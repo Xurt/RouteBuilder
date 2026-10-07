@@ -1,5 +1,7 @@
+addon/
 bin/
 obj/
 QuestieDB/
 guides/
+Make-Addon.ps1
 settings.json
