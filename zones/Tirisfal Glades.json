@@ -1,0 +1,538 @@
+// Tirisfal Glades: hand-made corrections for RouteBuilder.
+// QuestieDB has no prerequisites and few objectives for the quests that are new in Forever, so they are filled in here.
+// "pre" entries are best guesses from the order RestedXP's own Forever guide uses; they are the first thing to
+// check in game. Points are map coordinates as the game shows them: [x, y].
+{
+  "start": [30.04, 72.78],
+  "linkedAreas": [
+    {
+      "area": "Undercity",
+      "gate": [61.92, 64.85],
+      "hub": [66.0, 44.05],
+      "penalty": 250.0,
+      "enterText": "Go into the Ruins of Lordaeron and take a lift down into the Undercity",
+      "leaveText": "Take a lift back up and leave the Undercity"
+    }
+  ],
+  "innkeeper": 5688,
+  "bindName": "Brill",
+  "bindSubzone": 159,
+  "include": [],
+  "exclude": {},
+  "quests": {
+    "98601": {
+      "pre": [364]
+    },
+    "90902": {
+      "pre": [98601],
+      "objectives": [
+        {
+          "index": 1,
+          "kind": "use",
+          "npcs": [259377],
+          "label": "Injured Deathguard healed (5)",
+          "text": "Cast |T135920:0|t[Holy Light] on |cRXP_FRIENDLY_Injured Deathguards|r around Deathknell",
+          "kills": 0,
+          "targets": [
+            {
+              "kind": "target",
+              "name": "Injured Deathguard"
+            }
+          ]
+        }
+      ]
+    },
+    "98389": {
+      "pre": [376],
+      "objectives": [
+        {
+          "index": 1,
+          "kind": "kill",
+          "npcs": [271961],
+          "label": "Webbed Forsaken freed (6)",
+          "text": "Attack the |cRXP_ENEMY_Webbed Forsaken|r cocoons inside Night Web's Hollow to free them",
+          "kills": 0,
+          "targets": [
+            {
+              "kind": "mob",
+              "name": "Webbed Forsaken"
+            }
+          ]
+        }
+      ]
+    },
+    "91208": {
+      "pre": [90902],
+      "objectives": [
+        {
+          "index": 1,
+          "kind": "talk",
+          "npcs": [246143],
+          "label": "Offer aid to the Frightened Paladin",
+          "text": "Talk to the |cRXP_FRIENDLY_Frightened Paladin|r, then kill her when she turns hostile",
+          "extraLines": [
+            ".skipgossip"
+          ],
+          "kills": 1,
+          "mobLevel": 3,
+          "targets": [
+            {
+              "kind": "mob",
+              "name": "Frightened Paladin"
+            }
+          ]
+        }
+      ]
+    },
+    "91209": {
+      "pre": [90902],
+      "turninComplete": [
+        {
+          "index": 1,
+          "label": "Report to Shari Stilwell in Brill"
+        }
+      ]
+    },
+    "96656": {
+      "pre": [382]
+    },
+    "6395": {
+      "objectives": [
+        {
+          "kind": "loot",
+          "npcs": [1919],
+          "text": "Kill |cRXP_ENEMY_Samuel Fipps|r. Loot him for |cRXP_LOOT_Samuel's Remains|r",
+          "kills": 1,
+          "mobLevel": 5,
+          "command": ".collect 16333,1,6395,1 --Samuel's Remains (1)",
+          "targets": [
+            {
+              "kind": "mob",
+              "name": "Samuel Fipps"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "kind": "object",
+          "objects": [178090],
+          "label": "Samuel's Remains Buried (1)",
+          "text": "Click |cRXP_PICK_Marla's Grave|r in the Deathknell graveyard",
+          "after": true
+        }
+      ]
+    },
+    "96607": {
+      "pre": [96656],
+      "objectives": [
+        {
+          "index": 1,
+          "kind": "event",
+          "objects": [450008],
+          "label": "Use the /sit emote near the campfire",
+          "text": "Type /sit next to the |cRXP_PICK_Basic Campfire|r and stay seated for about a minute until you gain the Boosted Rest buff",
+          "extraLines": [
+            ".macro Sit,134400 >>/sit",
+            ".timer 59, RP",
+            ".complete 96607,2 --Gain the Boosted Rest buff"
+          ]
+        }
+      ]
+    },
+    "96658": {
+      "objectives": [],
+      "turninPreLines": [
+        ".train 2550 >>Train Cooking"
+      ],
+      "turninText": "|cRXP_WARN_Learning Cooking from him completes the quest|r"
+    },
+    "99134": {
+      "objectives": [
+        {
+          "index": 1,
+          "kind": "use",
+          "npcs": [1743, 1744, 1745, 1746, 2209, 2210],
+          "label": "Deathguards motivated (5)",
+          "text": "Use |T133490:0|t[Executor's Motivator] on any five |cRXP_FRIENDLY_Deathguards|r in and around Brill",
+          "extraLines": [
+            ".use 286176"
+          ],
+          "kills": 0
+        }
+      ]
+    },
+    "99141": {
+      "objectives": [
+        {
+          "index": 1,
+          "kind": "talk",
+          "npcs": [1496],
+          "label": "Dillinger's Report (1)",
+          "text": "Talk to |cRXP_FRIENDLY_Deathguard Dillinger|r and pick \"I need a report for Executor Zygand\"",
+          "extraLines": [
+            ".skipgossipid 142723"
+          ],
+          "kills": 0,
+          "targets": [
+            {
+              "kind": "target",
+              "name": "Deathguard Dillinger"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "kind": "talk",
+          "npcs": [251001],
+          "label": "Kristof's Report (1)",
+          "text": "Talk to |cRXP_FRIENDLY_Deathguard Kristof|r and pick \"I need a report for Executor Zygand\"",
+          "extraLines": [
+            ".skipgossipid 142730"
+          ],
+          "kills": 0,
+          "targets": [
+            {
+              "kind": "target",
+              "name": "Deathguard Kristof"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "kind": "talk",
+          "npcs": [10666],
+          "label": "Gordo's Report (1)",
+          "text": "Talk to |cRXP_FRIENDLY_Gordo|r and pick \"I need a report for Executor Zygand\". |cRXP_WARN_He is an abomination who patrols the road between Deathknell and Brill|r",
+          "kills": 0,
+          "patrol": true,
+          "targets": [
+            {
+              "kind": "unitscan",
+              "name": "Gordo"
+            }
+          ]
+        }
+      ]
+    },
+    "99144": {
+      "objectives": [
+        {
+          "index": 1,
+          "kind": "event",
+          "label": "Escort Bareth Dawnstone to safety",
+          "text": "Escort |cRXP_FRIENDLY_Bareth Dawnstone|r out of Solliden Farmstead",
+          "kills": 4,
+          "mobLevel": 7,
+          "minLevel": 6,
+          "points": [
+            [39.07, 48.77]
+          ],
+          "targets": [
+            {
+              "kind": "target",
+              "name": "Bareth Dawnstone"
+            }
+          ]
+        }
+      ],
+      "acceptText": "|cRXP_WARN_He is at the top of the tower and this starts an escort. It is easy to pull three Scarlet Warriors up there|r",
+      "acceptFlags": 1,
+      "tight": true
+    },
+    "361": {
+      "startItem": {
+        "item": 2839,
+        "npcs": [1520, 1522, 1523],
+        "passive": true,
+        "text": "|T134939:0|t[|cRXP_LOOT_A Letter to Yvette|r] can drop from the Agamand Mills undead. Use it to start the quest if you get one",
+        "anchors": [426, 362, 354]
+      }
+    },
+    "95328": {
+      "objectives": [],
+      "optional": true,
+      "startItem": {
+        "item": 268812,
+        "npcs": [260396],
+        "passive": false,
+        "text": "Kill the |cRXP_ENEMY_Whispering Horror|r (elite) and loot |T134438:0|t[|cRXP_LOOT_Whispering Horror Residue|r]. Use it to start the quest. |cRXP_WARN_Bring a partner if you can; skip this step if you cannot kill it|r",
+        "mob": "Whispering Horror",
+        "minLevel": 11
+      }
+    },
+    "97558": {
+      "objectiveIndex": {
+        "278242": 1,
+        "278243": 2,
+        "278244": 3
+      }
+    },
+    "99142": {
+      "pre": [5482]
+    },
+    "99156": {
+      "pre": [356],
+      "note": "|cRXP_WARN_Riptear is level 13|r"
+    },
+    "445": {
+      "pre": [369],
+      "acceptText": "|cRXP_WARN_This one is handed in at the Sepulcher in Silverpine Forest. It rides along until you head there|r"
+    },
+    "409": {
+      "objectives": [
+        {
+          "kind": "object",
+          "objects": [1586],
+          "text": "Open the |cRXP_PICK_Crate of Candles|r next to Gunther. Loot a |cRXP_LOOT_Candle of Beckoning|r",
+          "command": ".collect 3080,1,409,1 --Candle of Beckoning (1)"
+        },
+        {
+          "index": 1,
+          "kind": "kill",
+          "objects": [1557],
+          "label": "Lillith Nefara slain (1)",
+          "text": "Click |cRXP_PICK_Lillith's Dinner Table|r on the smaller island to summon |cRXP_ENEMY_Lillith Nefara|r, then kill her",
+          "kills": 1,
+          "mobLevel": 12,
+          "after": true,
+          "targets": [
+            {
+              "kind": "mob",
+              "name": "Lillith Nefara"
+            }
+          ]
+        }
+      ]
+    },
+    "96897": {
+      "pre": [96895],
+      "objectives": [
+        {
+          "index": 1,
+          "kind": "kill",
+          "npcs": [267006],
+          "label": "Dark Neophyte slain (8)",
+          "count": 8,
+          "mobLevel": 12,
+          "minLevel": 11,
+          "targets": [
+            {
+              "kind": "mob",
+              "name": "Dark Neophyte"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "kind": "kill",
+          "npcs": [275437],
+          "label": "Dark Enforcer slain (8)",
+          "text": "Kill |cRXP_ENEMY_Dark Neophytes|r and |cRXP_ENEMY_Dark Enforcers|r. |cRXP_WARN_They hit hard; Enforcers have an instant 50-70 damage ability|r",
+          "count": 8,
+          "mobLevel": 13,
+          "minLevel": 11,
+          "targets": [
+            {
+              "kind": "mob",
+              "name": "Dark Enforcer"
+            }
+          ]
+        }
+      ]
+    },
+    "96898": {
+      "pre": [96895]
+    },
+    "96899": {
+      "pre": [96897, 96898]
+    },
+    "96896": {
+      "pre": [96899],
+      "turninText": "|cRXP_WARN_Wait for Danitha Morr and Leonid to finish talking, then hand it in|r",
+      "objectives": []
+    },
+    "98545": {
+      "pre": [96896]
+    },
+    "91282": {
+      "pre": [91209]
+    },
+    "91285": {
+      "pre": [91282]
+    },
+    "91294": {
+      "pre": [91285],
+      "objectives": [
+        {
+          "index": 1,
+          "kind": "talk",
+          "npcs": [246389],
+          "label": "Speak with Hilda the Breaker",
+          "text": "Talk to |cRXP_FRIENDLY_Hilda the Breaker|r outside the keep",
+          "kills": 0,
+          "targets": [
+            {
+              "kind": "target",
+              "name": "Hilda the Breaker"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "kind": "talk",
+          "npcs": [246393],
+          "label": "Speak with Jorin Croge",
+          "text": "Talk to |cRXP_FRIENDLY_Jorin Croge|r inside the keep",
+          "kills": 0,
+          "targets": [
+            {
+              "kind": "target",
+              "name": "Jorin Croge"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "kind": "talk",
+          "npcs": [246394],
+          "label": "Speak with Ander Solliden",
+          "text": "Talk to |cRXP_FRIENDLY_Ander Solliden|r. |cRXP_WARN_He patrols the road outside the keep|r",
+          "kills": 0,
+          "targets": [
+            {
+              "kind": "unitscan",
+              "name": "Ander Solliden"
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "kind": "talk",
+          "npcs": [246378],
+          "label": "Speak with Danitha Morr",
+          "text": "Talk to |cRXP_FRIENDLY_Danitha Morr|r upstairs in the keep",
+          "kills": 0,
+          "targets": [
+            {
+              "kind": "target",
+              "name": "Danitha Morr"
+            }
+          ]
+        }
+      ]
+    },
+    "91316": {
+      "pre": [91294]
+    },
+    "91317": {
+      "pre": [91294],
+      "objectives": [
+        {
+          "index": 1,
+          "kind": "loot",
+          "npcs": [259431],
+          "label": "Rudolph Gelhardt's Head (1)",
+          "text": "Kill |cRXP_ENEMY_Rudolph Gelhardt|r upstairs. Loot him for his |cRXP_LOOT_Head|r",
+          "kills": 1,
+          "mobLevel": 10,
+          "targets": [
+            {
+              "kind": "mob",
+              "name": "Rudolph Gelhardt"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "kind": "kill",
+          "npcs": [259434],
+          "label": "Tarnished Drudge slain (8)",
+          "count": 8,
+          "mobLevel": 10,
+          "targets": [
+            {
+              "kind": "mob",
+              "name": "Tarnished Drudge"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "kind": "kill",
+          "npcs": [259433],
+          "label": "Tarnished Zealot slain (6)",
+          "count": 6,
+          "mobLevel": 10,
+          "targets": [
+            {
+              "kind": "mob",
+              "name": "Tarnished Zealot"
+            }
+          ]
+        }
+      ]
+    },
+    "95803": {
+      "pre": [91317]
+    },
+    "94427": {
+      "pre": [91317]
+    },
+    "94434": {
+      "pre": [94427],
+      "objectives": [],
+      "acceptText": "|cRXP_WARN_She wants 10|r |T132889:0|t[Linen Cloth]|cRXP_WARN_. The auction house is next to her if you are short|r"
+    },
+    "94435": {
+      "pre": [94434]
+    },
+    "94436": {
+      "pre": [94435]
+    },
+    "94438": {
+      "pre": [94436],
+      "turninPreLines": [
+        ".use 6866"
+      ],
+      "turninText": "Use the |T133439:0|t[Symbol of Life] on |cRXP_FRIENDLY_Deathguard Falgan|r to resurrect him, then talk to him"
+    },
+    "94440": {
+      "pre": [94438],
+      "objectives": [
+        {
+          "index": 1,
+          "kind": "loot",
+          "npcs": [1537, 1538],
+          "label": "Scarlet Crusade Attack Plans (1)",
+          "text": "Kill |cRXP_ENEMY_Scarlet Friars|r and |cRXP_ENEMY_Scarlet Zealots|r nearby. Loot them for the |cRXP_LOOT_Scarlet Crusade Attack Plans|r",
+          "kills": 4,
+          "mobLevel": 10,
+          "near": {
+            "point": [86.82, 43.36],
+            "radius": 320.0
+          },
+          "targets": [
+            {
+              "kind": "mob",
+              "name": "Scarlet Friar"
+            },
+            {
+              "kind": "mob",
+              "name": "Scarlet Zealot"
+            }
+          ]
+        }
+      ]
+    },
+    "94441": {
+      "pre": [94440]
+    }
+  },
+  "reminders": [
+    {
+      "tag": "Paladin",
+      "atLevel": 6,
+      "text": "|cRXP_WARN_Keep 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for the Paladin quest A Lesson in Divinity. Do not vendor it|r"
+    }
+  ]
+}

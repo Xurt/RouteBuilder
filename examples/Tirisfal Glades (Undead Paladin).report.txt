@@ -1,0 +1,85 @@
+Tirisfal Glades - Undead Paladin
+Guide "1-13 Tirisfal Glades" in group "Zone Routes (Undead Paladin)": 191 steps, 165 stops
+Written to final/Tirisfal Glades (Undead Paladin).lua
+Data: QuestieDB local copy, 2026-10-06
+Zone file: zones/Tirisfal Glades.json
+RestedXP cross-check: 5825 objective notes read from 200 guide files
+
+Checks
+------
+Played through as 1 race/class combination: no problems found.
+Quest log: at most 14 of 40 held at once, not counting quests brought in from other zones.
+Every stop picks up and hands in everything on offer within reach.
+
+Route
+-----
+Planned from level 1. Distances are straight lines, so real running is longer; levels are an estimate.
+  everyone: 241 tasks, 38,586 yd on foot (simply going to the nearest thing each time comes to 52,753 yd); ends at level 13.2; 4 hearths
+  everyone (quests that depend on other zones): 8 more tasks; their whole route comes to 39,170 yd; ends at level 13.2; 4 hearths
+Hearthstone: set at Innkeeper Renee (Brill); 4 hearth steps in the guide.
+These pickups are planned within about half a level of the level they unlock at, so the guide checks your level first.
+The check passes at once if you are there; if you are a little behind the prediction it asks you to grind the difference:
+  level 2 for The Damned
+  level 4 for Continue Your Training (Undead Paladin)
+  level 5 for Gordo's Task
+  level 6 for Wanted: Maggot Eye
+  level 7 for The Haunted Mills
+  level 8 for A Second Home (Undead Paladin)
+  level 10 for The Argent Emissary
+  level 12 for A Lesson in Divinity (Undead Paladin)
+3 pickups are also offered a visit early, in case you are ahead of the predicted level (they hide themselves otherwise).
+
+Quests in the guide (88)
+------------------------
+Start to finish here: 80 (62 for everyone, 17 Undead Paladin, 1 Undead)
+
+Picked up here, handed in elsewhere - these stay in the log (1):
+  Delivery to Silverpine Forest [445, level 10] -> Silverpine Forest
+
+Brought in from another zone and handed in here - steps show only if you have the quest (3):
+  Ride to the Undercity [6323, level 10, Undead] <- Silverpine Forest
+  A Recipe For Death [447, level 12] <- Silverpine Forest
+  Zinge's Delivery [1359, level 15] <- Silverpine Forest
+
+Need a quest this guide does not hand in - steps show only once that is done (4):
+  Michael Garrett [6322, level 10, Undead] - needs one of Ride to the Undercity [6323]
+  Return to Podrig [6324, level 10, Undead] - needs one of Michael Garrett [6322] -> Silverpine Forest
+  A Recipe For Death [450, level 15] - needs one of A Recipe For Death [447] -> Silverpine Forest
+  Sample for Helbrim [1358, level 15] - needs one of Zinge's Delivery [1359] -> The Barrens
+
+Worth checking in game
+----------------------
+38 quests are new in Forever: their experience is estimated, and 10 of them list no prerequisite in the database.
+If one of these is offered too early or too late in game, add a "pre" entry for it to the zone file:
+  Sticks and Bones [86784], That Shadowvale Green Elixir [95314], Whispering Horror Residue [95328], The Argent Emissary [96895], Hides for the Forsaken [97558], Discipline [99134], Patience [99141], Seeking Refuge [99144], As Above, So Below [99152], The One That Got Away [99153]
+
+Left out (216)
+--------------
+above this zone's range of 1-15 (89):
+  Alas, Andorhal [105], Errand for Apothecary Zinge [232], Errand for Apothecary Zinge [238], Into the Field [243], The Engraved Ring [440], Raleigh and the Undercity [441], Rot Hide Origins [444], Thule Ravenclaw [446], A Recipe For Death [451], Wand to Bethor [491], The Crown of Will [495], Elixir of Agony [513], Elixir of Agony [515], The Crown of Will [521], A Husband's Revenge [530], Battle of Hillsbrad [550], Crystal in the Mountains [635], To the Undercity for Yagyin's Digest [728], The Star, the Hand and the Heart [736], Forbidden Knowledge [737], Scholomance [838], Return to Apothecary Zinge [864], Skeletal Fragments [964], The New Frontier [1004], Going, Going, Guano! [1109], Test of Lore [1159], To Steal From Thieves [1164], Final Passage [1394], Reclaimed Treasures [2342], Rin'ji's Secret [2782], Tabetha's Task [2861], Venom to the Undercity [2938], Lines of Communication [2995], Delivery to Andron Gant [3542], Andron's Payment to Jediga [3564], Seeping Corruption [3568], Seeping Corruption [3569], Seeping Corruption [3570], Assisting Arch Druid Runetotem [3784], A Sample of Slime... [4293], ... 49 more
+repeatable (34):
+  The Dormant Shade [410], Candles of Beckoning [431], Testing for Impurities - Un'Goro Crater [4561], Testing for Corruption - Felwood [4661], Corruptor's Scourgestones [5406], Invader's Scourgestones [5407], Minion's Scourgestones [5408], Additional Runecloth [7819], Chicken Clucking for a Mint [8354], Invaders of Alterac Valley [8387], For Great Honor [8388], Battle of Warsong Gulch [8389], Conquering Arathi Basin [8390], Battle of Warsong Gulch [8431], Battle of Warsong Gulch [8432], Battle of Warsong Gulch [8433], Battle of Warsong Gulch [8434], Battle of Warsong Gulch [8435], Conquering Arathi Basin [8440], Conquering Arathi Basin [8441], Conquering Arathi Basin [8442], Conquering Arathi Basin [8443], One Commendation Signet [8816], Ten Commendation Signets [8824], One Commendation Signet [8840], Ten Commendation Signets [8841], Gift Giving [8981], Major Mana Potion [9320], Argent Dawn Gloves [9333], Blessed Wizard Oil [9334], Consecrated Sharpening Stones [9335], Major Healing Potion [9336], Tabard of the Argent Dawn [9343], A Light in Dark Places [9386]
+dungeon quest (24):
+  The Book of Ur [1013], Into The Scarlet Monastery [1048], Hearts of Zeal [1113], Test of Lore [1160], Bring the End [3341], Vivian Lagrave [4133], Vivian Lagrave and the Darkstone Tablet [4769], Barov Family Fortune [5341], The Power to Destroy... [5725], An Unholy Alliance [6521], An Unholy Alliance [6522], Camp Mojache [7492], Battle of Warsong Gulch [8368], Invaders of Alterac Valley [8369], Conquering Arathi Basin [8370], Battle of Warsong Gulch [8426], Battle of Warsong Gulch [8427], Battle of Warsong Gulch [8428], Battle of Warsong Gulch [8429], Battle of Warsong Gulch [8430], Conquering Arathi Basin [8436], Conquering Arathi Basin [8437], Conquering Arathi Basin [8438], Conquering Arathi Basin [8439]
+special category (sort -22) (15):
+  Stinking Up Southshore [1657], Great-father Winter is Here! [7024], Rotten Eggs [8322], Ruined Kegs [8409], Winter's Presents [8828], New Year Celebrations! [8861], Dearest Elenia, [8900], Dearest Elenia, [8901], Dearest Elenia, [8902], Dangerous Love [8904], Fenstad's Hunch [8979], Zinge's Assessment [8980], Tracing the Source [8982], Tracing the Source [8983], The Source Revealed [8984]
+needs a profession (14):
+  Goblin Engineering [3526], Gnome Engineering [3635], The Hero of the Day [8799], Camping 101: Alchemy [97951], Camping 101: Blacksmithing [97952], Camping 101: Enchanting [97953], Camping 101: Engineering [97954], Camping 101: First Aid [97955], Camping 101: Fishing [97956], Camping 101: Herbalism [97957], Camping 101: Leatherworking [97958], Camping 101: Mining [97959], Camping 101: Skinning [97960], Camping 101: Tailoring [97961]
+special category (sort -369) (10):
+  A Light in Dark Places [9319], Wild Fires in Kalimdor [9322], Wild Fires in the Eastern Kingdoms [9323], Stealing Stormwind's Flame [9330], Stealing Ironforge's Flame [9331], Stealing Darnassus's Flame [9332], A Thief's Reward [9339], The Festival of Fire [9368], Flickering Flames in Kalimdor [9388], Flickering Flames in the Eastern Kingdoms [9389]
+handed in here, but the database does not say where it starts (9):
+  Welcome! [5847], Nar'thalas Almanac [78124], The Dalaran Digest [78127], Bewitchments and Glamours [78142], Secrets of the Dreamers [78143], Arcanic Systems Manual [78145], Fury of the Land [78149], The Lessons of Ta'zo [79094], Baxtan: On Destructive Magics [79097]
+special category (sort -366) (7):
+  Darkcore the Elder [8648], Graveborn the Elder [8652], Lunar Fireworks [8867], The Lunar Festival [8873], The Lunar Festival [8874], The Lunar Festival [8875], Valadar Starsong [8883]
+special category (sort -284) (5):
+  Runes of the Sorcerer-Kings [78148], Archmage Theocritus' Research Journal [79092], The Apothecary's Metaphysical Primer [79095], Greater Friend of the Library [79536], WRIGGLE. [97583]
+world-event quest (4):
+  A Rogue's Deal [590], Scarlet Diversions [5096], Test of Lore [6628], Investigate the Scourge of the Undercity [9265]
+needs reputation (2):
+  Mantles of the Dawn [5504], Chromatic Mantle of the Dawn [5524]
+special category (sort -368) (2):
+  Light's Hope Chapel [9154], Faint Necrotic Crystal [9310]
+special category (sort -365) (1):
+  The Horde Needs Your Help! [8793]
+
+To force one in, add its number to "include" in the zone file; to drop one, add it to "exclude" with a reason.
