@@ -270,6 +270,9 @@
     "99152": {
       "pre": [98545]
     },
+    "99153": {
+      "pre": [98545]
+    },
     "99142": {
       "pre": [5482]
     },
@@ -529,6 +532,15 @@
     },
     "94441": {
       "pre": [94440]
+    },
+    "370": {
+      "objectives": [
+        { "index": 1, "kind": "kill", "npcs": [1536], "count": 3,
+          "label": "Scarlet Missionary slain",
+          "near": { "point": [51.8, 67.5], "radius": 250 },
+          "targets": [ { "kind": "mob", "name": "Scarlet Missionary" } ] 
+        }
+      ]
     }
   },
   "reminders": [
