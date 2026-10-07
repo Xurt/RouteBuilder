@@ -24,7 +24,7 @@ export script (it ships its own Lua for Windows and Linux). Run it again wheneve
 A zone takes a minute or two at the default effort; `--effort 0.2` is much quicker and usually within a
 few percent. Each build writes two files into `guides`:
 
-* `<Zone> (<who>).lua` - the guide. Load it the same way as any other custom RXP guide file.
+* `<Zone> (<who>).lua` - the guide. See "Getting the guides into the game" below.
 * `<Zone> (<who>).report.txt` - what went in, what was left out and why, and what to check in game.
 
 Without `--race`/`--class` you get one route for the whole faction. Quests everyone can do are ordered
@@ -36,6 +36,24 @@ Other options: `--out`, `--data`, `--zone-file`, `--start-level`, `--min-level`,
 `--no-hearth`, `--effort` (0.2 for a quick look, 3 for a slow thorough run) and `--rxp <folder>`.
 `--rxp` points at a RestedXP `Guides` folder (inside the addon); RouteBuilder reads the objective
 numbers RestedXP uses and flags or fixes the ones where the database disagrees.
+
+## Getting the guides into the game
+
+`Make-Addon.ps1` packs everything in `guides` into a small addon of its own, which lists RestedXP as a
+dependency. Nothing inside the RestedXP addon has to be edited.
+
+    .\Make-Addon.ps1
+
+It writes `addon\RXPGuides_ZoneRoutes`. Copy that `RXPGuides_ZoneRoutes` folder into your game's
+`Interface\AddOns` folder, next to `RXPGuides`. Run the script and copy the folder again after every
+build; the folder is rebuilt from scratch each time.
+
+* Close the game completely and start it again when the addon is new or a guide file was added or
+  removed. When only the contents of existing guides changed, `/reload` is enough.
+* If Windows refuses to run the script, start it as
+  `powershell -ExecutionPolicy Bypass -File .\Make-Addon.ps1`.
+* If the game lists the addon as out of date, pass the game's interface number, for example
+  `.\Make-Addon.ps1 -Interface 16001`. The default is the list RestedXP's own `.toc` uses.
 
 ## How a zone is planned
 
@@ -59,38 +77,17 @@ numbers RestedXP uses and flags or fixes the ones where the database disagrees.
 
 QuestieDB is missing prerequisites and some objectives for the quests that are new in Forever. The
 report's "Worth checking in game" section lists them. Fixes go in `zones/<Zone name>.json`, so they
-survive the next build. `zones/Tirisfal Glades.json` is a worked example. Everything is optional:
+survive the next build. The smallest useful file is one fix:
 
     {
-      "start": [30.0, 72.8],                // where the player begins; points are map coordinates [x, y]
-      "startLevel": 1,
-      "innkeeper": 5688, "bindName": "Brill", "bindSubzone": 159,
-      "linkedAreas": [ { "area": "Undercity", "gate": [61.9, 64.9], "hub": [66.0, 44.0], "penalty": 250,
-                         "enterText": "Take a lift down", "leaveText": "Take a lift back up" } ],
-      "include": [1234],                    // force a quest in
-      "exclude": { "441": "belongs to a Silverpine chain" },
       "quests": {
-        "98601": { "pre": [364] },          // must come after quest 364
-        "96896": { "objectives": [] },      // really has no objectives
-        "90902": { "objectives": [ {
-            "index": 1, "kind": "use", "npcs": [259377],
-            "label": "Injured Deathguard healed (5)",
-            "text": "Cast Holy Light on Injured Deathguards",
-            "targets": [ { "kind": "target", "name": "Injured Deathguard" } ], "kills": 0 } ] },
-        "97558": { "objectiveIndex": { "278242": 1, "278243": 2 } }   // quest-log line for each item/NPC
-      },
-      "reminders": [ { "tag": "Paladin", "atLevel": 6, "text": "Keep 10 Linen Cloth" } ]
+        "784": { "pre": [786] }      // quest 784 is not offered until 786 is handed in
+      }
     }
 
-Per quest you can set: `pre`, `objectives` (replaces the database's list), `objectiveIndex`,
-`acceptText`, `acceptFlags`, `turninText`, `turninPreLines`, `turninExtraLines`, `turninComplete`,
-`tight` (first objective must directly follow the pickup, for escorts), `optional`, `noTurnin`,
-`startItem`, `note`, `xp`.
-
-Per objective: `index` (its line in the quest log), `kind` (kill, loot, object, use, talk, event, buy),
-`npcs`, `objects`, `points`, `near` (`{ "point": [x, y], "radius": 300 }`), `label`, `text`,
-`extraLines` (raw RXP lines), `targets`, `count`, `kills`, `mobLevel`, `minLevel`, `after` (must follow
-the previous objective), `patrol`, `command` (a raw RXP line instead of `.complete`).
+**`docs/zone-files.md` is the full reference**: every key, what it does, what happens when it is left
+out, how to find the IDs and coordinates, and worked examples. `zones/Tirisfal Glades.json` is a
+complete real file.
 
 ## Settings
 
