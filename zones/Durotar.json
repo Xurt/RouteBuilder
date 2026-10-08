@@ -1,0 +1,14 @@
+// Durotar
+{ 
+  "exclude": {
+    "96873": "Requires Enchanting"
+  },
+  "quests": {
+    "97279": {
+      "pre": [4641]
+    },
+    "99123": {
+      "pre": [794, 6394, 786]
+    }
+  }
+}

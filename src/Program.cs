@@ -28,7 +28,7 @@ public static class Program
               --start-level <n>      level the player arrives at (default: the zone's lowest quest level)
               --min-level <n>, --max-level <n>   override the quest-level range that is included
               --no-hearth            do not plan hearthstone use
-              --effort <x>           search effort, 1 = normal, 0.2 = quick look, 3 = slow and thorough
+              --effort <x>           search effort from 0.01 to 100: 1 = normal, 0.2 = quick look, 3 = slow and thorough
 
         Numbers the router's judgement rests on can be changed in settings.json (see README).
         """;
@@ -100,9 +100,14 @@ public static class Program
     {
         if (!opt.TryGetValue("zone", out var zone)) throw new InvalidOperationException("build needs --zone \"<name>\" (or --zone all). Run 'RouteBuilder zones' for the list.");
         string faction = Faction(opt);
-        if (opt.TryGetValue("effort", out var es) && double.TryParse(es, NumberStyles.Float, CultureInfo.InvariantCulture, out double effort) && effort > 0)
+        if (opt.TryGetValue("effort", out var es))
         {
-            Tuning.IterationsPerTask = (int)(Tuning.IterationsPerTask * effort); Tuning.MinIterations = (int)(Tuning.MinIterations * effort); Tuning.MaxIterations = (int)(Tuning.MaxIterations * effort);
+            // the search's try counts are whole numbers: below 0.01 they round away to nothing, above 100 they no longer fit
+            if (!double.TryParse(es, NumberStyles.Float, CultureInfo.InvariantCulture, out double effort) || !(effort >= 0.01 && effort <= 100))
+                throw new InvalidOperationException($"--effort must be a number from 0.01 to 100 (1 is normal). Got '{es}'.");
+            Tuning.IterationsPerTask = Math.Max(1, (int)(Tuning.IterationsPerTask * effort));
+            Tuning.MinIterations = Math.Max(1, (int)(Tuning.MinIterations * effort));
+            Tuning.MaxIterations = Math.Max(1, (int)(Tuning.MaxIterations * effort));
         }
         var sw = Stopwatch.StartNew();
         Console.WriteLine("Reading QuestieDB data...");
@@ -186,6 +191,9 @@ public static class Program
                     var t = model.Tasks[id]; var c = t.Cands[route.Choice[id]];
                     return $"{i,4} {t.Kind,-10} {t.Q?.Id,6} {(t.Cond ? "cond" : "firm")}{(t.Deferred ? " deferred" : "")} L{route.Level[id]:0.0} [{t.Tag}] {t} @{c.Area}:{c.Pos.X:0},{c.Pos.Y:0} pre={string.Join(",", t.Pre)} any={string.Join(",", t.PreAny)} id={id}";
                 }));
+            if (debug)
+                File.WriteAllLines(Path.Combine(outDir, $"{area.Name}.part{visit.Number}.spawns.txt"), model.Tasks.Where(t => t.Obj != null).Select(t =>
+                    $"{t.Id} {t.Obj!.Kind} {t.Obj.Kills:0} " + string.Join(" ", t.Cands.SelectMany(c => c.Pts.Select(p => $"{c.Area}:{p.X:0},{p.Y:0}")))));
             if (!more) break;
             visit = new Visit
             {

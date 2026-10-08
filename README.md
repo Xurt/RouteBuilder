@@ -111,3 +111,94 @@ without recompiling, put it in a `settings.json` in the folder you run from, for
 Quest data comes from QuestieDB (GPL-3.0), downloaded by `update` and not included here. Guides built
 from it carry a note saying so. RestedXP's guides are only read for objective numbers when you pass
 `--rxp`; nothing from them is copied into the output.
+
+# Route Testing Status
+## Horde
+| Zone | Complete | In Progress |
+| ------------- |:-------------:|:-------------:|
+|Alterac Mountains|||
+|Arathi Highlands|||
+|Ashenvale|||
+|Azshara|||
+|Badlands|||
+|Blasted Lands|||
+|Burning Steppes|||
+|Desolace|||
+|Dun Morogh|||
+|Durotar||X|
+|Duskwood|||
+|Dustwallow Marsh|||
+|Eastern Plaguelands|||
+|Felwood|||
+|Feralas|||
+|Hillsbrad Foothills|||
+|Loch Modan|||
+|Moonglade|||
+|Mulgore|||
+|Orgrimmar|||
+|Redridge Mountains|||
+|Searing Gorge|||
+|Silithus|||
+|Silithus|||
+|Silverpine Forest|||
+|Stonetalon Mountains|||
+|Stranglethorn Vale|||
+|Swamp of Sorrows|||
+|Tanaris|||
+|Teldrassil|||
+|The Barrens|||
+|The Hinterlands|||
+|Thousand Needles|||
+|Thunder Bluff|||
+|Tirisfal Glades|X||
+|Un'Goro Crater|||
+|Undercity|||
+|Western Plaguelands|||
+|Westfall|||
+|Winterspring|||
+|Zephras Isle|||
+
+## Alliance
+| Zone | Complete | In Progress |
+| ------------- |:-------------:|:-------------:|
+|Alterac Mountains|||
+|Arathi Highlands|||
+|Ashenvale|||
+|Azshara|||
+|Badlands|||
+|Blasted Lands|||
+|Burning Steppes|||
+|Darkshore|||
+|Darnassus|||
+|Desolace|||
+|Dun Morogh|||
+|Durotar|||
+|Duskwood|||
+|Dustwallow Marsh|||
+|Eastern Plaguelands|||
+|Elwynn Forest|||
+|Felwood|||
+|Feralas|||
+|Hillsbrad Foothills|||
+|Ironforge|||
+|Loch Modan|||
+|Moonglade|||
+|Redridge Mountains|||
+|Riverglades|||
+|Searing Gorge|||
+|Silithus|||
+|Stonetalon Mountains|||
+|Stormwind City|||
+|Stranglethorn Vale|||
+|Swamp of Sorrows|||
+|Tanaris|||
+|Teldrassil|||
+|The Barrens|||
+|The Hinterlands|||
+|Thousand Needles|||
+|Un'Goro Crater|||
+|Western Plaguelands|||
+|Westfall|||
+|Wetlands|||
+|Winterspring|||
+|Zephras Isle|||

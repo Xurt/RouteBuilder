@@ -827,7 +827,12 @@ public sealed class ZoneModel
             {
                 if (q.Arrival) continue;
                 var needAll = q.PreAll.Where(p => !Quests.TryGetValue(p, out var pq) || !Firm(pq, q)).OrderBy(p => p).ToList();
-                var needAny = q.PreAny.Count > 0 && !q.PreAny.Any(p => Quests.TryGetValue(p, out var pq) && Firm(pq, q)) ? q.PreAny.OrderBy(p => p).ToList() : new List<int>();
+                // "any one of": fine when, between them, the alternatives this guide hands in cover every character the quest is for
+                // (e.g. one version of a quest for warlocks and another for everyone else)
+                ulong covered = 0;
+                foreach (int p in q.PreAny)
+                    if (Quests.TryGetValue(p, out var pq) && pq.HasTurnin && !pq.Cond && !pq.Late && !pq.Optional) covered |= pq.Elig & q.Elig;
+                var needAny = q.PreAny.Count > 0 && covered != q.Elig ? q.PreAny.OrderBy(p => p).ToList() : new List<int>();
                 bool cond = needAll.Count > 0 || needAny.Count > 0;
                 if (cond != q.Conditional || !needAll.SequenceEqual(q.NeedAll) || !needAny.SequenceEqual(q.NeedAny))
                 {

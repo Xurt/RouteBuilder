@@ -5,7 +5,7 @@ namespace RouteBuilder;
 /// <summary>What the simulated player experiences along one ordering, position by position.</summary>
 public sealed class Sim
 {
-    public double Travel, Penalty, EndXp, LevelShort; public int Broken, Misses;
+    public double Travel, Penalty, EndXp, LevelShort; public int Broken, Misses, Passes;
     public double[] Leg = Array.Empty<double>(), Level = Array.Empty<double>(), XpBefore = Array.Empty<double>();
     public bool[] Hearth = Array.Empty<bool>();
     public int Hearths => Hearth.Count(h => h);
@@ -28,6 +28,8 @@ public sealed class Evaluator
     public readonly int[][] Hub;       // [task][place] -> hub number, or -1
     public readonly int[][] HubTasks;  // [hub] -> pickups and hand-ins that can be done there
     public readonly bool[] Active;
+    readonly bool[] pass;              // hand-ins that count as "run past" when the route goes by them finished
+    readonly int[] preCount, left, wait;
     /// <param name="watch">Which pickups and hand-ins count as "left behind" when the player walks away from them; null = all.</param>
     public Evaluator(ZoneModel model, bool[] active, bool[]? watch = null)
     {
@@ -68,6 +70,12 @@ public sealed class Evaluator
                 foreach (int h in Hub[t.Id].Where(h => h >= 0).Distinct()) at[h].Add(t.Id);
         }
         HubTasks = at.Select(l => l.ToArray()).ToArray();
+        pass = new bool[n]; preCount = new int[n]; left = new int[n]; wait = new int[n];
+        foreach (var t in m.Tasks)
+        {
+            preCount[t.Id] = Pre[t.Id].Length;
+            pass[t.Id] = active[t.Id] && (watch == null || watch[t.Id]) && isTurn[t.Id] && Pre[t.Id].Length > 0 && t.Ent is { Patrol: false };
+        }
         home = m.Home != null && active[m.Home.Id] ? m.Home.Id : -1;
         if (m.Home != null) { var c = m.Home.Cands[0]; bx = c.Pos.X; by = c.Pos.Y; barea = c.Area; }
     }
@@ -91,6 +99,8 @@ public sealed class Evaluator
         var cum = Game.Cum;
         double big = Tuning.OrderPenalty, lbig = Tuning.LevelPenalty;
         double miss = Tuning.HubMiss; int hprev = -1;
+        double passMiss = Tuning.PassMiss, r2 = Tuning.PassRadius * Tuning.PassRadius, share = Tuning.PassDetour, cap = 3 * Tuning.PassRadius;
+        Array.Copy(preCount, left, n); int wn = 0;
         for (int pos = 0; pos < len; pos++)
         {
             int t = seq[pos];
@@ -98,7 +108,7 @@ public sealed class Evaluator
             while (lvl < Game.MaxLevel && exp >= cum[lvl + 1]) lvl++;
             double fl = lvl + (exp - cum[lvl]) / (cum[lvl + 1] - cum[lvl]);
             // leaving a hub with something still on offer there
-            int h = Hub[t][c];
+            int h = Hub[t][c], hfrom = hprev;
             if (hprev >= 0 && h != hprev && Tight[t] != prev)
             {
                 var nb = HubTasks[hprev];
@@ -138,6 +148,30 @@ public sealed class Evaluator
                 double db = Math.Sqrt((nx - bx) * (nx - bx) + (ny - by) * (ny - by));
                 if (db <= Tuning.HearthRadius) { d = Tuning.HearthCost + db; lastHs = clock; hs = true; }
             }
+            // running past a finished quest's hand-in on the way somewhere else
+            if (wn > 0 && passMiss > 0 && !hs && na == a && Tight[t] != prev)
+            {
+                double dx = nx - x, dy = ny - y, l2 = dx * dx + dy * dy;
+                for (int k = 0; k < wn; k++)
+                {
+                    int u = wait[k];
+                    if (u == t || done[u]) continue;
+                    int cu = ch[u]; if (ca[u][cu] != a) continue;
+                    int hu = Hub[u][cu];
+                    if (hu >= 0 && (hu == hfrom || hu == h)) continue;          // the hub rule covers leaving or arriving there
+                    double px = cx[u][cu], py = cy[u][cu];
+                    if ((px - nx) * (px - nx) + (py - ny) * (py - ny) <= r2) continue;   // heading there anyway
+                    double f = l2 > 0 ? Math.Clamp(((px - x) * dx + (py - y) * dy) / l2, 0, 1) : 0;
+                    double ex = x + f * dx - px, ey = y + f * dy - py;
+                    bool by = ex * ex + ey * ey <= r2;
+                    if (!by && share > 0 && d > 0)
+                    {
+                        double via = Math.Sqrt((px - x) * (px - x) + (py - y) * (py - y)) + Math.Sqrt((px - nx) * (px - nx) + (py - ny) * (py - ny));
+                        by = via - d <= Math.Min(share * d, cap);   // only a short way off a long leg
+                    }
+                    if (by) { pen += passMiss; if (detail != null) detail.Passes++; }
+                }
+            }
             total += d;
             int need = ml[t][c];
             if (need > 1 && need + safe[t] > fl)
@@ -158,6 +192,10 @@ public sealed class Evaluator
             if (detail != null) { detail.Leg[pos] = d; detail.Level[pos] = fl; detail.XpBefore[pos] = exp; detail.Hearth[pos] = hs; }
             clock += d / Tuning.RunSpeed + secs[t];
             exp += xp[t]; done[t] = true; prev = t; x = nx; y = ny; a = na;
+            // hand-ins whose quest is now finished join the waiting list; ones handed in drop out
+            var sc = Succ[t];
+            for (int i = 0; i < sc.Length; i++) { int s = sc[i]; if (--left[s] == 0 && pass[s] && !done[s]) wait[wn++] = s; }
+            if (isTurn[t]) for (int k = 0; k < wn; k++) if (wait[k] == t) { wait[k] = wait[--wn]; break; }
             if (t == home) bound = true;
         }
         if (detail != null) { detail.Travel = total; detail.Penalty = pen; detail.EndXp = exp; }
@@ -167,7 +205,7 @@ public sealed class Evaluator
 
 public sealed class ViewStat
 {
-    public string Name = ""; public bool Cond; public int Tasks, Broken; public double Travel, Penalty, EndLevel, StartCost, LevelShort; public int Hearths, HubMisses;
+    public string Name = ""; public bool Cond; public int Tasks, Broken; public double Travel, Penalty, EndLevel, StartCost, LevelShort; public int Hearths, HubMisses, Passes;
 }
 
 public sealed class RouteResult
@@ -196,7 +234,10 @@ public sealed class Router
     {
         var res = new RouteResult { Choice = new int[n], Level = new double[n], XpBefore = new double[n], Hearth = new bool[n] };
         var live = m.Tasks.Where(t => !t.Deferred).ToList();
-        var layers = live.GroupBy(t => (t.Cond, t.Elig)).OrderBy(g => g.Key.Cond).ThenByDescending(g => BitOperations.PopCount(g.Key.Elig)).ThenBy(g => g.Key.Elig).ToList();
+        // quests most characters can do (say, everyone but warlocks) are planned with the shared route, not slotted in afterwards
+        int all = BitOperations.PopCount(m.AllElig);
+        ulong LayerOf(RouteTask t) => BitOperations.PopCount(t.Elig) * 2 >= all ? m.AllElig : t.Elig;
+        var layers = live.GroupBy(t => (t.Cond, Elig: LayerOf(t))).OrderBy(g => g.Key.Cond).ThenByDescending(g => BitOperations.PopCount(g.Key.Elig)).ThenBy(g => g.Key.Elig).ToList();
         var master = new List<int>(); bool firmPlaced = false;
         foreach (var layer in layers)
         {
@@ -217,7 +258,7 @@ public sealed class Router
             for (int p = 0; p < seq.Length; p++)
                 if (movable[seq[p]]) { res.Level[seq[p]] = sim.Level[p]; res.XpBefore[seq[p]] = sim.XpBefore[p]; res.Hearth[seq[p]] = sim.Hearth[p]; }
             int misses = sim.Misses;
-            res.Views.Add(new ViewStat { Name = name, Cond = cond, Tasks = mine.Count, Travel = sim.Travel, Penalty = sim.Penalty, EndLevel = Game.FracLevel(sim.EndXp), Hearths = sim.Hearths, HubMisses = misses, StartCost = startCost, Broken = sim.Broken, LevelShort = sim.LevelShort });
+            res.Views.Add(new ViewStat { Name = name, Cond = cond, Tasks = mine.Count, Travel = sim.Travel, Penalty = sim.Penalty, EndLevel = Game.FracLevel(sim.EndXp), Hearths = sim.Hearths, HubMisses = misses, Passes = sim.Passes, StartCost = startCost, Broken = sim.Broken, LevelShort = sim.LevelShort });
             master = Merge(master, seq, movable);
         }
         if (!firmPlaced) PlaceDeferred(master, res, false);
@@ -230,7 +271,7 @@ public sealed class Router
     (int[] seq, double startCost) Optimise(List<int> tasks, bool[] active, int[] choice, string name)
     {
         int count = tasks.Count;
-        int iters = (int)Math.Clamp((long)count * Tuning.IterationsPerTask, Math.Min(Tuning.MinIterations, count * 20000), Tuning.MaxIterations);
+        int iters = Tries((long)count * Tuning.IterationsPerTask, Math.Min(Tuning.MinIterations, count * 20000), Tuning.MaxIterations);
         int seeds = Tuning.Seeds > 0 ? Tuning.Seeds : Math.Clamp(Environment.ProcessorCount, 4, 8);
         var results = new (double cost, double start, int[] seq, int[] ch)[seeds];
         log($"  ordering {count} steps for {name}: {seeds} runs of {iters:N0} tries, then up to {Tuning.RefineRounds} rounds of refining the best...");
@@ -277,6 +318,9 @@ public sealed class Router
         Array.Copy(best.ch, choice, n);
         return (best.seq, best.start);
     }
+
+    /// <summary>A try count kept between two limits. The upper limit wins if settings put them the wrong way round.</summary>
+    static int Tries(long wanted, long atLeast, long atMost) => (int)Math.Max(0, Math.Min(Math.Max(wanted, atLeast), atMost));
 
     /// <summary>Nearest-available-task ordering. Seeds after the first add a little noise so runs start differently.</summary>
     int[] Greedy(Evaluator ev, List<int> tasks, int[] ch, int seed)
@@ -504,7 +548,7 @@ public sealed class Router
         }
         var arr = seq.ToArray();
         double start = ev.Cost(arr, arr.Length, choice);
-        int iters = (int)Math.Clamp((long)mine.Count * Tuning.IterationsPerTask / 2, 40000, Tuning.MaxIterations / 4);
+        int iters = Tries((long)mine.Count * Tuning.IterationsPerTask / 2, Tuning.MinIterations / 10, Tuning.MaxIterations / 4);
         Anneal(ev, arr, choice, iters, 77, 60, 1, movable);
         Polish(ev, arr, choice, movable);
         arr = Settle(ev, arr, choice, movable);

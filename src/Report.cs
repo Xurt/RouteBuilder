@@ -180,6 +180,10 @@ public static class Report
         sb.AppendLine($"Quest log: at most {v.LogPeak} of 40 held at once{(v.LogPeakWho.Length > 0 && !m.SingleCharacter ? " (" + v.LogPeakWho + ")" : "")}, not counting quests brought in from other zones.");
         int misses = r.Views.Sum(x => x.HubMisses);
         sb.AppendLine(misses == 0 ? "Every stop picks up and hands in everything on offer within reach." : $"{misses} pickups or hand-ins are within reach of a stop but planned for later.");
+        int passes = r.Views.Sum(x => x.Passes);
+        if (Tuning.PassMiss > 0)
+            sb.AppendLine(passes == 0 ? "The route never runs past a finished quest's hand-in without stopping (judged in straight lines, so roads are not seen)."
+                                      : $"{passes} time{(passes == 1 ? "" : "s")} the route runs past a finished quest's hand-in without stopping (judged in straight lines).");
 
         H("Route");
         sb.AppendLine($"Planned from level {m.StartLevel.ToString("0.#", Inv)}. Distances are straight lines, so real running is longer; levels are an estimate.");
@@ -198,6 +202,7 @@ public static class Report
             sb.AppendLine("The check passes at once if you are there; if you are a little behind the prediction it asks you to grind the difference:");
             foreach (var s in g.GrindSteps) sb.AppendLine("  " + s);
         }
+        if (g.AsYouGo > 0) sb.AppendLine($"{g.AsYouGo} objective{(g.AsYouGo == 1 ? " is" : "s are")} also shown \"as you go\" at earlier stops inside their area; their own step finishes whatever is left (and skips itself if nothing is).");
         if (g.EarlyOffers > 0) sb.AppendLine($"{g.EarlyOffers} pickups are also offered a visit early, in case you are ahead of the predicted level (they hide themselves otherwise).");
         foreach (var s in r.Unplaced) sb.AppendLine($"  {s}: its hand-in spot is not passed again, so the step sits at the end of the guide.");
 

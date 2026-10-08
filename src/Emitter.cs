@@ -7,7 +7,7 @@ public sealed class GuideOutput
 {
     public string Name = "", Group = "", FileName = "";
     public List<string> Lines = new();      // the guide body (between RegisterGuide([[ and ]]))
-    public int Steps, HearthSteps, EarlyOffers, Stops;
+    public int Steps, HearthSteps, EarlyOffers, Stops, AsYouGo;
     public int GateLine = -1;               // index of the "step" line of the level check that leads to the next part
     public List<string> GrindSteps = new();
     public List<(string dest, string tag, string quest)> Carried = new();
@@ -150,11 +150,12 @@ public sealed class Emitter
             else
             {
                 var o = t.Obj!; bool mergeable = o.Kind is "kill" or "loot" or "object" or "use" && !o.Seq && !o.Patrol && guard.Length == 0;
-                if (cur != null && cur.Kind == "obj" && cur.Mergeable && mergeable && cur.Area == c.Area && cur.Pos.To(c.Pos) <= Tuning.MergeRadius)
-                { cur.Tasks.Add(t); cur.Pts.AddRange(c.Pts); }
+                if (cur != null && cur.Kind == "obj" && cur.Mergeable && mergeable && cur.Area == c.Area &&
+                    (cur.Pos.To(c.Pos) <= Tuning.MergeRadius || Overlapping(cur.Pts, c.Pts) && Geo.Span(cur.Pts.Concat(c.Pts).ToList()) <= 2 * Tuning.ClusterSpan))
+                { cur.Tasks.Add(t); cur.Pts.AddRange(Spread(t, c).Where(p => !cur.Pts.Contains(p)).ToList()); }
                 else
                 {
-                    units.Add(cur = new Unit { Kind = "obj", Mergeable = mergeable, Guard = guard, GuardQuest = gq, Area = c.Area, Pos = c.Pos, Level = r.Level[id], Pts = c.Pts.ToList() });
+                    units.Add(cur = new Unit { Kind = "obj", Mergeable = mergeable, Guard = guard, GuardQuest = gq, Area = c.Area, Pos = c.Pos, Level = r.Level[id], Pts = Spread(t, c) });
                     cur.Tasks.Add(t);
                 }
             }
@@ -162,6 +163,40 @@ public sealed class Emitter
         }
         return units;
     }
+
+    /// <summary>Share of the points in <paramref name="pts"/> that lie inside the area around <paramref name="area"/>.</summary>
+    static double Inside(List<Pt> pts, List<Pt> area)
+    {
+        if (pts.Count == 0 || area.Count == 0) return 0;
+        double r = Tuning.OverlapRadius; int hit = 0;
+        foreach (var p in pts) if (area.Any(a => a.To(p) <= r)) hit++;
+        return hit / (double)pts.Count;
+    }
+
+    /// <summary>
+    /// The places a step's loop covers: the patch the plan chose, widened with the objective's other spawn points
+    /// (nearest first) when that patch alone holds fewer than the objective needs, as with five Lazy Peons that each
+    /// sleep at a different spot. Kills respawn, so those only widen a little; people and objects you use once widen further.
+    /// </summary>
+    static List<Pt> Spread(RouteTask t, Cand c)
+    {
+        var pts = c.Pts.ToList(); var o = t.Obj;
+        if (o == null || o.Patrol || o.Seq) return pts;
+        bool once = o.Kind is "talk" or "object" or "use";
+        int need = once ? (int)Math.Ceiling(Math.Max(o.Count, 1) * 1.5) : (int)Math.Ceiling(o.Kills);
+        if (need <= 1 || pts.Count >= need) return pts;
+        double range = once ? Tuning.SpreadRange : Tuning.SpreadRange / 3;
+        var seen = pts.ToHashSet();
+        foreach (var p in t.Cands.Where(x => x != c && x.Area == c.Area).SelectMany(x => x.Pts).Where(p => !seen.Contains(p))
+                              .Select(p => (p, d: Math.Min(p.To(c.Pos), pts.Min(q => q.To(p))))).Where(x => x.d <= range).OrderBy(x => x.d).Select(x => x.p))
+        {
+            pts.Add(p);
+            if (pts.Count >= need) break;
+        }
+        return pts;
+    }
+
+    static bool Overlapping(List<Pt> a, List<Pt> b) => Inside(a, b) >= Tuning.OverlapShare || Inside(b, a) >= Tuning.OverlapShare;
 
     static string UnitTag(Unit u)
     {
@@ -280,6 +315,72 @@ public sealed class Emitter
         return o;
     }
 
+    /// <summary>
+    /// "As you go": an objective whose mobs or objects are all around stops planned before it is shown alongside
+    /// those stops (#completewith the last of them), so it gets done on the way. Its own step stays as the fallback
+    /// for whatever is left, and skips itself when nothing is.
+    /// </summary>
+    void AsYouGo(List<Unit> units)
+    {
+        if (Tuning.MaxAsYouGo <= 0) return;
+        var picked = new Dictionary<int, int>();
+        for (int i = 0; i < units.Count; i++)
+            foreach (var t in units[i].Tasks)
+                if (t.Kind is TaskKind.Accept or TaskKind.ItemAccept) picked.TryAdd(t.Q!.Id, i);
+
+        var found = new Dictionary<(int first, int last, string tag, int unit), List<RouteTask>>();
+        for (int ui = 0; ui < units.Count; ui++)
+        {
+            var u = units[ui];
+            if (u.Kind != "obj" || u.Guard.Length > 0) continue;
+            foreach (var t in u.Tasks)
+            {
+                var ob = t.Obj!;
+                if (ob.Kind is not ("kill" or "loot" or "object") || ob.Seq || ob.Patrol || ob.Index == null && ob.Command == null) continue;
+                if (!picked.TryGetValue(t.Q!.Id, out int from) || from >= ui) continue;
+                var area = t.Cands.Where(c => c.Area == u.Area).SelectMany(c => c.Pts).ToList();
+                // the level the plan waits for before sending you there; earlier than that it is not offered on the way
+                var cd = t.Cands[r.Choice[t.Id]];
+                double need = ob.Kind is "kill" or "loot"
+                    ? Math.Max(Math.Max(1, ob.MinLevel), Math.Floor(cd.MobLevel ?? ob.MobLevel ?? t.Q.Level) - Tuning.MobMargin)
+                    : Math.Max(t.MinLevel, ob.MinLevel);
+                bool In(Unit v) => v.Area == u.Area && Inside(v.Kind == "ent" ? new List<Pt> { v.Pos } : v.Pts, area) >= Tuning.OverlapShare;
+                // stretches of consecutive stops inside the area, between the pickup and the objective's own step
+                for (int j = from + 1; j < ui; j++)
+                {
+                    if (!In(units[j]) || units[j].Level < need) continue;
+                    int first = j;
+                    bool Ok(int k) => k < ui && In(units[k]) && units[k].Level >= need;
+                    while (Ok(j + 1) || Ok(j + 2) && units[j + 1].Area == u.Area) j += Ok(j + 1) ? 1 : 2;   // one stop just outside does not end the stretch
+                    int last = j;
+                    // the closing step must be one every character who sees this one also sees
+                    while (last >= first && UnitTag(units[last]) is var lt && lt.Length > 0 && lt != t.Tag) last--;
+                    if (last < first) continue;
+                    var key = (first, last, t.Tag, ui);
+                    if (!found.TryGetValue(key, out var list)) found[key] = list = new List<RouteTask>();
+                    list.Add(t);
+                }
+            }
+        }
+
+        // longest stretches first, keeping the number on screen at any one time small
+        var onScreen = new int[units.Count];
+        foreach (var ((first, last, tag, ui), tasks) in found.OrderByDescending(kv => kv.Key.last - kv.Key.first).ThenBy(kv => kv.Key.first))
+        {
+            if (Enumerable.Range(first, last - first + 1).Any(k => onScreen[k] >= Tuning.MaxAsYouGo)) continue;
+            for (int k = first; k <= last; k++) onScreen[k]++;
+            string lab = units[last].Label ??= $"Along{last}";
+            var lines = new List<string> { Step(tag), "    #completewith " + lab };
+            var texts = tasks.Select(t => ObjText(t.Obj!)).Where(x => x.Length > 0).Distinct().ToList();
+            lines.Add("    >>As you go: " + string.Join(". ", texts) + ". |cRXP_WARN_Anything left is finished later|r");
+            foreach (var t in tasks)
+                lines.Add(t.Obj!.Command != null ? "    " + t.Obj.Command : $"    .complete {t.Q!.Id},{t.Obj.Index} --{t.Obj.Label}");
+            foreach (var line in tasks.SelectMany(t => t.Obj!.Targets).Distinct().Select(x => $"    .{x.Kind} {x.Name}")) lines.Add(line);
+            units[first].PreSteps.AddRange(lines);
+            g.AsYouGo += tasks.Count;
+        }
+    }
+
     List<string> TravelStep(int from, int to, string tag, string guard)
     {
         var o = new List<string> { Step(tag), "    #completewith next" };
@@ -342,6 +443,8 @@ public sealed class Emitter
                 });
             }
         }
+
+        AsYouGo(units);
 
         var L = g.Lines;
         var reminders = m.Cfg.Reminders.OrderBy(x => x.AtLevel).ToList(); int nextReminder = 0;

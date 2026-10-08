@@ -26,10 +26,17 @@ public static class Tuning
     public static double HubMiss = 2500;      // cost of walking away from a pickup or hand-in that was within reach
     public static double Pickup = 0.02;       // cost per yard walked before a quest is picked up
     public static double Hold = 0.02;         // cost per yard of carrying a finished quest
+    public static double PassMiss = 800;      // cost of running past a finished quest's hand-in without stopping (0 = off)
+    public static double PassRadius = 150;    // a hand-in this close to the straight line you run along counts as passed
+    public static double PassDetour = 0.2;    // ...and so does one that going via would lengthen the leg by at most this share (capped at 3 x PassRadius)
     public static double Thin = 150;          // cost of a spawn patch smaller than the kills needed (respawn waits)
     public static double MergeRadius = 140;   // objectives closer than this share one guide step
+    public static double OverlapRadius = 60;  // a spot this close to an objective's spawns counts as inside its area
+    public static double OverlapShare = 0.3;  // back-to-back objectives sharing this much of their area become one step
+    public static int MaxAsYouGo = 3;         // at most this many "as you go" objectives on screen at once (0 = none)
     public static double ClusterEps = 75;     // spawn points closer than this belong to the same patch
     public static double ClusterSpan = 240;   // patches wider than this are split up
+    public static double SpreadRange = 700;   // a step's loop may reach this far for spawns when its patch has too few (a third of it for kills)
     public static int MaxPatches = 8;         // candidate patches kept per objective
     public static double PatrolRange = 120;   // an NPC whose points span more than this is treated as patrolling
     // --- travel ---

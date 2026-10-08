@@ -5,3 +5,5 @@ QuestieDB/
 guides/
 Make-Addon.ps1
 settings.json
+build.cmd
+
