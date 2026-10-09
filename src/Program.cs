@@ -220,6 +220,11 @@ public static class Program
                 HeldOver = visit.HeldOver.Concat(model.Quests.Values.Where(q => q.Late && !q.Cond).Select(q => q.Id)).ToHashSet(),
             };
         }
+        // a zone-file step only goes unplaced if no part of the guide has the step it names
+        var unplaced = visits.Select(v => v.g.StepsNotPlaced).Aggregate((x, y) => x.Intersect(y).ToList());
+        foreach (var v in visits) v.g.StepsNotPlaced = new();
+        visits[^1].g.StepsNotPlaced = unplaced;
+        foreach (var k in unplaced) Console.WriteLine($"  zone file: no step called \"{k}\" in this guide, so no hand-written step was placed there");
         string text = Emitter.FileText(visits.Select(v => (v.m, v.g)).ToList());
         string path = Path.Combine(outDir, visits[0].g.FileName);
         File.WriteAllText(path, text);

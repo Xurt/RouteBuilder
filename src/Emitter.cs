@@ -7,7 +7,8 @@ public sealed class GuideOutput
 {
     public string Name = "", Group = "", FileName = "";
     public List<string> Lines = new();      // the guide body (between RegisterGuide([[ and ]]))
-    public int Steps, HearthSteps, EarlyOffers, Stops, AsYouGo;
+    public int Steps, HearthSteps, EarlyOffers, Stops, AsYouGo, CustomSteps;
+    public List<string> StepsNotPlaced = new();      // zone-file steps whose anchor is in no part of this guide
     public int GateLine = -1;               // index of the "step" line of the level check that leads to the next part
     public List<string> GrindSteps = new();
     public List<(string dest, string tag, string quest)> Carried = new();
@@ -521,6 +522,31 @@ public sealed class Emitter
         if (m.Visit.Number > 1) nextReminder = reminders.Count;      // reminders belong to the first part
         Reminders(m.StartLevel);
 
+        // hand-written steps from the zone file, next to the planned step they name
+        var keyOf = RouteLock.Keys(m); var unitOf = new Dictionary<string, int>();
+        for (int i = 0; i < units.Count; i++) foreach (var t in units[i].AllTasks ?? units[i].Tasks) unitOf.TryAdd(keyOf[t.Id], i);
+        var before = new Dictionary<int, List<StepFix>>(); var after = new Dictionary<int, List<StepFix>>();
+        foreach (var sf in m.Cfg.Steps)
+        {
+            var map = sf.After != null ? after : before;
+            foreach (var raw in sf.After ?? sf.Before ?? new())
+            {
+                string key = raw.Trim();
+                if (!unitOf.TryGetValue(key, out int at)) { g.StepsNotPlaced.Add(key); continue; }
+                if (!map.TryGetValue(at, out var l)) map[at] = l = new();
+                if (!l.Contains(sf)) l.Add(sf);                   // two names at the same stop: once is enough
+            }
+        }
+        void Custom(StepFix sf)
+        {
+            L.Add(Step(sf.Tag?.Trim() ?? ""));
+            if (sf.Goto != null) { var (a, pt) = m.World(sf.Goto); L.Add(Goto(a, pt)); }
+            if (!string.IsNullOrWhiteSpace(sf.Text)) L.Add("    >>" + sf.Text.Trim().TrimStart('>'));
+            foreach (var line in sf.Lines) L.Add("    " + line.Trim());
+            if (sf.Goto == null && string.IsNullOrWhiteSpace(sf.Text) && sf.Lines.Count == 0) L.Add("    +" + string.Join(", ", sf.After ?? sf.Before ?? new()));
+            g.CustomSteps++;
+        }
+
         Pt prev = m.Start; int prevArea = m.StartArea;
         for (int i = 0; i < units.Count; i++)
         {
@@ -544,7 +570,9 @@ public sealed class Emitter
                 if (m.Cfg.BindSubzone is { } sub) L.Add($"    .subzoneskip {sub}");
                 g.HearthSteps++;
             }
+            foreach (var sf in before.GetValueOrDefault(i) ?? new()) Custom(sf);
             L.AddRange(Render(u, prev));
+            foreach (var sf in after.GetValueOrDefault(i) ?? new()) Custom(sf);
             foreach (var (t, c) in u.Early.OrderBy(e => e.t.Ent == u.Ent ? 0 : 1).ThenBy(e => e.c.Pos.To(u.Pos)))
             {
                 L.Add(Step(t.Tag)); L.Add(Goto(c.Area, c.Pos));

@@ -16,6 +16,7 @@ The app never changes the QuestieDB folder, and `update` never touches your zone
 - [Objectives](#objectives)
 - [Quests that start from an item](#quests-that-start-from-an-item)
 - [Reminders](#reminders)
+- [Extra steps: vendors, trainers, flight paths](#extra-steps-vendors-trainers-flight-paths)
 - [Finding IDs and coordinates](#finding-ids-and-coordinates)
 - [Checking that a fix took](#checking-that-a-fix-took)
 - [What a zone file cannot do](#what-a-zone-file-cannot-do)
@@ -88,6 +89,7 @@ names are not case-sensitive.
 | The hand-in needs something extra (use an item, train a skill) | `turninPreLines`, `turninText` |
 | A quest starts from a dropped item | [`startItem`](#quests-that-start-from-an-item) |
 | The city trip is planned as if you could walk through the wall | `linkedAreas` with `gate` and `hub` |
+| You want a vendor, trainer or flight-path stop in the guide | [`steps`](#extra-steps-vendors-trainers-flight-paths), placed next to a planned step |
 
 ## Zone settings
 
@@ -106,6 +108,7 @@ These sit at the top level of the file.
 | `exclude` | Quest IDs to leave out, each with a reason: `{ "441": "belongs to a Silverpine chain" }`. | |
 | `quests` | Corrections per quest. See [Quest corrections](#quest-corrections). | |
 | `reminders` | Notes shown at a certain level. See [Reminders](#reminders). | |
+| `steps` | Hand-written steps placed next to a planned one. See [Extra steps](#extra-steps-vendors-trainers-flight-paths). | |
 
 Hearthstone steps are only planned for a part of the guide with at least 25 things to do.
 
@@ -429,6 +432,36 @@ Notes that are not tied to a quest.
 The note disappears when the step after it is done. Reminders are only placed in the first part of a
 guide.
 
+## Extra steps: vendors, trainers, flight paths
+
+RouteBuilder plans quests only. Anything else you want the guide to tell you (sell and repair, train,
+pick up a flight path, buy food) goes under `steps`, each one placed right before or right after a planned
+step. It is tied to that step, not to a place in the order, so it moves with it when the route changes.
+
+```json
+"steps": [
+  { "after": "turnin:837", "goto": [52.0, 40.6], "text": "Sell your junk and repair at |cRXP_FRIENDLY_Uhgar|r", "lines": [".vendor", ".target Uhgar"] },
+  { "before": "accept:1505", "goto": [54.2, 42.0], "text": "Train your new spells", "lines": [".trainer"], "tag": "Warrior" },
+  { "after": "accept:840", "text": "Get the flight path", "lines": [".fp Orgrimmar"] },
+  { "after": ["turnin:806", "turnin:823"], "goto": [52.0, 40.6], "text": "Sell your junk", "lines": [".vendor"] }
+]
+```
+
+| Key | Meaning |
+|---|---|
+| `after` / `before` | The planned step to stand next to, named the way the `locks` file names it: `accept:786`, `obj:786:1` (objective line 1 of quest 786), `turnin:786`, `item:830` (a quest started from an item), `home` (setting the hearthstone). Use one of the two. A list (`["turnin:806", "turnin:823"]`) puts the same step next to each of them, once per stop. |
+| `goto` | Where to go, like any other point in the file: `[x, y]` on the zone's map, or `[areaId, x, y]` for a linked city. Leave it out for a step that needs no travel. |
+| `text` | The instruction shown in the guide. RestedXP colour codes work (`|cRXP_FRIENDLY_name|r`). |
+| `lines` | RestedXP lines written as in a guide: `.vendor`, `.trainer`, `.train <spell ID>`, `.fp <name>`, `.fly <name>`, `.target <NPC>`, `.buy <item>,<count>`. |
+| `tag` | Only for these characters, written as RestedXP does: `"Warrior"`, `"Orc/Troll"`, `"Undead Paladin"`. Leave it out for everyone. |
+
+- Several entries can name the same planned step; they appear in the order they are listed.
+- A "before" step goes in front of everything the guide shows for that stop, including a "grind to level"
+  check; an "after" step comes after the stop's own step.
+- If a named step is not in the guide (a typo, or the quest was left out or is handed in elsewhere), the
+  build says so on the console and in the report's Checks section, and places nothing there.
+- The step's lines are not checked against the game: a wrong NPC name or spell ID shows up only when you play it.
+
 ## Finding IDs and coordinates
 
 **Quest IDs.** The report lists every quest in the guide with its ID in square brackets, and the
@@ -458,6 +491,10 @@ lines like `[159] = 1420, -- Brill -> Tirisfal Glades`. The first number is the 
 the NPC in `targets` so the guide can still mark it.
 
 ## Checking that a fix took
+
+A rebuild keeps the step order of the previous build (see "Keeping the route between builds" in the
+README), so a fix only moves the steps it affects. The console line "keeping the saved order ... N moved
+for changed prerequisites" shows how many moved. Build with `--fresh` to plan the whole zone again.
 
 Build the zone again and look at three places.
 

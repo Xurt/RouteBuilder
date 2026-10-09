@@ -17,6 +17,11 @@ public sealed class Verifier
     {
         "goto", "accept", "turnin", "complete", "collect", "xp", "isOnQuest", "isQuestTurnedIn", "isQuestComplete", "zone", "zoneskip", "hs", "cooldown",
         "subzoneskip", "home", "target", "mob", "unitscan", "use", "skipgossip", "skipgossipid", "train", "macro", "timer", "vendor", "fp", "fly", "link",
+        // others RestedXP understands, for hand-written steps
+        "abandon", "bankdeposit", "bankwithdraw", "bindlocation", "buy", "cast", "collectmultiple", "deathskip", "destroy", "emote", "equip", "flygoto",
+        "gossip", "gossipoption", "groundgoto", "hideifcomplete", "isNotOnQuest", "isQuestAvailable", "isQuestNotComplete", "istrained", "itemcount",
+        "itemStat", "maxlevel", "money", "openitem", "profession", "reputation", "skill", "skipOnQuest", "stable", "subzone", "tame", "trainer",
+        "usespell", "waypoint", "xpto", "zone",
     };
     static readonly HashSet<string> StepTags = new() { "completewith", "label", "loop", "sticky", "optional", "requires", "hidewindow" };
 
@@ -205,6 +210,8 @@ public static class Report
             sb.AppendLine("The check passes at once if you are there; if you are a little behind the prediction it asks you to grind the difference:");
             foreach (var s in g.GrindSteps) sb.AppendLine("  " + s);
         }
+        if (g.CustomSteps > 0) sb.AppendLine($"{g.CustomSteps} hand-written step{(g.CustomSteps == 1 ? "" : "s")} from the zone file placed next to the steps they name.");
+        foreach (var k in g.StepsNotPlaced) sb.AppendLine($"  ! zone file \"steps\": nothing called \"{k}\" in this guide, so no hand-written step was placed there (check the name against the locks file)");
         if (g.AsYouGo > 0) sb.AppendLine($"{g.AsYouGo} objective{(g.AsYouGo == 1 ? " is" : "s are")} also shown \"as you go\" at earlier stops inside their area; their own step finishes whatever is left (and skips itself if nothing is).");
         if (g.EarlyOffers > 0) sb.AppendLine($"{g.EarlyOffers} pickups are also offered a visit early, in case you are ahead of the predicted level (they hide themselves otherwise).");
         foreach (var s in r.Unplaced) sb.AppendLine($"  {s}: its hand-in spot is not passed again, so the step sits at the end of the guide.");
