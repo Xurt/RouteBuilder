@@ -26,6 +26,7 @@ public static class Tuning
     public static double HubMiss = 2500;      // cost of walking away from a pickup or hand-in that was within reach
     public static double Pickup = 0.02;       // cost per yard walked before a quest is picked up
     public static double Hold = 0.02;         // cost per yard of carrying a finished quest
+    public static double TownRadius = 250;    // quest givers this close one after another are one visit to a town: each NPC is talked to once
     public static double PassMiss = 800;      // cost of running past a finished quest's hand-in without stopping (0 = off)
     public static double PassRadius = 150;    // a hand-in this close to the straight line you run along counts as passed
     public static double PassDetour = 0.2;    // ...and so does one that going via would lengthen the leg by at most this share (capped at 3 x PassRadius)

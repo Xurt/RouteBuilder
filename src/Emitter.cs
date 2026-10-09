@@ -316,6 +316,59 @@ public sealed class Emitter
     }
 
     /// <summary>
+    /// One visit to a town should talk to each NPC once. Within a run of quest-giver stops close together, a later
+    /// stop at an NPC already visited on this run is folded into the earlier one when nothing it needs comes in
+    /// between and you are high enough by then; failing that, the earlier stop is folded into the later one when
+    /// nothing in between needs it.
+    /// </summary>
+    void Consolidate(List<Unit> units, Func<int, bool> sameVisit)
+    {
+        double XpOf(IEnumerable<RouteTask> ts) => ts.Where(t => t.Kind == TaskKind.TurnIn).Sum(t => t.Xp);
+        bool Depends(RouteTask t, HashSet<int> on) => t.Pre.Overlaps(on) || (t.PreAny.Count > 0 && t.PreAny.All(on.Contains));
+        for (int i = 0; i < units.Count; i++)
+        {
+            if (units[i].Kind != "ent") continue;
+            int j = i + 1;
+            while (j < units.Count && sameVisit(j)) j++;
+            for (int a = i; a < j; a++)
+                for (int b = a + 1; b < j; b++)
+                {
+                    var A = units[a]; var B = units[b];
+                    if (B.Ent != A.Ent || B.Guard != A.Guard || B.AllTasks != null || A.AllTasks != null) continue;
+                    var between = units.Skip(a + 1).Take(b - a - 1).SelectMany(u => u.Tasks).ToList();
+                    var betweenIds = between.Select(t => t.Id).ToHashSet();
+                    var last = A.Tasks[^1]; double xpAfterA = r.XpBefore[last.Id] + XpOf(A.Tasks);
+                    // pull B's steps forward into A
+                    bool pull = B.Tasks.All(t => t.Tight < 0 && !Depends(t, betweenIds)
+                                              && (t.Kind != TaskKind.Accept || t.MinLevel <= 1 || Game.FracLevel(xpAfterA + XpOf(B.Tasks.TakeWhile(x => x != t))) >= t.MinLevel));
+                    if (pull)
+                    {
+                        double x0 = xpAfterA;
+                        foreach (var t in B.Tasks) { r.XpBefore[t.Id] = x0; r.Level[t.Id] = Game.FracLevel(x0); if (t.Kind == TaskKind.TurnIn) x0 += t.Xp; }
+                        A.Tasks.AddRange(B.Tasks); A.Hearth |= B.Hearth;
+                        units.RemoveAt(b); j--; b--;
+                        continue;
+                    }
+                    // or push A's steps back into B
+                    var aIds = A.Tasks.Select(t => t.Id).ToHashSet(); double aXp = XpOf(A.Tasks);
+                    bool push = !A.Hearth && A.Label == null && A.PreSteps.Count == 0 && A.Tasks.All(t => t.Tight < 0 && t.Kind != TaskKind.Home)
+                             && between.All(t => !Depends(t, aIds) && t.Tight < 0
+                                                && (t.Kind != TaskKind.Accept || t.MinLevel <= 1 || Game.FracLevel(r.XpBefore[t.Id] - aXp) >= t.MinLevel));
+                    if (push)
+                    {
+                        foreach (var t in between) { r.XpBefore[t.Id] -= aXp; r.Level[t.Id] = Game.FracLevel(r.XpBefore[t.Id]); }
+                        double x0 = r.XpBefore[B.Tasks[0].Id] - aXp;
+                        foreach (var t in A.Tasks) { r.XpBefore[t.Id] = x0; r.Level[t.Id] = Game.FracLevel(x0); if (t.Kind == TaskKind.TurnIn) x0 += t.Xp; }
+                        B.Tasks.InsertRange(0, A.Tasks);
+                        units.RemoveAt(a); j--; a--;
+                        break;
+                    }
+                }
+            i = j - 1;
+        }
+    }
+
+    /// <summary>
     /// "As you go": an objective whose mobs or objects are all around stops planned before it is shown alongside
     /// those stops (#completewith the last of them), so it gets done on the way. Its own step stays as the fallback
     /// for whatever is left, and skips itself when nothing is.
@@ -397,8 +450,16 @@ public sealed class Emitter
     /// <param name="nextVisitLevel">When the zone continues in a later visit: the level that one is planned from.</param>
     public GuideOutput Write(int? nextVisitLevel)
     {
-        var units = BuildUnits(); g.Stops = units.Count;
+        var units = BuildUnits();
         bool Far(int i) => i > 0 && (units[i].Area != units[i - 1].Area || units[i].Pos.To(units[i - 1].Pos) > 150);
+        // quest-giver stops next to each other, or in the same hub, make one visit to a town
+        int HubAt(int i) => units[i].Tasks.Select(t => m.HubOf.GetValueOrDefault(t.Cands[r.Choice[t.Id]], -1)).FirstOrDefault(h => h >= 0, -1);
+        bool SameVisit(int i) => i > 0 && units[i].Kind == "ent" && units[i - 1].Kind == "ent" && !units[i].Hearth &&
+                                 (units[i].Area == units[i - 1].Area && units[i].Pos.To(units[i - 1].Pos) <= Tuning.TownRadius || HubAt(i) >= 0 && HubAt(i) == HubAt(i - 1));
+        Consolidate(units, SameVisit);
+        g.Stops = units.Count;
+        var visitOf = new int[units.Count];
+        for (int i = 1; i < units.Count; i++) visitOf[i] = visitOf[i - 1] + (SameVisit(i) ? 0 : 1);
 
         // early offers: a pickup planned for later only because the predicted level is a shade short is offered
         // once per visit to its hub as a self-skipping step, in case the player is ahead of the prediction
@@ -409,13 +470,14 @@ public sealed class Emitter
         for (int i = 0; i < units.Count; i++)
         {
             var u = units[i];
-            if (Far(i)) visit++;
+            visit = visitOf[i];
             foreach (var t in u.Tasks) { done.Add(t.Id); if (t.Elig == m.AllElig) xp += t.Xp; }
             if (u.Kind != "ent") continue;
             double lvl = Game.FracLevel(xp);
             foreach (var t in m.Tasks)
             {
                 if (done.Contains(t.Id) || t.Kind != TaskKind.Accept || t.Ent == null || t.Cond || t.Q!.Fix.Tight || planned.GetValueOrDefault(t.Id) <= i + 1) continue;
+                if (planned.TryGetValue(t.Id, out int pu) && visitOf[pu] == visitOf[i]) continue;      // picked up later on this same visit anyway
                 if (t.Pre.Any(p => !done.Contains(p) && !m.Tasks[p].Deferred) || (t.PreAny.Count > 0 && !t.PreAny.Any(done.Contains))) continue;
                 if (t.MinLevel <= 1 || !(t.MinLevel - 0.5 <= lvl && lvl < t.MinLevel + Tuning.Safety)) continue;
                 var near = t.Cands.FirstOrDefault(c => c.Area == u.Area && c.Pos.To(u.Pos) <= Tuning.HubRadius);
@@ -483,7 +545,7 @@ public sealed class Emitter
                 g.HearthSteps++;
             }
             L.AddRange(Render(u, prev));
-            foreach (var (t, c) in u.Early)
+            foreach (var (t, c) in u.Early.OrderBy(e => e.t.Ent == u.Ent ? 0 : 1).ThenBy(e => e.c.Pos.To(u.Pos)))
             {
                 L.Add(Step(t.Tag)); L.Add(Goto(c.Area, c.Pos));
                 L.Add(t.Ent!.Kind == EntKind.Npc ? $"    >>{Talk}Talk to |cRXP_FRIENDLY_{t.Ent.Name}|r" : $"    >>Click the |cRXP_PICK_{t.Ent.Name}|r");
