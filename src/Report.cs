@@ -187,6 +187,9 @@ public static class Report
 
         H("Route");
         sb.AppendLine($"Planned from level {m.StartLevel.ToString("0.#", Inv)}. Distances are straight lines, so real running is longer; levels are an estimate.");
+        if (r.Locked)
+            sb.AppendLine($"Step order kept from the last build (locks folder): {r.LockKept} steps kept, {r.LockAdded} new ones slotted in, {r.LockMoved} moved because their prerequisites changed" +
+                          (r.LockDropped > 0 ? $", {r.LockDropped} no longer in the guide" : "") + ". Build with --fresh to plan from scratch.");
         if (m.Visit.Number == 1 && m.Visit.StartLevel != null)
             sb.AppendLine($"(The zone has quests below level {m.StartLevel.ToString("0", Inv)}, but too few to make a visit of, so the plan starts here. Use --start-level to change it.)");
         foreach (var x in r.Views)

@@ -1,33 +1,33 @@
 Tirisfal Glades - Undead Paladin
-Guide "1-13 Tirisfal Glades" in group "Zone Routes (Undead Paladin)": 191 steps, 165 stops
-Written to final/Tirisfal Glades (Undead Paladin).lua
+Guide "1-13 Tirisfal Glades" in group "Zone Routes (Undead Paladin)": 201 steps, 163 stops
+Written to spread/Tirisfal Glades (Undead Paladin).lua
 Data: QuestieDB local copy, 2026-10-06
 Zone file: zones/Tirisfal Glades.json
-RestedXP cross-check: 5825 objective notes read from 200 guide files
 
 Checks
 ------
 Played through as 1 race/class combination: no problems found.
-Quest log: at most 14 of 40 held at once, not counting quests brought in from other zones.
+Quest log: at most 15 of 40 held at once, not counting quests brought in from other zones.
 Every stop picks up and hands in everything on offer within reach.
+The route never runs past a finished quest's hand-in without stopping (judged in straight lines, so roads are not seen).
 
 Route
 -----
 Planned from level 1. Distances are straight lines, so real running is longer; levels are an estimate.
-  everyone: 241 tasks, 38,586 yd on foot (simply going to the nearest thing each time comes to 52,753 yd); ends at level 13.2; 4 hearths
-  everyone (quests that depend on other zones): 8 more tasks; their whole route comes to 39,170 yd; ends at level 13.2; 4 hearths
+  everyone: 241 tasks, 37,061 yd on foot (simply going to the nearest thing each time comes to 52,930 yd); ends at level 13.2; 4 hearths
+  everyone (quests that depend on other zones): 8 more tasks; their whole route comes to 37,245 yd; ends at level 13.2; 4 hearths
 Hearthstone: set at Innkeeper Renee (Brill); 4 hearth steps in the guide.
 These pickups are planned within about half a level of the level they unlock at, so the guide checks your level first.
 The check passes at once if you are there; if you are a little behind the prediction it asks you to grind the difference:
   level 2 for The Damned
-  level 4 for Continue Your Training (Undead Paladin)
   level 5 for Gordo's Task
   level 6 for Wanted: Maggot Eye
-  level 7 for The Haunted Mills
   level 8 for A Second Home (Undead Paladin)
+  level 9 for The Tarnished (Undead Paladin)
   level 10 for The Argent Emissary
   level 12 for A Lesson in Divinity (Undead Paladin)
-3 pickups are also offered a visit early, in case you are ahead of the predicted level (they hide themselves otherwise).
+9 objectives are also shown "as you go" at earlier stops inside their area; their own step finishes whatever is left (and skips itself if nothing is).
+6 pickups are also offered a visit early, in case you are ahead of the predicted level (they hide themselves otherwise).
 
 Quests in the guide (88)
 ------------------------
@@ -52,6 +52,8 @@ Worth checking in game
 38 quests are new in Forever: their experience is estimated, and 10 of them list no prerequisite in the database.
 If one of these is offered too early or too late in game, add a "pre" entry for it to the zone file:
   Sticks and Bones [86784], That Shadowvale Green Elixir [95314], Whispering Horror Residue [95328], The Argent Emissary [96895], Hides for the Forsaken [97558], Discipline [99134], Patience [99141], Seeking Refuge [99144], As Above, So Below [99152], The One That Got Away [99153]
+  Graverobbers [358, level 8]: could not read how many Rot Hide Graverobber are needed from the quest text; assumed 8
+  Graverobbers [358, level 8]: could not read how many Rot Hide Mongrel are needed from the quest text; assumed 8
 
 Left out (216)
 --------------

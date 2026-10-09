@@ -1,0 +1,36 @@
+{
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "guide": "14-34 Alterac Mountains",
+  "saved": "2026-10-08 19:26",
+  "parts": [
+    {
+      "part": 1,
+      "steps": [
+        "accept:94947 @1416:436.41,450  Accept Welcome to Azeroth",
+        "obj:94947:1 @1416:446.21,450.75  Objective Welcome to Azeroth / Skyborne Portal to Stormwind",
+        "accept:94912 @1416:255.81,34.85  Accept Child of Nature",
+        "turnin:94946 @1416:436.41,450  TurnIn The Magical City of Dalaran",
+        "turnin:602 @1416:255.81,34.85  TurnIn Magical Analysis",
+        "turnin:1791 @1416:-1470.67,250.83  TurnIn The Windwatcher"
+      ]
+    },
+    {
+      "part": 2,
+      "steps": [
+        "accept:6121 @1416:452.37,443.09  Accept Lessons Anew"
+      ]
+    },
+    {
+      "part": 3,
+      "steps": [
+        "accept:510 @1416:-849.63,232.16  Accept Foreboding Plans"
+      ]
+    },
+    {
+      "part": 4,
+      "steps": [
+        "accept:511 @1416:-849.63,232.16  Accept Encrypted Letter"
+      ]
+    }
+  ]
+}

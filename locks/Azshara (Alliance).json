@@ -1,0 +1,97 @@
+{
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "guide": "47-57 Azshara",
+  "saved": "2026-10-08 19:27",
+  "parts": [
+    {
+      "part": 1,
+      "steps": [
+        "accept:5535 @1447:-3853.64,2698.54  Accept Spiritual Unrest",
+        "accept:5536 @1447:-3853.64,2698.54  Accept A Land Filled with Hatred",
+        "obj:5535:1 @1447:-4184.26,3013.68  Objective Spiritual Unrest / Highborne Apparition slain (6)",
+        "obj:5536:2 @1447:-4304.94,3237.51  Objective A Land Filled with Hatred / Haldarr Trickster slain (2)",
+        "obj:5536:3 @1447:-4299.36,3293.64  Objective A Land Filled with Hatred / Haldarr Felsworn slain (2)",
+        "obj:5536:1 @1447:-4279.08,3239.88  Objective A Land Filled with Hatred / Haldarr Satyr slain (6)",
+        "obj:5535:2 @1447:-4153.32,3023.82  Objective Spiritual Unrest / Highborne Lichling slain (6)",
+        "turnin:5535 @1447:-3853.64,2698.54  TurnIn Spiritual Unrest",
+        "turnin:5536 @1447:-3853.64,2698.54  TurnIn A Land Filled with Hatred",
+        "turnin:8250 @1447:-4702.49,3648  TurnIn Magecraft",
+        "obj:3449:1 @1447:-5148.73,3543.86  Objective Arcane Runes / Rubbing: Rune of Beth\u0027Amara (1)",
+        "obj:3449:2 @1447:-5283.1,3642.59  Objective Arcane Runes / Rubbing: Rune of Jin\u0027yael (1)",
+        "turnin:8151 @1447:-5427.12,3900.58  TurnIn The Hunter\u0027s Charm",
+        "obj:8234:1 @1447:-5685.22,4283  Objective Sealed Azure Bag / Sealed Azure Bag (1)",
+        "turnin:8234 @1447:-4760.3,3982.07  TurnIn Sealed Azure Bag",
+        "turnin:8254 @1447:-5427.12,3900.58  TurnIn Cenarion Aid",
+        "obj:3449:3 @1447:-5272.96,3465.75  Objective Arcane Runes / Rubbing: Rune of Markri (1)",
+        "obj:3449:4 @1447:-5426.1,3172.59  Objective Arcane Runes / Rubbing: Rune of Sael\u0027hai (1)",
+        "accept:3509 @1447:-6361.16,3098.21  Accept The Name of the Beast",
+        "turnin:3509 @1447:-7188.22,3894.83  TurnIn The Name of the Beast",
+        "turnin:3449 @1447:-7222.7,2251.2  TurnIn Arcane Runes",
+        "accept:3461 @1447:-7222.7,2251.2  Accept Return to Tymor"
+      ]
+    },
+    {
+      "part": 2,
+      "steps": [
+        "accept:3601 @1447:-5987.44,4603.88  Accept Kim\u0027jael Indeed!",
+        "obj:3601:1 @1447:-6167.46,4381.39  Objective Kim\u0027jael Indeed! / Kim\u0027Jael\u0027s Compass (1)",
+        "obj:3601:2 @1447:-6167.46,4381.39  Objective Kim\u0027jael Indeed! / Kim\u0027Jael\u0027s Scope (1)",
+        "obj:3601:3 @1447:-6167.46,4381.39  Objective Kim\u0027jael Indeed! / Kim\u0027Jael\u0027s Stuffed Chicken (1)",
+        "obj:3601:4 @1447:-6167.46,4381.39  Objective Kim\u0027jael Indeed! / Kim\u0027Jael\u0027s Wizzlegoober (1)",
+        "turnin:3601 @1447:-5987.44,4603.88  TurnIn Kim\u0027jael Indeed!",
+        "accept:5534 @1447:-5987.44,4603.88  Accept Kim\u0027jael\u0027s \u0022Missing\u0022 Equipment",
+        "obj:5534:1 @1447:-5622.34,3819.09  Objective Kim\u0027jael\u0027s \u0022Missing\u0022 Equipment / Some Rune (1)",
+        "turnin:5534 @1447:-5987.44,4603.88  TurnIn Kim\u0027jael\u0027s \u0022Missing\u0022 Equipment"
+      ]
+    },
+    {
+      "part": 3,
+      "steps": [
+        "accept:8251 @1447:-4760.3,3982.07  Accept Magic Dust",
+        "obj:8251:1 @1447:-6152.75,4393.23  Objective Magic Dust / Glittering Dust (10)",
+        "turnin:8251 @1447:-4760.3,3982.07  TurnIn Magic Dust",
+        "accept:8252 @1447:-4760.3,3982.07  Accept The Siren\u0027s Coral",
+        "obj:8252:1 @1447:-5213.13,3682.15  Objective The Siren\u0027s Coral / Enchanted Coral (6)",
+        "turnin:8252 @1447:-4760.3,3982.07  TurnIn The Siren\u0027s Coral",
+        "accept:8253 @1447:-4760.3,3982.07  Accept Destroy Morphaz",
+        "accept:8153 @1447:-5427.12,3900.58  Accept Courser Antlers",
+        "obj:8153:1 @1447:-5824.67,4447.33  Objective Courser Antlers / Perfect Courser Antler (1)",
+        "turnin:8153 @1447:-5427.12,3900.58  TurnIn Courser Antlers",
+        "accept:8231 @1447:-5427.12,3900.58  Accept Wavethrashing",
+        "accept:8235 @1447:-4760.3,3982.07  Accept Encoded Fragments",
+        "obj:8235:1 @1447:-6855.06,4287.39  Objective Encoded Fragments / Encoded Fragment (10)",
+        "accept:8255 @1447:-5427.12,3900.58  Accept Of Coursers We Know",
+        "obj:8255:1 @1447:-5824.67,4447.33  Objective Of Coursers We Know / Healthy Courser Gland (4)",
+        "turnin:8255 @1447:-5427.12,3900.58  TurnIn Of Coursers We Know",
+        "accept:8256 @1447:-5427.12,3900.58  Accept The Ichor of Undeath",
+        "obj:8256:1 @1447:-5319.61,3781.9  Objective The Ichor of Undeath / Ichor of Undeath (1)",
+        "turnin:8256 @1447:-5427.12,3900.58  TurnIn The Ichor of Undeath",
+        "accept:8257 @1447:-5427.12,3900.58  Accept Blood of Morphaz",
+        "accept:3510 @1447:-7188.22,3894.83  Accept The Name of the Beast",
+        "obj:3510:1 @1447:-6153.77,3827.2  Objective The Name of the Beast / Hetaera\u0027s Beaten Head (10)",
+        "obj:3510:2 @1447:-6153.77,3827.2  Objective The Name of the Beast / Hetaera\u0027s Bloodied Head (10)",
+        "obj:3510:3 @1447:-6153.77,3827.2  Objective The Name of the Beast / Hetaera\u0027s Bruised Head (10)",
+        "turnin:3510 @1447:-7188.22,3894.83  TurnIn The Name of the Beast",
+        "accept:3511 @1447:-7188.22,3894.83  Accept The Name of the Beast",
+        "obj:8231:1 @1447:-6738.43,2371.24  Objective Wavethrashing / Wavethrasher Scales (6)",
+        "turnin:3511 @1447:-6361.16,3098.21  TurnIn The Name of the Beast",
+        "turnin:8231 @1447:-5427.12,3900.58  TurnIn Wavethrashing",
+        "accept:8232 @1447:-5427.12,3900.58  Accept The Green Drake",
+        "turnin:8235 @1447:-4760.3,3982.07  TurnIn Encoded Fragments",
+        "accept:8236 @1447:-4760.3,3982.07  Accept The Azure Key"
+      ]
+    },
+    {
+      "part": 4,
+      "steps": [
+        "accept:6804 @1447:-7297.24,2849.69  Accept Poisoned Water",
+        "accept:6805 @1447:-7297.24,2849.69  Accept Stormers and Rumblers",
+        "accept:3602 @1447:-6361.16,3098.21  Accept Azsharite",
+        "obj:3602:1 @1447:-6335.81,2678.59  Objective Azsharite / Crystallized Azsharite (20)",
+        "turnin:3602 @1447:-6361.16,3098.21  TurnIn Azsharite",
+        "accept:3621 @1447:-6361.16,3098.21  Accept The Formation of Felbane",
+        "turnin:8253 @1447:-4760.3,3982.07  TurnIn Destroy Morphaz"
+      ]
+    }
+  ]
+}

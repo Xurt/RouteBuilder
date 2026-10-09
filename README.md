@@ -21,8 +21,10 @@ export script (it ships its own Lua for Windows and Linux). Run it again wheneve
     dotnet run -c Release -- build --zone "Tirisfal Glades" --race Undead --class Paladin
     dotnet run -c Release -- build --zone all --faction Alliance
 
-A zone takes a minute or two at the default effort; `--effort 0.2` is much quicker and usually within a
-few percent. Each build writes two files into `guides`:
+A zone takes a minute or two at the default effort. `--effort` takes a number from 0.01 to 100 and
+scales how long the search runs: `--effort 0.2` is good for test builds while you edit a zone file
+(a few seconds, with a route up to about 10% longer), and values above 1 rarely find a shorter route.
+Each build writes two files into `guides`:
 
 * `<Zone> (<who>).lua` - the guide. See "Getting the guides into the game" below.
 * `<Zone> (<who>).report.txt` - what went in, what was left out and why, and what to check in game.
@@ -33,9 +35,44 @@ only show for those characters. With `--race` and `--class` the whole order is t
 character, which is shorter for them (the faction report lists each class's total, so you can compare).
 
 Other options: `--out`, `--data`, `--zone-file`, `--start-level`, `--min-level`, `--max-level`,
-`--no-hearth`, `--effort` (0.2 for a quick look, 3 for a slow thorough run) and `--rxp <folder>`.
+`--no-hearth`, `--effort` and `--rxp <folder>`.
+
+To break a zone into smaller guides, build it once per level range:
+
+    dotnet run -c Release -- build --zone Durotar --faction Horde --min-level 1 --max-level 5
+    dotnet run -c Release -- build --zone Durotar --faction Horde --min-level 6 --max-level 10
+
+Each range holds the zone's quests of those levels (both ends included), is planned from the range's
+lowest level, and is written as `<Zone> <min>-<max> (<who>).lua`, so the ranges sit side by side.
+Quests near the top that need a level the range does not quite reach stay in, behind a short "grind
+to level N" step. A quest whose prerequisite sits in an earlier range only shows once that
+prerequisite is done, so play the ranges in order.
 `--rxp` points at a RestedXP `Guides` folder (inside the addon); RouteBuilder reads the objective
 numbers RestedXP uses and flags or fixes the ones where the database disagrees.
+
+## Keeping the route between builds
+
+Every build saves its step order in `locks/<Zone> (<who>).json` (the level range is in the name too, when
+you give one). The next build of the same guide follows that order instead of planning from scratch, so
+adding a fix to a zone file does not reshuffle the whole route:
+
+* Steps that are still there keep their place and their spot.
+* New steps (a quest you `include`d, a new objective) are slotted in where they cost least.
+* Steps whose prerequisites changed (a new `pre` or `pickupAfter`) are taken out and slotted in again
+  after what they now need, together with the steps that follow from them.
+* Only those slotted-in steps are fine-tuned afterwards. The console and the report say how many steps
+  were kept, added and moved.
+
+A build that keeps a saved order takes a second or two. To plan a guide from scratch again (after a big
+change, or to see whether the planner finds something shorter), build with `--fresh`; that also replaces
+the saved order. Deleting the file does the same. The file has one line per step and can be reordered by hand.
+
+Guides built before this existed have no saved order. To keep the route of one you already have, build
+once with `--order-from`, pointing at that guide, with the same options it was built with:
+
+    dotnet run -c Release -- build --zone Durotar --faction Horde --order-from "guides/Durotar (Horde).lua"
+
+From then on the saved order in `locks` is used.
 
 ## Getting the guides into the game
 
@@ -69,6 +106,17 @@ build; the folder is rebuilt from scratch each time.
   level check between them ("the rest is planned from level 18; come back then").
 * **Hubs.** Whenever you are at a quest hub, everything you can pick up or hand in there is part of
   that stop. Nothing on offer is left for a later visit.
+* **Loops.** Objective steps get a `#loop` of waypoints over the spawns. When the chosen spot holds fewer
+  than the objective needs (five Lazy Peons that each sleep somewhere else), the loop takes in the
+  objective's other known spawn points, nearest first (`SpreadRange`).
+* **Doing things together.** Objectives next to each other in the route whose mobs or objects share an
+  area become one step. An objective whose area you pass through earlier (after picking it up) is also
+  shown "as you go" at those stops, with RestedXP's `#completewith`; its own step later finishes whatever
+  is left and skips itself if nothing is. "As you go" is only offered once you are at the level the plan
+  waits for, and at most `MaxAsYouGo` of them are on screen at once (`OverlapRadius`, `OverlapShare`).
+* **Passing by.** When a finished quest's hand-in lies on or just off the way between two stops, the
+  plan hands it in on the way rather than carrying it past. "On the way" is judged in straight lines
+  (`PassRadius`, `PassDetour` and `PassMiss` in settings), so a road that bends through a town is not seen.
 * **Quest log.** Forever's 40 slots are checked for every race/class combination.
 * **Checks.** The finished guide is replayed as each race/class combination; anything out of order
   (hand-in before pickup, a prerequisite skipped, a step shown to the wrong class) is reported.
@@ -111,94 +159,3 @@ without recompiling, put it in a `settings.json` in the folder you run from, for
 Quest data comes from QuestieDB (GPL-3.0), downloaded by `update` and not included here. Guides built
 from it carry a note saying so. RestedXP's guides are only read for objective numbers when you pass
 `--rxp`; nothing from them is copied into the output.
-
-# Route Testing Status
-## Horde
-| Zone | Complete | In Progress |
-| ------------- |:-------------:|:-------------:|
-|Alterac Mountains|||
-|Arathi Highlands|||
-|Ashenvale|||
-|Azshara|||
-|Badlands|||
-|Blasted Lands|||
-|Burning Steppes|||
-|Desolace|||
-|Dun Morogh|||
-|Durotar||X|
-|Duskwood|||
-|Dustwallow Marsh|||
-|Eastern Plaguelands|||
-|Felwood|||
-|Feralas|||
-|Hillsbrad Foothills|||
-|Loch Modan|||
-|Moonglade|||
-|Mulgore|||
-|Orgrimmar|||
-|Redridge Mountains|||
-|Searing Gorge|||
-|Silithus|||
-|Silithus|||
-|Silverpine Forest|||
-|Stonetalon Mountains|||
-|Stranglethorn Vale|||
-|Swamp of Sorrows|||
-|Tanaris|||
-|Teldrassil|||
-|The Barrens|||
-|The Hinterlands|||
-|Thousand Needles|||
-|Thunder Bluff|||
-|Tirisfal Glades|X||
-|Un'Goro Crater|||
-|Undercity|||
-|Western Plaguelands|||
-|Westfall|||
-|Winterspring|||
-|Zephras Isle|||
-
-## Alliance
-| Zone | Complete | In Progress |
-| ------------- |:-------------:|:-------------:|
-|Alterac Mountains|||
-|Arathi Highlands|||
-|Ashenvale|||
-|Azshara|||
-|Badlands|||
-|Blasted Lands|||
-|Burning Steppes|||
-|Darkshore|||
-|Darnassus|||
-|Desolace|||
-|Dun Morogh|||
-|Durotar|||
-|Duskwood|||
-|Dustwallow Marsh|||
-|Eastern Plaguelands|||
-|Elwynn Forest|||
-|Felwood|||
-|Feralas|||
-|Hillsbrad Foothills|||
-|Ironforge|||
-|Loch Modan|||
-|Moonglade|||
-|Redridge Mountains|||
-|Riverglades|||
-|Searing Gorge|||
-|Silithus|||
-|Stonetalon Mountains|||
-|Stormwind City|||
-|Stranglethorn Vale|||
-|Swamp of Sorrows|||
-|Tanaris|||
-|Teldrassil|||
-|The Barrens|||
-|The Hinterlands|||
-|Thousand Needles|||
-|Un'Goro Crater|||
-|Western Plaguelands|||
-|Westfall|||
-|Wetlands|||
-|Winterspring|||
-|Zephras Isle|||

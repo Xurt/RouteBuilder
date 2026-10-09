@@ -534,7 +534,9 @@ public sealed class Emitter
         // the range in the name runs from the level the plan starts at to the highest quest level in it
         int lo = (int)Math.Floor(m.StartLevel), hi = Math.Max(lo, visits.Max(v => v.m.LevelHi));
         string name = $"{lo}-{hi} {m.Main.Name}", group = $"Zone Routes ({who})";
-        foreach (var (_, g) in visits) { g.Name = name; g.Group = group; g.FileName = $"{m.Main.Name} ({who}).lua"; }
+        // a build limited with --min-level/--max-level gets the range in its file name, so several ranges of one zone sit side by side
+        string range = m.Opt.MinLevel != null || m.Opt.MaxLevel != null ? $" {m.Opt.MinLevel ?? lo}-{m.Opt.MaxLevel ?? hi}" : "";
+        foreach (var (_, g) in visits) { g.Name = name; g.Group = group; g.FileName = $"{m.Main.Name}{range} ({who}).lua"; }
         string other = m.Opt.Faction == "Horde" ? "Alliance" : "Horde";
         sb.AppendLine($"-- {name}: {group}.");
         sb.AppendLine($"-- Made by RouteBuilder from QuestieDB's Forever data ({m.Data.Version}; QuestieDB is GPL-3.0).");

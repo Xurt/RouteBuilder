@@ -215,6 +215,7 @@ public sealed class RouteResult
     public double[] Level = Array.Empty<double>(), XpBefore = Array.Empty<double>();
     public bool[] Hearth = Array.Empty<bool>();
     public List<ViewStat> Views = new();
+    public bool Locked; public int LockKept, LockAdded, LockMoved, LockDropped;   // when a saved order was followed
     public List<string> Unplaced = new();
 }
 
@@ -228,7 +229,19 @@ public sealed class Router
 {
     readonly ZoneModel m; readonly int n; readonly Action<string> log;
     static readonly bool Debug = Environment.GetEnvironmentVariable("ROUTEBUILDER_DEBUG") == "1";
-    public Router(ZoneModel model, Action<string> log) { m = model; n = m.Tasks.Count; this.log = log; }
+    readonly Dictionary<string, (int Index, LockedStep Step)>? saved; readonly string[] keys;
+    int kept, added, moved;
+
+    /// <param name="locked">The step order of an earlier build of this part, to keep; null plans from scratch.</param>
+    public Router(ZoneModel model, Action<string> log, List<LockedStep>? locked = null)
+    {
+        m = model; n = m.Tasks.Count; this.log = log; keys = RouteLock.Keys(m);
+        if (locked != null)
+        {
+            saved = new();
+            for (int i = 0; i < locked.Count; i++) saved.TryAdd(locked[i].Key, (i, locked[i]));
+        }
+    }
 
     public RouteResult Solve()
     {
@@ -250,7 +263,8 @@ public sealed class Router
             foreach (int t in mine) { active[t] = true; movable[t] = true; }
             string name = (elig == m.AllElig ? "everyone" : layer.First().Tag) + (cond ? " (quests that depend on other zones)" : "");
             int[] seq; double startCost;
-            if (backbone.Count == 0) (seq, startCost) = Optimise(mine, active, res.Choice, name);
+            if (saved != null) (seq, startCost) = Keep(backbone, mine, active, movable, res.Choice, name);
+            else if (backbone.Count == 0) (seq, startCost) = Optimise(mine, active, res.Choice, name);
             else (seq, startCost) = Insert(backbone, mine, active, movable, res.Choice, name);
 
             var ev = new Evaluator(m, active, movable);
@@ -264,6 +278,12 @@ public sealed class Router
         if (!firmPlaced) PlaceDeferred(master, res, false);
         PlaceDeferred(master, res, true);
         res.Seq = master;
+        if (saved != null)
+        {
+            var now = m.Tasks.Where(t => !t.Deferred).Select(t => keys[t.Id]).ToHashSet();
+            res.Locked = true; res.LockKept = kept; res.LockAdded = added; res.LockMoved = moved;
+            res.LockDropped = saved.Keys.Count(k => !now.Contains(k));
+        }
         return res;
     }
 
@@ -523,11 +543,24 @@ public sealed class Router
     {
         log($"  slotting in {mine.Count} steps for {name}...");
         var ev = new Evaluator(m, active, movable);
-        var seq = backbone.ToList(); var placed = new bool[n];
-        foreach (int t in backbone) placed[t] = true;
-        // insert in dependency order, each task where it adds least
-        var todo = mine.OrderBy(t => m.Tasks[t].Q?.Level ?? 0).ThenBy(t => m.Tasks[t].Q?.Id ?? 0).ThenBy(t => t).ToList();
-        var buf = new int[backbone.Count + mine.Count];
+        var seq = backbone.ToList();
+        Slot(ev, seq, mine, choice);
+        var arr = seq.ToArray();
+        double start = ev.Cost(arr, arr.Length, choice);
+        int iters = Tries((long)mine.Count * Tuning.IterationsPerTask / 2, Tuning.MinIterations / 10, Tuning.MaxIterations / 4);
+        Anneal(ev, arr, choice, iters, 77, 60, 1, movable);
+        Polish(ev, arr, choice, movable);
+        arr = Settle(ev, arr, choice, movable);
+        return (arr, start);
+    }
+
+    /// <summary>Inserts tasks into an order in dependency order, each where it adds least.</summary>
+    void Slot(Evaluator ev, List<int> seq, List<int> tasks, int[] choice)
+    {
+        var placed = new bool[n];
+        foreach (int t in seq) placed[t] = true;
+        var todo = tasks.OrderBy(t => m.Tasks[t].Q?.Level ?? 0).ThenBy(t => m.Tasks[t].Q?.Id ?? 0).ThenBy(t => t).ToList();
+        var buf = new int[seq.Count + tasks.Count];
         while (todo.Count > 0)
         {
             int pick = todo.FirstOrDefault(t => ev.Pre[t].All(p => placed[p]) && (ev.Any[t].Length == 0 || ev.Any[t].Any(p => placed[p])), -1);
@@ -546,12 +579,75 @@ public sealed class Router
             }
             choice[pick] = bc; seq.Insert(bi, pick); placed[pick] = true;
         }
+    }
+
+    // ------------------------------------------------------------------ keeping a saved order
+    /// <summary>
+    /// Follows the order of an earlier build. Steps it does not have (new quests, new objectives) and steps whose
+    /// prerequisites now come later or are new are taken out and slotted in where they cost least; only those are
+    /// then fine-tuned. Everything else keeps its place and its spot.
+    /// </summary>
+    (int[] seq, double startCost) Keep(List<int> backbone, List<int> mine, bool[] active, bool[] movable, int[] choice, string name)
+    {
+        var ev = new Evaluator(m, active, backbone.Count == 0 ? null : movable);
+        var at = new Dictionary<int, int>();
+        foreach (int t in backbone.Concat(mine))
+            if (saved!.TryGetValue(keys[t], out var e)) at[t] = e.Index;
+        foreach (int t in mine)
+        {
+            if (!at.ContainsKey(t)) continue;
+            var st = saved![keys[t]].Step; var cs = m.Tasks[t].Cands; double bd = double.MaxValue;
+            for (int c = 0; c < cs.Count && st.Map >= 0; c++)
+            {
+                var (map, p) = RouteLock.Spot(m, cs[c]);
+                if (map != st.Map) continue;
+                // read from a guide: the patch holding most of the step's waypoints, then the one nearest to them
+                double d = st.Distance(p);
+                if (st.Loop.Count > 1)
+                {
+                    var own = cs[c].Pts.Select(q => RouteLock.Spot(m, new Cand(cs[c].Area, new List<Pt> { q })).p).ToList();
+                    d = -1000 * st.Loop.Count(l => own.Any(q => q.To(l) <= 2)) + d;
+                }
+                if (d < bd) { bd = d; choice[t] = c; }
+            }
+        }
+        var loose = new bool[n];
+        foreach (int t in mine) if (!at.ContainsKey(t)) loose[t] = true;
+        int fresh = mine.Count(t => loose[t]);
+
+        // the saved steps of this layer, woven into the steps already fixed, by their saved position
+        var known = mine.Where(at.ContainsKey).OrderBy(t => at[t]).ToList();
+        var woven = new List<int>(); int k = 0;
+        foreach (int b in backbone)
+        {
+            if (at.TryGetValue(b, out int bi)) while (k < known.Count && at[known[k]] < bi) woven.Add(known[k++]);
+            woven.Add(b);
+        }
+        while (k < known.Count) woven.Add(known[k++]);
+
+        // a step whose prerequisites are not all ahead of it any more is taken out, and so is anything that follows from it
+        var placed = new bool[n]; var seq = new List<int>(woven.Count + fresh);
+        foreach (int t in woven)
+        {
+            bool ok = ev.Pre[t].All(p => placed[p]) && (ev.Any[t].Length == 0 || ev.Any[t].Any(p => placed[p]));
+            if (ok || !movable[t]) { seq.Add(t); placed[t] = true; }
+            else loose[t] = true;
+        }
+        int shifted = mine.Count(t => loose[t]) - fresh;
+        var todo = mine.Where(t => loose[t]).ToList();
+        log($"  keeping the saved order for {name}: {known.Count - shifted} steps kept, {fresh} new, {shifted} moved for changed prerequisites");
+        kept += known.Count - shifted; added += fresh; moved += shifted;
+
+        Slot(ev, seq, todo, choice);
         var arr = seq.ToArray();
         double start = ev.Cost(arr, arr.Length, choice);
-        int iters = Tries((long)mine.Count * Tuning.IterationsPerTask / 2, Tuning.MinIterations / 10, Tuning.MaxIterations / 4);
-        Anneal(ev, arr, choice, iters, 77, 60, 1, movable);
-        Polish(ev, arr, choice, movable);
-        arr = Settle(ev, arr, choice, movable);
+        if (todo.Count > 0)
+        {
+            int iters = Tries((long)todo.Count * Tuning.IterationsPerTask / 2, Tuning.MinIterations / 10, Tuning.MaxIterations / 4);
+            Anneal(ev, arr, choice, iters, 91, 60, 1, loose);
+            Polish(ev, arr, choice, loose);
+            arr = Settle(ev, arr, choice, loose);
+        }
         return (arr, start);
     }
 

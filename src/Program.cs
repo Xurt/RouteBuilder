@@ -28,6 +28,8 @@ public static class Program
               --start-level <n>      level the player arrives at (default: the zone's lowest quest level)
               --min-level <n>, --max-level <n>   override the quest-level range that is included
               --no-hearth            do not plan hearthstone use
+              --fresh                plan from scratch instead of keeping the step order saved in locks/
+              --order-from <guide>   keep the step order of a guide built earlier (for guides made before locks/)
               --effort <x>           search effort from 0.01 to 100: 1 = normal, 0.2 = quick look, 3 = slow and thorough
 
         Numbers the router's judgement rests on can be changed in settings.json (see README).
@@ -42,7 +44,7 @@ public static class Program
         {
             if (!argv[i].StartsWith("--")) { Console.Error.WriteLine($"Unexpected argument: {argv[i]}"); return 2; }
             string key = argv[i][2..];
-            if (key is "no-hearth" or "no-download") opt[key] = "1";
+            if (key is "no-hearth" or "no-download" or "fresh") opt[key] = "1";
             else if (i + 1 < argv.Length) opt[key] = argv[++i];
             else { Console.Error.WriteLine($"--{key} needs a value"); return 2; }
         }
@@ -89,10 +91,19 @@ public static class Program
     static int Zones(GameData d, string faction)
     {
         Console.WriteLine($"Zones with {faction} quests ({d.Version}):\n");
-        Console.WriteLine($"  {"Zone",-28}{"Quests",7}  {"Levels",-8} Notes");
+        Console.WriteLine($"  {"Zone",-28}{"Quests",7}  {"Levels",-8} {"Build to",-9}Notes");
         foreach (var (a, count, lo, hi) in ZoneList(d, faction))
-            Console.WriteLine($"  {a.Name,-28}{count,7}  {lo + "-" + hi,-8} {(ZoneModel.CityParent(a.Id) is { } p ? "planned with " + d.AreaName(p) : a.HasBounds ? "" : "no world map data; coordinates are map percent")}{(File.Exists(Path.Combine("zones", a.Name + ".json")) ? "  [has zone file]" : "")}");
-        Console.WriteLine("\nLevels are the range most of the zone's quests fall in.");
+        {
+            // the highest quest level a build of this zone lets in: the same rule as ZoneModel's level window
+            string file = Path.Combine("zones", a.Name + ".json"); bool hasFile = File.Exists(file);
+            int? fileMax = null;
+            if (hasFile) try { fileMax = ZoneConfig.Load(file).MaxLevel; } catch { }
+            string upTo = fileMax != null ? fileMax + " *" : Math.Min(Game.MaxLevel, count >= 5 ? hi + Tuning.ZoneLevelSlack : Game.MaxLevel).ToString();
+            Console.WriteLine($"  {a.Name,-28}{count,7}  {lo + "-" + hi,-8} {upTo,-9}{(ZoneModel.CityParent(a.Id) is { } p ? "planned with " + d.AreaName(p) : a.HasBounds ? "" : "no world map data; coordinates are map percent")}{(hasFile ? "  [has zone file]" : "")}");
+        }
+        Console.WriteLine("\nLevels: the range most of the zone's quests fall in.");
+        Console.WriteLine($"Build to: the highest quest level a build of the zone takes in (Levels plus {Tuning.ZoneLevelSlack}; * = set by maxLevel in its zone file).");
+        Console.WriteLine("--max-level overrides it for one build.");
         return 0;
     }
 
@@ -114,7 +125,7 @@ public static class Program
         var data = GameData.Load(dataDir);
         var bo = new BuildOptions
         {
-            Faction = faction, Race = opt.GetValueOrDefault("race"), Class = opt.GetValueOrDefault("class"), NoHearth = opt.ContainsKey("no-hearth"), RxpDir = opt.GetValueOrDefault("rxp"),
+            Faction = faction, Race = opt.GetValueOrDefault("race"), Class = opt.GetValueOrDefault("class"), NoHearth = opt.ContainsKey("no-hearth"), Fresh = opt.ContainsKey("fresh"), OrderFrom = opt.GetValueOrDefault("order-from"), RxpDir = opt.GetValueOrDefault("rxp"),
             StartLevel = Num(opt, "start-level"), MinLevel = (int?)Num(opt, "min-level"), MaxLevel = (int?)Num(opt, "max-level"),
         };
         string outDir = opt.GetValueOrDefault("out", "guides");
@@ -144,6 +155,11 @@ public static class Program
         if (zoneFile != null && !File.Exists(zoneFile)) throw new InvalidOperationException($"zone file not found: {zoneFile}");
         Console.WriteLine($"\n{area.Name} ({bo.Faction}{(bo.Race != null ? ", " + bo.Race : "")}{(bo.Class != null ? ", " + bo.Class : "")}){(zoneFile != null ? "  using " + zoneFile : "")}");
         var cfg = zoneFile != null ? ZoneConfig.Load(zoneFile) : null;
+        // the step order of the last build of this guide, kept unless --fresh
+        string lockPath = RouteLock.PathFor(area.Name, bo);
+        var lk = bo.OrderFrom != null ? RouteLock.FromGuide(bo.OrderFrom) : bo.Fresh ? null : RouteLock.Load(lockPath);
+        if (bo.OrderFrom != null) Console.WriteLine($"  keeping the step order of {bo.OrderFrom}");
+        else if (lk != null) Console.WriteLine($"  keeping the step order saved in {lockPath} (--fresh plans from scratch)");
         var visit = new Visit(); var visits = new List<(ZoneModel m, RouteResult r, GuideOutput g, Verifier v)>();
         bool debug = Environment.GetEnvironmentVariable("ROUTEBUILDER_DEBUG") == "1"; int bumps = 0;
         while (true)
@@ -172,7 +188,9 @@ public static class Program
             }
             Console.WriteLine($"  {(visit.Number > 1 ? $"part {visit.Number}" : "planned")} from level {model.StartLevel:0}: {model.Quests.Count} quests, {model.Tasks.Count} tasks; quest levels {model.LevelLo}-{model.LevelHi}" +
                               (visit.Number == 1 ? $"; {model.Excluded.Count} left out" : "") + (model.Later.Count > 0 ? $"; {model.Later.Count} need a higher level" : ""));
-            var route = new Router(model, Console.WriteLine).Solve();
+            List<LockedStep>? keep = null;
+            if (lk != null) keep = lk.Parts.GetValueOrDefault(visit.Number) ?? new List<LockedStep>();
+            var route = new Router(model, Console.WriteLine, keep).Solve();
             var main = route.Views[0];
             var firmLater = model.Later.Values.Where(v => !v.Cond).ToList();
             bool more = firmLater.Count > 0 && visit.Number < Tuning.MaxVisits && !(visit.Only != null && visit.Only.SetEquals(model.Later.Keys));
@@ -207,9 +225,10 @@ public static class Program
         File.WriteAllText(path, text);
         var reports = visits.Select((v, i) => Report.Write(v.m, v.r, v.g, v.v, path, zoneFile, i == visits.Count - 1, visits.Count));
         File.WriteAllText(Path.ChangeExtension(path, ".report.txt"), string.Join("\n\n" + new string('=', 100) + "\n\n", reports));
+        RouteLock.Save(lockPath, visits[0].g.Name, visits.Select((v, i) => (i + 1, v.m, v.r)));
         bool ok = visits.All(v => v.v.Errors.Count == 0);
         Console.WriteLine($"  \"{visits[0].g.Name}\"" + (visits.Count > 1 ? $" in {visits.Count} parts" : ""));
-        Console.WriteLine($"  -> {path}  ({sw.Elapsed.TotalSeconds:0} s)");
+        Console.WriteLine($"  -> {path}  ({sw.Elapsed.TotalSeconds:0} s); step order saved in {lockPath}");
         return ok;
     }
 }

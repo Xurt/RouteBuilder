@@ -5,7 +5,7 @@ namespace RouteBuilder;
 public sealed class BuildOptions
 {
     public string Faction = "Horde"; public string? Race, Class;
-    public double? StartLevel; public int? MinLevel, MaxLevel; public bool NoHearth; public string? RxpDir;
+    public double? StartLevel; public int? MinLevel, MaxLevel; public bool NoHearth, Fresh; public string? RxpDir, OrderFrom;
 }
 
 /// <summary>Fixed facts about the game: races, classes and the experience curve.</summary>
@@ -874,7 +874,9 @@ public sealed class ZoneModel
         {
             double cap = Game.FracLevel(StartXp + Tasks.Where(t => !t.Cond && (t.Elig & q.Elig) == q.Elig).Sum(t => t.Xp));
             var (need, why) = LevelNeeded(q);
-            if (need <= cap) continue;
+            // a build limited with --max-level is meant to hold its quests: a short grind at the end beats a part of its own
+            double slack = Opt.MaxLevel != null && q.Req <= Opt.MaxLevel ? 1.0 : 0;
+            if (need <= cap + slack) continue;
             Later[q.Id] = ($"{why}; this part gets {(q.Tag.Length > 0 ? q.Tag + " characters" : "you")} to about {cap.ToString("0.0", inv)}", need, q.Cond);
             Quests.Remove(q.Id); any = true;
         }
@@ -975,6 +977,16 @@ public sealed class ZoneModel
                 foreach (int p in q.PreAll) if (Find(TaskKind.TurnIn, p) is { } pt) first.Pre.Add(pt.Id);
                 var any = q.PreAny.Select(p => Find(TaskKind.TurnIn, p)).Where(x => x != null).Select(x => x!.Id).ToList();
                 if (any.Count > 0) first.PreAny = any.ToHashSet();
+                foreach (var after in q.Fix.PickupAfter ?? new())
+                {
+                    if (after.Length == 0) continue;
+                    int pq = after[0], line = after.Length > 1 ? after[1] : 0;
+                    string what = line > 0 ? $"line {line} of quest {pq}" : $"the objectives of quest {pq}";
+                    var objs = Tasks.Where(x => x.Kind == TaskKind.Objective && x.Q?.Id == pq && (line == 0 || x.Obj?.Index == line)).ToList();
+                    if (objs.Count > 0) foreach (var ot in objs) first.Pre.Add(ot.Id);
+                    else if (Find(TaskKind.TurnIn, pq) is { } pt) { first.Pre.Add(pt.Id); q.Notes.Add($"\"pickupAfter\": {what} is not a step in this guide, so the pickup waits for quest {pq}'s hand-in instead"); }
+                    else q.Notes.Add($"\"pickupAfter\": {what} is not in this guide, so it was ignored");
+                }
             }
             if (q.StartItem is { Passive: true } si && t != null)
                 foreach (int aq in si.Anchors.Where(Quests.ContainsKey))

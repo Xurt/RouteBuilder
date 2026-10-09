@@ -79,6 +79,7 @@ public sealed class StartItemFix
 public sealed class QuestFix
 {
     public List<int>? Pre;                         // quests that must be handed in first (added to the database's own list)
+    public List<int[]>? PickupAfter;               // objectives of other quests that must be done first: [quest, line] ([quest] = all of them)
     public List<ObjectiveFix>? Objectives;         // replaces the database's objectives entirely; [] = "has none"
     public Dictionary<string, int>? ObjectiveIndex; // NPC/object/item ID -> quest-log line, when the order differs
     public List<TurninCompleteFix> TurninComplete = new();

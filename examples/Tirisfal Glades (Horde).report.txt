@@ -1,47 +1,47 @@
 Tirisfal Glades - Horde - part 1 of 2, planned from level 1
-Guide "1-15 Tirisfal Glades" in group "Zone Routes (Horde)": this part has 243 steps, 206 stops
-Written to final/Tirisfal Glades (Horde).lua
+Guide "1-15 Tirisfal Glades" in group "Zone Routes (Horde)": this part has 256 steps, 206 stops
+Written to spread/Tirisfal Glades (Horde).lua
 Data: QuestieDB local copy, 2026-10-06
 Zone file: zones/Tirisfal Glades.json
-RestedXP cross-check: 5825 objective notes read from 200 guide files
 
 Checks
 ------
 Played through as 45 race/class combinations: no problems found.
-Quest log: at most 15 of 40 held at once (Orc Warrior), not counting quests brought in from other zones.
+Quest log: at most 14 of 40 held at once (Orc Warrior), not counting quests brought in from other zones.
 Every stop picks up and hands in everything on offer within reach.
+The route never runs past a finished quest's hand-in without stopping (judged in straight lines, so roads are not seen).
 
 Route
 -----
 Planned from level 1. Distances are straight lines, so real running is longer; levels are an estimate.
-  everyone: 192 tasks, 29,541 yd on foot (simply going to the nearest thing each time comes to 41,848 yd); ends at level 12.6; 4 hearths
-  Undead: 2 more tasks; their whole route comes to 29,541 yd; ends at level 12.6; 4 hearths
-  Warrior: 15 more tasks; their whole route comes to 29,795 yd; ends at level 12.9; 4 hearths
-  Warlock: 5 more tasks; their whole route comes to 29,594 yd; ends at level 12.7; 4 hearths
-  Undead Mage/Troll Mage: 5 more tasks; their whole route comes to 29,802 yd; ends at level 12.7; 4 hearths
-  Undead Warrior: 2 more tasks; their whole route comes to 29,844 yd; ends at level 12.9; 4 hearths
-  Undead Paladin: 47 more tasks; their whole route comes to 41,745 yd; ends at level 13.2; 4 hearths; at its hardest you are 1.1 levels below the mobs
-  Undead Rogue: 5 more tasks; their whole route comes to 29,898 yd; ends at level 12.7; 4 hearths
-  Undead Priest: 8 more tasks; their whole route comes to 29,681 yd; ends at level 12.7; 4 hearths
-  Undead Mage: 2 more tasks; their whole route comes to 29,803 yd; ends at level 12.7; 4 hearths
-  Undead Warlock: 6 more tasks; their whole route comes to 29,637 yd; ends at level 12.8; 4 hearths
-  Troll Priest: 1 more tasks; their whole route comes to 29,555 yd; ends at level 12.6; 4 hearths
-  everyone (quests that depend on other zones): 4 more tasks; their whole route comes to 30,003 yd; ends at level 12.6; 4 hearths
-  Undead (quests that depend on other zones): 4 more tasks; their whole route comes to 30,125 yd; ends at level 12.6; 4 hearths
-  Undead Rogue (quests that depend on other zones): 7 more tasks; their whole route comes to 31,741 yd; ends at level 12.7; 4 hearths
-  Undead Priest (quests that depend on other zones): 4 more tasks; their whole route comes to 30,545 yd; ends at level 12.7; 4 hearths
+  everyone: 192 tasks, 28,697 yd on foot (simply going to the nearest thing each time comes to 42,808 yd); ends at level 12.6; 4 hearths; at its hardest you are 1.1 levels below the mobs
+  Undead: 2 more tasks; their whole route comes to 28,697 yd; ends at level 12.6; 4 hearths; at its hardest you are 1.1 levels below the mobs
+  Warrior: 15 more tasks; their whole route comes to 28,952 yd; ends at level 12.9; 4 hearths
+  Warlock: 5 more tasks; their whole route comes to 28,725 yd; ends at level 12.6; 4 hearths; at its hardest you are 1.1 levels below the mobs
+  Undead Mage/Troll Mage: 5 more tasks; their whole route comes to 31,214 yd; ends at level 12.7; 4 hearths; at its hardest you are 1.1 levels below the mobs
+  Undead Warrior: 2 more tasks; their whole route comes to 28,963 yd; ends at level 12.9; 4 hearths
+  Undead Paladin: 47 more tasks; their whole route comes to 40,570 yd; ends at level 13.2; 4 hearths
+  Undead Rogue: 5 more tasks; their whole route comes to 28,995 yd; ends at level 12.6; 4 hearths; at its hardest you are 1.1 levels below the mobs
+  Undead Priest: 8 more tasks; their whole route comes to 28,801 yd; ends at level 12.6; 4 hearths
+  Undead Mage: 2 more tasks; their whole route comes to 31,215 yd; ends at level 12.7; 4 hearths; at its hardest you are 1.1 levels below the mobs
+  Undead Warlock: 6 more tasks; their whole route comes to 30,702 yd; ends at level 12.7; 4 hearths
+  Troll Priest: 1 more tasks; their whole route comes to 28,712 yd; ends at level 12.6; 4 hearths; at its hardest you are 1.1 levels below the mobs
+  everyone (quests that depend on other zones): 4 more tasks; their whole route comes to 29,159 yd; ends at level 12.6; 4 hearths; at its hardest you are 1.1 levels below the mobs
+  Undead (quests that depend on other zones): 4 more tasks; their whole route comes to 29,282 yd; ends at level 12.6; 4 hearths; at its hardest you are 1.1 levels below the mobs
+  Undead Rogue (quests that depend on other zones): 7 more tasks; their whole route comes to 30,560 yd; ends at level 12.6; 4 hearths; at its hardest you are 1.1 levels below the mobs
+  Undead Priest (quests that depend on other zones): 4 more tasks; their whole route comes to 29,665 yd; ends at level 12.6; 4 hearths
 Hearthstone: set at Innkeeper Renee (Brill); 5 hearth steps in the guide.
 These pickups are planned within about half a level of the level they unlock at, so the guide checks your level first.
 The check passes at once if you are there; if you are a little behind the prediction it asks you to grind the difference:
   level 2 for The Damned
-  level 3 for Marla's Last Wish
-  level 4 for Continue Your Training (Undead Paladin)
+  level 4 for Coming to Terms (Undead Paladin)
   level 5 for In Favor of Darkness (Undead Priest)
   level 5 for Gordo's Task
   level 6 for Wanted: Maggot Eye
   level 7 for That Shadowvale Green Elixir
-  level 8 for A Second Home (Undead Paladin)
-  level 10 for Speak with Dillinger (Warrior)
+  level 10 for The Argent Emissary
+  level 12 for A Lesson in Divinity (Undead Paladin)
+11 objectives are also shown "as you go" at earlier stops inside their area; their own step finishes whatever is left (and skips itself if nothing is).
 11 pickups are also offered a visit early, in case you are ahead of the predicted level (they hide themselves otherwise).
 
 Quests in the guide (117)
@@ -81,6 +81,8 @@ No objectives in the database (the hand-in step warns about it; add "objectives"
 39 quests are new in Forever: their experience is estimated, and 11 of them list no prerequisite in the database.
 If one of these is offered too early or too late in game, add a "pre" entry for it to the zone file:
   Touch of Weakness [5658], Sticks and Bones [86784], That Shadowvale Green Elixir [95314], Whispering Horror Residue [95328], The Argent Emissary [96895], Hides for the Forsaken [97558], Discipline [99134], Patience [99141], Seeking Refuge [99144], As Above, So Below [99152], The One That Got Away [99153]
+  Graverobbers [358, level 8]: could not read how many Rot Hide Graverobber are needed from the quest text; assumed 8
+  Graverobbers [358, level 8]: could not read how many Rot Hide Mongrel are needed from the quest text; assumed 8
 
 Put off to a later part (3)
 ---------------------------
@@ -125,16 +127,16 @@ To force one in, add its number to "include" in the zone file; to drop one, add 
 
 Tirisfal Glades - Horde - part 2 of 2, planned from level 16
 Guide "1-15 Tirisfal Glades" in group "Zone Routes (Horde)": this part has 14 steps, 10 stops
-Written to final/Tirisfal Glades (Horde).lua
+Written to spread/Tirisfal Glades (Horde).lua
 Data: QuestieDB local copy, 2026-10-06
 Zone file: zones/Tirisfal Glades.json
-RestedXP cross-check: 5825 objective notes read from 200 guide files
 
 Checks
 ------
 Played through as 45 race/class combinations: no problems found.
 Quest log: at most 1 of 40 held at once (Undead Mage), not counting quests brought in from other zones.
 Every stop picks up and hands in everything on offer within reach.
+The route never runs past a finished quest's hand-in without stopping (judged in straight lines, so roads are not seen).
 
 Route
 -----

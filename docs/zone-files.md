@@ -77,6 +77,7 @@ names are not case-sensitive.
 | What you see | What to add |
 |---|---|
 | The guide offers a quest the NPC does not have yet | [`pre`](#quest-corrections) with the quest that unlocks it |
+| A quest becomes available part way through another one (an NPC appears once you have done something) | [`pickupAfter`](#pickupafter) with that quest and objective line |
 | The report says "No objectives in the database", or the guide never sends you to do the quest | [`objectives`](#objectives) |
 | The quest really has nothing to do between pickup and hand-in | `"objectives": []` |
 | The step tracks the wrong line of the quest log | `objectiveIndex`, or `index` on a hand-written objective |
@@ -160,6 +161,7 @@ Under `quests`, one entry per quest ID.
 | Key | Meaning |
 |---|---|
 | `pre` | Quests that must be handed in first. Added to whatever the database already lists; all of them are required. |
+| `pickupAfter` | Objectives of other quests that must be done before this one is picked up, as `[quest, line]` pairs: `[[786, 1]]`. `[786]` alone waits for all of 786's objectives (but not its hand-in). See [pickupAfter](#pickupafter). |
 | `objectives` | Replaces the database's objectives for this quest. `[]` means "nothing to do". See [Objectives](#objectives). |
 | `objectiveIndex` | Corrects which quest-log line each database objective is. See below. |
 | `acceptText` | Extra line of text on the pickup step. |
@@ -181,6 +183,24 @@ Under `quests`, one entry per quest ID.
 - If it is not (it belongs to another zone, was left out, or is itself uncertain), the quest's pickup
   step only shows once the prerequisite is done, and its other steps only show while you are on it.
   The report lists these under "Need a quest this guide does not hand in".
+
+### pickupAfter
+
+Some quests open up in the middle of another one: an NPC only appears, or only offers the quest, once
+you have done one of that quest's objectives. `pre` cannot say that, because it waits for the hand-in.
+`pickupAfter` waits for an objective instead, named by its quest and the line it has in the quest log (the
+same numbers as the guide's `.complete 786,1`):
+
+```json
+"99123": { "pickupAfter": [[786, 1]] }   // Pal'juh is only there once the Valley of Trials plan is destroyed
+```
+
+- `[786, 1]` waits for line 1 of quest 786. List several pairs to wait for several objectives.
+- `[786]` waits for every objective of 786 that the guide plans, but not for the hand-in.
+- If that objective is not a step in this guide (the quest was left out, or the database has no
+  objectives for it), the pickup waits for quest 786's hand-in instead, and the report says so under
+  "Worth checking in game". If 786 is not in the guide at all, the `pickupAfter` is ignored and reported.
+- It can be combined with `pre`. Do not also put 786 in `pre`, or the pickup waits for the hand-in anyway.
 
 ### objectiveIndex
 
