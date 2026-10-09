@@ -189,7 +189,7 @@ public static class Program
             Console.WriteLine($"  {(visit.Number > 1 ? $"part {visit.Number}" : "planned")} from level {model.StartLevel:0}: {model.Quests.Count} quests, {model.Tasks.Count} tasks; quest levels {model.LevelLo}-{model.LevelHi}" +
                               (visit.Number == 1 ? $"; {model.Excluded.Count} left out" : "") + (model.Later.Count > 0 ? $"; {model.Later.Count} need a higher level" : ""));
             List<LockedStep>? keep = null;
-            if (lk != null) keep = lk.Parts.GetValueOrDefault(visit.Number) ?? new List<LockedStep>();
+            if (lk != null) keep = lk.For(visit.Number);
             var route = new Router(model, Console.WriteLine, keep).Solve();
             var main = route.Views[0];
             var firmLater = model.Later.Values.Where(v => !v.Cond).ToList();

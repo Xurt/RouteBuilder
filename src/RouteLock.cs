@@ -102,6 +102,30 @@ public sealed class RouteLock
         File.WriteAllText(path, JsonSerializer.Serialize(shape, Json), new UTF8Encoding(false));
     }
 
+    /// <summary>Writes an order that did not come from a build (one read from another guide) as a one-part lock.</summary>
+    public static void SaveSteps(string path, string guideName, string about, IEnumerable<(LockedStep step, string note)> steps)
+    {
+        var shape = new FileShape
+        {
+            About = about, Guide = guideName, Saved = DateTime.Now.ToString("yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture),
+            Parts = new List<PartShape>
+            {
+                new()
+                {
+                    Part = 1,
+                    Steps = steps.Select(x => x.step.Map >= 0
+                        ? string.Create(CultureInfo.InvariantCulture, $"{x.step.Key} @{x.step.Map}:{x.step.X:0.##},{x.step.Y:0.##}  {x.note}")
+                        : $"{x.step.Key}  {x.note}").ToList(),
+                },
+            },
+        };
+        Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+        File.WriteAllText(path, JsonSerializer.Serialize(shape, Json), new UTF8Encoding(false));
+    }
+
+    /// <summary>The saved order for one part of a guide; a lock with fewer parts than the build gives every part its whole order.</summary>
+    public List<LockedStep> For(int part) => Parts.TryGetValue(part, out var l) ? l : Parts.OrderBy(p => p.Key).SelectMany(p => p.Value).ToList();
+
     /// <summary>A place as the guide writes it: the map ID, and world coordinates (map percent where the map has no size).</summary>
     public static (int map, Pt p) Spot(ZoneModel m, Cand c)
     {

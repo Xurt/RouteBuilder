@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Reads a RestedXP guide and saves its step order as a RouteBuilder lock file. Uses RouteBuilder's own code. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>RxpToLock</RootNamespace>
+    <AssemblyName>RxpToLock</AssemblyName>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RouteBuilder.csproj" />
+  </ItemGroup>
+</Project>

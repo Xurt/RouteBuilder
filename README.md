@@ -74,6 +74,29 @@ once with `--order-from`, pointing at that guide, with the same options it was b
 
 From then on the saved order in `locks` is used.
 
+## Starting from a RestedXP guide (RxpToLock)
+
+`RxpToLock` is a second, small program in this folder. It reads RestedXP guide files and saves their step
+order (pickups, objectives, hand-ins) as the zone's lock file. The next build follows RestedXP's order
+for every quest both have and slots in the zone's quests RestedXP skips. Quests RouteBuilder does not count
+as part of the zone (RestedXP's guides visit other zones too) are left out. Run it from this folder, with
+the options of the build you will run next:
+
+    dotnet run --project RxpToLock -c Release -- --zone Durotar --faction Horde "<RXPGuides>\Guides\forever\Horde-01-12_Durotar.lua"
+    dotnet run -c Release -- build --zone Durotar --faction Horde --rxp "<RXPGuides>\Guides\forever"
+
+* It lists the quests it left out as belonging elsewhere, the zone's quests RestedXP does not do, and any
+  objective numbers RouteBuilder does not have.
+* Pass the RestedXP folder with `--rxp` when building, so objective numbers match RestedXP's.
+* `--race` and `--class` take only the steps RestedXP shows that character. Without them every class's
+  and race's steps are taken, for a faction guide.
+* `--guides "1-6 Durotar,6-10 Durotar"` takes only those guides (by their `#name`) from the files.
+* A lock that was already there is kept as `.bak`. The new one is an ordinary lock from then on: edit it,
+  or build with `--fresh` to go back to RouteBuilder's own plan.
+* Distances are still measured in straight lines, so a RestedXP order usually comes out a little longer
+  in the report than RouteBuilder's own plan; RestedXP plans around terrain and grinding, which RouteBuilder
+  does not see.
+
 ## Getting the guides into the game
 
 `Make-Addon.ps1` packs everything in `guides` into a small addon of its own, which lists RestedXP as a
