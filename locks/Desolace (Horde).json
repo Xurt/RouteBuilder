@@ -1,7 +1,7 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "31-39 Desolace",
-  "saved": "2026-10-10 14:07",
+  "saved": "2026-10-10 14:56",
   "parts": [
     {
       "part": 1,
@@ -12,7 +12,7 @@
         "accept:1433 @1443:1869.87,-1178.48  Accept Alliance Relations",
         "turnin:1433 @1443:1884.26,-1150  TurnIn Alliance Relations",
         "accept:1435 @1443:1884.26,-1150  Accept The Burning of Spirits",
-        "accept:6161 @1443:2611.69,-459.58  Accept Claim Rackmore\u0027s Treasure!",
+        "accept:6161 @1443:2611.69,-459.58  Accept Claim Rackmore's Treasure!",
         "accept:5741 @1443:2485.35,-362.15  Accept Sceptre of Light",
         "obj:1435:1 @1443:1810.98,-428.1  Objective The Burning of Spirits / Infused Burning Gem (15)",
         "obj:5741:1 @1443:1752.98,-451.79  Objective Sceptre of Light / Sceptre of Light (1)",
@@ -33,20 +33,20 @@
         "turnin:1434 @1443:1869.87,-1178.48  TurnIn Befouled by Satyr",
         "accept:1436 @1443:1869.87,-1178.48  Accept Alliance Relations",
         "turnin:1368 @1443:2604.94,-1923.77  TurnIn Gelkis Alliance",
-        "obj:6161:1 @1443:3039.24,-1843.12  Objective Claim Rackmore\u0027s Treasure! / Rackmore\u0027s Silver Key (1)",
+        "obj:6161:1 @1443:3039.24,-1843.12  Objective Claim Rackmore's Treasure! / Rackmore's Silver Key (1)",
         "turnin:5741 @1443:2485.35,-362.15  TurnIn Sceptre of Light",
-        "obj:6161:2 @1443:2624.27,-261.42  Objective Claim Rackmore\u0027s Treasure! / Rackmore\u0027s Golden Key (1)",
-        "turnin:6161 @1443:2884.58,190.96  TurnIn Claim Rackmore\u0027s Treasure!"
+        "obj:6161:2 @1443:2624.27,-261.42  Objective Claim Rackmore's Treasure! / Rackmore's Golden Key (1)",
+        "turnin:6161 @1443:2884.58,190.96  TurnIn Claim Rackmore's Treasure!"
       ]
     },
     {
       "part": 2,
       "steps": [
-        "accept:1365 @1443:1707.12,-1333.78  Accept Khan Dez\u0027hepah",
-        "obj:1365:1 @1443:879.44,-1010.9  Objective Khan Dez\u0027hepah / Khan Dez\u0027hepah\u0027s Head (1)",
+        "accept:1365 @1443:1707.12,-1333.78  Accept Khan Dez'hepah",
+        "obj:1365:1 @1443:879.44,-1010.9  Objective Khan Dez'hepah / Khan Dez'hepah's Head (1)",
         "accept:5561 @1443:1497.17,-1402.43  Accept Kodo Roundup",
         "obj:5561:1 @1443:1793.44,-1443.8  Objective Kodo Roundup / Aged Kodo (5)",
-        "turnin:1365 @1443:1707.12,-1333.78  TurnIn Khan Dez\u0027hepah",
+        "turnin:1365 @1443:1707.12,-1333.78  TurnIn Khan Dez'hepah",
         "accept:1366 @1443:1707.12,-1333.78  Accept Centaur Bounty",
         "turnin:5561 @1443:1497.17,-1402.43  TurnIn Kodo Roundup",
         "obj:1366:1 @1443:1111.43,-1753.18  Objective Centaur Bounty / Centaur Ear (15)",

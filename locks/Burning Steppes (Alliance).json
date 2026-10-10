@@ -1,7 +1,7 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-56 Burning Steppes",
-  "saved": "2026-10-10 14:17",
+  "saved": "2026-10-10 15:06",
   "parts": [
     {
       "part": 1,
@@ -19,7 +19,7 @@
     {
       "part": 2,
       "steps": [
-        "accept:3824 @1428:-2743.57,-8371.94  Accept Gor\u0027tesh the Brute Lord",
+        "accept:3824 @1428:-2743.57,-8371.94  Accept Gor'tesh the Brute Lord",
         "accept:4283 @1428:-2743.57,-8371.94  Accept FIFTY! YEP!",
         "turnin:4262 @1428:-2768.47,-8398.88  TurnIn Overmaster Pyron",
         "accept:4182 @1428:-2780.48,-8377.21  Accept Dragonkin Menace",
@@ -34,15 +34,15 @@
         "accept:4726 @1428:-2177.65,-7499.75  Accept Broodling Essence",
         "accept:4296 @1428:-2175.02,-7497.99  Accept Tablet of the Seven",
         "obj:4296:1 @1428:-1851.93,-7826.92  Objective Tablet of the Seven / Tablet Transcript (1)",
-        "obj:3824:1 @1428:-1418.71,-8110.75  Objective Gor\u0027tesh the Brute Lord / Gor\u0027tesh\u0027s Lopped Off Head (1)",
+        "obj:3824:1 @1428:-1418.71,-8110.75  Objective Gor'tesh the Brute Lord / Gor'tesh's Lopped Off Head (1)",
         "obj:4283:1 @1428:-1780.17,-8091.43  Objective FIFTY! YEP! / Blackrock Medallion (50)",
-        "turnin:3824 @1428:-2743.57,-8371.94  TurnIn Gor\u0027tesh the Brute Lord",
+        "turnin:3824 @1428:-2743.57,-8371.94  TurnIn Gor'tesh the Brute Lord",
         "turnin:4283 @1428:-2743.57,-8371.94  TurnIn FIFTY! YEP!",
         "accept:3825 @1428:-2743.57,-8371.94  Accept Ogre Head On A Stick = Party",
         "turnin:4182 @1428:-2780.48,-8377.21  TurnIn Dragonkin Menace",
         "accept:4183 @1428:-2780.48,-8377.21  Accept The True Masters",
         "obj:4726:1 @1428:-2919.61,-7956.34  Objective Broodling Essence / Broodling Essence (8)",
-        "obj:3825:1 @1428:-2639.29,-7944.63  Objective Ogre Head On A Stick = Party / Gor\u0027tesh Head Planted",
+        "obj:3825:1 @1428:-2639.29,-7944.63  Objective Ogre Head On A Stick = Party / Gor'tesh Head Planted",
         "turnin:3825 @1428:-2743.57,-8371.94  TurnIn Ogre Head On A Stick = Party",
         "turnin:4296 @1428:-2175.02,-7497.99  TurnIn Tablet of the Seven",
         "turnin:4726 @1428:-2177.65,-7499.75  TurnIn Broodling Essence",

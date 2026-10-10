@@ -1,7 +1,7 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-60 Winterspring",
-  "saved": "2026-10-10 14:08",
+  "saved": "2026-10-10 14:58",
   "parts": [
     {
       "part": 1,
@@ -11,10 +11,10 @@
         "accept:6029 @1452:-4672.52,6688.75  Accept The Everlook Report",
         "accept:6030 @1452:-4672.52,6688.75  Accept Duke Nicholas Zverenhoff",
         "turnin:4808 @1452:-4692.4,6705.79  TurnIn Felnok Steelspring",
-        "turnin:3512 @1452:-5131.18,7234.98  TurnIn In Eranikus\u0027 Own Words",
+        "turnin:3512 @1452:-5131.18,7234.98  TurnIn In Eranikus' Own Words",
         "accept:3912 @1452:-2536.84,6395.76  Accept Meet at the Grave",
         "turnin:5085 @1452:-2536.84,6395.76  TurnIn Mystery Goo",
-        "turnin:3908 @1452:-2536.84,6395.76  TurnIn It\u0027s a Secret to Everybody",
+        "turnin:3908 @1452:-2536.84,6395.76  TurnIn It's a Secret to Everybody",
         "accept:3909 @1452:-2536.84,6395.76  Accept The Videre Elixir",
         "turnin:980 @1452:-2536.84,6395.76  TurnIn The New Springs",
         "turnin:8465 @1452:-2285.5,6900.33  TurnIn Speak to Salfa"

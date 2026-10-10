@@ -1,7 +1,7 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "14-31 The Barrens",
-  "saved": "2026-10-10 14:14",
+  "saved": "2026-10-10 15:04",
   "parts": [
     {
       "part": 1,
@@ -21,7 +21,7 @@
         "accept:890 @1413:-3728.66,-835.29  Accept The Missing Shipment",
         "turnin:1039 @1413:-3796.55,-985.28  TurnIn The Barrens Port",
         "turnin:890 @1413:-3796.55,-985.28  TurnIn The Missing Shipment",
-        "accept:896 @1413:-3796.55,-985.28  Accept Miner\u0027s Fortune",
+        "accept:896 @1413:-3796.55,-985.28  Accept Miner's Fortune",
         "accept:892 @1413:-3796.55,-985.28  Accept The Missing Shipment",
         "turnin:892 @1413:-3728.66,-835.29  TurnIn The Missing Shipment",
         "accept:888 @1413:-3728.66,-835.29  Accept Stolen Booty",
@@ -35,10 +35,10 @@
         "obj:901:1 @1413:-2731.54,910.53  Objective Samophlange / Console Key (1)",
         "turnin:901 @1413:-2686.95,825.4  TurnIn Samophlange",
         "accept:902 @1413:-2686.95,825.4  Accept Samophlange",
-        "obj:896:1 @1413:-3652.66,1307.12  Objective Miner\u0027s Fortune / Cats Eye Emerald (1)",
-        "turnin:896 @1413:-3796.55,-985.28  TurnIn Miner\u0027s Fortune",
+        "obj:896:1 @1413:-3652.66,1307.12  Objective Miner's Fortune / Cats Eye Emerald (1)",
+        "turnin:896 @1413:-3796.55,-985.28  TurnIn Miner's Fortune",
         "turnin:902 @1413:-3759.06,-902.18  TurnIn Samophlange",
-        "obj:895:1 @1413:-3884.71,-1571.72  Objective WANTED: Baron Longshore / Baron Longshore\u0027s Head (1)",
+        "obj:895:1 @1413:-3884.71,-1571.72  Objective WANTED: Baron Longshore / Baron Longshore's Head (1)",
         "obj:888:2 @1413:-3819.86,-1714.95  Objective Stolen Booty / Telescopic Lens (1)",
         "obj:888:1 @1413:-3723.59,-1740.63  Objective Stolen Booty / Shipment of Boots (1)",
         "turnin:1718 @1413:-4330.58,-1708.87  TurnIn The Islander",
@@ -67,22 +67,22 @@
     {
       "part": 3,
       "steps": [
-        "accept:97005 @1413:-3639.48,-1049.46  Accept Chol\u0027aruk the Ravener",
+        "accept:97005 @1413:-3639.48,-1049.46  Accept Chol'aruk the Ravener",
         "turnin:1069 @1413:-3697.24,-929.2  TurnIn Deepmoss Spider Eggs",
-        "obj:97005:1 @1413:-3230.1,-240.06  Objective Chol\u0027aruk the Ravener / Chol\u0027aruk\u0027s Head (1)",
-        "turnin:97005 @1413:-3639.48,-1049.46  TurnIn Chol\u0027aruk the Ravener"
+        "obj:97005:1 @1413:-3230.1,-240.06  Objective Chol'aruk the Ravener / Chol'aruk's Head (1)",
+        "turnin:97005 @1413:-3639.48,-1049.46  TurnIn Chol'aruk the Ravener"
       ]
     },
     {
       "part": 4,
       "steps": [
-        "accept:1740 @1413:-2373.83,-2252.75  Accept The Orb of Soran\u0027ruk",
+        "accept:1740 @1413:-2373.83,-2252.75  Accept The Orb of Soran'ruk",
         "accept:65602 @1413:-2373.83,-2245.32  Accept What Is Love?",
         "accept:1738 @1413:-2373.83,-2245.32  Accept Heartswood",
         "turnin:1069 @1413:-3697.24,-929.2  TurnIn Deepmoss Spider Eggs",
         "accept:1221 @1413:-3697.24,-929.2  Accept Blueleaf Tubers",
         "obj:1221:4 @1413:-3694.2,-927.85  Objective Blueleaf Tubers / Snufflenose Command Stick (1)",
-        "obj:1221:3 @1413:-3693.19,-929.2  Objective Blueleaf Tubers / Snufflenose Owner\u0027s Manual (1)",
+        "obj:1221:3 @1413:-3693.19,-929.2  Objective Blueleaf Tubers / Snufflenose Owner's Manual (1)",
         "obj:1221:2 @1413:-3692.18,-929.2  Objective Blueleaf Tubers / Crate With Holes (1)"
       ]
     },
@@ -95,12 +95,12 @@
         "turnin:1795 @1413:-3723.59,-785.97  TurnIn The Binding",
         "obj:1221:4 @1413:-3694.2,-927.85  Objective Blueleaf Tubers / Snufflenose Command Stick (1)",
         "obj:1221:2 @1413:-3692.18,-929.2  Objective Blueleaf Tubers / Crate With Holes (1)",
-        "obj:1221:3 @1413:-3693.19,-929.2  Objective Blueleaf Tubers / Snufflenose Owner\u0027s Manual (1)",
+        "obj:1221:3 @1413:-3693.19,-929.2  Objective Blueleaf Tubers / Snufflenose Owner's Manual (1)",
         "turnin:1069 @1413:-3697.24,-929.2  TurnIn Deepmoss Spider Eggs",
         "turnin:1221 @1413:-3697.24,-929.2  TurnIn Blueleaf Tubers",
         "accept:1040 @1413:-3796.55,-985.28  Accept Passage to Booty Bay",
         "accept:1791 @1413:-4330.58,-1708.87  Accept The Windwatcher",
-        "turnin:1740 @1413:-2373.83,-2252.75  TurnIn The Orb of Soran\u0027ruk"
+        "turnin:1740 @1413:-2373.83,-2252.75  TurnIn The Orb of Soran'ruk"
       ]
     },
     {
@@ -109,10 +109,10 @@
         "accept:1796 @1413:-3711.43,-782.59  Accept Components for the Enchanted Gold Bloodrobe",
         "obj:1221:4 @1413:-3694.2,-927.85  Objective Blueleaf Tubers / Snufflenose Command Stick (1)",
         "obj:1221:2 @1413:-3692.18,-929.2  Objective Blueleaf Tubers / Crate With Holes (1)",
-        "obj:1221:3 @1413:-3693.19,-929.2  Objective Blueleaf Tubers / Snufflenose Owner\u0027s Manual (1)",
+        "obj:1221:3 @1413:-3693.19,-929.2  Objective Blueleaf Tubers / Snufflenose Owner's Manual (1)",
         "turnin:1069 @1413:-3697.24,-929.2  TurnIn Deepmoss Spider Eggs",
         "turnin:1221 @1413:-3697.24,-929.2  TurnIn Blueleaf Tubers",
-        "turnin:1740 @1413:-2373.83,-2252.75  TurnIn The Orb of Soran\u0027ruk"
+        "turnin:1740 @1413:-2373.83,-2252.75  TurnIn The Orb of Soran'ruk"
       ]
     }
   ]

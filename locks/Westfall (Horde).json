@@ -1,28 +1,28 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "16-20 Westfall",
-  "saved": "2026-10-10 14:06",
+  "saved": "2026-10-10 14:55",
   "parts": [
     {
       "part": 1,
       "steps": [
         "accept:103 @1436:1966.32,-11407.13  Accept Keeper of the Flame",
-        "accept:152 @1436:1966.32,-11407.13  Accept The Coast Isn\u0027t Clear",
-        "obj:152:4 @1436:2067.82,-11097.27  Objective The Coast Isn\u0027t Clear / Murloc Oracle slain (7)",
-        "obj:152:3 @1436:2079.72,-11082.8  Objective The Coast Isn\u0027t Clear / Murloc Tidehunter slain (7)",
+        "accept:152 @1436:1966.32,-11407.13  Accept The Coast Isn't Clear",
+        "obj:152:4 @1436:2067.82,-11097.27  Objective The Coast Isn't Clear / Murloc Oracle slain (7)",
+        "obj:152:3 @1436:2079.72,-11082.8  Objective The Coast Isn't Clear / Murloc Tidehunter slain (7)",
         "turnin:79007 @1436:1708.72,-10585.1  TurnIn ... and that note you found",
         "obj:103:1 @1436:1706.27,-10550.8  Objective Keeper of the Flame / Flask of Oil (5)",
-        "obj:152:1 @1436:1519.37,-9609.77  Objective The Coast Isn\u0027t Clear / Murloc Coastrunner slain (7)",
-        "obj:152:2 @1436:1996.07,-10143.4  Objective The Coast Isn\u0027t Clear / Murloc Warrior slain (7)",
-        "turnin:136 @1436:2109.82,-10514.17  TurnIn Captain Sander\u0027s Hidden Treasure",
-        "accept:138 @1436:2109.82,-10514.17  Accept Captain Sander\u0027s Hidden Treasure",
+        "obj:152:1 @1436:1519.37,-9609.77  Objective The Coast Isn't Clear / Murloc Coastrunner slain (7)",
+        "obj:152:2 @1436:1996.07,-10143.4  Objective The Coast Isn't Clear / Murloc Warrior slain (7)",
+        "turnin:136 @1436:2109.82,-10514.17  TurnIn Captain Sander's Hidden Treasure",
+        "accept:138 @1436:2109.82,-10514.17  Accept Captain Sander's Hidden Treasure",
         "turnin:103 @1436:1966.32,-11407.13  TurnIn Keeper of the Flame",
-        "turnin:152 @1436:1966.32,-11407.13  TurnIn The Coast Isn\u0027t Clear",
-        "turnin:138 @1436:1598.47,-10515.1  TurnIn Captain Sander\u0027s Hidden Treasure",
-        "accept:139 @1436:1598.47,-10515.1  Accept Captain Sander\u0027s Hidden Treasure",
-        "turnin:139 @1436:1594.62,-9797.37  TurnIn Captain Sander\u0027s Hidden Treasure",
-        "accept:140 @1436:1594.62,-9797.37  Accept Captain Sander\u0027s Hidden Treasure",
-        "turnin:140 @1436:2107.72,-9794.57  TurnIn Captain Sander\u0027s Hidden Treasure"
+        "turnin:152 @1436:1966.32,-11407.13  TurnIn The Coast Isn't Clear",
+        "turnin:138 @1436:1598.47,-10515.1  TurnIn Captain Sander's Hidden Treasure",
+        "accept:139 @1436:1598.47,-10515.1  Accept Captain Sander's Hidden Treasure",
+        "turnin:139 @1436:1594.62,-9797.37  TurnIn Captain Sander's Hidden Treasure",
+        "accept:140 @1436:1594.62,-9797.37  Accept Captain Sander's Hidden Treasure",
+        "turnin:140 @1436:2107.72,-9794.57  TurnIn Captain Sander's Hidden Treasure"
       ]
     },
     {

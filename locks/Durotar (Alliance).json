@@ -1,7 +1,7 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "9-52 Durotar",
-  "saved": "2026-10-10 14:14",
+  "saved": "2026-10-10 15:03",
   "parts": [
     {
       "part": 1,
@@ -42,7 +42,7 @@
     {
       "part": 5,
       "steps": [
-        "accept:2861 @1454:-4219.9,1468.2  Accept Tabetha\u0027s Task"
+        "accept:2861 @1454:-4219.9,1468.2  Accept Tabetha's Task"
       ]
     },
     {
@@ -51,9 +51,9 @@
         "accept:8417 @1454:-4808.15,1970.99  Accept A Troubled Spirit",
         "accept:8233 @1454:-4296.34,1762.86  Accept A Simple Request",
         "accept:8254 @1454:-4179.79,1452.39  Accept Cenarion Aid",
-        "accept:8151 @1454:-4607.02,2100.54  Accept The Hunter\u0027s Charm",
+        "accept:8151 @1454:-4607.02,2100.54  Accept The Hunter's Charm",
         "accept:8250 @1454:-4229.86,1466.89  Accept Magecraft",
-        "accept:8419 @1454:-4360.44,1848.92  Accept An Imp\u0027s Request"
+        "accept:8419 @1454:-4360.44,1848.92  Accept An Imp's Request"
       ]
     }
   ]

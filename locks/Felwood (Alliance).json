@@ -1,7 +1,7 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "48-56 Felwood",
-  "saved": "2026-10-10 14:17",
+  "saved": "2026-10-10 15:06",
   "parts": [
     {
       "part": 1,
@@ -15,10 +15,10 @@
         "turnin:8257 @1448:-1302.91,3985.78  TurnIn Blood of Morphaz",
         "turnin:5159 @1448:-1302.91,3985.78  TurnIn Cleansed Water Returns to Felwood",
         "turnin:5128 @1448:-1298.88,3999.58  TurnIn Words of the High Chief",
-        "turnin:3942 @1448:-1310.96,4008.78  TurnIn Linken\u0027s Memory",
-        "obj:8419:1 @1448:-488.13,4521.68  Objective An Imp\u0027s Request / Felcloth (1)",
+        "turnin:3942 @1448:-1310.96,4008.78  TurnIn Linken's Memory",
+        "obj:8419:1 @1448:-488.13,4521.68  Objective An Imp's Request / Felcloth (1)",
         "turnin:7623 @1448:-424.31,5430.57  TurnIn Lord Banehollow",
-        "turnin:8419 @1448:-736.53,5407.57  TurnIn An Imp\u0027s Request",
+        "turnin:8419 @1448:-736.53,5407.57  TurnIn An Imp's Request",
         "turnin:8462 @1448:-2082.61,6821.68  TurnIn Speak to Nafien",
         "turnin:5084 @1448:-1819.83,6909.47  TurnIn Falling to Corruption"
       ]
@@ -107,15 +107,15 @@
         "accept:4906 @1448:-1310.96,4008.78  Accept Further Corruption",
         "turnin:8422 @1448:-736.53,5407.57  TurnIn Trolls of a Feather",
         "accept:7602 @1448:-736.53,5407.57  Accept Flawless Fel Essence",
-        "accept:7603 @1448:-736.53,5407.57  Accept Kroshius\u0027 Infernal Core",
+        "accept:7603 @1448:-736.53,5407.57  Accept Kroshius' Infernal Core",
         "obj:5165:2 @1448:-524.93,5113.55  Objective Dousing the Flames of Protection / Extinguish the Brazier of Malice",
         "obj:4906:4 @1448:-604.86,6276.58  Objective Further Corruption / Xavaric slain (1)",
         "obj:4906:1 @1448:-635.91,6289.62  Objective Further Corruption / Jadefire Hellcaller slain (8)",
         "obj:4906:2 @1448:-781.38,6417.65  Objective Further Corruption / Jadefire Betrayer slain (8)",
         "obj:4906:3 @1448:-853.83,6516.17  Objective Further Corruption / Jadefire Trickster slain (8)",
-        "obj:7603:2 @1448:-986.08,5800.87  Objective Kroshius\u0027 Infernal Core / Kroshius\u0027 Infernal Core (1)",
-        "obj:7603:1 @1448:-986.08,5800.87  Objective Kroshius\u0027 Infernal Core / Kroshius slain (1)",
-        "turnin:7603 @1448:-737.68,5414.08  TurnIn Kroshius\u0027 Infernal Core",
+        "obj:7603:2 @1448:-986.08,5800.87  Objective Kroshius' Infernal Core / Kroshius' Infernal Core (1)",
+        "obj:7603:1 @1448:-986.08,5800.87  Objective Kroshius' Infernal Core / Kroshius slain (1)",
+        "turnin:7603 @1448:-737.68,5414.08  TurnIn Kroshius' Infernal Core",
         "obj:7602:2 @1448:-658.91,5249.25  Objective Flawless Fel Essence / Flawless Fel Essence (Jaedenar) (1)",
         "turnin:4906 @1448:-1310.96,4008.78  TurnIn Further Corruption",
         "turnin:5165 @1448:-1302.91,3985.78  TurnIn Dousing the Flames of Protection"

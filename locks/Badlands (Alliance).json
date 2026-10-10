@@ -1,7 +1,7 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-45 Badlands",
-  "saved": "2026-10-10 14:16",
+  "saved": "2026-10-10 15:05",
   "parts": [
     {
       "part": 1,
@@ -11,7 +11,7 @@
         "accept:2418 @1418:-3133.62,-6767.34  Accept Power Stones",
         "turnin:1106 @1418:-3129.39,-6763.36  TurnIn Martek the Exiled",
         "obj:703:1 @1418:-3576.89,-6388.74  Objective Barbecued Buzzard Wings / Buzzard Wing (4)",
-        "obj:2418:2 @1418:-3362.72,-6144.97  Objective Power Stones / An\u0027Alleum Power Stone (8)",
+        "obj:2418:2 @1418:-3362.72,-6144.97  Objective Power Stones / An'Alleum Power Stone (8)",
         "obj:2418:1 @1418:-3362.72,-6144.97  Objective Power Stones / Dentrium Power Stone (8)",
         "turnin:703 @1418:-3133.62,-6767.34  TurnIn Barbecued Buzzard Wings",
         "turnin:2418 @1418:-3133.62,-6767.34  TurnIn Power Stones",
@@ -19,7 +19,7 @@
         "turnin:687 @1418:-3357.49,-7164.34  TurnIn Theldurin the Lost",
         "turnin:738 @1418:-3345.06,-6924.38  TurnIn Find Agmond",
         "accept:719 @1418:-3407.99,-6609.13  Accept A Dwarf and His Tools",
-        "obj:719:1 @1418:-3405.75,-6431.86  Objective A Dwarf and His Tools / Ryedol\u0027s Lucky Pick (1)",
+        "obj:719:1 @1418:-3405.75,-6431.86  Objective A Dwarf and His Tools / Ryedol's Lucky Pick (1)",
         "accept:720 @1418:-3398.29,-6452.42  Accept A Sign of Hope",
         "turnin:719 @1418:-3407.99,-6609.13  TurnIn A Dwarf and His Tools",
         "turnin:720 @1418:-3407.99,-6609.13  TurnIn A Sign of Hope",
@@ -54,14 +54,14 @@
         "obj:711:1 @1418:-2447.32,-6450.93  Objective Study of the Elements: Rock / Large Stone Slab (3)",
         "turnin:711 @1418:-2724.67,-6633.68  TurnIn Study of the Elements: Rock",
         "accept:722 @1418:-3021.93,-6065.2  Accept Amulet of Secrets",
-        "obj:709:1 @1418:-3057.75,-6201.68  Objective Solution to Doom / Tablet of Ryun\u0027eh (1)",
-        "obj:722:1 @1418:-3049.04,-6216.77  Objective Amulet of Secrets / Hammertoe\u0027s Amulet (1)",
+        "obj:709:1 @1418:-3057.75,-6201.68  Objective Solution to Doom / Tablet of Ryun'eh (1)",
+        "obj:722:1 @1418:-3049.04,-6216.77  Objective Amulet of Secrets / Hammertoe's Amulet (1)",
         "turnin:722 @1418:-3021.93,-6065.2  TurnIn Amulet of Secrets",
         "accept:723 @1418:-3021.93,-6065.2  Accept Prospect of Faith",
         "turnin:723 @1418:-3407.99,-6609.13  TurnIn Prospect of Faith",
         "accept:724 @1418:-3407.99,-6609.13  Accept Prospect of Faith",
         "turnin:709 @1418:-3357.49,-7164.34  TurnIn Solution to Doom",
-        "accept:727 @1418:-3357.49,-7164.34  Accept To Ironforge for Yagyin\u0027s Digest"
+        "accept:727 @1418:-3357.49,-7164.34  Accept To Ironforge for Yagyin's Digest"
       ]
     },
     {
@@ -70,7 +70,7 @@
         "turnin:713 @1418:-2724.67,-6633.68  TurnIn Coolant Heads Prevail",
         "turnin:705 @1418:-3133.62,-6767.34  TurnIn Pearl Diving",
         "accept:706 @1418:-3417.44,-6607.64  Accept Fiery Blaze Enchantments",
-        "obj:706:1 @1418:-3847.28,-6746.94  Objective Fiery Blaze Enchantments / Black Drake\u0027s Heart (1)",
+        "obj:706:1 @1418:-3847.28,-6746.94  Objective Fiery Blaze Enchantments / Black Drake's Heart (1)",
         "accept:732 @1418:-3619.92,-6789.39  Accept Tremors of the Earth",
         "turnin:706 @1418:-3417.44,-6607.64  TurnIn Fiery Blaze Enchantments",
         "accept:712 @1418:-2724.67,-6633.68  Accept Study of the Elements: Rock",

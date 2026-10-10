@@ -1,7 +1,7 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-43 Badlands",
-  "saved": "2026-10-10 14:07",
+  "saved": "2026-10-10 14:56",
   "parts": [
     {
       "part": 1,
@@ -17,7 +17,7 @@
         "accept:2418 @1418:-3133.62,-6767.34  Accept Power Stones",
         "obj:1419:1 @1418:-3317.69,-6577.79  Objective Coyote Thieves / Coyote Jawbone (30)",
         "obj:703:1 @1418:-3576.89,-6388.74  Objective Barbecued Buzzard Wings / Buzzard Wing (4)",
-        "obj:2418:2 @1418:-3362.72,-6144.97  Objective Power Stones / An\u0027Alleum Power Stone (8)",
+        "obj:2418:2 @1418:-3362.72,-6144.97  Objective Power Stones / An'Alleum Power Stone (8)",
         "obj:2418:1 @1418:-3362.72,-6144.97  Objective Power Stones / Dentrium Power Stone (8)",
         "turnin:2418 @1418:-3133.62,-6767.34  TurnIn Power Stones",
         "turnin:703 @1418:-3133.62,-6767.34  TurnIn Barbecued Buzzard Wings",
@@ -33,12 +33,12 @@
       "part": 2,
       "steps": [
         "accept:709 @1418:-3357.49,-7164.34  Accept Solution to Doom",
-        "obj:709:1 @1418:-3057.75,-6201.68  Objective Solution to Doom / Tablet of Ryun\u0027eh (1)",
+        "obj:709:1 @1418:-3057.75,-6201.68  Objective Solution to Doom / Tablet of Ryun'eh (1)",
         "accept:1108 @1418:-3129.39,-6763.36  Accept Indurium",
         "turnin:705 @1418:-3133.62,-6767.34  TurnIn Pearl Diving",
         "obj:1108:1 @1418:-3320.18,-7023.55  Objective Indurium / Indurium Flake (10)",
         "turnin:709 @1418:-3357.49,-7164.34  TurnIn Solution to Doom",
-        "accept:728 @1418:-3357.49,-7164.34  Accept To the Undercity for Yagyin\u0027s Digest",
+        "accept:728 @1418:-3357.49,-7164.34  Accept To the Undercity for Yagyin's Digest",
         "turnin:1108 @1418:-3129.39,-6763.36  TurnIn Indurium",
         "accept:1137 @1418:-3129.39,-6763.36  Accept News for Fizzle",
         "turnin:713 @1418:-2724.67,-6633.68  TurnIn Coolant Heads Prevail",

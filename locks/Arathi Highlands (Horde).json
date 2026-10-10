@@ -1,12 +1,12 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "32-42 Arathi Highlands",
-  "saved": "2026-10-10 14:07",
+  "saved": "2026-10-10 14:56",
   "parts": [
     {
       "part": 1,
       "steps": [
-        "turnin:79975 @1417:-1675.95,-714.85  TurnIn Eagle\u0027s Fist",
+        "turnin:79975 @1417:-1675.95,-714.85  TurnIn Eagle's Fist",
         "accept:79976 @1417:-1675.95,-714.85  Accept This Must Be The Place",
         "turnin:79976 @1417:-1675.59,-714.85  TurnIn This Must Be The Place",
         "accept:655 @1417:-3481.71,-947.65  Accept Hammerfall",
@@ -74,8 +74,8 @@
         "accept:666 @1417:-2085.63,-2064.13  Accept Sunken Treasure",
         "accept:664 @1417:-2090.67,-2072.53  Accept Drowned Sorrows",
         "accept:662 @1417:-2047.47,-2088.85  Accept Deep Sea Salvage",
-        "obj:662:2 @1417:-1708.71,-2175.49  Objective Deep Sea Salvage / Maiden\u0027s Folly Log (1)",
-        "obj:662:1 @1417:-1696.47,-2161.57  Objective Deep Sea Salvage / Maiden\u0027s Folly Charts (1)",
+        "obj:662:2 @1417:-1708.71,-2175.49  Objective Deep Sea Salvage / Maiden's Folly Log (1)",
+        "obj:662:1 @1417:-1696.47,-2161.57  Objective Deep Sea Salvage / Maiden's Folly Charts (1)",
         "obj:664:2 @1417:-1674.87,-2157.73  Objective Drowned Sorrows / Daggerspine Sorceress slain (3)",
         "obj:662:4 @1417:-1610.07,-2175.73  Objective Deep Sea Salvage / Spirit of Silverpine Log (1)",
         "obj:662:3 @1417:-1603.23,-2187.97  Objective Deep Sea Salvage / Spirit of Silverpine Charts (1)",
@@ -90,7 +90,7 @@
         "obj:640:1 @1417:-1744.71,-1545.01  Objective The Broken Sigil / Sigil Fragment (11)",
         "obj:679:1 @1417:-1585.59,-1753.57  Objective Call to Arms / Boulderfist Shaman slain (7)",
         "obj:679:2 @1417:-1558.59,-1757.17  Objective Call to Arms / Boulderfist Lord slain (3)",
-        "obj:680:1 @1417:-1535.91,-1727.17  Objective The Real Threat / Or\u0027Kalar\u0027s Head (1)",
+        "obj:680:1 @1417:-1535.91,-1727.17  Objective The Real Threat / Or'Kalar's Head (1)",
         "turnin:680 @1417:-3532.11,-927.01  TurnIn The Real Threat",
         "turnin:679 @1417:-3539.31,-947.41  TurnIn Call to Arms",
         "turnin:640 @1417:-3556.59,-1004.29  TurnIn The Broken Sigil",
@@ -109,8 +109,8 @@
         "accept:652 @1417:-2170.95,-1510.45  Accept Breaking the Keystone",
         "obj:652:1 @1417:-3167.07,-853.33  Objective Breaking the Keystone / Rod of Order (1)",
         "turnin:652 @1417:-2165.55,-1527.49  TurnIn Breaking the Keystone",
-        "accept:688 @1417:-2165.55,-1527.49  Accept Myzrael\u0027s Allies",
-        "turnin:688 @1417:-3550.11,-988.69  TurnIn Myzrael\u0027s Allies",
+        "accept:688 @1417:-2165.55,-1527.49  Accept Myzrael's Allies",
+        "turnin:688 @1417:-3550.11,-988.69  TurnIn Myzrael's Allies",
         "accept:687 @1417:-3550.11,-988.69  Accept Theldurin the Lost"
       ]
     },
@@ -120,10 +120,10 @@
         "accept:644 @1417:-3523.47,-948.37  Accept Sigil of Trollbane",
         "obj:644:1 @1417:-1887.63,-1527.97  Objective Sigil of Trollbane / Sigil of Trollbane (1)",
         "turnin:644 @1417:-3523.47,-948.37  TurnIn Sigil of Trollbane",
-        "accept:645 @1417:-3523.47,-948.37  Accept Trol\u0027kalar",
-        "turnin:645 @1417:-1905.63,-1564.21  TurnIn Trol\u0027kalar",
-        "accept:646 @1417:-1905.63,-1564.21  Accept Trol\u0027kalar",
-        "turnin:646 @1417:-3523.47,-948.37  TurnIn Trol\u0027kalar"
+        "accept:645 @1417:-3523.47,-948.37  Accept Trol'kalar",
+        "turnin:645 @1417:-1905.63,-1564.21  TurnIn Trol'kalar",
+        "accept:646 @1417:-1905.63,-1564.21  Accept Trol'kalar",
+        "turnin:646 @1417:-3523.47,-948.37  TurnIn Trol'kalar"
       ]
     }
   ]

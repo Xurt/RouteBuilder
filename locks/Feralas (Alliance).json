@@ -1,16 +1,16 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "43-51 Feralas",
-  "saved": "2026-10-10 14:16",
+  "saved": "2026-10-10 15:05",
   "parts": [
     {
       "part": 1,
       "steps": [
         "turnin:2943 @1444:3232.96,-4474.83  TurnIn Return to Troyas",
-        "turnin:3787 @1444:3186.39,-4395.6  TurnIn Jonespyre\u0027s Request",
-        "accept:4266 @1444:3227.4,-4457.69  Accept A Hero\u0027s Welcome",
+        "turnin:3787 @1444:3186.39,-4395.6  TurnIn Jonespyre's Request",
+        "accept:4266 @1444:3227.4,-4457.69  Accept A Hero's Welcome",
         "accept:4124 @1444:3330.26,-4505.88  Accept The Missing Courier",
-        "turnin:4266 @1444:3337.21,-4505.88  TurnIn A Hero\u0027s Welcome",
+        "turnin:4266 @1444:3337.21,-4505.88  TurnIn A Hero's Welcome",
         "accept:4267 @1444:3337.21,-4505.88  Accept Rise of the Silithid",
         "accept:2866 @1444:3337.21,-4505.88  Accept The Ruins of Solarsal",
         "accept:2982 @1444:3229.48,-4479.93  Accept The High Wilderness",

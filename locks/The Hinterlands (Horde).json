@@ -1,18 +1,18 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "43-53 The Hinterlands",
-  "saved": "2026-10-10 14:07",
+  "saved": "2026-10-10 14:57",
   "parts": [
     {
       "part": 1,
       "steps": [
-        "turnin:1429 @1425:-2874.38,-463.72  TurnIn The Atal\u0027ai Exile",
-        "accept:1444 @1425:-2874.38,-463.72  Accept Return to Fel\u0027Zerul",
-        "accept:1446 @1425:-2874.38,-463.72  Accept Jammal\u0027an the Prophet",
+        "turnin:1429 @1425:-2874.38,-463.72  TurnIn The Atal'ai Exile",
+        "accept:1444 @1425:-2874.38,-463.72  Accept Return to Fel'Zerul",
+        "accept:1446 @1425:-2874.38,-463.72  Accept Jammal'an the Prophet",
         "accept:2933 @1425:-2481.29,-42.53  Accept Venom Bottles",
         "turnin:650 @1425:-2603.34,219.52  TurnIn Ripple Recovery",
-        "turnin:626 @1425:-4685.42,264.95  TurnIn Cortello\u0027s Riddle",
-        "accept:2782 @1425:-4897.55,-47.92  Accept Rin\u0027ji\u0027s Secret"
+        "turnin:626 @1425:-4685.42,264.95  TurnIn Cortello's Riddle",
+        "accept:2782 @1425:-4897.55,-47.92  Accept Rin'ji's Secret"
       ]
     },
     {
@@ -27,7 +27,7 @@
         "accept:7841 @1425:-4631.13,-563.05  Accept Message to the Wildhammer",
         "accept:7844 @1425:-4608.8,-541.75  Accept Cannibalistic Cousins",
         "obj:7828:1 @1425:-4380.88,-17.89  Objective Stalking the Stalkers / Silvermane Stalker slain (10)",
-        "obj:7839:1 @1425:-4370.1,108.9  Objective Vilebranch Hooligans / Slagtree\u0027s Lost Tools (1)",
+        "obj:7839:1 @1425:-4370.1,108.9  Objective Vilebranch Hooligans / Slagtree's Lost Tools (1)",
         "obj:7844:1 @1425:-4287.33,247.76  Objective Cannibalistic Cousins / Vilebranch Scalper slain (30)",
         "obj:7829:1 @1425:-3977.4,142.27  Objective Hunt the Savages / Savage Owlbeast slain (20)",
         "obj:7830:1 @1425:-3923.5,106.33  Objective Avenging the Fallen / Skylord Plume (1)",
@@ -46,13 +46,13 @@
         "turnin:7841 @1425:-4631.13,-563.05  TurnIn Message to the Wildhammer",
         "accept:7842 @1425:-4631.13,-563.05  Accept Another Message to the Wildhammer",
         "turnin:7844 @1425:-4608.8,-541.75  TurnIn Cannibalistic Cousins",
-        "obj:7816:1 @1425:-4670.4,-27.9  Objective Gammerita, Mon! / Katoom\u0027s Best Lure (1)",
+        "obj:7816:1 @1425:-4670.4,-27.9  Objective Gammerita, Mon! / Katoom's Best Lure (1)",
         "obj:7842:1 @1425:-4031.3,321.93  Objective Another Message to the Wildhammer / Long Elegant Feather (10)",
         "obj:77:1 @1425:-3884.23,409.46  Objective A Sticky Situation / Hinterlands Honey Ripple (1)",
         "turnin:485 @1425:-3474.98,500.06  TurnIn Find OOX-09/HL!",
         "turnin:77 @1425:-2603.34,219.52  TurnIn A Sticky Situation",
         "accept:81 @1425:-2603.34,219.52  Accept Ripple Delivery",
-        "turnin:1446 @1425:-2874.38,-463.72  TurnIn Jammal\u0027an the Prophet",
+        "turnin:1446 @1425:-2874.38,-463.72  TurnIn Jammal'an the Prophet",
         "turnin:7845 @1425:-3873.07,-531.23  TurnIn Kidnapped Elder Torntusk!",
         "turnin:7842 @1425:-4631.13,-563.05  TurnIn Another Message to the Wildhammer",
         "turnin:7816 @1425:-4667.71,-626.19  TurnIn Gammerita, Mon!"
@@ -71,26 +71,26 @@
         "obj:7862:4 @1425:-4120.62,-584.87  Objective Job Opening: Guard Captain of Revantusk Village / Vilebranch Soul Eater slain (20)",
         "obj:7862:3 @1425:-4111.77,-596.93  Objective Job Opening: Guard Captain of Revantusk Village / Vilebranch Blood Drinker slain (20)",
         "obj:7850:1 @1425:-4102.53,-591.54  Objective Dark Vessels / Vessel of Tainted Blood (1)",
-        "obj:7849:2 @1425:-3966.24,-467.32  Objective Separation Anxiety / Huntsman Malkhor\u0027s Bones (1)",
+        "obj:7849:2 @1425:-3966.24,-467.32  Objective Separation Anxiety / Huntsman Malkhor's Bones (1)",
         "obj:7862:1 @1425:-4060.56,-343.86  Objective Job Opening: Guard Captain of Revantusk Village / Vilebranch Berserker slain (20)",
         "obj:7862:2 @1425:-3988.57,-296.12  Objective Job Opening: Guard Captain of Revantusk Village / Vilebranch Shadow Hunter slain (20)",
-        "obj:7849:1 @1425:-3829.56,-195.51  Objective Separation Anxiety / Huntsman Malkhor\u0027s Skull (1)",
+        "obj:7849:1 @1425:-3829.56,-195.51  Objective Separation Anxiety / Huntsman Malkhor's Skull (1)",
         "obj:7815:1 @1425:-4737.39,359.41  Objective Snapjaws, Mon! / Saltwater Snapjaw slain (15)",
-        "obj:7840:1 @1425:-4832.1,409.2  Objective Lard Lost His Lunch / Lard\u0027s Lunch (1)",
+        "obj:7840:1 @1425:-4832.1,409.2  Objective Lard Lost His Lunch / Lard's Lunch (1)",
         "turnin:7840 @1425:-4583.39,-622.09  TurnIn Lard Lost His Lunch",
         "turnin:7850 @1425:-4585.7,-616.95  TurnIn Dark Vessels",
         "turnin:7862 @1425:-4585.7,-616.95  TurnIn Job Opening: Guard Captain of Revantusk Village",
         "turnin:7815 @1425:-4667.71,-626.19  TurnIn Snapjaws, Mon!",
         "turnin:7849 @1425:-4622.66,-574.6  TurnIn Separation Anxiety",
         "accept:7846 @1425:-3873.07,-531.23  Accept Recover the Key!",
-        "obj:7861:2 @1425:-3794.91,-625.42  Objective Wanted: Vile Priestess Hexx and Her Minions / Vilebranch Aman\u0027zasi Guard slain (20)",
+        "obj:7861:2 @1425:-3794.91,-625.42  Objective Wanted: Vile Priestess Hexx and Her Minions / Vilebranch Aman'zasi Guard slain (20)",
         "obj:7846:1 @1425:-3781.82,-757.09  Objective Recover the Key! / Shackle Key (1)",
         "turnin:7846 @1425:-3873.07,-531.23  TurnIn Recover the Key!",
         "accept:7847 @1425:-3873.07,-531.23  Accept Return to Primal Torntusk",
         "obj:7861:1 @1425:-3864.6,-542.01  Objective Wanted: Vile Priestess Hexx and Her Minions / Vile Priestess Hexx slain (1)",
         "turnin:7861 @1425:-4585.7,-616.95  TurnIn Wanted: Vile Priestess Hexx and Her Minions",
         "turnin:7847 @1425:-4585.7,-616.95  TurnIn Return to Primal Torntusk",
-        "turnin:1446 @1425:-2874.38,-463.72  TurnIn Jammal\u0027an the Prophet"
+        "turnin:1446 @1425:-2874.38,-463.72  TurnIn Jammal'an the Prophet"
       ]
     }
   ]

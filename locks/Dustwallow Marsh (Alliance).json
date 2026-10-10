@@ -1,7 +1,7 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "26-40 Dustwallow Marsh",
-  "saved": "2026-10-10 14:15",
+  "saved": "2026-10-10 15:04",
   "parts": [
     {
       "part": 1,
@@ -40,8 +40,8 @@
         "turnin:1252 @1445:-4556.02,-3735.03  TurnIn Lieutenant Paval Reethe",
         "accept:1259 @1445:-4556.02,-3735.03  Accept Lieutenant Paval Reethe",
         "turnin:1259 @1445:-4547.62,-3717.18  TurnIn Lieutenant Paval Reethe",
-        "accept:1285 @1445:-4547.62,-3717.18  Accept Daelin\u0027s Men",
-        "turnin:1285 @1445:-4556.02,-3735.03  TurnIn Daelin\u0027s Men",
+        "accept:1285 @1445:-4547.62,-3717.18  Accept Daelin's Men",
+        "turnin:1285 @1445:-4556.02,-3735.03  TurnIn Daelin's Men",
         "accept:1319 @1445:-4556.02,-3735.03  Accept The Black Shield",
         "accept:1286 @1445:-4556.02,-3735.03  Accept The Deserters",
         "turnin:1319 @1445:-4374.37,-3798.38  TurnIn The Black Shield",
@@ -76,8 +76,8 @@
         "obj:1206:1 @1445:-2686.5,-2817.33  Objective Jarl Needs Eyes / Unpopped Darkmist Eye (40)",
         "turnin:1206 @1445:-3885.6,-2952.78  TurnIn Jarl Needs Eyes",
         "accept:1203 @1445:-3885.6,-2952.78  Accept Jarl Needs a Blade",
-        "accept:1952 @1445:-3393.15,-4031.48  Accept Mage\u0027s Wand",
-        "turnin:1952 @1445:-3393.15,-4031.48  TurnIn Mage\u0027s Wand",
+        "accept:1952 @1445:-3393.15,-4031.48  Accept Mage's Wand",
+        "turnin:1952 @1445:-3393.15,-4031.48  TurnIn Mage's Wand",
         "accept:1948 @1445:-3393.15,-4031.48  Accept Items of Power",
         "accept:1954 @1445:-3393.15,-4031.48  Accept The Infernal Orb",
         "obj:1948:1 @1445:-3914.47,-4246.73  Objective Items of Power / Jade (1)",

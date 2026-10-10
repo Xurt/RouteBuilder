@@ -1,7 +1,7 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-52 Swamp of Sorrows",
-  "saved": "2026-10-10 14:16",
+  "saved": "2026-10-10 15:05",
   "parts": [
     {
       "part": 1,
@@ -17,7 +17,7 @@
         "turnin:2783 @1435:-3009.44,-10632.22  TurnIn Petty Squabbles",
         "item:1392 @1435:-3482.19,-10142.28  ItemAccept Noboru the Cudgel",
         "obj:1389:1 @1435:-3501.22,-10063.37  Objective Draenethyst Crystals / Draenethyst Crystal (6)",
-        "obj:1421:1 @1435:-3701.47,-9900.67  Objective The Lost Caravan / Wizards\u0027 Reagents (1)",
+        "obj:1421:1 @1435:-3701.47,-9900.67  Objective The Lost Caravan / Wizards' Reagents (1)",
         "turnin:1392 @1435:-2818.83,-10100.99  TurnIn Noboru the Cudgel",
         "turnin:1389 @1435:-2818.83,-10100.99  TurnIn Draenethyst Crystals",
         "turnin:1421 @1435:-2836.27,-10535.73  TurnIn The Lost Caravan"
@@ -30,7 +30,7 @@
         "obj:1398:1 @1435:-4198.98,-10920.17  Objective Driftwood / Sundried Driftwood (1)",
         "turnin:1398 @1435:-2836.27,-10535.73  TurnIn Driftwood",
         "accept:1425 @1435:-2836.27,-10535.73  Accept Deliver the Shipment",
-        "accept:625 @1435:-2747.5,-10357.74  Accept Cortello\u0027s Riddle"
+        "accept:625 @1435:-2747.5,-10357.74  Accept Cortello's Riddle"
       ]
     },
     {
@@ -46,7 +46,7 @@
         "turnin:2701 @1435:-2985.82,-10633.45  TurnIn Heroes of Old",
         "item:3374 @1435:-2536.47,-10717.55  ItemAccept The Essence of Eranikus",
         "turnin:3374 @1435:-2536.47,-10717.55  TurnIn The Essence of Eranikus",
-        "accept:3512 @1435:-2536.47,-10717.55  Accept In Eranikus\u0027 Own Words"
+        "accept:3512 @1435:-2536.47,-10717.55  Accept In Eranikus' Own Words"
       ]
     }
   ]

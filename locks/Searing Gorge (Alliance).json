@@ -1,7 +1,7 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "45-50 Searing Gorge",
-  "saved": "2026-10-10 14:16",
+  "saved": "2026-10-10 15:05",
   "parts": [
     {
       "part": 1,
@@ -33,7 +33,7 @@
       "part": 2,
       "steps": [
         "accept:7701 @1427:-1162.98,-6493.74  Accept WANTED: Overseer Maltorius",
-        "accept:7728 @1427:-1162.98,-6493.74  Accept STOLEN: Smithing Tuyere and Lookout\u0027s Spyglass",
+        "accept:7728 @1427:-1162.98,-6493.74  Accept STOLEN: Smithing Tuyere and Lookout's Spyglass",
         "accept:7729 @1427:-1162.98,-6493.74  Accept JOB OPPORTUNITY: Culling the Competition",
         "accept:7727 @1427:-1183.73,-6513.67  Accept Incendosaurs? Whateverosaur is More Like It",
         "accept:7724 @1427:-1183.73,-6513.67  Accept Fiery Menace!",
@@ -43,21 +43,21 @@
         "obj:7727:1 @1427:-1404.18,-6493.89  Objective Incendosaurs? Whateverosaur is More Like It / Incendosaur slain (20)",
         "obj:7729:1 @1427:-1317.38,-6627.62  Objective JOB OPPORTUNITY: Culling the Competition / Dark Iron Taskmaster slain (15)",
         "obj:7723:1 @1427:-1344.83,-6718.95  Objective Curse These Fat Fingers / Heavy War Golem slain (20)",
-        "obj:7728:1 @1427:-1228.36,-6836.01  Objective STOLEN: Smithing Tuyere and Lookout\u0027s Spyglass / Smithing Tuyere (1)",
-        "obj:7728:2 @1427:-1063.47,-6896.41  Objective STOLEN: Smithing Tuyere and Lookout\u0027s Spyglass / Lookout\u0027s Spyglass (1)",
+        "obj:7728:1 @1427:-1228.36,-6836.01  Objective STOLEN: Smithing Tuyere and Lookout's Spyglass / Smithing Tuyere (1)",
+        "obj:7728:2 @1427:-1063.47,-6896.41  Objective STOLEN: Smithing Tuyere and Lookout's Spyglass / Lookout's Spyglass (1)",
         "obj:7724:1 @1427:-929.15,-6822.18  Objective Fiery Menace! / Greater Lava Spider slain (20)",
-        "accept:3452 @1427:-1194.44,-6679.98  Accept The Flame\u0027s Casing",
+        "accept:3452 @1427:-1194.44,-6679.98  Accept The Flame's Casing",
         "obj:7722:1 @1427:-1225.46,-6631.63  Objective What the Flux? / Secret Plans: Fiery Flux (1)",
         "turnin:7722 @1427:-1188.64,-6524.09  TurnIn What the Flux?",
         "turnin:7724 @1427:-1183.73,-6513.67  TurnIn Fiery Menace!",
         "turnin:7723 @1427:-1183.73,-6513.67  TurnIn Curse These Fat Fingers",
         "turnin:7727 @1427:-1183.73,-6513.67  TurnIn Incendosaurs? Whateverosaur is More Like It",
-        "turnin:7728 @1427:-1192.43,-6509.21  TurnIn STOLEN: Smithing Tuyere and Lookout\u0027s Spyglass",
+        "turnin:7728 @1427:-1192.43,-6509.21  TurnIn STOLEN: Smithing Tuyere and Lookout's Spyglass",
         "turnin:7729 @1427:-1192.43,-6509.21  TurnIn JOB OPPORTUNITY: Culling the Competition",
         "accept:3378 @1427:-982.7,-6491.06  Accept Prayer to Elune",
-        "obj:3452:1 @1427:-920.22,-6479.01  Objective The Flame\u0027s Casing / Symbol of Ragnaros (1)",
+        "obj:3452:1 @1427:-920.22,-6479.01  Objective The Flame's Casing / Symbol of Ragnaros (1)",
         "obj:3378:1 @1427:-920.22,-6479.01  Objective Prayer to Elune / Prayer to Elune (1)",
-        "turnin:3452 @1427:-1194.44,-6679.98  TurnIn The Flame\u0027s Casing",
+        "turnin:3452 @1427:-1194.44,-6679.98  TurnIn The Flame's Casing",
         "obj:7701:1 @1427:-1232.6,-6633.86  Objective WANTED: Overseer Maltorius / Head of Overseer Maltorius (1)",
         "turnin:7701 @1427:-1164.99,-6495.08  TurnIn WANTED: Overseer Maltorius"
       ]

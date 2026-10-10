@@ -1,18 +1,18 @@
 {
-  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "30-42 Arathi Highlands",
-  "saved": "2026-10-10 14:16",
+  "saved": "2026-10-10 15:05",
   "parts": [
     {
       "part": 1,
       "steps": [
-        "turnin:79975 @1417:-1675.95,-714.85  TurnIn Eagle\u0027s Fist",
+        "turnin:79975 @1417:-1675.95,-714.85  TurnIn Eagle's Fist",
         "accept:79976 @1417:-1675.95,-714.85  Accept This Must Be The Place",
         "turnin:79976 @1417:-1675.59,-714.85  TurnIn This Must Be The Place",
         "turnin:634 @1417:-2516.55,-1274.77  TurnIn Plea To The Alliance",
-        "turnin:690 @1417:-2546.07,-1261.57  TurnIn Malin\u0027s Request",
+        "turnin:690 @1417:-2546.07,-1261.57  TurnIn Malin's Request",
         "turnin:659 @1417:-3033.15,-1425.73  TurnIn Hints of a New Plague?",
-        "accept:647 @1417:-2423.31,-2356.69  Accept MacKreel\u0027s Moonshine",
+        "accept:647 @1417:-2423.31,-2356.69  Accept MacKreel's Moonshine",
         "turnin:670 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure"
       ]
     },
@@ -61,32 +61,32 @@
         "accept:685 @1417:-2524.11,-1279.57  Accept Wanted!  Otto and Falconcrest",
         "accept:684 @1417:-2524.11,-1279.57  Accept Wanted!  Marez Cowl",
         "accept:693 @1417:-2546.07,-1261.57  Accept Wand over Fist",
-        "obj:693:1 @1417:-2837.67,-2098.21  Objective Wand over Fist / Trelane\u0027s Wand of Invocation (1)",
+        "obj:693:1 @1417:-2837.67,-2098.21  Objective Wand over Fist / Trelane's Wand of Invocation (1)",
         "turnin:693 @1417:-2546.07,-1261.57  TurnIn Wand over Fist",
-        "accept:694 @1417:-2546.07,-1261.57  Accept Trelane\u0027s Defenses",
-        "obj:684:1 @1417:-1932.99,-1644.61  Objective Wanted!  Marez Cowl / Marez\u0027s Head (1)",
-        "obj:685:1 @1417:-1810.59,-1706.53  Objective Wanted!  Otto and Falconcrest / Otto\u0027s Head (1)",
-        "obj:685:2 @1417:-1803.75,-1709.65  Objective Wanted!  Otto and Falconcrest / Falconcrest\u0027s Head (1)",
-        "obj:694:1 @1417:-1585.59,-1753.57  Objective Trelane\u0027s Defenses / Azure Agate (1)",
+        "accept:694 @1417:-2546.07,-1261.57  Accept Trelane's Defenses",
+        "obj:684:1 @1417:-1932.99,-1644.61  Objective Wanted!  Marez Cowl / Marez's Head (1)",
+        "obj:685:1 @1417:-1810.59,-1706.53  Objective Wanted!  Otto and Falconcrest / Otto's Head (1)",
+        "obj:685:2 @1417:-1803.75,-1709.65  Objective Wanted!  Otto and Falconcrest / Falconcrest's Head (1)",
+        "obj:694:1 @1417:-1585.59,-1753.57  Objective Trelane's Defenses / Azure Agate (1)",
         "turnin:685 @1417:-2516.55,-1274.77  TurnIn Wanted!  Otto and Falconcrest",
         "turnin:684 @1417:-2516.55,-1274.77  TurnIn Wanted!  Marez Cowl",
-        "turnin:694 @1417:-2529.87,-1279.33  TurnIn Trelane\u0027s Defenses",
-        "accept:695 @1417:-2529.87,-1279.33  Accept An Apprentice\u0027s Enchantment",
-        "turnin:695 @1417:-2546.07,-1261.57  TurnIn An Apprentice\u0027s Enchantment",
+        "turnin:694 @1417:-2529.87,-1279.33  TurnIn Trelane's Defenses",
+        "accept:695 @1417:-2529.87,-1279.33  Accept An Apprentice's Enchantment",
+        "turnin:695 @1417:-2546.07,-1261.57  TurnIn An Apprentice's Enchantment",
         "accept:696 @1417:-2546.07,-1261.57  Accept Attack on the Tower",
         "accept:666 @1417:-2085.63,-2064.13  Accept Sunken Treasure",
         "accept:664 @1417:-2090.67,-2072.53  Accept Drowned Sorrows",
         "accept:662 @1417:-2047.47,-2088.85  Accept Deep Sea Salvage",
-        "obj:662:2 @1417:-1708.71,-2175.49  Objective Deep Sea Salvage / Maiden\u0027s Folly Log (1)",
-        "obj:662:1 @1417:-1696.47,-2161.57  Objective Deep Sea Salvage / Maiden\u0027s Folly Charts (1)",
+        "obj:662:2 @1417:-1708.71,-2175.49  Objective Deep Sea Salvage / Maiden's Folly Log (1)",
+        "obj:662:1 @1417:-1696.47,-2161.57  Objective Deep Sea Salvage / Maiden's Folly Charts (1)",
         "obj:664:2 @1417:-1674.87,-2157.73  Objective Drowned Sorrows / Daggerspine Sorceress slain (3)",
         "obj:664:1 @1417:-1679.19,-2219.17  Objective Drowned Sorrows / Daggerspine Raider slain (10)",
         "obj:666:1 @1417:-1694.67,-2245.33  Objective Sunken Treasure / Elven Gem (10)",
         "obj:662:3 @1417:-1603.23,-2187.97  Objective Deep Sea Salvage / Spirit of Silverpine Charts (1)",
         "obj:662:4 @1417:-1610.07,-2175.73  Objective Deep Sea Salvage / Spirit of Silverpine Log (1)",
-        "obj:696:2 @1417:-1520.79,-1792.93  Objective Attack on the Tower / Trelane\u0027s Orb (1)",
-        "obj:696:3 @1417:-1515.75,-1762.21  Objective Attack on the Tower / Trelane\u0027s Ember Agate (1)",
-        "obj:696:1 @1417:-1521.15,-1768.69  Objective Attack on the Tower / Trelane\u0027s Phylactery (1)",
+        "obj:696:2 @1417:-1520.79,-1792.93  Objective Attack on the Tower / Trelane's Orb (1)",
+        "obj:696:3 @1417:-1515.75,-1762.21  Objective Attack on the Tower / Trelane's Ember Agate (1)",
+        "obj:696:1 @1417:-1521.15,-1768.69  Objective Attack on the Tower / Trelane's Phylactery (1)",
         "turnin:666 @1417:-2085.63,-2064.13  TurnIn Sunken Treasure",
         "accept:668 @1417:-2085.63,-2064.13  Accept Sunken Treasure",
         "turnin:668 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure",
@@ -94,7 +94,7 @@
         "turnin:662 @1417:-2047.47,-2088.85  TurnIn Deep Sea Salvage",
         "turnin:664 @1417:-2090.67,-2072.53  TurnIn Drowned Sorrows",
         "turnin:696 @1417:-2546.07,-1261.57  TurnIn Attack on the Tower",
-        "accept:697 @1417:-2546.07,-1261.57  Accept Malin\u0027s Request",
+        "accept:697 @1417:-2546.07,-1261.57  Accept Malin's Request",
         "home @1417:-3524.91,-912.37  Home inn"
       ]
     },
@@ -105,7 +105,7 @@
         "obj:652:1 @1417:-3167.07,-853.33  Objective Breaking the Keystone / Rod of Order (1)",
         "accept:687 @1417:-3550.11,-988.69  Accept Theldurin the Lost",
         "turnin:652 @1417:-2165.55,-1527.49  TurnIn Breaking the Keystone",
-        "accept:653 @1417:-2165.55,-1527.49  Accept Myzrael\u0027s Allies"
+        "accept:653 @1417:-2165.55,-1527.49  Accept Myzrael's Allies"
       ]
     }
   ]
