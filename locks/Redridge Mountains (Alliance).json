@@ -1,11 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "14-26 Redridge Mountains",
-<<<<<<< HEAD
-  "saved": "2026-10-08 19:25",
-=======
   "saved": "2026-10-10 13:02",
->>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
@@ -48,40 +44,6 @@
     {
       "part": 2,
       "steps": [
-<<<<<<< HEAD
-        "accept:98386 @1433:-2268.46,-9279.27  Accept Alther\u0027s Mill",
-        "accept:125 @1433:-2268.46,-9279.27  Accept The Lost Tools",
-        "accept:2358 @1433:-2179.89,-9332.55  Accept Horns of Nez\u0027ra",
-        "accept:2282 @1433:-2179.89,-9328.5  Accept Alther\u0027s Mill",
-        "accept:122 @1433:-2243.06,-9259.43  Accept Underbelly Scales",
-        "accept:124 @1433:-2243.06,-9259.43  Accept A Baying of Gnolls",
-        "accept:127 @1433:-2172.51,-9261.02  Accept Selling Fish",
-        "turnin:116 @1433:-2145.59,-9211.5  TurnIn Dry Times",
-        "accept:92 @1433:-2063.1,-9209.77  Accept Redridge Goulash",
-        "obj:92:3 @1433:-2057.67,-9535.84  Objective Redridge Goulash / Crisp Spider Meat (1)",
-        "obj:92:1 @1433:-2247.19,-9557.85  Objective Redridge Goulash / Great Goretusk Snout (5)",
-        "obj:92:2 @1433:-2340.53,-9591.87  Objective Redridge Goulash / Tough Condor Meat (1)",
-        "obj:127:1 @1433:-2620.57,-9571.46  Objective Selling Fish / Spotted Sunfish (10)",
-        "obj:125:1 @1433:-2472.08,-9366.43  Objective The Lost Tools / Oslow\u0027s Toolbox (1)",
-        "turnin:125 @1433:-2268.46,-9279.27  TurnIn The Lost Tools",
-        "accept:89 @1433:-2268.46,-9279.27  Accept The Everstill Bridge",
-        "turnin:127 @1433:-2172.51,-9261.02  TurnIn Selling Fish",
-        "turnin:92 @1433:-2063.1,-9209.77  TurnIn Redridge Goulash",
-        "obj:124:1 @1433:-2037.27,-9099.44  Objective A Baying of Gnolls / Redridge Brute slain (10)",
-        "obj:89:2 @1433:-2414.99,-9035  Objective The Everstill Bridge / Iron Rivet (5)",
-        "obj:89:1 @1433:-2414.99,-9035  Objective The Everstill Bridge / Iron Pike (5)",
-        "turnin:89 @1433:-2268.46,-9279.27  TurnIn The Everstill Bridge",
-        "obj:98386:1 @1433:-2708.27,-9184.43  Objective Alther\u0027s Mill / Greater Tarantula slain (12)",
-        "obj:122:1 @1433:-2530.91,-9057.74  Objective Underbelly Scales / Underbelly Whelp Scale (6)",
-        "obj:124:2 @1433:-2433.23,-9081.92  Objective A Baying of Gnolls / Redridge Mystic slain (8)",
-        "turnin:98386 @1433:-2268.46,-9279.27  TurnIn Alther\u0027s Mill",
-        "obj:2358:1 @1433:-2402.4,-9172.27  Objective Horns of Nez\u0027ra / Horns of Nez\u0027ra (1)",
-        "turnin:2358 @1433:-2179.89,-9332.55  TurnIn Horns of Nez\u0027ra",
-        "turnin:122 @1433:-2243.06,-9259.43  TurnIn Underbelly Scales",
-        "turnin:124 @1433:-2243.06,-9259.43  TurnIn A Baying of Gnolls",
-        "obj:2282:1 @1433:-2700.46,-9222.07  Objective Alther\u0027s Mill / Token of Thievery (1)",
-        "turnin:2282 @1433:-2179.89,-9328.5  TurnIn Alther\u0027s Mill"
-=======
         "turnin:116 @1433:-2145.59,-9211.5  TurnIn Dry Times",
         "accept:92 @1433:-2063.1,-9209.77  Accept Redridge Goulash",
         "accept:127 @1433:-2172.51,-9261.02  Accept Selling Fish",
@@ -114,7 +76,6 @@
         "accept:2358 @1433:-2179.89,-9332.55  Accept Horns of Nez\u0027ra",
         "obj:2358:1 @1433:-2402.4,-9172.27  Objective Horns of Nez\u0027ra / Horns of Nez\u0027ra (1)",
         "turnin:2358 @1433:-2179.89,-9332.55  TurnIn Horns of Nez\u0027ra"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
@@ -126,13 +87,8 @@
         "accept:145 @1433:-2221.79,-9218.6  Accept Messenger to Darkshire",
         "obj:20:1 @1433:-2402.4,-9172.27  Objective Blackrock Menace / Battleworn Axe (10)",
         "turnin:20 @1433:-2297.98,-9284.04  TurnIn Blackrock Menace",
-<<<<<<< HEAD
-        "accept:115 @1433:-2297.98,-9284.04  Accept Shadow Magic",
-        "accept:150 @1433:-2172.51,-9261.02  Accept Murloc Poachers",
-=======
         "accept:150 @1433:-2172.51,-9261.02  Accept Murloc Poachers",
         "accept:115 @1433:-2297.98,-9284.04  Accept Shadow Magic",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:150:1 @1433:-2478.81,-9314.45  Objective Murloc Poachers / Murloc Fin (8)",
         "obj:115:1 @1433:-3059.73,-9380.04  Objective Shadow Magic / Midnight Orb (3)",
         "accept:248 @1433:-3404.89,-9253.06  Accept Looking Further",
@@ -141,35 +97,12 @@
         "accept:347 @1433:-2268.46,-9279.27  Accept Rethban Ore",
         "turnin:150 @1433:-2172.51,-9261.02  TurnIn Murloc Poachers",
         "accept:1702 @1433:-2147.76,-9222.51  Accept The Shieldsmith",
-<<<<<<< HEAD
-        "obj:347:1 @1433:-1975.62,-8822.74  Objective Rethban Ore / Rethban Ore (1)"
-=======
         "obj:347:1 @1433:-1975.62,-8822.74  Objective Rethban Ore / Rethban Ore (5)"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 4,
       "steps": [
-<<<<<<< HEAD
-        "accept:91 @1433:-2215.93,-9215.85  Accept Solomon\u0027s Law",
-        "turnin:116 @1433:-2145.59,-9211.5  TurnIn Dry Times",
-        "accept:126 @1433:-2243.06,-9259.43  Accept Howling in the Hills",
-        "turnin:98387 @1433:-2297.98,-9284.04  TurnIn Blackrock Blockade",
-        "accept:19 @1433:-2297.98,-9284.04  Accept Tharil\u0027zun",
-        "accept:128 @1433:-2255.44,-9412.62  Accept Blackrock Bounty",
-        "obj:19:1 @1433:-3078.4,-9435.21  Objective Tharil\u0027zun / Tharil\u0027zun\u0027s Head (1)",
-        "obj:91:1 @1433:-3232.75,-9116.23  Objective Solomon\u0027s Law / Shadowhide Pendant (10)",
-        "obj:128:1 @1433:-2213.32,-8737.46  Objective Blackrock Bounty / Blackrock Champion slain (15)",
-        "accept:34 @1433:-2045.3,-9245.82  Accept An Unwelcome Guest",
-        "obj:34:1 @1433:-1911.14,-9288.97  Objective An Unwelcome Guest / Bellygrub\u0027s Tusk (1)",
-        "turnin:34 @1433:-2045.3,-9245.82  TurnIn An Unwelcome Guest",
-        "turnin:91 @1433:-2215.93,-9215.85  TurnIn Solomon\u0027s Law",
-        "turnin:19 @1433:-2297.98,-9284.04  TurnIn Tharil\u0027zun",
-        "turnin:128 @1433:-2255.44,-9412.62  TurnIn Blackrock Bounty",
-        "obj:126:1 @1433:-2170.99,-8884.56  Objective Howling in the Hills / Yowler\u0027s Paw (1)",
-        "turnin:126 @1433:-2243.06,-9259.43  TurnIn Howling in the Hills"
-=======
         "turnin:116 @1433:-2145.59,-9211.5  TurnIn Dry Times",
         "accept:91 @1433:-2215.93,-9215.85  Accept Solomon\u0027s Law",
         "accept:126 @1433:-2243.06,-9259.43  Accept Howling in the Hills",
@@ -187,24 +120,11 @@
         "turnin:34 @1433:-2045.3,-9245.82  TurnIn An Unwelcome Guest",
         "turnin:126 @1433:-2243.06,-9259.43  TurnIn Howling in the Hills",
         "turnin:128 @1433:-2255.44,-9412.62  TurnIn Blackrock Bounty"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 5,
       "steps": [
-<<<<<<< HEAD
-        "accept:169 @1433:-2213.76,-9243.36  Accept Wanted: Gath\u0027Ilzogg",
-        "turnin:116 @1433:-2145.59,-9211.5  TurnIn Dry Times",
-        "accept:180 @1433:-2151.45,-9247.41  Accept Wanted: Lieutenant Fangore",
-        "turnin:98387 @1433:-2297.98,-9284.04  TurnIn Blackrock Blockade",
-        "obj:180:1 @1433:-3311.33,-9111.6  Objective Wanted: Lieutenant Fangore / Fangore\u0027s Paw (1)",
-        "accept:249 @1433:-3404.89,-9253.06  Accept Morganth",
-        "obj:249:1 @1433:-3309.81,-9291.57  Objective Morganth / Pendant of Shadow (1)",
-        "obj:169:1 @1433:-3081.87,-9382.79  Objective Wanted: Gath\u0027Ilzogg / Head of Gath\u0027Ilzogg (1)",
-        "turnin:180 @1433:-2221.79,-9218.6  TurnIn Wanted: Lieutenant Fangore",
-        "turnin:169 @1433:-2221.79,-9218.6  TurnIn Wanted: Gath\u0027Ilzogg"
-=======
         "turnin:116 @1433:-2145.59,-9211.5  TurnIn Dry Times",
         "accept:180 @1433:-2151.45,-9247.41  Accept Wanted: Lieutenant Fangore",
         "accept:169 @1433:-2213.76,-9243.36  Accept Wanted: Gath\u0027Ilzogg",
@@ -215,7 +135,6 @@
         "obj:249:1 @1433:-3309.81,-9291.57  Objective Morganth / Pendant of Shadow (1)",
         "turnin:169 @1433:-2221.79,-9218.6  TurnIn Wanted: Gath\u0027Ilzogg",
         "turnin:180 @1433:-2221.79,-9218.6  TurnIn Wanted: Lieutenant Fangore"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     }
   ]

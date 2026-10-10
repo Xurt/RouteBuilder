@@ -1,27 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-24 Silverpine Forest",
-<<<<<<< HEAD
-  "saved": "2026-10-08 19:16",
-=======
   "saved": "2026-10-10 12:51",
->>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
-<<<<<<< HEAD
-        "turnin:6324 @1421:1626.36,499.63  TurnIn Return to Podrig",
-        "turnin:3301 @1421:1647.78,490.95  TurnIn Mura Runetotem",
-        "turnin:445 @1421:1652.4,522.59  TurnIn Delivery to Silverpine Forest",
-        "turnin:446 @1421:1652.4,522.59  TurnIn Thule Ravenclaw",
-        "turnin:91858 @1421:1627.2,518.67  TurnIn Diplomatic Incident",
-        "accept:477 @1421:1602.84,520.63  Accept Border Crossings",
-        "turnin:264 @1421:1594.02,471.91  TurnIn Until Death Do Us Part",
-        "turnin:477 @1421:1354.62,-22.57  TurnIn Border Crossings",
-        "accept:478 @1421:1354.62,-22.57  Accept Maps and Runes",
-        "turnin:478 @1421:1602.84,520.63  TurnIn Maps and Runes",
-=======
         "accept:447 @1421:1652.4,522.59  Accept A Recipe For Death",
         "turnin:445 @1421:1652.4,522.59  TurnIn Delivery to Silverpine Forest",
         "turnin:446 @1421:1652.4,522.59  TurnIn Thule Ravenclaw",
@@ -54,39 +38,10 @@
         "turnin:3221 @1421:1652.4,522.59  TurnIn Speak with Renferrel",
         "turnin:91920 @1421:1652.4,522.59  TurnIn Wild Eyes",
         "accept:91921 @1421:1652.4,522.59  Accept Return to Quinn (Again)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:481 @1421:1602.84,520.63  Accept Dalar\u0027s Analysis",
         "turnin:481 @1421:1593.6,551.99  TurnIn Dalar\u0027s Analysis",
         "accept:482 @1421:1593.6,551.99  Accept Dalaran\u0027s Intentions",
         "turnin:482 @1421:1602.84,520.63  TurnIn Dalaran\u0027s Intentions",
-<<<<<<< HEAD
-        "accept:448 @1421:1652.4,522.59  Accept Report to Hadrec",
-        "accept:428 @1421:1626.36,522.59  Accept Lost Deathstalkers",
-        "accept:6321 @1421:1626.36,499.63  Accept Supplying the Sepulcher",
-        "turnin:6321 @1421:1533.96,473.87  TurnIn Supplying the Sepulcher",
-        "accept:6323 @1421:1533.96,473.87  Accept Ride to the Undercity",
-        "turnin:448 @1421:1626.36,522.59  TurnIn Report to Hadrec",
-        "accept:449 @1421:1204.68,1290.63  Accept The Deathstalkers\u0027 Report",
-        "turnin:428 @1421:1204.68,1290.63  TurnIn Lost Deathstalkers",
-        "accept:429 @1421:1204.68,1290.63  Accept Wild Hearts",
-        "obj:429:1 @1421:1447.86,974.23  Objective Wild Hearts / Discolored Worg Heart (6)",
-        "turnin:449 @1421:1626.36,522.59  TurnIn The Deathstalkers\u0027 Report",
-        "accept:3221 @1421:1626.36,522.59  Accept Speak with Renferrel",
-        "turnin:3221 @1421:1652.4,522.59  TurnIn Speak with Renferrel",
-        "turnin:429 @1421:1652.4,522.59  TurnIn Wild Hearts",
-        "accept:1359 @1421:1652.4,522.59  Accept Zinge\u0027s Delivery",
-        "accept:430 @1421:1652.4,522.59  Accept Return to Quinn",
-        "turnin:430 @1421:1205.94,1314.15  TurnIn Return to Quinn",
-        "accept:91920 @1421:1205.94,1314.15  Accept Wild Eyes",
-        "obj:91920:1 @1421:1066.08,957.99  Objective Wild Eyes / Murloc Eye (3)",
-        "turnin:91920 @1421:1652.4,522.59  TurnIn Wild Eyes",
-        "obj:63:1 @1421:1821.24,427.39  Objective Call of Water / Corrupt Manifestation\u0027s Bracers (1)",
-        "turnin:63 @1421:1843.08,418.99  TurnIn Call of Water",
-        "obj:450:1 @1421:1644.84,-382.37  Objective A Recipe For Death / Berard\u0027s Journal (1)",
-        "turnin:450 @1421:1652.4,522.59  TurnIn A Recipe For Death",
-        "accept:91921 @1421:1652.4,522.59  Accept Return to Quinn (Again)",
-        "turnin:91921 @1421:1205.94,1314.15  TurnIn Return to Quinn (Again)"
-=======
         "turnin:91921 @1421:1205.94,1314.15  TurnIn Return to Quinn (Again)",
         "obj:425:1 @1421:1286.16,1277.47  Objective Ivar the Foul / Ivar\u0027s Head (1)",
         "turnin:425 @1421:1204.68,1290.63  TurnIn Ivar the Foul",
@@ -98,64 +53,26 @@
         "turnin:63 @1421:1843.08,418.99  TurnIn Call of Water",
         "obj:450:1 @1421:1644.84,-382.37  Objective A Recipe For Death / Berard\u0027s Journal (1)",
         "turnin:450 @1421:1652.4,522.59  TurnIn A Recipe For Death"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 2,
       "steps": [
-<<<<<<< HEAD
-        "accept:421 @1421:1593.6,551.99  Accept Prove Your Worth",
-        "accept:98298 @1421:1593.6,551.99  Accept Arugal\u0027s Folly",
-        "accept:437 @1421:1626.36,522.59  Accept The Dead Fields",
-        "accept:447 @1421:1652.4,522.59  Accept A Recipe For Death",
-=======
         "accept:98298 @1421:1593.6,551.99  Accept Arugal\u0027s Folly",
         "accept:421 @1421:1593.6,551.99  Accept Prove Your Worth",
         "accept:437 @1421:1626.36,522.59  Accept The Dead Fields",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "home @1421:1636.44,510.83  Home inn",
         "accept:479 @1421:1602.84,520.63  Accept Ambermill Investigations",
         "obj:421:1 @1421:1386.12,557.59  Objective Prove Your Worth / Moonrage Whitescalp slain (5)",
         "turnin:421 @1421:1593.6,551.99  TurnIn Prove Your Worth",
         "accept:422 @1421:1593.6,551.99  Accept Arugal\u0027s Folly",
-<<<<<<< HEAD
-        "obj:447:2 @1421:1959,1341.59  Objective A Recipe For Death / Skittering Blood (1)",
-        "obj:447:1 @1421:1619.22,1140.55  Objective A Recipe For Death / Grizzled Bear Heart (6)",
-        "obj:437:1 @1421:1560,1078.67  Objective The Dead Fields / Essence of Nightlash (1)",
-        "obj:437:2 @1421:1521.78,1071.11  Objective The Dead Fields / Enter the Dead Fields",
-        "accept:425 @1421:1204.68,1290.63  Accept Ivar the Foul",
-        "obj:425:1 @1421:1286.16,1277.47  Objective Ivar the Foul / Ivar\u0027s Head (1)",
-        "turnin:425 @1421:1204.68,1290.63  TurnIn Ivar the Foul",
-        "obj:422:1 @1421:1231.14,866.43  Objective Arugal\u0027s Folly / Remedy of Arugal (1)",
-=======
         "obj:422:1 @1421:1231.14,866.43  Objective Arugal\u0027s Folly / Remedy of Arugal (1)",
         "obj:437:1 @1421:1521.78,1071.11  Objective The Dead Fields / Enter the Dead Fields",
         "obj:437:2 @1421:1560,1078.67  Objective The Dead Fields / Essence of Nightlash (1)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:422 @1421:1593.6,551.99  TurnIn Arugal\u0027s Folly",
         "accept:423 @1421:1593.6,551.99  Accept Arugal\u0027s Folly",
         "turnin:437 @1421:1626.36,522.59  TurnIn The Dead Fields",
         "accept:438 @1421:1626.36,522.59  Accept The Decrepit Ferry",
-<<<<<<< HEAD
-        "turnin:438 @1421:995.52,689.47  TurnIn The Decrepit Ferry",
-        "accept:439 @1421:995.52,689.47  Accept Rot Hide Clues",
-        "obj:423:2 @1421:988.38,483.11  Objective Arugal\u0027s Folly / Darksoul Shackle (3)",
-        "obj:423:1 @1421:1077,366.07  Objective Arugal\u0027s Folly / Glutton Shackle (6)",
-        "obj:479:1 @1421:944.7,-159.77  Objective Ambermill Investigations / Dalaran Pendant (8)",
-        "turnin:439 @1421:1626.36,522.59  TurnIn Rot Hide Clues",
-        "accept:440 @1421:1626.36,522.59  Accept The Engraved Ring",
-        "turnin:479 @1421:1602.84,520.63  TurnIn Ambermill Investigations",
-        "turnin:423 @1421:1593.6,551.99  TurnIn Arugal\u0027s Folly",
-        "accept:424 @1421:1593.6,551.99  Accept Arugal\u0027s Folly",
-        "obj:424:1 @1421:989.64,410.59  Objective Arugal\u0027s Folly / Head of Grimson (1)",
-        "turnin:424 @1421:1593.6,551.99  TurnIn Arugal\u0027s Folly",
-        "accept:99 @1421:1593.6,551.99  Accept Arugal\u0027s Folly",
-        "obj:99:1 @1421:1545.3,-379.01  Objective Arugal\u0027s Folly / Pyrewood Shackle (6)",
-        "obj:98298:1 @1421:1431.48,-525.17  Objective Arugal\u0027s Folly / Worgen Bits (6)",
-        "turnin:98298 @1421:1593.6,551.99  TurnIn Arugal\u0027s Folly",
-        "turnin:99 @1421:1593.6,551.99  TurnIn Arugal\u0027s Folly"
-=======
         "obj:423:2 @1421:1633.08,779.63  Objective Arugal\u0027s Folly / Darksoul Shackle (3)",
         "obj:423:1 @1421:1620.9,852.43  Objective Arugal\u0027s Folly / Glutton Shackle (6)",
         "turnin:423 @1421:1593.6,551.99  TurnIn Arugal\u0027s Folly",
@@ -181,35 +98,12 @@
         "accept:491 @1421:704.88,971.99  Accept Wand to Bethor",
         "turnin:443 @1421:1652.4,522.59  TurnIn Rot Hide Ichor",
         "accept:444 @1421:1652.4,522.59  Accept Rot Hide Origins"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 3,
       "steps": [
         "accept:98299 @1421:1593.6,551.99  Accept Stop the Spread",
-<<<<<<< HEAD
-        "accept:451 @1421:1652.4,522.59  Accept A Recipe For Death",
-        "accept:443 @1421:1626.36,522.59  Accept Rot Hide Ichor",
-        "accept:95981 @1421:1602.84,520.63  Accept Watching the Roads",
-        "accept:92401 @1421:1580.58,463.79  Accept A Frightened Request",
-        "obj:443:1 @1421:690.18,993.83  Objective Rot Hide Ichor / Rot Hide Ichor (1)",
-        "turnin:460 @1421:599.46,970.87  TurnIn Resting in Pieces",
-        "accept:461 @1421:599.46,970.87  Accept The Hidden Niche",
-        "turnin:461 @1421:704.88,971.99  TurnIn The Hidden Niche",
-        "accept:491 @1421:704.88,971.99  Accept Wand to Bethor",
-        "obj:451:2 @1421:217.68,974.23  Objective A Recipe For Death / Lake Creeper Moss (1)",
-        "obj:451:3 @1421:153,796.43  Objective A Recipe For Death / Hardened Tumor (1)",
-        "obj:451:1 @1421:352.08,679.39  Objective A Recipe For Death / Lake Skulker Moss (1)",
-        "obj:95981:1 @1421:754.86,-1.01  Objective Watching the Roads / Dalaran Watcher slain (8)",
-        "obj:95981:2 @1421:767.46,21.95  Objective Watching the Roads / Dalaran Wizard slain (8)",
-        "obj:98299:1 @1421:1514.64,-730.97  Objective Stop the Spread / Haggard Refugee slain (5)",
-        "obj:98299:2 @1421:1519.68,-734.89  Objective Stop the Spread / Sickly Refugee slain (5)",
-        "turnin:443 @1421:1652.4,522.59  TurnIn Rot Hide Ichor",
-        "accept:444 @1421:1652.4,522.59  Accept Rot Hide Origins",
-        "turnin:95981 @1421:1602.84,520.63  TurnIn Watching the Roads",
-        "turnin:98299 @1421:1593.6,551.99  TurnIn Stop the Spread"
-=======
         "accept:95981 @1421:1602.84,520.63  Accept Watching the Roads",
         "accept:516 @1421:1602.84,520.63  Accept Beren\u0027s Peril",
         "accept:451 @1421:1652.4,522.59  Accept A Recipe For Death",
@@ -235,32 +129,11 @@
         "obj:451:3 @1421:696.06,408.91  Objective A Recipe For Death / Hardened Tumor (1)",
         "obj:451:1 @1421:486.48,679.11  Objective A Recipe For Death / Lake Skulker Moss (1)",
         "obj:451:2 @1421:217.68,974.23  Objective A Recipe For Death / Lake Creeper Moss (1)"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 4,
       "steps": [
-<<<<<<< HEAD
-        "accept:480 @1421:1602.84,520.63  Accept The Weaver",
-        "accept:516 @1421:1602.84,520.63  Accept Beren\u0027s Peril",
-        "accept:95034 @1421:1635.6,524.27  Accept The Debt",
-        "accept:493 @1421:1652.4,522.59  Accept Journey to Hillsbrad Foothills",
-        "accept:91859 @1421:1627.2,518.67  Accept A Curious Pair",
-        "accept:91860 @1421:1583.94,522.31  Accept A Grim Fate",
-        "turnin:91859 @1421:1583.94,522.31  TurnIn A Curious Pair",
-        "accept:91862 @1421:694.8,1017.07  Accept Lumina Windsinger",
-        "obj:91862:1 @1421:690.18,993.83  Objective Lumina Windsinger / Fenris Isle Key (1)",
-        "accept:96204 @1421:753.6,731.47  Accept The Windshaper\u0027s Wrath",
-        "turnin:91862 @1421:753.6,731.47  TurnIn Lumina Windsinger",
-        "turnin:92401 @1421:1580.58,463.79  TurnIn A Frightened Request",
-        "obj:516:2 @1421:986.28,-329.45  Objective Beren\u0027s Peril / Ravenclaw Guardian slain (6)",
-        "obj:516:1 @1421:966.12,-307.33  Objective Beren\u0027s Peril / Ravenclaw Drudger slain (6)",
-        "obj:480:1 @1421:787.2,-132.89  Objective The Weaver / Ataeric\u0027s Staff (1)",
-        "turnin:516 @1421:1602.84,520.63  TurnIn Beren\u0027s Peril",
-        "turnin:480 @1421:1602.84,520.63  TurnIn The Weaver",
-        "turnin:96204 @1421:1635.6,524.27  TurnIn The Windshaper\u0027s Wrath"
-=======
         "turnin:95034 @1421:1635.6,524.27  TurnIn The Debt",
         "accept:493 @1421:1652.4,522.59  Accept Journey to Hillsbrad Foothills",
         "accept:480 @1421:1602.84,520.63  Accept The Weaver",
@@ -270,7 +143,6 @@
         "accept:100 @1421:1843.08,418.99  Accept Call of Water",
         "turnin:100 @1421:1826.7,418.43  TurnIn Call of Water",
         "accept:96 @1421:1826.7,418.43  Accept Call of Water"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     }
   ]

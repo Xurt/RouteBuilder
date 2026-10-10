@@ -1,11 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-60 Winterspring",
-<<<<<<< HEAD
-  "saved": "2026-10-08 19:19",
-=======
   "saved": "2026-10-10 12:55",
->>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
@@ -33,48 +29,17 @@
         "home @1452:-4673.23,6695.38  Home inn",
         "accept:4809 @1452:-4692.4,6705.79  Accept Chillwind Horns",
         "accept:5054 @1452:-4713.7,6716.68  Accept Ursius of the Shardtooth",
-<<<<<<< HEAD
-        "obj:5054:1 @1452:-4641.99,6976.07  Objective Ursius of the Shardtooth / Ursius slain (1)",
-        "accept:5086 @1452:-2536.84,6395.76  Accept Toxic Horrors",
-        "accept:5087 @1452:-2536.84,6395.76  Accept Winterfall Runners",
-        "turnin:6603 @1452:-2536.84,6395.76  TurnIn Trouble in Winterspring!",
-        "accept:5082 @1452:-2536.84,6395.76  Accept Threat of the Winterfall",
-        "turnin:5054 @1452:-4713.7,6716.68  TurnIn Ursius of the Shardtooth",
-        "obj:3783:1 @1452:-5075.09,6441.67  Objective Are We There, Yeti? / Thick Yeti Fur (10)",
-        "obj:4809:1 @1452:-5039.59,6108.92  Objective Chillwind Horns / Uncracked Chillwind Horn (8)",
-=======
         "obj:4809:1 @1452:-5039.59,6108.92  Objective Chillwind Horns / Uncracked Chillwind Horn (8)",
         "obj:3783:1 @1452:-5016.87,6588.88  Objective Are We There, Yeti? / Thick Yeti Fur (10)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:4809 @1452:-4692.4,6705.79  TurnIn Chillwind Horns",
         "accept:4810 @1452:-4692.4,6705.79  Accept Return to Tinkee",
         "turnin:3783 @1452:-4639.15,6752.65  TurnIn Are We There, Yeti?",
         "accept:977 @1452:-4639.15,6752.65  Accept Are We There, Yeti?",
-<<<<<<< HEAD
-        "obj:5082:2 @1452:-5071.54,6900.81  Objective Threat of the Winterfall / Winterfall Den Watcher slain (8)",
-=======
         "obj:5054:1 @1452:-4641.99,6976.07  Objective Ursius of the Shardtooth / Ursius slain (1)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:8464:2 @1452:-5071.54,6900.81  Objective Winterfall Activity / Winterfall Den Watcher slain (8)",
         "obj:8464:1 @1452:-5161,6785.79  Objective Winterfall Activity / Winterfall Shaman slain (8)",
         "obj:977:1 @1452:-5308.68,6613.49  Objective Are We There, Yeti? / Pristine Yeti Horn (2)",
         "obj:8464:3 @1452:-5048.11,6693.96  Objective Winterfall Activity / Winterfall Ursa slain (8)",
-<<<<<<< HEAD
-        "turnin:977 @1452:-4639.15,6752.65  TurnIn Are We There, Yeti?",
-        "accept:5163 @1452:-4639.15,6752.65  Accept Are We There, Yeti?",
-        "obj:5082:1 @1452:-3217.02,6520.72  Objective Threat of the Winterfall / Winterfall Pathfinder slain (8)",
-        "obj:5082:3 @1452:-3161.64,6478.59  Objective Threat of the Winterfall / Winterfall Totemic slain (8)",
-        "obj:5087:1 @1452:-2301.83,6899.39  Objective Winterfall Runners / Winterfall Crate (1)",
-        "turnin:5087 @1452:-2536.84,6395.76  TurnIn Winterfall Runners",
-        "turnin:5082 @1452:-2536.84,6395.76  TurnIn Threat of the Winterfall",
-        "turnin:5083 @1452:-2536.84,6395.76  TurnIn Winterfall Firewater",
-        "accept:5084 @1452:-2536.84,6395.76  Accept Falling to Corruption",
-        "turnin:8464 @1452:-2285.5,6900.33  TurnIn Winterfall Activity",
-        "obj:5163:1 @1452:-4686.01,6705.79  Objective Are We There, Yeti? / Legacki",
-        "item:5123 @1452:-5255.43,6719.99  ItemAccept The Final Piece",
-        "turnin:5123 @1452:-2536.84,6395.76  TurnIn The Final Piece",
-        "accept:5128 @1452:-2536.84,6395.76  Accept Words of the High Chief"
-=======
         "turnin:5054 @1452:-4713.7,6716.68  TurnIn Ursius of the Shardtooth",
         "turnin:977 @1452:-4639.15,6752.65  TurnIn Are We There, Yeti?",
         "accept:5163 @1452:-4639.15,6752.65  Accept Are We There, Yeti?",
@@ -95,35 +60,11 @@
         "turnin:5123 @1452:-2536.84,6395.76  TurnIn The Final Piece",
         "accept:5128 @1452:-2536.84,6395.76  Accept Words of the High Chief",
         "accept:5084 @1452:-2536.84,6395.76  Accept Falling to Corruption"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 3,
       "steps": [
-<<<<<<< HEAD
-        "accept:5055 @1452:-4713.7,6716.68  Accept Brumeran of the Chillwind",
-        "accept:6606 @1452:-4656.19,6714.31  Accept A Little Luck",
-        "accept:969 @1452:-4712.99,6720.47  Accept Luck Be With You",
-        "turnin:6606 @1452:-4712.99,6720.47  TurnIn A Little Luck",
-        "accept:5161 @1452:-4189.72,6109.87  Accept Wrath of the Blue Flight",
-        "turnin:5161 @1452:-4189.72,6109.87  TurnIn Wrath of the Blue Flight",
-        "accept:5162 @1452:-4189.72,6109.87  Accept Wrath of the Blue Flight",
-        "obj:969:1 @1452:-4515.61,5362  Objective Luck Be With You / Frostmaul Shards (4)",
-        "obj:5055:1 @1452:-4757.01,5792.73  Objective Brumeran of the Chillwind / Brumeran slain (1)",
-        "turnin:5055 @1452:-4713.7,6716.68  TurnIn Brumeran of the Chillwind",
-        "accept:5056 @1452:-4713.7,6716.68  Accept Shy-Rotam",
-        "turnin:969 @1452:-4712.99,6720.47  TurnIn Luck Be With You",
-        "accept:5121 @1452:-2536.84,6395.76  Accept High Chief Winterfall",
-        "obj:5056:collect12733 @1452:-3951.87,7874.93  Objective Shy-Rotam / Sacred Frostsaber Meat",
-        "obj:5056:1 @1452:-3853.18,8069.47  Objective Shy-Rotam / Shy-Rotam slain (1)",
-        "obj:5121:1 @1452:-5255.43,6719.99  Objective High Chief Winterfall / High Chief Winterfall slain (1)",
-        "turnin:5056 @1452:-4713.7,6716.68  TurnIn Shy-Rotam",
-        "accept:5057 @1452:-4713.7,6716.68  Accept Past Endeavors",
-        "turnin:5057 @1452:-4713.7,6716.68  TurnIn Past Endeavors",
-        "obj:5163:1 @1452:-4686.01,6705.79  Objective Are We There, Yeti? / Legacki",
-        "turnin:5163 @1452:-4639.15,6752.65  TurnIn Are We There, Yeti?",
-=======
         "accept:6606 @1452:-4656.19,6714.31  Accept A Little Luck",
         "accept:969 @1452:-4712.99,6720.47  Accept Luck Be With You",
         "turnin:6606 @1452:-4712.99,6720.47  TurnIn A Little Luck",
@@ -145,7 +86,6 @@
         "accept:5057 @1452:-4713.7,6716.68  Accept Past Endeavors",
         "turnin:5057 @1452:-4713.7,6716.68  TurnIn Past Endeavors",
         "obj:5121:1 @1452:-5255.43,6719.99  Objective High Chief Winterfall / High Chief Winterfall slain (1)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:5121 @1452:-2536.84,6395.76  TurnIn High Chief Winterfall"
       ]
     }

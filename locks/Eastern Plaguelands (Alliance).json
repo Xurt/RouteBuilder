@@ -1,30 +1,17 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "55-60 Eastern Plaguelands",
-<<<<<<< HEAD
-  "saved": "2026-10-08 19:28",
-=======
   "saved": "2026-10-10 13:05",
->>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
-<<<<<<< HEAD
-        "turnin:5601 @1423:-3596.35,1456.24  TurnIn Sister Pamela",
-        "turnin:5142 @1423:-3596.35,1456.24  TurnIn Little Pamela",
-        "accept:5149 @1423:-3596.35,1456.24  Accept Pamela\u0027s Doll",
-        "obj:5149:collect12887 @1423:-3663.89,1423.56  Objective Pamela\u0027s Doll / Pamela\u0027s Doll\u0027s Left Side",
-        "accept:5241 @1423:-3596.35,1456.24  Accept Uncle Carlin",
-        "accept:5152 @1423:-3596.35,1456.24  Accept Auntie Marlene",
-=======
         "turnin:5142 @1423:-3596.35,1456.24  TurnIn Little Pamela",
         "turnin:5601 @1423:-3596.35,1456.24  TurnIn Sister Pamela",
         "accept:5149 @1423:-3596.35,1456.24  Accept Pamela\u0027s Doll",
         "obj:5149:collect12887 @1423:-3663.89,1423.56  Objective Pamela\u0027s Doll / Pamela\u0027s Doll\u0027s Left Side",
         "accept:5152 @1423:-3596.35,1456.24  Accept Auntie Marlene",
         "accept:5241 @1423:-3596.35,1456.24  Accept Uncle Carlin",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:5149:collect12888 @1423:-3715.95,1477.17  Objective Pamela\u0027s Doll / Pamela\u0027s Doll\u0027s Right Side",
         "obj:5149:collect12886 @1423:-3721.97,1476.31  Objective Pamela\u0027s Doll / Pamela\u0027s Doll\u0027s Head",
         "accept:6021 @1423:-5264.7,2151.69  Accept Zaeldarr the Outcast",
@@ -32,32 +19,16 @@
         "turnin:6030 @1423:-5337.83,2255.75  TurnIn Duke Nicholas Zverenhoff",
         "turnin:5503 @1423:-5337.83,2255.75  TurnIn Argent Dawn Commission",
         "turnin:5210 @1423:-5340.84,2257.19  TurnIn Brother Carlin",
-<<<<<<< HEAD
-        "turnin:5241 @1423:-5340.84,2257.19  TurnIn Uncle Carlin",
-        "accept:5168 @1423:-5340.84,2257.19  Accept Heroes of Darrowshire",
-        "accept:5211 @1423:-5340.84,2257.19  Accept Defenders of Darrowshire",
-        "accept:5181 @1423:-5340.84,2257.19  Accept Villains of Darrowshire",
-=======
         "accept:5181 @1423:-5340.84,2257.19  Accept Villains of Darrowshire",
         "accept:5168 @1423:-5340.84,2257.19  Accept Heroes of Darrowshire",
         "turnin:5241 @1423:-5340.84,2257.19  TurnIn Uncle Carlin",
         "accept:5211 @1423:-5340.84,2257.19  Accept Defenders of Darrowshire",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "home @1423:-5345.15,2300.76  Home inn",
         "turnin:8859 @1423:-5349.45,2303.91  TurnIn Secrets of the Colossus - Zora",
         "turnin:5522 @1423:-5349.02,2307.35  TurnIn Leonid Barthalomew",
         "turnin:5462 @1423:-5349.02,2307.35  TurnIn The Dying, Ras Frostwhisper",
         "accept:6026 @1423:-5305.57,2303.34  Accept That\u0027s Asking A Lot",
         "obj:5211:1 @1423:-4722.2,2774.05  Objective Defenders of Darrowshire / Darrowshire Spirit (15)",
-<<<<<<< HEAD
-        "turnin:8929 @1423:-3379.52,3367.73  TurnIn In Search of Anthion",
-        "accept:6164 @1423:-2744.97,2935.73  Accept Augustus\u0027 Receipt Book",
-        "accept:5544 @1423:-2478.24,2671.99  Accept Carrion Grubbage",
-        "accept:5542 @1423:-2478.24,2671.99  Accept Demon Dogs",
-        "accept:5781 @1423:-2478.24,2671.99  Accept Of Forgotten Memories",
-        "accept:5861 @1423:-2478.24,2671.99  Accept Find Myranda",
-        "accept:5543 @1423:-2478.24,2671.99  Accept Blood Tinged Skies",
-=======
         "accept:5248 @1423:-4256.29,3232.14  Accept Tormented By the Past",
         "accept:5247 @1423:-4256.29,3232.14  Accept Fragments of the Past",
         "turnin:5245 @1423:-4256.29,3232.14  TurnIn Troubled Spirits of Kel\u0027Theril",
@@ -66,7 +37,6 @@
         "accept:5543 @1423:-2478.24,2671.99  Accept Blood Tinged Skies",
         "accept:5542 @1423:-2478.24,2671.99  Accept Demon Dogs",
         "accept:5781 @1423:-2478.24,2671.99  Accept Of Forgotten Memories",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:5543:1 @1423:-2840.04,1772.15  Objective Blood Tinged Skies / Plaguebat slain (30)",
         "obj:5542:1 @1423:-2917.05,1757.53  Objective Demon Dogs / Plaguehound Runt slain (20)",
         "obj:6021:1 @1423:-3248.74,1609.61  Objective Zaeldarr the Outcast / Zaeldarr\u0027s Head (1)",
@@ -74,18 +44,6 @@
         "accept:6041 @1423:-5305.57,2303.34  Accept When Smokey Sings, I Get Violent",
         "turnin:6021 @1423:-5264.7,2151.69  TurnIn Zaeldarr the Outcast",
         "accept:5281 @1423:-5264.7,2151.69  Accept The Restless Souls",
-<<<<<<< HEAD
-        "obj:5181:2 @1423:-4272.21,2102.67  Objective Villains of Darrowshire / Shattered Sword of Marduk (1)",
-        "obj:5542:2 @1423:-4323.83,2284.71  Objective Demon Dogs / Plaguehound slain (20)",
-        "obj:5544:1 @1423:-4302.32,2373.57  Objective Carrion Grubbage / Slab of Carrion Worm Meat (1)",
-        "obj:5542:3 @1423:-4023.12,2795.55  Objective Demon Dogs / Frenzied Plaguehound slain (5)",
-        "obj:6164:1 @1423:-2860.26,2997.36  Objective Augustus\u0027 Receipt Book / Augustus\u0027 Receipt Book (1)",
-        "turnin:6164 @1423:-2744.97,2935.73  TurnIn Augustus\u0027 Receipt Book",
-        "turnin:5281 @1423:-2744.97,2929.13  TurnIn The Restless Souls",
-        "turnin:5543 @1423:-2478.24,2671.99  TurnIn Blood Tinged Skies",
-        "turnin:5544 @1423:-2478.24,2671.99  TurnIn Carrion Grubbage",
-        "turnin:5542 @1423:-2478.24,2671.99  TurnIn Demon Dogs",
-=======
         "obj:5544:1 @1423:-4828.9,2051.07  Objective Carrion Grubbage / Slab of Carrion Worm Meat (1)",
         "obj:5181:2 @1423:-4272.21,2102.67  Objective Villains of Darrowshire / Shattered Sword of Marduk (1)",
         "obj:5542:2 @1423:-4323.83,2284.71  Objective Demon Dogs / Plaguehound slain (20)",
@@ -101,28 +59,14 @@
         "turnin:5542 @1423:-2478.24,2671.99  TurnIn Demon Dogs",
         "accept:5861 @1423:-2478.24,2671.99  Accept Find Myranda",
         "obj:5781:1 @1423:-3282.3,1564.03  Objective Of Forgotten Memories / Taelan\u0027s Hammer (1)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:5721:1 @1423:-3702.61,1442.48  Objective The Battle of Darrowshire / Joseph Redpath",
         "turnin:5721 @1423:-3596.35,1456.24  TurnIn The Battle of Darrowshire",
         "accept:5942 @1423:-3596.35,1456.24  Accept Hidden Treasures",
         "turnin:5942 @1423:-3586.45,1461.97  TurnIn Hidden Treasures",
-<<<<<<< HEAD
-        "obj:5781:1 @1423:-3282.3,1564.03  Objective Of Forgotten Memories / Taelan\u0027s Hammer (1)",
-        "turnin:5781 @1423:-2478.24,2671.99  TurnIn Of Forgotten Memories",
-        "accept:5845 @1423:-2478.24,2671.99  Accept Of Lost Honor",
-        "obj:6041:1 @1423:-3868.67,3124.35  Objective When Smokey Sings, I Get Violent / Scourge Structures Destroyed (8)",
-        "turnin:5245 @1423:-4256.29,3232.14  TurnIn Troubled Spirits of Kel\u0027Theril",
-        "accept:5247 @1423:-4256.29,3232.14  Accept Fragments of the Past",
-        "accept:5248 @1423:-4256.29,3232.14  Accept Tormented By the Past",
-        "accept:5246 @1423:-4256.29,3232.14  Accept Fragments of the Past",
-        "obj:5845:1 @1423:-4946.34,2923.11  Objective Of Lost Honor / Symbol of Lost Honor (1)",
-        "obj:5181:1 @1423:-4163.79,2511.17  Objective Villains of Darrowshire / Skull of Horgus (1)",
-=======
         "turnin:5781 @1423:-2478.24,2671.99  TurnIn Of Forgotten Memories",
         "accept:5845 @1423:-2478.24,2671.99  Accept Of Lost Honor",
         "turnin:8929 @1423:-3379.52,3367.73  TurnIn In Search of Anthion",
         "obj:5845:1 @1423:-4946.34,2923.11  Objective Of Lost Honor / Symbol of Lost Honor (1)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:5845 @1423:-2478.24,2671.99  TurnIn Of Lost Honor",
         "accept:5846 @1423:-2478.24,2671.99  Accept Of Love and Family",
         "turnin:5181 @1423:-5340.84,2257.19  TurnIn Villains of Darrowshire",
@@ -147,19 +91,12 @@
         "accept:9664 @1423:-5332.67,2268.08  Accept Establishing New Outposts",
         "accept:5465 @1423:-5349.02,2307.35  Accept Soulbound Keepsake",
         "turnin:6026 @1423:-5305.57,2303.34  TurnIn That\u0027s Asking A Lot",
-<<<<<<< HEAD
-=======
         "obj:9664:2 @1423:-4796.2,2561.91  Objective Establishing New Outposts / \u003CTXT\u003EEastwall Capture Quest Doodad",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:6024:1 @1423:-4921.82,3373.18  Objective Hameya\u0027s Plea / Hameya\u0027s Key (1)",
         "obj:9664:3 @1423:-4375.03,3169.93  Objective Establishing New Outposts / \u003CTXT\u003ENorthpass Capture Quest Doodad",
         "obj:9664:4 @1423:-3037.51,2973.28  Objective Establishing New Outposts / \u003CTXT\u003EPlaguewood Capture Quest Doodad",
         "turnin:6024 @1423:-3270.68,1576.35  TurnIn Hameya\u0027s Plea",
         "obj:9664:1 @1423:-3722.83,1854.13  Objective Establishing New Outposts / \u003CTXT\u003ECrown Guard Capture Quest Doodad",
-<<<<<<< HEAD
-        "obj:9664:2 @1423:-4796.2,2561.91  Objective Establishing New Outposts / \u003CTXT\u003EEastwall Capture Quest Doodad",
-=======
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:9664 @1423:-5332.67,2268.08  TurnIn Establishing New Outposts"
       ]
     }

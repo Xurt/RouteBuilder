@@ -1,33 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "45-48 The Hinterlands",
-<<<<<<< HEAD
-  "saved": "2026-10-08 19:27",
-=======
   "saved": "2026-10-10 13:04",
->>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
-<<<<<<< HEAD
-        "accept:2877 @1425:-2145.96,322.7  Accept Skulk Rock Clean-up",
-        "accept:2880 @1425:-2145.96,322.7  Accept Troll Necklace Bounty",
-        "turnin:3843 @1425:-2120.16,347.09  TurnIn The Newest Member of the Family",
-        "accept:4297 @1425:-2120.16,347.09  Accept Food for Baby",
-        "accept:2990 @1425:-1950.38,325.27  Accept Thadius Grimshade",
-        "accept:2988 @1425:-1950.38,325.27  Accept Witherbark Cages",
-        "turnin:2993 @1425:-1950.38,325.27  TurnIn Return to the Hinterlands",
-        "obj:2988:2 @1425:-2465.51,-43.05  Objective Witherbark Cages / Check Second Cage",
-        "obj:2988:1 @1425:-2471.28,-42.79  Objective Witherbark Cages / Check First Cage",
-        "obj:2880:1 @1425:-2773.51,-35.86  Objective Troll Necklace Bounty / Troll Tribal Necklace (5)",
-        "obj:2988:3 @1425:-2806.62,-4.29  Objective Witherbark Cages / Check Third Cage",
-        "obj:2877:1 @1425:-3358.32,371.98  Objective Skulk Rock Clean-up / Green Sludge slain (10)",
-        "obj:2877:2 @1425:-3325.6,431.02  Objective Skulk Rock Clean-up / Jade Ooze slain (10)",
-        "turnin:626 @1425:-4685.42,264.95  TurnIn Cortello\u0027s Riddle",
-        "obj:4297:1 @1425:-4169.52,145.35  Objective Food for Baby / Silvermane Stalker Flank (5)",
-        "turnin:485 @1425:-3474.98,500.06  TurnIn Find OOX-09/HL!",
-=======
         "turnin:1449 @1425:-2029.69,266.49  TurnIn To The Hinterlands",
         "accept:1450 @1425:-2029.69,266.49  Accept Gryphon Master Talonaxe",
         "turnin:2993 @1425:-1950.38,325.27  TurnIn Return to the Hinterlands",
@@ -51,24 +29,12 @@
         "accept:1469 @1425:-2612.19,219.52  Accept Rhapsody\u0027s Tale",
         "turnin:1451 @1425:-2612.19,219.52  TurnIn Rhapsody Shindigger",
         "accept:1452 @1425:-2612.19,219.52  Accept Rhapsody\u0027s Kalimdor Kocktail",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:2877 @1425:-2145.96,322.7  TurnIn Skulk Rock Clean-up",
         "turnin:2880 @1425:-2145.96,322.7  TurnIn Troll Necklace Bounty",
         "turnin:4297 @1425:-2120.16,347.09  TurnIn Food for Baby",
         "accept:4298 @1425:-2120.16,347.09  Accept Becoming a Parent",
         "turnin:4298 @1425:-2120.16,347.09  TurnIn Becoming a Parent",
-<<<<<<< HEAD
-        "turnin:1449 @1425:-2029.69,266.49  TurnIn To The Hinterlands",
-        "accept:1450 @1425:-2029.69,266.49  Accept Gryphon Master Talonaxe",
-        "turnin:2988 @1425:-1950.38,325.27  TurnIn Witherbark Cages",
-        "turnin:1450 @1425:-1950.38,325.27  TurnIn Gryphon Master Talonaxe",
-        "accept:1451 @1425:-1950.38,325.27  Accept Rhapsody Shindigger",
-        "turnin:1451 @1425:-2612.19,219.52  TurnIn Rhapsody Shindigger",
-        "accept:1469 @1425:-2612.19,219.52  Accept Rhapsody\u0027s Tale",
-        "accept:1452 @1425:-2612.19,219.52  Accept Rhapsody\u0027s Kalimdor Kocktail"
-=======
         "turnin:2988 @1425:-1950.38,325.27  TurnIn Witherbark Cages"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     }
   ]

@@ -1,11 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "30-50 Stranglethorn Vale",
-<<<<<<< HEAD
-  "saved": "2026-10-08 19:18",
-=======
   "saved": "2026-10-10 12:53",
->>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
@@ -13,22 +9,6 @@
         "accept:575 @1434:415.58,-14469.56  Accept Supply and Demand",
         "turnin:2874 @1434:448.12,-14447.44  TurnIn Deliver to MacKinley",
         "turnin:2842 @1434:459.61,-14464.88  TurnIn Chief Engineer Scooty",
-<<<<<<< HEAD
-        "turnin:1118 @1434:490.24,-14453.39  TurnIn Back to Booty Bay",
-        "turnin:1122 @1434:490.24,-14453.39  TurnIn Report Back to Fizzlebub",
-        "turnin:1115 @1434:501.09,-14453.39  TurnIn The Rumormonger",
-        "turnin:669 @1434:487.05,-14444.88  TurnIn Sunken Treasure",
-        "turnin:1240 @1434:161.6,-12347.58  TurnIn The Troll Witchdoctor",
-        "turnin:5762 @1434:-54.72,-11628.63  TurnIn Hemet Nesingwary",
-        "turnin:5763 @1434:-54.72,-11628.63  TurnIn Hunting in Stranglethorn",
-        "accept:583 @1434:-54.72,-11616.71  Accept Welcome to the Jungle",
-        "turnin:583 @1434:-54.72,-11628.63  TurnIn Welcome to the Jungle",
-        "accept:185 @1434:-52.17,-11620.54  Accept Tiger Mastery",
-        "accept:190 @1434:-47.7,-11617.56  Accept Panther Mastery",
-        "obj:190:1 @1434:-420.37,-11613.74  Objective Panther Mastery / Young Panther slain (10)",
-        "obj:575:1 @1434:-356.55,-11690.31  Objective Supply and Demand / Large River Crocolisk Skin (2)",
-        "obj:185:1 @1434:-178.52,-11730.3  Objective Tiger Mastery / Young Stranglethorn Tiger slain (10)",
-=======
         "turnin:669 @1434:487.05,-14444.88  TurnIn Sunken Treasure",
         "turnin:1122 @1434:490.24,-14453.39  TurnIn Report Back to Fizzlebub",
         "turnin:1118 @1434:490.24,-14453.39  TurnIn Back to Booty Bay",
@@ -44,39 +24,23 @@
         "obj:185:1 @1434:-178.52,-11730.3  Objective Tiger Mastery / Young Stranglethorn Tiger slain (10)",
         "obj:575:1 @1434:-356.55,-11690.31  Objective Supply and Demand / Large River Crocolisk Skin (2)",
         "obj:190:1 @1434:-420.37,-11613.74  Objective Panther Mastery / Young Panther slain (10)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:185 @1434:-52.17,-11620.54  TurnIn Tiger Mastery",
         "accept:186 @1434:-52.17,-11620.54  Accept Tiger Mastery",
         "turnin:190 @1434:-47.7,-11617.56  TurnIn Panther Mastery",
         "accept:191 @1434:-47.7,-11617.56  Accept Panther Mastery",
-<<<<<<< HEAD
-        "obj:186:1 @1434:344.75,-11611.18  Objective Tiger Mastery / Stranglethorn Tiger slain (10)",
-        "obj:191:1 @1434:344.75,-11619.69  Objective Panther Mastery / Panther slain (10)",
-=======
         "obj:191:1 @1434:344.75,-11619.69  Objective Panther Mastery / Panther slain (10)",
         "obj:186:1 @1434:344.75,-11611.18  Objective Tiger Mastery / Stranglethorn Tiger slain (10)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:191 @1434:-47.7,-11617.56  TurnIn Panther Mastery",
         "turnin:186 @1434:-52.17,-11620.54  TurnIn Tiger Mastery",
         "accept:338 @1434:-54.72,-11616.71  Accept The Green Hills of Stranglethorn",
         "accept:1261 @1434:164.79,-12342.9  Accept Marg Speaks",
         "obj:4781:1 @1434:-26.64,-13328.16  Objective Components for the Enchanted Gold Bloodrobe / Gold Bar (1)",
-<<<<<<< HEAD
-        "turnin:1180 @1434:539.37,-14298.11  TurnIn Goblin Sponsorship",
-        "accept:1181 @1434:539.37,-14298.11  Accept Goblin Sponsorship",
-        "accept:1116 @1434:501.09,-14453.39  Accept Dream Dust in the Swamp",
-        "accept:1117 @1434:501.09,-14453.39  Accept Rumors for Kravel",
-        "turnin:1181 @1434:483.22,-14438.93  TurnIn Goblin Sponsorship",
-        "turnin:575 @1434:415.58,-14469.56  TurnIn Supply and Demand",
-        "turnin:4781 @1434:388.78,-14439.78  TurnIn Components for the Enchanted Gold Bloodrobe"
-=======
         "accept:1181 @1434:539.37,-14298.11  Accept Goblin Sponsorship",
         "turnin:4781 @1434:388.78,-14439.78  TurnIn Components for the Enchanted Gold Bloodrobe",
         "turnin:575 @1434:415.58,-14469.56  TurnIn Supply and Demand",
         "turnin:1181 @1434:483.22,-14438.93  TurnIn Goblin Sponsorship",
         "accept:1117 @1434:501.09,-14453.39  Accept Rumors for Kravel",
         "accept:1116 @1434:501.09,-14453.39  Accept Dream Dust in the Swamp"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
@@ -85,39 +49,6 @@
         "accept:194 @1434:-54.72,-11628.63  Accept Raptor Mastery",
         "turnin:338 @1434:-54.72,-11616.71  TurnIn The Green Hills of Stranglethorn",
         "accept:187 @1434:-52.17,-11620.54  Accept Tiger Mastery",
-<<<<<<< HEAD
-        "accept:596 @1434:161.6,-12347.58  Accept Bloody Bone Necklaces",
-        "accept:581 @1434:168.62,-12348  Accept Hunt for Yenniku",
-        "accept:638 @1434:168.62,-12348  Accept Trollbane",
-        "home @1434:211.38,-12434.36  Home inn",
-        "accept:213 @1434:497.9,-14449.99  Accept Hostile Takeover",
-        "accept:189 @1434:497.9,-14449.99  Accept Bloodscalp Ears",
-        "accept:605 @1434:490.24,-14453.39  Accept Singing Blue Shards",
-        "accept:577 @1434:415.58,-14469.56  Accept Some Assembly Required",
-        "accept:4782 @1434:388.78,-14439.78  Accept Components for the Enchanted Gold Bloodrobe",
-        "accept:568 @1434:167.99,-12398.2  Accept The Defense of Grom\u0027gol",
-        "obj:605:1 @1434:618.5,-11920.89  Objective Singing Blue Shards / Singing Crystal Shard (10)",
-        "obj:194:1 @1434:579.58,-11841.33  Objective Raptor Mastery / Stranglethorn Raptor slain (10)",
-        "obj:596:1 @1434:569.37,-11637.98  Objective Bloody Bone Necklaces / Bloody Bone Necklace (25)",
-        "obj:581:1 @1434:569.37,-11637.98  Objective Hunt for Yenniku / Bloodscalp Tusk (9)",
-        "turnin:581 @1434:168.62,-12348  TurnIn Hunt for Yenniku",
-        "turnin:596 @1434:161.6,-12347.58  TurnIn Bloody Bone Necklaces",
-        "obj:187:1 @1434:151.39,-11953.22  Objective Tiger Mastery / Elder Stranglethorn Tiger slain (10)",
-        "obj:189:1 @1434:115.66,-11750.29  Objective Bloodscalp Ears / Bloodscalp Ear (15)",
-        "turnin:187 @1434:-52.17,-11620.54  TurnIn Tiger Mastery",
-        "turnin:194 @1434:-54.72,-11628.63  TurnIn Raptor Mastery",
-        "accept:195 @1434:-54.72,-11628.63  Accept Raptor Mastery",
-        "obj:213:1 @1434:-528.21,-11998.74  Objective Hostile Takeover / Tumbled Crystal (8)",
-        "obj:577:1 @1434:-387.18,-11920.04  Objective Some Assembly Required / Snapjaw Crocolisk Skin (5)",
-        "obj:195:1 @1434:-219.36,-12040.43  Objective Raptor Mastery / Lashtail Raptor slain (10)",
-        "obj:568:1 @1434:-219.36,-12040.43  Objective The Defense of Grom\u0027gol / Lashtail Raptor slain (15)",
-        "turnin:195 @1434:-54.72,-11628.63  TurnIn Raptor Mastery",
-        "turnin:568 @1434:167.99,-12398.2  TurnIn The Defense of Grom\u0027gol",
-        "turnin:189 @1434:497.9,-14449.99  TurnIn Bloodscalp Ears",
-        "turnin:213 @1434:497.9,-14449.99  TurnIn Hostile Takeover",
-        "turnin:605 @1434:490.24,-14453.39  TurnIn Singing Blue Shards",
-        "turnin:577 @1434:415.58,-14469.56  TurnIn Some Assembly Required"
-=======
         "obj:187:1 @1434:151.39,-11953.22  Objective Tiger Mastery / Elder Stranglethorn Tiger slain (10)",
         "accept:581 @1434:168.62,-12348  Accept Hunt for Yenniku",
         "home @1434:211.38,-12434.36  Home inn",
@@ -149,7 +80,6 @@
         "turnin:605 @1434:490.24,-14453.39  TurnIn Singing Blue Shards",
         "turnin:213 @1434:497.9,-14449.99  TurnIn Hostile Takeover",
         "turnin:189 @1434:497.9,-14449.99  TurnIn Bloodscalp Ears"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
@@ -163,16 +93,8 @@
         "accept:582 @1434:168.62,-12348  Accept Headhunting",
         "accept:569 @1434:167.99,-12398.2  Accept The Defense of Grom\u0027gol",
         "accept:570 @1434:171.18,-12412.67  Accept Mok\u0027thardin\u0027s Enchantment",
-<<<<<<< HEAD
-        "accept:1182 @1434:483.22,-14438.93  Accept Goblin Sponsorship",
-        "accept:670 @1434:487.05,-14444.88  Accept Sunken Treasure",
-        "accept:628 @1434:415.58,-14469.56  Accept Excelsior",
-        "obj:570:1 @1434:-108.32,-12704.93  Objective Mok\u0027thardin\u0027s Enchantment / Shadowmaw Claw (8)",
-        "obj:192:1 @1434:-108.32,-12704.93  Objective Panther Mastery / Shadowmaw Panther slain (10)",
-=======
         "obj:192:1 @1434:-108.32,-12704.93  Objective Panther Mastery / Shadowmaw Panther slain (10)",
         "obj:570:1 @1434:-108.32,-12704.93  Objective Mok\u0027thardin\u0027s Enchantment / Shadowmaw Claw (8)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:570:2 @1434:-108.32,-12704.93  Objective Mok\u0027thardin\u0027s Enchantment / Pristine Tigress Fang (1)",
         "obj:569:1 @1434:-171.5,-12482.86  Objective The Defense of Grom\u0027gol / Mosh\u0027Ogg Brute slain (10)",
         "obj:569:2 @1434:-151.08,-12479.46  Objective The Defense of Grom\u0027gol / Mosh\u0027Ogg Witch Doctor slain (5)",
@@ -184,18 +106,12 @@
         "turnin:629 @1434:161.6,-12347.58  TurnIn The Vile Reef",
         "turnin:569 @1434:167.99,-12398.2  TurnIn The Defense of Grom\u0027gol",
         "turnin:570 @1434:171.18,-12412.67  TurnIn Mok\u0027thardin\u0027s Enchantment",
-<<<<<<< HEAD
-        "obj:1182:collect5851 @1434:-500.13,-11949.39  Objective Goblin Sponsorship / Cozzle\u0027s Key",
-        "obj:1182:1 @1434:-544.16,-12033.62  Objective Goblin Sponsorship / Fuel Regulator Blueprints (1)",
-        "obj:628:1 @1434:87.58,-12552.63  Objective Excelsior / Elder Crocolisk Skin (1)",
-=======
         "accept:1182 @1434:483.22,-14438.93  Accept Goblin Sponsorship",
         "accept:670 @1434:487.05,-14444.88  Accept Sunken Treasure",
         "accept:628 @1434:415.58,-14469.56  Accept Excelsior",
         "obj:628:1 @1434:87.58,-12552.63  Objective Excelsior / Elder Crocolisk Skin (1)",
         "obj:1182:collect5851 @1434:-500.13,-11949.39  Objective Goblin Sponsorship / Cozzle\u0027s Key",
         "obj:1182:1 @1434:-544.16,-12033.62  Objective Goblin Sponsorship / Fuel Regulator Blueprints (1)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:1182 @1434:483.22,-14438.93  TurnIn Goblin Sponsorship",
         "accept:1183 @1434:483.22,-14438.93  Accept Goblin Sponsorship",
         "turnin:628 @1434:415.58,-14469.56  TurnIn Excelsior"
@@ -213,50 +129,6 @@
         "home @1434:211.38,-12434.36  Home inn",
         "obj:196:1 @1434:220.31,-12953.8  Objective Raptor Mastery / Jungle Stalker slain (10)",
         "obj:572:1 @1434:220.31,-12953.8  Objective Mok\u0027thardin\u0027s Enchantment / Jungle Stalker Feather (10)",
-<<<<<<< HEAD
-        "accept:595 @1434:427.7,-14411.28  Accept The Bloodsail Buccaneers",
-        "accept:606 @1434:448.12,-14447.44  Accept Scaring Shaky",
-        "accept:600 @1434:490.24,-14453.39  Accept Venture Company Mining",
-        "accept:209 @1434:497.9,-14449.99  Accept Skullsplitter Tusks",
-        "accept:617 @1434:513.21,-14418.08  Accept Akiris by the Bundle",
-        "turnin:595 @1434:480.03,-14126.25  TurnIn The Bloodsail Buccaneers",
-        "accept:597 @1434:480.03,-14126.25  Accept The Bloodsail Buccaneers",
-        "turnin:597 @1434:427.7,-14411.28  TurnIn The Bloodsail Buccaneers",
-        "accept:599 @1434:427.7,-14411.28  Accept The Bloodsail Buccaneers",
-        "accept:576 @1434:396.43,-14397.66  Accept Keep An Eye Out",
-        "turnin:599 @1434:487.05,-14444.88  TurnIn The Bloodsail Buccaneers",
-        "accept:587 @1434:503,-14459.35  Accept Up to Snuff",
-        "turnin:572 @1434:171.18,-12412.67  TurnIn Mok\u0027thardin\u0027s Enchantment",
-        "accept:571 @1434:171.18,-12412.67  Accept Mok\u0027thardin\u0027s Enchantment",
-        "obj:209:1 @1434:-592.02,-12615.17  Objective Skullsplitter Tusks / Skullsplitter Tusk (18)",
-        "obj:598:1 @1434:-592.02,-12615.17  Objective Split Bone Necklace / Split Bone Necklace (25)",
-        "obj:193:1 @1434:-791.12,-12393.95  Objective Panther Mastery / Fang of Bhag\u0027thera (1)",
-        "turnin:598 @1434:161.6,-12347.58  TurnIn Split Bone Necklace",
-        "turnin:196 @1434:-54.72,-11628.63  TurnIn Raptor Mastery",
-        "turnin:193 @1434:-47.7,-11617.56  TurnIn Panther Mastery",
-        "obj:584:1 @1434:725.07,-11514.19  Objective Bloodscalp Clan Heads / Gan\u0027zulah\u0027s Head (1)",
-        "obj:584:2 @1434:719.96,-11574.17  Objective Bloodscalp Clan Heads / Nezzliok\u0027s Head (1)",
-        "obj:617:1 @1434:645.94,-12347.58  Objective Akiris by the Bundle / Akiris Reed (1)",
-        "turnin:584 @1434:164.79,-12342.9  TurnIn Bloodscalp Clan Heads",
-        "accept:585 @1434:164.79,-12342.9  Accept Speaking with Nezzliok",
-        "obj:585:2 @1434:-472.69,-12704.93  Objective Speaking with Nezzliok / Ziata\u0027jai Trophy (1)",
-        "obj:585:1 @1434:-722.84,-12544.12  Objective Speaking with Nezzliok / Balia\u0027mah Trophy (1)",
-        "obj:585:3 @1434:-819.83,-12850.85  Objective Speaking with Nezzliok / Zul\u0027Mamwe Trophy (1)",
-        "obj:600:1 @1434:-438.23,-13036.75  Objective Venture Company Mining / Singing Blue Crystal (10)",
-        "obj:606:1 @1434:142.46,-14003.73  Objective Scaring Shaky / Mistvale Giblets (5)",
-        "obj:571:1 @1434:142.46,-14003.73  Objective Mok\u0027thardin\u0027s Enchantment / Aged Gorilla Sinew (1)",
-        "obj:587:1 @1434:437.91,-14142.84  Objective Up to Snuff / Snuff (15)",
-        "obj:576:1 @1434:437.91,-14142.84  Objective Keep An Eye Out / Dizzy\u0027s Eye (1)",
-        "turnin:606 @1434:504.28,-14299.39  TurnIn Scaring Shaky",
-        "accept:607 @1434:504.28,-14299.39  Accept Return to MacKinley",
-        "turnin:617 @1434:513.21,-14418.08  TurnIn Akiris by the Bundle",
-        "turnin:209 @1434:497.9,-14449.99  TurnIn Skullsplitter Tusks",
-        "turnin:587 @1434:503,-14459.35  TurnIn Up to Snuff",
-        "turnin:600 @1434:490.24,-14453.39  TurnIn Venture Company Mining",
-        "turnin:607 @1434:448.12,-14447.44  TurnIn Return to MacKinley",
-        "turnin:576 @1434:396.43,-14397.66  TurnIn Keep An Eye Out",
-        "turnin:571 @1434:171.18,-12412.67  TurnIn Mok\u0027thardin\u0027s Enchantment",
-=======
         "obj:598:1 @1434:-592.02,-12615.17  Objective Split Bone Necklace / Split Bone Necklace (25)",
         "obj:193:1 @1434:-791.12,-12393.95  Objective Panther Mastery / Fang of Bhag\u0027thera (1)",
         "turnin:598 @1434:161.6,-12347.58  TurnIn Split Bone Necklace",
@@ -299,26 +171,18 @@
         "turnin:617 @1434:513.21,-14418.08  TurnIn Akiris by the Bundle",
         "turnin:209 @1434:497.9,-14449.99  TurnIn Skullsplitter Tusks",
         "turnin:600 @1434:490.24,-14453.39  TurnIn Venture Company Mining",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:585 @1434:164.79,-12342.9  TurnIn Speaking with Nezzliok"
       ]
     },
     {
       "part": 5,
       "steps": [
-<<<<<<< HEAD
-        "accept:197 @1434:-54.72,-11628.63  Accept Raptor Mastery",
-        "turnin:338 @1434:-54.72,-11616.71  TurnIn The Green Hills of Stranglethorn",
-        "accept:573 @1434:171.18,-12412.67  Accept Mok\u0027thardin\u0027s Enchantment",
-        "obj:573:2 @1434:372.82,-13803.36  Objective Mok\u0027thardin\u0027s Enchantment / Holy Spring Water (1)",
-=======
         "turnin:338 @1434:-54.72,-11616.71  TurnIn The Green Hills of Stranglethorn",
         "accept:197 @1434:-54.72,-11628.63  Accept Raptor Mastery",
         "accept:573 @1434:171.18,-12412.67  Accept Mok\u0027thardin\u0027s Enchantment",
         "obj:197:1 @1434:210.74,-12921.47  Objective Raptor Mastery / Talon of Tethis (1)",
         "obj:573:2 @1434:372.82,-13803.36  Objective Mok\u0027thardin\u0027s Enchantment / Holy Spring Water (1)",
         "obj:573:1 @1434:481.3,-13848.02  Objective Mok\u0027thardin\u0027s Enchantment / Naga Explorer slain (10)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:348 @1434:458.97,-14433.4  Accept Stranglethorn Fever",
         "accept:2872 @1434:448.12,-14447.44  Accept Stoley\u0027s Debt",
         "accept:609 @1434:448.12,-14447.44  Accept Voodoo Dues",
@@ -326,18 +190,6 @@
         "accept:621 @1434:490.24,-14453.39  Accept Zanzil\u0027s Secret",
         "accept:2864 @1434:501.09,-14453.39  Accept Tran\u0027rek",
         "home @1434:495.34,-14457.65  Home inn",
-<<<<<<< HEAD
-        "accept:580 @1434:488.96,-14463.6  Accept Whiskey Slim\u0027s Lost Grog",
-        "obj:604:1 @1434:503.64,-14698.86  Objective The Bloodsail Buccaneers / Bloodsail Swashbuckler slain (10)",
-        "obj:604:2 @1434:488.32,-14686.09  Objective The Bloodsail Buccaneers / Bloodsail Charts (1)",
-        "obj:604:3 @1434:486.41,-14685.24  Objective The Bloodsail Buccaneers / Bloodsail Orders (1)",
-        "turnin:604 @1434:487.05,-14444.88  TurnIn The Bloodsail Buccaneers",
-        "obj:609:3 @1434:-331.67,-13646.38  Objective Voodoo Dues / Chucky\u0027s Huge Ring (1)",
-        "obj:609:1 @1434:-29.2,-13349.86  Objective Voodoo Dues / Maury\u0027s Clubbed Foot (1)",
-        "obj:621:1 @1434:-4.95,-13367.3  Objective Zanzil\u0027s Secret / Zanzil\u0027s Mixture (1)",
-        "obj:609:2 @1434:-7.5,-13374.11  Objective Voodoo Dues / Jon-Jon\u0027s Golden Spyglass (1)",
-        "obj:573:1 @1434:481.3,-13848.02  Objective Mok\u0027thardin\u0027s Enchantment / Naga Explorer slain (10)",
-=======
         "obj:604:3 @1434:486.41,-14685.24  Objective The Bloodsail Buccaneers / Bloodsail Orders (1)",
         "obj:604:2 @1434:488.32,-14686.09  Objective The Bloodsail Buccaneers / Bloodsail Charts (1)",
         "obj:604:1 @1434:503.64,-14698.86  Objective The Bloodsail Buccaneers / Bloodsail Swashbuckler slain (10)",
@@ -346,7 +198,6 @@
         "obj:609:3 @1434:-331.67,-13646.38  Objective Voodoo Dues / Chucky\u0027s Huge Ring (1)",
         "obj:609:1 @1434:-29.2,-13349.86  Objective Voodoo Dues / Maury\u0027s Clubbed Foot (1)",
         "obj:609:2 @1434:-7.5,-13374.11  Objective Voodoo Dues / Jon-Jon\u0027s Golden Spyglass (1)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "item:8552 @1434:737.19,-14236  ItemAccept The Monogrammed Sash",
         "turnin:8552 @1434:517.68,-14300.24  TurnIn The Monogrammed Sash",
         "accept:8553 @1434:517.68,-14300.24  Accept The Captain\u0027s Cutlass",
@@ -356,17 +207,6 @@
         "turnin:609 @1434:448.12,-14447.44  TurnIn Voodoo Dues",
         "accept:613 @1434:448.12,-14447.44  Accept Cracking Maury\u0027s Foot",
         "obj:348:1 @1434:-15.79,-13758.69  Objective Stranglethorn Fever / Heart of Mokk (1)",
-<<<<<<< HEAD
-        "obj:197:1 @1434:166.07,-12989.53  Objective Raptor Mastery / Talon of Tethis (1)",
-        "turnin:573 @1434:171.18,-12412.67  TurnIn Mok\u0027thardin\u0027s Enchantment",
-        "turnin:197 @1434:-54.72,-11628.63  TurnIn Raptor Mastery",
-        "accept:208 @1434:-54.72,-11628.63  Accept Big Game Hunter",
-        "obj:208:1 @1434:-217.44,-12682.38  Objective Big Game Hunter / Head of Bangalash (1)",
-        "obj:613:1 @1434:-786.65,-12222.51  Objective Cracking Maury\u0027s Foot / Maury\u0027s Key (1)",
-        "turnin:208 @1434:-54.72,-11628.63  TurnIn Big Game Hunter",
-        "turnin:348 @1434:458.97,-14433.4  TurnIn Stranglethorn Fever",
-        "turnin:613 @1434:448.12,-14447.44  TurnIn Cracking Maury\u0027s Foot"
-=======
         "obj:613:1 @1434:-921.29,-12479.03  Objective Cracking Maury\u0027s Foot / Maury\u0027s Key (1)",
         "turnin:197 @1434:-54.72,-11628.63  TurnIn Raptor Mastery",
         "accept:208 @1434:-54.72,-11628.63  Accept Big Game Hunter",
@@ -376,24 +216,16 @@
         "turnin:348 @1434:458.97,-14433.4  TurnIn Stranglethorn Fever",
         "turnin:613 @1434:448.12,-14447.44  TurnIn Cracking Maury\u0027s Foot",
         "accept:580 @1434:488.96,-14463.6  Accept Whiskey Slim\u0027s Lost Grog"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 6,
       "steps": [
         "accept:586 @1434:164.79,-12342.9  Accept Speaking with Gan\u0027zulah",
-<<<<<<< HEAD
-        "obj:586:1 @1434:-713.27,-13000.59  Objective Speaking with Gan\u0027zulah / Skullsplitter Hunter slain (8)",
-        "obj:586:2 @1434:-837.06,-13000.59  Objective Speaking with Gan\u0027zulah / Skullsplitter Headhunter slain (6)",
-        "obj:586:3 @1434:-808.98,-13054.2  Objective Speaking with Gan\u0027zulah / Skullsplitter Berserker slain (4)",
-        "obj:586:4 @1434:-606.06,-13083.12  Objective Speaking with Gan\u0027zulah / Broken Armor of Ana\u0027thek (1)",
-=======
         "obj:586:4 @1434:-606.06,-13083.12  Objective Speaking with Gan\u0027zulah / Broken Armor of Ana\u0027thek (1)",
         "obj:586:3 @1434:-808.98,-13054.2  Objective Speaking with Gan\u0027zulah / Skullsplitter Berserker slain (4)",
         "obj:586:2 @1434:-837.06,-13000.59  Objective Speaking with Gan\u0027zulah / Skullsplitter Headhunter slain (6)",
         "obj:586:1 @1434:-713.27,-13000.59  Objective Speaking with Gan\u0027zulah / Skullsplitter Hunter slain (8)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:586 @1434:164.79,-12342.9  TurnIn Speaking with Gan\u0027zulah",
         "accept:588 @1434:164.79,-12342.9  Accept The Fate of Yenniku",
         "turnin:588 @1434:161.6,-12347.58  TurnIn The Fate of Yenniku",
@@ -401,17 +233,6 @@
         "obj:589:1 @1434:-547.99,-13206.5  Objective The Singing Crystals / Pulsing Blue Shard (3)",
         "turnin:589 @1434:161.6,-12347.58  TurnIn The Singing Crystals",
         "accept:591 @1434:161.6,-12347.58  Accept The Mind\u0027s Eye",
-<<<<<<< HEAD
-        "turnin:338 @1434:-54.72,-11616.71  TurnIn The Green Hills of Stranglethorn",
-        "obj:591:1 @1434:-1156.76,-12342.9  Objective The Mind\u0027s Eye / Mind\u0027s Eye (1)",
-        "turnin:591 @1434:161.6,-12347.58  TurnIn The Mind\u0027s Eye",
-        "accept:592 @1434:161.6,-12347.58  Accept Saving Yenniku",
-        "accept:8551 @1434:517.68,-14300.24  Accept The Captain\u0027s Chest",
-        "turnin:580 @1434:488.96,-14463.6  TurnIn Whiskey Slim\u0027s Lost Grog",
-        "obj:8551:1 @1434:-137.04,-14135.18  Objective The Captain\u0027s Chest / Smotts\u0027 Chest (1)",
-        "turnin:8551 @1434:517.68,-14300.24  TurnIn The Captain\u0027s Chest",
-        "obj:592:1 @1434:-269.13,-13651.06  Objective Saving Yenniku / Filled Soul Gem (1)",
-=======
         "obj:591:1 @1434:-1156.76,-12342.9  Objective The Mind\u0027s Eye / Mind\u0027s Eye (1)",
         "turnin:338 @1434:-54.72,-11616.71  TurnIn The Green Hills of Stranglethorn",
         "turnin:591 @1434:161.6,-12347.58  TurnIn The Mind\u0027s Eye",
@@ -421,7 +242,6 @@
         "obj:8551:1 @1434:-137.04,-14135.18  Objective The Captain\u0027s Chest / Smotts\u0027 Chest (1)",
         "turnin:580 @1434:488.96,-14463.6  TurnIn Whiskey Slim\u0027s Lost Grog",
         "turnin:8551 @1434:517.68,-14300.24  TurnIn The Captain\u0027s Chest",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:592 @1434:168.62,-12348  TurnIn Saving Yenniku"
       ]
     },
@@ -432,15 +252,9 @@
         "turnin:580 @1434:488.96,-14463.6  TurnIn Whiskey Slim\u0027s Lost Grog",
         "accept:3721 @1434:411.11,-14416.81  Accept An OOX of Your Own",
         "turnin:3721 @1434:411.11,-14416.81  TurnIn An OOX of Your Own",
-<<<<<<< HEAD
-        "obj:608:1 @1434:123.32,-14920.92  Objective The Bloodsail Buccaneers / Captain Stillwater slain (1)",
-        "obj:608:3 @1434:269.45,-15024.3  Objective The Bloodsail Buccaneers / Fleet Master Firallon slain (1)",
-        "obj:608:2 @1434:349.85,-14924.75  Objective The Bloodsail Buccaneers / Captain Keelhaul slain (1)",
-=======
         "obj:608:2 @1434:349.85,-14924.75  Objective The Bloodsail Buccaneers / Captain Keelhaul slain (1)",
         "obj:608:3 @1434:269.45,-15024.3  Objective The Bloodsail Buccaneers / Fleet Master Firallon slain (1)",
         "obj:608:1 @1434:123.32,-14920.92  Objective The Bloodsail Buccaneers / Captain Stillwater slain (1)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:608 @1434:487.05,-14444.88  TurnIn The Bloodsail Buccaneers",
         "turnin:338 @1434:-54.72,-11616.71  TurnIn The Green Hills of Stranglethorn"
       ]

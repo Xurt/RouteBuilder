@@ -17,14 +17,11 @@ public sealed class Verifier
     {
         "goto", "accept", "turnin", "complete", "collect", "xp", "isOnQuest", "isQuestTurnedIn", "isQuestComplete", "zone", "zoneskip", "hs", "cooldown",
         "subzoneskip", "home", "target", "mob", "unitscan", "use", "skipgossip", "skipgossipid", "train", "macro", "timer", "vendor", "fp", "fly", "link",
-<<<<<<< HEAD
-=======
         // others RestedXP understands, for hand-written steps
         "abandon", "bankdeposit", "bankwithdraw", "bindlocation", "buy", "cast", "collectmultiple", "deathskip", "destroy", "emote", "equip", "flygoto",
         "gossip", "gossipoption", "groundgoto", "hideifcomplete", "isNotOnQuest", "isQuestAvailable", "isQuestNotComplete", "istrained", "itemcount",
         "itemStat", "maxlevel", "money", "openitem", "profession", "reputation", "skill", "skipOnQuest", "stable", "subzone", "tame", "trainer",
         "usespell", "waypoint", "xpto", "zone",
->>>>>>> zone/Durotar-Horde-vendor_trainer
     };
     static readonly HashSet<string> StepTags = new() { "completewith", "label", "loop", "sticky", "optional", "requires", "hidewindow" };
 
@@ -61,11 +58,7 @@ public sealed class Verifier
         var chars = new List<(string race, long rbit, string cls, int cbit)>();
         foreach (var (rn, rb) in m.Races)
             foreach (var (cn, cb) in Game.Classes)
-<<<<<<< HEAD
-                if ((m.Opt.Race == null || rn.Equals(m.Opt.Race, StringComparison.OrdinalIgnoreCase)) && (m.Opt.Class == null || cn.Equals(m.Opt.Class, StringComparison.OrdinalIgnoreCase)))
-=======
                 if (Game.Exists(rn, cn) && (m.Opt.Race == null || rn.Equals(m.Opt.Race, StringComparison.OrdinalIgnoreCase)) && (m.Opt.Class == null || cn.Equals(m.Opt.Class, StringComparison.OrdinalIgnoreCase)))
->>>>>>> zone/Durotar-Horde-vendor_trainer
                     chars.Add((rn, rb, cn, cb));
         Characters = chars.Count;
         var seen = new HashSet<string>();
@@ -206,11 +199,7 @@ public static class Report
             sb.AppendLine($"(The zone has quests below level {m.StartLevel.ToString("0", Inv)}, but too few to make a visit of, so the plan starts here. Use --start-level to change it.)");
         foreach (var x in r.Views)
         {
-<<<<<<< HEAD
-            string what = x == r.Views[0] ? $"{x.Tasks} tasks, {Yd(x.Travel)} on foot (simply going to the nearest thing each time comes to {Yd(x.StartCost)})" : $"{x.Tasks} more tasks; their whole route comes to {Yd(x.Travel)}";
-=======
             string what = x == r.Views[0] ? $"{x.Tasks} tasks, {Yd(x.Travel)} on foot" + (r.Locked ? "" : $" (simply going to the nearest thing each time comes to {Yd(x.StartCost)})") : $"{x.Tasks} more tasks; their whole route comes to {Yd(x.Travel)}";
->>>>>>> zone/Durotar-Horde-vendor_trainer
             sb.AppendLine($"  {x.Name}: {what}; ends at level {x.EndLevel.ToString("0.0", Inv)}{(x.Hearths > 0 ? $"; {x.Hearths} hearth{(x.Hearths == 1 ? "" : "s")}" : "")}{(x.Broken > 0 ? $"; {x.Broken} ORDER PROBLEMS" : "")}{(x.LevelShort > 0.05 ? $"; at its hardest you are {(x.LevelShort + Tuning.MobMargin).ToString("0.0", Inv)} levels below the mobs" : "")}");
         }
         if (m.Home != null) sb.AppendLine($"Hearthstone: set at {m.Inn!.Name} ({m.BindName}); {g.HearthSteps} hearth step{(g.HearthSteps == 1 ? "" : "s")} in the guide.");
@@ -221,12 +210,9 @@ public static class Report
             sb.AppendLine("The check passes at once if you are there; if you are a little behind the prediction it asks you to grind the difference:");
             foreach (var s in g.GrindSteps) sb.AppendLine("  " + s);
         }
-<<<<<<< HEAD
-=======
         if (g.RxpSteps > 0) sb.AppendLine($"{g.RxpSteps} training, vendor and flight-path step{(g.RxpSteps == 1 ? "" : "s")} taken from RestedXP's guides, each next to the quest step it follows there (--no-rxp-steps leaves them out).");
         if (g.CustomSteps > 0) sb.AppendLine($"{g.CustomSteps} hand-written step{(g.CustomSteps == 1 ? "" : "s")} from the zone file placed next to the steps they name.");
         foreach (var k in g.StepsNotPlaced) sb.AppendLine($"  ! zone file \"steps\": nothing called \"{k}\" in this guide, so no hand-written step was placed there (check the name against the locks file)");
->>>>>>> zone/Durotar-Horde-vendor_trainer
         if (g.AsYouGo > 0) sb.AppendLine($"{g.AsYouGo} objective{(g.AsYouGo == 1 ? " is" : "s are")} also shown \"as you go\" at earlier stops inside their area; their own step finishes whatever is left (and skips itself if nothing is).");
         if (g.EarlyOffers > 0) sb.AppendLine($"{g.EarlyOffers} pickups are also offered a visit early, in case you are ahead of the predicted level (they hide themselves otherwise).");
         foreach (var s in r.Unplaced) sb.AppendLine($"  {s}: its hand-in spot is not passed again, so the step sits at the end of the guide.");

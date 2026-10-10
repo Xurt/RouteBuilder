@@ -7,12 +7,8 @@ public sealed class GuideOutput
 {
     public string Name = "", Group = "", FileName = "";
     public List<string> Lines = new();      // the guide body (between RegisterGuide([[ and ]]))
-<<<<<<< HEAD
-    public int Steps, HearthSteps, EarlyOffers, Stops, AsYouGo;
-=======
     public int Steps, HearthSteps, EarlyOffers, Stops, AsYouGo, CustomSteps, RxpSteps;
     public List<string> StepsNotPlaced = new();      // zone-file steps whose anchor is in no part of this guide
->>>>>>> zone/Durotar-Horde-vendor_trainer
     public int GateLine = -1;               // index of the "step" line of the level check that leads to the next part
     public List<string> GrindSteps = new();
     public List<(string dest, string tag, string quest)> Carried = new();
@@ -321,8 +317,6 @@ public sealed class Emitter
     }
 
     /// <summary>
-<<<<<<< HEAD
-=======
     /// One visit to a town should talk to each NPC once. Within a run of quest-giver stops close together, a later
     /// stop at an NPC already visited on this run is folded into the earlier one when nothing it needs comes in
     /// between and you are high enough by then; failing that, the earlier stop is folded into the later one when
@@ -377,7 +371,6 @@ public sealed class Emitter
     }
 
     /// <summary>
->>>>>>> zone/Durotar-Horde-vendor_trainer
     /// "As you go": an objective whose mobs or objects are all around stops planned before it is shown alongside
     /// those stops (#completewith the last of them), so it gets done on the way. Its own step stays as the fallback
     /// for whatever is left, and skips itself when nothing is.
@@ -459,10 +452,6 @@ public sealed class Emitter
     /// <param name="nextVisitLevel">When the zone continues in a later visit: the level that one is planned from.</param>
     public GuideOutput Write(int? nextVisitLevel)
     {
-<<<<<<< HEAD
-        var units = BuildUnits(); g.Stops = units.Count;
-        bool Far(int i) => i > 0 && (units[i].Area != units[i - 1].Area || units[i].Pos.To(units[i - 1].Pos) > 150);
-=======
         var units = BuildUnits();
         bool Far(int i) => i > 0 && (units[i].Area != units[i - 1].Area || units[i].Pos.To(units[i - 1].Pos) > 150);
         // quest-giver stops next to each other, or in the same hub, make one visit to a town
@@ -473,7 +462,6 @@ public sealed class Emitter
         g.Stops = units.Count;
         var visitOf = new int[units.Count];
         for (int i = 1; i < units.Count; i++) visitOf[i] = visitOf[i - 1] + (SameVisit(i) ? 0 : 1);
->>>>>>> zone/Durotar-Horde-vendor_trainer
 
         // early offers: a pickup planned for later only because the predicted level is a shade short is offered
         // once per visit to its hub as a self-skipping step, in case the player is ahead of the prediction
@@ -484,26 +472,17 @@ public sealed class Emitter
         for (int i = 0; i < units.Count; i++)
         {
             var u = units[i];
-<<<<<<< HEAD
-            if (Far(i)) visit++;
-=======
             visit = visitOf[i];
->>>>>>> zone/Durotar-Horde-vendor_trainer
             foreach (var t in u.Tasks) { done.Add(t.Id); if (t.Elig == m.AllElig) xp += t.Xp; }
             if (u.Kind != "ent") continue;
             double lvl = Game.FracLevel(xp);
             foreach (var t in m.Tasks)
             {
                 if (done.Contains(t.Id) || t.Kind != TaskKind.Accept || t.Ent == null || t.Cond || t.Q!.Fix.Tight || planned.GetValueOrDefault(t.Id) <= i + 1) continue;
-<<<<<<< HEAD
-                if (t.Pre.Any(p => !done.Contains(p) && !m.Tasks[p].Deferred) || (t.PreAny.Count > 0 && !t.PreAny.Any(done.Contains))) continue;
-                if (t.MinLevel <= 1 || !(t.MinLevel - 0.5 <= lvl && lvl < t.MinLevel + Tuning.Safety)) continue;
-=======
                 if (planned.TryGetValue(t.Id, out int pu) && visitOf[pu] == visitOf[i]) continue;      // picked up later on this same visit anyway
                 if (t.Pre.Any(p => !done.Contains(p) && !m.Tasks[p].Deferred) || (t.PreAny.Count > 0 && !t.PreAny.Any(done.Contains))) continue;
                 if (t.MinLevel <= 1 || !(t.MinLevel - 0.5 <= lvl && lvl < t.MinLevel + Tuning.Safety)) continue;
                 if (t.Q.Level > lvl + Tuning.PickupAhead) continue;                  // not offered far ahead of its level either
->>>>>>> zone/Durotar-Horde-vendor_trainer
                 var near = t.Cands.FirstOrDefault(c => c.Area == u.Area && c.Pos.To(u.Pos) <= Tuning.HubRadius);
                 if (near != null && !t.Ent.Patrol) offers[(t.Id, visit)] = (i, t, near);     // the last stop of the visit wins
             }
@@ -545,8 +524,6 @@ public sealed class Emitter
         if (m.Visit.Number > 1) nextReminder = reminders.Count;      // reminders belong to the first part
         Reminders(m.StartLevel);
 
-<<<<<<< HEAD
-=======
         // hand-written steps from the zone file, next to the planned step they name
         var keyOf = RouteLock.Keys(m); var unitOf = new Dictionary<string, int>();
         for (int i = 0; i < units.Count; i++) foreach (var t in units[i].AllTasks ?? units[i].Tasks) unitOf.TryAdd(keyOf[t.Id], i);
@@ -591,7 +568,6 @@ public sealed class Emitter
             if (sf.After != null || sf.Before != null) g.CustomSteps++;
         }
 
->>>>>>> zone/Durotar-Horde-vendor_trainer
         Pt prev = m.Start; int prevArea = m.StartArea;
         for (int i = 0; i < units.Count; i++)
         {
@@ -615,15 +591,10 @@ public sealed class Emitter
                 if (m.Cfg.BindSubzone is { } sub) L.Add($"    .subzoneskip {sub}");
                 g.HearthSteps++;
             }
-<<<<<<< HEAD
-            L.AddRange(Render(u, prev));
-            foreach (var (t, c) in u.Early)
-=======
             foreach (var sf in before.GetValueOrDefault(i) ?? new()) Custom(sf);
             L.AddRange(Render(u, prev));
             foreach (var sf in after.GetValueOrDefault(i) ?? new()) Custom(sf);
             foreach (var (t, c) in u.Early.OrderBy(e => e.t.Ent == u.Ent ? 0 : 1).ThenBy(e => e.c.Pos.To(u.Pos)))
->>>>>>> zone/Durotar-Horde-vendor_trainer
             {
                 L.Add(Step(t.Tag)); L.Add(Goto(c.Area, c.Pos));
                 L.Add(t.Ent!.Kind == EntKind.Npc ? $"    >>{Talk}Talk to |cRXP_FRIENDLY_{t.Ent.Name}|r" : $"    >>Click the |cRXP_PICK_{t.Ent.Name}|r");
@@ -670,11 +641,7 @@ public sealed class Emitter
     public static string FileText(List<(ZoneModel m, GuideOutput g)> visits)
     {
         var m = visits[0].m; var sb = new StringBuilder();
-<<<<<<< HEAD
-        string who = m.SingleCharacter ? string.Join(" ", new[] { m.Opt.Race, m.Opt.Class }.Where(s => s != null).Select(s => Proper(s!))) : m.Opt.Faction;
-=======
         string who = Who(m);
->>>>>>> zone/Durotar-Horde-vendor_trainer
         // the range in the name runs from the level the plan starts at to the highest quest level in it
         int lo = (int)Math.Floor(m.StartLevel), hi = Math.Max(lo, visits.Max(v => v.m.LevelHi));
         string name = $"{lo}-{hi} {m.Main.Name}", group = $"Zone Routes ({who})";
@@ -700,11 +667,8 @@ public sealed class Emitter
         sb.AppendLine("]])");
         return sb.ToString();
     }
-<<<<<<< HEAD
-=======
 
     /// <summary>Who a guide is for: the faction, or the race and class it was tuned for.</summary>
     public static string Who(ZoneModel m) =>
         m.SingleCharacter ? string.Join(" ", new[] { m.Opt.Race, m.Opt.Class }.Where(s => s != null).Select(s => Proper(s!))) : m.Opt.Faction;
->>>>>>> zone/Durotar-Horde-vendor_trainer
 }

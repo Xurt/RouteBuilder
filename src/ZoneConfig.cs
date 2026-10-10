@@ -94,8 +94,6 @@ public sealed class QuestFix
     public int? Xp;
 }
 
-<<<<<<< HEAD
-=======
 /// <summary>A hand-written step placed right before or after a planned one, so it moves with it when the route changes.</summary>
 public sealed class StepFix
 {
@@ -124,7 +122,6 @@ sealed class OneOrManyConverter : JsonConverter<List<string>>
     public override void Write(Utf8JsonWriter w, List<string> v, JsonSerializerOptions o) => JsonSerializer.Serialize(w, v, o);
 }
 
->>>>>>> zone/Durotar-Horde-vendor_trainer
 public sealed class ReminderFix { public string Tag = ""; public string Text = ""; public double AtLevel = 1; }
 
 /// <summary>
@@ -144,10 +141,7 @@ public sealed class ZoneConfig
     public int? MinLevel, MaxLevel;
     public Dictionary<string, QuestFix> Quests = new();
     public List<ReminderFix> Reminders = new();
-<<<<<<< HEAD
-=======
     public List<StepFix> Steps = new();     // hand-written steps (vendor, trainer, flight path) placed next to a planned step
->>>>>>> zone/Durotar-Horde-vendor_trainer
 
     public static readonly JsonSerializerOptions Json = new()
     {

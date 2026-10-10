@@ -1,19 +1,10 @@
-<<<<<<< HEAD
 addon/
-=======
->>>>>>> zone/Durotar-Horde-vendor_trainer
 bin/
 obj/
 QuestieDB/
 QuestieDB.unzip/
+QuestieDB.clone/
 guides/
-<<<<<<< HEAD
-Make-Addon.ps1
 settings.json
 build.cmd
-
-=======
-addon/
-settings.json
 forever/
->>>>>>> zone/Durotar-Horde-vendor_trainer

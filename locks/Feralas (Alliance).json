@@ -1,20 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "43-51 Feralas",
-<<<<<<< HEAD
-  "saved": "2026-10-08 19:27",
-=======
   "saved": "2026-10-10 13:04",
->>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
-<<<<<<< HEAD
-        "accept:2982 @1444:3229.48,-4479.93  Accept The High Wilderness",
-        "accept:2939 @1444:3232.96,-4474.83  Accept In Search of Knowledge",
-=======
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:2943 @1444:3232.96,-4474.83  TurnIn Return to Troyas",
         "turnin:3787 @1444:3186.39,-4395.6  TurnIn Jonespyre\u0027s Request",
         "accept:4266 @1444:3227.4,-4457.69  Accept A Hero\u0027s Welcome",
@@ -22,10 +13,7 @@
         "turnin:4266 @1444:3337.21,-4505.88  TurnIn A Hero\u0027s Welcome",
         "accept:4267 @1444:3337.21,-4505.88  Accept Rise of the Silithid",
         "accept:2866 @1444:3337.21,-4505.88  Accept The Ruins of Solarsal",
-<<<<<<< HEAD
-=======
         "accept:2982 @1444:3229.48,-4479.93  Accept The High Wilderness",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:4124 @1444:3227.4,-4457.69  TurnIn The Missing Courier",
         "accept:4125 @1444:3227.4,-4457.69  Accept The Missing Courier",
         "home @1444:3289.25,-4381.7  Home inn",
@@ -45,16 +33,6 @@
         "obj:2982:2 @1444:1251.51,-5418.64  Objective The High Wilderness / Gordunni Shaman slain (8)",
         "accept:3841 @1444:858.84,-4481.78  Accept An Orphan Looking For a Home",
         "accept:2970 @1444:858.14,-4479.93  Accept Doling Justice",
-<<<<<<< HEAD
-        "obj:2970:1 @1444:606.55,-4162.55  Objective Doling Justice / Grimtotem Naturalist slain (12)",
-        "obj:2970:2 @1444:623.23,-4171.35  Objective Doling Justice / Grimtotem Raider slain (10)",
-        "obj:2970:3 @1444:643.39,-4196.37  Objective Doling Justice / Grimtotem Shaman slain (6)",
-        "turnin:2970 @1444:858.14,-4479.93  TurnIn Doling Justice",
-        "accept:2972 @1444:858.14,-4479.93  Accept Doling Justice",
-        "turnin:2821 @1444:3312.88,-4345.56  TurnIn The Mark of Quality",
-        "turnin:2869 @1444:3330.26,-4505.88  TurnIn Against the Hatecrest",
-        "turnin:2982 @1444:3229.48,-4479.93  TurnIn The High Wilderness",
-=======
         "obj:2970:3 @1444:643.39,-4196.37  Objective Doling Justice / Grimtotem Shaman slain (6)",
         "obj:2970:2 @1444:623.23,-4171.35  Objective Doling Justice / Grimtotem Raider slain (10)",
         "obj:2970:1 @1444:606.55,-4162.55  Objective Doling Justice / Grimtotem Naturalist slain (12)",
@@ -62,7 +40,6 @@
         "turnin:2869 @1444:3330.26,-4505.88  TurnIn Against the Hatecrest",
         "turnin:2982 @1444:3229.48,-4479.93  TurnIn The High Wilderness",
         "accept:2939 @1444:3232.96,-4474.83  Accept In Search of Knowledge",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:4127 @1444:3227.4,-4457.69  TurnIn Boat Wreckage",
         "accept:4129 @1444:3227.4,-4457.69  Accept The Knife Revealed",
         "turnin:4129 @1444:3186.39,-4395.6  TurnIn The Knife Revealed",
@@ -71,11 +48,8 @@
         "accept:4131 @1444:3227.4,-4457.69  Accept The Woodpaw Gnolls",
         "turnin:4142 @1444:2305.83,-3551.41  TurnIn A Visit to Gregan",
         "turnin:2766 @1444:1733.84,-4947.43  TurnIn Find OOX-22/FE!",
-<<<<<<< HEAD
-=======
         "turnin:2970 @1444:858.14,-4479.93  TurnIn Doling Justice",
         "accept:2972 @1444:858.14,-4479.93  Accept Doling Justice",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:4131 @1444:345.93,-4975.7  TurnIn The Woodpaw Gnolls",
         "accept:4135 @1444:345.93,-4975.7  Accept The Writhing Deep",
         "turnin:4135 @1444:432.8,-5319.03  TurnIn The Writhing Deep",
@@ -101,13 +75,8 @@
         "obj:7003:1 @1444:2688.77,-3391.1  Objective Zapped Giants / Miniaturization Residue (15)",
         "turnin:7721 @1444:2327.37,-4378.46  TurnIn Fuel for the Zapping",
         "turnin:7003 @1444:2327.37,-4378.46  TurnIn Zapped Giants",
-<<<<<<< HEAD
-        "accept:3445 @1444:3229.48,-4479.93  Accept The Sunken Temple",
-        "turnin:7733 @1444:3312.88,-4345.56  TurnIn Improved Quality"
-=======
         "turnin:7733 @1444:3312.88,-4345.56  TurnIn Improved Quality",
         "accept:3445 @1444:3229.48,-4479.93  Accept The Sunken Temple"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     }
   ]

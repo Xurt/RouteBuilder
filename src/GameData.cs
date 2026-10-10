@@ -111,10 +111,7 @@ public sealed class GameData
 
         d.LoadAreas(repo); d.LoadSupport(repo);
         d.Version = ReadVersion(repo);
-<<<<<<< HEAD
-=======
         Game.Learn(d);                       // race/class combinations the quest data has class quests for
->>>>>>> zone/Durotar-Horde-vendor_trainer
         return d;
     }
 
@@ -264,11 +261,7 @@ public static class Updater
         if (!skipDownload)
         {
             try { Download(repo); }
-<<<<<<< HEAD
-            catch (Exception e) when (e is HttpRequestException or IOException or TaskCanceledException or InvalidDataException)
-=======
             catch (Exception e) when (e is HttpRequestException or IOException or TaskCanceledException or InvalidDataException or UnauthorizedAccessException)
->>>>>>> zone/Durotar-Horde-vendor_trainer
             {
                 if (!Directory.Exists(Path.Combine(repo, "tools"))) throw new InvalidOperationException("Could not download QuestieDB: " + e.Message);
                 Console.WriteLine($"Could not download a newer QuestieDB ({e.Message}); using the copy already here.");
@@ -280,15 +273,6 @@ public static class Updater
     static void Download(string repo)
     {
         string version;
-<<<<<<< HEAD
-        if (Directory.Exists(Path.Combine(repo, ".git")) && Run("git", "pull --ff-only --depth 1", repo, quiet: true) == 0)
-            version = "commit " + Capture("git", "log -1 \"--format=%h, %cs\"", repo);
-        else if (!Directory.Exists(repo) && Run("git", $"clone --depth 1 --branch {Branch} {RepoUrl}.git \"{repo}\"", null, quiet: true) == 0)
-            version = "commit " + Capture("git", "log -1 \"--format=%h, %cs\"", repo);
-        else
-        {
-            Console.WriteLine("git not available or failed; downloading the zip instead...");
-=======
         string? gitError = null;
         if (Directory.Exists(Path.Combine(repo, ".git")) && Refresh(repo, out gitError))
             version = "commit " + Capture("git", "log -1 \"--format=%h, %cs\"", repo);
@@ -297,33 +281,22 @@ public static class Updater
         else
         {
             Console.WriteLine(gitError == null ? "git not available; downloading the zip instead..." : $"git failed ({gitError}); downloading the zip instead...");
->>>>>>> zone/Durotar-Horde-vendor_trainer
             string zip = Path.Combine(Path.GetTempPath(), "questiedb.zip");
             using (var http = new HttpClient { Timeout = TimeSpan.FromMinutes(20) })
             using (var s = http.GetStreamAsync($"{RepoUrl}/archive/refs/heads/{Branch}.zip").GetAwaiter().GetResult())
             using (var f = File.Create(zip)) s.CopyTo(f);
             string tmp = repo + ".unzip";
-<<<<<<< HEAD
-            if (Directory.Exists(tmp)) Directory.Delete(tmp, true);
-            ZipFile.ExtractToDirectory(zip, tmp);
-            if (Directory.Exists(repo)) Directory.Delete(repo, true);
-            Directory.Move(Directory.GetDirectories(tmp)[0], repo);
-            Directory.Delete(tmp, true); File.Delete(zip);
-=======
             if (Directory.Exists(tmp)) Wipe(tmp);
             ZipFile.ExtractToDirectory(zip, tmp);
             if (Directory.Exists(repo)) Wipe(repo);
             Directory.Move(Directory.GetDirectories(tmp)[0], repo);
             Wipe(tmp); File.Delete(zip);
->>>>>>> zone/Durotar-Horde-vendor_trainer
             version = "zip download, " + DateTime.Now.ToString("yyyy-MM-dd");
         }
         File.WriteAllText(Path.Combine(repo, ".routebuilder-version"), version);
         Console.WriteLine("QuestieDB: " + version);
     }
 
-<<<<<<< HEAD
-=======
     /// <summary>
     /// Brings a shallow clone up to date. "git pull --depth 1" cannot do that once QuestieDB has new commits: the new tip's
     /// history is cut off, so git sees two unrelated branches and refuses to fast-forward. Fetching the tip and moving the
@@ -390,7 +363,6 @@ public static class Updater
         catch (Exception) { return (-1, ""); }
     }
 
->>>>>>> zone/Durotar-Horde-vendor_trainer
     /// <summary>Runs QuestieDB's export-forever.lua with the Lua 5.1 interpreter it ships.</summary>
     public static void Export(string repo, string? luaPath)
     {

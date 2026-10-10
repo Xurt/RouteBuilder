@@ -1,11 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-32 Loch Modan",
-<<<<<<< HEAD
-  "saved": "2026-10-08 19:25",
-=======
   "saved": "2026-10-10 13:02",
->>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
@@ -20,41 +16,6 @@
         "turnin:418 @1432:-2954.48,-5394.05  TurnIn Thelsamar Blood Sausages",
         "accept:86667 @1432:-3000.27,-5375.83  Accept Snowbound",
         "accept:6387 @1432:-3014.88,-5367  Accept Honor Students",
-<<<<<<< HEAD
-        "accept:416 @1432:-2966.89,-5349.34  Accept Rat Catching",
-        "turnin:414 @1432:-2966.89,-5349.34  TurnIn Stout to Kadrell",
-        "accept:1339 @1432:-2966.89,-5349.34  Accept Mountaineer Stormpike\u0027s Task",
-        "turnin:6387 @1432:-2929.93,-5424.77  TurnIn Honor Students",
-        "accept:6391 @1432:-2929.93,-5424.77  Accept Ride to Ironforge",
-        "turnin:1339 @1432:-2676.71,-4825.98  TurnIn Mountaineer Stormpike\u0027s Task",
-        "accept:1338 @1432:-2676.71,-4825.98  Accept Stormpike\u0027s Order",
-        "turnin:353 @1432:-2676.71,-4825.98  TurnIn Stormpike\u0027s Delivery",
-        "obj:416:1 @1432:-3028.95,-4785.33  Objective Rat Catching / Tunnel Rat Ear (12)",
-        "turnin:94505 @1432:-3146.18,-4835.18  TurnIn Call of Water",
-        "turnin:94501 @1432:-3146.18,-4835.18  TurnIn Call of Water",
-        "turnin:94494 @1432:-3146.18,-4835.18  TurnIn Call of Water",
-        "turnin:86667 @1432:-3146.18,-4835.18  TurnIn Snowbound",
-        "turnin:274 @1432:-3263.96,-4737.87  TurnIn A Dark Threat Looms",
-        "turnin:79974 @1432:-3356.92,-4722.6  TurnIn Wet Job",
-        "turnin:2039 @1432:-3746.95,-5369.03  TurnIn Find Bingles",
-        "accept:298 @1432:-3812.32,-5694.63  Accept Excavation Progress Report",
-        "accept:454 @1432:-3433.32,-5762.7  Accept After the Ambush",
-        "turnin:454 @1432:-3433.88,-5764.72  TurnIn After the Ambush",
-        "turnin:298 @1432:-3020.95,-5359.09  TurnIn Excavation Progress Report",
-        "accept:301 @1432:-3020.95,-5359.09  Accept Report to Ironforge",
-        "turnin:416 @1432:-2893.79,-5402.51  TurnIn Rat Catching",
-        "turnin:94465 @1432:-2877.8,-5702.73  TurnIn Call of Fire",
-        "accept:94473 @1432:-2877.8,-5702.73  Accept Fire Sapta",
-        "accept:94467 @1432:-2877.8,-5702.73  Accept Call of Fire",
-        "accept:94466 @1432:-2877.8,-5702.73  Accept Call of Fire",
-        "accept:224 @1432:-2602.51,-5832.79  Accept In Defense of the King\u0027s Lands",
-        "accept:267 @1432:-2634.51,-5842.9  Accept The Trogg Threat",
-        "obj:224:1 @1432:-2866.76,-5873.63  Objective In Defense of the King\u0027s Lands / Stonesplinter Trogg slain (10)",
-        "obj:224:2 @1432:-2912.27,-5883.56  Objective In Defense of the King\u0027s Lands / Stonesplinter Scout slain (10)",
-        "obj:267:1 @1432:-2867.87,-5897.72  Objective The Trogg Threat / Trogg Stone Tooth (1)",
-        "turnin:267 @1432:-2634.51,-5842.9  TurnIn The Trogg Threat",
-        "turnin:224 @1432:-2602.51,-5832.79  TurnIn In Defense of the King\u0027s Lands",
-=======
         "accept:416 @1432:-2949.79,-5355.97  Accept Rat Catching",
         "turnin:6387 @1432:-2929.93,-5424.77  TurnIn Honor Students",
         "accept:6391 @1432:-2929.93,-5424.77  Accept Ride to Ironforge",
@@ -87,46 +48,22 @@
         "turnin:353 @1432:-2676.71,-4825.98  TurnIn Stormpike\u0027s Delivery",
         "turnin:224 @1432:-2602.51,-5832.79  TurnIn In Defense of the King\u0027s Lands",
         "turnin:267 @1432:-2634.51,-5842.9  TurnIn The Trogg Threat",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:237 @1432:-2643.06,-5892.94  Accept In Defense of the King\u0027s Lands",
         "obj:237:1 @1432:-2791.74,-6049.86  Objective In Defense of the King\u0027s Lands / Stonesplinter Skullthumper slain (10)",
         "obj:237:2 @1432:-2779.6,-6027.41  Objective In Defense of the King\u0027s Lands / Stonesplinter Seer slain (10)",
         "turnin:237 @1432:-2643.06,-5892.94  TurnIn In Defense of the King\u0027s Lands",
         "obj:94466:2 @1432:-2779.6,-6027.41  Objective Call of Fire / Reagent Pouch (1)",
-<<<<<<< HEAD
-        "obj:94466:1 @1432:-2991.71,-4934.7  Objective Call of Fire / Fire Tar (1)",
-        "turnin:94466 @1432:-2877.8,-5702.73  TurnIn Call of Fire"
-=======
         "turnin:94466 @1432:-2881.11,-5701.07  TurnIn Call of Fire",
         "accept:94467 @1432:-2881.11,-5701.07  Accept Call of Fire",
         "obj:94467:1 @1432:-2875.31,-5672.56  Objective Call of Fire / Glowing Ember (1)",
         "turnin:94467 @1432:-2870.62,-5674.4  TurnIn Call of Fire",
         "accept:94468 @1432:-2870.62,-5674.4  Accept Call of Fire"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 2,
       "steps": [
         "accept:307 @1432:-2676.71,-4825.98  Accept Filthy Paws",
-<<<<<<< HEAD
-        "obj:307:1 @1432:-2967.44,-4935.99  Objective Filthy Paws / Miners\u0027 Gear (1)",
-        "turnin:307 @1432:-2676.71,-4825.98  TurnIn Filthy Paws",
-        "accept:436 @1432:-3020.95,-5359.09  Accept Ironband\u0027s Excavation",
-        "home @1432:-2973.79,-5377.86  Home inn",
-        "turnin:94473 @1432:-2877.8,-5702.73  TurnIn Fire Sapta",
-        "accept:263 @1432:-2641.13,-5858.17  Accept In Defense of the King\u0027s Lands",
-        "accept:86585 @1432:-2869.8,-6073.4  Accept Banner of the Fallen",
-        "obj:263:1 @1432:-2989.51,-6189.67  Objective In Defense of the King\u0027s Lands / Stonesplinter Shaman slain (10)",
-        "obj:263:2 @1432:-2982.61,-6181.57  Objective In Defense of the King\u0027s Lands / Stonesplinter Bonesnapper slain (10)",
-        "turnin:263 @1432:-2641.13,-5858.17  TurnIn In Defense of the King\u0027s Lands",
-        "accept:217 @1432:-2634.51,-5842.9  Accept In Defense of the King\u0027s Lands",
-        "turnin:436 @1432:-3783.91,-5713.77  TurnIn Ironband\u0027s Excavation",
-        "accept:257 @1432:-4296.13,-5691.69  Accept A Hunter\u0027s Boast",
-        "accept:86758 @1432:-4248.96,-5621.79  Accept Twisting the Knife",
-        "accept:385 @1432:-4248.96,-5621.79  Accept Crocolisk Hunting",
-        "accept:2038 @1432:-3746.95,-5369.03  Accept Bingles\u0027 Missing Supplies",
-=======
         "obj:307:1 @1432:-2967.44,-4935.99  Objective Filthy Paws / Miners\u0027 Gear (4)",
         "turnin:307 @1432:-2676.71,-4825.98  TurnIn Filthy Paws",
         "home @1432:-2973.79,-5377.86  Home inn",
@@ -146,7 +83,6 @@
         "turnin:257 @1432:-4296.13,-5691.69  TurnIn A Hunter\u0027s Boast",
         "accept:258 @1432:-4296.13,-5691.69  Accept A Hunter\u0027s Challenge",
         "accept:436 @1432:-3020.95,-5359.09  Accept Ironband\u0027s Excavation",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:86614 @1432:-3319.4,-5218.92  Accept Silver of the Waves",
         "turnin:86614 @1432:-3104.81,-5210.09  TurnIn Silver of the Waves",
         "obj:2038:1 @1432:-3337.89,-5041.03  Objective Bingles\u0027 Missing Supplies / Bingles\u0027 Wrench (1)",
@@ -154,21 +90,6 @@
         "accept:79975 @1432:-3356.92,-4722.6  Accept Eagle\u0027s Fist",
         "obj:2038:3 @1432:-3422.01,-4930.66  Objective Bingles\u0027 Missing Supplies / Bingles\u0027 Hammer (1)",
         "obj:2038:4 @1432:-3489.04,-4976.83  Objective Bingles\u0027 Missing Supplies / Bingles\u0027 Blastencapper (1)",
-<<<<<<< HEAD
-        "obj:385:1 @1432:-3731.5,-5345.67  Objective Crocolisk Hunting / Crocolisk Meat (1)",
-        "obj:385:2 @1432:-3731.5,-5345.67  Objective Crocolisk Hunting / Crocolisk Skin (6)",
-        "obj:86758:1 @1432:-3731.5,-5345.67  Objective Twisting the Knife / Marek\u0027s Croc-Hunting Knife (1)",
-        "turnin:2038 @1432:-3746.95,-5369.03  TurnIn Bingles\u0027 Missing Supplies",
-        "obj:257:1 @1432:-4122.63,-5542.13  Objective A Hunter\u0027s Boast / Mountain Buzzard slain (6)",
-        "turnin:86758 @1432:-4248.96,-5621.79  TurnIn Twisting the Knife",
-        "turnin:385 @1432:-4248.96,-5621.79  TurnIn Crocolisk Hunting",
-        "turnin:257 @1432:-4296.13,-5691.69  TurnIn A Hunter\u0027s Boast",
-        "accept:258 @1432:-4296.13,-5691.69  Accept A Hunter\u0027s Challenge",
-        "obj:258:1 @1432:-3730.95,-5222.41  Objective A Hunter\u0027s Challenge / Elder Mountain Boar slain (5)",
-        "turnin:258 @1432:-4296.13,-5691.69  TurnIn A Hunter\u0027s Challenge",
-        "obj:86585:1 @1432:-2868.14,-6072.12  Objective Banner of the Fallen / Headsplitter slain (8)",
-        "turnin:86585 @1432:-2634.51,-5842.9  TurnIn Banner of the Fallen",
-=======
         "turnin:2038 @1432:-3746.95,-5369.03  TurnIn Bingles\u0027 Missing Supplies",
         "obj:258:1 @1432:-3730.95,-5222.41  Objective A Hunter\u0027s Challenge / Elder Mountain Boar slain (5)",
         "turnin:258 @1432:-4296.13,-5691.69  TurnIn A Hunter\u0027s Challenge",
@@ -178,7 +99,6 @@
         "turnin:263 @1432:-2641.13,-5858.17  TurnIn In Defense of the King\u0027s Lands",
         "turnin:86585 @1432:-2634.51,-5842.9  TurnIn Banner of the Fallen",
         "accept:217 @1432:-2634.51,-5842.9  Accept In Defense of the King\u0027s Lands",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:217:3 @1432:-2949.24,-6153.24  Objective In Defense of the King\u0027s Lands / Brawler slain (1)",
         "obj:217:2 @1432:-2951.17,-6158.21  Objective In Defense of the King\u0027s Lands / Gnasher slain (1)",
         "obj:217:1 @1432:-2952.82,-6151.4  Objective In Defense of the King\u0027s Lands / Grawmug slain (1)",
@@ -189,16 +109,9 @@
       "part": 3,
       "steps": [
         "accept:297 @1432:-3783.91,-5713.77  Accept Gathering Idols",
-<<<<<<< HEAD
-        "accept:271 @1432:-4248.14,-5667.41  Accept Vyrin\u0027s Revenge",
-        "obj:297:1 @1432:-3941.96,-5679.18  Objective Gathering Idols / Carved Stone Idol (8)",
-        "turnin:297 @1432:-3783.91,-5713.77  TurnIn Gathering Idols",
-        "accept:86776 @1432:-2932.13,-5343.64  Accept Ingredients for the Forge",
-=======
         "obj:297:1 @1432:-3941.96,-5679.18  Objective Gathering Idols / Carved Stone Idol (8)",
         "accept:271 @1432:-4248.14,-5667.41  Accept Vyrin\u0027s Revenge",
         "turnin:297 @1432:-3783.91,-5713.77  TurnIn Gathering Idols",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:255 @1432:-2948.13,-5305.56  Accept Mercenaries",
         "accept:278 @1432:-3263.96,-4737.87  Accept A Dark Threat Looms",
         "accept:250 @1432:-3263.96,-4737.87  Accept A Dark Threat Looms",
@@ -212,22 +125,13 @@
         "obj:278:1 @1432:-3002.2,-5060.16  Objective A Dark Threat Looms / Lurker Venom (1)",
         "turnin:199 @1432:-3263.96,-4737.87  TurnIn A Dark Threat Looms",
         "turnin:278 @1432:-3263.96,-4737.87  TurnIn A Dark Threat Looms",
-<<<<<<< HEAD
-        "accept:280 @1432:-3263.96,-4737.87  Accept A Dark Threat Looms",
-        "accept:161 @1432:-3263.96,-4737.87  Accept A Dark Threat Looms",
-=======
         "accept:161 @1432:-3263.96,-4737.87  Accept A Dark Threat Looms",
         "accept:280 @1432:-3263.96,-4737.87  Accept A Dark Threat Looms",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:280 @1432:-3388.91,-4750.56  TurnIn A Dark Threat Looms",
         "accept:283 @1432:-3388.91,-4750.56  Accept A Dark Threat Looms",
         "turnin:283 @1432:-3263.96,-4737.87  TurnIn A Dark Threat Looms",
         "turnin:255 @1432:-2948.13,-5305.56  TurnIn Mercenaries",
-<<<<<<< HEAD
-        "turnin:94473 @1432:-2877.8,-5702.73  TurnIn Fire Sapta",
-=======
         "accept:86776 @1432:-2932.13,-5343.64  Accept Ingredients for the Forge",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:271:1 @1432:-3039.71,-5653.43  Objective Vyrin\u0027s Revenge / Ol\u0027 Sooty\u0027s Head (1)",
         "turnin:271 @1432:-4296.13,-5691.69  TurnIn Vyrin\u0027s Revenge",
         "accept:531 @1432:-4296.13,-5691.69  Accept Vyrin\u0027s Revenge",
@@ -237,19 +141,11 @@
     {
       "part": 4,
       "steps": [
-<<<<<<< HEAD
-=======
         "turnin:86776 @1432:-2932.13,-5343.64  TurnIn Ingredients for the Forge",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:256 @1432:-3022.61,-5343.27  Accept WANTED: Chok\u0027sul",
         "accept:94616 @1432:-3146.18,-4835.18  Accept Water Sapta",
         "accept:94502 @1432:-3146.18,-4835.18  Accept Call of Water",
         "accept:94495 @1432:-3146.18,-4835.18  Accept Call of Water",
-<<<<<<< HEAD
-        "turnin:86776 @1432:-2932.13,-5343.64  TurnIn Ingredients for the Forge",
-        "turnin:94473 @1432:-2877.8,-5702.73  TurnIn Fire Sapta",
-=======
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:256:1 @1432:-4189.11,-4757.92  Objective WANTED: Chok\u0027sul / Chok\u0027sul\u0027s Head (1)",
         "accept:467 @1432:-2966.89,-5349.34  Accept Stonegear\u0027s Search",
         "accept:468 @1432:-2966.89,-5349.34  Accept Report to Mountaineer Rockgar",

@@ -10,11 +10,7 @@
     <ServerGarbageCollection>false</ServerGarbageCollection>
     <TieredPGO>true</TieredPGO>
     <!-- the downloaded data and the generated guides live next to the project; keep the build from scanning them -->
-<<<<<<< HEAD
-    <DefaultItemExcludes>$(DefaultItemExcludes);QuestieDB/**;guides/**;addon/**;examples/**</DefaultItemExcludes>
-=======
     <DefaultItemExcludes>$(DefaultItemExcludes);QuestieDB/**;guides/**;addon/**;examples/**;locks/**;RxpToLock/**</DefaultItemExcludes>
->>>>>>> zone/Durotar-Horde-vendor_trainer
   </PropertyGroup>
   <ItemGroup>
     <None Include="zones\**\*.json" CopyToOutputDirectory="PreserveNewest" />

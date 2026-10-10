@@ -102,8 +102,6 @@ public sealed class RouteLock
         File.WriteAllText(path, JsonSerializer.Serialize(shape, Json), new UTF8Encoding(false));
     }
 
-<<<<<<< HEAD
-=======
     /// <summary>Writes an order that did not come from a build (one read from another guide) as a one-part lock.</summary>
     public static void SaveSteps(string path, string guideName, string about, IEnumerable<(LockedStep step, string note)> steps)
     {
@@ -128,7 +126,6 @@ public sealed class RouteLock
     /// <summary>The saved order for one part of a guide; a lock with fewer parts than the build gives every part its whole order.</summary>
     public List<LockedStep> For(int part) => Parts.TryGetValue(part, out var l) ? l : Parts.OrderBy(p => p.Key).SelectMany(p => p.Value).ToList();
 
->>>>>>> zone/Durotar-Horde-vendor_trainer
     /// <summary>A place as the guide writes it: the map ID, and world coordinates (map percent where the map has no size).</summary>
     public static (int map, Pt p) Spot(ZoneModel m, Cand c)
     {

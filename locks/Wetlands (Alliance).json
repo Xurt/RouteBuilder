@@ -1,11 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "20-32 Wetlands",
-<<<<<<< HEAD
-  "saved": "2026-10-08 19:25",
-=======
   "saved": "2026-10-10 13:02",
->>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
@@ -17,40 +13,14 @@
         "home @1437:-832.07,-3827.85  Home inn",
         "turnin:942 @1437:-837.86,-3813.52  TurnIn The Absent Minded Prospector",
         "accept:98197 @1437:-807.26,-3716.22  Accept Spoils of War",
-<<<<<<< HEAD
-        "obj:98197:2 @1437:-666.66,-3567.39  Objective Spoils of War / Khaz Modan Iron (30)",
-        "obj:98197:1 @1437:-637.71,-3603.22  Objective Spoils of War / Khaz Modan Timber (6)",
-=======
         "obj:98197:1 @1437:-637.71,-3603.22  Objective Spoils of War / Khaz Modan Timber (6)",
         "obj:98197:2 @1437:-666.66,-3567.39  Objective Spoils of War / Khaz Modan Iron (30)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:98197 @1437:-807.26,-3716.22  TurnIn Spoils of War",
         "accept:463 @1437:-840.34,-3791.74  Accept The Greenwarden",
         "accept:98282 @1437:-880.87,-3769.14  Accept Alchemical Hazards",
         "accept:469 @1437:-2453.98,-3233.05  Accept Daily Delivery",
         "turnin:463 @1437:-2720.72,-3261.44  TurnIn The Greenwarden",
         "accept:276 @1437:-2720.72,-3261.44  Accept Tramping Paws",
-<<<<<<< HEAD
-        "obj:98282:1 @1437:-2676.88,-3904.75  Objective Alchemical Hazards / Unruptured Stalker Gland (1)",
-        "obj:276:1 @1437:-2948.99,-4129.11  Objective Tramping Paws / Mosshide Gnoll slain (15)",
-        "obj:276:2 @1437:-2958.5,-4072.33  Objective Tramping Paws / Mosshide Mongrel slain (10)",
-        "turnin:94495 @1437:-3107.79,-4254.52  TurnIn Call of Water",
-        "accept:94500 @1437:-3107.79,-4254.52  Accept Call of Water",
-        "turnin:94500 @1437:-3107.79,-4254.52  TurnIn Call of Water",
-        "accept:94497 @1437:-3107.79,-4254.52  Accept Call of Water",
-        "turnin:94497 @1437:-3107.79,-4254.52  TurnIn Call of Water",
-        "accept:94499 @1437:-3107.79,-4254.52  Accept Call of Water",
-        "turnin:94499 @1437:-3107.79,-4254.52  TurnIn Call of Water",
-        "accept:94501 @1437:-3107.79,-4254.52  Accept Call of Water",
-        "turnin:276 @1437:-2720.72,-3261.44  TurnIn Tramping Paws",
-        "accept:277 @1437:-2720.72,-3261.44  Accept Fire Taboo",
-        "turnin:161 @1437:-2459.36,-2648.73  TurnIn A Dark Threat Looms",
-        "accept:274 @1437:-2459.36,-2648.73  Accept A Dark Threat Looms",
-        "obj:277:1 @1437:-2571.84,-2910.57  Objective Fire Taboo / Crude Flint (9)",
-        "turnin:277 @1437:-2720.72,-3261.44  TurnIn Fire Taboo",
-        "accept:321 @1437:-827.11,-3817.93  Accept Lightforge Iron",
-        "turnin:321 @1437:-890.38,-3917.15  TurnIn Lightforge Iron",
-=======
         "obj:276:2 @1437:-2958.5,-4072.33  Objective Tramping Paws / Mosshide Mongrel slain (10)",
         "obj:276:1 @1437:-2948.99,-4129.11  Objective Tramping Paws / Mosshide Gnoll slain (15)",
         "turnin:94495 @1437:-3107.79,-4254.52  TurnIn Call of Water",
@@ -68,7 +38,6 @@
         "turnin:161 @1437:-2459.36,-2648.73  TurnIn A Dark Threat Looms",
         "accept:274 @1437:-2459.36,-2648.73  Accept A Dark Threat Looms",
         "turnin:277 @1437:-2720.72,-3261.44  TurnIn Fire Taboo",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:279 @1437:-733.65,-3762.25  Accept Claws from the Deep",
         "turnin:469 @1437:-743.16,-3684.25  TurnIn Daily Delivery",
         "obj:279:1 @1437:-968.13,-3270.54  Objective Claws from the Deep / Bluegill Murloc slain (12)",
@@ -82,13 +51,9 @@
         "accept:285 @1437:-952,-3201.36  Accept Search More Hovels",
         "turnin:285 @1437:-966.06,-3107.37  TurnIn Search More Hovels",
         "accept:286 @1437:-966.06,-3107.37  Accept Return the Statuette",
-<<<<<<< HEAD
-        "turnin:286 @1437:-733.65,-3762.25  TurnIn Return the Statuette"
-=======
         "turnin:286 @1437:-733.65,-3762.25  TurnIn Return the Statuette",
         "accept:321 @1437:-827.11,-3817.93  Accept Lightforge Iron",
         "turnin:321 @1437:-890.38,-3917.15  TurnIn Lightforge Iron"
->>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
@@ -98,14 +63,6 @@
         "accept:943 @1437:-837.86,-3813.52  Accept The Absent Minded Prospector",
         "accept:471 @1437:-743.16,-3684.25  Accept Apprentice\u0027s Duties",
         "accept:305 @1437:-865.16,-3585.85  Accept In Search of The Excavation Team",
-<<<<<<< HEAD
-        "accept:294 @1437:-1968.49,-3550.57  Accept Ormer\u0027s Revenge",
-        "obj:943:2 @1437:-1996.61,-3586.95  Objective The Absent Minded Prospector / Flagongut\u0027s Fossil (1)",
-        "turnin:305 @1437:-1998.67,-3590.54  TurnIn In Search of The Excavation Team",
-        "accept:306 @1437:-1998.67,-3590.54  Accept In Search of The Excavation Team",
-        "accept:275 @1437:-2720.72,-3261.44  Accept Blisters on The Land",
-        "obj:470:1 @1437:-2239.36,-2847.45  Objective Digging Through the Ooze / Sida\u0027s Bag (1)",
-=======
         "obj:470:1 @1437:-2239.36,-2847.45  Objective Digging Through the Ooze / Sida\u0027s Bag (1)",
         "accept:275 @1437:-2720.72,-3261.44  Accept Blisters on The Land",
         "turnin:305 @1437:-1998.67,-3590.54  TurnIn In Search of The Excavation Team",
@@ -113,16 +70,11 @@
         "obj:943:2 @1437:-1996.61,-3586.95  Objective The Absent Minded Prospector / Flagongut\u0027s Fossil (1)",
         "accept:294 @1437:-1968.49,-3550.57  Accept Ormer\u0027s Revenge",
         "obj:294:2 @1437:-1624.83,-3372.79  Objective Ormer\u0027s Revenge / Mottled Screecher slain (10)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:275:1 @1437:-1521.86,-3171.04  Objective Blisters on The Land / Fen Creeper slain (12)",
         "obj:294:1 @1437:-1388.7,-3478.36  Objective Ormer\u0027s Revenge / Mottled Raptor slain (10)",
         "turnin:306 @1437:-865.16,-3585.85  TurnIn In Search of The Excavation Team",
         "turnin:470 @1437:-877.56,-3746.27  TurnIn Digging Through the Ooze",
         "obj:943:1 @1437:-1325.01,-3687.56  Objective The Absent Minded Prospector / Stone of Relu (1)",
-<<<<<<< HEAD
-        "obj:294:2 @1437:-1342.38,-3679.01  Objective Ormer\u0027s Revenge / Mottled Screecher slain (10)",
-=======
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:294 @1437:-1968.49,-3550.57  TurnIn Ormer\u0027s Revenge",
         "turnin:275 @1437:-2720.72,-3261.44  TurnIn Blisters on The Land",
         "obj:471:1 @1437:-1149.26,-2893.21  Objective Apprentice\u0027s Duties / Giant Crocolisk Skin (6)",
@@ -135,21 +87,6 @@
     {
       "part": 3,
       "steps": [
-<<<<<<< HEAD
-        "accept:526 @1437:-827.11,-3817.93  Accept Lightforge Ingots",
-        "accept:288 @1437:-840.34,-3791.74  Accept The Third Fleet",
-        "accept:464 @1437:-797.34,-3732.48  Accept War Banners",
-        "accept:472 @1437:-838.28,-3688.66  Accept Fall of Dun Modr",
-        "accept:295 @1437:-1968.49,-3550.57  Accept Ormer\u0027s Revenge",
-        "accept:299 @1437:-1994.54,-3591.92  Accept Uncovering the Past",
-        "obj:464:1 @1437:-2084.69,-3401.18  Objective War Banners / Dragonmaw War Banner (8)",
-        "obj:299:2 @1437:-1803.9,-3459.89  Objective Uncovering the Past / Modr Fragment (4)",
-        "obj:299:4 @1437:-1803.9,-3459.89  Objective Uncovering the Past / Neru Fragment (4)",
-        "obj:299:1 @1437:-1803.9,-3459.89  Objective Uncovering the Past / Ados Fragment (4)",
-        "obj:299:3 @1437:-1803.9,-3459.89  Objective Uncovering the Past / Golm Fragment (4)",
-        "obj:295:2 @1437:-1789.42,-3478.36  Objective Ormer\u0027s Revenge / Mottled Razormaw slain (10)",
-        "obj:295:1 @1437:-1842.77,-3549.19  Objective Ormer\u0027s Revenge / Mottled Scytheclaw slain (10)",
-=======
         "accept:288 @1437:-840.34,-3791.74  Accept The Third Fleet",
         "obj:288:1 @1437:-832.07,-3827.85  Objective The Third Fleet / Flagon of Mead (1)",
         "accept:526 @1437:-827.11,-3817.93  Accept Lightforge Ingots",
@@ -165,7 +102,6 @@
         "obj:299:2 @1437:-1803.9,-3459.89  Objective Uncovering the Past / Modr Fragment (4)",
         "obj:299:1 @1437:-1803.9,-3459.89  Objective Uncovering the Past / Ados Fragment (4)",
         "obj:299:4 @1437:-1803.9,-3459.89  Objective Uncovering the Past / Neru Fragment (4)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:295 @1437:-1968.49,-3550.57  TurnIn Ormer\u0027s Revenge",
         "turnin:299 @1437:-1994.54,-3591.92  TurnIn Uncovering the Past",
         "turnin:464 @1437:-797.34,-3732.48  TurnIn War Banners",
@@ -173,17 +109,9 @@
         "accept:324 @1437:-890.38,-3917.15  Accept The Lost Ingots",
         "obj:526:1 @1437:-812.22,-3975.59  Objective Lightforge Ingots / Lightforge Ingot (5)",
         "obj:324:1 @1437:-812.22,-3975.59  Objective The Lost Ingots / Lightforge Ingot (5)",
-<<<<<<< HEAD
-        "obj:288:1 @1437:-832.07,-3827.85  Objective The Third Fleet / Flagon of Mead (1)",
         "turnin:324 @1437:-827.11,-3817.93  TurnIn The Lost Ingots",
         "accept:322 @1437:-827.11,-3817.93  Accept Blessed Arm",
         "turnin:526 @1437:-827.11,-3817.93  TurnIn Lightforge Ingots",
-        "turnin:288 @1437:-840.34,-3791.74  TurnIn The Third Fleet",
-=======
-        "turnin:324 @1437:-827.11,-3817.93  TurnIn The Lost Ingots",
-        "accept:322 @1437:-827.11,-3817.93  Accept Blessed Arm",
-        "turnin:526 @1437:-827.11,-3817.93  TurnIn Lightforge Ingots",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:465 @1437:-2352.25,-3443.63  TurnIn Nek\u0027rosh\u0027s Gambit",
         "turnin:472 @1437:-2449.02,-2651.21  TurnIn Fall of Dun Modr"
       ]
@@ -191,16 +119,8 @@
     {
       "part": 4,
       "steps": [
-<<<<<<< HEAD
-        "accept:289 @1437:-840.34,-3791.74  Accept The Cursed Crew",
-        "accept:1250 @1437:-825.46,-3808.83  Accept The Missing Diplomat",
-        "turnin:1250 @1437:-827.94,-3822.89  TurnIn The Missing Diplomat",
-        "accept:1264 @1437:-827.94,-3822.89  Accept The Missing Diplomat",
-        "home @1437:-832.07,-3827.85  Home inn",
-=======
         "home @1437:-832.07,-3827.85  Home inn",
         "accept:289 @1437:-840.34,-3791.74  Accept The Cursed Crew",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:289:3 @1437:-959.86,-2979.75  Objective The Cursed Crew / Snellig\u0027s Snuffbox (1)",
         "obj:289:1 @1437:-968.13,-2979.75  Objective The Cursed Crew / Cursed Sailor slain (13)",
         "obj:289:2 @1437:-966.47,-2973.69  Objective The Cursed Crew / Cursed Marine slain (5)",
@@ -209,16 +129,11 @@
         "obj:290:1 @1437:-1028.51,-2798.67  Objective Lifting the Curse / Intrepid Strongbox Key (1)",
         "turnin:290 @1437:-984.26,-2810.52  TurnIn Lifting the Curse",
         "accept:292 @1437:-984.26,-2810.52  Accept The Eye of Paleth",
-<<<<<<< HEAD
-        "turnin:292 @1437:-827.11,-3817.93  TurnIn The Eye of Paleth",
-        "accept:293 @1437:-827.11,-3817.93  Accept Cleansing the Eye",
-=======
         "accept:1250 @1437:-825.46,-3808.83  Accept The Missing Diplomat",
         "turnin:292 @1437:-827.11,-3817.93  TurnIn The Eye of Paleth",
         "accept:293 @1437:-827.11,-3817.93  Accept Cleansing the Eye",
         "turnin:1250 @1437:-827.94,-3822.89  TurnIn The Missing Diplomat",
         "accept:1264 @1437:-827.94,-3822.89  Accept The Missing Diplomat",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:296 @1437:-1968.49,-3550.57  Accept Ormer\u0027s Revenge",
         "obj:296:1 @1437:-1765.02,-3567.66  Objective Ormer\u0027s Revenge / Sarltooth\u0027s Talon (1)",
         "turnin:296 @1437:-1968.49,-3550.57  TurnIn Ormer\u0027s Revenge",

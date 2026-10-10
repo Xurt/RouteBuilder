@@ -5,12 +5,8 @@ namespace RouteBuilder;
 public sealed class BuildOptions
 {
     public string Faction = "Horde"; public string? Race, Class;
-<<<<<<< HEAD
-    public double? StartLevel; public int? MinLevel, MaxLevel; public bool NoHearth, Fresh; public string? RxpDir, OrderFrom;
-=======
     public double? StartLevel; public int? MinLevel, MaxLevel; public bool NoHearth, Fresh, NoRxpSteps; public string? RxpDir, OrderFrom;
     public HashSet<string> RxpPlaced = new();    // RestedXP service steps already put in a part of this guide
->>>>>>> zone/Durotar-Horde-vendor_trainer
 }
 
 /// <summary>Fixed facts about the game: races, classes and the experience curve.</summary>
@@ -25,8 +21,6 @@ public static class Game
     static readonly (string Name, long Bit)[] Alliance = { ("Human", 1), ("Dwarf", 4), ("NightElf", 8), ("Gnome", 64), ("Skyborne", 1L << 32) };
     public static (string Name, long Bit)[] Races(string faction) => faction == "Horde" ? Horde : Alliance;
 
-<<<<<<< HEAD
-=======
     /// <summary>
     /// The race/class combinations that exist: classic's, plus those Forever adds. Forever's are the ones its quest
     /// data has class quests for; any more that the data turns up are added when it is loaded (<see cref="Learn"/>).
@@ -61,7 +55,6 @@ public static class Game
         }
     }
 
->>>>>>> zone/Durotar-Horde-vendor_trainer
     /// <summary>Quest "sort" values that mean "class quest".</summary>
     public static readonly HashSet<int> ClassSorts = new() { -61, -81, -82, -141, -161, -162, -261, -262, -263 };
     public const int CampingSort = -666;
@@ -233,16 +226,10 @@ public sealed class Travel
 public sealed class RxpNotes
 {
     public readonly Dictionary<(int q, int idx), List<string>> Lines = new();
-<<<<<<< HEAD
-    public int Files;
-
-    public static RxpNotes? Load(string? dir)
-=======
     public readonly List<RxpService> Services = new();     // training, vendor and flight-path steps
     public int Files;
 
     public static RxpNotes? Load(string? dir, GameData? data = null)
->>>>>>> zone/Durotar-Horde-vendor_trainer
     {
         if (dir == null) return null;
         if (!Directory.Exists(dir)) { Console.WriteLine($"--rxp: folder not found: {dir}"); return null; }
@@ -253,10 +240,7 @@ public sealed class RxpNotes
             try { text = File.ReadAllText(f); } catch (IOException) { continue; }
             if (!text.Contains("RegisterGuide")) continue;
             r.Files++;
-<<<<<<< HEAD
-=======
             r.Services.AddRange(RxpServices.Read(f, text, data));
->>>>>>> zone/Durotar-Horde-vendor_trainer
             foreach (Match m in rx.Matches(text))
             {
                 var k = (int.Parse(m.Groups[1].Value), int.Parse(m.Groups[2].Value)); string s = m.Groups[3].Value.Trim();
@@ -326,11 +310,7 @@ public sealed class ZoneModel
     {
         Data = data; Main = main; Cfg = cfg ?? new ZoneConfig(); HasConfig = cfg != null; Opt = opt; Visit = visit ?? new Visit();
         Races = Game.Races(opt.Faction); FactionMask = Races.Aggregate(0L, (m, r) => m | r.Bit);
-<<<<<<< HEAD
-        Rxp = RxpNotes.Load(opt.RxpDir);
-=======
         Rxp = RxpNotes.Load(opt.RxpDir, Data);
->>>>>>> zone/Durotar-Horde-vendor_trainer
         SetUpAreas();
         SelectQuests();
         foreach (var q in Quests.Values) ResolveObjectives(q);
@@ -520,12 +500,8 @@ public sealed class ZoneModel
         ulong e = 0;
         for (int r = 0; r < Races.Length; r++)
             for (int c = 0; c < Game.Classes.Length; c++)
-<<<<<<< HEAD
-                if ((races == 0 || (races & Races[r].Bit) != 0) && (classes == 0 || (classes & Game.Classes[c].Bit) != 0)) e |= 1UL << (r * Game.Classes.Length + c);
-=======
                 if ((races == 0 || (races & Races[r].Bit) != 0) && (classes == 0 || (classes & Game.Classes[c].Bit) != 0) && Game.Exists(Races[r].Name, Game.Classes[c].Name))
                     e |= 1UL << (r * Game.Classes.Length + c);
->>>>>>> zone/Durotar-Horde-vendor_trainer
         return e;
     }
 
@@ -544,14 +520,11 @@ public sealed class ZoneModel
             if (c.Name == null) throw new InvalidOperationException($"'{Opt.Class}' is not a class. Choices: {string.Join(", ", Game.Classes.Select(x => x.Name))}");
             classBit = c.Bit;
         }
-<<<<<<< HEAD
-=======
         if (Opt.Race != null && Opt.Class != null && !Game.Exists(Races.First(x => x.Bit == raceBit).Name, Game.Classes.First(x => x.Bit == classBit).Name))
         {
             string rn = Races.First(x => x.Bit == raceBit).Name;
             throw new InvalidOperationException($"there are no {rn} {Opt.Class}s. {rn} classes: {string.Join(", ", Game.ClassesOf(rn))}");
         }
->>>>>>> zone/Durotar-Horde-vendor_trainer
         SingleCharacter = raceBit != 0 || classBit != 0;
         AllElig = EligFor(raceBit, classBit);
 

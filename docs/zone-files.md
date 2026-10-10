@@ -16,10 +16,7 @@ The app never changes the QuestieDB folder, and `update` never touches your zone
 - [Objectives](#objectives)
 - [Quests that start from an item](#quests-that-start-from-an-item)
 - [Reminders](#reminders)
-<<<<<<< HEAD
-=======
 - [Extra steps: vendors, trainers, flight paths](#extra-steps-vendors-trainers-flight-paths)
->>>>>>> zone/Durotar-Horde-vendor_trainer
 - [Finding IDs and coordinates](#finding-ids-and-coordinates)
 - [Checking that a fix took](#checking-that-a-fix-took)
 - [What a zone file cannot do](#what-a-zone-file-cannot-do)
@@ -92,10 +89,7 @@ names are not case-sensitive.
 | The hand-in needs something extra (use an item, train a skill) | `turninPreLines`, `turninText` |
 | A quest starts from a dropped item | [`startItem`](#quests-that-start-from-an-item) |
 | The city trip is planned as if you could walk through the wall | `linkedAreas` with `gate` and `hub` |
-<<<<<<< HEAD
-=======
 | You want a vendor, trainer or flight-path stop in the guide | [`steps`](#extra-steps-vendors-trainers-flight-paths), placed next to a planned step |
->>>>>>> zone/Durotar-Horde-vendor_trainer
 
 ## Zone settings
 
@@ -114,10 +108,7 @@ These sit at the top level of the file.
 | `exclude` | Quest IDs to leave out, each with a reason: `{ "441": "belongs to a Silverpine chain" }`. | |
 | `quests` | Corrections per quest. See [Quest corrections](#quest-corrections). | |
 | `reminders` | Notes shown at a certain level. See [Reminders](#reminders). | |
-<<<<<<< HEAD
-=======
 | `steps` | Hand-written steps placed next to a planned one. See [Extra steps](#extra-steps-vendors-trainers-flight-paths). | |
->>>>>>> zone/Durotar-Horde-vendor_trainer
 
 Hearthstone steps are only planned for a part of the guide with at least 25 things to do.
 
@@ -441,8 +432,6 @@ Notes that are not tied to a quest.
 The note disappears when the step after it is done. Reminders are only placed in the first part of a
 guide.
 
-<<<<<<< HEAD
-=======
 ## Extra steps: vendors, trainers, flight paths
 
 RouteBuilder plans quests only. Building with `--rxp` copies RestedXP's own training, vendor and
@@ -474,7 +463,6 @@ step. It is tied to that step, not to a place in the order, so it moves with it 
   build says so on the console and in the report's Checks section, and places nothing there.
 - The step's lines are not checked against the game: a wrong NPC name or spell ID shows up only when you play it.
 
->>>>>>> zone/Durotar-Horde-vendor_trainer
 ## Finding IDs and coordinates
 
 **Quest IDs.** The report lists every quest in the guide with its ID in square brackets, and the
@@ -505,13 +493,10 @@ the NPC in `targets` so the guide can still mark it.
 
 ## Checking that a fix took
 
-<<<<<<< HEAD
-=======
 A rebuild keeps the step order of the previous build (see "Keeping the route between builds" in the
 README), so a fix only moves the steps it affects. The console line "keeping the saved order ... N moved
 for changed prerequisites" shows how many moved. Build with `--fresh` to plan the whole zone again.
 
->>>>>>> zone/Durotar-Horde-vendor_trainer
 Build the zone again and look at three places.
 
 1. The first line of the build names the zone file it used.

@@ -1,11 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-57 Western Plaguelands",
-<<<<<<< HEAD
-  "saved": "2026-10-08 19:19",
-=======
   "saved": "2026-10-10 12:55",
->>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
@@ -49,46 +45,14 @@
       "part": 2,
       "steps": [
         "accept:6004 @1422:-1815.89,2562.28  Accept Unfinished Business",
-<<<<<<< HEAD
-        "obj:6004:4 @1422:-1751.82,2189.61  Objective Unfinished Business / Scarlet Knight slain (2)",
-        "accept:5060 @1422:-1619.38,1943.94  Accept Locked Away",
-        "obj:5060:1 @1422:-1657.22,1942.79  Objective Locked Away / Dalson Cabinet Key (1)",
-        "turnin:5060 @1422:-1619.38,1943.94  TurnIn Locked Away",
-        "accept:5058 @1422:-1638.73,1914.13  Accept Mrs. Dalson\u0027s Diary",
-        "accept:4971 @1422:-1280.11,1452.88  Accept A Matter of Time",
-        "accept:5153 @1422:-1697.64,1114.33  Accept A Strange Historian",
-        "accept:5862 @1422:-1767.3,1134.97  Accept Scarlet Subterfuge",
-        "obj:5153:1 @1422:-1720.43,1166.21  Objective A Strange Historian / Joseph\u0027s Wedding Ring (1)",
-        "obj:4971:1 @1422:-1658.51,1481.26  Objective A Matter of Time / Temporal Parasite slain (10)",
-        "turnin:4971 @1422:-1280.11,1452.88  TurnIn A Matter of Time",
-        "turnin:5153 @1422:-1280.11,1452.88  TurnIn A Strange Historian",
-        "accept:5154 @1422:-1280.11,1452.88  Accept The Annals of Darrowshire",
-        "accept:4972 @1422:-1280.11,1452.88  Accept Counting Out Time",
-        "obj:5154:1 @1422:-1448.24,1374.05  Objective The Annals of Darrowshire / Annals of Darrowshire (1)",
-        "obj:4972:1 @1422:-1314.08,1413.03  Objective Counting Out Time / Andorhal Watch (5)",
-        "turnin:4972 @1422:-1280.11,1452.88  TurnIn Counting Out Time",
-        "turnin:5154 @1422:-1280.11,1452.88  TurnIn The Annals of Darrowshire",
-        "accept:5210 @1422:-1280.11,1452.88  Accept Brother Carlin",
-=======
         "obj:6004:4 @1422:-1870.07,2306.86  Objective Unfinished Business / Scarlet Knight slain (2)",
         "obj:6004:3 @1422:-1852.44,2289.95  Objective Unfinished Business / Scarlet Mage slain (8)",
         "obj:6004:2 @1422:-1806.43,2104.47  Objective Unfinished Business / Scarlet Hunter slain (2)",
         "obj:6004:1 @1422:-1814.6,2087.85  Objective Unfinished Business / Scarlet Medic slain (2)",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:4985 @1422:-1893.72,1513.08  Accept The Wildlife Suffers Too",
         "obj:4985:1 @1422:-1988.32,1618.86  Objective The Wildlife Suffers Too / Diseased Grizzly slain (8)",
         "turnin:4985 @1422:-1893.72,1513.08  TurnIn The Wildlife Suffers Too",
         "accept:4987 @1422:-1893.72,1513.08  Accept Glyphed Oaken Branch",
-<<<<<<< HEAD
-        "obj:6004:1 @1422:-1814.6,2087.85  Objective Unfinished Business / Scarlet Medic slain (2)",
-        "obj:6004:2 @1422:-1806.43,2104.47  Objective Unfinished Business / Scarlet Hunter slain (2)",
-        "obj:6004:3 @1422:-1852.44,2289.95  Objective Unfinished Business / Scarlet Mage slain (8)",
-        "turnin:6004 @1422:-1815.89,2562.28  TurnIn Unfinished Business",
-        "accept:6023 @1422:-1815.89,2562.28  Accept Unfinished Business",
-        "accept:5544 @1422:-1903.18,2665.77  Accept Carrion Grubbage",
-        "accept:5543 @1422:-1903.18,2665.77  Accept Blood Tinged Skies",
-        "accept:5542 @1422:-1903.18,2665.77  Accept Demon Dogs",
-=======
         "accept:5862 @1422:-1767.3,1134.97  Accept Scarlet Subterfuge",
         "accept:5153 @1422:-1697.64,1114.33  Accept A Strange Historian",
         "obj:5153:1 @1422:-1720.43,1166.21  Objective A Strange Historian / Joseph\u0027s Wedding Ring (1)",
@@ -112,7 +76,6 @@
         "accept:5543 @1422:-1903.18,2665.77  Accept Blood Tinged Skies",
         "accept:5542 @1422:-1903.18,2665.77  Accept Demon Dogs",
         "accept:5544 @1422:-1903.18,2665.77  Accept Carrion Grubbage",
->>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:6023:2 @1422:-1954.78,2689.56  Objective Unfinished Business / Cavalier Durgen slain (1)",
         "obj:6023:1 @1422:-2070.02,2331.8  Objective Unfinished Business / Huntsman Radley slain (1)",
         "turnin:6023 @1422:-1815.89,2562.28  TurnIn Unfinished Business",

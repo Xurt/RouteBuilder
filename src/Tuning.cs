@@ -24,17 +24,12 @@ public static class Tuning
     // --- route shape ---
     public static double HubRadius = 90;      // anything on offer within this range of where you stand is picked up / handed in
     public static double HubMiss = 2500;      // cost of walking away from a pickup or hand-in that was within reach
-<<<<<<< HEAD
-    public static double Pickup = 0.02;       // cost per yard walked before a quest is picked up
-    public static double Hold = 0.02;         // cost per yard of carrying a finished quest
-=======
     public static double PickupAhead = 3;     // a quest more than this many levels above you is not picked up "while you are there"
     public static double AheadCost = 600;     // ...and picking it up anyway costs this much per level beyond that (0 = off)
     public static double Pickup = 0.02;       // cost per yard walked before a quest is picked up
     public static double Open = 0.15;         // cost per yard of carrying a picked-up quest before its objectives are done (pick up, do, hand in)
     public static double Hold = 0.02;         // cost per yard of carrying a finished quest
     public static double TownRadius = 250;    // quest givers this close one after another are one visit to a town: each NPC is talked to once
->>>>>>> zone/Durotar-Horde-vendor_trainer
     public static double PassMiss = 800;      // cost of running past a finished quest's hand-in without stopping (0 = off)
     public static double PassRadius = 150;    // a hand-in this close to the straight line you run along counts as passed
     public static double PassDetour = 0.2;    // ...and so does one that going via would lengthen the leg by at most this share (capped at 3 x PassRadius)

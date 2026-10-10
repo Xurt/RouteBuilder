@@ -13,9 +13,6 @@
     "97282": {
     "pre": [97281]
     }
-<<<<<<< HEAD
-  }
-=======
   },
   "steps": [
 //    { "after": "turnin:837", "goto": [52.0, 40.6], "text": "Sell your junk and repair at |cRXP_FRIENDLY_Uhgar|r", "lines": [".vendor", ".target Uhgar"] },
@@ -40,5 +37,4 @@
     { "after": "accept:97279", "goto": [42.89,69.44], "text": "Train |T132155:0|t[Rend]", "lines": [".train"], "tag": "Warrior" } //continue from here
     
   ]
->>>>>>> zone/Durotar-Horde-vendor_trainer
 }
