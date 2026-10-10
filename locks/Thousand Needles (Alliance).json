@@ -1,0 +1,62 @@
+{
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "guide": "30-37 Thousand Needles",
+  "saved": "2026-10-10 13:03",
+  "parts": [
+    {
+      "part": 1,
+      "steps": [
+        "turnin:1137 @1441:-3867.97,-6229.15  TurnIn News for Fizzle",
+        "accept:5762 @1441:-3856.09,-6233.25  Accept Hemet Nesingwary",
+        "turnin:1112 @1441:-3856.09,-6233.25  TurnIn Parts for Kravel",
+        "turnin:1117 @1441:-3856.09,-6233.25  TurnIn Rumors for Kravel",
+        "turnin:1119 @1441:-3856.09,-6233.25  TurnIn Zanzil\u0027s Mixture and a Fool\u0027s Stout",
+        "accept:1110 @1441:-3856.09,-6233.25  Accept Rocket Car Parts",
+        "accept:1104 @1441:-3867.97,-6229.15  Accept Salt Flat Venom",
+        "accept:1105 @1441:-3871.49,-6228.85  Accept Hardened Shells",
+        "turnin:1179 @1441:-3871.49,-6228.85  TurnIn The Brassbolts Brothers",
+        "turnin:2769 @1441:-3871.49,-6228.85  TurnIn The Brassbolts Brothers",
+        "turnin:1949 @1441:-3878.09,-6187.2  TurnIn Hidden Secrets",
+        "turnin:1189 @1441:-3967.85,-6198.64  TurnIn Safety First",
+        "accept:1176 @1441:-3961.25,-6192.48  Accept Load Lightening",
+        "turnin:1183 @1441:-3961.25,-6192.48  TurnIn Goblin Sponsorship",
+        "obj:1104:1 @1441:-3878.09,-5961.33  Objective Salt Flat Venom / Salty Scorpid Venom (6)",
+        "obj:1105:1 @1441:-4072.57,-5581.76  Objective Hardened Shells / Hardened Tortoise Shell (9)",
+        "obj:1110:1 @1441:-4248.13,-5753.07  Objective Rocket Car Parts / Rocket Car Parts (30)",
+        "obj:1176:1 @1441:-4303.13,-5882.72  Objective Load Lightening / Hollow Vulture Bone (10)",
+        "turnin:1176 @1441:-3961.25,-6192.48  TurnIn Load Lightening",
+        "accept:1178 @1441:-3961.25,-6192.48  Accept Goblin Sponsorship",
+        "accept:1190 @1441:-3961.25,-6192.48  Accept Keeping Pace",
+        "turnin:1105 @1441:-3871.49,-6228.85  TurnIn Hardened Shells",
+        "turnin:1104 @1441:-3867.97,-6229.15  TurnIn Salt Flat Venom",
+        "turnin:1110 @1441:-3856.09,-6233.25  TurnIn Rocket Car Parts",
+        "accept:1114 @1441:-3856.09,-6233.25  Accept Delivery to the Gnomes",
+        "accept:1111 @1441:-3856.09,-6233.25  Accept Wharfmaster Dizzywig",
+        "accept:1106 @1441:-3867.97,-6229.15  Accept Martek the Exiled",
+        "turnin:1114 @1441:-3867.97,-6229.15  TurnIn Delivery to the Gnomes",
+        "accept:1115 @1441:-3856.09,-6233.25  Accept The Rumormonger",
+        "turnin:1190 @1441:-3830.57,-6236.77  TurnIn Keeping Pace",
+        "accept:1194 @1441:-3830.57,-6236.77  Accept Rizzle\u0027s Schematics",
+        "accept:1107 @1441:-3871.49,-6228.85  Accept Encrusted Tail Fins",
+        "turnin:1194 @1441:-3961.25,-6192.48  TurnIn Rizzle\u0027s Schematics",
+        "accept:1186 @1441:-3961.25,-6192.48  Accept The Eighteenth Pilot",
+        "accept:1188 @1441:-3967.85,-6198.64  Accept Safety First",
+        "turnin:1186 @1441:-3967.85,-6198.64  TurnIn The Eighteenth Pilot",
+        "accept:1187 @1441:-3967.85,-6198.64  Accept Razzeric\u0027s Tweaking",
+        "accept:1951 @1441:-3878.09,-6187.2  Accept Rituals of Power",
+        "item:635 @1441:-2208.29,-4846.08  ItemAccept Crystal in the Mountains"
+      ]
+    },
+    {
+      "part": 2,
+      "steps": [
+        "accept:1175 @1441:-4025.05,-6253.2  Accept A Bump in the Road",
+        "obj:1175:2 @1441:-3888.21,-6577.33  Objective A Bump in the Road / Saltstone Crystalhide slain (10)",
+        "obj:1175:3 @1441:-3863.13,-6582.61  Objective A Bump in the Road / Saltstone Gazer slain (6)",
+        "turnin:1107 @1441:-3871.49,-6228.85  TurnIn Encrusted Tail Fins",
+        "obj:1175:1 @1441:-3754.89,-5649.52  Objective A Bump in the Road / Saltstone Basilisk slain (10)",
+        "turnin:1175 @1441:-4025.05,-6253.2  TurnIn A Bump in the Road"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "guide": "15-60 Redridge Mountains",
+  "saved": "2026-10-10 12:52",
+  "parts": [
+    {
+      "part": 1,
+      "steps": [
+        "accept:91900 @1433:-1892.91,-9603.31  Accept A Sealed Crate",
+        "accept:91904 @1433:-1892.91,-9603.31  Accept A Sealed Crate",
+        "accept:91899 @1433:-1892.91,-9603.31  Accept A Sealed Crate",
+        "accept:91905 @1433:-1892.91,-9603.31  Accept A Sealed Crate",
+        "accept:3741 @1433:-2207.24,-9351.66  Accept Hilary\u0027s Necklace",
+        "obj:3741:1 @1433:-2311.66,-9347.75  Objective Hilary\u0027s Necklace / Hilary\u0027s Necklace (1)",
+        "turnin:3741 @1433:-2205.51,-9351.52  TurnIn Hilary\u0027s Necklace"
+      ]
+    }
+  ]
+}

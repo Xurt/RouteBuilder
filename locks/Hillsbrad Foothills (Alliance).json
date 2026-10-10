@@ -1,0 +1,70 @@
+{
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "guide": "27-38 Hillsbrad Foothills",
+  "saved": "2026-10-10 13:03",
+  "parts": [
+    {
+      "part": 1,
+      "steps": [
+        "accept:98459 @1424:-550.29,-1093.55  Accept A Lack of Virtue",
+        "turnin:525 @1424:-473.81,-861.01  TurnIn Further Mysteries",
+        "turnin:510 @1424:-473.81,-861.01  TurnIn Foreboding Plans",
+        "accept:512 @1424:-473.81,-861.01  Accept Noble Deaths",
+        "accept:505 @1424:-473.81,-861.01  Accept Syndicate Assassins",
+        "turnin:661 @1424:-544.53,-859.73  TurnIn Hints of a New Plague?",
+        "accept:542 @1424:-551.57,-817.92  Accept Return to Milton",
+        "turnin:538 @1424:-551.57,-817.92  TurnIn Southshore",
+        "accept:540 @1424:-551.57,-817.92  Accept Preserving Knowledge",
+        "turnin:511 @1424:-551.57,-817.92  TurnIn Encrypted Letter",
+        "turnin:647 @1424:-601.49,-853.12  TurnIn MacKreel\u0027s Moonshine"
+      ]
+    },
+    {
+      "part": 2,
+      "steps": [
+        "accept:536 @1424:-580.05,-845.65  Accept Down the Coast",
+        "accept:555 @1424:-593.81,-851.84  Accept Soothing Turtle Bisque",
+        "home @1424:-570.77,-857.17  Home inn",
+        "turnin:505 @1424:-473.81,-861.01  TurnIn Syndicate Assassins",
+        "obj:555:2 @1424:-499.41,-773.97  Objective Soothing Turtle Bisque / Soothing Spices (1)",
+        "obj:555:1 @1424:-737.81,-679.25  Objective Soothing Turtle Bisque / Turtle Meat (1)",
+        "turnin:555 @1424:-593.81,-851.84  TurnIn Soothing Turtle Bisque",
+        "obj:536:1 @1424:-418.77,-1018.03  Objective Down the Coast / Torn Fin Tidehunter slain (10)",
+        "obj:536:2 @1424:-339.73,-1064.53  Objective Down the Coast / Torn Fin Oracle slain (10)",
+        "turnin:536 @1424:-580.05,-845.65  TurnIn Down the Coast",
+        "accept:559 @1424:-580.05,-845.65  Accept Farren\u0027s Proof",
+        "obj:559:1 @1424:-352.21,-1047.89  Objective Farren\u0027s Proof / Murloc Head (10)",
+        "turnin:559 @1424:-580.05,-845.65  TurnIn Farren\u0027s Proof",
+        "accept:560 @1424:-580.05,-845.65  Accept Farren\u0027s Proof",
+        "accept:659 @1424:-544.53,-859.73  Accept Hints of a New Plague?",
+        "turnin:560 @1424:-516.37,-852.91  TurnIn Farren\u0027s Proof",
+        "accept:561 @1424:-516.37,-852.91  Accept Farren\u0027s Proof",
+        "turnin:561 @1424:-580.05,-845.65  TurnIn Farren\u0027s Proof",
+        "accept:562 @1424:-580.05,-845.65  Accept Stormwind Ho!",
+        "obj:562:2 @1424:-703.57,-961.92  Objective Stormwind Ho! / Daggerspine Siren slain (10)",
+        "obj:562:1 @1424:-651.73,-1024  Objective Stormwind Ho! / Daggerspine Shorehunter slain (10)",
+        "turnin:562 @1424:-580.05,-845.65  TurnIn Stormwind Ho!",
+        "accept:563 @1424:-580.05,-845.65  Accept Reassignment",
+        "accept:564 @1424:-610.77,-793.81  Accept Costly Menace",
+        "item:522 @1424:-535.25,-835.41  ItemAccept Assassin\u0027s Contract",
+        "accept:514 @1424:-551.57,-817.92  Accept Letter to Stormpike",
+        "accept:500 @1424:-516.37,-852.91  Accept Crushridge Bounty",
+        "turnin:522 @1424:-473.81,-861.01  TurnIn Assassin\u0027s Contract",
+        "obj:564:1 @1424:-174.93,-125.23  Objective Costly Menace / Mountain Lion slain (8)"
+      ]
+    },
+    {
+      "part": 3,
+      "steps": [
+        "accept:565 @1424:-515.09,-784.64  Accept Bartolo\u0027s Yeti Fur Cloak",
+        "obj:565:2 @1424:-499.41,-773.97  Objective Bartolo\u0027s Yeti Fur Cloak / Fine Thread (1)",
+        "turnin:500 @1424:-516.37,-852.91  TurnIn Crushridge Bounty",
+        "turnin:505 @1424:-473.81,-861.01  TurnIn Syndicate Assassins",
+        "obj:565:4 @1424:-358.93,-226.35  Objective Bartolo\u0027s Yeti Fur Cloak / Yeti Fur (1)",
+        "obj:565:1 @1424:-339.09,-202.03  Objective Bartolo\u0027s Yeti Fur Cloak / Bolt of Woolen Cloth (1)",
+        "obj:564:1 @1424:-174.93,-125.23  Objective Costly Menace / Mountain Lion slain (8)",
+        "turnin:564 @1424:-610.77,-793.81  TurnIn Costly Menace"
+      ]
+    }
+  ]
+}

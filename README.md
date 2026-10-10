@@ -13,6 +13,9 @@ You need the .NET 8 SDK and, for the first download, git (without git it downloa
 
 `update` fetches QuestieDB into a `QuestieDB` folder next to where you run it and runs QuestieDB's own
 export script (it ships its own Lua for Windows and Linux). Run it again whenever you want newer data.
+With git it fetches only the newest QuestieDB commit; a `QuestieDB` folder left by an earlier zip
+download is replaced by a git copy, so later updates are quick. If git fails it says why, then falls
+back to the zip.
 
 ## Building a guide
 

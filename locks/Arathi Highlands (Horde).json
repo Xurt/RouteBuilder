@@ -1,0 +1,130 @@
+{
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "guide": "32-42 Arathi Highlands",
+  "saved": "2026-10-10 12:54",
+  "parts": [
+    {
+      "part": 1,
+      "steps": [
+        "turnin:79975 @1417:-1675.95,-714.85  TurnIn Eagle\u0027s Fist",
+        "accept:79976 @1417:-1675.95,-714.85  Accept This Must Be The Place",
+        "turnin:79976 @1417:-1675.59,-714.85  TurnIn This Must Be The Place",
+        "accept:655 @1417:-3481.71,-947.65  Accept Hammerfall",
+        "turnin:638 @1417:-3523.47,-948.37  TurnIn Trollbane",
+        "accept:677 @1417:-3539.31,-947.41  Accept Call to Arms",
+        "turnin:655 @1417:-3556.59,-1004.29  TurnIn Hammerfall",
+        "accept:671 @1417:-3556.59,-1004.29  Accept Foul Magics",
+        "accept:672 @1417:-3556.59,-1004.29  Accept Raising Spirits",
+        "obj:672:1 @1417:-3299.55,-1019.41  Objective Raising Spirits / Highland Raptor Eye (10)",
+        "turnin:672 @1417:-3556.59,-1004.29  TurnIn Raising Spirits",
+        "accept:674 @1417:-3556.59,-1004.29  Accept Raising Spirits",
+        "turnin:674 @1417:-3481.71,-947.65  TurnIn Raising Spirits",
+        "accept:675 @1417:-3481.71,-947.65  Accept Raising Spirits",
+        "turnin:675 @1417:-3556.59,-1004.29  TurnIn Raising Spirits",
+        "obj:677:1 @1417:-3444.63,-1587.25  Objective Call to Arms / Witherbark Axe Thrower slain (10)",
+        "obj:677:3 @1417:-3442.83,-1743.97  Objective Call to Arms / Witherbark Witch Doctor slain (8)",
+        "obj:677:2 @1417:-3387.39,-1855.33  Objective Call to Arms / Witherbark Headhunter slain (10)",
+        "turnin:670 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure",
+        "obj:676:1 @1417:-2151.87,-1219.81  Objective The Hammer May Fall / Boulderfist Ogre slain (8)",
+        "obj:676:2 @1417:-2032.71,-1207.09  Objective The Hammer May Fall / Boulderfist Enforcer slain (10)",
+        "obj:671:1 @1417:-2028.39,-812.53  Objective Foul Magics / Bloodstone Amulet (10)",
+        "turnin:635 @1417:-3116.67,-942.85  TurnIn Crystal in the Mountains",
+        "turnin:676 @1417:-3539.31,-947.41  TurnIn The Hammer May Fall",
+        "turnin:677 @1417:-3539.31,-947.41  TurnIn Call to Arms",
+        "turnin:671 @1417:-3556.59,-1004.29  TurnIn Foul Magics"
+      ]
+    },
+    {
+      "part": 2,
+      "steps": [
+        "accept:701 @1417:-3556.59,-1004.29  Accept Guile of the Raptor",
+        "accept:678 @1417:-3539.31,-947.41  Accept Call to Arms",
+        "accept:639 @1417:-3523.47,-948.37  Accept Sigil of Strom",
+        "obj:701:1 @1417:-2748.75,-1768.69  Objective Guile of the Raptor / Raptor Heart (12)",
+        "obj:678:1 @1417:-2778.27,-1955.65  Objective Call to Arms / Boulderfist Brute slain (10)",
+        "obj:678:2 @1417:-2773.23,-1981.81  Objective Call to Arms / Boulderfist Magus slain (8)",
+        "accept:663 @1417:-2010.75,-2117.65  Accept Land Ho!",
+        "turnin:663 @1417:-2028.75,-2086.45  TurnIn Land Ho!",
+        "obj:639:1 @1417:-1886.55,-1653.97  Objective Sigil of Strom / Sigil of Strom (1)",
+        "accept:642 @1417:-3116.67,-942.85  Accept The Princess Trapped",
+        "turnin:701 @1417:-3556.59,-1004.29  TurnIn Guile of the Raptor",
+        "accept:702 @1417:-3556.59,-1004.29  Accept Guile of the Raptor",
+        "turnin:678 @1417:-3539.31,-947.41  TurnIn Call to Arms",
+        "turnin:639 @1417:-3523.47,-948.37  TurnIn Sigil of Strom",
+        "turnin:702 @1417:-3481.71,-947.65  TurnIn Guile of the Raptor",
+        "accept:847 @1417:-3481.71,-947.65  Accept Guile of the Raptor",
+        "turnin:847 @1417:-3556.59,-1004.29  TurnIn Guile of the Raptor",
+        "obj:642:1 @1417:-3880.23,-941.65  Objective The Princess Trapped / Mote of Myzrael (12)",
+        "turnin:642 @1417:-3901.83,-876.13  TurnIn The Princess Trapped",
+        "accept:651 @1417:-3901.83,-876.13  Accept Stones of Binding",
+        "obj:651:2 @1417:-3267.87,-846.61  Objective Stones of Binding / Cresting Key (1)",
+        "obj:651:3 @1417:-2740.11,-1350.85  Objective Stones of Binding / Thundering Key (1)",
+        "obj:651:1 @1417:-1783.23,-855.97  Objective Stones of Binding / Burning Key (1)",
+        "turnin:651 @1417:-2170.95,-1510.45  TurnIn Stones of Binding"
+      ]
+    },
+    {
+      "part": 3,
+      "steps": [
+        "accept:679 @1417:-3539.31,-947.41  Accept Call to Arms",
+        "accept:680 @1417:-3532.11,-927.01  Accept The Real Threat",
+        "home @1417:-3524.91,-912.37  Home inn",
+        "accept:640 @1417:-3523.47,-948.37  Accept The Broken Sigil",
+        "accept:673 @1417:-3556.59,-1004.29  Accept Foul Magics",
+        "accept:666 @1417:-2085.63,-2064.13  Accept Sunken Treasure",
+        "accept:664 @1417:-2090.67,-2072.53  Accept Drowned Sorrows",
+        "accept:662 @1417:-2047.47,-2088.85  Accept Deep Sea Salvage",
+        "obj:662:2 @1417:-1708.71,-2175.49  Objective Deep Sea Salvage / Maiden\u0027s Folly Log (1)",
+        "obj:662:1 @1417:-1696.47,-2161.57  Objective Deep Sea Salvage / Maiden\u0027s Folly Charts (1)",
+        "obj:664:2 @1417:-1674.87,-2157.73  Objective Drowned Sorrows / Daggerspine Sorceress slain (3)",
+        "obj:662:4 @1417:-1610.07,-2175.73  Objective Deep Sea Salvage / Spirit of Silverpine Log (1)",
+        "obj:662:3 @1417:-1603.23,-2187.97  Objective Deep Sea Salvage / Spirit of Silverpine Charts (1)",
+        "obj:664:1 @1417:-1679.19,-2219.17  Objective Drowned Sorrows / Daggerspine Raider slain (10)",
+        "obj:666:1 @1417:-1694.67,-2245.33  Objective Sunken Treasure / Elven Gem (10)",
+        "turnin:662 @1417:-2047.47,-2088.85  TurnIn Deep Sea Salvage",
+        "turnin:664 @1417:-2090.67,-2072.53  TurnIn Drowned Sorrows",
+        "turnin:666 @1417:-2085.63,-2064.13  TurnIn Sunken Treasure",
+        "accept:668 @1417:-2085.63,-2064.13  Accept Sunken Treasure",
+        "turnin:668 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure",
+        "accept:669 @1417:-2028.75,-2086.45  Accept Sunken Treasure",
+        "obj:640:1 @1417:-1744.71,-1545.01  Objective The Broken Sigil / Sigil Fragment (11)",
+        "obj:679:1 @1417:-1585.59,-1753.57  Objective Call to Arms / Boulderfist Shaman slain (7)",
+        "obj:679:2 @1417:-1558.59,-1757.17  Objective Call to Arms / Boulderfist Lord slain (3)",
+        "obj:680:1 @1417:-1535.91,-1727.17  Objective The Real Threat / Or\u0027Kalar\u0027s Head (1)",
+        "turnin:680 @1417:-3532.11,-927.01  TurnIn The Real Threat",
+        "turnin:679 @1417:-3539.31,-947.41  TurnIn Call to Arms",
+        "turnin:640 @1417:-3556.59,-1004.29  TurnIn The Broken Sigil",
+        "accept:641 @1417:-3556.59,-1004.29  Accept Sigil of Thoradin",
+        "turnin:641 @1417:-3523.47,-948.37  TurnIn Sigil of Thoradin",
+        "accept:643 @1417:-3523.47,-948.37  Accept Sigil of Arathor",
+        "obj:643:1 @1417:-2071.59,-1383.25  Objective Sigil of Arathor / Sigil of Arathor (1)",
+        "obj:673:1 @1417:-1932.99,-1644.61  Objective Foul Magics / Befouled Bloodstone Orb (1)",
+        "turnin:643 @1417:-3523.47,-948.37  TurnIn Sigil of Arathor",
+        "turnin:673 @1417:-3556.59,-1004.29  TurnIn Foul Magics"
+      ]
+    },
+    {
+      "part": 4,
+      "steps": [
+        "accept:652 @1417:-2170.95,-1510.45  Accept Breaking the Keystone",
+        "obj:652:1 @1417:-3167.07,-853.33  Objective Breaking the Keystone / Rod of Order (1)",
+        "turnin:652 @1417:-2165.55,-1527.49  TurnIn Breaking the Keystone",
+        "accept:688 @1417:-2165.55,-1527.49  Accept Myzrael\u0027s Allies",
+        "turnin:688 @1417:-3550.11,-988.69  TurnIn Myzrael\u0027s Allies",
+        "accept:687 @1417:-3550.11,-988.69  Accept Theldurin the Lost"
+      ]
+    },
+    {
+      "part": 5,
+      "steps": [
+        "accept:644 @1417:-3523.47,-948.37  Accept Sigil of Trollbane",
+        "obj:644:1 @1417:-1887.63,-1527.97  Objective Sigil of Trollbane / Sigil of Trollbane (1)",
+        "turnin:644 @1417:-3523.47,-948.37  TurnIn Sigil of Trollbane",
+        "accept:645 @1417:-3523.47,-948.37  Accept Trol\u0027kalar",
+        "turnin:645 @1417:-1905.63,-1564.21  TurnIn Trol\u0027kalar",
+        "accept:646 @1417:-1905.63,-1564.21  Accept Trol\u0027kalar",
+        "turnin:646 @1417:-3523.47,-948.37  TurnIn Trol\u0027kalar"
+      ]
+    }
+  ]
+}

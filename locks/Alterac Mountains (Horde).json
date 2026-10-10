@@ -1,0 +1,55 @@
+{
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "guide": "25-60 Alterac Mountains",
+  "saved": "2026-10-10 12:54",
+  "parts": [
+    {
+      "part": 1,
+      "steps": [
+        "accept:79362 @1416:-1470.67,250.83  Accept Grant\u0027s Shield",
+        "accept:79363 @1416:-1470.67,250.83  Accept Silvia\u0027s Sword",
+        "turnin:1791 @1416:-1470.67,250.83  TurnIn The Windwatcher",
+        "obj:8410:3 @1416:201.77,370.48  Objective Elemental Mastery / Elemental Earth (1)",
+        "turnin:8233 @1416:-1625.23,27.57  TurnIn A Simple Request",
+        "turnin:8236 @1416:-1625.23,27.57  TurnIn The Azure Key",
+        "obj:507:1 @1416:-317.63,1227.84  Objective Lord Aliden Perenolde / Lord Aliden Perenolde slain (1)",
+        "turnin:507 @1416:-317.07,1232.88  TurnIn Lord Aliden Perenolde",
+        "obj:8410:1 @1416:-1465.63,340.05  Objective Elemental Mastery / Elemental Air (1)",
+        "turnin:8410 @1416:-1470.67,250.83  TurnIn Elemental Mastery"
+      ]
+    },
+    {
+      "part": 2,
+      "steps": [
+        "turnin:79363 @1416:-1470.67,250.83  TurnIn Silvia\u0027s Sword",
+        "turnin:79362 @1416:-1470.67,250.83  TurnIn Grant\u0027s Shield",
+        "accept:8413 @1416:-1470.67,250.83  Accept Da Voodoo",
+        "accept:8411 @1416:-1470.67,250.83  Accept Mastering the Elements",
+        "obj:8411:1 @1416:-1465.63,340.05  Objective Mastering the Elements / Elemental Air (1)",
+        "accept:8412 @1416:-1470.67,250.83  Accept Spirit Totem",
+        "obj:8411:2 @1416:-1027.71,664.29  Objective Mastering the Elements / Elemental Earth (1)",
+        "accept:8234 @1416:-1625.23,27.57  Accept Sealed Azure Bag",
+        "accept:1712 @1416:-1470.67,250.83  Accept Cyclonian",
+        "accept:1713 @1416:-1470.67,250.83  Accept The Summoning",
+        "obj:1713:1 @1416:-1465.63,340.05  Objective The Summoning / Whirlwind Heart (1)",
+        "turnin:1713 @1416:-1470.67,250.83  TurnIn The Summoning",
+        "accept:1792 @1416:-1470.67,250.83  Accept Whirlwind Weapon",
+        "turnin:1792 @1416:-1470.67,250.83  TurnIn Whirlwind Weapon",
+        "accept:506 @1416:-895.55,683.52  Accept Blackmoore\u0027s Legacy",
+        "accept:508 @1416:-317.07,1232.88  Accept Taretha\u0027s Gift",
+        "obj:1712:1 @1416:-189.95,1317.07  Objective Cyclonian / Liferoot (1)"
+      ]
+    },
+    {
+      "part": 3,
+      "steps": [
+        "accept:8367 @1416:-983.19,382.43  Accept For Great Honor",
+        "obj:8411:2 @1416:-1027.71,664.29  Objective Mastering the Elements / Elemental Earth (1)",
+        "obj:8411:1 @1416:-1465.63,340.05  Objective Mastering the Elements / Elemental Air (1)",
+        "turnin:79363 @1416:-1470.67,250.83  TurnIn Silvia\u0027s Sword",
+        "turnin:79362 @1416:-1470.67,250.83  TurnIn Grant\u0027s Shield",
+        "turnin:8411 @1416:-1470.67,250.83  TurnIn Mastering the Elements"
+      ]
+    }
+  ]
+}

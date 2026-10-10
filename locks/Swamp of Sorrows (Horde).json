@@ -1,0 +1,91 @@
+{
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "guide": "35-52 Swamp of Sorrows",
+  "saved": "2026-10-10 12:54",
+  "parts": [
+    {
+      "part": 1,
+      "steps": [
+        "accept:1389 @1435:-2818.83,-10100.99  Accept Draenethyst Crystals",
+        "obj:1389:1 @1435:-3501.22,-10063.37  Objective Draenethyst Crystals / Draenethyst Crystal (6)",
+        "item:1392 @1435:-3482.19,-10142.28  ItemAccept Noboru the Cudgel",
+        "turnin:1444 @1435:-3322.31,-10458.51  TurnIn Return to Fel\u0027Zerul",
+        "turnin:1420 @1435:-3317.95,-10464.93  TurnIn Report to Helgrum",
+        "accept:1418 @1435:-3317.95,-10464.93  Accept Neeka Bloodscar",
+        "turnin:1391 @1435:-3238.82,-10422.58  TurnIn Nothing But The Truth",
+        "turnin:8417 @1435:-3009.44,-10632.22  TurnIn A Troubled Spirit",
+        "turnin:1389 @1435:-2818.83,-10100.99  TurnIn Draenethyst Crystals",
+        "turnin:1392 @1435:-2818.83,-10100.99  TurnIn Noboru the Cudgel"
+      ]
+    },
+    {
+      "part": 2,
+      "steps": [
+        "accept:625 @1435:-2747.5,-10357.74  Accept Cortello\u0027s Riddle",
+        "accept:698 @1435:-3248.22,-10495.67  Accept Lack of Surplus",
+        "obj:698:1 @1435:-3485.63,-10378.84  Objective Lack of Surplus / Unprepared Sawtooth Flank (8)",
+        "turnin:698 @1435:-4088.19,-10859  TurnIn Lack of Surplus"
+      ]
+    },
+    {
+      "part": 3,
+      "steps": [
+        "accept:699 @1435:-4088.19,-10859  Accept Lack of Surplus",
+        "obj:699:1 @1435:-4071.45,-11100.61  Objective Lack of Surplus / Sawtooth Snapper Claw (6)",
+        "turnin:699 @1435:-4088.19,-10859  TurnIn Lack of Surplus",
+        "accept:1422 @1435:-4088.19,-10859  Accept Threat From the Sea",
+        "turnin:1422 @1435:-4144.16,-10850.44  TurnIn Threat From the Sea",
+        "accept:1426 @1435:-4144.16,-10850.44  Accept Threat From the Sea",
+        "obj:1426:1 @1435:-4193.94,-10920.17  Objective Threat From the Sea / Marsh Murloc slain (10)",
+        "obj:1426:2 @1435:-4138.89,-11011.15  Objective Threat From the Sea / Marsh Inkspewer slain (10)",
+        "obj:1426:3 @1435:-3673.03,-10919.25  Objective Threat From the Sea / Marsh Flesheater slain (10)",
+        "accept:1430 @1435:-3248.22,-10495.67  Accept Fresh Meat",
+        "accept:1424 @1435:-3322.31,-10458.51  Accept Pool of Tears",
+        "obj:1424:1 @1435:-3863.87,-10526.25  Objective Pool of Tears / Atal\u0027ai Artifact (10)",
+        "turnin:1426 @1435:-4144.16,-10850.44  TurnIn Threat From the Sea",
+        "accept:1427 @1435:-4144.16,-10850.44  Accept Threat From the Sea",
+        "turnin:1427 @1435:-4088.19,-10859  TurnIn Threat From the Sea",
+        "obj:1430:1 @1435:-4296.47,-11024.61  Objective Fresh Meat / Monstrous Crawler Leg (10)",
+        "turnin:1424 @1435:-3322.31,-10458.51  TurnIn Pool of Tears",
+        "accept:1429 @1435:-3322.31,-10458.51  Accept The Atal\u0027ai Exile",
+        "turnin:1430 @1435:-3248.22,-10495.67  TurnIn Fresh Meat"
+      ]
+    },
+    {
+      "part": 4,
+      "steps": [
+        "accept:1428 @1435:-4144.16,-10850.44  Accept Continued Threat",
+        "obj:1428:1 @1435:-3697.8,-10853.65  Objective Continued Threat / Marsh Inkspewer slain (10)",
+        "obj:1428:3 @1435:-3631.51,-10910.53  Objective Continued Threat / Marsh Oracle slain (10)",
+        "obj:1428:2 @1435:-3673.03,-10919.25  Objective Continued Threat / Marsh Flesheater slain (10)",
+        "accept:1445 @1435:-3322.31,-10458.51  Accept The Temple of Atal\u0027Hakkar",
+        "obj:1445:1 @1435:-4071.22,-10347.03  Objective The Temple of Atal\u0027Hakkar / Fetish of Hakkar (20)",
+        "turnin:1428 @1435:-4144.16,-10850.44  TurnIn Continued Threat",
+        "turnin:1445 @1435:-3322.31,-10458.51  TurnIn The Temple of Atal\u0027Hakkar"
+      ]
+    },
+    {
+      "part": 5,
+      "steps": [
+        "accept:8425 @1435:-3009.44,-10632.22  Accept Voodoo Feathers",
+        "accept:8423 @1435:-3009.44,-10632.22  Accept Warrior Kinship",
+        "accept:8424 @1435:-3009.44,-10632.22  Accept War on the Shadowsworn",
+        "accept:2621 @1435:-3009.44,-10632.22  Accept The Disgraced One",
+        "accept:2702 @1435:-3009.44,-10632.22  Accept Heroes of Old",
+        "accept:2681 @1435:-3009.44,-10632.22  Accept The Stones That Bind Us",
+        "turnin:2702 @1435:-2991.09,-10629.93  TurnIn Heroes of Old",
+        "accept:2701 @1435:-2991.09,-10629.93  Accept Heroes of Old",
+        "turnin:2701 @1435:-2985.82,-10633.45  TurnIn Heroes of Old",
+        "turnin:2621 @1435:-3319.1,-10460.96  TurnIn The Disgraced One",
+        "accept:2622 @1435:-3319.1,-10460.96  Accept The Missing Orders",
+        "turnin:2622 @1435:-3254.42,-10498.12  TurnIn The Missing Orders",
+        "accept:2623 @1435:-3254.42,-10498.12  Accept The Swamp Talker",
+        "obj:2623:1 @1435:-3681.74,-10942.03  Objective The Swamp Talker / Warchief\u0027s Orders (1)",
+        "turnin:2623 @1435:-3009.44,-10632.22  TurnIn The Swamp Talker",
+        "item:3374 @1435:-2536.47,-10717.55  ItemAccept The Essence of Eranikus",
+        "turnin:3374 @1435:-2536.47,-10717.55  TurnIn The Essence of Eranikus",
+        "accept:3512 @1435:-2536.47,-10717.55  Accept In Eranikus\u0027 Own Words"
+      ]
+    }
+  ]
+}

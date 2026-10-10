@@ -1,6 +1,8 @@
 bin/
 obj/
 QuestieDB/
+QuestieDB.unzip/
 guides/
 addon/
 settings.json
+forever/
