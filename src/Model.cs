@@ -7,6 +7,8 @@ public sealed class BuildOptions
     public string Faction = "Horde"; public string? Race, Class;
     public double? StartLevel; public int? MinLevel, MaxLevel; public bool NoHearth, Fresh, NoRxpSteps; public string? RxpDir, OrderFrom;
     public HashSet<string> RxpPlaced = new();    // RestedXP service steps already put in a part of this guide
+    public RouteLock? Lock;                      // the saved order this build follows (null = planned from scratch)
+    public HashSet<LockedService> LockPlaced = new();   // the lock's service steps already put in a part of this guide
 }
 
 /// <summary>Fixed facts about the game: races, classes and the experience curve.</summary>

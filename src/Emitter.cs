@@ -9,6 +9,8 @@ public sealed class GuideOutput
     public List<string> Lines = new();      // the guide body (between RegisterGuide([[ and ]]))
     public int Steps, HearthSteps, EarlyOffers, Stops, AsYouGo, CustomSteps, RxpSteps;
     public List<string> StepsNotPlaced = new();      // zone-file steps whose anchor is in no part of this guide
+    public int LockSteps;                            // service steps placed from the lock file
+    public List<(LockedService Svc, string Key, bool After)> LockServices = new();   // every service step placed, to save in the lock
     public int GateLine = -1;               // index of the "step" line of the level check that leads to the next part
     public List<string> GrindSteps = new();
     public List<(string dest, string tag, string quest)> Carried = new();
@@ -539,7 +541,25 @@ public sealed class Emitter
                 if (!l.Contains(sf)) l.Add(sf);                   // two names at the same stop: once is enough
             }
         }
-        // training, vendor and flight-path steps from RestedXP's guides (--rxp), next to the quest step they follow there
+        // training, vendor and flight-path steps kept in the lock file, next to the step above them there
+        var lockSvcs = m.Opt.Lock?.ServicesFor(m.Visit.Number) ?? new();
+        var inLock = (m.Opt.Lock?.AllServices ?? Enumerable.Empty<LockedService>()).Select(x => m.Main.Name + "|" + x.Id).ToHashSet();
+        foreach (var svc in lockSvcs)
+        {
+            if (m.Opt.LockPlaced.Contains(svc)) continue;
+            var anchor = svc.Anchors.FirstOrDefault(a => unitOf.ContainsKey(a.Key));
+            if (anchor.Key == null) continue;                  // none of the steps around it is in this part: another part may have them
+            m.Opt.LockPlaced.Add(svc);
+            g.LockServices.Add((svc, anchor.Key, anchor.After));
+            // a lock written for every character keeps another class's steps; a one-character build just does not show them
+            if (m.SingleCharacter && m.Opt.Race != null && m.Opt.Class != null && !Verifier.Applies(svc.Tag ?? "", m.Opt.Race, m.Opt.Class, m.Opt.Faction)) continue;
+            var map = anchor.After ? after : before; int at = unitOf[anchor.Key];
+            if (!map.TryGetValue(at, out var l)) map[at] = l = new();
+            l.Add(new StepFix { Lines = svc.Lines, Text = svc.Text, Tag = svc.Tag });
+            g.LockSteps++;
+        }
+        // training, vendor and flight-path steps from RestedXP's guides (--rxp), next to the quest step they follow there;
+        // the ones the lock already has are left to the lock (wherever it puts them), and the ones placed here are saved in it
         var nearUs = m.Areas.Select(a => a.UiMap).ToHashSet();
         if (m.Rxp != null && !m.Opt.NoRxpSteps)
             foreach (var svc in m.Rxp.Services)
@@ -548,7 +568,7 @@ public sealed class Emitter
                 if (svc.Map >= 0 && !nearUs.Contains(svc.Map)) continue;
                 if (m.SingleCharacter && m.Opt.Race != null && m.Opt.Class != null && !Verifier.Applies(svc.Tag, m.Opt.Race, m.Opt.Class, m.Opt.Faction)) continue;
                 string id = m.Main.Name + "|" + svc.Id;
-                if (m.Opt.RxpPlaced.Contains(id)) continue;
+                if (m.Opt.RxpPlaced.Contains(id) || inLock.Contains(id)) continue;
                 var anchor = svc.Anchors.FirstOrDefault(a => unitOf.ContainsKey(a.Key));
                 if (anchor.Key == null) continue;
                 var map = anchor.After ? after : before; int at = unitOf[anchor.Key];
@@ -557,6 +577,7 @@ public sealed class Emitter
                 if (!map.TryGetValue(at, out var l)) map[at] = l = new();
                 l.Add(new StepFix { Lines = svc.Lines, Tag = svc.Tag });
                 m.Opt.RxpPlaced.Add(id); g.RxpSteps++;
+                g.LockServices.Add((new LockedService { Lines = svc.Lines, Tag = svc.Tag.Length > 0 ? svc.Tag : null, From = "RestedXP: " + svc.Guide, Anchors = svc.Anchors }, anchor.Key, anchor.After));
             }
         void Custom(StepFix sf)
         {

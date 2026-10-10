@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "14-26 Redridge Mountains",
-  "saved": "2026-10-10 13:39",
+  "saved": "2026-10-10 14:14",
   "parts": [
     {
       "part": 1,
@@ -97,7 +97,7 @@
         "accept:347 @1433:-2268.46,-9279.27  Accept Rethban Ore",
         "turnin:150 @1433:-2172.51,-9261.02  TurnIn Murloc Poachers",
         "accept:1702 @1433:-2147.76,-9222.51  Accept The Shieldsmith",
-        "obj:347:1 @1433:-1975.62,-8822.74  Objective Rethban Ore / Rethban Ore (5)"
+        "obj:347:1 @1433:-1975.62,-8822.74  Objective Rethban Ore / Rethban Ore (1)"
       ]
     },
     {

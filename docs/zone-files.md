@@ -434,10 +434,16 @@ guide.
 
 ## Extra steps: vendors, trainers, flight paths
 
-RouteBuilder plans quests only. Building with `--rxp` copies RestedXP's own training, vendor and
-flight-path steps in (see the README). Anything else you want the guide to tell you (sell and repair, train,
-pick up a flight path, buy food) goes under `steps`, each one placed right before or right after a planned
-step. It is tied to that step, not to a place in the order, so it moves with it when the route changes.
+RouteBuilder plans quests only. There are two places for steps that are not quests:
+
+- **The zone file's `steps`** (below): each one is tied to a quest step you name, so it moves with that step
+  wherever the route puts it. These are never written into the lock file.
+- **The lock file**: RestedXP's training, vendor and flight-path steps (taken by RxpToLock, or by a build with
+  `--rxp`) are kept there as lines of their own, and you can move them or write your own (see "Keeping the
+  route between builds" in the README).
+
+Anything you want the guide to tell you (sell and repair, train, pick up a flight path, buy food) can go
+under `steps`, each one placed right before or right after a planned step.
 
 ```json
 "steps": [

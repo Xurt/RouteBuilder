@@ -29,6 +29,7 @@ public static class Program
         """;
 
     sealed record Hit(string Key, int Order, bool Along, LockedStep Step, string Guide);
+    sealed record Svc(int Order, string Guide, int Map, LockedService Step);
 
     static readonly Regex GotoRx = new(@"^\.goto\s+(\d+)(?:/\d+)?\s*,\s*(-?\d+(?:\.\d+)?)[\d.]*\s*,\s*(-?\d+(?:\.\d+)?)[\d.]*(?:\s*,\s*(\d+(?:\.\d+)?))?(?:\s*,\s*(\d+))?", RegexOptions.Compiled);
     static readonly Regex CmdRx = new(@"^\.(accept|turnin|complete|home)\b\s*(\d+)?(?:\s*,\s*(\d+))?", RegexOptions.Compiled);
@@ -77,7 +78,7 @@ public static class Program
         var keys = RouteLock.Keys(model).ToHashSet();
 
         // every .accept / .complete / .turnin / .home in the guides, in order
-        var hits = new List<Hit>(); var guides = new List<string>(); int order = 0;
+        var hits = new List<Hit>(); var guides = new List<string>(); int order = 0; var services = new List<Svc>();
         var only = opt.TryGetValue("guides", out var gl) ? gl.Split(',').Select(s => s.Trim()).Where(s => s.Length > 0).ToHashSet(StringComparer.OrdinalIgnoreCase) : null;
         foreach (var file in files)
             foreach (var (name, steps) in ReadGuides(file, faction, data))
@@ -101,6 +102,10 @@ public static class Program
                         };
                         if (key != null) hits.Add(new Hit(key, order++, st.Along, spot with { Key = key }, name));
                     }
+                    // a training, vendor or flight-path step: kept whole, in its place in RestedXP's order
+                    // (after a quest handed in at the same trainer, as RestedXP does them together)
+                    if (!st.Along && RxpServices.ServiceLines(st.Lines, out int svcMap) is { } svcLines)
+                        services.Add(new Svc(order++, name, svcMap, new LockedService { Lines = svcLines, Tag = st.Tag.Length > 0 ? st.Tag : null, From = "RestedXP: " + name }));
                 }
             }
         if (guides.Count == 0) throw new InvalidOperationException(only != null ? "none of the --guides names were found in the files" : "no RestedXP guides found in the files");
@@ -121,6 +126,12 @@ public static class Program
         var rxpQuests = kept.Select(h => Quest(h.Key)).ToHashSet();
         var skipped = inZone.Where(q => !rxpQuests.Contains(q)).OrderBy(q => q).ToList();
 
+        // service steps on this zone's maps (or its city's), from the RestedXP guides that do some of this zone's quests, once each
+        var zoneMaps = model.Areas.Select(a => a.UiMap).ToHashSet();
+        var ours = kept.Select(h => h.Guide).ToHashSet();
+        var seenSvc = new HashSet<string>();
+        var svcKept = services.Where(x => (x.Map < 0 || zoneMaps.Contains(x.Map)) && ours.Contains(x.Guide)).Where(x => seenSvc.Add(x.Step.Id)).ToList();
+
         string QName(int q) => data.Quests.TryGetValue(q, out var r) ? $"{r.Name} [{q}]" : $"quest {q}";
         string Note(Hit h) => h.Key switch
         {
@@ -131,14 +142,23 @@ public static class Program
         } + $"  (RestedXP: {h.Guide})";
 
         string path = RouteLock.PathFor(area.Name, bo);
+        if (kept.Count == 0)
+        {
+            // nothing to follow: an empty lock would only throw away the order that is there now
+            Console.WriteLine($"\nNone of these RestedXP guides has a pickup, objective or hand-in for {area.Name} ({faction}{(bo.Race != null ? ", " + bo.Race : "")}{(bo.Class != null ? ", " + bo.Class : "")}). " +
+                (File.Exists(path) ? $"{Path.GetFullPath(path)} is left as it was." : "No lock written."));
+            return 1;
+        }
         if (File.Exists(path)) { File.Copy(path, path + ".bak", true); Console.WriteLine($"The lock that was there is kept as {path}.bak"); }
         RouteLock.SaveSteps(path, "from RestedXP: " + string.Join(", ", guides),
             "Step order taken from RestedXP's guide by RxpToLock. RouteBuilder follows it and slots in this zone's other quests. " +
             "Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
-            kept.Select(h => (h.Step, Note(h))));
+            kept.Select(h => (h.Order, Entry: (Step: (LockedStep?)h.Step, Svc: (LockedService?)null, Note: Note(h))))
+                .Concat(svcKept.Select(x => (x.Order, Entry: (Step: (LockedStep?)null, Svc: (LockedService?)x.Step, Note: ""))))
+                .OrderBy(x => x.Order).Select(x => x.Entry));
 
         Console.WriteLine();
-        Console.WriteLine($"{kept.Count} steps for {rxpQuests.Count(q => q != 0)} quests of {area.Name} saved in {path}");
+        Console.WriteLine($"{kept.Count} steps for {rxpQuests.Count(q => q != 0)} quests of {area.Name}, and {svcKept.Count} training, vendor and flight-path step{(svcKept.Count == 1 ? "" : "s")}, saved in {Path.GetFullPath(path)}");
         if (outside.Count > 0)
         {
             Console.WriteLine($"\nLeft out, not part of {area.Name} for this build ({outside.Count}):");

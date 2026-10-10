@@ -8,3 +8,4 @@ guides/
 settings.json
 build.cmd
 forever/
+locks/*.bak

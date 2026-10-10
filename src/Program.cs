@@ -159,6 +159,7 @@ public static class Program
         // the step order of the last build of this guide, kept unless --fresh
         string lockPath = RouteLock.PathFor(area.Name, bo);
         var lk = bo.OrderFrom != null ? RouteLock.FromGuide(bo.OrderFrom) : bo.Fresh ? null : RouteLock.Load(lockPath);
+        bo.Lock = lk;
         if (bo.OrderFrom != null) Console.WriteLine($"  keeping the step order of {bo.OrderFrom}");
         else if (lk != null) Console.WriteLine($"  keeping the step order saved in {lockPath} (--fresh plans from scratch)");
         var visit = new Visit(); var visits = new List<(ZoneModel m, RouteResult r, GuideOutput g, Verifier v)>();
@@ -232,7 +233,12 @@ public static class Program
         File.WriteAllText(path, text);
         var reports = visits.Select((v, i) => Report.Write(v.m, v.r, v.g, v.v, path, zoneFile, i == visits.Count - 1, visits.Count));
         File.WriteAllText(Path.ChangeExtension(path, ".report.txt"), string.Join("\n\n" + new string('=', 100) + "\n\n", reports));
-        RouteLock.Save(lockPath, visits[0].g.Name, visits.Select((v, i) => (i + 1, v.m, v.r)));
+        RouteLock.Save(lockPath, visits[0].g.Name, visits.Select((v, i) => (i + 1, v.m, v.r, v.g)));
+        if (lk != null)
+        {
+            int lost = lk.AllServices.Count(x => !bo.LockPlaced.Contains(x));
+            if (lost > 0) Console.WriteLine($"  {lost} training/vendor/flight-path step{(lost == 1 ? "" : "s")} in the lock had none of the steps around {(lost == 1 ? "it" : "them")} left in this guide, so {(lost == 1 ? "it was" : "they were")} dropped from it");
+        }
         bool ok = visits.All(v => v.v.Errors.Count == 0);
         Console.WriteLine($"  \"{visits[0].g.Name}\"" + (visits.Count > 1 ? $" in {visits.Count} parts" : ""));
         Console.WriteLine($"  -> {path}  ({sw.Elapsed.TotalSeconds:0} s); step order saved in {lockPath}");

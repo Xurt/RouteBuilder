@@ -65,6 +65,8 @@ copies in RestedXP's training, vendor and flight-path steps for the zone:
 * RestedXP's own conditions come along (`.money`, `.xp`, class tags), so its "train if you can afford
   it" variants still choose themselves in game. Hardcore-only variants are left out.
 * `--no-rxp-steps` leaves them out. The report says how many were added.
+* The ones placed are saved in the lock file (next section), so later builds keep them where they are, with
+  or without `--rxp`, and you can move them by hand.
 
 ## Keeping the route between builds
 
@@ -82,6 +84,22 @@ adding a fix to a zone file does not reshuffle the whole route:
 A build that keeps a saved order takes a second or two. To plan a guide from scratch again (after a big
 change, or to see whether the planner finds something shorter), build with `--fresh`; that also replaces
 the saved order. Deleting the file does the same. The file has one line per step and can be reordered by hand.
+
+Training, vendor and flight-path steps are lines of their own in the file, written out in full:
+
+    "turnin:790 @1411:-4109.22,-397.61  TurnIn Sarkoth",
+    {"lines":[".goto 1411/1,-4107.11,-604.18",">>Talk to |cRXP_FRIENDLY_Hraug|r",".vendor",".target Hraug"],"tag":"Warlock","from":"RestedXP: 1-6 Durotar"},
+    "accept:804 @1411:-4109.22,-397.61  Accept Sarkoth",
+
+* Each one goes in the guide right after the step above it in the file, so moving the line moves the step.
+  If the guide no longer has that step, it goes by the nearest one around it that it does have.
+* They come from RxpToLock or from a build with `--rxp`. You can also write your own the same way: `lines`
+  are RestedXP lines as in a guide (with a `.goto` for where), `tag` is who sees it (leave it out for
+  everyone), `text` is an optional instruction line, and `from` is only a note.
+* A build with `--rxp` does not add a second copy of a step the file already has, wherever it stands.
+  Delete a line to drop that step (with `--rxp`, the build would add it back in RestedXP's place;
+  `--no-rxp-steps` stops that).
+* Hand-written steps tied to a quest step belong in the zone file's `steps` instead; they are not saved here.
 
 Guides built before this existed have no saved order. To keep the route of one you already have, build
 once with `--order-from`, pointing at that guide, with the same options it was built with:
@@ -107,6 +125,9 @@ the options of the build you will run next:
 * `--race` and `--class` take only the steps RestedXP shows that character. Without them every class's
   and race's steps are taken, for a faction guide.
 * `--guides "1-6 Durotar,6-10 Durotar"` takes only those guides (by their `#name`) from the files.
+* RestedXP's training, vendor and flight-path steps for this zone go in too, in RestedXP's places (on this
+  zone's maps, from the guides that do its quests).
+* If the files have nothing for the zone, the lock that is there is left alone.
 * A lock that was already there is kept as `.bak`. The new one is an ordinary lock from then on: edit it,
   or build with `--fresh` to go back to RouteBuilder's own plan.
 * Distances are still measured in straight lines, so a RestedXP order usually comes out a little longer

@@ -45,6 +45,32 @@ public static class RxpServices
         return string.Create(System.Globalization.CultureInfo.InvariantCulture, $".goto {a.UiMap}/{a.Continent},{w.X:0.00},{w.Y:0.00}{m.Groups[4].Value}");
     }
 
+    /// <summary>
+    /// The lines worth carrying over from one RestedXP step, if it is a training, vendor or flight-path step (null if not,
+    /// or if it is RestedXP's hardcore-mode version of one), and the map ID of its first .goto (-1 = none).
+    /// </summary>
+    public static List<string>? ServiceLines(IEnumerable<(string Text, string Tag)> lines, out int map)
+    {
+        map = -1;
+        var all = lines.ToList();
+        if (!all.Any(x => Cmd.Match(x.Text) is { Success: true } c && Service.Contains(c.Groups[1].Value))) return null;
+        if (all.Any(x => x.Text.StartsWith("#hardcore"))) return null;     // the normal version of the step is used
+        var kept = new List<string>();
+        foreach (var (t, lt) in all)
+        {
+            bool isText = t.StartsWith(">>") || t.StartsWith('+');
+            var c = Cmd.Match(t);
+            if (!isText && !(c.Success && Keep.Contains(c.Groups[1].Value))) continue;
+            if (c.Success && c.Groups[1].Value == "goto" && map < 0 && Regex.Match(t, @"^\.goto\s+(\d+)") is { Success: true } g) map = int.Parse(g.Groups[1].Value);
+            kept.Add(lt.Length > 0 ? $"{t} << {lt}" : t);
+        }
+        return kept;
+    }
+
+    /// <summary>What a service step does, ignoring where it is and how it is worded: the same step from two places is placed once.</summary>
+    public static string IdOf(string tag, IEnumerable<string> lines) =>
+        tag + "|" + string.Join("|", lines.Where(x => !x.StartsWith(".goto") && !x.StartsWith(">>")).Select(x => Regex.Replace(x.Trim(), @"\s+", " ")));
+
     /// <summary>Every service step in the RestedXP guide files' text, by guide.</summary>
     public static List<RxpService> Read(string file, string text, GameData? data = null)
     {
@@ -90,23 +116,14 @@ public static class RxpServices
             for (int i = 0; i < steps.Count; i++)
             {
                 var (tag, along, lines) = steps[i];
-                if (along || !lines.Any(x => Cmd.Match(x.Text) is { Success: true } c && Service.Contains(c.Groups[1].Value))) continue;
-                if (lines.Any(x => x.Text.StartsWith("#hardcore"))) continue;     // RestedXP's hardcore-mode version of a step; the normal one is used
-                var svc = new RxpService { Guide = name, Faction = faction, Tag = tag };
+                if (along || ServiceLines(lines, out int map) is not { } kept) continue;
+                var svc = new RxpService { Guide = name, Faction = faction, Tag = tag, Map = map, Lines = kept };
                 if (Regex.Match(name, @"^(\d+)\s*-\s*(\d+)") is { Success: true } rg) { svc.MinLevel = int.Parse(rg.Groups[1].Value); svc.MaxLevel = int.Parse(rg.Groups[2].Value); }
-                foreach (var (t, lt) in lines)
-                {
-                    bool isText = t.StartsWith(">>") || t.StartsWith('+');
-                    var c = Cmd.Match(t);
-                    if (!isText && !(c.Success && Keep.Contains(c.Groups[1].Value))) continue;
-                    if (c.Success && c.Groups[1].Value == "goto" && svc.Map < 0 && Regex.Match(t, @"^\.goto\s+(\d+)") is { Success: true } g) svc.Map = int.Parse(g.Groups[1].Value);
-                    svc.Lines.Add(lt.Length > 0 ? $"{t} << {lt}" : t);
-                }
                 // quest steps in the same step first (a class quest handed in at the trainer), then before it, then after it
                 foreach (var a in actions.Where(a => a.Step == i)) svc.Anchors.Add((a.Key, true));
                 foreach (var a in actions.Where(a => a.Step < i).Reverse().Take(Reach)) svc.Anchors.Add((a.Key, true));
                 foreach (var a in actions.Where(a => a.Step > i).Take(Reach)) svc.Anchors.Add((a.Key, false));
-                svc.Id = tag + "|" + string.Join("|", svc.Lines.Where(x => !x.StartsWith(".goto") && !x.StartsWith(">>")).Select(x => Regex.Replace(x, @"\s+", " ")));
+                svc.Id = IdOf(tag, kept);
                 if (svc.Anchors.Count > 0) all.Add(svc);
             }
         }
