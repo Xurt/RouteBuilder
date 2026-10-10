@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "50-56 Un'Goro Crater",
-  "saved": "2026-10-10 15:06",
+  "saved": "2026-10-10 16:05",
   "parts": [
     {
       "part": 1,
@@ -70,6 +70,7 @@
         "obj:4284:3 @1449:-1586.77,-6215.8  Objective Crystals of Power / Green Power Crystal (7)",
         "obj:4284:1 @1449:-1586.77,-6215.8  Objective Crystals of Power / Red Power Crystal (7)",
         "turnin:4284 @1449:-1017.71,-6033.27  TurnIn Crystals of Power",
+        {"lines":[".goto 1449/1,-1140.32,-6110.50",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryfe|r",".fp Un'Goro >> Get the Un'Goro Crater Flight Path",".target Gryfe"],"from":"RestedXP: 50-51 Tanaris/Un'goro"},
         "turnin:9052 @1449:-2117.35,-7840.35  TurnIn Bloodpetal Poison"
       ]
     },

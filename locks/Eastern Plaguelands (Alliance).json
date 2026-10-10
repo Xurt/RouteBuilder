@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "55-60 Eastern Plaguelands",
-  "saved": "2026-10-10 15:06",
+  "saved": "2026-10-10 16:06",
   "parts": [
     {
       "part": 1,
@@ -91,6 +91,7 @@
         "accept:9664 @1423:-5332.67,2268.08  Accept Establishing New Outposts",
         "accept:5465 @1423:-5349.02,2307.35  Accept Soulbound Keepsake",
         "turnin:6026 @1423:-5305.57,2303.34  TurnIn That's Asking A Lot",
+        {"lines":[".goto 1423/0,-5768.34,1992.31",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khaelyn Steelwing|r",".fp Chapel >> Get the Light's Hope Chapel flight path",".target Khaelyn Steelwing"],"from":"RestedXP: 57-58 Western/Eastern Plaguelands"},
         "obj:9664:2 @1423:-4796.2,2561.91  Objective Establishing New Outposts / <TXT>Eastwall Capture Quest Doodad",
         "obj:6024:1 @1423:-4921.82,3373.18  Objective Hameya's Plea / Hameya's Key (1)",
         "obj:9664:3 @1423:-4375.03,3169.93  Objective Establishing New Outposts / <TXT>Northpass Capture Quest Doodad",

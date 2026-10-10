@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "48-56 Felwood",
-  "saved": "2026-10-10 15:06",
+  "saved": "2026-10-10 16:05",
   "parts": [
     {
       "part": 1,
@@ -63,6 +63,9 @@
         "accept:8421 @1448:-736.53,5407.57  Accept The Wrong Stuff",
         "obj:8421:2 @1448:-758.38,5259.6  Objective The Wrong Stuff / Bloodvenom Essence (4)",
         "obj:8421:1 @1448:-1335.11,6206.82  Objective The Wrong Stuff / Rotting Wood (10)",
+        {"lines":[".goto 1448/1,-1951.39,6204.06",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mishellena|r",".fp Felwood>> Get the Felwood Flight Path",".target Mishellena"],"from":"RestedXP: 52-53 Felwood"},
+        {"lines":[".goto 1448/1,-1934.26,6477.45",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Felpaw Ravager|r to tame it|r",".train 17267 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 7)]"],"tag":"Hunter","from":"RestedXP: 52-53 Felwood"},
+        {"lines":[".goto 1448/1,-1303.48,5998.28,70,0",".goto 1448/1,-1213.78,5805.08,70,0",".goto 1448/1,-614.06,5721.13,70,0",".goto 1448/1,-565.18,5534.45,70,0",".goto 1448/1,-575.53,5209.77",">>|cRXP_WARN_Abandon your current|r |cRXP_FRIENDLY_Felpaw Ravager|r",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ironbeak Hunter|r or |cRXP_ENEMY_Angerclaw Mauler|r to tame it|r",".train 2977 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 7)]"],"tag":"Hunter","from":"RestedXP: 52-53 Felwood"},
         "turnin:8421 @1448:-736.53,5407.57  TurnIn The Wrong Stuff",
         "accept:8422 @1448:-736.53,5407.57  Accept Trolls of a Feather",
         "turnin:4084 @1448:-1310.96,4008.78  TurnIn Silver Heart",

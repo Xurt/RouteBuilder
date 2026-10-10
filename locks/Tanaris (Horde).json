@@ -1,12 +1,14 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "43-60 Tanaris",
-  "saved": "2026-10-10 14:57",
+  "saved": "2026-10-10 15:54",
   "parts": [
     {
       "part": 1,
       "steps": [
         "accept:992 @1446:-3683.24,-7139.08  Accept Gadgetzan Water Survey",
+        {"lines":[".goto 1446/1,-3949.58,-7356.66",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Scorpid Hunter|r to tame it|r",".train 2976 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 6)]",".xp <40,1",".zoneskip Tanaris,1"],"tag":"Hunter","from":"RestedXP: 43-45 Tanaris/Dustwallow"},
+        {"lines":[".goto 1446/1,-3824.21,-7163.05",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laziphus|r",".target Laziphus",".train 2976,3",".zoneskip Tanaris,1"],"tag":"Hunter","from":"RestedXP: 43-45 Tanaris/Dustwallow"},
         "turnin:4494 @1446:-3730.16,-7115.16  TurnIn March of the Silithid",
         "turnin:1188 @1446:-3734.99,-7128.04  TurnIn Safety First",
         "accept:1189 @1446:-3734.99,-7128.04  Accept Safety First",
@@ -25,6 +27,7 @@
         "turnin:3912 @1446:-3939.23,-6948.18  TurnIn Meet at the Grave",
         "obj:1707:1 @1446:-4604.39,-7304.22  Objective Water Pouch Bounty / Wastewander Water Pouch (5)",
         "obj:1690:2 @1446:-4618.19,-7319.4  Objective Wastewander Justice / Wastewander Thief slain (8)",
+        {"lines":[".goto 1446/1,-3850.22,-7168.06",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirge Quikcleave|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Dirge Quikcleave",".subzoneskip 976,1"],"tag":"Shaman","from":"RestedXP: 43-45 Tanaris/Dustwallow"},
         "obj:1690:1 @1446:-4620.26,-7244.88  Objective Wastewander Justice / Wastewander Bandit slain (10)",
         "turnin:2872 @1446:-4849.34,-6978.08  TurnIn Stoley's Debt",
         "accept:2873 @1446:-4849.34,-6978.08  Accept Stoley's Shipment",
@@ -63,6 +66,7 @@
         "accept:2741 @1446:-3833.66,-7115.62  Accept The Super Egg-O-Matic",
         "obj:992:1 @1446:-2909.75,-7209  Objective Gadgetzan Water Survey / Tapped Dowsing Widget (1)",
         "turnin:992 @1446:-3683.24,-7139.08  TurnIn Gadgetzan Water Survey",
+        {"lines":[".goto 1446/1,-3850.22,-7168.06",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirge Quikcleave|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Dirge Quikcleave",".subzoneskip 976,1"],"tag":"!Shaman","from":"RestedXP: 43-45 Tanaris/Dustwallow"},
         "turnin:3380 @1446:-3855.74,-7987.32  TurnIn The Sunken Temple",
         "turnin:351 @1446:-4374.62,-8852.12  TurnIn Find OOX-17/TN!",
         "turnin:2966 @1446:-2815.22,-9619.4  TurnIn Seeing What Happens"
@@ -74,6 +78,7 @@
         "accept:2781 @1446:-4829.33,-6900.34  Accept WANTED: Caliph Scorpidsting",
         "turnin:3520 @1446:-4841.06,-6903.56  TurnIn Screecher Spirits",
         "obj:2781:1 @1446:-4480.88,-7630.82  Objective WANTED: Caliph Scorpidsting / Caliph Scorpidsting's Head (1)",
+        {"lines":[".goto 1446/1,-3850.22,-7168.06",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirge Quikcleave|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Dirge Quikcleave",".subzoneskip 976,1"],"from":"RestedXP: 47-49 Tanaris"},
         "turnin:2781 @1446:-3838.49,-7186.46  TurnIn WANTED: Caliph Scorpidsting",
         "turnin:2768 @1446:-3838.49,-7186.46  TurnIn Divino-matic Rod",
         "turnin:2741 @1446:-3833.66,-7115.62  TurnIn The Super Egg-O-Matic",
@@ -93,6 +98,7 @@
         "accept:3161 @1446:-3855.74,-7987.32  Accept Gahz'ridian",
         "obj:3161:1 @1446:-3468.65,-8911  Objective Gahz'ridian / Gahz'ridian Ornament (30)",
         "obj:10:1 @1446:-4079.99,-9148.82  Objective The Scrimshank Redemption / Scrimshank's Surveying Gear (1)",
+        {"lines":[".goto 1446/1,-3850.22,-7168.06",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirge|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Dirge Quikcleave",".isQuestComplete 10"],"tag":"Shaman","from":"RestedXP: 47-49 Tanaris"},
         "turnin:3161 @1446:-3855.74,-7987.32  TurnIn Gahz'ridian",
         "turnin:10 @1446:-3683.24,-7139.08  TurnIn The Scrimshank Redemption",
         "accept:110 @1446:-3683.24,-7139.08  Accept Insect Part Analysis",

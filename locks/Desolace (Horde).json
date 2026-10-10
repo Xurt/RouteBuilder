@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "31-39 Desolace",
-  "saved": "2026-10-10 14:56",
+  "saved": "2026-10-10 15:53",
   "parts": [
     {
       "part": 1,
@@ -49,10 +49,13 @@
         "turnin:1365 @1443:1707.12,-1333.78  TurnIn Khan Dez'hepah",
         "accept:1366 @1443:1707.12,-1333.78  Accept Centaur Bounty",
         "turnin:5561 @1443:1497.17,-1402.43  TurnIn Kodo Roundup",
+        {"lines":[".goto 1443/1,3150.29,-1592.80",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Sikewa|r",".target Innkeeper Sikewa",".train 3566,3"],"tag":"Mage","from":"RestedXP: 35-37 Desolace Horde"},
         "obj:1366:1 @1443:1111.43,-1753.18  Objective Centaur Bounty / Centaur Ear (15)",
         "turnin:1366 @1443:1707.12,-1333.78  TurnIn Centaur Bounty",
         "accept:1482 @1443:1884.26,-1150  Accept The Corrupter",
+        {"lines":[".goto 1443/1,1931.47,-1144.91",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harnor|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Harnor",".subzoneskip 597,1"],"from":"RestedXP: 35-37 Desolace Horde"},
         "accept:6143 @1443:3184.9,-1732.5  Accept Other Fish to Fry",
+        {"lines":[".goto 1443/1,3262.23,-1770.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thalon|r at the end of the dock",".fp Shadowprey Village >> Get the Shadowprey Village flight path",".target Thalon",".subzoneskip 2408,1"],"from":"RestedXP: 35-37 Desolace Horde"},
         "accept:6142 @1443:3215.48,-1705.52  Accept Clam Bait",
         "obj:6142:collect15874 @1443:2857.61,-576.2  Objective Clam Bait / Soft-shelled Clam",
         "obj:6142:1 @1443:2857.61,-576.2  Objective Clam Bait / Soft-shelled Clam Meat (1)",
@@ -63,7 +66,9 @@
         "turnin:1482 @1443:1884.26,-1150  TurnIn The Corrupter",
         "accept:1484 @1443:1884.26,-1150  Accept The Corrupter",
         "turnin:1484 @1443:1869.87,-1178.48  TurnIn The Corrupter",
+        {"lines":[".goto 1443/1,2324.85,-1652.15,0",".goto 1443/1,2514.13,-1775.37,50,0",".goto 1443/1,2324.85,-1652.15,50,0",".goto 1443/1,2284.84,-1359.56,50,0",".train 16831 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 5)]"],"tag":"Hunter","from":"RestedXP: 35-37 Desolace Horde"},
         "turnin:6142 @1443:3215.48,-1705.52  TurnIn Clam Bait",
+        {"lines":[".zoneskip Thunder Bluff",".train 3566,3"],"tag":"Mage","from":"RestedXP: 35-37 Desolace Horde"},
         "turnin:6143 @1443:3184.9,-1732.5  TurnIn Other Fish to Fry"
       ]
     },

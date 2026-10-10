@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "9-52 Durotar",
-  "saved": "2026-10-10 15:03",
+  "saved": "2026-10-10 16:01",
   "parts": [
     {
       "part": 1,
@@ -29,7 +29,9 @@
     {
       "part": 3,
       "steps": [
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r",".goto StormwindClassic,76.08,50.14,15,0",".goto StormwindClassic,80.22,45.37,15,0",".goto StormwindClassic,78.68,45.79",".trainer >> Train your class spells",".target Wu Shen",".target Ilsa Corbin"],"tag":"Warrior","from":"RestedXP: 30-32 Duskwood"},
         "accept:1718 @1454:-4808.15,1970.99  Accept The Islander",
+        {"lines":[".goto StormwindClassic,74.65,52.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r",".trainer >> Train your class spells",".target Osborne the Night Man"],"tag":"Rogue","from":"RestedXP: 30-32 Duskwood"},
         "accept:1947 @1454:-4219.9,1468.2  Accept Journey to the Marsh"
       ]
     },
@@ -48,7 +50,13 @@
     {
       "part": 6,
       "steps": [
+        {"lines":[".goto StormwindClassic,20.898,55.491",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r",".trainer >> Train your class spells",".target Sheldras Moontree"],"tag":"Druid","from":"RestedXP: 50-51 Tanaris/Un'goro"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",".goto StormwindClassic,38.82,31.27,10,0",".goto StormwindClassic,38.67,32.82",".trainer >> Train your class spells",".target Arthur the Faithful"],"tag":"Paladin","from":"RestedXP: 50-51 Tanaris/Un'goro"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r",".goto StormwindClassic,38.54,26.86",".trainer >> Train your class spells",".target Brother Joshua"],"tag":"Priest","from":"RestedXP: 50-51 Tanaris/Un'goro"},
+        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r",".trainer >> Train your class spells",".target Einris Brightspear"],"tag":"Hunter","from":"RestedXP: 50-51 Tanaris/Un'goro"},
         "accept:8417 @1454:-4808.15,1970.99  Accept A Troubled Spirit",
+        {"lines":[".goto StormwindClassic,26.117,77.225",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r",".trainer >> Train your class spells",".target Ursula Deline"],"tag":"Warlock","from":"RestedXP: 50-51 Tanaris/Un'goro"},
+        {"lines":[".goto StormwindClassic,25.665,77.649",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spackle Thornberry|r",".vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoires] |cRXP_BUY_for your pets|r",".target Spackle Thornberry"],"tag":"Warlock","from":"RestedXP: 50-51 Tanaris/Un'goro"},
         "accept:8233 @1454:-4296.34,1762.86  Accept A Simple Request",
         "accept:8254 @1454:-4179.79,1452.39  Accept Cenarion Aid",
         "accept:8151 @1454:-4607.02,2100.54  Accept The Hunter's Charm",

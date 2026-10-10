@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-60 Winterspring",
-  "saved": "2026-10-10 15:06",
+  "saved": "2026-10-10 16:06",
   "parts": [
     {
       "part": 1,
@@ -21,6 +21,7 @@
         "turnin:3908 @1452:-2536.84,6395.76  TurnIn It's a Secret to Everybody",
         "accept:3912 @1452:-2536.84,6395.76  Accept Meet at the Grave",
         "accept:3909 @1452:-2536.84,6395.76  Accept The Videre Elixir",
+        {"lines":[".goto 1452/1,-4742.38,6800.51",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maethrya|r",".fp Winterspring >> Get the Winterspring Flight Path",".fly Felwood >> Fly to Felwood << Hunter/Warlock",".zoneskip Winterspring,1",".target Maethrya"],"from":"RestedXP: 52-53 Felwood"},
         "turnin:8465 @1452:-2285.5,6900.33  TurnIn Speak to Salfa"
       ]
     },
@@ -90,6 +91,7 @@
         "accept:5121 @1452:-2536.84,6395.76  Accept High Chief Winterfall",
         "accept:969 @1452:-4712.99,6720.47  Accept Luck Be With You",
         "obj:5121:1 @1452:-5255.43,6719.99  Objective High Chief Winterfall / High Chief Winterfall slain (1)",
+        {"lines":[".goto 1452/1,-4420.47,7283.73,70,0",".goto 1452/1,-4548.27,7681.33",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Winterspring Screecher|r to tame it|r",".train 3666 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 8)]",".zoneskip Winterspring,1"],"tag":"Hunter","from":"RestedXP: 58-59 Felwood/Winterspring"},
         "accept:4864 @1452:-4678.91,5661.15  Accept Enraged Wildkin",
         "obj:4864:1 @1452:-4676.78,5658.78  Objective Enraged Wildkin / Jaron's Supplies (1)",
         "obj:969:1 @1452:-4515.61,5362  Objective Luck Be With You / Frostmaul Shards (4)",

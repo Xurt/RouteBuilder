@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "14-26 Redridge Mountains",
-  "saved": "2026-10-10 15:03",
+  "saved": "2026-10-10 16:02",
   "parts": [
     {
       "part": 1,
@@ -117,6 +117,7 @@
         "obj:126:1 @1433:-2170.99,-8884.56  Objective Howling in the Hills / Yowler's Paw (1)",
         "accept:34 @1433:-2045.3,-9245.82  Accept An Unwelcome Guest",
         "obj:34:1 @1433:-1911.14,-9288.97  Objective An Unwelcome Guest / Bellygrub's Tusk (1)",
+        {"lines":[".goto 1433/0,-2094.58,-8914.97",">>Kill |cRXP_ENEMY_Redridge Drudgers|r. Loot them for their |cRXP_LOOT_Ore|r",">>|cRXP_ENEMY_Redridge Bashers|r |cRXP_WARN_also share spawns with |cRXP_ENEMY_Redridge Drudgers|r so you may need to kill them to make them spawn|r",">>|cRXP_ENEMY_Redridge Drudgers|r |cRXP_WARN_attack very fast and |cRXP_ENEMY_Redridge Bashers|r have a|r |T132154:0|t[Knockdown] |cRXP_WARN_stun|r",">>|cRXP_WARN_You may also acquire them by|r |T134708:0|t[Mining] |cRXP_WARN_the|r |T134566:0|t[Copper Veins] |cRXP_WARN_and|r |T134579:0|t[Tin Veins] |cRXP_WARN_inside the Rethban Caverns|r",".train 2575,3"],"from":"RestedXP: 24-27 Duskwood/Redridge"},
         "turnin:34 @1433:-2045.3,-9245.82  TurnIn An Unwelcome Guest",
         "turnin:126 @1433:-2243.06,-9259.43  TurnIn Howling in the Hills",
         "turnin:128 @1433:-2255.44,-9412.62  TurnIn Blackrock Bounty"

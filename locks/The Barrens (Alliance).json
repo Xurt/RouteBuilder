@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "14-31 The Barrens",
-  "saved": "2026-10-10 15:04",
+  "saved": "2026-10-10 16:02",
   "parts": [
     {
       "part": 1,
@@ -79,6 +79,7 @@
         "accept:1740 @1413:-2373.83,-2252.75  Accept The Orb of Soran'ruk",
         "accept:65602 @1413:-2373.83,-2245.32  Accept What Is Love?",
         "accept:1738 @1413:-2373.83,-2245.32  Accept Heartswood",
+        {"lines":[".goto 1413/1,-3769.60,-898.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r",".fp Ratchet>> Get the Ratchet Flight Path",".target Bragok"],"tag":"Warlock","from":"RestedXP: 21-23 Stonetalon/Ashenvale"},
         "turnin:1069 @1413:-3697.24,-929.2  TurnIn Deepmoss Spider Eggs",
         "accept:1221 @1413:-3697.24,-929.2  Accept Blueleaf Tubers",
         "obj:1221:4 @1413:-3694.2,-927.85  Objective Blueleaf Tubers / Snufflenose Command Stick (1)",

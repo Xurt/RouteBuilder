@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-60 Winterspring",
-  "saved": "2026-10-10 14:58",
+  "saved": "2026-10-10 15:55",
   "parts": [
     {
       "part": 1,
@@ -31,9 +31,11 @@
         "accept:5054 @1452:-4713.7,6716.68  Accept Ursius of the Shardtooth",
         "obj:4809:1 @1452:-5039.59,6108.92  Objective Chillwind Horns / Uncracked Chillwind Horn (8)",
         "obj:3783:1 @1452:-5016.87,6588.88  Objective Are We There, Yeti? / Thick Yeti Fur (10)",
+        {"lines":[".goto 1452/1,-4673.23,6695.38",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vizzie|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Vizzie",".subzoneskip 2255,1"],"tag":"Shaman","from":"RestedXP: 56-57 Felwood/Winterspring"},
         "turnin:4809 @1452:-4692.4,6705.79  TurnIn Chillwind Horns",
         "accept:4810 @1452:-4692.4,6705.79  Accept Return to Tinkee",
         "turnin:3783 @1452:-4639.15,6752.65  TurnIn Are We There, Yeti?",
+        {"lines":[".goto 1452/1,-4673.23,6695.38",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vizzie|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Vizzie",".subzoneskip 2255,1"],"tag":"!Shaman","from":"RestedXP: 56-57 Felwood/Winterspring"},
         "accept:977 @1452:-4639.15,6752.65  Accept Are We There, Yeti?",
         "obj:5054:1 @1452:-4641.99,6976.07  Objective Ursius of the Shardtooth / Ursius slain (1)",
         "obj:8464:2 @1452:-5071.54,6900.81  Objective Winterfall Activity / Winterfall Den Watcher slain (8)",
@@ -46,6 +48,7 @@
         "turnin:6603 @1452:-2536.84,6395.76  TurnIn Trouble in Winterspring!",
         "accept:5087 @1452:-2536.84,6395.76  Accept Winterfall Runners",
         "accept:5086 @1452:-2536.84,6395.76  Accept Toxic Horrors",
+        {"lines":[".goto 1452/1,-4673.23,6695.38",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vizzie|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Vizzie"],"from":"RestedXP: 56-57 Felwood/Winterspring"},
         "accept:5082 @1452:-2536.84,6395.76  Accept Threat of the Winterfall",
         "turnin:8464 @1452:-2285.5,6900.33  TurnIn Winterfall Activity",
         "obj:5087:1 @1452:-2301.83,6899.39  Objective Winterfall Runners / Winterfall Crate (1)",
@@ -77,6 +80,7 @@
         "obj:5163:1 @1452:-4686.01,6705.79  Objective Are We There, Yeti? / Legacki",
         "turnin:5055 @1452:-4713.7,6716.68  TurnIn Brumeran of the Chillwind",
         "accept:5056 @1452:-4713.7,6716.68  Accept Shy-Rotam",
+        {"lines":[".goto 1452/1,-4420.47,7283.73,70,0",".goto 1452/1,-4548.27,7681.33",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Winterspring Screecher|r to tame it|r",".train 3666 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 8)]",".zoneskip Winterspring,1"],"tag":"Hunter","from":"RestedXP: 59-59 Winterspring/Silithus I"},
         "turnin:969 @1452:-4712.99,6720.47  TurnIn Luck Be With You",
         "turnin:5163 @1452:-4639.15,6752.65  TurnIn Are We There, Yeti?",
         "obj:5056:collect12733 @1452:-3951.87,7874.93  Objective Shy-Rotam / Sacred Frostsaber Meat",

@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "25-37 Thousand Needles",
-  "saved": "2026-10-10 14:55",
+  "saved": "2026-10-10 15:52",
   "parts": [
     {
       "part": 1,
@@ -48,14 +48,20 @@
         "obj:5151:1 @1441:-1434.77,-4688.85  Objective Hypercapacitor Gizmo / Hypercapacitor Gizmo (1)",
         "turnin:5151 @1441:-1376.25,-4921.47  TurnIn Hypercapacitor Gizmo",
         "accept:1197 @1441:-2463.49,-5483.49  Accept The Sacred Flame",
+        {"lines":[".goto 1441/1,-2419.93,-5456.21",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Montarr|r",".vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134937:0|t[Scrolls] |cRXP_BUY_from him if they're up|r << !Warrior",".vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions]|cRXP_BUY_, |r|T134937:0|t[Scrolls] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from him if they're up|r << Warrior",".target Montarr",".subzoneskip 484,1"],"from":"RestedXP: 29-31 Thousand Needles"},
+        {"lines":[".goto 1441/1,-2408.49,-5453.28",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Starn|r",".vendor >>|cRXP_BUY_Buy a|r |T135495:0|t[|cRXP_FRIENDLY_Dense Shortbow|r] |cRXP_BUY_from him if it's up|r",".target Starn",".money <2.7172",".subzoneskip 484,1"],"tag":"Hunter","from":"RestedXP: 29-31 Thousand Needles"},
         "accept:5147 @1441:-2457.33,-5458.56  Accept Wanted - Arnak Grimtotem",
         "accept:4767 @1441:-2410.25,-5401.65  Accept Wind Rider",
+        {"lines":[".goto 1441/1,-2419.49,-5407.23",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyse|r",".fp Freewind Post >> Get the Freewind Post flight path",".target Nyse",".subzoneskip 484,1"],"from":"RestedXP: 29-31 Thousand Needles"},
         "obj:1197:1 @1441:-2281.77,-4889.79  Objective The Sacred Flame / Cloven Hoof (1)",
         "obj:5147:1 @1441:-2110.17,-4754.85  Objective Wanted - Arnak Grimtotem / Arnak's Hoof (1)",
         "obj:4767:1 @1441:-969.69,-5026.48  Objective Wind Rider / Highperch Wyvern Egg (10)",
+        {"lines":[".goto 1441/1,-1359.97,-4901.52",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laer|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Laer Stepperunner",".isOnQuest 1131"],"from":"RestedXP: 29-31 Thousand Needles"},
         "turnin:4767 @1441:-2410.25,-5401.65  TurnIn Wind Rider",
         "turnin:5147 @1441:-2442.81,-5455.04  TurnIn Wanted - Arnak Grimtotem",
-        "turnin:1197 @1441:-2463.49,-5483.49  TurnIn The Sacred Flame"
+        {"lines":[".goto 1441/1,-2408.49,-5453.28",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Starn|r",".vendor >>|cRXP_BUY_Buy a|r |T135495:0|t[|cRXP_FRIENDLY_Dense Shortbow|r] |cRXP_BUY_from him if it's up and fill your quiver with arrows|r",".collect 3030,1800,4767,1",".target Starn",".money <2.7172",".subzoneskip 484,1"],"tag":"Hunter","from":"RestedXP: 29-31 Thousand Needles"},
+        "turnin:1197 @1441:-2463.49,-5483.49  TurnIn The Sacred Flame",
+        {"lines":[".goto 1441/1,-2460.41,-5477.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Abeqwa|r",".target Innkeeper Abeqwa",".train 3566,3"],"tag":"Mage","from":"RestedXP: 29-31 Thousand Needles"}
       ]
     },
     {

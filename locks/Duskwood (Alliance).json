@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "17-31 Duskwood",
-  "saved": "2026-10-10 15:04",
+  "saved": "2026-10-10 16:03",
   "parts": [
     {
       "part": 1,
@@ -86,6 +86,8 @@
         "turnin:175 @1431:-1380.4,-10780.29  TurnIn Look To The Stars",
         "obj:156:1 @1431:-1343.95,-10786.23  Objective Gather Rot Blossoms / Rot Blossom (8)",
         "obj:57:2 @1431:-1343.95,-10786.23  Objective The Night Watch / Skeletal Horror slain (15)",
+        {"lines":[".goto StormwindClassic,26.117,77.225",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r",".trainer >> Train your class spells",".target Ursula Deline"],"tag":"Warlock","from":"RestedXP: 24-27 Duskwood/Redridge"},
+        {"lines":[".goto StormwindClassic,25.665,77.649",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spackle Thornberry|r",".vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoires] |cRXP_BUY_for your|r |T136220:0|t[Succubus]|cRXP_BUY_ which you will have in a second. If you have extra gold also buy them for your|r |T136221:0|t[Voidwalker]",".target Spackle Thornberry"],"tag":"Warlock","from":"RestedXP: 24-27 Duskwood/Redridge"},
         "accept:66 @1431:-1213,-10532.43  Accept The Legend of Stalvan",
         "turnin:156 @1431:-1158.73,-10517.49  TurnIn Gather Rot Blossoms",
         "accept:79 @1431:-1158.73,-10517.49  Accept The Legend of Stalvan",
@@ -98,6 +100,8 @@
         "accept:80 @1431:-1152.25,-10559.43  Accept The Legend of Stalvan",
         "turnin:80 @1431:-1125.25,-10560.33  TurnIn The Legend of Stalvan",
         "accept:67 @1431:-1125.25,-10560.33  Accept The Legend of Stalvan",
+        {"lines":[".goto 1431/0,-1258.79,-10513.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felicia Maline|r",".fp Duskwood>> Get the Duskwood Flight Path",".target Felicia Maline"],"from":"RestedXP: 24-27 Duskwood/Redridge"},
+        {"lines":[".goto 1431/0,-1272.45,-10586.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herble Baubbletump|r",".vendor >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube]",">>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Herble Baubbletump|r doesn't have one|r",".target Herble Baubbletump"],"from":"RestedXP: 24-27 Duskwood/Redridge"},
         "accept:69 @1431:-1125.25,-10560.33  Accept The Legend of Stalvan",
         "accept:97 @1431:-1125.25,-10560.33  Accept The Legend of Stalvan",
         "turnin:97 @1431:-1152.25,-10559.43  TurnIn The Legend of Stalvan"
@@ -154,6 +158,7 @@
         "accept:253 @1431:-1108.78,-10552.23  Accept Bride of the Embalmer",
         "accept:1244 @1431:-1186.54,-10513.89  Accept The Missing Diplomat",
         "accept:222 @1431:-1211.92,-10572.93  Accept Worgen in the Woods",
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avette Fellwood|r",".goto 1431/0,-1145.23,-10522.35",".vendor 228 >>|cRXP_BUY_Stock up on|r |T132382:0|t[Razor Arrows]",".target Avette Fellwood"],"tag":"Hunter","from":"RestedXP: 30-32 Duskwood"},
         "accept:1043 @1431:-1200.31,-10599.03  Accept The Scythe of Elune",
         "accept:181 @1431:-1321.27,-10581.03  Accept Look To The Stars",
         "obj:222:1 @1431:-1119.31,-10980.09  Objective Worgen in the Woods / Nightbane Vile Fang slain (8)",
@@ -169,6 +174,7 @@
         "accept:223 @1431:-1211.92,-10572.93  Accept Worgen in the Woods",
         "turnin:1043 @1431:-1200.31,-10599.03  TurnIn The Scythe of Elune",
         "turnin:223 @1431:-1200.31,-10599.03  TurnIn Worgen in the Woods",
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r",".goto StormwindClassic,76.08,50.14,15,0",".goto StormwindClassic,80.22,45.37,15,0",".goto StormwindClassic,78.68,45.79",".trainer >> Train your class spells",".target Wu Shen",".target Ilsa Corbin"],"tag":"Warrior","from":"RestedXP: 30-32 Duskwood"},
         "accept:1044 @1431:-1200.31,-10599.03  Accept Answered Questions",
         "turnin:181 @1431:-1321.27,-10581.03  TurnIn Look To The Stars"
       ]

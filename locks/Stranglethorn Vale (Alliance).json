@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "30-50 Stranglethorn Vale",
-  "saved": "2026-10-10 15:05",
+  "saved": "2026-10-10 16:04",
   "parts": [
     {
       "part": 1,
@@ -80,6 +80,10 @@
         "home @1434:211.38,-12434.36  Home inn",
         "accept:4782 @1434:388.78,-14439.78  Accept Components for the Enchanted Gold Bloodrobe",
         "accept:577 @1434:415.58,-14469.56  Accept Some Assembly Required",
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",".goto StormwindClassic,38.82,31.27,10,0",".goto StormwindClassic,38.67,32.82",".trainer >> Train your class spells",".target Arthur the Faithful"],"tag":"Paladin","from":"RestedXP: 34-35 Stranglethorn Vale I"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r",".goto StormwindClassic,38.54,26.86",".trainer >> Train your class spells",".target Brother Joshua"],"tag":"Priest","from":"RestedXP: 34-35 Stranglethorn Vale I"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r",".goto StormwindClassic,76.08,50.14,15,0",".goto StormwindClassic,80.22,45.37,15,0",".goto StormwindClassic,78.68,45.79",".trainer >> Train your class spells",".target Wu Shen",".target Ilsa Corbin"],"tag":"Warrior","from":"RestedXP: 34-35 Stranglethorn Vale I"},
+        {"lines":[".goto StormwindClassic,74.65,52.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r",".trainer >> Train your class spells",".target Osborne the Night Man"],"tag":"Rogue","from":"RestedXP: 34-35 Stranglethorn Vale I"},
         "accept:605 @1434:490.24,-14453.39  Accept Singing Blue Shards",
         "turnin:210 @1434:501.09,-14453.39  TurnIn Krazek's Cookery",
         "accept:213 @1434:497.9,-14449.99  Accept Hostile Takeover",
@@ -204,6 +208,9 @@
         "accept:604 @1434:487.05,-14444.88  Accept The Bloodsail Buccaneers",
         "accept:621 @1434:490.24,-14453.39  Accept Zanzil's Secret",
         "turnin:627 @1434:501.09,-14453.39  TurnIn Favor for Krazek",
+        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r",".trainer >> Train your class spells",".target Einris Brightspear"],"tag":"Hunter","from":"RestedXP: 43-44 Swamp of Sorrows II"},
+        {"lines":[".goto StormwindClassic,26.117,77.225",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r",".trainer >> Train your class spells",".target Ursula Deline"],"tag":"Warlock","from":"RestedXP: 43-44 Swamp of Sorrows II"},
+        {"lines":[".goto StormwindClassic,25.665,77.649",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spackle Thornberry|r",".vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoires] |cRXP_BUY_for your pets|r",".target Spackle Thornberry"],"tag":"Warlock","from":"RestedXP: 43-44 Swamp of Sorrows II"},
         "accept:2864 @1434:501.09,-14453.39  Accept Tran'rek",
         "home @1434:495.34,-14457.65  Home inn",
         "obj:604:3 @1434:486.41,-14685.24  Objective The Bloodsail Buccaneers / Bloodsail Orders (1)",
@@ -259,6 +266,7 @@
         "obj:608:3 @1434:269.45,-15024.3  Objective The Bloodsail Buccaneers / Fleet Master Firallon slain (1)",
         "obj:608:1 @1434:123.32,-14920.92  Objective The Bloodsail Buccaneers / Captain Stillwater slain (1)",
         "turnin:608 @1434:487.05,-14444.88  TurnIn The Bloodsail Buccaneers",
+        {"lines":[".goto StormwindClassic,20.898,55.491",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r",".trainer >> Train your class spells",".target Sheldras Moontree"],"tag":"Druid","from":"RestedXP: 48-49 STV/Hinterlands II"},
         "turnin:338 @1434:-54.72,-11616.71  TurnIn The Green Hills of Stranglethorn"
       ]
     },

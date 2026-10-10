@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-43 Badlands",
-  "saved": "2026-10-10 14:56",
+  "saved": "2026-10-10 15:53",
   "parts": [
     {
       "part": 1,
@@ -64,6 +64,8 @@
       "steps": [
         "turnin:713 @1418:-2724.67,-6633.68  TurnIn Coolant Heads Prevail",
         "accept:712 @1418:-2724.67,-6633.68  Accept Study of the Elements: Rock",
+        {"lines":[".goto 1418/0,-2178.42,-6632.35",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorrik|r",".fp Kargath >> Get the Kargath Flight Path",".target Gorrik"],"from":"RestedXP: 41-42 Badlands"},
+        {"lines":[".goto 1418/0,-2151.30,-6672.98",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sranda|r",".vendor >>|cRXP_BUY_Sell your junk and repair, if necessary|r",".target Sranda"],"from":"RestedXP: 41-42 Badlands"},
         "accept:782 @1418:-2151.55,-6645.78  Accept Broken Alliances",
         "accept:2202 @1418:-2139.36,-6653.41  Accept Uldaman Reagent Run",
         "obj:712:1 @1418:-2181.4,-7214.76  Objective Study of the Elements: Rock / Bracers of Rock Binding (5)",

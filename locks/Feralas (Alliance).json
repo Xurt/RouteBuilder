@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "43-51 Feralas",
-  "saved": "2026-10-10 15:05",
+  "saved": "2026-10-10 16:05",
   "parts": [
     {
       "part": 1,
@@ -60,6 +60,8 @@
     {
       "part": 2,
       "steps": [
+        {"lines":[".goto 1444/1,3311.84,-4379.06",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faralorn|r",".vendor >>|cRXP_BUY_Buy Ammo if needed|r",".target Faralorn",".zoneskip Feralas,1"],"tag":"Hunter","from":"RestedXP: 45-46 Feralas"},
+        {"lines":[".goto 1444/1,3171.03,-4406.68",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Logannas|r",".vendor >> |cRXP_BUY_Buy|r |T134833:0|t[Superior Healing Potions] |cRXP_BUY_from him|r",">>|cRXP_WARN_Skip this step if |cRXP_FRIENDLY_Logannas|r has none in stock|r",".zoneskip Feralas,1"],"from":"RestedXP: 45-46 Feralas"},
         "accept:2870 @1444:3330.26,-4505.88  Accept Against Lord Shalzaru",
         "obj:2870:1 @1444:3460.92,-5631.31  Objective Against Lord Shalzaru / Mysterious Relic (1)",
         "turnin:2870 @1444:3330.26,-4505.88  TurnIn Against Lord Shalzaru",

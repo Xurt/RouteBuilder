@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "30-42 Arathi Highlands",
-  "saved": "2026-10-10 15:05",
+  "saved": "2026-10-10 16:04",
   "parts": [
     {
       "part": 1,
@@ -24,6 +24,7 @@
         "obj:681:1 @1417:-1981.59,-848.29  Objective Northfold Manor / Syndicate Highwayman slain (8)",
         "obj:681:2 @1417:-2035.59,-775.33  Objective Northfold Manor / Syndicate Mercenary slain (6)",
         "turnin:681 @1417:-2516.55,-1274.77  TurnIn Northfold Manor",
+        {"lines":[".goto 1417/0,-2364.27,-1280.53,0",".goto 1417/0,-2371.47,-1539.73,0",".goto 1417/0,-2630.67,-1338.13,0",".goto 1417/0,-2364.27,-1280.53,40,0",".goto 1417/0,-2371.47,-1539.73,40,0",".goto 1417/0,-2630.67,-1338.13,40,0",".goto 1417/0,-2594.67,-1539.73",">>|cRXP_WARN_Cast|r |T132172:0|t[Eagle Eye] |cRXP_WARN_to try and find a |cRXP_ENEMY_Plains Creeper|r. Some of their locations are marked on your map|r",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Plains Creeper|r to tame it|r",".train 17265 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 5)]"],"tag":"Hunter","from":"RestedXP: 32-33 Hillsbrad/Arathi I"},
         "obj:691:1 @1417:-3153.03,-1852.69  Objective Worth Its Weight in Gold / Witherbark Tusk (10)",
         "obj:691:2 @1417:-3196.95,-1852.69  Objective Worth Its Weight in Gold / Witherbark Medicine Pouch (4)",
         "obj:691:3 @1417:-3297.75,-2065.57  Objective Worth Its Weight in Gold / Shadow Hunter Knife (1)",

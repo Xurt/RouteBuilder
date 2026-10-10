@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "20-40 Hillsbrad Foothills",
-  "saved": "2026-10-10 14:55",
+  "saved": "2026-10-10 15:52",
   "parts": [
     {
       "part": 1,
@@ -41,6 +41,10 @@
       "part": 2,
       "steps": [
         "accept:498 @1424:-957.01,-40.75  Accept The Rescue",
+        {"lines":[".goto 1424/0,-941.65,-6.40",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shay|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Shay",".subzoneskip 272,1"],"from":"RestedXP: 23-25 Hillsbrad"},
+        {"lines":[".goto 1424/0,-867.09,-158.51",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r",".vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r",".money <3.0195",".target Ott",".subzoneskip 272,1"],"tag":"Shaman/Warrior","from":"RestedXP: 23-25 Hillsbrad"},
+        {"lines":[".goto 1424/0,-867.09,-158.51",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r",".vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r",".money <2.8372",".target Ott",".subzoneskip 272,1"],"tag":"Rogue","from":"RestedXP: 23-25 Hillsbrad"},
+        {"lines":[".goto 1424/0,-787.09,-194.13,0",".goto 1424/0,-787.09,-194.13,60,0",".goto 1424/0,-817.49,-288.64,60,0",".goto 1424/0,-909.97,-371.41,60,0",".train 16829 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Gray Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 3)]",".train 17263 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Forest Most Creeper|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 3)]"],"tag":"Hunter","from":"RestedXP: 23-25 Hillsbrad"},
         "accept:527 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
         "accept:501 @1424:-899.41,-6.61  Accept Elixir of Pain",
         "turnin:95125 @1424:-867.09,-158.51  TurnIn Ott's Masterwork",
@@ -55,6 +59,10 @@
         "accept:546 @1424:-920.85,-20.27  Accept Souvenirs of Death",
         "accept:528 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
         "obj:498:2 @1424:-1486.61,-445.87  Objective The Rescue / Rescue Tog'thar",
+        {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",">>|cRXP_BUY_Buy|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_BUY_and|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] |cRXP_BUY_from her if they're up|r",".vendor >> Vendor and Repair",".target Kris Legace",".money <1.1374"],"tag":"Rogue/Hunter/Shaman","from":"RestedXP: 23-25 Hillsbrad"},
+        {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",">>|cRXP_BUY_Buy|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_BUY_from her if they're up|r",".vendor >> Vendor and Repair",".target Kris Legace",".money <0.7859"],"tag":"Rogue/Hunter/Shaman/Druid","from":"RestedXP: 23-25 Hillsbrad"},
+        {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",">>|cRXP_BUY_Buy|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] |cRXP_BUY_from her if they're up|r",".vendor >> Vendor and Repair",".target Kris Legace",".money <0.3515"],"tag":"Rogue/Hunter/Shaman/Druid","from":"RestedXP: 23-25 Hillsbrad"},
+        {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",".vendor >> Vendor and Repair",".target Kris Legace",".isOnQuest 498",".subzoneskip 275,1"],"tag":"!Rogue !Hunter !Shaman !Druid","from":"RestedXP: 23-25 Hillsbrad"},
         "obj:498:collect3499 @1424:-1477.01,-465.49  Objective The Rescue / Burnished Gold Key",
         "obj:498:collect3467 @1424:-1480.53,-492.37  Objective The Rescue / Dull Iron Key",
         "obj:546:1 @1424:-1389.33,-493.23  Objective Souvenirs of Death / Hillsbrad Human Skull (30)",
@@ -122,6 +130,7 @@
         "accept:544 @1424:-904.53,-44.8  Accept Prison Break In",
         "accept:556 @1424:-901.33,-46.51  Accept Stone Tokens",
         "accept:676 @1424:-913.17,-17.49  Accept The Hammer May Fall",
+        {"lines":[".goto 1424/0,-941.65,-6.40",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shay|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Shay"],"from":"RestedXP: 31-34 Hillsbrad/Arathi"},
         "accept:541 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
         "turnin:533 @1424:-957.01,-40.75  TurnIn Infiltration",
         "accept:1361 @1424:-957.01,-40.75  Accept Regthar Deathgate",

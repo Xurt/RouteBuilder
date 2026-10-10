@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "32-42 Arathi Highlands",
-  "saved": "2026-10-10 14:56",
+  "saved": "2026-10-10 15:53",
   "parts": [
     {
       "part": 1,
@@ -12,8 +12,11 @@
         "accept:655 @1417:-3481.71,-947.65  Accept Hammerfall",
         "turnin:638 @1417:-3523.47,-948.37  TurnIn Trollbane",
         "accept:677 @1417:-3539.31,-947.41  Accept Call to Arms",
+        {"lines":[".goto 1417/0,-3524.91,-912.37",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Adegwa|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Adegwa"],"from":"RestedXP: 31-34 Hillsbrad/Arathi"},
         "turnin:655 @1417:-3556.59,-1004.29  TurnIn Hammerfall",
         "accept:671 @1417:-3556.59,-1004.29  Accept Foul Magics",
+        {"lines":[".goto 1417/0,-3360.75,-1034.05,0",".goto 1417/0,-3101.91,-1068.13,0",".goto 1417/0,-3334.47,-1372.69,0",".goto 1417/0,-3360.75,-1034.05,40,0",".goto 1417/0,-3101.91,-1068.13,40,0",".goto 1417/0,-3334.47,-1372.69,40,0",">>|cRXP_WARN_Cast|r |T132172:0|t[Eagle Eye] |cRXP_WARN_to try and find a |cRXP_ENEMY_Plains Creeper|r. Some of their locations are marked on your map|r",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Plains Creeper|r to tame it|r",".train 17265 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 5)]",".zoneskip Arathi Highlands,1"],"tag":"Hunter","from":"RestedXP: 31-34 Hillsbrad/Arathi"},
+        {"lines":[".goto 1417/0,-3527.79,-928.21",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharlidun|r",".target Tharlidun",".train 17265,3",".zoneskip Arathi Highlands,1"],"tag":"Hunter","from":"RestedXP: 31-34 Hillsbrad/Arathi"},
         "accept:672 @1417:-3556.59,-1004.29  Accept Raising Spirits",
         "obj:672:1 @1417:-3299.55,-1019.41  Objective Raising Spirits / Highland Raptor Eye (10)",
         "turnin:672 @1417:-3556.59,-1004.29  TurnIn Raising Spirits",
@@ -27,6 +30,7 @@
         "turnin:670 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure",
         "obj:676:1 @1417:-2151.87,-1219.81  Objective The Hammer May Fall / Boulderfist Ogre slain (8)",
         "obj:676:2 @1417:-2032.71,-1207.09  Objective The Hammer May Fall / Boulderfist Enforcer slain (10)",
+        {"lines":[".goto 1417/0,-3498.27,-918.13",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urda|r",".fp Hammerfall >> Get the Hammerfall flight path",".target Urda"],"from":"RestedXP: 31-34 Hillsbrad/Arathi"},
         "obj:671:1 @1417:-2028.39,-812.53  Objective Foul Magics / Bloodstone Amulet (10)",
         "turnin:635 @1417:-3116.67,-942.85  TurnIn Crystal in the Mountains",
         "turnin:676 @1417:-3539.31,-947.41  TurnIn The Hammer May Fall",
@@ -93,6 +97,7 @@
         "obj:680:1 @1417:-1535.91,-1727.17  Objective The Real Threat / Or'Kalar's Head (1)",
         "turnin:680 @1417:-3532.11,-927.01  TurnIn The Real Threat",
         "turnin:679 @1417:-3539.31,-947.41  TurnIn Call to Arms",
+        {"lines":[".goto 1417/0,-3524.91,-912.37",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Adegwa|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Adegwa",".subzoneskip 321,1"],"from":"RestedXP: 39-41 Alterac/Arathi"},
         "turnin:640 @1417:-3556.59,-1004.29  TurnIn The Broken Sigil",
         "accept:641 @1417:-3556.59,-1004.29  Accept Sigil of Thoradin",
         "turnin:641 @1417:-3523.47,-948.37  TurnIn Sigil of Thoradin",

@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "45-50 Searing Gorge",
-  "saved": "2026-10-10 15:05",
+  "saved": "2026-10-10 16:05",
   "parts": [
     {
       "part": 1,
@@ -24,6 +24,8 @@
         "accept:4450 @1427:-1786.39,-7024.78  Accept Ledger from Tanaris",
         "obj:4450:1 @1427:-1784.39,-7025.08  Objective Ledger from Tanaris / Goodsteel Ledger (1)",
         "obj:4450:2 @1427:-1837.27,-7119.98  Objective Ledger from Tanaris / Solid Crystal Leg Shaft (1)",
+        {"lines":[".isQuestComplete 762",".goto 1427/0,-1169.32,-6559.06",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanie Reed|r",".fp Thorium Point >> Get the Thorium Point flight path",".fly Ironforge >> Fly to Ironforge << !Mage",".target Lanie Reed",".zoneskip Searing Gorge,1"],"from":"RestedXP: 46-47 Hinterlands/Badlands"},
+        {"lines":[".goto 1427/0,-1169.32,-6559.06",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanie Reed|r",".fp Thorium Point >> Get the Thorium Point flight path",".fly Stormwind >> Fly to Stormwind << !Mage",".target Lanie Reed",".zoneskip Searing Gorge,1"],"from":"RestedXP: 46-47 Hinterlands/Badlands"},
         "item:3181 @1427:-1963.33,-7324.36  ItemAccept The Horn of the Beast",
         "accept:3368 @1427:-1984.08,-6386.94  Accept Suntara Stones",
         "turnin:3443 @1427:-1194.44,-6679.98  TurnIn Forging the Shaft"

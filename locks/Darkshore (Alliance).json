@@ -1,12 +1,14 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-21 Darkshore",
-  "saved": "2026-10-10 15:03",
+  "saved": "2026-10-10 16:02",
   "parts": [
     {
       "part": 1,
       "steps": [
         "accept:983 @1439:520.13,6406.32  Accept Buzzbox 827",
+        {"lines":[".goto 1439/1,436.29,6542.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurdram Stonehammer|r",".train 2581 >> Train Mining, cast Find Minerals",".target Kurdram Stonehammer"],"tag":"Warrior/Rogue/Paladin","from":"RestedXP: 11-13 Darkshore (Night Elf)"},
+        {"lines":[".goto 1439/1,440.16,6545.88",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delfrum Flintbeard|r",".train 2020 >> Train Blacksmithing. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. << Warrior/Rogue",".train 2020 >> This will allow you to make +2 damage weightstones for your weapon which are very strong. << Paladin",".target Delfrum Flintbeard"],"tag":"Warrior/Rogue/Paladin","from":"RestedXP: 11-13 Darkshore (Night Elf)"},
         "obj:983:1 @1439:526.03,6564.4  Objective Buzzbox 827 / Crawler Leg (6)",
         "turnin:97926 @1439:491.97,6580.99  TurnIn Making Do",
         "accept:958 @1439:491.97,6580.99  Accept Tools of the Highborne",
@@ -79,6 +81,7 @@
         "accept:947 @1439:497.21,6427.72  Accept Cave Mushrooms",
         "home @1439:515.55,6406.32  Home inn",
         "accept:963 @1439:600.7,6424.66  Accept For Love Eternal",
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r",".target Caylais Moonfeather",".goto 1439/1,561.66,6343.27",".fp Auberdine >> Get the Auberdine flight path"],"tag":"!NightElf","from":"RestedXP: 15-18 Darkshore"},
         "turnin:1141 @1439:577.12,6371.39  TurnIn The Family and the Fishing Pole",
         "turnin:4727 @1439:543.06,6342.57  TurnIn Beached Sea Turtle",
         "turnin:4725 @1439:543.06,6342.57  TurnIn Beached Sea Turtle",

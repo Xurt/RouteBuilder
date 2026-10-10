@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "55-60 Eastern Plaguelands",
-  "saved": "2026-10-10 14:58",
+  "saved": "2026-10-10 15:55",
   "parts": [
     {
       "part": 1,
@@ -89,6 +89,7 @@
       "part": 2,
       "steps": [
         "accept:6024 @1423:-3241.43,1600.15  Accept Hameya's Plea",
+        {"lines":[".goto 1423/0,-2877.47,2731.05",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Augustus|r again",">>|cRXP_WARN_Make a lot of space in your bag",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r"],"from":"RestedXP: 57-59 Western PL/Eastern PL"},
         "accept:6133 @1423:-3212.6,1871.05  Accept The Ranger Lord's Behest",
         "accept:6146 @1423:-3212.6,1871.05  Accept Nathanos' Ruse",
         "obj:6133:4 @1423:-4203.8,3327.6  Objective The Ranger Lord's Behest / Quel'Thalas Registry (1)",

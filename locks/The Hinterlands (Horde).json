@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "43-53 The Hinterlands",
-  "saved": "2026-10-10 14:57",
+  "saved": "2026-10-10 15:54",
   "parts": [
     {
       "part": 1,
@@ -65,8 +65,11 @@
         "home @1425:-4583.39,-622.09  Home inn",
         "accept:7850 @1425:-4585.7,-616.95  Accept Dark Vessels",
         "accept:7815 @1425:-4667.71,-626.19  Accept Snapjaws, Mon!",
+        {"lines":[".goto 1425/0,-4655.00,-42.53,0",".goto 1425/0,-4655.00,-42.53,50,0",".goto 1425/0,-4547.20,-119.53,50,0",".goto 1425/0,-4547.20,-181.13,50,0",".goto 1425/0,-4454.80,-294.07,50,0",".goto 1425/0,-4485.60,-381.33,50,0",".goto 1425/0,-4585.70,-309.47,50,0",".goto 1425/0,-4578.00,-181.13,50,0",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Saltwater Snapjaw|r to tame it|r",".train 17267 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 7)]"],"tag":"Hunter","from":"RestedXP: 49-50 The Hinterlands"},
+        {"lines":[".goto 1425/0,-4620.35,-573.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Markhor|r",".target Huntsman Markhor",".train 17267,3",".zoneskip The Hinterlands,1"],"tag":"Hunter","from":"RestedXP: 49-50 The Hinterlands"},
         "accept:7849 @1425:-4622.66,-574.6  Accept Separation Anxiety",
         "accept:7862 @1425:-4619.58,-560.74  Accept Job Opening: Guard Captain of Revantusk Village",
+        {"lines":[".goto 1425/0,-4585.70,-620.03,15,0",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lard|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Lard",".subzoneskip 3317,1"],"from":"RestedXP: 49-50 The Hinterlands"},
         "accept:7861 @1425:-4619.58,-560.74  Accept Wanted: Vile Priestess Hexx and Her Minions",
         "obj:7862:4 @1425:-4120.62,-584.87  Objective Job Opening: Guard Captain of Revantusk Village / Vilebranch Soul Eater slain (20)",
         "obj:7862:3 @1425:-4111.77,-596.93  Objective Job Opening: Guard Captain of Revantusk Village / Vilebranch Blood Drinker slain (20)",

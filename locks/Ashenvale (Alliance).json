@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "18-32 Ashenvale",
-  "saved": "2026-10-10 15:04",
+  "saved": "2026-10-10 16:02",
   "parts": [
     {
       "part": 1,
@@ -46,6 +46,7 @@
         "obj:1010:1 @1440:-137.26,3791.16  Objective Bathran's Hair / Bathran's Hair (5)",
         "turnin:1010 @1440:175.29,3189.61  TurnIn Bathran's Hair",
         "accept:1020 @1440:175.29,3189.61  Accept Orendil's Cure",
+        {"lines":[".goto 1440/1,-283.73,2827.92",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r",".fp Astranaar>> Get the Astranaar Flight Path",".target Daelyshia"],"from":"RestedXP: 20-21 Darkshore/Ashenvale"},
         "turnin:1134 @1440:-299.3,2795.63  TurnIn Pridewings of Stonetalon",
         "turnin:1020 @1440:-455,2682.24  TurnIn Orendil's Cure",
         "accept:1033 @1440:-455,2682.24  Accept Elune's Tear",

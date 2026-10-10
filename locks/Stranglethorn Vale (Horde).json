@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "30-50 Stranglethorn Vale",
-  "saved": "2026-10-10 14:56",
+  "saved": "2026-10-10 15:53",
   "parts": [
     {
       "part": 1,
@@ -54,9 +54,14 @@
         "home @1434:211.38,-12434.36  Home inn",
         "accept:4782 @1434:388.78,-14439.78  Accept Components for the Enchanted Gold Bloodrobe",
         "accept:577 @1434:415.58,-14469.56  Accept Some Assembly Required",
+        {"lines":[".goto 1434/0,412.39,-14378.94",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zarena|r",".vendor >>|cRXP_BUY_Buy a|r |T135158:0|t[Big Stick] |cRXP_BUY_or a|r |T135144:0|t[Staff of Protection] |cRXP_BUY_from her if one of them is available|r",".money <5.3896",".target Zarena Cromwind"],"tag":"Warrior/Shaman","from":"RestedXP: 34-35 Shimmering Flats"},
         "accept:605 @1434:490.24,-14453.39  Accept Singing Blue Shards",
+        {"lines":[".goto 1434/0,509.38,-14450.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn",".train 8696 >> Train your class spells",".target Ian Strom",".xp <34,1",".xp >36,1"],"tag":"Rogue","from":"RestedXP: 34-35 Shimmering Flats"},
+        {"lines":[".goto 1434/0,509.38,-14450.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn",".train 8691 >> Train your class spells",">>|T132273:0|t[Instant Poison Rank 3] |cRXP_WARN_requires 160 skill in Poisons!|r",".target Ian Strom",".xp <36,1"],"tag":"Rogue","from":"RestedXP: 34-35 Shimmering Flats"},
         "accept:189 @1434:497.9,-14449.99  Accept Bloodscalp Ears",
         "accept:213 @1434:497.9,-14449.99  Accept Hostile Takeover",
+        {"lines":[".goto 1434/0,504.28,-14448.71",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gringer|r around the corner of the balcony",".fp Booty Bay >> Get the Booty Bay flight path",".target Gringer",".subzoneskip 35,1"],"from":"RestedXP: 34-35 Shimmering Flats"},
+        {"lines":[".goto 1434/0,425.15,-14491.68",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Glyx|r",".vendor >> |cRXP_BUY_Buy|r |T134832:0|t[Greater Healing Potions] |cRXP_BUY_from him if they're up|r",".target Glyx Brewright",".subzoneskip 35,1"],"from":"RestedXP: 34-35 Shimmering Flats"},
         "accept:596 @1434:161.6,-12347.58  Accept Bloody Bone Necklaces",
         "obj:605:1 @1434:618.5,-11920.89  Objective Singing Blue Shards / Singing Crystal Shard (10)",
         "obj:194:1 @1434:579.58,-11841.33  Objective Raptor Mastery / Stranglethorn Raptor slain (10)",
@@ -92,6 +97,8 @@
         "accept:629 @1434:161.6,-12347.58  Accept The Vile Reef",
         "accept:582 @1434:168.62,-12348  Accept Headhunting",
         "accept:569 @1434:167.99,-12398.2  Accept The Defense of Grom'gol",
+        {"lines":[".goto 1434/0,227.97,-12388.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kragg|r",".train 14303 >>Train your class spells",".target Kragg",".xp <36,1",".xp >38,1"],"tag":"Hunter","from":"RestedXP: 37-38 Northern Stranglethorn"},
+        {"lines":[".goto 1434/0,227.97,-12388.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kragg|r",".train 14320 >>Train your class spells",".target Kragg",".xp <38,1"],"tag":"Hunter","from":"RestedXP: 37-38 Northern Stranglethorn"},
         "accept:570 @1434:171.18,-12412.67  Accept Mok'thardin's Enchantment",
         "obj:192:1 @1434:-108.32,-12704.93  Objective Panther Mastery / Shadowmaw Panther slain (10)",
         "obj:570:1 @1434:-108.32,-12704.93  Objective Mok'thardin's Enchantment / Shadowmaw Claw (8)",
@@ -109,11 +116,15 @@
         "accept:1182 @1434:483.22,-14438.93  Accept Goblin Sponsorship",
         "accept:670 @1434:487.05,-14444.88  Accept Sunken Treasure",
         "accept:628 @1434:415.58,-14469.56  Accept Excelsior",
+        {"lines":[".goto 1434/0,408.56,-14437.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sly|r",".vendor >>|cRXP_BUY_Stock up on|r |T134387:0|t[Flash Powder] |cRXP_BUY_and|r |T132273:0|t[Poisons]",".target Sly Garret",".zoneskip Stranglethorn Vale,1"],"tag":"Rogue","from":"RestedXP: 37-38 Northern Stranglethorn"},
+        {"lines":[".zoneskip Orgrimmar",".train 3567,3"],"tag":"Mage","from":"RestedXP: 37-38 Northern Stranglethorn"},
         "obj:628:1 @1434:87.58,-12552.63  Objective Excelsior / Elder Crocolisk Skin (1)",
         "obj:1182:collect5851 @1434:-500.13,-11949.39  Objective Goblin Sponsorship / Cozzle's Key",
         "obj:1182:1 @1434:-544.16,-12033.62  Objective Goblin Sponsorship / Fuel Regulator Blueprints (1)",
         "turnin:1182 @1434:483.22,-14438.93  TurnIn Goblin Sponsorship",
         "accept:1183 @1434:483.22,-14438.93  Accept Goblin Sponsorship",
+        {"lines":[".goto 1434/0,509.38,-14450.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn",".train 8691 >> Train your class spells",">>|T132273:0|t[Instant Poison Rank 3] |cRXP_WARN_requires 160 skill in Poisons!|r",".target Ian Strom",".xp <36,1",".xp >38,1"],"tag":"Rogue","from":"RestedXP: 37-38 Northern Stranglethorn"},
+        {"lines":[".goto 1434/0,509.38,-14450.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn",".train 8621 >> Train your class spells",">>|T132273:0|t[Instant Poison Rank 3] |cRXP_WARN_requires 160 skill in Poisons!|r",".target Ian Strom",".xp <38,1"],"tag":"Rogue","from":"RestedXP: 37-38 Northern Stranglethorn"},
         "turnin:628 @1434:415.58,-14469.56  TurnIn Excelsior"
       ]
     },
@@ -185,9 +196,12 @@
         "obj:573:1 @1434:481.3,-13848.02  Objective Mok'thardin's Enchantment / Naga Explorer slain (10)",
         "accept:348 @1434:458.97,-14433.4  Accept Stranglethorn Fever",
         "accept:2872 @1434:448.12,-14447.44  Accept Stoley's Debt",
+        {"lines":[".goto 1434/0,408.56,-14437.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sly|r",".vendor >>|cRXP_BUY_Stock up on|r |T134387:0|t[Flash Powder] |cRXP_BUY_and|r |T132273:0|t[Poisons]",".target Sly Garret",".subzoneskip 35,1"],"tag":"Rogue","from":"RestedXP: 42-43 Stranglethorn Vale"},
         "accept:609 @1434:448.12,-14447.44  Accept Voodoo Dues",
         "accept:604 @1434:487.05,-14444.88  Accept The Bloodsail Buccaneers",
         "accept:621 @1434:490.24,-14453.39  Accept Zanzil's Secret",
+        {"lines":[".goto 1434/0,509.38,-14450.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn",".train 6774 >> Train your class spells",".target Ian Strom",".xp <42,1",".xp >44,1"],"tag":"Rogue","from":"RestedXP: 42-43 Stranglethorn Vale"},
+        {"lines":[".goto 1434/0,509.38,-14450.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn",".train 11341 >> Train your class spells",".target Ian Strom",".xp <44,1"],"tag":"Rogue","from":"RestedXP: 42-43 Stranglethorn Vale"},
         "accept:2864 @1434:501.09,-14453.39  Accept Tran'rek",
         "home @1434:495.34,-14457.65  Home inn",
         "obj:604:3 @1434:486.41,-14685.24  Objective The Bloodsail Buccaneers / Bloodsail Orders (1)",
@@ -264,11 +278,14 @@
       "steps": [
         "accept:8554 @1434:519.59,-14301.52  Accept Facing Negolash",
         "turnin:580 @1434:488.96,-14463.6  TurnIn Whiskey Slim's Lost Grog",
+        {"lines":[".goto 1434/0,495.34,-14451.69,0",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nixxrax|r",">>|cRXP_WARN_If you didn't get|r |T133974:0|t[Barbecued Buzzard Wings] |cRXP_WARN_earlier (and none of your group members do either), then skip this step. You need 10 wings in total to summon|r |cRXP_ENEMY_Negolash|r",".vendor >>Buy |cRXP_BUY_Junglevine Wine|r from |cRXP_FRIENDLY_Nixxrax|r",".collect 4457,10",".collect 4595,5",".target Nixxrax Fillamug"],"from":"RestedXP: 51-52 Stranglethorn/Blasted Lands"},
         "obj:8554:1 @1434:150.12,-14638.87  Objective Facing Negolash / Smotts' Cutlass (1)",
         "accept:630 @1434:-237.86,-14596.76  Accept Message in a Bottle",
         "obj:630:1 @1434:-392.29,-14738  Objective Message in a Bottle / Shackle Key (1)",
         "turnin:630 @1434:-237.86,-14596.76  TurnIn Message in a Bottle",
         "turnin:8554 @1434:517.68,-14300.24  TurnIn Facing Negolash",
+        {"lines":[".goto 1434/0,509.38,-14450.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn",".train 8643 >> Train your class spells",".target Ian Strom",".xp <50,1",".xp >52,1"],"tag":"Rogue","from":"RestedXP: 51-52 Stranglethorn/Blasted Lands"},
+        {"lines":[".goto 1434/0,509.38,-14450.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn",".train 11342 >> Train your class spells",".target Ian Strom",".xp <52,1"],"tag":"Rogue","from":"RestedXP: 51-52 Stranglethorn/Blasted Lands"},
         "turnin:338 @1434:-54.72,-11616.71  TurnIn The Green Hills of Stranglethorn"
       ]
     }
