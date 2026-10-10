@@ -2,6 +2,7 @@ addon/
 bin/
 obj/
 QuestieDB/
+QuestieDB.unzip/
 guides/
 Make-Addon.ps1
 settings.json
