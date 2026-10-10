@@ -1,11 +1,16 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "50-55 Blasted Lands",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:19",
+=======
+  "saved": "2026-10-10 12:55",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
+<<<<<<< HEAD
         "accept:2583 @1419:-2935.09,-10883.8  Accept A Boar\u0027s Vitality",
         "accept:2585 @1419:-2935.09,-10883.8  Accept The Decisive Striker",
         "accept:2581 @1419:-2935.09,-10883.8  Accept Snickerfang Jowls",
@@ -13,10 +18,27 @@
         "accept:2601 @1419:-2938.11,-10886.03  Accept The Basilisk\u0027s Bite",
         "turnin:2721 @1419:-3546.47,-11260.56  TurnIn Kirith",
         "accept:2743 @1419:-3546.47,-11260.56  Accept The Cover of Darkness",
+=======
+        "accept:2585 @1419:-2935.09,-10883.8  Accept The Decisive Striker",
+        "accept:2581 @1419:-2935.09,-10883.8  Accept Snickerfang Jowls",
+        "accept:2583 @1419:-2935.09,-10883.8  Accept A Boar\u0027s Vitality",
+        "accept:2601 @1419:-2938.11,-10886.03  Accept The Basilisk\u0027s Bite",
+        "accept:2603 @1419:-2938.11,-10886.03  Accept Vulture\u0027s Vigor",
+        "obj:2585:1 @1419:-2863.07,-11004.4  Objective The Decisive Striker / Scorpok Pincer (3)",
+        "obj:2581:3 @1419:-2863.07,-11004.4  Objective Snickerfang Jowls / Scorpok Pincer (1)",
+        "obj:2583:2 @1419:-2863.07,-11004.4  Objective A Boar\u0027s Vitality / Scorpok Pincer (2)",
+        "obj:2601:2 @1419:-2789.37,-10986.53  Objective The Basilisk\u0027s Bite / Vulture Gizzard (2)",
+        "obj:2585:2 @1419:-2789.37,-10986.53  Objective The Decisive Striker / Vulture Gizzard (2)",
+        "obj:2583:3 @1419:-2782.33,-11021.37  Objective A Boar\u0027s Vitality / Basilisk Brain (1)",
+        "obj:2601:1 @1419:-2782.33,-11021.37  Objective The Basilisk\u0027s Bite / Basilisk Brain (10)",
+        "obj:2603:2 @1419:-2805.11,-11034.33  Objective Vulture\u0027s Vigor / Snickerfang Jowl (2)",
+        "obj:2581:1 @1419:-2805.11,-11034.33  Objective Snickerfang Jowls / Snickerfang Jowl (3)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:2585:3 @1419:-3192.04,-11244.71  Objective The Decisive Striker / Blasted Boar Lung (1)",
         "obj:2583:1 @1419:-3192.04,-11244.71  Objective A Boar\u0027s Vitality / Blasted Boar Lung (3)",
         "obj:2581:2 @1419:-3192.04,-11244.71  Objective Snickerfang Jowls / Blasted Boar Lung (2)",
         "obj:2603:1 @1419:-3090.87,-11384.07  Objective Vulture\u0027s Vigor / Vulture Gizzard (10)",
+<<<<<<< HEAD
         "obj:2601:2 @1419:-3090.87,-11384.07  Objective The Basilisk\u0027s Bite / Vulture Gizzard (2)",
         "obj:2585:2 @1419:-3090.87,-11384.07  Objective The Decisive Striker / Vulture Gizzard (2)",
         "accept:3501 @1419:-2983,-11362.85  Accept Everything Counts In Large Amounts",
@@ -37,6 +59,21 @@
         "turnin:2581 @1419:-2935.09,-10883.8  TurnIn Snickerfang Jowls",
         "turnin:2585 @1419:-2935.09,-10883.8  TurnIn The Decisive Striker",
         "turnin:2583 @1419:-2935.09,-10883.8  TurnIn A Boar\u0027s Vitality"
+=======
+        "accept:2521 @1419:-2983,-11362.85  Accept To Serve Kum\u0027isha",
+        "accept:3501 @1419:-2983,-11362.85  Accept Everything Counts In Large Amounts",
+        "obj:3501:1 @1419:-3030.57,-11451.07  Objective Everything Counts In Large Amounts / Imperfect Draenethyst Fragment (1)",
+        "obj:2521:1 @1419:-3030.57,-11451.07  Objective To Serve Kum\u0027isha / Flawless Draenethyst Sphere (1)",
+        "turnin:2521 @1419:-2983,-11362.85  TurnIn To Serve Kum\u0027isha",
+        "turnin:3501 @1419:-2983,-11362.85  TurnIn Everything Counts In Large Amounts",
+        "turnin:2601 @1419:-2938.11,-10886.03  TurnIn The Basilisk\u0027s Bite",
+        "turnin:2603 @1419:-2938.11,-10886.03  TurnIn Vulture\u0027s Vigor",
+        "turnin:2581 @1419:-2935.09,-10883.8  TurnIn Snickerfang Jowls",
+        "turnin:2583 @1419:-2935.09,-10883.8  TurnIn A Boar\u0027s Vitality",
+        "turnin:2585 @1419:-2935.09,-10883.8  TurnIn The Decisive Striker",
+        "turnin:2721 @1419:-3546.47,-11260.56  TurnIn Kirith",
+        "accept:2743 @1419:-3546.47,-11260.56  Accept The Cover of Darkness"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     }
   ]

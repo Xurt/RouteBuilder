@@ -13,5 +13,32 @@
     "97282": {
     "pre": [97281]
     }
+<<<<<<< HEAD
   }
+=======
+  },
+  "steps": [
+//    { "after": "turnin:837", "goto": [52.0, 40.6], "text": "Sell your junk and repair at |cRXP_FRIENDLY_Uhgar|r", "lines": [".vendor", ".target Uhgar"] },
+//    { "before": "accept:1505", "goto": [54.2, 42.0], "text": "Train your new spells", "lines": [".trainer"], "tag": "Warrior" },
+//    { "after": "accept:840", "text": "Get the flight path", "lines": [".fp Orgrimmar"] },
+    { "after": "accept:4402", "goto": [42.59,67.34], "text": "Sell your junk and repair at |cRXP_FRIENDLY_Duokna|r", "lines": [".vendor", ".target Duokna"] },
+
+
+    { "after": "turnin:97279", "goto": [42.84,69.32], "text": "Train |T132204:0|t[Serpent Sting]", "lines": [".train"], "tag": "Hunter" },
+
+    { "after": "turnin:97279", "goto": [42.51,69.04], "text": "Train |T135932:0|t[Arcane Intellect]", "lines": [".train"], "tag": "Mage" },
+
+    { "after": ["turnin:97279", "turnin:3083"], "goto": [41.27,68.00], "text": "Train |T132090:0|t[Backstab]", "lines": [".train"], "tag": "Rogue" },
+
+    { "after": "accept:97279", "goto": [42.39,69.00], "text": "Train |T136086:0|t[Rockbiter Weapon]", "lines": [".train"], "tag": "Shaman" },
+    { "after": "accept:97279", "goto": [42.39,69.00], "text": "Train |T136026:0|t[Earth Shock]", "lines": [".train"], "tag": "Shaman" },
+
+    { "after": "accept:97279", "goto": [40.65,68.52], "text": "Train |T135817:0|t[Immolate]", "lines": [".train"], "tag": "Warlock" },
+    { "after": "turnin:97279", "goto": [40.65,68.52], "text": "Train |T136118:0|t[Corrupton]", "lines": [".train"], "tag": "Warlock" },
+
+    { "after": "accept:97279", "goto": [42.89,69.44], "text": "Train |T132333:0|t[Battle Shout]", "lines": [".train"], "tag": "Warrior" },
+    { "after": "accept:97279", "goto": [42.89,69.44], "text": "Train |T132155:0|t[Rend]", "lines": [".train"], "tag": "Warrior" } //continue from here
+    
+  ]
+>>>>>>> zone/Durotar-Horde-vendor_trainer
 }

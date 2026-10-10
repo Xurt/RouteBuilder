@@ -1,18 +1,26 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-24 Westfall",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:25",
+=======
+  "saved": "2026-10-10 13:01",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
         "accept:102 @1436:1041.97,-10511.13  Accept Patrolling Westfall",
+<<<<<<< HEAD
         "turnin:6285 @1436:1021.67,-10500.63  TurnIn Return to Lewis",
+=======
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:98021 @1436:1045.12,-10508.8  TurnIn Journey to Sentinel Hill",
         "turnin:141 @1436:1045.12,-10508.8  TurnIn The Defias Brotherhood",
         "turnin:132 @1436:1045.12,-10508.8  TurnIn The Defias Brotherhood",
         "turnin:143 @1436:1045.12,-10508.8  TurnIn Messenger to Westfall",
         "accept:12 @1436:1045.12,-10508.8  Accept The People\u0027s Militia",
+<<<<<<< HEAD
         "home @1436:1166.57,-10653.23  Home inn",
         "turnin:92752 @1436:1179.52,-10638.07  TurnIn Explosive Consultation",
         "accept:92742 @1436:1179.52,-10638.07  Accept Testing the Wells",
@@ -71,12 +79,64 @@
         "turnin:92911 @1436:1211.02,-10151.1  TurnIn Harvesting the Harvesters",
         "turnin:92909 @1436:1211.02,-10151.1  TurnIn Harvesting the Harvesters",
         "turnin:103 @1436:1966.32,-11407.13  TurnIn Keeper of the Flame",
+=======
+        "turnin:6285 @1436:1021.67,-10500.63  TurnIn Return to Lewis",
+        "accept:36 @1436:919.47,-9853.13  Accept Westfall Stew",
+        "accept:64 @1436:918.42,-9851.73  Accept The Forgotten Heirloom",
+        "obj:102:1 @1436:1039.87,-9714.53  Objective Patrolling Westfall / Gnoll Paw (8)",
+        "obj:64:1 @1436:1290.12,-9849.87  Objective The Forgotten Heirloom / Furlbrow\u0027s Pocket Watch (1)",
+        "accept:109 @1436:1055.27,-10128.7  Accept Report to Gryan Stoutmantle",
+        "accept:22 @1436:1041.97,-10112.13  Accept Goretusk Liver Pie",
+        "turnin:36 @1436:1041.97,-10112.13  TurnIn Westfall Stew",
+        "accept:38 @1436:1041.97,-10112.13  Accept Westfall Stew",
+        "obj:38:4 @1436:1007.32,-9862.7  Objective Westfall Stew / Okra (3)",
+        "turnin:64 @1436:918.42,-9851.73  TurnIn The Forgotten Heirloom",
+        "obj:38:1 @1436:884.12,-10052.63  Objective Westfall Stew / Stringy Vulture Meat (3)",
+        "accept:6181 @1436:1021.67,-10500.63  Accept A Swift Message",
+        "turnin:109 @1436:1045.12,-10508.8  TurnIn Report to Gryan Stoutmantle",
+        "turnin:102 @1436:1041.97,-10511.13  TurnIn Patrolling Westfall",
+        "turnin:6181 @1436:1037.42,-10628.27  TurnIn A Swift Message",
+        "accept:6281 @1436:1037.42,-10628.27  Accept Continue to Stormwind",
+        "accept:153 @1436:1127.37,-10636.2  Accept Red Leather Bandanas",
+        "home @1436:1166.57,-10653.23  Home inn",
+        "turnin:92752 @1436:1179.52,-10638.07  TurnIn Explosive Consultation",
+        "accept:92742 @1436:1179.52,-10638.07  Accept Testing the Wells",
+        "accept:92744 @1436:1179.52,-10638.07  Accept Murloc Gills",
+        "turnin:92742 @1436:1179.52,-10638.07  TurnIn Testing the Wells",
+        "obj:153:1 @1436:1424.52,-9906.8  Objective Red Leather Bandanas / Red Leather Bandana (15)",
+        "obj:12:2 @1436:1424.52,-9906.8  Objective The People\u0027s Militia / Defias Smuggler slain (15)",
+        "obj:38:2 @1436:1493.12,-9615.6  Objective Westfall Stew / Murloc Eye (3)",
+        "obj:92744:1 @1436:1493.12,-9615.6  Objective Murloc Gills / Longshore Murloc Gill (7)",
+        "accept:92745 @1436:1179.52,-10638.07  Accept The State of the Mines",
+        "turnin:92744 @1436:1179.52,-10638.07  TurnIn Murloc Gills",
+        "turnin:153 @1436:1127.37,-10636.2  TurnIn Red Leather Bandanas",
+        "obj:22:1 @1436:1120.37,-10384.67  Objective Goretusk Liver Pie / Goretusk Liver (8)",
+        "obj:38:3 @1436:1120.37,-10384.67  Objective Westfall Stew / Goretusk Snout (3)",
+        "obj:12:1 @1436:1318.12,-10455.6  Objective The People\u0027s Militia / Defias Trapper slain (15)",
+        "turnin:38 @1436:1041.97,-10112.13  TurnIn Westfall Stew",
+        "turnin:22 @1436:1041.97,-10112.13  TurnIn Goretusk Liver Pie",
+        "accept:151 @1436:919.47,-9853.13  Accept Poor Old Blanchy",
+        "obj:151:1 @1436:1006.27,-9804.6  Objective Poor Old Blanchy / Handful of Oats (8)",
+        "turnin:151 @1436:919.47,-9853.13  TurnIn Poor Old Blanchy",
+        "obj:92745:1 @1436:1430.47,-9877.4  Objective The State of the Mines / Kobold Digger slain (4)",
+        "accept:92911 @1436:1211.02,-10151.1  Accept Harvesting the Harvesters",
+        "accept:92909 @1436:1211.02,-10151.1  Accept Harvesting the Harvesters",
+        "obj:92909:2 @1436:1374.82,-10219.47  Objective Harvesting the Harvesters / Harvester Gyrostabilizer (5)",
+        "obj:92911:1 @1436:1374.82,-10219.47  Objective Harvesting the Harvesters / Golem Isospring (8)",
+        "obj:92909:1 @1436:1374.82,-10219.47  Objective Harvesting the Harvesters / Golem Isospring (14)",
+        "turnin:92909 @1436:1211.02,-10151.1  TurnIn Harvesting the Harvesters",
+        "turnin:92911 @1436:1211.02,-10151.1  TurnIn Harvesting the Harvesters",
+        "accept:9 @1436:1055.27,-10128.7  Accept The Killing Fields",
+        "turnin:12 @1436:1045.12,-10508.8  TurnIn The People\u0027s Militia",
+        "accept:13 @1436:1045.12,-10508.8  Accept The People\u0027s Militia",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:13:2 @1436:1714.32,-10672.37  Objective The People\u0027s Militia / Defias Looter slain (15)",
         "obj:9:1 @1436:1681.77,-10585.1  Objective The Killing Fields / Harvest Watcher slain (20)",
         "obj:13:1 @1436:1952.67,-10473.1  Objective The People\u0027s Militia / Defias Pillager slain (15)",
         "obj:92745:2 @1436:1957.57,-10509.5  Objective The State of the Mines / Riverpaw Miner slain (6)",
         "turnin:136 @1436:2109.82,-10514.17  TurnIn Captain Sander\u0027s Hidden Treasure",
         "accept:138 @1436:2109.82,-10514.17  Accept Captain Sander\u0027s Hidden Treasure",
+<<<<<<< HEAD
         "turnin:92745 @1436:1179.52,-10638.07  TurnIn The State of the Mines",
         "turnin:13 @1436:1045.12,-10508.8  TurnIn The People\u0027s Militia",
         "turnin:9 @1436:1055.27,-10128.7  TurnIn The Killing Fields",
@@ -85,6 +145,26 @@
         "accept:139 @1436:1598.47,-10515.1  Accept Captain Sander\u0027s Hidden Treasure",
         "obj:92747:1 @1436:1497.67,-10991.33  Objective Moonbrook Espionage / Suspicious Industrial Supplies (8)",
         "turnin:92747 @1436:1179.52,-10638.07  TurnIn Moonbrook Espionage",
+=======
+        "accept:103 @1436:1966.32,-11407.13  Accept Keeper of the Flame",
+        "accept:92748 @1436:1179.52,-10638.07  Accept Explosive Consultation",
+        "accept:92747 @1436:1179.52,-10638.07  Accept Moonbrook Espionage",
+        "turnin:92745 @1436:1179.52,-10638.07  TurnIn The State of the Mines",
+        "turnin:13 @1436:1045.12,-10508.8  TurnIn The People\u0027s Militia",
+        "turnin:9 @1436:1055.27,-10128.7  TurnIn The Killing Fields",
+        "obj:103:1 @1436:1081.52,-10186.33  Objective Keeper of the Flame / Flask of Oil (5)",
+        "turnin:92910 @1436:1211.02,-10151.1  TurnIn Harvesting the Harvesters",
+        "accept:92753 @1436:1179.52,-10638.07  Accept Destruction in Deadmines",
+        "turnin:2360 @1436:619.52,-11035.2  TurnIn Mathias and the Defias",
+        "turnin:1650 @1436:1557.52,-11482.27  TurnIn The Tome of Valor",
+        "turnin:92753 @1436:1662.52,-11349.5  TurnIn Destruction in Deadmines",
+        "accept:92819 @1436:1662.52,-11349.5  Accept Destruction in Deadmines",
+        "turnin:103 @1436:1966.32,-11407.13  TurnIn Keeper of the Flame",
+        "obj:92747:1 @1436:1497.67,-10991.33  Objective Moonbrook Espionage / Suspicious Industrial Supplies (8)",
+        "turnin:92747 @1436:1179.52,-10638.07  TurnIn Moonbrook Espionage",
+        "turnin:138 @1436:1598.47,-10515.1  TurnIn Captain Sander\u0027s Hidden Treasure",
+        "accept:139 @1436:1598.47,-10515.1  Accept Captain Sander\u0027s Hidden Treasure",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:139 @1436:1594.62,-9797.37  TurnIn Captain Sander\u0027s Hidden Treasure",
         "accept:140 @1436:1594.62,-9797.37  Accept Captain Sander\u0027s Hidden Treasure",
         "turnin:140 @1436:2107.72,-9794.57  TurnIn Captain Sander\u0027s Hidden Treasure"
@@ -93,6 +173,7 @@
     {
       "part": 2,
       "steps": [
+<<<<<<< HEAD
         "accept:144 @1436:1045.12,-10508.8  Accept Messenger to Westfall",
         "accept:135 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
         "accept:65 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
@@ -107,11 +188,31 @@
         "obj:14:2 @1436:1722.02,-11155.13  Objective The People\u0027s Militia / Defias Pathstalker slain (5)",
         "obj:14:3 @1436:1698.57,-11153.5  Objective The People\u0027s Militia / Defias Knuckleduster slain (5)",
         "obj:142:1 @1436:1438.17,-11017.7  Objective The Defias Brotherhood / A Mysterious Message (1)",
+=======
+        "accept:135 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
+        "accept:144 @1436:1045.12,-10508.8  Accept Messenger to Westfall",
+        "accept:14 @1436:1045.12,-10508.8  Accept The People\u0027s Militia",
+        "accept:65 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
+        "accept:142 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
+        "accept:93928 @1436:1202.97,-10658.6  Accept Of Mice and Milk",
+        "obj:142:1 @1436:1438.17,-11017.7  Objective The Defias Brotherhood / A Mysterious Message (1)",
+        "obj:14:3 @1436:1698.57,-11153.5  Objective The People\u0027s Militia / Defias Knuckleduster slain (5)",
+        "obj:14:2 @1436:1722.02,-11155.13  Objective The People\u0027s Militia / Defias Pathstalker slain (5)",
+        "accept:152 @1436:1966.32,-11407.13  Accept The Coast Isn\u0027t Clear",
+        "obj:152:4 @1436:1829.12,-11379.6  Objective The Coast Isn\u0027t Clear / Murloc Oracle slain (7)",
+        "turnin:92819 @1436:1662.52,-11349.5  TurnIn Destruction in Deadmines",
+        "obj:14:1 @1436:1683.52,-11281.6  Objective The People\u0027s Militia / Defias Highwayman slain (8)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:14 @1436:1045.12,-10508.8  TurnIn The People\u0027s Militia",
         "turnin:142 @1436:1045.12,-10508.8  TurnIn The Defias Brotherhood",
         "obj:152:1 @1436:1519.37,-9609.77  Objective The Coast Isn\u0027t Clear / Murloc Coastrunner slain (7)",
         "obj:152:2 @1436:1996.07,-10143.4  Objective The Coast Isn\u0027t Clear / Murloc Warrior slain (7)",
+<<<<<<< HEAD
         "obj:152:4 @1436:2072.72,-10691.27  Objective The Coast Isn\u0027t Clear / Murloc Oracle slain (7)",
+=======
+        "accept:79008 @1436:1708.72,-10585.1  Accept ... and that note you found",
+        "accept:79192 @1436:1708.72,-10585.1  Accept Stepping Stones",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:152:3 @1436:2079.72,-11082.8  Objective The Coast Isn\u0027t Clear / Murloc Tidehunter slain (7)",
         "turnin:152 @1436:1966.32,-11407.13  TurnIn The Coast Isn\u0027t Clear"
       ]

@@ -1,7 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-60 Winterspring",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:28",
+=======
+  "saved": "2026-10-10 13:05",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
@@ -35,6 +39,7 @@
         "accept:3783 @1452:-4639.15,6752.65  Accept Are We There, Yeti?",
         "accept:5244 @1452:-4006.54,7094.87  Accept The Ruins of Kel\u0027Theril",
         "turnin:6604 @1452:-4018.61,7092.98  TurnIn Enraged Wildkin",
+<<<<<<< HEAD
         "accept:4861 @1452:-4018.61,7092.98  Accept Enraged Wildkin",
         "turnin:5244 @1452:-4018.61,7092.98  TurnIn The Ruins of Kel\u0027Theril",
         "accept:5245 @1452:-4018.61,7092.98  Accept Troubled Spirits of Kel\u0027Theril",
@@ -55,6 +60,23 @@
         "accept:977 @1452:-4639.15,6752.65  Accept Are We There, Yeti?",
         "obj:5082:2 @1452:-5071.54,6900.81  Objective Threat of the Winterfall / Winterfall Den Watcher slain (8)",
         "obj:8464:2 @1452:-5071.54,6900.81  Objective Winterfall Activity / Winterfall Den Watcher slain (8)",
+=======
+        "turnin:5244 @1452:-4018.61,7092.98  TurnIn The Ruins of Kel\u0027Theril",
+        "accept:4861 @1452:-4018.61,7092.98  Accept Enraged Wildkin",
+        "accept:5245 @1452:-4018.61,7092.98  Accept Troubled Spirits of Kel\u0027Theril",
+        "turnin:6603 @1452:-2536.84,6395.76  TurnIn Trouble in Winterspring!",
+        "accept:5082 @1452:-2536.84,6395.76  Accept Threat of the Winterfall",
+        "accept:5086 @1452:-2536.84,6395.76  Accept Toxic Horrors",
+        "accept:5087 @1452:-2536.84,6395.76  Accept Winterfall Runners",
+        "obj:5087:1 @1452:-2301.83,6899.39  Objective Winterfall Runners / Winterfall Crate (1)",
+        "accept:6606 @1452:-4656.19,6714.31  Accept A Little Luck",
+        "turnin:6606 @1452:-4712.99,6720.47  TurnIn A Little Luck",
+        "obj:3783:1 @1452:-5016.87,6588.88  Objective Are We There, Yeti? / Thick Yeti Fur (10)",
+        "turnin:3783 @1452:-4639.15,6752.65  TurnIn Are We There, Yeti?",
+        "accept:977 @1452:-4639.15,6752.65  Accept Are We There, Yeti?",
+        "obj:8464:2 @1452:-5071.54,6900.81  Objective Winterfall Activity / Winterfall Den Watcher slain (8)",
+        "obj:5082:2 @1452:-5071.54,6900.81  Objective Threat of the Winterfall / Winterfall Den Watcher slain (8)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:8464:1 @1452:-5161,6785.79  Objective Winterfall Activity / Winterfall Shaman slain (8)",
         "obj:977:1 @1452:-5308.68,6613.49  Objective Are We There, Yeti? / Pristine Yeti Horn (2)",
         "obj:8464:3 @1452:-5048.11,6693.96  Objective Winterfall Activity / Winterfall Ursa slain (8)",
@@ -67,6 +89,7 @@
         "obj:5245:2 @1452:-3929.15,6559.06  Objective Troubled Spirits of Kel\u0027Theril / Second Relic Fragment (4)",
         "obj:5082:1 @1452:-3329.2,6447.83  Objective Threat of the Winterfall / Winterfall Pathfinder slain (8)",
         "obj:5082:3 @1452:-3161.64,6478.59  Objective Threat of the Winterfall / Winterfall Totemic slain (8)",
+<<<<<<< HEAD
         "obj:5087:1 @1452:-2301.83,6899.39  Objective Winterfall Runners / Winterfall Crate (1)",
         "turnin:5083 @1452:-2536.84,6395.76  TurnIn Winterfall Firewater",
         "turnin:5087 @1452:-2536.84,6395.76  TurnIn Winterfall Runners",
@@ -75,6 +98,21 @@
         "turnin:8464 @1452:-2285.5,6900.33  TurnIn Winterfall Activity",
         "obj:5163:1 @1452:-4686.01,6705.79  Objective Are We There, Yeti? / Legacki",
         "item:5123 @1452:-5255.43,6719.99  ItemAccept The Final Piece",
+=======
+        "turnin:5082 @1452:-2536.84,6395.76  TurnIn Threat of the Winterfall",
+        "turnin:5083 @1452:-2536.84,6395.76  TurnIn Winterfall Firewater",
+        "accept:5084 @1452:-2536.84,6395.76  Accept Falling to Corruption",
+        "turnin:5087 @1452:-2536.84,6395.76  TurnIn Winterfall Runners",
+        "turnin:8464 @1452:-2285.5,6900.33  TurnIn Winterfall Activity",
+        "obj:5163:1 @1452:-4686.01,6705.79  Objective Are We There, Yeti? / Legacki",
+        "item:5123 @1452:-5255.43,6719.99  ItemAccept The Final Piece",
+        "obj:4809:1 @1452:-5039.59,6108.92  Objective Chillwind Horns / Uncracked Chillwind Horn (8)",
+        "turnin:4861 @1452:-4504.96,5703.27  TurnIn Enraged Wildkin",
+        "accept:4863 @1452:-4504.96,5703.27  Accept Enraged Wildkin",
+        "turnin:4863 @1452:-4678.91,5661.15  TurnIn Enraged Wildkin",
+        "turnin:4809 @1452:-4692.4,6705.79  TurnIn Chillwind Horns",
+        "accept:4810 @1452:-4692.4,6705.79  Accept Return to Tinkee",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:5252 @1452:-4006.54,7094.87  TurnIn Remorseful Highborne",
         "accept:5253 @1452:-4006.54,7094.87  Accept The Crystal of Zin-Malor",
         "turnin:5123 @1452:-2536.84,6395.76  TurnIn The Final Piece",
@@ -84,18 +122,32 @@
     {
       "part": 3,
       "steps": [
+<<<<<<< HEAD
         "accept:4864 @1452:-4678.91,5661.15  Accept Enraged Wildkin",
         "obj:4864:1 @1452:-4676.78,5658.78  Objective Enraged Wildkin / Jaron\u0027s Supplies (1)",
         "accept:969 @1452:-4712.99,6720.47  Accept Luck Be With You",
+=======
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:5161 @1452:-4189.72,6109.87  Accept Wrath of the Blue Flight",
         "turnin:5161 @1452:-4189.72,6109.87  TurnIn Wrath of the Blue Flight",
         "accept:5162 @1452:-4189.72,6109.87  Accept Wrath of the Blue Flight",
         "accept:5121 @1452:-2536.84,6395.76  Accept High Chief Winterfall",
+<<<<<<< HEAD
         "obj:969:1 @1452:-4515.61,5362  Objective Luck Be With You / Frostmaul Shards (4)",
         "obj:4864:2 @1452:-4513.48,5709.9  Objective Enraged Wildkin / Blue-feathered Amulet (1)",
         "obj:5121:1 @1452:-5255.43,6719.99  Objective High Chief Winterfall / High Chief Winterfall slain (1)",
         "turnin:969 @1452:-4712.99,6720.47  TurnIn Luck Be With You",
         "obj:5163:1 @1452:-4686.01,6705.79  Objective Are We There, Yeti? / Legacki",
+=======
+        "accept:969 @1452:-4712.99,6720.47  Accept Luck Be With You",
+        "obj:5121:1 @1452:-5255.43,6719.99  Objective High Chief Winterfall / High Chief Winterfall slain (1)",
+        "accept:4864 @1452:-4678.91,5661.15  Accept Enraged Wildkin",
+        "obj:4864:1 @1452:-4676.78,5658.78  Objective Enraged Wildkin / Jaron\u0027s Supplies (1)",
+        "obj:969:1 @1452:-4515.61,5362  Objective Luck Be With You / Frostmaul Shards (4)",
+        "obj:4864:2 @1452:-4513.48,5709.9  Objective Enraged Wildkin / Blue-feathered Amulet (1)",
+        "obj:5163:1 @1452:-4686.01,6705.79  Objective Are We There, Yeti? / Legacki",
+        "turnin:969 @1452:-4712.99,6720.47  TurnIn Luck Be With You",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:5163 @1452:-4639.15,6752.65  TurnIn Are We There, Yeti?",
         "turnin:4864 @1452:-4018.61,7092.98  TurnIn Enraged Wildkin",
         "turnin:5121 @1452:-2536.84,6395.76  TurnIn High Chief Winterfall"

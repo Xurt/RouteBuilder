@@ -1,11 +1,16 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "1-30 Dun Morogh",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:24",
+=======
+  "saved": "2026-10-10 13:01",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
+<<<<<<< HEAD
         "accept:98581 @1426:328.03,-6214.82  Accept Archaic Rune",
         "accept:179 @1426:328.03,-6214.82  Accept Dwarven Outfitters",
         "accept:98574 @1426:328.03,-6214.82  Accept Hallowed Memorandum",
@@ -18,6 +23,16 @@
         "accept:3113 @1426:328.03,-6214.82  Accept Encrypted Memorandum",
         "accept:3114 @1426:328.03,-6214.82  Accept Glyphic Memorandum",
         "accept:3115 @1426:328.03,-6214.82  Accept Tainted Memorandum",
+=======
+        "accept:179 @1426:328.03,-6214.82  Accept Dwarven Outfitters",
+        "obj:179:1 @1426:384.18,-6312  Objective Dwarven Outfitters / Tough Wolf Meat (8)",
+        "turnin:179 @1426:328.03,-6214.82  TurnIn Dwarven Outfitters",
+        "accept:3106 @1426:328.03,-6214.82  Accept Simple Rune",
+        "accept:3109 @1426:328.03,-6214.82  Accept Encrypted Rune",
+        "accept:98581 @1426:328.03,-6214.82  Accept Archaic Rune",
+        "accept:3112 @1426:328.03,-6214.82  Accept Simple Memorandum",
+        "accept:3113 @1426:328.03,-6214.82  Accept Encrypted Memorandum",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:233 @1426:328.03,-6214.82  Accept Coldridge Valley Mail Delivery",
         "turnin:3106 @1426:382.21,-6084.8  TurnIn Simple Rune",
         "accept:3107 @1426:328.03,-6214.82  Accept Consecrated Rune",
@@ -25,6 +40,7 @@
         "accept:3108 @1426:328.03,-6214.82  Accept Etched Rune",
         "turnin:3108 @1426:364.97,-6091.69  TurnIn Etched Rune",
         "turnin:3109 @1426:404.86,-6093.66  TurnIn Encrypted Rune",
+<<<<<<< HEAD
         "turnin:3112 @1426:382.21,-6084.8  TurnIn Simple Memorandum",
         "turnin:3113 @1426:404.86,-6093.66  TurnIn Encrypted Memorandum",
         "accept:170 @1426:338.87,-6216.46  Accept A New Threat",
@@ -51,13 +67,48 @@
         "accept:94374 @1426:381.71,-6051.63  Accept Call of Earth",
         "accept:94373 @1426:381.71,-6051.63  Accept Call of Earth",
         "accept:94472 @1426:381.71,-6051.63  Accept Earth Sapta",
+=======
+        "accept:3110 @1426:328.03,-6214.82  Accept Hallowed Rune",
+        "turnin:3112 @1426:382.21,-6084.8  TurnIn Simple Memorandum",
+        "turnin:3113 @1426:404.86,-6093.66  TurnIn Encrypted Memorandum",
+        "accept:98574 @1426:328.03,-6214.82  Accept Hallowed Memorandum",
+        "accept:3114 @1426:328.03,-6214.82  Accept Glyphic Memorandum",
+        "accept:3115 @1426:328.03,-6214.82  Accept Tainted Memorandum",
+        "accept:170 @1426:338.87,-6216.46  Accept A New Threat",
+        "obj:170:1 @1426:291.09,-6362.89  Objective A New Threat / Rockjaw Trogg slain (6)",
+        "accept:182 @1426:566.89,-6362.89  Accept The Troll Cave",
+        "obj:182:1 @1426:703.32,-6442.02  Objective The Troll Cave / Frostmane Troll Whelp slain (14)",
+        "obj:170:2 @1426:746.16,-6329.08  Objective A New Threat / Burly Rockjaw Trogg slain (6)",
+        "turnin:233 @1426:689.03,-6222.37  TurnIn Coldridge Valley Mail Delivery",
+        "accept:234 @1426:689.03,-6222.37  Accept Coldridge Valley Mail Delivery",
+        "accept:183 @1426:689.03,-6222.37  Accept The Boar Hunter",
+        "obj:183:1 @1426:751.09,-6248.31  Objective The Boar Hunter / Small Crag Boar slain (12)",
+        "turnin:183 @1426:689.03,-6222.37  TurnIn The Boar Hunter",
+        "turnin:182 @1426:566.89,-6362.89  TurnIn The Troll Cave",
+        "accept:218 @1426:566.89,-6362.89  Accept The Stolen Journal",
+        "turnin:234 @1426:566.89,-6362.89  TurnIn Coldridge Valley Mail Delivery",
+        "accept:3364 @1426:571.82,-6371.1  Accept Scalding Mornbrew Delivery",
+        "obj:218:1 @1426:300.94,-6508.67  Objective The Stolen Journal / Grelin Whitebeard\u0027s Journal (1)",
+        "turnin:170 @1426:338.87,-6216.46  TurnIn A New Threat",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:3110 @1426:393.53,-6056.89  TurnIn Hallowed Rune",
         "turnin:98574 @1426:393.53,-6056.89  TurnIn Hallowed Memorandum",
         "turnin:3114 @1426:388.12,-6056.23  TurnIn Glyphic Memorandum",
         "turnin:3364 @1426:385.16,-6056.23  TurnIn Scalding Mornbrew Delivery",
         "accept:3365 @1426:385.16,-6056.23  Accept Bring Back the Mug",
+<<<<<<< HEAD
         "turnin:3115 @1426:391.07,-6048.68  TurnIn Tainted Memorandum",
         "accept:1599 @1426:391.07,-6048.68  Accept Beginnings",
+=======
+        "accept:1599 @1426:391.07,-6048.68  Accept Beginnings",
+        "accept:94373 @1426:384.18,-6049.99  Accept Call of Earth",
+        "turnin:98581 @1426:384.18,-6049.99  TurnIn Archaic Rune",
+        "turnin:3115 @1426:391.07,-6048.68  TurnIn Tainted Memorandum",
+        "accept:97277 @1426:390.09,-6093.99  Accept Grund and Gozwin",
+        "accept:3361 @1426:396,-6097.93  Accept A Refugee\u0027s Quandary",
+        "turnin:218 @1426:566.89,-6362.89  TurnIn The Stolen Journal",
+        "accept:282 @1426:566.89,-6362.89  Accept Senir\u0027s Observations",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:3365 @1426:571.82,-6371.1  TurnIn Bring Back the Mug",
         "obj:3361:1 @1426:773.74,-6374.71  Objective A Refugee\u0027s Quandary / Felix\u0027s Box (1)",
         "obj:94373:1 @1426:703.32,-6442.02  Objective Call of Earth / Iceclaw Bear Pendant (2)",
@@ -66,6 +117,7 @@
         "obj:1599:1 @1426:355.12,-6538.55  Objective Beginnings / Feather Charm (3)",
         "accept:2160 @1426:134.97,-6248.96  Accept Supplies to Tannok",
         "turnin:282 @1426:153.19,-6235.83  TurnIn Senir\u0027s Observations",
+<<<<<<< HEAD
         "accept:420 @1426:153.19,-6235.83  Accept Senir\u0027s Observations",
         "accept:96628 @1426:153.19,-6235.83  Accept The Adventurer",
         "turnin:3361 @1426:396,-6097.93  TurnIn A Refugee\u0027s Quandary",
@@ -75,12 +127,32 @@
         "accept:310 @1426:315.23,-5371.98  Accept Bitter Rivals",
         "accept:98323 @1426:-368.86,-5748.25  Accept Secure the Mountain",
         "accept:98319 @1426:-368.86,-5748.25  Accept Secure the Mountain",
+=======
+        "accept:96628 @1426:153.19,-6235.83  Accept The Adventurer",
+        "accept:420 @1426:153.19,-6235.83  Accept Senir\u0027s Observations",
+        "turnin:3361 @1426:396,-6097.93  TurnIn A Refugee\u0027s Quandary",
+        "turnin:1599 @1426:391.07,-6048.68  TurnIn Beginnings",
+        "turnin:94373 @1426:384.18,-6049.99  TurnIn Call of Earth",
+        "accept:94374 @1426:384.18,-6049.99  Accept Call of Earth",
+        "obj:97277:1 @1426:459.04,-5940.99  Objective Grund and Gozwin / Gozwin\u0027s Mechanic\u0027s Log (1)",
+        "obj:97277:2 @1426:454.11,-5940.99  Objective Grund and Gozwin / Snow Leopard Prowler slain (1)",
+        "turnin:94374 @1426:578.71,-5908.15  TurnIn Call of Earth",
+        "accept:94375 @1426:578.71,-5908.15  Accept Call of Earth",
+        "turnin:97277 @1426:390.09,-6093.99  TurnIn Grund and Gozwin",
+        "turnin:94375 @1426:384.18,-6049.99  TurnIn Call of Earth",
+        "accept:315 @1426:315.23,-5378.55  Accept The Perfect Stout",
+        "accept:310 @1426:315.23,-5371.98  Accept Bitter Rivals",
+        "accept:98321 @1426:-430.91,-5582.45  Accept Flintfire\u0027s Shipment",
+        "accept:400 @1426:-464.4,-5573.91  Accept Tools for Steelgrill",
+        "turnin:6076 @1426:-454.06,-5618.56  TurnIn The Hunter\u0027s Path",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:96628 @1426:-497.4,-5647.46  TurnIn The Adventurer",
         "accept:96608 @1426:-497.4,-5647.46  Accept The Great Outdoors",
         "obj:96608:2 @1426:-496.91,-5644.83  Objective The Great Outdoors / Basic Campfire",
         "obj:96608:1 @1426:-496.91,-5644.83  Objective The Great Outdoors / Basic Campfire",
         "turnin:96608 @1426:-497.4,-5647.46  TurnIn The Great Outdoors",
         "accept:96629 @1426:-497.4,-5647.46  Accept Camping 101: Cooking",
+<<<<<<< HEAD
         "accept:291 @1426:-499.37,-5644.5  Accept The Reports",
         "turnin:98323 @1426:-499.37,-5644.5  TurnIn Secure the Mountain",
         "accept:98322 @1426:-499.37,-5644.5  Accept Secure the Mountain",
@@ -93,6 +165,11 @@
         "accept:400 @1426:-464.4,-5573.91  Accept Tools for Steelgrill",
         "turnin:2160 @1426:-523.5,-5590.65  TurnIn Supplies to Tannok",
         "turnin:5625 @1426:-529.41,-5590.65  TurnIn Garments of the Light",
+=======
+        "accept:98322 @1426:-499.37,-5644.5  Accept Secure the Mountain",
+        "turnin:420 @1426:-499.37,-5644.5  TurnIn Senir\u0027s Observations",
+        "turnin:2160 @1426:-523.5,-5590.65  TurnIn Supplies to Tannok",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:99158 @1426:-529.41,-5590.65  Accept Dawn in the Mountains",
         "home @1426:-531.38,-5601.49  Home inn",
         "turnin:310 @1426:-548.13,-5607.4  TurnIn Bitter Rivals",
@@ -100,6 +177,7 @@
         "obj:96629:1 @1426:-545.66,-5594.59  Objective Camping 101: Cooking / Gremlock Pilsnor",
         "turnin:96629 @1426:-545.66,-5594.59  TurnIn Camping 101: Cooking",
         "accept:317 @1426:-632.34,-5466.54  Accept Stocking Jetsteam",
+<<<<<<< HEAD
         "accept:313 @1426:-641.7,-5473.11  Accept The Grizzled Den",
         "turnin:400 @1426:-682.09,-5488.87  TurnIn Tools for Steelgrill",
         "accept:5541 @1426:-664.36,-5499.71  Accept Ammo for Rumbleshot",
@@ -135,6 +213,83 @@
         "turnin:99158 @1426:-1041.12,-5350.64  TurnIn Dawn in the Mountains",
         "accept:99159 @1426:-1041.12,-5350.64  Accept Finding Warmth",
         "accept:99161 @1426:-1041.12,-5350.64  Accept Rime\u0027s Wrath",
+=======
+        "obj:317:2 @1426:-619.54,-5551.58  Objective Stocking Jetsteam / Thick Bear Fur (2)",
+        "obj:317:1 @1426:-632.84,-5534.51  Objective Stocking Jetsteam / Chunk of Boar Meat (4)",
+        "accept:5541 @1426:-664.36,-5499.71  Accept Ammo for Rumbleshot",
+        "turnin:400 @1426:-682.09,-5488.87  TurnIn Tools for Steelgrill",
+        "accept:313 @1426:-641.7,-5473.11  Accept The Grizzled Den",
+        "turnin:317 @1426:-632.34,-5466.54  TurnIn Stocking Jetsteam",
+        "accept:318 @1426:-632.34,-5466.54  Accept Evershine",
+        "obj:98321:1 @1426:-271.34,-5469.5  Objective Flintfire\u0027s Shipment / Flintfire\u0027s Shipment (8)",
+        "turnin:98321 @1426:-430.91,-5582.45  TurnIn Flintfire\u0027s Shipment",
+        "obj:5541:1 @1426:-371.32,-5746.94  Objective Ammo for Rumbleshot / Rumbleshot\u0027s Ammo (1)",
+        "turnin:98322 @1426:-369.84,-5750.88  TurnIn Secure the Mountain",
+        "accept:98319 @1426:-369.84,-5750.88  Accept Secure the Mountain",
+        "accept:98323 @1426:-369.84,-5750.88  Accept Secure the Mountain",
+        "turnin:5541 @1426:-201.41,-6015.52  TurnIn Ammo for Rumbleshot",
+        "obj:313:1 @1426:-289.07,-5639.58  Objective The Grizzled Den / Wendigo Mane (8)",
+        "obj:315:1 @1426:-236.37,-5334.23  Objective The Perfect Stout / Shimmerweed (6)",
+        "accept:98326 @1426:249.23,-5343.09  Accept Frosthowl",
+        "turnin:311 @1426:315.23,-5371.98  TurnIn Return to Marleth",
+        "turnin:315 @1426:315.23,-5378.55  TurnIn The Perfect Stout",
+        "turnin:318 @1426:315.23,-5378.55  TurnIn Evershine",
+        "accept:319 @1426:315.23,-5378.55  Accept A Favor for Evershine",
+        "obj:319:2 @1426:448.2,-5378.88  Objective A Favor for Evershine / Elder Crag Boar slain (8)",
+        "obj:319:1 @1426:359.06,-5239.99  Objective A Favor for Evershine / Ice Claw Bear slain (6)",
+        "obj:319:3 @1426:318.18,-5193.04  Objective A Favor for Evershine / Snow Leopard slain (8)",
+        "turnin:319 @1426:315.23,-5378.55  TurnIn A Favor for Evershine",
+        "accept:320 @1426:315.23,-5378.55  Accept Return to Bellowfiz",
+        "accept:291 @1426:-499.37,-5644.5  Accept The Reports",
+        "turnin:98323 @1426:-499.37,-5644.5  TurnIn Secure the Mountain",
+        "turnin:320 @1426:-632.34,-5466.54  TurnIn Return to Bellowfiz",
+        "turnin:313 @1426:-641.7,-5473.11  TurnIn The Grizzled Den",
+        "turnin:99158 @1426:-1041.12,-5350.64  TurnIn Dawn in the Mountains",
+        "accept:99159 @1426:-1041.12,-5350.64  Accept Finding Warmth",
+        "obj:99159:1 @1426:-1015.02,-5679.63  Objective Finding Warmth / Mostly Dry Firewood (14)",
+        "accept:95212 @1426:-1304.61,-5513.82  Accept Never Saddle on Quality",
+        "accept:433 @1426:-1579.91,-5714.76  Accept The Public Servant",
+        "accept:432 @1426:-1600.11,-5726.58  Accept Those Blasted Troggs!",
+        "obj:433:1 @1426:-1702.05,-5607.73  Objective The Public Servant / Rockjaw Bonesnapper slain (10)",
+        "obj:432:1 @1426:-1751.8,-5592.62  Objective Those Blasted Troggs! / Rockjaw Skullthumper slain (6)",
+        "obj:95212:1 @1426:-1825.67,-5657.63  Objective Never Saddle on Quality / Pristine Leopard Pelt (6)",
+        "obj:95213:1 @1426:-1772.48,-5645.16  Objective Stolen Blasting Powder / Empty Powder Keg (1)",
+        "turnin:95213 @1426:-1604.05,-5676.35  TurnIn Stolen Blasting Powder",
+        "accept:95214 @1426:-1604.05,-5676.35  Accept Stolen Blasting Powder",
+        "turnin:432 @1426:-1600.11,-5726.58  TurnIn Those Blasted Troggs!",
+        "turnin:433 @1426:-1579.91,-5714.76  TurnIn The Public Servant",
+        "turnin:95212 @1426:-1304.61,-5513.82  TurnIn Never Saddle on Quality",
+        "turnin:99159 @1426:-1041.12,-5350.64  TurnIn Finding Warmth",
+        "accept:99160 @1426:-1041.12,-5350.64  Accept Rime\u0027s Wrath",
+        "obj:99160:1 @1426:-972.66,-5332.58  Objective Rime\u0027s Wrath / Minor Ice Elemental slain (10)",
+        "turnin:99160 @1426:-1041.12,-5350.64  TurnIn Rime\u0027s Wrath",
+        "accept:99161 @1426:-1041.12,-5350.64  Accept Rime\u0027s Wrath",
+        "accept:99162 @1426:-1041.12,-5350.64  Accept Treacherous Cold",
+        "obj:99161:1 @1426:-1071.16,-5258.05  Objective Rime\u0027s Wrath / Avala\u0027s Core (1)",
+        "turnin:99161 @1426:-1041.12,-5350.64  TurnIn Rime\u0027s Wrath",
+        "obj:99162:3 @1426:-763.84,-5323.06  Objective Treacherous Cold / Coalbeard\u0027s Rifle (1)",
+        "accept:415 @1426:-632.34,-5466.54  Accept Rejold\u0027s New Brew",
+        "accept:412 @1426:-456.03,-5498.06  Accept Operation Recombobulation",
+        "obj:98326:1 @1426:-134.92,-5479.02  Objective Frosthowl / Sack of Fish (1)",
+        "turnin:98326 @1426:249.23,-5343.09  TurnIn Frosthowl",
+        "turnin:415 @1426:315.23,-5378.55  TurnIn Rejold\u0027s New Brew",
+        "accept:413 @1426:315.23,-5378.55  Accept Shimmer Stout",
+        "obj:412:1 @1426:536.85,-5288.26  Objective Operation Recombobulation / Restabilization Cog (8)",
+        "obj:412:2 @1426:536.85,-5288.26  Objective Operation Recombobulation / Gyromechanic Gear (8)",
+        "turnin:412 @1426:-456.03,-5498.06  TurnIn Operation Recombobulation",
+        "obj:99162:1 @1426:-816.05,-5807.03  Objective Treacherous Cold / Stoneanvil\u0027s Rifle (1)",
+        "obj:99162:2 @1426:-1147.99,-5522.03  Objective Treacherous Cold / Sunhammer\u0027s Rifle (1)",
+        "turnin:99162 @1426:-1041.12,-5350.64  TurnIn Treacherous Cold",
+        "obj:95214:1 @1426:-1772.48,-5645.16  Objective Stolen Blasting Powder / Stolen Blasting Powder (16)",
+        "turnin:413 @1426:-2447.21,-5479.68  TurnIn Shimmer Stout",
+        "accept:414 @1426:-2447.21,-5479.68  Accept Stout to Kadrell",
+        "turnin:94468 @1426:-2528.96,-5348.02  TurnIn Call of Fire",
+        "accept:419 @1426:-2329.5,-5163.82  Accept The Lost Pilot",
+        "turnin:419 @1426:-2121.66,-5064.66  TurnIn The Lost Pilot",
+        "accept:417 @1426:-2121.66,-5064.66  Accept A Pilot\u0027s Revenge",
+        "obj:417:1 @1426:-2054.68,-5116.87  Objective A Pilot\u0027s Revenge / Mangy Claw (1)",
+        "turnin:417 @1426:-2329.5,-5163.82  TurnIn A Pilot\u0027s Revenge",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:1072 @1455:-1283.47,-4842.96  TurnIn An Old Colleague",
         "accept:97263 @1455:-1285.85,-4826.5  Accept Your Package Has Arrived",
         "turnin:2923 @1455:-1263.47,-4834.78  TurnIn Tinkmaster Overspark",
@@ -145,6 +300,7 @@
         "turnin:6391 @1455:-1120.92,-4708.05  TurnIn Ride to Ironforge",
         "turnin:97263 @1455:-1088.58,-4640.47  TurnIn Your Package Has Arrived",
         "turnin:3000 @1455:-932.04,-4633.5  TurnIn Tome of Divinity",
+<<<<<<< HEAD
         "turnin:5647 @1455:-909.11,-4612.29  TurnIn A Lack of Fear",
         "turnin:5645 @1455:-909.11,-4612.29  TurnIn A Lack of Fear",
         "turnin:291 @1455:-1026.28,-4872.56  TurnIn The Reports",
@@ -226,6 +382,51 @@
         "accept:5637 @1426:-529.41,-5590.65  Accept Desperate Prayer",
         "turnin:1879 @1455:-929.04,-4613.03  TurnIn Speak with Bink",
         "accept:1880 @1455:-929.04,-4613.03  Accept Mage-tastic Gizmonitor",
+=======
+        "turnin:5645 @1455:-909.11,-4612.29  TurnIn A Lack of Fear",
+        "turnin:5647 @1455:-909.11,-4612.29  TurnIn A Lack of Fear",
+        "obj:95041:1 @1426:516.66,-5256.08  Objective Data Hoarders / Gnomeregan Archival Data (7)",
+        "accept:5626 @1426:393.53,-6056.89  Accept In Favor of the Light",
+        "accept:312 @1426:99.51,-5572.92  Accept Tundra MacGrann\u0027s Stolen Stash",
+        "obj:312:1 @1426:-94.53,-5647.78  Objective Tundra MacGrann\u0027s Stolen Stash / MacGrann\u0027s Dried Meats (1)",
+        "turnin:312 @1426:99.51,-5572.92  TurnIn Tundra MacGrann\u0027s Stolen Stash",
+        "obj:98319:1 @1426:-317.14,-5506.27  Objective Secure the Mountain / Mountaineer Cornelius",
+        "accept:1679 @1426:-530.4,-5605.76  Accept Muren Stormpike",
+        "accept:2218 @1426:-540.25,-5604.44  Accept Road to Salvation",
+        "accept:5637 @1426:-529.41,-5590.65  Accept Desperate Prayer",
+        "turnin:5626 @1426:-529.41,-5590.65  TurnIn In Favor of the Light",
+        "accept:5625 @1426:-529.41,-5590.65  Accept Garments of the Light",
+        "obj:5625:1 @1426:-454.06,-5668.8  Objective Garments of the Light / Mountaineer Dolf",
+        "turnin:5625 @1426:-529.41,-5590.65  TurnIn Garments of the Light",
+        "accept:1879 @1426:-537.29,-5587.04  Accept Speak with Bink",
+        "accept:5630 @1426:-529.41,-5590.65  Accept Returning Home",
+        "accept:94824 @1426:-529.41,-5590.65  Accept Confounding Flash",
+        "accept:96408 @1426:-682.09,-5488.87  Accept A Visitor to Dun Morogh",
+        "turnin:94824 @1455:-910.38,-4623.22  TurnIn Confounding Flash",
+        "accept:94817 @1455:-910.38,-4623.22  Accept Confounding Flash",
+        "turnin:1653 @1426:-783.05,-5089.29  TurnIn The Test of Righteousness",
+        "turnin:291 @1455:-1026.28,-4872.56  TurnIn The Reports",
+        "turnin:95041 @1455:-1248.53,-4802.5  TurnIn Data Hoarders",
+        "turnin:1679 @1455:-1273.12,-5045.51  TurnIn Muren Stormpike",
+        "accept:1678 @1455:-1273.12,-5045.51  Accept Vejrek",
+        "obj:1678:1 @1426:431.46,-5780.1  Objective Vejrek / Vejrek\u0027s Head (1)",
+        "turnin:1678 @1455:-1273.12,-5045.51  TurnIn Vejrek",
+        "accept:1680 @1455:-1273.12,-5045.51  Accept Tormus Deepforge",
+        "turnin:1680 @1455:-1098.15,-4793.37  TurnIn Tormus Deepforge",
+        "accept:1681 @1455:-1098.15,-4793.37  Accept Ironband\u0027s Compound",
+        "turnin:2218 @1455:-1124.4,-4647.54  TurnIn Road to Salvation",
+        "accept:2238 @1455:-1124.4,-4647.54  Accept Simple Subterfugin\u0027",
+        "turnin:2238 @1426:562.95,-5336.52  TurnIn Simple Subterfugin\u0027",
+        "accept:2239 @1426:562.95,-5336.52  Accept Onin\u0027s Report",
+        "turnin:2239 @1455:-1124.4,-4647.54  TurnIn Onin\u0027s Report",
+        "turnin:1879 @1455:-929.04,-4613.03  TurnIn Speak with Bink",
+        "accept:1880 @1455:-929.04,-4613.03  Accept Mage-tastic Gizmonitor",
+        "obj:1880:1 @1426:436.87,-5072.87  Objective Mage-tastic Gizmonitor / Mage-tastic Gizmonitor (1)",
+        "turnin:1880 @1455:-929.04,-4613.03  TurnIn Mage-tastic Gizmonitor",
+        "accept:1715 @1455:-1090.17,-4618.1  Accept The Slaughtered Lamb",
+        "accept:94449 @1455:-1088.58,-4640.47  Accept Call of Fire",
+        "accept:6074 @1455:-1274.07,-5010.37  Accept The Hunter\u0027s Path",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:6074 @1426:-454.06,-5618.56  TurnIn The Hunter\u0027s Path",
         "accept:6064 @1426:-454.06,-5618.56  Accept Taming the Beast",
         "obj:6064:1 @1426:-582.6,-5740.7  Objective Taming the Beast / Large Crag Boar",
@@ -234,6 +435,7 @@
         "obj:6084:1 @1426:-584.08,-5910.78  Objective Taming the Beast / Snow Leopard",
         "turnin:6084 @1426:-454.06,-5618.56  TurnIn Taming the Beast",
         "accept:6085 @1426:-454.06,-5618.56  Accept Taming the Beast",
+<<<<<<< HEAD
         "accept:5630 @1426:-529.41,-5590.65  Accept Returning Home",
         "accept:94824 @1426:-529.41,-5590.65  Accept Confounding Flash",
         "turnin:1653 @1426:-783.05,-5089.29  TurnIn The Test of Righteousness",
@@ -261,6 +463,37 @@
         "turnin:6086 @1455:-1273.83,-5022.08  TurnIn Training the Beast",
         "accept:94817 @1455:-910.38,-4623.22  Accept Confounding Flash",
         "turnin:94824 @1455:-910.38,-4623.22  TurnIn Confounding Flash"
+=======
+        "obj:6085:1 @1426:-498.38,-5955.43  Objective Taming the Beast / Ice Claw Bear",
+        "turnin:6085 @1426:-454.06,-5618.56  TurnIn Taming the Beast",
+        "accept:6086 @1426:-454.06,-5618.56  Accept Training the Beast",
+        "turnin:6086 @1455:-1273.83,-5022.08  TurnIn Training the Beast",
+        "accept:6721 @1455:-1274.07,-5010.37  Accept The Hunter\u0027s Path",
+        "turnin:1758 @1455:-1300.16,-4618.78  TurnIn Tome of the Cabal",
+        "turnin:301 @1455:-1303.71,-4631.18  TurnIn Report to Ironforge",
+        "accept:302 @1455:-1303.71,-4631.18  Accept Powder to Ironband",
+        "accept:6388 @1455:-1120.92,-4708.05  Accept Gryth Thurden",
+        "turnin:6388 @1455:-1152.39,-4821.12  TurnIn Gryth Thurden",
+        "accept:6392 @1455:-1152.39,-4821.12  Accept Return to Brock",
+        "accept:314 @1426:-1304.61,-5513.82  Accept Protecting the Herd",
+        "obj:314:1 @1426:-1281.95,-5389.06  Objective Protecting the Herd / Fang of Vagash (1)",
+        "turnin:314 @1426:-1304.61,-5513.82  TurnIn Protecting the Herd",
+        "turnin:96408 @1426:-1392.76,-5796.85  TurnIn A Visitor to Dun Morogh",
+        "accept:96392 @1426:-1392.76,-5796.85  Accept Farsen\u0027s Watch",
+        "obj:96392:1 @1426:-1392.76,-5796.85  Objective Farsen\u0027s Watch / Earthseer Farsen",
+        "turnin:96392 @1426:-1392.76,-5796.85  TurnIn Farsen\u0027s Watch",
+        "accept:96390 @1426:-1392.76,-5796.85  Accept Nip \u0027Em in the Bud",
+        "turnin:95214 @1426:-1604.05,-5676.35  TurnIn Stolen Blasting Powder",
+        "obj:96390:1 @1426:-2007.9,-5890.09  Objective Nip \u0027Em in the Bud / Dark Iron Spy slain (10)",
+        "obj:1681:1 @1426:-2037.45,-5918  Objective Ironband\u0027s Compound / Umbral Ore (1)",
+        "turnin:96390 @1426:-1392.76,-5796.85  TurnIn Nip \u0027Em in the Bud",
+        "turnin:96391 @1426:-1392.76,-5796.85  TurnIn Underground Map",
+        "turnin:1681 @1455:-1098.15,-4793.37  TurnIn Ironband\u0027s Compound",
+        "accept:1682 @1455:-1098.15,-4793.37  Accept Grey Iron Weapons",
+        "turnin:1682 @1455:-1098.15,-4793.37  TurnIn Grey Iron Weapons",
+        "accept:94465 @1426:-2528.96,-5348.02  Accept Call of Fire",
+        "turnin:94449 @1426:-2528.96,-5348.02  TurnIn Call of Fire"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
@@ -269,12 +502,19 @@
         "accept:2997 @1426:-542.22,-5586.71  Accept Tome of Divinity",
         "turnin:2997 @1455:-932.04,-4633.5  TurnIn Tome of Divinity",
         "accept:1647 @1455:-932.04,-4633.5  Accept The Tome of Divinity",
+<<<<<<< HEAD
         "turnin:94817 @1455:-910.38,-4623.22  TurnIn Confounding Flash",
         "turnin:96403 @1455:-969.67,-4805.34  TurnIn Important Heirlooms",
         "turnin:96394 @1455:-977.19,-4821.54  TurnIn The Restless Dead",
         "turnin:96393 @1455:-1022.65,-4865.75  TurnIn Old Ironforge Incursion",
         "turnin:1647 @1455:-1052.93,-5012.96  TurnIn The Tome of Divinity",
         "accept:1648 @1455:-1052.93,-5012.96  Accept The Tome of Divinity",
+=======
+        "turnin:1647 @1455:-887.92,-4859.85  TurnIn The Tome of Divinity",
+        "accept:1648 @1455:-887.92,-4859.85  Accept The Tome of Divinity",
+        "obj:98319:1 @1426:-317.14,-5506.27  Objective Secure the Mountain / Mountaineer Cornelius",
+        "turnin:98319 @1426:-369.84,-5750.88  TurnIn Secure the Mountain",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:1648:1 @1426:-1741.45,-5586.06  Objective The Tome of Divinity / Linen Cloth (10)",
         "turnin:1648 @1455:-1052.93,-5012.96  TurnIn The Tome of Divinity",
         "accept:1778 @1455:-1052.93,-5012.96  Accept The Tome of Divinity",
@@ -282,16 +522,25 @@
         "accept:1779 @1455:-932.04,-4633.5  Accept The Tome of Divinity",
         "turnin:1779 @1455:-899.7,-4613.03  TurnIn The Tome of Divinity",
         "accept:1783 @1455:-899.7,-4613.03  Accept The Tome of Divinity",
+<<<<<<< HEAD
         "accept:2039 @1455:-1260.55,-4835.95  Accept Find Bingles",
         "accept:3681 @1455:-896.46,-4601.64  Accept Tome of Divinity",
         "obj:95217:2 @1426:-1849.31,-5485.92  Objective The Quarry\u0027s Smith / Toughened Boar Hide (4)",
+=======
+        "turnin:94817 @1455:-910.38,-4623.22  TurnIn Confounding Flash",
+        "accept:2039 @1455:-1260.55,-4835.95  Accept Find Bingles",
+        "accept:3681 @1455:-896.46,-4601.64  Accept Tome of Divinity",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:1783:1 @1426:-2055.18,-5784.37  Objective The Tome of Divinity / Narm Faulk slain (1)",
         "turnin:1783 @1426:-2055.18,-5784.37  TurnIn The Tome of Divinity",
         "accept:1784 @1426:-2055.18,-5784.37  Accept The Tome of Divinity",
         "obj:1784:1 @1426:-2007.9,-5890.09  Objective The Tome of Divinity / Dark Iron Script (1)",
+<<<<<<< HEAD
         "turnin:95217 @1426:-1596.17,-5712.14  TurnIn The Quarry\u0027s Smith",
         "turnin:96392 @1426:-1395.23,-5798.16  TurnIn Farsen\u0027s Watch",
         "turnin:94472 @1426:381.71,-6051.63  TurnIn Earth Sapta",
+=======
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:1784 @1455:-899.7,-4613.03  TurnIn The Tome of Divinity",
         "accept:1785 @1455:-899.7,-4613.03  Accept The Tome of Divinity",
         "turnin:1785 @1455:-932.04,-4633.5  TurnIn The Tome of Divinity"
@@ -301,6 +550,7 @@
       "part": 3,
       "steps": [
         "accept:1919 @1426:-537.29,-5587.04  Accept Report to Jennea",
+<<<<<<< HEAD
         "turnin:94817 @1455:-910.38,-4623.22  TurnIn Confounding Flash",
         "turnin:96403 @1455:-969.67,-4805.34  TurnIn Important Heirlooms",
         "turnin:96394 @1455:-977.19,-4821.54  TurnIn The Restless Dead",
@@ -310,6 +560,12 @@
         "turnin:95217 @1426:-1596.17,-5712.14  TurnIn The Quarry\u0027s Smith",
         "turnin:96392 @1426:-1395.23,-5798.16  TurnIn Farsen\u0027s Watch",
         "turnin:94472 @1426:381.71,-6051.63  TurnIn Earth Sapta"
+=======
+        "obj:98319:1 @1426:-317.14,-5506.27  Objective Secure the Mountain / Mountaineer Cornelius",
+        "turnin:98319 @1426:-369.84,-5750.88  TurnIn Secure the Mountain",
+        "turnin:94817 @1455:-910.38,-4623.22  TurnIn Confounding Flash",
+        "accept:2041 @1455:-1260.55,-4835.95  Accept Speak with Shoni"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
@@ -318,6 +574,7 @@
         "accept:2299 @1426:-540.25,-5604.44  Accept To Hulfdan!",
         "turnin:2299 @1455:-1124.4,-4647.54  TurnIn To Hulfdan!",
         "accept:2298 @1455:-1124.4,-4647.54  Accept Kingly Shakedown",
+<<<<<<< HEAD
         "turnin:94817 @1455:-910.38,-4623.22  TurnIn Confounding Flash",
         "turnin:96403 @1455:-969.67,-4805.34  TurnIn Important Heirlooms",
         "turnin:96394 @1455:-977.19,-4821.54  TurnIn The Restless Dead",
@@ -328,11 +585,19 @@
         "turnin:95217 @1426:-1596.17,-5712.14  TurnIn The Quarry\u0027s Smith",
         "turnin:96392 @1426:-1395.23,-5798.16  TurnIn Farsen\u0027s Watch",
         "turnin:94472 @1426:381.71,-6051.63  TurnIn Earth Sapta"
+=======
+        "obj:98319:1 @1426:-317.14,-5506.27  Objective Secure the Mountain / Mountaineer Cornelius",
+        "turnin:98319 @1426:-369.84,-5750.88  TurnIn Secure the Mountain",
+        "turnin:94817 @1455:-910.38,-4623.22  TurnIn Confounding Flash",
+        "accept:1073 @1455:-1283.47,-4842.96  Accept Ineptitude \u002B Chemicals = Fun",
+        "accept:1074 @1455:-1283.47,-4842.96  Accept Ineptitude \u002B Chemicals = Fun"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 5,
       "steps": [
+<<<<<<< HEAD
         "accept:1654 @1426:-783.05,-5089.29  Accept The Test of Righteousness",
         "accept:1806 @1426:-783.05,-5089.29  Accept The Test of Righteousness",
         "turnin:1806 @1426:-783.05,-5089.29  TurnIn The Test of Righteousness",
@@ -358,6 +623,28 @@
         "accept:466 @1426:-641.7,-5473.11  Accept Search for Incendicite",
         "turnin:2927 @1426:-458,-5498.72  TurnIn The Day After",
         "turnin:94472 @1426:381.71,-6051.63  TurnIn Earth Sapta"
+=======
+        "accept:1717 @1455:-1090.17,-4618.1  Accept Gakin\u0027s Summons",
+        "accept:94494 @1455:-1088.58,-4640.47  Accept Call of Water",
+        "accept:5677 @1455:-909.11,-4612.29  Accept Arcane Feedback",
+        "accept:5641 @1455:-909.11,-4612.29  Accept A Lack of Fear",
+        "accept:5675 @1455:-909.11,-4612.29  Accept Elune\u0027s Grace",
+        "accept:1708 @1455:-1250.58,-4812.47  Accept Iron Coral",
+        "accept:1709 @1455:-1250.58,-4812.47  Accept Klockmort\u0027s Creation",
+        "turnin:1709 @1455:-1250.58,-4812.47  TurnIn Klockmort\u0027s Creation",
+        "accept:1806 @1426:-783.05,-5089.29  Accept The Test of Righteousness",
+        "accept:1654 @1426:-783.05,-5089.29  Accept The Test of Righteousness",
+        "turnin:1806 @1426:-783.05,-5089.29  TurnIn The Test of Righteousness",
+        "turnin:94817 @1455:-910.38,-4623.22  TurnIn Confounding Flash",
+        "accept:2927 @1455:-1260.55,-4835.95  Accept The Day After",
+        "accept:1698 @1455:-1269.72,-5047.51  Accept Yorus Barleybrew",
+        "accept:467 @1455:-1288.61,-5065.24  Accept Stonegear\u0027s Search",
+        "turnin:467 @1426:-641.7,-5473.11  TurnIn Stonegear\u0027s Search",
+        "accept:466 @1426:-641.7,-5473.11  Accept Search for Incendicite",
+        "turnin:2927 @1426:-458,-5498.72  TurnIn The Day After",
+        "obj:98319:1 @1426:-317.14,-5506.27  Objective Secure the Mountain / Mountaineer Cornelius",
+        "turnin:98319 @1426:-369.84,-5750.88  TurnIn Secure the Mountain"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
@@ -368,6 +655,7 @@
         "accept:2922 @1455:-1263.47,-4834.78  Accept Save Techbot\u0027s Brain!",
         "accept:2924 @1455:-1250.58,-4812.47  Accept Essential Artificials",
         "item:6681 @1455:-1124.4,-4647.54  ItemAccept The Manor, Ravenholdt",
+<<<<<<< HEAD
         "turnin:96393 @1455:-1022.65,-4865.75  TurnIn Old Ironforge Incursion",
         "turnin:96394 @1455:-977.19,-4821.54  TurnIn The Restless Dead",
         "turnin:96403 @1455:-969.67,-4805.34  TurnIn Important Heirlooms",
@@ -382,11 +670,23 @@
         "obj:95217:2 @1426:-1849.31,-5485.92  Objective The Quarry\u0027s Smith / Toughened Boar Hide (4)",
         "turnin:95217 @1426:-1596.17,-5712.14  TurnIn The Quarry\u0027s Smith",
         "turnin:96392 @1426:-1395.23,-5798.16  TurnIn Farsen\u0027s Watch"
+=======
+        "turnin:5641 @1455:-909.11,-4612.29  TurnIn A Lack of Fear",
+        "turnin:94817 @1455:-910.38,-4623.22  TurnIn Confounding Flash",
+        "obj:2926:1 @1426:714.15,-4998.01  Objective Gnogaine / Full Leaden Collection Phial (1)",
+        "obj:2922:1 @1426:827.92,-4925.45  Objective Save Techbot\u0027s Brain! / Techbot\u0027s Memory Core (1)",
+        "obj:98319:1 @1426:-317.14,-5506.27  Objective Secure the Mountain / Mountaineer Cornelius",
+        "turnin:98319 @1426:-369.84,-5750.88  TurnIn Secure the Mountain",
+        "turnin:2926 @1426:-458,-5498.72  TurnIn Gnogaine",
+        "accept:2962 @1426:-458,-5498.72  Accept The Only Cure is More Green Glow",
+        "turnin:2922 @1455:-1263.47,-4834.78  TurnIn Save Techbot\u0027s Brain!"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 7,
       "steps": [
+<<<<<<< HEAD
         "turnin:94472 @1426:381.71,-6051.63  TurnIn Earth Sapta",
         "turnin:2962 @1426:-458,-5498.72  TurnIn The Only Cure is More Green Glow",
         "turnin:466 @1426:-641.7,-5473.11  TurnIn Search for Incendicite",
@@ -408,6 +708,24 @@
         "obj:95217:2 @1426:-1849.31,-5485.92  Objective The Quarry\u0027s Smith / Toughened Boar Hide (4)",
         "turnin:95217 @1426:-1596.17,-5712.14  TurnIn The Quarry\u0027s Smith",
         "turnin:96392 @1426:-1395.23,-5798.16  TurnIn Farsen\u0027s Watch",
+=======
+        "obj:98319:1 @1426:-317.14,-5506.27  Objective Secure the Mountain / Mountaineer Cornelius",
+        "turnin:98319 @1426:-369.84,-5750.88  TurnIn Secure the Mountain",
+        "turnin:2962 @1426:-458,-5498.72  TurnIn The Only Cure is More Green Glow",
+        "turnin:466 @1426:-641.7,-5473.11  TurnIn Search for Incendicite",
+        "accept:700 @1455:-1022.25,-5033.8  Accept A King\u0027s Tribute",
+        "turnin:700 @1455:-1022.65,-4865.75  TurnIn A King\u0027s Tribute",
+        "turnin:2924 @1455:-1250.58,-4812.47  TurnIn Essential Artificials",
+        "accept:2930 @1455:-1265.68,-4823.02  Accept Data Rescue",
+        "accept:1939 @1455:-929.04,-4613.03  Accept High Sorcerer Andromath",
+        "accept:683 @1455:-1215.64,-4924.32  Accept Sara Balloo\u0027s Plea",
+        "turnin:683 @1455:-1022.65,-4865.75  TurnIn Sara Balloo\u0027s Plea",
+        "accept:686 @1455:-1022.65,-4865.75  Accept A King\u0027s Tribute",
+        "turnin:686 @1455:-1022.25,-5033.8  TurnIn A King\u0027s Tribute",
+        "accept:689 @1455:-1022.25,-5033.8  Accept A King\u0027s Tribute",
+        "turnin:5641 @1455:-909.11,-4612.29  TurnIn A Lack of Fear",
+        "turnin:94817 @1455:-910.38,-4623.22  TurnIn Confounding Flash",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:2930:collect9279 @1426:692.48,-5160.54  Objective Data Rescue / White Punch Card"
       ]
     },
@@ -415,6 +733,7 @@
       "part": 8,
       "steps": [
         "accept:1718 @1455:-1269.72,-5047.51  Accept The Islander",
+<<<<<<< HEAD
         "turnin:94472 @1426:381.71,-6051.63  TurnIn Earth Sapta",
         "obj:2930:collect9279 @1426:692.48,-5160.54  Objective Data Rescue / White Punch Card",
         "turnin:2962 @1426:-458,-5498.72  TurnIn The Only Cure is More Green Glow",
@@ -433,6 +752,21 @@
         "obj:95217:2 @1426:-1849.31,-5485.92  Objective The Quarry\u0027s Smith / Toughened Boar Hide (4)",
         "turnin:95217 @1426:-1596.17,-5712.14  TurnIn The Quarry\u0027s Smith",
         "turnin:96392 @1426:-1395.23,-5798.16  TurnIn Farsen\u0027s Watch"
+=======
+        "obj:98319:1 @1426:-317.14,-5506.27  Objective Secure the Mountain / Mountaineer Cornelius",
+        "obj:2930:collect9279 @1426:692.48,-5160.54  Objective Data Rescue / White Punch Card",
+        "turnin:98319 @1426:-369.84,-5750.88  TurnIn Secure the Mountain",
+        "turnin:2962 @1426:-458,-5498.72  TurnIn The Only Cure is More Green Glow",
+        "turnin:466 @1426:-641.7,-5473.11  TurnIn Search for Incendicite",
+        "accept:1179 @1455:-1288.61,-5065.24  Accept The Brassbolts Brothers",
+        "accept:1798 @1455:-1090.17,-4618.1  Accept Seeking Strahad",
+        "accept:1802 @1455:-1300.16,-4618.78  Accept Tome of the Cabal",
+        "accept:1804 @1455:-1300.16,-4618.78  Accept Tome of the Cabal",
+        "turnin:2930 @1455:-1265.68,-4823.02  TurnIn Data Rescue",
+        "turnin:2924 @1455:-1250.58,-4812.47  TurnIn Essential Artificials",
+        "turnin:5641 @1455:-909.11,-4612.29  TurnIn A Lack of Fear",
+        "turnin:94817 @1455:-910.38,-4623.22  TurnIn Confounding Flash"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     }
   ]

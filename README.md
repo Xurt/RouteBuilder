@@ -13,6 +13,12 @@ You need the .NET 8 SDK and, for the first download, git (without git it downloa
 
 `update` fetches QuestieDB into a `QuestieDB` folder next to where you run it and runs QuestieDB's own
 export script (it ships its own Lua for Windows and Linux). Run it again whenever you want newer data.
+<<<<<<< HEAD
+=======
+With git it fetches only the newest QuestieDB commit; a `QuestieDB` folder left by an earlier zip
+download is replaced by a git copy, so later updates are quick. If git fails it says why, then falls
+back to the zip.
+>>>>>>> zone/Durotar-Horde-vendor_trainer
 
 ## Building a guide
 
@@ -29,6 +35,12 @@ Each build writes two files into `guides`:
 * `<Zone> (<who>).lua` - the guide. See "Getting the guides into the game" below.
 * `<Zone> (<who>).report.txt` - what went in, what was left out and why, and what to check in game.
 
+<<<<<<< HEAD
+=======
+The console also lists any other guide files of the same zone still in `guides` (other level ranges,
+for instance); delete the ones a build replaces, or the addon loads both.
+
+>>>>>>> zone/Durotar-Horde-vendor_trainer
 Without `--race`/`--class` you get one route for the whole faction. Quests everyone can do are ordered
 first; class and race quests are slotted into that order and tagged (`<< Paladin`, `<< Undead`), so they
 only show for those characters. With `--race` and `--class` the whole order is tuned for that one
@@ -47,8 +59,23 @@ lowest level, and is written as `<Zone> <min>-<max> (<who>).lua`, so the ranges 
 Quests near the top that need a level the range does not quite reach stay in, behind a short "grind
 to level N" step. A quest whose prerequisite sits in an earlier range only shows once that
 prerequisite is done, so play the ranges in order.
+<<<<<<< HEAD
 `--rxp` points at a RestedXP `Guides` folder (inside the addon); RouteBuilder reads the objective
 numbers RestedXP uses and flags or fixes the ones where the database disagrees.
+=======
+`--rxp` points at a RestedXP `Guides` folder (inside the addon, best its `forever` folder). RouteBuilder
+reads the objective numbers RestedXP uses and flags or fixes the ones where the database disagrees, and
+copies in RestedXP's training, vendor and flight-path steps for the zone:
+
+* Each one is placed next to the quest step it comes after in RestedXP's guide (or the one before it,
+  when RestedXP does both at one NPC), so it moves with that step if the route changes. If our guide
+  does not have that quest, the nearest one RestedXP does around it is used.
+* Only steps for this faction, on this zone's maps, and from a RestedXP guide whose level range the
+  route is in at that point. A build for one race and class takes only the steps for it.
+* RestedXP's own conditions come along (`.money`, `.xp`, class tags), so its "train if you can afford
+  it" variants still choose themselves in game. Hardcore-only variants are left out.
+* `--no-rxp-steps` leaves them out. The report says how many were added.
+>>>>>>> zone/Durotar-Horde-vendor_trainer
 
 ## Keeping the route between builds
 
@@ -74,6 +101,32 @@ once with `--order-from`, pointing at that guide, with the same options it was b
 
 From then on the saved order in `locks` is used.
 
+<<<<<<< HEAD
+=======
+## Starting from a RestedXP guide (RxpToLock)
+
+`RxpToLock` is a second, small program in this folder. It reads RestedXP guide files and saves their step
+order (pickups, objectives, hand-ins) as the zone's lock file. The next build follows RestedXP's order
+for every quest both have and slots in the zone's quests RestedXP skips. Quests RouteBuilder does not count
+as part of the zone (RestedXP's guides visit other zones too) are left out. Run it from this folder, with
+the options of the build you will run next:
+
+    dotnet run --project RxpToLock -c Release -- --zone Durotar --faction Horde "<RXPGuides>\Guides\forever\Horde-01-12_Durotar.lua"
+    dotnet run -c Release -- build --zone Durotar --faction Horde --rxp "<RXPGuides>\Guides\forever"
+
+* It lists the quests it left out as belonging elsewhere, the zone's quests RestedXP does not do, and any
+  objective numbers RouteBuilder does not have.
+* Pass the RestedXP folder with `--rxp` when building, so objective numbers match RestedXP's.
+* `--race` and `--class` take only the steps RestedXP shows that character. Without them every class's
+  and race's steps are taken, for a faction guide.
+* `--guides "1-6 Durotar,6-10 Durotar"` takes only those guides (by their `#name`) from the files.
+* A lock that was already there is kept as `.bak`. The new one is an ordinary lock from then on: edit it,
+  or build with `--fresh` to go back to RouteBuilder's own plan.
+* Distances are still measured in straight lines, so a RestedXP order usually comes out a little longer
+  in the report than RouteBuilder's own plan; RestedXP plans around terrain and grinding, which RouteBuilder
+  does not see.
+
+>>>>>>> zone/Durotar-Horde-vendor_trainer
 ## Getting the guides into the game
 
 `Make-Addon.ps1` packs everything in `guides` into a small addon of its own, which lists RestedXP as a
@@ -105,7 +158,16 @@ build; the folder is rebuilt from scratch each time.
   goes. If the zone covers more levels than its own quests give, the guide is cut into parts with a
   level check between them ("the rest is planned from level 18; come back then").
 * **Hubs.** Whenever you are at a quest hub, everything you can pick up or hand in there is part of
+<<<<<<< HEAD
   that stop. Nothing on offer is left for a later visit.
+=======
+  that stop. Nothing on offer is left for a later visit. A quest more than three levels above you is
+  not "on offer" yet: it is picked up on a later visit, close to when you can do it (`PickupAhead`,
+  `AheadCost` in settings).
+* **Finishing what you pick up.** Carrying a picked-up quest whose objectives are not done yet costs a
+  little per yard (`Open`), so the plan picks up a group of quests, does them, and hands them in before
+  moving on, instead of leaving a starting area with its quests half done.
+>>>>>>> zone/Durotar-Horde-vendor_trainer
 * **Loops.** Objective steps get a `#loop` of waypoints over the spawns. When the chosen spot holds fewer
   than the objective needs (five Lazy Peons that each sleep somewhere else), the loop takes in the
   objective's other known spawn points, nearest first (`SpreadRange`).
@@ -118,7 +180,12 @@ build; the folder is rebuilt from scratch each time.
   plan hands it in on the way rather than carrying it past. "On the way" is judged in straight lines
   (`PassRadius`, `PassDetour` and `PassMiss` in settings), so a road that bends through a town is not seen.
 * **Quest log.** Forever's 40 slots are checked for every race/class combination.
+<<<<<<< HEAD
 * **Checks.** The finished guide is replayed as each race/class combination; anything out of order
+=======
+* **Checks.** The finished guide is replayed as each race/class combination that exists (classic's,
+  plus Forever's, such as Undead Paladin, Orc Mage and Skyborne; more are picked up from the quest data); anything out of order
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   (hand-in before pickup, a prerequisite skipped, a step shown to the wrong class) is reported.
 
 ## Zone files: where your corrections go

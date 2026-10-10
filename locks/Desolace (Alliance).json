@@ -1,11 +1,16 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "31-40 Desolace",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:26",
+=======
+  "saved": "2026-10-10 13:04",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
+<<<<<<< HEAD
         "accept:1387 @1443:1232.81,126.21  Accept Centaur Bounty",
         "accept:1385 @1443:1236.41,124.41  Accept Brutal Politics",
         "accept:1382 @1443:1236.41,124.41  Accept Strange Alliance",
@@ -34,6 +39,36 @@
         "obj:5741:1 @1443:1752.98,-451.79  Objective Sceptre of Light / Sceptre of Light (1)",
         "turnin:1455 @1443:1257.09,163.38  TurnIn The Karnitol Shipwreck",
         "turnin:5741 @1443:2485.35,-362.15  TurnIn Sceptre of Light",
+=======
+        "turnin:6141 @1443:1242.7,214.95  TurnIn Brother Anton",
+        "turnin:1453 @1443:1257.09,163.38  TurnIn Reclaimers\u0027 Business in Desolace",
+        "accept:1458 @1443:1257.09,163.38  Accept Reagents for Reclaimers Inc.",
+        "accept:1387 @1443:1232.81,126.21  Accept Centaur Bounty",
+        "accept:1385 @1443:1236.41,124.41  Accept Brutal Politics",
+        "accept:1437 @1443:1246.3,97.73  Accept Vahlarriel\u0027s Search",
+        "obj:1387:1 @1443:1043.99,-807.94  Objective Centaur Bounty / Centaur Ear (15)",
+        "turnin:1385 @1443:862.81,-1591.3  TurnIn Brutal Politics",
+        "turnin:1437 @1443:1692.29,-82.75  TurnIn Vahlarriel\u0027s Search",
+        "accept:1465 @1443:1692.29,-82.75  Accept Vahlarriel\u0027s Search",
+        "turnin:1465 @1443:1246.3,97.73  TurnIn Vahlarriel\u0027s Search",
+        "accept:1438 @1443:1246.3,97.73  Accept Vahlarriel\u0027s Search",
+        "turnin:1387 @1443:1232.81,126.21  TurnIn Centaur Bounty",
+        "accept:1454 @1443:1257.09,163.38  Accept The Karnitol Shipwreck",
+        "accept:1382 @1443:1236.41,124.41  Accept Strange Alliance",
+        "obj:1458:1 @1443:823.24,-282.11  Objective Reagents for Reclaimers Inc. / Hatefury Claw (10)",
+        "obj:1458:2 @1443:823.24,-282.11  Objective Reagents for Reclaimers Inc. / Hatefury Horn (10)",
+        "turnin:1438 @1443:1766.92,-331.27  TurnIn Vahlarriel\u0027s Search",
+        "turnin:1454 @1443:2609.89,-460.78  TurnIn The Karnitol Shipwreck",
+        "accept:1455 @1443:2609.89,-460.78  Accept The Karnitol Shipwreck",
+        "accept:5741 @1443:2485.35,-362.15  Accept Sceptre of Light",
+        "obj:5741:1 @1443:1752.98,-451.79  Objective Sceptre of Light / Sceptre of Light (1)",
+        "turnin:1455 @1443:1257.09,163.38  TurnIn The Karnitol Shipwreck",
+        "turnin:1458 @1443:1257.09,163.38  TurnIn Reagents for Reclaimers Inc.",
+        "turnin:5741 @1443:2485.35,-362.15  TurnIn Sceptre of Light",
+        "accept:6161 @1443:2611.69,-459.58  Accept Claim Rackmore\u0027s Treasure!",
+        "turnin:1382 @1443:2604.94,-1923.77  TurnIn Strange Alliance",
+        "obj:6161:1 @1443:3039.24,-1843.12  Objective Claim Rackmore\u0027s Treasure! / Rackmore\u0027s Silver Key (1)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:6161:2 @1443:2624.27,-261.42  Objective Claim Rackmore\u0027s Treasure! / Rackmore\u0027s Golden Key (1)",
         "turnin:6161 @1443:2884.58,190.96  TurnIn Claim Rackmore\u0027s Treasure!"
       ]
@@ -46,9 +81,15 @@
         "turnin:1439 @1443:1766.92,-331.27  TurnIn Search for Tyranis",
         "accept:1459 @1443:1257.09,163.38  Accept Reagents for Reclaimers Inc.",
         "accept:1456 @1443:1257.09,163.38  Accept The Karnitol Shipwreck",
+<<<<<<< HEAD
         "obj:1459:2 @1443:2213.8,-137.01  Objective Reagents for Reclaimers Inc. / Aged Kodo Hide (3)",
         "obj:1456:1 @1443:2922.8,181.37  Objective The Karnitol Shipwreck / Karnitol\u0027s Satchel (1)",
         "obj:1459:1 @1443:1949,219.15  Objective Reagents for Reclaimers Inc. / Scorpashi Venom (1)",
+=======
+        "obj:1459:1 @1443:1380.28,-83.04  Objective Reagents for Reclaimers Inc. / Scorpashi Venom (1)",
+        "obj:1459:2 @1443:2213.8,-137.01  Objective Reagents for Reclaimers Inc. / Aged Kodo Hide (3)",
+        "obj:1456:1 @1443:2922.8,181.37  Objective The Karnitol Shipwreck / Karnitol\u0027s Satchel (1)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:1459 @1443:1257.09,163.38  TurnIn Reagents for Reclaimers Inc.",
         "turnin:1456 @1443:1257.09,163.38  TurnIn The Karnitol Shipwreck",
         "accept:1457 @1443:1257.09,163.38  Accept The Karnitol Shipwreck",
@@ -66,6 +107,7 @@
         "accept:261 @1443:1242.7,214.95  Accept Down the Scarlet Path",
         "accept:1466 @1443:1257.09,163.38  Accept Reagents for Reclaimers Inc.",
         "accept:5501 @1443:1431.08,-716.8  Accept Bone Collector",
+<<<<<<< HEAD
         "accept:6134 @1443:2082.98,-1401.53  Accept Ghost-o-plasm Round Up",
         "obj:1466:1 @1443:1676.1,-1811.04  Objective Reagents for Reclaimers Inc. / Felhound Brain (10)",
         "obj:6134:1 @1443:1347.91,-2294.91  Objective Ghost-o-plasm Round Up / Ghost-o-plasm (8)",
@@ -74,6 +116,16 @@
         "obj:1466:3 @1443:1904.94,-2051.78  Objective Reagents for Reclaimers Inc. / Doomwarder Blood (1)",
         "turnin:6134 @1443:2082.98,-1401.53  TurnIn Ghost-o-plasm Round Up",
         "obj:5501:1 @1443:2035.32,-1310.99  Objective Bone Collector / Kodo Bone (10)",
+=======
+        "obj:5501:1 @1443:2035.32,-1310.99  Objective Bone Collector / Kodo Bone (10)",
+        "accept:6134 @1443:2082.98,-1401.53  Accept Ghost-o-plasm Round Up",
+        "obj:1466:1 @1443:1676.1,-1811.04  Objective Reagents for Reclaimers Inc. / Felhound Brain (10)",
+        "obj:261:1 @1443:1344.31,-2188.18  Objective Down the Scarlet Path / Undead Ravager slain (30)",
+        "obj:6134:1 @1443:1347.91,-2294.91  Objective Ghost-o-plasm Round Up / Ghost-o-plasm (8)",
+        "obj:1466:2 @1443:1894.6,-2064.97  Objective Reagents for Reclaimers Inc. / Nether Wing (10)",
+        "obj:1466:3 @1443:1904.94,-2051.78  Objective Reagents for Reclaimers Inc. / Doomwarder Blood (1)",
+        "turnin:6134 @1443:2082.98,-1401.53  TurnIn Ghost-o-plasm Round Up",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:5501 @1443:1431.08,-716.8  TurnIn Bone Collector",
         "turnin:1466 @1443:1257.09,163.38  TurnIn Reagents for Reclaimers Inc.",
         "accept:1467 @1443:1257.09,163.38  Accept Reagents for Reclaimers Inc.",

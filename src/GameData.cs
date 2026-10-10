@@ -111,6 +111,10 @@ public sealed class GameData
 
         d.LoadAreas(repo); d.LoadSupport(repo);
         d.Version = ReadVersion(repo);
+<<<<<<< HEAD
+=======
+        Game.Learn(d);                       // race/class combinations the quest data has class quests for
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         return d;
     }
 
@@ -260,7 +264,11 @@ public static class Updater
         if (!skipDownload)
         {
             try { Download(repo); }
+<<<<<<< HEAD
             catch (Exception e) when (e is HttpRequestException or IOException or TaskCanceledException or InvalidDataException)
+=======
+            catch (Exception e) when (e is HttpRequestException or IOException or TaskCanceledException or InvalidDataException or UnauthorizedAccessException)
+>>>>>>> zone/Durotar-Horde-vendor_trainer
             {
                 if (!Directory.Exists(Path.Combine(repo, "tools"))) throw new InvalidOperationException("Could not download QuestieDB: " + e.Message);
                 Console.WriteLine($"Could not download a newer QuestieDB ({e.Message}); using the copy already here.");
@@ -272,6 +280,7 @@ public static class Updater
     static void Download(string repo)
     {
         string version;
+<<<<<<< HEAD
         if (Directory.Exists(Path.Combine(repo, ".git")) && Run("git", "pull --ff-only --depth 1", repo, quiet: true) == 0)
             version = "commit " + Capture("git", "log -1 \"--format=%h, %cs\"", repo);
         else if (!Directory.Exists(repo) && Run("git", $"clone --depth 1 --branch {Branch} {RepoUrl}.git \"{repo}\"", null, quiet: true) == 0)
@@ -279,22 +288,109 @@ public static class Updater
         else
         {
             Console.WriteLine("git not available or failed; downloading the zip instead...");
+=======
+        string? gitError = null;
+        if (Directory.Exists(Path.Combine(repo, ".git")) && Refresh(repo, out gitError))
+            version = "commit " + Capture("git", "log -1 \"--format=%h, %cs\"", repo);
+        else if (Clone(repo, ref gitError))
+            version = "commit " + Capture("git", "log -1 \"--format=%h, %cs\"", repo);
+        else
+        {
+            Console.WriteLine(gitError == null ? "git not available; downloading the zip instead..." : $"git failed ({gitError}); downloading the zip instead...");
+>>>>>>> zone/Durotar-Horde-vendor_trainer
             string zip = Path.Combine(Path.GetTempPath(), "questiedb.zip");
             using (var http = new HttpClient { Timeout = TimeSpan.FromMinutes(20) })
             using (var s = http.GetStreamAsync($"{RepoUrl}/archive/refs/heads/{Branch}.zip").GetAwaiter().GetResult())
             using (var f = File.Create(zip)) s.CopyTo(f);
             string tmp = repo + ".unzip";
+<<<<<<< HEAD
             if (Directory.Exists(tmp)) Directory.Delete(tmp, true);
             ZipFile.ExtractToDirectory(zip, tmp);
             if (Directory.Exists(repo)) Directory.Delete(repo, true);
             Directory.Move(Directory.GetDirectories(tmp)[0], repo);
             Directory.Delete(tmp, true); File.Delete(zip);
+=======
+            if (Directory.Exists(tmp)) Wipe(tmp);
+            ZipFile.ExtractToDirectory(zip, tmp);
+            if (Directory.Exists(repo)) Wipe(repo);
+            Directory.Move(Directory.GetDirectories(tmp)[0], repo);
+            Wipe(tmp); File.Delete(zip);
+>>>>>>> zone/Durotar-Horde-vendor_trainer
             version = "zip download, " + DateTime.Now.ToString("yyyy-MM-dd");
         }
         File.WriteAllText(Path.Combine(repo, ".routebuilder-version"), version);
         Console.WriteLine("QuestieDB: " + version);
     }
 
+<<<<<<< HEAD
+=======
+    /// <summary>
+    /// Brings a shallow clone up to date. "git pull --depth 1" cannot do that once QuestieDB has new commits: the new tip's
+    /// history is cut off, so git sees two unrelated branches and refuses to fast-forward. Fetching the tip and moving the
+    /// folder onto it always works. The export's output is in QuestieDB's .gitignore, so nothing of ours is lost.
+    /// </summary>
+    static bool Refresh(string repo, out string? error)
+    {
+        error = null;
+        foreach (var args in new[] { $"fetch --depth 1 origin {Branch}", "reset --hard FETCH_HEAD" })
+        {
+            var (rc, err) = Git(args, repo);
+            if (rc != 0) { error = rc == -1 ? null : err; return false; }
+        }
+        return true;
+    }
+
+    /// <summary>
+    /// A fresh clone. A folder that is already there without git (left by an earlier zip download) is replaced, so the
+    /// next update can use git again instead of downloading the whole zip every time.
+    /// </summary>
+    static bool Clone(string repo, ref string? error)
+    {
+        string target = Directory.Exists(repo) ? repo + ".clone" : repo;
+        if (Directory.Exists(target) && target != repo) Wipe(target);
+        var (rc, err) = Git($"clone --depth 1 --branch {Branch} {RepoUrl}.git \"{target}\"", null);
+        if (rc != 0)
+        {
+            if (rc != -1) error ??= err;
+            if (Directory.Exists(target)) try { Wipe(target); } catch (Exception e) when (e is IOException or UnauthorizedAccessException) { }
+            return false;
+        }
+        if (target != repo)
+        {
+            Wipe(repo);
+            Directory.Move(target, repo);
+        }
+        return true;
+    }
+
+    /// <summary>Deletes a folder, including git's read-only object files (which Directory.Delete refuses on Windows).</summary>
+    static void Wipe(string dir)
+    {
+        foreach (var f in Directory.EnumerateFiles(dir, "*", SearchOption.AllDirectories))
+            if (File.GetAttributes(f).HasFlag(FileAttributes.ReadOnly)) File.SetAttributes(f, FileAttributes.Normal);
+        Directory.Delete(dir, true);
+    }
+
+    /// <summary>Runs git quietly. Returns its exit code (-1 when git could not be started) and the last line it printed as an error.</summary>
+    static (int Code, string Error) Git(string args, string? dir)
+    {
+        try
+        {
+            var psi = new ProcessStartInfo("git", args) { UseShellExecute = false, RedirectStandardOutput = true, RedirectStandardError = true };
+            if (dir != null) psi.WorkingDirectory = dir;
+            using var p = Process.Start(psi)!;
+            var err = new List<string>();
+            p.OutputDataReceived += (_, _) => { };
+            p.ErrorDataReceived += (_, e) => { if (!string.IsNullOrWhiteSpace(e.Data)) lock (err) err.Add(e.Data.Trim()); };
+            p.BeginOutputReadLine(); p.BeginErrorReadLine();
+            p.WaitForExit();
+            string last = err.LastOrDefault(l => l.StartsWith("fatal:") || l.StartsWith("error:")) ?? err.LastOrDefault() ?? "";
+            return (p.ExitCode, last.Length > 0 ? last : $"exit code {p.ExitCode}");
+        }
+        catch (Exception) { return (-1, ""); }
+    }
+
+>>>>>>> zone/Durotar-Horde-vendor_trainer
     /// <summary>Runs QuestieDB's export-forever.lua with the Lua 5.1 interpreter it ships.</summary>
     public static void Export(string repo, string? luaPath)
     {

@@ -1,25 +1,42 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-52 Swamp of Sorrows",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:27",
+=======
+  "saved": "2026-10-10 13:04",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
         "accept:1389 @1435:-2818.83,-10100.99  Accept Draenethyst Crystals",
         "accept:1396 @1435:-2836.27,-10535.73  Accept Encroaching Wildlife",
+<<<<<<< HEAD
         "obj:1396:1 @1435:-2844.52,-10463.86  Objective Encroaching Wildlife / Young Sawtooth Crocolisk slain (8)",
         "obj:1396:3 @1435:-2802.78,-10252.07  Objective Encroaching Wildlife / Swamp Jaguar slain (10)",
         "obj:1396:2 @1435:-2822.27,-10568.15  Objective Encroaching Wildlife / Sorrow Spinner slain (10)",
+=======
+        "obj:1396:2 @1435:-2822.27,-10568.15  Objective Encroaching Wildlife / Sorrow Spinner slain (10)",
+        "obj:1396:1 @1435:-2844.52,-10463.86  Objective Encroaching Wildlife / Young Sawtooth Crocolisk slain (8)",
+        "obj:1396:3 @1435:-2802.78,-10252.07  Objective Encroaching Wildlife / Swamp Jaguar slain (10)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:1396 @1435:-2836.27,-10535.73  TurnIn Encroaching Wildlife",
         "accept:1421 @1435:-2836.27,-10535.73  Accept The Lost Caravan",
         "turnin:8417 @1435:-3009.44,-10632.22  TurnIn A Troubled Spirit",
         "turnin:2783 @1435:-3009.44,-10632.22  TurnIn Petty Squabbles",
         "item:1392 @1435:-3482.19,-10142.28  ItemAccept Noboru the Cudgel",
+<<<<<<< HEAD
         "obj:1389:1 @1435:-3646.88,-9964.13  Objective Draenethyst Crystals / Draenethyst Crystal (6)",
         "obj:1421:1 @1435:-3701.47,-9900.67  Objective The Lost Caravan / Wizards\u0027 Reagents (1)",
         "turnin:1389 @1435:-2818.83,-10100.99  TurnIn Draenethyst Crystals",
         "turnin:1392 @1435:-2818.83,-10100.99  TurnIn Noboru the Cudgel",
+=======
+        "obj:1389:1 @1435:-3501.22,-10063.37  Objective Draenethyst Crystals / Draenethyst Crystal (6)",
+        "obj:1421:1 @1435:-3701.47,-9900.67  Objective The Lost Caravan / Wizards\u0027 Reagents (1)",
+        "turnin:1392 @1435:-2818.83,-10100.99  TurnIn Noboru the Cudgel",
+        "turnin:1389 @1435:-2818.83,-10100.99  TurnIn Draenethyst Crystals",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:1421 @1435:-2836.27,-10535.73  TurnIn The Lost Caravan"
       ]
     },

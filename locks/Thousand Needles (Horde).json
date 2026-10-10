@@ -1,7 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "25-37 Thousand Needles",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:17",
+=======
+  "saved": "2026-10-10 12:53",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
@@ -10,6 +14,7 @@
         "turnin:5881 @1441:-1835.17,-4602.03  TurnIn Calling in the Reserves",
         "item:4881 @1441:-2168.25,-4937.6  ItemAccept Assassination Plot",
         "accept:4821 @1441:-2397.49,-5441.84  Accept Alien Egg",
+<<<<<<< HEAD
         "turnin:4542 @1441:-2442.81,-5455.04  TurnIn Message to Freewind Post",
         "accept:4841 @1441:-2442.81,-5455.04  Accept Pacify the Centaur",
         "turnin:1196 @1441:-2463.49,-5483.49  TurnIn The Sacred Flame",
@@ -20,6 +25,18 @@
         "obj:4841:3 @1441:-2553.25,-5152.61  Objective Pacify the Centaur / Galak Windchaser slain (6)",
         "obj:4841:2 @1441:-2454.25,-5178.72  Objective Pacify the Centaur / Galak Wrangler slain (10)",
         "obj:4841:1 @1441:-2453.81,-5223.89  Objective Pacify the Centaur / Galak Scout slain (12)",
+=======
+        "turnin:1196 @1441:-2463.49,-5483.49  TurnIn The Sacred Flame",
+        "turnin:4542 @1441:-2442.81,-5455.04  TurnIn Message to Freewind Post",
+        "accept:4841 @1441:-2442.81,-5455.04  Accept Pacify the Centaur",
+        "obj:4841:1 @1441:-2453.81,-5223.89  Objective Pacify the Centaur / Galak Scout slain (12)",
+        "obj:4841:2 @1441:-2454.25,-5178.72  Objective Pacify the Centaur / Galak Wrangler slain (10)",
+        "obj:4841:3 @1441:-2553.25,-5152.61  Objective Pacify the Centaur / Galak Windchaser slain (6)",
+        "turnin:1394 @1441:-2807.13,-5183.71  TurnIn Final Passage",
+        "turnin:1532 @1441:-2789.09,-5217.73  TurnIn Call of Air",
+        "turnin:1531 @1441:-2789.09,-5217.73  TurnIn Call of Air",
+        "obj:4821:1 @1441:-2736.29,-5587.33  Objective Alien Egg / Alien Egg (1)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:4841 @1441:-2442.81,-5455.04  TurnIn Pacify the Centaur",
         "accept:5064 @1441:-2442.81,-5455.04  Accept Grimtotem Spying",
         "turnin:4821 @1441:-2397.49,-5441.84  TurnIn Alien Egg",
@@ -45,13 +62,21 @@
       "part": 2,
       "steps": [
         "accept:5151 @1441:-1376.25,-4921.47  Accept Hypercapacitor Gizmo",
+<<<<<<< HEAD
+=======
+        "obj:5151:1 @1441:-1434.77,-4688.85  Objective Hypercapacitor Gizmo / Hypercapacitor Gizmo (1)",
+        "turnin:5151 @1441:-1376.25,-4921.47  TurnIn Hypercapacitor Gizmo",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:1197 @1441:-2463.49,-5483.49  Accept The Sacred Flame",
         "accept:5147 @1441:-2457.33,-5458.56  Accept Wanted - Arnak Grimtotem",
         "accept:4767 @1441:-2410.25,-5401.65  Accept Wind Rider",
         "obj:1197:1 @1441:-2281.77,-4889.79  Objective The Sacred Flame / Cloven Hoof (1)",
         "obj:5147:1 @1441:-2110.17,-4754.85  Objective Wanted - Arnak Grimtotem / Arnak\u0027s Hoof (1)",
+<<<<<<< HEAD
         "obj:5151:1 @1441:-1434.77,-4688.85  Objective Hypercapacitor Gizmo / Hypercapacitor Gizmo (1)",
         "turnin:5151 @1441:-1376.25,-4921.47  TurnIn Hypercapacitor Gizmo",
+=======
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:4767:1 @1441:-969.69,-5026.48  Objective Wind Rider / Highperch Wyvern Egg (10)",
         "turnin:4767 @1441:-2410.25,-5401.65  TurnIn Wind Rider",
         "turnin:5147 @1441:-2442.81,-5455.04  TurnIn Wanted - Arnak Grimtotem",
@@ -61,6 +86,7 @@
     {
       "part": 3,
       "steps": [
+<<<<<<< HEAD
         "accept:1104 @1441:-3867.97,-6229.15  Accept Salt Flat Venom",
         "accept:1110 @1441:-3856.09,-6233.25  Accept Rocket Car Parts",
         "accept:1111 @1441:-3856.09,-6233.25  Accept Wharfmaster Dizzywig",
@@ -90,6 +116,37 @@
         "accept:1106 @1441:-3867.97,-6229.15  Accept Martek the Exiled",
         "accept:1107 @1441:-3871.49,-6228.85  Accept Encrusted Tail Fins",
         "turnin:1110 @1441:-3856.09,-6233.25  TurnIn Rocket Car Parts",
+=======
+        "accept:5762 @1441:-3856.09,-6233.25  Accept Hemet Nesingwary",
+        "accept:1110 @1441:-3856.09,-6233.25  Accept Rocket Car Parts",
+        "accept:1104 @1441:-3867.97,-6229.15  Accept Salt Flat Venom",
+        "accept:1105 @1441:-3871.49,-6228.85  Accept Hardened Shells",
+        "accept:1176 @1441:-3961.25,-6192.48  Accept Load Lightening",
+        "obj:1104:1 @1441:-3878.09,-5961.33  Objective Salt Flat Venom / Salty Scorpid Venom (6)",
+        "obj:1105:1 @1441:-4072.57,-5581.76  Objective Hardened Shells / Hardened Tortoise Shell (9)",
+        "obj:1110:1 @1441:-4248.13,-5753.07  Objective Rocket Car Parts / Rocket Car Parts (30)",
+        "obj:1176:1 @1441:-4303.13,-5882.72  Objective Load Lightening / Hollow Vulture Bone (10)",
+        "turnin:1176 @1441:-3961.25,-6192.48  TurnIn Load Lightening",
+        "accept:1190 @1441:-3961.25,-6192.48  Accept Keeping Pace",
+        "accept:1178 @1441:-3961.25,-6192.48  Accept Goblin Sponsorship",
+        "turnin:1105 @1441:-3871.49,-6228.85  TurnIn Hardened Shells",
+        "turnin:1104 @1441:-3867.97,-6229.15  TurnIn Salt Flat Venom",
+        "turnin:1110 @1441:-3856.09,-6233.25  TurnIn Rocket Car Parts",
+        "accept:1114 @1441:-3856.09,-6233.25  Accept Delivery to the Gnomes",
+        "accept:1111 @1441:-3856.09,-6233.25  Accept Wharfmaster Dizzywig",
+        "accept:1106 @1441:-3867.97,-6229.15  Accept Martek the Exiled",
+        "turnin:1114 @1441:-3867.97,-6229.15  TurnIn Delivery to the Gnomes",
+        "accept:1115 @1441:-3856.09,-6233.25  Accept The Rumormonger",
+        "turnin:1190 @1441:-3830.57,-6236.77  TurnIn Keeping Pace",
+        "accept:1194 @1441:-3830.57,-6236.77  Accept Rizzle\u0027s Schematics",
+        "accept:1107 @1441:-3871.49,-6228.85  Accept Encrusted Tail Fins",
+        "accept:1186 @1441:-3961.25,-6192.48  Accept The Eighteenth Pilot",
+        "turnin:1194 @1441:-3961.25,-6192.48  TurnIn Rizzle\u0027s Schematics",
+        "accept:1188 @1441:-3967.85,-6198.64  Accept Safety First",
+        "turnin:1186 @1441:-3967.85,-6198.64  TurnIn The Eighteenth Pilot",
+        "accept:1187 @1441:-3967.85,-6198.64  Accept Razzeric\u0027s Tweaking",
+        "accept:1951 @1441:-3878.09,-6187.2  Accept Rituals of Power",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:1150 @1441:-2807.13,-5183.71  Accept Test of Endurance",
         "obj:1150:1 @1441:-1603.73,-5603.47  Objective Test of Endurance / Grenka\u0027s Claw (1)",
         "turnin:1150 @1441:-2807.13,-5183.71  TurnIn Test of Endurance",
@@ -104,6 +161,7 @@
       "part": 4,
       "steps": [
         "accept:1175 @1441:-4025.05,-6253.2  Accept A Bump in the Road",
+<<<<<<< HEAD
         "obj:1175:1 @1441:-3754.89,-5649.52  Objective A Bump in the Road / Saltstone Basilisk slain (10)",
         "accept:1147 @1441:-3406.85,-5842.24  Accept The Swarm Grows",
         "obj:1147:1 @1441:-3413.89,-6353.81  Objective The Swarm Grows / Silithid Searcher slain (5)",
@@ -116,6 +174,20 @@
         "obj:1175:2 @1441:-3888.21,-6577.33  Objective A Bump in the Road / Saltstone Crystalhide slain (10)",
         "turnin:1175 @1441:-4025.05,-6253.2  TurnIn A Bump in the Road",
         "turnin:1107 @1441:-3871.49,-6228.85  TurnIn Encrusted Tail Fins",
+=======
+        "obj:1175:2 @1441:-3888.21,-6577.33  Objective A Bump in the Road / Saltstone Crystalhide slain (10)",
+        "obj:1175:3 @1441:-3863.13,-6582.61  Objective A Bump in the Road / Saltstone Gazer slain (6)",
+        "turnin:1107 @1441:-3871.49,-6228.85  TurnIn Encrusted Tail Fins",
+        "obj:1175:1 @1441:-3754.89,-5649.52  Objective A Bump in the Road / Saltstone Basilisk slain (10)",
+        "accept:1147 @1441:-3406.85,-5842.24  Accept The Swarm Grows",
+        "obj:1147:2 @1441:-3270.45,-6484.35  Objective The Swarm Grows / Silithid Hive Drone slain (5)",
+        "obj:1148:1 @1441:-3270.45,-6484.35  Objective Parts of the Swarm / Silithid Heart (1)",
+        "obj:1148:2 @1441:-3270.45,-6484.35  Objective Parts of the Swarm / Silithid Talon (5)",
+        "obj:1148:3 @1441:-3270.45,-6484.35  Objective Parts of the Swarm / Intact Silithid Carapace (3)",
+        "obj:1147:3 @1441:-3299.49,-6463.52  Objective The Swarm Grows / Silithid Invader slain (5)",
+        "obj:1147:1 @1441:-3413.89,-6353.81  Objective The Swarm Grows / Silithid Searcher slain (5)",
+        "turnin:1175 @1441:-4025.05,-6253.2  TurnIn A Bump in the Road",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:1147 @1441:-3406.85,-5842.24  TurnIn The Swarm Grows",
         "accept:5361 @1441:-2442.81,-5455.04  Accept Family Tree"
       ]

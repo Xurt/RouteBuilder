@@ -1,7 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "26-40 Dustwallow Marsh",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:26",
+=======
+  "saved": "2026-10-10 13:03",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
@@ -26,8 +30,13 @@
         "accept:1282 @1445:-4447.87,-3645.78  Accept They Call Him Smiling Jim",
         "turnin:1219 @1445:-4545,-3713.33  TurnIn The Orc Report",
         "accept:1220 @1445:-4545,-3713.33  Accept Captain Vimes",
+<<<<<<< HEAD
         "turnin:1282 @1445:-4556.02,-3735.03  TurnIn They Call Him Smiling Jim",
         "turnin:1220 @1445:-4556.02,-3735.03  TurnIn Captain Vimes",
+=======
+        "turnin:1220 @1445:-4556.02,-3735.03  TurnIn Captain Vimes",
+        "turnin:1282 @1445:-4556.02,-3735.03  TurnIn They Call Him Smiling Jim",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:1266 @1445:-4462.05,-3757.43  Accept The Missing Diplomat",
         "accept:1267 @1445:-4454.17,-3749.73  Accept The Missing Diplomat",
         "turnin:1267 @1445:-4454.17,-3749.73  TurnIn The Missing Diplomat",
@@ -35,20 +44,36 @@
         "accept:1284 @1445:-2534.25,-3700.73  Accept Suspicious Hoofprints",
         "accept:1252 @1445:-2541.07,-3721.73  Accept Lieutenant Paval Reethe",
         "accept:1253 @1445:-2530.57,-3735.03  Accept The Black Shield",
+<<<<<<< HEAD
         "turnin:1252 @1445:-4556.02,-3735.03  TurnIn Lieutenant Paval Reethe",
         "turnin:1253 @1445:-4556.02,-3735.03  TurnIn The Black Shield",
         "turnin:1284 @1445:-4556.02,-3735.03  TurnIn Suspicious Hoofprints",
         "accept:1319 @1445:-4556.02,-3735.03  Accept The Black Shield",
+=======
+        "turnin:1284 @1445:-4556.02,-3735.03  TurnIn Suspicious Hoofprints",
+        "turnin:1253 @1445:-4556.02,-3735.03  TurnIn The Black Shield",
+        "turnin:1252 @1445:-4556.02,-3735.03  TurnIn Lieutenant Paval Reethe",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:1259 @1445:-4556.02,-3735.03  Accept Lieutenant Paval Reethe",
         "turnin:1259 @1445:-4547.62,-3717.18  TurnIn Lieutenant Paval Reethe",
         "accept:1285 @1445:-4547.62,-3717.18  Accept Daelin\u0027s Men",
         "turnin:1285 @1445:-4556.02,-3735.03  TurnIn Daelin\u0027s Men",
+<<<<<<< HEAD
         "accept:1286 @1445:-4556.02,-3735.03  Accept The Deserters",
         "turnin:1319 @1445:-4374.37,-3798.38  TurnIn The Black Shield",
         "accept:1320 @1445:-4374.37,-3798.38  Accept The Black Shield",
         "accept:1949 @1445:-3393.15,-4031.48  Accept Hidden Secrets",
         "turnin:1286 @1445:-2869.72,-3934.18  TurnIn The Deserters",
         "accept:1287 @1445:-2869.72,-3934.18  Accept The Deserters",
+=======
+        "accept:1319 @1445:-4556.02,-3735.03  Accept The Black Shield",
+        "accept:1286 @1445:-4556.02,-3735.03  Accept The Deserters",
+        "turnin:1319 @1445:-4374.37,-3798.38  TurnIn The Black Shield",
+        "turnin:1286 @1445:-2869.72,-3934.18  TurnIn The Deserters",
+        "accept:1287 @1445:-2869.72,-3934.18  Accept The Deserters",
+        "accept:1949 @1445:-3393.15,-4031.48  Accept Hidden Secrets",
+        "accept:1320 @1445:-4374.37,-3798.38  Accept The Black Shield",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:1320 @1445:-4556.02,-3735.03  TurnIn The Black Shield",
         "turnin:1287 @1445:-4556.02,-3735.03  TurnIn The Deserters"
       ]
@@ -57,10 +82,17 @@
       "part": 3,
       "steps": [
         "accept:1218 @1445:-3885.6,-2952.78  Accept Soothing Spices",
+<<<<<<< HEAD
         "accept:1177 @1445:-2820.37,-3372.43  Accept Hungry!",
         "obj:1218:1 @1445:-4463.1,-3834.43  Objective Soothing Spices / Soothing Spices (3)",
         "accept:1204 @1445:-4457.85,-3624.78  Accept Mudrock Soup and Bugs",
         "turnin:1135 @1445:-4464.15,-3613.58  TurnIn Highperch Venom",
+=======
+        "turnin:1135 @1445:-4464.15,-3613.58  TurnIn Highperch Venom",
+        "accept:1204 @1445:-4457.85,-3624.78  Accept Mudrock Soup and Bugs",
+        "obj:1218:1 @1445:-4463.1,-3834.43  Objective Soothing Spices / Soothing Spices (3)",
+        "accept:1177 @1445:-2820.37,-3372.43  Accept Hungry!",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:1218 @1445:-3885.6,-2952.78  TurnIn Soothing Spices",
         "obj:1177:1 @1445:-3967.5,-2775.33  Objective Hungry! / Mirefin Head (12)",
         "obj:1204:1 @1445:-4251,-3035.73  Objective Mudrock Soup and Bugs / Forked Mudrock Tongue (8)",

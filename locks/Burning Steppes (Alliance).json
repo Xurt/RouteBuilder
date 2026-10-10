@@ -1,11 +1,16 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-56 Burning Steppes",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:27",
+=======
+  "saved": "2026-10-10 13:05",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
+<<<<<<< HEAD
         "accept:3823 @1428:-2743.57,-8371.94  Accept Extinguish the Firegut",
         "turnin:4223 @1428:-2748.84,-8378.58  TurnIn The True Masters",
         "accept:4262 @1428:-2768.47,-8398.88  Accept Overmaster Pyron",
@@ -14,11 +19,22 @@
         "turnin:4810 @1428:-2177.65,-7499.75  TurnIn Return to Tinkee",
         "obj:3823:2 @1428:-2529.15,-7913.59  Objective Extinguish the Firegut / Firegut Ogre slain (15)",
         "turnin:3823 @1428:-2743.57,-8371.94  TurnIn Extinguish the Firegut"
+=======
+        "turnin:4223 @1428:-2748.84,-8378.58  TurnIn The True Masters",
+        "accept:4262 @1428:-2768.47,-8398.88  Accept Overmaster Pyron",
+        "accept:3823 @1428:-2743.57,-8371.94  Accept Extinguish the Firegut",
+        "obj:3823:3 @1428:-2621.42,-7911.83  Objective Extinguish the Firegut / Firegut Brute slain (7)",
+        "obj:3823:1 @1428:-2631.38,-7846.63  Objective Extinguish the Firegut / Firegut Ogre Mage slain (8)",
+        "obj:3823:2 @1428:-2529.15,-7913.59  Objective Extinguish the Firegut / Firegut Ogre slain (15)",
+        "turnin:3823 @1428:-2743.57,-8371.94  TurnIn Extinguish the Firegut",
+        "turnin:4810 @1428:-2177.65,-7499.75  TurnIn Return to Tinkee"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 2,
       "steps": [
+<<<<<<< HEAD
         "accept:4283 @1428:-2743.57,-8371.94  Accept FIFTY! YEP!",
         "accept:3824 @1428:-2743.57,-8371.94  Accept Gor\u0027tesh the Brute Lord",
         "turnin:4262 @1428:-2768.47,-8398.88  TurnIn Overmaster Pyron",
@@ -26,6 +42,19 @@
         "accept:4022 @1428:-3052.01,-7647.33  Accept A Taste of Flame",
         "obj:4022:1 @1428:-3031.8,-7652.01  Objective A Taste of Flame / Black Dragonflight Molt (1)",
         "obj:4022:2 @1428:-3052.01,-7647.33  Objective A Taste of Flame / Cyrus Therepentous (1)",
+=======
+        "accept:3824 @1428:-2743.57,-8371.94  Accept Gor\u0027tesh the Brute Lord",
+        "accept:4283 @1428:-2743.57,-8371.94  Accept FIFTY! YEP!",
+        "turnin:4262 @1428:-2768.47,-8398.88  TurnIn Overmaster Pyron",
+        "accept:4182 @1428:-2780.48,-8377.21  Accept Dragonkin Menace",
+        "obj:4182:3 @1428:-2888.27,-8143.16  Objective Dragonkin Menace / Black Drake slain (1)",
+        "obj:4182:2 @1428:-2967.07,-8097.28  Objective Dragonkin Menace / Black Dragonspawn slain (10)",
+        "obj:4182:4 @1428:-2955.64,-8068.98  Objective Dragonkin Menace / Black Wyrmkin slain (4)",
+        "obj:4182:1 @1428:-2919.61,-7956.34  Objective Dragonkin Menace / Black Broodling slain (15)",
+        "accept:4022 @1428:-3052.01,-7647.33  Accept A Taste of Flame",
+        "obj:4022:2 @1428:-3052.01,-7647.33  Objective A Taste of Flame / Cyrus Therepentous (1)",
+        "obj:4022:1 @1428:-3031.8,-7652.01  Objective A Taste of Flame / Black Dragonflight Molt (1)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:4022 @1428:-3052.01,-7647.33  TurnIn A Taste of Flame",
         "accept:4726 @1428:-2177.65,-7499.75  Accept Broodling Essence",
         "accept:4296 @1428:-2175.02,-7497.99  Accept Tablet of the Seven",
@@ -35,6 +64,7 @@
         "turnin:3824 @1428:-2743.57,-8371.94  TurnIn Gor\u0027tesh the Brute Lord",
         "turnin:4283 @1428:-2743.57,-8371.94  TurnIn FIFTY! YEP!",
         "accept:3825 @1428:-2743.57,-8371.94  Accept Ogre Head On A Stick = Party",
+<<<<<<< HEAD
         "obj:3825:1 @1428:-2639.29,-7944.63  Objective Ogre Head On A Stick = Party / Gor\u0027tesh Head Planted",
         "obj:4726:1 @1428:-2919.61,-7956.34  Objective Broodling Essence / Broodling Essence (8)",
         "obj:4182:1 @1428:-2919.61,-7956.34  Objective Dragonkin Menace / Black Broodling slain (15)",
@@ -43,6 +73,12 @@
         "obj:4182:3 @1428:-2888.27,-8143.16  Objective Dragonkin Menace / Black Drake slain (1)",
         "turnin:4182 @1428:-2780.48,-8377.21  TurnIn Dragonkin Menace",
         "accept:4183 @1428:-2780.48,-8377.21  Accept The True Masters",
+=======
+        "turnin:4182 @1428:-2780.48,-8377.21  TurnIn Dragonkin Menace",
+        "accept:4183 @1428:-2780.48,-8377.21  Accept The True Masters",
+        "obj:4726:1 @1428:-2919.61,-7956.34  Objective Broodling Essence / Broodling Essence (8)",
+        "obj:3825:1 @1428:-2639.29,-7944.63  Objective Ogre Head On A Stick = Party / Gor\u0027tesh Head Planted",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:3825 @1428:-2743.57,-8371.94  TurnIn Ogre Head On A Stick = Party",
         "turnin:4296 @1428:-2175.02,-7497.99  TurnIn Tablet of the Seven",
         "turnin:4726 @1428:-2177.65,-7499.75  TurnIn Broodling Essence",

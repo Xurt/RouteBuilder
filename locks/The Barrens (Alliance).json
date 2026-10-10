@@ -1,11 +1,16 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "14-31 The Barrens",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:25",
+=======
+  "saved": "2026-10-10 13:02",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
+<<<<<<< HEAD
         "accept:887 @1413:-3728.66,-835.29  Accept Southsea Freebooters",
         "turnin:4738 @1413:-3711.43,-782.59  TurnIn In Search of Menara Voidrender",
         "turnin:4736 @1413:-3711.43,-782.59  TurnIn In Search of Menara Voidrender",
@@ -22,14 +27,38 @@
         "turnin:887 @1413:-3728.66,-835.29  TurnIn Southsea Freebooters",
         "accept:890 @1413:-3728.66,-835.29  Accept The Missing Shipment",
         "turnin:890 @1413:-3796.55,-985.28  TurnIn The Missing Shipment",
+=======
+        "turnin:1804 @1413:-3723.59,-785.97  TurnIn Tome of the Cabal",
+        "turnin:1798 @1413:-3723.59,-785.97  TurnIn Seeking Strahad",
+        "turnin:4738 @1413:-3711.43,-782.59  TurnIn In Search of Menara Voidrender",
+        "turnin:4736 @1413:-3711.43,-782.59  TurnIn In Search of Menara Voidrender",
+        "accept:887 @1413:-3728.66,-835.29  Accept Southsea Freebooters",
+        "turnin:1094 @1413:-3759.06,-902.18  TurnIn Further Instructions",
+        "accept:894 @1413:-3759.06,-902.18  Accept Samophlange",
+        "accept:895 @1413:-3719.54,-919.07  Accept WANTED: Baron Longshore",
+        "obj:887:1 @1413:-3852.28,-1420.38  Objective Southsea Freebooters / Southsea Brigand slain (12)",
+        "obj:887:2 @1413:-3878.63,-1551.45  Objective Southsea Freebooters / Southsea Cannoneer slain (6)",
+        "home @1413:-3664.82,-1050.14  Home inn",
+        "turnin:887 @1413:-3728.66,-835.29  TurnIn Southsea Freebooters",
+        "accept:890 @1413:-3728.66,-835.29  Accept The Missing Shipment",
+        "turnin:1039 @1413:-3796.55,-985.28  TurnIn The Barrens Port",
+        "turnin:890 @1413:-3796.55,-985.28  TurnIn The Missing Shipment",
+        "accept:896 @1413:-3796.55,-985.28  Accept Miner\u0027s Fortune",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:892 @1413:-3796.55,-985.28  Accept The Missing Shipment",
         "turnin:892 @1413:-3728.66,-835.29  TurnIn The Missing Shipment",
         "accept:888 @1413:-3728.66,-835.29  Accept Stolen Booty",
         "turnin:894 @1413:-2686.95,825.4  TurnIn Samophlange",
         "accept:900 @1413:-2686.95,825.4  Accept Samophlange",
+<<<<<<< HEAD
         "obj:900:2 @1413:-2686.95,841.61  Objective Samophlange / Shut off Fuel Control Valve",
         "obj:900:3 @1413:-2676.82,840.94  Objective Samophlange / Shut off Regulator Valve",
         "obj:900:1 @1413:-2679.86,831.48  Objective Samophlange / Shut off Main Control Valve",
+=======
+        "obj:900:1 @1413:-2679.86,831.48  Objective Samophlange / Shut off Main Control Valve",
+        "obj:900:3 @1413:-2676.82,840.94  Objective Samophlange / Shut off Regulator Valve",
+        "obj:900:2 @1413:-2686.95,841.61  Objective Samophlange / Shut off Fuel Control Valve",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:900 @1413:-2686.95,825.4  TurnIn Samophlange",
         "accept:901 @1413:-2686.95,825.4  Accept Samophlange",
         "obj:901:1 @1413:-2731.54,910.53  Objective Samophlange / Console Key (1)",
@@ -38,10 +67,17 @@
         "obj:896:1 @1413:-3652.66,1307.12  Objective Miner\u0027s Fortune / Cats Eye Emerald (1)",
         "turnin:896 @1413:-3796.55,-985.28  TurnIn Miner\u0027s Fortune",
         "turnin:902 @1413:-3759.06,-902.18  TurnIn Samophlange",
+<<<<<<< HEAD
         "turnin:1718 @1413:-4330.58,-1708.87  TurnIn The Islander",
         "obj:888:2 @1413:-3819.86,-1714.95  Objective Stolen Booty / Telescopic Lens (1)",
         "obj:895:1 @1413:-3791.48,-1698.06  Objective WANTED: Baron Longshore / Baron Longshore\u0027s Head (1)",
         "obj:888:1 @1413:-3723.59,-1740.63  Objective Stolen Booty / Shipment of Boots (1)",
+=======
+        "obj:895:1 @1413:-3884.71,-1571.72  Objective WANTED: Baron Longshore / Baron Longshore\u0027s Head (1)",
+        "obj:888:2 @1413:-3819.86,-1714.95  Objective Stolen Booty / Telescopic Lens (1)",
+        "obj:888:1 @1413:-3723.59,-1740.63  Objective Stolen Booty / Shipment of Boots (1)",
+        "turnin:1718 @1413:-4330.58,-1708.87  TurnIn The Islander",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:895 @1413:-3728.66,-835.29  TurnIn WANTED: Baron Longshore",
         "turnin:888 @1413:-3728.66,-835.29  TurnIn Stolen Booty",
         "turnin:1716 @1413:-2373.83,-2245.32  TurnIn Devourer of Souls",
@@ -56,12 +92,21 @@
         "obj:858:1 @1413:-3079.11,1032.81  Objective Ignition / Ignition Key (1)",
         "turnin:858 @1413:-3104.44,1109.16  TurnIn Ignition",
         "accept:3370 @1413:-2259.32,-602.2  Accept In Nightmares",
+<<<<<<< HEAD
         "accept:1095 @1413:-3759.06,-902.18  Accept Further Instructions",
         "accept:1483 @1413:-3759.06,-902.18  Accept Ziz Fizziks",
         "accept:865 @1413:-3697.24,-929.2  Accept Raptor Horns",
         "accept:1069 @1413:-3697.24,-929.2  Accept Deepmoss Spider Eggs",
         "obj:865:1 @1413:-3482.42,-563.69  Objective Raptor Horns / Intact Raptor Horn (5)",
         "turnin:865 @1413:-3697.24,-929.2  TurnIn Raptor Horns"
+=======
+        "accept:865 @1413:-3697.24,-929.2  Accept Raptor Horns",
+        "accept:1069 @1413:-3697.24,-929.2  Accept Deepmoss Spider Eggs",
+        "obj:865:1 @1413:-3482.42,-563.69  Objective Raptor Horns / Intact Raptor Horn (5)",
+        "turnin:865 @1413:-3697.24,-929.2  TurnIn Raptor Horns",
+        "accept:1483 @1413:-3759.06,-902.18  Accept Ziz Fizziks",
+        "accept:1095 @1413:-3759.06,-902.18  Accept Further Instructions"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {

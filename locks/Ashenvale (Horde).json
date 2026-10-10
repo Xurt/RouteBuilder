@@ -1,7 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "19-30 Ashenvale",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:17",
+=======
+  "saved": "2026-10-10 12:52",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
@@ -21,6 +25,7 @@
       "part": 2,
       "steps": [
         "accept:6462 @1440:1028.18,3333.37  Accept Troll Charm",
+<<<<<<< HEAD
         "accept:95042 @1440:1019.53,3350.67  Accept Seeking the Kor Gem",
         "accept:216 @1440:1013.77,3345.29  Accept Between a Rock and a Thistlefur",
         "obj:216:2 @1440:-521.32,3312.23  Objective Between a Rock and a Thistlefur / Thistlefur Shaman slain (8)",
@@ -33,6 +38,20 @@
         "turnin:78133 @1440:-802.73,1966.92  TurnIn Dragonslayer\u0027s Shield",
         "turnin:78132 @1440:-802.73,1966.92  TurnIn Dragonslayer\u0027s Helm",
         "turnin:78134 @1440:-802.73,1966.92  TurnIn Dragonslayer\u0027s Lance",
+=======
+        "accept:216 @1440:1013.77,3345.29  Accept Between a Rock and a Thistlefur",
+        "accept:95042 @1440:1019.53,3350.67  Accept Seeking the Kor Gem",
+        "obj:95042:1 @1440:918.62,4209.36  Objective Seeking the Kor Gem / Corrupted Kor Gem (1)",
+        "obj:216:1 @1440:-457.89,3355.66  Objective Between a Rock and a Thistlefur / Thistlefur Avenger slain (8)",
+        "obj:216:2 @1440:-521.32,3312.23  Objective Between a Rock and a Thistlefur / Thistlefur Shaman slain (8)",
+        "obj:6462:1 @1440:-656.26,3379.88  Objective Troll Charm / Troll Charm (8)",
+        "turnin:216 @1440:1013.77,3345.29  TurnIn Between a Rock and a Thistlefur",
+        "turnin:95042 @1440:1019.53,3350.67  TurnIn Seeking the Kor Gem",
+        "turnin:6462 @1440:1028.18,3333.37  TurnIn Troll Charm",
+        "turnin:78134 @1440:-802.73,1966.92  TurnIn Dragonslayer\u0027s Lance",
+        "turnin:78132 @1440:-802.73,1966.92  TurnIn Dragonslayer\u0027s Helm",
+        "turnin:78133 @1440:-802.73,1966.92  TurnIn Dragonslayer\u0027s Shield",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:6503 @1440:-2400.68,2054.55  Accept Ashenvale Outrunners",
         "obj:6503:1 @1440:-2635.96,1960.77  Objective Ashenvale Outrunners / Ashenvale Outrunner slain (9)",
         "turnin:6503 @1440:-2400.68,2054.55  TurnIn Ashenvale Outrunners",
@@ -52,6 +71,7 @@
       "steps": [
         "accept:6441 @1440:-2513.13,2309.78  Accept Satyr Horns",
         "turnin:6383 @1440:-2554.65,2310.55  TurnIn The Ashenvale Hunt",
+<<<<<<< HEAD
         "accept:6504 @1440:-2337.24,1937.7  Accept The Lost Pages",
         "item:1918 @1440:-952.67,1982.29  ItemAccept The Befouled Element",
         "turnin:78134 @1440:-802.73,1966.92  TurnIn Dragonslayer\u0027s Lance",
@@ -65,6 +85,21 @@
         "turnin:6441 @1440:-2513.13,2309.78  TurnIn Satyr Horns",
         "obj:6621:1 @1440:-1558.17,2232.14  Objective King of the Foulweald / Murgut\u0027s Totem (1)",
         "obj:6504:collect16650 @1440:441.71,3089.29  Objective The Lost Pages / Shredder Operating Manual - Page 6",
+=======
+        "obj:6441:1 @1440:-2181.54,2573.08  Objective Satyr Horns / Satyr Horns (16)",
+        "accept:6621 @1440:1013.77,3345.29  Accept King of the Foulweald",
+        "turnin:78133 @1440:-802.73,1966.92  TurnIn Dragonslayer\u0027s Shield",
+        "turnin:78132 @1440:-802.73,1966.92  TurnIn Dragonslayer\u0027s Helm",
+        "turnin:78134 @1440:-802.73,1966.92  TurnIn Dragonslayer\u0027s Lance",
+        "item:1918 @1440:-952.67,1982.29  ItemAccept The Befouled Element",
+        "obj:6621:1 @1440:-1558.17,2232.14  Objective King of the Foulweald / Murgut\u0027s Totem (1)",
+        "accept:6504 @1440:-2337.24,1937.7  Accept The Lost Pages",
+        "turnin:6441 @1440:-2513.13,2309.78  TurnIn Satyr Horns",
+        "turnin:1918 @1440:-2548.3,2366.67  TurnIn The Befouled Element",
+        "accept:824 @1440:-2548.3,2366.67  Accept Je\u0027neu of the Earthen Ring",
+        "obj:6504:collect16650 @1440:472.85,2997.81  Objective The Lost Pages / Shredder Operating Manual - Page 6",
+        "obj:6504:collect16655 @1440:518.99,3010.49  Objective The Lost Pages / Shredder Operating Manual - Page 11",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:6621 @1440:1013.77,3345.29  TurnIn King of the Foulweald",
         "turnin:824 @1440:1033.37,3354.89  TurnIn Je\u0027neu of the Earthen Ring"
       ]

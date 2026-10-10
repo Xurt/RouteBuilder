@@ -1,15 +1,24 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "31-39 Desolace",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:18",
+=======
+  "saved": "2026-10-10 12:53",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
         "accept:5763 @1443:3107.13,-1714.51  Accept Hunting in Stranglethorn",
         "turnin:1432 @1443:1869.87,-1178.48  TurnIn Alliance Relations",
+<<<<<<< HEAD
         "accept:1433 @1443:1869.87,-1178.48  Accept Alliance Relations",
         "accept:1434 @1443:1869.87,-1178.48  Accept Befouled by Satyr",
+=======
+        "accept:1434 @1443:1869.87,-1178.48  Accept Befouled by Satyr",
+        "accept:1433 @1443:1869.87,-1178.48  Accept Alliance Relations",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:1433 @1443:1884.26,-1150  TurnIn Alliance Relations",
         "accept:1435 @1443:1884.26,-1150  Accept The Burning of Spirits",
         "accept:6161 @1443:2611.69,-459.58  Accept Claim Rackmore\u0027s Treasure!",
@@ -17,6 +26,7 @@
         "obj:1435:1 @1443:1810.98,-428.1  Objective The Burning of Spirits / Infused Burning Gem (15)",
         "obj:5741:1 @1443:1752.98,-451.79  Objective Sceptre of Light / Sceptre of Light (1)",
         "turnin:1480 @1443:1884.26,-1150  TurnIn The Corrupter",
+<<<<<<< HEAD
         "accept:1481 @1443:1884.26,-1150  Accept The Corrupter",
         "turnin:1435 @1443:1884.26,-1150  TurnIn The Burning of Spirits",
         "turnin:5361 @1443:1742.19,-1221.05  TurnIn Family Tree",
@@ -27,6 +37,18 @@
         "obj:1434:4 @1443:759.4,-258.72  Objective Befouled by Satyr / Hatefury Hellcaller slain (7)",
         "obj:1481:1 @1443:794.47,-263.52  Objective The Corrupter / Shadowstalker Scalp (1)",
         "obj:1434:2 @1443:945.08,-155.89  Objective Befouled by Satyr / Hatefury Felsworn slain (7)",
+=======
+        "turnin:1435 @1443:1884.26,-1150  TurnIn The Burning of Spirits",
+        "accept:1481 @1443:1884.26,-1150  Accept The Corrupter",
+        "turnin:5361 @1443:1742.19,-1221.05  TurnIn Family Tree",
+        "turnin:1362 @1443:1707.12,-1333.78  TurnIn The Kolkar of Desolace",
+        "accept:1367 @1443:1702.63,-1337.07  Accept Magram Alliance",
+        "accept:1368 @1443:1702.63,-1337.07  Accept Gelkis Alliance",
+        "turnin:1367 @1443:862.81,-1591.3  TurnIn Magram Alliance",
+        "obj:1434:2 @1443:882.14,-351.06  Objective Befouled by Satyr / Hatefury Felsworn slain (7)",
+        "obj:1481:1 @1443:794.47,-263.52  Objective The Corrupter / Shadowstalker Scalp (1)",
+        "obj:1434:4 @1443:759.4,-258.72  Objective Befouled by Satyr / Hatefury Hellcaller slain (7)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:1434:3 @1443:959.02,-51.87  Objective Befouled by Satyr / Hatefury Betrayer slain (7)",
         "obj:1434:1 @1443:984.64,-56.96  Objective Befouled by Satyr / Hatefury Rogue slain (7)",
         "turnin:1481 @1443:1884.26,-1150  TurnIn The Corrupter",
@@ -43,23 +65,40 @@
       "part": 2,
       "steps": [
         "accept:1365 @1443:1707.12,-1333.78  Accept Khan Dez\u0027hepah",
+<<<<<<< HEAD
         "accept:5561 @1443:1497.17,-1402.43  Accept Kodo Roundup",
         "obj:1365:1 @1443:879.44,-1010.9  Objective Khan Dez\u0027hepah / Khan Dez\u0027hepah\u0027s Head (1)",
         "turnin:1365 @1443:1707.12,-1333.78  TurnIn Khan Dez\u0027hepah",
         "accept:1366 @1443:1707.12,-1333.78  Accept Centaur Bounty",
         "obj:5561:1 @1443:1793.44,-1443.8  Objective Kodo Roundup / Aged Kodo (5)",
+=======
+        "obj:1365:1 @1443:879.44,-1010.9  Objective Khan Dez\u0027hepah / Khan Dez\u0027hepah\u0027s Head (1)",
+        "accept:5561 @1443:1497.17,-1402.43  Accept Kodo Roundup",
+        "obj:5561:1 @1443:1793.44,-1443.8  Objective Kodo Roundup / Aged Kodo (5)",
+        "turnin:1365 @1443:1707.12,-1333.78  TurnIn Khan Dez\u0027hepah",
+        "accept:1366 @1443:1707.12,-1333.78  Accept Centaur Bounty",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:5561 @1443:1497.17,-1402.43  TurnIn Kodo Roundup",
         "obj:1366:1 @1443:1111.43,-1753.18  Objective Centaur Bounty / Centaur Ear (15)",
         "turnin:1366 @1443:1707.12,-1333.78  TurnIn Centaur Bounty",
         "accept:1482 @1443:1884.26,-1150  Accept The Corrupter",
         "accept:6143 @1443:3184.9,-1732.5  Accept Other Fish to Fry",
         "accept:6142 @1443:3215.48,-1705.52  Accept Clam Bait",
+<<<<<<< HEAD
         "obj:6143:3 @1443:2612.59,-290.8  Objective Other Fish to Fry / Slitherblade Sorceress slain (5)",
         "obj:6143:2 @1443:2569.87,-204.76  Objective Other Fish to Fry / Slitherblade Naga slain (7)",
         "obj:1482:1 @1443:2751.06,-211.06  Objective The Corrupter / Oracle Crystal (1)",
         "obj:6143:1 @1443:2770.84,-221.55  Objective Other Fish to Fry / Slitherblade Myrmidon slain (7)",
         "obj:6142:collect15874 @1443:2857.61,-576.2  Objective Clam Bait / Soft-shelled Clam",
         "obj:6142:1 @1443:2857.61,-576.2  Objective Clam Bait / Soft-shelled Clam Meat (1)",
+=======
+        "obj:6142:collect15874 @1443:2857.61,-576.2  Objective Clam Bait / Soft-shelled Clam",
+        "obj:6142:1 @1443:2857.61,-576.2  Objective Clam Bait / Soft-shelled Clam Meat (1)",
+        "obj:6143:1 @1443:2770.84,-221.55  Objective Other Fish to Fry / Slitherblade Myrmidon slain (7)",
+        "obj:1482:1 @1443:2751.06,-211.06  Objective The Corrupter / Oracle Crystal (1)",
+        "obj:6143:2 @1443:2569.87,-204.76  Objective Other Fish to Fry / Slitherblade Naga slain (7)",
+        "obj:6143:3 @1443:2612.59,-290.8  Objective Other Fish to Fry / Slitherblade Sorceress slain (5)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:1482 @1443:1884.26,-1150  TurnIn The Corrupter",
         "accept:1484 @1443:1884.26,-1150  Accept The Corrupter",
         "turnin:1484 @1443:1869.87,-1178.48  TurnIn The Corrupter",
@@ -74,16 +113,27 @@
         "obj:6027:1 @1443:2963.71,252.12  Objective Book of the Ancients / Book of the Ancients (1)",
         "turnin:6027 @1443:2485.35,-362.15  TurnIn Book of the Ancients",
         "accept:5381 @1443:3072.51,-1592.8  Accept Hand of Iruxos",
+<<<<<<< HEAD
         "accept:6134 @1443:2082.98,-1401.53  Accept Ghost-o-plasm Round Up",
         "accept:5386 @1443:1742.19,-1221.05  Accept Catch of the Day",
         "accept:5501 @1443:1431.08,-716.8  Accept Bone Collector",
         "obj:5381:1 @1443:1760.62,-345.36  Objective Hand of Iruxos / Demon Box (1)",
+=======
+        "obj:5381:1 @1443:1760.62,-345.36  Objective Hand of Iruxos / Demon Box (1)",
+        "accept:5501 @1443:1431.08,-716.8  Accept Bone Collector",
+        "accept:5386 @1443:1742.19,-1221.05  Accept Catch of the Day",
+        "obj:5501:1 @1443:2035.32,-1310.99  Objective Bone Collector / Kodo Bone (10)",
+        "accept:6134 @1443:2082.98,-1401.53  Accept Ghost-o-plasm Round Up",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:5381 @1443:3072.51,-1592.8  TurnIn Hand of Iruxos",
         "accept:5581 @1443:3072.51,-1592.8  Accept Portals of the Legion",
         "obj:5386:1 @1443:3224.02,-1739.99  Objective Catch of the Day / Bloodbelly Fish (2)",
         "obj:5581:1 @1443:1859.53,-1988.22  Objective Portals of the Legion / Portals Banished (8)",
         "obj:6134:1 @1443:1347.91,-2294.91  Objective Ghost-o-plasm Round Up / Ghost-o-plasm (8)",
+<<<<<<< HEAD
         "obj:5501:1 @1443:1787.15,-1358.06  Objective Bone Collector / Kodo Bone (10)",
+=======
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:5386 @1443:1742.19,-1221.05  TurnIn Catch of the Day",
         "turnin:5501 @1443:1431.08,-716.8  TurnIn Bone Collector",
         "turnin:6134 @1443:2082.98,-1401.53  TurnIn Ghost-o-plasm Round Up",

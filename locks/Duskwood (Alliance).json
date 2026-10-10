@@ -1,11 +1,16 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "17-31 Duskwood",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:26",
+=======
+  "saved": "2026-10-10 13:03",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
       "steps": [
+<<<<<<< HEAD
         "accept:245 @1431:-384.91,-10923.21  Accept Eight-Legged Menaces",
         "turnin:145 @1431:-1108.78,-10552.23  TurnIn Messenger to Darkshire",
         "turnin:1041 @1431:-1125.25,-10560.33  TurnIn The Caravan Road",
@@ -14,18 +19,37 @@
         "turnin:1243 @1431:-1186.54,-10513.89  TurnIn The Missing Diplomat",
         "turnin:78 @1431:-1158.73,-10517.49  TurnIn The Legend of Stalvan",
         "turnin:95161 @1431:-1138.48,-10516.23  TurnIn Remember That I Love You",
+=======
+        "item:91740 @1431:-1091.77,-9994.23  ItemAccept Croaky\u0027s Head",
+        "turnin:1243 @1431:-1122.55,-10330.83  TurnIn The Missing Diplomat",
+        "turnin:95161 @1431:-1138.48,-10516.23  TurnIn Remember That I Love You",
+        "turnin:78 @1431:-1158.73,-10517.49  TurnIn The Legend of Stalvan",
+        "accept:163 @1431:-1200.85,-10594.17  Accept Raven Hill",
+        "turnin:1041 @1431:-1125.25,-10560.33  TurnIn The Caravan Road",
+        "turnin:68 @1431:-1125.25,-10560.33  TurnIn The Legend of Stalvan",
+        "turnin:145 @1431:-1108.78,-10552.23  TurnIn Messenger to Darkshire",
+        "accept:245 @1431:-384.91,-10923.21  Accept Eight-Legged Menaces",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:163 @1431:337.07,-10731.33  TurnIn Raven Hill",
         "obj:245:1 @1431:543.08,-10713.69  Objective Eight-Legged Menaces / Pygmy Venom Web Spider slain (15)",
         "accept:5 @1431:337.07,-10731.33  Accept Jitters\u0027 Growling Gut",
         "turnin:245 @1431:-384.91,-10923.21  TurnIn Eight-Legged Menaces",
         "turnin:5 @1431:-1157.92,-10499.31  TurnIn Jitters\u0027 Growling Gut",
         "accept:93 @1431:-1157.92,-10499.31  Accept Dusky Crab Cakes",
+<<<<<<< HEAD
         "accept:164 @1431:-1200.85,-10594.17  Accept Deliveries to Sven",
         "accept:165 @1431:-1200.85,-10594.17  Accept The Hermit",
         "item:91740 @1431:-1091.77,-9994.23  ItemAccept Croaky\u0027s Head",
         "turnin:165 @1431:74.36,-10282.95  TurnIn The Hermit",
         "turnin:164 @1431:623.27,-10329.93  TurnIn Deliveries to Sven",
         "turnin:325 @1431:623.27,-10329.93  TurnIn Armed and Ready",
+=======
+        "accept:165 @1431:-1200.85,-10594.17  Accept The Hermit",
+        "accept:164 @1431:-1200.85,-10594.17  Accept Deliveries to Sven",
+        "turnin:165 @1431:74.36,-10282.95  TurnIn The Hermit",
+        "turnin:325 @1431:623.27,-10329.93  TurnIn Armed and Ready",
+        "turnin:164 @1431:623.27,-10329.93  TurnIn Deliveries to Sven",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:93:1 @1431:580.61,-10487.61  Objective Dusky Crab Cakes / Gooey Spider Leg (6)",
         "turnin:93 @1431:-1157.92,-10499.31  TurnIn Dusky Crab Cakes",
         "accept:240 @1431:-1157.92,-10499.31  Accept Return to Jitters",
@@ -36,7 +60,10 @@
       "part": 2,
       "steps": [
         "accept:96139 @1431:-1127.41,-10573.83  Accept The Valor Family",
+<<<<<<< HEAD
         "accept:56 @1431:-1152.25,-10559.43  Accept The Night Watch",
+=======
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "home @1431:-1161.16,-10516.05  Home inn",
         "accept:146 @1431:-1108.78,-10552.23  Accept Messenger to Darkshire",
         "obj:96139:1 @1431:263.63,-10717.47  Objective The Valor Family / Raven Hill Tome (1)",
@@ -56,6 +83,7 @@
         "turnin:95 @1431:-512.62,-11115.45  TurnIn Sven\u0027s Revenge",
         "accept:230 @1431:-512.62,-11115.45  Accept Sven\u0027s Camp",
         "turnin:157 @1431:74.36,-10282.95  TurnIn Deliver the Thread",
+<<<<<<< HEAD
         "accept:158 @1431:74.36,-10282.95  Accept Zombie Juice",
         "turnin:230 @1431:623.27,-10329.93  TurnIn Sven\u0027s Camp",
         "accept:262 @1431:623.27,-10329.93  Accept The Shadowy Figure",
@@ -69,6 +97,22 @@
         "obj:56:1 @1431:-1298.59,-10970.91  Objective The Night Watch / Skeletal Warrior slain (8)",
         "obj:56:2 @1431:-1314.25,-10998.99  Objective The Night Watch / Skeletal Mage slain (6)",
         "turnin:56 @1431:-1152.25,-10559.43  TurnIn The Night Watch",
+=======
+        "turnin:230 @1431:623.27,-10329.93  TurnIn Sven\u0027s Camp",
+        "accept:262 @1431:623.27,-10329.93  Accept The Shadowy Figure",
+        "accept:158 @1431:74.36,-10282.95  Accept Zombie Juice",
+        "turnin:158 @1431:-1158.73,-10517.49  TurnIn Zombie Juice",
+        "turnin:262 @1431:-1213,-10532.43  TurnIn The Shadowy Figure",
+        "accept:265 @1431:-1213,-10532.43  Accept The Shadowy Search Continues",
+        "accept:56 @1431:-1152.25,-10559.43  Accept The Night Watch",
+        "turnin:265 @1431:-1125.25,-10560.33  TurnIn The Shadowy Search Continues",
+        "obj:56:1 @1431:-1298.59,-10970.91  Objective The Night Watch / Skeletal Warrior slain (8)",
+        "obj:56:2 @1431:-1314.25,-10998.99  Objective The Night Watch / Skeletal Mage slain (6)",
+        "turnin:56 @1431:-1152.25,-10559.43  TurnIn The Night Watch",
+        "accept:266 @1431:-1125.25,-10560.33  Accept Inquire at the Inn",
+        "turnin:266 @1431:-1158.73,-10517.49  TurnIn Inquire at the Inn",
+        "accept:453 @1431:-1158.73,-10517.49  Accept Finding the Shadowy Figure",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:453 @1431:337.07,-10731.33  TurnIn Finding the Shadowy Figure",
         "accept:268 @1431:337.07,-10731.33  Accept Return to Sven",
         "turnin:268 @1431:623.27,-10329.93  TurnIn Return to Sven"
@@ -78,6 +122,7 @@
       "part": 3,
       "steps": [
         "accept:57 @1431:-1152.25,-10559.43  Accept The Night Watch",
+<<<<<<< HEAD
         "accept:66 @1431:-1213,-10532.43  Accept The Legend of Stalvan",
         "accept:156 @1431:-1158.73,-10517.49  Accept Gather Rot Blossoms",
         "accept:79 @1431:-1158.73,-10517.49  Accept The Legend of Stalvan",
@@ -89,6 +134,9 @@
         "turnin:80 @1431:-1125.25,-10560.33  TurnIn The Legend of Stalvan",
         "accept:97 @1431:-1125.25,-10560.33  Accept The Legend of Stalvan",
         "turnin:97 @1431:-1152.25,-10559.43  TurnIn The Legend of Stalvan",
+=======
+        "accept:156 @1431:-1158.73,-10517.49  Accept Gather Rot Blossoms",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:174 @1431:-1321.27,-10581.03  Accept Look To The Stars",
         "obj:174:1 @1431:-1272.4,-10586.61  Objective Look To The Stars / Bronze Tube (1)",
         "turnin:174 @1431:-1321.27,-10581.03  TurnIn Look To The Stars",
@@ -96,16 +144,35 @@
         "turnin:175 @1431:-1380.4,-10780.29  TurnIn Look To The Stars",
         "obj:156:1 @1431:-1343.95,-10786.23  Objective Gather Rot Blossoms / Rot Blossom (8)",
         "obj:57:2 @1431:-1343.95,-10786.23  Objective The Night Watch / Skeletal Horror slain (15)",
+<<<<<<< HEAD
         "turnin:156 @1431:-1158.73,-10517.49  TurnIn Gather Rot Blossoms",
         "accept:159 @1431:-1158.73,-10517.49  Accept Juice Delivery",
         "turnin:159 @1431:74.36,-10282.95  TurnIn Juice Delivery",
         "obj:57:1 @1431:203.15,-10484.37  Objective The Night Watch / Skeletal Fiend slain (15)",
         "turnin:57 @1431:-1152.25,-10559.43  TurnIn The Night Watch"
+=======
+        "accept:66 @1431:-1213,-10532.43  Accept The Legend of Stalvan",
+        "turnin:156 @1431:-1158.73,-10517.49  TurnIn Gather Rot Blossoms",
+        "accept:79 @1431:-1158.73,-10517.49  Accept The Legend of Stalvan",
+        "accept:159 @1431:-1158.73,-10517.49  Accept Juice Delivery",
+        "turnin:79 @1431:-1152.25,-10559.43  TurnIn The Legend of Stalvan",
+        "turnin:66 @1431:-1125.25,-10560.33  TurnIn The Legend of Stalvan",
+        "turnin:159 @1431:74.36,-10282.95  TurnIn Juice Delivery",
+        "obj:57:1 @1431:203.15,-10484.37  Objective The Night Watch / Skeletal Fiend slain (15)",
+        "turnin:57 @1431:-1152.25,-10559.43  TurnIn The Night Watch",
+        "accept:80 @1431:-1152.25,-10559.43  Accept The Legend of Stalvan",
+        "turnin:80 @1431:-1125.25,-10560.33  TurnIn The Legend of Stalvan",
+        "accept:67 @1431:-1125.25,-10560.33  Accept The Legend of Stalvan",
+        "accept:69 @1431:-1125.25,-10560.33  Accept The Legend of Stalvan",
+        "accept:97 @1431:-1125.25,-10560.33  Accept The Legend of Stalvan",
+        "turnin:97 @1431:-1152.25,-10559.43  TurnIn The Legend of Stalvan"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 4,
       "steps": [
+<<<<<<< HEAD
         "accept:101 @1431:-1213,-10532.43  Accept The Totem of Infliction",
         "home @1431:-1161.16,-10516.05  Home inn",
         "accept:1042 @1431:-1125.25,-10560.33  Accept The Carevin Family",
@@ -126,6 +193,26 @@
         "obj:323:2 @1431:383.51,-10396.17  Objective Proving Your Worth / Skeletal Healer slain (3)",
         "obj:323:1 @1431:370.01,-10345.59  Objective Proving Your Worth / Skeletal Raider slain (15)",
         "obj:101:3 @1431:402.41,-10340.37  Objective The Totem of Infliction / Skeleton Finger (10)",
+=======
+        "accept:177 @1431:-1380.4,-10780.29  Accept Look To The Stars",
+        "obj:177:1 @1431:-1350.97,-11011.95  Objective Look To The Stars / Mary\u0027s Looking Glass (1)",
+        "turnin:177 @1431:-1321.27,-10581.03  TurnIn Look To The Stars",
+        "accept:173 @1431:-1211.92,-10572.93  Accept Worgen in the Woods",
+        "accept:101 @1431:-1213,-10532.43  Accept The Totem of Infliction",
+        "home @1431:-1161.16,-10516.05  Home inn",
+        "accept:58 @1431:-1152.25,-10559.43  Accept The Night Watch",
+        "obj:173:1 @1431:-878.2,-10512.45  Objective Worgen in the Woods / Nightbane Shadow Weaver slain (6)",
+        "obj:101:2 @1431:-52.81,-10364.85  Objective The Totem of Infliction / Vial of Spider Venom (1)",
+        "accept:133 @1431:74.36,-10282.95  Accept Ghoulish Effigy",
+        "obj:58:1 @1431:193.16,-10329.93  Objective The Night Watch / Plague Spreader slain (20)",
+        "obj:101:1 @1431:206.39,-10306.89  Objective The Totem of Infliction / Ghoul Fang (10)",
+        "obj:133:1 @1431:206.39,-10306.89  Objective Ghoulish Effigy / Ghoul Rib (7)",
+        "turnin:133 @1431:74.36,-10282.95  TurnIn Ghoulish Effigy",
+        "obj:101:3 @1431:402.41,-10340.37  Objective The Totem of Infliction / Skeleton Finger (10)",
+        "accept:323 @1431:623.27,-10329.93  Accept Proving Your Worth",
+        "obj:323:2 @1431:383.51,-10396.17  Objective Proving Your Worth / Skeletal Healer slain (3)",
+        "obj:323:1 @1431:370.01,-10345.59  Objective Proving Your Worth / Skeletal Raider slain (15)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "obj:323:3 @1431:402.41,-10340.37  Objective Proving Your Worth / Skeletal Warder slain (3)",
         "turnin:323 @1431:623.27,-10329.93  TurnIn Proving Your Worth",
         "accept:269 @1431:623.27,-10329.93  Accept Seeking Wisdom",
@@ -134,6 +221,11 @@
         "accept:221 @1431:-1211.92,-10572.93  Accept Worgen in the Woods",
         "turnin:58 @1431:-1152.25,-10559.43  TurnIn The Night Watch",
         "obj:221:1 @1431:-894.13,-10613.61  Objective Worgen in the Woods / Nightbane Dark Runner slain (12)",
+<<<<<<< HEAD
+=======
+        "accept:1042 @1431:-1125.25,-10560.33  Accept The Carevin Family",
+        "turnin:1042 @1431:-1200.31,-10599.03  TurnIn The Carevin Family",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:221 @1431:-1211.92,-10572.93  TurnIn Worgen in the Woods"
       ]
     },
@@ -167,8 +259,13 @@
         "accept:1245 @1431:-1186.54,-10513.89  Accept The Missing Diplomat",
         "turnin:222 @1431:-1211.92,-10572.93  TurnIn Worgen in the Woods",
         "accept:223 @1431:-1211.92,-10572.93  Accept Worgen in the Woods",
+<<<<<<< HEAD
         "turnin:223 @1431:-1200.31,-10599.03  TurnIn Worgen in the Woods",
         "turnin:1043 @1431:-1200.31,-10599.03  TurnIn The Scythe of Elune",
+=======
+        "turnin:1043 @1431:-1200.31,-10599.03  TurnIn The Scythe of Elune",
+        "turnin:223 @1431:-1200.31,-10599.03  TurnIn Worgen in the Woods",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:1044 @1431:-1200.31,-10599.03  Accept Answered Questions",
         "turnin:181 @1431:-1321.27,-10581.03  TurnIn Look To The Stars"
       ]

@@ -20,7 +20,11 @@ public sealed class Evaluator
 {
     readonly ZoneModel m; readonly int n;
     public readonly int[][] Pre, Any, Succ; public readonly int[] Tight;
+<<<<<<< HEAD
     readonly double[] xp, secs, late, safe; readonly bool[] isTurn, isAcc;
+=======
+    readonly double[] xp, secs, late, safe, qlv; readonly bool[] isTurn, isAcc;
+>>>>>>> zone/Durotar-Horde-vendor_trainer
     readonly double[][] ct, cx, cy; readonly int[][] ca, ml;
     readonly bool[] done; readonly double[] mark;
     readonly int home; readonly double bx, by; readonly int barea;
@@ -34,7 +38,11 @@ public sealed class Evaluator
     public Evaluator(ZoneModel model, bool[] active, bool[]? watch = null)
     {
         m = model; n = m.Tasks.Count; Active = active; travel = m.Travel;
+<<<<<<< HEAD
         Pre = new int[n][]; Any = new int[n][]; Tight = new int[n]; xp = new double[n]; secs = new double[n]; late = new double[n]; safe = new double[n];
+=======
+        Pre = new int[n][]; Any = new int[n][]; Tight = new int[n]; xp = new double[n]; secs = new double[n]; late = new double[n]; safe = new double[n]; qlv = new double[n];
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         isTurn = new bool[n]; isAcc = new bool[n]; ct = new double[n][]; cx = new double[n][]; cy = new double[n][]; ca = new int[n][]; ml = new int[n][];
         done = new bool[n]; mark = new double[n];
         foreach (var t in m.Tasks)
@@ -44,6 +52,10 @@ public sealed class Evaluator
             Tight[i] = t.Tight >= 0 && active[t.Tight] ? t.Tight : -1;
             xp[i] = t.Xp; secs[i] = t.Secs; late[i] = (t.Q?.Level ?? Game.MaxLevel) + Tuning.LateFree;
             isTurn[i] = t.Kind == TaskKind.TurnIn; isAcc[i] = t.Kind is TaskKind.Accept or TaskKind.ItemAccept;
+<<<<<<< HEAD
+=======
+            qlv[i] = isAcc[i] && t.Q is { Level: > 0 } ql ? ql.Level : 0;
+>>>>>>> zone/Durotar-Horde-vendor_trainer
             safe[i] = isAcc[i] && t.MinLevel > 1 ? Tuning.Safety : 0;
             int k = t.Cands.Count; ct[i] = new double[k]; cx[i] = new double[k]; cy[i] = new double[k]; ca[i] = new int[k]; ml[i] = new int[k];
             for (int c = 0; c < k; c++)
@@ -127,6 +139,10 @@ public sealed class Evaluator
                         if (!ready) continue;
                     }
                     if (safe[u] > 0 && fl < ml[u][0] + safe[u]) continue;
+<<<<<<< HEAD
+=======
+                    if (qlv[u] > fl + Tuning.PickupAhead) continue;          // a quest well above your level is not "on offer" yet
+>>>>>>> zone/Durotar-Horde-vendor_trainer
                     pen += miss; if (detail != null) detail.Misses++;
                 }
             }
@@ -181,12 +197,31 @@ public sealed class Evaluator
             }
             if (fl > late[t]) pen += Tuning.LateCost * (fl - late[t]);
             pen += ct[t][c];
+<<<<<<< HEAD
             if (isAcc[t]) pen += Tuning.Pickup * total;
             if (isTurn[t])
             {
                 double rd = 0;
                 for (int i = 0; i < pr.Length; i++) if (mark[pr[i]] > rd && done[pr[i]]) rd = mark[pr[i]];
                 pen += Tuning.Hold * (total - rd);
+=======
+            if (isAcc[t])
+            {
+                pen += Tuning.Pickup * total;
+                if (qlv[t] > fl + Tuning.PickupAhead) pen += Tuning.AheadCost * (qlv[t] - fl - Tuning.PickupAhead);   // picked up long before you can do it
+            }
+            if (isTurn[t])
+            {
+                double rd = 0, picked = -1;
+                for (int i = 0; i < pr.Length; i++)
+                {
+                    int p = pr[i]; if (!done[p]) continue;
+                    if (mark[p] > rd) rd = mark[p];
+                    if (isAcc[p]) picked = mark[p];
+                }
+                pen += Tuning.Hold * (total - rd);
+                if (picked >= 0 && rd > picked) pen += Tuning.Open * (rd - picked);      // carried from pickup until its objectives are done
+>>>>>>> zone/Durotar-Horde-vendor_trainer
             }
             mark[t] = total;
             if (detail != null) { detail.Leg[pos] = d; detail.Level[pos] = fl; detail.XpBefore[pos] = exp; detail.Hearth[pos] = hs; }
@@ -358,7 +393,12 @@ public sealed class Router
                 for (int ci = 0; ci < t.Cands.Count; ci++)
                 {
                     var c = t.Cands[ci];
+<<<<<<< HEAD
                     double d = m.Travel.Dist(a, x, y, c.Area, c.Pos.X, c.Pos.Y) + (c.Area == a ? 0 : 350) + Math.Max(0, ev.Need(id, ci) - lvl) * 4000;
+=======
+                    double d = m.Travel.Dist(a, x, y, c.Area, c.Pos.X, c.Pos.Y) + (c.Area == a ? 0 : 350) + Math.Max(0, ev.Need(id, ci) - lvl) * 4000
+                             + (t.Kind is TaskKind.Accept or TaskKind.ItemAccept && t.Q is { Level: > 0 } gq ? Math.Max(0, gq.Level - lvl - Tuning.PickupAhead) * Tuning.AheadCost : 0);
+>>>>>>> zone/Durotar-Horde-vendor_trainer
                     if (seed > 0) d *= 1 + 0.25 * rnd.NextDouble();
                     if (d < bd) { bd = d; bt = id; bc = ci; }
                 }
@@ -522,6 +562,10 @@ public sealed class Router
                     if (ev.Pre[u].Any(p => !done[p])) continue;
                     if (ev.Any[u].Length > 0 && !ev.Any[u].Any(p => done[p])) continue;
                     if (t.Kind == TaskKind.Accept && t.MinLevel > 1 && lvl < t.MinLevel + Tuning.Safety) continue;
+<<<<<<< HEAD
+=======
+                    if (t.Kind == TaskKind.Accept && t.Q is { Level: > 0 } tq && tq.Level > lvl + Tuning.PickupAhead) continue;
+>>>>>>> zone/Durotar-Horde-vendor_trainer
                     for (int ci = 0; ci < t.Cands.Count; ci++)
                     {
                         if (ev.Hub[u][ci] != h) continue;

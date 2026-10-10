@@ -1,7 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "20-40 Hillsbrad Foothills",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:17",
+=======
+  "saved": "2026-10-10 12:53",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
@@ -11,6 +15,7 @@
         "turnin:508 @1424:-957.01,-40.75  TurnIn Taretha\u0027s Gift",
         "turnin:506 @1424:-957.01,-40.75  TurnIn Blackmoore\u0027s Legacy",
         "turnin:2479 @1424:-905.49,-9.39  TurnIn Hinott\u0027s Assistance",
+<<<<<<< HEAD
         "accept:496 @1424:-899.41,-6.61  Accept Elixir of Suffering",
         "turnin:2933 @1424:-899.41,-6.61  TurnIn Venom Bottles",
         "turnin:1065 @1424:-899.41,-6.61  TurnIn Journey to Tarren Mill",
@@ -35,6 +40,32 @@
         "obj:515:2 @1424:-1045.33,-1354.24  Objective Elixir of Agony / Daggerspine Scale (5)",
         "obj:515:3 @1424:-39.25,-1108.69  Objective Elixir of Agony / Torn Fin Eye (5)",
         "turnin:515 @1424:-899.41,-6.61  TurnIn Elixir of Agony"
+=======
+        "turnin:2933 @1424:-899.41,-6.61  TurnIn Venom Bottles",
+        "turnin:493 @1424:-899.41,-6.61  TurnIn Journey to Hillsbrad Foothills",
+        "turnin:1065 @1424:-899.41,-6.61  TurnIn Journey to Tarren Mill",
+        "accept:1066 @1424:-899.41,-6.61  Accept Blood of Innocents",
+        "accept:496 @1424:-899.41,-6.61  Accept Elixir of Suffering",
+        "obj:496:2 @1424:-880.53,83.41  Objective Elixir of Suffering / Creeper Ichor (1)",
+        "turnin:95111 @1424:-867.09,-158.51  TurnIn An Underrated Talent",
+        "obj:496:1 @1424:-823.57,-298.67  Objective Elixir of Suffering / Gray Bear Tongue (10)",
+        "obj:549:2 @1424:-1079.57,-617.6  Objective WANTED: Syndicate Personnel / Syndicate Watchman slain (8)",
+        "obj:549:1 @1424:-1046.61,-626.77  Objective WANTED: Syndicate Personnel / Syndicate Rogue slain (10)",
+        "obj:1066:1 @1424:-1025.17,-638.51  Objective Blood of Innocents / Vial of Innocent Blood (1)",
+        "obj:515:2 @1424:-1045.33,-1354.24  Objective Elixir of Agony / Daggerspine Scale (5)",
+        "obj:515:3 @1424:-39.25,-1108.69  Objective Elixir of Agony / Torn Fin Eye (5)",
+        "accept:494 @1424:401.39,-611.2  Accept Time To Strike",
+        "turnin:515 @1424:-899.41,-6.61  TurnIn Elixir of Agony",
+        "turnin:1066 @1424:-899.41,-6.61  TurnIn Blood of Innocents",
+        "accept:1067 @1424:-899.41,-6.61  Accept Return to Thunder Bluff",
+        "turnin:496 @1424:-899.41,-6.61  TurnIn Elixir of Suffering",
+        "accept:499 @1424:-899.41,-6.61  Accept Elixir of Suffering",
+        "turnin:499 @1424:-902.93,-8.32  TurnIn Elixir of Suffering",
+        "turnin:494 @1424:-927.89,-36.27  TurnIn Time To Strike",
+        "turnin:549 @1424:-927.89,-36.27  TurnIn WANTED: Syndicate Personnel",
+        "accept:95126 @1424:-867.09,-158.51  Accept The Moonsilver Blade",
+        "accept:95125 @1424:-867.09,-158.51  Accept Ott\u0027s Masterwork"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
@@ -43,6 +74,7 @@
         "accept:498 @1424:-957.01,-40.75  Accept The Rescue",
         "accept:527 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
         "accept:501 @1424:-899.41,-6.61  Accept Elixir of Pain",
+<<<<<<< HEAD
         "obj:527:3 @1424:3.63,-341.55  Objective Battle of Hillsbrad / Farmer Ray slain (1)",
         "obj:527:2 @1424:-15.89,-455.25  Objective Battle of Hillsbrad / Hillsbrad Farmhand slain (6)",
         "obj:527:1 @1424:-46.61,-421.76  Objective Battle of Hillsbrad / Hillsbrad Farmer slain (6)",
@@ -64,6 +96,29 @@
         "turnin:498 @1424:-957.01,-40.75  TurnIn The Rescue",
         "turnin:528 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad",
         "turnin:546 @1424:-920.85,-20.27  TurnIn Souvenirs of Death"
+=======
+        "turnin:95125 @1424:-867.09,-158.51  TurnIn Ott\u0027s Masterwork",
+        "obj:501:1 @1424:-679.57,-218.67  Objective Elixir of Pain / Mountain Lion Blood (1)",
+        "obj:527:4 @1424:-98.13,-440.53  Objective Battle of Hillsbrad / Farmer Getz slain (8)",
+        "obj:527:1 @1424:-46.61,-421.76  Objective Battle of Hillsbrad / Hillsbrad Farmer slain (6)",
+        "obj:527:2 @1424:-15.89,-455.25  Objective Battle of Hillsbrad / Hillsbrad Farmhand slain (6)",
+        "obj:527:3 @1424:3.63,-341.55  Objective Battle of Hillsbrad / Farmer Ray slain (1)",
+        "turnin:501 @1424:-899.41,-6.61  TurnIn Elixir of Pain",
+        "accept:502 @1424:-899.41,-6.61  Accept Elixir of Pain",
+        "turnin:527 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad",
+        "accept:546 @1424:-920.85,-20.27  Accept Souvenirs of Death",
+        "accept:528 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
+        "obj:498:2 @1424:-1486.61,-445.87  Objective The Rescue / Rescue Tog\u0027thar",
+        "obj:498:collect3499 @1424:-1477.01,-465.49  Objective The Rescue / Burnished Gold Key",
+        "obj:498:collect3467 @1424:-1480.53,-492.37  Objective The Rescue / Dull Iron Key",
+        "obj:546:1 @1424:-1389.33,-493.23  Objective Souvenirs of Death / Hillsbrad Human Skull (30)",
+        "obj:498:1 @1424:-1343.89,-485.33  Objective The Rescue / Rescue Drull",
+        "obj:528:1 @1424:-45.65,-583.68  Objective Battle of Hillsbrad / Hillsbrad Peasant slain (15)",
+        "turnin:502 @1424:21.55,-353.49  TurnIn Elixir of Pain",
+        "turnin:546 @1424:-920.85,-20.27  TurnIn Souvenirs of Death",
+        "turnin:528 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad",
+        "turnin:498 @1424:-957.01,-40.75  TurnIn The Rescue"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
@@ -72,6 +127,7 @@
         "accept:529 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
         "accept:509 @1424:-899.41,-6.61  Accept Elixir of Agony",
         "turnin:95125 @1424:-867.09,-158.51  TurnIn Ott\u0027s Masterwork",
+<<<<<<< HEAD
         "obj:529:1 @1424:39.15,-547.63  Objective Battle of Hillsbrad / Blacksmith Verringtan slain (1)",
         "obj:529:3 @1424:42.35,-569.6  Objective Battle of Hillsbrad / Shipment of Iron (1)",
         "obj:529:2 @1424:43.95,-577.71  Objective Battle of Hillsbrad / Hillsbrad Apprentice Blacksmith slain (4)",
@@ -79,12 +135,22 @@
         "turnin:529 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad",
         "turnin:509 @1424:-899.41,-6.61  TurnIn Elixir of Agony",
         "accept:513 @1424:-899.41,-6.61  Accept Elixir of Agony"
+=======
+        "obj:509:1 @1424:-999.25,-906.67  Objective Elixir of Agony / Mudsnout Blossoms (6)",
+        "obj:529:2 @1424:43.95,-577.71  Objective Battle of Hillsbrad / Hillsbrad Apprentice Blacksmith slain (4)",
+        "obj:529:3 @1424:42.35,-569.6  Objective Battle of Hillsbrad / Shipment of Iron (1)",
+        "obj:529:1 @1424:39.15,-547.63  Objective Battle of Hillsbrad / Blacksmith Verringtan slain (1)",
+        "turnin:509 @1424:-899.41,-6.61  TurnIn Elixir of Agony",
+        "accept:513 @1424:-899.41,-6.61  Accept Elixir of Agony",
+        "turnin:529 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 4,
       "steps": [
         "accept:532 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
+<<<<<<< HEAD
         "accept:517 @1424:-899.41,-6.61  Accept Elixir of Agony",
         "accept:567 @1424:-935.25,-19.41  Accept Dangerous!",
         "accept:547 @1424:-941.65,-31.15  Accept Humbert\u0027s Sword",
@@ -114,11 +180,43 @@
         "accept:533 @1424:-957.01,-40.75  Accept Infiltration",
         "turnin:552 @1424:-977.49,-19.41  TurnIn Helcular\u0027s Revenge",
         "turnin:524 @1424:-943.25,0.43  TurnIn Elixir of Agony"
+=======
+        "accept:547 @1424:-941.65,-31.15  Accept Humbert\u0027s Sword",
+        "accept:567 @1424:-935.25,-19.41  Accept Dangerous!",
+        "accept:517 @1424:-899.41,-6.61  Accept Elixir of Agony",
+        "turnin:95125 @1424:-867.09,-158.51  TurnIn Ott\u0027s Masterwork",
+        "obj:567:2 @1424:22.83,-448.85  Objective Dangerous! / Citizen Wilkes slain (1)",
+        "obj:532:2 @1424:100.59,-499.41  Objective Battle of Hillsbrad / Hillsbrad Councilman slain (8)",
+        "obj:532:3 @1424:115.31,-490.67  Objective Battle of Hillsbrad / Hillsbrad Proclamation destroyed",
+        "obj:532:1 @1424:117.23,-488.32  Objective Battle of Hillsbrad / Magistrate Burnside slain (1)",
+        "obj:532:4 @1424:122.03,-485.97  Objective Battle of Hillsbrad / Hillsbrad Town Registry (1)",
+        "obj:567:1 @1424:122.35,-504.75  Objective Dangerous! / Clerk Horrace Whitesteed slain (1)",
+        "obj:567:3 @1424:49.07,-724.27  Objective Dangerous! / Miner Hackett slain (1)",
+        "obj:567:4 @1424:-81.49,-593.49  Objective Dangerous! / Farmer Kalaba slain (1)",
+        "obj:547:1 @1424:-1208.21,-1284.69  Objective Humbert\u0027s Sword / Humbert\u0027s Sword (1)",
+        "obj:517:1 @1424:-1225.17,-1309.87  Objective Elixir of Agony / Keg of Shindigger Stout (1)",
+        "turnin:532 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad",
+        "turnin:567 @1424:-927.89,-36.27  TurnIn Dangerous!",
+        "turnin:547 @1424:-941.65,-31.15  TurnIn Humbert\u0027s Sword",
+        "turnin:517 @1424:-899.41,-6.61  TurnIn Elixir of Agony",
+        "accept:524 @1424:-899.41,-6.61  Accept Elixir of Agony",
+        "turnin:524 @1424:-943.25,0.43  TurnIn Elixir of Agony",
+        "accept:552 @1424:-977.49,-19.41  Accept Helcular\u0027s Revenge",
+        "accept:539 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
+        "obj:552:1 @1424:-358.93,-226.35  Objective Helcular\u0027s Revenge / Helcular\u0027s Rod (1)",
+        "obj:539:2 @1424:117.23,-773.12  Objective Battle of Hillsbrad / Hillsbrad Miner slain (10)",
+        "obj:539:1 @1424:67.95,-794.88  Objective Battle of Hillsbrad / Foreman Bonds slain (1)",
+        "turnin:539 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad",
+        "turnin:552 @1424:-977.49,-19.41  TurnIn Helcular\u0027s Revenge",
+        "accept:507 @1424:-957.01,-40.75  Accept Lord Aliden Perenolde",
+        "accept:533 @1424:-957.01,-40.75  Accept Infiltration"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
       "part": 5,
       "steps": [
+<<<<<<< HEAD
         "accept:541 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
         "accept:544 @1424:-904.53,-44.8  Accept Prison Break In",
         "accept:556 @1424:-901.33,-46.51  Accept Stone Tokens",
@@ -131,6 +229,20 @@
         "obj:541:3 @1424:-1240.21,-1307.73  Objective Battle of Hillsbrad / Dun Garok Priest slain (2)",
         "obj:541:1 @1424:-1223.89,-1297.49  Objective Battle of Hillsbrad / Dun Garok Mountaineer slain (8)",
         "obj:541:2 @1424:-1195.09,-1276.8  Objective Battle of Hillsbrad / Dun Garok Rifleman slain (8)",
+=======
+        "accept:544 @1424:-904.53,-44.8  Accept Prison Break In",
+        "accept:556 @1424:-901.33,-46.51  Accept Stone Tokens",
+        "accept:676 @1424:-913.17,-17.49  Accept The Hammer May Fall",
+        "accept:541 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
+        "turnin:533 @1424:-957.01,-40.75  TurnIn Infiltration",
+        "accept:1361 @1424:-957.01,-40.75  Accept Regthar Deathgate",
+        "accept:553 @1424:-977.49,-19.41  Accept Helcular\u0027s Revenge",
+        "turnin:95125 @1424:-867.09,-158.51  TurnIn Ott\u0027s Masterwork",
+        "obj:541:2 @1424:-1195.09,-1276.8  Objective Battle of Hillsbrad / Dun Garok Rifleman slain (8)",
+        "obj:541:1 @1424:-1223.89,-1297.49  Objective Battle of Hillsbrad / Dun Garok Mountaineer slain (8)",
+        "obj:541:3 @1424:-1240.21,-1307.73  Objective Battle of Hillsbrad / Dun Garok Priest slain (2)",
+        "obj:541:4 @1424:-1254.29,-1299.2  Objective Battle of Hillsbrad / Captain Ironhill slain (8)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:541 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad",
         "accept:550 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
         "accept:557 @1424:-901.33,-46.51  Accept Bracers of Binding",
@@ -142,10 +254,17 @@
     {
       "part": 6,
       "steps": [
+<<<<<<< HEAD
         "accept:518 @1424:-937.49,-40.53  Accept The Crown of Will",
         "accept:521 @1424:-937.49,-40.53  Accept The Crown of Will",
         "accept:519 @1424:-937.49,-40.53  Accept The Crown of Will",
         "accept:520 @1424:-937.49,-40.53  Accept The Crown of Will",
+=======
+        "accept:520 @1424:-937.49,-40.53  Accept The Crown of Will",
+        "accept:521 @1424:-937.49,-40.53  Accept The Crown of Will",
+        "accept:518 @1424:-937.49,-40.53  Accept The Crown of Will",
+        "accept:519 @1424:-937.49,-40.53  Accept The Crown of Will",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:533 @1424:-957.01,-40.75  TurnIn Infiltration",
         "turnin:544 @1424:-904.53,-44.8  TurnIn Prison Break In",
         "turnin:556 @1424:-901.33,-46.51  TurnIn Stone Tokens",

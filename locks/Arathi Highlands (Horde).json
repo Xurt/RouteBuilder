@@ -1,7 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "32-42 Arathi Highlands",
+<<<<<<< HEAD
   "saved": "2026-10-08 19:18",
+=======
+  "saved": "2026-10-10 12:54",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
   "parts": [
     {
       "part": 1,
@@ -9,29 +13,51 @@
         "turnin:79975 @1417:-1675.95,-714.85  TurnIn Eagle\u0027s Fist",
         "accept:79976 @1417:-1675.95,-714.85  Accept This Must Be The Place",
         "turnin:79976 @1417:-1675.59,-714.85  TurnIn This Must Be The Place",
+<<<<<<< HEAD
         "obj:676:2 @1417:-2032.71,-1207.09  Objective The Hammer May Fall / Boulderfist Enforcer slain (10)",
         "obj:676:1 @1417:-2151.87,-1219.81  Objective The Hammer May Fall / Boulderfist Ogre slain (8)",
         "turnin:670 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure",
         "accept:655 @1417:-3481.71,-947.65  Accept Hammerfall",
         "turnin:638 @1417:-3523.47,-948.37  TurnIn Trollbane",
         "turnin:676 @1417:-3539.31,-947.41  TurnIn The Hammer May Fall",
+=======
+        "accept:655 @1417:-3481.71,-947.65  Accept Hammerfall",
+        "turnin:638 @1417:-3523.47,-948.37  TurnIn Trollbane",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "accept:677 @1417:-3539.31,-947.41  Accept Call to Arms",
         "turnin:655 @1417:-3556.59,-1004.29  TurnIn Hammerfall",
         "accept:671 @1417:-3556.59,-1004.29  Accept Foul Magics",
         "accept:672 @1417:-3556.59,-1004.29  Accept Raising Spirits",
+<<<<<<< HEAD
         "obj:671:1 @1417:-2028.39,-812.53  Objective Foul Magics / Bloodstone Amulet (10)",
         "obj:672:1 @1417:-3299.55,-1019.41  Objective Raising Spirits / Highland Raptor Eye (10)",
         "turnin:672 @1417:-3556.59,-1004.29  TurnIn Raising Spirits",
         "accept:674 @1417:-3556.59,-1004.29  Accept Raising Spirits",
         "turnin:671 @1417:-3556.59,-1004.29  TurnIn Foul Magics",
+=======
+        "obj:672:1 @1417:-3299.55,-1019.41  Objective Raising Spirits / Highland Raptor Eye (10)",
+        "turnin:672 @1417:-3556.59,-1004.29  TurnIn Raising Spirits",
+        "accept:674 @1417:-3556.59,-1004.29  Accept Raising Spirits",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:674 @1417:-3481.71,-947.65  TurnIn Raising Spirits",
         "accept:675 @1417:-3481.71,-947.65  Accept Raising Spirits",
         "turnin:675 @1417:-3556.59,-1004.29  TurnIn Raising Spirits",
         "obj:677:1 @1417:-3444.63,-1587.25  Objective Call to Arms / Witherbark Axe Thrower slain (10)",
         "obj:677:3 @1417:-3442.83,-1743.97  Objective Call to Arms / Witherbark Witch Doctor slain (8)",
         "obj:677:2 @1417:-3387.39,-1855.33  Objective Call to Arms / Witherbark Headhunter slain (10)",
+<<<<<<< HEAD
         "turnin:677 @1417:-3539.31,-947.41  TurnIn Call to Arms",
         "turnin:635 @1417:-3116.67,-942.85  TurnIn Crystal in the Mountains"
+=======
+        "turnin:670 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure",
+        "obj:676:1 @1417:-2151.87,-1219.81  Objective The Hammer May Fall / Boulderfist Ogre slain (8)",
+        "obj:676:2 @1417:-2032.71,-1207.09  Objective The Hammer May Fall / Boulderfist Enforcer slain (10)",
+        "obj:671:1 @1417:-2028.39,-812.53  Objective Foul Magics / Bloodstone Amulet (10)",
+        "turnin:635 @1417:-3116.67,-942.85  TurnIn Crystal in the Mountains",
+        "turnin:676 @1417:-3539.31,-947.41  TurnIn The Hammer May Fall",
+        "turnin:677 @1417:-3539.31,-947.41  TurnIn Call to Arms",
+        "turnin:671 @1417:-3556.59,-1004.29  TurnIn Foul Magics"
+>>>>>>> zone/Durotar-Horde-vendor_trainer
       ]
     },
     {
@@ -74,6 +100,7 @@
         "accept:666 @1417:-2085.63,-2064.13  Accept Sunken Treasure",
         "accept:664 @1417:-2090.67,-2072.53  Accept Drowned Sorrows",
         "accept:662 @1417:-2047.47,-2088.85  Accept Deep Sea Salvage",
+<<<<<<< HEAD
         "obj:666:1 @1417:-1694.67,-2245.33  Objective Sunken Treasure / Elven Gem (10)",
         "obj:664:1 @1417:-1679.19,-2219.17  Objective Drowned Sorrows / Daggerspine Raider slain (10)",
         "obj:662:3 @1417:-1603.23,-2187.97  Objective Deep Sea Salvage / Spirit of Silverpine Charts (1)",
@@ -81,6 +108,15 @@
         "obj:664:2 @1417:-1674.87,-2157.73  Objective Drowned Sorrows / Daggerspine Sorceress slain (3)",
         "obj:662:1 @1417:-1696.47,-2161.57  Objective Deep Sea Salvage / Maiden\u0027s Folly Charts (1)",
         "obj:662:2 @1417:-1708.71,-2175.49  Objective Deep Sea Salvage / Maiden\u0027s Folly Log (1)",
+=======
+        "obj:662:2 @1417:-1708.71,-2175.49  Objective Deep Sea Salvage / Maiden\u0027s Folly Log (1)",
+        "obj:662:1 @1417:-1696.47,-2161.57  Objective Deep Sea Salvage / Maiden\u0027s Folly Charts (1)",
+        "obj:664:2 @1417:-1674.87,-2157.73  Objective Drowned Sorrows / Daggerspine Sorceress slain (3)",
+        "obj:662:4 @1417:-1610.07,-2175.73  Objective Deep Sea Salvage / Spirit of Silverpine Log (1)",
+        "obj:662:3 @1417:-1603.23,-2187.97  Objective Deep Sea Salvage / Spirit of Silverpine Charts (1)",
+        "obj:664:1 @1417:-1679.19,-2219.17  Objective Drowned Sorrows / Daggerspine Raider slain (10)",
+        "obj:666:1 @1417:-1694.67,-2245.33  Objective Sunken Treasure / Elven Gem (10)",
+>>>>>>> zone/Durotar-Horde-vendor_trainer
         "turnin:662 @1417:-2047.47,-2088.85  TurnIn Deep Sea Salvage",
         "turnin:664 @1417:-2090.67,-2072.53  TurnIn Drowned Sorrows",
         "turnin:666 @1417:-2085.63,-2064.13  TurnIn Sunken Treasure",
