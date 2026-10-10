@@ -5,7 +5,8 @@ namespace RouteBuilder;
 public sealed class BuildOptions
 {
     public string Faction = "Horde"; public string? Race, Class;
-    public double? StartLevel; public int? MinLevel, MaxLevel; public bool NoHearth, Fresh; public string? RxpDir, OrderFrom;
+    public double? StartLevel; public int? MinLevel, MaxLevel; public bool NoHearth, Fresh, NoRxpSteps; public string? RxpDir, OrderFrom;
+    public HashSet<string> RxpPlaced = new();    // RestedXP service steps already put in a part of this guide
 }
 
 /// <summary>Fixed facts about the game: races, classes and the experience curve.</summary>
@@ -191,9 +192,10 @@ public sealed class Travel
 public sealed class RxpNotes
 {
     public readonly Dictionary<(int q, int idx), List<string>> Lines = new();
+    public readonly List<RxpService> Services = new();     // training, vendor and flight-path steps
     public int Files;
 
-    public static RxpNotes? Load(string? dir)
+    public static RxpNotes? Load(string? dir, GameData? data = null)
     {
         if (dir == null) return null;
         if (!Directory.Exists(dir)) { Console.WriteLine($"--rxp: folder not found: {dir}"); return null; }
@@ -204,6 +206,7 @@ public sealed class RxpNotes
             try { text = File.ReadAllText(f); } catch (IOException) { continue; }
             if (!text.Contains("RegisterGuide")) continue;
             r.Files++;
+            r.Services.AddRange(RxpServices.Read(f, text, data));
             foreach (Match m in rx.Matches(text))
             {
                 var k = (int.Parse(m.Groups[1].Value), int.Parse(m.Groups[2].Value)); string s = m.Groups[3].Value.Trim();
@@ -273,7 +276,7 @@ public sealed class ZoneModel
     {
         Data = data; Main = main; Cfg = cfg ?? new ZoneConfig(); HasConfig = cfg != null; Opt = opt; Visit = visit ?? new Visit();
         Races = Game.Races(opt.Faction); FactionMask = Races.Aggregate(0L, (m, r) => m | r.Bit);
-        Rxp = RxpNotes.Load(opt.RxpDir);
+        Rxp = RxpNotes.Load(opt.RxpDir, Data);
         SetUpAreas();
         SelectQuests();
         foreach (var q in Quests.Values) ResolveObjectives(q);

@@ -29,6 +29,9 @@ Each build writes two files into `guides`:
 * `<Zone> (<who>).lua` - the guide. See "Getting the guides into the game" below.
 * `<Zone> (<who>).report.txt` - what went in, what was left out and why, and what to check in game.
 
+The console also lists any other guide files of the same zone still in `guides` (other level ranges,
+for instance); delete the ones a build replaces, or the addon loads both.
+
 Without `--race`/`--class` you get one route for the whole faction. Quests everyone can do are ordered
 first; class and race quests are slotted into that order and tagged (`<< Paladin`, `<< Undead`), so they
 only show for those characters. With `--race` and `--class` the whole order is tuned for that one
@@ -47,8 +50,18 @@ lowest level, and is written as `<Zone> <min>-<max> (<who>).lua`, so the ranges 
 Quests near the top that need a level the range does not quite reach stay in, behind a short "grind
 to level N" step. A quest whose prerequisite sits in an earlier range only shows once that
 prerequisite is done, so play the ranges in order.
-`--rxp` points at a RestedXP `Guides` folder (inside the addon); RouteBuilder reads the objective
-numbers RestedXP uses and flags or fixes the ones where the database disagrees.
+`--rxp` points at a RestedXP `Guides` folder (inside the addon, best its `forever` folder). RouteBuilder
+reads the objective numbers RestedXP uses and flags or fixes the ones where the database disagrees, and
+copies in RestedXP's training, vendor and flight-path steps for the zone:
+
+* Each one is placed next to the quest step it comes after in RestedXP's guide (or the one before it,
+  when RestedXP does both at one NPC), so it moves with that step if the route changes. If our guide
+  does not have that quest, the nearest one RestedXP does around it is used.
+* Only steps for this faction, on this zone's maps, and from a RestedXP guide whose level range the
+  route is in at that point. A build for one race and class takes only the steps for it.
+* RestedXP's own conditions come along (`.money`, `.xp`, class tags), so its "train if you can afford
+  it" variants still choose themselves in game. Hardcore-only variants are left out.
+* `--no-rxp-steps` leaves them out. The report says how many were added.
 
 ## Keeping the route between builds
 

@@ -24,7 +24,8 @@ public static class Program
               --out <folder>         where guides go (default: guides)
               --data <folder>        the QuestieDB folder (default: QuestieDB)
               --zone-file <path>     corrections file (default: zones/<zone name>.json if it exists)
-              --rxp <folder>         a RestedXP "Guides" folder, used to cross-check objective numbers
+              --rxp <folder>         a RestedXP "Guides" folder: objective numbers are checked against it, and its
+                                     training, vendor and flight-path steps are copied in (--no-rxp-steps: not)
               --start-level <n>      level the player arrives at (default: the zone's lowest quest level)
               --min-level <n>, --max-level <n>   override the quest-level range that is included
               --no-hearth            do not plan hearthstone use
@@ -44,7 +45,7 @@ public static class Program
         {
             if (!argv[i].StartsWith("--")) { Console.Error.WriteLine($"Unexpected argument: {argv[i]}"); return 2; }
             string key = argv[i][2..];
-            if (key is "no-hearth" or "no-download" or "fresh") opt[key] = "1";
+            if (key is "no-hearth" or "no-download" or "fresh" or "no-rxp-steps") opt[key] = "1";
             else if (i + 1 < argv.Length) opt[key] = argv[++i];
             else { Console.Error.WriteLine($"--{key} needs a value"); return 2; }
         }
@@ -125,7 +126,7 @@ public static class Program
         var data = GameData.Load(dataDir);
         var bo = new BuildOptions
         {
-            Faction = faction, Race = opt.GetValueOrDefault("race"), Class = opt.GetValueOrDefault("class"), NoHearth = opt.ContainsKey("no-hearth"), Fresh = opt.ContainsKey("fresh"), OrderFrom = opt.GetValueOrDefault("order-from"), RxpDir = opt.GetValueOrDefault("rxp"),
+            Faction = faction, Race = opt.GetValueOrDefault("race"), Class = opt.GetValueOrDefault("class"), NoHearth = opt.ContainsKey("no-hearth"), Fresh = opt.ContainsKey("fresh"), NoRxpSteps = opt.ContainsKey("no-rxp-steps"), OrderFrom = opt.GetValueOrDefault("order-from"), RxpDir = opt.GetValueOrDefault("rxp"),
             StartLevel = Num(opt, "start-level"), MinLevel = (int?)Num(opt, "min-level"), MaxLevel = (int?)Num(opt, "max-level"),
         };
         string outDir = opt.GetValueOrDefault("out", "guides");
@@ -191,6 +192,7 @@ public static class Program
             List<LockedStep>? keep = null;
             if (lk != null) keep = lk.For(visit.Number);
             var route = new Router(model, Console.WriteLine, keep).Solve();
+            if (lk != null && !lk.Parts.ContainsKey(visit.Number)) route.LockDropped = 0;   // a one-part order shared by every part: the rest belongs to other parts
             var main = route.Views[0];
             var firmLater = model.Later.Values.Where(v => !v.Cond).ToList();
             bool more = firmLater.Count > 0 && visit.Number < Tuning.MaxVisits && !(visit.Only != null && visit.Only.SetEquals(model.Later.Keys));
@@ -234,6 +236,12 @@ public static class Program
         bool ok = visits.All(v => v.v.Errors.Count == 0);
         Console.WriteLine($"  \"{visits[0].g.Name}\"" + (visits.Count > 1 ? $" in {visits.Count} parts" : ""));
         Console.WriteLine($"  -> {path}  ({sw.Elapsed.TotalSeconds:0} s); step order saved in {lockPath}");
+        var written = new List<string> { path };
+        // guide files from earlier builds of this zone (other level ranges, or the per-level split) stay in the folder: say so
+        string who = Emitter.Who(visits[0].m);
+        var stale = Directory.EnumerateFiles(outDir, area.Name + " *(" + who + ").lua").Where(f => !written.Contains(f, StringComparer.OrdinalIgnoreCase)).ToList();
+        if (stale.Count > 0)
+            Console.WriteLine($"  also in {outDir} from earlier builds of {area.Name} (delete any this build replaces, or the addon loads both): " + string.Join(", ", stale.Select(Path.GetFileName)));
         return ok;
     }
 }

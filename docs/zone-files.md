@@ -434,7 +434,8 @@ guide.
 
 ## Extra steps: vendors, trainers, flight paths
 
-RouteBuilder plans quests only. Anything else you want the guide to tell you (sell and repair, train,
+RouteBuilder plans quests only. Building with `--rxp` copies RestedXP's own training, vendor and
+flight-path steps in (see the README). Anything else you want the guide to tell you (sell and repair, train,
 pick up a flight path, buy food) goes under `steps`, each one placed right before or right after a planned
 step. It is tied to that step, not to a place in the order, so it moves with it when the route changes.
 

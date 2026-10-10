@@ -80,7 +80,7 @@ public static class Program
         var hits = new List<Hit>(); var guides = new List<string>(); int order = 0;
         var only = opt.TryGetValue("guides", out var gl) ? gl.Split(',').Select(s => s.Trim()).Where(s => s.Length > 0).ToHashSet(StringComparer.OrdinalIgnoreCase) : null;
         foreach (var file in files)
-            foreach (var (name, steps) in ReadGuides(file))
+            foreach (var (name, steps) in ReadGuides(file, faction, data))
             {
                 if (only != null && !only.Contains(name)) continue;
                 guides.Add(name);
@@ -162,12 +162,12 @@ public static class Program
     sealed record Step(string Tag, bool Along, List<(string Text, string Tag)> Lines);
 
     /// <summary>The guides in a RestedXP file: each RegisterGuide block's #name and its steps, comments removed.</summary>
-    static IEnumerable<(string Name, List<Step> Steps)> ReadGuides(string file)
+    static IEnumerable<(string Name, List<Step> Steps)> ReadGuides(string file, string faction, GameData data)
     {
         string text = File.ReadAllText(file);
         foreach (Match block in Regex.Matches(text, @"RegisterGuide\(\s*\[\[(.*?)\]\]", RegexOptions.Singleline))
         {
-            string name = "?"; var steps = new List<Step>(); Step? cur = null;
+            string name = "?", side = ""; var steps = new List<Step>(); Step? cur = null;
             foreach (var raw in block.Groups[1].Value.Split('\n'))
             {
                 string l = Regex.Replace(raw, "--.*$", "").Trim();
@@ -175,11 +175,14 @@ public static class Program
                 string tag = ""; int ti = l.LastIndexOf("<<", StringComparison.Ordinal);
                 if (ti >= 0) { tag = l[(ti + 2)..].Trim(); l = l[..ti].TrimEnd(); }
                 if (l.StartsWith("#name ")) { name = l[6..].Trim(); continue; }
+                if (cur == null && l.Length == 0) { side = tag.StartsWith("Horde") ? "Horde" : tag.StartsWith("Alliance") ? "Alliance" : side; continue; }
                 if (l == "step") { steps.Add(cur = new Step(tag, false, new())); continue; }
                 if (cur == null) continue;
+                l = RxpServices.NormalizeGoto(l, data);              // ".goto Ashenvale,37.36,51.79" -> map ID and world coordinates
                 if (l.StartsWith("#completewith")) { steps[^1] = cur = cur with { Along = true }; continue; }
                 cur.Lines.Add((l, tag));
             }
+            if (side.Length > 0 && side != faction) continue;          // a guide for the other faction
             yield return (name, steps);
         }
     }

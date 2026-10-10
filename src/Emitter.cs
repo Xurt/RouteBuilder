@@ -7,7 +7,7 @@ public sealed class GuideOutput
 {
     public string Name = "", Group = "", FileName = "";
     public List<string> Lines = new();      // the guide body (between RegisterGuide([[ and ]]))
-    public int Steps, HearthSteps, EarlyOffers, Stops, AsYouGo, CustomSteps;
+    public int Steps, HearthSteps, EarlyOffers, Stops, AsYouGo, CustomSteps, RxpSteps;
     public List<string> StepsNotPlaced = new();      // zone-file steps whose anchor is in no part of this guide
     public int GateLine = -1;               // index of the "step" line of the level check that leads to the next part
     public List<string> GrindSteps = new();
@@ -537,6 +537,25 @@ public sealed class Emitter
                 if (!l.Contains(sf)) l.Add(sf);                   // two names at the same stop: once is enough
             }
         }
+        // training, vendor and flight-path steps from RestedXP's guides (--rxp), next to the quest step they follow there
+        var nearUs = m.Areas.Select(a => a.UiMap).ToHashSet();
+        if (m.Rxp != null && !m.Opt.NoRxpSteps)
+            foreach (var svc in m.Rxp.Services)
+            {
+                if (svc.Faction.Length > 0 && svc.Faction != m.Opt.Faction) continue;
+                if (svc.Map >= 0 && !nearUs.Contains(svc.Map)) continue;
+                if (m.SingleCharacter && m.Opt.Race != null && m.Opt.Class != null && !Verifier.Applies(svc.Tag, m.Opt.Race, m.Opt.Class, m.Opt.Faction)) continue;
+                string id = m.Main.Name + "|" + svc.Id;
+                if (m.Opt.RxpPlaced.Contains(id)) continue;
+                var anchor = svc.Anchors.FirstOrDefault(a => unitOf.ContainsKey(a.Key));
+                if (anchor.Key == null) continue;
+                var map = anchor.After ? after : before; int at = unitOf[anchor.Key];
+                // only where this guide is within a level of the RestedXP guide the step comes from
+                if (units[at].Level < svc.MinLevel - 1 || units[at].Level > svc.MaxLevel + 1) continue;
+                if (!map.TryGetValue(at, out var l)) map[at] = l = new();
+                l.Add(new StepFix { Lines = svc.Lines, Tag = svc.Tag });
+                m.Opt.RxpPlaced.Add(id); g.RxpSteps++;
+            }
         void Custom(StepFix sf)
         {
             L.Add(Step(sf.Tag?.Trim() ?? ""));
@@ -544,7 +563,7 @@ public sealed class Emitter
             if (!string.IsNullOrWhiteSpace(sf.Text)) L.Add("    >>" + sf.Text.Trim().TrimStart('>'));
             foreach (var line in sf.Lines) L.Add("    " + line.Trim());
             if (sf.Goto == null && string.IsNullOrWhiteSpace(sf.Text) && sf.Lines.Count == 0) L.Add("    +" + string.Join(", ", sf.After ?? sf.Before ?? new()));
-            g.CustomSteps++;
+            if (sf.After != null || sf.Before != null) g.CustomSteps++;
         }
 
         Pt prev = m.Start; int prevArea = m.StartArea;
@@ -620,7 +639,7 @@ public sealed class Emitter
     public static string FileText(List<(ZoneModel m, GuideOutput g)> visits)
     {
         var m = visits[0].m; var sb = new StringBuilder();
-        string who = m.SingleCharacter ? string.Join(" ", new[] { m.Opt.Race, m.Opt.Class }.Where(s => s != null).Select(s => Proper(s!))) : m.Opt.Faction;
+        string who = Who(m);
         // the range in the name runs from the level the plan starts at to the highest quest level in it
         int lo = (int)Math.Floor(m.StartLevel), hi = Math.Max(lo, visits.Max(v => v.m.LevelHi));
         string name = $"{lo}-{hi} {m.Main.Name}", group = $"Zone Routes ({who})";
@@ -646,4 +665,8 @@ public sealed class Emitter
         sb.AppendLine("]])");
         return sb.ToString();
     }
+
+    /// <summary>Who a guide is for: the faction, or the race and class it was tuned for.</summary>
+    public static string Who(ZoneModel m) =>
+        m.SingleCharacter ? string.Join(" ", new[] { m.Opt.Race, m.Opt.Class }.Where(s => s != null).Select(s => Proper(s!))) : m.Opt.Faction;
 }

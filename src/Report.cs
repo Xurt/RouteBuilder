@@ -210,6 +210,7 @@ public static class Report
             sb.AppendLine("The check passes at once if you are there; if you are a little behind the prediction it asks you to grind the difference:");
             foreach (var s in g.GrindSteps) sb.AppendLine("  " + s);
         }
+        if (g.RxpSteps > 0) sb.AppendLine($"{g.RxpSteps} training, vendor and flight-path step{(g.RxpSteps == 1 ? "" : "s")} taken from RestedXP's guides, each next to the quest step it follows there (--no-rxp-steps leaves them out).");
         if (g.CustomSteps > 0) sb.AppendLine($"{g.CustomSteps} hand-written step{(g.CustomSteps == 1 ? "" : "s")} from the zone file placed next to the steps they name.");
         foreach (var k in g.StepsNotPlaced) sb.AppendLine($"  ! zone file \"steps\": nothing called \"{k}\" in this guide, so no hand-written step was placed there (check the name against the locks file)");
         if (g.AsYouGo > 0) sb.AppendLine($"{g.AsYouGo} objective{(g.AsYouGo == 1 ? " is" : "s are")} also shown \"as you go\" at earlier stops inside their area; their own step finishes whatever is left (and skips itself if nothing is).");
