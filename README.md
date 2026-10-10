@@ -141,7 +141,12 @@ build; the folder is rebuilt from scratch each time.
   goes. If the zone covers more levels than its own quests give, the guide is cut into parts with a
   level check between them ("the rest is planned from level 18; come back then").
 * **Hubs.** Whenever you are at a quest hub, everything you can pick up or hand in there is part of
-  that stop. Nothing on offer is left for a later visit.
+  that stop. Nothing on offer is left for a later visit. A quest more than three levels above you is
+  not "on offer" yet: it is picked up on a later visit, close to when you can do it (`PickupAhead`,
+  `AheadCost` in settings).
+* **Finishing what you pick up.** Carrying a picked-up quest whose objectives are not done yet costs a
+  little per yard (`Open`), so the plan picks up a group of quests, does them, and hands them in before
+  moving on, instead of leaving a starting area with its quests half done.
 * **Loops.** Objective steps get a `#loop` of waypoints over the spawns. When the chosen spot holds fewer
   than the objective needs (five Lazy Peons that each sleep somewhere else), the loop takes in the
   objective's other known spawn points, nearest first (`SpreadRange`).
@@ -154,7 +159,8 @@ build; the folder is rebuilt from scratch each time.
   plan hands it in on the way rather than carrying it past. "On the way" is judged in straight lines
   (`PassRadius`, `PassDetour` and `PassMiss` in settings), so a road that bends through a town is not seen.
 * **Quest log.** Forever's 40 slots are checked for every race/class combination.
-* **Checks.** The finished guide is replayed as each race/class combination; anything out of order
+* **Checks.** The finished guide is replayed as each race/class combination that exists (classic's,
+  plus Forever's, such as Undead Paladin, Orc Mage and Skyborne; more are picked up from the quest data); anything out of order
   (hand-in before pickup, a prerequisite skipped, a step shown to the wrong class) is reported.
 
 ## Zone files: where your corrections go

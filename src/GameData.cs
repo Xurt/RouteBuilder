@@ -111,6 +111,7 @@ public sealed class GameData
 
         d.LoadAreas(repo); d.LoadSupport(repo);
         d.Version = ReadVersion(repo);
+        Game.Learn(d);                       // race/class combinations the quest data has class quests for
         return d;
     }
 

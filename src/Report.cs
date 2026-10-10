@@ -58,7 +58,7 @@ public sealed class Verifier
         var chars = new List<(string race, long rbit, string cls, int cbit)>();
         foreach (var (rn, rb) in m.Races)
             foreach (var (cn, cb) in Game.Classes)
-                if ((m.Opt.Race == null || rn.Equals(m.Opt.Race, StringComparison.OrdinalIgnoreCase)) && (m.Opt.Class == null || cn.Equals(m.Opt.Class, StringComparison.OrdinalIgnoreCase)))
+                if (Game.Exists(rn, cn) && (m.Opt.Race == null || rn.Equals(m.Opt.Race, StringComparison.OrdinalIgnoreCase)) && (m.Opt.Class == null || cn.Equals(m.Opt.Class, StringComparison.OrdinalIgnoreCase)))
                     chars.Add((rn, rb, cn, cb));
         Characters = chars.Count;
         var seen = new HashSet<string>();

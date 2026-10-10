@@ -21,6 +21,40 @@ public static class Game
     static readonly (string Name, long Bit)[] Alliance = { ("Human", 1), ("Dwarf", 4), ("NightElf", 8), ("Gnome", 64), ("Skyborne", 1L << 32) };
     public static (string Name, long Bit)[] Races(string faction) => faction == "Horde" ? Horde : Alliance;
 
+    /// <summary>
+    /// The race/class combinations that exist: classic's, plus those Forever adds. Forever's are the ones its quest
+    /// data has class quests for; any more that the data turns up are added when it is loaded (<see cref="Learn"/>).
+    /// </summary>
+    static readonly HashSet<(string Race, string Class)> Combos = new()
+    {
+        ("Human", "Warrior"), ("Human", "Paladin"), ("Human", "Rogue"), ("Human", "Priest"), ("Human", "Mage"), ("Human", "Warlock"),
+        ("Dwarf", "Warrior"), ("Dwarf", "Paladin"), ("Dwarf", "Hunter"), ("Dwarf", "Rogue"), ("Dwarf", "Priest"),
+        ("Gnome", "Warrior"), ("Gnome", "Rogue"), ("Gnome", "Mage"), ("Gnome", "Warlock"),
+        ("NightElf", "Warrior"), ("NightElf", "Hunter"), ("NightElf", "Rogue"), ("NightElf", "Priest"), ("NightElf", "Druid"),
+        ("Orc", "Warrior"), ("Orc", "Hunter"), ("Orc", "Rogue"), ("Orc", "Shaman"), ("Orc", "Warlock"),
+        ("Troll", "Warrior"), ("Troll", "Hunter"), ("Troll", "Rogue"), ("Troll", "Priest"), ("Troll", "Shaman"), ("Troll", "Mage"),
+        ("Tauren", "Warrior"), ("Tauren", "Hunter"), ("Tauren", "Shaman"), ("Tauren", "Druid"),
+        ("Undead", "Warrior"), ("Undead", "Rogue"), ("Undead", "Priest"), ("Undead", "Mage"), ("Undead", "Warlock"),
+        // Forever
+        ("Undead", "Paladin"), ("Gnome", "Priest"), ("Orc", "Mage"), ("Troll", "Warlock"), ("Dwarf", "Shaman"),
+        ("Skyborne", "Druid"), ("Skyborne", "Hunter"), ("Skyborne", "Shaman"), ("Skyborne", "Warrior"), ("Skyborne", "Mage"),
+    };
+
+    public static bool Exists(string race, string cls) => Combos.Contains((race, cls));
+    public static IEnumerable<string> ClassesOf(string race) => Classes.Select(c => c.Name).Where(c => Exists(race, c));
+
+    /// <summary>Adds combinations the quest data has a class quest for (one class, at most three races).</summary>
+    public static void Learn(GameData data)
+    {
+        foreach (var q in data.Quests.Values)
+        {
+            if (q.Races == 0 || q.Classes == 0) continue;
+            var cs = Classes.Where(c => (q.Classes & c.Bit) != 0).ToList();
+            var rs = Horde.Concat(Alliance).Where(r => (q.Races & r.Bit) != 0).Select(r => r.Name).Distinct().ToList();
+            if (cs.Count == 1 && rs.Count is > 0 and <= 3) foreach (var r in rs) Combos.Add((r, cs[0].Name));
+        }
+    }
+
     /// <summary>Quest "sort" values that mean "class quest".</summary>
     public static readonly HashSet<int> ClassSorts = new() { -61, -81, -82, -141, -161, -162, -261, -262, -263 };
     public const int CampingSort = -666;
@@ -466,7 +500,8 @@ public sealed class ZoneModel
         ulong e = 0;
         for (int r = 0; r < Races.Length; r++)
             for (int c = 0; c < Game.Classes.Length; c++)
-                if ((races == 0 || (races & Races[r].Bit) != 0) && (classes == 0 || (classes & Game.Classes[c].Bit) != 0)) e |= 1UL << (r * Game.Classes.Length + c);
+                if ((races == 0 || (races & Races[r].Bit) != 0) && (classes == 0 || (classes & Game.Classes[c].Bit) != 0) && Game.Exists(Races[r].Name, Game.Classes[c].Name))
+                    e |= 1UL << (r * Game.Classes.Length + c);
         return e;
     }
 
@@ -484,6 +519,11 @@ public sealed class ZoneModel
             var c = Game.Classes.FirstOrDefault(x => x.Name.Equals(Opt.Class, StringComparison.OrdinalIgnoreCase));
             if (c.Name == null) throw new InvalidOperationException($"'{Opt.Class}' is not a class. Choices: {string.Join(", ", Game.Classes.Select(x => x.Name))}");
             classBit = c.Bit;
+        }
+        if (Opt.Race != null && Opt.Class != null && !Game.Exists(Races.First(x => x.Bit == raceBit).Name, Game.Classes.First(x => x.Bit == classBit).Name))
+        {
+            string rn = Races.First(x => x.Bit == raceBit).Name;
+            throw new InvalidOperationException($"there are no {rn} {Opt.Class}s. {rn} classes: {string.Join(", ", Game.ClassesOf(rn))}");
         }
         SingleCharacter = raceBit != 0 || classBit != 0;
         AllElig = EligFor(raceBit, classBit);

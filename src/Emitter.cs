@@ -341,7 +341,8 @@ public sealed class Emitter
                     var last = A.Tasks[^1]; double xpAfterA = r.XpBefore[last.Id] + XpOf(A.Tasks);
                     // pull B's steps forward into A
                     bool pull = B.Tasks.All(t => t.Tight < 0 && !Depends(t, betweenIds)
-                                              && (t.Kind != TaskKind.Accept || t.MinLevel <= 1 || Game.FracLevel(xpAfterA + XpOf(B.Tasks.TakeWhile(x => x != t))) >= t.MinLevel));
+                                              && (t.Kind != TaskKind.Accept || (t.MinLevel <= 1 || Game.FracLevel(xpAfterA + XpOf(B.Tasks.TakeWhile(x => x != t))) >= t.MinLevel)
+                                                  && !(t.Q!.Level > Game.FracLevel(xpAfterA) + Tuning.PickupAhead)));
                     if (pull)
                     {
                         double x0 = xpAfterA;
@@ -481,6 +482,7 @@ public sealed class Emitter
                 if (planned.TryGetValue(t.Id, out int pu) && visitOf[pu] == visitOf[i]) continue;      // picked up later on this same visit anyway
                 if (t.Pre.Any(p => !done.Contains(p) && !m.Tasks[p].Deferred) || (t.PreAny.Count > 0 && !t.PreAny.Any(done.Contains))) continue;
                 if (t.MinLevel <= 1 || !(t.MinLevel - 0.5 <= lvl && lvl < t.MinLevel + Tuning.Safety)) continue;
+                if (t.Q.Level > lvl + Tuning.PickupAhead) continue;                  // not offered far ahead of its level either
                 var near = t.Cands.FirstOrDefault(c => c.Area == u.Area && c.Pos.To(u.Pos) <= Tuning.HubRadius);
                 if (near != null && !t.Ent.Patrol) offers[(t.Id, visit)] = (i, t, near);     // the last stop of the visit wins
             }
