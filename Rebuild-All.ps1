@@ -38,11 +38,13 @@ Set-Location $PSScriptRoot
 $Rxp = $Rxp.Trim().TrimEnd('"').TrimEnd('\', '/')
 if (-not (Test-Path -LiteralPath $Rxp -PathType Container)) { throw "RestedXP folder not found: $Rxp" }
 
-# the zones to build for each faction (as in the old build.cmd)
+# the zones to build for each faction (as in the old build.cmd; the capital cities are planned with their zone:
+# Orgrimmar with Durotar, Thunder Bluff with Mulgore, Undercity with Tirisfal Glades, Stormwind City with
+# Elwynn Forest, Ironforge with Dun Morogh, Darnassus with Teldrassil)
 $zones = @{
     Horde = @(
-        'Durotar', 'Mulgore', 'Zephras Isle', 'Tirisfal Glades', 'Thunder Bluff', 'Undercity', 'Silverpine Forest',
-        'The Barrens', 'Orgrimmar', 'Redridge Mountains', 'Westfall', 'Stonetalon Mountains', 'Ashenvale',
+        'Durotar', 'Mulgore', 'Zephras Isle', 'Tirisfal Glades', 'Silverpine Forest',
+        'The Barrens', 'Redridge Mountains', 'Westfall', 'Stonetalon Mountains', 'Ashenvale',
         'Hillsbrad Foothills', 'Thousand Needles', 'Duskwood', 'Dun Morogh', 'Stranglethorn Vale', 'Desolace',
         'Loch Modan', 'Arathi Highlands', 'Alterac Mountains', 'Swamp of Sorrows', 'Dustwallow Marsh', 'Badlands',
         'Feralas', 'The Hinterlands', 'Tanaris', 'Searing Gorge', 'Azshara', 'Felwood', "Un'Goro Crater",
@@ -50,8 +52,8 @@ $zones = @{
         'Silithus', 'Teldrassil'
     )
     Alliance = @(
-        'Elwynn Forest', 'Teldrassil', 'Zephras Isle', 'Dun Morogh', 'Ironforge', 'Stormwind City', 'Durotar',
-        'Westfall', 'Darkshore', 'Loch Modan', 'Darnassus', 'Redridge Mountains', 'The Barrens', 'Ashenvale',
+        'Elwynn Forest', 'Teldrassil', 'Zephras Isle', 'Dun Morogh', 'Durotar',
+        'Westfall', 'Darkshore', 'Loch Modan', 'Redridge Mountains', 'The Barrens', 'Ashenvale',
         'Wetlands', 'Duskwood', 'Dustwallow Marsh', 'Stonetalon Mountains', 'Riverglades', 'Hillsbrad Foothills',
         'Thousand Needles', 'Stranglethorn Vale', 'Arathi Highlands', 'Desolace', 'Alterac Mountains', 'Badlands',
         'Swamp of Sorrows', 'Feralas', 'The Hinterlands', 'Tanaris', 'Searing Gorge', 'Azshara', 'Felwood',
@@ -64,16 +66,17 @@ $log = Join-Path $PSScriptRoot 'rebuild.log'
 Set-Content -LiteralPath $log -Value "Rebuild-All $(Get-Date -Format 'yyyy-MM-dd HH:mm')  RestedXP: $Rxp" -Encoding UTF8
 
 Write-Host 'Compiling...'
-& dotnet build -c Release --nologo -v q | Out-File -LiteralPath $log -Append -Encoding UTF8
+$ErrorActionPreference = 'Continue'
+& dotnet build -c Release --nologo -v q 2>&1 | ForEach-Object { "$_" } | Out-File -LiteralPath $log -Append -Encoding UTF8
 if ($LASTEXITCODE -ne 0) { throw 'RouteBuilder did not compile; see rebuild.log' }
-& dotnet build RxpToLock -c Release --nologo -v q | Out-File -LiteralPath $log -Append -Encoding UTF8
+& dotnet build RxpToLock -c Release --nologo -v q 2>&1 | ForEach-Object { "$_" } | Out-File -LiteralPath $log -Append -Encoding UTF8
 if ($LASTEXITCODE -ne 0) { throw 'RxpToLock did not compile; see rebuild.log' }
 $routeBuilder = [IO.Path]::Combine($PSScriptRoot, 'bin', 'Release', 'net8.0', 'RouteBuilder.dll')
 $rxpToLock = [IO.Path]::Combine($PSScriptRoot, 'RxpToLock', 'bin', 'Release', 'net8.0', 'RxpToLock.dll')
 
 if ($Update) {
     Write-Host 'Updating QuestieDB...'
-    & dotnet $routeBuilder update 2>&1 | Out-File -LiteralPath $log -Append -Encoding UTF8
+    & dotnet $routeBuilder update 2>&1 | ForEach-Object { "$_" } | Out-File -LiteralPath $log -Append -Encoding UTF8
     if ($LASTEXITCODE -ne 0) { throw 'update failed; see rebuild.log' }
 }
 
@@ -82,16 +85,19 @@ if ($guides.Count -eq 0) { throw "no .lua guide files in $Rxp" }
 Write-Host "$($guides.Count) RestedXP guide files in $Rxp"
 
 # runs one command, keeps all of its output in the log, shows the lines worth seeing
+# (Windows PowerShell 5.1 turns anything a program writes to its error output into a stopping error, so that is
+# switched off here: a zone that fails is reported and the run goes on)
 function Invoke-Step([string]$what, [string[]]$arguments, [string]$show) {
+    $ErrorActionPreference = 'Continue'
     Add-Content -LiteralPath $log -Value "`n===== $what`n> dotnet $($arguments -join ' ')" -Encoding UTF8
-    $out = & dotnet @arguments 2>&1 | ForEach-Object { "$_" }
+    $out = & dotnet @arguments 2>&1 | ForEach-Object { if ($_ -is [System.Management.Automation.ErrorRecord]) { $_.Exception.Message } else { "$_" } }
     $code = $LASTEXITCODE
     $out | Out-File -LiteralPath $log -Append -Encoding UTF8
     $out | Where-Object { $_ -match $show } | ForEach-Object { Write-Host "    $($_.Trim())" }
     return @{ Code = $code; Out = $out }
 }
 
-$problems = @(); $failed = @(); $noRxp = @(); $done = 0
+$problems = @(); $failed = @(); $noRxp = @(); $skipped = @(); $done = 0
 foreach ($f in $Faction) {
     # -Zone "A","B" arrives as one string "A,B" when the script is started with -File
     $list = if ($Zone) { $Zone | ForEach-Object { $_ -split ',' } | ForEach-Object { $_.Trim() } | Where-Object { $_ } } else { $zones[$f] }
@@ -105,7 +111,8 @@ foreach ($f in $Faction) {
         if ($Fresh) { $buildArgs += '--fresh' }
         $b = Invoke-Step "build $z ($f)" $buildArgs 'saved order for everyone:|yd on foot|training, vendor|^Error'
         $text = $b.Out -join "`n"
-        if ($text -match '(?m)^Error') { $failed += "$z ($f)" }
+        if ($text -match 'is planned as part of (.+?); build') { $skipped += "$z ($f, part of $($Matches[1]))" }
+        elseif ($text -match '(?m)^Error') { $failed += "$z ($f)" }
         elseif ($text -match 'PROBLEMS') { $problems += "$z ($f)" }
         else { $done++ }
     }
@@ -115,6 +122,7 @@ Write-Host ''
 Write-Host "$done built with all checks passed." -ForegroundColor Green
 if ($problems.Count) { Write-Host "Built, but the report lists problems: $($problems -join ', ')" -ForegroundColor Yellow }
 if ($failed.Count) { Write-Host "Not built (see rebuild.log): $($failed -join ', ')" -ForegroundColor Red }
+if ($skipped.Count) { Write-Host "Skipped, built with their zone: $($skipped -join ', ')" }
 if ($noRxp.Count) { Write-Host "RestedXP's guides have nothing for these, so their lock was kept as it was: $($noRxp -join ', ')" }
 
 if (-not $NoAddon) {

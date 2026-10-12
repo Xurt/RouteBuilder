@@ -1,0 +1,29 @@
+{
+  "about": "Step order taken from RestedXP's guide by RxpToLock. RouteBuilder follows it and slots in this zone's other quests. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "guide": "from RestedXP: 1-10 ADV Elwynn Forest Human Mage AoE, 10-11 ADV Dun Morogh Human Mage AoE, 1-10 ADV Dun Morogh Gnome Mage AoE, 1-10 Elwynn Forest Mage AoE, 1-10 Dun Morogh Mage AoE, 1-6 Durotar, 6-10 Durotar, 10-12 Durotar, 10-12 Tirisfal (Orc/Troll), 1-6 Tirisfal Glades, 6-12 Tirisfal Glades, 12-14 Silverpine Forest, 1-6 Mulgore, 6-12 Mulgore, 12-17 The Barrens, 17-22 Stonetalon/Barrens/Ashenvale, 12-17 The Barrens AoE, 17-21 Stonetalon/Barrens AoE, 1-14 Zephras Isle, Random Stuff",
+  "saved": "2026-10-12 12:08",
+  "parts": [
+    {
+      "part": 1,
+      "steps": [
+        "turnin:94913 @1450:-2678.76,8019.94  TurnIn Moonglade [94913]  (RestedXP: 12-14 Silverpine Forest)",
+        {"lines":[".goto 1450/1,-2593.82,7866.90",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r",".train 5178 >> Train your class spells",".target Loganaar",".xp <14,1",".xp >16,1"],"tag":"Druid","from":"RestedXP: 12-14 Silverpine Forest"},
+        {"lines":[".goto 1450/1,-2593.82,7866.90",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r",".train 8925 >> Train your class spells",".target Loganaar",".xp <16,1"],"tag":"Druid","from":"RestedXP: 12-14 Silverpine Forest"},
+        "accept:5922 @1456:-283.89,-1039.96  Accept Moonglade [5922]  (RestedXP: 6-12 Mulgore)",
+        "turnin:5922 @1450:-2678.76,8019.94  TurnIn Moonglade [5922]  (RestedXP: 6-12 Mulgore)",
+        "accept:5932 @1450:-2678.76,8019.94  Accept Back to Thunder Bluff [5932]  (RestedXP: 6-12 Mulgore)",
+        "turnin:5932 @1456:-283.89,-1039.96  TurnIn Back to Thunder Bluff [5932]  (RestedXP: 6-12 Mulgore)",
+        {"lines":[".goto 1450/1,-2593.82,7866.90",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r",".train 1430 >> Train your class spells",".target Loganaar",".xp <18,1",".xp >20,1"],"tag":"Druid","from":"RestedXP: 17-22 Stonetalon/Barrens/Ashenvale"},
+        {"lines":[".goto 1450/1,-2593.82,7866.90",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r",".train 768 >> Train your class spells",".target Loganaar",".xp <20,1"],"tag":"Druid","from":"RestedXP: 17-22 Stonetalon/Barrens/Ashenvale"},
+        "accept:27 @1456:-281.59,-1039.61  Accept A Lesson to Learn [27]  (RestedXP: 17-22 Stonetalon/Barrens/Ashenvale)",
+        "turnin:27 @1450:-2678.76,8019.94  TurnIn A Lesson to Learn [27]  (RestedXP: 17-22 Stonetalon/Barrens/Ashenvale)",
+        "accept:30 @1450:-2224.25,7874.29  Accept Trial of the Sea Lion [30]  (RestedXP: 17-22 Stonetalon/Barrens/Ashenvale)",
+        {"lines":[".train 2575 >>Use |T4625105:0|t[Mining for Dummies]."],"from":"RestedXP: 1-14 Zephras Isle"},
+        {"lines":[".train 2366 >>Use |T4624731:0|t[Wild Harvest]."],"from":"RestedXP: 1-14 Zephras Isle"},
+        {"lines":[".train 8613 >>Use |T4624731:0|t[Pelt Collecting for Beginners]."],"from":"RestedXP: 1-14 Zephras Isle"},
+        {"lines":[".isOnQuest 93461",".train 7411,3",">>Use the |T135225:0|t[Runed Copper Rod] macro below, then use the |T135645:0|t[Novice's Practice Wand] macro",".collect 6218,1",".collect 247789,1"],"tag":"Mage","from":"RestedXP: 1-14 Zephras Isle"},
+        "accept:94913  Accept Moonglade [94913]  (RestedXP: 1-14 Zephras Isle)"
+      ]
+    }
+  ]
+}

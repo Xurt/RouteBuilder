@@ -68,6 +68,7 @@ public static class Program
         Console.WriteLine("Reading QuestieDB data...");
         var data = GameData.Load(opt.GetValueOrDefault("data", "QuestieDB"));
         var area = data.FindArea(zone) ?? throw new InvalidOperationException($"No zone called '{zone}'.");
+        if (ZoneModel.CityParent(area.Id) is { } parent) throw new InvalidOperationException($"{area.Name} is planned as part of {data.AreaName(parent)}; run this for that zone instead");
         string? zoneFile = opt.GetValueOrDefault("zone-file") ?? new[] { Path.Combine("zones", area.Name + ".json") }.FirstOrDefault(File.Exists);
         var cfg = zoneFile != null ? ZoneConfig.Load(zoneFile) : null;
         Console.WriteLine($"{area.Name} ({faction}{(bo.Race != null ? ", " + bo.Race : "")}{(bo.Class != null ? ", " + bo.Class : "")}){(zoneFile != null ? "  using " + zoneFile : "")}");

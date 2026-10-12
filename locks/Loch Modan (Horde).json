@@ -1,0 +1,17 @@
+{
+  "about": "Step order taken from RestedXP's guide by RxpToLock. RouteBuilder follows it and slots in this zone's other quests. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "guide": "from RestedXP: 1-10 ADV Elwynn Forest Human Mage AoE, 10-11 ADV Dun Morogh Human Mage AoE, 1-10 ADV Dun Morogh Gnome Mage AoE, 1-10 Elwynn Forest Mage AoE, 1-10 Dun Morogh Mage AoE, 1-6 Durotar, 6-10 Durotar, 10-12 Durotar, 10-12 Tirisfal (Orc/Troll), 1-6 Tirisfal Glades, 6-12 Tirisfal Glades, 12-14 Silverpine Forest, 1-6 Mulgore, 6-12 Mulgore, 12-17 The Barrens, 17-22 Stonetalon/Barrens/Ashenvale, 12-17 The Barrens AoE, 17-21 Stonetalon/Barrens AoE, 1-14 Zephras Isle, Random Stuff",
+  "saved": "2026-10-12 12:07",
+  "parts": [
+    {
+      "part": 1,
+      "steps": [
+        "accept:1526 @1411:-3999.24,-268.95  Accept Call of Fire [1526]  (RestedXP: 12-17 The Barrens)",
+        "obj:1526:1 @1411:-4022.51,-243.92  Objective 1 of Call of Fire [1526]  (RestedXP: 12-17 The Barrens)",
+        "turnin:1526 @1411:-4022.51,-243.92  TurnIn Call of Fire [1526]  (RestedXP: 12-17 The Barrens)",
+        "accept:1527 @1411:-4022.51,-243.92  Accept Call of Fire [1527]  (RestedXP: 12-17 The Barrens)",
+        "turnin:1527 @1413:-3037.56,264.63  TurnIn Call of Fire [1527]  (RestedXP: 12-17 The Barrens)"
+      ]
+    }
+  ]
+}
