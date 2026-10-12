@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "21-28 Stonetalon Mountains",
-  "saved": "2026-10-10 16:03",
+  "saved": "2026-10-10 20:04",
   "parts": [
     {
       "part": 1,
@@ -36,9 +36,7 @@
         "turnin:1080 @1442:339.27,730.09  TurnIn Covert Ops - Beta",
         "accept:1091 @1442:339.27,730.09  Accept Kaela's Update",
         "turnin:1091 @1442:320.72,739.86  TurnIn Kaela's Update",
-        "turnin:1056 @1442:1434.12,2652.91  TurnIn Journey to Stonetalon Peak",
-        {"lines":[".goto 1442/1,1507.61,2677.30",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illyanie|r",".vendor >> |cRXP_WARN_Vendor trash|r",".target Illyanie"],"tag":"Warlock","from":"RestedXP: 21-23 Stonetalon/Ashenvale"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teloren|r",".target Teloren",".goto 1442/1,1466.44,2682.84",".fp Stonetalon >> Get the Stonetalon Flight Path",".fly Ashenvale >> Fly to Ashenvale << !Warlock"],"from":"RestedXP: 21-23 Stonetalon/Ashenvale"}
+        "turnin:1056 @1442:1434.12,2652.91  TurnIn Journey to Stonetalon Peak"
       ]
     },
     {
