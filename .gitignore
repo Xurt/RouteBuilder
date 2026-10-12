@@ -8,5 +8,6 @@ guides/
 settings.json
 build.cmd
 tempforever/
+forever/
 locks/*.bak
 rebuild.log
