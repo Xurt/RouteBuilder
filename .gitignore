@@ -7,6 +7,6 @@ QuestieDB.clone/
 guides/
 settings.json
 build.cmd
-forever/
+tempforever/
 locks/*.bak
 rebuild.log
