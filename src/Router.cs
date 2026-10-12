@@ -639,18 +639,31 @@ public sealed class Router
         }
         while (k < known.Count) woven.Add(known[k++]);
 
-        // a step whose prerequisites are not all ahead of it any more is taken out, and so is anything that follows from it
+        // Steps keep their saved order. A step that needs one the lock does not have (a quest the lock never did, an objective
+        // it did along the way) stays put: the missing step is slotted in ahead of it below. A step that needs one which comes
+        // later in the lock waits, and goes in right after it; so do the steps that need the waiting one. Nothing else moves.
+        var inWoven = new bool[n]; foreach (int t in woven) inWoven[t] = true;
         var placed = new bool[n]; var seq = new List<int>(woven.Count + fresh);
+        bool Ready(int t) => ev.Pre[t].All(p => placed[p] || !inWoven[p]) && (ev.Any[t].Length == 0 || ev.Any[t].Any(p => placed[p] || !inWoven[p]));
+        var waiting = new List<int>(); int held = 0;
+        bool dbg = Environment.GetEnvironmentVariable("ROUTEBUILDER_DEBUG") == "1";
+        void Place(int t)
+        {
+            seq.Add(t); placed[t] = true;
+            for (int i = 0; i < waiting.Count; i++)
+                if (Ready(waiting[i])) { int w = waiting[i]; waiting.RemoveAt(i); seq.Add(w); placed[w] = true; i = -1; }
+        }
         foreach (int t in woven)
         {
-            bool ok = ev.Pre[t].All(p => placed[p]) && (ev.Any[t].Length == 0 || ev.Any[t].Any(p => placed[p]));
-            if (ok || !movable[t]) { seq.Add(t); placed[t] = true; }
-            else loose[t] = true;
+            if (!movable[t] || Ready(t)) { Place(t); continue; }
+            waiting.Add(t); held++;
+            if (dbg) log($"    held back {keys[t]}: needs " + string.Join(", ", ev.Pre[t].Where(p => !placed[p] && inWoven[p]).Select(p => keys[p])));
         }
-        int shifted = mine.Count(t => loose[t]) - fresh;
+        foreach (int t in waiting) loose[t] = true;        // still waiting at the end: what it needs never came (a loop in the order)
+        int shifted = waiting.Count;
         var todo = mine.Where(t => loose[t]).ToList();
-        log($"  keeping the saved order for {name}: {known.Count - shifted} steps kept, {fresh} new, {shifted} moved for changed prerequisites");
-        kept += known.Count - shifted; added += fresh; moved += shifted;
+        log($"  keeping the saved order for {name}: {known.Count - held} steps kept, {fresh} new, {held - shifted} held back until a step they need" + (shifted > 0 ? $", {shifted} planned again" : ""));
+        kept += known.Count - held; added += fresh; moved += held;
 
         Slot(ev, seq, todo, choice);
         var arr = seq.ToArray();

@@ -100,6 +100,8 @@ public static class Program
                             "accept" or "turnin" when c.Groups[2].Success => $"{c.Groups[1].Value}:{c.Groups[2].Value}",
                             _ => null,
                         };
+                        // a quest RouteBuilder starts from an item ("item:Q") is an .accept in RestedXP's guide
+                        if (key != null && key.StartsWith("accept:") && !keys.Contains(key) && keys.Contains("item:" + key[7..])) key = "item:" + key[7..];
                         if (key != null) hits.Add(new Hit(key, order++, st.Along, spot with { Key = key }, name));
                     }
                     // a training, vendor or flight-path step: kept whole, in its place in RestedXP's order
@@ -137,6 +139,7 @@ public static class Program
         {
             "home" => "Set hearthstone",
             var k when k.StartsWith("accept:") => "Accept " + QName(Quest(k)),
+            var k when k.StartsWith("item:") => "Accept (from an item) " + QName(Quest(k)),
             var k when k.StartsWith("turnin:") => "TurnIn " + QName(Quest(k)),
             var k => $"Objective {k.Split(':')[2]} of {QName(Quest(k))}",
         } + $"  (RestedXP: {h.Guide})";

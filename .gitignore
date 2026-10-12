@@ -9,3 +9,4 @@ settings.json
 build.cmd
 forever/
 locks/*.bak
+rebuild.log

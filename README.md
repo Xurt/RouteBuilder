@@ -64,7 +64,10 @@ copies in RestedXP's training, vendor and flight-path steps for the zone:
   route is in at that point. A build for one race and class takes only the steps for it.
 * RestedXP's own conditions come along (`.money`, `.xp`, class tags), so its "train if you can afford
   it" variants still choose themselves in game. Hardcore-only variants are left out.
-* `--no-rxp-steps` leaves them out. The report says how many were added.
+* `--no-rxp-steps` leaves them out. The report says how many were added, and the console ends each build
+  with a line saying how many came from the lock, from RestedXP and from the zone file.
+* If the `--rxp` folder is not there, or has no RestedXP guides in it, the build stops and says so. On
+  Windows, leave the `\` off the end of a quoted folder (`"D:\...\Guides\forever"`, not `"...\forever\"`).
 * The ones placed are saved in the lock file (next section), so later builds keep them where they are, with
   or without `--rxp`, and you can move them by hand.
 
@@ -76,10 +79,12 @@ adding a fix to a zone file does not reshuffle the whole route:
 
 * Steps that are still there keep their place and their spot.
 * New steps (a quest you `include`d, a new objective) are slotted in where they cost least.
-* Steps whose prerequisites changed (a new `pre` or `pickupAfter`) are taken out and slotted in again
-  after what they now need, together with the steps that follow from them.
-* Only those slotted-in steps are fine-tuned afterwards. The console and the report say how many steps
-  were kept, added and moved.
+* A new step that a saved step needs (a quest the lock never did, an objective it did along the way) is
+  slotted in ahead of it; the saved step stays where it is.
+* A saved step that needs one coming later in the lock (after a new `pre` or `pickupAfter`) waits and goes
+  in right after it, and so do the steps that need it. Nothing else moves.
+* Only the new steps are fine-tuned afterwards. The console says how many steps were kept, added and held
+  back (`ROUTEBUILDER_DEBUG=1` also lists the held-back ones and what they wait for).
 
 A build that keeps a saved order takes a second or two. To plan a guide from scratch again (after a big
 change, or to see whether the planner finds something shorter), build with `--fresh`; that also replaces
@@ -133,6 +138,21 @@ the options of the build you will run next:
 * Distances are still measured in straight lines, so a RestedXP order usually comes out a little longer
   in the report than RouteBuilder's own plan; RestedXP plans around terrain and grinding, which RouteBuilder
   does not see.
+
+## Rebuilding every zone (Rebuild-All.ps1)
+
+`Rebuild-All.ps1` runs RxpToLock and then the build for every zone of both factions, and packs the addon
+at the end:
+
+    .\Rebuild-All.ps1 -Rxp "D:\World of Warcraft\_classic_beta_\Interface\AddOns\RXPGuides\Guides\forever"
+
+* It reads every RestedXP guide file in that folder (not its subfolders; `-Recurse` adds them). A zone
+  RestedXP's guides do not cover keeps its lock as it was.
+* `-Faction Horde` or `-Zone "Durotar","Mulgore"` narrows it down; `-NoRxpToLock` builds from the locks as
+  they are; `-Fresh` plans every zone from scratch; `-Update` fetches QuestieDB first; `-NoAddon` skips
+  Make-Addon.ps1.
+* The console shows a line or two per zone and a summary of zones with problems; everything else goes to
+  `rebuild.log`.
 
 ## Getting the guides into the game
 
