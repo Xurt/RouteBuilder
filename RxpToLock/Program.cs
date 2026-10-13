@@ -28,7 +28,10 @@ public static class Program
           dotnet run -c Release -- build --zone <name> --faction <faction> --rxp <folder>
         """;
 
-    sealed record Hit(string Key, int Order, bool Along, LockedStep Step, string Guide, int Map);
+    sealed record Hit(string Key, int Order, bool Along, LockedStep Step, string Guide, int Map)
+    {
+        public bool Optional { get; init; }      // a step RestedXP only shows if you are already a level ahead (".xp <N,1")
+    }
     sealed record Svc(int Order, string Guide, int Map, LockedService Step);
 
     static readonly Regex GotoRx = new(@"^\.goto\s+(\d+)(?:/\d+)?\s*,\s*(-?\d+(?:\.\d+)?)[\d.]*\s*,\s*(-?\d+(?:\.\d+)?)[\d.]*(?:\s*,\s*(\d+(?:\.\d+)?))?(?:\s*,\s*(\d+))?", RegexOptions.Compiled);
@@ -93,6 +96,7 @@ public static class Program
                     if (here >= 0) lastMap = here;
                     if (!Applies(st.Tag, bo) || RxpServices.OtherSeason(st.Lines.Select(l => l.Text))) continue;   // e.g. Season of Discovery runes
                     var spot = SpotOf(st.Lines.Where(l => Applies(l.Tag, bo)).Select(l => l.Text).ToList());
+                    bool optional = st.Lines.Any(l => Regex.IsMatch(l.Text, @"^\.xp\s*<"));
                     foreach (var (text, tag) in st.Lines)
                     {
                         if (!Applies(tag, bo)) continue;
@@ -106,30 +110,40 @@ public static class Program
                         };
                         // a quest RouteBuilder starts from an item ("item:Q") is an .accept in RestedXP's guide
                         if (key != null && key.StartsWith("accept:") && !keys.Contains(key) && keys.Contains("item:" + key[7..])) key = "item:" + key[7..];
-                        if (key != null) hits.Add(new Hit(key, order++, st.Along, spot with { Key = key }, name, here >= 0 ? here : lastMap));
+                        if (key != null) hits.Add(new Hit(key, order++, st.Along, spot with { Key = key }, name, here >= 0 ? here : lastMap) { Optional = optional });
                     }
                     // a training, vendor or flight-path step: kept whole, in its place in RestedXP's order
                     // (after a quest handed in at the same trainer, as RestedXP does them together)
-                    if (!st.Along && RxpServices.ServiceLines(st.Lines, out int svcMap) is { } svcLines)
+                    // RestedXP's own grind steps (".xp 5+1740 >>Grind to ..."), so the build can follow its level timing
+                    if (!st.Along && !optional && st.Lines.Any(l => Regex.IsMatch(l.Text, @"^\.xp\s+\d")) && !st.Lines.Any(l => CmdRx.IsMatch(l.Text)))
+                        services.Add(new Svc(order++, name, here >= 0 ? here : lastMap, new LockedService
+                        {
+                            Lines = st.Lines.Where(l => l.Text.StartsWith(".goto") || l.Text.StartsWith(">>") || l.Text.StartsWith(".xp"))
+                                            .Select(l => l.Tag.Length > 0 ? $"{l.Text} << {l.Tag}" : l.Text).ToList(),
+                            Tag = st.Tag.Length > 0 ? st.Tag : null, From = "RestedXP: " + name,
+                        }));
+                    else if (!st.Along && RxpServices.ServiceLines(st.Lines, out int svcMap) is { } svcLines)
                         services.Add(new Svc(order++, name, svcMap >= 0 ? svcMap : lastMap, new LockedService { Lines = svcLines, Tag = st.Tag.Length > 0 ? st.Tag : null, From = "RestedXP: " + name }));
                 }
             }
         if (guides.Count == 0) throw new InvalidOperationException(only != null ? "none of the --guides names were found in the files" : "no RestedXP guides found in the files");
         Console.WriteLine($"Read {hits.Count} pickups, objectives and hand-ins from: {string.Join(", ", guides)}");
 
-        // one place per step: a pickup or hand-in where it first happens; an objective at its own step,
-        // not where the guide first says "kill these as you go"
         // setting the hearthstone counts only where it is done on this zone's maps, in a guide that does its quests
         // (any other guide in the files sets it somewhere else entirely)
         var zoneMapsAll = model.Areas.Select(a => a.UiMap).ToHashSet();
         int QuestOf(string key) => key == "home" ? 0 : int.Parse(key.Split(':')[1], CultureInfo.InvariantCulture);
         var questGuides = hits.Where(h => h.Key != "home" && inZone.Contains(QuestOf(h.Key))).Select(h => h.Guide).ToHashSet();
         hits.RemoveAll(h => h.Key == "home" && !(zoneMapsAll.Contains(h.Map) && questGuides.Contains(h.Guide)));
+        // one place per step: a pickup or hand-in where it first happens; an objective at its own step,
+        // not where the guide first says "kill these as you go"
         var chosen = new Dictionary<string, Hit>();
         foreach (var h in hits)
         {
             if (!chosen.TryGetValue(h.Key, out var had)) { chosen[h.Key] = h; continue; }
-            if (h.Key.StartsWith("obj:") && had.Along && !h.Along) chosen[h.Key] = h;
+            // the place RestedXP plans it, not an earlier "if you are already level N" offer or a "kill these as you go" note
+            if (had.Optional && !h.Optional && !h.Along) chosen[h.Key] = h;
+            else if (h.Key.StartsWith("obj:") && had.Along && !h.Along && !h.Optional) chosen[h.Key] = h;
         }
         int Quest(string key) => key == "home" ? 0 : int.Parse(key.Split(':')[1], CultureInfo.InvariantCulture);
         var kept = chosen.Values.Where(h => h.Key == "home" ? model.Home != null : inZone.Contains(Quest(h.Key))).OrderBy(h => h.Order).ToList();
@@ -168,7 +182,7 @@ public static class Program
             "Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
             kept.Select(h => (h.Order, Entry: (Step: (LockedStep?)h.Step, Svc: (LockedService?)null, Note: Note(h))))
                 .Concat(svcKept.Select(x => (x.Order, Entry: (Step: (LockedStep?)null, Svc: (LockedService?)x.Step, Note: ""))))
-                .OrderBy(x => x.Order).Select(x => x.Entry));
+                .OrderBy(x => x.Order).Select(x => x.Entry), levels: "RestedXP");
 
         Console.WriteLine();
         Console.WriteLine($"{kept.Count} steps for {rxpQuests.Count(q => q != 0)} quests of {area.Name}, and {svcKept.Count} training, vendor and flight-path step{(svcKept.Count == 1 ? "" : "s")}, saved in {Path.GetFullPath(path)}");

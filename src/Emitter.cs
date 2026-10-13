@@ -37,6 +37,7 @@ public sealed class Emitter
 
     readonly ZoneModel m; readonly RouteResult r; readonly GuideOutput g = new();
     readonly HashSet<(int, string)> guards = new();
+    HashSet<int>? trusted;                       // pickups placed by a RestedXP order
 
     public Emitter(ZoneModel model, RouteResult route) { m = model; r = route; }
 
@@ -217,11 +218,13 @@ public sealed class Emitter
         string LineTag(RouteTask t) => t.Tag.Length > 0 && tag.Length == 0 ? " << " + t.Tag : "";
 
         // an accept that the plan reaches only just in time gets a "be this level" step in front of it
+        // (not one kept where a RestedXP order puts it: RestedXP's timing is played in game, and its own grind steps come with it)
+        trusted ??= m.Opt.Lock is { RestedXpLevels: true } lk ? RouteLock.Keys(m).Select((k, i) => (k, i)).Where(x => lk.AllKeys.Contains(x.k)).Select(x => x.i).ToHashSet() : new HashSet<int>();
         var need = new List<RouteTask>();
         if (u.Kind == "ent" && u.Guard.Length == 0)
             foreach (var t in u.Tasks)
             {
-                if (t.Kind != TaskKind.Accept || t.Q!.Req <= 1) continue;
+                if (t.Kind != TaskKind.Accept || t.Q!.Req <= 1 || trusted.Contains(t.Id)) continue;
                 var all = u.AllTasks ?? u.Tasks;
                 double xp = r.XpBefore[t.Id] + all.Skip(all.IndexOf(t) + 1).Where(x => x.Kind == TaskKind.TurnIn && (x.Elig & t.Elig) == t.Elig).Sum(x => x.Xp);
                 if (Game.FracLevel(xp) < t.Q.Req + 0.6 && guards.Add((t.Q.Req, t.Tag))) need.Add(t);

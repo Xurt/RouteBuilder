@@ -233,7 +233,11 @@ public static class Program
         File.WriteAllText(path, text);
         var reports = visits.Select((v, i) => Report.Write(v.m, v.r, v.g, v.v, path, zoneFile, i == visits.Count - 1, visits.Count));
         File.WriteAllText(Path.ChangeExtension(path, ".report.txt"), string.Join("\n\n" + new string('=', 100) + "\n\n", reports));
-        RouteLock.Save(lockPath, visits[0].g.Name, visits.Select((v, i) => (i + 1, v.m, v.r, v.g)));
+        RouteLock.Save(lockPath, visits[0].g.Name, visits.Select((v, i) => (i + 1, v.m, v.r, v.g)), lk?.RestedXpLevels == true ? "RestedXP" : null);
+        int fromLock = visits.Sum(v => v.g.LockSteps), fromRxp = visits.Sum(v => v.g.RxpSteps), custom = visits.Sum(v => v.g.CustomSteps);
+        Console.WriteLine(fromLock + fromRxp + custom == 0
+            ? "  training, vendor and flight-path steps: none (build with --rxp <RestedXP Guides folder>, or run RxpToLock, to add RestedXP's; or add your own under \"steps\" in the zone file)"
+            : $"  training, vendor and flight-path steps: {fromLock} kept from the lock, {fromRxp} newly taken from RestedXP{(bo.RxpDir == null ? " (no --rxp)" : bo.NoRxpSteps ? " (--no-rxp-steps)" : "")}, {custom} from the zone file");
         if (lk != null)
         {
             int lost = lk.AllServices.Count(x => !bo.LockPlaced.Contains(x));

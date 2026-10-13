@@ -38,6 +38,8 @@ public sealed class RouteLock
 {
     public Dictionary<int, List<LockedStep>> Parts = new();
     public Dictionary<int, List<LockedService>> Services = new();
+    public bool RestedXpLevels;                // the order came from RestedXP: trust its level timing (no level checks of our own on its steps)
+    public HashSet<string> AllKeys => Parts.Values.SelectMany(l => l).Select(s => s.Key).ToHashSet();
     const int Reach = 8;                       // how many quest steps either side a service step may be placed by
 
     sealed class FileShape
@@ -45,6 +47,7 @@ public sealed class RouteLock
         public string? About { get; set; }
         public string? Guide { get; set; }
         public string? Saved { get; set; }
+        public string? Levels { get; set; }
         public List<PartShape> Parts { get; set; } = new();
     }
     sealed class PartShape
@@ -82,7 +85,7 @@ public sealed class RouteLock
         FileShape shape;
         try { shape = JsonSerializer.Deserialize<FileShape>(File.ReadAllText(path), Json) ?? new FileShape(); }
         catch (JsonException e) { throw new InvalidOperationException($"{path}: {e.Message} (fix it, delete it, or build with --fresh)"); }
-        var lk = new RouteLock();
+        var lk = new RouteLock { RestedXpLevels = string.Equals(shape.Levels, "RestedXP", StringComparison.OrdinalIgnoreCase) };
         foreach (var p in shape.Parts)
         {
             var list = new List<LockedStep>(); var svcs = new List<(LockedService Svc, int At)>();
@@ -119,7 +122,7 @@ public sealed class RouteLock
         return lk;
     }
 
-    public static void Save(string path, string guideName, IEnumerable<(int part, ZoneModel m, RouteResult r, GuideOutput g)> parts)
+    public static void Save(string path, string guideName, IEnumerable<(int part, ZoneModel m, RouteResult r, GuideOutput g)> parts, string? levels = null)
     {
         var all = new List<(int, List<object>)>();
         foreach (var (part, m, r, g) in parts)
@@ -161,20 +164,20 @@ public sealed class RouteLock
         }
         Write(path, guideName, "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. " +
               "Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. " +
-              "Delete the file, or build with --fresh, to plan the guide from scratch.", all);
+              "Delete the file, or build with --fresh, to plan the guide from scratch.", all, levels);
     }
 
     /// <summary>Writes an order that did not come from a build (one read from another guide) as a one-part lock: quest steps and service steps.</summary>
-    public static void SaveSteps(string path, string guideName, string about, IEnumerable<(LockedStep? step, LockedService? svc, string note)> steps) =>
+    public static void SaveSteps(string path, string guideName, string about, IEnumerable<(LockedStep? step, LockedService? svc, string note)> steps, string? levels = null) =>
         Write(path, guideName, about, new List<(int, List<object>)>
         {
             (1, steps.Select(x => x.svc != null ? (object)x.svc
                 : x.step!.Map >= 0 ? string.Create(CultureInfo.InvariantCulture, $"{x.step.Key} @{x.step.Map}:{x.step.X:0.##},{x.step.Y:0.##}  {x.note}")
                 : $"{x.step.Key}  {x.note}").ToList()),
-        });
+        }, levels);
 
     /// <summary>The file, one step per line: a quest step as a string, a service step as a one-line { ... }.</summary>
-    static void Write(string path, string guideName, string about, List<(int part, List<object> steps)> parts)
+    static void Write(string path, string guideName, string about, List<(int part, List<object> steps)> parts, string? levels = null)
     {
         string J(object o) => JsonSerializer.Serialize(o, Line);
         var sb = new StringBuilder();
@@ -182,6 +185,7 @@ public sealed class RouteLock
         sb.Append($"  \"about\": {J(about)},\n");
         sb.Append($"  \"guide\": {J(guideName)},\n");
         sb.Append($"  \"saved\": {J(DateTime.Now.ToString("yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture))},\n");
+        if (levels != null) sb.Append($"  \"levels\": {J(levels)},\n");
         sb.Append("  \"parts\": [");
         for (int i = 0; i < parts.Count; i++)
         {

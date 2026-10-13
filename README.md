@@ -132,6 +132,12 @@ the options of the build you will run next:
   and race's steps are taken, for a faction guide.
 * `--guides "1-6 Durotar,6-10 Durotar"` takes only those guides (by their `#name`) from the files.
 * Setting the hearthstone is only taken from a step on this zone's maps, in a guide that does its quests.
+* Where RestedXP offers a pickup early "if you are already level N" (`.xp <N`) and plans it again later, the
+  later one is used.
+* RestedXP's own grind steps (`.xp 5+1740 >>Grind to ...`) go in too, and the lock is marked `"levels": "RestedXP"`.
+  The build then trusts RestedXP's level timing: the pickups it keeps in RestedXP's places get no "be level N"
+  check of RouteBuilder's (whose experience figures for new Forever quests are estimates). Quests RestedXP does not
+  do, which RouteBuilder slots in, still get one where needed. Building with `--fresh` drops the mark.
 * RestedXP's training, vendor and flight-path steps for this zone go in too, in RestedXP's places (on this
   zone's maps, from the guides that do its quests).
 * If the files have nothing for the zone, the lock that is there is left alone.
