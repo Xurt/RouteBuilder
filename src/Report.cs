@@ -215,7 +215,6 @@ public static class Report
         if (g.CustomSteps > 0) sb.AppendLine($"{g.CustomSteps} hand-written step{(g.CustomSteps == 1 ? "" : "s")} from the zone file placed next to the steps they name.");
         foreach (var k in g.StepsNotPlaced) sb.AppendLine($"  ! zone file \"steps\": nothing called \"{k}\" in this guide, so no hand-written step was placed there (check the name against the locks file)");
         if (g.AsYouGo > 0) sb.AppendLine($"{g.AsYouGo} objective{(g.AsYouGo == 1 ? " is" : "s are")} also shown \"as you go\" at earlier stops inside their area; their own step finishes whatever is left (and skips itself if nothing is).");
-        if (g.EarlyHandIns > 0) sb.AppendLine($"{g.EarlyHandIns} finished quests are also offered for hand-in at an earlier stop that passes their quest giver (they only show once the quest is complete).");
         if (g.EarlyOffers > 0) sb.AppendLine($"{g.EarlyOffers} pickups are also offered a visit early, in case you are ahead of the predicted level (they hide themselves otherwise).");
         foreach (var s in r.Unplaced) sb.AppendLine($"  {s}: its hand-in spot is not passed again, so the step sits at the end of the guide.");
 

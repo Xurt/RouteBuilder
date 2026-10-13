@@ -199,10 +199,6 @@ build; the folder is rebuilt from scratch each time.
   shown "as you go" at those stops, with RestedXP's `#completewith`; its own step later finishes whatever
   is left and skips itself if nothing is. "As you go" is only offered once you are at the level the plan
   waits for, and at most `MaxAsYouGo` of them are on screen at once (`OverlapRadius`, `OverlapShare`).
-* **Early hand-ins.** When a stop (or a training or vendor step) is within reach of a quest giver whose quest is
-  already finished but handed in further down the guide (a RestedXP order does that now and then), the guide
-  offers the hand-in there too: "Turn in X while you are here". It only shows once the quest is complete, and
-  the hand-in planned later skips itself.
 * **Passing by.** When a finished quest's hand-in lies on or just off the way between two stops, the
   plan hands it in on the way rather than carrying it past. "On the way" is judged in straight lines
   (`PassRadius`, `PassDetour` and `PassMiss` in settings), so a road that bends through a town is not seen.

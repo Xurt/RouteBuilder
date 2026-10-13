@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Text;
 
@@ -8,7 +7,7 @@ public sealed class GuideOutput
 {
     public string Name = "", Group = "", FileName = "";
     public List<string> Lines = new();      // the guide body (between RegisterGuide([[ and ]]))
-    public int Steps, HearthSteps, EarlyOffers, EarlyHandIns, Stops, AsYouGo, CustomSteps, RxpSteps;
+    public int Steps, HearthSteps, EarlyOffers, Stops, AsYouGo, CustomSteps, RxpSteps;
     public List<string> StepsNotPlaced = new();      // zone-file steps whose anchor is in no part of this guide
     public int LockSteps;                            // service steps placed from the lock file
     public List<(LockedService Svc, string Key, bool After)> LockServices = new();   // every service step placed, to save in the lock
@@ -30,7 +29,6 @@ public sealed class Emitter
         public List<RouteTask> Tasks = new(); public int Area; public Pt Pos; public double Level;
         public List<Pt> Pts = new(); public bool Mergeable, Hearth; public string? Label; public string HearthTag = "";
         public List<string> PreSteps = new(); public List<(RouteTask t, Cand c)> Early = new();
-        public List<(RouteTask t, Cand c)> HandIns = new();   // finished quests whose hand-in is within reach here, ahead of their own step
         public List<RouteTask>? AllTasks;          // the whole stop, when this unit is one half of a split
         public Unit Copy() => (Unit)MemberwiseClone();
     }
@@ -581,53 +579,6 @@ public sealed class Emitter
                 m.Opt.RxpPlaced.Add(id); g.RxpSteps++;
                 g.LockServices.Add((new LockedService { Lines = svc.Lines, Tag = svc.Tag.Length > 0 ? svc.Tag : null, From = "RestedXP: " + svc.Guide, Anchors = svc.Anchors }, anchor.Key, anchor.After));
             }
-        // early hand-ins: a quest that is finished by a stop near its hand-in, but handed in further down the guide (a saved
-        // or RestedXP order that does it later, or never got round to it), is offered there too. The step only shows once the
-        // quest is complete, and the planned hand-in skips itself once it is done.
-        var stopOf = new Dictionary<int, int>();
-        for (int i = 0; i < units.Count; i++) foreach (var t in units[i].AllTasks ?? units[i].Tasks) stopOf.TryAdd(t.Id, i);
-        var finishedAt = new Dictionary<int, int>();          // quest -> the stop where its last pickup or objective step is
-        foreach (var (id, i) in stopOf)
-        {
-            var t = m.Tasks[id];
-            if (t.Q == null || t.Kind is not (TaskKind.Accept or TaskKind.ItemAccept or TaskKind.Objective)) continue;
-            finishedAt[t.Q.Id] = Math.Max(finishedAt.GetValueOrDefault(t.Q.Id, -1), i);
-        }
-        // where you stand at each stop: the stop itself, and any training, vendor or flight-path step placed with it
-        (int area, Pt pos)? Where(StepFix sf)
-        {
-            if (sf.Goto != null) return m.World(sf.Goto);
-            foreach (var line in sf.Lines)
-            {
-                var g = Regex.Match(line, @"^\.goto\s+(\d+)(?:/-?\d+)?\s*,\s*(-?[\d.]+)\s*,\s*(-?[\d.]+)");
-                if (!g.Success) continue;
-                int map = int.Parse(g.Groups[1].Value, CultureInfo.InvariantCulture);
-                int ai = m.Areas.FindIndex(x => x.UiMap == map); if (ai < 0) return null;
-                var pt = new Pt(double.Parse(g.Groups[2].Value, CultureInfo.InvariantCulture), double.Parse(g.Groups[3].Value, CultureInfo.InvariantCulture));
-                return (ai, m.Areas[ai].HasBounds ? pt : m.Areas[ai].ToWorld(pt));
-            }
-            return null;
-        }
-        var handedEarly = new HashSet<int>();
-        for (int i = 0; i < units.Count; i++)
-        {
-            var u = units[i];
-            var spots = new List<(int area, Pt pos)> { (u.Area, u.Pos) };
-            foreach (var sf in (before.GetValueOrDefault(i) ?? new()).Concat(after.GetValueOrDefault(i) ?? new()))
-                if (Where(sf) is { } w) spots.Add(w);
-            foreach (var t in m.Tasks)
-            {
-                if (t.Kind != TaskKind.TurnIn || t.Ent == null || t.Ent.Patrol || t.Cond || t.Deferred || handedEarly.Contains(t.Id)) continue;
-                if (!stopOf.TryGetValue(t.Id, out int planAt) || planAt <= i + 1 || visitOf[planAt] == visitOf[i]) continue;   // handed in here or soon anyway
-                if (!finishedAt.TryGetValue(t.Q!.Id, out int f) || f > i) continue;                                            // not finished yet
-                if (t.Pre.Any(p => !m.Tasks[p].Deferred && stopOf.GetValueOrDefault(p, int.MaxValue) > i) ||
-                    t.PreAny.Count > 0 && !t.PreAny.Any(p => stopOf.GetValueOrDefault(p, int.MaxValue) <= i)) continue;     // something it needs comes later
-                var near = t.Cands.FirstOrDefault(c => spots.Any(sp => c.Area == sp.area && c.Pos.To(sp.pos) <= Tuning.HubRadius));
-                if (near == null) continue;
-                u.HandIns.Add((t, near)); handedEarly.Add(t.Id); g.EarlyHandIns++;
-            }
-        }
-
         void Custom(StepFix sf)
         {
             L.Add(Step(sf.Tag?.Trim() ?? ""));
@@ -664,14 +615,6 @@ public sealed class Emitter
             foreach (var sf in before.GetValueOrDefault(i) ?? new()) Custom(sf);
             L.AddRange(Render(u, prev));
             foreach (var sf in after.GetValueOrDefault(i) ?? new()) Custom(sf);
-            foreach (var (t, c) in u.HandIns.OrderBy(e => e.t.Ent == u.Ent ? 0 : 1).ThenBy(e => e.c.Pos.To(u.Pos)))
-            {
-                L.Add(Step(t.Tag)); L.Add(Goto(c.Area, c.Pos));
-                L.Add(t.Ent!.Kind == EntKind.Npc ? $"    >>{Talk}Talk to |cRXP_FRIENDLY_{t.Ent.Name}|r" : $"    >>Click the |cRXP_PICK_{t.Ent.Name}|r");
-                L.Add($"    .turnin {t.Q!.Id} >>Turn in {t.Q.Name} while you are here");
-                L.Add($"    .isQuestComplete {t.Q.Id}");
-                if (t.Ent.Kind == EntKind.Npc) L.Add("    .target " + t.Ent.Name);
-            }
             foreach (var (t, c) in u.Early.OrderBy(e => e.t.Ent == u.Ent ? 0 : 1).ThenBy(e => e.c.Pos.To(u.Pos)))
             {
                 L.Add(Step(t.Tag)); L.Add(Goto(c.Area, c.Pos));
