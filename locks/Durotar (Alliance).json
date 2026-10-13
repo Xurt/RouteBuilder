@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "9-52 Durotar",
-  "saved": "2026-10-12 12:09",
+  "saved": "2026-10-13 06:56",
   "parts": [
     {
       "part": 1,
@@ -16,37 +16,58 @@
         "turnin:94374 @1411:-4290.59,-877.72  TurnIn Call of Earth",
         "accept:94375 @1411:-4290.59,-877.72  Accept Call of Earth",
         "obj:94467:1 @1411:-4009.82,-246.39  Objective Call of Fire / Glowing Ember (1)",
-        "turnin:94467 @1411:-4022.51,-243.92  TurnIn Call of Fire"
+        "turnin:94467 @1411:-4022.51,-243.92  TurnIn Call of Fire",
+        {"lines":[".train 416050 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flagellation|r] |cRXP_WARN_to train|r |T133495:0|t[Flagellation]",".train 403480,1"],"tag":"Warrior","from":"RestedXP: 28-32 Duskwood SoD"},
+        {"lines":[".train 416050 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Mass Regeneration|r] |cRXP_WARN_to train|r |T132870:0|t[Mass Regeneration]",".train 415939,1"],"tag":"Mage","from":"RestedXP: 28-32 Duskwood SoD"},
+        {"lines":[".train 416037,1",".xp <24,1"],"tag":"Paladin","from":"RestedXP: 28-32 Duskwood SoD"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r",".goto StormwindClassic,76.08,50.14,15,0",".goto StormwindClassic,80.22,45.37,15,0",".goto StormwindClassic,78.68,45.79",".trainer >> Train your class spells",".target Wu Shen",".target Ilsa Corbin"],"tag":"Warrior","from":"RestedXP: 28-32 Duskwood SoD"},
+        {"lines":[".goto StormwindClassic,74.65,52.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r",".trainer >> Train your class spells",".target Osborne the Night Man"],"tag":"Rogue","from":"RestedXP: 28-32 Duskwood SoD"},
+        {"lines":[".goto StormwindClassic,26.12,77.23",">>Talk to |cRXP_FRIENDLY_Ursula Deline|r",".target Ursula Deline",".train 410014,1",".isQuestComplete 78091"],"tag":"Paladin","from":"RestedXP: 28-32 Duskwood SoD"},
+        {"lines":[".goto StormwindClassic,26.12,77.23",">>Talk to |cRXP_FRIENDLY_Ursula Deline|r",".target Ursula Deline",".train 410014,1",".isQuestTurnedIn 78091"],"tag":"Paladin","from":"RestedXP: 28-32 Duskwood SoD"},
+        {"lines":[".goto StormwindClassic,26.117,77.225",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r",".trainer >> Train your class spells",".target Ursula Deline"],"tag":"Warlock","from":"RestedXP: 28-32 Duskwood SoD"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",".goto StormwindClassic,38.82,31.27,10,0",".goto StormwindClassic,38.67,32.82",".trainer >> Train your class spells",".target Arthur the Faithful"],"tag":"Paladin","from":"RestedXP: 28-32 Duskwood SoD"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r",".goto StormwindClassic,38.54,26.86",".trainer >> Train your class spells",".target Brother Joshua"],"tag":"Priest","from":"RestedXP: 28-32 Duskwood SoD"},
+        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r",".trainer >> Train your class spells",".target Einris Brightspear"],"tag":"Hunter","from":"RestedXP: 28-32 Duskwood SoD"},
+        {"lines":[".trainer >>Train your spells",".train 19752 >>Train |T136106:0|t[|cRXP_FRIENDLY_Divine Intervention|r]. You will need it for a rune later << sod"],"tag":"Paladin sod","from":"RestedXP: 33-34 Thousand Needles"},
+        {"lines":[".train 431601 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Focused Fire|r] |cRXP_WARN_to train|r |T135548:0|t[Focus Fire]"],"tag":"Hunter","from":"RestedXP: 51-52 Searing Gorge SoD"},
+        {"lines":[".train 427076 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Bloodthirsty|r] |cRXP_WARN_to learn|r |T236276:0|t[Taste for Blood]",".train 427076,1"],"tag":"Warrior","from":"RestedXP: 51-52 Searing Gorge SoD"}
       ]
     },
     {
       "part": 2,
       "steps": [
-        "item:6681 @1454:-4284.42,1771.18  ItemAccept The Manor, Ravenholdt",
+        "accept:1883 @1454:-4229.86,1466.89  Accept Speak with Un'thuwa",
+        "turnin:1883 @1411:-4939.89,-839.29  TurnIn Speak with Un'thuwa",
         "accept:94468 @1411:-4022.51,-243.92  Accept Call of Fire"
       ]
     },
     {
       "part": 3,
       "steps": [
-        "accept:1718 @1454:-4808.15,1970.99  Accept The Islander",
-        "accept:1947 @1454:-4219.9,1468.2  Accept Journey to the Marsh"
+        "item:6681 @1454:-4284.42,1771.18  ItemAccept The Manor, Ravenholdt"
       ]
     },
     {
       "part": 4,
       "steps": [
-        "accept:1953 @1454:-4219.9,1468.2  Accept Return to the Marsh"
+        "accept:1718 @1454:-4808.15,1970.99  Accept The Islander",
+        "accept:1947 @1454:-4219.9,1468.2  Accept Journey to the Marsh"
       ]
     },
     {
       "part": 5,
       "steps": [
-        "accept:2861 @1454:-4219.9,1468.2  Accept Tabetha's Task"
+        "accept:1953 @1454:-4219.9,1468.2  Accept Return to the Marsh"
       ]
     },
     {
       "part": 6,
+      "steps": [
+        "accept:2861 @1454:-4219.9,1468.2  Accept Tabetha's Task"
+      ]
+    },
+    {
+      "part": 7,
       "steps": [
         "accept:8417 @1454:-4808.15,1970.99  Accept A Troubled Spirit",
         "accept:8233 @1454:-4296.34,1762.86  Accept A Simple Request",

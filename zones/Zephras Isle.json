@@ -1,0 +1,14 @@
+// Zephras Isle
+{
+  "quests": {
+    // QuestieDB puts Zaal Stormshield at Malduko Cloudcrush's spot (36.05, 33.53); RestedXP has him at 56.56, 50.36
+    "94003": {
+      "objectives": [
+        { "index": 1, "kind": "loot", "label": "Skybreaker Bulwark", "count": 1, "mobLevel": 10,
+          "points": [ [56.56, 50.36] ],
+          "text": "Kill |cRXP_ENEMY_Zaal Stormshield|r and loot |cRXP_LOOT_Skybreaker Bulwark|r",
+          "targets": [ { "kind": "mob", "name": "Zaal Stormshield" } ] }
+      ]
+    }
+  }
+}

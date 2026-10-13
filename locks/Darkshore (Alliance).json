@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-21 Darkshore",
-  "saved": "2026-10-12 12:09",
+  "saved": "2026-10-13 06:56",
   "parts": [
     {
       "part": 1,
@@ -58,7 +58,7 @@
         "obj:953:2 @1439:148.09,5576.22  Objective The Fall of Ameth'Aran / Read the Fall of Ameth'Aran",
         "obj:957:1 @1439:166.43,5633.86  Objective Bashal'Aran / Destroy the seal at the ancient flame",
         "obj:953:1 @1439:105.52,5770.97  Objective The Fall of Ameth'Aran / Read the Lay of Ameth'Aran",
-        "obj:98025:1 @1439:6.61,5810.27  Objective WANTED: Jai'vhanel / Feather of Jai'vhanel (1)",
+        "obj:98025:1 @1439:9.23,5788.88  Objective WANTED: Jai'vhanel / Feather of Jai'vhanel (1)",
         "turnin:953 @1439:302.02,5725.12  TurnIn The Fall of Ameth'Aran",
         "turnin:4722 @1439:543.06,6342.57  TurnIn Beached Sea Turtle",
         "turnin:4723 @1439:543.06,6342.57  TurnIn Beached Sea Creature",
@@ -180,15 +180,15 @@
         "accept:87760 @1439:543.06,6342.57  Accept Holy Diver",
         "accept:951 @1439:89.14,5002  Accept Mathystra Relics",
         "obj:4740:1 @1439:554.85,4992.4  Objective WANTED: Murkdeep! / Murkdeep slain (1)",
-        "accept:98013 @1439:78.66,4992.4  Accept Swelling Forces",
+        "accept:98013 @1439:74.08,4993.71  Accept Swelling Forces",
         "turnin:4740 @1439:472.32,6437.76  TurnIn WANTED: Murkdeep!",
         "obj:2139:1 @1439:-430.27,6662.65  Objective Tharnariun's Hope / Den Mother slain (1)",
         "obj:98013:1 @1439:-873.05,7344.28  Objective Swelling Forces / Stormscale Myrmidon slain (12)",
         "obj:98013:2 @1439:-841.61,7377.03  Objective Swelling Forces / Stormscale Sorceress slain (8)",
+        "obj:87760:1 @1439:-281.59,7775.71  Objective Holy Diver / Rod of Deep Dominion (1)",
         "obj:951:1 @1439:-1041.39,7319.83  Objective Mathystra Relics / Mathystra Relic (6)",
         "accept:2098 @1439:-769.56,7744.71  Accept Gyromast's Retrieval",
         "obj:2098:2 @1439:-661.49,7786.63  Objective Gyromast's Retrieval / Middle of Gelkak's Key (1)",
-        "obj:87760:1 @1439:-307.13,7818.07  Objective Holy Diver / Rod of Deep Dominion (1)",
         "obj:2098:3 @1439:-745.98,7699.73  Objective Gyromast's Retrieval / Bottom of Gelkak's Key (1)",
         "obj:2098:1 @1439:-916.28,7752.13  Objective Gyromast's Retrieval / Top of Gelkak's Key (1)",
         "turnin:2098 @1439:-769.56,7744.71  TurnIn Gyromast's Retrieval",
@@ -199,7 +199,7 @@
         "turnin:2139 @1439:397.65,6437.33  TurnIn Tharnariun's Hope",
         "accept:98461 @1439:489.35,6506.32  Accept Unrequited Love",
         "turnin:87760 @1439:543.06,6342.57  TurnIn Holy Diver",
-        "turnin:98013 @1439:78.66,4992.4  TurnIn Swelling Forces",
+        "turnin:98013 @1439:74.08,4993.71  TurnIn Swelling Forces",
         "turnin:951 @1439:89.14,5002  TurnIn Mathystra Relics"
       ]
     }

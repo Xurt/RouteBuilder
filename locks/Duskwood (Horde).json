@@ -1,13 +1,19 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "42-42 Duskwood",
-  "saved": "2026-10-12 12:06",
+  "saved": "2026-10-13 06:52",
   "parts": [
     {
       "part": 1,
       "steps": [
+        {"lines":[".goto 1431/0,128.23,-10272.20",">>Open the |cRXP_PICK_Dusty Coffer|r. Loot it for the |T252996:0|t[|cRXP_LOOT_Decrepit Phylactery|r]",".collect 210568,1",".train 403480,1 << Warrior",".train 415939,1 << Mage"],"tag":"Warrior/Mage","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
+        {"lines":[".goto 1431/0,343.55,-10399.59",">>Kill the |cRXP_ENEMY_Awakened Lich|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Flagellation|r] << Warrior",">>Kill the |cRXP_ENEMY_Awakened Lich|r. Loot it for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Mass Regeneration|r] << Mage",">>|cRXP_WARN_If someone else is there killing the |cRXP_ENEMY_Awakened Lich|r you can also help them and you will still be able to loot it|r",".collect 210569,1 << Warrior",".collect 211514,1 << Mage",".train 403480,1 << Warrior",".train 415939,1 << Mage"],"tag":"Warrior/Mage","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
+        {"lines":[".train 416050 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flagellation|r] |cRXP_WARN_to train|r |T133495:0|t[Flagellation]",".train 403480,1"],"tag":"Warrior","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
+        {"lines":[".train 416050 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Mass Regeneration|r] |cRXP_WARN_to train|r |T132870:0|t[Mass Regeneration]",".train 415939,1"],"tag":"Mage","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
         "accept:1372 @1431:-1537.54,-10358.01  Accept Nothing But The Truth",
         "turnin:1372 @1431:-1527.82,-10351.17  TurnIn Nothing But The Truth",
+        {"lines":[".train 400096 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r] |cRXP_WARN_to learn|r |T132330:0|t[Shuriken Toss]"],"tag":"Rogue","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
+        {"lines":[".train 416015 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r] |cRXP_WARN_to train|r |T135789:0|t[Incinerate]"],"tag":"Warlock","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
         "accept:1383 @1431:-1527.82,-10351.17  Accept Nothing But The Truth",
         "accept:1388 @1431:-1527.82,-10351.17  Accept Nothing But The Truth",
         "turnin:1388 @1431:-1537.54,-10358.01  TurnIn Nothing But The Truth",

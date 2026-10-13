@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "14-26 Redridge Mountains",
-  "saved": "2026-10-12 12:09",
+  "saved": "2026-10-13 06:57",
   "parts": [
     {
       "part": 1,
@@ -12,7 +12,6 @@
         {"lines":[".goto 1433/0,-2234.900,-9435.300",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r",".fp Redridge Mountains >> Get the Redridge Mountains flight path",".target Ariena Stormfeather"],"tag":"!Warlock","from":"RestedXP: 6-11 Elwynn Forest"},
         "accept:1097 @1433:-2243.06,-9259.43  Accept Elmore's Task",
         {"lines":[".goto 1433/0,-2234.900,-9435.300",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r",".fp Redridge Mountains >> Get the Redridge Mountains flight path",".fly Stormwind >> Fly to Stormwind",".target Ariena Stormfeather"],"tag":"Warlock","from":"RestedXP: 6-11 Elwynn Forest"},
-        "turnin:144 @1433:-2221.79,-9218.6  TurnIn Messenger to Westfall",
         "turnin:146 @1433:-2221.79,-9218.6  TurnIn Messenger to Darkshire",
         "accept:246 @1433:-2237.85,-9443.75  Accept Assessing the Threat",
         "accept:98407 @1433:-2237.85,-9443.75  Accept Show of Force",
@@ -46,7 +45,19 @@
         "accept:143 @1433:-2221.79,-9218.6  Accept Messenger to Westfall",
         "accept:132 @1433:-2145.59,-9231.63  Accept The Defias Brotherhood",
         {"lines":[".goto 1433/0,-2157.18,-9223.81",".vendor >> Buy level 15 drink"],"from":"RestedXP: 18-21 Redridge Mage AoE"},
-        "turnin:94 @1433:-3404.89,-9253.06  TurnIn A Watchful Eye"
+        "turnin:94 @1433:-3404.89,-9253.06  TurnIn A Watchful Eye",
+        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r inside",".trainer >> Train your class spells",".target Einris Brightspear"],"tag":"Hunter","from":"RestedXP: 24-27 Duskwood/Redridge"},
+        {"lines":[".goto StormwindClassic,74.65,52.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r",".trainer >> Train your class spells",".target Osborne the Night Man"],"tag":"Rogue","from":"RestedXP: 24-27 Duskwood/Redridge"},
+        {"lines":[".goto StormwindClassic,38.58,32.00,12,0",".goto StormwindClassic,38.67,32.82",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",".trainer >> Train your class spells",".target Arthur the Faithful"],"tag":"Paladin","from":"RestedXP: 24-27 Duskwood/Redridge"},
+        {"lines":[".goto StormwindClassic,26.117,77.225",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r",".trainer >> Train your class spells",".target Ursula Deline"],"tag":"Warlock","from":"RestedXP: 24-27 Duskwood/Redridge"},
+        {"lines":[".goto StormwindClassic,25.665,77.649",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spackle Thornberry|r",".vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoires] |cRXP_BUY_for your|r |T136220:0|t[Succubus]|cRXP_BUY_ which you will have in a second. If you have extra gold also buy them for your|r |T136221:0|t[Voidwalker]",".target Spackle Thornberry"],"tag":"Warlock","from":"RestedXP: 24-27 Duskwood/Redridge"},
+        {"lines":[".goto StormwindClassic,57.12,57.69",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r",".train 201 >> Train 1h Swords << Mage/Rogue/Warlock",".train 1180 >> Train Daggers << Mage/Druid/Priest",".train 202 >> Train 2h Swords << Warrior/Paladin/Hunter",".target Woo Ping"],"from":"RestedXP: 24-27 Duskwood/Redridge"},
+        {"lines":[".goto 1433/0,-2345.31,-9435.21",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r",".fp Redridge Mountains >> Get the Redridge Mountains flight path",".target Ariena Stormfeather"],"tag":"!Human !Warlock","from":"RestedXP: 24-27 Duskwood/Redridge"},
+        {"lines":[".goto 1433/0,-2345.31,-9435.21",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r",".fp Redridge Mountains >> Get the Redridge Mountains flight path",".target Ariena Stormfeather"],"tag":"Hunter","from":"RestedXP: 24-27 Duskwood/Redridge"},
+        {"lines":[".goto StormwindClassic,20.898,55.491",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r",".trainer >> Train your class spells",".target Sheldras Moontree"],"tag":"Druid","from":"RestedXP: 24-27 Duskwood/Redridge"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r",".goto StormwindClassic,38.54,26.86",".trainer >> Train your class spells",".target Brother Joshua"],"tag":"Priest","from":"RestedXP: 24-27 Duskwood/Redridge"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r",".goto StormwindClassic,76.08,50.14,15,0",".goto StormwindClassic,80.22,45.37,15,0",".goto StormwindClassic,78.68,45.79",".trainer >> Train your class spells",".target Wu Shen",".target Ilsa Corbin"],"tag":"Warrior","from":"RestedXP: 24-27 Duskwood/Redridge"},
+        "turnin:144 @1433:-2221.79,-9218.6  TurnIn Messenger to Westfall"
       ]
     },
     {
@@ -89,45 +100,56 @@
     {
       "part": 3,
       "steps": [
-        "accept:145 @1433:-2221.79,-9218.6  Accept Messenger to Darkshire",
         "accept:20 @1433:-2297.98,-9284.04  Accept Blackrock Menace",
         "accept:98387 @1433:-2297.98,-9284.04  Accept Blackrock Blockade",
         "obj:20:1 @1433:-3196.28,-9756.64  Objective Blackrock Menace / Battleworn Axe (10)",
         "turnin:20 @1433:-2297.98,-9284.04  TurnIn Blackrock Menace",
         "accept:150 @1433:-2172.51,-9261.02  Accept Murloc Poachers",
-        "accept:115 @1433:-2297.98,-9284.04  Accept Shadow Magic",
         "obj:150:1 @1433:-2478.81,-9314.45  Objective Murloc Poachers / Murloc Fin (8)",
-        "obj:115:1 @1433:-3059.73,-9380.04  Objective Shadow Magic / Midnight Orb (3)",
-        "accept:248 @1433:-3404.89,-9253.06  Accept Looking Further",
-        "turnin:248 @1433:-2943.81,-9296.64  TurnIn Looking Further",
-        "turnin:115 @1433:-2297.98,-9284.04  TurnIn Shadow Magic",
         "turnin:150 @1433:-2172.51,-9261.02  TurnIn Murloc Poachers",
         "accept:347 @1433:-2268.46,-9279.27  Accept Rethban Ore",
         "accept:1702 @1433:-2147.76,-9222.51  Accept The Shieldsmith",
         "turnin:116 @1433:-2145.59,-9211.5  TurnIn Dry Times",
-        "obj:347:1 @1433:-1975.62,-8822.74  Objective Rethban Ore / Rethban Ore (5)"
+        "obj:347:1 @1433:-1975.62,-8822.74  Objective Rethban Ore / Rethban Ore (5)",
+        "accept:115 @1433:-2297.98,-9284.04  Accept Shadow Magic",
+        "accept:248 @1433:-3404.89,-9253.06  Accept Looking Further",
+        "obj:115:1 @1433:-3059.73,-9380.04  Objective Shadow Magic / Midnight Orb (3)",
+        "turnin:248 @1433:-2943.81,-9296.64  TurnIn Looking Further",
+        "turnin:115 @1433:-2297.98,-9284.04  TurnIn Shadow Magic",
+        "accept:145 @1433:-2221.79,-9218.6  Accept Messenger to Darkshire"
       ]
     },
     {
       "part": 4,
       "steps": [
+        "accept:95999 @1433:-2210.93,-9241.77  Accept WANTED: Incinerator Gar'im",
         "accept:34 @1433:-2045.3,-9245.82  Accept An Unwelcome Guest",
         "obj:34:1 @1433:-1911.14,-9288.97  Objective An Unwelcome Guest / Bellygrub's Tusk (1)",
         "turnin:34 @1433:-2045.3,-9245.82  TurnIn An Unwelcome Guest",
+        "obj:95999:1 @1433:-3232.75,-9796.03  Objective WANTED: Incinerator Gar'im / Broken Staff of Incinerator Gar'im (1)",
         "turnin:98387 @1433:-2297.98,-9284.04  TurnIn Blackrock Blockade",
+        "turnin:95999 @1433:-2221.79,-9218.6  TurnIn WANTED: Incinerator Gar'im",
         "accept:91 @1433:-2215.93,-9215.85  Accept Solomon's Law",
         "turnin:116 @1433:-2145.59,-9211.5  TurnIn Dry Times",
+        {"lines":[".goto StormwindClassic,37.23,31.87",">>Talk to |cRXP_FRIENDLY_Katherine the Pure|r",".target Katherine the Pure",".train 410014,1",".isQuestTurnedIn 78089"],"tag":"Paladin","from":"RestedXP: 24-28 Redridge/Duskwood SoD"},
+        {"lines":[".goto StormwindClassic,38.67,32.82",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",">>|cRXP_WARN_You need this to acquire|r |T134596:0|t[Engrave Pants - Aura Mastery] |cRXP_WARN_shortly|r",".train 2878 >> Train |T135983:0|t[Turn Undead]",".train 5502 >> Train |T135974:0|t[Sense Undead]",".target Arthur the Faithful",".train 416037,1",".xp <24,1"],"tag":"Paladin","from":"RestedXP: 24-28 Redridge/Duskwood SoD"},
+        {"lines":[".goto StormwindClassic,26.12,77.23",">>Talk to |cRXP_FRIENDLY_Ursula Deline|r",".target Ursula Deline",".train 410014,1",".isOnQuest 78090"],"tag":"Paladin","from":"RestedXP: 24-28 Redridge/Duskwood SoD"},
+        {"lines":[".goto StormwindClassic,26.12,77.23",">>Talk to |cRXP_FRIENDLY_Ursula Deline|r",".target Ursula Deline",".train 410014,1",".isQuestTurnedIn 78090"],"tag":"Paladin","from":"RestedXP: 24-28 Redridge/Duskwood SoD"},
+        {"lines":[".goto StormwindClassic,57.12,57.69",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r",".train 201 >> Train 1h Swords << Mage/Rogue/Warlock",".train 1180 >> Train Daggers << Mage/Druid/Priest",".train 202 >> Train 2h Swords << Warrior/Paladin/Hunter",".target Woo Ping",".zoneskip Redridge Mountains"],"from":"RestedXP: 24-28 Redridge/Duskwood SoD"},
+        {"lines":[".goto 1433/0,-3287.67,-9765.19,60,0",".goto 1433/0,-3365.82,-9828.90,50,0",".goto 1433/0,-3348.45,-9765.19",">>Kill |cRXP_ENEMY_Incinerator Gar'im|r |cRXP_WARN_(lvl 23 elite)|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r]",".collect 211477,1",".train 416015,1"],"tag":"Warlock","from":"RestedXP: 24-28 Redridge/Duskwood SoD"},
+        {"lines":[".train 416015 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r] |cRXP_WARN_to train|r |T135789:0|t[Incinerate]"],"tag":"Warlock","from":"RestedXP: 24-28 Redridge/Duskwood SoD"},
         "accept:19 @1433:-2297.98,-9284.04  Accept Tharil'zun",
-        "obj:19:1 @1433:-3078.4,-9435.21  Objective Tharil'zun / Tharil'zun's Head (1)",
-        "obj:91:1 @1433:-3276.81,-9341.67  Objective Solomon's Law / Shadowhide Pendant (10)",
-        "accept:128 @1433:-2255.44,-9412.62  Accept Blackrock Bounty",
-        "turnin:19 @1433:-2297.98,-9284.04  TurnIn Tharil'zun",
-        "turnin:91 @1433:-2215.93,-9215.85  TurnIn Solomon's Law",
-        "obj:128:1 @1433:-2213.32,-8737.46  Objective Blackrock Bounty / Blackrock Champion slain (15)",
-        "turnin:128 @1433:-2255.44,-9412.62  TurnIn Blackrock Bounty",
         "accept:126 @1433:-2243.06,-9259.43  Accept Howling in the Hills",
+        "obj:91:1 @1433:-3232.75,-9116.23  Objective Solomon's Law / Shadowhide Pendant (10)",
+        {"lines":[".goto 1433/0,-3422.26,-9291.72",">>Loot the |cRXP_PICK_Demonic Reliquary|r at the top of the tower to get the |T134337:0|t[Orb of Des]",">>|cRXP_WARN_This is for your|r |T237558:0|t[Metamorphosis] |cRXP_WARN_rune later. If you don't want to do this, skip this step|r",".collect 210765,1",".train 403938,1"],"tag":"Warlock","from":"RestedXP: 24-28 Redridge/Duskwood SoD"},
+        "turnin:91 @1433:-2215.93,-9215.85  TurnIn Solomon's Law",
+        "accept:128 @1433:-2255.44,-9412.62  Accept Blackrock Bounty",
         "obj:126:1 @1433:-2170.99,-8884.56  Objective Howling in the Hills / Yowler's Paw (1)",
-        "turnin:126 @1433:-2243.06,-9259.43  TurnIn Howling in the Hills"
+        "obj:19:1 @1433:-3078.4,-9435.21  Objective Tharil'zun / Tharil'zun's Head (1)",
+        "turnin:19 @1433:-2297.98,-9284.04  TurnIn Tharil'zun",
+        "obj:128:1 @1433:-2213.32,-8737.46  Objective Blackrock Bounty / Blackrock Champion slain (15)",
+        "turnin:126 @1433:-2243.06,-9259.43  TurnIn Howling in the Hills",
+        "turnin:128 @1433:-2255.44,-9412.62  TurnIn Blackrock Bounty"
       ]
     },
     {
@@ -135,14 +157,14 @@
       "steps": [
         "turnin:98387 @1433:-2297.98,-9284.04  TurnIn Blackrock Blockade",
         "accept:180 @1433:-2151.45,-9247.41  Accept Wanted: Lieutenant Fangore",
-        "accept:169 @1433:-2213.76,-9243.36  Accept Wanted: Gath'Ilzogg",
-        "obj:169:1 @1433:-3081.87,-9382.79  Objective Wanted: Gath'Ilzogg / Head of Gath'Ilzogg (1)",
+        "turnin:116 @1433:-2145.59,-9211.5  TurnIn Dry Times",
         "obj:180:1 @1433:-3311.33,-9111.6  Objective Wanted: Lieutenant Fangore / Fangore's Paw (1)",
         "accept:249 @1433:-3404.89,-9253.06  Accept Morganth",
         "obj:249:1 @1433:-3309.81,-9291.57  Objective Morganth / Pendant of Shadow (1)",
         "turnin:180 @1433:-2221.79,-9218.6  TurnIn Wanted: Lieutenant Fangore",
-        "turnin:169 @1433:-2221.79,-9218.6  TurnIn Wanted: Gath'Ilzogg",
-        "turnin:116 @1433:-2145.59,-9211.5  TurnIn Dry Times"
+        "accept:169 @1433:-2213.76,-9243.36  Accept Wanted: Gath'Ilzogg",
+        "obj:169:1 @1433:-3081.87,-9382.79  Objective Wanted: Gath'Ilzogg / Head of Gath'Ilzogg (1)",
+        "turnin:169 @1433:-2221.79,-9218.6  TurnIn Wanted: Gath'Ilzogg"
       ]
     }
   ]

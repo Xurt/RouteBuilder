@@ -1,52 +1,66 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
-  "guide": "35-52 Swamp of Sorrows",
-  "saved": "2026-10-12 12:10",
+  "guide": "34-52 Swamp of Sorrows",
+  "saved": "2026-10-13 06:59",
   "parts": [
     {
       "part": 1,
       "steps": [
-        "accept:1389 @1435:-2818.83,-10100.99  Accept Draenethyst Crystals",
+        "accept:93176 @1435:-2800.25,-10449.18  Accept My Little Friends",
+        {"lines":[".goto StormwindClassic,26.117,77.225",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r",".trainer >> Train your class spells",".target Ursula Deline"],"tag":"Warlock","from":"RestedXP: 38-39 Swamp of Sorrows"},
+        {"lines":[".goto StormwindClassic,25.665,77.649",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spackle Thornberry|r",".vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoires] |cRXP_BUY_for your pets|r",".target Spackle Thornberry"],"tag":"Warlock","from":"RestedXP: 38-39 Swamp of Sorrows"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",".goto StormwindClassic,38.82,31.27,10,0",".goto StormwindClassic,38.67,32.82",".trainer >> Train your class spells",".target Arthur the Faithful"],"tag":"Paladin","from":"RestedXP: 38-39 Swamp of Sorrows"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r",".goto StormwindClassic,38.54,26.86",".trainer >> Train your class spells",".target Brother Joshua"],"tag":"Priest","from":"RestedXP: 38-39 Swamp of Sorrows"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r",".goto StormwindClassic,76.08,50.14,15,0",".goto StormwindClassic,80.22,45.37,15,0",".goto StormwindClassic,78.68,45.79",".trainer >> Train your class spells",".target Wu Shen",".target Ilsa Corbin"],"tag":"Warrior","from":"RestedXP: 38-39 Swamp of Sorrows"},
+        {"lines":[".goto StormwindClassic,74.65,52.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r",".trainer >> Train your class spells",".target Osborne the Night Man"],"tag":"Rogue","from":"RestedXP: 38-39 Swamp of Sorrows"},
+        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r",".trainer >> Train your class spells",".target Einris Brightspear"],"tag":"Hunter","from":"RestedXP: 38-39 Swamp of Sorrows"},
+        {"lines":[".goto StormwindClassic,61.576,15.996",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r",".trainer >> Train your pet spells",".target Karrina Mekenda"],"tag":"Hunter","from":"RestedXP: 38-39 Swamp of Sorrows"},
         "accept:1396 @1435:-2836.27,-10535.73  Accept Encroaching Wildlife",
-        "obj:1396:2 @1435:-2822.27,-10568.15  Objective Encroaching Wildlife / Sorrow Spinner slain (10)",
-        "obj:1396:1 @1435:-2844.52,-10463.86  Objective Encroaching Wildlife / Young Sawtooth Crocolisk slain (8)",
-        "obj:1396:3 @1435:-2802.78,-10252.07  Objective Encroaching Wildlife / Swamp Jaguar slain (10)",
+        "item:1392 @1435:-3482.19,-10142.28  ItemAccept Noboru the Cudgel",
+        "turnin:1392 @1435:-2818.83,-10100.99  TurnIn Noboru the Cudgel",
+        "accept:1389 @1435:-2818.83,-10100.99  Accept Draenethyst Crystals",
+        "obj:1396:1 @1435:-2973.43,-10215.68  Objective Encroaching Wildlife / Young Sawtooth Crocolisk slain (8)",
+        "obj:1396:2 @1435:-3128.95,-10091.97  Objective Encroaching Wildlife / Sorrow Spinner slain (10)",
+        "obj:1396:3 @1435:-3137.21,-10247.79  Objective Encroaching Wildlife / Swamp Jaguar slain (10)",
         "turnin:1396 @1435:-2836.27,-10535.73  TurnIn Encroaching Wildlife",
         "accept:1421 @1435:-2836.27,-10535.73  Accept The Lost Caravan",
-        "turnin:8417 @1435:-3009.44,-10632.22  TurnIn A Troubled Spirit",
-        "turnin:2783 @1435:-3009.44,-10632.22  TurnIn Petty Squabbles",
-        "item:1392 @1435:-3482.19,-10142.28  ItemAccept Noboru the Cudgel",
-        "obj:1389:1 @1435:-3501.22,-10063.37  Objective Draenethyst Crystals / Draenethyst Crystal (6)",
         "obj:1421:1 @1435:-3701.47,-9900.67  Objective The Lost Caravan / Wizards' Reagents (1)",
-        "turnin:1392 @1435:-2818.83,-10100.99  TurnIn Noboru the Cudgel",
+        "obj:1389:1 @1435:-3501.22,-10063.37  Objective Draenethyst Crystals / Draenethyst Crystal (6)",
         "turnin:1389 @1435:-2818.83,-10100.99  TurnIn Draenethyst Crystals",
-        "turnin:1421 @1435:-2836.27,-10535.73  TurnIn The Lost Caravan"
+        "accept:93585 @1435:-2731.21,-10388.93  Accept This Light of Mine",
+        "turnin:1421 @1435:-2836.27,-10535.73  TurnIn The Lost Caravan",
+        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r inside",".trainer >> Train your class spells",".target Einris Brightspear",".xp <42,1"],"tag":"Hunter","from":"RestedXP: 41-43 STV/Swamp of Sorrows"},
+        {"lines":[".goto StormwindClassic,20.898,55.491",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r",".trainer >> Train your class spells",".target Sheldras Moontree"],"tag":"Druid","from":"RestedXP: 50-51 Stranglethorn Vale SoD"},
+        "turnin:8417 @1435:-3009.44,-10632.22  TurnIn A Troubled Spirit",
+        "turnin:2783 @1435:-3009.44,-10632.22  TurnIn Petty Squabbles"
       ]
     },
     {
       "part": 2,
       "steps": [
+        "turnin:93176 @1435:-2800.25,-10449.18  TurnIn My Little Friends",
+        "accept:625 @1435:-2747.5,-10357.74  Accept Cortello's Riddle",
         "accept:1398 @1435:-2836.27,-10535.73  Accept Driftwood",
-        "obj:1398:1 @1435:-4198.98,-10920.17  Objective Driftwood / Sundried Driftwood (1)",
+        "obj:1398:1 @1435:-4366.2,-10634.06  Objective Driftwood / Sundried Driftwood (1)",
         "turnin:1398 @1435:-2836.27,-10535.73  TurnIn Driftwood",
-        "accept:1425 @1435:-2836.27,-10535.73  Accept Deliver the Shipment",
-        "accept:625 @1435:-2747.5,-10357.74  Accept Cortello's Riddle"
+        "accept:1425 @1435:-2836.27,-10535.73  Accept Deliver the Shipment"
       ]
     },
     {
       "part": 3,
       "steps": [
-        "accept:8425 @1435:-3009.44,-10632.22  Accept Voodoo Feathers",
         "accept:8423 @1435:-3009.44,-10632.22  Accept Warrior Kinship",
-        "accept:8424 @1435:-3009.44,-10632.22  Accept War on the Shadowsworn",
-        "accept:2681 @1435:-3009.44,-10632.22  Accept The Stones That Bind Us",
         "accept:2702 @1435:-3009.44,-10632.22  Accept Heroes of Old",
+        "accept:2681 @1435:-3009.44,-10632.22  Accept The Stones That Bind Us",
         "turnin:2702 @1435:-2991.09,-10629.93  TurnIn Heroes of Old",
         "accept:2701 @1435:-2991.09,-10629.93  Accept Heroes of Old",
         "turnin:2701 @1435:-2985.82,-10633.45  TurnIn Heroes of Old",
+        "turnin:93176 @1435:-2800.25,-10449.18  TurnIn My Little Friends",
         "item:3374 @1435:-2536.47,-10717.55  ItemAccept The Essence of Eranikus",
         "turnin:3374 @1435:-2536.47,-10717.55  TurnIn The Essence of Eranikus",
-        "accept:3512 @1435:-2536.47,-10717.55  Accept In Eranikus' Own Words"
+        "accept:3512 @1435:-2536.47,-10717.55  Accept In Eranikus' Own Words",
+        "accept:8424 @1435:-3009.44,-10632.22  Accept War on the Shadowsworn",
+        "accept:8425 @1435:-3009.44,-10632.22  Accept Voodoo Feathers"
       ]
     }
   ]

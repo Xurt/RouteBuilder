@@ -1,54 +1,56 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
-  "guide": "25-60 Alterac Mountains",
-  "saved": "2026-10-12 12:07",
+  "guide": "25-38 Alterac Mountains",
+  "saved": "2026-10-13 06:53",
   "parts": [
     {
       "part": 1,
       "steps": [
-        "accept:79362 @1416:-1470.67,250.83  Accept Grant's Shield",
         "accept:79363 @1416:-1470.67,250.83  Accept Silvia's Sword",
+        "accept:79362 @1416:-1470.67,250.83  Accept Grant's Shield",
+        "turnin:79360 @1416:-1470.67,250.83  TurnIn Elemental Aid",
+        "turnin:97287 @1416:383.77,378.69  TurnIn Shrewd Negotiations",
+        {"lines":[".train 424760,1",".train 5209,3"],"tag":"Druid","from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".train 424760 >> |cRXP_WARN_Use the|r |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r] |cRXP_WARN_to train|r |T236149:0|t[Berserk]"],"tag":"Druid","from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".train 416017,1",".train 1949,3",">>|cRXP_WARN_Cast|r |T135818:0|t[Hellfire] |cRXP_WARN_to damage yourself below 70% health. Afterwards|r |T236297:0|t[Brimstone Carving] |cRXP_WARN_will transform into|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r]",".collect 213102,1"],"tag":"Warlock","from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".train 416017 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r] |cRXP_WARN_to learn|r |T236295:0|t[Dance of the Wicked]"],"tag":"Warlock","from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".train 425189,1",">>|cRXP_WARN_Use the|r |T134943:0|t|T134938:0|t|T134937:0|t[|cRXP_LOOT_Partial Spell Notes|r] |cRXP_WARN_to create the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r]",".collect 213116,1"],"tag":"Mage","from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".train 425189 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r |cRXP_WARN_to train|r |T135729:0|t[Chronostatic Preservation]",".train 425189,1"],"tag":"Mage","from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".train 400093,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".train 400093,1",".collect 215452,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".train 400093,1",".collect 215453,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".train 400093,1",".collect 213138,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".train 400093 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r] |cRXP_WARN_to train|r |T134919:0|t[Rolling with the Punches]"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".train 425309 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r] |cRXP_WARN_to train|r |T236254:0|t[Empowered Renew]"],"tag":"Priest","from":"RestedXP: 28-30 Thousand Needles"},
         "turnin:1791 @1416:-1470.67,250.83  TurnIn The Windwatcher",
-        "obj:8410:3 @1416:201.77,370.48  Objective Elemental Mastery / Elemental Earth (1)",
-        "turnin:8233 @1416:-1625.23,27.57  TurnIn A Simple Request",
-        "turnin:8236 @1416:-1625.23,27.57  TurnIn The Azure Key",
-        "obj:507:1 @1416:-317.63,1227.84  Objective Lord Aliden Perenolde / Lord Aliden Perenolde slain (1)",
-        "turnin:507 @1416:-317.07,1232.88  TurnIn Lord Aliden Perenolde",
-        "obj:8410:1 @1416:-1465.63,340.05  Objective Elemental Mastery / Elemental Air (1)",
-        "turnin:8410 @1416:-1470.67,250.83  TurnIn Elemental Mastery"
+        {"lines":[".train 416054,1",">>Cast |T136048:0|t[Lightning Bolt] 10 times on the |cRXP_ENEMY_Lightning Rod|r",">>Kill |cRXP_ENEMY_Tamkar|r or kite him as he spawns. Loot him for the |T134419:0|t[Rune of Power]",">>|cRXP_WARN_He will die automatically after 30 seconds so you can kite him instead of killing him|r",".collect 213093,1"],"tag":"Shaman","from":"RestedXP: 30-33 Hillsbrad/Arathi"},
+        {"lines":[".train 416054 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Power] |cRXP_WARN_to learn|r |T134337:0|t[Power Surge]"],"tag":"Shaman","from":"RestedXP: 30-33 Hillsbrad/Arathi"},
+        {"lines":[".train 409163 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of Focused Rage|r] |cRXP_WARN_to train|r |T132345:0|t[Focused Rage]"],"tag":"Warrior","from":"RestedXP: 30-33 Hillsbrad/Arathi"},
+        {"lines":[".train 410109 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r] |cRXP_WARN_to train|r |T132213:0|t[Steady Shot]"],"tag":"Hunter","from":"RestedXP: 30-33 Hillsbrad/Arathi"},
+        {"lines":[".train 426443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of Invocation|r] |cRXP_WARN_to train|r |T136133:0|t[Invocation]"],"tag":"Warlock","from":"RestedXP: 38-39 Alterac/Arathi"}
       ]
     },
     {
       "part": 2,
       "steps": [
+        "accept:96781 @1416:-1594.71,-0.43  Accept What's the Big Idea?",
+        "accept:96783 @1416:-1594.71,-0.43  Accept A Way In",
+        "accept:96779 @1416:-1594.71,-0.43  Accept Syndicate Sabotage",
         "turnin:79363 @1416:-1470.67,250.83  TurnIn Silvia's Sword",
-        "turnin:79362 @1416:-1470.67,250.83  TurnIn Grant's Shield",
-        "accept:8413 @1416:-1470.67,250.83  Accept Da Voodoo",
-        "accept:8411 @1416:-1470.67,250.83  Accept Mastering the Elements",
-        "obj:8411:1 @1416:-1465.63,340.05  Objective Mastering the Elements / Elemental Air (1)",
-        "accept:8412 @1416:-1470.67,250.83  Accept Spirit Totem",
-        "obj:8411:2 @1416:-1027.71,664.29  Objective Mastering the Elements / Elemental Earth (1)",
-        "accept:8234 @1416:-1625.23,27.57  Accept Sealed Azure Bag",
-        "accept:1712 @1416:-1470.67,250.83  Accept Cyclonian",
-        "accept:1713 @1416:-1470.67,250.83  Accept The Summoning",
-        "obj:1713:1 @1416:-1465.63,340.05  Objective The Summoning / Whirlwind Heart (1)",
-        "turnin:1713 @1416:-1470.67,250.83  TurnIn The Summoning",
-        "accept:1792 @1416:-1470.67,250.83  Accept Whirlwind Weapon",
-        "turnin:1792 @1416:-1470.67,250.83  TurnIn Whirlwind Weapon",
-        "accept:506 @1416:-895.55,683.52  Accept Blackmoore's Legacy",
-        "accept:508 @1416:-317.07,1232.88  Accept Taretha's Gift",
-        "obj:1712:1 @1416:-189.95,1317.07  Objective Cyclonian / Liferoot (1)"
+        "turnin:79362 @1416:-1470.67,250.83  TurnIn Grant's Shield"
       ]
     },
     {
       "part": 3,
       "steps": [
-        "accept:8367 @1416:-983.19,382.43  Accept For Great Honor",
-        "obj:8411:2 @1416:-1027.71,664.29  Objective Mastering the Elements / Elemental Earth (1)",
-        "obj:8411:1 @1416:-1465.63,340.05  Objective Mastering the Elements / Elemental Air (1)",
         "turnin:79363 @1416:-1470.67,250.83  TurnIn Silvia's Sword",
         "turnin:79362 @1416:-1470.67,250.83  TurnIn Grant's Shield",
-        "turnin:8411 @1416:-1470.67,250.83  TurnIn Mastering the Elements"
+        "accept:79361 @1416:-1470.67,250.83  Accept Storm, Earth, and Fire",
+        "accept:79364 @1416:-1470.67,250.83  Accept Eyes on the Sky",
+        "turnin:96781 @1416:-1594.71,-0.43  TurnIn What's the Big Idea?",
+        "turnin:96779 @1416:-1594.71,-0.43  TurnIn Syndicate Sabotage",
+        "accept:506 @1416:-895.55,683.52  Accept Blackmoore's Legacy",
+        {"lines":[".vendor >> Buy level 35 drink if needed"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"}
       ]
     }
   ]
