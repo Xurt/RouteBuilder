@@ -370,6 +370,15 @@ step
     >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for |cRXP_LOOT_Red Burlap Bandana|r
     .complete 18,1 --Red Burlap Bandana (12)
     .mob Defias Thug
+step << Rogue
+    .goto 1429/0,-288.51,-9068.87,0
+    .goto 1429/0,-388.47,-9001.28,0
+    .goto 1429/0,-288.51,-9068.87,30,0
+    .goto 1429/0,-335.02,-9108.91,30,0
+    .goto 1429/0,-376.67,-9073.73,30,0
+    .goto 1429/0,-388.47,-9001.28,30,0
+    .goto 1429/0,-333.97,-9028.59,30,0
+    .xp 4 >> Grind to level 4
 step
     .goto 1429/0,-136.48,-8933.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
@@ -532,6 +541,15 @@ step
     .complete 6,1 --Garrick's Head (1)
     .mob Garrick Padfoot
 step
+    .goto 1429/0,-288.51,-9068.87,0
+    .goto 1429/0,-388.47,-9001.28,0
+    .goto 1429/0,-288.51,-9068.87,30,0
+    .goto 1429/0,-335.02,-9108.91,30,0
+    .goto 1429/0,-376.67,-9073.73,30,0
+    .goto 1429/0,-388.47,-9001.28,30,0
+    .goto 1429/0,-333.97,-9028.59,30,0
+    .xp 5 >> Grind to level 5
+step
     .goto 1429/0,-223.95,-8850.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
     .turnin 3904 >>Turn in Milly's Harvest
@@ -566,8 +584,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Neals|r
     .turnin 3905 >>Turn in Grape Manifest
     .target Brother Neals
-step << Human Priest
-    .xp 5 >>Grind to level 5 (In Favor of the Light needs it)
 step << Human Priest
     .goto 1429/0,-193.41,-8853.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
@@ -713,6 +729,8 @@ step
     .train 2550 >> Train |T133971:0|t[Cooking]
     .target Tomas
     .money <0.0100
+step
+    .xp 6 >> Grind to 6
 step << Rogue
     .goto 1429/0,9.64,-9465.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brog Hamfist|r
@@ -786,14 +804,10 @@ step << Human Priest
     .complete 5624,1 --Guard Roberts
     .target Guard Roberts
 step
-    .xp 5 >>Grind to level 5 (Lost Necklace needs it)
-step
     .goto 1429/0,338.33,-9889.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
     .accept 85 >>Accept Lost Necklace
     .target "Auntie" Bernice Stonefield
-step
-    .xp 6 >>Grind to level 6 (Princess Must Die! needs it)
 step
     .goto 1429/0,332.43,-9894.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
@@ -891,15 +905,25 @@ step
     .mob Nimsy
     .isOnQuest 91775
 step
+    .goto 1429/0,223.09,-9916.240,0
+    .goto 1429/0,176.93,-9857.68,35,0
+    .goto 1429/0,176.24,-9902.12,35,0
+    .goto 1429/0,223.09,-9916.240,35,0
+    .goto 1429/0,259.54,-9865.09,35,0
+    .goto 1429/0,215.81,-9830.600,35,0
+    .xp 7+1140 >>Grind to 1140+/4500xp
+step
+    .goto 1429/0,223.09,-9916.240,0
+    .goto 1429/0,176.93,-9857.68,35,0
+    .goto 1429/0,176.24,-9902.12,35,0
+    .goto 1429/0,223.09,-9916.240,35,0
+    .goto 1429/0,259.54,-9865.09,35,0
+    .goto 1429/0,215.81,-9830.600,35,0
+    .xp 7+1815 >>Grind to 1815+/4500xp
+step
     .goto 1429/0,72.81,-9496.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .turnin 47 >>Turn in Gold Dust Exchange
-    .target Remy "Two Times"
-step
-    .xp 7 >>Grind to level 7 (A Fishy Peril needs it)
-step
-    .goto 1429/0,72.81,-9496.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .accept 40 >>Accept A Fishy Peril
     .target Remy "Two Times"
 step
@@ -952,6 +976,8 @@ step
     .accept 61 >>Accept Shipment to Stormwind
     .accept 112 >>Accept Collecting Kelp
     .target William Pestle
+step
+    .xp 8 >> Grind to 8
 step << Warlock
     .goto 1429/0,-5.36,-9472.760
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maximillian Crowe|r
@@ -1074,6 +1100,8 @@ step
     .turnin 99128 >>Turn in Slimy Menace
     .accept 99129 >>Accept A Man About a Murloc
     .target Jason Mathers
+step
+    .xp 7 >>Grind to level 7 (Delicate Instruments needs it)
 step
     .goto 1429/0,-724.10,-9556.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r
@@ -1243,30 +1271,16 @@ step
     .target Blixie Fitzwink
 step
     #loop
-    .goto 1429/0,-842.10,-8997.35,0
-    .goto 1429/0,-842.10,-8997.35,40,0
-    .goto 1429/0,-807.40,-8927.91,40,0
-    .goto 1429/0,-769.22,-8909.39,40,0
-    .goto 1429/0,-720.62,-8890.88,40,0
-    .goto 1429/0,-706.74,-8874.67,40,0
-    .goto 1429/0,-772.69,-8837.64,40,0
-    .goto 1429/0,-817.81,-8846.90,40,0
-    .goto 1429/0,-876.81,-8826.07,40,0
-    .goto 1429/0,-828.22,-8897.82,40,0
-    >>Pick up |cRXP_PICK_Stolen Enchanting Supplies|r from the ground
-    .complete 91725,1 --Stolen Enchanting Supplies (5)
-step
-    #loop
-    .goto 1429/0,-890.70,-8885.09,0
-    .goto 1429/0,-890.70,-8885.09,40,0
+    .goto 1429/0,-912.56,-8908.47,0
     .goto 1429/0,-912.56,-8908.47,40,0
-    .goto 1429/0,-968.10,-8889.95,40,0
-    .goto 1429/0,-1019.46,-8865.18,40,0
-    .goto 1429/0,-1075.34,-8874.91,40,0
-    .goto 1429/0,-1081.94,-8803.62,40,0
-    .goto 1429/0,-1035.08,-8809.63,40,0
-    .goto 1429/0,-943.80,-8806.39,40,0
+    .goto 1429/0,-890.70,-8885.09,40,0
     .goto 1429/0,-918.81,-8847.83,40,0
+    .goto 1429/0,-943.80,-8806.39,40,0
+    .goto 1429/0,-1035.08,-8809.63,40,0
+    .goto 1429/0,-1081.94,-8803.62,40,0
+    .goto 1429/0,-1075.34,-8874.91,40,0
+    .goto 1429/0,-1019.46,-8865.18,40,0
+    .goto 1429/0,-968.10,-8889.95,40,0
     >>Kill |cRXP_ENEMY_Prowlers|r
     .complete 52,1 --Prowler slain (8)
     .mob Prowler
@@ -1275,36 +1289,6 @@ step
     >>Kill |cRXP_ENEMY_Young Forest Bears|r
     .complete 52,2 --Young Forest Bear slain (5)
     .mob Young Forest Bear
-step
-    #completewith Drop184x1
-    >>|cRXP_LOOT_Westfall Deed|r can drop from |cRXP_ENEMY_Defias Bandit|r, |cRXP_ENEMY_Defias Rogue Wizard|r, |cRXP_ENEMY_Defias Ambusher|r. Use it to start the quest if you get one
-    .collect 1972,1,184 --Westfall Deed (1)
-    .accept 184 >>Accept Furlbrow's Deed
-    .use 1972
-step
-    #completewith Drop184x1
-    >>As you go: Kill |cRXP_ENEMY_Defias Bandits|r, |cRXP_ENEMY_Morgan the Collectors|r, |cRXP_ENEMY_Defias Rogue Wizards|r and |cRXP_ENEMY_Defias Ambushers|r. Loot them for |cRXP_LOOT_Red Linen Bandana|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 83,1 --Red Linen Bandana (6)
-    .mob Defias Bandit
-    .mob Morgan the Collector
-    .mob Defias Rogue Wizard
-    .mob Defias Ambusher
-step
-    #label Drop184x1
-    #loop
-    .goto 1429/0,-1122.89,-9175.11,0
-    .goto 1429/0,-1122.89,-9175.11,40,0
-    .goto 1429/0,-1131.22,-9065.16,40,0
-    .goto 1429/0,-1048.27,-9026.74,40,0
-    .goto 1429/0,-983.37,-9012.62,40,0
-    .goto 1429/0,-951.78,-9090.86,40,0
-    .goto 1429/0,-1020.16,-9123.72,40,0
-    .goto 1429/0,-954.56,-9143.86,40,0
-    .goto 1429/0,-980.94,-9245.24,40,0
-    .goto 1429/0,-1051.05,-9188.30,40,0
-    >>Kill |cRXP_ENEMY_Defias Rogue Wizards|r
-    .complete 91724,1 --Defias Rogue Wizard slain (6)
-    .mob Defias Rogue Wizard
 step
     #loop
     .goto 1429/0,-606.09,-9177.88,0
@@ -1315,23 +1299,13 @@ step
     >>Pick up |cRXP_PICK_Mining Tools|r from the ground
     .complete 91732,1 --Mining Tools (4)
 step
-    .goto 1429/0,-724.10,-9556.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r
-    .turnin 91724 >>Turn in Delicate Instruments
-    .target Hamish Bergwort
-step
-    .goto 1429/0,-658.15,-9619.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blixie Fitzwink|r
-    .turnin 91725 >>Turn in Stolen Enchanting Supplies
-    .target Blixie Fitzwink
-step
-    #completewith Drop184x2
+    #completewith Drop184x1
     >>|cRXP_LOOT_Westfall Deed|r can drop from |cRXP_ENEMY_Defias Bandit|r, |cRXP_ENEMY_Defias Rogue Wizard|r, |cRXP_ENEMY_Defias Ambusher|r. Use it to start the quest if you get one
     .collect 1972,1,184 --Westfall Deed (1)
     .accept 184 >>Accept Furlbrow's Deed
     .use 1972
 step
-    #completewith Drop184x2
+    #completewith Drop184x1
     >>As you go: Kill |cRXP_ENEMY_Stonetusk Boars|r, |cRXP_ENEMY_Longsnouts|r, |cRXP_ENEMY_Princess|r and |cRXP_ENEMY_Porcine Entourages|r. Loot them for |cRXP_LOOT_Chunk of Boar Meat|r. |cRXP_WARN_Anything left is finished later|r
     .complete 86,1 --Chunk of Boar Meat (4)
     .mob Stonetusk Boar
@@ -1339,18 +1313,18 @@ step
     .mob Princess
     .mob Porcine Entourage
 step
-    #label Drop184x2
+    #label Drop184x1
     #loop
-    .goto 1429/0,-816.07,-9744.73,0
+    .goto 1429/0,-846.62,-9714.17,0
+    .goto 1429/0,-846.62,-9714.17,40,0
     .goto 1429/0,-816.07,-9744.73,40,0
     .goto 1429/0,-828.91,-9802.59,40,0
     .goto 1429/0,-840.02,-9836.62,40,0
     .goto 1429/0,-918.81,-9826.66,40,0
     .goto 1429/0,-927.14,-9805.83,40,0
+    .goto 1429/0,-882.37,-9773.89,40,0
     .goto 1429/0,-917.42,-9766.95,40,0
     .goto 1429/0,-939.63,-9715.10,40,0
-    .goto 1429/0,-882.37,-9773.89,40,0
-    .goto 1429/0,-846.62,-9714.17,40,0
     >>Kill |cRXP_ENEMY_Princess|r and loot |cRXP_LOOT_Brass Collar|r
     >>Kill |cRXP_ENEMY_Defias Bandits|r, |cRXP_ENEMY_Morgan the Collectors|r, |cRXP_ENEMY_Defias Rogue Wizards|r and |cRXP_ENEMY_Defias Ambushers|r. Loot them for |cRXP_LOOT_Red Linen Bandana|r
     .complete 88,1 --Brass Collar (1)
@@ -1370,59 +1344,36 @@ step
 step
     .goto 1429/0,-1121.16,-9604.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormin Pelford|r
-    .turnin 91733 >>Turn in Downstream while you are here
-    .isQuestComplete 91733
-    .target Ormin Pelford
-step
-    .goto 1429/0,-1326.98,-9416.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hagar Lowe|r
-    .turnin 91732 >>Turn in Good Steel
-    .target Hagar Lowe
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Farley's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .xp 9 >>Grind to level 9 (Report to Gryan Stoutmantle needs it)
-step
-    .goto 1429/0,73.85,-9465.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
-    .accept 109 >>Accept Report to Gryan Stoutmantle
-    .target Marshal Dughan
-step
-    .goto 1429/0,73.85,-9465.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
-    .turnin 39 >>Turn in Deliver Thomas' Report while you are here
-    .isQuestComplete 39
-    .target Marshal Dughan
-step
-    .goto 1429/0,72.81,-9496.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
-    .turnin 99129 >>Turn in A Man About a Murloc while you are here
-    .isQuestComplete 99129
-    .target Remy "Two Times"
-step
-    .goto 1429/0,31.85,-9460.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
-    .turnin 112 >>Turn in Collecting Kelp while you are here
-    .isQuestComplete 112
-    .target William Pestle
-step
-    .goto 1429/0,-1121.16,-9604.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormin Pelford|r
     .turnin 91733 >>Turn in Downstream
     .target Ormin Pelford
+step << Warlock/Warrior/Rogue/Hunter
+    .goto 1429/0,-877.85,-9778.98
+    .xp 9+3510 >> Grind to 3510+/6500xp << Warlock/Hunter
+    .xp 9+3420 >> Grind to 3420+/6500xp << Warrior/Rogue
+step << Warlock/Warrior/Rogue/Hunter
+    .goto 1429/0,-877.85,-9778.98
+    .xp 9+2670 >> Grind to 2670+/6500xp << Warlock/Hunter
+    .xp 9+2580 >> Grind to 2580+/6500xp << Warrior/Rogue
 step
     .goto 1429/0,-1222.51,-9531.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
     .turnin 83 >>Turn in Red Linen Goods
     .target Sara Timberlain
 step
+    .goto 1429/0,-1326.98,-9416.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hagar Lowe|r
+    .turnin 91732 >>Turn in Good Steel
+    .target Hagar Lowe
+step
     .goto 1429/0,-1406.11,-9775.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merell Ross|r
     .turnin 91740 >>Turn in Croaky's Head
     .target Merell Ross
     .isOnQuest 91740
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Farley's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
 step
     .goto 1429/0,31.85,-9460.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
@@ -1443,10 +1394,17 @@ step << Rogue
     .target Keryn Sylvius
     .xp <10,1
 step
+    .goto 1429/0,72.81,-9496.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
+    .turnin 99129 >>Turn in A Man About a Murloc while you are here
+    .isQuestComplete 99129
+    .target Remy "Two Times"
+step
     .goto 1429/0,73.85,-9465.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 39 >>Turn in Deliver Thomas' Report
     .accept 59 >>Accept Cloth and Leather Armor
+    .accept 109 >>Accept Report to Gryan Stoutmantle
     .target Marshal Dughan
 step
     .goto 1429/0,94.01,-9464.8900
@@ -1454,6 +1412,8 @@ step
     .vendor >> Vendor Trash
     .target Corina Steele
     .money >0.75
+step << Warlock/Warrior/Hunter
+    .xp 10 >> Grind to 10
 step
     .goto 1429/0,73.85,-9465.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
@@ -1461,8 +1421,6 @@ step
     .target Marshal Dughan
     .isQuestTurnedIn 76 --any of: The Jasperlode Mine
     .xp <6,1
-step << Warrior
-    .xp 10 >>Grind to level 10 (A Warrior's Training needs it)
 step << Warrior
     .goto 1429/0,109.25,-9461.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
@@ -1487,8 +1445,6 @@ step << Paladin
     .trainer >> Train your class spells
     .target Brother Wilhelm
     .xp <12,1
-step << Hunter
-    .xp 10 >>Grind to level 10 (Taming the Beast needs it)
 step << Hunter
     .goto 1429/0,106.13,-9474.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson|r
@@ -1566,8 +1522,6 @@ step << Hunter
     .target Isaac Chan::258930
     .trainer >> Train your pet spells
 step << Warlock
-    .xp 10 >>Grind to level 10 (Gakin's Summons needs it)
-step << Warlock
     .goto 1429/0,-8.76,-9473.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remen Marcot|r
     .accept 1685 >>Accept Gakin's Summons
@@ -1604,32 +1558,8 @@ step
     .turnin 99129 >>Turn in A Man About a Murloc
     .accept 99130 >>Accept An Enticing Offer
     .target Remy "Two Times"
-step << Human Mage/Gnome Mage
-    .goto 1429/0,34.28,-9471.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
-    .accept 1860 >>Accept Speak with Jennea
-    .target Zaldimar Wefhellt
-    .xp <10,1
-step << NightElf Priest
-    .goto 1429/0,33.24,-9460.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
-    .accept 5628 >>Accept Returning Home
-    .target Priestess Josetta
-    .xp <10,1
-step << Human Priest
-    .goto 1429/0,33.24,-9460.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
-    .accept 94774 >>Accept Divine Grace
-    .target Priestess Josetta
-    .xp <10,1
-step << Rogue
-    .goto 1429/0,12.76,-9465.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
-    .accept 2205 >>Accept Seek out SI: 7
-    .target Keryn Sylvius
-    .xp <10,1
 step
-    #completewith Along137
+    #completewith Along132
     >>As you go: Kill |cRXP_ENEMY_Stonetusk Boars|r, |cRXP_ENEMY_Longsnouts|r, |cRXP_ENEMY_Princess|r and |cRXP_ENEMY_Porcine Entourages|r. Loot them for |cRXP_LOOT_Chunk of Boar Meat|r. |cRXP_WARN_Anything left is finished later|r
     .complete 86,1 --Chunk of Boar Meat (4)
     .mob Stonetusk Boar
@@ -1637,7 +1567,7 @@ step
     .mob Princess
     .mob Porcine Entourage
 step
-    #label Along137
+    #label Along132
     #loop
     .goto 1429/0,105.43,-9932.44,0
     .goto 1429/0,105.43,-9932.44,40,0
@@ -1661,37 +1591,13 @@ step
     .turnin 99130 >>Turn in An Enticing Offer
     .accept 99131 >>Accept Baited for Success
     .target Remy "Two Times"
-step << Human Mage/Gnome Mage
-    .goto 1429/0,34.28,-9471.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
-    .accept 1860 >>Accept Speak with Jennea
-    .target Zaldimar Wefhellt
-    .xp <10,1
-step << NightElf Priest
-    .goto 1429/0,33.24,-9460.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
-    .accept 5628 >>Accept Returning Home
-    .target Priestess Josetta
-    .xp <10,1
-step << Human Priest
-    .goto 1429/0,33.24,-9460.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
-    .accept 94774 >>Accept Divine Grace
-    .target Priestess Josetta
-    .xp <10,1
-step << Rogue
-    .goto 1429/0,12.76,-9465.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
-    .accept 2205 >>Accept Seek out SI: 7
-    .target Keryn Sylvius
-    .xp <10,1
 step
     .goto 1429/0,-111.84,-9378.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jason Mathers|r
     .turnin 99131 >>Turn in Baited for Success
     .target Jason Mathers
 step
-    #completewith Along141
+    #completewith Along136
     >>As you go: Kill |cRXP_ENEMY_Stonetusk Boars|r, |cRXP_ENEMY_Longsnouts|r, |cRXP_ENEMY_Princess|r and |cRXP_ENEMY_Porcine Entourages|r. Loot them for |cRXP_LOOT_Chunk of Boar Meat|r. |cRXP_WARN_Anything left is finished later|r
     .complete 86,1 --Chunk of Boar Meat (4)
     .mob Stonetusk Boar
@@ -1704,7 +1610,7 @@ step
     .turnin 114 >>Turn in The Escape
     .target Maybell Maclure
 step
-    #label Along141
+    #label Along136
     .goto 1429/0,332.43,-9894.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
     .turnin 88 >>Turn in Princess Must Die!
@@ -1744,23 +1650,47 @@ step
     .accept 123 >>Accept The Collector
     .use 1307
 step
+    #label Drop123x1
     .goto 1429/0,667.01,-10089.83
     >>Kill |cRXP_ENEMY_Hogger|r and loot |cRXP_LOOT_Huge Gnoll Claw|r
     .complete 176,1 --Huge Gnoll Claw (1)
     .mob Hogger
 step
-    #label Drop123x1
+    #completewith Drop184x2
+    >>|cRXP_LOOT_Westfall Deed|r can drop from |cRXP_ENEMY_Defias Bandit|r, |cRXP_ENEMY_Defias Rogue Wizard|r, |cRXP_ENEMY_Defias Ambusher|r. Use it to start the quest if you get one
+    .collect 1972,1,184 --Westfall Deed (1)
+    .accept 184 >>Accept Furlbrow's Deed
+    .use 1972
+step
+    #label Drop184x2
     #loop
-    .goto 1429/0,673.96,-10089.83,0
-    .goto 1429/0,673.96,-10089.83,40,0
-    .goto 1429/0,686.45,-10117.84,40,0
-    .goto 1429/0,653.48,-10120.15,40,0
-    .goto 1429/0,616.34,-10147.00,40,0
-    .goto 1429/0,573.65,-10127.10,40,0
-    .goto 1429/0,542.76,-10091.91,40,0
-    .goto 1429/0,629.18,-10071.31,40,0
-    .goto 1429/0,581.28,-10010.67,40,0
+    .goto 1429/0,529.22,-9389.67,0
+    .goto 1429/0,529.22,-9389.67,40,0
+    .goto 1429/0,503.88,-9352.17,40,0
+    .goto 1429/0,524.36,-9348.70,40,0
+    .goto 1429/0,552.13,-9321.16,40,0
+    >>Kill |cRXP_ENEMY_Defias Rogue Wizards|r
+    .complete 91724,1 --Defias Rogue Wizard slain (6)
+    .mob Defias Rogue Wizard
+step
+    #completewith Drop123x2
+    >>|cRXP_LOOT_Gold Pickup Schedule|r can drop from |cRXP_ENEMY_Riverpaw Runt|r, |cRXP_ENEMY_Gruff Swiftbite|r, |cRXP_ENEMY_Hogger|r. Use it to start the quest if you get one
+    .collect 1307,1,123 --Gold Pickup Schedule (1)
+    .accept 123 >>Accept The Collector
+    .use 1307
+step
+    #label Drop123x2
+    #loop
+    .goto 1429/0,653.82,-9990.77,0
     .goto 1429/0,653.82,-9990.77,40,0
+    .goto 1429/0,581.28,-10010.67,40,0
+    .goto 1429/0,542.76,-10091.91,40,0
+    .goto 1429/0,573.65,-10127.10,40,0
+    .goto 1429/0,616.34,-10147.00,40,0
+    .goto 1429/0,653.48,-10120.15,40,0
+    .goto 1429/0,686.45,-10117.84,40,0
+    .goto 1429/0,673.96,-10089.83,40,0
+    .goto 1429/0,629.18,-10071.31,40,0
     >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for |cRXP_LOOT_Painted Gnoll Armband|r
     .complete 11,1 --Painted Gnoll Armband (8)
     .mob Riverpaw Runt
@@ -1880,11 +1810,19 @@ step << Rogue
     .target Keryn Sylvius
     .xp <10,1
 step
-    .goto 1429/0,-1031.96,-9610.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
-    .accept 46 >>Accept Bounty on Murlocs
-    .turnin 46 >>Turn in Bounty on Murlocs
-    .target Guard Thomas
+    #loop
+    .goto 1429/0,-706.74,-8874.67,0
+    .goto 1429/0,-706.74,-8874.67,40,0
+    .goto 1429/0,-720.62,-8890.88,40,0
+    .goto 1429/0,-769.22,-8909.39,40,0
+    .goto 1429/0,-807.40,-8927.91,40,0
+    .goto 1429/0,-842.10,-8997.35,40,0
+    .goto 1429/0,-828.22,-8897.82,40,0
+    .goto 1429/0,-876.81,-8826.07,40,0
+    .goto 1429/0,-817.81,-8846.90,40,0
+    .goto 1429/0,-772.69,-8837.64,40,0
+    >>Pick up |cRXP_PICK_Stolen Enchanting Supplies|r from the ground
+    .complete 91725,1 --Stolen Enchanting Supplies (5)
 step << Warlock
     .goto 1429/0,-929.22,-9809.07
     >>Kill |cRXP_ENEMY_Surena Caledon|r and loot |cRXP_LOOT_Surena's Choker|r
@@ -1907,6 +1845,22 @@ step << Warlock
     .turnin 1688 >>Turn in Surena Caledon while you are here
     .isQuestComplete 1688
     .target Gakin the Darkbinder
+step
+    .goto 1429/0,-1031.96,-9610.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
+    .accept 46 >>Accept Bounty on Murlocs
+    .turnin 46 >>Turn in Bounty on Murlocs
+    .target Guard Thomas
+step
+    .goto 1429/0,-724.10,-9556.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r
+    .turnin 91724 >>Turn in Delicate Instruments
+    .target Hamish Bergwort
+step
+    .goto 1429/0,-658.15,-9619.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blixie Fitzwink|r
+    .turnin 91725 >>Turn in Stolen Enchanting Supplies
+    .target Blixie Fitzwink
 step << Warrior
     #completewith next
     .zone 1453 >>Travel to Stormwind City
@@ -2072,60 +2026,6 @@ step << Warlock/Mage/Rogue/Priest/Warrior/Paladin
     .trainer >>Train Staves << Priest
     .trainer >>Train 2h Swords << Warrior/Paladin
     .target Woo Ping
-step << NightElf Hunter
-    .xp 10 >>Grind to level 10 (The Hunter's Path needs it)
-step << NightElf Hunter
-    .goto 1453/0,552.71,-8415.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
-    .accept 6073 >>Accept The Hunter's Path
-    .target Einris Brightspear
-step
-    #completewith next
-    .zone 1429 >>Leave Stormwind City for Elwynn Forest
-    .zoneskip 1429
-step << NightElf Priest
-    .xp 10 >>Grind to level 10 (Returning Home needs it)
-step << NightElf Priest
-    .goto 1429/0,33.24,-9460.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
-    .accept 5628 >>Accept Returning Home
-    .target Priestess Josetta
-step
-    #completewith next
-    .zone 1453 >>Travel to Stormwind City
-    .zoneskip 1453
-step << NightElf Druid
-    .xp 10 >>Grind to level 10 (Heeding the Call needs it)
-step << NightElf Druid
-    .goto 1453/0,1095.51,-8741.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
-    .accept 5924 >>Accept Heeding the Call
-    .target Theridran
-step << Human
-    .goto 1453/0,382.09,-8702.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osric Strang|r
-    .turnin 6281 >>Turn in Continue to Stormwind
-    .target Osric Strang
-    .isOnQuest 6281
-step << Human
-    .goto 1453/0,382.09,-8702.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osric Strang|r
-    .accept 6261 >>Accept Dungar Longdrink
-    .target Osric Strang
-    .isQuestTurnedIn 6281 --any of: Continue to Stormwind
-    .xp <10,1
-step
-    .goto 1453/0,638.26,-8342.22
-    >>Talk to |cRXP_FRIENDLY_Billibub|r
-    .vendor 5519 >>|cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him if its up|r
-    .target Billibub Cogspinner
-    .money <0.08
-step << Human
-    .goto 1453/0,490.16,-8835.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .turnin 6261 >>Turn in Dungar Longdrink
-    .target Dungar Longdrink
-    .isOnQuest 6261
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
@@ -2175,6 +2075,67 @@ step << Warrior
     .trainer >> Train your class spells
     .target Wu Shen
     .target Ilsa Corbin
+step << NightElf Hunter
+    .xp 10 >>Grind to level 10 (The Hunter's Path needs it)
+step << NightElf Hunter
+    .goto 1453/0,552.71,-8415.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
+    .accept 6073 >>Accept The Hunter's Path
+    .target Einris Brightspear
+step
+    #completewith next
+    .zone 1429 >>Leave Stormwind City for Elwynn Forest
+    .zoneskip 1429
+step << NightElf Priest
+    .xp 10 >>Grind to level 10 (Returning Home needs it)
+step << NightElf Priest
+    .goto 1429/0,33.24,-9460.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
+    .accept 5628 >>Accept Returning Home
+    .target Priestess Josetta
+step
+    #completewith next
+    .zone 1453 >>Travel to Stormwind City
+    .zoneskip 1453
+step << NightElf Druid
+    .xp 10 >>Grind to level 10 (Heeding the Call needs it)
+step << NightElf Druid
+    .goto 1453/0,1095.51,-8741.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
+    .accept 5924 >>Accept Heeding the Call
+    .target Theridran
+step << Skyborne Druid
+    .goto 1453/0,1100.20,-8776.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
+    .turnin 94912 >>Turn in Child of Nature
+    .target Sheldras Moontree
+    .isOnQuest 94912
+step << Skyborne Druid
+    .xp 10 >>Grind to level 10 (Moonglade needs it)
+step << Skyborne Druid
+    .goto 1453/0,1100.20,-8776.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
+    .accept 94914 >>Accept Moonglade
+    .target Sheldras Moontree
+step << Human
+    .goto 1453/0,382.09,-8702.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osric Strang|r
+    .turnin 6281 >>Turn in Continue to Stormwind
+    .target Osric Strang
+    .isOnQuest 6281
+step << Human
+    .goto 1453/0,382.09,-8702.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osric Strang|r
+    .accept 6261 >>Accept Dungar Longdrink
+    .target Osric Strang
+    .isQuestTurnedIn 6281 --any of: Continue to Stormwind
+    .xp <10,1
+step
+    .goto 1453/0,638.26,-8342.22
+    >>Talk to |cRXP_FRIENDLY_Billibub|r
+    .vendor 5519 >>|cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him if its up|r
+    .target Billibub Cogspinner
+    .money <0.08
 step << Warrior
     .goto 1453/0,389.21,-8604.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartleby|r
@@ -2201,12 +2162,6 @@ step << Warrior
     .target Harry Burlguard
     .isQuestTurnedIn 1665 --any of: Bartleby's Mug
     .xp <10,1
-step << Human Paladin
-    .goto 1453/0,845.83,-8545.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
-    .turnin 3681 >>Turn in Tome of Divinity
-    .target Duthorian Rall
-    .isOnQuest 3681
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .target Woo Ping
@@ -2230,6 +2185,12 @@ step << Human Priest
     .turnin 94773 >>Turn in Divine Grace
     .target High Priestess Laurena
     .isOnQuest 94773
+step << Human Paladin
+    .goto 1453/0,845.83,-8545.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 3681 >>Turn in Tome of Divinity
+    .target Duthorian Rall
+    .isOnQuest 3681
 step
     .goto 1453/0,598.23,-8821.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy |cRXP_LOOT_Nightcrawlers|r from |cRXP_FRIENDLY_Edna Mullby|r
@@ -2240,8 +2201,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilbert Gray|r
     .turnin 95065 >>Turn in Fishin' Time
     .target Gilbert Gray
-step << Human Mage/Gnome Mage/Skyborne Mage
-    .xp 10 >>Grind to level 10 (Mirror Lake needs it)
 step << Human Mage/Gnome Mage/Skyborne Mage
     .goto 1453/0,861.81,-8989.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
@@ -2342,8 +2301,15 @@ step
     .vendor >>Kill wolves until you have 50c worth of vendor trash. Vendor, then buy x10 water from Brother Danil.
     .collect 159,10
 step
+    .xp 2 >> Grind to 2
+step
     .goto 1429/0,-116.70,-8900.14
     .vendor >>vendor trash, then buy x10 more water from Brother Danil
+step
+    .xp 3 >> Grind to 3
+step
+    .goto 1429/0,-120.17,-8897.82
+    .xp 3+1110 >>Grind to 1110+/1400xp on your way back to town
 step
     .goto 1429/0,-120.17,-8897.82
     .vendor >>vendor trash
@@ -2359,6 +2325,11 @@ step
     .goto 1429/0,-120.17,-8897.82
     .vendor >>vendor trash, repair
 step
+    .xp 5 >> Grind to 5
+step
+    .xp 5+1175 >> Grind on your way back to 1175+/2800xp
+    .goto 1429/0,-224.30,-8846.90
+step
     .goto 1429/0,88.08,-9464.89
     .vendor >> vendor trash, repair
 step
@@ -2368,19 +2339,6 @@ step
 step
     .goto 1429/0,63.78,-10008.82
     .vendor >>Vendor, buy as much milk as you can
-step << Skyborne Druid
-    .goto 1453/0,1100.20,-8776.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
-    .turnin 94912 >>Turn in Child of Nature
-    .target Sheldras Moontree
-    .isOnQuest 94912
-step << Skyborne Druid
-    .xp 10 >>Grind to level 10 (Moonglade needs it)
-step << Skyborne Druid
-    .goto 1453/0,1100.20,-8776.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
-    .accept 94914 >>Accept Moonglade
-    .target Sheldras Moontree
 step << Human Priest/Dwarf Priest
     .goto 1453/0,862.33,-8512.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
@@ -2431,7 +2389,7 @@ step
     .isQuestTurnedIn 123 --any of: The Collector
     .xp <7,1
 step
-    #completewith Along194
+    #completewith Along192
     >>As you go: Kill |cRXP_ENEMY_Stonetusk Boars|r, |cRXP_ENEMY_Longsnouts|r, |cRXP_ENEMY_Princess|r and |cRXP_ENEMY_Porcine Entourages|r. Loot them for |cRXP_LOOT_Chunk of Boar Meat|r. |cRXP_WARN_Anything left is finished later|r
     .complete 86,1 --Chunk of Boar Meat (4)
     .mob Stonetusk Boar
@@ -2439,7 +2397,7 @@ step
     .mob Princess
     .mob Porcine Entourage
 step
-    #label Along194
+    #label Along192
     .goto 1429/0,-932.00,-9806.29
     >>Kill |cRXP_ENEMY_Morgan the Collector|r and loot |cRXP_LOOT_The Collector's Ring|r
     .complete 147,1 --The Collector's Ring (1)
@@ -2519,8 +2477,12 @@ step << Human
     #completewith next
     .zone 1453 >>Travel to Stormwind City
     .zoneskip 1453
-    .isQuestTurnedIn 6261 --any of: Dungar Longdrink
-    .xp <10,1
+step << Human
+    .goto 1453/0,490.16,-8835.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .turnin 6261 >>Turn in Dungar Longdrink
+    .target Dungar Longdrink
+    .isOnQuest 6261
 step << Human
     .goto 1453/0,490.16,-8835.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
@@ -2619,12 +2581,20 @@ step
     .mob Princess
     .mob Porcine Entourage
 step
+    .xp 7+1600 >>Grind until 1600+/4500xp
+step
+    >>Grind some mobs back to Goldshire
+    .xp 7+2690 >>Grind until 2690+/4500xp
+    .goto 1429/0,74.20,-9497.30
+step
     .money <0.1250
     .goto 1429/0,8.25,-9464.89
     .vendor >>Buy a 6 slot bag from Brog
 step
     .goto 1429/0,16.20,-9462.65
     .vendor >>Buy level 5 Water up to 40
+step
+    .xp 9 >> Grind to 9
 step
     .goto 1453/0,613.39,-8796.05
     .trainer >> Train 1h Swords

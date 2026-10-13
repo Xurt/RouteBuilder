@@ -15,14 +15,10 @@ RXPGuides.RegisterGuide([[
 #name 10-21 Darkshore
 
 step << Warrior
-    .xp 10 >>Grind to level 10 (Elanaria needs it)
-step << Warrior
     .goto 1439/1,383.89,6431.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r
     .accept 1684 >>Accept Elanaria
     .target Sentinel Elissa Starbreeze
-step
-    .xp 11 >>Grind to level 11 (Washed Ashore needs it)
 step
     .goto 1439/1,543.06,6342.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
@@ -74,8 +70,6 @@ step
     .turnin 97894 >>Turn in Business in Auberdine
     .target Gorbold Steelhand
     .isOnQuest 97894
-step
-    .xp 10 >>Grind to level 10 (Plagued Lands needs it)
 step
     .goto 1439/1,397.65,6437.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
@@ -132,6 +126,25 @@ step
     >>Interact with |cRXP_FRIENDLY_Rabid Thistle Bear|r
     .complete 2118,1 --Rabid Thistle Bear
     .target Rabid Thistle Bear
+step << NightElf
+    .goto 1439,36.051,44.757,0
+    .goto 1439,36.280,50.071,0
+    .goto 1439,35.275,53.464,0
+    .goto 1439,36.051,44.757,60,0
+    .goto 1439,35.759,45.455,60,0
+    .goto 1439,35.902,47.145,60,0
+    .goto 1439,35.977,48.408,60,0
+    .goto 1439,36.523,48.554,60,0
+    .goto 1439,36.280,50.071,60,0
+    .goto 1439,36.091,51.501,60,0
+    .goto 1439,37.115,52.368,60,0
+    .goto 1439,37.130,53.663,60,0
+    .goto 1439,36.740,55.221,60,0
+    .goto 1439,35.655,55.872,60,0
+    .goto 1439,35.088,55.085,60,0
+    .goto 1439,35.275,53.464,60,0
+    .goto 1439,36.091,51.501,60,0
+    .xp 11+7300 >> Grind to 7300+/8800xp
 step
     #completewith next
     .hs >>Hearth to Innkeeper Shaussiy's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -294,6 +307,27 @@ step
     .target Asterion
     .isQuestTurnedIn 956 --any of: Bashal'Aran
     .xp <7,1
+step << NightElf/Dwarf/Human Hunter
+    .goto 1439,44.528,36.587,0
+    .goto 1439,45.334,39.393,0
+    .goto 1439,46.096,36.541,0
+    .goto 1439,44.528,36.587,50,0
+    .goto 1439,44.435,37.404,50,0
+    .goto 1439,44.443,38.202,50,0
+    .goto 1439,44.493,39.008,50,0
+    .goto 1439,44.821,39.711,50,0
+    .goto 1439,45.334,39.393,50,0
+    .goto 1439,45.167,38.652,50,0
+    .goto 1439,45.091,37.865,50,0
+    .goto 1439,45.495,37.019,50,0
+    .goto 1439,45.831,36.790,50,0
+    .goto 1439,46.096,36.541,50,0
+    .goto 1439,46.906,36.171,50,0
+    .goto 1439,47.431,36.151,50,0
+    .goto 1439,47.022,37.083,50,0
+    .goto 1439,47.166,37.580,50,0
+    .goto 1439,45.827,36.812,50,0
+    .xp 13 >> Grind to level 13
 step
     .goto 1439/1,488.69,6564.830,0,0
     >>Talk to |cRXP_FRIENDLY_Dalmond|r
@@ -444,6 +478,19 @@ step << NightElf Druid/Skyborne Druid
     .turnin 6122 >>Turn in The Principal Source
     .target Alanndarian Nightsong
     .isOnQuest 6122
+step << Druid
+    .goto 1439,39.899,54.745,0
+    .goto 1439,40.181,56.229,0
+    .goto 1439,39.267,53.092,50,0
+    .goto 1439,39.754,53.444,50,0
+    .goto 1439,40.234,54.325,50,0
+    .goto 1439,39.899,54.745,50,0
+    .goto 1439,40.181,56.229,50,0
+    .goto 1439,39.388,56.671,50,0
+    .goto 1439,39.191,56.382,50,0
+    .goto 1439,39.957,55.300,50,0
+    .goto 1439,39.332,54.079,50,0
+    .xp 16 >> Grind to level 16
 step
     .goto 1439/1,489.35,6506.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
@@ -489,30 +536,10 @@ step
 step
     .xp 14 >>|cRXP_WARN_The rest of Darkshore is planned from level 14.|r Come back to this guide then
 step
-    .goto 1439/1,600.70,6424.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
-    .accept 963 >>Accept For Love Eternal
-    .target Cerellean Whiteclaw
-step
     .goto 1439/1,515.55,6406.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shaussiy|r
     .target Innkeeper Shaussiy
     .home >>Set your Hearthstone to Innkeeper Shaussiy's inn
-step
-    .goto 1439/1,497.21,6427.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
-    .accept 947 >>Accept Cave Mushrooms
-    .target Barithras Moonshade
-step
-    .goto 1439/1,561.40,6343.01
-    .fp Auberdine >> Get the Auberdine flight path
-step
-    .xp 15 >>Grind to level 15 (Fruit of the Sea needs it)
-step
-    .goto 1439/1,577.12,6371.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
-    .accept 1138 >>Accept Fruit of the Sea
-    .target Gubber Blump
 step
     .goto 1439/1,577.12,6371.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
@@ -532,10 +559,18 @@ step
     .complete 4812,1 --Moonwell Water Tube (1)
     .isOnQuest 4812
 step
-    .goto 1439/1,445.46,6535.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
-    .accept 982 >>Accept Deep Ocean, Vast Sea
-    .target Gorbold Steelhand
+    .goto 1439/1,600.70,6424.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    .accept 963 >>Accept For Love Eternal
+    .target Cerellean Whiteclaw
+step
+    .goto 1439/1,497.21,6427.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
+    .accept 947 >>Accept Cave Mushrooms
+    .target Barithras Moonshade
+step
+    .goto 1439/1,561.40,6343.01
+    .fp Auberdine >> Get the Auberdine flight path
 step
     .goto 1439/1,491.97,6580.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
@@ -543,12 +578,6 @@ step
     .target Thundris Windweaver
     .isQuestTurnedIn 4761 --any of: Thundris Windweaver
     .xp <11,1
-step
-    .goto 1439/1,436.95,7075.73
-    >>Pick up |cRXP_PICK_Silver Dawning's Lockbox|r from the ground
-    >>Pick up |cRXP_PICK_Mist Veil's Lockbox|r from the ground
-    .complete 982,1 --Silver Dawning's Lockbox (1)
-    .complete 982,2 --Mist Veil's Lockbox (1)
 step
     .goto 1439/1,193.29,7083.59
     >>Click the |cRXP_PICK_Buzzbox 411|r
@@ -575,19 +604,14 @@ step
     .target Sentinel Glynda Nal'Shea
     .isOnQuest 4813
 step
-    #completewith next
-    .hs >>Hearth to Innkeeper Shaussiy's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .goto 1439/1,445.46,6535.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
-    .turnin 982 >>Turn in Deep Ocean, Vast Sea
-    .target Gorbold Steelhand
-step
     .goto 1439/1,203.11,5681.46
     >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r and loot |cRXP_LOOT_Anaya's Pendant|r
     .complete 963,1 --Anaya's Pendant (1)
     .mob Anaya Dawnrunner
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Shaussiy's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
 step
     .goto 1439/1,600.70,6424.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
@@ -606,10 +630,31 @@ step
     .accept 965 >>Accept The Tower of Althalaxx
     .target Sentinel Elissa Starbreeze
 step
+    .goto 1439/1,445.46,6535.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .accept 982 >>Accept Deep Ocean, Vast Sea
+    .target Gorbold Steelhand
+step
+    .goto 1439/1,436.95,7075.73
+    >>Pick up |cRXP_PICK_Silver Dawning's Lockbox|r from the ground
+    >>Pick up |cRXP_PICK_Mist Veil's Lockbox|r from the ground
+    .complete 982,1 --Silver Dawning's Lockbox (1)
+    .complete 982,2 --Mist Veil's Lockbox (1)
+step
+    .goto 1439/1,445.46,6535.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .turnin 982 >>Turn in Deep Ocean, Vast Sea
+    .target Gorbold Steelhand
+step
     .goto 1439/1,491.97,6580.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .accept 97914 >>Accept Expanding Horizons
     .target Thundris Windweaver
+step
+    .goto 1439/1,577.12,6371.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .accept 1138 >>Accept Fruit of the Sea
+    .target Gubber Blump
 step
     .goto 1439/1,47.22,7433.80
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
@@ -788,6 +833,9 @@ step
     .turnin 950 >>Turn in Return to Onu
     .target Onu
     .isOnQuest 950
+step << Hunter
+    .goto 1439/1,417.30,4575.82
+    .xp 17 >> Grind to level 17
 step
     .goto 1439/1,601.35,4678.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r
@@ -887,6 +935,14 @@ step
     >>Open the |cRXP_PICK_Xabraxxis' Demon Bag|r. Loot it for |cRXP_LOOT_Talisman of Corruption|r
     .complete 4763,1 --Talisman of Corruption (1)
     .isOnQuest 4763
+step << !Hunter
+    .goto 1439/1,-503.63,6866.13
+    .xp 18 >> Grind to level 18
+step << Hunter
+    .goto 1439/1,-503.63,6866.13
+    .xp 18.75 >> Grind to 18 + 75%
+    >>Make sure your HS cooldown is <10 min
+    >>Skip this step if the area is too crowded
 step
     #loop
     .goto 1439/1,296.12,4367.53,0

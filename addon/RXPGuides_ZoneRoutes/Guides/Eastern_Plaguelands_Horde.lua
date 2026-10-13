@@ -140,8 +140,6 @@ step
     .turnin 5503 >>Turn in Argent Dawn Commission
     .target Duke Nicholas Zverenhoff
 step
-    .xp 55 >>Grind to level 55 (The Restless Souls needs it)
-step
     .goto 1423/0,-5264.70,2151.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Alen|r
     .accept 6021 >>Accept Zaeldarr the Outcast

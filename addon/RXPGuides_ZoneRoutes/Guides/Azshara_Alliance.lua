@@ -213,6 +213,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kim'jael|r
     .turnin 5534 >>Turn in Kim'jael's "Missing" Equipment
     .target Kim'jael
+step
+    .goto 1447/1,-6144.64,4382.74
+    .xp 53.5 >> Grind |cRXP_ENEMY_Blood Elves|r until you are 50% into level 53
+step
+    .goto 1447/1,-6144.64,4382.74
+    .xp 54+20000 >> Grind |cRXP_ENEMY_Blood Elves|r until you are 20,000XP into level 54
 step << Mage
     .xp 53 >>|cRXP_WARN_The rest of Azshara is planned from level 53.|r Come back to this guide then
 step << Mage

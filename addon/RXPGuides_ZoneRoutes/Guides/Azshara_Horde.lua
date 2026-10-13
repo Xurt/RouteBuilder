@@ -151,8 +151,6 @@ step
     .accept 3517 >>Accept Stealing Knowledge
     .target Jediga
 step << Mage
-    .xp 50 >>Grind to level 50 (Magic Dust needs it)
-step << Mage
     .goto 1447/1,-4760.30,3982.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Xylem|r
     .accept 8251 >>Accept Magic Dust
@@ -186,6 +184,18 @@ step
     .complete 3601,4 --Kim'Jael's Wizzlegoober (1)
     .mob Blood Elf Surveyor << Mage
     .mob Blood Elf Reclaimer << Mage
+step
+    .goto 1447/1,-6106.61,4465.92,50,0
+    .goto 1447/1,-6208.02,4449.02,50,0
+    .goto 1447/1,-6218.17,4388.15,50,0
+    .goto 1447/1,-6279.02,4340.82,50,0
+    .goto 1447/1,-6213.10,4279.95,50,0
+    .goto 1447/1,-6167.46,4317.15,50,0
+    .goto 1447/1,-6162.39,4411.82,50,0
+    .goto 1447/1,-6116.75,4337.44,50,0
+    .goto 1447/1,-6086.32,4337.44,50,0
+    .xp 53+95000 >> Grind to level 53 95000+/167100
+    >>|cRXP_WARN_This is your last grinding spot needed before level 60. If you don't want to grind this much you can do a dungeon or two instead|r
 step
     .goto 1447/1,-5987.44,4603.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kim'jael|r

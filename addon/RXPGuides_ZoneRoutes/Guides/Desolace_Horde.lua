@@ -14,6 +14,9 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 31-45 Desolace
 
+step << Warrior/Hunter/Rogue/Druid/Shaman
+    .goto 1443/1,1718.36,-423.01
+    .xp 35 >> Grind Burning Blade mobs at Thunder Axe Fortress to level 35
 step
     .goto 1443/1,2485.35,-362.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azore Aldamort|r
@@ -189,8 +192,6 @@ step << Mage
     .target Innkeeper Sikewa
     .train 3566,3
 step
-    .xp 31 >>Grind to level 31 (Clam Bait needs it)
-step
     .goto 1443/1,3215.48,-1705.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'Lahii|r
     .accept 6142 >>Accept Clam Bait
@@ -303,6 +304,18 @@ step
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Harnor
     .subzoneskip 597,1
+step << !Warrior !Hunter !Rogue !Druid !Shaman
+    .goto 1443/1,1180.66,-1754.08,60,0
+    .goto 1443/1,1182.46,-1820.34,60,0
+    .goto 1443/1,1254.39,-1817.34,60,0
+    .goto 1443/1,1279.57,-1912.07,60,0
+    .goto 1443/1,1248.10,-1947.75,60,0
+    .goto 1443/1,1150.99,-1976.53,60,0
+    .goto 1443/1,987.34,-1896.78,60,0
+    .goto 1443/1,1043.54,-1799.05,60,0
+    .goto 1443/1,935.19,-1747.49,60,0
+    .goto 1443/1,1104.23,-1881.79,60,0
+    .xp 35+17000 >> Grind to level 35 17000/67100
 step
     #completewith Drop635x4
     >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Kolkar Centaur|r, |cRXP_ENEMY_Kolkar Scout|r, |cRXP_ENEMY_Kolkar Mauler|r. Use it to start the quest if you get one

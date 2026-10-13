@@ -58,6 +58,8 @@ step
     .target Kaela Shadowspear
     .isOnQuest 1070
 step
+    .xp 22+6700 >> Grind |cRXP_ENEMY_Goblins|r to level 22 and 6700+xp
+step
     .goto 1442/1,365.16,878.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
     .turnin 1483 >>Turn in Ziz Fizziks

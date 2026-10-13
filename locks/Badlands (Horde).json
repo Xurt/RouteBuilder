@@ -1,7 +1,8 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-43 Badlands",
-  "saved": "2026-10-13 08:07",
+  "saved": "2026-10-13 08:55",
+  "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
@@ -23,6 +24,7 @@
         "turnin:2418 @1418:-3133.62,-6767.34  TurnIn Power Stones",
         "turnin:703 @1418:-3133.62,-6767.34  TurnIn Barbecued Buzzard Wings",
         "turnin:1106 @1418:-3129.39,-6763.36  TurnIn Martek the Exiled",
+        {"lines":[".goto 1418/0,-2656.27,-6669.00",".xp 40 >> Grind to 40"],"from":"RestedXP: 39-40 Badlands"},
         "turnin:737 @1418:-3357.49,-7164.34  TurnIn Forbidden Knowledge",
         "turnin:687 @1418:-3357.49,-7164.34  TurnIn Theldurin the Lost",
         "obj:1419:1 @1418:-3317.69,-6577.79  Objective Coyote Thieves / Coyote Jawbone (30)",
@@ -64,7 +66,6 @@
     {
       "part": 3,
       "steps": [
-        "accept:782 @1418:-2151.55,-6645.78  Accept Broken Alliances",
         "turnin:713 @1418:-2724.67,-6633.68  TurnIn Coolant Heads Prevail",
         "turnin:705 @1418:-3133.62,-6767.34  TurnIn Pearl Diving",
         "accept:692 @1418:-3357.49,-7164.34  Accept The Lost Fragments",
@@ -72,6 +73,7 @@
         "obj:692:2 @1418:-3419.18,-7281.09  Objective The Lost Fragments / Crumpled Scroll Fragment (1)",
         "obj:692:1 @1418:-3419.18,-7281.09  Objective The Lost Fragments / Torn Scroll Fragment (1)",
         "turnin:692 @1418:-3357.49,-7164.34  TurnIn The Lost Fragments",
+        "accept:782 @1418:-2151.55,-6645.78  Accept Broken Alliances",
         "obj:782:1 @1418:-2393.09,-7141.46  Objective Broken Alliances / Sign of the Earth (1)",
         "accept:712 @1418:-2724.67,-6633.68  Accept Study of the Elements: Rock",
         "obj:712:1 @1418:-2181.4,-7214.76  Objective Study of the Elements: Rock / Bracers of Rock Binding (5)",

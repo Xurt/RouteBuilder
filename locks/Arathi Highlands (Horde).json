@@ -1,7 +1,8 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "32-42 Arathi Highlands",
-  "saved": "2026-10-13 08:07",
+  "saved": "2026-10-13 08:55",
+  "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
@@ -25,6 +26,7 @@
         {"lines":[".goto 1417/0,-3527.79,-928.21",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharlidun|r",".target Tharlidun",".train 17265,3",".zoneskip Arathi Highlands,1"],"tag":"Hunter","from":"RestedXP: 30-33 Hillsbrad/Arathi"},
         "accept:97539 @1417:-3509.43,-1018.69  Accept Silky Sutures",
         "obj:671:1 @1417:-2028.39,-812.53  Objective Foul Magics / Bloodstone Amulet (10)",
+        {"lines":[".goto 1417/0,-2093.19,-813.73,50,0",".goto 1417/0,-2067.63,-767.17,50,0",".goto 1417/0,-2011.11,-768.61,50,0",".goto 1417/0,-1976.55,-793.09,50,0",".goto 1417/0,-1983.03,-843.25,50,0",".goto 1417/0,-2030.19,-874.21,50,0",".goto 1417/0,-2067.63,-870.61,50,0",".xp 32>> Grind to level 32"],"from":"RestedXP: 30-33 Hillsbrad/Arathi"},
         "obj:97539:1 @1417:-2647.95,-1014.13  Objective Silky Sutures / Surgical Spidersilk (12)",
         "obj:672:1 @1417:-3083.91,-1147.33  Objective Raising Spirits / Highland Raptor Eye (10)",
         "obj:677:3 @1417:-3196.95,-1852.69  Objective Call to Arms / Witherbark Witch Doctor slain (8)",
@@ -40,6 +42,8 @@
         "turnin:638 @1417:-3523.47,-948.37  TurnIn Trollbane",
         "home @1417:-3524.91,-912.37  Home inn",
         {"lines":[".goto 1417/0,-3495.39,-918.13",".fp Hammerfall >> Get the Hammerfall Flight Path"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
+        {"lines":[".xp 32 >> AoE the Dabyrie Farmstead to 32",">>Start saving the Wool Cloth and Silk Cloth you get. You need 12 stacks for later"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
+        {"lines":[".xp 34 >> AoE the Dabyrie Farmstead to 34",">>Start saving the Wool Cloth and Silk Cloth you get. You need 12 stacks for later"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
         "accept:98887 @1417:-3512.67,-832.45  Accept Conflict at Darkspear Islands",
         "accept:98888 @1417:-3512.67,-832.45  Accept Conflict at Darkspear Islands",
         "turnin:635 @1417:-3116.67,-942.85  TurnIn Crystal in the Mountains"

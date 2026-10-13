@@ -1,7 +1,8 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "1-50 Stranglethorn Vale",
-  "saved": "2026-10-13 08:06",
+  "saved": "2026-10-13 08:54",
+  "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
@@ -26,7 +27,6 @@
         "turnin:1240 @1434:161.6,-12347.58  TurnIn The Troll Witchdoctor",
         "obj:4781:1 @1434:-26.64,-13328.16  Objective Components for the Enchanted Gold Bloodrobe / Gold Bar (1)",
         "turnin:4781 @1434:388.78,-14439.78  TurnIn Components for the Enchanted Gold Bloodrobe",
-        {"lines":[".goto 1434/0,212.02,-12434.36",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Thulbek|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Thulbek",".subzoneskip 117,1"],"from":"RestedXP: 40-41 Stranglethorn Vale"},
         "turnin:669 @1434:487.05,-14444.88  TurnIn Sunken Treasure",
         {"lines":[".goto 1434/0,509.38,-14450.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn",".train 6774 >> Train your class spells",".target Ian Strom",".xp <42,1",".xp >44,1"],"tag":"Rogue","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
         {"lines":[".goto 1434/0,509.38,-14450.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn",".train 11341 >> Train your class spells",".target Ian Strom",".xp <44,1"],"tag":"Rogue","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
@@ -78,9 +78,11 @@
         {"lines":[".goto 1434/0,227.97,-12388.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kragg|r",".train 14303 >>Train your class spells",".target Kragg",".xp <36,1",".xp >38,1"],"tag":"Hunter","from":"RestedXP: 35-37 Northern Stranglethorn"},
         {"lines":[".goto 1434/0,227.97,-12388.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kragg|r",".train 14320 >>Train your class spells",".target Kragg",".xp <38,1"],"tag":"Hunter","from":"RestedXP: 35-37 Northern Stranglethorn"},
         "turnin:596 @1434:161.6,-12347.58  TurnIn Bloody Bone Necklaces",
+        {"lines":[".goto 1434/0,-539.70,-12064.25,60,0",".goto 1434/0,-496.30,-12104.67,60,0",".goto 1434/0,-572.88,-12138.70,60,0",".goto 1434/0,-613.72,-12170.61,60,0",".goto 1434/0,-674.98,-12159.12,60,0",".goto 1434/0,-733.05,-12166.35,60,0",".goto 1434/0,-731.13,-12102.11,60,0",".goto 1434/0,-779.63,-12020.43,60,0",".goto 1434/0,-757.30,-11982.57,60,0",".goto 1434/0,-736.24,-11934.50,60,0",".goto 1434/0,-667.96,-11924.29,60,0",".goto 1434/0,-643.71,-11883.02,60,0",".goto 1434/0,-614.99,-11857.50,60,0",".goto 1434/0,-561.39,-11840.91,60,0",".goto 1434/0,-547.99,-11918.76,60,0",".goto 1434/0,-564.58,-11990.65,60,0",".xp 36+50000 >> Grind to level 36 50000+/71600 xp"],"from":"RestedXP: 35-37 Northern Stranglethorn"},
         "accept:4782 @1434:388.78,-14439.78  Accept Components for the Enchanted Gold Bloodrobe",
         "turnin:189 @1434:497.9,-14449.99  TurnIn Bloodscalp Ears",
         "accept:1116 @1434:501.09,-14453.39  Accept Dream Dust in the Swamp",
+        {"lines":[".goto 1434/0,212.02,-12434.36",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Thulbek|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Thulbek",".subzoneskip 117,1"],"from":"RestedXP: 40-41 Stranglethorn Vale"},
         "accept:1261 @1434:164.79,-12342.9  Accept Marg Speaks",
         "accept:1117 @1434:501.09,-14453.39  Accept Rumors for Kravel"
       ]
@@ -154,10 +156,10 @@
         "obj:209:1 @1434:-592.02,-12615.17  Objective Skullsplitter Tusks / Skullsplitter Tusk (18)",
         "obj:598:1 @1434:-592.02,-12615.17  Objective Split Bone Necklace / Split Bone Necklace (25)",
         "obj:193:1 @1434:-944.27,-12189.75  Objective Panther Mastery / Fang of Bhag'thera (1)",
-        "turnin:196 @1434:-54.72,-11628.63  TurnIn Raptor Mastery",
-        "turnin:193 @1434:-47.7,-11617.56  TurnIn Panther Mastery",
         "turnin:572 @1434:171.18,-12412.67  TurnIn Mok'thardin's Enchantment",
         "turnin:598 @1434:161.6,-12347.58  TurnIn Split Bone Necklace",
+        "turnin:196 @1434:-54.72,-11628.63  TurnIn Raptor Mastery",
+        "turnin:193 @1434:-47.7,-11617.56  TurnIn Panther Mastery",
         "turnin:209 @1434:497.9,-14449.99  TurnIn Skullsplitter Tusks",
         "turnin:600 @1434:490.24,-14453.39  TurnIn Venture Company Mining",
         "accept:628 @1434:415.58,-14469.56  Accept Excelsior",
@@ -197,8 +199,8 @@
         "obj:585:2 @1434:-472.69,-12704.93  Objective Speaking with Nezzliok / Ziata'jai Trophy (1)",
         "obj:585:3 @1434:-819.83,-12850.85  Objective Speaking with Nezzliok / Zul'Mamwe Trophy (1)",
         "obj:585:1 @1434:-722.84,-12544.12  Objective Speaking with Nezzliok / Balia'mah Trophy (1)",
-        "accept:197 @1434:-54.72,-11628.63  Accept Raptor Mastery",
         "turnin:585 @1434:164.79,-12342.9  TurnIn Speaking with Nezzliok",
+        "accept:197 @1434:-54.72,-11628.63  Accept Raptor Mastery",
         "accept:2864 @1434:501.09,-14453.39  Accept Tran'rek",
         "home @1434:495.34,-14457.65  Home inn",
         "accept:2872 @1434:448.12,-14447.44  Accept Stoley's Debt",

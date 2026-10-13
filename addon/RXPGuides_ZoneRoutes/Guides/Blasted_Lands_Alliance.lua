@@ -58,8 +58,6 @@ step
     .fly Booty Bay >> Fly to Booty Bay
     .target Alexandra Constantine
 step
-    .xp 50 >>Grind to level 50 (Petty Squabbles needs it)
-step
     .goto 1419/0,-3505.26,-10997.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Ardalan|r
     .accept 2783 >>Accept Petty Squabbles

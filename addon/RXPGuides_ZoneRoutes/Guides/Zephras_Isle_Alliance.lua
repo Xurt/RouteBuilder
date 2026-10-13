@@ -22,14 +22,7 @@ step
     .goto 2521,42.09,23.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r
     .turnin 92460 >>Turn in Coming of Age
-    .target Rorian the Dayseeker
-step
-    .xp 2 >>Grind to level 2 (Elemental Unrest needs it)
-step
-    .goto 2521,42.09,23.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r
     .accept 92461 >>Accept Harmony in Balance
-    .accept 92464 >>Accept Elemental Unrest
     .target Rorian the Dayseeker
 step
     #completewith Along2
@@ -75,8 +68,6 @@ step << Warrior
     .xp <1,1
     .train 5242,1
 step << Skyborne
-    .xp 2 >>Grind to level 2 (Falling With Style needs it)
-step << Skyborne
     .goto 2521,43.68,24.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myriaal Mistwake|r
     .accept 92474 >>Accept Falling With Style
@@ -86,18 +77,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r
     .turnin 92461 >>Turn in Harmony in Balance
     .turnin 92474 >>Turn in Falling With Style << Skyborne
-    .target Rorian the Dayseeker
-step << Warrior
-    .xp 2 >>Grind to level 2 (The Warrior's Path needs it)
-step << Rogue
-    .xp 2 >>Grind to level 2 (At Home in the Shadows needs it)
-step << Hunter
-    .xp 2 >>Grind to level 2 (The Way of the Hunter needs it)
-step << Mage
-    .xp 2 >>Grind to level 2 (A Student of the Arcane needs it)
-step
-    .goto 2521,42.09,23.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r
+    .accept 92464 >>Accept Elemental Unrest
     .accept 92532 >>Accept The Warrior's Path << Warrior
     .accept 92483 >>Accept At Home in the Shadows << Rogue
     .accept 92482 >>Accept The Way of the Hunter << Hunter
@@ -168,6 +148,8 @@ step
     .accept 93552 >>Accept Harvesting Windstones
     .target Dalia the Collector
 step
+    .xp 2 >>Grind to level 2 (The Anchors of Zephras needs it)
+step
     #completewith Along15
     >>As you go: Loot the |cRXP_PICK_Raw Windstones|r for |cRXP_LOOT_Windstone Cluster|r. |cRXP_WARN_Anything left is finished later|r
     .complete 93552,1 --Windstone Cluster (15)
@@ -237,6 +219,8 @@ step
     .goto 2521,48.29,25.67,40,0
     >>Loot the |cRXP_PICK_Raw Windstones|r for |cRXP_LOOT_Windstone Cluster|r
     .complete 93552,1 --Windstone Cluster (15)
+step << Alliance/!Shaman
+    .xp 3+300 >>Grind to 300+/1400xp
 step
     .goto 2521,43.40,24.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r
@@ -259,12 +243,6 @@ step
     .goto 2521,47.26,21.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher|r
     .turnin 92465 >>Turn in Agitators
-    .target Yala Windwatcher
-step
-    .xp 3 >>Grind to level 3 (Return to Rorian needs it)
-step
-    .goto 2521,47.26,21.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher|r
     .accept 92469 >>Accept Return to Rorian
     .target Yala Windwatcher
 step
@@ -281,19 +259,6 @@ step
 step
     .goto 2521,43.44,24.80
     .train 8613 >>Use |T4624731:0|t[Pelt Collecting for Beginners] |cRXP_WARN_while walking towards the questgiver|r.
-step << Warrior
-    .goto 2521,43.65,24.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r
-    .turnin 92532 >>Turn in The Warrior's Path
-    .target Blademaster Ren
-step << Hunter Horde
-    .goto 2521,42.467,23.731
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'ree Farsight::251376|r
-    .train 13163 >>Train |T132159:0|t[Aspect of the Monkey]
-    .train 1978 >>Train |T132204:0|t[Serpent Sting]
-    .xp <4,1
-    .money <0.02
-    .target Tai'ree Farsight::251376
 step << Rogue
     .goto 2521,43.73,24.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akeri Duskblade|r
@@ -315,6 +280,27 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r
     .turnin 92463 >>Turn in The Cirrusfly Queen
     .target Elatrell Featherlight
+step << Warrior
+    .goto 2521,43.65,24.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r
+    .turnin 92532 >>Turn in The Warrior's Path
+    .target Blademaster Ren
+step << Hunter Alliance
+    .goto 2521,42.467,23.731
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'ree Farsight::251376|r
+    .train 13163 >>Train |T132159:0|t[Aspect of the Monkey]
+    .train 1978 >>Train |T132204:0|t[Serpent Sting]
+    .xp <4,1
+    .money <0.02
+    .target Tai'ree Farsight::251376
+step << Hunter Horde
+    .goto 2521,42.467,23.731
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'ree Farsight::251376|r
+    .train 13163 >>Train |T132159:0|t[Aspect of the Monkey]
+    .train 1978 >>Train |T132204:0|t[Serpent Sting]
+    .xp <4,1
+    .money <0.02
+    .target Tai'ree Farsight::251376
 step << Skyborne
     .goto 2521,43.32,24.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r
@@ -326,24 +312,10 @@ step
     .train 2366 >>Use |T4624731:0|t[Wild Harvest].
 step
     .train 8613 >>Use |T4624731:0|t[Pelt Collecting for Beginners].
-step << Hunter Alliance
-    .goto 2521,42.467,23.731
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'ree Farsight::251376|r
-    .train 13163 >>Train |T132159:0|t[Aspect of the Monkey]
-    .train 1978 >>Train |T132204:0|t[Serpent Sting]
-    .xp <4,1
-    .money <0.02
-    .target Tai'ree Farsight::251376
 step
     .goto 2521,42.09,23.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r
     .turnin 92469 >>Turn in Return to Rorian
-    .target Rorian the Dayseeker
-step
-    .xp 4 >>Grind to level 4 (Aetheen of the Gales needs it)
-step
-    .goto 2521,42.09,23.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r
     .accept 92471 >>Accept Aetheen of the Gales
     .target Rorian the Dayseeker
 step << Druid Alliance
@@ -446,6 +418,8 @@ step
     .mob Malduko Cloudcrush
     .mob Al'Aketh Brute
     .mob Al'Aketh Neophyte
+step
+    .xp 5+1740 >>Grind to level 5 1740+/2800xp to reach level 6 after turn ins in the next village to be able to train new spells.
 step
     .goto 2521,38.32,30.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r

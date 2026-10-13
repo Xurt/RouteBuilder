@@ -42,6 +42,21 @@ step
     .accept 38 >>Accept Westfall Stew
     .accept 22 >>Accept Goretusk Liver Pie
     .target Salma Saldean
+step << !Hunter
+    .goto 1436/0,1045.22,-10508.800
+    .xp 9+5775 >> Grind to 5775+/6500xp
+step << !Hunter
+    .goto 1436/0,1045.22,-10508.800
+    .xp 9+5410 >> Grind to 5410+/6500xp
+step << Paladin
+    .goto 1436,48.249,46.729
+    .xp 11+5360 >> Grind to 5360+/8800xp
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 109 >>Turn in Report to Gryan Stoutmantle while you are here
+    .isQuestComplete 109
+    .target Gryan Stoutmantle
 step
     #completewith Drop136x1
     >>|cRXP_LOOT_Captain Sander's Treasure Map|r can drop from |cRXP_ENEMY_Murloc Coastrunner|r, |cRXP_ENEMY_Murloc Tidehunter|r, |cRXP_ENEMY_Murloc Warrior|r. Use it to start the quest if you get one
@@ -106,6 +121,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
     .accept 102 >>Accept Patrolling Westfall
     .target Captain Danuvin
+step << Human
+    .goto 1436/0,1055.27,-10128.70
+    .xp 10 >> Grind to level 10
 step
     #completewith Drop136x2
     >>|cRXP_LOOT_Captain Sander's Treasure Map|r can drop from |cRXP_ENEMY_Murloc Coastrunner|r, |cRXP_ENEMY_Murloc Tidehunter|r, |cRXP_ENEMY_Murloc Warrior|r. Use it to start the quest if you get one
@@ -613,6 +631,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
     .turnin 103 >>Turn in Keeper of the Flame
     .target Captain Grayson
+step
+    .goto 1436/0,1207.17,-9940.40
+    .xp 17+11890 >> Grind to 11890+/17700xp
+step
+    .goto 1436/0,1207.17,-9940.40
+    >>|cRXP_WARN_Skip this step if you've finished the objective of The People's Militia|r
+    .xp 17+12800 >> Grind to 12800+/17700xp
 step
     >>Talk to |cRXP_FRIENDLY_Farmer Saldean|r and then |cRXP_FRIENDLY_Salma|r inside
     .vendor >> Vendor Trash

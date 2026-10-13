@@ -110,6 +110,31 @@ step
     .complete 788,1 --Mottled Boar slain (10)
     .complete 97279,1 --Abandoned Training Weapon (6)
     .mob Mottled Boar
+step << Warlock
+    .goto 1411/1,-4146.24,-483.97,0
+    .goto 1411/1,-4146.24,-483.97,40,0
+    .goto 1411/1,-4179.02,-473.75,40,0
+    .goto 1411/1,-4218.15,-480.10,40,0
+    .goto 1411/1,-4252.52,-483.62,40,0
+    .goto 1411/1,-4283.71,-516.76,40,0
+    .goto 1411/1,-4317.55,-516.76,40,0
+    .goto 1411/1,-4350.33,-510.06,40,0
+    .goto 1411/1,-4379.94,-515.70,40,0
+    .goto 1411/1,-4379.94,-484.33,40,0
+    .goto 1411/1,-4352.98,-445.90,40,0
+    .goto 1411/1,-4385.76,-412.77,40,0
+    .goto 1411/1,-4384.70,-383.16,40,0
+    .goto 1411/1,-4383.12,-346.85,40,0
+    .goto 1411/1,-4349.81,-313.720,40,0
+    .goto 1411/1,-4315.44,-287.28,40,0
+    .goto 1411/1,-4281.60,-321.82,40,0
+    .goto 1411/1,-4239.83,-315.13,40,0
+    .goto 1411/1,-4213.92,-309.84,40,0
+    .goto 1411/1,-4184.31,-348.61,40,0
+    .goto 1411/1,-4184.31,-382.45,40,0
+    .goto 1411/1,-4183.25,-409.6,40,0
+    .goto 1411/1,-4182.72,-448.72,40,0
+    .xp 3+685 >> Grind to 685+/1400xp
 step << Rogue
     .goto 1411/1,-4214.45,-565.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
@@ -159,6 +184,13 @@ step
     .accept 3084 >>Accept Rune-Inscribed Tablet << Troll Shaman
     .accept 3086 >>Accept Glyphic Tablet << Troll Mage
     .target Gornek
+step << Rogue
+    .goto 1411/1,-4144.65,-588.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
+    .train 53 >> Train |T132090:0|t[Backstab]
+    .target Rwag
+    .money <0.04
+    .xp <4,1
 step << Troll Priest
     .goto 1411/1,-4202.28,-617.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
@@ -177,13 +209,6 @@ step
     .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue
     .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue
     .target Rwag
-step << Rogue
-    .goto 1411/1,-4144.65,-588.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .train 53 >> Train |T132090:0|t[Backstab]
-    .target Rwag
-    .money <0.04
-    .xp <4,1
 step
     .goto 1411/1,-4111.87,-607.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
@@ -259,8 +284,6 @@ step
     .turnin 3082 >>Turn in Etched Tablet << Troll Hunter
     .target Jen'shan
 step
-    .xp 3 >>Grind to level 3 (Lazy Peons needs it)
-step
     .goto 1411/1,-4322.31,-611.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Thazz'ril|r
     .accept 5441 >>Accept Lazy Peons
@@ -314,12 +337,35 @@ step
     .complete 5441,1 --Lazy Peon (5)
     .target Lazy Peon
 step
+    .goto 1411/1,-4146.24,-483.97,0
+    .goto 1411/1,-4146.24,-483.97,40,0
+    .goto 1411/1,-4179.02,-473.75,40,0
+    .goto 1411/1,-4218.15,-480.10,40,0
+    .goto 1411/1,-4252.52,-483.62,40,0
+    .goto 1411/1,-4283.71,-516.76,40,0
+    .goto 1411/1,-4317.55,-516.76,40,0
+    .goto 1411/1,-4350.33,-510.06,40,0
+    .goto 1411/1,-4379.94,-515.70,40,0
+    .goto 1411/1,-4379.94,-484.33,40,0
+    .goto 1411/1,-4352.98,-445.90,40,0
+    .goto 1411/1,-4385.76,-412.77,40,0
+    .goto 1411/1,-4384.70,-383.16,40,0
+    .goto 1411/1,-4383.12,-346.85,40,0
+    .goto 1411/1,-4349.81,-313.720,40,0
+    .goto 1411/1,-4315.44,-287.28,40,0
+    .goto 1411/1,-4281.60,-321.82,40,0
+    .goto 1411/1,-4239.83,-315.13,40,0
+    .goto 1411/1,-4213.92,-309.84,40,0
+    .goto 1411/1,-4184.31,-348.61,40,0
+    .goto 1411/1,-4184.31,-382.45,40,0
+    .goto 1411/1,-4183.25,-409.6,40,0
+    .goto 1411/1,-4182.72,-448.72,40,0
+    .xp 4 >> Grind to level 4
+step
     .goto 1411/1,-4186.42,-600.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
     .turnin 789 >>Turn in Sting of the Scorpid
     .target Gornek
-step << Shaman
-    .xp 4 >>Grind to level 4 (Call of Earth needs it)
 step << Shaman
     .goto 1411/1,-4204.40,-629.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Canaga Earthcaller|r
@@ -413,6 +459,41 @@ step
     .goto 1411/1,-4338.17,-360.60,40,0
     >>Pick up |cRXP_PICK_Cactus Apple|r from the ground
     .complete 4402,1 --Cactus Apple (10)
+step << !Warrior !Rogue !Shaman
+    .goto 1411/1,-4282.13,-250.97,0
+    .goto 1411/1,-4282.13,-250.97,40,0
+    .goto 1411/1,-4317.02,-258.02,40,0
+    .goto 1411/1,-4351.39,-250.97,40,0
+    .goto 1411/1,-4385.76,-256.96,40,0
+    .goto 1411/1,-4383.65,-216.07,40,0
+    .goto 1411/1,-4419.07,-221.01,40,0
+    .goto 1411/1,-4457.67,-205.15,40,0
+    .goto 1411/1,-4405.85,-189.99,40,0
+    .goto 1411/1,-4409.55,-169.54,40,0
+    .goto 1411/1,-4376.24,-197.390,40,0
+    .goto 1411/1,-4360.38,-176.95,40,0
+    .goto 1411/1,-4329.71,-196.33,40,0
+    .goto 1411/1,-4319.67,-169.190,40,0
+    .goto 1411/1,-4303.28,-186.46,40,0
+    .goto 1411/1,-4281.07,-148.75,40,0
+    .xp 4+1720 >> Grind to 1720+/2100xp
+step << !Warrior !Rogue !Shaman
+    .goto 1411/1,-4282.13,-250.97,40,0
+    .goto 1411/1,-4317.02,-258.02,40,0
+    .goto 1411/1,-4351.39,-250.97,40,0
+    .goto 1411/1,-4385.76,-256.96,40,0
+    .goto 1411/1,-4383.65,-216.07,40,0
+    .goto 1411/1,-4419.07,-221.01,40,0
+    .goto 1411/1,-4457.67,-205.15,40,0
+    .goto 1411/1,-4405.85,-189.99,40,0
+    .goto 1411/1,-4409.55,-169.54,40,0
+    .goto 1411/1,-4376.24,-197.390,40,0
+    .goto 1411/1,-4360.38,-176.95,40,0
+    .goto 1411/1,-4329.71,-196.33,40,0
+    .goto 1411/1,-4319.67,-169.190,40,0
+    .goto 1411/1,-4303.28,-186.46,40,0
+    .goto 1411/1,-4281.07,-148.75,40,0
+    .xp 5 >> Grind to level 5
 step
     .goto 1411/1,-4221.85,-561.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r
@@ -448,6 +529,52 @@ step
     .complete 1516,1 << Shaman --Felstalker Hoof (2)
     .mob Yarrog Baneshadow
     .mob Felstalker << Shaman
+step
+    .goto 1411/1,-4220.26,-59.56,25,0
+    .goto 1411/1,-4234.54,5.65,25,0
+    .goto 1411/1,-4265.73,-26.43,25,0
+    .goto 1411/1,-4275.25,-47.58,25,0
+    .goto 1411/1,-4295.87,-54.63,25,0
+    .goto 1411/1,-4332.36,-42.64,25,0
+    .goto 1411/1,-4332.89,-74.020,25,0
+    .goto 1411/1,-4330.24,-115.26,25,0
+    .goto 1411/1,-4349.28,-131.12,25,0
+    .goto 1411/1,-4368.84,-138.52,25,0
+    .goto 1411/1,-4349.28,-131.12,25,0
+    .goto 1411/1,-4315.97,-131.47,25,0
+    .goto 1411/1,-4300.10,-99.40,25,0
+    .goto 1411/1,-4284.77,-105.740,25,0
+    .goto 1411/1,-4282.13,-138.17,25,0
+    .goto 1411/1,-4260.45,-150.16,25,0
+    .goto 1411/1,-4238.77,-138.88,25,0
+    .goto 1411/1,-4203.34,-102.92,25,0
+    .goto 1411/1,-4211.27,-76.84,25,0
+    .goto 1411/1,-4250.40,-88.82,25,0
+    .xp 5+1680 >> Grind to 1680+/2800xp << !Shaman
+    .xp 5+690 >> Grind to 690+/2800xp << Shaman
+step
+    .goto 1411/1,-4220.26,-59.56,25,0
+    .goto 1411/1,-4234.54,5.65,25,0
+    .goto 1411/1,-4265.73,-26.43,25,0
+    .goto 1411/1,-4275.25,-47.58,25,0
+    .goto 1411/1,-4295.87,-54.63,25,0
+    .goto 1411/1,-4332.36,-42.64,25,0
+    .goto 1411/1,-4332.89,-74.020,25,0
+    .goto 1411/1,-4330.24,-115.26,25,0
+    .goto 1411/1,-4349.28,-131.12,25,0
+    .goto 1411/1,-4368.84,-138.52,25,0
+    .goto 1411/1,-4349.28,-131.12,25,0
+    .goto 1411/1,-4315.97,-131.47,25,0
+    .goto 1411/1,-4300.10,-99.40,25,0
+    .goto 1411/1,-4284.77,-105.740,25,0
+    .goto 1411/1,-4282.13,-138.17,25,0
+    .goto 1411/1,-4260.45,-150.16,25,0
+    .goto 1411/1,-4238.77,-138.88,25,0
+    .goto 1411/1,-4203.34,-102.92,25,0
+    .goto 1411/1,-4211.27,-76.84,25,0
+    .goto 1411/1,-4250.40,-88.82,25,0
+    .xp 5+1300 >> Grind to 1300+/2800xp << !Shaman
+    .xp 5+310 >> Grind to 310+/2800xp << Shaman
 step << Orc Hunter/Troll Hunter
     .goto 1411/1,-4704.07,275.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r
@@ -464,8 +591,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
     .accept 96825 >>Accept This Fruit Could Bite Back
     .target Cook Torka
-step
-    .xp 4 >>Grind to level 4 (Carry Your Weight needs it)
 step
     .goto 1411/1,-4599.90,384.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl Scornbrow|r
@@ -499,12 +624,6 @@ step
     .target Duokna
     .isOnQuest 794
 step << Shaman
-    .goto 1411/1,-4204.40,-629.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Canaga Earthcaller|r
-    .turnin 1516 >>Turn in Call of Earth
-    .accept 1517 >>Accept Call of Earth
-    .target Canaga Earthcaller
-step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r and |cRXP_FRIENDLY_Canaga|r
     .train 332 >>Train |T136052:0|t[Healing Wave]
     .target +Shikrik
@@ -512,6 +631,12 @@ step << Shaman
     .target +Canaga Earthcaller
     .goto 1411/1,-4204.4,-629.91
     .xp <6,1
+step << Shaman
+    .goto 1411/1,-4204.40,-629.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Canaga Earthcaller|r
+    .turnin 1516 >>Turn in Call of Earth
+    .accept 1517 >>Accept Call of Earth
+    .target Canaga Earthcaller
 step
     .goto 1411/1,-4228.19,-629.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha Fargaze|r
@@ -544,8 +669,6 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r
     .train 332 >>Train |T136052:0|t[Healing Wave]
     .target Shikrik
-step << Troll Priest
-    .xp 5 >>Grind to level 5 (In Favor of Spirituality needs it)
 step << Troll Priest
     .goto 1411/1,-4202.28,-617.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
@@ -627,8 +750,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ukor|r
     .accept 2161 >>Accept A Peon's Burden
     .target Ukor
-step
-    .xp 5 >>Grind to level 5 (Thwarting Kolkar Aggression needs it)
 step
     .goto 1411/1,-4841.01,-812.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar Prowltusk|r
@@ -793,8 +914,6 @@ step
     .isQuestComplete 2161
     .target Innkeeper Grosk
 step
-    .xp 6 >>Grind to level 6 (Encroachment needs it)
-step
     .goto 1411/1,-4709.36,274.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
     .accept 837 >>Accept Encroachment
@@ -804,7 +923,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
     .accept 815 >>Accept Break a Few Eggs
     .target Cook Torka
-    .xp <6,1
 step
     .goto 1411/1,-4664.94,311.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
@@ -814,10 +932,9 @@ step
     .goto 1411/1,-4664.94,311.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
     .turnin 96655 >>Turn in Camping 101: Cooking
-    .accept 815 >>Accept Break a Few Eggs
     .target Cook Torka
 step
-    #completewith Along64
+    #completewith Along65
     >>As you go: Kill |cRXP_ENEMY_Kul Tiras Sailors|r. Kill |cRXP_ENEMY_Kolkar Drudges|r, |cRXP_ENEMY_Kolkar Outrunners|r, |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for |cRXP_LOOT_Canvas Scraps|r. |cRXP_WARN_Anything left is finished later|r
     .complete 784,1 --Kul Tiras Sailor slain (10)
     .complete 791,1 --Canvas Scraps (8)
@@ -826,12 +943,12 @@ step
     .mob Kolkar Outrunner
     .mob Kul Tiras Marine
 step
-    #completewith Along63
+    #completewith Along64
     >>As you go: Kill |cRXP_ENEMY_Kul Tiras Marines|r. |cRXP_WARN_Anything left is finished later|r
     .complete 784,2 --Kul Tiras Marine slain (8)
     .mob Kul Tiras Marine
 step
-    #label Along63
+    #label Along64
     #loop
     .goto 1411/1,-4995.94,-180.82,0
     .goto 1411/1,-4995.94,-180.82,40,0
@@ -845,7 +962,7 @@ step
     .complete 784,3 --Lieutenant Benedict slain (1)
     .mob Lieutenant Benedict
 step
-    #label Along64
+    #label Along65
     .goto 1411/1,-4952.05,-59.92
     >>Pick up |cRXP_PICK_Raider's Shield|r from the ground
     .complete 96822,3 --Raider's Shield (1)
@@ -871,6 +988,38 @@ step
     .mob Kul Tiras Marine
     .mob Kolkar Drudge
     .mob Kolkar Outrunner
+step << !Priest !Mage
+    .goto 1411/1,-5083.18,37.37,50,0
+    .goto 1411/1,-5025.55,126.56,50,0
+    .goto 1411/1,-5092.7,246.76,50,0
+    .goto 1411/1,-5027.13,311.62,50,0
+    .goto 1411/1,-4948.35,276.72,50,0
+    .goto 1411/1,-4897.06,82.14,50,0
+    .xp 7+2520 >> Grind to 2520+/4500xp
+step << !Priest !Mage
+    .goto 1411/1,-5083.18,37.37,50,0
+    .goto 1411/1,-5025.55,126.56,50,0
+    .goto 1411/1,-5092.7,246.76,50,0
+    .goto 1411/1,-5027.13,311.62,50,0
+    .goto 1411/1,-4948.35,276.72,50,0
+    .goto 1411/1,-4897.06,82.14,50,0
+    .xp 7+2200 >> Grind to 2200+/4500xp
+step << Priest
+    .goto 1411/1,-5083.18,37.37,50,0
+    .goto 1411/1,-5025.55,126.56,50,0
+    .goto 1411/1,-5092.7,246.76,50,0
+    .goto 1411/1,-5027.13,311.62,50,0
+    .goto 1411/1,-4948.35,276.72,50,0
+    .goto 1411/1,-4897.06,82.14,50,0
+    .xp 7+2070 >> Grind to 2070+/4500xp
+step << Priest
+    .goto 1411/1,-5083.18,37.37,50,0
+    .goto 1411/1,-5025.55,126.56,50,0
+    .goto 1411/1,-5092.7,246.76,50,0
+    .goto 1411/1,-5027.13,311.62,50,0
+    .goto 1411/1,-4948.35,276.72,50,0
+    .goto 1411/1,-4897.06,82.14,50,0
+    .xp 7+1750 >> Grind to 1750+/4500xp
 step
     .goto 1411/1,-4709.36,274.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
@@ -1022,7 +1171,7 @@ step << Rogue/Warrior
     .money <0.01
     .target Rawrk
 step
-    #completewith Along74
+    #completewith Along75
     >>As you go: Kill |cRXP_ENEMY_Makrura Clackers|r, |cRXP_ENEMY_Makrura Shellhides|r, |cRXP_ENEMY_Makrura Snapclaws|r and |cRXP_ENEMY_Makrura Elders|r. Loot them for |cRXP_LOOT_Intact Makrura Eye|r. |cRXP_WARN_Anything left is finished later|r
     .complete 818,1 --Intact Makrura Eye (4)
     .mob Makrura Clacker
@@ -1030,7 +1179,7 @@ step
     .mob Makrura Snapclaw
     .mob Makrura Elder
 step
-    #label Along74
+    #label Along75
     #loop
     .goto 1411/1,-5308.96,-211.84,0
     .goto 1411/1,-5308.96,-211.84,40,0
@@ -1040,14 +1189,14 @@ step
     >>Loot the |cRXP_PICK_Gnomish Toolboxes|r for |cRXP_LOOT_Gnomish Tools|r
     .complete 825,1 --Gnomish Tools (3)
 step
-    #completewith Along75
+    #completewith Along76
     >>As you go: Kill |cRXP_ENEMY_Durotar Tigers|r and |cRXP_ENEMY_Shal'mas|r. Loot them for |cRXP_LOOT_Durotar Tiger Fur|r. Loot the |cRXP_PICK_Taillasher Eggs|r for |cRXP_LOOT_Taillasher Egg|r. |cRXP_WARN_Anything left is finished later|r
     .complete 817,1 --Durotar Tiger Fur (4)
     .complete 815,1 --Taillasher Egg (3)
     .mob Durotar Tiger
     .mob Shal'ma
 step
-    #label Along75
+    #label Along76
     .goto 1411/1,-5600.83,-721.91
     >>Kill |cRXP_ENEMY_Bloodtalon Matriarch|r and loot |cRXP_LOOT_Bloodtalon Martriarch Eggs|r
     .complete 97223,1 --Bloodtalon Martriarch Eggs (1)
@@ -1244,6 +1393,17 @@ step
     .complete 837,4 --Razormane Battleguard slain (4)
     .mob Razormane Dustrunner
     .mob Razormane Battleguard
+step << Hunter
+    .goto 1411/1,-4475.12,92.72,0
+    .goto 1411/1,-4475.12,92.72,50,0
+    .goto 1411/1,-4401.09,205.52,50,0
+    .goto 1411/1,-4270.49,260.51,50,0
+    .goto 1411/1,-4166.33,233.01,50,0
+    .goto 1411/1,-4130.37,182.25,50,0
+    .goto 1411/1,-4208.1,98.71,50,0
+    .goto 1411/1,-4300.1,57.11,50,0
+    .goto 1411/1,-4456.61,65.57,50,0
+    .xp 9+4470 >> Grind to 4470+/6500xp
 step
     .goto 1411/1,-4664.94,311.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
@@ -1293,8 +1453,6 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside
     .trainer >> Train your class spells
     .target Thotar
-step
-    .xp 9 >>Grind to level 9 (A Missing Hand needs it)
 step
     .goto 1411/1,-4724.69,287.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
@@ -1409,12 +1567,11 @@ step << Orc Rogue
     .accept 1859 >>Accept Therzok
     .target Kaplak
 step
-    .xp 10 >>Grind to level 10 (Conscript of the Horde needs it)
-step
     .goto 1411/1,-4650.66,271.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Takrin Pathseeker|r
     .accept 840 >>Accept Conscript of the Horde
     .target Takrin Pathseeker
+    .xp <10,1
 step
     .goto 1411/1,-4241.41,742.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Misha Tor'kren|r
@@ -1455,16 +1612,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhinag|r
     .accept 812 >>Accept Need for a Cure
     .target Rhinag
+step << Shaman
+    .goto 1411/1,-4265.73,1276.76,0
+    .goto 1411/1,-4297.46,1131.89,60,0
+    .goto 1411/1,-4295.87,1208.38,60,0
+    .goto 1411/1,-4265.73,1276.76,60,0
+    .xp 9+2520 >>Grind to 2520+/6500 into level 9
 step
     #completewith next
     .zone 1454 >>Travel to Orgrimmar
     .zoneskip 1454
-step << Troll Priest
-    .goto 1454/1,-4179.79,1452.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ur'kyo|r
-    .turnin 5656 >>Turn in Hex of Weakness
-    .target Ur'kyo
-    .isOnQuest 5656
 step << Troll Priest
     .goto 1454/1,-4179.79,1452.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ur'kyo|r
@@ -1477,6 +1634,12 @@ step << Troll Priest
     .turnin 5657 >>Turn in Hex of Weakness
     .target Ur'kyo
     .isOnQuest 5657
+step << Troll Priest
+    .goto 1454/1,-4179.79,1452.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ur'kyo|r
+    .turnin 5656 >>Turn in Hex of Weakness
+    .target Ur'kyo
+    .isOnQuest 5656
 step << Troll Priest
     .goto 1454/1,-4179.79,1452.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ur'kyo|r
@@ -1537,6 +1700,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
     .target Thrall
+step << Priest
+    .goto 1411/1,-4162.63,943.30,40,0
+    .goto 1411/1,-4073.80,953.87,40,0
+    .goto 1411/1,-4026.21,866.10,40,0
+    .goto 1411/1,-4035.20,687.38
+    .xp 9+3150 >>Grind to 3150+/6500 into level 9
 step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
@@ -1584,24 +1753,6 @@ step << Warlock
     .target Kitha
     .money <0.01
     .train 7799,1
-step
-    #loop
-    .goto 1411/1,-4977.96,745.90,0
-    .goto 1411/1,-4977.96,745.90,40,0
-    .goto 1411/1,-4984.83,830.85,40,0
-    .goto 1411/1,-5029.78,893.24,40,0
-    .goto 1411/1,-5117.55,861.52,40,0
-    .goto 1411/1,-5109.09,821.69,40,0
-    .goto 1411/1,-5056.74,823.10,40,0
-    .goto 1411/1,-5099.04,752.60,40,0
-    .goto 1411/1,-5056.74,776.21,40,0
-    .goto 1411/1,-5018.67,775.86,40,0
-    >>Kill |cRXP_ENEMY_Spitelash Scouts|r and |cRXP_ENEMY_Spitelash Attendants|r. Loot them for |cRXP_LOOT_Naga Spinefin|r
-    .complete 99051,1 --Naga Spinefin (9)
-    .mob Spitelash Scout
-    .mob Spitelash Attendant
-step << Undead Priest
-    .xp 10 >>Grind to level 10 (Touch of Weakness needs it)
 step << Undead Priest
     .goto 1411/1,-4831.50,295.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
@@ -1618,12 +1769,6 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
     .train 674 >> Train your class spells
     .target Kaplak
-step
-    .goto 1411/1,-4724.69,287.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
-    .turnin 99051 >>Turn in Threat from Below while you are here
-    .isQuestComplete 99051
-    .target Orgnil Soulscar
 step << Warrior
     .goto 1411/1,-4827.80,311.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw Jaggedscar|r
@@ -1636,6 +1781,27 @@ step << Warlock
     .accept 1506 >>Accept Gan'rul's Summons
     .target Ophek
     .xp <10,1
+step
+    .goto 1411/1,-4650.66,271.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Takrin Pathseeker|r
+    .accept 840 >>Accept Conscript of the Horde
+    .target Takrin Pathseeker
+step
+    #loop
+    .goto 1411/1,-4977.96,745.90,0
+    .goto 1411/1,-4977.96,745.90,40,0
+    .goto 1411/1,-4984.83,830.85,40,0
+    .goto 1411/1,-5029.78,893.24,40,0
+    .goto 1411/1,-5117.55,861.52,40,0
+    .goto 1411/1,-5109.09,821.69,40,0
+    .goto 1411/1,-5056.74,823.10,40,0
+    .goto 1411/1,-5099.04,752.60,40,0
+    .goto 1411/1,-5056.74,776.21,40,0
+    .goto 1411/1,-5018.67,775.86,40,0
+    >>Kill |cRXP_ENEMY_Spitelash Scouts|r and |cRXP_ENEMY_Spitelash Attendants|r. Loot them for |cRXP_LOOT_Naga Spinefin|r
+    .complete 99051,1 --Naga Spinefin (9)
+    .mob Spitelash Scout
+    .mob Spitelash Attendant
 step << Shaman
     .goto 1411/1,-4000.83,-270.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Telf Joolam|r
@@ -1741,13 +1907,13 @@ step
     .target Rezlak
     .isOnQuest 97282
 step
-    #completewith Along130
+    #completewith Along131
     >>As you go: Kill |cRXP_ENEMY_Burning Blade Fanatics|r and |cRXP_ENEMY_Burning Blade Apprentices|r. Loot them for |cRXP_LOOT_Lieutenant's Insignia|r. |cRXP_WARN_Anything left is finished later|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
 step
-    #label Along130
+    #label Along131
     .goto 1411/1,-4744.25,1497.43
     >>Kill |cRXP_ENEMY_Gazz'uz|r and loot |cRXP_LOOT_Eye of Burning Shadow|r. Use it to start the quest
     .collect 4903,1,832 --Eye of Burning Shadow (1)

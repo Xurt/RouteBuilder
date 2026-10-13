@@ -69,6 +69,45 @@ step
     .turnin 659 >>Turn in Hints of a New Plague?
     .target Quae
     .isOnQuest 659
+step
+    .goto 1417/0,-3138.27,-1531.81,30,0
+    .goto 1417/0,-3074.91,-1571.41,30,0
+    .goto 1417/0,-3073.47,-1518.61,30,0
+    .goto 1417/0,-3027.39,-1505.89,30,0
+    .goto 1417/0,-3106.23,-1483.81,30,0
+    .goto 1417/0,-3138.27,-1531.81,30,0
+    >>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r
+    >>Cast |T132797:0|t[Conjure Water r4] if you run out of |T132799:0|t[Sweet Nectar]
+    .xp 34 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 34
+step
+    .goto 1417/0,-3138.27,-1531.81,30,0
+    .goto 1417/0,-3074.91,-1571.41,30,0
+    .goto 1417/0,-3073.47,-1518.61,30,0
+    .goto 1417/0,-3027.39,-1505.89,30,0
+    .goto 1417/0,-3106.23,-1483.81,30,0
+    .goto 1417/0,-3138.27,-1531.81,30,0
+    >>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r
+    >>Cast |T132797:0|t[Conjure Water r4] if you run out of |T132799:0|t[Sweet Nectar]
+    >>|cRXP_WARN_Whenever your bags get full, cast|r |T135757:0|t[Teleport: Ironforge] |cRXP_WARN_(you do NOT need to be 35 yet to do this)|r
+    .xp 35 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 35
+step
+    .goto 1417/0,-3138.27,-1531.81,30,0
+    .goto 1417/0,-3074.91,-1571.41,30,0
+    .goto 1417/0,-3073.47,-1518.61,30,0
+    .goto 1417/0,-3027.39,-1505.89,30,0
+    .goto 1417/0,-3106.23,-1483.81,30,0
+    .goto 1417/0,-3138.27,-1531.81,30,0
+    >>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r
+    .xp 36 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 36
+step
+    .goto 1417/0,-3138.27,-1531.81,30,0
+    .goto 1417/0,-3074.91,-1571.41,30,0
+    .goto 1417/0,-3073.47,-1518.61,30,0
+    .goto 1417/0,-3027.39,-1505.89,30,0
+    .goto 1417/0,-3106.23,-1483.81,30,0
+    .goto 1417/0,-3138.27,-1531.81,30,0
+    >>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r
+    .xp 37 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 37
 step << Hunter
     .goto 1417/0,-2364.27,-1280.53,0
     .goto 1417/0,-2371.47,-1539.73,0
@@ -671,6 +710,8 @@ step
     .turnin 695 >>Turn in An Apprentice's Enchantment
     .accept 696 >>Accept Attack on the Tower
     .target Skuerto
+step << Warlock/Paladin
+    .xp 40 >> Grind to level 40
 step
     .goto 1417/0,-1521.15,-1768.69
     >>Open the |cRXP_PICK_Trelane's Lockbox|r. Loot it for |cRXP_LOOT_Trelane's Ember Agate|r

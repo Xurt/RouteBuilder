@@ -1,7 +1,8 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "15-28 Stonetalon Mountains",
-  "saved": "2026-10-13 08:12",
+  "saved": "2026-10-13 09:00",
+  "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
@@ -13,6 +14,7 @@
         "turnin:1077 @1442:339.27,730.09  TurnIn Special Delivery for Gaxim",
         "turnin:1074 @1442:339.27,730.09  TurnIn Ineptitude + Chemicals = Fun",
         "turnin:1070 @1442:320.72,739.86  TurnIn On Guard in Stonetalon",
+        {"lines":[".xp 22+6700 >> Grind |cRXP_ENEMY_Goblins|r to level 22 and 6700+xp"],"from":"RestedXP: 21-23 Ashenvale/Stonetalon"},
         "turnin:1483 @1442:365.16,878.25  TurnIn Ziz Fizziks",
         "turnin:1095 @1442:365.16,878.25  TurnIn Further Instructions",
         "turnin:1056 @1442:1434.12,2652.91  TurnIn Journey to Stonetalon Peak",

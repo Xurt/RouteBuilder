@@ -53,11 +53,17 @@ step
     .mob Dark Strand Excavator
     .isOnQuest 970
 step
+    .goto 1440/1,-102.08,3492.890
+    .xp 20-1650 >>Keep killing |cRXP_ENEMY_Dark Strand mobs|r until you have enough xp to reach level 20
+step
     .goto 1440/1,189.13,3185.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 970 >>Turn in The Tower of Althalaxx
     .target Delgren the Purifier
     .isOnQuest 970
+step
+    .goto 1440/1,-138.99,3806.92
+    .xp 20 >> Grind to level 20
 step << Hunter
     .goto 1440/1,663.38,2365.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bolyun|r
@@ -96,8 +102,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Thenysil|r
     .accept 1070 >>Accept On Guard in Stonetalon
     .target Sentinel Thenysil
-step
-    .xp 18 >>Grind to level 18 (Journey to Stonetalon Peak needs it)
 step
     .goto 1440/1,-362.74,2785.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faldreas Goeth'Shael|r
@@ -433,53 +437,23 @@ step
     .target Delgren the Purifier
     .isOnQuest 973
 step
-    .goto 1440/1,-584.18,3277.25
-    >>Kill |cRXP_ENEMY_Dal Bloodclaw|r and loot |cRXP_LOOT_Dal Bloodclaw's Skull|r
-    .complete 1054,1 --Dal Bloodclaw's Skull (1)
-    .mob Dal Bloodclaw
-step
-    .goto 1440/1,-411.75,2767.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
-    .turnin 1054 >>Turn in Culling the Threat
-    .accept 1025 >>Accept An Aggressive Defense
-    .target Raene Wolfrunner
-step
     .goto 1440/1,-299.30,2795.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
     .turnin 1134 >>Turn in Pridewings of Stonetalon
     .target Shindrell Swiftfire
     .isQuestComplete 1134
 step
-    .goto 1440/1,-802.73,1966.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
-    .turnin 78132 >>Turn in Dragonslayer's Helm
-    .target Alonso
-    .isOnQuest 78132
+    .goto 1440/1,-411.75,2767.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
+    .accept 1025 >>Accept An Aggressive Defense
+    .target Raene Wolfrunner
 step
-    .goto 1440/1,-802.73,1966.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
-    .turnin 78134 >>Turn in Dragonslayer's Lance
-    .target Alonso
-    .isOnQuest 78134
-step
-    .goto 1440/1,-802.73,1966.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
-    .turnin 78133 >>Turn in Dragonslayer's Shield
-    .target Alonso
-    .isOnQuest 78133
-step
-    .goto 1440/1,-1171.80,2089.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
-    .turnin 1017 >>Turn in Mage Summoner
-    .target Sentinel Velene Starstrike
-    .isQuestComplete 1017
-step
-    #completewith Along11
+    #completewith Along6
     >>As you go: Kill |cRXP_ENEMY_Foulweald Ursas|r. |cRXP_WARN_Anything left is finished later|r
     .complete 1025,2 --Foulweald Ursa slain (2)
     .mob Foulweald Ursa
 step
-    #label Along11
+    #label Along6
     #loop
     .goto 1440/1,-1351.72,2222.14,0
     .goto 1440/1,-1351.72,2222.14,40,0
@@ -506,12 +480,44 @@ step
     .mob Foulweald Ursa
     .mob Foulweald Den Watcher
 step
+    .goto 1440/1,-1171.80,2089.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
+    .turnin 1017 >>Turn in Mage Summoner
+    .target Sentinel Velene Starstrike
+    .isQuestComplete 1017
+step
+    .goto 1440/1,-802.73,1966.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .turnin 78133 >>Turn in Dragonslayer's Shield
+    .target Alonso
+    .isOnQuest 78133
+step
+    .goto 1440/1,-802.73,1966.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .turnin 78134 >>Turn in Dragonslayer's Lance
+    .target Alonso
+    .isOnQuest 78134
+step
+    .goto 1440/1,-802.73,1966.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .turnin 78132 >>Turn in Dragonslayer's Helm
+    .target Alonso
+    .isOnQuest 78132
+step
     .goto 1440/1,-411.75,2767.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .turnin 1025 >>Turn in An Aggressive Defense
     .target Raene Wolfrunner
 step
-    .xp 24 >>Grind to level 24 (Kayneth Stillwind needs it)
+    .goto 1440/1,-584.18,3277.25
+    >>Kill |cRXP_ENEMY_Dal Bloodclaw|r and loot |cRXP_LOOT_Dal Bloodclaw's Skull|r
+    .complete 1054,1 --Dal Bloodclaw's Skull (1)
+    .mob Dal Bloodclaw
+step
+    .goto 1440/1,-411.75,2767.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
+    .turnin 1054 >>Turn in Culling the Threat
+    .target Raene Wolfrunner
 step
     .goto 1440/1,-299.30,2795.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r

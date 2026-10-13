@@ -338,6 +338,21 @@ step
     .mob Southsea Dock Worker
     .mob Southsea Swashbuckler
 step
+    .goto 1446/1,-5113.61,-7846.10,50,0
+    .goto 1446/1,-5201.93,-7915.10,50,0
+    .goto 1446/1,-5226.77,-7958.80,50,0
+    .goto 1446/1,-5122.58,-7992.38,50,0
+    .goto 1446/1,-5135.00,-8082.08,50,0
+    .goto 1446/1,-5213.66,-8093.58,50,0
+    .goto 1446/1,-5227.46,-8041.60,50,0
+    .goto 1446/1,-5274.38,-8082.54,50,0
+    .goto 1446/1,-5342.00,-8049.42,50,0
+    .goto 1446/1,-5302.67,-7985.94,50,0
+    .goto 1446/1,-5226.77,-7958.80,50,0
+    .goto 1446/1,-5201.93,-7915.10,50,0
+    >>Kill |cRXP_ENEMY_Southsea Pirates|r
+    .xp 47 >> Grind to level 47
+step
     .goto 1446/1,-3855.74,-7987.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
     .turnin 3380 >>Turn in The Sunken Temple
@@ -480,6 +495,9 @@ step
     >>Talk to |cRXP_FRIENDLY_Trenton Lighthammer|r
     .vendor >> Vendor and Repair at Krinkle
 step
+    .xp 44 >> AoE Zul'Farrak to level 44
+    >>Start saving the Silk Cloth and Mageweave Cloth you get. You need 12 stacks of each for later
+step
     #completewith Drop351x5
     >>|cRXP_LOOT_OOX-17/TN Distress Beacon|r can drop from |cRXP_ENEMY_Glasshide Basilisk|r, |cRXP_ENEMY_Glasshide Gazer|r, |cRXP_ENEMY_Glasshide Petrifier|r. Use it to start the quest if you get one
     .collect 8623,1,351 --OOX-17/TN Distress Beacon (1)
@@ -505,9 +523,34 @@ step
     .mob Wastewander Shadow Mage
     .mob Wastewander Bandit
 step
+    .goto 1446/1,-5305.43,-8030.56
+    .xp 43+91000 >> AoE Grind to 43 & 91000+/106300xp
+    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
+step
+    .goto 1446/1,-5305.43,-8030.56
+    .xp 44 >> AoE Grind to 44
+    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
+    >>Start saving the Silk Cloth and Mageweave Cloth you get. You need 12 stacks of each for later
+step
+    .goto 1446/1,-5305.43,-8030.56
+    .xp 48 >> AoE grind to 48
+    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
+step
+    .xp 48 >> AoE Zul'Farrak to level 48
+step
     .trainer >> Teleport to Orgrimmar or Undercity. Train your level 46-48 spells
 step
+    .xp 52 >> AoE Zul'Farrak to level 52
+step
+    .goto 1446/1,-5305.43,-8030.56
+    .xp 52 >> AoE grind to 52
+    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
+    >>Remember to save 12 stacks of Mageweave. You'll need it for cloth turnins later
+step
     .trainer >> Teleport to Orgrimmar or Undercity. Train your level 50-52 spells
+step
+    .xp 54 >> AoE Zul'Farrak to level 54
+    >>Remember to save 12 stacks of Mageweave. You'll need it for cloth turnins later
 step
     .goto 1446/1,-3840.56,-7183.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spigot Operator Luglunket|r
@@ -569,30 +612,6 @@ step
     .complete 2781,1 --Caliph Scorpidsting's Head (1)
     .mob Caliph Scorpidsting
 step
-    .goto 1446/1,-3855.74,-7987.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
-    .accept 3161 >>Accept Gahz'ridian
-    .target Marvon Rivetseeker
-step
-    #loop
-    .goto 1446/1,-3482.45,-8791.40,0
-    .goto 1446/1,-3482.45,-8791.40,40,0
-    .goto 1446/1,-3406.55,-8786.80,40,0
-    .goto 1446/1,-3316.85,-8837.40,40,0
-    .goto 1446/1,-3399.65,-8892.60,40,0
-    .goto 1446/1,-3378.95,-8947.80,40,0
-    .goto 1446/1,-3468.65,-8911.00,40,0
-    .goto 1446/1,-3537.65,-8980.00,40,0
-    .goto 1446/1,-3523.85,-8901.80,40,0
-    .goto 1446/1,-3544.55,-8851.20,40,0
-    >>Loot the |cRXP_PICK_Gahz'ridians|r for |cRXP_LOOT_Gahz'ridian Ornament|r
-    .complete 3161,1 --Gahz'ridian Ornament (30)
-step
-    .goto 1446/1,-3855.74,-7987.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
-    .turnin 3161 >>Turn in Gahz'ridian
-    .target Marvon Rivetseeker
-step
     .goto 1446/1,-3838.49,-7186.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Bilgewhizzle|r
     .turnin 2781 >>Turn in WANTED: Caliph Scorpidsting
@@ -618,6 +637,30 @@ step
     .turnin 3520 >>Turn in Screecher Spirits
     .target Yeh'kinya
     .isQuestComplete 3520
+step
+    .goto 1446/1,-3855.74,-7987.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
+    .accept 3161 >>Accept Gahz'ridian
+    .target Marvon Rivetseeker
+step
+    #loop
+    .goto 1446/1,-3482.45,-8791.40,0
+    .goto 1446/1,-3482.45,-8791.40,40,0
+    .goto 1446/1,-3406.55,-8786.80,40,0
+    .goto 1446/1,-3316.85,-8837.40,40,0
+    .goto 1446/1,-3399.65,-8892.60,40,0
+    .goto 1446/1,-3378.95,-8947.80,40,0
+    .goto 1446/1,-3468.65,-8911.00,40,0
+    .goto 1446/1,-3537.65,-8980.00,40,0
+    .goto 1446/1,-3523.85,-8901.80,40,0
+    .goto 1446/1,-3544.55,-8851.20,40,0
+    >>Loot the |cRXP_PICK_Gahz'ridians|r for |cRXP_LOOT_Gahz'ridian Ornament|r
+    .complete 3161,1 --Gahz'ridian Ornament (30)
+step
+    .goto 1446/1,-3855.74,-7987.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
+    .turnin 3161 >>Turn in Gahz'ridian
+    .target Marvon Rivetseeker
 step
     #loop
     .goto 1446/1,-2697.23,-7894.86,0

@@ -232,13 +232,7 @@ step
     .goto 1449/1,-2117.35,-7840.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
     .turnin 4289 >>Turn in The Apes of Un'Goro
-    .target Torwa Pathfinder
-step << Druid
-    .xp 50 >>Grind to level 50 (Bloodpetal Poison needs it)
-step << Druid
-    .goto 1449/1,-2117.35,-7840.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
-    .accept 9052 >>Accept Bloodpetal Poison
+    .accept 9052 >>Accept Bloodpetal Poison << Druid
     .target Torwa Pathfinder
 step << Druid
     #loop

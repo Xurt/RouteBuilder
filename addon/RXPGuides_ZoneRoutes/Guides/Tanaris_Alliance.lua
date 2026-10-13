@@ -120,6 +120,64 @@ step
     .turnin 1690 >>Turn in Wastewander Justice
     .target Chief Engineer Bilgewhizzle
 step
+    .goto 1446/1,-4655.45,-7226.48,60,0
+    .goto 1446/1,-4587.83,-7232.00,60,0
+    .goto 1446/1,-4564.37,-7288.12,60,0
+    .goto 1446/1,-4627.85,-7314.80,60,0
+    .goto 1446/1,-4551.26,-7409.10,60,0
+    .goto 1446/1,-4587.83,-7453.72,60,0
+    .goto 1446/1,-4718.93,-7403.58,60,0
+    .goto 1446/1,-4745.84,-7346.08,60,0
+    .goto 1446/1,-4281.47,-6964.28,60,0
+    .goto 1446/1,-4424.30,-6935.30,60,0
+    .goto 1446/1,-4411.19,-6997.86,60,0
+    .goto 1446/1,-4655.45,-7226.48,50,0
+    .goto 1446/1,-4587.83,-7232.00,50,0
+    .goto 1446/1,-4564.37,-7288.12,50,0
+    .goto 1446/1,-4627.85,-7314.80,50,0
+    .goto 1446/1,-4551.26,-7409.10,50,0
+    .goto 1446/1,-4587.83,-7453.72,50,0
+    .goto 1446/1,-4718.93,-7403.58,50,0
+    .goto 1446/1,-4745.84,-7346.08,50,0
+    .goto 1446/1,-4281.47,-6964.28,50,0
+    .goto 1446/1,-4424.30,-6935.30,50,0
+    .goto 1446/1,-4411.19,-6997.86,50,0
+    .goto 1446/1,-4655.45,-7226.48,50,0
+    .xp 42+97000 >>AoE |cRXP_ENEMY_Wastewander Bandits|r and |cRXP_ENEMY_Wastewander Thieves|r to 97000+/101000xp
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Wastewander Bandits|r cast|r |T132155:0|t[Gouge] |cRXP_WARN_(stuns you until you take damage if you're facing them) and|r |T132090:0|t[Backstab] |cRXP_WARN_(deals double damage from behind)|r
+    >>|cRXP_WARN_You can make bigger pulls by kiting them around with|r |T135852:0|t[Cone of Cold] |cRXP_WARN_to slow them and refresh their leash|r
+    >>|cRXP_WARN_Be careful as aggroing the |cRXP_ENEMY_Wastewanderers|r under the tent will evade your whole pull after about 10 seconds|r
+    >>|cRXP_WARN_Avoid pulling any|r |cRXP_ENEMY_Wastewander Shadow Mages|r
+step
+    .goto 1446/1,-5414.45,-7978.12,20,0
+    .goto 1446/1,-5364.08,-8076.56,20,0
+    .goto 1446/1,-5283.35,-8004.34,20,0
+    .goto 1446/1,-5969.90,-8051.72,20,0
+    .goto 1446/1,-5205.38,-8009.86,20,0
+    .goto 1446/1,-5414.45,-7978.12,20,0
+    .xp 44 >>AoE |cRXP_ENEMY_Southsea Swashbucklers|r, |cRXP_ENEMY_Southsea Dock Workers|r, |cRXP_ENEMY_Southsea Freebooters|r, and |cRXP_ENEMY_Southsea Pirates|r to Level 44
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Southsea Pirates|r cast|r |T132282:0|t[Strike] |cRXP_WARN_(deals double damage every 10 seconds) and |cRXP_ENEMY_Southsea Freebooters|r cast|r |T132222:0|t[Shoot] |cRXP_WARN_(Deals ranged damage)|r
+step
+    .goto 1446/1,-5414.45,-7978.12,20,0
+    .goto 1446/1,-5364.08,-8076.56,20,0
+    .goto 1446/1,-5283.35,-8004.34,20,0
+    .goto 1446/1,-5969.90,-8051.72,20,0
+    .goto 1446/1,-5205.38,-8009.86,20,0
+    .goto 1446/1,-5414.45,-7978.12,20,0
+    .xp 46 >>AoE |cRXP_ENEMY_Southsea Swashbucklers|r, |cRXP_ENEMY_Southsea Dock Workers|r, |cRXP_ENEMY_Southsea Freebooters|r, and |cRXP_ENEMY_Southsea Pirates|r to Level 46
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Southsea Pirates|r cast|r |T132282:0|t[Strike] |cRXP_WARN_(deals double damage every 10 seconds) and |cRXP_ENEMY_Southsea Freebooters|r cast|r |T132222:0|t[Shoot] |cRXP_WARN_(Deals ranged damage)|r
+step
+    .goto 1446/1,-5414.45,-7978.12,20,0
+    .goto 1446/1,-5364.08,-8076.56,20,0
+    .goto 1446/1,-5283.35,-8004.34,20,0
+    .goto 1446/1,-5969.90,-8051.72,20,0
+    .goto 1446/1,-5281.28,-8099.10,20,0
+    .goto 1446/1,-5240.57,-8078.40,20,0
+    .goto 1446/1,-5205.38,-8009.86,20,0
+    .goto 1446/1,-5414.45,-7978.12,20,0
+    .xp 48 >>AoE |cRXP_ENEMY_Southsea Swashbucklers|r, |cRXP_ENEMY_Southsea Dock Workers|r, |cRXP_ENEMY_Southsea Freebooters|r, and |cRXP_ENEMY_Southsea Pirates|r to Level 48
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Southsea Pirates|r cast|r |T132282:0|t[Strike] |cRXP_WARN_(deals double damage every 10 seconds) and |cRXP_ENEMY_Southsea Freebooters|r cast|r |T132222:0|t[Shoot] |cRXP_WARN_(Deals ranged damage)|r
+step
     #completewith Drop351x2
     >>|cRXP_LOOT_OOX-17/TN Distress Beacon|r can drop from |cRXP_ENEMY_Glasshide Basilisk|r, |cRXP_ENEMY_Glasshide Gazer|r, |cRXP_ENEMY_Glasshide Petrifier|r. Use it to start the quest if you get one
     .collect 8623,1,351 --OOX-17/TN Distress Beacon (1)
@@ -157,6 +215,18 @@ step
     .mob Southsea Dock Worker
     .mob Southsea Swashbuckler
     .mob Andre Firebeard
+step
+    .goto 1446/1,-5414.45,-7978.12,20,0
+    .goto 1446/1,-5364.08,-8076.56,20,0
+    .goto 1446/1,-5283.35,-8004.34,20,0
+    .goto 1446/1,-5969.90,-8051.72,20,0
+    .goto 1446/1,-5281.28,-8099.10,20,0
+    .goto 1446/1,-5240.57,-8078.40,20,0
+    .goto 1446/1,-5205.38,-8009.86,20,0
+    .goto 1446/1,-5414.45,-7978.12,20,0
+    .xp 50 >>AoE |cRXP_ENEMY_Southsea Swashbucklers|r, |cRXP_ENEMY_Southsea Dock Workers|r, |cRXP_ENEMY_Southsea Freebooters|r, and |cRXP_ENEMY_Southsea Pirates|r to Level 50. Loot them for their Silk Cloth
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Southsea Pirates|r cast|r |T132282:0|t[Strike] |cRXP_WARN_(deals double damage every 10 seconds) and |cRXP_ENEMY_Southsea Freebooters|r cast|r |T132222:0|t[Shoot] |cRXP_WARN_(Deals ranged damage)|r
+    >>|cRXP_WARN_MAKE SURE You keep an extra 15|r |T132905:0|t[Silk Cloth] |cRXP_WARN_on your character for Searing Gorge|r
 step
     .goto 1446/1,-4845.89,-6973.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Security Chief Bilgewhizzle|r

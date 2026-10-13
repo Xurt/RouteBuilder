@@ -56,8 +56,6 @@ step
     .isQuestTurnedIn 5149 --any of: Pamela's Doll
     .xp <50,1
 step
-    .xp 55 >>Grind to level 55 (The Restless Souls needs it)
-step
     .goto 1423/0,-5264.70,2151.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Alen|r
     .accept 5281 >>Accept The Restless Souls

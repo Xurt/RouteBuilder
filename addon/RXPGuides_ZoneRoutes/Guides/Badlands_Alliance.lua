@@ -15,8 +15,6 @@ RXPGuides.RegisterGuide([[
 #name 35-45 Badlands
 
 step
-    .xp 35 >>Grind to level 35 (A Dwarf and His Tools needs it)
-step
     .goto 1418/0,-3407.99,-6609.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ryedol|r
     .accept 719 >>Accept A Dwarf and His Tools

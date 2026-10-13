@@ -443,6 +443,15 @@ step
     .mob Bloodscalp Hunter
     .mob Bloodscalp Berserker
 step
+    .goto 1434/0,592.34,-11566.94
+    .xp 38-26000 >>Grind until you are 26k xp away from level 38
+step
+    .goto 1434/0,592.34,-11566.94
+    .xp 37+53000 >>Grind until you are 53000/76100 xp into level 37
+step
+    .goto 1434/0,592.34,-11566.94
+    .xp 37+57500 >>Grind until you are 57500/76100 xp into level 37
+step
     .goto 1434/0,-206.59,-11296.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Doren|r
     .turnin 329 >>Turn in The Spy Revealed!
@@ -476,6 +485,8 @@ step
     .target Krazek
     .isQuestTurnedIn 1115 --any of: The Rumormonger
     .xp <30,1
+step
+    .xp 38 >> Make sure you are level 38 before starting the next segment
 step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
@@ -900,8 +911,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizzlik|r
     .accept 628 >>Accept Excelsior
     .target Drizzlik
-step
-    .xp 37 >>Grind to level 37 (The Bloodsail Buccaneers needs it)
 step
     .goto 1434/0,427.70,-14411.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Crazz|r

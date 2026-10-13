@@ -288,6 +288,42 @@ step
     .complete 4501,2 --Frenzied Pterrordax slain (15)
     .mob Frenzied Pterrordax
 step
+    .goto 1449/1,-1608.97,-7743.90,45,0
+    .goto 1449/1,-1645.23,-7667.68,45,0
+    .goto 1449/1,-1606.75,-7565.56,45,0
+    .goto 1449/1,-1715.53,-7502.91,45,0
+    .goto 1449/1,-1754.38,-7478.49,45,0
+    .goto 1449/1,-1718.12,-7447.16,45,0
+    .goto 1449/1,-1705.91,-7251.06,45,0
+    .goto 1449/1,-1630.80,-7259.94,45,0
+    .goto 1449/1,-1608.60,-7216.03,45,0
+    .goto 1449/1,-1577.15,-7240.21,45,0
+    .goto 1449/1,-1635.24,-7403.25,45,0
+    .goto 1449/1,-1608.97,-7495.51,45,0
+    .goto 1449/1,-1576.78,-7514.99,45,0
+    .goto 1449/1,-1551.25,-7548.05,45,0
+    .goto 1449/1,-1509.81,-7443.21,45,0
+    .goto 1449/1,-1399.55,-7419.53,45,0
+    .goto 1449/1,-1386.97,-7525.85,45,0
+    .goto 1449/1,-1408.80,-7633.39,45,0
+    .goto 1449/1,-1419.53,-7713.81,45,0
+    .goto 1449/1,-1310.75,-7755.25,45,0
+    .goto 1449/1,-1277.08,-7673.11,45,0
+    .goto 1449/1,-1277.82,-7534.48,45,0
+    .goto 1449/1,-1275.23,-7440.99,45,0
+    .goto 1449/1,-1147.58,-7479.72,45,0
+    .goto 1449/1,-1089.12,-7491.31,45,0
+    .goto 1449/1,-1200.86,-7606.75,45,0
+    .goto 1449/1,-1193.09,-7703.94,45,0
+    .goto 1449/1,-1160.16,-7741.19,45,0
+    .goto 1449/1,-1085.05,-7746.61,45,0
+    .goto 1449/1,-1091.71,-7604.29,45,0
+    .goto 1449/1,-1069.51,-7549.77,45,0
+    .goto 1449/1,-1075.06,-7473.55,45,0
+    .goto 1449/1,-1169.04,-7450.12,45,0
+    .xp 51+89865 >>AoE |cRXP_ENEMY_Diemetradons|r to 89865+/153900xp
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Young Diemetradons|r cast|r |T132109:0|t[Tendon Rip] |cRXP_WARN_B(reduces movespeed by 70% for 8 seconds), and|r |cRXP_ENEMY_Fledgling Pterrordaxes|r cast|r |T132338:0|t[Swoop] |cRXP_WARN_(deals 50 extra damage and stuns for 2 seconds)|r
+step
     .goto 1449/1,-1103.18,-6252.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shizzle|r
     .turnin 4503 >>Turn in Shizzle's Flyer
@@ -364,13 +400,7 @@ step
     .goto 1449/1,-2117.35,-7840.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
     .turnin 4291 >>Turn in The Scent of Lar'korwi
-    .target Torwa Pathfinder
-step << Druid
-    .xp 50 >>Grind to level 50 (Bloodpetal Poison needs it)
-step << Druid
-    .goto 1449/1,-2117.35,-7840.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
-    .accept 9052 >>Accept Bloodpetal Poison
+    .accept 9052 >>Accept Bloodpetal Poison << Druid
     .target Torwa Pathfinder
 step
     .goto 1449/1,-1055.45,-6204.45

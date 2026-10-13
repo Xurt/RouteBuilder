@@ -1,7 +1,8 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "47-57 Azshara",
-  "saved": "2026-10-13 08:08",
+  "saved": "2026-10-13 08:56",
+  "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
@@ -40,6 +41,7 @@
         "obj:3601:2 @1447:-6167.46,4381.39  Objective Kim'jael Indeed! / Kim'Jael's Scope (1)",
         "obj:3601:3 @1447:-6167.46,4381.39  Objective Kim'jael Indeed! / Kim'Jael's Stuffed Chicken (1)",
         "obj:3601:4 @1447:-6167.46,4381.39  Objective Kim'jael Indeed! / Kim'Jael's Wizzlegoober (1)",
+        {"lines":[".goto 1447/1,-6106.61,4465.92,50,0",".goto 1447/1,-6208.02,4449.02,50,0",".goto 1447/1,-6218.17,4388.15,50,0",".goto 1447/1,-6279.02,4340.82,50,0",".goto 1447/1,-6213.10,4279.95,50,0",".goto 1447/1,-6167.46,4317.15,50,0",".goto 1447/1,-6162.39,4411.82,50,0",".goto 1447/1,-6116.75,4337.44,50,0",".goto 1447/1,-6086.32,4337.44,50,0",".xp 53+95000 >> Grind to level 53 95000+/167100",">>|cRXP_WARN_This is your last grinding spot needed before level 60. If you don't want to grind this much you can do a dungeon or two instead|r"],"from":"RestedXP: 52-53 Azshara"},
         "turnin:3601 @1447:-5987.44,4603.88  TurnIn Kim'jael Indeed!",
         "accept:5534 @1447:-5987.44,4603.88  Accept Kim'jael's \"Missing\" Equipment",
         "turnin:8251 @1447:-4760.3,3982.07  TurnIn Magic Dust",

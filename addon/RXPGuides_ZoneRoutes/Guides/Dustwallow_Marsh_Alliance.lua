@@ -44,11 +44,65 @@ step
     .target Commander Samaul
     .isOnQuest 1264
 step
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .goto 1445/1,-3979.57,-2822.23,30,0
+    .goto 1445/1,-3984.82,-2566.38,30,0
+    .goto 1445/1,-4044.15,-2587.38,30,0
+    .goto 1445/1,-3818.40,-2561.83,30,0
+    .goto 1445/1,-3815.25,-2721.78,30,0
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .xp 38 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, and |cRXP_ENEMY_Mirefin Murlocs|r to Level 38
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
+step
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .goto 1445/1,-3979.57,-2822.23,30,0
+    .goto 1445/1,-3984.82,-2566.38,30,0
+    .goto 1445/1,-4044.15,-2587.38,30,0
+    .goto 1445/1,-3818.40,-2561.83,30,0
+    .goto 1445/1,-3815.25,-2448.78,30,0
+    .goto 1445/1,-3809.47,-2725.63,30,0
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .xp 40 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
+step
     .goto 1445/1,-4366.50,-3785.78
     >>Talk to |cRXP_FRIENDLY_Marie|r
     .vendor 4888 >> Vendor Trash. Repair
     .target Marie Holdston
     .zoneskip Dustwallow Marsh,1
+step
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .goto 1445/1,-3979.57,-2822.23,30,0
+    .goto 1445/1,-3984.82,-2566.38,30,0
+    .goto 1445/1,-4044.15,-2587.38,30,0
+    .goto 1445/1,-3818.40,-2561.83,30,0
+    .goto 1445/1,-3815.25,-2448.78,30,0
+    .goto 1445/1,-3809.47,-2725.63,30,0
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .xp 41 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to Level 41
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
+step
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .goto 1445/1,-3979.57,-2822.23,30,0
+    .goto 1445/1,-3984.82,-2566.38,30,0
+    .goto 1445/1,-4044.15,-2587.38,30,0
+    .goto 1445/1,-3818.40,-2561.83,30,0
+    .goto 1445/1,-3815.25,-2448.78,30,0
+    .goto 1445/1,-3809.47,-2725.63,30,0
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .xp 41+33530 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 33530+/95800xp
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
+step
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .goto 1445/1,-3979.57,-2822.23,30,0
+    .goto 1445/1,-3984.82,-2566.38,30,0
+    .goto 1445/1,-4044.15,-2587.38,30,0
+    .goto 1445/1,-3818.40,-2561.83,30,0
+    .goto 1445/1,-3815.25,-2448.78,30,0
+    .goto 1445/1,-3809.47,-2725.63,30,0
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .xp 41+43110 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 43110+/95800xp
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
 step << Hunter
     .goto 1445/1,-4534.50,-3776.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
@@ -157,6 +211,17 @@ step
     >>Talk to |cRXP_FRIENDLY_Marie|r
     .vendor 4888 >> Vendor Trash. Repair
     .target Marie Holdston
+step
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .goto 1445/1,-3979.57,-2822.23,30,0
+    .goto 1445/1,-3984.82,-2566.38,30,0
+    .goto 1445/1,-4044.15,-2587.38,30,0
+    .goto 1445/1,-3818.40,-2561.83,30,0
+    .goto 1445/1,-3815.25,-2448.78,30,0
+    .goto 1445/1,-3809.47,-2725.63,30,0
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .xp 39 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to Level 39
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
 step
     .goto 1445/1,-3350.10,-2896.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Private Hendel|r

@@ -194,8 +194,6 @@ step
     .target Innkeeper Anderson
     .home >>Set your Hearthstone to Innkeeper Anderson's inn
 step
-    .xp 30 >>Grind to level 30 (Hints of a New Plague? needs it)
-step
     .goto 1424/0,-544.53,-859.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Phin Odelic|r
     .accept 659 >>Accept Hints of a New Plague?
@@ -341,6 +339,8 @@ step
     .turnin 560 >>Turn in Farren's Proof
     .accept 561 >>Accept Farren's Proof
     .target Marshal Redpath
+step
+    .xp 30 >>Grind to level 30 (An Alarming Request needs it)
 step
     .goto 1424/0,-479.57,-880.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emissary Jacques|r

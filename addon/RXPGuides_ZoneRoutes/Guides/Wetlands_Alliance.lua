@@ -117,8 +117,6 @@ step
     .turnin 98197 >>Turn in Spoils of War
     .target Valstag Ironjaw
 step
-    .xp 21 >>Grind to level 21 (In Search of The Excavation Team needs it)
-step
     .goto 1437/0,-865.16,-3585.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarrel Rockweaver|r
     .accept 305 >>Accept In Search of The Excavation Team
@@ -129,8 +127,6 @@ step
     .turnin 98461 >>Turn in Unrequited Love
     .target Tarrel Rockweaver
     .isOnQuest 98461
-step
-    .xp 22 >>Grind to level 22 (Ormer's Revenge needs it)
 step
     .goto 1437/0,-1968.49,-3550.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
@@ -189,6 +185,14 @@ step
     .mob Mosshide Gnoll
     .mob Mosshide Mongrel
 step
+    .goto 1437/0,-3034.60,-3897.31,50,0
+    .goto 1437/0,-2980.84,-4063.51,50,0
+    .goto 1437/0,-2693.01,-4220.34,50,0
+    .goto 1437/0,-2942.38,-4141.24,50,0
+    .goto 1437/0,-2980.84,-4063.51,50,0
+    .goto 1437/0,-3034.60,-3897.31,50,0
+    .xp 24 >>AoE |cRXP_ENEMY_Mosshide Gnolls|r and |cRXP_ENEMY_Mosshide Mongrels|r to level 24
+step
     .goto 1437/0,-2720.72,-3261.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rethiel the Greenwarden|r
     .turnin 276 >>Turn in Tramping Paws
@@ -245,6 +249,14 @@ step
     .mob Crimson Ooze
     .mob Black Ooze
     .mob Monstrous Ooze
+step
+    .goto 1437/0,-3034.60,-3897.31,50,0
+    .goto 1437/0,-2980.84,-4063.51,50,0
+    .goto 1437/0,-2693.01,-4220.34,50,0
+    .goto 1437/0,-2942.38,-4141.24,50,0
+    .goto 1437/0,-2980.84,-4063.51,50,0
+    .goto 1437/0,-3034.60,-3897.31,50,0
+    .xp 25 >>AoE |cRXP_ENEMY_Mosshide Gnolls|r and |cRXP_ENEMY_Mosshide Mongrels|r to level 25
 step
     .goto 1437/0,-2459.36,-2648.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashlan Stonesmirk|r
@@ -415,6 +427,8 @@ step
     .accept 98072 >>Accept Crocs of the Sky
     .accept 98240 >>Accept Crimson Crate Delivery
     .target James Halloran
+step
+    .xp 22 >>Grind to level 22 (This Land Was Their Land needs it)
 step
     .goto 1437/0,-797.34,-3732.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
@@ -662,8 +676,6 @@ step
     .target James Halloran
     .isOnQuest 471
 step
-    .xp 25 >>Grind to level 25 (Fall of Dun Modr needs it)
-step
     .goto 1437/0,-838.28,-3688.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harlo Barnaby|r
     .accept 472 >>Accept Fall of Dun Modr
@@ -756,6 +768,8 @@ step
     .vendor >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube]
     >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Fradd Swiftgear|r doesn't have one|r
     .target Fradd Swiftgear
+step
+    .xp 24 >> Grind to level 24
 step
     .goto 1437/0,-797.34,-3732.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
@@ -951,12 +965,12 @@ step
     .turnin 87491 >>Turn in Spark of Freedom
     .target Roggo Harlbarrow
 step
-    .xp 28 >>Grind to level 28 (The Thandol Span needs it)
-step
     .goto 1437/0,-2453.16,-2650.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
     .accept 631 >>Accept The Thandol Span
     .target Rhag Garmason
+step
+    .xp 28 >>Grind to level 28 (Hearts of the Lost needs it)
 step
     .goto 1437/0,-2454.40,-2493.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Comar Villard|r
@@ -1062,6 +1076,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Motley Garmason|r
     .turnin 303 >>Turn in The Dark Iron War
     .target Motley Garmason
+step << Hunter
+    .goto 1437/0,-784.10,-4069.02
+    .xp 29+29000 >> Grind to |cRXP_ENEMY_Murlocs|r 29000/44300 xp
+step << Hunter
+    .goto 1437/0,-784.10,-4069.02
+    .xp 29+31100 >> Grind |cRXP_ENEMY_Murlocs|r to 31100/44300 xp
+step << Hunter
+    .goto 1437/0,-784.10,-4069.02
+    .xp 29+31550 >> Grind |cRXP_ENEMY_Murlocs|r to 31550/44300 xp
+step << Hunter
+    .goto 1437/0,-784.10,-4069.02
+    .xp 29+33650 >> Grind |cRXP_ENEMY_Murlocs|r to 33650/44300 xp
 step
     .goto 1437/0,-2453.16,-2650.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r

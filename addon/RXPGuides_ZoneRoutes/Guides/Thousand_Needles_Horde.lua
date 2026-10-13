@@ -160,6 +160,12 @@ step
     .accept 5062 >>Accept Sacred Fire
     .target Motega Firemane
 step
+    .goto 1441/1,-1256.13,-4617.87
+    .xp 28+29000 >> Grind to level 28 29000+/41400xp
+step
+    .goto 1441/1,-1256.13,-4617.87
+    .xp 28+20000 >> Grind to level 28 20000+/41400xp
+step
     #loop
     .goto 1441/1,-1901.61,-4930.56,0
     .goto 1441/1,-1901.61,-4930.56,40,0
@@ -198,6 +204,9 @@ step << Hunter
     .target Starn
     .money <2.7172
     .subzoneskip 484,1
+step
+    .goto 1441/1,-2330.61,-5047.89
+    .xp 30 >> Grind to level 30
 step
     .goto 1441/1,-2460.41,-5477.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Abeqwa|r
@@ -375,8 +384,6 @@ step
     .turnin 98069 >>Turn in Stolen Freewind Supplies
     .target Jandia
     .isQuestComplete 98069
-step
-    .xp 28 >>Grind to level 28 (Rocket Car Parts needs it)
 step
     .goto 1441/1,-3856.09,-6233.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kravel Koalbeard|r
@@ -692,29 +699,6 @@ step
     .turnin 1107 >>Turn in Encrusted Tail Fins
     .target Wizzle Brassbolts
     .isQuestComplete 1107
-step << Shaman
-    .goto 1441/1,-2463.49,-5483.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
-    .turnin 79366 >>Turn in Heed My Call
-    .target Rau Cliffrunner
-    .isOnQuest 79366
-step << Shaman
-    .goto 1441/1,-2463.49,-5483.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
-    .turnin 79360 >>Turn in Elemental Aid
-    .target Rau Cliffrunner
-    .isQuestComplete 79360
-step
-    .goto 1441/1,-2466.57,-5477.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
-    .turnin 98069 >>Turn in Stolen Freewind Supplies
-    .target Jandia
-    .isQuestComplete 98069
-step
-    .goto 1441/1,-2442.81,-5455.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cliffwatcher Longhorn|r
-    .accept 5361 >>Accept Family Tree
-    .target Cliffwatcher Longhorn
 step
     .goto 1441/1,-3406.85,-5842.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moktar Krin|r
@@ -738,12 +722,12 @@ step
     .complete 1175,1 --Saltstone Basilisk slain (10)
     .mob Saltstone Basilisk
 step
-    #completewith Along8
+    #completewith Along4
     >>As you go: Kill |cRXP_ENEMY_Saltstone Gazers|r. |cRXP_WARN_Anything left is finished later|r
     .complete 1175,3 --Saltstone Gazer slain (6)
     .mob Saltstone Gazer
 step
-    #label Along8
+    #label Along4
     #loop
     .goto 1441/1,-3818.69,-6450.61,0
     .goto 1441/1,-3818.69,-6450.61,40,0
@@ -884,6 +868,29 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trackmaster Zherin|r
     .turnin 1175 >>Turn in A Bump in the Road
     .target Trackmaster Zherin
+step << Shaman
+    .goto 1441/1,-2463.49,-5483.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
+    .turnin 79366 >>Turn in Heed My Call
+    .target Rau Cliffrunner
+    .isOnQuest 79366
+step << Shaman
+    .goto 1441/1,-2463.49,-5483.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
+    .turnin 79360 >>Turn in Elemental Aid
+    .target Rau Cliffrunner
+    .isQuestComplete 79360
+step
+    .goto 1441/1,-2466.57,-5477.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
+    .turnin 98069 >>Turn in Stolen Freewind Supplies
+    .target Jandia
+    .isQuestComplete 98069
+step
+    .goto 1441/1,-2442.81,-5455.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cliffwatcher Longhorn|r
+    .accept 5361 >>Accept Family Tree
+    .target Cliffwatcher Longhorn
 step
     +|cRXP_WARN_End of the Thousand Needles route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Desolace|r: Family Tree

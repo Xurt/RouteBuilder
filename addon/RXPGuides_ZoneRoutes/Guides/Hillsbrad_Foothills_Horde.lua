@@ -303,6 +303,17 @@ step
     .isOnQuest 529
     .subzoneskip 272,1
 step
+    .goto 1424/0,-105.81,-564.48,60,0
+    .goto 1424/0,-86.29,-547.20,60,0
+    .goto 1424/0,-32.85,-551.89,60,0
+    .goto 1424/0,-15.57,-576.00,60,0
+    .goto 1424/0,2.67,-635.52,60,0
+    .goto 1424/0,-40.21,-626.77,60,0
+    .goto 1424/0,-62.61,-608.64,60,0
+    .goto 1424/0,-101.01,-613.12,60,0
+    .goto 1424/0,-105.81,-564.48,60,0
+    .xp 24 >>Grind to level 24
+step
     .goto 1424/0,-957.01,-40.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
     .turnin 506 >>Turn in Blackmoore's Legacy
@@ -560,6 +571,17 @@ step
     .mob Syndicate Rogue
     .mob Syndicate Watchman
 step
+    .goto 1424/0,69.87,-767.57,0
+    .goto 1424/0,116.59,-837.97,15,0
+    .goto 1424/0,165.23,-821.76,15,0
+    .goto 1424/0,219.31,-853.12,15,0
+    .goto 1424/0,190.19,-866.77,15,0
+    .goto 1424/0,187.31,-828.80,15,0
+    .goto 1424/0,168.75,-775.89,15,0
+    .goto 1424/0,160.11,-732.80,15,0
+    .goto 1424/0,69.87,-767.57,15,0
+    .xp 31 >> Grind to 31 in Azurelode Mine. Return to Tarren Mill if you need to restock
+step
     .goto 1424/0,-982.93,-748.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
     .turnin 98095 >>Turn in Valuable Vantages
@@ -683,8 +705,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
     .accept 532 >>Accept Battle of Hillsbrad
     .target High Executor Darthalia
-step
-    .xp 29 >>Grind to level 29 (Infiltration needs it)
 step
     .goto 1424/0,-957.01,-40.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r

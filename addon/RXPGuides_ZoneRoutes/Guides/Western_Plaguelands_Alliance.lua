@@ -125,12 +125,62 @@ step
     .collect 13724,260
     .target Argent Quartermaster Lightspark
 step
+    .goto 1422/0,-1654.21,1845.04,25,0
+    .goto 1422/0,-1580.68,1866.54,25,0
+    .goto 1422/0,-1600.03,1814.94,25,0
+    .goto 1422/0,-1563.91,1758.75,25,0
+    .goto 1422/0,-1511.88,1804.05,25,0
+    .goto 1422/0,-1548.00,1837.87,25,0
+    .goto 1422/0,-1566.92,1865.39,25,0
+    .goto 1422/0,-1569.07,1892.91,25,0
+    .goto 1422/0,-1520.05,1887.75,25,0
+    .goto 1422/0,-1514.89,1851.63,25,0
+    .goto 1422/0,-1544.99,1924.16,25,0
+    .goto 1422/0,-1576.81,1948.24,25,0
+    .goto 1422/0,-1597.02,1942.79,25,0
+    .goto 1422/0,-1603.04,1918.71,25,0
+    .goto 1422/0,-1597.02,1942.79,25,0
+    .goto 1422/0,-1623.25,1953.11,25,0
+    .goto 1422/0,-1637.01,1931.90,25,0
+    .goto 1422/0,-1660.66,1916.13,25,0
+    .goto 1422/0,-1649.48,1888.61,25,0
+    .goto 1422/0,-1654.21,1845.04,25,0
+    .xp 54 >>AoE |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Rotting Cadavers|r, |cRXP_ENEMY_Skeletal Terrors|r, and the |cRXP_ENEMY_Wandering Skeleton|r to Level 54. Loot them for |T132903:0|t[|cRXP_LOOT_Runecloth|r], |T133447:0|t[|cRXP_LOOT_Minion's Scourgestones|r], and |T133724:0|t[|cRXP_LOOT_Bone Fragments|r]
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blighted Zombies|r cast|r |T135914:0|t[Volatile Infection] |cRXP_WARN_(deals 156 nature damage every 15 seconds, causing pushback, dispellable with|r |T135841:0|t[Ice Block]|cRXP_WARN_), and |cRXP_ENEMY_Skeletal Terrors|r cast|r |T136183:0|t[Fear]|cRXP_WARN_, (Fearing you for 4 seconds IF they've been rooted by|r |T135848:0|t[Frost Nova]|cRXP_WARN_. Remember to|r |T135736:0|t[Blink] |cRXP_WARN_out of range of their cast if needed|r
+    >>|cRXP_WARN_Avoid aggroing the |cRXP_ENEMY_Scarlets|r. If you do, run away|r
+step
     .goto 1422/0,-1425.45,966.98
     >>Talk to |cRXP_FRIENDLY_Lightspark|r
     .vendor 10857 >> Vendor Trash. Repair
     >>|cRXP_BUY_Buy some|r |T133989:0|t[Enriched Manna Biscuits] |cRXP_BUY_from him|r
     .collect 13724,260
     .target Argent Quartermaster Lightspark
+step
+    .goto 1422/0,-1654.21,1845.04,25,0
+    .goto 1422/0,-1580.68,1866.54,25,0
+    .goto 1422/0,-1600.03,1814.94,25,0
+    .goto 1422/0,-1563.91,1758.75,25,0
+    .goto 1422/0,-1511.88,1804.05,25,0
+    .goto 1422/0,-1548.00,1837.87,25,0
+    .goto 1422/0,-1566.92,1865.39,25,0
+    .goto 1422/0,-1569.07,1892.91,25,0
+    .goto 1422/0,-1520.05,1887.75,25,0
+    .goto 1422/0,-1514.89,1851.63,25,0
+    .goto 1422/0,-1544.99,1924.16,25,0
+    .goto 1422/0,-1576.81,1948.24,25,0
+    .goto 1422/0,-1597.02,1942.79,25,0
+    .goto 1422/0,-1603.04,1918.71,25,0
+    .goto 1422/0,-1614.65,1936.77,25,0
+    .goto 1422/0,-1603.04,1918.71,25,0
+    .goto 1422/0,-1597.02,1942.79,25,0
+    .goto 1422/0,-1623.25,1953.11,25,0
+    .goto 1422/0,-1637.01,1931.90,25,0
+    .goto 1422/0,-1660.66,1916.13,25,0
+    .goto 1422/0,-1649.48,1888.61,25,0
+    .goto 1422/0,-1654.21,1845.04,25,0
+    .xp 56 >>AoE |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Rotting Cadavers|r, |cRXP_ENEMY_Skeletal Terrors|r, and the |cRXP_ENEMY_Wandering Skeleton|r to Level 56. Loot them for |T132903:0|t[|cRXP_LOOT_Runecloth|r], |T133447:0|t[|cRXP_LOOT_Minion's Scourgestones|r], and |T133724:0|t[|cRXP_LOOT_Bone Fragments|r]
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blighted Zombies|r cast|r |T135914:0|t[Volatile Infection] |cRXP_WARN_(deals 156 nature damage every 15 seconds, causing pushback, dispellable with|r |T135841:0|t[Ice Block]|cRXP_WARN_), and |cRXP_ENEMY_Skeletal Terrors|r cast|r |T136183:0|t[Fear]|cRXP_WARN_, (Fearing you for 4 seconds IF they've been rooted by|r |T135848:0|t[Frost Nova]|cRXP_WARN_. Remember to|r |T135736:0|t[Blink] |cRXP_WARN_out of range of their cast if needed|r
+    >>|cRXP_WARN_Avoid aggroing the |cRXP_ENEMY_Scarlets|r. If you do, run away|r
 step
     .goto 1422/0,-1234.53,1817.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janice Felstone|r
@@ -151,10 +201,65 @@ step
     .target Janice Felstone
     .isOnQuest 5051
 step
+    .goto 1422/0,-1654.21,1845.04,25,0
+    .goto 1422/0,-1580.68,1866.54,25,0
+    .goto 1422/0,-1600.03,1814.94,25,0
+    .goto 1422/0,-1563.91,1758.75,25,0
+    .goto 1422/0,-1511.88,1804.05,25,0
+    .goto 1422/0,-1548.00,1837.87,25,0
+    .goto 1422/0,-1566.92,1865.39,25,0
+    .goto 1422/0,-1569.07,1892.91,25,0
+    .goto 1422/0,-1520.05,1887.75,25,0
+    .goto 1422/0,-1514.89,1851.63,25,0
+    .goto 1422/0,-1544.99,1924.16,25,0
+    .goto 1422/0,-1576.81,1948.24,25,0
+    .goto 1422/0,-1597.02,1942.79,25,0
+    .goto 1422/0,-1603.04,1918.71,25,0
+    .goto 1422/0,-1614.65,1936.77,25,0
+    .goto 1422/0,-1603.04,1918.71,25,0
+    .goto 1422/0,-1597.02,1942.79,25,0
+    .goto 1422/0,-1623.25,1953.11,25,0
+    .goto 1422/0,-1637.01,1931.90,25,0
+    .goto 1422/0,-1660.66,1916.13,25,0
+    .goto 1422/0,-1649.48,1888.61,25,0
+    .goto 1422/0,-1654.21,1845.04,25,0
+    .xp 57 >>AoE |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Rotting Cadavers|r, |cRXP_ENEMY_Skeletal Terrors|r, and the |cRXP_ENEMY_Wandering Skeleton|r to Level 57. Loot them for |T132903:0|t[|cRXP_LOOT_Runecloth|r], |T133447:0|t[|cRXP_LOOT_Minion's Scourgestones|r], and |T133724:0|t[|cRXP_LOOT_Bone Fragments|r]
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blighted Zombies|r cast|r |T135914:0|t[Volatile Infection] |cRXP_WARN_(deals 156 nature damage every 15 seconds, causing pushback, dispellable with|r |T135841:0|t[Ice Block]|cRXP_WARN_), and |cRXP_ENEMY_Skeletal Terrors|r cast|r |T136183:0|t[Fear]|cRXP_WARN_, (Fearing you for 4 seconds IF they've been rooted by|r |T135848:0|t[Frost Nova]|cRXP_WARN_. Remember to|r |T135736:0|t[Blink] |cRXP_WARN_out of range of their cast if needed|r
+    >>|cRXP_WARN_Avoid aggroing the |cRXP_ENEMY_Scarlets|r. If you do, run away|r
+step
+    .goto 1422/0,-1654.21,1845.04,25,0
+    .goto 1422/0,-1580.68,1866.54,25,0
+    .goto 1422/0,-1600.03,1814.94,25,0
+    .goto 1422/0,-1563.91,1758.75,25,0
+    .goto 1422/0,-1511.88,1804.05,25,0
+    .goto 1422/0,-1548.00,1837.87,25,0
+    .goto 1422/0,-1566.92,1865.39,25,0
+    .goto 1422/0,-1569.07,1892.91,25,0
+    .goto 1422/0,-1520.05,1887.75,25,0
+    .goto 1422/0,-1514.89,1851.63,25,0
+    .goto 1422/0,-1544.99,1924.16,25,0
+    .goto 1422/0,-1576.81,1948.24,25,0
+    .goto 1422/0,-1597.02,1942.79,25,0
+    .goto 1422/0,-1603.04,1918.71,25,0
+    .goto 1422/0,-1614.65,1936.77,25,0
+    .goto 1422/0,-1603.04,1918.71,25,0
+    .goto 1422/0,-1597.02,1942.79,25,0
+    .goto 1422/0,-1623.25,1953.11,25,0
+    .goto 1422/0,-1637.01,1931.90,25,0
+    .goto 1422/0,-1660.66,1916.13,25,0
+    .goto 1422/0,-1649.48,1888.61,25,0
+    .goto 1422/0,-1654.21,1845.04,25,0
+    .xp 57+188350 >>AoE |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Rotting Cadavers|r, |cRXP_ENEMY_Skeletal Terrors|r, and the |cRXP_ENEMY_Wandering Skeleton|r to 188350+/195000xp. Loot them for |T132903:0|t[|cRXP_LOOT_Runecloth|r], |T133447:0|t[|cRXP_LOOT_Minion's Scourgestones|r], and |T133724:0|t[|cRXP_LOOT_Bone Fragments|r]
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blighted Zombies|r cast|r |T135914:0|t[Volatile Infection] |cRXP_WARN_(deals 156 nature damage every 15 seconds, causing pushback, dispellable with|r |T135841:0|t[Ice Block]|cRXP_WARN_), and |cRXP_ENEMY_Skeletal Terrors|r cast|r |T136183:0|t[Fear]|cRXP_WARN_, (Fearing you for 4 seconds IF they've been rooted by|r |T135848:0|t[Frost Nova]|cRXP_WARN_. Remember to|r |T135736:0|t[Blink] |cRXP_WARN_out of range of their cast if needed|r
+    >>|cRXP_WARN_Avoid aggroing the |cRXP_ENEMY_Scarlets|r. If you do, run away|r
+step
     .goto 1422/0,-1893.72,1513.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulgris Deepriver|r
     .accept 4984 >>Accept The Wildlife Suffers Too
     .target Mulgris Deepriver
+step
+    .goto 1422/0,-1863.19,1486.13
+    .xp 58 >> Grind to level 58
 step
     .goto 1422/0,-1450.39,934.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathaniel Dumah|r
@@ -266,6 +371,9 @@ step << Human Paladin/Dwarf Paladin
     .turnin 8416 >>Turn in Inert Scourgestones
     .accept 8418 >>Accept Forging the Mightstone
     .target Commander Ashlam Valorfist
+step << Hunter
+    .xp 52-16950 >> Grind until you are 16950 XP away from 52
+    >>If you are not yet close, do one more Cauldron quest to get you where you need to be
 step << Human Paladin/Dwarf Paladin
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
@@ -291,6 +399,32 @@ step
     .isQuestTurnedIn 5904 --any of: A Plague Upon Thee
     .xp <48,1
 step
+    .goto 1422/0,-1654.21,1845.04,25,0
+    .goto 1422/0,-1580.68,1866.54,25,0
+    .goto 1422/0,-1600.03,1814.94,25,0
+    .goto 1422/0,-1563.91,1758.75,25,0
+    .goto 1422/0,-1511.88,1804.05,25,0
+    .goto 1422/0,-1548.00,1837.87,25,0
+    .goto 1422/0,-1566.92,1865.39,25,0
+    .goto 1422/0,-1569.07,1892.91,25,0
+    .goto 1422/0,-1520.05,1887.75,25,0
+    .goto 1422/0,-1514.89,1851.63,25,0
+    .goto 1422/0,-1544.99,1924.16,25,0
+    .goto 1422/0,-1576.81,1948.24,25,0
+    .goto 1422/0,-1597.02,1942.79,25,0
+    .goto 1422/0,-1603.04,1918.71,25,0
+    .goto 1422/0,-1614.65,1936.77,25,0
+    .goto 1422/0,-1603.04,1918.71,25,0
+    .goto 1422/0,-1597.02,1942.79,25,0
+    .goto 1422/0,-1623.25,1953.11,25,0
+    .goto 1422/0,-1637.01,1931.90,25,0
+    .goto 1422/0,-1660.66,1916.13,25,0
+    .goto 1422/0,-1649.48,1888.61,25,0
+    .goto 1422/0,-1654.21,1845.04,25,0
+    .xp 59+132800 >>AoE |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Rotting Cadavers|r, |cRXP_ENEMY_Skeletal Terrors|r, and the |cRXP_ENEMY_Wandering Skeleton|r to 132800+/209800xp. Loot them for |T132903:0|t[|cRXP_LOOT_Runecloth|r] and |T133447:0|t[|cRXP_LOOT_Minion's Scourgestones|r]
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blighted Zombies|r cast|r |T135914:0|t[Volatile Infection] |cRXP_WARN_(deals 156 nature damage every 15 seconds, causing pushback, dispellable with|r |T135841:0|t[Ice Block]|cRXP_WARN_), and |cRXP_ENEMY_Skeletal Terrors|r cast|r |T136183:0|t[Fear]|cRXP_WARN_, (Fearing you for 4 seconds IF they've been rooted by|r |T135848:0|t[Frost Nova]|cRXP_WARN_. Remember to|r |T135736:0|t[Blink] |cRXP_WARN_out of range of their cast if needed|r
+    >>|cRXP_WARN_Avoid aggroing the |cRXP_ENEMY_Scarlets|r. If you do, run away|r
+step
     .goto 1422/0,-1425.45,966.98
     >>Talk to |cRXP_FRIENDLY_Lightspark|r
     .vendor 10857 >> Vendor Trash (and all your food if you aren't playing this character at 60). Repair
@@ -301,6 +435,32 @@ step
     .turnin 6389 >>Turn in A Plague Upon Thee
     .target Nathaniel Dumah
     .isOnQuest 6389
+step
+    .goto 1422/0,-1654.21,1845.04,25,0
+    .goto 1422/0,-1580.68,1866.54,25,0
+    .goto 1422/0,-1600.03,1814.94,25,0
+    .goto 1422/0,-1563.91,1758.75,25,0
+    .goto 1422/0,-1511.88,1804.05,25,0
+    .goto 1422/0,-1548.00,1837.87,25,0
+    .goto 1422/0,-1566.92,1865.39,25,0
+    .goto 1422/0,-1569.07,1892.91,25,0
+    .goto 1422/0,-1520.05,1887.75,25,0
+    .goto 1422/0,-1514.89,1851.63,25,0
+    .goto 1422/0,-1544.99,1924.16,25,0
+    .goto 1422/0,-1576.81,1948.24,25,0
+    .goto 1422/0,-1597.02,1942.79,25,0
+    .goto 1422/0,-1603.04,1918.71,25,0
+    .goto 1422/0,-1614.65,1936.77,25,0
+    .goto 1422/0,-1603.04,1918.71,25,0
+    .goto 1422/0,-1597.02,1942.79,25,0
+    .goto 1422/0,-1623.25,1953.11,25,0
+    .goto 1422/0,-1637.01,1931.90,25,0
+    .goto 1422/0,-1660.66,1916.13,25,0
+    .goto 1422/0,-1649.48,1888.61,25,0
+    .goto 1422/0,-1654.21,1845.04,25,0
+    .xp 60 >>AoE |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Rotting Cadavers|r, |cRXP_ENEMY_Skeletal Terrors|r, and the |cRXP_ENEMY_Wandering Skeleton|r to Level 60
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blighted Zombies|r cast|r |T135914:0|t[Volatile Infection] |cRXP_WARN_(deals 156 nature damage every 15 seconds, causing pushback, dispellable with|r |T135841:0|t[Ice Block]|cRXP_WARN_), and |cRXP_ENEMY_Skeletal Terrors|r cast|r |T136183:0|t[Fear]|cRXP_WARN_, (Fearing you for 4 seconds IF they've been rooted by|r |T135848:0|t[Frost Nova]|cRXP_WARN_. Remember to|r |T135736:0|t[Blink] |cRXP_WARN_out of range of their cast if needed|r
+    >>|cRXP_WARN_Avoid aggroing the |cRXP_ENEMY_Scarlets|r. If you do, run away|r
 step
     .goto 1422/0,-1431.04,971.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Officer Pureheart|r
@@ -403,12 +563,6 @@ step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .turnin 5097 >>Turn in All Along the Watchtowers
-    .target Commander Ashlam Valorfist
-step
-    .xp 55 >>Grind to level 55 (Scholomance needs it)
-step
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .accept 5533 >>Accept Scholomance
     .target Commander Ashlam Valorfist
 step
@@ -483,6 +637,12 @@ step
     .goto 1422/0,-1417.71,965.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .turnin 5537 >>Turn in Skeletal Fragments
+    .target Alchemist Arbington
+step
+    .xp 55 >>Grind to level 55 (Mold Rhymes With... needs it)
+step
+    .goto 1422/0,-1417.71,965.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .accept 5538 >>Accept Mold Rhymes With...
     .target Alchemist Arbington
 step

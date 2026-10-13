@@ -56,8 +56,6 @@ step
     .target Innkeeper Belm
     .home >>Set your Hearthstone to Innkeeper Belm's inn
 step
-    .xp 9 >>Grind to level 9 (A Visitor to Dun Morogh needs it)
-step
     .goto 1426/0,-682.09,-5488.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill|r
     .accept 96408 >>Accept A Visitor to Dun Morogh
@@ -128,8 +126,6 @@ step
     .goto 1455/0,-928.40,-4614.46
     .trainer >> Train your class spells
 step
-    .xp 6 >>Grind to level 6 (Protecting the Herd needs it)
-step
     .goto 1426/0,-1304.61,-5513.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
     .accept 314 >>Accept Protecting the Herd
@@ -157,8 +153,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .accept 433 >>Accept The Public Servant
     .target Senator Mehr Stonehallow
-step
-    .xp 5 >>Grind to level 5 (Those Blasted Troggs! needs it)
 step
     .goto 1426/0,-1600.11,-5726.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r
@@ -286,8 +280,6 @@ step
     .target Quarrymaster Thesten
     .isOnQuest 95214
 step
-    .xp 8 >>Grind to level 8 (The Lost Pilot needs it)
-step
     .goto 1426/0,-2329.50,-5163.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .accept 419 >>Accept The Lost Pilot
@@ -373,6 +365,18 @@ step
     .mob Ragged Timber Wolf
     .mob Ragged Young Wolf
 step
+    .goto 1426,29.529,73.286,0
+    .goto 1426,28.117,75.088,0
+    .goto 1426,28.557,72.487,0
+    .goto 1426,29.529,73.286,60,0
+    .goto 1426,29.054,74.608,60,0
+    .goto 1426,28.558,75.781,60,0
+    .goto 1426,28.117,75.088,60,0
+    .goto 1426,27.562,74.331,60,0
+    .goto 1426,27.793,73.123,60,0
+    .goto 1426,28.557,72.487,60,0
+    .xp 2 >> Grind to level 2
+step
     .goto 1426/0,328.03,-6214.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
     .turnin 179 >>Turn in Dwarven Outfitters
@@ -451,12 +455,29 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
     .turnin 183 >>Turn in The Boar Hunter
     .target Talin Keeneye
+step << Paladin/Warlock/Shaman
+    .goto 1426,23.595,72.462,0
+    .goto 1426,26.117,74.469,0
+    .goto 1426,26.832,74.649,0
+    .goto 1426,26.884,72.733,0
+    .goto 1426,23.595,72.462,50,0
+    .goto 1426,24.290,73.406,50,0
+    .goto 1426,24.642,74.138,50,0
+    .goto 1426,26.117,74.469,50,0
+    .goto 1426,26.832,74.649,50,0
+    .goto 1426,26.884,72.733,50,0
+    .xp 3+1130 >> Grind to 1130+/1400xp
 step
     .goto 1426/0,566.89,-6362.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
     .turnin 234 >>Turn in Coldridge Valley Mail Delivery
     .accept 182 >>Accept The Troll Cave
     .target Grelin Whitebeard
+step << Hunter
+    .goto 1426,25.861,78.197,0
+    .goto 1426,23.716,80.257,0
+    .goto 1426,20.671,75.838,0
+    .xp 4 >> Grind to level 4
 step
     .goto 1426/0,571.82,-6371.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
@@ -644,6 +665,8 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm|r
     .turnin 94375 >>Turn in Call of Earth
     .target Teo Hammerstorm
+step << Dwarf Priest/Gnome Priest
+    .xp 4+1690 >> Grind to 1690+/2100xp
 step
     .goto 1426/0,382.21,-6084.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r
@@ -712,6 +735,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hands Springsprocket|r
     .accept 2160 >>Accept Supplies to Tannok
     .target Hands Springsprocket
+step
+    .goto 1426,43.316,56.283,60,0
+    .goto 1426,43.949,52.524,60,0
+    .goto 1426,38.677,60.561,60,0
+    .goto 1426/0,-499.17,-5644.37
+    .xp 5+1325 >> Travel to Kharanos. Grind to 1325+/2800xp killing |cRXP_ENEMY_Crag Boars|r en-route << Priest
+    .xp 5+1595 >> Travel to Kharanos. Grind to 1595+/2800xp killing |cRXP_ENEMY_Crag Boars|r en-route << !Priest
 step
     #completewith next
     .hs >>Hearth to Innkeeper Belm's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -1029,6 +1059,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tognus Flintfire|r
     .turnin 98321 >>Turn in Flintfire's Shipment
     .target Tognus Flintfire
+step
+    .xp 7 >> Grind to 7
 step << Dwarf Hunter
     .goto 1426/0,-454.06,-5618.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
@@ -1328,6 +1360,22 @@ step
     .complete 412,1 --Restabilization Cog (8)
     .mob Leper Gnome
     .mob Gibblewilt
+step << Hunter
+    .xp 10-1720 >> Grind until you are 1720xp away from level 10
+step << Hunter
+    .xp 10-2040 >> Grind until you are 2040xp away from level 10
+step << !Hunter
+    .goto 1426,31.212,39.189,0
+    .goto 1426,27.876,45.549,0
+    .goto 1426,29.443,50.102,0
+    .goto 1426,31.691,46.837,0
+    .xp 8+4525 >> Grind to 4525+/5400xp
+step << !Hunter
+    .goto 1426,31.212,39.189,0
+    .goto 1426,27.876,45.549,0
+    .goto 1426,29.443,50.102,0
+    .goto 1426,31.691,46.837,0
+    .xp 9 >> Grind to level 9
 step
     #completewith next
     .hs >>Hearth to Innkeeper Belm's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -1349,6 +1397,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
     .turnin 412 >>Turn in Operation Recombobulation
     .target Razzle Sprysprocket
+step << Hunter
+    .xp 10 >> Grind to level 10
 step << Warrior
     .xp 10 >>Grind to level 10 (Muren Stormpike needs it)
 step << Warrior
@@ -1950,6 +2000,28 @@ step
     .goto 1426/0,-664.55,-5499.710
     .target +Loslor Rudge
 step
+    .goto 1426/0,-744.14,-5507.59,40,0
+    .goto 1426/0,-713.61,-5598.21,40,0
+    .goto 1426/0,-730.84,-5624.15,40,0
+    .goto 1426/0,-663.37,-5573.25,40,0
+    .goto 1426/0,-638.75,-5545.67,40,0
+    .goto 1426/0,-567.83,-5489.200,40,0
+    .goto 1426/0,-572.26,-5417.95,40,0
+    .goto 1426/0,-437.81,-5520.06,40,0
+    .goto 1426/0,-368.36,-5600.830,40,0
+    .goto 1426/0,-349.65,-5702.29,40,0
+    .goto 1426/0,-304.83,-5743.99,40,0
+    .goto 1426/0,-387.08,-5825.09,40,0
+    .goto 1426/0,-478.68,-5907.83,40,0
+    .goto 1426/0,-476.22,-5830.34,40,0
+    .goto 1426/0,-565.86,-5815.89,40,0
+    .goto 1426/0,-630.87,-5813.27,40,0
+    .goto 1426/0,-576.69,-5743.99,40,0
+    .goto 1426/0,-615.60,-5674.38,40,0
+    .goto 1426/0,-641.21,-5660.59,40,0
+    .goto 1426/0,-730.84,-5624.15,40,0
+    .xp 5+2690 >> Grind to 2690+/2800xp
+step
     .goto 1426/0,-537.29,-5587.04
     >>Talk to |cRXP_FRIENDLY_Magis|r upstairs
     .trainer >> Train your class spells (Fireball R2, Fire Blast)
@@ -1992,6 +2064,15 @@ step
     >>Talk to |cRXP_FRIENDLY_Dank|r
     .train 2575 >> Train |T136248:0|t[Mining]
     .target Dank Drizzlecut
+step
+    .goto 1426/0,-2075.37,-5511.20
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Scarred Crag Boars|r and |cRXP_ENEMY_Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range), and |cRXP_ENEMY_Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cRXP_WARN_(Melee Instant: Deals an additional 4 melee damage)|r
+    .xp 9+5450 >> Grind to 5450+/6500xp
+step
+    .goto 1426/0,-2469.86,-5504.96,40,0
+    .goto 1426/0,-2451.15,-5432.07
+    .xp 9+6320 >> Grind to 6320+/6500xp
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Scarred Crag Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range)|r
 step
     .goto 1455/0,-1121.08,-4708.000
     >>Talk to |cRXP_FRIENDLY_Golnir|r

@@ -64,6 +64,14 @@ step
     .complete 8460,3 --Deadwood Gardener slain (6)
     .mob Deadwood Pathfinder
     .mob Deadwood Gardener
+step << !Warrior !Hunter !Rogue !Druid !Shaman
+    .goto 1448/1,-1129.83,3518.50,50,0
+    .goto 1448/1,-1049.33,3614.33,50,0
+    .goto 1448/1,-1037.83,3668.00,50,0
+    .goto 1448/1,-1037.83,3737.00,50,0
+    .goto 1448/1,-1152.83,3706.33,50,0
+    .goto 1448/1,-1187.33,3622.00,50,0
+    .xp 53+95000 >> Grind to level 53 130000+/167100
 step
     .goto 1448/1,-1286.81,3874.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grazle|r

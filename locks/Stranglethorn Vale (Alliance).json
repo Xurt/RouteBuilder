@@ -1,7 +1,8 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "1-50 Stranglethorn Vale",
-  "saved": "2026-10-13 08:12",
+  "saved": "2026-10-13 09:00",
+  "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
@@ -76,6 +77,9 @@
         "turnin:328 @1434:-945.54,-11490.36  TurnIn The Hidden Key",
         "accept:329 @1434:-945.54,-11490.36  Accept The Spy Revealed!",
         "obj:189:1 @1434:569.37,-11637.98  Objective Bloodscalp Ears / Bloodscalp Ear (15)",
+        {"lines":[".goto 1434/0,592.34,-11566.94",".xp 38-26000 >>Grind until you are 26k xp away from level 38"],"from":"RestedXP: 36-38 Stranglethorn Vale II"},
+        {"lines":[".goto 1434/0,592.34,-11566.94",".xp 37+53000 >>Grind until you are 53000/76100 xp into level 37"],"from":"RestedXP: 36-38 Stranglethorn Vale II"},
+        {"lines":[".goto 1434/0,592.34,-11566.94",".xp 37+57500 >>Grind until you are 57500/76100 xp into level 37"],"from":"RestedXP: 36-38 Stranglethorn Vale II"},
         "turnin:329 @1434:-206.59,-11296.8  TurnIn The Spy Revealed!",
         "accept:330 @1434:-206.59,-11296.8  Accept Patrol Schedules",
         "turnin:330 @1434:-182.35,-11312.97  TurnIn Patrol Schedules",
@@ -84,6 +88,7 @@
         "turnin:189 @1434:497.9,-14449.99  TurnIn Bloodscalp Ears",
         "home @1434:211.38,-12434.36  Home inn",
         "accept:1116 @1434:501.09,-14453.39  Accept Dream Dust in the Swamp",
+        {"lines":[".xp 38 >> Make sure you are level 38 before starting the next segment"],"from":"RestedXP: 36-38 Stranglethorn Vale II"},
         "accept:1117 @1434:501.09,-14453.39  Accept Rumors for Kravel",
         "accept:338 @1434:-54.72,-11616.71  Accept The Green Hills of Stranglethorn"
       ]

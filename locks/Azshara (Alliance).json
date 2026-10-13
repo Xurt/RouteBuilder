@@ -1,7 +1,8 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "47-57 Azshara",
-  "saved": "2026-10-13 08:13",
+  "saved": "2026-10-13 09:01",
+  "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
@@ -42,7 +43,9 @@
         "turnin:3601 @1447:-5987.44,4603.88  TurnIn Kim'jael Indeed!",
         "accept:5534 @1447:-5987.44,4603.88  Accept Kim'jael's \"Missing\" Equipment",
         "obj:5534:1 @1447:-5685.22,3551.97  Objective Kim'jael's \"Missing\" Equipment / Some Rune (1)",
-        "turnin:5534 @1447:-5987.44,4603.88  TurnIn Kim'jael's \"Missing\" Equipment"
+        "turnin:5534 @1447:-5987.44,4603.88  TurnIn Kim'jael's \"Missing\" Equipment",
+        {"lines":[".goto 1447/1,-6144.64,4382.74",".xp 53.5 >> Grind |cRXP_ENEMY_Blood Elves|r until you are 50% into level 53"],"from":"RestedXP: 53-53 Azshara"},
+        {"lines":[".goto 1447/1,-6144.64,4382.74",".xp 54+20000 >> Grind |cRXP_ENEMY_Blood Elves|r until you are 20,000XP into level 54"],"from":"RestedXP: 53-53 Azshara"}
       ]
     },
     {

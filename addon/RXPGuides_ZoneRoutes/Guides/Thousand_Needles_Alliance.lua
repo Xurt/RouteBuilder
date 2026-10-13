@@ -129,12 +129,6 @@ step
     .goto 1441/1,-3856.09,-6233.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kravel Koalbeard|r
     .turnin 1110 >>Turn in Rocket Car Parts
-    .target Kravel Koalbeard
-step
-    .xp 30 >>Grind to level 30 (Wharfmaster Dizzywig needs it)
-step
-    .goto 1441/1,-3856.09,-6233.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kravel Koalbeard|r
     .accept 1111 >>Accept Wharfmaster Dizzywig
     .accept 5762 >>Accept Hemet Nesingwary
     .target Kravel Koalbeard

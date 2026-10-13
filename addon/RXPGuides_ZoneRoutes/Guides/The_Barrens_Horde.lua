@@ -92,8 +92,6 @@ step << Rogue
     .target Hula'mahi
     .subzoneskip 380,1
 step << Tauren
-    .xp 9 >>Grind to level 9 (Journey to the Crossroads needs it)
-step << Tauren
     .goto 1413/1,-1924.92,-2347.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirge Sternhorn|r
     .accept 854 >>Accept Journey to the Crossroads
@@ -140,8 +138,6 @@ step << Shaman
     .turnin 2983 >>Turn in Call of Fire
     .target Kranal Fiss
     .isOnQuest 2983
-step << Shaman
-    .xp 10 >>Grind to level 10 (Call of Fire needs it)
 step << Shaman
     .goto 1413/1,-3054.79,268.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
@@ -209,27 +205,17 @@ step
     .hs >>Hearth to Innkeeper Boorand Plainswind's inn. |cRXP_WARN_Walk instead if you are already nearby|r
     .cooldown item,6948,>0,1
 step
-    .xp 10 >>Grind to level 10 (Plainstrider Menace needs it)
-step
     .goto 1413/1,-2669.72,-482.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra Darkthorn|r
     .accept 844 >>Accept Plainstrider Menace
     .target Sergra Darkthorn
-step << Tauren
-    .goto 1413/1,-2595.75,-473.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
-    .turnin 854 >>Turn in Journey to the Crossroads
-    .target Thork
-step
-    .xp 9 >>Grind to level 9 (Disrupt the Attacks needs it)
 step
     .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
+    .turnin 854 >>Turn in Journey to the Crossroads << Tauren
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
     .target Thork
-step
-    .xp 12 >>Grind to level 12 (Harpy Raiders needs it)
 step
     .goto 1413/1,-2607.91,-475.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok Swiftdagger|r
@@ -241,8 +227,6 @@ step
     .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
     .target Apothecary Helbrim
-step << Tauren
-    .xp 10 >>Grind to level 10 (A Bundle of Hides needs it)
 step << Tauren
     .goto 1413/1,-2566.36,-350.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jahan Hawkwing|r
@@ -259,8 +243,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
     .accept 869 >>Accept Raptor Thieves
     .target Gazrog
-step << Orc/Troll
-    .xp 10 >>Grind to level 10 (Meats to Orgrimmar needs it)
 step << Orc/Troll
     .goto 1413/1,-2709.24,-403.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
@@ -283,8 +265,6 @@ step << Warrior
     .turnin 1505 >>Turn in Veteran Uzzek
     .target Uzzek
     .isOnQuest 1505
-step << Warrior
-    .xp 10 >>Grind to level 10 (Path of Defense needs it)
 step << Warrior
     .goto 1413/1,-3596.92,185.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
@@ -471,8 +451,6 @@ step
     .accept 894 >>Accept Samophlange
     .target Sputtervalve
 step
-    .xp 11 >>Grind to level 11 (WANTED: Baron Longshore needs it)
-step
     .goto 1413/1,-3719.54,-919.07
     >>Click the |cRXP_PICK_WANTED|r
     .accept 895 >>Accept WANTED: Baron Longshore
@@ -520,12 +498,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wharfmaster Dizzywig|r
     .turnin 1492 >>Turn in Wharfmaster Dizzywig
     .turnin 890 >>Turn in The Missing Shipment
-    .target Wharfmaster Dizzywig
-step
-    .xp 13 >>Grind to level 13 (Miner's Fortune needs it)
-step
-    .goto 1413/1,-3796.55,-985.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wharfmaster Dizzywig|r
     .accept 892 >>Accept The Missing Shipment
     .accept 896 >>Accept Miner's Fortune
     .target Wharfmaster Dizzywig
@@ -610,8 +582,6 @@ step
     .mob Witchwing Roguefeather
     .mob Witchwing Slayer
     .mob Witchwing Ambusher
-step
-    .xp 14 >>Grind to level 14 (Bruised Pride and Lion Hides needs it)
 step
     .goto 1413/1,-1815.48,787.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang Wildgore|r
@@ -746,6 +716,10 @@ step
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
 step
+    .goto 1413/1,-3102.42,1105.78
+    >>Grinding to level 16 here is important, due to the next 3 quests being quite hard
+    .xp 16
+step
     #loop
     .goto 1413/1,-3577.67,1240.91,0
     .goto 1413/1,-3577.67,1240.91,40,0
@@ -853,8 +827,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wharfmaster Dizzywig|r
     .turnin 896 >>Turn in Miner's Fortune
     .target Wharfmaster Dizzywig
-step
-    .xp 15 >>Grind to level 15 (Deepmoss Spider Eggs needs it)
 step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
@@ -1209,6 +1181,27 @@ step
     .mob Bristleback Water Seeker
     .mob Bristleback Thornweaver
     .mob Bristleback Geomancer
+step << Warlock/Shaman
+    .goto 1413/1,-2515.7,-2076.41,60,0
+    .goto 1413/1,-2518.74,-2125.73,60,0
+    .goto 1413/1,-2517.72,-2223.7,60,0
+    .goto 1413/1,-2486.31,-2254.1,60,0
+    .goto 1413/1,-2494.42,-2282.48,60,0
+    .goto 1413/1,-2531.91,-2272.34,60,0
+    .goto 1413/1,-2571.43,-2295.31,60,0
+    .goto 1413/1,-2620.07,-2285.18,60,0
+    .goto 1413/1,-2625.14,-2245.32,60,0
+    .goto 1413/1,-2755.86,-2082.49,60,0
+    .goto 1413/1,-2813.62,-2054.12,60,0
+    .goto 1413/1,-2811.59,-2004.12,60,0
+    .goto 1413/1,-2783.22,-1949.39,60,0
+    .goto 1413/1,-2747.75,-1889.26,60,0
+    .goto 1413/1,-2709.24,-1913.59,60,0
+    .goto 1413/1,-2706.2,-1948.72,60,0
+    .goto 1413/1,-2687.96,-1973.04,60,0
+    .goto 1413/1,-2678.84,-2016.28,60,0
+    .goto 1413/1,-2584.6,-2050.74,60,0
+    .xp 19+9500 >> Grind to 9500+/21300 xp
 step
     #loop
     .goto 1413/1,-2463.00,-1541.32,0
@@ -1330,6 +1323,12 @@ step
     .goto 1413/1,-2253.24,1246.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
     .turnin 3513 >>Turn in The Runed Scroll
+    .target Kadrak
+step
+    .xp 15 >>Grind to level 15 (Horde Presence needs it)
+step
+    .goto 1413/1,-2253.24,1246.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
     .accept 3514 >>Accept Horde Presence
     .target Kadrak
 step
@@ -2316,12 +2315,6 @@ step
     .turnin 91901 >>Turn in A Sealed Crate
     .target Dokimi
     .isOnQuest 91901
-step << Warlock
-    .goto 1413/1,-2373.83,-2252.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r
-    .turnin 1740 >>Turn in The Orb of Soran'ruk
-    .target Doan Karhan
-    .isQuestComplete 1740
 step
     .goto 1413/1,-1891.48,-2391.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
@@ -2450,19 +2443,6 @@ step
     .turnin 849 >>Turn in Revenge of Gann
     .unitscan Gann Stonespire
 step
-    .xp 25 >>Grind to level 25 (A New Ore Sample needs it)
-step
-    .goto 1413/1,-1947.22,-2284.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack Steelforge|r
-    .accept 1153 >>Accept A New Ore Sample
-    .target Tatternack Steelforge
-step
-    .goto 1413/1,-1947.22,-2284.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack Steelforge|r
-    .turnin 1153 >>Turn in A New Ore Sample
-    .target Tatternack Steelforge
-    .isQuestComplete 1153
-step
     .goto 1413/1,-1891.48,-2391.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     .turnin 879 >>Turn in Betrayal from Within
@@ -2497,18 +2477,23 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mahren Skyseer|r
     .turnin 873 >>Turn in Isha Awak
     .target Mahren Skyseer
+step << Warlock
+    .goto 1413/1,-2373.83,-2252.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r
+    .turnin 1740 >>Turn in The Orb of Soran'ruk
+    .target Doan Karhan
+    .isQuestComplete 1740
 step
-    .goto 1413/1,-2253.24,1246.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
-    .turnin 6543 >>Turn in The Warsong Reports
-    .target Kadrak
-    .isQuestComplete 6543
+    .goto 1413/1,-1947.22,-2284.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack Steelforge|r
+    .accept 1153 >>Accept A New Ore Sample
+    .target Tatternack Steelforge
 step
-    .goto 1413/1,-2253.24,1246.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
-    .turnin 3514 >>Turn in Horde Presence
-    .target Kadrak
-    .isQuestComplete 3514
+    .goto 1413/1,-1947.22,-2284.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack Steelforge|r
+    .turnin 1153 >>Turn in A New Ore Sample
+    .target Tatternack Steelforge
+    .isQuestComplete 1153
 step << Warrior
     .goto 1413/1,-3596.92,185.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
@@ -2521,6 +2506,18 @@ step
     .turnin 95508 >>Turn in Unwelcome Guests
     .target Walton
     .isOnQuest 95508
+step
+    .goto 1413/1,-2253.24,1246.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
+    .turnin 3514 >>Turn in Horde Presence
+    .target Kadrak
+    .isQuestComplete 3514
+step
+    .goto 1413/1,-2253.24,1246.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
+    .turnin 6543 >>Turn in The Warsong Reports
+    .target Kadrak
+    .isQuestComplete 6543
 step
     .goto 1413/1,-1971.54,-306.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar Deathgate|r

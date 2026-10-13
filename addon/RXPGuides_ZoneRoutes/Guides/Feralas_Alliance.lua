@@ -282,6 +282,9 @@ step << Hunter
     .vendor >>|cRXP_BUY_Buy Ammo for the next segment|r
     .target Faralorn
 step
+    .goto 1444/1,3524.86,-5564.59
+    .xp 45+87500 >> Do loops around the cave, grinding |cRXP_ENEMY_Nagas|r to level 45+87500xp
+step
     #completewith Drop2766x3
     >>|cRXP_LOOT_OOX-22/FE Distress Beacon|r can drop from |cRXP_ENEMY_Gordunni Ogre|r, |cRXP_ENEMY_Gordunni Brute|r, |cRXP_ENEMY_Gordunni Mauler|r. Use it to start the quest if you get one
     .collect 8705,1,2766 --OOX-22/FE Distress Beacon (1)
@@ -311,6 +314,15 @@ step
     .goto 1444/1,1723.42,-4936.78
     >>Kill |cRXP_ENEMY_Feral Scar Yetis|r, |cRXP_ENEMY_Enraged Feral Scars|r and |cRXP_ENEMY_Hulking Feral Scars|r. Loot them for their |cRXP_LOOT_Thick Yeti Hides|r
     .train 415428,3 << Hunter sod
+step
+    .goto 1444/1,3621.46,-5494.63
+    .xp 47 >> Head back to the |cRXP_ENEMY_Naga|r cave and grind to level 47
+step
+    .goto 1444/1,3621.46,-5494.63
+    .xp 48 >> Head back to the |cRXP_ENEMY_Naga|r cave and grind to level 48
+step
+    .goto 1444/1,3621.46,-5494.63
+    .xp 48.5 >> Head back to the |cRXP_ENEMY_Naga|r cave and grind to level 48 + 50%
 step
     .goto 1444/1,1733.84,-4947.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homing Robot OOX-22/FE|r

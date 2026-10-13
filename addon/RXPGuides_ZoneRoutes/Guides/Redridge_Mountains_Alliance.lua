@@ -14,6 +14,22 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 14-26 Redridge Mountains
 
+step << !Warlock
+    .goto 1433/0,-2234.900,-9435.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
+    .target Ariena Stormfeather
+step
+    .goto 1433/0,-2243.06,-9259.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+    .accept 1097 >>Accept Elmore's Task
+    .target Verner Osgood
+step
+    .goto 1433/0,-2221.79,-9218.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
+    .turnin 146 >>Turn in Messenger to Darkshire
+    .target Magistrate Solomon
+    .isOnQuest 146
 step << Warrior
     .goto 1433/0,-2147.76,-9222.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorus Barleybrew|r
@@ -38,10 +54,11 @@ step
     .accept 246 >>Accept Assessing the Threat
     .accept 98407 >>Accept Show of Force
     .target Deputy Feldon
-step << !Warlock
+step << Warlock
     .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
+    .fly Stormwind >> Fly to Stormwind
     .target Ariena Stormfeather
 step << NightElf
     .goto 1433/0,-2234.900,-9435.300
@@ -49,25 +66,10 @@ step << NightElf
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .target Ariena Stormfeather
 step
-    .goto 1433/0,-2221.79,-9218.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
-    .turnin 146 >>Turn in Messenger to Darkshire
-    .target Magistrate Solomon
-    .isOnQuest 146
-step
-    .xp 14 >>Grind to level 14 (The Price of Shoes needs it)
-step
     .goto 1433/0,-2243.06,-9259.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
-    .accept 1097 >>Accept Elmore's Task
     .accept 118 >>Accept The Price of Shoes
     .target Verner Osgood
-step << Warlock
-    .goto 1433/0,-2234.900,-9435.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
-    .fp Redridge Mountains >> Get the Redridge Mountains flight path
-    .fly Stormwind >> Fly to Stormwind
-    .target Ariena Stormfeather
 step
     .goto 1433/0,-2221.79,-9218.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
@@ -150,6 +152,10 @@ step
     .complete 98407,1 --Spiked Collar (5)
     .mob Redridge Thrasher
 step
+    .goto 1433/0,-2634.54,-9588.54
+    .xp 20-7687 >> Grind until you are 7687 xp away from level 20 << !Rogue
+    .xp 20-10012 >> Grind until you are 10012 xp away from level 20 << Rogue
+step
     .goto 1433/0,-2045.30,-9245.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
     .turnin 130 >>Turn in Visit the Herbalist
@@ -166,6 +172,9 @@ step
     .turnin 246 >>Turn in Assessing the Threat
     .turnin 98407 >>Turn in Show of Force
     .target Deputy Feldon
+step
+    .goto 1433/0,-2634.54,-9588.54
+    .xp 20 >> Grind until you are level 20
 step
     .goto 1433/0,-2243.06,-9259.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
@@ -205,6 +214,28 @@ step
     .vendor >> Vendor Trash
     .target Dorin Songblade
     .isOnQuest 89
+step
+    .goto 1433/0,-1982.21,-8929.740,20,0
+    .goto 1433/0,-2040.17,-8918.45,20,0
+    .goto 1433/0,-2046.03,-8793.06,20,0
+    .goto 1433/0,-2009.56,-8766.85,20,0
+    .goto 1433/0,-1979.38,-8792.62,20,0
+    .goto 1433/0,-1919.47,-8822.30,20,0
+    .goto 1433/0,-1950.29,-8858.07,20,0
+    .goto 1433/0,-1919.25,-8879.64,20,0
+    .goto 1433/0,-1982.21,-8929.740,20,0
+    .xp 21+14365 >> Grind to 14365+/25200xp
+step
+    .goto 1433/0,-1982.21,-8929.740,20,0
+    .goto 1433/0,-2040.17,-8918.45,20,0
+    .goto 1433/0,-2046.03,-8793.06,20,0
+    .goto 1433/0,-2009.56,-8766.85,20,0
+    .goto 1433/0,-1979.38,-8792.62,20,0
+    .goto 1433/0,-1919.47,-8822.30,20,0
+    .goto 1433/0,-1950.29,-8858.07,20,0
+    .goto 1433/0,-1919.25,-8879.64,20,0
+    .goto 1433/0,-1982.21,-8929.740,20,0
+    .xp 21+15715 >> Grind to 15715+/25200xp
 step
     .goto 1433/0,-2158.69,-9234.38,0,0
     .vendor >> Vendor Trash. You can sell the |T134708:0|t[Mining Pick] now if you wish
@@ -543,8 +574,6 @@ step
     .turnin 20 >>Turn in Blackrock Menace
     .target Marshal Marris
 step
-    .xp 20 >>Grind to level 20 (Murloc Poachers needs it)
-step
     .goto 1433/0,-2172.51,-9261.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
     .accept 150 >>Accept Murloc Poachers
@@ -619,6 +648,13 @@ step
     .accept 248 >>Accept Looking Further
     .isQuestTurnedIn 94 --any of: A Watchful Eye
     .xp <20,1
+step
+    .goto 1433/0,-3320.01,-9176.90,60,0
+    .goto 1433/0,-3419.87,-9106.10,60,0
+    .goto 1433/0,-3432.90,-9245.10,60,0
+    .goto 1433/0,-3366.25,-9187.18,60,0
+    .goto 1433/0,-3364.08,-9100.74
+    .xp 28-8910
 step
     #loop
     .goto 1433/0,-3084.91,-9356.59,0

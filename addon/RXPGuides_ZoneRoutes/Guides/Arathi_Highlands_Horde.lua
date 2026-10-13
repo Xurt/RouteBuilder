@@ -164,6 +164,15 @@ step
     .mob Syndicate Pathstalker
     .mob Syndicate Mercenary
 step
+    .goto 1417/0,-2093.19,-813.73,50,0
+    .goto 1417/0,-2067.63,-767.17,50,0
+    .goto 1417/0,-2011.11,-768.61,50,0
+    .goto 1417/0,-1976.55,-793.09,50,0
+    .goto 1417/0,-1983.03,-843.25,50,0
+    .goto 1417/0,-2030.19,-874.21,50,0
+    .goto 1417/0,-2067.63,-870.61,50,0
+    .xp 32>> Grind to level 32
+step
     #loop
     .goto 1417/0,-2403.15,-841.09,0
     .goto 1417/0,-2403.15,-841.09,40,0
@@ -287,6 +296,12 @@ step
 step
     .goto 1417/0,-3495.39,-918.13
     .fp Hammerfall >> Get the Hammerfall Flight Path
+step
+    .xp 32 >> AoE the Dabyrie Farmstead to 32
+    >>Start saving the Wool Cloth and Silk Cloth you get. You need 12 stacks for later
+step
+    .xp 34 >> AoE the Dabyrie Farmstead to 34
+    >>Start saving the Wool Cloth and Silk Cloth you get. You need 12 stacks for later
 step
     .goto 1417/0,-3512.67,-832.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
@@ -476,8 +491,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
     .turnin 639 >>Turn in Sigil of Strom
     .target Zengu
-step
-    .xp 35 >>Grind to level 35 (Land Ho! needs it)
 step
     .goto 1417/0,-2010.75,-2117.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lolo the Lookout|r

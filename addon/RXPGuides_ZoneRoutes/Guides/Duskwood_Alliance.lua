@@ -15,8 +15,6 @@ RXPGuides.RegisterGuide([[
 #name 17-31 Duskwood
 
 step
-    .xp 17 >>Grind to level 17 (Raven Hill needs it)
-step
     .goto 1431/0,-1200.85,-10594.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Carevin|r
     .accept 163 >>Accept Raven Hill
@@ -90,6 +88,23 @@ step
     .target Clerk Daltry
     .isOnQuest 68
 step
+    .goto 1431/0,395.39,-10312.47,40,0
+    .goto 1431/0,345.17,-10307.07,40,0
+    .goto 1431/0,239.33,-10401.75,40,0
+    .goto 1431/0,242.03,-10322.19,40,0
+    .goto 1431/0,147.26,-10323.99,40,0
+    .goto 1431/0,170.75,-10417.95,40,0
+    .goto 1431/0,202.61,-10451.25,40,0
+    .goto 1431/0,178.31,-10481.67,40,0
+    .goto 1431/0,217.19,-10556.73,40,0
+    .goto 1431/0,237.98,-10584.99,40,0
+    .goto 1431/0,280.37,-10567.35,40,0
+    .goto 1431/0,354.89,-10577.97,40,0
+    .goto 1431/0,438.32,-10577.43,40,0
+    .goto 1431/0,444.26,-10468.17,40,0
+    .goto 1431/0,395.39,-10312.47,40,0
+    .xp 27+36025 >> Grind to 36025+/38900xp
+step
     #loop
     .goto 1431/0,-1186.54,-10513.89,0
     .goto 1431/0,-1186.54,-10513.89,40,0
@@ -108,6 +123,56 @@ step
     .target Tavernkeep Smitts
     .isOnQuest 78
 step
+    .goto 1431/0,-1157.65,-10997.55,30,0
+    .goto 1431/0,-1139.83,-11070.99,30,0
+    .goto 1431/0,-1147.93,-11096.73,30,0
+    .goto 1431/0,-1174.12,-11117.07,30,0
+    .goto 1431/0,-1165.48,-11140.65,30,0
+    .goto 1431/0,-1174.12,-11117.07,30,0
+    .goto 1431/0,-1147.93,-11096.73,30,0
+    .goto 1431/0,-1139.83,-11070.99,30,0
+    .goto 1431/0,-1107.97,-10988.55,30,0
+    .goto 1431/0,-1044.52,-11017.71,30,0
+    .goto 1431/0,-1020.76,-11067.57,30,0
+    .goto 1431/0,-1021.84,-11110.77,30,0
+    .goto 1431/0,-984.58,-11170.89,30,0
+    .goto 1431/0,-935.71,-11160.27,30,0
+    .goto 1431/0,-909.79,-11202.93,30,0
+    .goto 1431/0,-856.33,-11224.17,30,0
+    .goto 1431/0,-837.16,-11210.13,30,0
+    .goto 1431/0,-840.13,-11183.49,30,0
+    .goto 1431/0,-818.53,-11072.25,30,0
+    .goto 1431/0,-898.72,-11032.65,30,0
+    .goto 1431/0,-917.08,-10737.63,30,0
+    .goto 1431/0,-889.27,-10640.79,30,0
+    .goto 1431/0,-1157.65,-10997.55,30,0
+    .xp 30 >>AoE |cRXP_ENEMY_Nightbane Vile Fangs|r, |cRXP_ENEMY_Nightbane Tainted Ones|r, and |cRXP_ENEMY_Nightbane Dark Runners|r to Level 30
+    >>|cRXP_WARN_Be careful of |cRXP_ENEMY_Nightbane Vile Fangs|r as they cast|r |T136066:0|t[Infected Wound] |cRXP_WARN_(Increases physical damage taken by 6, stackable if batched), |cRXP_ENEMY_Nightbane Tainted Ones|r cast|r |T136188:0|t[Tainted Howl] |cRXP_WARN_(stackable buff giving a chance to inflict|r |T136016:0|t[Poison] |cRXP_WARN_on melee attack, dealing 16.5 damage every 3 seconds for 30 seconds)|r |cRXP_ENEMY_Nightbane Dark Runners|r |cRXP_WARN_as they have|r |T132307:0|t[Increased Movespeed] |cRXP_WARN_and cast|r |T132090:0|t[Exploit Weakness] |cRXP_WARN_(deals double damage from behind)|r
+step
+    .goto 1431/0,-1157.65,-10997.55,30,0
+    .goto 1431/0,-1139.83,-11070.99,30,0
+    .goto 1431/0,-1147.93,-11096.73,30,0
+    .goto 1431/0,-1174.12,-11117.07,30,0
+    .goto 1431/0,-1165.48,-11140.65,30,0
+    .goto 1431/0,-1174.12,-11117.07,30,0
+    .goto 1431/0,-1147.93,-11096.73,30,0
+    .goto 1431/0,-1139.83,-11070.99,30,0
+    .goto 1431/0,-1107.97,-10988.55,30,0
+    .goto 1431/0,-1044.52,-11017.71,30,0
+    .goto 1431/0,-1020.76,-11067.57,30,0
+    .goto 1431/0,-1021.84,-11110.77,30,0
+    .goto 1431/0,-984.58,-11170.89,30,0
+    .goto 1431/0,-935.71,-11160.27,30,0
+    .goto 1431/0,-877.12,-11181.51,30,0
+    .goto 1431/0,-840.13,-11183.49,30,0
+    .goto 1431/0,-818.53,-11072.25,30,0
+    .goto 1431/0,-898.72,-11032.65,30,0
+    .goto 1431/0,-917.08,-10737.63,30,0
+    .goto 1431/0,-889.27,-10640.79,30,0
+    .goto 1431/0,-1157.65,-10997.55,30,0
+    .xp 31 >>AoE |cRXP_ENEMY_Nightbane Vile Fangs|r, |cRXP_ENEMY_Nightbane Tainted Ones|r, and |cRXP_ENEMY_Nightbane Dark Runners|r until your |T134414:0|t[Hearthstone] is off cooldown
+    >>|cRXP_WARN_Be careful of |cRXP_ENEMY_Nightbane Vile Fangs|r as they cast|r |T136066:0|t[Infected Wound] |cRXP_WARN_(Increases physical damage taken by 6, stackable if batched), |cRXP_ENEMY_Nightbane Tainted Ones|r cast|r |T136188:0|t[Tainted Howl] |cRXP_WARN_(stackable buff giving a chance to inflict|r |T136016:0|t[Poison] |cRXP_WARN_on melee attack, dealing 16.5 damage every 3 seconds for 30 seconds)|r |cRXP_ENEMY_Nightbane Dark Runners|r |cRXP_WARN_as they have|r |T132307:0|t[Increased Movespeed] |cRXP_WARN_and cast|r |T132090:0|t[Exploit Weakness] |cRXP_WARN_(deals double damage from behind)|r
+step
     .goto 1431/0,-1156.03,-10590.57,10,0
     .goto 1431/0,-1163.05,-10596.33
     >>Talk to |cRXP_FRIENDLY_Morg|r or |cRXP_FRIENDLY_Gavin|r
@@ -115,6 +180,31 @@ step
     >>|cRXP_WARN_Do NOT sell your|r |T132917:0|t[Light Feathers]
     .target Morg Gnarltree
     .target Gavin Gnarltree
+step
+    .goto 1431/0,-1157.65,-10997.55,30,0
+    .goto 1431/0,-1139.83,-11070.99,30,0
+    .goto 1431/0,-1147.93,-11096.73,30,0
+    .goto 1431/0,-1174.12,-11117.07,30,0
+    .goto 1431/0,-1165.48,-11140.65,30,0
+    .goto 1431/0,-1174.12,-11117.07,30,0
+    .goto 1431/0,-1147.93,-11096.73,30,0
+    .goto 1431/0,-1139.83,-11070.99,30,0
+    .goto 1431/0,-1107.97,-10988.55,30,0
+    .goto 1431/0,-1044.52,-11017.71,30,0
+    .goto 1431/0,-1020.76,-11067.57,30,0
+    .goto 1431/0,-1021.84,-11110.77,30,0
+    .goto 1431/0,-984.58,-11170.89,30,0
+    .goto 1431/0,-935.71,-11160.27,30,0
+    .goto 1431/0,-877.12,-11181.51,30,0
+    .goto 1431/0,-840.13,-11183.49,30,0
+    .goto 1431/0,-818.53,-11072.25,30,0
+    .goto 1431/0,-898.72,-11032.65,30,0
+    .goto 1431/0,-917.08,-10737.63,30,0
+    .goto 1431/0,-889.27,-10640.79,30,0
+    .goto 1431/0,-1157.65,-10997.55,30,0
+    .xp 32 >>AoE |cRXP_ENEMY_Nightbane Vile Fangs|r, |cRXP_ENEMY_Nightbane Tainted Ones|r, and |cRXP_ENEMY_Nightbane Dark Runners|r to Level 32
+    >>|cRXP_WARN_Be careful of |cRXP_ENEMY_Nightbane Vile Fangs|r as they cast|r |T136066:0|t[Infected Wound] |cRXP_WARN_(Increases physical damage taken by 6, stackable if batched), |cRXP_ENEMY_Nightbane Tainted Ones|r cast|r |T136188:0|t[Tainted Howl] |cRXP_WARN_(stackable buff giving a chance to inflict|r |T136016:0|t[Poison] |cRXP_WARN_on melee attack, dealing 16.5 damage every 3 seconds for 30 seconds)|r |cRXP_ENEMY_Nightbane Dark Runners|r |cRXP_WARN_as they have|r |T132307:0|t[Increased Movespeed] |cRXP_WARN_and cast|r |T132090:0|t[Exploit Weakness] |cRXP_WARN_(deals double damage from behind)|r
+    >>Talk to |cRXP_FRIENDLY_Morg|r or |cRXP_FRIENDLY_Gavin|r in Darkshire to Vendor and Repair whenever needed after clearing the northern |cRXP_ENEMY_Nightbane Dark Runner|r camp
 step
     .goto 1431/0,623.27,-10329.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
@@ -175,6 +265,9 @@ step
     .turnin 245 >>Turn in Eight-Legged Menaces
     .target Watcher Dodds
 step
+    .goto 1431/0,256.88,-10559.07
+    .xp 25+29845 >> Grind to 29845+/34000xp
+step
     #loop
     .goto 1431/0,476.39,-10768.05,0
     .goto 1431/0,476.39,-10768.05,40,0
@@ -210,6 +303,8 @@ step
     .target Lord Ello Ebonlocke
     .isOnQuest 145
 step
+    .xp 22 >> Grind to 22
+step
     +|cRXP_WARN_That is all of Duskwood for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elwynn Forest|r: Elmpaw's Head
 step
@@ -221,8 +316,6 @@ step
     .target Lord Ello Ebonlocke
     .isQuestTurnedIn 145 --any of: Messenger to Darkshire
     .xp <18,1
-step
-    .xp 20 >>Grind to level 20 (Sven's Revenge needs it)
 step
     .goto 1431/0,623.27,-10329.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r

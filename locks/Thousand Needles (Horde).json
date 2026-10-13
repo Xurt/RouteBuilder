@@ -1,7 +1,8 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "25-40 Thousand Needles",
-  "saved": "2026-10-13 08:06",
+  "saved": "2026-10-13 08:54",
+  "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
@@ -33,12 +34,15 @@
         "turnin:4881 @1441:-1368.33,-4907.09  TurnIn Assassination Plot",
         "turnin:4865 @1441:-1381.09,-4915.6  TurnIn Serpent Wild",
         "accept:5062 @1441:-1381.09,-4915.6  Accept Sacred Fire",
+        {"lines":[".goto 1441/1,-1256.13,-4617.87",".xp 28+29000 >> Grind to level 28 29000+/41400xp"],"from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".goto 1441/1,-1256.13,-4617.87",".xp 28+20000 >> Grind to level 28 20000+/41400xp"],"from":"RestedXP: 28-30 Thousand Needles"},
         "obj:5062:1 @1441:-2000.61,-5028.53  Objective Sacred Fire / Incendia Agave (1)",
         "obj:5064:1 @1441:-1832.09,-4922.35  Objective Grimtotem Spying / Secret Note #1 (1)",
         "obj:5064:2 @1441:-1918.77,-5139.71  Objective Grimtotem Spying / Secret Note #2 (1)",
         "obj:5064:3 @1441:-2164.29,-5184.88  Objective Grimtotem Spying / Secret Note #3 (1)",
         "turnin:5064 @1441:-2442.81,-5455.04  TurnIn Grimtotem Spying",
         {"lines":[".goto 1441/1,-2408.49,-5453.28",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Starn|r",".vendor >>|cRXP_BUY_Buy a|r |T135495:0|t[|cRXP_FRIENDLY_Dense Shortbow|r] |cRXP_BUY_from him if it's up and fill your quiver with arrows|r",".collect 3030,1800,1151,1",".target Starn",".money <2.7172",".subzoneskip 484,1"],"tag":"Hunter","from":"RestedXP: 28-30 Thousand Needles"},
+        {"lines":[".goto 1441/1,-2330.61,-5047.89",".xp 30 >> Grind to level 30"],"from":"RestedXP: 28-30 Thousand Needles"},
         {"lines":[".goto 1441/1,-2460.41,-5477.92",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Abeqwa|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Abeqwa"],"from":"RestedXP: 28-30 Thousand Needles"},
         {"lines":[".goto 1441/1,-2408.49,-5453.28",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Starn|r",".vendor >>|cRXP_BUY_Buy a|r |T135495:0|t[|cRXP_FRIENDLY_Dense Shortbow|r] |cRXP_BUY_from him if it's up|r",".target Starn",".money <2.7172"],"tag":"Hunter","from":"RestedXP: 33-34 Shimmering Flats"},
         "turnin:1531 @1441:-2789.09,-5217.73  TurnIn Call of Air",
@@ -127,10 +131,6 @@
       "steps": [
         "accept:1175 @1441:-4025.05,-6253.2  Accept A Bump in the Road",
         "turnin:1107 @1441:-3871.49,-6228.85  TurnIn Encrusted Tail Fins",
-        "turnin:79366 @1441:-2463.49,-5483.49  TurnIn Heed My Call",
-        "turnin:79360 @1441:-2463.49,-5483.49  TurnIn Elemental Aid",
-        "turnin:98069 @1441:-2466.57,-5477.63  TurnIn Stolen Freewind Supplies",
-        "accept:5361 @1441:-2442.81,-5455.04  Accept Family Tree",
         "accept:1147 @1441:-3406.85,-5842.24  Accept The Swarm Grows",
         "obj:1175:1 @1441:-3754.89,-5649.52  Objective A Bump in the Road / Saltstone Basilisk slain (10)",
         "obj:1175:2 @1441:-3888.21,-6577.33  Objective A Bump in the Road / Saltstone Crystalhide slain (10)",
@@ -142,7 +142,11 @@
         "obj:1148:3 @1441:-3485.61,-6470.27  Objective Parts of the Swarm / Intact Silithid Carapace (3)",
         "turnin:1147 @1441:-3406.85,-5842.24  TurnIn The Swarm Grows",
         "obj:1175:3 @1441:-3863.13,-6582.61  Objective A Bump in the Road / Saltstone Gazer slain (6)",
-        "turnin:1175 @1441:-4025.05,-6253.2  TurnIn A Bump in the Road"
+        "turnin:1175 @1441:-4025.05,-6253.2  TurnIn A Bump in the Road",
+        "turnin:79366 @1441:-2463.49,-5483.49  TurnIn Heed My Call",
+        "turnin:79360 @1441:-2463.49,-5483.49  TurnIn Elemental Aid",
+        "turnin:98069 @1441:-2466.57,-5477.63  TurnIn Stolen Freewind Supplies",
+        "accept:5361 @1441:-2442.81,-5455.04  Accept Family Tree"
       ]
     }
   ]

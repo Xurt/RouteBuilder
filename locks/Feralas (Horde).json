@@ -1,7 +1,8 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "42-52 Feralas",
-  "saved": "2026-10-13 08:07",
+  "saved": "2026-10-13 08:55",
+  "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
@@ -49,6 +50,7 @@
         "obj:2822:1 @1444:1835.31,-5080.87  Objective The Mark of Quality / Thick Yeti Hide (10)",
         {"lines":[".goto 1444/1,1824.19,-5072.53,0",".goto 1444/1,1609.44,-4977.55,70,0",".goto 1444/1,1749.83,-4973.84,70,0",".goto 1444/1,1824.19,-5072.53,70,0",">>Kill |cRXP_ENEMY_Yetis|r. Loot them for their |cRXP_LOOT_Hides|r",".train 416083,3 << Hunter sod"],"from":"RestedXP: 43-44 Feralas"},
         "turnin:2766 @1444:1733.84,-4947.43  TurnIn Find OOX-22/FE!",
+        {"lines":[".goto 1444/1,3621.46,-5494.63",">>Kill |cRXP_ENEMY_Hatecrest Nagas|r",".xp 44+40000 >> Grind to level 44 40000/111800 or higher"],"from":"RestedXP: 43-44 Feralas"},
         {"lines":[".goto 1444/1,242.37,-4460.01",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Greul|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",">>|cRXP_WARN_Make sure you DO NOT sell any|r |T135992:0|t[Long Elegant Feather]",".target Innkeeper Greul",".subzoneskip 1099,1"],"from":"RestedXP: 43-44 Feralas"},
         "turnin:2980 @1444:173.57,-4385.87  TurnIn The Ogres of Feralas",
         "turnin:7730 @1444:235.42,-4333.98  TurnIn Zukk'ash Infestation",

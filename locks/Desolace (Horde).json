@@ -1,11 +1,13 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "31-45 Desolace",
-  "saved": "2026-10-13 08:07",
+  "saved": "2026-10-13 08:54",
+  "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        {"lines":[".goto 1443/1,1718.36,-423.01",".xp 35 >> Grind Burning Blade mobs at Thunder Axe Fortress to level 35"],"tag":"Warrior/Hunter/Rogue/Druid/Shaman","from":"RestedXP: 34-35 Desolace"},
         "accept:5741 @1443:2485.35,-362.15  Accept Sceptre of Light",
         "turnin:1362 @1443:1707.12,-1333.78  TurnIn The Kolkar of Desolace",
         "accept:94872 @1443:1702.63,-1337.07  Accept Buying Friendship: Magram",
@@ -47,6 +49,7 @@
         "obj:1481:1 @1443:846.62,-185.27  Objective The Corrupter / Shadowstalker Scalp (1)",
         "turnin:1481 @1443:1884.26,-1150  TurnIn The Corrupter",
         {"lines":[".goto 1443/1,1931.47,-1144.91",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harnor|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Harnor",".subzoneskip 597,1"],"from":"RestedXP: 34-35 Desolace"},
+        {"lines":[".goto 1443/1,1180.66,-1754.08,60,0",".goto 1443/1,1182.46,-1820.34,60,0",".goto 1443/1,1254.39,-1817.34,60,0",".goto 1443/1,1279.57,-1912.07,60,0",".goto 1443/1,1248.10,-1947.75,60,0",".goto 1443/1,1150.99,-1976.53,60,0",".goto 1443/1,987.34,-1896.78,60,0",".goto 1443/1,1043.54,-1799.05,60,0",".goto 1443/1,935.19,-1747.49,60,0",".goto 1443/1,1104.23,-1881.79,60,0",".xp 35+17000 >> Grind to level 35 17000/67100"],"tag":"!Warrior !Hunter !Rogue !Druid !Shaman","from":"RestedXP: 34-35 Desolace"},
         "obj:1435:1 @1443:1724.21,-302.49  Objective The Burning of Spirits / Infused Burning Gem (15)",
         "turnin:5741 @1443:2485.35,-362.15  TurnIn Sceptre of Light",
         "accept:6161 @1443:2611.69,-459.58  Accept Claim Rackmore's Treasure!",

@@ -36,8 +36,6 @@ step
     .accept 1419 >>Accept Coyote Thieves
     .target Neeka Bloodscar
 step
-    .xp 35 >>Grind to level 35 (Coolant Heads Prevail needs it)
-step
     .goto 1418/0,-2724.67,-6633.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotwil Veriatus|r
     .accept 713 >>Accept Coolant Heads Prevail
@@ -155,6 +153,9 @@ step
     .turnin 1106 >>Turn in Martek the Exiled
     .target Martek the Exiled
     .isOnQuest 1106
+step
+    .goto 1418/0,-2656.27,-6669.00
+    .xp 40 >> Grind to 40
 step
     .goto 1418/0,-3357.49,-7164.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theldurin the Lost|r
@@ -415,11 +416,6 @@ step
 step
     .xp 41 >>|cRXP_WARN_The rest of Badlands is planned from level 41.|r Come back to this guide then
 step
-    .goto 1418/0,-2151.55,-6645.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorn|r
-    .accept 782 >>Accept Broken Alliances
-    .target Gorn
-step
     .goto 1418/0,-2724.67,-6633.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotwil Veriatus|r
     .turnin 713 >>Turn in Coolant Heads Prevail
@@ -492,6 +488,11 @@ step
     .turnin 692 >>Turn in The Lost Fragments
     .target Theldurin the Lost
     .isOnQuest 692
+step
+    .goto 1418/0,-2151.55,-6645.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorn|r
+    .accept 782 >>Accept Broken Alliances
+    .target Gorn
 step
     .goto 1418/0,-2393.09,-7141.46
     >>Kill |cRXP_ENEMY_Boss Tho'grun|r and loot |cRXP_LOOT_Sign of the Earth|r

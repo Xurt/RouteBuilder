@@ -492,6 +492,25 @@ step
     .accept 95805 >>Accept Grace of An'she and Mu'sha
     .target Seer Graytongue
 step
+    .goto 1412/1,-292.73,-3285.20,40,0
+    .goto 1412/1,-362.60,-3281.44,40,0
+    .goto 1412/1,-452.50,-3246.84,40,0
+    .goto 1412/1,-554.23,-3213.96,40,0
+    .goto 1412/1,-572.72,-3139.98,40,0
+    .goto 1412/1,-626.67,-3065.32,40,0
+    .goto 1412/1,-616.90,-2998.53,40,0
+    .goto 1412/1,-606.63,-2923.52,40,0
+    .goto 1412/1,-621.01,-2847.15,40,0
+    .goto 1412/1,-537.27,-2887.22,40,0
+    .goto 1412/1,-461.75,-2869.75,40,0
+    .goto 1412/1,-387.77,-2851.94,40,0
+    .goto 1412/1,-356.43,-2951.61,40,0
+    .goto 1412/1,-307.11,-3026.96,40,0
+    .goto 1412/1,-265.50,-3086.55,40,0
+    .goto 1412/1,-217.21,-3146.15,40,0
+    .goto 1412/1,-207.45,-3221.16,40,0
+    .xp 3+1150 >> Grind to 1150+/1400xp
+step
     .goto 1412/1,-257.59,-2912.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull Hawkwind|r
     .turnin 750 >>Turn in The Hunt Continues
@@ -503,14 +522,10 @@ step
     .vendor >> Vendor Trash
     .target Kawnie Softbreeze
 step
-    .xp 3 >>Grind to level 3 (Break Sharptusk! needs it)
-step
     .goto 1412/1,-239.74,-2893.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brave Windfeather|r
     .accept 3376 >>Accept Break Sharptusk!
     .target Brave Windfeather
-step << Shaman
-    .xp 4 >>Grind to level 4 (Call of Earth needs it)
 step << Shaman
     .goto 1412/1,-250.21,-2882.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seer Ravenfeather|r
@@ -614,6 +629,20 @@ step
     .mob Chief Sharptusk Thornmantle
     .mob Bristleback Quilboar
     .mob Bristleback Shaman
+step
+    .goto 1412/1,-1239.06,-3015.66,40,0
+    .goto 1412/1,-1256.01,-2954.35,40,0
+    .goto 1412/1,-1223.13,-2882.08,40,0
+    .goto 1412/1,-1171.75,-2879.34,40,0
+    .goto 1412/1,-1103.43,-2914.62,40,0
+    .goto 1412/1,-1122.95,-2977.98,40,0
+    .goto 1412/1,-1152.23,-3065.32,40,0
+    .goto 1412/1,-1076.71,-3040.66,40,0
+    .goto 1412/1,-1038.69,-3079.02,40,0
+    .goto 1412/1,-1087.50,-3092.38,40,0
+    .goto 1412/1,-1151.20,-3082.44,40,0
+    .xp 5+880 >> Grind to 880+/2800xp << !Shaman
+    .xp 5 >> Grind to level 5 << Shaman
 step
     .goto 1412/1,-257.59,-2912.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull Hawkwind|r
@@ -744,14 +773,10 @@ step
     .accept 96130 >>Accept Chakuyak
     .target Yaw Sharpmane
 step
-    .xp 7 >>Grind to level 7 (Kyle's Gone Missing! needs it)
-step
     .goto 1412/1,-430.52,-2097.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r
     .accept 99411 >>Accept Kyle's Gone Missing!
     .target Ahab Wheathoof
-step
-    .xp 5 >>Grind to level 5 (Mazzranache needs it)
 step
     .goto 1412/1,-365.90,-2227.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r
@@ -786,12 +811,6 @@ step
     .goto 1412/1,-392.98,-2333.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r
     .turnin 763 >>Turn in Rites of the Earthmother
-    .target Baine Bloodhoof
-step
-    .xp 6 >>Grind to level 6 (Dwarven Digging needs it)
-step
-    .goto 1412/1,-392.98,-2333.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r
     .accept 745 >>Accept Sharing the Land
     .accept 767 >>Accept Rite of Vision
     .accept 746 >>Accept Dwarven Digging
@@ -1361,6 +1380,82 @@ step
     .mob Swoop
     .mob Taloned Swoop
 step
+    .goto 1412/1,-1009.92,-1073.00,60,0
+    .goto 1412/1,-906.66,-926.41,60,0
+    .goto 1412/1,-788.50,-912.36,60,0
+    .goto 1412/1,-674.44,-866.81,60,0
+    .goto 1412/1,-572.21,-903.12,60,0
+    .goto 1412/1,-512.61,-983.26,60,0
+    .goto 1412/1,-511.59,-1084.30,60,0
+    .goto 1412/1,-496.17,-1166.84,60,0
+    .goto 1412/1,-506.45,-1236.71,60,0
+    .goto 1412/1,-561.42,-1278.84,60,0
+    .goto 1412/1,-635.91,-1302.81,60,0
+    .goto 1412/1,-737.12,-1315.14,60,0
+    .goto 1412/1,-836.79,-1312.40,60,0
+    .goto 1412/1,-920.02,-1316.86,60,0
+    .goto 1412/1,-972.42,-1249.73,60,0
+    .goto 1412/1,-1063.35,-1159.31,60,0
+    .goto 1412/1,-1009.92,-1073.00,60,0
+    .xp 9+3020 >> Grind to 3020+/6500xp
+step
+    .goto 1412/1,-1009.92,-1073.00,60,0
+    .goto 1412/1,-906.66,-926.41,60,0
+    .goto 1412/1,-788.50,-912.36,60,0
+    .goto 1412/1,-674.44,-866.81,60,0
+    .goto 1412/1,-572.21,-903.12,60,0
+    .goto 1412/1,-512.61,-983.26,60,0
+    .goto 1412/1,-511.59,-1084.30,60,0
+    .goto 1412/1,-496.17,-1166.84,60,0
+    .goto 1412/1,-506.45,-1236.71,60,0
+    .goto 1412/1,-561.42,-1278.84,60,0
+    .goto 1412/1,-635.91,-1302.81,60,0
+    .goto 1412/1,-737.12,-1315.14,60,0
+    .goto 1412/1,-836.79,-1312.40,60,0
+    .goto 1412/1,-920.02,-1316.86,60,0
+    .goto 1412/1,-972.42,-1249.73,60,0
+    .goto 1412/1,-1063.35,-1159.31,60,0
+    .goto 1412/1,-1009.92,-1073.00,60,0
+    .xp 9+3720 >> Grind to 3720+/6500xp
+step
+    .goto 1412/1,-1009.92,-1073.00,60,0
+    .goto 1412/1,-906.66,-926.41,60,0
+    .goto 1412/1,-788.50,-912.36,60,0
+    .goto 1412/1,-674.44,-866.81,60,0
+    .goto 1412/1,-572.21,-903.12,60,0
+    .goto 1412/1,-512.61,-983.26,60,0
+    .goto 1412/1,-511.59,-1084.30,60,0
+    .goto 1412/1,-496.17,-1166.84,60,0
+    .goto 1412/1,-506.45,-1236.71,60,0
+    .goto 1412/1,-561.42,-1278.84,60,0
+    .goto 1412/1,-635.91,-1302.81,60,0
+    .goto 1412/1,-737.12,-1315.14,60,0
+    .goto 1412/1,-836.79,-1312.40,60,0
+    .goto 1412/1,-920.02,-1316.86,60,0
+    .goto 1412/1,-972.42,-1249.73,60,0
+    .goto 1412/1,-1063.35,-1159.31,60,0
+    .goto 1412/1,-1009.92,-1073.00,60,0
+    .xp 9+3700 >> Grind to 3700+/6500xp
+step
+    .goto 1412/1,-1009.92,-1073.00,60,0
+    .goto 1412/1,-906.66,-926.41,60,0
+    .goto 1412/1,-788.50,-912.36,60,0
+    .goto 1412/1,-674.44,-866.81,60,0
+    .goto 1412/1,-572.21,-903.12,60,0
+    .goto 1412/1,-512.61,-983.26,60,0
+    .goto 1412/1,-511.59,-1084.30,60,0
+    .goto 1412/1,-496.17,-1166.84,60,0
+    .goto 1412/1,-506.45,-1236.71,60,0
+    .goto 1412/1,-561.42,-1278.84,60,0
+    .goto 1412/1,-635.91,-1302.81,60,0
+    .goto 1412/1,-737.12,-1315.14,60,0
+    .goto 1412/1,-836.79,-1312.40,60,0
+    .goto 1412/1,-920.02,-1316.86,60,0
+    .goto 1412/1,-972.42,-1249.73,60,0
+    .goto 1412/1,-1063.35,-1159.31,60,0
+    .goto 1412/1,-1009.92,-1073.00,60,0
+    .xp 9+4400 >> Grind to 4400+/6500xp
+step
     .goto 1412/1,-347.19,-2364.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kauth|r
     .vendor >> Vendor trash
@@ -1382,13 +1477,6 @@ step
     .turnin 770 >>Turn in The Demon Scarred Cloak
     .target Skorn Whitecloud
 step
-    .xp 10 >>Grind to level 10 (The Hunter's Way needs it)
-step
-    .goto 1412/1,-353.60,-2335.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skorn Whitecloud|r
-    .accept 861 >>Accept The Hunter's Way
-    .target Skorn Whitecloud
-step
     .goto 1412/1,-392.98,-2333.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r
     .turnin 746 >>Turn in Dwarven Digging
@@ -1402,8 +1490,6 @@ step
     #completewith next
     .zone 1456 >>Travel to Thunder Bluff
     .zoneskip 1456
-step << Warrior
-    .xp 10 >>Grind to level 10 (Veteran Uzzek needs it)
 step << Warrior
     .goto 1456/1,-80.78,-1457.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torm Ragetotem|r
@@ -1506,6 +1592,11 @@ step << Tauren
     .isQuestTurnedIn 758 --any of: Thunderhorn Cleansing
     .xp <4,1
 step
+    .goto 1412/1,-353.60,-2335.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skorn Whitecloud|r
+    .accept 861 >>Accept The Hunter's Way
+    .target Skorn Whitecloud
+step
     #loop
     .goto 1412/1,-598.53,-2302.06,0
     .goto 1412/1,-598.53,-2302.06,40,0
@@ -1559,7 +1650,7 @@ step << Tauren
     .mob Prairie Wolf Alpha
     .isOnQuest 759
 step
-    #completewith Along115
+    #completewith Along116
     >>As you go: Kill |cRXP_ENEMY_Venture Co. Workers|r. Kill |cRXP_ENEMY_Venture Co. Supervisors|r. |cRXP_WARN_Anything left is finished later|r
     .complete 764,1 --Venture Co. Worker slain (14)
     .complete 764,2 --Venture Co. Supervisor slain (6)
@@ -1571,7 +1662,7 @@ step
     .complete 765,1 --Fizsprocket's Clipboard (1)
     .mob Supervisor Fizsprocket
 step
-    #label Along115
+    #label Along116
     .goto 1412/1,-1286.57,-1756.48
     >>Kill |cRXP_ENEMY_Supervisor Fizsprocket|r and loot |cRXP_LOOT_Mulgore Expansion Plans|r. Use it to start the quest
     .collect 281031,1,98424 --Mulgore Expansion Plans (1)
@@ -1750,12 +1841,12 @@ step << Skyborne Druid
     .target Muln Earthfury
     .xp <10,1
 step
-    #completewith Along132
+    #completewith Along133
     >>As you go: Kill |cRXP_ENEMY_Flatland Prowlers|r. Loot them for |cRXP_LOOT_Flatland Prowler Claw|r. |cRXP_WARN_Anything left is finished later|r
     .complete 861,1 --Flatland Prowler Claw (4)
     .mob Flatland Prowler
 step
-    #label Along132
+    #label Along133
     .goto 1412/1,-674.84,-751.47
     >>Kill |cRXP_ENEMY_Arra'chea|r and loot |cRXP_LOOT_Horn of Arra'chea|r
     .complete 776,1 --Horn of Arra'chea (1)
@@ -1902,8 +1993,6 @@ step
     .turnin 98424 >>Turn in Fizsprocket's Notes
     .unitscan Morin Cloudstalker
     .isQuestComplete 98424
-step << Skyborne Druid
-    .xp 10 >>Grind to level 10 (Child of Nature needs it)
 step << Skyborne Druid
     .goto 1412/1,422.44,-657.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muln Earthfury|r

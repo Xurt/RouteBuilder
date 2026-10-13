@@ -198,6 +198,46 @@ step
     .target "Swamp Eye" Jarl
     .isQuestComplete 1203
 step
+    .goto 1445/1,-3977.47,-2767.63,0
+    .goto 1445/1,-4007.92,-2599.98,0
+    .goto 1445/1,-3819.45,-2561.83,0
+    .goto 1445/1,-3977.47,-2767.63,60,0
+    .goto 1445/1,-4007.92,-2599.98,60,0
+    .goto 1445/1,-3819.45,-2561.83,60,0
+    .xp 37+71300 >> Grind |cRXP_ENEMY_Murlocs|r until you are at least 71300+/76100xp
+step
+    .goto 1445/1,-3977.47,-2767.63,0
+    .goto 1445/1,-4007.92,-2599.98,0
+    .goto 1445/1,-3819.45,-2561.83,0
+    .goto 1445/1,-3977.47,-2767.63,60,0
+    .goto 1445/1,-4007.92,-2599.98,60,0
+    .goto 1445/1,-3819.45,-2561.83,60,0
+    .xp 37+74000 >> Grind |cRXP_ENEMY_Murlocs|r until you are at least 74000+/76100xp
+step
+    .goto 1445/1,-3977.47,-2767.63,0
+    .goto 1445/1,-4007.92,-2599.98,0
+    .goto 1445/1,-3819.45,-2561.83,0
+    .goto 1445/1,-3977.47,-2767.63,60,0
+    .goto 1445/1,-4007.92,-2599.98,60,0
+    .goto 1445/1,-3819.45,-2561.83,60,0
+    .xp 37+64130 >> Grind |cRXP_ENEMY_Murlocs|r until you are at least 66500+/76100xp
+step
+    .goto 1445/1,-3977.47,-2767.63,0
+    .goto 1445/1,-4007.92,-2599.98,0
+    .goto 1445/1,-3819.45,-2561.83,0
+    .goto 1445/1,-3977.47,-2767.63,60,0
+    .goto 1445/1,-4007.92,-2599.98,60,0
+    .goto 1445/1,-3819.45,-2561.83,60,0
+    .xp 37+67980 >> Grind |cRXP_ENEMY_Murlocs|r until you are at least 71900+/76100xp
+step
+    .goto 1445/1,-3977.47,-2767.63,0
+    .goto 1445/1,-4007.92,-2599.98,0
+    .goto 1445/1,-3819.45,-2561.83,0
+    .goto 1445/1,-3977.47,-2767.63,60,0
+    .goto 1445/1,-4007.92,-2599.98,60,0
+    .goto 1445/1,-3819.45,-2561.83,60,0
+    .xp 39+80575 >>Grind |cRXP_ENEMY_Murlocs|r until you are at least 80575+/85700xp
+step
     .goto 1445/1,-4470.97,-3616.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Janene|r
     .target Innkeeper Janene
@@ -306,6 +346,9 @@ step
     .accept 626 >>Accept Cortello's Riddle
     .isQuestTurnedIn 625 --any of: Cortello's Riddle
     .xp <35,1
+step
+    .goto 1445/1,-3521.25,-4668.83
+    .xp 47+118800 >> Grind to level 47+118800
 step
     .goto 1445/1,-3949.65,-5103.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emberstrife|r

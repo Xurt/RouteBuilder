@@ -162,8 +162,6 @@ step
     .accept 477 >>Accept Border Crossings
     .target Shadow Priest Allister
 step << Undead
-    .xp 10 >>Grind to level 10 (Supplying the Sepulcher needs it)
-step << Undead
     .goto 1421/0,1626.36,499.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Podrig|r
     .accept 6321 >>Accept Supplying the Sepulcher

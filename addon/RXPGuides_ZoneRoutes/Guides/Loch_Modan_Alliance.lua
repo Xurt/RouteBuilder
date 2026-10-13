@@ -21,8 +21,6 @@ step
     .target Mountaineer Stormpike
     .isOnQuest 353
 step
-    .xp 10 >>Grind to level 10 (Rat Catching needs it)
-step
     #loop
     .goto 1432/0,-3024.26,-5305.93,0
     .goto 1432/0,-3024.26,-5305.93,40,0
@@ -226,6 +224,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
     .turnin 224 >>Turn in In Defense of the King's Lands
     .target Mountaineer Cobbleflint
+step << Warlock
+    .goto 1432/0,-2747.60,-5530.540
+    .xp 14 >>Grind to 14
+    >>|cRXP_WARN_Fly to Ironforge and skip this step if you're planning on running the Hall of Thanes dungeon in Ironforge|r
 step
     .goto 1432/0,-2643.06,-5892.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Gravelgaw|r
@@ -358,6 +360,10 @@ step << Shaman
     .complete 94466,1 --Fire Tar (1)
     .mob Tunnel Rat Geomancer
     .isOnQuest 94466
+step
+    .goto 1432/0,-2729.40,-5534.96
+    .xp 13+9600 >> Grind to 9600+/11400xp
+    >>|cRXP_WARN_If you're planning on running the Hall of Thanes dungeon in Ironforge later, skip this step|r
 step << Shaman
     .goto 1432/0,-2881.11,-5701.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Braldir Ashmantle|r
@@ -421,6 +427,42 @@ step
     .vendor >>Vendor Trash
     .target Gothor Brumn
     .isOnQuest 307
+step << Human
+    .goto 1432/0,-2849.11,-4944.45,50,0
+    .goto 1432/0,-2895.45,-5014.91,50,0
+    .goto 1432/0,-2957.24,-5067.89,50,0
+    .goto 1432/0,-3008.26,-5098.06,50,0
+    .goto 1432/0,-3087.43,-5091.25,50,0
+    .goto 1432/0,-3046.05,-5189.48,50,0
+    .goto 1432/0,-2918.62,-5233.08,50,0
+    .goto 1432/0,-2817.66,-5471.86,50,0
+    .goto 1432/0,-2809.66,-5343.64,50,0
+    .goto 1432/0,-2819.87,-5220.39,50,0
+    .goto 1432/0,-2740.98,-5225.170,50,0
+    .goto 1432/0,-2794.49,-5102.66,50,0
+    .goto 1432/0,-2743.74,-5021.16,50,0
+    .goto 1432/0,-2704.57,-4958.430,50,0
+    .goto 1432/0,-2645.82,-4895.890,50,0
+    .goto 1432/0,-2849.11,-4944.45,50,0
+    .xp 13+8675 >> Grind to 8675+/11400xp
+step << Gnome
+    .goto 1432/0,-2849.11,-4944.45,50,0
+    .goto 1432/0,-2895.45,-5014.91,50,0
+    .goto 1432/0,-2957.24,-5067.89,50,0
+    .goto 1432/0,-3008.26,-5098.06,50,0
+    .goto 1432/0,-3087.43,-5091.25,50,0
+    .goto 1432/0,-3046.05,-5189.48,50,0
+    .goto 1432/0,-2918.62,-5233.08,50,0
+    .goto 1432/0,-2817.66,-5471.86,50,0
+    .goto 1432/0,-2809.66,-5343.64,50,0
+    .goto 1432/0,-2819.87,-5220.39,50,0
+    .goto 1432/0,-2740.98,-5225.170,50,0
+    .goto 1432/0,-2794.49,-5102.66,50,0
+    .goto 1432/0,-2743.74,-5021.16,50,0
+    .goto 1432/0,-2704.57,-4958.430,50,0
+    .goto 1432/0,-2645.82,-4895.890,50,0
+    .goto 1432/0,-2849.11,-4944.45,50,0
+    .xp 13+6780 >> Grind to 6780+/11400xp
 step
     .goto 1432/0,-2952.55,-5381.91
     >>Talk to |cRXP_FRIENDLY_Yanni|r
@@ -448,6 +490,8 @@ step
     .vendor >> Buy 6 slots until your bag containers are full. Also buy 1 Flint and Tinder, and 2 Simple Wood
     .collect 4470,2
     .collect 4471,1
+step
+    .xp 12 >> Grind to 12
 step
     .goto 1432/0,-2929.93,-5424.95
     .fp Thelsamar >> Get the Thelsamar flight path

@@ -1,7 +1,8 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "41-51 Feralas",
-  "saved": "2026-10-13 08:13",
+  "saved": "2026-10-13 09:01",
+  "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
@@ -51,8 +52,12 @@
         "accept:4267 @1444:3337.21,-4505.88  Accept Rise of the Silithid",
         {"lines":[".goto 1444/1,3311.84,-4379.06",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faralorn|r",".vendor >>|cRXP_BUY_Buy Ammo if needed|r",".target Faralorn"],"tag":"Hunter","from":"RestedXP: 44-46 Feralas SoD"},
         {"lines":[".goto 1444/1,3311.84,-4379.06",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faralorn|r",".vendor >>|cRXP_BUY_Buy Ammo for the next segment|r",".target Faralorn"],"tag":"Hunter","from":"RestedXP: 44-46 Feralas SoD"},
+        {"lines":[".goto 1444/1,3524.86,-5564.59",".xp 45+87500 >> Do loops around the cave, grinding |cRXP_ENEMY_Nagas|r to level 45+87500xp"],"from":"RestedXP: 44-48 Feralas"},
         "obj:2821:1 @1444:1580.94,-4983.11  Objective The Mark of Quality / Thick Yeti Hide (10)",
         {"lines":[".goto 1444/1,1575.38,-4981.72,50,0",".goto 1444/1,1723.42,-4936.78",">>Kill |cRXP_ENEMY_Feral Scar Yetis|r, |cRXP_ENEMY_Enraged Feral Scars|r and |cRXP_ENEMY_Hulking Feral Scars|r. Loot them for their |cRXP_LOOT_Thick Yeti Hides|r",".train 415428,3 << Hunter sod"],"from":"RestedXP: 44-48 Feralas"},
+        {"lines":[".goto 1444/1,3621.46,-5494.63",".xp 47 >> Head back to the |cRXP_ENEMY_Naga|r cave and grind to level 47"],"from":"RestedXP: 44-48 Feralas"},
+        {"lines":[".goto 1444/1,3621.46,-5494.63",".xp 48 >> Head back to the |cRXP_ENEMY_Naga|r cave and grind to level 48"],"from":"RestedXP: 44-48 Feralas"},
+        {"lines":[".goto 1444/1,3621.46,-5494.63",".xp 48.5 >> Head back to the |cRXP_ENEMY_Naga|r cave and grind to level 48 + 50%"],"from":"RestedXP: 44-48 Feralas"},
         "turnin:2766 @1444:1733.84,-4947.43  TurnIn Find OOX-22/FE!",
         "turnin:2821 @1444:3312.88,-4345.56  TurnIn The Mark of Quality",
         "turnin:2943 @1444:3232.96,-4474.83  TurnIn Return to Troyas",

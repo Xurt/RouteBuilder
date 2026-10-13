@@ -353,6 +353,10 @@ step
     .target Homing Robot OOX-22/FE
     .isOnQuest 2766
 step
+    .goto 1444/1,3621.46,-5494.63
+    >>Kill |cRXP_ENEMY_Hatecrest Nagas|r
+    .xp 44+40000 >> Grind to level 44 40000/111800 or higher
+step
     .goto 1444/1,242.37,-4460.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Greul|r
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior

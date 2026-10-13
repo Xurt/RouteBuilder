@@ -1,7 +1,8 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "48-56 Felwood",
-  "saved": "2026-10-13 08:08",
+  "saved": "2026-10-13 08:56",
+  "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
@@ -11,6 +12,7 @@
         "obj:8460:1 @1448:-1140.76,3629.67  Objective Timbermaw Ally / Deadwood Warrior slain (6)",
         "obj:8460:2 @1448:-1011.38,3688.32  Objective Timbermaw Ally / Deadwood Pathfinder slain (6)",
         "obj:8460:3 @1448:-1142.48,3689.47  Objective Timbermaw Ally / Deadwood Gardener slain (6)",
+        {"lines":[".goto 1448/1,-1129.83,3518.50,50,0",".goto 1448/1,-1049.33,3614.33,50,0",".goto 1448/1,-1037.83,3668.00,50,0",".goto 1448/1,-1037.83,3737.00,50,0",".goto 1448/1,-1152.83,3706.33,50,0",".goto 1448/1,-1187.33,3622.00,50,0",".xp 53+95000 >> Grind to level 53 130000+/167100"],"tag":"!Warrior !Hunter !Rogue !Druid !Shaman","from":"RestedXP: 53-54 Felwood"},
         "turnin:8460 @1448:-1286.81,3874.62  TurnIn Timbermaw Ally",
         "accept:8462 @1448:-1286.81,3874.62  Accept Speak to Nafien",
         "obj:8419:1 @1448:-488.13,4521.68  Objective An Imp's Request / Felcloth (1)",

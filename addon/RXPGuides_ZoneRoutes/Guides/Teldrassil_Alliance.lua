@@ -19,6 +19,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .accept 456 >>Accept The Balance of Nature
     .target Conservator Ilthalaine
+step << !Druid
+    >>Loot the mobs you kill, make sure you have at least 10 copper worth of vendor trash, you will need it to train |T132333:0|t[Battle Shout] << Warrior
+    .xp 2 >> Grind to level 2
 step
     #loop
     .goto 1438/1,744.31,10270.46,0
@@ -37,8 +40,6 @@ step
     .complete 456,2 --Young Thistle Boar slain (4)
     .mob Young Nightsaber
     .mob Young Thistle Boar
-step
-    .xp 2 >>Grind to level 2 (A Good Friend needs it)
 step
     .goto 1438/1,713.76,10407.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r
@@ -66,6 +67,9 @@ step << Warrior
     .target Alyissia
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
     .trainer >> Train |T132333:0|t[Battle Shout]
+step << Hunter/Warrior
+    .goto 1438/1,769.77,10673.98
+    .xp 4-610 >> Grind until you are 610xp away from level 4 (790/1400)
 step
     .goto 1438/1,826.28,10328.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
@@ -155,6 +159,8 @@ step
     .turnin 3519 >>Turn in A Friend in Need
     .accept 3521 >>Accept Iverron's Antidote
     .target Dirania Silvershine
+step << Warrior
+    .xp 4-40
 step << NightElf Warrior
     .goto 1438/1,777.91,10526.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
@@ -173,12 +179,14 @@ step << Priest
     .collect 159,25
     .target Dellylah
 step
-    .xp 3 >>Grind to level 3 (Webwood Venom needs it)
+    .xp 3
 step
     .goto 1438/1,871.09,10417.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
     .accept 916 >>Accept Webwood Venom
     .target Gilshalan Windwalker
+step << Hunter/Druid
+    .xp 4-40
 step << NightElf Hunter
     .goto 1438/1,827.81,10458.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayanna Everstride|r
@@ -350,12 +358,6 @@ step << NightElf Priest
     .goto 1438/1,801.84,10458.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r
     .turnin 3119 >>Turn in Hallowed Sigil
-    .target Shanda
-step << NightElf Priest
-    .xp 5 >>Grind to level 5 (In Favor of Elune needs it)
-step << NightElf Priest
-    .goto 1438/1,801.84,10458.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r
     .accept 5622 >>Accept In Favor of Elune
     .target Shanda
 step << Priest
@@ -619,6 +621,12 @@ step
     .accept 489 >>Accept Seek Redemption!
     .target Sentinel Kyra Starsong
 step
+    .goto 1438/1,956.12,9736.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
+    .turnin 929 >>Turn in Crown of the Earth while you are here
+    .isQuestComplete 929
+    .target Corithras Moonrage
+step
     .goto 1438/1,965.29,9887.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
     .turnin 476 >>Turn in Gnarlpine Corruption
@@ -664,12 +672,6 @@ step << Warrior
     .trainer >> Train your class spells
     .target Kyra Windblade
     .xp <8,1
-step
-    .goto 1438/1,956.12,9736.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
-    .turnin 929 >>Turn in Crown of the Earth
-    .accept 933 >>Accept Crown of the Earth
-    .target Corithras Moonrage
 step << Druid
     .goto 1438/1,966.05,9741.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kal|r
@@ -718,6 +720,16 @@ step
     .vendor >> |cRXP_BUY_Vendor and repair if necessary|r
     .target Brannol Eaglemoon
 step
+    #completewith next
+    .hs >>Hearth to Innkeeper Keldamyr's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
+    .goto 1438/1,956.12,9736.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
+    .turnin 929 >>Turn in Crown of the Earth
+    .accept 933 >>Accept Crown of the Earth
+    .target Corithras Moonrage
+step
     #completewith Along67
     >>As you go: Open the |cRXP_PICK_Chest of the Sky|r. Loot it for |cRXP_LOOT_Sapphire of Sky|r. |cRXP_WARN_Anything left is finished later|r
     .complete 483,3 --Sapphire of Sky (1)
@@ -762,10 +774,6 @@ step
     >>Kill |cRXP_ENEMY_Gnarlpine Shaman|r and loot |cRXP_LOOT_Shaman Voodoo Charm|r
     .complete 2541,1 --Shaman Voodoo Charm (1)
     .mob Gnarlpine Shaman
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Keldamyr's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
 step
     .goto 1438/1,956.12,9736.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
@@ -932,8 +940,6 @@ step
     .accept 923 >>Accept Tumors
     .target Rellian Greenspyre
 step << NightElf Druid
-    .xp 10 >>Grind to level 10 (Heeding the Call needs it)
-step << NightElf Druid
     .goto 1457/1,2570.38,10186.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denatharion|r
     .accept 5923 >>Accept Heeding the Call
@@ -1021,8 +1027,6 @@ step << NightElf Priest
     #completewith next
     .zone 1457 >>Travel to Darnassus
     .zoneskip 1457
-step << NightElf Priest
-    .xp 10 >>Grind to level 10 (Stars of Elune needs it)
 step << NightElf Priest
     .goto 1457/1,2520.11,9665.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Alathea|r
@@ -1115,6 +1119,12 @@ step
     .mob Blooming Lasher
     .mob Wrathvine
 step
+    .xp 10-850 << !Hunter !Druid
+    .xp 10 << Hunter
+step
+    .xp 10-1475 << !Hunter
+    .xp 10-625 << Hunter
+step
     .goto 1438/1,784.02,10442.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy |cRXP_LOOT_Refreshing Spring Water|r from |cRXP_FRIENDLY_Lyrai|r
     .complete 99050,3 --Refreshing Spring Water (1)
@@ -1189,8 +1199,6 @@ step
     >>Escort Lynessa Duskblossom out of Ban'ethil
     .complete 99053,1 --Escort Lynessa Duskblossom out of Ban'ethil
 step << Warrior
-    .xp 10 >>Grind to level 10 (Elanaria needs it)
-step << Warrior
     #loop
     .goto 1438/1,1258.57,10003.72,0
     .goto 1438/1,1258.57,10003.72,40,0
@@ -1234,8 +1242,6 @@ step << Dwarf Priest
     .accept 5636 >>Accept Desperate Prayer
     .target Laurna Morninglight
     .xp <10,1
-step << Rogue
-    .xp 10 >>Grind to level 10 (The Apple Falls needs it)
 step << Rogue
     .goto 1438/1,943.90,9790.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
@@ -1412,6 +1418,11 @@ step
     >>Click the |cRXP_PICK_Oracle Tree Bark|r
     .turnin 98398 >>Turn in The Oracle Tree
     .accept 940 >>Accept Teldrassil
+step << Druid/Priest
+    .xp 10-900 >> Grind until you are 900 xp off level 10 (5600/6500)
+step << Hunter
+    .xp 9+2250 >> Grind until you are 2250 into level 9 (2250/6500)
+    >>|cRXP_WARN_Once you reach this xp breakpoint, skip the harpy/escort quest and go straight to Darnassus. You will have another opportunity to finish those quests later|r
 step << Hunter
     .goto 1457/1,2316.49,9924.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
@@ -1467,8 +1478,6 @@ step
     #completewith next
     .zone 1457 >>Travel to Darnassus
     .zoneskip 1457
-step << NightElf
-    .xp 10 >>Grind to level 10 (Nessa Shadowsong needs it)
 step << NightElf
     .goto 1457/1,2190.33,9918.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mydrannul|r

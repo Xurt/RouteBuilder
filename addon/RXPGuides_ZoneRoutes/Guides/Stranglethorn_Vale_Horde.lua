@@ -127,13 +127,6 @@ step << Warlock
     .target Xizk Goodstitch
     .isOnQuest 4781
 step
-    .goto 1434/0,212.02,-12434.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Thulbek|r
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
-    .target Innkeeper Thulbek
-    .subzoneskip 117,1
-step
     .goto 1434/0,487.05,-14444.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Master Seahorn|r
     .turnin 669 >>Turn in Sunken Treasure
@@ -424,6 +417,24 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kin'weelay|r
     .turnin 596 >>Turn in Bloody Bone Necklaces
     .target Kin'weelay
+step
+    .goto 1434/0,-539.70,-12064.25,60,0
+    .goto 1434/0,-496.30,-12104.67,60,0
+    .goto 1434/0,-572.88,-12138.70,60,0
+    .goto 1434/0,-613.72,-12170.61,60,0
+    .goto 1434/0,-674.98,-12159.12,60,0
+    .goto 1434/0,-733.05,-12166.35,60,0
+    .goto 1434/0,-731.13,-12102.11,60,0
+    .goto 1434/0,-779.63,-12020.43,60,0
+    .goto 1434/0,-757.30,-11982.57,60,0
+    .goto 1434/0,-736.24,-11934.50,60,0
+    .goto 1434/0,-667.96,-11924.29,60,0
+    .goto 1434/0,-643.71,-11883.02,60,0
+    .goto 1434/0,-614.99,-11857.50,60,0
+    .goto 1434/0,-561.39,-11840.91,60,0
+    .goto 1434/0,-547.99,-11918.76,60,0
+    .goto 1434/0,-564.58,-11990.65,60,0
+    .xp 36+50000 >> Grind to level 36 50000+/71600 xp
 step << Warlock
     .goto 1434/0,388.78,-14439.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xizk Goodstitch|r
@@ -447,6 +458,13 @@ step
     #completewith next
     .hs >>Hearth to Innkeeper Thulbek's inn. |cRXP_WARN_Walk instead if you are already nearby|r
     .cooldown item,6948,>0,1
+step
+    .goto 1434/0,212.02,-12434.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Thulbek|r
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
+    .target Innkeeper Thulbek
+    .subzoneskip 117,1
 step
     .goto 1434/0,164.79,-12342.90
     >>Click the |cRXP_PICK_Bubbling Cauldron|r
@@ -814,8 +832,6 @@ step
     .isQuestTurnedIn 1182 --any of: Goblin Sponsorship
     .xp <29,1
 step
-    .xp 37 >>Grind to level 37 (Skullsplitter Tusks needs it)
-step
     .goto 1434/0,497.90,-14449.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
     .accept 209 >>Accept Skullsplitter Tusks
@@ -902,16 +918,6 @@ step
     .complete 193,1 --Fang of Bhag'thera (1)
     .mob Bhag'thera
 step
-    .goto 1434/0,-54.72,-11628.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
-    .turnin 196 >>Turn in Raptor Mastery
-    .target Hemet Nesingwary
-step
-    .goto 1434/0,-47.70,-11617.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir S. J. Erlgadin|r
-    .turnin 193 >>Turn in Panther Mastery
-    .target Sir S. J. Erlgadin
-step
     #completewith next
     .hs >>Hearth to Innkeeper Thulbek's inn. |cRXP_WARN_Walk instead if you are already nearby|r
     .cooldown item,6948,>0,1
@@ -925,6 +931,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kin'weelay|r
     .turnin 598 >>Turn in Split Bone Necklace
     .target Kin'weelay
+step
+    .goto 1434/0,-54.72,-11628.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
+    .turnin 196 >>Turn in Raptor Mastery
+    .target Hemet Nesingwary
+step
+    .goto 1434/0,-47.70,-11617.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir S. J. Erlgadin|r
+    .turnin 193 >>Turn in Panther Mastery
+    .target Sir S. J. Erlgadin
 step
     .goto 1434/0,497.90,-14449.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
@@ -1106,14 +1122,14 @@ step
     >>Open the |cRXP_PICK_Balia'mah Trophy Skulls|r. Loot it for |cRXP_LOOT_Balia'mah Trophy|r
     .complete 585,1 --Balia'mah Trophy (1)
 step
+    .goto 1434/0,164.79,-12342.90
+    >>Click the |cRXP_PICK_Bubbling Cauldron|r
+    .turnin 585 >>Turn in Speaking with Nezzliok
+step
     .goto 1434/0,-54.72,-11628.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .accept 197 >>Accept Raptor Mastery
     .target Hemet Nesingwary
-step
-    .goto 1434/0,164.79,-12342.90
-    >>Click the |cRXP_PICK_Bubbling Cauldron|r
-    .turnin 585 >>Turn in Speaking with Nezzliok
 step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
