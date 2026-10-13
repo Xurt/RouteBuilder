@@ -46,6 +46,24 @@ public static class RxpServices
     }
 
     /// <summary>
+    /// RestedXP's "#season" names the classic seasons a step is for (0 = normal, 1 = Mastery, 2 = Discovery). Forever plays
+    /// as season 0, so a step for other seasons only (Season of Discovery runes) is not for us.
+    /// </summary>
+    public static bool OtherSeason(IEnumerable<string> lines)
+    {
+        foreach (var l in lines)
+        {
+            var m = Regex.Match(l, @"^#season\s+([\d,\s]+)");
+            if (m.Success) return !m.Groups[1].Value.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Contains("0");
+        }
+        return false;
+    }
+
+    static readonly Regex AnyGoto = new(@"^\.goto\s+(\d+)", RegexOptions.Compiled);
+    /// <summary>The map of a step's first .goto, or -1.</summary>
+    public static int MapOf(IEnumerable<string> lines) => lines.Select(l => AnyGoto.Match(l)).FirstOrDefault(g => g.Success) is { } g ? int.Parse(g.Groups[1].Value) : -1;
+
+    /// <summary>
     /// The lines worth carrying over from one RestedXP step, if it is a training, vendor or flight-path step (null if not,
     /// or if it is RestedXP's hardcore-mode version of one), and the map ID of its first .goto (-1 = none).
     /// </summary>
@@ -98,7 +116,7 @@ public static class RxpServices
             var actions = new List<(int Step, string Key)>();
             for (int i = 0; i < steps.Count; i++)
             {
-                if (steps[i].Along) continue;
+                if (steps[i].Along || OtherSeason(steps[i].Lines.Select(x => x.Text))) continue;
                 foreach (var (t, _) in steps[i].Lines)
                 {
                     var c = Cmd.Match(t); if (!c.Success || !c.Groups[2].Success) continue;
@@ -113,11 +131,15 @@ public static class RxpServices
                 }
             }
 
+            int lastMap = -1;
             for (int i = 0; i < steps.Count; i++)
             {
                 var (tag, along, lines) = steps[i];
-                if (along || ServiceLines(lines, out int map) is not { } kept) continue;
-                var svc = new RxpService { Guide = name, Faction = faction, Tag = tag, Map = map, Lines = kept };
+                int here = MapOf(lines.Select(x => x.Text));
+                if (here >= 0) lastMap = here;
+                if (along || OtherSeason(lines.Select(x => x.Text)) || ServiceLines(lines, out int map) is not { } kept) continue;
+                // a step with no .goto of its own is done where the guide last sent you
+                var svc = new RxpService { Guide = name, Faction = faction, Tag = tag, Map = map >= 0 ? map : lastMap, Lines = kept };
                 if (Regex.Match(name, @"^(\d+)\s*-\s*(\d+)") is { Success: true } rg) { svc.MinLevel = int.Parse(rg.Groups[1].Value); svc.MaxLevel = int.Parse(rg.Groups[2].Value); }
                 // quest steps in the same step first (a class quest handed in at the trainer), then before it, then after it
                 foreach (var a in actions.Where(a => a.Step == i)) svc.Anchors.Add((a.Key, true));

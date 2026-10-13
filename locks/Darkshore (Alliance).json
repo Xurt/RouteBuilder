@@ -1,12 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-21 Darkshore",
-  "saved": "2026-10-13 07:54",
+  "saved": "2026-10-13 08:10",
   "parts": [
     {
       "part": 1,
       "steps": [
-        "home @1439:515.55,6406.32  Home inn",
         "accept:1684 @1439:383.89,6431.65  Accept Elanaria",
         "accept:3524 @1439:543.06,6342.57  Accept Washed Ashore",
         {"lines":[".goto 1439/1,561.40,6343.01",">>Talk to |cRXP_FRIENDLY_Caylais|r",".fp Auberdine >> Get the Auberdine flight path",".target Caylais Moonfeather"],"from":"RestedXP: 10-12 ADV Darkshore 1 Mage AoE"},
@@ -14,6 +13,7 @@
         "accept:6343 @1439:533.23,6399.77  Accept Return to Nessa",
         "accept:983 @1439:520.13,6406.32  Accept Buzzbox 827",
         {"lines":[".goto 1439/1,488.69,6564.830",">>Talk to |cRXP_FRIENDLY_Dalmond|r",".vendor 4182 >> |cRXP_BUY_Buy as many|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_as you need/can|r",".target Dalmond",".money <0.0500"],"from":"RestedXP: 10-12 ADV Darkshore 1 Mage AoE"},
+        "home @1439:515.55,6406.32  Home inn",
         "turnin:97926 @1439:491.97,6580.99  TurnIn Making Do",
         "turnin:97894 @1439:445.46,6535.58  TurnIn Business in Auberdine",
         "accept:2118 @1439:397.65,6437.33  Accept Plagued Lands",
@@ -79,8 +79,8 @@
     {
       "part": 2,
       "steps": [
-        "home @1439:515.55,6406.32  Home inn",
         "accept:963 @1439:600.7,6424.66  Accept For Love Eternal",
+        "home @1439:515.55,6406.32  Home inn",
         "accept:947 @1439:497.21,6427.72  Accept Cave Mushrooms",
         {"lines":[".goto 1439/1,561.40,6343.01",".fp Auberdine >> Get the Auberdine flight path"],"from":"RestedXP: 12-18 Darkshore Mage AoE"},
         "accept:1138 @1439:577.12,6371.39  Accept Fruit of the Sea",

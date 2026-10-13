@@ -1,13 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "50-55 Blasted Lands",
-  "saved": "2026-10-13 07:52",
+  "saved": "2026-10-13 08:08",
   "parts": [
     {
       "part": 1,
       "steps": [
-        {"lines":[".goto 1419/0,-2758.21,-10935.61",">>Open the |cRXP_PICK_Abandoned Cache|r. Kill the |cRXP_ENEMY_Murderous Lost One|r (level 46) that spawns",">>Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Carnage|r]",".collect 221461,1",".train 432299,1"],"tag":"Rogue","from":"RestedXP: 50-51 Stranglethorn/Blasted Lands"},
-        {"lines":[".train 432299 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Carnage|r] |cRXP_WARN_to train|r |T236268:0|t[Carnage]"],"tag":"Rogue","from":"RestedXP: 50-51 Stranglethorn/Blasted Lands"},
         "accept:2585 @1419:-2935.09,-10883.8  Accept The Decisive Striker",
         "obj:2585:2 @1419:-2923.37,-10964.2  Objective The Decisive Striker / Vulture Gizzard (2)",
         "obj:2585:1 @1419:-2863.07,-11004.4  Objective The Decisive Striker / Scorpok Pincer (3)",

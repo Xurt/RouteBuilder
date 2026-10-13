@@ -1,19 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "31-40 Desolace",
-  "saved": "2026-10-13 07:56",
+  "saved": "2026-10-13 08:12",
   "parts": [
     {
       "part": 1,
       "steps": [
-        {"lines":[".goto StormwindClassic,26.117,77.225",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r",".trainer >> Train your class spells",".target Ursula Deline"],"tag":"Warlock","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",".goto StormwindClassic,38.82,31.27,10,0",".goto StormwindClassic,38.67,32.82",".trainer >> Train your class spells",".target Arthur the Faithful"],"tag":"Paladin","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r",".goto StormwindClassic,38.54,26.86",".trainer >> Train your class spells",".target Brother Joshua"],"tag":"Priest","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r",".trainer >> Train your class spells",".train 1543 >>Make sure you train |T135815:0|t[|cRXP_FRIENDLY_Flare|r]. You will need it for a rune later",".target Einris Brightspear"],"tag":"Hunter","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[".goto StormwindClassic,61.576,15.996",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r",".trainer >> Train your pet spells",".target Karrina Mekenda"],"tag":"Hunter","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r",".goto StormwindClassic,76.08,50.14,15,0",".goto StormwindClassic,80.22,45.37,15,0",".goto StormwindClassic,78.68,45.79",".trainer >> Train your class spells",".target Wu Shen",".target Ilsa Corbin"],"tag":"Warrior","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[".goto StormwindClassic,74.65,52.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r",".trainer >> Train your class spells",".target Osborne the Night Man"],"tag":"Rogue","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r",".trainer >> Train your class spells",".target Einris Brightspear"],"tag":"Hunter","from":"RestedXP: 34-35 Stranglethorn Vale I"},
         "accept:1437 @1443:1246.3,97.73  Accept Vahlarriel's Search",
         {"lines":[".goto 1443/1,1326.33,136.40",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baritanas Skyriver|r",".fp Desolace >> Get the Desolace Flight Path",".target Baritanas Skyriver"],"from":"RestedXP: 35-36 Desolace"},
         {"lines":[".goto 1443/1,1239.11,248.22",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Christi Galvanis|r",".vendor >> |cRXP_BUY_Restock on |r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed|r",".target Christi Galvanis"],"tag":"Hunter","from":"RestedXP: 35-36 Desolace"},
@@ -51,8 +43,7 @@
         "obj:6161:2 @1443:2922.8,181.37  Objective Claim Rackmore's Treasure! / Rackmore's Golden Key (1)",
         "turnin:6161 @1443:2884.58,190.96  TurnIn Claim Rackmore's Treasure!",
         "turnin:1387 @1443:1232.81,126.21  TurnIn Centaur Bounty",
-        {"lines":[".goto 1443/1,2273.15,-1418.62,0",".goto 1443/1,690.62,-21.59,0",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Scorpashi Lasher|r to tame it|r",".train 2975 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 5)]"],"tag":"Hunter","from":"RestedXP: 35-36 Desolace"},
-        {"lines":[".goto StormwindClassic,25.665,77.649",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spackle Thornberry|r",".vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoires] |cRXP_BUY_for your pets|r",".target Spackle Thornberry"],"tag":"Warlock","from":"RestedXP: 38-39 Swamp of Sorrows"}
+        {"lines":[".goto 1443/1,2273.15,-1418.62,0",".goto 1443/1,690.62,-21.59,0",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Scorpashi Lasher|r to tame it|r",".train 2975 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 5)]"],"tag":"Hunter","from":"RestedXP: 35-36 Desolace"}
       ]
     },
     {
@@ -78,7 +69,6 @@
     {
       "part": 3,
       "steps": [
-        {"lines":[".train 3565,3",".zoneskip Desolace"],"tag":"Mage","from":"RestedXP: 35-37 Desolace"},
         "accept:261 @1443:1242.7,214.95  Accept Down the Scarlet Path",
         "accept:93224 @1443:1236.41,124.41  Accept Carved Centaur Totems",
         "accept:5501 @1443:1431.08,-716.8  Accept Bone Collector",

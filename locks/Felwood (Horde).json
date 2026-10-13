@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "48-56 Felwood",
-  "saved": "2026-10-13 07:52",
+  "saved": "2026-10-13 08:08",
   "parts": [
     {
       "part": 1,
@@ -16,20 +16,14 @@
         "obj:8419:1 @1448:-488.13,4521.68  Objective An Imp's Request / Felcloth (1)",
         "turnin:8419 @1448:-736.53,5407.57  TurnIn An Imp's Request",
         "turnin:8462 @1448:-2082.61,6821.68  TurnIn Speak to Nafien",
-        {"lines":[".train 436609 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Knives|r] |cRXP_WARN_to train|r |T236273:0|t[Fan of Knives]"],"tag":"Rogue","from":"RestedXP: 53-54 Felwood"},
         {"lines":[".zoneskip Orgrimmar",".train 3567,1 << Mage"],"from":"RestedXP: 53-54 Felwood"},
         {"lines":[".zoneskip Orgrimmar",".train 3567,3"],"tag":"Mage","from":"RestedXP: 53-54 Felwood"},
         "turnin:8257 @1448:-1302.91,3985.78  TurnIn Blood of Morphaz",
         "turnin:5159 @1448:-1302.91,3985.78  TurnIn Cleansed Water Returns to Felwood",
         "turnin:6605 @1448:-325.41,5126.97  TurnIn A Strange One",
         "turnin:7623 @1448:-424.31,5430.57  TurnIn Lord Banehollow",
-        {"lines":[".train 440858,1",".goto 1448/1,-1980.83,6788.33,0",">>Kill |cRXP_ENEMY_Deadwood Avengers|r and |cRXP_ENEMY_Deadwood Shamans|r. Loot them for the |T237446:0|t[|cRXP_LOOT_Mysterious Darnassian Scroll|r]. You will need it to unlock the rune of |T135851:0|t[Frozen Orb] soon",".collect 227796,1"],"tag":"Mage","from":"RestedXP: 55-56 Felwood/Winterspring"},
-        {"lines":[".train 440858,1",">>|cRXP_WARN_Use a|r |T135933:0|t[|cRXP_LOOT_Comprehension Charm|r] |cRXP_WARN_on the|r |T237446:0|t[|cRXP_LOOT_Mysterious Darnassian Scroll|r] |cRXP_WARN_to decipher it into the|r |T134937:0|t[|cRXP_LOOT_Deciphered Darnassian Scroll|r]",".collect 227797,1"],"tag":"Mage","from":"RestedXP: 55-56 Felwood/Winterspring"},
         "turnin:5084 @1448:-1819.83,6909.47  TurnIn Falling to Corruption",
-        {"lines":[".train 440858,1",".goto 1448/1,-1865.83,6673.33",">>|cRXP_FRIENDLY_Calyx Greenglow|r |cRXP_WARN_patrols around slightly|r"],"tag":"Mage","from":"RestedXP: 55-56 Felwood/Winterspring"},
-        {"lines":[".train 440858,1",">>Kill the |cRXP_ENEMY_Enraged Shade|r. Loot it for the |T134939:0|t[|cRXP_LOOT_Spell Notes: Frozen Orb|r]",".collect 225690,1"],"tag":"Mage","from":"RestedXP: 55-56 Felwood/Winterspring"},
         "turnin:3942 @1448:-1310.96,4008.78  TurnIn Linken's Memory",
-        {"lines":[".train 440630 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of the Bound Spirit|r] |cRXP_WARN_to learn|r |T237577:0|t[Feral Spirit]"],"tag":"Shaman","from":"RestedXP: 58-59 Winterspring/Silithus I"},
         "turnin:5128 @1448:-1298.88,3999.58  TurnIn Words of the High Chief"
       ]
     },

@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "9-29 The Barrens",
-  "saved": "2026-10-13 07:49",
+  "saved": "2026-10-13 08:05",
   "parts": [
     {
       "part": 1,
@@ -11,15 +11,6 @@
         "turnin:98024 @1413:-2595.75,-473.15  TurnIn Journey to the Crossroads",
         "turnin:1945 @1413:-2666.68,-529.23  TurnIn Laughing Sisters",
         "item:897 @1413:-1633.08,-3116.88  ItemAccept The Harvester",
-        {"lines":[".train 410097,1",".xp <20,1"],"tag":"Shaman","from":"RestedXP: 22-24 Hillsbrad"},
-        {"lines":[">>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r",".train 410097,1"],"tag":"Shaman","from":"RestedXP: 22-24 Hillsbrad"},
-        {"lines":[".target Deathstalker Adamant",".train 400080,1",".isOnQuest 78261"],"tag":"Rogue","from":"RestedXP: 22-24 Hillsbrad"},
-        {"lines":[">>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Gefell|r for |T134244:0|t[|cRXP_LOOT_Brother's Half-Key|r]",">>|cRXP_WARN_He is located above the dining hall on the second floor|r",".collect 210212,1",".train 400080,1",".isOnQuest 78261"],"tag":"Rogue","from":"RestedXP: 22-24 Hillsbrad"},
-        {"lines":[">>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Gemela|r for |T134243:0|t[|cRXP_LOOT_Sister's Half-Key|r]",">>|cRXP_WARN_She is located in the dining hall on the bottom floor|r",".collect 210213,1",".train 400080,1",".isOnQuest 78261"],"tag":"Rogue","from":"RestedXP: 22-24 Hillsbrad"},
-        {"lines":[".collect 210209,1",".train 400080,1",".isOnQuest 78261"],"tag":"Rogue","from":"RestedXP: 22-24 Hillsbrad"},
-        {"lines":[".train 400080 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Deadly Brew|r]",".isQuestTurnedIn 78261"],"tag":"Rogue","from":"RestedXP: 22-24 Hillsbrad"},
-        {"lines":[".collect 210323,1",".collect 210329,1",".train 400102,1"],"tag":"Rogue","from":"RestedXP: 22-24 Hillsbrad"},
-        {"lines":[".train 400102 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Venom|r]"],"tag":"Rogue","from":"RestedXP: 22-24 Hillsbrad"},
         "turnin:1823 @1413:-1903.64,-2402.06  TurnIn Speak with Ruga",
         {"lines":[".goto 1413/1,-1995.86,-2376.39",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Byula"],"from":"RestedXP: 24-26 Southern Barrens"},
         {"lines":[".goto 1413/1,-1995.86,-2376.39",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Byula"],"tag":"!Rogue !Shaman","from":"RestedXP: 24-26 Southern Barrens"},
@@ -29,19 +20,6 @@
         "turnin:2986 @1413:-4047.86,-1345.39  TurnIn Call of Water",
         "turnin:1529 @1413:-4047.86,-1345.39  TurnIn Call of Water",
         "turnin:2985 @1413:-4047.86,-1345.39  TurnIn Call of Water",
-        {"lines":[".train 424760,1",".train 5209,3"],"tag":"Druid","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 424760 >> |cRXP_WARN_Use the|r |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r] |cRXP_WARN_to train|r |T236149:0|t[Berserk]"],"tag":"Druid","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 416017,1",".train 1949,3",">>|cRXP_WARN_Cast|r |T135818:0|t[Hellfire] |cRXP_WARN_to damage yourself below 70% health. Afterwards|r |T236297:0|t[Brimstone Carving] |cRXP_WARN_will transform into|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r]",".collect 213102,1"],"tag":"Warlock","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 416017 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r] |cRXP_WARN_to learn|r |T236295:0|t[Dance of the Wicked]"],"tag":"Warlock","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 425189,1",">>|cRXP_WARN_Use the|r |T134943:0|t|T134938:0|t|T134937:0|t[|cRXP_LOOT_Partial Spell Notes|r] |cRXP_WARN_to create the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r]",".collect 213116,1"],"tag":"Mage","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 425189 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r |cRXP_WARN_to train|r |T135729:0|t[Chronostatic Preservation]",".train 425189,1"],"tag":"Mage","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093,1",".collect 215452,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093,1",".collect 215453,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093,1",".collect 213138,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r] |cRXP_WARN_to train|r |T134919:0|t[Rolling with the Punches]"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 425309 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r] |cRXP_WARN_to train|r |T236254:0|t[Empowered Renew]"],"tag":"Priest","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 403472 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r] |cRXP_WARN_to train|r |T132365:0|t[Intervene]",".train 5308,3",".train 355,3",".train 72,3",".train 403338,1"],"tag":"Warrior","from":"RestedXP: 33-34 Shimmering Flats"},
         "turnin:96 @1413:-4047.86,-1345.39  TurnIn Call of Water",
         "turnin:1523 @1413:-3054.79,268.68  TurnIn Call of Fire",
         "turnin:1522 @1413:-3054.79,268.68  TurnIn Call of Fire",
@@ -238,8 +216,6 @@
         "accept:6401 @1413:-943,-263.04  Accept Kaya's Alive",
         "turnin:2458 @1413:-2995,1236.85  TurnIn Deep Cover",
         "turnin:1511 @1413:-1898.58,-2391.93  TurnIn Ken'zigla's Draught",
-        {"lines":[".train 410095,1"],"tag":"Shaman","from":"RestedXP: 24-26 Southern Barrens"},
-        {"lines":[".train 425343,1"],"tag":"Shaman","from":"RestedXP: 24-26 Southern Barrens/Stonetalon"},
         {"lines":[".goto 1413/1,-2645.40,-406.94",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Boorand Plainswind",".train 425343,3 << Shaman"],"tag":"!Mage","from":"RestedXP: 24-26 Southern Barrens/Stonetalon"},
         {"lines":[".goto 1413/1,-1891.48,-2391.93",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r",".target Mangletooth",".train 783,1 << Druid",".train 2645,1 << Shaman",".train 5118,1 << Hunter"],"from":"RestedXP: 28-30 Thousand Needles"},
         {"lines":[".goto 1413/1,-1891.48,-2391.93",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r","+|cRXP_WARN_If you have|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain buffs of your choice from|r |cRXP_FRIENDLY_Mangletooth|r",".target Mangletooth",".train 783,3 << Druid",".train 2645,3 << Shaman",".train 5118,3 << Hunter"],"tag":"Druid/Shaman/Hunter","from":"RestedXP: 28-30 Thousand Needles"}
@@ -300,8 +276,6 @@
         "obj:6128:1 @1413:-3445.94,-1427.81  Objective Gathering the Cure / Earthroot (5)",
         "obj:891:2 @1413:-3500.66,-2087.9  Objective The Guns of Northwatch / Cannoneer Whessan slain (1)",
         "obj:868:1 @1413:-2227.91,-3174.98  Objective Egg Hunt / Silithid Egg (12)",
-        {"lines":[".train 415936,1",".train 1953,3",".goto 1413/1,-1982.68,-3792.50"],"tag":"Mage","from":"RestedXP: 24-26 Southern Barrens"},
-        {"lines":[".train 415936,1",".train 1953,3",".goto 1413/1,-1965.46,-3801.96,5,0",".goto 1413/1,-1960.39,-3820.88,5,0",".goto 1413/1,-1943.16,-3831.01,5,0",".goto 1413/1,-1931.00,-3846.55,5,0",".goto 1413/1,-1923.91,-3865.47,5,0",".goto 1413/1,-1916.82,-3885.06",".train 415936 >>|cRXP_WARN_Cast|r |T135736:0|t[Blink] |cRXP_WARN_onto the green circles one by one. At the end, blink against the|r |cRXP_PICK_Etched Carving|r |cRXP_WARN_to train|r |T236220:0|t[Living Bomb]"],"tag":"Mage","from":"RestedXP: 24-26 Southern Barrens"},
         "turnin:97003 @1413:-2711.27,-350.19  TurnIn Chol'aruk the Ravener",
         "turnin:868 @1413:-2552.18,-389.38  TurnIn Egg Hunt",
         "turnin:878 @1413:-1891.48,-2391.25  TurnIn Tribes at War",
@@ -426,11 +400,7 @@
         "obj:2478:3 @1413:-2931.16,1234.83  Objective Mission: Possible But Not Probable / Venture Co. Patroller slain (2)",
         "obj:2478:2 @1413:-2913.94,1222.66  Objective Mission: Possible But Not Probable / Venture Co. Lookout slain (2)",
         "obj:2478:4 @1413:-2925.08,1234.83  Objective Mission: Possible But Not Probable / Gallywix's Head (1)",
-        "obj:2478:6 @1413:-2926.1,1236.85  Objective Mission: Possible But Not Probable / Cache of Zanzil's Altered Mixture (1)",
-        {"lines":[".train 2575 >>Use |T4625105:0|t[Mining for Dummies]."],"from":"RestedXP: 1-14 Zephras Isle"},
-        {"lines":[".train 2366 >>Use |T4624731:0|t[Wild Harvest]."],"from":"RestedXP: 1-14 Zephras Isle"},
-        {"lines":[".train 8613 >>Use |T4624731:0|t[Pelt Collecting for Beginners]."],"from":"RestedXP: 1-14 Zephras Isle"},
-        {"lines":[".isOnQuest 93461",".train 7411,3",">>Use the |T135225:0|t[Runed Copper Rod] macro below, then use the |T135645:0|t[Novice's Practice Wand] macro",".collect 6218,1",".collect 247789,1"],"tag":"Mage","from":"RestedXP: 1-14 Zephras Isle"}
+        "obj:2478:6 @1413:-2926.1,1236.85  Objective Mission: Possible But Not Probable / Cache of Zanzil's Altered Mixture (1)"
       ]
     }
   ]

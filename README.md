@@ -61,7 +61,8 @@ copies in RestedXP's training, vendor and flight-path steps for the zone:
   when RestedXP does both at one NPC), so it moves with that step if the route changes. If our guide
   does not have that quest, the nearest one RestedXP does around it is used.
 * Only steps for this faction, on this zone's maps, and from a RestedXP guide whose level range the
-  route is in at that point. A build for one race and class takes only the steps for it.
+  route is in at that point. A step without a `.goto` counts as being wherever its guide last sent you, and
+  steps for other classic seasons (`#season 2`: Season of Discovery runes) are left out. A build for one race and class takes only the steps for it.
 * RestedXP's own conditions come along (`.money`, `.xp`, class tags), so its "train if you can afford
   it" variants still choose themselves in game. Hardcore-only variants are left out.
 * `--no-rxp-steps` leaves them out. The report says how many were added, and the console ends each build
@@ -130,6 +131,7 @@ the options of the build you will run next:
 * `--race` and `--class` take only the steps RestedXP shows that character. Without them every class's
   and race's steps are taken, for a faction guide.
 * `--guides "1-6 Durotar,6-10 Durotar"` takes only those guides (by their `#name`) from the files.
+* Setting the hearthstone is only taken from a step on this zone's maps, in a guide that does its quests.
 * RestedXP's training, vendor and flight-path steps for this zone go in too, in RestedXP's places (on this
   zone's maps, from the guides that do its quests).
 * If the files have nothing for the zone, the lock that is there is left alone.

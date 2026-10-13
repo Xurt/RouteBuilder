@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "47-57 Azshara",
-  "saved": "2026-10-13 07:51",
+  "saved": "2026-10-13 08:08",
   "parts": [
     {
       "part": 1,
@@ -22,12 +22,6 @@
         "turnin:8254 @1447:-5427.12,3900.58  TurnIn Cenarion Aid",
         "turnin:3562 @1447:-4421.06,3603.03  TurnIn Magatha's Payment to Jediga",
         "turnin:3563 @1447:-4421.06,3603.03  TurnIn Jes'rimon's Payment to Jediga",
-        {"lines":[".train 440858,1",">>|cRXP_WARN_Use a|r |T135933:0|t[|cRXP_LOOT_Comprehension Charm|r] |cRXP_WARN_on the|r |T237446:0|t[|cRXP_LOOT_Mysterious Darnassian Scroll|r] |cRXP_WARN_to decipher it into the|r |T134937:0|t[|cRXP_LOOT_Deciphered Darnassian Scroll|r]",".collect 227797,1"],"tag":"Mage","from":"RestedXP: 55-56 Felwood/Winterspring"},
-        {"lines":[".train 440858,1",">>Kill the |cRXP_ENEMY_Enraged Shade|r. Loot it for the |T134939:0|t[|cRXP_LOOT_Spell Notes: Frozen Orb|r]",".collect 225690,1"],"tag":"Mage","from":"RestedXP: 55-56 Felwood/Winterspring"},
-        {"lines":[".train 440924 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mark of Chaos|r] |cRXP_WARN_to learn|r |T136226:0|t[Mark of Chaos]"],"tag":"Warlock","from":"RestedXP: 56-58 Western PL/Eastern PL"},
-        {"lines":[">>Use the |T134046:0|t[|cRXP_LOOT_Tainted Boar Meat|r] to combine it with the |T132108:0|t[|cRXP_LOOT_Bubbling Green Ichor|r] and create a |T134047:0|t[Rancid Hunk of Flesh]",".collect 225943,1",".train 440557,1"],"tag":"Hunter","from":"RestedXP: 56-58 Western PL/Eastern PL"},
-        {"lines":[".train 440557 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Resourceful|r] |cRXP_WARN_to train|r |T132178:0|t[Resourcefulness]",".train 440557,1"],"tag":"Hunter","from":"RestedXP: 56-58 Western PL/Eastern PL"},
-        {"lines":[".train 440630 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of the Bound Spirit|r] |cRXP_WARN_to learn|r |T237577:0|t[Feral Spirit]"],"tag":"Shaman","from":"RestedXP: 58-59 Winterspring/Silithus I"},
         "turnin:3564 @1447:-4421.06,3603.03  TurnIn Andron's Payment to Jediga",
         "obj:8234:1 @1447:-5379.96,4683.34  Objective Sealed Azure Bag / Sealed Azure Bag (1)",
         "turnin:8234 @1447:-4760.3,3982.07  TurnIn Sealed Azure Bag",
@@ -66,9 +60,6 @@
         "turnin:8252 @1447:-4760.3,3982.07  TurnIn The Siren's Coral",
         "accept:8253 @1447:-4760.3,3982.07  Accept Destroy Morphaz",
         "turnin:3565 @1447:-4421.06,3603.03  TurnIn Xylem's Payment to Jediga",
-        {"lines":[".train 436609 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Knives|r] |cRXP_WARN_to train|r |T236273:0|t[Fan of Knives]"],"tag":"Rogue","from":"RestedXP: 53-54 Felwood"},
-        {"lines":[".zoneskip Orgrimmar",".train 3567,1 << Mage"],"from":"RestedXP: 53-54 Felwood"},
-        {"lines":[".zoneskip Orgrimmar",".train 3567,3"],"tag":"Mage","from":"RestedXP: 53-54 Felwood"},
         "accept:3542 @1447:-4421.06,3603.03  Accept Delivery to Andron Gant",
         "home @1447:-3916.01,2727.28  Home inn"
       ]

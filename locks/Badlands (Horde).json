@@ -1,19 +1,12 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-43 Badlands",
-  "saved": "2026-10-13 07:51",
+  "saved": "2026-10-13 08:07",
   "parts": [
     {
       "part": 1,
       "steps": [
         "turnin:1418 @1418:-2240.61,-6672.32  TurnIn Neeka Bloodscar",
-        {"lines":[".train 403472 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r] |cRXP_WARN_to train|r |T132365:0|t[Intervene]",".train 5308,3",".train 355,3",".train 72,3",".train 403338,1"],"tag":"Warrior","from":"RestedXP: 33-34 Shimmering Flats"},
-        {"lines":[".train 409163 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of Focused Rage|r] |cRXP_WARN_to train|r |T132345:0|t[Focused Rage]"],"tag":"Warrior","from":"RestedXP: 38-39 Alterac/Arathi"},
-        {"lines":[".train 426443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of Invocation|r] |cRXP_WARN_to train|r |T136133:0|t[Invocation]"],"tag":"Warlock","from":"RestedXP: 38-39 Alterac/Arathi"},
-        {"lines":[".train 431663,1 << Priest",".train 416031,1 << Paladin",".train 401752,1 << Mage",".train 410118,1 << Hunter",".train 410029,1 << Druid",".train 403467,1 << Warrior",".train 426452,1 << Warlock",".train 425102,1 << Rogue",".train 425883,1 << Shaman",">>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T135791:0|t[|cRXP_FRIENDLY_Psychosophic Epiphany|r] << Priest",">>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Warfare|r] << Paladin",">>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Brain Freeze|r] << Mage",">>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Trapper|r] << Hunter",">>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Eclipse|r] << Druid",">>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Healing Rage|r] << Warrior",">>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Burning Darkness|r] << Warlock",">>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Poisoned Blade|r] << Rogue",">>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ancestral Awakening|r] << Shaman",".collect 212552,1 << Priest",".collect 212551,1 << Paladin",".collect 208853,1 << Mage",".collect 212549,1 << Hunter",".collect 212548,1 << Druid",".collect 212562,1 << Warrior",".collect 212561,1 << Warlock",".collect 212559,1 << Rogue",".collect 212560,1 << Shaman"],"from":"RestedXP: 39-40 Badlands"},
-        {"lines":[".train 431663 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Psychosophic Epiphany|r] |cRXP_WARN_to train|r |T136181:0|t[Mind Spike] << Priest",".train 416031 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Warfare|r] |cRXP_WARN_to train|r |T236246:0|t[The Art of War] << Paladin",".train 401752 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Brain Freeze|r] |cRXP_WARN_to train|r |T236206:0|t[Brain Freeze] << Mage",".train 410118 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Trapper|r] |cRXP_WARN_to train|r |T133882:0|t[Trap Launcher] << Hunter",".train 410029 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Eclipse|r] |cRXP_WARN_to train|r |T236151:0|t[Eclipse] << Druid",".train 403467 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Healing Rage|r] |cRXP_WARN_to train|r |T132345:0|t[Enraged Regeneration] << Warrior",".train 426452 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Burning Darkness|r] |cRXP_WARN_to train|r |T135823:0|t[Shadow and Flame] << Warlock",".train 425102 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Poisoned Blade|r] |cRXP_WARN_to train|r |T236270:0|t[Poisoned Blade] << Rogue",".train 425883 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Ancestral Awakening|r] |cRXP_WARN_to train|r |T237571:0|t[Ancestral Awakening] << Shaman"],"from":"RestedXP: 39-40 Badlands"},
-        {"lines":[".train 424718 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Stars|r] |cRXP_WARN_to train|r |T135730:0|t[Starsurge]"],"tag":"Druid","from":"RestedXP: 39-40 Badlands"},
-        {"lines":[".train 410115 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Aspect of the Lion|r] |cRXP_WARN_to train|r |T132185:0|t[Aspect of the Lion]"],"tag":"Hunter","from":"RestedXP: 39-40 Badlands"},
         {"lines":[".goto 1418/0,-2178.42,-6632.35",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorrik|r",".fp Kargath >> Get the Kargath Flight Path",".target Gorrik"],"from":"RestedXP: 39-40 Badlands"},
         {"lines":[".goto 1418/0,-2151.30,-6672.98",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sranda|r",".vendor >>|cRXP_BUY_Sell your junk and repair, if necessary|r",".target Sranda"],"from":"RestedXP: 39-40 Badlands"},
         "accept:1419 @1418:-2240.61,-6672.32  Accept Coyote Thieves",
@@ -35,13 +28,6 @@
         "obj:1419:1 @1418:-3317.69,-6577.79  Objective Coyote Thieves / Coyote Jawbone (30)",
         "turnin:1419 @1418:-2240.61,-6672.32  TurnIn Coyote Thieves",
         "accept:1420 @1418:-2240.61,-6672.32  Accept Report to Helgrum",
-        {"lines":[".zoneskip Orgrimmar",".train 3567,3"],"tag":"Mage","from":"RestedXP: 39-40 Badlands"},
-        {"lines":[".train 416050 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flagellation|r] |cRXP_WARN_to train|r |T133495:0|t[Flagellation]",".train 403480,1"],"tag":"Warrior","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
-        {"lines":[".train 416050 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Mass Regeneration|r] |cRXP_WARN_to train|r |T132870:0|t[Mass Regeneration]",".train 415939,1"],"tag":"Mage","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
-        {"lines":[".train 400096 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r] |cRXP_WARN_to learn|r |T132330:0|t[Shuriken Toss]"],"tag":"Rogue","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
-        {"lines":[".train 416015 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r] |cRXP_WARN_to train|r |T135789:0|t[Incinerate]"],"tag":"Warlock","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
-        {"lines":[">>Combine the |T134939:0|t[|cRXP_LOOT_Coded Warlock Notes|r] with the |T134329:0|t[|cRXP_LOOT_Wastewander Cipher|r] to receive |T237018:0|t[|cRXP_LOOT_Deciphered Warlock Notes|r]",".collect 221545,1",".train 415991,1 << Priest",".train 416055,1 << Shaman"],"tag":"Priest/Shaman","from":"RestedXP: 41-43 Tanaris/Dustwallow"},
-        {"lines":[">>Use |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Verdant Winter|r] to learn |T237567:0|t[|cRXP_FRIENDLY_Pain and Suffering|r] << Priest",">>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Mental Dexterity|r] to learn |T136055:0|t[|cRXP_FRIENDLY_Mental Dexterity|r] << Shaman",".train 415991,1 << Priest",".train 416055,1 << Shaman"],"tag":"Priest/Shaman","from":"RestedXP: 41-43 Tanaris/Dustwallow"},
         "turnin:2341 @1418:-2139.36,-6653.41  TurnIn Necklace Recovery, Take 3"
       ]
     },
@@ -72,9 +58,7 @@
         "accept:709 @1418:-3357.49,-7164.34  Accept Solution to Doom",
         "obj:709:1 @1418:-3057.75,-6201.68  Objective Solution to Doom / Tablet of Ryun'eh (1)",
         "turnin:709 @1418:-3357.49,-7164.34  TurnIn Solution to Doom",
-        "accept:728 @1418:-3357.49,-7164.34  Accept To the Undercity for Yagyin's Digest",
-        {"lines":[".zoneskip Undercity",".train 3563,3"],"tag":"Mage","from":"RestedXP: 48-49 The Hinterlands"},
-        {"lines":[".train 432291 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Focus|r] |cRXP_WARN_to train|r |T236274:0|t[Focused Attacks]"],"tag":"Rogue","from":"RestedXP: 48-49 The Hinterlands"}
+        "accept:728 @1418:-3357.49,-7164.34  Accept To the Undercity for Yagyin's Digest"
       ]
     },
     {

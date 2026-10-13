@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-45 Badlands",
-  "saved": "2026-10-13 07:56",
+  "saved": "2026-10-13 08:13",
   "parts": [
     {
       "part": 1,
@@ -21,7 +21,6 @@
         "accept:2418 @1418:-3133.62,-6767.34  Accept Power Stones",
         "accept:703 @1418:-3133.62,-6767.34  Accept Barbecued Buzzard Wings",
         "turnin:733 @1418:-3417.44,-6607.64  TurnIn Scrounging",
-        {"lines":[".goto StormwindClassic,38.67,32.82",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",".trainer >> Train your class spells",".target Arthur the Faithful"],"tag":"Paladin","from":"RestedXP: 39-40 Alterac/Arathi"},
         "obj:2418:1 @1418:-3362.72,-6144.97  Objective Power Stones / Dentrium Power Stone (8)",
         "obj:2418:2 @1418:-3362.72,-6144.97  Objective Power Stones / An'Alleum Power Stone (8)",
         "turnin:2418 @1418:-3133.62,-6767.34  TurnIn Power Stones",
@@ -34,10 +33,6 @@
         "obj:703:1 @1418:-3653.01,-6787.07  Objective Barbecued Buzzard Wings / Buzzard Wing (4)",
         "turnin:703 @1418:-3133.62,-6767.34  TurnIn Barbecued Buzzard Wings",
         "accept:715 @1418:-2721.44,-6623.23  Accept Liquid Stone",
-        {"lines":[".train 415428 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle Cat|r] |cRXP_WARN_to train|r |T132167:0|t[Catlike Reflexes]",".train 415428,1 << Hunter sod"],"tag":"Hunter","from":"RestedXP: 44-46 Feralas SoD"},
-        {"lines":[">>Use the |T135139:0|t|cRXP_LOOT_Broken Woodpaw Staff|r to combine it with the |T133291:0|t|cRXP_LOOT_Grimtotem Necklace|r and create a |T135153:0|t|cRXP_LOOT_Diseased Nature Staff|r",".collect 221976,1",".train 431743,1"],"tag":"Warlock","from":"RestedXP: 44-46 Feralas SoD"},
-        {"lines":[".train 431743 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Pandemic|r] |cRXP_WARN_to learn|r |T136227:0|t[Pandemic]",".train 431743,1"],"tag":"Warlock","from":"RestedXP: 44-46 Feralas SoD"},
-        {"lines":[".train 426940 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Unbridled|r] |cRXP_WARN_to learn|r |T132352:0|t[Rampage]",".train 427081,1"],"tag":"Warrior","from":"RestedXP: 44-46 Feralas SoD"},
         "accept:721 @1418:-3407.99,-6609.13  Accept A Sign of Hope",
         "obj:715:1 @1418:-3387.34,-6448.28  Objective Liquid Stone / Healing Potion (1)",
         "turnin:721 @1418:-3021.93,-6065.2  TurnIn A Sign of Hope"

@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "19-30 Ashenvale",
-  "saved": "2026-10-13 07:49",
+  "saved": "2026-10-13 08:06",
   "parts": [
     {
       "part": 1,
@@ -28,7 +28,6 @@
         "turnin:78132 @1440:-802.73,1966.92  TurnIn Dragonslayer's Helm",
         "turnin:78133 @1440:-802.73,1966.92  TurnIn Dragonslayer's Shield",
         "turnin:78134 @1440:-802.73,1966.92  TurnIn Dragonslayer's Lance",
-        {"lines":[".train 410095,1"],"tag":"Shaman","from":"RestedXP: 24-26 Southern Barrens"},
         "accept:6503 @1440:-2400.68,2054.55  Accept Ashenvale Outrunners",
         {"lines":[".goto 1440/1,-2520.05,2305.55",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r",".fp Splintertree Post >> Get the Splintertree Post flight path",".target Vhulgra"],"tag":"!Hunter","from":"RestedXP: 26-28 Ashenvale"},
         {"lines":[".goto 1440/1,-2066.21,2187.93,0",".goto 1440/1,-2285.92,2195.62,0",".goto 1440/1,-2285.92,2195.62,50,0",".goto 1440/1,-2255.36,2346.29,50,0",".goto 1440/1,-2141.75,2258.66,50,0",".goto 1440/1,-2066.21,2187.93,50,0",".train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]",".train 17264 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ghostpaw Alpha|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 4)]",".xp <27,1"],"tag":"Hunter","from":"RestedXP: 26-28 Ashenvale"},

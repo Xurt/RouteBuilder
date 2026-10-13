@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "15-29 Stonetalon Mountains",
-  "saved": "2026-10-13 07:49",
+  "saved": "2026-10-13 08:06",
   "parts": [
     {
       "part": 1,
@@ -16,20 +16,6 @@
         "turnin:1095 @1442:365.16,878.25  TurnIn Further Instructions",
         {"lines":[".goto 1442/1,183.98,1608.63",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nizzik|r",".vendor >>|cRXP_BUY_Buy gear upgrades if any are available|r",".target Nizzik",".isOnQuest 1096"],"from":"RestedXP: 24-26 Southern Barrens/Stonetalon"},
         "turnin:1060 @1442:-394.2,-272.5  TurnIn Letter to Jin'Zil",
-        {"lines":[".train 424760,1",".train 5209,3"],"tag":"Druid","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 424760 >> |cRXP_WARN_Use the|r |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r] |cRXP_WARN_to train|r |T236149:0|t[Berserk]"],"tag":"Druid","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 416017,1",".train 1949,3",">>|cRXP_WARN_Cast|r |T135818:0|t[Hellfire] |cRXP_WARN_to damage yourself below 70% health. Afterwards|r |T236297:0|t[Brimstone Carving] |cRXP_WARN_will transform into|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r]",".collect 213102,1"],"tag":"Warlock","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 416017 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r] |cRXP_WARN_to learn|r |T236295:0|t[Dance of the Wicked]"],"tag":"Warlock","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 425189,1",">>|cRXP_WARN_Use the|r |T134943:0|t|T134938:0|t|T134937:0|t[|cRXP_LOOT_Partial Spell Notes|r] |cRXP_WARN_to create the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r]",".collect 213116,1"],"tag":"Mage","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 425189 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r |cRXP_WARN_to train|r |T135729:0|t[Chronostatic Preservation]",".train 425189,1"],"tag":"Mage","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093,1",".collect 215452,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093,1",".collect 215453,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093,1",".collect 213138,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r] |cRXP_WARN_to train|r |T134919:0|t[Rolling with the Punches]"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 425309 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r] |cRXP_WARN_to train|r |T236254:0|t[Empowered Renew]"],"tag":"Priest","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 416017,1",">>|cRXP_WARN_Cast|r |T135818:0|t[Hellfire] |cRXP_WARN_to damage yourself below 70% health. Afterwards|r |T236297:0|t[Brimstone Carving] |cRXP_WARN_will transform into|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r]",".collect 213102,1"],"tag":"Warlock","from":"RestedXP: 34-35 Desolace"},
-        {"lines":[".zoneskip Thunder Bluff",".train 3566,3"],"tag":"Mage","from":"RestedXP: 34-35 Desolace"},
         "accept:6461 @1442:-233.54,-177.42  Accept Blood Feeders",
         "obj:6461:1 @1442:563.42,445.17  Objective Blood Feeders / Deepmoss Creeper slain (10)",
         {"lines":[".goto 1442/1,927.72,893.56",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Jayka"],"from":"RestedXP: 17-22 Stonetalon/Barrens/Ashenvale"},
@@ -70,8 +56,6 @@
         "obj:6284:1 @1442:628.37,552.63  Objective Arachnophobia / Besseleth's Fang (1)",
         "turnin:6284 @1442:940.9,925.14  TurnIn Arachnophobia",
         "obj:6301:1 @1442:794.89,1640.22  Objective Cycle of Rebirth / Gaea Seed (10)",
-        {"lines":[".goto 1442/1,1856.52,800.10,0",".goto 1442/1,1856.52,800.10,50,0",".goto 1442/1,1825.76,573.14,50,0",".goto 1442/1,1613.33,670.83,50,0",".goto 1442/1,1610.40,656.83,50,0",".goto 1442/1,1446.32,570.86,50,0",">>Kill the |cRXP_ENEMY_Primordial Anomaly|r. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Primordial Fury]|r",">>|cRXP_WARN_Make sure to check its form (debuffs). If it's in|r |T136074:0|t[Nature Form]|cRXP_WARN_, deal|r |T135824:0|t[Fire Damage]|cRXP_WARN_. If it's in|r |T135819:0|t[Fire Form]|cRXP_WARN_, deal|r |T135865:0|t[Frost Damage]|cRXP_WARN_. If it's in|r |T135861:0|t[Water Form]|cRXP_WARN_, deal|r |T136085:0|t[Nature Damage]",">>|cRXP_WARN_Be careful as it casts |T132939:0|t[Knock Away] |cRXP_WARN_(Melee Instant: Knocks target up in the air and deals 80 damage)|r",">>|cRXP_WARN_It has a 5-8 minute respawn time and drops a random BoE green each time|r",".collect 210811,1",".train 425343,1"],"tag":"Shaman","from":"RestedXP: 24-26 Southern Barrens/Stonetalon"},
-        {"lines":[".train 425343,1"],"tag":"Shaman","from":"RestedXP: 24-26 Southern Barrens/Stonetalon"},
         "turnin:6301 @1442:928.2,1015.67  TurnIn Cycle of Rebirth",
         "accept:1511 @1442:-331.21,-181  Accept Ken'zigla's Draught"
       ]

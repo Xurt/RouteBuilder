@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "24-38 Hillsbrad Foothills",
-  "saved": "2026-10-13 07:55",
+  "saved": "2026-10-13 08:12",
   "parts": [
     {
       "part": 1,
@@ -47,7 +47,6 @@
         "accept:564 @1424:-610.77,-793.81  Accept Costly Menace",
         "turnin:98059 @1424:-420.37,-669.44  TurnIn Hillsbrad's Hoard",
         "obj:564:1 @1424:-174.93,-125.23  Objective Costly Menace / Mountain Lion slain (8)",
-        {"lines":[".vendor >> Buy up to 120 level 35 drink from the Innkeeper"],"from":"RestedXP: 31-33 Hillsbrad Mage AoE"},
         "accept:514 @1424:-551.57,-817.92  Accept Letter to Stormpike",
         "turnin:505 @1424:-473.81,-861.01  TurnIn Syndicate Assassins",
         "accept:536 @1424:-580.05,-845.65  Accept Down the Coast",
@@ -72,15 +71,7 @@
         "accept:555 @1424:-593.81,-851.84  Accept Soothing Turtle Bisque",
         "obj:555:2 @1424:-499.41,-773.97  Objective Soothing Turtle Bisque / Soothing Spices (1)",
         "obj:555:1 @1424:-737.81,-679.25  Objective Soothing Turtle Bisque / Turtle Meat (1)",
-        "turnin:555 @1424:-593.81,-851.84  TurnIn Soothing Turtle Bisque",
-        {"lines":[".goto StormwindClassic,26.117,77.225",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r",".trainer >> Train your class spells",".target Ursula Deline"],"tag":"Warlock","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",".goto StormwindClassic,38.82,31.27,10,0",".goto StormwindClassic,38.67,32.82",".trainer >> Train your class spells",".target Arthur the Faithful"],"tag":"Paladin","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r",".goto StormwindClassic,38.54,26.86",".trainer >> Train your class spells",".target Brother Joshua"],"tag":"Priest","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r",".trainer >> Train your class spells",".train 1543 >>Make sure you train |T135815:0|t[|cRXP_FRIENDLY_Flare|r]. You will need it for a rune later",".target Einris Brightspear"],"tag":"Hunter","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[".goto StormwindClassic,61.576,15.996",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r",".trainer >> Train your pet spells",".target Karrina Mekenda"],"tag":"Hunter","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r",".goto StormwindClassic,76.08,50.14,15,0",".goto StormwindClassic,80.22,45.37,15,0",".goto StormwindClassic,78.68,45.79",".trainer >> Train your class spells",".target Wu Shen",".target Ilsa Corbin"],"tag":"Warrior","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[".goto StormwindClassic,74.65,52.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r",".trainer >> Train your class spells",".target Osborne the Night Man"],"tag":"Rogue","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r",".trainer >> Train your class spells",".target Einris Brightspear"],"tag":"Hunter","from":"RestedXP: 34-35 Stranglethorn Vale I"}
+        "turnin:555 @1424:-593.81,-851.84  TurnIn Soothing Turtle Bisque"
       ]
     },
     {

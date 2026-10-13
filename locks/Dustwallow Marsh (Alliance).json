@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "26-40 Dustwallow Marsh",
-  "saved": "2026-10-13 07:55",
+  "saved": "2026-10-13 08:11",
   "parts": [
     {
       "part": 1,
@@ -16,13 +16,11 @@
         {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed|r",".target Jensen Farran"],"tag":"Hunter","from":"RestedXP: 33-34 Thousand Needles"},
         {"lines":[".trainer >>Train your spells",".train 19752 >>Train |T136106:0|t[|cRXP_FRIENDLY_Divine Intervention|r]. You will need it for a rune later << sod"],"tag":"Paladin sod","from":"RestedXP: 33-34 Thousand Needles"},
         "accept:1135 @1445:-4464.15,-3613.58  Accept Highperch Venom",
-        {"lines":[".goto StormwindClassic,38.67,32.82",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",".trainer >> Train your class spells",".target Arthur the Faithful"],"tag":"Paladin","from":"RestedXP: 39-40 Alterac/Arathi"},
         {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Delete all|r |T132382:0|t[Razor Arrows] |cRXP_BUY_you have and fill your quiver with|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_instead|r",".target Jensen Farran",".xp <40,1"],"tag":"Hunter","from":"RestedXP: 40-40 Dustwallow Marsh"},
         {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed. Buy a couple stacks of|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_if you're close to level 40|r",".target Jensen Farran",".xp >40,1"],"tag":"Hunter","from":"RestedXP: 40-40 Dustwallow Marsh"},
         "turnin:1953 @1445:-3393.15,-4031.48  TurnIn Return to the Marsh",
         "turnin:1951 @1445:-3393.15,-4031.48  TurnIn Rituals of Power",
         "turnin:1947 @1445:-3393.15,-4031.48  TurnIn Journey to the Marsh",
-        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r inside",".trainer >> Train your class spells",".target Einris Brightspear",".xp <42,1"],"tag":"Hunter","from":"RestedXP: 41-43 STV/Swamp of Sorrows"},
         {"lines":[".goto 1445/1,-4538.44,-3727.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Evencane|r up stairs in the Keep",".trainer >> Train your class spells",".target Captain Evencane"],"tag":"Warrior","from":"RestedXP: 43-44 Tanaris"},
         {"lines":[".goto 1445/1,-4513.29,-3692.68",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Karman|r",".trainer >> Train your class spells",".target Brother Karman"],"tag":"Paladin","from":"RestedXP: 43-44 Tanaris"},
         "turnin:1799 @1445:-3393.15,-4031.48  TurnIn Fragments of the Orb of Orahil"
@@ -67,7 +65,6 @@
     {
       "part": 3,
       "steps": [
-        {"lines":[".vendor >> Buy level 35 drink if needed"],"from":"RestedXP: 33-60 Mage AoE"},
         {"lines":[".goto 1445/1,-4517.17,-3828.83",".fp Theramore >> Get the Theramore Flight Path"],"from":"RestedXP: 33-60 Mage AoE"},
         "accept:1204 @1445:-4457.85,-3624.78  Accept Mudrock Soup and Bugs",
         {"lines":[".goto 1445/1,-4470.97,-3616.03",".vendor >> Buy up to 180 level 35 drink"],"from":"RestedXP: 33-60 Mage AoE"},
@@ -80,13 +77,9 @@
         "obj:1177:1 @1445:-3974.32,-2559.38  Objective Hungry! / Mirefin Head (12)",
         "obj:1204:1 @1445:-4251,-3035.73  Objective Mudrock Soup and Bugs / Forked Mudrock Tongue (8)",
         {"lines":[".trainer >> Train your class spells"],"tag":"Gnome","from":"RestedXP: 33-60 Mage AoE"},
-        {"lines":[".trainer >> Train your class spells"],"tag":"Human","from":"RestedXP: 33-60 Mage AoE"},
         "turnin:1204 @1445:-4457.85,-3624.78  TurnIn Mudrock Soup and Bugs",
         {"lines":[".trainer >> Train your class spells"],"from":"RestedXP: 33-60 Mage AoE"},
         "turnin:1177 @1445:-2820.37,-3372.43  TurnIn Hungry!",
-        {"lines":[".train 424760,1"],"tag":"Druid","from":"RestedXP: 34-36 Thousand Needles SoD"},
-        {"lines":[".train 424760 >> |cRXP_WARN_Use the|r |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r] |cRXP_WARN_to train|r |T236149:0|t[Berserk]"],"tag":"Druid","from":"RestedXP: 34-36 Thousand Needles SoD"},
-        {"lines":[".train 403472 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r] |cRXP_WARN_to train|r |T132365:0|t[Intervene]",".train 5308,3",".train 355,3",".train 72,3",".train 403338,1"],"tag":"Warrior","from":"RestedXP: 34-36 Thousand Needles SoD"},
         "turnin:1135 @1445:-4464.15,-3613.58  TurnIn Highperch Venom",
         "accept:1258 @1445:-4457.85,-3624.78  Accept ... and Bugs"
       ]

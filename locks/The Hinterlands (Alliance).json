@@ -1,19 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "45-48 The Hinterlands",
-  "saved": "2026-10-13 07:57",
+  "saved": "2026-10-13 08:13",
   "parts": [
     {
       "part": 1,
       "steps": [
-        {"lines":[".goto StormwindClassic,26.117,77.225",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r",".trainer >> Train your class spells",".target Ursula Deline"],"tag":"Warlock","from":"RestedXP: 38-39 Swamp of Sorrows"},
-        {"lines":[".goto StormwindClassic,25.665,77.649",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spackle Thornberry|r",".vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoires] |cRXP_BUY_for your pets|r",".target Spackle Thornberry"],"tag":"Warlock","from":"RestedXP: 38-39 Swamp of Sorrows"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",".goto StormwindClassic,38.82,31.27,10,0",".goto StormwindClassic,38.67,32.82",".trainer >> Train your class spells",".target Arthur the Faithful"],"tag":"Paladin","from":"RestedXP: 38-39 Swamp of Sorrows"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r",".goto StormwindClassic,38.54,26.86",".trainer >> Train your class spells",".target Brother Joshua"],"tag":"Priest","from":"RestedXP: 38-39 Swamp of Sorrows"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r",".goto StormwindClassic,76.08,50.14,15,0",".goto StormwindClassic,80.22,45.37,15,0",".goto StormwindClassic,78.68,45.79",".trainer >> Train your class spells",".target Wu Shen",".target Ilsa Corbin"],"tag":"Warrior","from":"RestedXP: 38-39 Swamp of Sorrows"},
-        {"lines":[".goto StormwindClassic,74.65,52.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r",".trainer >> Train your class spells",".target Osborne the Night Man"],"tag":"Rogue","from":"RestedXP: 38-39 Swamp of Sorrows"},
-        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r",".trainer >> Train your class spells",".target Einris Brightspear"],"tag":"Hunter","from":"RestedXP: 38-39 Swamp of Sorrows"},
-        {"lines":[".goto StormwindClassic,61.576,15.996",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r",".trainer >> Train your pet spells",".target Karrina Mekenda"],"tag":"Hunter","from":"RestedXP: 38-39 Swamp of Sorrows"},
         "turnin:1449 @1425:-2029.69,266.49  TurnIn To The Hinterlands",
         "accept:1450 @1425:-2029.69,266.49  Accept Gryphon Master Talonaxe",
         {"lines":[".goto 1425/0,-2001.23,282.07",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guthrum Thunderfist|r",".fp Hinterlands >> Get The Hinterlands Flight Path",".target Guthrum Thunderfist"],"from":"RestedXP: 39-40 Alterac/Arathi"},
@@ -40,8 +32,6 @@
         "obj:4297:1 @1425:-3723.69,342.72  Objective Food for Baby / Silvermane Stalker Flank (5)",
         "turnin:485 @1425:-3474.98,500.06  TurnIn Find OOX-09/HL!",
         "turnin:626 @1425:-4685.42,264.95  TurnIn Cortello's Riddle",
-        {"lines":[".goto StormwindClassic,20.898,55.491",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r",".trainer >> Train your class spells",".target Sheldras Moontree"],"tag":"Druid","from":"RestedXP: 50-50 Stranglethorn Vale"},
-        {"lines":[".goto StormwindClassic,61.576,15.996",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r",".trainer >> Retrain your pet. Learn Fire Resistance (Rank 4) and Shadow Resistance (Rank 3)",".target Karrina Mekenda"],"tag":"Hunter","from":"RestedXP: 50-50 Stranglethorn Vale"},
         "turnin:2877 @1425:-2145.96,322.7  TurnIn Skulk Rock Clean-up",
         "turnin:4297 @1425:-2120.16,347.09  TurnIn Food for Baby",
         "accept:4298 @1425:-2120.16,347.09  Accept Becoming a Parent",

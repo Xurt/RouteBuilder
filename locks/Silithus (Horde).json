@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "55-60 Silithus",
-  "saved": "2026-10-13 07:53",
+  "saved": "2026-10-13 08:09",
   "parts": [
     {
       "part": 1,
@@ -10,7 +10,6 @@
         "accept:8859 @1451:814.29,-6824.78  Accept Secrets of the Colossus - Zora",
         "accept:8858 @1451:811.51,-6825.01  Accept Secrets of the Colossus - Regal",
         "turnin:8276 @1451:755.77,-6847.78  TurnIn Taking Back Silithus",
-        {"lines":[".train 440630 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of the Bound Spirit|r] |cRXP_WARN_to learn|r |T237577:0|t[Feral Spirit]"],"tag":"Shaman","from":"RestedXP: 58-59 Winterspring/Silithus I"},
         "turnin:1124 @1451:-314.31,-6398.06  TurnIn Wasteland",
         "accept:1125 @1451:-314.31,-6398.06  Accept The Spirits of Southwind",
         "accept:8277 @1451:739.75,-6855.68  Accept Deadly Desert Venom",

@@ -1,32 +1,20 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "39-53 The Hinterlands",
-  "saved": "2026-10-13 07:51",
+  "saved": "2026-10-13 08:07",
   "parts": [
     {
       "part": 1,
       "steps": [
         "accept:98888 @1425:-3512.71,-832.3  Accept Conflict at Darkspear Islands",
         "accept:98887 @1425:-3512.71,-832.3  Accept Conflict at Darkspear Islands",
-        {"lines":[".train 416089 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Invigoration|r] |cRXP_WARN_to train|r |T135125:0|t[Wyvern Strike] << Hunter",".train 410027 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Survival|r] |cRXP_WARN_to train|r |T132266:0|t[Survival Instincts] << Druid"],"tag":"Hunter/Druid","from":"RestedXP: 45-46 Swamp of Sorrows"},
-        {"lines":[">>Open the |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r and loot it for a |T133302:0|t|cRXP_LOOT_Precious Medalion|r",".collect 221370,1",".train 432301,1"],"tag":"Rogue","from":"RestedXP: 46-48 Tanaris"},
-        {"lines":[".train 432236 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Rolling Thunder|r] |cRXP_WARN_to learn|r |T136111:0|t[Rolling Thunder]"],"tag":"Shaman","from":"RestedXP: 46-48 Tanaris"},
-        {"lines":[".train 432301 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r] |cRXP_WARN_to train|r |T236285:0|t[Unfair Advantage]"],"tag":"Rogue","from":"RestedXP: 46-48 Tanaris"},
-        {"lines":[".zoneskip Undercity",".train 3563,3"],"tag":"Mage","from":"RestedXP: 48-49 The Hinterlands"},
         "turnin:650 @1425:-2603.34,219.52  TurnIn Ripple Recovery",
         {"lines":[".goto 1425/0,-4655.00,-42.53,0",".goto 1425/0,-4655.00,-42.53,50,0",".goto 1425/0,-4547.20,-119.53,50,0",".goto 1425/0,-4547.20,-181.13,50,0",".goto 1425/0,-4454.80,-294.07,50,0",".goto 1425/0,-4485.60,-381.33,50,0",".goto 1425/0,-4585.70,-309.47,50,0",".goto 1425/0,-4578.00,-181.13,50,0",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Saltwater Snapjaw|r to tame it|r",".train 17267 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 7)]",".xp <49,1"],"tag":"Hunter","from":"RestedXP: 48-49 The Hinterlands"},
         {"lines":[".goto 1425/0,-4620.35,-573.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Markhor|r",".target Huntsman Markhor",".train 17267,3",".zoneskip The Hinterlands,1",".xp <49,1"],"tag":"Hunter","from":"RestedXP: 48-49 The Hinterlands"},
         "turnin:626 @1425:-4685.42,264.95  TurnIn Cortello's Riddle",
-        {"lines":[".goto 1425/0,-3935.44,582.19",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Alandra|r",".vendor >>|cRXP_BUY_Buy up to 5|r |T236885:0|t[Major Healing Potions] |cRXP_BUY_from her if you want|r",">>|cRXP_WARN_These can only be used within the incursion zones|r",".target Quartermaster Alandra"],"from":"RestedXP: 48-49 The Hinterlands"},
         "turnin:1429 @1425:-2874.38,-463.72  TurnIn The Atal'ai Exile",
         "accept:1444 @1425:-2874.38,-463.72  Accept Return to Fel'Zerul",
-        {"lines":[".train 432299 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Carnage|r] |cRXP_WARN_to train|r |T236268:0|t[Carnage]"],"tag":"Rogue","from":"RestedXP: 50-51 Stranglethorn/Blasted Lands"},
-        "accept:1446 @1425:-2874.38,-463.72  Accept Jammal'an the Prophet",
-        {"lines":[".train 440858,1",">>|cRXP_WARN_Use a|r |T135933:0|t[|cRXP_LOOT_Comprehension Charm|r] |cRXP_WARN_on the|r |T237446:0|t[|cRXP_LOOT_Mysterious Darnassian Scroll|r] |cRXP_WARN_to decipher it into the|r |T134937:0|t[|cRXP_LOOT_Deciphered Darnassian Scroll|r]",".collect 227797,1"],"tag":"Mage","from":"RestedXP: 55-56 Felwood/Winterspring"},
-        {"lines":[".train 440858,1",">>Kill the |cRXP_ENEMY_Enraged Shade|r. Loot it for the |T134939:0|t[|cRXP_LOOT_Spell Notes: Frozen Orb|r]",".collect 225690,1"],"tag":"Mage","from":"RestedXP: 55-56 Felwood/Winterspring"},
-        {"lines":[".train 440924 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mark of Chaos|r] |cRXP_WARN_to learn|r |T136226:0|t[Mark of Chaos]"],"tag":"Warlock","from":"RestedXP: 56-58 Western PL/Eastern PL"},
-        {"lines":[">>Use the |T134046:0|t[|cRXP_LOOT_Tainted Boar Meat|r] to combine it with the |T132108:0|t[|cRXP_LOOT_Bubbling Green Ichor|r] and create a |T134047:0|t[Rancid Hunk of Flesh]",".collect 225943,1",".train 440557,1"],"tag":"Hunter","from":"RestedXP: 56-58 Western PL/Eastern PL"},
-        {"lines":[".train 440557 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Resourceful|r] |cRXP_WARN_to train|r |T132178:0|t[Resourcefulness]",".train 440557,1"],"tag":"Hunter","from":"RestedXP: 56-58 Western PL/Eastern PL"}
+        "accept:1446 @1425:-2874.38,-463.72  Accept Jammal'an the Prophet"
       ]
     },
     {
@@ -51,8 +39,6 @@
         "accept:7828 @1425:-4622.66,-574.6  Accept Stalking the Stalkers",
         "accept:7829 @1425:-4622.66,-574.6  Accept Hunt the Savages",
         "accept:7830 @1425:-4622.66,-574.6  Accept Avenging the Fallen",
-        {"lines":[".goto 1425/0,-4376.26,108.64",">>Cast |T136175:0|t[Blind] on the |cRXP_ENEMY_Vilebranch Mask|r, then loot the |cRXP_PICK_Treasure of the Bat|r chest for |T134419:0|t[|cRXP_FRIENDLY_Rune of Focus|r]",".collect 221433,1",".train 432291,1"],"tag":"Rogue","from":"RestedXP: 48-49 The Hinterlands"},
-        {"lines":[".train 432291 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Focus|r] |cRXP_WARN_to train|r |T236274:0|t[Focused Attacks]"],"tag":"Rogue","from":"RestedXP: 48-49 The Hinterlands"},
         "obj:7839:1 @1425:-4131.4,316.8  Objective Vilebranch Hooligans / Slagtree's Lost Tools (1)",
         "obj:77:1 @1425:-3779.9,412.02  Objective A Sticky Situation / Hinterlands Honey Ripple (1)",
         "obj:7841:1 @1425:-2800.46,225.94  Objective Message to the Wildhammer / Highvale Scout slain (15)",
@@ -62,7 +48,6 @@
         "obj:7828:2 @1425:-3415.69,-48.69  Objective Stalking the Stalkers / Silvermane Howler slain (10)",
         "obj:7844:1 @1425:-4287.33,247.76  Objective Cannibalistic Cousins / Vilebranch Scalper slain (30)",
         "obj:7844:2 @1425:-3406.06,-239.91  Objective Cannibalistic Cousins / Vilebranch Soothsayer slain (15)",
-        {"lines":[".goto 1425/0,-3330.60,-160.60,0",".goto 1425/0,-3330.60,-160.60,50,0",".goto 1425/0,-3284.40,-253.00,50,0",".goto 1425/0,-3361.40,-299.20,50,0",".goto 1425/0,-3484.60,-206.80,50,0",".goto 1425/0,-3523.10,-222.20,50,0",".goto 1425/0,-3523.10,-134.93,50,0",">>|cRXP_WARN_Look for a|r |T133054:0|t|cRXP_LOOT_Geode Hammer|r |cRXP_WARN_which can drop from any of the|r |cRXP_ENEMY_Witherbark Trolls|r. |cRXP_WARN_You will need it to unlock|r |T132364:0|t[Wrecking Crew]",".collect 220912,1",".train 427084,1"],"tag":"Warrior","from":"RestedXP: 48-49 The Hinterlands"},
         "obj:7830:1 @1425:-3923.5,106.33  Objective Avenging the Fallen / Skylord Plume (1)",
         "obj:7828:1 @1425:-4025.14,201.3  Objective Stalking the Stalkers / Silvermane Stalker slain (10)",
         "obj:7829:1 @1425:-3977.4,142.27  Objective Hunt the Savages / Savage Owlbeast slain (20)",

@@ -1,23 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "30-37 Thousand Needles",
-  "saved": "2026-10-13 07:56",
+  "saved": "2026-10-13 08:12",
   "parts": [
     {
       "part": 1,
       "steps": [
-        {"lines":[".train 416050 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flagellation|r] |cRXP_WARN_to train|r |T133495:0|t[Flagellation]",".train 403480,1"],"tag":"Warrior","from":"RestedXP: 28-32 Duskwood SoD"},
-        {"lines":[".train 416050 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Mass Regeneration|r] |cRXP_WARN_to train|r |T132870:0|t[Mass Regeneration]",".train 415939,1"],"tag":"Mage","from":"RestedXP: 28-32 Duskwood SoD"},
-        {"lines":[".train 416037,1",".xp <24,1"],"tag":"Paladin","from":"RestedXP: 28-32 Duskwood SoD"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r",".goto StormwindClassic,76.08,50.14,15,0",".goto StormwindClassic,80.22,45.37,15,0",".goto StormwindClassic,78.68,45.79",".trainer >> Train your class spells",".target Wu Shen",".target Ilsa Corbin"],"tag":"Warrior","from":"RestedXP: 28-32 Duskwood SoD"},
-        {"lines":[".goto StormwindClassic,74.65,52.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r",".trainer >> Train your class spells",".target Osborne the Night Man"],"tag":"Rogue","from":"RestedXP: 28-32 Duskwood SoD"},
-        {"lines":[".goto StormwindClassic,26.12,77.23",">>Talk to |cRXP_FRIENDLY_Ursula Deline|r",".target Ursula Deline",".train 410014,1",".isQuestComplete 78091"],"tag":"Paladin","from":"RestedXP: 28-32 Duskwood SoD"},
-        {"lines":[".goto StormwindClassic,26.12,77.23",">>Talk to |cRXP_FRIENDLY_Ursula Deline|r",".target Ursula Deline",".train 410014,1",".isQuestTurnedIn 78091"],"tag":"Paladin","from":"RestedXP: 28-32 Duskwood SoD"},
-        {"lines":[".goto StormwindClassic,26.117,77.225",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r",".trainer >> Train your class spells",".target Ursula Deline"],"tag":"Warlock","from":"RestedXP: 28-32 Duskwood SoD"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",".goto StormwindClassic,38.82,31.27,10,0",".goto StormwindClassic,38.67,32.82",".trainer >> Train your class spells",".target Arthur the Faithful"],"tag":"Paladin","from":"RestedXP: 28-32 Duskwood SoD"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r",".goto StormwindClassic,38.54,26.86",".trainer >> Train your class spells",".target Brother Joshua"],"tag":"Priest","from":"RestedXP: 28-32 Duskwood SoD"},
-        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r",".trainer >> Train your class spells",".target Einris Brightspear"],"tag":"Hunter","from":"RestedXP: 28-32 Duskwood SoD"},
-        {"lines":[".trainer >>Train your spells",".train 19752 >>Train |T136106:0|t[|cRXP_FRIENDLY_Divine Intervention|r]. You will need it for a rune later << sod"],"tag":"Paladin sod","from":"RestedXP: 33-34 Thousand Needles"},
         "accept:1110 @1441:-3856.09,-6233.25  Accept Rocket Car Parts",
         "accept:1104 @1441:-3867.97,-6229.15  Accept Salt Flat Venom",
         "turnin:2769 @1441:-3871.49,-6228.85  TurnIn The Brassbolts Brothers",
@@ -36,8 +24,6 @@
         "turnin:1110 @1441:-3856.09,-6233.25  TurnIn Rocket Car Parts",
         "accept:1111 @1441:-3856.09,-6233.25  Accept Wharfmaster Dizzywig",
         "accept:5762 @1441:-3856.09,-6233.25  Accept Hemet Nesingwary",
-        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r",".trainer >> Train your class spells",".train 1543 >>Make sure you train |T135815:0|t[|cRXP_FRIENDLY_Flare|r]. You will need it for a rune later",".target Einris Brightspear"],"tag":"Hunter","from":"RestedXP: 34-35 Stranglethorn Vale I"},
-        {"lines":[".goto StormwindClassic,61.576,15.996",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r",".trainer >> Train your pet spells",".target Karrina Mekenda"],"tag":"Hunter","from":"RestedXP: 34-35 Stranglethorn Vale I"},
         "turnin:1112 @1441:-3856.09,-6233.25  TurnIn Parts for Kravel",
         "accept:1107 @1441:-3871.49,-6228.85  Accept Encrusted Tail Fins",
         "turnin:1183 @1441:-3961.25,-6192.48  TurnIn Goblin Sponsorship",
@@ -48,43 +34,28 @@
         "accept:1114 @1441:-3856.09,-6233.25  Accept Delivery to the Gnomes",
         "turnin:1114 @1441:-3867.97,-6229.15  TurnIn Delivery to the Gnomes",
         "accept:1115 @1441:-3856.09,-6233.25  Accept The Rumormonger",
-        {"lines":[".goto StormwindClassic,25.665,77.649",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spackle Thornberry|r",".vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoires] |cRXP_BUY_for your pets|r",".target Spackle Thornberry"],"tag":"Warlock","from":"RestedXP: 38-39 Swamp of Sorrows"},
         "turnin:79358 @1441:-2463.49,-5483.49  TurnIn Storm, Earth, and Fire",
         "item:635 @1441:-2208.29,-4846.08  ItemAccept Crystal in the Mountains",
         "accept:1106 @1441:-3867.97,-6229.15  Accept Martek the Exiled",
         "turnin:1117 @1441:-3856.09,-6233.25  TurnIn Rumors for Kravel",
         "accept:1188 @1441:-3967.85,-6198.64  Accept Safety First",
-        {"lines":[".train 415948 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: PELFRB STOLLOTS|r] |cRXP_WARN_to train|r |T135780:0|t[Spellfrost Bolt]",".train 401762 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: TROFF IRESTBOL|r] |cRXP_WARN_to train|r |T236217:0|t[Frostfire Bolt]"],"tag":"Mage","from":"RestedXP: 41-43 STV SoD"},
-        {"lines":[".train 425314 >> |cRXP_WARN_Use the|r |T135975:0|t|cRXP_LOOT_[Prophecy of Imprisoned Malice]|r |cRXP_WARN_to train|r |T237563:0|t[Dispersion]"],"tag":"Priest","from":"RestedXP: 41-43 STV SoD"},
         "turnin:1137 @1441:-3867.97,-6229.15  TurnIn News for Fizzle",
         "turnin:1119 @1441:-3856.09,-6233.25  TurnIn Zanzil's Mixture and a Fool's Stout",
         "turnin:1189 @1441:-3967.85,-6198.64  TurnIn Safety First",
         "accept:1190 @1441:-3961.25,-6192.48  Accept Keeping Pace",
         "turnin:1190 @1441:-3830.57,-6236.77  TurnIn Keeping Pace",
         "accept:1194 @1441:-3830.57,-6236.77  Accept Rizzle's Schematics",
-        "turnin:1194 @1441:-3961.25,-6192.48  TurnIn Rizzle's Schematics",
-        {"lines":[".goto StormwindClassic,20.898,55.491",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r",".trainer >> Train your class spells",".target Sheldras Moontree"],"tag":"Druid","from":"RestedXP: 50-50 Stranglethorn Vale"},
-        {"lines":[".goto StormwindClassic,61.576,15.996",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r",".trainer >> Retrain your pet. Learn Fire Resistance (Rank 4) and Shadow Resistance (Rank 3)",".target Karrina Mekenda"],"tag":"Hunter","from":"RestedXP: 50-50 Stranglethorn Vale"}
+        "turnin:1194 @1441:-3961.25,-6192.48  TurnIn Rizzle's Schematics"
       ]
     },
     {
       "part": 2,
       "steps": [
-        {"lines":[".train 425189,1",".train 400640,3",".train 120,3",".goto 1441/1,-1031.65,-4959.72,40,0",".goto 1441/1,-908.97,-5128.27",">>Kill the |cRXP_ENEMY_Singed Highperch Consort|r. Loot it for the |T134938:0|t[|cRXP_LOOT_Partial Spell Notes|r]",">>|cRXP_WARN_You need to cool it down to kill it. In order to do it by yourself you have to use this exact rotation in quick succession:|r",">>Cast |T135846:0|t[Frostbolt] > |T135848:0|t[Frost Nova] > |T135852:0|t[Cone of Cold] > |T135844:0|t[Ice Lance] |cRXP_WARN_This has to be done without any breaks between the casts|r",".collect 213633,1"],"tag":"Mage","from":"RestedXP: 34-36 Thousand Needles SoD"},
-        {"lines":[".train 425189,1",".train 400640,3",".train 120,3",".goto 1441/1,-1606.37,-5327.15",">>Kill the |cRXP_ENEMY_Scorched Screeching Roguefeather|r. Loot it for the |T134937:0|t[|cRXP_LOOT_Partial Spell Notes|r]",">>|cRXP_WARN_You need to cool it down to kill it. In order to do it by yourself you have to use this exact rotation in quick succession:|r",">>Cast |T135846:0|t[Frostbolt] > |T135848:0|t[Frost Nova] > |T135852:0|t[Cone of Cold] > |T135844:0|t[Ice Lance] |cRXP_WARN_This has to be done without any breaks between the casts|r",".collect 213632,1"],"tag":"Mage","from":"RestedXP: 34-36 Thousand Needles SoD"},
-        {"lines":[".train 425189,1",">>|cRXP_WARN_Use the|r |T134943:0|t|T134938:0|t|T134937:0|t[|cRXP_LOOT_Partial Spell Notes|r] |cRXP_WARN_to create the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r]",".collect 213116,1"],"tag":"Mage","from":"RestedXP: 34-36 Thousand Needles SoD"},
-        {"lines":[".train 425189 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r |cRXP_WARN_to train|r |T135729:0|t[Chronostatic Preservation]",".train 425189,1"],"tag":"Mage","from":"RestedXP: 34-36 Thousand Needles SoD"},
-        {"lines":[".train 424760,1",".goto 1441/1,-3455.69,-5584.55"],"tag":"Druid","from":"RestedXP: 34-36 Thousand Needles SoD"},
-        {"lines":[".train 424760,1",".goto 1441/1,-3455.69,-5584.55",">>Kill |cRXP_ENEMY_Zai'enki|r. Loot it for the |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r]",".collect 213594,1"],"tag":"Druid","from":"RestedXP: 34-36 Thousand Needles SoD"},
         "accept:1175 @1441:-4025.05,-6253.2  Accept A Bump in the Road",
         "obj:1175:1 @1441:-3754.89,-5649.52  Objective A Bump in the Road / Saltstone Basilisk slain (10)",
         "obj:1175:2 @1441:-3888.21,-6577.33  Objective A Bump in the Road / Saltstone Crystalhide slain (10)",
         "obj:1175:3 @1441:-3863.13,-6582.61  Objective A Bump in the Road / Saltstone Gazer slain (6)",
         "turnin:1175 @1441:-4025.05,-6253.2  TurnIn A Bump in the Road",
-        {"lines":[".train 424760 >> |cRXP_WARN_Use the|r |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r] |cRXP_WARN_to train|r |T236149:0|t[Berserk]"],"tag":"Druid","from":"RestedXP: 34-36 Thousand Needles SoD"},
-        {"lines":[".train 403472,1",">>|cRXP_WARN_You will need a shield to get this rune. Skip the following steps if you don't have one|r",".goto 1441/1,-3418.29,-6592.00,100 >> Travel to the Rustmaul Digsite in |cFFfa9602Thousand Needles|r",".train 5308,3",".train 355,3",".train 72,3",".train 403338,1"],"tag":"Warrior","from":"RestedXP: 34-36 Thousand Needles SoD"},
-        {"lines":[".train 403472,1",".goto 1441/1,-3422.39,-6589.30",">>Open the |cRXP_PICK_Warrior's Bounty|r chest. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r]",".collect 213111,1",".train 5308,3",".train 355,3",".train 72,3",".train 403338,1"],"tag":"Warrior","from":"RestedXP: 34-36 Thousand Needles SoD"},
-        {"lines":[".train 403472 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r] |cRXP_WARN_to train|r |T132365:0|t[Intervene]",".train 5308,3",".train 355,3",".train 72,3",".train 403338,1"],"tag":"Warrior","from":"RestedXP: 34-36 Thousand Needles SoD"},
         "turnin:1107 @1441:-3871.49,-6228.85  TurnIn Encrusted Tail Fins"
       ]
     }

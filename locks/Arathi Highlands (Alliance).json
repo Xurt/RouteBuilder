@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "30-42 Arathi Highlands",
-  "saved": "2026-10-13 07:56",
+  "saved": "2026-10-13 08:12",
   "parts": [
     {
       "part": 1,
@@ -25,8 +25,6 @@
       "part": 2,
       "steps": [
         "accept:658 @1417:-3033.15,-1425.73  Accept Hints of a New Plague?",
-        {"lines":[".train 410109,1",".goto 1417/0,-3307.47,-1717.33",">>Kill |cRXP_ENEMY_Needletooth|r. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r]",">>|cRXP_ENEMY_Needletooth|r |cRXP_WARN_is a fish that swims in the Witherbark Village lake|r",".collect 213122,1"],"tag":"Hunter","from":"RestedXP: 32-34 Wetlands/Hillsbrad SoD"},
-        {"lines":[".train 410109 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r] |cRXP_WARN_to train|r |T132213:0|t[Steady Shot]"],"tag":"Hunter","from":"RestedXP: 32-34 Wetlands/Hillsbrad SoD"},
         "obj:658:1 @1417:-2755.59,-1610.05  Objective Hints of a New Plague? / Sealed Folder (1)",
         "turnin:658 @1417:-3033.15,-1425.73  TurnIn Hints of a New Plague?",
         "accept:657 @1417:-3033.15,-1425.73  Accept Hints of a New Plague?",
@@ -82,9 +80,6 @@
       "steps": [
         "turnin:98896 @1417:-2510.07,-1231.33  TurnIn Darkspear Islands Clash",
         "turnin:98895 @1417:-2510.07,-1231.33  TurnIn Darkspear Islands Clash",
-        {"lines":[".train 409163,1",".goto 1417/0,-3327.73,-1952.68,25 >>Enter the Witherbark Cave"],"tag":"Warrior","from":"RestedXP: 39-41 Alterac/Arathi SoD"},
-        {"lines":[".train 409163,1",".goto 1417/0,-3372.63,-2091.73",">>Kill the |cRXP_ENEMY_Witherbark Goliath|r. Loot it for the |T134419:0|t[|cRXP_LOOT_Rune of Focused Rage|r]",".collect 213109,1"],"tag":"Warrior","from":"RestedXP: 39-41 Alterac/Arathi SoD"},
-        {"lines":[".train 409163 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of Focused Rage|r] |cRXP_WARN_to train|r |T132345:0|t[Focused Rage]"],"tag":"Warrior","from":"RestedXP: 39-41 Alterac/Arathi SoD"},
         "accept:693 @1417:-2546.07,-1261.57  Accept Wand over Fist",
         "obj:693:1 @1417:-2837.67,-2098.21  Objective Wand over Fist / Trelane's Wand of Invocation (1)",
         {"lines":[".train 431663,1 << Priest",".train 416031,1 << Paladin",".train 401752,1 << Mage",".train 410118,1 << Hunter",".train 410029,1 << Druid",".train 403467,1 << Warrior",".train 426452,1 << Warlock",".train 425102,1 << Rogue",".train 425883,1 << Shaman",".goto 1417/0,-4247.07,-1849.09",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r to receive |cRXP_LOOT_Illari's Key|r",".collect 212347,1,79242,1",".skipgossip 215655,1,1,2",".target Illari Duskfeather",".isOnQuest 79242"],"tag":"NightElf","from":"RestedXP: 39-41 Alterac/Arathi SoD"},
@@ -97,11 +92,6 @@
         "accept:694 @1417:-2546.07,-1261.57  Accept Trelane's Defenses",
         "accept:684 @1417:-2524.11,-1279.57  Accept Wanted!  Marez Cowl",
         "accept:685 @1417:-2524.11,-1279.57  Accept Wanted!  Otto and Falconcrest",
-        {"lines":[".train 401749,1",".goto 1417/0,-3295.23,-824.29,40,0",".goto 1417/0,-3223.59,-823.81,40,0",".goto 1417/0,-3237.99,-883.09,40,0",".goto 1417/0,-3295.59,-868.93,40,0",".goto 1417/0,-3272.19,-847.81",">>Kill |cRXP_ENEMY_Burning Exiles|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Spell Notes: Hot Streak|r]",">>|cRXP_WARN_Note: This has been reported to have a relatively low drop rate. You may want to consider getting it from Alterac Mountains instead|r",".collect 213113,1"],"tag":"Mage","from":"RestedXP: 39-41 Alterac/Arathi SoD"},
-        {"lines":[".train 401749 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Hot Streak|r] |cRXP_WARN_to train|r |T236218:0|t[Hot Streak]",".train 401749,1"],"tag":"Mage","from":"RestedXP: 39-41 Alterac/Arathi SoD"},
-        {"lines":[".train 426443,1",".goto 1417/0,-1804.11,-1640.53,40,0",".goto 1417/0,-1927.59,-1672.69,40,0",".goto 1417/0,-1912.83,-1596.37,40,0",">>Kill |cRXP_ENEMY_Syndicate Conjurors|r. Loot them for their |T348282:0|t[|cRXP_LOOT_Conjuror's Pendants|r]",">>Kill a |cRXP_ENEMY_Voidwalker Minion|r while you are channelling |T136163:0|t[Drain Soul] on it to receive a |T132885:0|t[|cRXP_LOOT_Soul of the Void|r]",".collect 213573,10",".collect 213572,1"],"tag":"Warlock","from":"RestedXP: 39-41 Alterac/Arathi SoD"},
-        {"lines":[".train 426443,1",".goto 1417/0,-1913.44,-1647.23",">>Kill the |cRXP_ENEMY_Void Seeker|r. Loot it for the |T134419:0|t[|cRXP_LOOT_Rune of Invocation|r]",".collect 213098,1"],"tag":"Warlock","from":"RestedXP: 39-41 Alterac/Arathi SoD"},
-        {"lines":[".train 426443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of Invocation|r] |cRXP_WARN_to train|r |T136133:0|t[Invocation]"],"tag":"Warlock","from":"RestedXP: 39-41 Alterac/Arathi SoD"},
         "obj:685:1 @1417:-1810.59,-1706.53  Objective Wanted!  Otto and Falconcrest / Otto's Head (1)",
         "obj:685:2 @1417:-1803.75,-1709.65  Objective Wanted!  Otto and Falconcrest / Falconcrest's Head (1)",
         "obj:684:1 @1417:-1932.99,-1644.61  Objective Wanted!  Marez Cowl / Marez's Head (1)",
@@ -127,8 +117,6 @@
         "turnin:694 @1417:-2529.87,-1279.33  TurnIn Trelane's Defenses",
         "accept:695 @1417:-2529.87,-1279.33  Accept An Apprentice's Enchantment",
         "turnin:695 @1417:-2546.07,-1261.57  TurnIn An Apprentice's Enchantment",
-        {"lines":[".goto StormwindClassic,38.67,32.82",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r",".trainer >> Train your class spells",".target Arthur the Faithful"],"tag":"Paladin","from":"RestedXP: 39-40 Alterac/Arathi"},
-        {"lines":[".goto StormwindClassic,61.609,15.269",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r inside",".trainer >> Train your class spells",".target Einris Brightspear",".xp <42,1"],"tag":"Hunter","from":"RestedXP: 41-43 STV/Swamp of Sorrows"},
         "accept:696 @1417:-2546.07,-1261.57  Accept Attack on the Tower",
         "obj:696:3 @1417:-1515.75,-1762.21  Objective Attack on the Tower / Trelane's Ember Agate (1)",
         "obj:696:1 @1417:-1521.15,-1768.69  Objective Attack on the Tower / Trelane's Phylactery (1)",

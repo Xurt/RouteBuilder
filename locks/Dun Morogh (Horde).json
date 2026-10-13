@@ -1,24 +1,12 @@
 {
   "about": "Step order taken from RestedXP's guide by RxpToLock. RouteBuilder follows it and slots in this zone's other quests. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "from RestedXP: 1-10 ADV Elwynn Forest Human Mage AoE, 10-11 ADV Dun Morogh Human Mage AoE, 1-10 ADV Dun Morogh Gnome Mage AoE, 1-10 Elwynn Forest Mage AoE, 1-10 Dun Morogh Mage AoE, 22-24 Hillsbrad, 23-24 Hillsbrad Class Quests, 24-26 Southern Barrens, 24-26 Southern Barrens/Stonetalon, 26-28 Ashenvale, 26-28 SoD Ashenvale, 28-30 Thousand Needles, 30-33 Hillsbrad/Arathi, 33-34 Shimmering Flats, 34-35 Desolace, 35-37 Northern Stranglethorn, 37-38 Dustwallow Marsh, 38-39 Alterac/Arathi, 39-40 Badlands, 40-41 Stranglethorn Vale, 41-400_41-41 Swamp of Sorrows, 41-41 Desolace II, 41-43 Tanaris/Dustwallow, 43-44 Feralas, 44-45 Southern Stranglethorn, 45-46 Swamp of Sorrows, 46-48 Tanaris, 48-49 The Hinterlands, 49-50 Feralas, 50-51 Stranglethorn/Blasted Lands, 51-52 Searing Gorge/Burning Steppes, 52-53 Azshara, 53-54 Felwood, 54-55 Un'Goro Crater, 55-56 Felwood/Winterspring, 56-58 Western PL/Eastern PL, 58-59 Winterspring/Silithus I, 59-60 Winterspring/Silithus II, 21-30 Silverpine/Hillsbrad AoE, 30-36 Arathi/Alterac AoE, 36-60 Mage AoE, 1-6 Durotar, 6-10 Durotar, 10-12 Durotar, 10-12 Tirisfal (Orc/Troll), 1-6 Tirisfal Glades, 6-12 Tirisfal Glades, 12-14 Silverpine Forest, 1-6 Mulgore, 6-12 Mulgore, 12-17 The Barrens, 17-22 Stonetalon/Barrens/Ashenvale, 12-17 The Barrens AoE, 17-21 Stonetalon/Barrens AoE, 1-14 Zephras Isle, Random Stuff",
-  "saved": "2026-10-13 07:50",
+  "saved": "2026-10-13 08:06",
   "parts": [
     {
       "part": 1,
       "steps": [
         "accept:1718 @1456:-81.09,-1457.74  Accept The Islander [1718]  (RestedXP: 28-30 Thousand Needles)",
-        {"lines":[".train 424760,1",".train 5209,3"],"tag":"Druid","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 424760 >> |cRXP_WARN_Use the|r |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r] |cRXP_WARN_to train|r |T236149:0|t[Berserk]"],"tag":"Druid","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 416017,1",".train 1949,3",">>|cRXP_WARN_Cast|r |T135818:0|t[Hellfire] |cRXP_WARN_to damage yourself below 70% health. Afterwards|r |T236297:0|t[Brimstone Carving] |cRXP_WARN_will transform into|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r]",".collect 213102,1"],"tag":"Warlock","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 416017 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r] |cRXP_WARN_to learn|r |T236295:0|t[Dance of the Wicked]"],"tag":"Warlock","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 425189,1",">>|cRXP_WARN_Use the|r |T134943:0|t|T134938:0|t|T134937:0|t[|cRXP_LOOT_Partial Spell Notes|r] |cRXP_WARN_to create the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r]",".collect 213116,1"],"tag":"Mage","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 425189 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r |cRXP_WARN_to train|r |T135729:0|t[Chronostatic Preservation]",".train 425189,1"],"tag":"Mage","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093,1",".collect 215452,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093,1",".collect 215453,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093,1",".collect 213138,1"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 400093 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r] |cRXP_WARN_to train|r |T134919:0|t[Rolling with the Punches]"],"tag":"Rogue","from":"RestedXP: 28-30 Thousand Needles"},
-        {"lines":[".train 425309 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r] |cRXP_WARN_to train|r |T236254:0|t[Empowered Renew]"],"tag":"Priest","from":"RestedXP: 28-30 Thousand Needles"},
         "turnin:1718 @1413:-4330.58,-1708.87  TurnIn The Islander [1718]  (RestedXP: 28-30 Thousand Needles)",
         "accept:1517 @1411:-4204.4,-629.91  Accept Call of Earth [1517]  (RestedXP: 1-6 Durotar)",
         "turnin:1517 @1411:-4290.59,-878.07  TurnIn Call of Earth [1517]  (RestedXP: 1-6 Durotar)",

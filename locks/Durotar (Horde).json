@@ -1,14 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "1-13 Durotar",
-  "saved": "2026-10-13 07:48",
+  "saved": "2026-10-13 08:04",
   "parts": [
     {
       "part": 1,
       "steps": [
-        {"lines":[".train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]"],"tag":"Human","from":"RestedXP: 1-10 ADV Elwynn Forest Human Mage AoE"},
-        "home @1411:-4686.09,340.52  Home inn",
-        "turnin:6070 @1411:-4704.07,275.31  TurnIn The Hunter's Path",
         "accept:4641 @1411:-4251.46,-607.35  Accept Your Place In The World",
         "accept:1485 @1411:-4214.45,-623.92  Accept Vile Familiars",
         {"lines":[".goto 1411/1,-4214.45,-565.75",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r",".vendor >> Vendor Trash",".target Duokna",".money >0.01"],"tag":"Warrior/Shaman","from":"RestedXP: 1-6 Durotar"},
@@ -92,6 +89,7 @@
         "obj:6394:1 @1411:-4274.72,-87.76  Objective Thazz'ril's Pick / Thazz'ril's Pick (1)",
         "obj:794:1 @1411:-4220.79,-58.15  Objective Burning Blade Medallion / Burning Blade Medallion (1)",
         "obj:1516:1 @1411:-4304.33,-101.86  Objective Call of Earth / Felstalker Hoof (2)",
+        "turnin:6070 @1411:-4704.07,275.31  TurnIn The Hunter's Path",
         "accept:784 @1411:-4709.36,274.96  Accept Vanquish the Betrayers",
         "accept:96825 @1411:-4664.94,311.97  Accept This Fruit Could Bite Back",
         "accept:791 @1411:-4599.9,384.59  Accept Carry Your Weight",
@@ -180,6 +178,7 @@
         {"lines":[".goto 1411/1,-4713.06,382.12",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r",".vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T132401:0|t[Large Axe] (4s 60c). You'll come back later if you don't have enough yet",".target Uhgar"],"tag":"Orc Warrior","from":"RestedXP: 6-10 Durotar"},
         {"lines":[".goto 1411/1,-4713.06,382.12",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r",".vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135421:0|t[Tomahawk] (5s 13c). You'll come back later if you don't have enough yet",".target Uhgar"],"tag":"Troll Warrior","from":"RestedXP: 6-10 Durotar"},
         {"lines":[".goto 1411/1,-4763.29,361.67",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghrawt|r",".vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135499:0|t[Hornwood Recurve Bow] (2s 83c). You'll come back later if you don't have enough yet",".target Ghrawt"],"tag":"Hunter","from":"RestedXP: 6-10 Durotar"},
+        "home @1411:-4686.09,340.52  Home inn",
         "turnin:2161 @1411:-4686.09,340.52  TurnIn A Peon's Burden",
         {"lines":[".goto 1411/1,-4686.09,340.52",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r",">>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid",">>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior",">>|cRXP_WARN_Save 4 silver for your class spells!|r << Rogue/Warrior/Shaman/Warlock",">>|cRXP_WARN_Save 2 silver for your class spells!|r << Priest",".vendor >> Vendor Trash",".target Innkeeper Grosk",".train 6760,1 << Rogue",".train 139,1 << Priest",".train 980,1 << Warlock",".train 8044,1 << Shaman",".train 284,1 << Warrior"],"from":"RestedXP: 6-10 Durotar"},
         {"lines":[".goto 1411/1,-4686.09,340.52",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r",">>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid",">>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior",".vendor >> Vendor Trash",".target Innkeeper Grosk",".train 6760,3 << Rogue",".train 139,3 << Priest",".train 980,3 << Warlock",".train 8044,3 << Shaman",".train 284,3 << Warrior"],"tag":"!Mage !Hunter !Druid","from":"RestedXP: 6-10 Durotar"},
@@ -391,10 +390,6 @@
         "turnin:1858 @1454:-4279.93,1772.96  TurnIn The Shattered Hand",
         {"lines":[".goto 1454/1,-4362.55,1834.70",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r",".train 1455 >> Train your class spells",".target Mirket",".xp <16,1",".xp >18,1"],"tag":"Warlock","from":"RestedXP: 12-17 The Barrens"},
         {"lines":[".goto 1454/1,-4362.55,1834.70",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r",".train 1014 >> Train your class spells",".target Mirket",".xp <18,1"],"tag":"Warlock","from":"RestedXP: 12-17 The Barrens"},
-        {"lines":[".train 2575 >>Use |T4625105:0|t[Mining for Dummies]."],"from":"RestedXP: 1-14 Zephras Isle"},
-        {"lines":[".train 2366 >>Use |T4624731:0|t[Wild Harvest]."],"from":"RestedXP: 1-14 Zephras Isle"},
-        {"lines":[".train 8613 >>Use |T4624731:0|t[Pelt Collecting for Beginners]."],"from":"RestedXP: 1-14 Zephras Isle"},
-        {"lines":[".isOnQuest 93461",".train 7411,3",">>Use the |T135225:0|t[Runed Copper Rod] macro below, then use the |T135645:0|t[Novice's Practice Wand] macro",".collect 6218,1",".collect 247789,1"],"tag":"Mage","from":"RestedXP: 1-14 Zephras Isle"},
         {"lines":[".goto 1454/1,-4607.02,2100.64",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak Grimshot::3352|r",".train 13795 >> Train your class spells",".target Ormak Grimshot::3352",".xp <12,1"],"tag":"Horde Hunter","from":"RestedXP: 1-14 Zephras Isle"},
         {"lines":[".goto 1454/1,-4611.09,2135.15",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu::10088|r",".train 24556 >> Train your pet spells",".target Xao'tsu::10088"],"tag":"Horde Hunter","from":"RestedXP: 1-14 Zephras Isle"},
         {"lines":[".goto 1454/1,-4801.42,1980.53",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz Ragefist::3353|r",".train 7384 >> Train your class spells",".target Grezz Ragefist::3353",".xp <12,1",".xp >14,1"],"tag":"Horde Warrior","from":"RestedXP: 1-14 Zephras Isle"},

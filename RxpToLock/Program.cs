@@ -28,7 +28,7 @@ public static class Program
           dotnet run -c Release -- build --zone <name> --faction <faction> --rxp <folder>
         """;
 
-    sealed record Hit(string Key, int Order, bool Along, LockedStep Step, string Guide);
+    sealed record Hit(string Key, int Order, bool Along, LockedStep Step, string Guide, int Map);
     sealed record Svc(int Order, string Guide, int Map, LockedService Step);
 
     static readonly Regex GotoRx = new(@"^\.goto\s+(\d+)(?:/\d+)?\s*,\s*(-?\d+(?:\.\d+)?)[\d.]*\s*,\s*(-?\d+(?:\.\d+)?)[\d.]*(?:\s*,\s*(\d+(?:\.\d+)?))?(?:\s*,\s*(\d+))?", RegexOptions.Compiled);
@@ -86,9 +86,12 @@ public static class Program
             {
                 if (only != null && !only.Contains(name)) continue;
                 guides.Add(name);
+                int lastMap = -1;
                 foreach (var st in steps)
                 {
-                    if (!Applies(st.Tag, bo)) continue;
+                    int here = RxpServices.MapOf(st.Lines.Select(l => l.Text));
+                    if (here >= 0) lastMap = here;
+                    if (!Applies(st.Tag, bo) || RxpServices.OtherSeason(st.Lines.Select(l => l.Text))) continue;   // e.g. Season of Discovery runes
                     var spot = SpotOf(st.Lines.Where(l => Applies(l.Tag, bo)).Select(l => l.Text).ToList());
                     foreach (var (text, tag) in st.Lines)
                     {
@@ -103,12 +106,12 @@ public static class Program
                         };
                         // a quest RouteBuilder starts from an item ("item:Q") is an .accept in RestedXP's guide
                         if (key != null && key.StartsWith("accept:") && !keys.Contains(key) && keys.Contains("item:" + key[7..])) key = "item:" + key[7..];
-                        if (key != null) hits.Add(new Hit(key, order++, st.Along, spot with { Key = key }, name));
+                        if (key != null) hits.Add(new Hit(key, order++, st.Along, spot with { Key = key }, name, here >= 0 ? here : lastMap));
                     }
                     // a training, vendor or flight-path step: kept whole, in its place in RestedXP's order
                     // (after a quest handed in at the same trainer, as RestedXP does them together)
                     if (!st.Along && RxpServices.ServiceLines(st.Lines, out int svcMap) is { } svcLines)
-                        services.Add(new Svc(order++, name, svcMap, new LockedService { Lines = svcLines, Tag = st.Tag.Length > 0 ? st.Tag : null, From = "RestedXP: " + name }));
+                        services.Add(new Svc(order++, name, svcMap >= 0 ? svcMap : lastMap, new LockedService { Lines = svcLines, Tag = st.Tag.Length > 0 ? st.Tag : null, From = "RestedXP: " + name }));
                 }
             }
         if (guides.Count == 0) throw new InvalidOperationException(only != null ? "none of the --guides names were found in the files" : "no RestedXP guides found in the files");
@@ -116,6 +119,12 @@ public static class Program
 
         // one place per step: a pickup or hand-in where it first happens; an objective at its own step,
         // not where the guide first says "kill these as you go"
+        // setting the hearthstone counts only where it is done on this zone's maps, in a guide that does its quests
+        // (any other guide in the files sets it somewhere else entirely)
+        var zoneMapsAll = model.Areas.Select(a => a.UiMap).ToHashSet();
+        int QuestOf(string key) => key == "home" ? 0 : int.Parse(key.Split(':')[1], CultureInfo.InvariantCulture);
+        var questGuides = hits.Where(h => h.Key != "home" && inZone.Contains(QuestOf(h.Key))).Select(h => h.Guide).ToHashSet();
+        hits.RemoveAll(h => h.Key == "home" && !(zoneMapsAll.Contains(h.Map) && questGuides.Contains(h.Guide)));
         var chosen = new Dictionary<string, Hit>();
         foreach (var h in hits)
         {

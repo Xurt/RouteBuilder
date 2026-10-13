@@ -1,13 +1,11 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "48-56 Felwood",
-  "saved": "2026-10-13 07:57",
+  "saved": "2026-10-13 08:13",
   "parts": [
     {
       "part": 1,
       "steps": [
-        {"lines":[".train 431601 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Focused Fire|r] |cRXP_WARN_to train|r |T135548:0|t[Focus Fire]"],"tag":"Hunter","from":"RestedXP: 51-52 Searing Gorge SoD"},
-        {"lines":[".train 427076 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Bloodthirsty|r] |cRXP_WARN_to learn|r |T236276:0|t[Taste for Blood]",".train 427076,1"],"tag":"Warrior","from":"RestedXP: 51-52 Searing Gorge SoD"},
         "accept:8460 @1448:-1286.81,3874.62  Accept Timbermaw Ally",
         "obj:8460:1 @1448:-1140.76,3629.67  Objective Timbermaw Ally / Deadwood Warrior slain (6)",
         "obj:8460:2 @1448:-1011.38,3688.32  Objective Timbermaw Ally / Deadwood Pathfinder slain (6)",
@@ -63,7 +61,6 @@
         "turnin:939 @1448:-1310.96,4008.78  TurnIn Flute of Xavaric",
         "accept:4441 @1448:-1310.96,4008.78  Accept Felbound Ancients",
         "turnin:5156 @1448:-1284.51,4004.57  TurnIn Verifying the Corruption",
-        {"lines":[".train 436609 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Knives|r] |cRXP_WARN_to train|r |T236273:0|t[Fan of Knives]"],"tag":"Rogue","from":"RestedXP: 52-53 Felwood SoD"},
         "accept:4442 @1448:-1310.96,4008.78  Accept Purified!",
         "turnin:4442 @1448:-1310.96,4008.78  TurnIn Purified!",
         "accept:5882 @1448:-1471.96,3804.85  Accept Salve via Hunting",
@@ -106,15 +103,11 @@
         "turnin:4906 @1448:-1310.96,4008.78  TurnIn Further Corruption",
         "accept:8461 @1448:-2082.61,6821.68  Accept Deadwood of the North",
         "accept:5085 @1448:-1819.83,6909.47  Accept Mystery Goo",
-        {"lines":[".train 453698,1",".goto 1448/1,-1969.33,6845.83",">>|cRXP_WARN_Look for a red book in the marked location. It's in a camp next to|r |cRXP_ENEMY_Chieftain Bloodmaw|r |cRXP_WARN_Loot it for the rune|r",".collect 226416,1"],"tag":"Hunter","from":"RestedXP: 54-55 Felwood/Winterspring SoD"},
-        {"lines":[".train 453698,1",".goto 1448/1,-1969.33,6845.83",">>|cRXP_WARN_Look for a red book in the marked location. It's in a camp next to|r |cRXP_ENEMY_Chieftain Bloodmaw|r |cRXP_WARN_Loot it for the rune|r",".collect 226416,1"],"tag":"Druid/Rogue","from":"RestedXP: 54-55 Felwood/Winterspring SoD"},
         "obj:8461:1 @1448:-1880.78,6849.28  Objective Deadwood of the North / Deadwood Den Watcher slain (6)",
         "obj:8461:2 @1448:-1988.88,6756.13  Objective Deadwood of the North / Deadwood Avenger slain (6)",
         "obj:8461:3 @1448:-1950.93,6690.2  Objective Deadwood of the North / Deadwood Shaman slain (6)",
-        {"lines":[".train 440858,1",".goto 1448/1,-1865.83,6673.33",">>|cRXP_FRIENDLY_Calyx Greenglow|r |cRXP_WARN_patrols around slightly|r"],"tag":"Mage","from":"RestedXP: 54-55 Felwood/Winterspring SoD"},
         "turnin:8461 @1448:-2082.61,6821.68  TurnIn Deadwood of the North",
         "accept:8465 @1448:-2082.61,6821.68  Accept Speak to Salfa",
-        {"lines":[".train 440858,1",">>Kill the |cRXP_ENEMY_Enraged Shade|r. Loot it for the |T134939:0|t[|cRXP_LOOT_Spell Notes: Frozen Orb|r]",".collect 225690,1"],"tag":"Mage","from":"RestedXP: 54-55 Felwood/Winterspring SoD"},
         "turnin:4441 @1448:-1310.96,4008.78  TurnIn Felbound Ancients",
         "accept:5165 @1448:-1302.91,3985.78  Accept Dousing the Flames of Protection",
         "obj:5165:1 @1448:-443.86,4975.17  Objective Dousing the Flames of Protection / Extinguish the Brazier of Pain",
