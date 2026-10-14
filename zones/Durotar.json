@@ -12,6 +12,9 @@
     },
     "97282": {
     "pre": [97281]
+    },
+    "97225": {
+    "pre": [805]
     }
   },
     "steps": [
@@ -26,6 +29,24 @@
         ".goto 1411/1,-4299.05,-494.9,30,0 << Warrior/Shaman",
         ".mob Mottled Boar",
         ".money >0.01"
-      ] }
+      ]
+    },
+    { "before": "obj:786:1",
+      "lines": [
+        "#loop",
+        ".goto 1411/1,-5057.80,-866.79,40,0",
+        ".goto 1411/1,-5014.97,-937.99,40,0",
+        ".goto 1411/1,-4908.69,-998.27,40,0",
+        ".goto 1411/1,-4829.91,-1091.33,40,0",
+        ".goto 1411/1,-4722.57,-1117.42,40,0",
+        ">>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r.",
+        ".complete 818,2 --Crawler Mucus (8)",
+        ".mob +Pygmy Surf Crawler",
+        ".mob +Surf Crawler",
+        ".complete 818,1 --Intact Makrura Eye (4)",
+        ".mob +Makrura Shellhide",
+        ".mob +Makrura Clacker"
+      ]
+    }
   ]
 }

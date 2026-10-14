@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "1-13 Durotar",
-  "saved": "2026-10-13 17:29",
+  "saved": "2026-10-13 18:28",
   "levels": "RestedXP",
   "parts": [
     {
@@ -131,8 +131,8 @@
         "accept:817 @1411:-4921.38,-797.7  Accept Practical Prey",
         "accept:96821 @1411:-4921.38,-797.7  Accept Legging It",
         "accept:818 @1411:-4920.33,-813.91  Accept A Solvent Spirit",
-        "accept:97225 @1411:-4920.33,-813.91  Accept Forgotten Loa Idols",
         "turnin:805 @1411:-4920.86,-825.55  TurnIn Report to Sen'jin Village",
+        "accept:97225 @1411:-4920.33,-813.91  Accept Forgotten Loa Idols",
         "accept:808 @1411:-4920.86,-825.55  Accept Minshina's Skull",
         "accept:826 @1411:-4920.86,-825.55  Accept Zalazane",
         "accept:823 @1411:-4920.86,-825.55  Accept Report to Orgnil",
