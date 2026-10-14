@@ -234,7 +234,10 @@ public sealed class RxpNotes
     public static RxpNotes? Load(string? dir, GameData? data = null)
     {
         if (dir == null) return null;
-        if (!Directory.Exists(dir)) { Console.WriteLine($"--rxp: folder not found: {dir}"); return null; }
+        dir = dir.Trim().TrimEnd('"');                    // Windows turns a quoted path ending in \ into one ending in "
+        if (!Directory.Exists(dir) && File.Exists(dir)) dir = Path.GetDirectoryName(Path.GetFullPath(dir))!;   // a guide file named instead of its folder
+        if (!Directory.Exists(dir))
+            throw new InvalidOperationException($"--rxp: folder not found: {dir}  (give the folder that holds RestedXP's guide .lua files; on Windows, leave the \\ off the end of a quoted path)");
         var r = new RxpNotes(); var rx = new Regex(@"\.complete (\d+),(\d+)[^\r\n]*?--([^\r\n<]*)");
         foreach (var f in Directory.EnumerateFiles(dir, "*.lua", SearchOption.AllDirectories))
         {
@@ -251,6 +254,7 @@ public sealed class RxpNotes
                 if (!l.Contains(s)) l.Add(s);
             }
         }
+        if (r.Files == 0) throw new InvalidOperationException($"--rxp: no RestedXP guides (.lua files with RegisterGuide) in {dir} or its subfolders");
         return r;
     }
 
@@ -1015,7 +1019,13 @@ public sealed class ZoneModel
                 if (routed[k].Seq && k > 0) for (int j = 0; j < k; j++) os[k].Pre.Add(os[j].Id);
             }
             if (a != null) t?.Pre.Add(a.Id);
-            if (q.Fix.Tight && os.Count > 0 && a != null) os[0].Tight = a.Id;
+            // "tight": what the quest is about starts the moment you accept it (an escort, a timer): its first objective, or for a
+            // quest with nothing to do but get somewhere in time (a timed delivery), its hand-in, comes straight after the pickup
+            if (q.Fix.Tight && a != null)
+            {
+                if (os.Count > 0) os[0].Tight = a.Id;
+                else if (t != null && !t.Deferred) t.Tight = a.Id;
+            }
             var first = a ?? (os.Count > 0 ? os[0] : t);
             if (first != null)
             {

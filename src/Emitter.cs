@@ -549,11 +549,15 @@ public sealed class Emitter
         // training, vendor and flight-path steps kept in the lock file, next to the step above them there
         var lockSvcs = m.Opt.Lock?.ServicesFor(m.Visit.Number) ?? new();
         var inLock = (m.Opt.Lock?.AllServices ?? Enumerable.Empty<LockedService>()).Select(x => m.Main.Name + "|" + x.Id).ToHashSet();
+        // a step saved after a "tight" pickup (an escort, a timed delivery) goes after what must follow that pickup instead
+        var tightNext = new Dictionary<string, string>();
+        foreach (var t in m.Tasks) if (t.Tight >= 0) tightNext[keyOf[t.Tight]] = keyOf[t.Id];
         foreach (var svc in lockSvcs)
         {
             if (m.Opt.LockPlaced.Contains(svc)) continue;
             var anchor = svc.Anchors.FirstOrDefault(a => unitOf.ContainsKey(a.Key));
             if (anchor.Key == null) continue;                  // none of the steps around it is in this part: another part may have them
+            if (anchor.After && tightNext.TryGetValue(anchor.Key, out var follow) && unitOf.ContainsKey(follow)) anchor = (follow, true);
             m.Opt.LockPlaced.Add(svc);
             g.LockServices.Add((svc, anchor.Key, anchor.After));
             // a lock written for every character keeps another class's steps; a one-character build just does not show them

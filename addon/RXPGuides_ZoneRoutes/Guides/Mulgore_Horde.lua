@@ -19,6 +19,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull Hawkwind|r
     .accept 747 >>Accept The Hunt Begins
     .target Grull Hawkwind
+step << Warrior/Shaman
+    .goto 1412/1,-317.90,-2852.63,30,0--c:Mulgore,46.05,75.32
+    +|cRXP_WARN_Kill |cRXP_ENEMY_Plainstriders|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r
+    .mob Plainstrider
+    .money >0.01
 step
     #completewith Along3
     >>As you go: Kill |cRXP_ENEMY_Plainstriders|r. Loot them for |cRXP_LOOT_Plainstrider Meat|r. Kill |cRXP_ENEMY_Plainstriders|r. Loot them for |cRXP_LOOT_Plainstrider Feather|r. |cRXP_WARN_Anything left is finished later|r
@@ -150,6 +155,10 @@ step
     .accept 95805 >>Accept Grace of An'she and Mu'sha
     .target Seer Graytongue
 step
+    .goto 1412/1,-1004.09,-3376.39
+    >>Click the |cRXP_PICK_Ritual Fire|r
+    .turnin 95805 >>Turn in Grace of An'she and Mu'sha
+step
     .goto 1412/1,-292.73,-3285.20,40,0
     .goto 1412/1,-362.60,-3281.44,40,0
     .goto 1412/1,-452.50,-3246.84,40,0
@@ -237,29 +246,17 @@ step << Druid
     .train 8921 >> Train |T136096:0|t[Moonfire]
     .target Gart Mistrunner
 step
-    #completewith Along16
-    >>As you go: Kill |cRXP_ENEMY_Bristleback Battleboars|r and |cRXP_ENEMY_Battleboars|r. Loot them for |cRXP_LOOT_Battleboar Flank|r. Kill |cRXP_ENEMY_Bristleback Battleboars|r and |cRXP_ENEMY_Battleboars|r. Loot them for |cRXP_LOOT_Battleboar Snout|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 780,2 --Battleboar Flank (8)
-    .complete 780,1 --Battleboar Snout (8)
-    .mob Bristleback Battleboar
-    .mob Battleboar
-step
-    #label Along16
-    .goto 1412/1,-1004.09,-3376.39
-    >>Click the |cRXP_PICK_Ritual Fire|r
-    .turnin 95805 >>Turn in Grace of An'she and Mu'sha
-step
     #loop
-    .goto 1412/1,-852.70,-3214.77,0
-    .goto 1412/1,-852.70,-3214.77,40,0
-    .goto 1412/1,-879.16,-3181.13,40,0
-    .goto 1412/1,-852.08,-3152.01,40,0
-    .goto 1412/1,-857.01,-3080.22,40,0
-    .goto 1412/1,-813.31,-3018.69,40,0
-    .goto 1412/1,-777.00,-3076.12,40,0
+    .goto 1412/1,-717.31,-3080.63,0
     .goto 1412/1,-717.31,-3080.63,40,0
-    .goto 1412/1,-754.85,-3150.78,40,0
+    .goto 1412/1,-777.00,-3076.12,40,0
+    .goto 1412/1,-813.31,-3018.69,40,0
+    .goto 1412/1,-857.01,-3080.22,40,0
+    .goto 1412/1,-852.08,-3152.01,40,0
+    .goto 1412/1,-879.16,-3181.13,40,0
+    .goto 1412/1,-852.70,-3214.77,40,0
     .goto 1412/1,-780.08,-3244.31,40,0
+    .goto 1412/1,-754.85,-3150.78,40,0
     >>Kill |cRXP_ENEMY_Bristleback Battleboars|r and |cRXP_ENEMY_Battleboars|r. Loot them for |cRXP_LOOT_Battleboar Flank|r
     >>Kill |cRXP_ENEMY_Bristleback Battleboars|r and |cRXP_ENEMY_Battleboars|r. Loot them for |cRXP_LOOT_Battleboar Snout|r
     .complete 780,2 --Battleboar Flank (8)

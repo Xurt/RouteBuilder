@@ -634,7 +634,9 @@ public sealed class Router
         var woven = new List<int>(); int k = 0;
         foreach (int b in backbone)
         {
-            if (at.TryGetValue(b, out int bi)) while (k < known.Count && at[known[k]] < bi) woven.Add(known[k++]);
+            // nothing of this layer goes between a "tight" pickup and the step that must follow it
+            bool tightPair = ev.Tight[b] >= 0 && woven.Count > 0 && woven[^1] == ev.Tight[b];
+            if (!tightPair && at.TryGetValue(b, out int bi)) while (k < known.Count && at[known[k]] < bi) woven.Add(known[k++]);
             woven.Add(b);
         }
         while (k < known.Count) woven.Add(known[k++]);
@@ -647,14 +649,23 @@ public sealed class Router
         bool Ready(int t) => ev.Pre[t].All(p => placed[p] || !inWoven[p]) && (ev.Any[t].Length == 0 || ev.Any[t].Any(p => placed[p] || !inWoven[p]));
         var waiting = new List<int>(); int held = 0;
         bool dbg = Environment.GetEnvironmentVariable("ROUTEBUILDER_DEBUG") == "1";
+        // a "tight" step (an escort's first objective, a timed delivery's hand-in) goes straight after its pickup, wherever the lock had it
+        var tightAfter = new Dictionary<int, List<int>>();
+        foreach (int u in woven)
+            if (ev.Tight[u] >= 0 && movable[u]) { if (!tightAfter.TryGetValue(ev.Tight[u], out var l)) tightAfter[ev.Tight[u]] = l = new(); l.Add(u); }
+        int pulled = 0;
         void Place(int t)
         {
             seq.Add(t); placed[t] = true;
+            if (tightAfter.TryGetValue(t, out var follow))
+                foreach (int u in follow)
+                    if (!placed[u] && Ready(u)) { waiting.Remove(u); seq.Add(u); placed[u] = true; pulled++; }
             for (int i = 0; i < waiting.Count; i++)
                 if (Ready(waiting[i])) { int w = waiting[i]; waiting.RemoveAt(i); seq.Add(w); placed[w] = true; i = -1; }
         }
         foreach (int t in woven)
         {
+            if (placed[t]) continue;                     // pulled forward already
             if (!movable[t] || Ready(t)) { Place(t); continue; }
             waiting.Add(t); held++;
             if (dbg) log($"    held back {keys[t]}: needs " + string.Join(", ", ev.Pre[t].Where(p => !placed[p] && inWoven[p]).Select(p => keys[p])));
@@ -662,7 +673,7 @@ public sealed class Router
         foreach (int t in waiting) loose[t] = true;        // still waiting at the end: what it needs never came (a loop in the order)
         int shifted = waiting.Count;
         var todo = mine.Where(t => loose[t]).ToList();
-        log($"  keeping the saved order for {name}: {known.Count - held} steps kept, {fresh} new, {held - shifted} held back until a step they need" + (shifted > 0 ? $", {shifted} planned again" : ""));
+        log($"  keeping the saved order for {name}: {known.Count - held - pulled} steps kept, {fresh} new, {held - shifted} held back until a step they need" + (pulled > 0 ? $", {pulled} moved up to follow their pickup (tight)" : "") + (shifted > 0 ? $", {shifted} planned again" : ""));
         kept += known.Count - held; added += fresh; moved += held;
 
         Slot(ev, seq, todo, choice);

@@ -1,5 +1,8 @@
 // Mulgore
 { 
+  "quests": {
+    "95805": { "tight": true }
+  },
   "steps": [
     { "before": "accept:752", "tag": "Warrior/Shaman",
       "lines": [

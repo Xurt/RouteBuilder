@@ -169,7 +169,7 @@ Under `quests`, one entry per quest ID.
 | `objectiveIndex` | Corrects which quest-log line each database objective is. See below. |
 | `acceptText` | Extra line of text on the pickup step. |
 | `acceptFlags` | Passed to RestedXP as `.accept quest,<flags>`. `1` stops it accepting the quest automatically, which is what you want for an escort. |
-| `tight` | The quest's first objective must come directly after the pickup, with nothing in between. For escorts and anything else that starts the moment you accept. |
+| `tight` | The quest's first objective must come directly after the pickup, with nothing in between. For escorts and anything else that starts the moment you accept. A quest with no objectives (a timed delivery: "bring this to the shrine before it burns out") gets its hand-in straight after the pickup instead. This also holds in a guide built from a lock: the step is moved up to follow the pickup, and no class step or training/vendor step is put in between. |
 | `turninText` | Extra line of text on the hand-in step. |
 | `turninPreLines` | Raw RXP lines placed before the hand-in line, e.g. `".use 6866"` or `".train 2550 >>Train Cooking"`. |
 | `turninExtraLines` | Raw RXP lines placed at the end of the hand-in step. |
