@@ -14,10 +14,18 @@
     "pre": [97281]
     }
   },
-  "steps": [
-//    { "after": "turnin:837", "goto": [52.0, 40.6], "text": "Sell your junk and repair at |cRXP_FRIENDLY_Uhgar|r", "lines": [".vendor", ".target Uhgar"] },
-//    { "before": "accept:1505", "goto": [54.2, 42.0], "text": "Train your new spells", "lines": [".trainer"], "tag": "Warrior" },
-//    { "after": "accept:840", "text": "Get the flight path", "lines": [".fp Orgrimmar"] },
-    
+    "steps": [
+    { "before": "accept:4641", "tag": "Warrior/Shaman/Warlock/Mage/Priest",
+      "lines": [
+        "#completewith next",
+        "+|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock",
+        "+|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 60 copper worth of vendor items (including your armor)|r << Mage",
+        "+|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 50 copper worth of vendor items (including your armor)|r << Priest",
+        "+|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Shaman",
+        ".goto 1411/1,-4281.07,-720.15,30,0 << Warlock/Mage/Priest",
+        ".goto 1411/1,-4299.05,-494.9,30,0 << Warrior/Shaman",
+        ".mob Mottled Boar",
+        ".money >0.01"
+      ] }
   ]
 }

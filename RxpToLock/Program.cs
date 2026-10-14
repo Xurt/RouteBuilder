@@ -89,12 +89,13 @@ public static class Program
             {
                 if (only != null && !only.Contains(name)) continue;
                 guides.Add(name);
-                int lastMap = -1;
+                int lastMap = -1; bool homeSet = false;
                 foreach (var st in steps)
                 {
                     int here = RxpServices.MapOf(st.Lines.Select(l => l.Text));
                     if (here >= 0) lastMap = here;
                     if (!Applies(st.Tag, bo) || RxpServices.OtherSeason(st.Lines.Select(l => l.Text))) continue;   // e.g. Season of Discovery runes
+                    if (RxpServices.SoftcoreOnly(st.Lines.Select(l => l.Text))) continue;                          // the death-skip route; we walk
                     var spot = SpotOf(st.Lines.Where(l => Applies(l.Tag, bo)).Select(l => l.Text).ToList());
                     bool optional = st.Lines.Any(l => Regex.IsMatch(l.Text, @"^\.xp\s*<"));
                     foreach (var (text, tag) in st.Lines)
@@ -112,8 +113,19 @@ public static class Program
                         if (key != null && key.StartsWith("accept:") && !keys.Contains(key) && keys.Contains("item:" + key[7..])) key = "item:" + key[7..];
                         if (key != null) hits.Add(new Hit(key, order++, st.Along, spot with { Key = key }, name, here >= 0 ? here : lastMap) { Optional = optional });
                     }
-                    // a training, vendor or flight-path step: kept whole, in its place in RestedXP's order
-                    // (after a quest handed in at the same trainer, as RestedXP does them together)
+                    if (st.Lines.Any(l => Regex.IsMatch(l.Text, @"^\.home\b"))) homeSet = true;
+                    // a hearth before this guide sets the hearthstone goes back to where the character started (the Valley of
+                    // Trials, say): RouteBuilder does not know that bind, so RestedXP's step is kept as it is
+                    if (!homeSet && st.Lines.Any(l => Regex.IsMatch(l.Text, @"^\.hs\b")) && !st.Lines.Any(l => CmdRx.IsMatch(l.Text)))
+                    {
+                        services.Add(new Svc(order++, name, here >= 0 ? here : lastMap, new LockedService
+                        {
+                            Lines = st.Lines.Where(l => l.Text.StartsWith(".hs") || l.Text.StartsWith(">>") || l.Text.StartsWith(".cooldown") || l.Text.StartsWith(".subzoneskip") || l.Text.StartsWith(".zoneskip"))
+                                            .Select(l => l.Tag.Length > 0 ? $"{l.Text} << {l.Tag}" : l.Text).ToList(),
+                            Tag = st.Tag.Length > 0 ? st.Tag : null, From = "RestedXP: " + name,
+                        }));
+                        continue;
+                    }
                     // RestedXP's own grind steps (".xp 5+1740 >>Grind to ..."), so the build can follow its level timing
                     if (!st.Along && !optional && st.Lines.Any(l => Regex.IsMatch(l.Text, @"^\.xp\s+\d")) && !st.Lines.Any(l => CmdRx.IsMatch(l.Text)))
                         services.Add(new Svc(order++, name, here >= 0 ? here : lastMap, new LockedService
@@ -122,6 +134,8 @@ public static class Program
                                             .Select(l => l.Tag.Length > 0 ? $"{l.Text} << {l.Tag}" : l.Text).ToList(),
                             Tag = st.Tag.Length > 0 ? st.Tag : null, From = "RestedXP: " + name,
                         }));
+                    // a training, vendor or flight-path step: kept whole, in its place in RestedXP's order
+                    // (after a quest handed in at the same trainer, as RestedXP does them together)
                     else if (!st.Along && RxpServices.ServiceLines(st.Lines, out int svcMap) is { } svcLines)
                         services.Add(new Svc(order++, name, svcMap >= 0 ? svcMap : lastMap, new LockedService { Lines = svcLines, Tag = st.Tag.Length > 0 ? st.Tag : null, From = "RestedXP: " + name }));
                 }

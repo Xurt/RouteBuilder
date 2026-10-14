@@ -59,6 +59,13 @@ public static class RxpServices
         return false;
     }
 
+    /// <summary>
+    /// RestedXP guides hold two routes in one file: steps marked "#softcore" only show in softcore mode, where the route
+    /// dies on purpose to skip a walk (".deathskip"), and "#hardcore" ones only in hardcore mode. RouteBuilder plans walking,
+    /// which is the hardcore route, so softcore-only steps are left out (and hardcore-only ones kept).
+    /// </summary>
+    public static bool SoftcoreOnly(IEnumerable<string> lines) => lines.Any(l => l.Trim() == "#softcore");
+
     static readonly Regex AnyGoto = new(@"^\.goto\s+(\d+)", RegexOptions.Compiled);
     /// <summary>The map of a step's first .goto, or -1.</summary>
     public static int MapOf(IEnumerable<string> lines) => lines.Select(l => AnyGoto.Match(l)).FirstOrDefault(g => g.Success) is { } g ? int.Parse(g.Groups[1].Value) : -1;
@@ -72,7 +79,7 @@ public static class RxpServices
         map = -1;
         var all = lines.ToList();
         if (!all.Any(x => Cmd.Match(x.Text) is { Success: true } c && Service.Contains(c.Groups[1].Value))) return null;
-        if (all.Any(x => x.Text.StartsWith("#hardcore"))) return null;     // the normal version of the step is used
+        if (SoftcoreOnly(all.Select(x => x.Text))) return null;             // the walking (hardcore) version of the step is used
         var kept = new List<string>();
         foreach (var (t, lt) in all)
         {
@@ -116,7 +123,7 @@ public static class RxpServices
             var actions = new List<(int Step, string Key)>();
             for (int i = 0; i < steps.Count; i++)
             {
-                if (steps[i].Along || OtherSeason(steps[i].Lines.Select(x => x.Text))) continue;
+                if (steps[i].Along || OtherSeason(steps[i].Lines.Select(x => x.Text)) || SoftcoreOnly(steps[i].Lines.Select(x => x.Text))) continue;
                 foreach (var (t, _) in steps[i].Lines)
                 {
                     var c = Cmd.Match(t); if (!c.Success || !c.Groups[2].Success) continue;

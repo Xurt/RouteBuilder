@@ -62,7 +62,7 @@ copies in RestedXP's training, vendor and flight-path steps for the zone:
   does not have that quest, the nearest one RestedXP does around it is used.
 * Only steps for this faction, on this zone's maps, and from a RestedXP guide whose level range the
   route is in at that point. A step without a `.goto` counts as being wherever its guide last sent you, and
-  steps for other classic seasons (`#season 2`: Season of Discovery runes) are left out. A build for one race and class takes only the steps for it.
+  steps for other classic seasons (`#season 2`: Season of Discovery runes) and softcore-only steps are left out. A build for one race and class takes only the steps for it.
 * RestedXP's own conditions come along (`.money`, `.xp`, class tags), so its "train if you can afford
   it" variants still choose themselves in game. Hardcore-only variants are left out.
 * `--no-rxp-steps` leaves them out. The report says how many were added, and the console ends each build
@@ -131,6 +131,11 @@ the options of the build you will run next:
 * `--race` and `--class` take only the steps RestedXP shows that character. Without them every class's
   and race's steps are taken, for a faction guide.
 * `--guides "1-6 Durotar,6-10 Durotar"` takes only those guides (by their `#name`) from the files.
+* RestedXP's guides hold two routes in one file: steps marked `#softcore` (which die on purpose to skip a walk,
+  `.deathskip`) and steps marked `#hardcore`. RouteBuilder plans walking, so it follows the hardcore route and leaves
+  the softcore-only steps out.
+* A hearth RestedXP uses before its guide has you set the hearthstone (back to where the character started, such
+  as "Hearth to the Valley of Trials") is kept as a step of its own. Later hearths are RouteBuilder's own.
 * Setting the hearthstone is only taken from a step on this zone's maps, in a guide that does its quests.
 * Where RestedXP offers a pickup early "if you are already level N" (`.xp <N`) and plans it again later, the
   later one is used.
