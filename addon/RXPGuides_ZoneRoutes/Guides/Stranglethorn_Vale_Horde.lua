@@ -28,31 +28,11 @@ step
     .target Scooty
     .isOnQuest 2842
 step
-    .goto 1434/0,539.37,-14298.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wharfmaster Lozgil|r
-    .turnin 1180 >>Turn in Goblin Sponsorship
-    .target Wharfmaster Lozgil
-    .isOnQuest 1180
-step << Warrior/Shaman
-    .goto 1434/0,412.39,-14378.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zarena|r
-    .vendor >>|cRXP_BUY_Buy a|r |T135158:0|t[Big Stick] |cRXP_BUY_or a|r |T135144:0|t[Staff of Protection] |cRXP_BUY_from her if one of them is available|r
-    .money <5.3896
-    .target Zarena Cromwind
-step << Rogue
-    .goto 1434/0,509.38,-14450.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn
-    .train 8696 >> Train your class spells
-    .target Ian Strom
-    .xp <34,1
-    .xp >36,1
-step << Rogue
-    .goto 1434/0,509.38,-14450.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn
-    .train 8691 >> Train your class spells
-    >>|T132273:0|t[Instant Poison Rank 3] |cRXP_WARN_requires 160 skill in Poisons!|r
-    .target Ian Strom
-    .xp <36,1
+    .goto 1434/0,487.05,-14444.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Master Seahorn|r
+    .turnin 669 >>Turn in Sunken Treasure
+    .target Fleet Master Seahorn
+    .isOnQuest 669
 step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
@@ -60,17 +40,11 @@ step
     .target Krazek
     .isOnQuest 1115
 step
-    .goto 1434/0,504.28,-14448.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gringer|r around the corner of the balcony
-    .fp Booty Bay >> Get the Booty Bay flight path
-    .target Gringer
-    .subzoneskip 35,1
-step
-    .goto 1434/0,425.15,-14491.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Glyx|r
-    .vendor >> |cRXP_BUY_Buy|r |T134832:0|t[Greater Healing Potions] |cRXP_BUY_from him if they're up|r
-    .target Glyx Brewright
-    .subzoneskip 35,1
+    .goto 1434/0,539.37,-14298.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wharfmaster Lozgil|r
+    .turnin 1180 >>Turn in Goblin Sponsorship
+    .target Wharfmaster Lozgil
+    .isOnQuest 1180
 step << Mage
     .goto 1434/0,211.38,-12434.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Thulbek|r
@@ -103,6 +77,12 @@ step << Rogue
     >>|T132273:0|t[Instant Poison Rank 3] |cRXP_WARN_requires 160 skill in Poisons!|r
     .target Ian Strom
     .xp <38,1
+step
+    .goto 1434/0,425.15,-14491.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Glyx|r
+    .vendor >> |cRXP_BUY_Buy|r |T134832:0|t[Greater Healing Potions] |cRXP_BUY_from him if they're up|r
+    .target Glyx Brewright
+    .subzoneskip 35,1
 step << Rogue
     .goto 1434/0,408.56,-14437.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sly|r
@@ -127,25 +107,6 @@ step << Warlock
     .target Xizk Goodstitch
     .isOnQuest 4781
 step
-    .goto 1434/0,487.05,-14444.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Master Seahorn|r
-    .turnin 669 >>Turn in Sunken Treasure
-    .target Fleet Master Seahorn
-    .isOnQuest 669
-step << Rogue
-    .goto 1434/0,509.38,-14450.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn
-    .train 6774 >> Train your class spells
-    .target Ian Strom
-    .xp <42,1
-    .xp >44,1
-step << Rogue
-    .goto 1434/0,509.38,-14450.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn
-    .train 11341 >> Train your class spells
-    .target Ian Strom
-    .xp <44,1
-step
     .goto 1434/0,490.24,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
     .turnin 1118 >>Turn in Back to Booty Bay
@@ -154,10 +115,6 @@ step
 step
     .hs >>Hearth to Camp Mojache
     .zoneskip Feralas
-step
-    .hs >> Hearth to Feralas
-    .subzoneskip 1099
-    .cooldown item,6948,>0,1
 step
     .goto 1434/0,448.12,-14447.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
@@ -179,6 +136,19 @@ step
     .collect 4595,5
     .target Nixxrax Fillamug
     .isOnQuest 8554
+step << Rogue
+    .goto 1434/0,509.38,-14450.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn
+    .train 8643 >> Train your class spells
+    .target Ian Strom
+    .xp <50,1
+    .xp >52,1
+step << Rogue
+    .goto 1434/0,509.38,-14450.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn
+    .train 11342 >> Train your class spells
+    .target Ian Strom
+    .xp <52,1
 step
     +|cRXP_WARN_That is all of Stranglethorn Vale for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_another zone|r: Tip the Scales - Keefer's Angelfish, Tip the Scales - Brownell's Blue Striped Racer, Tip the Scales - Dezian Queenfish
@@ -213,23 +183,10 @@ step
     .target Innkeeper Thulbek
     .home >>Set your Hearthstone to Innkeeper Thulbek's inn
 step
-    .goto 1434/0,539.37,-14298.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wharfmaster Lozgil|r
-    .accept 1181 >>Accept Goblin Sponsorship
-    .target Wharfmaster Lozgil
-    .isQuestTurnedIn 1180 --any of: Goblin Sponsorship
-    .xp <29,1
-step
     .goto 1434/0,497.90,-14449.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
     .accept 189 >>Accept Bloodscalp Ears
     .target Kebok
-step
-    .goto 1434/0,483.22,-14438.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
-    .turnin 1181 >>Turn in Goblin Sponsorship
-    .target Baron Revilgaz
-    .isOnQuest 1181
 step
     #completewith next
     .hs >>Hearth to Innkeeper Thulbek's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -442,13 +399,19 @@ step
     .goto 1434/0,-547.99,-11918.76,60,0
     .goto 1434/0,-564.58,-11990.65,60,0
     .xp 36+50000 >> Grind to level 36 50000+/71600 xp
-step << Warlock
-    .goto 1434/0,388.78,-14439.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xizk Goodstitch|r
-    .accept 4782 >>Accept Components for the Enchanted Gold Bloodrobe
-    .target Xizk Goodstitch
-    .isQuestTurnedIn 4781 --any of: Components for the Enchanted Gold Bloodrobe
-    .xp <31,1
+step
+    .goto 1434/0,539.37,-14298.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wharfmaster Lozgil|r
+    .accept 1181 >>Accept Goblin Sponsorship
+    .target Wharfmaster Lozgil
+    .isQuestTurnedIn 1180 --any of: Goblin Sponsorship
+    .xp <29,1
+step
+    .goto 1434/0,483.22,-14438.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
+    .turnin 1181 >>Turn in Goblin Sponsorship
+    .target Baron Revilgaz
+    .isOnQuest 1181
 step
     .goto 1434/0,497.90,-14449.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
@@ -457,10 +420,30 @@ step
 step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
+    .accept 1117 >>Accept Rumors for Kravel
+    .target Krazek
+    .isQuestTurnedIn 1116 --any of: Dream Dust in the Swamp
+    .xp <30,1
+step
+    .goto 1434/0,501.09,-14453.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
     .accept 1116 >>Accept Dream Dust in the Swamp
     .target Krazek
     .isQuestTurnedIn 1115 --any of: The Rumormonger
     .xp <30,1
+step
+    .goto 1434/0,501.09,-14453.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
+    .turnin 1116 >>Turn in Dream Dust in the Swamp
+    .target Krazek
+    .isQuestComplete 1116
+step << Warlock
+    .goto 1434/0,388.78,-14439.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xizk Goodstitch|r
+    .accept 4782 >>Accept Components for the Enchanted Gold Bloodrobe
+    .target Xizk Goodstitch
+    .isQuestTurnedIn 4781 --any of: Components for the Enchanted Gold Bloodrobe
+    .xp <31,1
 step
     #completewith next
     .hs >>Hearth to Innkeeper Thulbek's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -479,19 +462,6 @@ step
     .isQuestTurnedIn 1240 --any of: The Troll Witchdoctor
     .xp <30,1
 step
-    .goto 1434/0,501.09,-14453.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
-    .accept 1117 >>Accept Rumors for Kravel
-    .target Krazek
-    .isQuestTurnedIn 1116 --any of: Dream Dust in the Swamp
-    .xp <30,1
-step
-    .goto 1434/0,501.09,-14453.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
-    .turnin 1116 >>Turn in Dream Dust in the Swamp
-    .target Krazek
-    .isQuestComplete 1116
-step
     +|cRXP_WARN_That is all of Stranglethorn Vale for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Crystal in the Mountains
     >>|cRXP_FRIENDLY_Dustwallow Marsh|r: Marg Speaks
@@ -506,16 +476,6 @@ step
     .turnin 338 >>Turn in The Green Hills of Stranglethorn
     .target Barnil Stonepot
     .isQuestComplete 338
-step
-    .goto 1434/0,490.24,-14453.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
-    .accept 605 >>Accept Singing Blue Shards
-    .target Crank Fizzlebub
-step
-    .goto 1434/0,497.90,-14449.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
-    .accept 213 >>Accept Hostile Takeover
-    .target Kebok
 step
     .goto 1434/0,211.38,-12434.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Thulbek|r
@@ -573,6 +533,46 @@ step
     .complete 195,1 --Lashtail Raptor slain (10)
     .mob Lashtail Raptor
 step
+    .goto 1434/0,497.90,-14449.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
+    .accept 213 >>Accept Hostile Takeover
+    .target Kebok
+step
+    .goto 1434/0,504.28,-14448.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gringer|r around the corner of the balcony
+    .fp Booty Bay >> Get the Booty Bay flight path
+    .target Gringer
+    .subzoneskip 35,1
+step << Warrior/Shaman
+    .goto 1434/0,412.39,-14378.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zarena|r
+    .vendor >>|cRXP_BUY_Buy a|r |T135158:0|t[Big Stick] |cRXP_BUY_or a|r |T135144:0|t[Staff of Protection] |cRXP_BUY_from her if one of them is available|r
+    .money <5.3896
+    .target Zarena Cromwind
+step
+    .goto 1434/0,490.24,-14453.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
+    .accept 605 >>Accept Singing Blue Shards
+    .target Crank Fizzlebub
+step << Rogue
+    .goto 1434/0,509.38,-14450.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn
+    .train 8696 >> Train your class spells
+    .target Ian Strom
+    .xp <34,1
+    .xp >36,1
+step << Rogue
+    .goto 1434/0,509.38,-14450.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn
+    .train 8691 >> Train your class spells
+    >>|T132273:0|t[Instant Poison Rank 3] |cRXP_WARN_requires 160 skill in Poisons!|r
+    .target Ian Strom
+    .xp <36,1
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Thulbek's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
     .goto 1434/0,168.62,-12348.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nimboya|r
     .accept 582 >>Accept Headhunting
@@ -619,10 +619,6 @@ step
     >>Kill |cRXP_ENEMY_Bloodscalp Headhunters|r. Loot them for |cRXP_LOOT_Shrunken Head|r
     .complete 582,1 --Shrunken Head (20)
     .mob Bloodscalp Headhunter
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Thulbek's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
 step
     .goto 1434/0,168.62,-12348.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nimboya|r
@@ -730,10 +726,12 @@ step
     .target Barnil Stonepot
     .isQuestComplete 338
 step
-    .goto 1434/0,211.38,-12434.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Thulbek|r
-    .target Innkeeper Thulbek
-    .home >>Set your Hearthstone to Innkeeper Thulbek's inn
+    .goto 1434/0,487.05,-14444.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Master Seahorn|r
+    .accept 670 >>Accept Sunken Treasure
+    .target Fleet Master Seahorn
+    .isQuestTurnedIn 669 --any of: Sunken Treasure
+    .xp <35,1
 step
     .goto 1434/0,483.22,-14438.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
@@ -741,13 +739,6 @@ step
     .target Baron Revilgaz
     .isQuestTurnedIn 1181 --any of: Goblin Sponsorship
     .xp <29,1
-step
-    .goto 1434/0,487.05,-14444.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Master Seahorn|r
-    .accept 670 >>Accept Sunken Treasure
-    .target Fleet Master Seahorn
-    .isQuestTurnedIn 669 --any of: Sunken Treasure
-    .xp <35,1
 step
     .goto 1434/0,171.18,-12412.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Far Seer Mok'thardin|r
@@ -817,14 +808,15 @@ step
     .turnin 188 >>Turn in Tiger Mastery
     .target Ajeck Rouack
 step
-    #completewith next
-    .hs >>Hearth to Innkeeper Thulbek's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
     .goto 1434/0,171.18,-12412.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Far Seer Mok'thardin|r
     .turnin 570 >>Turn in Mok'thardin's Enchantment
     .target Far Seer Mok'thardin
+step
+    .goto 1434/0,211.38,-12434.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Thulbek|r
+    .target Innkeeper Thulbek
+    .home >>Set your Hearthstone to Innkeeper Thulbek's inn
 step
     .goto 1434/0,483.22,-14438.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
@@ -848,6 +840,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
     .accept 600 >>Accept Venture Company Mining
     .target Crank Fizzlebub
+step
+    .goto 1434/0,415.58,-14469.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizzlik|r
+    .accept 628 >>Accept Excelsior
+    .target Drizzlik
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Thulbek's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
 step
     .goto 1434/0,171.18,-12412.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Far Seer Mok'thardin|r
@@ -949,21 +950,6 @@ step
     .turnin 193 >>Turn in Panther Mastery
     .target Sir S. J. Erlgadin
 step
-    .goto 1434/0,497.90,-14449.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
-    .turnin 209 >>Turn in Skullsplitter Tusks
-    .target Kebok
-step
-    .goto 1434/0,490.24,-14453.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
-    .turnin 600 >>Turn in Venture Company Mining
-    .target Crank Fizzlebub
-step
-    .goto 1434/0,415.58,-14469.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizzlik|r
-    .accept 628 >>Accept Excelsior
-    .target Drizzlik
-step
     .goto 1434/0,171.18,-12412.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Far Seer Mok'thardin|r
     .accept 571 >>Accept Mok'thardin's Enchantment
@@ -973,6 +959,16 @@ step
     >>Kill |cRXP_ENEMY_Elder Saltwater Crocolisk|r and loot |cRXP_LOOT_Elder Crocolisk Skin|r
     .complete 628,1 --Elder Crocolisk Skin (1)
     .mob Elder Saltwater Crocolisk
+step
+    .goto 1434/0,497.90,-14449.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
+    .turnin 209 >>Turn in Skullsplitter Tusks
+    .target Kebok
+step
+    .goto 1434/0,490.24,-14453.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
+    .turnin 600 >>Turn in Venture Company Mining
+    .target Crank Fizzlebub
 step
     .goto 1434/0,415.58,-14469.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizzlik|r
@@ -1138,21 +1134,6 @@ step
     .accept 197 >>Accept Raptor Mastery
     .target Hemet Nesingwary
 step
-    .goto 1434/0,501.09,-14453.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
-    .accept 2864 >>Accept Tran'rek
-    .target Krazek
-step
-    .goto 1434/0,495.34,-14457.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Skindle|r
-    .target Innkeeper Skindle
-    .home >>Set your Hearthstone to Innkeeper Skindle's inn
-step
-    .goto 1434/0,448.12,-14447.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
-    .accept 2872 >>Accept Stoley's Debt
-    .target "Sea Wolf" MacKinley
-step
     .goto 1434/0,386.86,-13076.74
     >>Kill |cRXP_ENEMY_Tethis|r and loot |cRXP_LOOT_Talon of Tethis|r
     .complete 197,1 --Talon of Tethis (1)
@@ -1163,10 +1144,6 @@ step
     .turnin 197 >>Turn in Raptor Mastery
     .accept 208 >>Accept Big Game Hunter
     .target Hemet Nesingwary
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Skindle's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
 step
     .goto 1434/0,513.21,-14418.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Privateer Bloads|r
@@ -1182,6 +1159,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Master Seahorn|r
     .accept 604 >>Accept The Bloodsail Buccaneers
     .target Fleet Master Seahorn
+step
+    .goto 1434/0,495.34,-14457.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Skindle|r
+    .target Innkeeper Skindle
+    .home >>Set your Hearthstone to Innkeeper Skindle's inn
 step
     #loop
     .goto 1434/0,500.45,-14678.44,0
@@ -1201,6 +1183,7 @@ step
 step
     .goto 1434/0,448.12,-14447.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
+    .accept 2872 >>Accept Stoley's Debt
     .accept 609 >>Accept Voodoo Dues
     .target "Sea Wolf" MacKinley
 step
@@ -1266,6 +1249,10 @@ step
     .mob Naga Explorer
     .mob Brinescale Skirmisher
 step
+    #completewith next
+    .hs >>Hearth to Innkeeper Skindle's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
     .goto 1434/0,448.12,-14447.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
     .turnin 609 >>Turn in Voodoo Dues
@@ -1286,6 +1273,24 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Whiskey Slim|r
     .accept 580 >>Accept Whiskey Slim's Lost Grog
     .target Whiskey Slim
+step
+    .goto 1434/0,501.09,-14453.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
+    .accept 2864 >>Accept Tran'rek
+    .target Krazek
+step << Rogue
+    .goto 1434/0,509.38,-14450.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn
+    .train 6774 >> Train your class spells
+    .target Ian Strom
+    .xp <42,1
+    .xp >44,1
+step << Rogue
+    .goto 1434/0,509.38,-14450.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn
+    .train 11341 >> Train your class spells
+    .target Ian Strom
+    .xp <44,1
 step
     .goto 1434/0,372.82,-13803.36
     >>Open the |cRXP_PICK_The Holy Spring|r. Loot it for |cRXP_LOOT_Holy Spring Water|r
@@ -1344,19 +1349,6 @@ step
     .turnin 8552 >>Turn in The Monogrammed Sash
     .accept 8553 >>Accept The Captain's Cutlass
     .target Captain Hecklebury Smotts
-step << Rogue
-    .goto 1434/0,509.38,-14450.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn
-    .train 8643 >> Train your class spells
-    .target Ian Strom
-    .xp <50,1
-    .xp >52,1
-step << Rogue
-    .goto 1434/0,509.38,-14450.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn
-    .train 11342 >> Train your class spells
-    .target Ian Strom
-    .xp <52,1
 step
     .goto 1434/0,519.59,-14301.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sprogger|r

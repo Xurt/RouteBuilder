@@ -207,12 +207,21 @@ step
 step
     .xp 38 >>|cRXP_WARN_The rest of Badlands is planned from level 38.|r Come back to this guide then
 step
+    .goto 1418/0,-3357.49,-7164.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theldurin the Lost|r
+    .accept 709 >>Accept Solution to Doom
+    .target Theldurin the Lost
+step
+    .goto 1418/0,-3057.75,-6201.68
+    >>Open the |cRXP_PICK_Ancient Chest|r. Loot it for |cRXP_LOOT_Tablet of Ryun'eh|r
+    .complete 709,1 --Tablet of Ryun'eh (1)
+step
     .goto 1418/0,-2139.36,-6653.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarkal Mossmeld|r
     .accept 2258 >>Accept Badlands Reagent Run
     .target Jarkal Mossmeld
 step
-    #completewith Along2
+    #completewith Along4
     >>As you go: Kill |cRXP_ENEMY_Rock Elementals|r, |cRXP_ENEMY_Lesser Rock Elementals|r, |cRXP_ENEMY_Greater Rock Elementals|r and |cRXP_ENEMY_Ambassador Infernus|r. Loot them for |cRXP_LOOT_Rock Elemental Shard|r. |cRXP_WARN_Anything left is finished later|r
     .complete 2258,3 --Rock Elemental Shard (5)
     .mob Rock Elemental
@@ -226,7 +235,7 @@ step
     .target Lotwil Veriatus
     .isQuestComplete 713
 step
-    #label Along2
+    #label Along4
     .goto 1418/0,-2724.67,-6633.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotwil Veriatus|r
     .accept 710 >>Accept Study of the Elements: Rock
@@ -286,10 +295,14 @@ step
     .complete 711,1 --Large Stone Slab (3)
     .mob Rock Elemental
 step
+    .goto 1418/0,-3357.49,-7164.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theldurin the Lost|r
+    .turnin 709 >>Turn in Solution to Doom
+    .accept 728 >>Accept To the Undercity for Yagyin's Digest
+    .target Theldurin the Lost
+step
     #loop
-    .goto 1418/0,-3255.75,-7048.59,0
-    .goto 1418/0,-3255.75,-7048.59,40,0
-    .goto 1418/0,-3291.08,-7082.42,40,0
+    .goto 1418/0,-3352.27,-7077.78,0
     .goto 1418/0,-3352.27,-7077.78,40,0
     .goto 1418/0,-3384.61,-7043.95,40,0
     .goto 1418/0,-3384.11,-6983.42,40,0
@@ -297,6 +310,8 @@ step
     .goto 1418/0,-3345.80,-6956.89,40,0
     .goto 1418/0,-3314.46,-6956.06,40,0
     .goto 1418/0,-3320.18,-7023.55,40,0
+    .goto 1418/0,-3255.75,-7048.59,40,0
+    .goto 1418/0,-3291.08,-7082.42,40,0
     >>Kill |cRXP_ENEMY_Stonevault Bashers|r, |cRXP_ENEMY_Stonevault Shamans|r, |cRXP_ENEMY_Stonevault Bonesnappers|r and |cRXP_ENEMY_Stonevault Seers|r. Loot them for |cRXP_LOOT_Indurium Flake|r
     .complete 1108,1 --Indurium Flake (10)
     .mob Stonevault Basher
@@ -394,21 +409,6 @@ step
     .target Jarkal Mossmeld
     .isQuestComplete 2339
 step
-    .goto 1418/0,-3357.49,-7164.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theldurin the Lost|r
-    .accept 709 >>Accept Solution to Doom
-    .target Theldurin the Lost
-step
-    .goto 1418/0,-3057.75,-6201.68
-    >>Open the |cRXP_PICK_Ancient Chest|r. Loot it for |cRXP_LOOT_Tablet of Ryun'eh|r
-    .complete 709,1 --Tablet of Ryun'eh (1)
-step
-    .goto 1418/0,-3357.49,-7164.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theldurin the Lost|r
-    .turnin 709 >>Turn in Solution to Doom
-    .accept 728 >>Accept To the Undercity for Yagyin's Digest
-    .target Theldurin the Lost
-step
     +|cRXP_WARN_That is all of Badlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Orgrimmar|r: Deliver the Gems
     >>|cRXP_FRIENDLY_Thousand Needles|r: News for Fizzle
@@ -494,10 +494,27 @@ step
     .accept 782 >>Accept Broken Alliances
     .target Gorn
 step
+    .goto 1418/0,-2139.36,-6653.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarkal Mossmeld|r
+    .accept 2202 >>Accept Uldaman Reagent Run
+    .target Jarkal Mossmeld
+step
     .goto 1418/0,-2393.09,-7141.46
     >>Kill |cRXP_ENEMY_Boss Tho'grun|r and loot |cRXP_LOOT_Sign of the Earth|r
     .complete 782,1 --Sign of the Earth (1)
     .mob Boss Tho'grun
+step
+    #loop
+    .goto 1418/0,-2911.48,-6118.76,0
+    .goto 1418/0,-2911.48,-6118.76,40,0
+    .goto 1418/0,-2979.64,-6096.87,40,0
+    .goto 1418/0,-3019.69,-6061.88,40,0
+    .goto 1418/0,-3091.33,-6064.21,40,0
+    .goto 1418/0,-3099.29,-6138.33,40,0
+    .goto 1418/0,-3030.14,-6172.00,40,0
+    .goto 1418/0,-3013.72,-6142.64,40,0
+    >>Loot the |cRXP_PICK_Magenta Cap Clusters|r for |cRXP_LOOT_Magenta Fungus Cap|r
+    .complete 2202,1 --Magenta Fungus Cap (12)
 step
     .goto 1418/0,-2724.67,-6633.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotwil Veriatus|r
@@ -565,23 +582,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorn|r
     .turnin 782 >>Turn in Broken Alliances
     .target Gorn
-step
-    .goto 1418/0,-2139.36,-6653.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarkal Mossmeld|r
-    .accept 2202 >>Accept Uldaman Reagent Run
-    .target Jarkal Mossmeld
-step
-    #loop
-    .goto 1418/0,-2911.48,-6118.76,0
-    .goto 1418/0,-2911.48,-6118.76,40,0
-    .goto 1418/0,-2979.64,-6096.87,40,0
-    .goto 1418/0,-3019.69,-6061.88,40,0
-    .goto 1418/0,-3091.33,-6064.21,40,0
-    .goto 1418/0,-3099.29,-6138.33,40,0
-    .goto 1418/0,-3030.14,-6172.00,40,0
-    .goto 1418/0,-3013.72,-6142.64,40,0
-    >>Loot the |cRXP_PICK_Magenta Cap Clusters|r for |cRXP_LOOT_Magenta Fungus Cap|r
-    .complete 2202,1 --Magenta Fungus Cap (12)
 step
     .goto 1418/0,-2139.36,-6653.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarkal Mossmeld|r

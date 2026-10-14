@@ -15,6 +15,30 @@ RXPGuides.RegisterGuide([[
 #name 10-24 Westfall
 
 step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 143 >>Turn in Messenger to Westfall
+    .target Gryan Stoutmantle
+    .isOnQuest 143
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 141 >>Turn in The Defias Brotherhood
+    .target Gryan Stoutmantle
+    .isOnQuest 141
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 132 >>Turn in The Defias Brotherhood
+    .target Gryan Stoutmantle
+    .isOnQuest 132
+step << Human
+    .goto 1436/0,1021.67,-10500.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Lewis|r
+    .accept 6181 >>Accept A Swift Message
+    .target Quartermaster Lewis
+    .xp <10,1
+step
     .goto 1436/0,1055.27,-10128.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
     .accept 109 >>Accept Report to Gryan Stoutmantle
@@ -98,18 +122,6 @@ step
     .mob Young Fleshripper
     .mob Vultros
     .mob Fleshripper
-step
-    .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 141 >>Turn in The Defias Brotherhood
-    .target Gryan Stoutmantle
-    .isOnQuest 141
-step << Human
-    .goto 1436/0,1021.67,-10500.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Lewis|r
-    .accept 6181 >>Accept A Swift Message
-    .target Quartermaster Lewis
-    .xp <10,1
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
@@ -401,7 +413,7 @@ step
     .accept 92910 >>Accept Harvesting the Harvesters
     .use 255155
 step
-    #completewith Along33
+    #completewith Along35
     >>As you go: Kill |cRXP_ENEMY_Defias Smugglers|r, |cRXP_ENEMY_Defias Pathstalkers|r, |cRXP_ENEMY_Defias Highwaymans|r and |cRXP_ENEMY_Defias Knuckledusters|r. Loot them for |cRXP_LOOT_Red Leather Bandana|r. |cRXP_WARN_Anything left is finished later|r
     .complete 153,1 --Red Leather Bandana (15)
     .mob Defias Smuggler
@@ -442,12 +454,12 @@ step
     .complete 12,1 --Defias Trapper slain (15)
     .mob Defias Trapper
 step
-    #completewith Along33
+    #completewith Along35
     >>As you go: Kill |cRXP_ENEMY_Kobold Diggers|r. |cRXP_WARN_Anything left is finished later|r
     .complete 92745,1 --Kobold Digger slain (4)
     .mob Kobold Digger
 step
-    #label Along33
+    #label Along35
     #loop
     .goto 1436/0,1431.87,-10027.67,0
     .goto 1436/0,1431.87,-10027.67,40,0
@@ -515,12 +527,6 @@ step
     .turnin 92744 >>Turn in Murloc Gills
     .accept 92747 >>Accept Moonbrook Espionage
     .target Alba Fairmoon
-step << NightElf Rogue
-    .goto 1436/0,1037.42,-10628.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
-    .fp Westfall >> Get the Westfall flight path
-    .target Thor
-    .isOnQuest 2360
 step
     #loop
     .goto 1436/0,1460.57,-10933.70,0
@@ -536,15 +542,6 @@ step
     >>Kill |cRXP_ENEMY_Defias Looters|r
     .complete 13,2 --Defias Looter slain (15)
     .mob Defias Looter
-step << Rogue
-    .goto 1436/0,619.52,-11035.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Kearnen|r
-    .turnin 2360 >>Turn in Mathias and the Defias
-    .target Agent Kearnen
-    .isOnQuest 2360
-step << !Dwarf Rogue
-    .collect 6452,1 >> Craft an |T134437:0|t[Anti-Venom]
-    .train 7934,3
 step
     .goto 1436/0,1966.32,-11407.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
@@ -718,24 +715,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket|r
     .turnin 92911 >>Turn in Harvesting the Harvesters
     .target Ozwin Ironsprocket
-step << Human Paladin/Dwarf Paladin
-    .goto 1436/0,1557.52,-11482.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daphne Stilwell|r
-    .turnin 1650 >>Turn in The Tome of Valor
-    .target Daphne Stilwell
-    .isOnQuest 1650
-step
-    .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 132 >>Turn in The Defias Brotherhood
-    .target Gryan Stoutmantle
-    .isOnQuest 132
-step
-    .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 143 >>Turn in Messenger to Westfall
-    .target Gryan Stoutmantle
-    .isOnQuest 143
 step
     .goto 1436/0,1594.62,-9797.37
     >>Click the |cRXP_PICK_Old Jug|r
@@ -752,6 +731,21 @@ step
     >>Click the |cRXP_PICK_Locked Chest|r
     .turnin 140 >>Turn in Captain Sander's Hidden Treasure
     .isOnQuest 140
+step << Rogue
+    .goto 1436/0,619.52,-11035.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Kearnen|r
+    .turnin 2360 >>Turn in Mathias and the Defias
+    .target Agent Kearnen
+    .isOnQuest 2360
+step << !Dwarf Rogue
+    .collect 6452,1 >> Craft an |T134437:0|t[Anti-Venom]
+    .train 7934,3
+step << Human Paladin/Dwarf Paladin
+    .goto 1436/0,1557.52,-11482.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daphne Stilwell|r
+    .turnin 1650 >>Turn in The Tome of Valor
+    .target Daphne Stilwell
+    .isOnQuest 1650
 step
     +|cRXP_WARN_That is all of Westfall for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Stormwind City|r: Continue to Stormwind << Human
@@ -764,6 +758,20 @@ step
     .accept 65 >>Accept The Defias Brotherhood
     .accept 14 >>Accept The People's Militia
     .target Gryan Stoutmantle
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .accept 144 >>Accept Messenger to Westfall
+    .target Gryan Stoutmantle
+    .isQuestTurnedIn 143 --any of: Messenger to Westfall
+    .xp <14,1
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .accept 135 >>Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+    .isQuestTurnedIn 132 --any of: The Defias Brotherhood
+    .xp <14,1
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
@@ -796,12 +804,12 @@ step
     .accept 152 >>Accept The Coast Isn't Clear
     .target Captain Grayson
 step
-    #completewith Along5
+    #completewith Along7
     >>As you go: Kill |cRXP_ENEMY_Defias Highwaymans|r. |cRXP_WARN_Anything left is finished later|r
     .complete 14,1 --Defias Highwayman slain (8)
     .mob Defias Highwayman
 step
-    #label Along5
+    #label Along7
     .goto 1436/0,1665.32,-11353.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .turnin 92819 >>Turn in Destruction in Deadmines
@@ -905,20 +913,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
     .turnin 152 >>Turn in The Coast Isn't Clear
     .target Captain Grayson
-step
-    .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .accept 135 >>Accept The Defias Brotherhood
-    .target Gryan Stoutmantle
-    .isQuestTurnedIn 132 --any of: The Defias Brotherhood
-    .xp <14,1
-step
-    .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .accept 144 >>Accept Messenger to Westfall
-    .target Gryan Stoutmantle
-    .isQuestTurnedIn 143 --any of: Messenger to Westfall
-    .xp <14,1
 step
     +|cRXP_WARN_That is all of Westfall for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Redridge Mountains|r: Messenger to Westfall, The Defias Brotherhood

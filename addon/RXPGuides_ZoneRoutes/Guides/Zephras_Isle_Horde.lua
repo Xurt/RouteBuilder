@@ -1787,20 +1787,29 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r
     .turnin 93949 >>Turn in Bugged
     .target Valennia Stormfist
+step << Skyborne Hunter
+    #completewith next
+    .hs >>Hearth to Coriella Calmbreeze's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
 step
-    #completewith Along128
+    #completewith Along129
     >>As you go: Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |cRXP_LOOT_Windsong Crawler Meat|r. |cRXP_WARN_Anything left is finished later|r
     .complete 93317,1 --Windsong Crawler Meat (6)
     .mob Windsong Crawler
+step << Skyborne Hunter
+    .goto 2521,45.26,44.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elayaa Easewind|r
+    .accept 94007 >>Accept Taming the Beast
+    .target Elayaa Easewind
 step
-    #label Along128
+    #label Along129
     #loop
-    .goto 2521,52.90,66.10,0
-    .goto 2521,52.90,66.10,40,0
+    .goto 2521,52.80,64.80,0
     .goto 2521,52.80,64.80,40,0
-    .goto 2521,51.90,65.60,40,0
-    .goto 2521,51.50,67.60,40,0
+    .goto 2521,52.90,66.10,40,0
     .goto 2521,51.90,67.10,40,0
+    .goto 2521,51.50,67.60,40,0
+    .goto 2521,51.90,65.60,40,0
     >>Open the |cRXP_PICK_Construct Parts|r. Loot it for |cRXP_LOOT_Crystallized Lightning|r
     .complete 93737,2 --Crystallized Lightning (1)
 step
@@ -1906,7 +1915,7 @@ step
     .mob Resaan Nimbuswalker
     .mob Wind Hollow
 step
-    #completewith Along140
+    #completewith Along141
     >>As you go: Loot the |cRXP_PICK_Zephyrseed Cones|r for |cRXP_LOOT_Zephyrseed|r. |cRXP_WARN_Anything left is finished later|r
     .complete 93160,1 --Zephyrseed (8)
 step
@@ -1918,16 +1927,16 @@ step
     .accept 94487 >>Accept Unwanted and Unworthy
     .target Elegael Thornpaw
 step
-    #completewith Along143
+    #completewith Along144
     >>As you go: Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for |cRXP_LOOT_Pristine Shriekling Feather|r. |cRXP_WARN_Anything left is finished later|r
     .complete 94486,1 --Pristine Shriekling Feather (20)
     .mob Shadowgale Shriekling
 step
-    #completewith Along142
+    #completewith Along143
     >>As you go: Pick up |cRXP_PICK_Lady's Tear Moss|r from the ground. |cRXP_WARN_Anything left is finished later|r
     .complete 94485,1 --Lady's Tear Moss (8)
 step
-    #label Along140
+    #label Along141
     #loop
     .goto 2521,61.60,38.86,0
     .goto 2521,61.60,38.86,40,0
@@ -1955,7 +1964,7 @@ step
     .accept 93165 >>Accept Mercy Falls on Deaf Ears
     .target Vayn Moongaze
 step
-    #label Along142
+    #label Along143
     #loop
     .goto 2521,61.80,36.40,0
     .goto 2521,61.80,36.40,40,0
@@ -1970,7 +1979,7 @@ step
     >>Loot the |cRXP_PICK_Zephyrseed Cones|r for |cRXP_LOOT_Zephyrseed|r
     .complete 93160,1 --Zephyrseed (8)
 step
-    #label Along143
+    #label Along144
     .goto 2521,53.96,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r
     .turnin 93160 >>Turn in The Forest's Bounty
@@ -2001,7 +2010,7 @@ step
     .complete 94486,1 --Pristine Shriekling Feather (20)
     .mob Shadowgale Shriekling
 step
-    #completewith Along150
+    #completewith Along151
     >>As you go: Kill |cRXP_ENEMY_Al'Aketh Stormchasers|r, |cRXP_ENEMY_Al'Aketh Footsoldiers|r, |cRXP_ENEMY_Al'Aketh Guardians|r and |cRXP_ENEMY_Al'Aketh Spiritcallers|r. Loot them for |cRXP_LOOT_Al'Alketh Cultist's Ear|r. |cRXP_WARN_Anything left is finished later|r
     .complete 93165,1 --Al'Alketh Cultist's Ear (10)
     .mob Al'Aketh Stormchaser
@@ -2018,7 +2027,7 @@ step
     .accept 94489 >>Accept The Wounds of Betrayal
     .target Elegael Thornpaw
 step
-    #completewith Along147
+    #completewith Along148
     >>As you go: Kill |cRXP_ENEMY_Naaleos Leafwhisper|r, |cRXP_ENEMY_Telenos Leafwhisper|r, |cRXP_ENEMY_Nayeela Snarlfang|r and |cRXP_ENEMY_Neyasteel Mossmender|r. |cRXP_WARN_Anything left is finished later|r
     .complete 94489,2 --Naaleos Leafwhisper (1)
     .mob Naaleos Leafwhisper
@@ -2031,7 +2040,7 @@ step
     .complete 94488,1 --Commander Haalien's Severed Head (1)
     .mob Commander Haalien
 step
-    #label Along147
+    #label Along148
     .goto 2521,65.53,36.32
     >>Kill |cRXP_ENEMY_Commander Haalien|r and loot |cRXP_LOOT_Ripped Missive|r. Use it to start the quest
     .collect 265476,1,94490 --Ripped Missive (1)
@@ -2058,7 +2067,7 @@ step
     .complete 94489,2 --Jorel Windsinger (7)
     .target Jorel Windsinger
 step
-    #label Along150
+    #label Along151
     .goto 2521,61.76,39.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elegael Thornpaw|r
     .turnin 94489 >>Turn in The Wounds of Betrayal
@@ -2185,6 +2194,11 @@ step << Warrior Alliance
     .target Seena Skybreaker::252377
     .money <0.45
     .xp <14,1
+step << Skyborne Hunter
+    .goto 2521,59.61,72.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale|r
+    .turnin 94007 >>Turn in Taming the Beast
+    .target Quel'ana Quickgale
 step
     .goto 2521,59.07,73.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Riaani Nightwind|r
@@ -2204,8 +2218,8 @@ step
 step
     .goto 2521,59.15,79.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger|r
-    .turnin 93738 >>Turn in The Broken Construct while you are here
-    .isQuestComplete 93738
+    .turnin 93738 >>Turn in The Broken Construct
+    .accept 93746 >>Accept A Firm Response
     .target Ayessa Dawnsinger
 step
     .goto 2521,59.15,79.73
@@ -2216,8 +2230,6 @@ step
     .goto 2521,59.15,79.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger|r
     .turnin 92708 >>Turn in A Grand Adventure
-    .turnin 93738 >>Turn in The Broken Construct
-    .accept 93746 >>Accept A Firm Response
     .target Ayessa Dawnsinger
 step
     .goto 2521,59.93,57.15
@@ -2244,7 +2256,7 @@ step
     .accept 93320 >>Accept Tower Defense
     .target Valennia Stormfist
 step
-    #completewith Along163
+    #completewith Along166
     >>As you go: Kill |cRXP_ENEMY_Al'Aketh Stormchasers|r, |cRXP_ENEMY_Al'Aketh Footsoldiers|r, |cRXP_ENEMY_Al'Aketh Guardians|r and |cRXP_ENEMY_Al'Aketh Spiritcallers|r. Loot them for |cRXP_LOOT_Al'Aketh Windstone Charm|r. |cRXP_WARN_Anything left is finished later|r
     .complete 93740,1 --Al'Aketh Windstone Charm (10)
     .mob Al'Aketh Stormchaser
@@ -2252,7 +2264,7 @@ step
     .mob Al'Aketh Guardian
     .mob Al'Aketh Spiritcaller
 step
-    #label Along163
+    #label Along166
     .goto 2521,69.62,67.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorana Windyreed|r
     .turnin 93320 >>Turn in Tower Defense
@@ -2312,15 +2324,6 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood::256507|r inside the house.
     .vendor 256507 >>Vendor trash and repair if needed
     .target Belann Windwood::256507
-step << Skyborne Hunter
-    #completewith next
-    .hs >>Hearth to Coriella Calmbreeze's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step << Skyborne Hunter
-    .goto 2521,45.26,44.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elayaa Easewind|r
-    .accept 94007 >>Accept Taming the Beast
-    .target Elayaa Easewind
 step
     .goto 2521,56.16,60.59
     >>Find the cultist turncoat at the house just inside the highlands northwest of Valanaar.
@@ -2337,11 +2340,6 @@ step
     .turnin 92643 >>Turn in The Turncoat
     .accept 92644 >>Accept Unfortunate News
     .target Dead Cultist
-step << Skyborne Hunter
-    .goto 2521,59.61,72.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale|r
-    .turnin 94007 >>Turn in Taming the Beast
-    .target Quel'ana Quickgale
 step
     .goto 2521,66.17,76.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong|r
@@ -2410,25 +2408,25 @@ step << Alliance Mage
     .xp <12,1
 step
     #loop
-    .goto 2521,64.77,55.81,0
-    .goto 2521,64.77,55.81,40,0
-    .goto 2521,61.59,53.22,40,0
-    .goto 2521,58.97,53.90,40,0
+    .goto 2521,65.88,56.94,0
+    .goto 2521,65.88,56.94,40,0
+    .goto 2521,66.43,53.31,40,0
+    .goto 2521,64.47,52.15,40,0
+    .goto 2521,62.56,51.65,40,0
+    .goto 2521,60.80,49.83,40,0
     .goto 2521,58.14,51.04,40,0
-    .goto 2521,58.99,48.80,40,0
-    .goto 2521,60.81,48.97,40,0
-    .goto 2521,62.51,49.80,40,0
-    .goto 2521,64.56,45.11,40,0
-    .goto 2521,64.06,51.97,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Guardians|r
+    .goto 2521,59.03,54.09,40,0
+    .goto 2521,61.61,53.31,40,0
+    .goto 2521,63.90,54.42,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Blademasters|r
     >>Kill |cRXP_ENEMY_Al'Aketh Spiritcallers|r
-    .complete 92947,1 --Al'Aketh Guardian slain (7)
+    >>Kill |cRXP_ENEMY_Al'Aketh Guardians|r
     .complete 92947,3 --Al'Aketh Blademaster slain (7)
     .complete 92947,2 --Al'Aketh Spiritcaller slain (7)
-    .mob Al'Aketh Guardian
+    .complete 92947,1 --Al'Aketh Guardian slain (7)
     .mob Al'Aketh Blademaster
     .mob Al'Aketh Spiritcaller
+    .mob Al'Aketh Guardian
 step
     .goto 2521,63.82,50.59
     >>Interact with |cRXP_FRIENDLY_Hyusaa Quickbreeze|r

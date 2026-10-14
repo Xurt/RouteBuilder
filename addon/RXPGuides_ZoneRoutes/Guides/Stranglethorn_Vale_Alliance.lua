@@ -27,6 +27,9 @@ step
     .turnin 98463 >>Turn in Talk of the Town
     .target Nixxrax Fillamug
     .isOnQuest 98463
+step << Druid
+    .goto 1434/0,87.58,-11672.87
+    .xp 32 >> Grind to 32
 step
     .goto 1434/0,539.37,-14298.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wharfmaster Lozgil|r
@@ -73,17 +76,8 @@ step
     .turnin 1115 >>Turn in The Rumormonger
     .target Krazek
     .isOnQuest 1115
-step << Rogue
-    .goto 1434/0,509.57,-14450.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_FRIENDLY_Ian Strom|r up stairs
-    .trainer >> Train your class spells
-    .target Ian Strom
 step
-    .goto 1434/0,480.03,-14467.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catelyn the Blade|r
-    .turnin 603 >>Turn in Ansirem's Key
-    .target Catelyn the Blade
-    .isOnQuest 603
+    .xp 38 >> Make sure you are level 38 before starting the next segment
 step
     .goto 1434/0,490.24,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
@@ -96,6 +90,12 @@ step
     .turnin 669 >>Turn in Sunken Treasure
     .target Fleet Master Seahorn
     .isOnQuest 669
+step
+    .goto 1434/0,480.03,-14467.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catelyn the Blade|r
+    .turnin 603 >>Turn in Ansirem's Key
+    .target Catelyn the Blade
+    .isOnQuest 603
 step
     .goto 1434/0,448.12,-14447.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
@@ -401,6 +401,13 @@ step
     .turnin 191 >>Turn in Panther Mastery
     .target Sir S. J. Erlgadin
 step
+    .goto 1434/0,501.09,-14453.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
+    .accept 1117 >>Accept Rumors for Kravel
+    .target Krazek
+    .isQuestTurnedIn 1116 --any of: Dream Dust in the Swamp
+    .xp <30,1
+step
     .goto 1434/0,497.90,-14449.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
     .accept 189 >>Accept Bloodscalp Ears
@@ -484,15 +491,6 @@ step
     .accept 1116 >>Accept Dream Dust in the Swamp
     .target Krazek
     .isQuestTurnedIn 1115 --any of: The Rumormonger
-    .xp <30,1
-step
-    .xp 38 >> Make sure you are level 38 before starting the next segment
-step
-    .goto 1434/0,501.09,-14453.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
-    .accept 1117 >>Accept Rumors for Kravel
-    .target Krazek
-    .isQuestTurnedIn 1116 --any of: Dream Dust in the Swamp
     .xp <30,1
 step
     .goto 1434/0,501.09,-14453.39
@@ -895,13 +893,6 @@ step
     .target Innkeeper Thulbek
     .home >>Set your Hearthstone to Innkeeper Thulbek's inn
 step
-    .goto 1434/0,480.03,-14467.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catelyn the Blade|r
-    .accept 610 >>Accept "Pretty Boy" Duncan
-    .target Catelyn the Blade
-    .isQuestTurnedIn 603 --any of: Ansirem's Key
-    .xp <32,1
-step
     .goto 1434/0,448.12,-14447.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
     .accept 606 >>Accept Scaring Shaky
@@ -922,30 +913,11 @@ step
     .turnin 595 >>Turn in The Bloodsail Buccaneers
     .accept 597 >>Accept The Bloodsail Buccaneers
 step
-    .goto 1434/0,473.01,-14121.99
-    >>Kill |cRXP_ENEMY_"Pretty Boy" Duncan|r and loot |cRXP_LOOT_Catelyn's Blade|r
-    .complete 610,1 --Catelyn's Blade (1)
-    .mob "Pretty Boy" Duncan
-    .isOnQuest 610
-step
     .goto 1434/0,427.70,-14411.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Crazz|r
     .turnin 597 >>Turn in The Bloodsail Buccaneers
     .accept 599 >>Accept The Bloodsail Buccaneers
     .target First Mate Crazz
-step
-    .goto 1434/0,480.03,-14467.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catelyn the Blade|r
-    .turnin 610 >>Turn in "Pretty Boy" Duncan
-    .target Catelyn the Blade
-    .isOnQuest 610
-step
-    .goto 1434/0,480.03,-14467.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catelyn the Blade|r
-    .accept 611 >>Accept The Curse of the Tides
-    .target Catelyn the Blade
-    .isQuestTurnedIn 610 --any of: "Pretty Boy" Duncan
-    .xp <32,1
 step
     .goto 1434/0,503.00,-14459.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deeg|r
@@ -1064,18 +1036,6 @@ step
     .complete 628,1 --Elder Crocolisk Skin (1)
     .mob Elder Saltwater Crocolisk
 step
-    .goto 1434/0,627.44,-12171.88
-    >>Kill |cRXP_ENEMY_Gazban|r and loot |cRXP_LOOT_Stone of the Tides|r
-    .complete 611,1 --Stone of the Tides (1)
-    .mob Gazban
-    .isOnQuest 611
-step
-    .goto 1434/0,483.22,-14438.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
-    .turnin 611 >>Turn in The Curse of the Tides
-    .target Baron Revilgaz
-    .isOnQuest 611
-step
     .goto 1434/0,504.28,-14299.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Shaky" Phillipe|r
     .turnin 606 >>Turn in Scaring Shaky
@@ -1130,6 +1090,44 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
     .accept 209 >>Accept Skullsplitter Tusks
     .target Kebok
+step
+    .goto 1434/0,480.03,-14467.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catelyn the Blade|r
+    .accept 610 >>Accept "Pretty Boy" Duncan
+    .target Catelyn the Blade
+    .isQuestTurnedIn 603 --any of: Ansirem's Key
+    .xp <32,1
+step
+    .goto 1434/0,473.01,-14121.99
+    >>Kill |cRXP_ENEMY_"Pretty Boy" Duncan|r and loot |cRXP_LOOT_Catelyn's Blade|r
+    .complete 610,1 --Catelyn's Blade (1)
+    .mob "Pretty Boy" Duncan
+    .isOnQuest 610
+step
+    .goto 1434/0,480.03,-14467.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catelyn the Blade|r
+    .turnin 610 >>Turn in "Pretty Boy" Duncan
+    .target Catelyn the Blade
+    .isOnQuest 610
+step
+    .goto 1434/0,480.03,-14467.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catelyn the Blade|r
+    .accept 611 >>Accept The Curse of the Tides
+    .target Catelyn the Blade
+    .isQuestTurnedIn 610 --any of: "Pretty Boy" Duncan
+    .xp <32,1
+step
+    .goto 1434/0,627.44,-12171.88
+    >>Kill |cRXP_ENEMY_Gazban|r and loot |cRXP_LOOT_Stone of the Tides|r
+    .complete 611,1 --Stone of the Tides (1)
+    .mob Gazban
+    .isOnQuest 611
+step
+    .goto 1434/0,483.22,-14438.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
+    .turnin 611 >>Turn in The Curse of the Tides
+    .target Baron Revilgaz
+    .isOnQuest 611
 step
     .goto 1434/0,490.24,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
@@ -1188,21 +1186,11 @@ step
 step
     .xp 41 >>|cRXP_WARN_The rest of Stranglethorn Vale is planned from level 41.|r Come back to this guide then
 step
-    .goto 1434/0,495.34,-14457.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Skindle|r
-    .target Innkeeper Skindle
-    .home >>Set your Hearthstone to Innkeeper Skindle's inn
-step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
     .turnin 627 >>Turn in Favor for Krazek
     .target Krazek
     .isQuestComplete 627
-step
-    .goto 1434/0,490.24,-14453.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
-    .accept 621 >>Accept Zanzil's Secret
-    .target Crank Fizzlebub
 step
     .goto 1434/0,-54.72,-11628.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
@@ -1214,14 +1202,15 @@ step
     .complete 197,1 --Talon of Tethis (1)
     .mob Tethis
 step
-    #completewith next
-    .hs >>Hearth to Innkeeper Skindle's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
     .goto 1434/0,487.05,-14444.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Master Seahorn|r
     .accept 604 >>Accept The Bloodsail Buccaneers
     .target Fleet Master Seahorn
+step
+    .goto 1434/0,495.34,-14457.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Skindle|r
+    .target Innkeeper Skindle
+    .home >>Set your Hearthstone to Innkeeper Skindle's inn
 step
     .goto 1434/0,448.12,-14447.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
@@ -1257,24 +1246,6 @@ step
     .mob Maury "Club Foot" Wilkins
     .mob Jon-Jon the Crow
 step
-    #loop
-    .goto 1434/0,-247.43,-13577.03,0
-    .goto 1434/0,-247.43,-13577.03,40,0
-    .goto 1434/0,-325.29,-13604.69,40,0
-    .goto 1434/0,-443.34,-13572.35,40,0
-    .goto 1434/0,-378.89,-13637.87,40,0
-    .goto 1434/0,-384.63,-13683.81,40,0
-    .goto 1434/0,-331.67,-13646.38,40,0
-    .goto 1434/0,-311.25,-13689.34,40,0
-    .goto 1434/0,-246.16,-13711.89,40,0
-    .goto 1434/0,-274.24,-13646.80,40,0
-    >>Kill |cRXP_ENEMY_Zanzil Zombies|r, |cRXP_ENEMY_Zanzil Hunters|r, |cRXP_ENEMY_Zanzil Witch Doctors|r and |cRXP_ENEMY_Zanzil Nagas|r. Loot them for |cRXP_LOOT_Zanzil's Mixture|r
-    .complete 621,1 --Zanzil's Mixture (1)
-    .mob Zanzil Zombie
-    .mob Zanzil Hunter
-    .mob Zanzil Witch Doctor
-    .mob Zanzil Naga
-step
     .goto 1434/0,-54.72,-11628.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .turnin 197 >>Turn in Raptor Mastery
@@ -1297,6 +1268,10 @@ step
     .turnin 208 >>Turn in Big Game Hunter
     .target Hemet Nesingwary
 step
+    #completewith next
+    .hs >>Hearth to Innkeeper Skindle's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
     .accept 2864 >>Accept Tran'rek
@@ -1312,6 +1287,59 @@ step
     .accept 580 >>Accept Whiskey Slim's Lost Grog
     .target Whiskey Slim
 step
+    .goto 1434/0,448.12,-14447.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
+    .turnin 609 >>Turn in Voodoo Dues
+    .accept 613 >>Accept Cracking Maury's Foot
+    .accept 2872 >>Accept Stoley's Debt
+    .target "Sea Wolf" MacKinley
+step
+    .goto 1434/0,490.24,-14453.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
+    .accept 621 >>Accept Zanzil's Secret
+    .target Crank Fizzlebub
+step
+    #loop
+    .goto 1434/0,-246.16,-13711.89,0
+    .goto 1434/0,-246.16,-13711.89,40,0
+    .goto 1434/0,-311.25,-13689.34,40,0
+    .goto 1434/0,-384.63,-13683.81,40,0
+    .goto 1434/0,-443.34,-13572.35,40,0
+    .goto 1434/0,-378.89,-13637.87,40,0
+    .goto 1434/0,-331.67,-13646.38,40,0
+    .goto 1434/0,-325.29,-13604.69,40,0
+    .goto 1434/0,-247.43,-13577.03,40,0
+    .goto 1434/0,-274.24,-13646.80,40,0
+    >>Kill |cRXP_ENEMY_Zanzil Zombies|r, |cRXP_ENEMY_Zanzil Hunters|r, |cRXP_ENEMY_Zanzil Witch Doctors|r and |cRXP_ENEMY_Zanzil Nagas|r. Loot them for |cRXP_LOOT_Zanzil's Mixture|r
+    .complete 621,1 --Zanzil's Mixture (1)
+    .mob Zanzil Zombie
+    .mob Zanzil Hunter
+    .mob Zanzil Witch Doctor
+    .mob Zanzil Naga
+step
+    #loop
+    .goto 1434/0,-890.66,-12507.54,0
+    .goto 1434/0,-890.66,-12507.54,40,0
+    .goto 1434/0,-851.10,-12484.56,40,0
+    .goto 1434/0,-844.72,-12428.83,40,0
+    .goto 1434/0,-891.30,-12386.72,40,0
+    .goto 1434/0,-896.41,-12448.40,40,0
+    .goto 1434/0,-921.29,-12479.03,40,0
+    .goto 1434/0,-951.29,-12442.87,40,0
+    .goto 1434/0,-1006.16,-12499.45,40,0
+    .goto 1434/0,-958.94,-12482.01,40,0
+    >>Kill |cRXP_ENEMY_Mosh'Ogg Maulers|r, |cRXP_ENEMY_Mosh'Ogg Shamans|r, |cRXP_ENEMY_Mosh'Ogg Lords|r and |cRXP_ENEMY_Mosh'Ogg Warmongers|r. Loot them for |cRXP_LOOT_Maury's Key|r
+    .complete 613,1 --Maury's Key (1)
+    .mob Mosh'Ogg Mauler
+    .mob Mosh'Ogg Shaman
+    .mob Mosh'Ogg Lord
+    .mob Mosh'Ogg Warmonger
+step
+    .goto 1434/0,448.12,-14447.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
+    .turnin 613 >>Turn in Cracking Maury's Foot
+    .target "Sea Wolf" MacKinley
+step
     .goto 1434/0,490.24,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
     .turnin 621 >>Turn in Zanzil's Secret
@@ -1323,13 +1351,6 @@ step
     .target Crank Fizzlebub
     .isQuestTurnedIn 1118 --Back to Booty Bay
     .xp <35,1
-step
-    .goto 1434/0,448.12,-14447.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
-    .turnin 609 >>Turn in Voodoo Dues
-    .accept 613 >>Accept Cracking Maury's Foot
-    .accept 2872 >>Accept Stoley's Debt
-    .target "Sea Wolf" MacKinley
 step
     .goto 1434/0,513.21,-14418.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Privateer Bloads|r
@@ -1352,28 +1373,12 @@ step
     .mob Naga Explorer
     .mob Brinescale Skirmisher
 step
-    #loop
-    .goto 1434/0,-851.10,-12484.56,0
-    .goto 1434/0,-851.10,-12484.56,40,0
-    .goto 1434/0,-890.66,-12507.54,40,0
-    .goto 1434/0,-921.29,-12479.03,40,0
-    .goto 1434/0,-958.94,-12482.01,40,0
-    .goto 1434/0,-1006.16,-12499.45,40,0
-    .goto 1434/0,-951.29,-12442.87,40,0
-    .goto 1434/0,-896.41,-12448.40,40,0
-    .goto 1434/0,-891.30,-12386.72,40,0
-    .goto 1434/0,-844.72,-12428.83,40,0
-    >>Kill |cRXP_ENEMY_Mosh'Ogg Maulers|r, |cRXP_ENEMY_Mosh'Ogg Shamans|r, |cRXP_ENEMY_Mosh'Ogg Lords|r and |cRXP_ENEMY_Mosh'Ogg Warmongers|r. Loot them for |cRXP_LOOT_Maury's Key|r
-    .complete 613,1 --Maury's Key (1)
-    .mob Mosh'Ogg Mauler
-    .mob Mosh'Ogg Shaman
-    .mob Mosh'Ogg Lord
-    .mob Mosh'Ogg Warmonger
-step
-    .goto 1434/0,448.12,-14447.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
-    .turnin 613 >>Turn in Cracking Maury's Foot
-    .target "Sea Wolf" MacKinley
+    .goto 1434/0,737.19,-14236.00
+    >>Kill |cRXP_ENEMY_Mok'rash|r and loot |cRXP_LOOT_Monogrammed Sash|r. Use it to start the quest
+    .collect 3985,1,8552 --Monogrammed Sash (1)
+    .accept 8552 >>Accept The Monogrammed Sash
+    .use 3985
+    .mob Mok'rash
 step
     .goto 1434/0,513.21,-14418.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Privateer Bloads|r
@@ -1386,13 +1391,6 @@ step
     .turnin 580 >>Turn in Whiskey Slim's Lost Grog
     .target Whiskey Slim
     .isQuestComplete 580
-step
-    .goto 1434/0,737.19,-14236.00
-    >>Kill |cRXP_ENEMY_Mok'rash|r and loot |cRXP_LOOT_Monogrammed Sash|r. Use it to start the quest
-    .collect 3985,1,8552 --Monogrammed Sash (1)
-    .accept 8552 >>Accept The Monogrammed Sash
-    .use 3985
-    .mob Mok'rash
 step
     .goto 1434/0,517.68,-14300.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Hecklebury Smotts|r

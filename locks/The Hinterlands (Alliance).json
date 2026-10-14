@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "45-48 The Hinterlands",
-  "saved": "2026-10-13 17:38",
+  "saved": "2026-10-14 00:14",
   "levels": "RestedXP",
   "parts": [
     {
@@ -32,11 +32,11 @@
         "obj:2877:2 @1425:-3801.46,370.19  Objective Skulk Rock Clean-up / Jade Ooze slain (10)",
         "obj:4297:1 @1425:-3723.69,342.72  Objective Food for Baby / Silvermane Stalker Flank (5)",
         "turnin:485 @1425:-3474.98,500.06  TurnIn Find OOX-09/HL!",
-        "turnin:626 @1425:-4685.42,264.95  TurnIn Cortello's Riddle",
-        "turnin:2877 @1425:-2145.96,322.7  TurnIn Skulk Rock Clean-up",
         "turnin:4297 @1425:-2120.16,347.09  TurnIn Food for Baby",
         "accept:4298 @1425:-2120.16,347.09  Accept Becoming a Parent",
-        "turnin:4298 @1425:-2120.16,347.09  TurnIn Becoming a Parent"
+        "turnin:4298 @1425:-2120.16,347.09  TurnIn Becoming a Parent",
+        "turnin:2877 @1425:-2145.96,322.7  TurnIn Skulk Rock Clean-up",
+        "turnin:626 @1425:-4685.42,264.95  TurnIn Cortello's Riddle"
       ]
     }
   ]

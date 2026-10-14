@@ -31,6 +31,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Biggs|r
     .accept 1396 >>Accept Encroaching Wildlife
     .target Watcher Biggs
+step << Warrior
+    .goto 1435/0,-3009.44,-10632.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
+    .turnin 8417 >>Turn in A Troubled Spirit
+    .target Fallen Hero of the Horde
+    .isOnQuest 8417
+step
+    .goto 1435/0,-3009.44,-10632.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
+    .turnin 2783 >>Turn in Petty Squabbles
+    .target Fallen Hero of the Horde
+    .isOnQuest 2783
 step
     .goto 1435/0,-3482.19,-10142.28
     >>Kill |cRXP_ENEMY_Noboru the Cudgel|r and loot |cRXP_LOOT_Noboru's Cudgel|r. Use it to start the quest
@@ -92,11 +104,11 @@ step
     .accept 1421 >>Accept The Lost Caravan
     .target Watcher Biggs
 step
-    #completewith Along9
+    #completewith Along11
     >>As you go: Loot the |cRXP_PICK_Draenethyst Crystals|r for |cRXP_LOOT_Draenethyst Crystal|r. |cRXP_WARN_Anything left is finished later|r
     .complete 1389,1 --Draenethyst Crystal (6)
 step
-    #label Along9
+    #label Along11
     .goto 1435/0,-3701.47,-9900.67
     >>Open the |cRXP_PICK_Caravan Chest|r. Loot it for |cRXP_LOOT_Wizards' Reagents|r
     .complete 1421,1 --Wizards' Reagents (1)
@@ -131,18 +143,6 @@ step
     >>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
     >>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
     .zoneskip Swamp of Sorrows,1
-step << Warrior
-    .goto 1435/0,-3009.44,-10632.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
-    .turnin 8417 >>Turn in A Troubled Spirit
-    .target Fallen Hero of the Horde
-    .isOnQuest 8417
-step
-    .goto 1435/0,-3009.44,-10632.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
-    .turnin 2783 >>Turn in Petty Squabbles
-    .target Fallen Hero of the Horde
-    .isOnQuest 2783
 step
     +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_another zone|r: This Light of Mine

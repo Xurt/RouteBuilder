@@ -198,16 +198,6 @@ step
     .target Homing Robot OOX-09/HL
     .isOnQuest 485
 step
-    .goto 1425/0,-4685.42,264.95
-    >>Click the |cRXP_PICK_Cortello's Treasure|r
-    .turnin 626 >>Turn in Cortello's Riddle
-    .isOnQuest 626
-step
-    .goto 1425/0,-2145.96,322.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fraggar Thundermantle|r
-    .turnin 2877 >>Turn in Skulk Rock Clean-up
-    .target Fraggar Thundermantle
-step
     .goto 1425/0,-2120.16,347.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agnar Beastamer|r
     .turnin 4297 >>Turn in Food for Baby
@@ -226,6 +216,16 @@ step
     .turnin 4298 >>Turn in Becoming a Parent
     .target Agnar Beastamer
     .isOnQuest 4298
+step
+    .goto 1425/0,-2145.96,322.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fraggar Thundermantle|r
+    .turnin 2877 >>Turn in Skulk Rock Clean-up
+    .target Fraggar Thundermantle
+step
+    .goto 1425/0,-4685.42,264.95
+    >>Click the |cRXP_PICK_Cortello's Treasure|r
+    .turnin 626 >>Turn in Cortello's Riddle
+    .isOnQuest 626
 step
     +|cRXP_WARN_End of the The Hinterlands route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Blasted Lands|r: Thadius Grimshade

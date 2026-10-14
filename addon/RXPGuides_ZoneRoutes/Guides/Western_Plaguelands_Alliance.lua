@@ -14,6 +14,70 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 52-60 Western Plaguelands
 
+step << Human Paladin/Dwarf Paladin
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 8415 >>Turn in Chillwind Point
+    .target Commander Ashlam Valorfist
+    .isOnQuest 8415
+step << Human Paladin/Dwarf Paladin
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .accept 8414 >>Accept Dispelling Evil
+    .target Commander Ashlam Valorfist
+step
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 5066 >>Turn in A Call to Arms: The Plaguelands!
+    .target Commander Ashlam Valorfist
+    .isOnQuest 5066
+step
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 5091 >>Turn in A Call to Arms: The Plaguelands!
+    .target Commander Ashlam Valorfist
+    .isOnQuest 5091
+step
+    .goto 1422/0,-1417.71,965.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
+    .turnin 5801 >>Turn in Fire Plume Forged
+    .target Alchemist Arbington
+    .isQuestComplete 5801
+step
+    .goto 1422/0,-1431.04,971.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Officer Pureheart|r
+    .accept 5401 >>Accept Argent Dawn Commission
+    .target Argent Officer Pureheart
+step
+    .goto 1422/0,-1431.04,971.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Officer Pureheart|r
+    .turnin 5401 >>Turn in Argent Dawn Commission while you are here
+    .isQuestComplete 5401
+    .target Argent Officer Pureheart
+step << Human Paladin/Dwarf Paladin
+    #loop
+    .goto 1422/0,-1198.84,1659.28,0
+    .goto 1422/0,-1198.84,1659.28,40,0
+    .goto 1422/0,-1133.48,1689.95,40,0
+    .goto 1422/0,-1115.42,1732.38,40,0
+    .goto 1422/0,-1199.70,1734.96,40,0
+    .goto 1422/0,-1191.53,1772.80,40,0
+    .goto 1422/0,-1172.18,1819.53,40,0
+    .goto 1422/0,-1240.55,1819.81,40,0
+    .goto 1422/0,-1262.48,1764.20,40,0
+    .goto 1422/0,-1239.69,1719.19,40,0
+    >>Kill |cRXP_ENEMY_Skeletal Flayers|r, |cRXP_ENEMY_Skeletal Sorcerers|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Skeletal Executioners|r. Loot them for |cRXP_LOOT_Minion's Scourgestone|r
+    .complete 8414,1 --Minion's Scourgestone (20)
+    .mob Skeletal Flayer
+    .mob Skeletal Sorcerer
+    .mob Skeletal Terror
+    .mob Skeletal Executioner
+step << Human Paladin/Dwarf Paladin
+    .goto 1422/0,-1821.48,979.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Thel'danis|r
+    .turnin 8414 >>Turn in Dispelling Evil
+    .accept 8416 >>Accept Inert Scourgestones
+    .target High Priest Thel'danis
 step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
@@ -23,23 +87,27 @@ step
 step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 8416 >>Turn in Inert Scourgestones << Human Paladin/Dwarf Paladin
+    .accept 8418 >>Accept Forging the Mightstone << Human Paladin/Dwarf Paladin
     .accept 5092 >>Accept Clear the Way
     .target Commander Ashlam Valorfist
+step << Hunter
+    .xp 52-16950 >> Grind until you are 16950 XP away from 52
+    >>If you are not yet close, do one more Cauldron quest to get you where you need to be
 step
-    .goto 1422/0,-1417.71,965.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
-    .turnin 5801 >>Turn in Fire Plume Forged
-    .target Alchemist Arbington
-    .isQuestComplete 5801
+    .goto 1422/0,-1431.04,971.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Officer Pureheart|r
+    .turnin 5401 >>Turn in Argent Dawn Commission
+    .target Argent Officer Pureheart
 step
-    #completewith Along3
+    #completewith Along11
     >>As you go: Kill |cRXP_ENEMY_Skeletal Flayers|r. Kill |cRXP_ENEMY_Slavering Ghouls|r. |cRXP_WARN_Anything left is finished later|r
     .complete 5092,1 --Skeletal Flayer slain (10)
     .complete 5092,2 --Slavering Ghoul slain (10)
     .mob Skeletal Flayer
     .mob Slavering Ghoul
 step
-    #label Along3
+    #label Along11
     .goto 1422/0,-1697.64,1114.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marlene Redpath|r
     .accept 5142 >>Accept Little Pamela
@@ -272,6 +340,18 @@ step
     .target Flint Shadowmore
     .isOnQuest 6184
 step
+    .goto 1422/0,-1450.39,934.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathaniel Dumah|r
+    .turnin 5903 >>Turn in A Plague Upon Thee
+    .target Nathaniel Dumah
+    .isQuestComplete 5903
+step << Human Paladin/Dwarf Paladin
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 8418 >>Turn in Forging the Mightstone
+    .target Commander Ashlam Valorfist
+    .isQuestComplete 8418
+step
     #loop
     .goto 1422/0,-1513.17,1947.38,0
     .goto 1422/0,-1513.17,1947.38,40,0
@@ -291,95 +371,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulgris Deepriver|r
     .turnin 4984 >>Turn in The Wildlife Suffers Too
     .target Mulgris Deepriver
-step << Human Paladin/Dwarf Paladin
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .turnin 8415 >>Turn in Chillwind Point
-    .target Commander Ashlam Valorfist
-    .isOnQuest 8415
-step << Human Paladin/Dwarf Paladin
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .accept 8414 >>Accept Dispelling Evil
-    .target Commander Ashlam Valorfist
-step << Human Paladin/Dwarf Paladin
-    #completewith Along25
-    >>As you go: Kill |cRXP_ENEMY_Skeletal Flayers|r, |cRXP_ENEMY_Skeletal Sorcerers|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Skeletal Executioners|r. Loot them for |cRXP_LOOT_Minion's Scourgestone|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 8414,1 --Minion's Scourgestone (20)
-    .mob Skeletal Flayer
-    .mob Skeletal Sorcerer
-    .mob Skeletal Terror
-    .mob Skeletal Executioner
-step
-    #label Along25
-    .goto 1422/0,-1697.64,1114.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marlene Redpath|r
-    .turnin 5152 >>Turn in Auntie Marlene
-    .target Marlene Redpath
-    .isOnQuest 5152
-step
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .turnin 5066 >>Turn in A Call to Arms: The Plaguelands!
-    .target Commander Ashlam Valorfist
-    .isOnQuest 5066
-step
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .turnin 5091 >>Turn in A Call to Arms: The Plaguelands!
-    .target Commander Ashlam Valorfist
-    .isOnQuest 5091
-step
-    .goto 1422/0,-1431.04,971.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Officer Pureheart|r
-    .accept 5401 >>Accept Argent Dawn Commission
-    .turnin 5401 >>Turn in Argent Dawn Commission
-    .target Argent Officer Pureheart
-step
-    .goto 1422/0,-1450.39,934.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathaniel Dumah|r
-    .turnin 5903 >>Turn in A Plague Upon Thee
-    .target Nathaniel Dumah
-    .isQuestComplete 5903
-step << Human Paladin/Dwarf Paladin
-    #loop
-    .goto 1422/0,-1198.84,1659.28,0
-    .goto 1422/0,-1198.84,1659.28,40,0
-    .goto 1422/0,-1133.48,1689.95,40,0
-    .goto 1422/0,-1115.42,1732.38,40,0
-    .goto 1422/0,-1199.70,1734.96,40,0
-    .goto 1422/0,-1191.53,1772.80,40,0
-    .goto 1422/0,-1172.18,1819.53,40,0
-    .goto 1422/0,-1240.55,1819.81,40,0
-    .goto 1422/0,-1262.48,1764.20,40,0
-    .goto 1422/0,-1239.69,1719.19,40,0
-    >>Kill |cRXP_ENEMY_Skeletal Flayers|r, |cRXP_ENEMY_Skeletal Sorcerers|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Skeletal Executioners|r. Loot them for |cRXP_LOOT_Minion's Scourgestone|r
-    .complete 8414,1 --Minion's Scourgestone (20)
-    .mob Skeletal Flayer
-    .mob Skeletal Sorcerer
-    .mob Skeletal Terror
-    .mob Skeletal Executioner
-step << Human Paladin/Dwarf Paladin
-    .goto 1422/0,-1821.48,979.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Thel'danis|r
-    .turnin 8414 >>Turn in Dispelling Evil
-    .accept 8416 >>Accept Inert Scourgestones
-    .target High Priest Thel'danis
-step << Human Paladin/Dwarf Paladin
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .turnin 8416 >>Turn in Inert Scourgestones
-    .accept 8418 >>Accept Forging the Mightstone
-    .target Commander Ashlam Valorfist
-step << Hunter
-    .xp 52-16950 >> Grind until you are 16950 XP away from 52
-    >>If you are not yet close, do one more Cauldron quest to get you where you need to be
-step << Human Paladin/Dwarf Paladin
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .turnin 8418 >>Turn in Forging the Mightstone
-    .target Commander Ashlam Valorfist
-    .isQuestComplete 8418
 step
     .goto 1422/0,-1450.39,934.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathaniel Dumah|r
@@ -387,6 +378,12 @@ step
     .target Nathaniel Dumah
     .isQuestTurnedIn 5903 --any of: A Plague Upon Thee
     .xp <48,1
+step
+    .goto 1422/0,-1697.64,1114.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marlene Redpath|r
+    .turnin 5152 >>Turn in Auntie Marlene
+    .target Marlene Redpath
+    .isOnQuest 5152
 step
     .goto 1422/0,-1661.95,2449.62
     >>Click the |cRXP_PICK_Termite Barrel|r

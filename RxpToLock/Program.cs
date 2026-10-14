@@ -149,6 +149,28 @@ public static class Program
         int QuestOf(string key) => key == "home" ? 0 : int.Parse(key.Split(':')[1], CultureInfo.InvariantCulture);
         var questGuides = hits.Where(h => h.Key != "home" && inZone.Contains(QuestOf(h.Key))).Select(h => h.Guide).ToHashSet();
         hits.RemoveAll(h => h.Key == "home" && !(zoneMapsAll.Contains(h.Map) && questGuides.Contains(h.Guide)));
+
+        // The guides this zone is really about: those named after it ("1-6 Mulgore"), and any doing at least a fifth as many of
+        // its steps as the one doing most. Other guides only pass through (a class quest in the capital, a hand-in on the way
+        // to the next zone): where they do it says nothing about this zone's order, so their steps are left to the build.
+        string? nameWord = area.Name.Split(' ', StringSplitOptions.RemoveEmptyEntries).FirstOrDefault(w => w.Length >= 5);
+        bool Named(string g) => g.Contains(area.Name, StringComparison.OrdinalIgnoreCase) || nameWord != null && g.Contains(nameWord, StringComparison.OrdinalIgnoreCase);
+        var zoneHits = hits.Where(h => h.Key != "home" && !h.Along && inZone.Contains(QuestOf(h.Key))).GroupBy(h => h.Guide).ToDictionary(g => g.Key, g => g.Count());
+        int top = zoneHits.Values.DefaultIfEmpty(0).Max();
+        var primary = zoneHits.Where(kv => Named(kv.Key) || kv.Value * 5 >= top).Select(kv => kv.Key).ToHashSet();
+        var passing = zoneHits.Where(kv => !primary.Contains(kv.Key)).OrderByDescending(kv => kv.Value).ToList();
+        hits.RemoveAll(h => !primary.Contains(h.Guide));
+        services.RemoveAll(x => !primary.Contains(x.Guide));
+        // in order of the guides' starting levels ("6-12 Mulgore" after "1-6 Mulgore"), whatever order the files came in
+        int StartLevel(string g) => Regex.Match(g, @"^(\d+)\s*-") is { Success: true } lm ? int.Parse(lm.Groups[1].Value, CultureInfo.InvariantCulture) : 99;
+        var firstAt = hits.Select(h => (h.Guide, h.Order)).Concat(services.Select(x => (x.Guide, x.Order))).GroupBy(x => x.Guide).ToDictionary(g => g.Key, g => g.Min(x => x.Order));
+        var rank = firstAt.Keys.OrderBy(StartLevel).ThenBy(g => firstAt[g]).Select((g, i) => (g, i)).ToDictionary(x => x.g, x => x.i);
+        hits = hits.Select(h => h with { Order = rank[h.Guide] * 10_000_000 + h.Order }).ToList();
+        services = services.Select(x => x with { Order = rank[x.Guide] * 10_000_000 + x.Order }).ToList();
+        if (primary.Count > 0)
+            Console.WriteLine($"Following: {string.Join(", ", rank.OrderBy(kv => kv.Value).Select(kv => $"{kv.Key} ({zoneHits.GetValueOrDefault(kv.Key)} steps)"))}");
+        if (passing.Count > 0)
+            Console.WriteLine($"Left to the build (these guides only pass through {area.Name}): {string.Join(", ", passing.Select(kv => $"{kv.Key} ({kv.Value} steps)"))}");
         // one place per step: a pickup or hand-in where it first happens; an objective at its own step,
         // not where the guide first says "kill these as you go"
         var chosen = new Dictionary<string, Hit>();

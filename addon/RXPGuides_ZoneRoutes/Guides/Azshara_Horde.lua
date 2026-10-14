@@ -76,30 +76,12 @@ step
     .turnin 3504 >>Turn in Betrayed
     .target Ag'tor Bloodfist
     .isOnQuest 3504
-step << Hunter
-    .goto 1447/1,-5427.12,3900.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogtinc|r
-    .turnin 8151 >>Turn in The Hunter's Charm
-    .target Ogtinc
-    .isOnQuest 8151
-step << Mage
-    .goto 1447/1,-4702.49,3648.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sanath Lim-yo|r
-    .turnin 8250 >>Turn in Magecraft
-    .target Sanath Lim-yo
-    .isOnQuest 8250
-step << Priest
-    .goto 1447/1,-5427.12,3900.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogtinc|r
-    .turnin 8254 >>Turn in Cenarion Aid
-    .target Ogtinc
-    .isOnQuest 8254
 step
     .goto 1447/1,-4421.06,3603.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jediga|r
-    .turnin 3562 >>Turn in Magatha's Payment to Jediga
+    .turnin 3564 >>Turn in Andron's Payment to Jediga
     .target Jediga
-    .isOnQuest 3562
+    .isOnQuest 3564
 step
     .goto 1447/1,-4421.06,3603.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jediga|r
@@ -107,15 +89,11 @@ step
     .target Jediga
     .isOnQuest 3563
 step
-    .hs >>Hearth to Everlook
-    .subzoneskip 255
-    .zoneskip Winterspring
-step
     .goto 1447/1,-4421.06,3603.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jediga|r
-    .turnin 3564 >>Turn in Andron's Payment to Jediga
+    .turnin 3562 >>Turn in Magatha's Payment to Jediga
     .target Jediga
-    .isOnQuest 3564
+    .isOnQuest 3562
 step << Rogue
     #loop
     .goto 1447/1,-5377.42,4605.91,0
@@ -147,6 +125,24 @@ step
     .turnin 3509 >>Turn in The Name of the Beast
     .target Lord Arkkoroc
     .isOnQuest 3509
+step << Hunter
+    .goto 1447/1,-5427.12,3900.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogtinc|r
+    .turnin 8151 >>Turn in The Hunter's Charm
+    .target Ogtinc
+    .isOnQuest 8151
+step << Mage
+    .goto 1447/1,-4702.49,3648.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sanath Lim-yo|r
+    .turnin 8250 >>Turn in Magecraft
+    .target Sanath Lim-yo
+    .isOnQuest 8250
+step << Priest
+    .goto 1447/1,-5427.12,3900.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogtinc|r
+    .turnin 8254 >>Turn in Cenarion Aid
+    .target Ogtinc
+    .isOnQuest 8254
 step
     .xp 50 >>|cRXP_WARN_The rest of Azshara is planned from level 50.|r Come back to this guide then
 step
@@ -275,6 +271,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jediga|r
     .turnin 3517 >>Turn in Stealing Knowledge
     .accept 3561 >>Accept Delivery to Archmage Xylem
+    .accept 3542 >>Accept Delivery to Andron Gant
     .accept 3518 >>Accept Delivery to Magatha
     .accept 3541 >>Accept Delivery to Jes'rimon
     .target Jediga
@@ -296,7 +293,6 @@ step
     .goto 1447/1,-4421.06,3603.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jediga|r
     .turnin 3565 >>Turn in Xylem's Payment to Jediga
-    .accept 3542 >>Accept Delivery to Andron Gant
     .target Jediga
 step
     .goto 1447/1,-3916.01,2727.28
@@ -533,6 +529,12 @@ step << Hunter
     .turnin 8232 >>Turn in The Green Drake
     .target Ogtinc
     .isQuestComplete 8232
+step << Mage
+    .goto 1447/1,-4760.30,3982.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Xylem|r
+    .turnin 8253 >>Turn in Destroy Morphaz
+    .target Archmage Xylem
+    .isQuestComplete 8253
 step << Rogue
     .goto 1447/1,-4760.30,3982.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Xylem|r
@@ -597,12 +599,6 @@ step
     .target Ag'tor Bloodfist
     .isQuestTurnedIn 3506 --any of: Betrayed
     .xp <44,1
-step << Mage
-    .goto 1447/1,-4760.30,3982.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Xylem|r
-    .turnin 8253 >>Turn in Destroy Morphaz
-    .target Archmage Xylem
-    .isQuestComplete 8253
 step
     +|cRXP_WARN_That is all of Azshara for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Alterac Mountains|r: The Azure Key << Rogue

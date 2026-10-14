@@ -93,29 +93,17 @@ step
     .target Magistrate Henry Maleb
     .isOnQuest 510
 step
-    .goto 1424/0,-473.81,-861.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
-    .turnin 525 >>Turn in Further Mysteries
-    .target Magistrate Henry Maleb
-    .isOnQuest 525
-step
-    .goto 1424/0,-610.77,-793.81
-    >>Talk to |cRXP_FRIENDLY_Robert|r outside
-    .vendor 3543 >> Vendor Trash. Repair
-    .target Robert Aebischer
-    .isQuestTurnedIn 525
-step
     .goto 1424/0,-544.53,-859.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Phin Odelic|r
     .turnin 661 >>Turn in Hints of a New Plague?
     .target Phin Odelic
     .isOnQuest 661
 step
-    .goto 1424/0,-610.77,-793.81
-    >>Talk to |cRXP_FRIENDLY_Robert|r
-    .vendor 3543 >> Vendor Trash. Repair
-    .target Robert Aebischer
-    .isOnQuest 1302
+    .goto 1424/0,-473.81,-861.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
+    .turnin 525 >>Turn in Further Mysteries
+    .target Magistrate Henry Maleb
+    .isOnQuest 525
 step
     .goto 1424/0,-551.57,-817.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r

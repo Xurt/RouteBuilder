@@ -52,6 +52,12 @@ step
     .accept 2822 >>Accept The Mark of Quality
     .target Jangdor Swiftstrider
 step
+    .goto 1444/1,269.48,-4375.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
+    .turnin 3122 >>Turn in Return to Witch Doctor Uzer'i
+    .target Witch Doctor Uzer'i
+    .isOnQuest 3122
+step
     .goto 1444/1,243.07,-4460.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Greul|r
     .target Innkeeper Greul
@@ -110,14 +116,14 @@ step
     .mob Woodpaw Brute
     .mob Woodpaw Mystic
 step
-    #completewith Along8
+    #completewith Along9
     >>As you go: Kill |cRXP_ENEMY_Gordunni Ogres|r. Kill |cRXP_ENEMY_Gordunni Brutes|r. |cRXP_WARN_Anything left is finished later|r
     .complete 2975,1 --Gordunni Ogre slain (10)
     .complete 2975,3 --Gordunni Brute slain (5)
     .mob Gordunni Ogre
     .mob Gordunni Brute
 step
-    #label Along8
+    #label Along9
     #loop
     .goto 1444/1,256.97,-3765.93,0
     .goto 1444/1,256.97,-3765.93,40,0
@@ -402,41 +408,12 @@ step << Druid
     .target Jannos Lighthoof
     .xp <46,1
 step
-    .goto 1444/1,242.37,-4460.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Greul|r
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
-    .target Innkeeper Greul
-step << Druid
-    .goto 1444/1,159.67,-4326.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r
-    .train 9823 >>Train your class spells
-    .target Jannos Lighthoof
-    .xp <46,1
-    .xp >48,1
-step << Druid
-    .goto 1444/1,159.67,-4326.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r
-    .train 22828 >>Train your class spells
-    .target Jannos Lighthoof
-    .xp <48,1
-step
-    .goto 1444/1,269.48,-4375.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
-    .turnin 3122 >>Turn in Return to Witch Doctor Uzer'i
-    .target Witch Doctor Uzer'i
-    .isOnQuest 3122
-step
     .goto 1444/1,269.48,-4375.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
     .accept 3123 >>Accept Testing the Vessel
     .target Witch Doctor Uzer'i
     .isQuestTurnedIn 3122 --any of: Return to Witch Doctor Uzer'i
     .xp <40,1
-step
-    .hs >> Hearth to Feralas
-    .subzoneskip 1099
-    .cooldown item,6948,>0,1
 step
     .goto 1444/1,269.48,-4375.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
@@ -704,25 +681,22 @@ step << Druid
     .target Jannos Lighthoof
     .xp <52,1
     .subzoneskip 1099,1
-step << !Mage
-    .hs >>Hearth to Camp Taurajo
-    .subzoneskip 378
 step
     +|cRXP_WARN_That is all of Feralas for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Orgrimmar|r: The Gordunni Orb, Zukk'ash Report
 step
     .xp 48 >>|cRXP_WARN_The rest of Feralas is planned from level 48.|r Come back to this guide then
 step
-    .goto 1444/1,269.48,-4375.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
-    .accept 3380 >>Accept The Sunken Temple
-    .target Witch Doctor Uzer'i
-step
     .goto 1444/1,147.16,-4397.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talo Thornhoof|r
     .accept 3063 >>Accept Vengeance on the Northspring
     .accept 3062 >>Accept Dark Heart
     .target Talo Thornhoof
+step
+    .goto 1444/1,269.48,-4375.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
+    .accept 3380 >>Accept The Sunken Temple
+    .target Witch Doctor Uzer'i
 step
     .goto 1444/1,269.48,-4375.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
@@ -868,8 +842,8 @@ step
 step
     .goto 1444/1,2327.37,-4378.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zorbin Fandazzle|r
-    .turnin 7721 >>Turn in Fuel for the Zapping
     .turnin 7003 >>Turn in Zapped Giants
+    .turnin 7721 >>Turn in Fuel for the Zapping
     .target Zorbin Fandazzle
 step
     .goto 1444/1,269.48,-4375.68
@@ -893,17 +867,17 @@ step
     .accept 4120 >>Accept The Strength of Corruption
     .target Talo Thornhoof
 step
-    .goto 1444/1,269.48,-4375.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
-    .turnin 3129 >>Turn in Weapons of Spirit
-    .target Witch Doctor Uzer'i
-    .isOnQuest 3129
-step
     .goto 1444/1,147.16,-4397.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talo Thornhoof|r
     .turnin 4120 >>Turn in The Strength of Corruption
     .target Talo Thornhoof
     .isQuestComplete 4120
+step
+    .goto 1444/1,269.48,-4375.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
+    .turnin 3129 >>Turn in Weapons of Spirit
+    .target Witch Doctor Uzer'i
+    .isOnQuest 3129
 step
     +|cRXP_WARN_End of the Feralas route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Tanaris|r: The Sunken Temple

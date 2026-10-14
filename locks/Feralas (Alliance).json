@@ -1,18 +1,17 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "41-51 Feralas",
-  "saved": "2026-10-13 17:38",
+  "saved": "2026-10-14 00:14",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
         "accept:98155 @1444:-773.02,-4497.54  Accept Pristine Pesterhide Pelts",
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thyssiana|r",".goto 1444/1,-778.37,-4491.19",".fp Thalanaar >> Get the Thalanaar flight path",".target Thyssiana"],"from":"RestedXP: 33-34 Thousand Needles"},
-        "accept:1101 @1444:-788.31,-4524.41  Accept The Crone of the Kraul",
         "turnin:1059 @1444:-788.31,-4524.41  TurnIn Reclaiming the Charred Vale",
-        {"lines":[".goto 1444/1,3340.13,-4370.49",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fyldren Moonfeather|r",".fp Feathermoon >> Get the Feathermoon Flight Path",".target Fyldren Moonfeather"],"from":"RestedXP: 44-46 Feralas SoD"},
+        "accept:1101 @1444:-788.31,-4524.41  Accept The Crone of the Kraul",
         "accept:3841 @1444:858.84,-4481.78  Accept An Orphan Looking For a Home",
+        {"lines":[".goto 1444/1,3340.13,-4370.49",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fyldren Moonfeather|r",".fp Feathermoon >> Get the Feathermoon Flight Path",".target Fyldren Moonfeather"],"from":"RestedXP: 44-46 Feralas SoD"},
         "accept:2821 @1444:3312.88,-4345.56  Accept The Mark of Quality",
         {"lines":[".goto 1444/1,3312.74,-4345.38",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pratt McGrubben|r",".target Pratt McGrubben",".train 415428,1"],"tag":"Hunter","from":"RestedXP: 44-46 Feralas SoD"},
         {"lines":[".goto 1444/1,3370.57,-4645.80",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Longtooth Runner|r to tame it|r",".train 17266 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 6)]"],"tag":"Hunter","from":"RestedXP: 44-46 Feralas SoD"},

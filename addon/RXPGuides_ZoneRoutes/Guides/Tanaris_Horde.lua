@@ -15,17 +15,11 @@ RXPGuides.RegisterGuide([[
 #name 43-60 Tanaris
 
 step
-    .goto 1446/1,-3769.49,-7200.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krinkle Goodsteel|r
-    .turnin 5514 >>Turn in Mold Rhymes With...
-    .target Krinkle Goodsteel
-    .isOnQuest 5514
-step
-    .goto 1446/1,-3769.49,-7200.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krinkle Goodsteel|r
-    .turnin 4450 >>Turn in Ledger from Tanaris
-    .target Krinkle Goodsteel
-    .isQuestComplete 4450
+    .goto 1446/1,-3730.16,-7115.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Pestlezugg|r
+    .turnin 4494 >>Turn in March of the Silithid
+    .target Alchemist Pestlezugg
+    .isOnQuest 4494
 step
     .goto 1446/1,-3777.08,-7105.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
@@ -43,6 +37,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Fizzgrimble|r
     .target Innkeeper Fizzgrimble
     .home >>Set your Hearthstone to Innkeeper Fizzgrimble's inn
+step
+    .goto 1446/1,-3769.49,-7200.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krinkle Goodsteel|r
+    .turnin 4450 >>Turn in Ledger from Tanaris
+    .target Krinkle Goodsteel
+    .isQuestComplete 4450
+step
+    .goto 1446/1,-3769.49,-7200.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krinkle Goodsteel|r
+    .turnin 5514 >>Turn in Mold Rhymes With...
+    .target Krinkle Goodsteel
+    .isOnQuest 5514
 step
     .goto 1446/1,-3838.49,-7186.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Bilgewhizzle|r
@@ -86,30 +92,58 @@ step
     .use 8623
 step
     #completewith Drop351x1
-    >>As you go: Kill |cRXP_ENEMY_Wastewander Thiefs|r. |cRXP_WARN_Anything left is finished later|r
+    >>As you go: Kill |cRXP_ENEMY_Wastewander Bandits|r. Kill |cRXP_ENEMY_Wastewander Thiefs|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 1690,1 --Wastewander Bandit slain (10)
     .complete 1690,2 --Wastewander Thief slain (8)
+    .mob Wastewander Bandit
     .mob Wastewander Thief
 step
-    #completewith Drop351x1
-    >>As you go: Kill |cRXP_ENEMY_Wastewander Rogues|r, |cRXP_ENEMY_Wastewander Thiefs|r, |cRXP_ENEMY_Wastewander Shadow Mages|r and |cRXP_ENEMY_Wastewander Bandits|r. Loot them for |cRXP_LOOT_Wastewander Water Pouch|r. |cRXP_WARN_Anything left is finished later|r
+    #loop
+    .goto 1446/1,-4544.36,-7257.76,0
+    .goto 1446/1,-4544.36,-7257.76,40,0
+    .goto 1446/1,-4554.71,-7291.34,40,0
+    .goto 1446/1,-4556.78,-7387.94,40,0
+    .goto 1446/1,-4606.46,-7444.06,40,0
+    .goto 1446/1,-4616.12,-7411.40,40,0
+    .goto 1446/1,-4608.53,-7381.96,40,0
+    .goto 1446/1,-4627.85,-7311.58,40,0
+    .goto 1446/1,-4629.92,-7213.14,40,0
+    .goto 1446/1,-4594.04,-7225.10,40,0
+    >>Kill |cRXP_ENEMY_Wastewander Rogues|r, |cRXP_ENEMY_Wastewander Thiefs|r, |cRXP_ENEMY_Wastewander Shadow Mages|r and |cRXP_ENEMY_Wastewander Bandits|r. Loot them for |cRXP_LOOT_Wastewander Water Pouch|r
     .complete 1707,1 --Wastewander Water Pouch (5)
     .mob Wastewander Rogue
     .mob Wastewander Thief
     .mob Wastewander Shadow Mage
     .mob Wastewander Bandit
 step
+    .goto 1446/1,-5305.43,-8030.56
+    .xp 44 >> AoE Grind to 44
+    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
+    >>Start saving the Silk Cloth and Mageweave Cloth you get. You need 12 stacks of each for later
+step
+    .goto 1446/1,-5305.43,-8030.56
+    .xp 48 >> AoE grind to 48
+    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
+step
+    .trainer >> Teleport to Orgrimmar or Undercity. Train your level 46-48 spells
+step
+    .goto 1446/1,-5305.43,-8030.56
+    .xp 52 >> AoE grind to 52
+    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
+    >>Remember to save 12 stacks of Mageweave. You'll need it for cloth turnins later
+step
     #label Drop351x1
     #loop
-    .goto 1446/1,-4290.44,-6952.32,0
-    .goto 1446/1,-4290.44,-6952.32,40,0
-    .goto 1446/1,-4344.26,-6984.06,40,0
-    .goto 1446/1,-4355.99,-6952.32,40,0
-    .goto 1446/1,-4380.14,-6919.66,40,0
-    .goto 1446/1,-4413.26,-6920.12,40,0
-    .goto 1446/1,-4417.40,-6955.08,40,0
-    .goto 1446/1,-4413.26,-6988.20,40,0
-    .goto 1446/1,-4387.04,-7013.96,40,0
-    .goto 1446/1,-4317.35,-7011.66,40,0
+    .goto 1446/1,-4627.85,-7311.58,0
+    .goto 1446/1,-4627.85,-7311.58,40,0
+    .goto 1446/1,-4608.53,-7381.96,40,0
+    .goto 1446/1,-4616.12,-7411.40,40,0
+    .goto 1446/1,-4606.46,-7444.06,40,0
+    .goto 1446/1,-4556.78,-7387.94,40,0
+    .goto 1446/1,-4554.71,-7291.34,40,0
+    .goto 1446/1,-4544.36,-7257.76,40,0
+    .goto 1446/1,-4594.04,-7225.10,40,0
+    .goto 1446/1,-4629.92,-7213.14,40,0
     >>Kill |cRXP_ENEMY_Wastewander Rogues|r, |cRXP_ENEMY_Wastewander Thiefs|r, |cRXP_ENEMY_Wastewander Shadow Mages|r and |cRXP_ENEMY_Wastewander Bandits|r. Loot them for |cRXP_LOOT_Wastewander Water Pouch|r
     .complete 379,1 --Wastewander Water Pouch (5)
     .mob Wastewander Rogue
@@ -117,6 +151,19 @@ step
     .mob Wastewander Shadow Mage
     .mob Wastewander Bandit
     .isOnQuest 379
+step
+    .goto 1446/1,-4841.06,-6903.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
+    .accept 3528 >>Accept The God Hakkar
+    .target Yeh'kinya
+    .isQuestTurnedIn 4787 --any of: The Ancient Egg
+    .xp <40,1
+step
+    .goto 1446/1,-4841.06,-6903.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
+    .turnin 3528 >>Turn in The God Hakkar
+    .target Yeh'kinya
+    .isOnQuest 3528
 step
     .goto 1446/1,-4841.06,-6903.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
@@ -129,26 +176,11 @@ step
     .target Stoley
     .isOnQuest 2872
 step
-    .goto 1446/1,-4834.16,-6980.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironboot|r
-    .accept 8182 >>Accept The Hand of Rastakhan
-    .target Prospector Ironboot
-    .isQuestTurnedIn 8181 --any of: Confront Yeh'kinya
-    .xp <40,1
-step
     #completewith Drop351x2
     >>|cRXP_LOOT_OOX-17/TN Distress Beacon|r can drop from |cRXP_ENEMY_Glasshide Basilisk|r, |cRXP_ENEMY_Glasshide Gazer|r, |cRXP_ENEMY_Glasshide Petrifier|r. Use it to start the quest if you get one
     .collect 8623,1,351 --OOX-17/TN Distress Beacon (1)
     .accept 351 >>Accept Find OOX-17/TN!
     .use 8623
-step
-    #completewith Drop351x2
-    >>As you go: Kill |cRXP_ENEMY_Wastewander Rogues|r, |cRXP_ENEMY_Wastewander Thiefs|r, |cRXP_ENEMY_Wastewander Shadow Mages|r and |cRXP_ENEMY_Wastewander Bandits|r. Loot them for |cRXP_LOOT_Wastewander Water Pouch|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 1707,1 --Wastewander Water Pouch (5)
-    .mob Wastewander Rogue
-    .mob Wastewander Thief
-    .mob Wastewander Shadow Mage
-    .mob Wastewander Bandit
 step
     #label Drop351x2
     #loop
@@ -176,6 +208,12 @@ step << Shaman
     .target Dirge Quikcleave
     .subzoneskip 976,1
 step
+    .goto 1446/1,-3840.56,-7183.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spigot Operator Luglunket|r
+    .turnin 1707 >>Turn in Water Pouch Bounty while you are here
+    .isQuestComplete 1707
+    .target Spigot Operator Luglunket
+step
     .goto 1446/1,-3838.49,-7186.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Bilgewhizzle|r
     .turnin 1690 >>Turn in Wastewander Justice while you are here
@@ -202,19 +240,23 @@ step
     .accept 1691 >>Accept More Wastewander Justice
     .target Chief Engineer Bilgewhizzle
 step
+    .goto 1446/1,-3840.56,-7183.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spigot Operator Luglunket|r
+    .turnin 1707 >>Turn in Water Pouch Bounty
+    .target Spigot Operator Luglunket
+step << !Shaman
+    .goto 1446/1,-3850.22,-7168.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirge Quikcleave|r
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
+    .target Dirge Quikcleave
+    .subzoneskip 976,1
+step
     #completewith Drop351x3
     >>|cRXP_LOOT_OOX-17/TN Distress Beacon|r can drop from |cRXP_ENEMY_Glasshide Basilisk|r, |cRXP_ENEMY_Glasshide Gazer|r, |cRXP_ENEMY_Glasshide Petrifier|r. Use it to start the quest if you get one
     .collect 8623,1,351 --OOX-17/TN Distress Beacon (1)
     .accept 351 >>Accept Find OOX-17/TN!
     .use 8623
-step
-    #completewith Drop351x3
-    >>As you go: Kill |cRXP_ENEMY_Wastewander Rogues|r, |cRXP_ENEMY_Wastewander Thiefs|r, |cRXP_ENEMY_Wastewander Shadow Mages|r and |cRXP_ENEMY_Wastewander Bandits|r. Loot them for |cRXP_LOOT_Wastewander Water Pouch|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 1707,1 --Wastewander Water Pouch (5)
-    .mob Wastewander Rogue
-    .mob Wastewander Thief
-    .mob Wastewander Shadow Mage
-    .mob Wastewander Bandit
 step
     #loop
     .goto 1446/1,-4584.38,-7596.32,0
@@ -280,6 +322,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senior Surveyor Fizzledowser|r
     .turnin 992 >>Turn in Gadgetzan Water Survey
     .target Senior Surveyor Fizzledowser
+step
+    .goto 1446/1,-3939.23,-6948.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaeriyan|r
+    .turnin 3912 >>Turn in Meet at the Grave
+    .target Gaeriyan
+    .isOnQuest 3912
 step
     .goto 1446/1,-4829.33,-6900.34
     >>Click the |cRXP_PICK_Wanted Poster|r
@@ -405,6 +453,33 @@ step
     .target Dirge Quikcleave
     .subzoneskip 976,1
 step
+    .goto 1446/1,-4834.16,-6980.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironboot|r
+    .accept 8182 >>Accept The Hand of Rastakhan
+    .target Prospector Ironboot
+    .isQuestTurnedIn 8181 --any of: Confront Yeh'kinya
+    .xp <40,1
+step
+    .goto 1446/1,-4834.16,-6980.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironboot|r
+    .accept 5065 >>Accept The Lost Tablets of Mosh'aru
+    .target Prospector Ironboot
+    .isQuestTurnedIn 3528 --any of: The God Hakkar
+    .xp <40,1
+step
+    .goto 1446/1,-4374.62,-8852.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homing Robot OOX-17/TN|r
+    .turnin 351 >>Turn in Find OOX-17/TN!
+    .target Homing Robot OOX-17/TN
+    .isOnQuest 351
+step
+    .goto 1446/1,-3850.22,-7168.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirge|r
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
+    .target Dirge Quikcleave
+    .isQuestComplete 10
+step
     #completewith next
     .hs >>Hearth to Innkeeper Fizzgrimble's inn. |cRXP_WARN_Walk instead if you are already nearby|r
     .cooldown item,6948,>0,1
@@ -419,6 +494,18 @@ step
     .accept 2768 >>Accept Divino-matic Rod
     .target Chief Engineer Bilgewhizzle
 step
+    .goto 1446/1,-3766.04,-7197.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trenton Lighthammer|r
+    .turnin 3042 >>Turn in Troll Temper
+    .target Trenton Lighthammer
+    .isQuestComplete 3042
+step
+    .goto 1446/1,-3838.49,-7186.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Bilgewhizzle|r
+    .turnin 2768 >>Turn in Divino-matic Rod
+    .target Chief Engineer Bilgewhizzle
+    .isQuestComplete 2768
+step
     .goto 1446/1,-3777.08,-7105.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
     .accept 2865 >>Accept Scarab Shells
@@ -429,6 +516,11 @@ step
     .turnin 2865 >>Turn in Scarab Shells
     .target Tran'rek
     .isQuestComplete 2865
+step
+    .goto 1446/1,-3833.66,-7115.62
+    >>Click the |cRXP_PICK_Egg-O-Matic|r
+    .turnin 2741 >>Turn in The Super Egg-O-Matic
+    .isQuestComplete 2741
 step
     .goto 1446/1,-3838.49,-7186.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Bilgewhizzle|r
@@ -442,32 +534,6 @@ step
     .accept 4787 >>Accept The Ancient Egg
     .target Yeh'kinya
     .isQuestTurnedIn 3527 --any of: The Prophecy of Mosh'aru
-    .xp <40,1
-step
-    .goto 1446/1,-3730.16,-7115.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Pestlezugg|r
-    .turnin 4494 >>Turn in March of the Silithid
-    .target Alchemist Pestlezugg
-    .isOnQuest 4494
-step
-    .goto 1446/1,-4841.06,-6903.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
-    .accept 3528 >>Accept The God Hakkar
-    .target Yeh'kinya
-    .isQuestTurnedIn 4787 --any of: The Ancient Egg
-    .xp <40,1
-step
-    .goto 1446/1,-4841.06,-6903.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
-    .turnin 3528 >>Turn in The God Hakkar
-    .target Yeh'kinya
-    .isOnQuest 3528
-step
-    .goto 1446/1,-4834.16,-6980.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironboot|r
-    .accept 5065 >>Accept The Lost Tablets of Mosh'aru
-    .target Prospector Ironboot
-    .isQuestTurnedIn 3528 --any of: The God Hakkar
     .xp <40,1
 step
     .goto 1446/1,-4841.06,-6903.56
@@ -487,99 +553,6 @@ step
     .turnin 5065 >>Turn in The Lost Tablets of Mosh'aru
     .target Prospector Ironboot
     .isQuestComplete 5065
-step
-    .goto 1446/1,-3939.23,-6948.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaeriyan|r
-    .turnin 3912 >>Turn in Meet at the Grave
-    .target Gaeriyan
-    .isOnQuest 3912
-step
-    .hs >>Hearth to Everlook
-    .subzoneskip 255
-    .zoneskip Winterspring
-step
-    #completewith Drop351x5
-    >>|cRXP_LOOT_OOX-17/TN Distress Beacon|r can drop from |cRXP_ENEMY_Glasshide Basilisk|r, |cRXP_ENEMY_Glasshide Gazer|r, |cRXP_ENEMY_Glasshide Petrifier|r. Use it to start the quest if you get one
-    .collect 8623,1,351 --OOX-17/TN Distress Beacon (1)
-    .accept 351 >>Accept Find OOX-17/TN!
-    .use 8623
-step
-    #label Drop351x5
-    #loop
-    .goto 1446/1,-4544.36,-7257.76,0
-    .goto 1446/1,-4544.36,-7257.76,40,0
-    .goto 1446/1,-4554.71,-7291.34,40,0
-    .goto 1446/1,-4556.78,-7387.94,40,0
-    .goto 1446/1,-4606.46,-7444.06,40,0
-    .goto 1446/1,-4616.12,-7411.40,40,0
-    .goto 1446/1,-4608.53,-7381.96,40,0
-    .goto 1446/1,-4627.85,-7311.58,40,0
-    .goto 1446/1,-4629.92,-7213.14,40,0
-    .goto 1446/1,-4594.04,-7225.10,40,0
-    >>Kill |cRXP_ENEMY_Wastewander Rogues|r, |cRXP_ENEMY_Wastewander Thiefs|r, |cRXP_ENEMY_Wastewander Shadow Mages|r and |cRXP_ENEMY_Wastewander Bandits|r. Loot them for |cRXP_LOOT_Wastewander Water Pouch|r
-    .complete 1707,1 --Wastewander Water Pouch (5)
-    .mob Wastewander Rogue
-    .mob Wastewander Thief
-    .mob Wastewander Shadow Mage
-    .mob Wastewander Bandit
-step
-    .goto 1446/1,-5305.43,-8030.56
-    .xp 44 >> AoE Grind to 44
-    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
-    >>Start saving the Silk Cloth and Mageweave Cloth you get. You need 12 stacks of each for later
-step
-    .goto 1446/1,-5305.43,-8030.56
-    .xp 48 >> AoE grind to 48
-    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
-step
-    .trainer >> Teleport to Orgrimmar or Undercity. Train your level 46-48 spells
-step
-    .goto 1446/1,-5305.43,-8030.56
-    .xp 52 >> AoE grind to 52
-    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
-    >>Remember to save 12 stacks of Mageweave. You'll need it for cloth turnins later
-step
-    .goto 1446/1,-3840.56,-7183.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spigot Operator Luglunket|r
-    .turnin 1707 >>Turn in Water Pouch Bounty
-    .target Spigot Operator Luglunket
-step << !Shaman
-    .goto 1446/1,-3850.22,-7168.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirge Quikcleave|r
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
-    .target Dirge Quikcleave
-    .subzoneskip 976,1
-step
-    .goto 1446/1,-3766.04,-7197.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trenton Lighthammer|r
-    .turnin 3042 >>Turn in Troll Temper
-    .target Trenton Lighthammer
-    .isQuestComplete 3042
-step
-    .goto 1446/1,-3838.49,-7186.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Bilgewhizzle|r
-    .turnin 2768 >>Turn in Divino-matic Rod
-    .target Chief Engineer Bilgewhizzle
-    .isQuestComplete 2768
-step
-    .goto 1446/1,-3833.66,-7115.62
-    >>Click the |cRXP_PICK_Egg-O-Matic|r
-    .turnin 2741 >>Turn in The Super Egg-O-Matic
-    .isQuestComplete 2741
-step
-    .goto 1446/1,-4374.62,-8852.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homing Robot OOX-17/TN|r
-    .turnin 351 >>Turn in Find OOX-17/TN!
-    .target Homing Robot OOX-17/TN
-    .isOnQuest 351
-step
-    .goto 1446/1,-3850.22,-7168.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirge|r
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
-    .target Dirge Quikcleave
-    .isQuestComplete 10
 step
     +|cRXP_WARN_That is all of Tanaris for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Deliver to MacKinley, The Hand of Rastakhan
@@ -727,24 +700,6 @@ step
     .accept 32 >>Accept Rise of the Silithid
     .target Senior Surveyor Fizzledowser
 step
-    .goto 1446/1,-3766.04,-7197.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trenton Lighthammer|r
-    .turnin 3042 >>Turn in Troll Temper
-    .target Trenton Lighthammer
-    .isQuestComplete 3042
-step
-    .goto 1446/1,-3838.49,-7186.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Bilgewhizzle|r
-    .turnin 2768 >>Turn in Divino-matic Rod
-    .target Chief Engineer Bilgewhizzle
-    .isQuestComplete 2768
-step
-    .goto 1446/1,-3777.08,-7105.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
-    .turnin 2865 >>Turn in Scarab Shells
-    .target Tran'rek
-    .isQuestComplete 2865
-step
     .goto 1446/1,-3741.89,-7111.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sprinkle|r
     .turnin 2641 >>Turn in Sprinkle's Secret Ingredient
@@ -758,6 +713,12 @@ step
     .isQuestTurnedIn 2641 --any of: Sprinkle's Secret Ingredient
     .xp <44,1
 step
+    .goto 1446/1,-3766.04,-7197.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trenton Lighthammer|r
+    .turnin 3042 >>Turn in Troll Temper
+    .target Trenton Lighthammer
+    .isQuestComplete 3042
+step
     .goto 1446/1,-3793.64,-7193.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r
     .turnin 2661 >>Turn in Delivery for Marin
@@ -770,6 +731,18 @@ step
     .target Marin Noggenfogger
     .isQuestTurnedIn 2661 --any of: Delivery for Marin
     .xp <44,1
+step
+    .goto 1446/1,-3838.49,-7186.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Bilgewhizzle|r
+    .turnin 2768 >>Turn in Divino-matic Rod
+    .target Chief Engineer Bilgewhizzle
+    .isQuestComplete 2768
+step
+    .goto 1446/1,-3777.08,-7105.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
+    .turnin 2865 >>Turn in Scarab Shells
+    .target Tran'rek
+    .isQuestComplete 2865
 step
     .goto 1446/1,-3793.64,-7193.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r
@@ -785,8 +758,22 @@ step
 step
     .xp 49 >>|cRXP_WARN_The rest of Tanaris is planned from level 49.|r Come back to this guide then
 step
+    .goto 1446/1,-3939.23,-6948.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaeriyan|r
+    .accept 3913 >>Accept A Grave Situation
+    .target Gaeriyan
+    .isQuestTurnedIn 3912 --any of: Meet at the Grave
+    .xp <47,1
+step
+    .goto 1446/1,-3741.89,-7111.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sprinkle|r
+    .turnin 2641 >>Turn in Sprinkle's Secret Ingredient
+    .target Sprinkle
+    .isQuestComplete 2641
+step
     .goto 1446/1,-3777.08,-7105.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
+    .accept 4504 >>Accept Super Sticky
     .accept 3362 >>Accept Thistleshrub Valley
     .target Tran'rek
 step
@@ -800,11 +787,43 @@ step
     .accept 5863 >>Accept The Dunemaul Compound
     .target Andi Lynn
 step
+    .goto 1446/1,-3931.64,-7211.76
+    >>Click the |cRXP_PICK_A Conspicuous Gravestone|r
+    .turnin 3913 >>Turn in A Grave Situation
+    .isOnQuest 3913
+step
+    .goto 1446/1,-3931.64,-7211.76
+    >>Click the |cRXP_PICK_A Conspicuous Gravestone|r
+    .accept 3914 >>Accept Linken's Sword
+    .isQuestTurnedIn 3913 --any of: A Grave Situation
+    .xp <47,1
+step
     .goto 1446/1,-4841.06,-6903.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
     .turnin 3520 >>Turn in Screecher Spirits
     .target Yeh'kinya
     .isQuestComplete 3520
+step
+    .goto 1446/1,-3855.74,-7987.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
+    .accept 3444 >>Accept The Stone Circle
+    .target Marvon Rivetseeker
+    .isQuestTurnedIn 3380,3445 --any of: The Sunken Temple, The Sunken Temple
+    .xp <46,1
+step
+    .goto 1446/1,-3855.74,-7987.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
+    .accept 3446 >>Accept Into the Depths
+    .accept 3447 >>Accept Secret of the Circle
+    .target Marvon Rivetseeker
+    .isQuestTurnedIn 3444 --any of: The Stone Circle
+    .xp <46,1
+step
+    .goto 1446/1,-3855.74,-7987.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
+    .turnin 3444 >>Turn in The Stone Circle
+    .target Marvon Rivetseeker
+    .isQuestComplete 3444
 step
     #loop
     .goto 1446/1,-3179.54,-8395.80,0
@@ -859,6 +878,12 @@ step
     .turnin 3362 >>Turn in Thistleshrub Valley
     .target Tran'rek
 step
+    .goto 1446/1,-3777.08,-7105.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
+    .turnin 4504 >>Turn in Super Sticky
+    .target Tran'rek
+    .isQuestComplete 4504
+step
     .goto 1446/1,-3863.33,-7135.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andi Lynn|r
     .turnin 5863 >>Turn in The Dunemaul Compound
@@ -881,62 +906,6 @@ step
     .turnin 2865 >>Turn in Scarab Shells
     .target Tran'rek
     .isQuestComplete 2865
-step
-    .goto 1446/1,-3741.89,-7111.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sprinkle|r
-    .turnin 2641 >>Turn in Sprinkle's Secret Ingredient
-    .target Sprinkle
-    .isQuestComplete 2641
-step
-    .goto 1446/1,-3855.74,-7987.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
-    .accept 3444 >>Accept The Stone Circle
-    .target Marvon Rivetseeker
-    .isQuestTurnedIn 3380,3445 --any of: The Sunken Temple, The Sunken Temple
-    .xp <46,1
-step
-    .goto 1446/1,-3855.74,-7987.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
-    .accept 3446 >>Accept Into the Depths
-    .accept 3447 >>Accept Secret of the Circle
-    .target Marvon Rivetseeker
-    .isQuestTurnedIn 3444 --any of: The Stone Circle
-    .xp <46,1
-step
-    .goto 1446/1,-3855.74,-7987.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
-    .turnin 3444 >>Turn in The Stone Circle
-    .target Marvon Rivetseeker
-    .isQuestComplete 3444
-step
-    .goto 1446/1,-3939.23,-6948.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaeriyan|r
-    .accept 3913 >>Accept A Grave Situation
-    .target Gaeriyan
-    .isQuestTurnedIn 3912 --any of: Meet at the Grave
-    .xp <47,1
-step
-    .goto 1446/1,-3931.64,-7211.76
-    >>Click the |cRXP_PICK_A Conspicuous Gravestone|r
-    .turnin 3913 >>Turn in A Grave Situation
-    .isOnQuest 3913
-step
-    .goto 1446/1,-3931.64,-7211.76
-    >>Click the |cRXP_PICK_A Conspicuous Gravestone|r
-    .accept 3914 >>Accept Linken's Sword
-    .isQuestTurnedIn 3913 --any of: A Grave Situation
-    .xp <47,1
-step
-    .goto 1446/1,-3777.08,-7105.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
-    .accept 4504 >>Accept Super Sticky
-    .target Tran'rek
-step
-    .goto 1446/1,-3777.08,-7105.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
-    .turnin 4504 >>Turn in Super Sticky
-    .target Tran'rek
-    .isQuestComplete 4504
 step
     +|cRXP_WARN_End of the Tanaris route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Un'Goro Crater|r: Linken's Sword

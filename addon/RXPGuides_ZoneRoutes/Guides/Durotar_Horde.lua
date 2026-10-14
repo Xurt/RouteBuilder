@@ -652,6 +652,19 @@ step << Troll Priest
 step << Shaman
     .goto 1411/1,-4290.59,-877.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth|r
+    .turnin 1520 >>Turn in Call of Earth
+    .target Minor Manifestation of Earth
+    .isOnQuest 1520
+step << Shaman
+    .goto 1411/1,-4290.59,-877.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth|r
+    .accept 1521 >>Accept Call of Earth
+    .target Minor Manifestation of Earth
+    .isQuestTurnedIn 1520 --any of: Call of Earth
+    .xp <4,1
+step << Shaman
+    .goto 1411/1,-4290.59,-877.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth|r
     .turnin 1517 >>Turn in Call of Earth
     .accept 1518 >>Accept Call of Earth
     .target Minor Manifestation of Earth
@@ -763,6 +776,11 @@ step
     .accept 96821 >>Accept Legging It
     .target Vel'rin Fang
 step
+    .goto 1411/1,-4920.86,-825.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Gadrin|r
+    .turnin 805 >>Turn in Report to Sen'jin Village
+    .target Master Gadrin
+step
     .goto 1411/1,-4920.33,-813.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Vornal|r
     .accept 818 >>Accept A Solvent Spirit
@@ -771,7 +789,6 @@ step
 step
     .goto 1411/1,-4920.86,-825.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Gadrin|r
-    .turnin 805 >>Turn in Report to Sen'jin Village
     .accept 808 >>Accept Minshina's Skull
     .accept 826 >>Accept Zalazane
     .accept 823 >>Accept Report to Orgnil
@@ -813,6 +830,20 @@ step << Mage
     .train 143 >> Train |T135812:0|t[Fireball]
     .train 2136 >>Train |T135807:0|t[Fire Blast]
     .target Un'Thuwa
+step
+    #loop
+    .goto 1411/1,-5057.80,-866.79,40,0
+    .goto 1411/1,-5014.97,-937.99,40,0
+    .goto 1411/1,-4908.69,-998.27,40,0
+    .goto 1411/1,-4829.91,-1091.33,40,0
+    .goto 1411/1,-4722.57,-1117.42,40,0
+    >>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r.
+    .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
+    .complete 818,1 --Intact Makrura Eye (4)
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     .goto 1411/1,-4596.20,-1057.14
     >>Click the |cRXP_PICK_Attack Plan: Valley of Trials|r
@@ -940,7 +971,7 @@ step << Warrior/Rogue
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
 step
-    #completewith Along63
+    #completewith Along66
     >>As you go: Kill |cRXP_ENEMY_Kul Tiras Sailors|r. Kill |cRXP_ENEMY_Kolkar Drudges|r, |cRXP_ENEMY_Kolkar Outrunners|r, |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for |cRXP_LOOT_Canvas Scraps|r. |cRXP_WARN_Anything left is finished later|r
     .complete 784,1 --Kul Tiras Sailor slain (10)
     .complete 791,1 --Canvas Scraps (8)
@@ -949,12 +980,12 @@ step
     .mob Kolkar Outrunner
     .mob Kul Tiras Marine
 step
-    #completewith Along62
+    #completewith Along65
     >>As you go: Kill |cRXP_ENEMY_Kul Tiras Marines|r. |cRXP_WARN_Anything left is finished later|r
     .complete 784,2 --Kul Tiras Marine slain (8)
     .mob Kul Tiras Marine
 step
-    #label Along62
+    #label Along65
     #loop
     .goto 1411/1,-4995.94,-180.82,0
     .goto 1411/1,-4995.94,-180.82,40,0
@@ -968,7 +999,7 @@ step
     .complete 784,3 --Lieutenant Benedict slain (1)
     .mob Lieutenant Benedict
 step
-    #label Along63
+    #label Along66
     .goto 1411/1,-4952.05,-59.92
     >>Pick up |cRXP_PICK_Raider's Shield|r from the ground
     .complete 96822,3 --Raider's Shield (1)
@@ -1171,7 +1202,7 @@ step << Rogue/Warrior
     .money <0.01
     .target Rawrk
 step
-    #completewith Along73
+    #completewith Along76
     >>As you go: Kill |cRXP_ENEMY_Makrura Clackers|r, |cRXP_ENEMY_Makrura Shellhides|r, |cRXP_ENEMY_Makrura Snapclaws|r and |cRXP_ENEMY_Makrura Elders|r. Loot them for |cRXP_LOOT_Intact Makrura Eye|r. |cRXP_WARN_Anything left is finished later|r
     .complete 818,1 --Intact Makrura Eye (4)
     .mob Makrura Clacker
@@ -1179,7 +1210,7 @@ step
     .mob Makrura Snapclaw
     .mob Makrura Elder
 step
-    #label Along73
+    #label Along76
     #loop
     .goto 1411/1,-5308.96,-211.84,0
     .goto 1411/1,-5308.96,-211.84,40,0
@@ -1189,14 +1220,14 @@ step
     >>Loot the |cRXP_PICK_Gnomish Toolboxes|r for |cRXP_LOOT_Gnomish Tools|r
     .complete 825,1 --Gnomish Tools (3)
 step
-    #completewith Along74
+    #completewith Along77
     >>As you go: Kill |cRXP_ENEMY_Durotar Tigers|r and |cRXP_ENEMY_Shal'mas|r. Loot them for |cRXP_LOOT_Durotar Tiger Fur|r. Loot the |cRXP_PICK_Taillasher Eggs|r for |cRXP_LOOT_Taillasher Egg|r. |cRXP_WARN_Anything left is finished later|r
     .complete 817,1 --Durotar Tiger Fur (4)
     .complete 815,1 --Taillasher Egg (3)
     .mob Durotar Tiger
     .mob Shal'ma
 step
-    #label Along74
+    #label Along77
     .goto 1411/1,-5600.83,-721.91
     >>Kill |cRXP_ENEMY_Bloodtalon Matriarch|r and loot |cRXP_LOOT_Bloodtalon Martriarch Eggs|r
     .complete 97223,1 --Bloodtalon Martriarch Eggs (1)
@@ -1695,6 +1726,36 @@ step
     .turnin 831 >>Turn in The Admiral's Orders
     .target Nazgrel
     .isOnQuest 831
+step << Horde Hunter
+    .goto 1454/1,-4607.02,2100.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak Grimshot::3352|r
+    .train 13795 >> Train your class spells
+    .target Ormak Grimshot::3352
+    .xp <12,1
+step << Horde Hunter
+    .goto 1454/1,-4611.09,2135.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu::10088|r
+    .train 24556 >> Train your pet spells
+    .target Xao'tsu::10088
+step << Horde Warrior
+    .goto 1454/1,-4801.42,1980.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz Ragefist::3353|r
+    .train 7384 >> Train your class spells
+    .target Grezz Ragefist::3353
+    .xp <12,1
+    .xp >14,1
+step << Horde Warrior
+    .goto 1454/1,-4801.42,1980.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz Ragefist::3353|r
+    .train 1160 >> Train your class spells
+    .target Grezz Ragefist::3353
+    .xp <14,1
+step << Skyborne
+    .goto 1454/1,-4125.65,1920.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 95350 >>Turn in Welcome to Azeroth
+    .target Thrall
+    .isOnQuest 95350
 step
     .goto 1454/1,-4125.65,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
@@ -1907,13 +1968,13 @@ step
     .target Rezlak
     .isOnQuest 97282
 step
-    #completewith Along129
+    #completewith Along133
     >>As you go: Kill |cRXP_ENEMY_Burning Blade Fanatics|r and |cRXP_ENEMY_Burning Blade Apprentices|r. Loot them for |cRXP_LOOT_Lieutenant's Insignia|r. |cRXP_WARN_Anything left is finished later|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
 step
-    #label Along129
+    #label Along133
     .goto 1411/1,-4744.25,1497.43
     >>Kill |cRXP_ENEMY_Gazz'uz|r and loot |cRXP_LOOT_Eye of Burning Shadow|r. Use it to start the quest
     .collect 4903,1,832 --Eye of Burning Shadow (1)
@@ -1977,6 +2038,14 @@ step << Tauren Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Gryshka|r
     .accept 5927 >>Accept Heeding the Call
     .target Innkeeper Gryshka
+step << Skyborne
+    .goto 1454/1,-4125.65,1920.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .accept 98024 >>Accept Journey to the Crossroads
+    .accept 93739 >>Accept Exploring the Horde
+    .target Thrall
+    .isQuestTurnedIn 95350 --any of: Welcome to Azeroth
+    .xp <7,1
 step
     .goto 1454/1,-4125.65,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
@@ -2100,6 +2169,11 @@ step
     .turnin 99051 >>Turn in Threat from Below
     .accept 99052 >>Accept Threat from Below
     .target Orgnil Soulscar
+step << Warrior
+    .goto 1411/1,-4827.80,311.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw Jaggedscar|r
+    .accept 1505 >>Accept Veteran Uzzek
+    .target Tarshaw Jaggedscar
 step << Warlock
     .goto 1411/1,-4837.31,352.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ophek|r
@@ -2162,62 +2236,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Misha Tor'kren|r
     .turnin 816 >>Turn in Lost But Not Forgotten
     .target Misha Tor'kren
-step << Undead
-    .goto 1454/1,-4313.60,1676.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
-    >>|cRXP_WARN_Don't fly anywhere!|r
-    .fp Orgrimmar >> Get the Orgrimmar flight path
-    .target Doras
-step << Rogue
-    .goto 1411/1,-4710.94,268.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
-    .train 1758 >> Train your class spells
-    .target Kaplak
-    .xp <14,1
-    .xp >16,1
-step << Rogue
-    .goto 1411/1,-4710.94,268.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
-    .train 6761 >> Train your class spells
-    .target Kaplak
-    .xp <16,1
-step << Priest
-    .goto 1411/1,-4831.5,295.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
-    .train 8122 >>Train your class spells
-    .target Tai'jin
-    .xp <14,1
-    .xp >16,1
-step << Priest
-    .goto 1411/1,-4831.5,295.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
-    .train 8102 >>Train your class spells
-    .target Tai'jin
-    .xp <16,1
-step << Warrior
-    .goto 1411/1,-4827.27,311.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
-    .train 285 >>Train your class spells
-    .target Tarshaw Jaggedscar
-    .xp <16,1
-step << Warlock
-    .goto 1411/1,-4837.31,356.030
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dhugru|r
-    .train 6222 >> Train your class spells
-    .target Dhugru Gorelust
-    .xp <14,1
-    .xp >16,1
-step << Warlock
-    .goto 1411/1,-4837.31,356.030
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dhugru|r
-    .train 1455 >> Train your class spells
-    .target Dhugru Gorelust
-    .xp <16,1
-step << Warrior
-    .goto 1411/1,-4827.80,311.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw Jaggedscar|r
-    .accept 1505 >>Accept Veteran Uzzek
-    .target Tarshaw Jaggedscar
 step
     #completewith next
     .zone 1454 >>Travel to Orgrimmar
@@ -2359,26 +2377,6 @@ step << Rogue
     .train 921 >> Train |T133644:0|t[Pick Pocket]
     .target Shenthul
 step << Skyborne
-    .goto 1454/1,-4125.65,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 95350 >>Turn in Welcome to Azeroth
-    .target Thrall
-    .isOnQuest 95350
-step << Skyborne
-    .goto 1454/1,-4125.65,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .accept 93739 >>Accept Exploring the Horde
-    .accept 98024 >>Accept Journey to the Crossroads
-    .target Thrall
-    .isQuestTurnedIn 95350 --any of: Welcome to Azeroth
-    .xp <7,1
-step << Skyborne
-    .goto 1454/1,-4133.64,1939.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
-    .complete 93739,1 --Nazgrel
-    .target Nazgrel
-    .isOnQuest 93739
-step << Skyborne
     .goto 1454/1,-4162.26,1934.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'jin|r
     .complete 93739,2 --Vol'jin
@@ -2424,6 +2422,12 @@ step << Horde Mage
     .target Pephredo::5882
     .xp <14,1
 step << Skyborne
+    .goto 1454/1,-4133.64,1939.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
+    .complete 93739,1 --Nazgrel
+    .target Nazgrel
+    .isOnQuest 93739
+step << Skyborne
     .goto 1454/1,-4125.65,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 93739 >>Turn in Exploring the Horde
@@ -2433,19 +2437,6 @@ step
     #completewith next
     .zone 1411 >>Leave Orgrimmar for Durotar
     .zoneskip 1411
-step << Shaman
-    .goto 1411/1,-4290.59,-877.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth|r
-    .turnin 1520 >>Turn in Call of Earth
-    .target Minor Manifestation of Earth
-    .isOnQuest 1520
-step << Shaman
-    .goto 1411/1,-4290.59,-877.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth|r
-    .accept 1521 >>Accept Call of Earth
-    .target Minor Manifestation of Earth
-    .isQuestTurnedIn 1520 --any of: Call of Earth
-    .xp <4,1
 step << Shaman
     .goto 1411/1,-4000.83,-270.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Telf Joolam|r
@@ -2550,30 +2541,6 @@ step << Warlock
     .train 1014 >> Train your class spells
     .target Mirket
     .xp <18,1
-step << Horde Hunter
-    .goto 1454/1,-4607.02,2100.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak Grimshot::3352|r
-    .train 13795 >> Train your class spells
-    .target Ormak Grimshot::3352
-    .xp <12,1
-step << Horde Hunter
-    .goto 1454/1,-4611.09,2135.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu::10088|r
-    .train 24556 >> Train your pet spells
-    .target Xao'tsu::10088
-step << Horde Warrior
-    .goto 1454/1,-4801.42,1980.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz Ragefist::3353|r
-    .train 7384 >> Train your class spells
-    .target Grezz Ragefist::3353
-    .xp <12,1
-    .xp >14,1
-step << Horde Warrior
-    .goto 1454/1,-4801.42,1980.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz Ragefist::3353|r
-    .train 1160 >> Train your class spells
-    .target Grezz Ragefist::3353
-    .xp <14,1
 step
     +|cRXP_WARN_End of the Durotar route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Mulgore|r: Call of Earth << Shaman

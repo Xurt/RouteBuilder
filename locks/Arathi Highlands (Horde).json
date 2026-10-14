@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "32-42 Arathi Highlands",
-  "saved": "2026-10-13 17:31",
+  "saved": "2026-10-14 00:07",
   "levels": "RestedXP",
   "parts": [
     {
@@ -14,7 +14,6 @@
         "obj:676:1 @1417:-2151.87,-1219.81  Objective The Hammer May Fall / Boulderfist Ogre slain (8)",
         "obj:676:2 @1417:-2032.71,-1207.09  Objective The Hammer May Fall / Boulderfist Enforcer slain (10)",
         {"lines":[".goto 1417/0,-3498.27,-918.13",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urda|r",".fp Hammerfall >> Get the Hammerfall flight path",".target Urda"],"from":"RestedXP: 30-33 Hillsbrad/Arathi"},
-        "turnin:670 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure",
         "turnin:676 @1417:-3539.31,-947.41  TurnIn The Hammer May Fall",
         "accept:677 @1417:-3539.31,-947.41  Accept Call to Arms",
         {"lines":[".goto 1417/0,-3524.91,-912.37",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Adegwa|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Adegwa"],"from":"RestedXP: 30-33 Hillsbrad/Arathi"},
@@ -39,14 +38,15 @@
         "accept:675 @1417:-3481.71,-947.65  Accept Raising Spirits",
         "turnin:675 @1417:-3556.59,-1004.29  TurnIn Raising Spirits",
         "turnin:677 @1417:-3539.31,-947.41  TurnIn Call to Arms",
-        "turnin:638 @1417:-3523.47,-948.37  TurnIn Trollbane",
         "home @1417:-3524.91,-912.37  Home inn",
         {"lines":[".goto 1417/0,-3495.39,-918.13",".fp Hammerfall >> Get the Hammerfall Flight Path"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
         {"lines":[".xp 32 >> AoE the Dabyrie Farmstead to 32",">>Start saving the Wool Cloth and Silk Cloth you get. You need 12 stacks for later"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
         {"lines":[".xp 34 >> AoE the Dabyrie Farmstead to 34",">>Start saving the Wool Cloth and Silk Cloth you get. You need 12 stacks for later"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
         "accept:98887 @1417:-3512.67,-832.45  Accept Conflict at Darkspear Islands",
         "accept:98888 @1417:-3512.67,-832.45  Accept Conflict at Darkspear Islands",
-        "turnin:635 @1417:-3116.67,-942.85  TurnIn Crystal in the Mountains"
+        "turnin:635 @1417:-3116.67,-942.85  TurnIn Crystal in the Mountains",
+        "turnin:670 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure",
+        "turnin:638 @1417:-3523.47,-948.37  TurnIn Trollbane"
       ]
     },
     {
@@ -87,6 +87,7 @@
       "steps": [
         "turnin:98888 @1417:-3512.67,-832.45  TurnIn Conflict at Darkspear Islands",
         "turnin:98887 @1417:-3512.67,-832.45  TurnIn Conflict at Darkspear Islands",
+        "home @1417:-3524.91,-912.37  Home inn",
         "accept:640 @1417:-3523.47,-948.37  Accept The Broken Sigil",
         "accept:673 @1417:-3556.59,-1004.29  Accept Foul Magics",
         "obj:673:1 @1417:-1932.99,-1644.61  Objective Foul Magics / Befouled Bloodstone Orb (1)",
@@ -99,7 +100,6 @@
         "obj:679:2 @1417:-1558.59,-1757.17  Objective Call to Arms / Boulderfist Lord slain (3)",
         "turnin:679 @1417:-3539.31,-947.41  TurnIn Call to Arms",
         "turnin:680 @1417:-3532.11,-927.01  TurnIn The Real Threat",
-        "obj:640:1 @1417:-1744.71,-1545.01  Objective The Broken Sigil / Sigil Fragment (11)",
         "accept:662 @1417:-2047.47,-2088.85  Accept Deep Sea Salvage",
         "accept:664 @1417:-2090.67,-2072.53  Accept Drowned Sorrows",
         "accept:666 @1417:-2085.63,-2064.13  Accept Sunken Treasure",
@@ -107,6 +107,7 @@
         "obj:662:1 @1417:-1696.47,-2161.57  Objective Deep Sea Salvage / Maiden's Folly Charts (1)",
         "obj:662:3 @1417:-1603.23,-2187.97  Objective Deep Sea Salvage / Spirit of Silverpine Charts (1)",
         "obj:662:4 @1417:-1610.07,-2175.73  Objective Deep Sea Salvage / Spirit of Silverpine Log (1)",
+        "obj:640:1 @1417:-1744.71,-1545.01  Objective The Broken Sigil / Sigil Fragment (11)",
         "obj:666:1 @1417:-1694.67,-2245.33  Objective Sunken Treasure / Elven Gem (10)",
         "obj:664:1 @1417:-1679.19,-2219.17  Objective Drowned Sorrows / Daggerspine Raider slain (10)",
         "obj:664:2 @1417:-1674.87,-2157.73  Objective Drowned Sorrows / Daggerspine Sorceress slain (3)",
@@ -118,11 +119,10 @@
         "accept:641 @1417:-3556.59,-1004.29  Accept Sigil of Thoradin",
         "turnin:641 @1417:-3523.47,-948.37  TurnIn Sigil of Thoradin",
         "accept:643 @1417:-3523.47,-948.37  Accept Sigil of Arathor",
-        "turnin:668 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure",
-        "accept:669 @1417:-2028.75,-2086.45  Accept Sunken Treasure",
-        "home @1417:-3524.91,-912.37  Home inn",
         "obj:643:1 @1417:-2071.59,-1383.25  Objective Sigil of Arathor / Sigil of Arathor (1)",
-        "turnin:643 @1417:-3523.47,-948.37  TurnIn Sigil of Arathor"
+        "turnin:643 @1417:-3523.47,-948.37  TurnIn Sigil of Arathor",
+        "turnin:668 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure",
+        "accept:669 @1417:-2028.75,-2086.45  Accept Sunken Treasure"
       ]
     },
     {

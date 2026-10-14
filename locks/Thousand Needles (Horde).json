@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "25-40 Thousand Needles",
-  "saved": "2026-10-13 17:30",
+  "saved": "2026-10-14 00:06",
   "levels": "RestedXP",
   "parts": [
     {
@@ -115,6 +115,7 @@
         "accept:79364 @1441:-2463.49,-5483.49  Accept Eyes on the Sky",
         "accept:79366 @1441:-2463.49,-5483.49  Accept Heed My Call",
         "turnin:79364 @1441:-2789.09,-5217.73  TurnIn Eyes on the Sky",
+        "accept:1188 @1441:-3967.85,-6198.64  Accept Safety First",
         "item:635 @1441:-2208.29,-4846.08  ItemAccept Crystal in the Mountains",
         "accept:1186 @1441:-3961.25,-6192.48  Accept The Eighteenth Pilot",
         "accept:1190 @1441:-3961.25,-6192.48  Accept Keeping Pace",
@@ -122,9 +123,7 @@
         "accept:1187 @1441:-3967.85,-6198.64  Accept Razzeric's Tweaking",
         "turnin:1190 @1441:-3830.57,-6236.77  TurnIn Keeping Pace",
         "accept:1194 @1441:-3830.57,-6236.77  Accept Rizzle's Schematics",
-        "turnin:1194 @1441:-3961.25,-6192.48  TurnIn Rizzle's Schematics",
-        {"lines":[".hs >> Hearth to Feralas",".subzoneskip 1099",".cooldown item,6948,>0,1"],"from":"RestedXP: 46-48 Tanaris"},
-        "accept:1188 @1441:-3967.85,-6198.64  Accept Safety First"
+        "turnin:1194 @1441:-3961.25,-6192.48  TurnIn Rizzle's Schematics"
       ]
     },
     {

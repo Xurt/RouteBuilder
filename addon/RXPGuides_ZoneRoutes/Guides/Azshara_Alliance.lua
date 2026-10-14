@@ -14,10 +14,6 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 47-57 Azshara
 
-step << !Mage
-    .zoneskip Searing Gorge
-    .hs >> Hearthstone to Stormwind
-    .cooldown item,6948,>0,1
 step
     .goto 1447/1,-3880.51,2718.83
     .fp Azshara>> Get the Azshara flight path

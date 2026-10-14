@@ -138,6 +138,10 @@ step
     .target Innkeeper Vizzie
     .isQuestComplete 5055,4741,4842
 step
+    .hs >>Hearth to Everlook
+    .subzoneskip 255
+    .zoneskip Winterspring
+step
     .goto 1452/1,-5131.18,7234.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Umbranse the Spiritspeaker|r
     .turnin 3512 >>Turn in In Eranikus' Own Words
@@ -318,10 +322,6 @@ step
     .turnin 5087 >>Turn in Winterfall Runners
     .target Donova Snowden
     .isOnQuest 5087
-step
-    .hs >>Hearth to Everlook
-    .subzoneskip 255
-    .zoneskip Winterspring
 step
     .goto 1452/1,-4692.40,6705.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felnok Steelspring|r

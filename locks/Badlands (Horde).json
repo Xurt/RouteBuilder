@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-43 Badlands",
-  "saved": "2026-10-13 17:32",
+  "saved": "2026-10-14 00:08",
   "levels": "RestedXP",
   "parts": [
     {
@@ -36,6 +36,8 @@
     {
       "part": 2,
       "steps": [
+        "accept:709 @1418:-3357.49,-7164.34  Accept Solution to Doom",
+        "obj:709:1 @1418:-3057.75,-6201.68  Objective Solution to Doom / Tablet of Ryun'eh (1)",
         "accept:2258 @1418:-2139.36,-6653.41  Accept Badlands Reagent Run",
         "turnin:713 @1418:-2724.67,-6633.68  TurnIn Coolant Heads Prevail",
         "accept:710 @1418:-2724.67,-6633.68  Accept Study of the Elements: Rock",
@@ -46,6 +48,8 @@
         "turnin:705 @1418:-3133.62,-6767.34  TurnIn Pearl Diving",
         "accept:1108 @1418:-3129.39,-6763.36  Accept Indurium",
         "obj:711:1 @1418:-3098.3,-7204.48  Objective Study of the Elements: Rock / Large Stone Slab (3)",
+        "turnin:709 @1418:-3357.49,-7164.34  TurnIn Solution to Doom",
+        "accept:728 @1418:-3357.49,-7164.34  Accept To the Undercity for Yagyin's Digest",
         "obj:1108:1 @1418:-3320.18,-7023.55  Objective Indurium / Indurium Flake (10)",
         "turnin:1108 @1418:-3129.39,-6763.36  TurnIn Indurium",
         "accept:1137 @1418:-3129.39,-6763.36  Accept News for Fizzle",
@@ -56,11 +60,7 @@
         "accept:2340 @1418:-2139.36,-6653.41  Accept Deliver the Gems",
         "accept:2338 @1418:-2139.36,-6653.41  Accept Translating the Journal",
         "turnin:2338 @1418:-2139.36,-6653.41  TurnIn Translating the Journal",
-        "accept:2339 @1418:-2139.36,-6653.41  Accept Find the Gems and Power Source",
-        "accept:709 @1418:-3357.49,-7164.34  Accept Solution to Doom",
-        "obj:709:1 @1418:-3057.75,-6201.68  Objective Solution to Doom / Tablet of Ryun'eh (1)",
-        "turnin:709 @1418:-3357.49,-7164.34  TurnIn Solution to Doom",
-        "accept:728 @1418:-3357.49,-7164.34  Accept To the Undercity for Yagyin's Digest"
+        "accept:2339 @1418:-2139.36,-6653.41  Accept Find the Gems and Power Source"
       ]
     },
     {
@@ -74,7 +74,9 @@
         "obj:692:1 @1418:-3419.18,-7281.09  Objective The Lost Fragments / Torn Scroll Fragment (1)",
         "turnin:692 @1418:-3357.49,-7164.34  TurnIn The Lost Fragments",
         "accept:782 @1418:-2151.55,-6645.78  Accept Broken Alliances",
+        "accept:2202 @1418:-2139.36,-6653.41  Accept Uldaman Reagent Run",
         "obj:782:1 @1418:-2393.09,-7141.46  Objective Broken Alliances / Sign of the Earth (1)",
+        "obj:2202:1 @1418:-3013.72,-6142.64  Objective Uldaman Reagent Run / Magenta Fungus Cap (12)",
         "accept:712 @1418:-2724.67,-6633.68  Accept Study of the Elements: Rock",
         "obj:712:1 @1418:-2181.4,-7214.76  Objective Study of the Elements: Rock / Bracers of Rock Binding (5)",
         "turnin:712 @1418:-2724.67,-6633.68  TurnIn Study of the Elements: Rock",
@@ -84,8 +86,6 @@
         "accept:777 @1418:-2721.44,-6623.23  Accept This Is Going to Be Hard",
         "turnin:777 @1418:-2724.67,-6633.68  TurnIn This Is Going to Be Hard",
         "turnin:782 @1418:-2151.55,-6645.78  TurnIn Broken Alliances",
-        "accept:2202 @1418:-2139.36,-6653.41  Accept Uldaman Reagent Run",
-        "obj:2202:1 @1418:-3013.72,-6142.64  Objective Uldaman Reagent Run / Magenta Fungus Cap (12)",
         "turnin:2202 @1418:-2139.36,-6653.41  TurnIn Uldaman Reagent Run"
       ]
     }

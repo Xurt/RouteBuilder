@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "39-53 The Hinterlands",
-  "saved": "2026-10-13 17:32",
+  "saved": "2026-10-14 00:08",
   "levels": "RestedXP",
   "parts": [
     {
@@ -9,14 +9,13 @@
       "steps": [
         "accept:98888 @1425:-3512.71,-832.3  Accept Conflict at Darkspear Islands",
         "accept:98887 @1425:-3512.71,-832.3  Accept Conflict at Darkspear Islands",
-        {"lines":[".hs >> Hearth to Feralas",".subzoneskip 1099",".cooldown item,6948,>0,1"],"from":"RestedXP: 46-48 Tanaris"},
+        "accept:1446 @1425:-2874.38,-463.72  Accept Jammal'an the Prophet",
         "turnin:650 @1425:-2603.34,219.52  TurnIn Ripple Recovery",
         {"lines":[".goto 1425/0,-4655.00,-42.53,0",".goto 1425/0,-4655.00,-42.53,50,0",".goto 1425/0,-4547.20,-119.53,50,0",".goto 1425/0,-4547.20,-181.13,50,0",".goto 1425/0,-4454.80,-294.07,50,0",".goto 1425/0,-4485.60,-381.33,50,0",".goto 1425/0,-4585.70,-309.47,50,0",".goto 1425/0,-4578.00,-181.13,50,0",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Saltwater Snapjaw|r to tame it|r",".train 17267 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 7)]",".xp <49,1"],"tag":"Hunter","from":"RestedXP: 48-49 The Hinterlands"},
         {"lines":[".goto 1425/0,-4620.35,-573.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Markhor|r",".target Huntsman Markhor",".train 17267,3",".zoneskip The Hinterlands,1",".xp <49,1"],"tag":"Hunter","from":"RestedXP: 48-49 The Hinterlands"},
         "turnin:626 @1425:-4685.42,264.95  TurnIn Cortello's Riddle",
         "turnin:1429 @1425:-2874.38,-463.72  TurnIn The Atal'ai Exile",
-        "accept:1444 @1425:-2874.38,-463.72  Accept Return to Fel'Zerul",
-        "accept:1446 @1425:-2874.38,-463.72  Accept Jammal'an the Prophet"
+        "accept:1444 @1425:-2874.38,-463.72  Accept Return to Fel'Zerul"
       ]
     },
     {
@@ -32,8 +31,9 @@
       "part": 3,
       "steps": [
         "home @1425:-4583.39,-622.09  Home inn",
-        "turnin:98887 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
         "turnin:98888 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
+        "turnin:98887 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
+        "turnin:1446 @1425:-2874.38,-463.72  TurnIn Jammal'an the Prophet",
         "accept:77 @1425:-2603.34,219.52  Accept A Sticky Situation",
         "accept:7839 @1425:-4548.36,-590  Accept Vilebranch Hooligans",
         "accept:7844 @1425:-4608.8,-541.75  Accept Cannibalistic Cousins",
@@ -66,8 +66,7 @@
         {"lines":[".goto 1425/0,-4585.70,-620.03,15,0",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lard|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Lard",".subzoneskip 3317,1"],"from":"RestedXP: 48-49 The Hinterlands"},
         "turnin:77 @1425:-2603.34,219.52  TurnIn A Sticky Situation",
         "accept:81 @1425:-2603.34,219.52  Accept Ripple Delivery",
-        "turnin:485 @1425:-3474.98,500.06  TurnIn Find OOX-09/HL!",
-        "turnin:1446 @1425:-2874.38,-463.72  TurnIn Jammal'an the Prophet"
+        "turnin:485 @1425:-3474.98,500.06  TurnIn Find OOX-09/HL!"
       ]
     },
     {
@@ -97,8 +96,8 @@
         "turnin:7862 @1425:-4585.7,-616.95  TurnIn Job Opening: Guard Captain of Revantusk Village",
         "turnin:7849 @1425:-4622.66,-574.6  TurnIn Separation Anxiety",
         "turnin:7850 @1425:-4585.7,-616.95  TurnIn Dark Vessels",
-        "turnin:98887 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
         "turnin:98888 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
+        "turnin:98887 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
         "turnin:1446 @1425:-2874.38,-463.72  TurnIn Jammal'an the Prophet"
       ]
     },

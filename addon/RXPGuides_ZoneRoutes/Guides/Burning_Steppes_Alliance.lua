@@ -46,12 +46,6 @@ step
     .turnin 3823 >>Turn in Extinguish the Firegut
     .target Oralius
 step
-    .goto 1428/0,-2736.95,-8365.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Borgun Stoutarm|r
-    .fp Burning Steppes >> Get the Burning Steppes Flight Path
-    .fly Ironforge>> Fly to Ironforge << !Mage
-    .target Borgun Stoutarm
-step
     .goto 1428/0,-2748.84,-8378.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
     .turnin 4223 >>Turn in The True Masters

@@ -60,15 +60,15 @@ step
 step << Rogue
     .goto 1416/0,-1625.23,27.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
-    .turnin 8233 >>Turn in A Simple Request
-    .target Lord Jorach Ravenholdt
-    .isOnQuest 8233
-step << Rogue
-    .goto 1416/0,-1625.23,27.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 8236 >>Turn in The Azure Key
     .target Lord Jorach Ravenholdt
     .isQuestComplete 8236
+step << Rogue
+    .goto 1416/0,-1625.23,27.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
+    .turnin 8233 >>Turn in A Simple Request
+    .target Lord Jorach Ravenholdt
+    .isOnQuest 8233
 step << Shaman
     .goto 1416/0,-1470.67,250.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r

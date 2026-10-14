@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "47-57 Azshara",
-  "saved": "2026-10-13 17:32",
+  "saved": "2026-10-14 00:08",
   "levels": "RestedXP",
   "parts": [
     {
@@ -18,17 +18,16 @@
         "turnin:5536 @1447:-3853.64,2698.54  TurnIn A Land Filled with Hatred",
         {"lines":[".goto 1447/1,-4392.67,3661.19",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kroum|r",".fp Azshara >>Get the Azshara Flight Path",".target Kroum"],"from":"RestedXP: 52-53 Azshara"},
         "turnin:3504 @1447:-4405.85,3601  TurnIn Betrayed",
-        "turnin:8151 @1447:-5427.12,3900.58  TurnIn The Hunter's Charm",
-        "turnin:8250 @1447:-4702.49,3648  TurnIn Magecraft",
-        "turnin:8254 @1447:-5427.12,3900.58  TurnIn Cenarion Aid",
-        "turnin:3562 @1447:-4421.06,3603.03  TurnIn Magatha's Payment to Jediga",
-        "turnin:3563 @1447:-4421.06,3603.03  TurnIn Jes'rimon's Payment to Jediga",
-        {"lines":[".hs >>Hearth to Everlook",".subzoneskip 255",".zoneskip Winterspring"],"from":"RestedXP: 58-59 Winterspring/Silithus I"},
         "turnin:3564 @1447:-4421.06,3603.03  TurnIn Andron's Payment to Jediga",
+        "turnin:3563 @1447:-4421.06,3603.03  TurnIn Jes'rimon's Payment to Jediga",
+        "turnin:3562 @1447:-4421.06,3603.03  TurnIn Magatha's Payment to Jediga",
         "obj:8234:1 @1447:-5379.96,4683.34  Objective Sealed Azure Bag / Sealed Azure Bag (1)",
         "turnin:8234 @1447:-4760.3,3982.07  TurnIn Sealed Azure Bag",
         "accept:3509 @1447:-6361.16,3098.21  Accept The Name of the Beast",
-        "turnin:3509 @1447:-7188.22,3894.83  TurnIn The Name of the Beast"
+        "turnin:3509 @1447:-7188.22,3894.83  TurnIn The Name of the Beast",
+        "turnin:8151 @1447:-5427.12,3900.58  TurnIn The Hunter's Charm",
+        "turnin:8250 @1447:-4702.49,3648  TurnIn Magecraft",
+        "turnin:8254 @1447:-5427.12,3900.58  TurnIn Cenarion Aid"
       ]
     },
     {
@@ -56,6 +55,7 @@
         "turnin:5534 @1447:-5987.44,4603.88  TurnIn Kim'jael's \"Missing\" Equipment",
         "turnin:3517 @1447:-4421.06,3603.03  TurnIn Stealing Knowledge",
         "accept:3561 @1447:-4421.06,3603.03  Accept Delivery to Archmage Xylem",
+        "accept:3542 @1447:-4421.06,3603.03  Accept Delivery to Andron Gant",
         "accept:3518 @1447:-4421.06,3603.03  Accept Delivery to Magatha",
         "accept:3541 @1447:-4421.06,3603.03  Accept Delivery to Jes'rimon",
         "turnin:3561 @1447:-4760.3,3982.07  TurnIn Delivery to Archmage Xylem",
@@ -63,7 +63,6 @@
         "turnin:8252 @1447:-4760.3,3982.07  TurnIn The Siren's Coral",
         "accept:8253 @1447:-4760.3,3982.07  Accept Destroy Morphaz",
         "turnin:3565 @1447:-4421.06,3603.03  TurnIn Xylem's Payment to Jediga",
-        "accept:3542 @1447:-4421.06,3603.03  Accept Delivery to Andron Gant",
         "home @1447:-3916.01,2727.28  Home inn"
       ]
     },
@@ -96,6 +95,7 @@
         "obj:8231:1 @1447:-7545.2,4941.66  Objective Wavethrashing / Wavethrasher Scales (6)",
         "turnin:8231 @1447:-5427.12,3900.58  TurnIn Wavethrashing",
         "accept:8232 @1447:-5427.12,3900.58  Accept The Green Drake",
+        "turnin:8253 @1447:-4760.3,3982.07  TurnIn Destroy Morphaz",
         "turnin:8235 @1447:-4760.3,3982.07  TurnIn Encoded Fragments",
         "accept:8236 @1447:-4760.3,3982.07  Accept The Azure Key",
         "turnin:8255 @1447:-5427.12,3900.58  TurnIn Of Coursers We Know",
@@ -104,8 +104,7 @@
         "turnin:8256 @1447:-5427.12,3900.58  TurnIn The Ichor of Undeath",
         "accept:8257 @1447:-5427.12,3900.58  Accept Blood of Morphaz",
         "turnin:3506 @1447:-4405.85,3601  TurnIn Betrayed",
-        "accept:3507 @1447:-4405.85,3601  Accept Betrayed",
-        "turnin:8253 @1447:-4760.3,3982.07  TurnIn Destroy Morphaz"
+        "accept:3507 @1447:-4405.85,3601  Accept Betrayed"
       ]
     }
   ]

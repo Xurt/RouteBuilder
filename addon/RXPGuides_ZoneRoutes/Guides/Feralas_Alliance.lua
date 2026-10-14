@@ -26,10 +26,11 @@ step
     .target Kristy Grant
     .isQuestComplete 98155
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thyssiana|r
-    .goto 1444/1,-778.37,-4491.19
-    .fp Thalanaar >> Get the Thalanaar flight path
-    .target Thyssiana
+    .goto 1444/1,-788.31,-4524.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfindel Waywarder|r
+    .turnin 1059 >>Turn in Reclaiming the Charred Vale
+    .target Falfindel Waywarder
+    .isOnQuest 1059
 step
     .goto 1444/1,-788.31,-4524.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfindel Waywarder|r
@@ -40,20 +41,9 @@ step
 step
     .goto 1444/1,-788.31,-4524.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfindel Waywarder|r
-    .turnin 1059 >>Turn in Reclaiming the Charred Vale
-    .target Falfindel Waywarder
-    .isOnQuest 1059
-step
-    .goto 1444/1,-788.31,-4524.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfindel Waywarder|r
     .turnin 1101 >>Turn in The Crone of the Kraul
     .target Falfindel Waywarder
     .isQuestComplete 1101
-step
-    .goto 1444/1,3340.13,-4370.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fyldren Moonfeather|r
-    .fp Feathermoon >> Get the Feathermoon Flight Path
-    .target Fyldren Moonfeather
 step
     .goto 1444/1,858.84,-4481.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kindal Moonweaver|r
@@ -61,6 +51,11 @@ step
     .target Kindal Moonweaver
     .isQuestTurnedIn 2972 --any of: Doling Justice
     .xp <38,1
+step
+    .goto 1444/1,3340.13,-4370.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fyldren Moonfeather|r
+    .fp Feathermoon >> Get the Feathermoon Flight Path
+    .target Fyldren Moonfeather
 step
     .goto 1444/1,3312.88,-4345.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pratt McGrubben|r

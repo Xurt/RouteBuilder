@@ -39,11 +39,6 @@ step
     .accept 647 >>Accept MacKreel's Moonshine
     .target Foggy MacKreel
 step
-    .goto 1417/0,-2536.35,-1262.29,0,0
-    >>Talk to |cRXP_FRIENDLY_Drovnar|r
-    .vendor 2812 >> |cRXP_BUY_Buy|r |T134832:0|t[Greater Healing Potions] |cRXP_BUY_and|r |T134852:0|t[Mana Potions] |cRXP_BUY_from him (if they're up)|r
-    .target Drovnar Strongbrew
-step
     .goto 1417/0,-2516.55,-1274.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
     .turnin 634 >>Turn in Plea To The Alliance
@@ -55,11 +50,22 @@ step
     .turnin 690 >>Turn in Malin's Request
     .target Skuerto
     .isOnQuest 690
-step
-    .goto 1417/0,-2514.03,-1239.49
-    >>Talk to |cRXP_FRIENDLY_Cedrik|r
-    .fp Refuge Pointe >> Get the Refuge Pointe flight path
-    .target Cedrik Prose
+step << Hunter
+    .goto 1417/0,-2364.27,-1280.53,0
+    .goto 1417/0,-2371.47,-1539.73,0
+    .goto 1417/0,-2630.67,-1338.13,0
+    .goto 1417/0,-2364.27,-1280.53,40,0
+    .goto 1417/0,-2371.47,-1539.73,40,0
+    .goto 1417/0,-2630.67,-1338.13,40,0
+    .goto 1417/0,-2594.67,-1539.73
+    >>|cRXP_WARN_Cast|r |T132172:0|t[Eagle Eye] |cRXP_WARN_to try and find a |cRXP_ENEMY_Plains Creeper|r. Some of their locations are marked on your map|r
+    >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Plains Creeper|r to tame it|r
+    .train 17265 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 5)]
+step << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Targot Jinglepocket|r
+    .goto 1417/0,-2537.07,-1227.73
+    .vendor >> |cRXP_BUY_Buy up to a stack of|r |T133969:0|t[Wild Hog Shank] |cRXP_BUY_to serve as pet food|r
+    .target Targot Jinglepocket
 step
     .goto 1417/0,-2512.95,-1239.73
     .fp Refuge Pointe >> Get the Refuge Pointe flight path
@@ -110,17 +116,6 @@ step
     .xp 37 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 37
 step
     .hs >> Hearth to Southshore
-step << Hunter
-    .goto 1417/0,-2364.27,-1280.53,0
-    .goto 1417/0,-2371.47,-1539.73,0
-    .goto 1417/0,-2630.67,-1338.13,0
-    .goto 1417/0,-2364.27,-1280.53,40,0
-    .goto 1417/0,-2371.47,-1539.73,40,0
-    .goto 1417/0,-2630.67,-1338.13,40,0
-    .goto 1417/0,-2594.67,-1539.73
-    >>|cRXP_WARN_Cast|r |T132172:0|t[Eagle Eye] |cRXP_WARN_to try and find a |cRXP_ENEMY_Plains Creeper|r. Some of their locations are marked on your map|r
-    >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Plains Creeper|r to tame it|r
-    .train 17265 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 5)]
 step << Shaman
     .goto 1417/0,-3018.39,-795.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
@@ -132,6 +127,41 @@ step
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: MacKreel's Moonshine
 step
     .xp 33 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 33.|r Come back to this guide then
+step
+    .goto 1417/0,-2516.55,-1274.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
+    .accept 681 >>Accept Northfold Manor
+    .target Captain Nials
+step
+    #completewith Drop635x1
+    >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Witherbark Troll|r, |cRXP_ENEMY_Witherbark Shadowcaster|r, |cRXP_ENEMY_Witherbark Axe Thrower|r. Use it to start the quest if you get one
+    .collect 4614,1,635 --Pendant of Myzrael (1)
+    .accept 635 >>Accept Crystal in the Mountains
+    .use 4614
+step
+    #label Drop635x1
+    #loop
+    .goto 1417/0,-2114.43,-893.89,0
+    .goto 1417/0,-2114.43,-893.89,40,0
+    .goto 1417/0,-2078.43,-848.53,40,0
+    .goto 1417/0,-2115.87,-781.33,40,0
+    .goto 1417/0,-2035.59,-775.33,40,0
+    .goto 1417/0,-2022.63,-728.29,40,0
+    .goto 1417/0,-1957.47,-717.25,40,0
+    .goto 1417/0,-1912.47,-814.45,40,0
+    .goto 1417/0,-1981.23,-803.17,40,0
+    .goto 1417/0,-2010.75,-924.85,40,0
+    >>Kill |cRXP_ENEMY_Syndicate Highwaymans|r
+    >>Kill |cRXP_ENEMY_Syndicate Mercenaries|r
+    .complete 681,1 --Syndicate Highwayman slain (8)
+    .complete 681,2 --Syndicate Mercenary slain (6)
+    .mob Syndicate Highwayman
+    .mob Syndicate Mercenary
+step
+    .goto 1417/0,-2516.55,-1274.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
+    .turnin 681 >>Turn in Northfold Manor
+    .target Captain Nials
 step
     .goto 1417/0,-3033.15,-1425.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quae|r
@@ -178,46 +208,6 @@ step
     .vendor >> Buy up to 140 level 35 water
 step
     .vendor >> Buy level 35 drink if needed
-step
-    .goto 1417/0,-2516.55,-1274.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
-    .accept 681 >>Accept Northfold Manor
-    .target Captain Nials
-step
-    #completewith Drop635x1
-    >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Witherbark Troll|r, |cRXP_ENEMY_Witherbark Shadowcaster|r, |cRXP_ENEMY_Witherbark Axe Thrower|r. Use it to start the quest if you get one
-    .collect 4614,1,635 --Pendant of Myzrael (1)
-    .accept 635 >>Accept Crystal in the Mountains
-    .use 4614
-step
-    #label Drop635x1
-    #loop
-    .goto 1417/0,-2114.43,-893.89,0
-    .goto 1417/0,-2114.43,-893.89,40,0
-    .goto 1417/0,-2078.43,-848.53,40,0
-    .goto 1417/0,-2115.87,-781.33,40,0
-    .goto 1417/0,-2035.59,-775.33,40,0
-    .goto 1417/0,-2022.63,-728.29,40,0
-    .goto 1417/0,-1957.47,-717.25,40,0
-    .goto 1417/0,-1912.47,-814.45,40,0
-    .goto 1417/0,-1981.23,-803.17,40,0
-    .goto 1417/0,-2010.75,-924.85,40,0
-    >>Kill |cRXP_ENEMY_Syndicate Highwaymans|r
-    >>Kill |cRXP_ENEMY_Syndicate Mercenaries|r
-    .complete 681,1 --Syndicate Highwayman slain (8)
-    .complete 681,2 --Syndicate Mercenary slain (6)
-    .mob Syndicate Highwayman
-    .mob Syndicate Mercenary
-step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Targot Jinglepocket|r
-    .goto 1417/0,-2537.07,-1227.73
-    .vendor >> |cRXP_BUY_Buy up to a stack of|r |T133969:0|t[Wild Hog Shank] |cRXP_BUY_to serve as pet food|r
-    .target Targot Jinglepocket
-step
-    .goto 1417/0,-2516.55,-1274.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
-    .turnin 681 >>Turn in Northfold Manor
-    .target Captain Nials
 step
     .goto 1417/0,-2529.87,-1279.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Kryten|r
@@ -795,17 +785,17 @@ step
     .complete 652,1 --Rod of Order (1)
     .mob Fozruk
 step
-    .goto 1417/0,-2165.55,-1527.49
-    >>Click the |cRXP_PICK_Keystone|r
-    .turnin 652 >>Turn in Breaking the Keystone
-    .accept 653 >>Accept Myzrael's Allies
-step
     .goto 1417/0,-3550.11,-988.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaruk|r
     .accept 687 >>Accept Theldurin the Lost
     .target Zaruk
     .isQuestTurnedIn 653,688 --any of: Myzrael's Allies, Myzrael's Allies
     .xp <30,1
+step
+    .goto 1417/0,-2165.55,-1527.49
+    >>Click the |cRXP_PICK_Keystone|r
+    .turnin 652 >>Turn in Breaking the Keystone
+    .accept 653 >>Accept Myzrael's Allies
 step
     +|cRXP_WARN_End of the Arathi Highlands route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Badlands|r: Theldurin the Lost

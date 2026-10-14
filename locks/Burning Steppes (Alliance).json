@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-56 Burning Steppes",
-  "saved": "2026-10-13 17:38",
+  "saved": "2026-10-14 00:14",
   "levels": "RestedXP",
   "parts": [
     {
@@ -12,7 +12,6 @@
         "obj:3823:2 @1428:-2529.15,-7913.59  Objective Extinguish the Firegut / Firegut Ogre slain (15)",
         "obj:3823:3 @1428:-2621.42,-7911.83  Objective Extinguish the Firegut / Firegut Brute slain (7)",
         "turnin:3823 @1428:-2743.57,-8371.94  TurnIn Extinguish the Firegut",
-        {"lines":[".goto 1428/0,-2736.95,-8365.03",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Borgun Stoutarm|r",".fp Burning Steppes >> Get the Burning Steppes Flight Path",".fly Ironforge>> Fly to Ironforge << !Mage",".target Borgun Stoutarm"],"from":"RestedXP: 51-51 Blasted Lands"},
         "turnin:4223 @1428:-2748.84,-8378.58  TurnIn The True Masters",
         "accept:4262 @1428:-2768.47,-8398.88  Accept Overmaster Pyron",
         "turnin:4810 @1428:-2177.65,-7499.75  TurnIn Return to Tinkee"

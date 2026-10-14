@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "26-40 Dustwallow Marsh",
-  "saved": "2026-10-13 17:36",
+  "saved": "2026-10-14 00:12",
   "levels": "RestedXP",
   "parts": [
     {
@@ -9,32 +9,28 @@
       "steps": [
         "turnin:1132 @1445:-4464.15,-3613.58  TurnIn Fiora Longears",
         "accept:1133 @1445:-4464.15,-3613.58  Accept Journey to Astranaar",
-        {"lines":[".goto 1445/1,-4517.17,-3828.83",">>Talk to |cRXP_FRIENDLY_Baldruc|r",".fp Theramore >> Get the Theramore Flight Path",".target Baldruc"],"from":"RestedXP: 33-37 ADV Arathi Mage AoE"},
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baldruc|r",".goto 1445/1,-4517.49,-3828.83",".fp Theramore >> Get the Theramore Flight Path",".target Baldruc"],"from":"RestedXP: 33-34 Thousand Needles"},
+        {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed|r",".target Jensen Farran"],"tag":"Hunter","from":"RestedXP: 33-34 Thousand Needles"},
+        {"lines":[".trainer >>Train your spells",".train 19752 >>Train |T136106:0|t[|cRXP_FRIENDLY_Divine Intervention|r]. You will need it for a rune later << sod"],"tag":"Paladin sod","from":"RestedXP: 33-34 Thousand Needles"},
+        "accept:1135 @1445:-4464.15,-3613.58  Accept Highperch Venom",
         "turnin:1260 @1445:-4457.85,-3624.78  TurnIn Morgan Stern",
         "turnin:1302 @1445:-4538.7,-3721.73  TurnIn James Hyal",
         "turnin:1264 @1445:-4546.05,-3738.18  TurnIn The Missing Diplomat",
         {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2721.78,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 38 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, and |cRXP_ENEMY_Mirefin Murlocs|r to Level 38",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
-        {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2448.78,30,0",".goto 1445/1,-3809.47,-2725.63,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 40 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
-        {"lines":[".goto 1445/1,-4366.50,-3785.78",">>Talk to |cRXP_FRIENDLY_Marie|r",".vendor 4888 >> Vendor Trash. Repair",".target Marie Holdston",".zoneskip Dustwallow Marsh,1"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
-        {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2448.78,30,0",".goto 1445/1,-3809.47,-2725.63,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 41 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to Level 41",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
-        {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2448.78,30,0",".goto 1445/1,-3809.47,-2725.63,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 41+33530 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 33530+/95800xp",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
-        {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2448.78,30,0",".goto 1445/1,-3809.47,-2725.63,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 41+43110 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 43110+/95800xp",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
-        {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed|r",".target Jensen Farran"],"tag":"Hunter","from":"RestedXP: 33-34 Thousand Needles"},
-        {"lines":[".trainer >>Train your spells",".train 19752 >>Train |T136106:0|t[|cRXP_FRIENDLY_Divine Intervention|r]. You will need it for a rune later << sod"],"tag":"Paladin sod","from":"RestedXP: 33-34 Thousand Needles"},
-        "accept:1135 @1445:-4464.15,-3613.58  Accept Highperch Venom",
-        {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Delete all|r |T132382:0|t[Razor Arrows] |cRXP_BUY_you have and fill your quiver with|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_instead|r",".target Jensen Farran",".xp <40,1"],"tag":"Hunter","from":"RestedXP: 40-40 Dustwallow Marsh"},
-        {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed. Buy a couple stacks of|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_if you're close to level 40|r",".target Jensen Farran",".xp >40,1"],"tag":"Hunter","from":"RestedXP: 40-40 Dustwallow Marsh"},
         "turnin:1953 @1445:-3393.15,-4031.48  TurnIn Return to the Marsh",
         "turnin:1951 @1445:-3393.15,-4031.48  TurnIn Rituals of Power",
         "turnin:1947 @1445:-3393.15,-4031.48  TurnIn Journey to the Marsh",
-        {"lines":[".goto 1445/1,-4538.44,-3727.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Evencane|r up stairs in the Keep",".trainer >> Train your class spells",".target Captain Evencane"],"tag":"Warrior","from":"RestedXP: 43-44 Tanaris"},
-        {"lines":[".goto 1445/1,-4513.29,-3692.68",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Karman|r",".trainer >> Train your class spells",".target Brother Karman"],"tag":"Paladin","from":"RestedXP: 43-44 Tanaris"},
+        {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Delete all|r |T132382:0|t[Razor Arrows] |cRXP_BUY_you have and fill your quiver with|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_instead|r",".target Jensen Farran",".xp <40,1"],"tag":"Hunter","from":"RestedXP: 40-40 Dustwallow Marsh"},
+        {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed. Buy a couple stacks of|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_if you're close to level 40|r",".target Jensen Farran",".xp >40,1"],"tag":"Hunter","from":"RestedXP: 40-40 Dustwallow Marsh"},
+        {"lines":[".goto 1445/1,-4538.44,-3727.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Evencane|r up stairs in the Keep",".trainer >> Train your class spells",".target Captain Evencane"],"tag":"Warrior","from":"RestedXP: 43-44 Tanaris/Dustwallow"},
+        {"lines":[".goto 1445/1,-4513.29,-3692.68",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Karman|r",".trainer >> Train your class spells",".target Brother Karman"],"tag":"Paladin","from":"RestedXP: 43-44 Tanaris/Dustwallow"},
         "turnin:1799 @1445:-3393.15,-4031.48  TurnIn Fragments of the Orb of Orahil"
       ]
     },
     {
       "part": 2,
       "steps": [
+        "turnin:1135 @1445:-4464.15,-3613.58  TurnIn Highperch Venom",
         "accept:1282 @1445:-4447.87,-3645.78  Accept They Call Him Smiling Jim",
         "turnin:1282 @1445:-4556.02,-3735.03  TurnIn They Call Him Smiling Jim",
         "accept:1266 @1445:-4462.05,-3757.43  Accept The Missing Diplomat",
@@ -61,17 +57,22 @@
         "accept:1286 @1445:-4556.02,-3735.03  Accept The Deserters",
         "turnin:1319 @1445:-4374.37,-3798.38  TurnIn The Black Shield",
         "accept:1320 @1445:-4374.37,-3798.38  Accept The Black Shield",
+        {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2448.78,30,0",".goto 1445/1,-3809.47,-2725.63,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 40 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
+        {"lines":[".goto 1445/1,-4366.50,-3785.78",">>Talk to |cRXP_FRIENDLY_Marie|r",".vendor 4888 >> Vendor Trash. Repair",".target Marie Holdston",".zoneskip Dustwallow Marsh,1"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
+        {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2448.78,30,0",".goto 1445/1,-3809.47,-2725.63,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 41 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to Level 41",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
         "turnin:1286 @1445:-2869.72,-3934.18  TurnIn The Deserters",
         "accept:1287 @1445:-2869.72,-3934.18  Accept The Deserters",
         "accept:1949 @1445:-3393.15,-4031.48  Accept Hidden Secrets",
         "turnin:1287 @1445:-4556.02,-3735.03  TurnIn The Deserters",
         "turnin:1320 @1445:-4556.02,-3735.03  TurnIn The Black Shield",
-        "turnin:1135 @1445:-4464.15,-3613.58  TurnIn Highperch Venom"
+        {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2448.78,30,0",".goto 1445/1,-3809.47,-2725.63,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 41+33530 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 33530+/95800xp",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
+        {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2448.78,30,0",".goto 1445/1,-3809.47,-2725.63,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 41+43110 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 43110+/95800xp",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"}
       ]
     },
     {
       "part": 3,
       "steps": [
+        "turnin:1135 @1445:-4464.15,-3613.58  TurnIn Highperch Venom",
         {"lines":[".goto 1445/1,-4517.17,-3828.83",".fp Theramore >> Get the Theramore Flight Path"],"from":"RestedXP: 33-60 Mage AoE"},
         "accept:1204 @1445:-4457.85,-3624.78  Accept Mudrock Soup and Bugs",
         {"lines":[".goto 1445/1,-4470.97,-3616.03",".vendor >> Buy up to 180 level 35 drink"],"from":"RestedXP: 33-60 Mage AoE"},
@@ -87,7 +88,6 @@
         "turnin:1204 @1445:-4457.85,-3624.78  TurnIn Mudrock Soup and Bugs",
         {"lines":[".trainer >> Train your class spells"],"from":"RestedXP: 33-60 Mage AoE"},
         "turnin:1177 @1445:-2820.37,-3372.43  TurnIn Hungry!",
-        "turnin:1135 @1445:-4464.15,-3613.58  TurnIn Highperch Venom",
         "accept:1258 @1445:-4457.85,-3624.78  Accept ... and Bugs"
       ]
     },

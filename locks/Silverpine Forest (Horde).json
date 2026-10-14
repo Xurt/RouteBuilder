@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-24 Silverpine Forest",
-  "saved": "2026-10-13 17:29",
+  "saved": "2026-10-14 00:05",
   "levels": "RestedXP",
   "parts": [
     {
@@ -9,15 +9,10 @@
       "steps": [
         "turnin:446 @1421:1652.4,522.59  TurnIn Thule Ravenclaw",
         "home @1421:1636.44,510.83  Home inn",
+        "turnin:6324 @1421:1626.36,499.63  TurnIn Return to Podrig",
         "turnin:91858 @1421:1629.72,518.11  TurnIn Diplomatic Incident",
         "accept:428 @1421:1626.36,522.59  Accept Lost Deathstalkers",
         "turnin:428 @1421:1204.68,1290.63  TurnIn Lost Deathstalkers",
-        {"lines":[".goto 1421/0,1533.96,474.43",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r",".fp Sepulcher >> Get the Sepulcher flight path",".target Karos Razok"],"tag":"!Undead !Mage !Priest !Rogue !Warlock","from":"RestedXP: 22-24 Hillsbrad"},
-        "turnin:3301 @1421:1647.78,490.95  TurnIn Mura Runetotem",
-        "turnin:264 @1421:1594.02,471.91  TurnIn Until Death Do Us Part",
-        "turnin:6324 @1421:1626.36,499.63  TurnIn Return to Podrig",
-        "obj:63:1 @1421:1821.24,427.39  Objective Call of Water / Corrupt Manifestation's Bracers (1)",
-        "turnin:63 @1421:1843.08,418.99  TurnIn Call of Water",
         "accept:429 @1421:1204.68,1290.63  Accept Wild Hearts",
         "obj:429:1 @1421:1054.74,1384.15  Objective Wild Hearts / Discolored Worg Heart (6)",
         "accept:449 @1421:1204.68,1290.63  Accept The Deathstalkers' Report",
@@ -63,7 +58,12 @@
         {"lines":[".hs >> Hearth to the Undercity",".zoneskip Undercity"],"tag":"Undead","from":"RestedXP: 12-14 Silverpine Forest"},
         "turnin:450 @1421:1652.4,522.59  TurnIn A Recipe For Death",
         "accept:448 @1421:1652.4,522.59  Accept Report to Hadrec",
-        "turnin:448 @1421:1626.36,522.59  TurnIn Report to Hadrec"
+        "turnin:448 @1421:1626.36,522.59  TurnIn Report to Hadrec",
+        "turnin:3301 @1421:1647.78,490.95  TurnIn Mura Runetotem",
+        "turnin:264 @1421:1594.02,471.91  TurnIn Until Death Do Us Part",
+        {"lines":[".goto 1421/0,1513.80,-734.33",".xp 22 >> Run south to The Greymane Wall. AoE here until 22"],"from":"RestedXP: 21-30 Silverpine/Hillsbrad AoE"},
+        "obj:63:1 @1421:1821.24,427.39  Objective Call of Water / Corrupt Manifestation's Bracers (1)",
+        "turnin:63 @1421:1843.08,418.99  TurnIn Call of Water"
       ]
     },
     {
@@ -149,6 +149,7 @@
       "part": 4,
       "steps": [
         "turnin:95034 @1421:1630.14,519.51  TurnIn The Debt",
+        {"lines":[".goto 1421/0,1533.96,474.43",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r",".fp Sepulcher >> Get the Sepulcher flight path",".target Karos Razok"],"tag":"!Undead !Mage !Priest !Rogue !Warlock","from":"RestedXP: 22-24 Hillsbrad"},
         "accept:493 @1421:1652.4,522.59  Accept Journey to Hillsbrad Foothills",
         "accept:480 @1421:1602.84,520.63  Accept The Weaver",
         "obj:480:1 @1421:787.2,-132.89  Objective The Weaver / Ataeric's Staff (1)",

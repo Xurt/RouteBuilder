@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "42-52 Feralas",
-  "saved": "2026-10-13 17:32",
+  "saved": "2026-10-14 00:08",
   "levels": "RestedXP",
   "parts": [
     {
@@ -14,6 +14,7 @@
         "accept:2973 @1444:163.84,-4346.95  Accept A New Cloak's Sheen",
         "accept:2862 @1444:235.42,-4333.98  Accept War on the Woodpaw",
         "accept:2822 @1444:268.78,-4354.83  Accept The Mark of Quality",
+        "turnin:3122 @1444:269.48,-4375.68  TurnIn Return to Witch Doctor Uzer'i",
         "home @1444:243.07,-4460.01  Home inn",
         {"lines":[".goto 1444/1,242.37,-4460.01",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Greul|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".collect 4537,5 >>Buy a couple |T133980:0|t|cRXP_LOOT_Tel'Abim Bananas|r. |cRXP_WARN_You will need at least one to unlock a rune later|r << Hunter sod",".target Innkeeper Greul",".train 416083,1 << Hunter SoD"],"from":"RestedXP: 43-44 Feralas"},
         {"lines":[".goto 1444/1,242.37,-4460.01",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Greul|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Greul",".train 416083,3"],"tag":"Hunter SoD","from":"RestedXP: 43-44 Feralas"},
@@ -58,12 +59,7 @@
         "turnin:2822 @1444:268.78,-4354.83  TurnIn The Mark of Quality",
         {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 1824 >>Train your class spells",".target Jannos Lighthoof",".xp <44,1",".xp >46,1"],"tag":"Druid","from":"RestedXP: 43-44 Feralas"},
         {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 9821 >>Train your class spells",".target Jannos Lighthoof",".xp <46,1"],"tag":"Druid","from":"RestedXP: 43-44 Feralas"},
-        {"lines":[".goto 1444/1,242.37,-4460.01",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Greul|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Greul"],"from":"RestedXP: 45-46 Swamp of Sorrows"},
-        {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 9823 >>Train your class spells",".target Jannos Lighthoof",".xp <46,1",".xp >48,1"],"tag":"Druid","from":"RestedXP: 45-46 Swamp of Sorrows"},
-        {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 22828 >>Train your class spells",".target Jannos Lighthoof",".xp <48,1"],"tag":"Druid","from":"RestedXP: 45-46 Swamp of Sorrows"},
-        "turnin:3122 @1444:269.48,-4375.68  TurnIn Return to Witch Doctor Uzer'i",
         "accept:3123 @1444:269.48,-4375.68  Accept Testing the Vessel",
-        {"lines":[".hs >> Hearth to Feralas",".subzoneskip 1099",".cooldown item,6948,>0,1"],"from":"RestedXP: 46-48 Tanaris"},
         "accept:3124 @1444:269.48,-4375.68  Accept Hippogryph Muisek",
         "obj:3124:1 @1444:1681.02,-5619.27  Objective Hippogryph Muisek / Hippogryph Muisek (1)",
         "turnin:3124 @1444:269.48,-4375.68  TurnIn Hippogryph Muisek",
@@ -96,16 +92,15 @@
         "turnin:3128 @1444:269.48,-4375.68  TurnIn Natural Materials",
         "turnin:7734 @1444:268.78,-4354.83  TurnIn Improved Quality",
         {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 9884 >>Train your class spells",".target Jannos Lighthoof",".xp <50,1",".xp >52,1",".subzoneskip 1099,1"],"tag":"Druid","from":"RestedXP: 49-50 Feralas"},
-        {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 9894 >>Train your class spells",".target Jannos Lighthoof",".xp <52,1",".subzoneskip 1099,1"],"tag":"Druid","from":"RestedXP: 49-50 Feralas"},
-        {"lines":[".hs >>Hearth to Camp Taurajo",".subzoneskip 378"],"tag":"!Mage","from":"RestedXP: 54-55 Un'Goro Crater"}
+        {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 9894 >>Train your class spells",".target Jannos Lighthoof",".xp <52,1",".subzoneskip 1099,1"],"tag":"Druid","from":"RestedXP: 49-50 Feralas"}
       ]
     },
     {
       "part": 3,
       "steps": [
-        "accept:3380 @1444:269.48,-4375.68  Accept The Sunken Temple",
         "accept:3063 @1444:147.16,-4397.46  Accept Vengeance on the Northspring",
         "accept:3062 @1444:147.16,-4397.46  Accept Dark Heart",
+        "accept:3380 @1444:269.48,-4375.68  Accept The Sunken Temple",
         "accept:3127 @1444:269.48,-4375.68  Accept Mountain Giant Muisek",
         "accept:7003 @1444:2327.37,-4378.46  Accept Zapped Giants",
         "accept:7721 @1444:2327.37,-4378.46  Accept Fuel for the Zapping",
@@ -118,8 +113,8 @@
         "obj:3063:2 @1444:2788.16,-2926.37  Objective Vengeance on the Northspring / Northspring Roguefeather slain (4)",
         "obj:3063:3 @1444:2699.89,-2836.49  Objective Vengeance on the Northspring / Northspring Slayer slain (4)",
         "obj:3063:4 @1444:2721.44,-2971.32  Objective Vengeance on the Northspring / Northspring Windcaller slain (4)",
-        "turnin:7721 @1444:2327.37,-4378.46  TurnIn Fuel for the Zapping",
         "turnin:7003 @1444:2327.37,-4378.46  TurnIn Zapped Giants",
+        "turnin:7721 @1444:2327.37,-4378.46  TurnIn Fuel for the Zapping",
         "turnin:3127 @1444:269.48,-4375.68  TurnIn Mountain Giant Muisek",
         "accept:3129 @1444:269.48,-4375.68  Accept Weapons of Spirit",
         "turnin:3063 @1444:147.16,-4397.46  TurnIn Vengeance on the Northspring",

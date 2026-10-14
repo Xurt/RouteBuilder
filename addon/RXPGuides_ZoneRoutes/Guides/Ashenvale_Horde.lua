@@ -42,29 +42,6 @@ step
     .turnin 78134 >>Turn in Dragonslayer's Lance
     .target Alonso
     .isOnQuest 78134
-step
-    .goto 1440/1,-2554.65,2310.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani Thunderheart|r
-    .turnin 742 >>Turn in The Ashenvale Hunt
-    .target Senani Thunderheart
-    .isOnQuest 742
-step
-    .goto 1440/1,-2554.65,2310.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani Thunderheart|r
-    .turnin 235 >>Turn in The Ashenvale Hunt
-    .target Senani Thunderheart
-    .isOnQuest 235
-step
-    .goto 1440/1,-2554.65,2310.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani Thunderheart|r
-    .turnin 6382 >>Turn in The Ashenvale Hunt
-    .target Senani Thunderheart
-    .isOnQuest 6382
-step
-    .goto 1440/1,-2520.05,2305.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
-    .fp Splintertree Post >> Get the Splintertree Post flight path
-    .target Vhulgra
 step << Hunter
     .goto 1440/1,-2520.05,2305.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
@@ -173,8 +150,85 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marukai|r
     .turnin 6442 >>Turn in Naga at the Zoram Strand
     .target Marukai
+step << !Hunter
+    .goto 1440/1,-2520.05,2305.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
+    .fp Splintertree Post >> Get the Splintertree Post flight path
+    .target Vhulgra
+step << Hunter
+    .goto 1440/1,-2066.21,2187.93,0
+    .goto 1440/1,-2285.92,2195.62,0
+    .goto 1440/1,-2285.92,2195.62,50,0
+    .goto 1440/1,-2255.36,2346.29,50,0
+    .goto 1440/1,-2141.75,2258.66,50,0
+    .goto 1440/1,-2066.21,2187.93,50,0
+    .train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
+    .train 17264 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ghostpaw Alpha|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 4)]
+    .xp <27,1
+step << Hunter
+    .goto 1440/1,-2066.21,2187.93,0
+    .goto 1440/1,-2255.36,2346.29,50,0
+    .goto 1440/1,-2141.75,2258.66,50,0
+    .goto 1440/1,-2066.21,2187.93,50,0
+    .train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
+    .xp >26,1
+step
+    .goto 1440/1,-2554.65,2310.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani Thunderheart|r
+    .turnin 742 >>Turn in The Ashenvale Hunt
+    .target Senani Thunderheart
+    .isOnQuest 742
+step
+    .goto 1440/1,-2554.65,2310.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani Thunderheart|r
+    .turnin 235 >>Turn in The Ashenvale Hunt
+    .target Senani Thunderheart
+    .isOnQuest 235
+step
+    .goto 1440/1,-2554.65,2310.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani Thunderheart|r
+    .turnin 6382 >>Turn in The Ashenvale Hunt
+    .target Senani Thunderheart
+    .isOnQuest 6382
+step
+    .goto 1440/1,-2520.05,2305.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
+    .fp Splintertree Post >> Get the Splintertree Post flight path
+    .target Vhulgra
 step
     .xp 22 >>|cRXP_WARN_The rest of Ashenvale is planned from level 22.|r Come back to this guide then
+step
+    .goto 1440/1,-631.46,2309.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Va'xug Firefure|r
+    .accept 98251 >>Accept Never Coming Back
+    .target Va'xug Firefure
+step
+    #loop
+    .goto 1440/1,-580.14,2280.95,0
+    .goto 1440/1,-580.14,2280.95,40,0
+    .goto 1440/1,-586.48,2239.44,40,0
+    .goto 1440/1,-643.57,2130.28,40,0
+    .goto 1440/1,-664.91,2112.98,40,0
+    .goto 1440/1,-689.71,2100.29,40,0
+    .goto 1440/1,-595.13,2090.30,40,0
+    .goto 1440/1,-584.75,2166.41,40,0
+    .goto 1440/1,-540.35,2207.54,40,0
+    .goto 1440/1,-507.48,2260.19,40,0
+    >>Kill |cRXP_ENEMY_Ashenvale Bears|r
+    .complete 98251,2 --Ashenvale Bear slain (6)
+    .mob Ashenvale Bear
+step
+    #loop
+    .goto 1440/1,-779.67,2205.61,0
+    .goto 1440/1,-779.67,2205.61,40,0
+    .goto 1440/1,-812.54,2235.98,40,0
+    .goto 1440/1,-916.91,2194.08,40,0
+    .goto 1440/1,-773.32,2039.95,40,0
+    .goto 1440/1,-728.34,1980.75,40,0
+    .goto 1440/1,-693.74,1940.78,40,0
+    >>Kill |cRXP_ENEMY_Shadowhorn Stags|r
+    .complete 98251,1 --Shadowhorn Stag slain (6)
+    .mob Shadowhorn Stag
 step
     .goto 1440/1,-802.73,1966.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
@@ -193,6 +247,11 @@ step
     .turnin 78134 >>Turn in Dragonslayer's Lance
     .target Alonso
     .isOnQuest 78134
+step
+    .goto 1440/1,-631.46,2309.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Va'xug Firefure|r
+    .turnin 98251 >>Turn in Never Coming Back
+    .target Va'xug Firefure
 step
     .goto 1440/1,-2400.68,2054.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kuray'bin|r
@@ -225,28 +284,6 @@ step
     .turnin 6383 >>Turn in The Ashenvale Hunt
     .target Senani Thunderheart
     .isOnQuest 6383
-step << !Hunter
-    .goto 1440/1,-2520.05,2305.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
-    .fp Splintertree Post >> Get the Splintertree Post flight path
-    .target Vhulgra
-step << Hunter
-    .goto 1440/1,-2066.21,2187.93,0
-    .goto 1440/1,-2285.92,2195.62,0
-    .goto 1440/1,-2285.92,2195.62,50,0
-    .goto 1440/1,-2255.36,2346.29,50,0
-    .goto 1440/1,-2141.75,2258.66,50,0
-    .goto 1440/1,-2066.21,2187.93,50,0
-    .train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
-    .train 17264 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ghostpaw Alpha|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 4)]
-    .xp <27,1
-step << Hunter
-    .goto 1440/1,-2066.21,2187.93,0
-    .goto 1440/1,-2255.36,2346.29,50,0
-    .goto 1440/1,-2141.75,2258.66,50,0
-    .goto 1440/1,-2066.21,2187.93,50,0
-    .train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
-    .xp >26,1
 step
     .goto 1440/1,-592.83,2166.41
     >>Kill |cRXP_ENEMY_Ursangous|r and loot |cRXP_LOOT_Ursangous's Paw|r. Use it to start the quest
@@ -387,43 +424,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mitsuwa|r
     .turnin 6462 >>Turn in Troll Charm
     .target Mitsuwa
-step
-    .goto 1440/1,-631.46,2309.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Va'xug Firefure|r
-    .accept 98251 >>Accept Never Coming Back
-    .target Va'xug Firefure
-step
-    #loop
-    .goto 1440/1,-580.14,2280.95,0
-    .goto 1440/1,-580.14,2280.95,40,0
-    .goto 1440/1,-586.48,2239.44,40,0
-    .goto 1440/1,-643.57,2130.28,40,0
-    .goto 1440/1,-664.91,2112.98,40,0
-    .goto 1440/1,-689.71,2100.29,40,0
-    .goto 1440/1,-595.13,2090.30,40,0
-    .goto 1440/1,-584.75,2166.41,40,0
-    .goto 1440/1,-540.35,2207.54,40,0
-    .goto 1440/1,-507.48,2260.19,40,0
-    >>Kill |cRXP_ENEMY_Ashenvale Bears|r
-    .complete 98251,2 --Ashenvale Bear slain (6)
-    .mob Ashenvale Bear
-step
-    #loop
-    .goto 1440/1,-779.67,2205.61,0
-    .goto 1440/1,-779.67,2205.61,40,0
-    .goto 1440/1,-812.54,2235.98,40,0
-    .goto 1440/1,-916.91,2194.08,40,0
-    .goto 1440/1,-773.32,2039.95,40,0
-    .goto 1440/1,-728.34,1980.75,40,0
-    .goto 1440/1,-693.74,1940.78,40,0
-    >>Kill |cRXP_ENEMY_Shadowhorn Stags|r
-    .complete 98251,1 --Shadowhorn Stag slain (6)
-    .mob Shadowhorn Stag
-step
-    .goto 1440/1,-631.46,2309.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Va'xug Firefure|r
-    .turnin 98251 >>Turn in Never Coming Back
-    .target Va'xug Firefure
 step
     .xp 25 >>|cRXP_WARN_The rest of Ashenvale is planned from level 25.|r Come back to this guide then
 step

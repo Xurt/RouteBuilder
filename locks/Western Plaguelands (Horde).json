@@ -1,12 +1,16 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-57 Western Plaguelands",
-  "saved": "2026-10-13 17:33",
+  "saved": "2026-10-14 00:09",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        {"lines":[".goto 1422/0,-1582.40,1871.70",".xp 53+100000 >>AoE Undead in the area to 53 & 100000+/167100xp",">>Remember to try and save 12 stacks of Runecloth. You'll need it for cloth turnins later"],"from":"RestedXP: 36-60 Mage AoE"},
+        {"lines":[".goto 1422/0,-729.28,1784.84",".vendor >> You should be Friendly with the Argent Dawn now, so buy as many Manna Biscuits as possible to last you to level 60",">>If you're not, turn in scourgestones you looted until you are"],"from":"RestedXP: 36-60 Mage AoE"},
+        {"lines":[".goto 1422/0,-1582.40,1871.70",".xp 58 >> AoE Undead in the area to 58"],"from":"RestedXP: 36-60 Mage AoE"},
+        {"lines":[".goto 1422/0,-1574.23,2883.35,120,0",".goto 1422/0,-1511.45,3010.34,120,0",".goto 1422/0,-1541.12,3094.05,120,0",".goto 1422/0,-1474.04,2873.31,120,0",".xp 59+130000 >> Grind to 59 & 130000+/209800"],"from":"RestedXP: 36-60 Mage AoE"},
         "obj:5229:1 @1422:-1171.32,1720.91  Objective Target: Felstone Field / Felstone Field Cauldron Key (1)",
         "turnin:5229 @1422:-1185.08,1738.97  TurnIn Target: Felstone Field",
         "accept:5230 @1422:-1185.08,1738.97  Accept Return to the Bulwark",
@@ -16,7 +20,6 @@
         "obj:5231:1 @1422:-1566.06,1858.51  Objective Target: Dalson's Tears / Dalson's Tears Cauldron Key (1)",
         "turnin:5231 @1422:-1569.07,1878.87  TurnIn Target: Dalson's Tears",
         "accept:5232 @1422:-1569.07,1878.87  Accept Return to the Bulwark",
-        {"lines":[".goto 1422/0,-729.28,1784.84",".vendor >> You should be Friendly with the Argent Dawn now, so buy as many Manna Biscuits as possible to last you to level 60",">>If you're not, turn in scourgestones you looted until you are"],"from":"RestedXP: 36-60 Mage AoE"},
         "obj:5233:1 @1422:-1857.17,1472.37  Objective Target: Writhing Haunt / Writhing Haunt Cauldron Key (1)",
         "turnin:5233 @1422:-1863.19,1485.85  TurnIn Target: Writhing Haunt",
         "accept:5234 @1422:-1863.19,1485.85  Accept Return to the Bulwark",
@@ -39,7 +42,6 @@
         "turnin:5050 @1422:-1234.53,1817.23  TurnIn Good Luck Charm",
         "accept:5051 @1422:-1234.53,1817.23  Accept Two Halves Become One",
         "turnin:5051 @1422:-1234.53,1817.23  TurnIn Two Halves Become One",
-        {"lines":[".hs >>Hearth to Everlook",".subzoneskip 255",".zoneskip Winterspring"],"from":"RestedXP: 58-59 Winterspring/Silithus I"},
         "turnin:5941 @1422:-1280.11,1452.88  TurnIn Return to Chromie",
         "turnin:5162 @1422:-1276.24,1452.31  TurnIn Wrath of the Blue Flight"
       ]

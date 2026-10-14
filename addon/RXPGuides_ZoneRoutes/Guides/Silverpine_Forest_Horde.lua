@@ -25,6 +25,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Bates|r
     .target Innkeeper Bates
     .home >>Set your Hearthstone to Innkeeper Bates's inn
+step << Undead
+    .goto 1421/0,1626.36,499.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Podrig|r
+    .turnin 6324 >>Turn in Return to Podrig
+    .target Deathguard Podrig
+    .isOnQuest 6324
 step << Undead Paladin
     .goto 1421/0,1629.72,518.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trevan Rol|r
@@ -48,59 +54,6 @@ step
     .goto 1421/0,1204.68,1290.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rane Yorick|r
     .turnin 428 >>Turn in Lost Deathstalkers
-    .target Rane Yorick
-step
-    .goto 1421/0,1204.68,1290.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rane Yorick|r
-    .accept 429 >>Accept Wild Hearts
-    .target Rane Yorick
-    .xp <10,1
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Bates's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step << !Undead !Mage !Priest !Rogue !Warlock
-    .goto 1421/0,1533.96,474.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r
-    .fp Sepulcher >> Get the Sepulcher flight path
-    .target Karos Razok
-step
-    .goto 1421/0,1647.78,490.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mura Runetotem|r
-    .turnin 3301 >>Turn in Mura Runetotem
-    .target Mura Runetotem
-    .isOnQuest 3301
-step
-    .goto 1421/0,1594.02,471.91
-    >>Click the |cRXP_PICK_Yuriv's Tombstone|r
-    .turnin 264 >>Turn in Until Death Do Us Part
-    .isOnQuest 264
-step << Undead
-    .goto 1421/0,1626.36,499.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Podrig|r
-    .turnin 6324 >>Turn in Return to Podrig
-    .target Deathguard Podrig
-    .isOnQuest 6324
-step << Undead
-    .goto 1421/0,1626.36,499.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Podrig|r
-    .accept 6321 >>Accept Supplying the Sepulcher
-    .target Deathguard Podrig
-    .xp <10,1
-step << Shaman
-    .goto 1421/0,1821.24,427.39
-    >>Kill |cRXP_ENEMY_Corrupt Minor Manifestation of Water|r and loot |cRXP_LOOT_Corrupt Manifestation's Bracers|r
-    .complete 63,1 --Corrupt Manifestation's Bracers (1)
-    .mob Corrupt Minor Manifestation of Water
-    .isOnQuest 63
-step << Shaman
-    .goto 1421/0,1843.08,418.99
-    >>Click the |cRXP_PICK_Brazier of Everfount|r
-    .turnin 63 >>Turn in Call of Water
-    .isOnQuest 63
-step
-    .goto 1421/0,1204.68,1290.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rane Yorick|r
     .accept 429 >>Accept Wild Hearts
     .target Rane Yorick
 step
@@ -373,6 +326,31 @@ step
     .turnin 448 >>Turn in Report to Hadrec
     .target High Executor Hadrec
     .isOnQuest 448
+step
+    .goto 1421/0,1647.78,490.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mura Runetotem|r
+    .turnin 3301 >>Turn in Mura Runetotem
+    .target Mura Runetotem
+    .isOnQuest 3301
+step
+    .goto 1421/0,1594.02,471.91
+    >>Click the |cRXP_PICK_Yuriv's Tombstone|r
+    .turnin 264 >>Turn in Until Death Do Us Part
+    .isOnQuest 264
+step
+    .goto 1421/0,1513.80,-734.33
+    .xp 22 >> Run south to The Greymane Wall. AoE here until 22
+step << Shaman
+    .goto 1421/0,1821.24,427.39
+    >>Kill |cRXP_ENEMY_Corrupt Minor Manifestation of Water|r and loot |cRXP_LOOT_Corrupt Manifestation's Bracers|r
+    .complete 63,1 --Corrupt Manifestation's Bracers (1)
+    .mob Corrupt Minor Manifestation of Water
+    .isOnQuest 63
+step << Shaman
+    .goto 1421/0,1843.08,418.99
+    >>Click the |cRXP_PICK_Brazier of Everfount|r
+    .turnin 63 >>Turn in Call of Water
+    .isOnQuest 63
 step
     +|cRXP_WARN_That is all of Silverpine Forest for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Undercity|r: Ride to the Undercity << Undead
@@ -834,6 +812,11 @@ step << Undead Paladin
     .turnin 95034 >>Turn in The Debt
     .target Lumina Windsinger
     .isOnQuest 95034
+step << !Undead !Mage !Priest !Rogue !Warlock
+    .goto 1421/0,1533.96,474.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r
+    .fp Sepulcher >> Get the Sepulcher flight path
+    .target Karos Razok
 step
     .goto 1421/0,1652.40,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r

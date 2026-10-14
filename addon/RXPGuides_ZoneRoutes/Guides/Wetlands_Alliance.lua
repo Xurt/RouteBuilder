@@ -14,16 +14,6 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 21-34 Wetlands
 
-step << Shaman
-    .money <0.08
-    .goto 1437/0,-819.67,-3691.42,25,0
-    .goto 1437/0,-807.26,-3716.22,25,0
-    .goto 1437/0,-827.94,-3724.49,25,0
-    .goto 1437,10.760,56.721
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r
-    .vendor >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube]
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Neal Allen|r doesn't have one|r
-    .target Neal Allen
 step
     .goto 1437/0,-718.35,-3701.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r
@@ -422,6 +412,51 @@ step
     .turnin 286 >>Turn in Return the Statuette
     .target Karl Boran
 step
+    .goto 1437/0,-718.35,-3701.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r
+    .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Dewin Shimmerdawn|r doesn't have any|r
+    .target Dewin Shimmerdawn
+step << NightElf
+    .goto 1437/0,-782.03,-3793.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei|r
+    .fp Wetlands>> Get the Wetlands flight path
+    .target Shellei Brondir
+step
+    .goto 1437/0,-823.64,-3807.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Samor Festivus|r upstairs
+    .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Samor Festivus|r doesn't have any|r
+    .target Samor Festivus
+step << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Edwina Monzor|r
+    .goto 1437/0,-844.48,-3763.08
+    .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_if needed. If you're close to level 25 you can buy some|r |T132382:0|t[Razor Arrows] |cRXP_BUY_from her as well|r
+    .xp >25,1
+    .target Edwina Monzor
+step
+    .goto 1437/0,-819.67,-3691.42,25,0
+    .goto 1437/0,-807.26,-3716.22,25,0
+    .goto 1437/0,-827.94,-3724.49,25,0
+    .goto 1437/0,-834.60,-3711.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r
+    .vendor >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube]
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Neal Allen|r doesn't have one|r
+    .target Neal Allen
+step
+    .goto 1437/0,-1481.33,-2857.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fradd Swiftgear|r
+    .vendor >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube]
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Fradd Swiftgear|r doesn't have one|r
+    .target Fradd Swiftgear
+step
+    .xp 24 >> Grind to level 24
+step << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Edwina Monzor|r
+    .goto 1437/0,-844.48,-3763.08
+    .vendor >> |cRXP_BUY_Restock on |r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed|r
+    .target Edwina Monzor
+step
     .goto 1437/0,-743.16,-3684.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James Halloran|r
     .accept 98072 >>Accept Crocs of the Sky
@@ -493,6 +528,18 @@ step
     .turnin 98208 >>Turn in Bloom of the Heavens
     .target Sylessa Duskwhisper
     .isQuestComplete 98208
+step << Hunter
+    .goto 1437/0,-784.10,-4069.02
+    .xp 29+29000 >> Grind to |cRXP_ENEMY_Murlocs|r 29000/44300 xp
+step << Hunter
+    .goto 1437/0,-784.10,-4069.02
+    .xp 29+31100 >> Grind |cRXP_ENEMY_Murlocs|r to 31100/44300 xp
+step << Hunter
+    .goto 1437/0,-784.10,-4069.02
+    .xp 29+31550 >> Grind |cRXP_ENEMY_Murlocs|r to 31550/44300 xp
+step << Hunter
+    .goto 1437/0,-784.10,-4069.02
+    .xp 29+33650 >> Grind |cRXP_ENEMY_Murlocs|r to 33650/44300 xp
 step
     .goto 1437/0,-827.11,-3817.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Glorin Steelbrow|r
@@ -676,6 +723,22 @@ step
     .target James Halloran
     .isOnQuest 471
 step
+    .goto 1437/0,-832.07,-3827.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy |cRXP_LOOT_Flagon of Mead|r from |cRXP_FRIENDLY_Innkeeper Helbrek|r
+    .complete 288,1 --Flagon of Mead (1)
+    .target Innkeeper Helbrek
+step
+    .goto 1437/0,-840.34,-3791.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
+    .turnin 288 >>Turn in The Third Fleet
+    .target First Mate Fitzsimmons
+step
+    .goto 1437/0,-797.34,-3732.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
+    .turnin 473 >>Turn in Report to Captain Stoutfist
+    .target Captain Stoutfist
+    .isOnQuest 473
+step
     .goto 1437/0,-838.28,-3688.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harlo Barnaby|r
     .accept 472 >>Accept Fall of Dun Modr
@@ -726,62 +789,6 @@ step
     .accept 98313 >>Accept For Further Study
     .target Prospector Whelgar
 step
-    .goto 1437/0,-718.35,-3701.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r
-    .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Dewin Shimmerdawn|r doesn't have any|r
-    .target Dewin Shimmerdawn
-step << NightElf
-    .goto 1437/0,-782.03,-3793.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei|r
-    .fp Wetlands>> Get the Wetlands flight path
-    .target Shellei Brondir
-step
-    .goto 1437/0,-832.07,-3827.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy |cRXP_LOOT_Flagon of Mead|r from |cRXP_FRIENDLY_Innkeeper Helbrek|r
-    .complete 288,1 --Flagon of Mead (1)
-    .target Innkeeper Helbrek
-step
-    .goto 1437/0,-823.64,-3807.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Samor Festivus|r upstairs
-    .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Samor Festivus|r doesn't have any|r
-    .target Samor Festivus
-step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Edwina Monzor|r
-    .goto 1437/0,-844.48,-3763.08
-    .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_if needed. If you're close to level 25 you can buy some|r |T132382:0|t[Razor Arrows] |cRXP_BUY_from her as well|r
-    .xp >25,1
-    .target Edwina Monzor
-step
-    .goto 1437/0,-819.67,-3691.42,25,0
-    .goto 1437/0,-807.26,-3716.22,25,0
-    .goto 1437/0,-827.94,-3724.49,25,0
-    .goto 1437/0,-834.60,-3711.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r
-    .vendor >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube]
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Neal Allen|r doesn't have one|r
-    .target Neal Allen
-step
-    .goto 1437/0,-1481.33,-2857.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fradd Swiftgear|r
-    .vendor >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube]
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Fradd Swiftgear|r doesn't have one|r
-    .target Fradd Swiftgear
-step
-    .xp 24 >> Grind to level 24
-step
-    .goto 1437/0,-797.34,-3732.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
-    .turnin 98223 >>Turn in Old Habits while you are here
-    .isQuestComplete 98223
-    .target Captain Stoutfist
-step
-    .goto 1437/0,-840.34,-3791.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
-    .turnin 288 >>Turn in The Third Fleet
-    .target First Mate Fitzsimmons
-step
     .goto 1437/0,-797.34,-3732.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
     .turnin 98223 >>Turn in Old Habits
@@ -793,17 +800,6 @@ step
     .turnin 98221 >>Turn in From the Ashes
     .target Captain Stoutfist
     .isOnQuest 98221
-step
-    .goto 1437/0,-797.34,-3732.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
-    .turnin 473 >>Turn in Report to Captain Stoutfist
-    .target Captain Stoutfist
-    .isOnQuest 473
-step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Edwina Monzor|r
-    .goto 1437/0,-844.48,-3763.08
-    .vendor >> |cRXP_BUY_Restock on |r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed|r
-    .target Edwina Monzor
 step
     +|cRXP_WARN_That is all of Wetlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ironforge|r: For Further Study, Word to Ironforge
@@ -852,6 +848,52 @@ step
     .turnin 296 >>Turn in Ormer's Revenge
     .target Ormer Ironbraid
 step
+    .goto 1437/0,-2443.64,-2650.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Motley Garmason|r
+    .accept 303 >>Accept The Dark Iron War
+    .target Motley Garmason
+step
+    .goto 1437/0,-2453.16,-2650.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
+    .accept 631 >>Accept The Thandol Span
+    .target Rhag Garmason
+    .xp <28,1
+step
+    #loop
+    .goto 1437/0,-2867.94,-2782.41,0
+    .goto 1437/0,-2867.94,-2782.41,40,0
+    .goto 1437/0,-2862.98,-2845.80,40,0
+    .goto 1437/0,-2935.35,-2898.99,40,0
+    .goto 1437/0,-2974.63,-2946.95,40,0
+    .goto 1437/0,-3006.06,-2941.17,40,0
+    .goto 1437/0,-2992.00,-2903.96,40,0
+    .goto 1437/0,-2973.39,-2859.86,40,0
+    .goto 1437/0,-2934.11,-2869.23,40,0
+    .goto 1437/0,-2889.44,-2833.12,40,0
+    >>Kill |cRXP_ENEMY_Dark Iron Dwarfs|r
+    >>Kill |cRXP_ENEMY_Dark Iron Tunnelers|r
+    >>Kill |cRXP_ENEMY_Dark Iron Saboteurs|r
+    >>Kill |cRXP_ENEMY_Dark Iron Demolitionists|r
+    .complete 303,1 --Dark Iron Dwarf slain (8)
+    .complete 303,2 --Dark Iron Tunneler slain (5)
+    .complete 303,3 --Dark Iron Saboteur slain (5)
+    .complete 303,4 --Dark Iron Demolitionist slain (5)
+    .mob Dark Iron Dwarf
+    .mob Dark Iron Tunneler
+    .mob Dark Iron Saboteur
+    .mob Dark Iron Demolitionist
+step
+    .goto 1437/0,-2443.64,-2650.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Motley Garmason|r
+    .turnin 303 >>Turn in The Dark Iron War
+    .target Motley Garmason
+step
+    .goto 1437/0,-2453.16,-2650.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
+    .accept 631 >>Accept The Thandol Span
+    .target Rhag Garmason
+    .xp <28,1
+step
     #completewith next
     .hs >>Hearth to Innkeeper Helbrek's inn. |cRXP_WARN_Walk instead if you are already nearby|r
     .cooldown item,6948,>0,1
@@ -876,7 +918,7 @@ step
     .isQuestTurnedIn 1250 --any of: The Missing Diplomat
     .xp <28,1
 step
-    #completewith Along12
+    #completewith Along15
     >>As you go: Kill |cRXP_ENEMY_Bluegill Raiders|r. Loot them for |cRXP_LOOT_Lightforge Ingot|r. |cRXP_WARN_Anything left is finished later|r
     .complete 526,1 --Lightforge Ingot (5)
     .mob Bluegill Raider
@@ -887,7 +929,7 @@ step
     .isQuestTurnedIn 321 --any of: Lightforge Iron
     .xp <20,1
 step
-    #label Along12
+    #label Along15
     #loop
     .goto 1437/0,-885.01,-3899.51,0
     .goto 1437/0,-885.01,-3899.51,40,0
@@ -910,12 +952,12 @@ step
     .target Sylessa Duskwhisper
     .isQuestComplete 98208
 step
-    #completewith Along14
+    #completewith Along17
     >>As you go: Kill |cRXP_ENEMY_Cursed Marines|r. |cRXP_WARN_Anything left is finished later|r
     .complete 289,2 --Cursed Marine slain (5)
     .mob Cursed Marine
 step
-    #label Along14
+    #label Along17
     .goto 1437/0,-959.86,-2979.75
     >>Kill |cRXP_ENEMY_First Mate Snellig|r and loot |cRXP_LOOT_Snellig's Snuffbox|r
     >>Kill |cRXP_ENEMY_Cursed Sailors|r
@@ -955,20 +997,33 @@ step
     .turnin 290 >>Turn in Lifting the Curse
     .accept 292 >>Accept The Eye of Paleth
 step
+    #loop
+    .goto 1437/0,-1387.87,-2612.90,0
+    .goto 1437/0,-1387.87,-2612.90,40,0
+    .goto 1437/0,-1415.99,-2649.28,40,0
+    .goto 1437/0,-1480.51,-2657.00,40,0
+    .goto 1437/0,-1506.97,-2613.45,40,0
+    .goto 1437/0,-1554.53,-2592.22,40,0
+    .goto 1437/0,-1470.17,-2597.19,40,0
+    .goto 1437/0,-1451.14,-2615.10,40,0
+    >>Kill |cRXP_ENEMY_Bluegill Raiders|r. Loot them for |cRXP_LOOT_Lightforge Ingot|r
+    .complete 526,1 --Lightforge Ingot (5)
+    .mob Bluegill Raider
+step
     .goto 1437/0,-2279.47,-2608.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captive Fire Elemental|r
     .accept 87491 >>Accept Spark of Freedom
     .target Captive Fire Elemental
 step
-    .goto 1437/0,-2451.09,-2646.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Roggo Harlbarrow|r
-    .turnin 87491 >>Turn in Spark of Freedom
-    .target Roggo Harlbarrow
-step
     .goto 1437/0,-2453.16,-2650.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
     .accept 631 >>Accept The Thandol Span
     .target Rhag Garmason
+step
+    .goto 1437/0,-2451.09,-2646.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Roggo Harlbarrow|r
+    .turnin 87491 >>Turn in Spark of Freedom
+    .target Roggo Harlbarrow
 step
     .xp 28 >>Grind to level 28 (Hearts of the Lost needs it)
 step
@@ -985,8 +1040,8 @@ step
     .goto 1437/0,-2520.98,-2395.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Essene Villard|r
     .turnin 87318 >>Turn in Hearts of the Lost
-    .accept 88757 >>Accept Accessories of the Lost
     .accept 88758 >>Accept Sentiments of the Lost
+    .accept 88757 >>Accept Accessories of the Lost
     .target Essene Villard
 step
     .goto 1437/0,-2520.98,-2395.98
@@ -1011,6 +1066,25 @@ step
     .accept 88756 >>Accept Bring Back a Bang
     .target Ashlan Stonesmirk
 step
+    .goto 1437/0,-2453.16,-2650.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
+    .turnin 633 >>Turn in The Thandol Span
+    .target Rhag Garmason
+    .isQuestComplete 633
+step
+    .goto 1437/0,-2459.36,-2648.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashlan Stonesmirk|r
+    .turnin 88756 >>Turn in Bring Back a Bang
+    .target Ashlan Stonesmirk
+    .isQuestComplete 88756
+step
+    .goto 1437/0,-2453.16,-2650.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
+    .accept 634 >>Accept Plea To The Alliance
+    .target Rhag Garmason
+    .isQuestTurnedIn 633 --any of: The Thandol Span
+    .xp <28,1
+step
     .goto 1437/0,-827.11,-3817.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Glorin Steelbrow|r
     .turnin 324 >>Turn in The Lost Ingots
@@ -1027,86 +1101,9 @@ step
     .goto 1437/0,-827.11,-3817.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Glorin Steelbrow|r
     .turnin 292 >>Turn in The Eye of Paleth
+    .turnin 526 >>Turn in Lightforge Ingots
     .accept 293 >>Accept Cleansing the Eye
     .target Glorin Steelbrow
-step
-    #loop
-    .goto 1437/0,-1415.99,-2649.28,0
-    .goto 1437/0,-1415.99,-2649.28,40,0
-    .goto 1437/0,-1387.87,-2612.90,40,0
-    .goto 1437/0,-1451.14,-2615.10,40,0
-    .goto 1437/0,-1470.17,-2597.19,40,0
-    .goto 1437/0,-1554.53,-2592.22,40,0
-    .goto 1437/0,-1506.97,-2613.45,40,0
-    .goto 1437/0,-1480.51,-2657.00,40,0
-    >>Kill |cRXP_ENEMY_Bluegill Raiders|r. Loot them for |cRXP_LOOT_Lightforge Ingot|r
-    .complete 526,1 --Lightforge Ingot (5)
-    .mob Bluegill Raider
-step
-    .goto 1437/0,-2443.64,-2650.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Motley Garmason|r
-    .accept 303 >>Accept The Dark Iron War
-    .target Motley Garmason
-step
-    #loop
-    .goto 1437/0,-2867.94,-2782.41,0
-    .goto 1437/0,-2867.94,-2782.41,40,0
-    .goto 1437/0,-2862.98,-2845.80,40,0
-    .goto 1437/0,-2935.35,-2898.99,40,0
-    .goto 1437/0,-2974.63,-2946.95,40,0
-    .goto 1437/0,-3006.06,-2941.17,40,0
-    .goto 1437/0,-2992.00,-2903.96,40,0
-    .goto 1437/0,-2973.39,-2859.86,40,0
-    .goto 1437/0,-2934.11,-2869.23,40,0
-    .goto 1437/0,-2889.44,-2833.12,40,0
-    >>Kill |cRXP_ENEMY_Dark Iron Dwarfs|r
-    >>Kill |cRXP_ENEMY_Dark Iron Tunnelers|r
-    >>Kill |cRXP_ENEMY_Dark Iron Saboteurs|r
-    >>Kill |cRXP_ENEMY_Dark Iron Demolitionists|r
-    .complete 303,1 --Dark Iron Dwarf slain (8)
-    .complete 303,2 --Dark Iron Tunneler slain (5)
-    .complete 303,3 --Dark Iron Saboteur slain (5)
-    .complete 303,4 --Dark Iron Demolitionist slain (5)
-    .mob Dark Iron Dwarf
-    .mob Dark Iron Tunneler
-    .mob Dark Iron Saboteur
-    .mob Dark Iron Demolitionist
-step
-    .goto 1437/0,-2443.64,-2650.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Motley Garmason|r
-    .turnin 303 >>Turn in The Dark Iron War
-    .target Motley Garmason
-step << Hunter
-    .goto 1437/0,-784.10,-4069.02
-    .xp 29+29000 >> Grind to |cRXP_ENEMY_Murlocs|r 29000/44300 xp
-step << Hunter
-    .goto 1437/0,-784.10,-4069.02
-    .xp 29+31100 >> Grind |cRXP_ENEMY_Murlocs|r to 31100/44300 xp
-step << Hunter
-    .goto 1437/0,-784.10,-4069.02
-    .xp 29+31550 >> Grind |cRXP_ENEMY_Murlocs|r to 31550/44300 xp
-step << Hunter
-    .goto 1437/0,-784.10,-4069.02
-    .xp 29+33650 >> Grind |cRXP_ENEMY_Murlocs|r to 33650/44300 xp
-step
-    .goto 1437/0,-2453.16,-2650.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
-    .turnin 633 >>Turn in The Thandol Span
-    .target Rhag Garmason
-    .isQuestComplete 633
-step
-    .goto 1437/0,-2453.16,-2650.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
-    .accept 634 >>Accept Plea To The Alliance
-    .target Rhag Garmason
-    .isQuestTurnedIn 633 --any of: The Thandol Span
-    .xp <28,1
-step
-    .goto 1437/0,-2459.36,-2648.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashlan Stonesmirk|r
-    .turnin 88756 >>Turn in Bring Back a Bang
-    .target Ashlan Stonesmirk
-    .isQuestComplete 88756
 step
     .goto 1437/0,-2430.82,-3306.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Howin Kindfeather|r
@@ -1181,15 +1178,6 @@ step
     .turnin 98291 >>Turn in Death to the Dragonmaw
     .target Howin Kindfeather
 step
-    #completewith next
-    .hs >>Hearth to Innkeeper Helbrek's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .goto 1437/0,-827.11,-3817.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Glorin Steelbrow|r
-    .turnin 526 >>Turn in Lightforge Ingots
-    .target Glorin Steelbrow
-step
     +|cRXP_WARN_That is all of Wetlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Plea To The Alliance
     >>|cRXP_FRIENDLY_Dustwallow Marsh|r: The Missing Diplomat
@@ -1225,23 +1213,9 @@ step
     .turnin 98216 >>Turn in Understanding Our Present
     .target Prospector Whelgar
 step
-    #completewith Along4
-    >>As you go: Kill |cRXP_ENEMY_Modr|r and loot |cRXP_LOOT_Heart of Modr|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 98310,2 --Heart of Modr (1)
-    .mob Modr
-step
-    .goto 1437/0,-2453.16,-2650.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
-    .turnin 633 >>Turn in The Thandol Span
-    .target Rhag Garmason
-    .isQuestComplete 633
-step
-    #label Along4
-    .goto 1437/0,-2459.36,-2648.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashlan Stonesmirk|r
-    .turnin 88756 >>Turn in Bring Back a Bang
-    .target Ashlan Stonesmirk
-    .isQuestComplete 88756
+    .goto 1437/0,-2352.25,-3443.63
+    >>Click the |cRXP_PICK_Dragonmaw Catapult|r
+    .accept 474 >>Accept Defeat Nek'rosh
 step
     .goto 1437/0,-2430.82,-3306.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Howin Kindfeather|r
@@ -1249,12 +1223,22 @@ step
     .target Howin Kindfeather
     .isQuestComplete 98246
 step
-    .goto 1437/0,-2352.25,-3443.63
-    >>Click the |cRXP_PICK_Dragonmaw Catapult|r
-    .accept 474 >>Accept Defeat Nek'rosh
+    #completewith Along5
+    >>As you go: Kill |cRXP_ENEMY_Modr|r and loot |cRXP_LOOT_Heart of Modr|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 98310,2 --Heart of Modr (1)
+    .mob Modr
+step
+    #label Along5
+    .goto 1437/0,-2459.36,-2648.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashlan Stonesmirk|r
+    .turnin 88756 >>Turn in Bring Back a Bang
+    .target Ashlan Stonesmirk
+    .isQuestComplete 88756
 step
     #loop
-    .goto 1437/0,-2478.38,-2724.25,0
+    .goto 1437/0,-2466.80,-2627.23,0
+    .goto 1437/0,-2466.80,-2627.23,40,0
+    .goto 1437/0,-2396.09,-2652.03,40,0
     .goto 1437/0,-2478.38,-2724.25,40,0
     .goto 1437/0,-2494.92,-2685.66,40,0
     .goto 1437/0,-2508.98,-2650.11,40,0
@@ -1262,17 +1246,9 @@ step
     .goto 1437/0,-2492.44,-2582.58,40,0
     .goto 1437/0,-2498.65,-2551.71,40,0
     .goto 1437/0,-2461.01,-2518.36,40,0
-    .goto 1437/0,-2466.80,-2627.23,40,0
-    .goto 1437/0,-2396.09,-2652.03,40,0
     >>Kill |cRXP_ENEMY_Modr|r and loot |cRXP_LOOT_Heart of Modr|r
     .complete 98310,2 --Heart of Modr (1)
     .mob Modr
-step
-    .goto 1437/0,-2520.98,-2395.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Essene Villard|r
-    .turnin 88757 >>Turn in Accessories of the Lost
-    .target Essene Villard
-    .isQuestComplete 88757
 step
     #loop
     .goto 1437/0,-2822.86,-2787.92,0
@@ -1328,15 +1304,15 @@ step
 step
     .goto 1437/0,-797.34,-3732.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
-    .turnin 98293 >>Turn in Forced Disarmament
-    .target Captain Stoutfist
-    .isQuestComplete 98293
-step
-    .goto 1437/0,-797.34,-3732.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
     .turnin 98221 >>Turn in From the Ashes
     .target Captain Stoutfist
     .isOnQuest 98221
+step
+    .goto 1437/0,-797.34,-3732.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
+    .turnin 98293 >>Turn in Forced Disarmament
+    .target Captain Stoutfist
+    .isQuestComplete 98293
 step
     .goto 1437/0,-797.34,-3732.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
@@ -1348,6 +1324,18 @@ step
     .turnin 98208 >>Turn in Bloom of the Heavens
     .target Sylessa Duskwhisper
     .isQuestComplete 98208
+step
+    .goto 1437/0,-2453.16,-2650.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
+    .turnin 633 >>Turn in The Thandol Span
+    .target Rhag Garmason
+    .isQuestComplete 633
+step
+    .goto 1437/0,-2520.98,-2395.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Essene Villard|r
+    .turnin 88757 >>Turn in Accessories of the Lost
+    .target Essene Villard
+    .isQuestComplete 88757
 step
     +|cRXP_WARN_That is all of Wetlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Dustwallow Marsh|r: Fiora Longears
@@ -1364,12 +1352,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Howin Kindfeather|r
     .accept 98297 >>Accept Stopping the Cycle
     .target Howin Kindfeather
-step
-    .goto 1437/0,-2453.16,-2650.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
-    .turnin 633 >>Turn in The Thandol Span
-    .target Rhag Garmason
-    .isQuestComplete 633
 step
     .goto 1437/0,-2449.02,-2651.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Longbraid the Grim|r
@@ -1420,6 +1402,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Longbraid the Grim|r
     .turnin 304 >>Turn in A Grim Task
     .target Longbraid the Grim
+step
+    .goto 1437/0,-2453.16,-2650.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
+    .turnin 633 >>Turn in The Thandol Span
+    .target Rhag Garmason
+    .isQuestComplete 633
 step
     .goto 1437/0,-797.34,-3732.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r

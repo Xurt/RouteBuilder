@@ -14,10 +14,6 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 48-56 Felwood
 
-step << !Mage
-    .zoneskip Searing Gorge
-    .hs >> Hearthstone to Stormwind
-    .cooldown item,6948,>0,1
 step
     .goto 1448/1,-1286.81,3874.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grazle|r
@@ -68,6 +64,12 @@ step
     .turnin 8460 >>Turn in Timbermaw Ally
     .accept 8462 >>Accept Speak to Nafien
     .target Grazle
+step << Priest
+    .goto 1448/1,-1302.91,3985.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greta Mosshoof|r
+    .turnin 8257 >>Turn in Blood of Morphaz
+    .target Greta Mosshoof
+    .isQuestComplete 8257
 step << Warlock
     #loop
     .goto 1448/1,-550.23,4470.70,0
@@ -128,6 +130,12 @@ step
     .turnin 5084 >>Turn in Falling to Corruption
     .isOnQuest 5084
 step
+    .goto 1448/1,-1298.88,3999.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelek Skykeeper|r
+    .turnin 5128 >>Turn in Words of the High Chief
+    .target Kelek Skykeeper
+    .isOnQuest 5128
+step
     .goto 1448/1,-1302.91,3985.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greta Mosshoof|r
     .turnin 5159 >>Turn in Cleansed Water Returns to Felwood
@@ -139,18 +147,6 @@ step
     .turnin 3942 >>Turn in Linken's Memory
     .target Eridan Bluewind
     .isOnQuest 3942
-step << Priest
-    .goto 1448/1,-1302.91,3985.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greta Mosshoof|r
-    .turnin 8257 >>Turn in Blood of Morphaz
-    .target Greta Mosshoof
-    .isQuestComplete 8257
-step
-    .goto 1448/1,-1298.88,3999.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelek Skykeeper|r
-    .turnin 5128 >>Turn in Words of the High Chief
-    .target Kelek Skykeeper
-    .isOnQuest 5128
 step
     .xp 51 >>|cRXP_WARN_The rest of Felwood is planned from level 51.|r Come back to this guide then
 step
@@ -616,6 +612,12 @@ step << Warlock
 step << Warlock
     .goto 1448/1,-736.53,5407.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Impsy|r
+    .turnin 8422 >>Turn in Trolls of a Feather
+    .target Impsy
+    .isQuestComplete 8422
+step << Warlock
+    .goto 1448/1,-736.53,5407.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Impsy|r
     .accept 7603 >>Accept Kroshius' Infernal Core
     .target Impsy
     .isQuestTurnedIn 7602 --any of: Flawless Fel Essence
@@ -664,6 +666,12 @@ step
     .mob Jadefire Betrayer
     .mob Jadefire Trickster
 step << Warlock
+    .goto 1448/1,-737.68,5414.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Niby the Almighty|r
+    .turnin 7603 >>Turn in Kroshius' Infernal Core
+    .target Niby the Almighty
+    .isOnQuest 7603
+step << Warlock
     .goto 1448/1,-577.83,5182.93
     >>Kill |cRXP_ENEMY_Jaedenar Legionnaire|r and loot |cRXP_LOOT_Flawless Fel Essence (Jaedenar)|r
     .complete 7602,2 --Flawless Fel Essence (Jaedenar) (1)
@@ -679,7 +687,7 @@ step
     .accept 8461 >>Accept Deadwood of the North
     .target Nafien
 step
-    #completewith Along17
+    #completewith Along19
     >>As you go: Kill |cRXP_ENEMY_Deadwood Den Watchers|r. Kill |cRXP_ENEMY_Deadwood Avengers|r. Kill |cRXP_ENEMY_Deadwood Shamans|r. |cRXP_WARN_Anything left is finished later|r
     .complete 8461,1 --Deadwood Den Watcher slain (6)
     .complete 8461,2 --Deadwood Avenger slain (6)
@@ -688,7 +696,7 @@ step
     .mob Deadwood Avenger
     .mob Deadwood Shaman
 step
-    #label Along17
+    #label Along19
     .goto 1448/1,-1819.83,6909.47
     >>Click the |cRXP_PICK_Deadwood Cauldron|r
     .accept 5085 >>Accept Mystery Goo
@@ -792,18 +800,6 @@ step
     .turnin 5385 >>Turn in The Remains of Trey Lightforge
     .target Jessir Moonbow
     .isOnQuest 5385
-step << Warlock
-    .goto 1448/1,-736.53,5407.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Impsy|r
-    .turnin 8422 >>Turn in Trolls of a Feather
-    .target Impsy
-    .isQuestComplete 8422
-step << Warlock
-    .goto 1448/1,-737.68,5414.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Niby the Almighty|r
-    .turnin 7603 >>Turn in Kroshius' Infernal Core
-    .target Niby the Almighty
-    .isOnQuest 7603
 step
     +|cRXP_WARN_End of the Felwood route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Winterspring|r: Speak to Salfa, Winterfall Firewater, Mystery Goo, To Winterspring!

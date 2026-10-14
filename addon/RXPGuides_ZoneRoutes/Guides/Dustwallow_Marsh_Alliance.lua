@@ -21,10 +21,30 @@ step
     .target Fiora Longears
     .isOnQuest 1132
 step
-    .goto 1445/1,-4517.17,-3828.83
-    >>Talk to |cRXP_FRIENDLY_Baldruc|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baldruc|r
+    .goto 1445/1,-4517.49,-3828.83
     .fp Theramore >> Get the Theramore Flight Path
     .target Baldruc
+step << Hunter
+    .goto 1445/1,-4534.50,-3776.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
+    .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed|r
+    .target Jensen Farran
+step << Paladin sod
+    .trainer >>Train your spells
+    .train 19752 >>Train |T136106:0|t[|cRXP_FRIENDLY_Divine Intervention|r]. You will need it for a rune later << sod
+step
+    .goto 1445/1,-4464.15,-3613.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
+    .accept 1133 >>Accept Journey to Astranaar
+    .accept 1135 >>Accept Highperch Venom
+    .target Fiora Longears
+step
+    .goto 1445/1,-4464.15,-3613.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
+    .turnin 1135 >>Turn in Highperch Venom
+    .target Fiora Longears
+    .isQuestComplete 1135
 step
     .goto 1445/1,-4457.85,-3624.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Stern|r
@@ -53,88 +73,6 @@ step
     .goto 1445/1,-3971.70,-2767.63,30,0
     .xp 38 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, and |cRXP_ENEMY_Mirefin Murlocs|r to Level 38
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
-step
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .goto 1445/1,-3979.57,-2822.23,30,0
-    .goto 1445/1,-3984.82,-2566.38,30,0
-    .goto 1445/1,-4044.15,-2587.38,30,0
-    .goto 1445/1,-3818.40,-2561.83,30,0
-    .goto 1445/1,-3815.25,-2448.78,30,0
-    .goto 1445/1,-3809.47,-2725.63,30,0
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .xp 40 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
-step
-    .goto 1445/1,-4366.50,-3785.78
-    >>Talk to |cRXP_FRIENDLY_Marie|r
-    .vendor 4888 >> Vendor Trash. Repair
-    .target Marie Holdston
-    .zoneskip Dustwallow Marsh,1
-step
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .goto 1445/1,-3979.57,-2822.23,30,0
-    .goto 1445/1,-3984.82,-2566.38,30,0
-    .goto 1445/1,-4044.15,-2587.38,30,0
-    .goto 1445/1,-3818.40,-2561.83,30,0
-    .goto 1445/1,-3815.25,-2448.78,30,0
-    .goto 1445/1,-3809.47,-2725.63,30,0
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .xp 41 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to Level 41
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
-step
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .goto 1445/1,-3979.57,-2822.23,30,0
-    .goto 1445/1,-3984.82,-2566.38,30,0
-    .goto 1445/1,-4044.15,-2587.38,30,0
-    .goto 1445/1,-3818.40,-2561.83,30,0
-    .goto 1445/1,-3815.25,-2448.78,30,0
-    .goto 1445/1,-3809.47,-2725.63,30,0
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .xp 41+33530 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 33530+/95800xp
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
-step
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .goto 1445/1,-3979.57,-2822.23,30,0
-    .goto 1445/1,-3984.82,-2566.38,30,0
-    .goto 1445/1,-4044.15,-2587.38,30,0
-    .goto 1445/1,-3818.40,-2561.83,30,0
-    .goto 1445/1,-3815.25,-2448.78,30,0
-    .goto 1445/1,-3809.47,-2725.63,30,0
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .xp 41+43110 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 43110+/95800xp
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
-step << Hunter
-    .goto 1445/1,-4534.50,-3776.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
-    .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed|r
-    .target Jensen Farran
-step << Paladin sod
-    .trainer >>Train your spells
-    .train 19752 >>Train |T136106:0|t[|cRXP_FRIENDLY_Divine Intervention|r]. You will need it for a rune later << sod
-step
-    .goto 1445/1,-4464.15,-3613.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
-    .accept 1133 >>Accept Journey to Astranaar
-    .accept 1135 >>Accept Highperch Venom
-    .target Fiora Longears
-step
-    .goto 1445/1,-4464.15,-3613.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
-    .turnin 1135 >>Turn in Highperch Venom
-    .target Fiora Longears
-    .isQuestComplete 1135
-step << Hunter
-    .goto 1445/1,-4534.50,-3776.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
-    .vendor >> |cRXP_BUY_Delete all|r |T132382:0|t[Razor Arrows] |cRXP_BUY_you have and fill your quiver with|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_instead|r
-    .target Jensen Farran
-    .xp <40,1
-step << Hunter
-    .goto 1445/1,-4534.50,-3776.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
-    .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed. Buy a couple stacks of|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_if you're close to level 40|r
-    .target Jensen Farran
-    .xp >40,1
 step << Mage
     .goto 1445/1,-3393.15,-4031.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
@@ -153,6 +91,18 @@ step << Mage
     .turnin 1947 >>Turn in Journey to the Marsh
     .target Tabetha
     .isOnQuest 1947
+step << Hunter
+    .goto 1445/1,-4534.50,-3776.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
+    .vendor >> |cRXP_BUY_Delete all|r |T132382:0|t[Razor Arrows] |cRXP_BUY_you have and fill your quiver with|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_instead|r
+    .target Jensen Farran
+    .xp <40,1
+step << Hunter
+    .goto 1445/1,-4534.50,-3776.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
+    .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed. Buy a couple stacks of|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_if you're close to level 40|r
+    .target Jensen Farran
+    .xp >40,1
 step << Warrior
     .goto 1445/1,-4538.44,-3727.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Evencane|r up stairs in the Keep
@@ -175,6 +125,12 @@ step
     >>|cRXP_FRIENDLY_Thousand Needles and back here|r: Highperch Venom
 step
     .xp 31 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 31.|r Come back to this guide then
+step
+    .goto 1445/1,-4464.15,-3613.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
+    .turnin 1135 >>Turn in Highperch Venom
+    .target Fiora Longears
+    .isQuestComplete 1135
 step
     .goto 1445/1,-4447.87,-3645.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Byron|r
@@ -282,6 +238,34 @@ step
     .accept 1320 >>Accept The Black Shield
     .target Caz Twosprocket
 step
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .goto 1445/1,-3979.57,-2822.23,30,0
+    .goto 1445/1,-3984.82,-2566.38,30,0
+    .goto 1445/1,-4044.15,-2587.38,30,0
+    .goto 1445/1,-3818.40,-2561.83,30,0
+    .goto 1445/1,-3815.25,-2448.78,30,0
+    .goto 1445/1,-3809.47,-2725.63,30,0
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .xp 40 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
+step
+    .goto 1445/1,-4366.50,-3785.78
+    >>Talk to |cRXP_FRIENDLY_Marie|r
+    .vendor 4888 >> Vendor Trash. Repair
+    .target Marie Holdston
+    .zoneskip Dustwallow Marsh,1
+step
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .goto 1445/1,-3979.57,-2822.23,30,0
+    .goto 1445/1,-3984.82,-2566.38,30,0
+    .goto 1445/1,-4044.15,-2587.38,30,0
+    .goto 1445/1,-3818.40,-2561.83,30,0
+    .goto 1445/1,-3815.25,-2448.78,30,0
+    .goto 1445/1,-3809.47,-2725.63,30,0
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .xp 41 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to Level 41
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
+step
     .goto 1445/1,-2869.72,-3934.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balos Jacken|r
     .turnin 1286 >>Turn in The Deserters
@@ -301,16 +285,38 @@ step
     .turnin 1320 >>Turn in The Black Shield
     .target Captain Garran Vimes
 step
-    .goto 1445/1,-4464.15,-3613.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
-    .turnin 1135 >>Turn in Highperch Venom
-    .target Fiora Longears
-    .isQuestComplete 1135
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .goto 1445/1,-3979.57,-2822.23,30,0
+    .goto 1445/1,-3984.82,-2566.38,30,0
+    .goto 1445/1,-4044.15,-2587.38,30,0
+    .goto 1445/1,-3818.40,-2561.83,30,0
+    .goto 1445/1,-3815.25,-2448.78,30,0
+    .goto 1445/1,-3809.47,-2725.63,30,0
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .xp 41+33530 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 33530+/95800xp
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
+step
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .goto 1445/1,-3979.57,-2822.23,30,0
+    .goto 1445/1,-3984.82,-2566.38,30,0
+    .goto 1445/1,-4044.15,-2587.38,30,0
+    .goto 1445/1,-3818.40,-2561.83,30,0
+    .goto 1445/1,-3815.25,-2448.78,30,0
+    .goto 1445/1,-3809.47,-2725.63,30,0
+    .goto 1445/1,-3971.70,-2767.63,30,0
+    .xp 41+43110 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 43110+/95800xp
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
 step
     +|cRXP_WARN_That is all of Dustwallow Marsh for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Thousand Needles|r: Hidden Secrets << Mage
 step
     .xp 34 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 34.|r Come back to this guide then
+step
+    .goto 1445/1,-4464.15,-3613.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
+    .turnin 1135 >>Turn in Highperch Venom
+    .target Fiora Longears
+    .isQuestComplete 1135
 step
     .goto 1445/1,-4517.17,-3828.83
     .fp Theramore >> Get the Theramore Flight Path
@@ -405,12 +411,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mudcrush Durtfeet|r
     .turnin 1177 >>Turn in Hungry!
     .target Mudcrush Durtfeet
-step
-    .goto 1445/1,-4464.15,-3613.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
-    .turnin 1135 >>Turn in Highperch Venom
-    .target Fiora Longears
-    .isQuestComplete 1135
 step
     .goto 1445/1,-4457.85,-3624.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Stern|r

@@ -15,35 +15,12 @@ RXPGuides.RegisterGuide([[
 #name 17-31 Duskwood
 
 step
-    .hs >> Hearth to Stormwind City
-    .zoneskip Stormwind City
-step
-    .goto 1431/0,-1200.85,-10594.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Carevin|r
-    .accept 163 >>Accept Raven Hill
-    .accept 164 >>Accept Deliveries to Sven
-    .accept 165 >>Accept The Hermit
-    .target Elaine Carevin
-step
-    .goto 1431/0,-1272.67,-10586.073
-    >>Talk to |cRXP_FRIENDLY_Herble|r
-    .vendor 3133 >>|cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him if its up|r
-    .target Herble Baubbletump
-step
-    .goto 1431/0,-1258.63,-10513.89
-    >>Talk to |cRXP_FRIENDLY_Felicia|r
-    .fp Duskwood >> Get the Duskwood flight path
-    .target Felicia Mane
-step
-    .goto 1431/0,-1375.81,-10072.35
-    >>Talk to |cRXP_FRIENDLY_Kzixx|r
-    .vendor 3134 >>|cRXP_BUY_Buy|r |T134851:0|t[Lesser Mana Potions] |cRXP_BUY_and|r  |T134831:0|t[Healing Potions] |cRXP_BUY_from him (if they're up)|r
-    .target Kzixx
-step
-    .goto 1431/0,-1375.81,-10072.35
-    >>Talk to |cRXP_FRIENDLY_Kzixx|r
-    .vendor 3134 >>|cRXP_BUY_Buy|r |T134851:0|t[Lesser Mana Potions]|cRXP_BUY_,|r |T134831:0|t[Healing Potions]|cRXP_BUY_, and a|r |T132515:0|t[Cloth Belt] |cRXP_BUY_from him (if they're up, and if needed)|r
-    .target Kzixx
+    .goto 1431/0,-1250.26,-10020.33
+    >>Kill |cRXP_ENEMY_Elmpaw|r and loot |cRXP_LOOT_Elmpaw's Head|r. Use it to start the quest
+    .collect 247862,1,91746 --Elmpaw's Head (1)
+    .accept 91746 >>Accept Elmpaw's Head
+    .use 247862
+    .mob Elmpaw
 step
     .goto 1431/0,-1138.48,-10516.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avette Fellwood|r
@@ -51,12 +28,68 @@ step
     .target Avette Fellwood
     .isOnQuest 95161
 step
-    .goto 1431/0,-1250.26,-10020.33
-    >>Kill |cRXP_ENEMY_Elmpaw|r and loot |cRXP_LOOT_Elmpaw's Head|r. Use it to start the quest
-    .collect 247862,1,91746 --Elmpaw's Head (1)
-    .accept 91746 >>Accept Elmpaw's Head
-    .use 247862
-    .mob Elmpaw
+    .goto 1431/0,-1108.78,-10552.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
+    .turnin 145 >>Turn in Messenger to Darkshire
+    .target Lord Ello Ebonlocke
+    .isOnQuest 145
+step
+    .xp 22 >> Grind to 22
+step
+    .goto 1431/0,-1125.25,-10560.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Daltry|r
+    .turnin 1041 >>Turn in The Caravan Road
+    .target Clerk Daltry
+    .isOnQuest 1041
+step
+    .goto 1431/0,-1200.85,-10594.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Carevin|r
+    .accept 163 >>Accept Raven Hill
+    .accept 165 >>Accept The Hermit
+    .accept 164 >>Accept Deliveries to Sven
+    .target Elaine Carevin
+step
+    .goto 1431/0,-1258.79,-10513.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felicia Maline|r
+    .fp Duskwood>> Get the Duskwood Flight Path
+    .target Felicia Maline
+step
+    .goto 1431/0,-1272.45,-10586.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herble Baubbletump|r
+    .vendor >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube]
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Herble Baubbletump|r doesn't have one|r
+    .target Herble Baubbletump
+step
+    .goto 1431/0,-384.91,-10923.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Dodds|r
+    .accept 245 >>Accept Eight-Legged Menaces
+    .target Watcher Dodds
+step
+    .goto 1431/0,-1375.81,-10072.53
+    .vendor >> Talk to Kzixx. Buy one of the green BoE belts (lower level = better). Buy potions too if any of these are available
+step
+    >>Follow the road down into Darkshire.
+    .goto 1431/0,-1258.63,-10513.89
+    .fp Darkshire >> Get the Darkshire flight path
+step
+    >>Go behind Eva
+    .goto 1431/0,-1226.50,-10531.71
+    .vendor >> Buy 2 Runes of Teleportation from Alyssa
+    .collect 17031,2
+step
+    #loop
+    .goto 1431/0,510.14,-10782.09,0
+    .goto 1431/0,510.14,-10782.09,40,0
+    .goto 1431/0,509.33,-10638.99,40,0
+    .goto 1431/0,542.00,-10670.67,40,0
+    .goto 1431/0,576.02,-10684.53,40,0
+    .goto 1431/0,543.08,-10713.69,40,0
+    .goto 1431/0,578.99,-10746.09,40,0
+    .goto 1431/0,584.12,-10811.43,40,0
+    .goto 1431/0,552.53,-10779.75,40,0
+    >>Kill |cRXP_ENEMY_Pygmy Venom Web Spiders|r
+    .complete 245,1 --Pygmy Venom Web Spider slain (15)
+    .mob Pygmy Venom Web Spider
 step
     .goto 1431/0,623.27,-10329.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
@@ -68,10 +101,13 @@ step
     .turnin 165 >>Turn in The Hermit
     .target Abercrombie
 step
-    .goto 1431/0,-1138.48,-10516.05
-    >>Talk to |cRXP_FRIENDLY_Avette|r
-    .vendor 228 >> Vendor Trash. Repair
-    .target Avette Fellwood
+    .goto 1431/0,-384.91,-10923.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Dodds|r
+    .turnin 245 >>Turn in Eight-Legged Menaces
+    .target Watcher Dodds
+step
+    .goto 1431/0,256.88,-10559.07
+    .xp 25+29845 >> Grind to 29845+/34000xp
 step
     .goto 1431/0,337.07,-10731.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jitters|r
@@ -85,11 +121,40 @@ step
     .accept 93 >>Accept Dusky Crab Cakes
     .target Chef Grual
 step
+    #loop
+    .goto 1431/0,479.36,-10570.95,0
+    .goto 1431/0,479.36,-10570.95,40,0
+    .goto 1431/0,550.64,-10520.37,40,0
+    .goto 1431/0,576.02,-10610.37,40,0
+    .goto 1431/0,578.99,-10746.09,40,0
+    .goto 1431/0,584.12,-10811.43,40,0
+    .goto 1431/0,519.32,-10844.55,40,0
+    .goto 1431/0,476.39,-10768.05,40,0
+    .goto 1431/0,542.00,-10670.67,40,0
+    .goto 1431/0,481.79,-10634.31,40,0
+    >>Kill |cRXP_ENEMY_Venom Web Spiders|r, |cRXP_ENEMY_Pygmy Venom Web Spiders|r, |cRXP_ENEMY_Green Recluses|r and |cRXP_ENEMY_Naraxis|r. Loot them for |cRXP_LOOT_Gooey Spider Leg|r
+    .complete 93,1 --Gooey Spider Leg (6)
+    .mob Venom Web Spider
+    .mob Pygmy Venom Web Spider
+    .mob Green Recluse
+    .mob Naraxis
+step
+    .goto 1431/0,-1157.92,-10499.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Grual|r
+    .turnin 93 >>Turn in Dusky Crab Cakes
+    .accept 240 >>Accept Return to Jitters
+    .target Chef Grual
+step
     .goto 1431/0,-1125.25,-10560.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Daltry|r
     .turnin 68 >>Turn in The Legend of Stalvan
     .target Clerk Daltry
     .isOnQuest 68
+step
+    .goto 1431/0,337.07,-10731.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jitters|r
+    .turnin 240 >>Turn in Return to Jitters
+    .target Jitters
 step
     .goto 1431/0,395.39,-10312.47,40,0
     .goto 1431/0,345.17,-10307.07,40,0
@@ -109,12 +174,12 @@ step
     .xp 27+36025 >> Grind to 36025+/38900xp
 step
     #loop
-    .goto 1431/0,-1186.54,-10513.89,0
-    .goto 1431/0,-1186.54,-10513.89,40,0
-    .goto 1431/0,-1160.35,-10428.75,40,0
-    .goto 1431/0,-1115.53,-10386.63,40,0
-    .goto 1431/0,-1109.59,-10359.45,40,0
+    .goto 1431/0,-1122.55,-10330.83,0
     .goto 1431/0,-1122.55,-10330.83,40,0
+    .goto 1431/0,-1109.59,-10359.45,40,0
+    .goto 1431/0,-1115.53,-10386.63,40,0
+    .goto 1431/0,-1160.35,-10428.75,40,0
+    .goto 1431/0,-1186.54,-10513.89,40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Backus|r. |cRXP_WARN_This NPC walks a patrol route|r
     .turnin 1243 >>Turn in The Missing Diplomat
     .unitscan Watcher Backus
@@ -215,103 +280,39 @@ step
     .target Sven Yorgen
     .isOnQuest 325
 step
-    .goto 1431/0,-1258.79,-10513.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felicia Maline|r
-    .fp Duskwood>> Get the Duskwood Flight Path
-    .target Felicia Maline
+    .goto 1431/0,-397.87,-10638.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Falinar|r
+    .vendor >> |cRXP_BUY_Buy up to 5|r |T134718:0|t[Greater Healing Potions] |cRXP_BUY_from him if you want.|r |cRXP_WARN_These can only be used within the incursion zones|r
+    .target Quartermaster Falinar
+step << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avette Fellwood|r
+    .goto 1431/0,-1145.23,-10522.35
+    .vendor 228 >>|cRXP_BUY_Stock up on|r |T132382:0|t[Razor Arrows] |cRXP_WARN_Don't forget this, there is a grinding session ahead!|r
+    .target Avette Fellwood
 step
-    .goto 1431/0,-1272.45,-10586.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herble Baubbletump|r
-    .vendor >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube]
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Herble Baubbletump|r doesn't have one|r
-    .target Herble Baubbletump
-step
-    .goto 1431/0,-384.91,-10923.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Dodds|r
-    .accept 245 >>Accept Eight-Legged Menaces
-    .target Watcher Dodds
-step
-    .goto 1431/0,-1125.25,-10560.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Daltry|r
-    .turnin 1041 >>Turn in The Caravan Road
-    .target Clerk Daltry
-    .isOnQuest 1041
-step
-    .goto 1431/0,-1375.81,-10072.53
-    .vendor >> Talk to Kzixx. Buy one of the green BoE belts (lower level = better). Buy potions too if any of these are available
-step
-    >>Follow the road down into Darkshire.
-    .goto 1431/0,-1258.63,-10513.89
-    .fp Darkshire >> Get the Darkshire flight path
-step
-    >>Go behind Eva
-    .goto 1431/0,-1226.50,-10531.71
-    .vendor >> Buy 2 Runes of Teleportation from Alyssa
-    .collect 17031,2
-step
-    #loop
-    .goto 1431/0,509.33,-10638.99,0
-    .goto 1431/0,509.33,-10638.99,40,0
-    .goto 1431/0,542.00,-10670.67,40,0
-    .goto 1431/0,576.02,-10684.53,40,0
-    .goto 1431/0,578.99,-10746.09,40,0
-    .goto 1431/0,584.12,-10811.43,40,0
-    .goto 1431/0,552.53,-10779.75,40,0
-    .goto 1431/0,510.14,-10782.09,40,0
-    .goto 1431/0,543.08,-10713.69,40,0
-    >>Kill |cRXP_ENEMY_Pygmy Venom Web Spiders|r
-    .complete 245,1 --Pygmy Venom Web Spider slain (15)
-    .mob Pygmy Venom Web Spider
-step
-    .goto 1431/0,-384.91,-10923.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Dodds|r
-    .turnin 245 >>Turn in Eight-Legged Menaces
-    .target Watcher Dodds
-step
-    .goto 1431/0,256.88,-10559.07
-    .xp 25+29845 >> Grind to 29845+/34000xp
-step
-    #loop
-    .goto 1431/0,476.39,-10768.05,0
-    .goto 1431/0,476.39,-10768.05,40,0
-    .goto 1431/0,519.32,-10844.55,40,0
-    .goto 1431/0,584.12,-10811.43,40,0
-    .goto 1431/0,578.99,-10746.09,40,0
-    .goto 1431/0,542.00,-10670.67,40,0
-    .goto 1431/0,576.02,-10610.37,40,0
-    .goto 1431/0,550.64,-10520.37,40,0
-    .goto 1431/0,479.36,-10570.95,40,0
-    .goto 1431/0,481.79,-10634.31,40,0
-    >>Kill |cRXP_ENEMY_Venom Web Spiders|r, |cRXP_ENEMY_Pygmy Venom Web Spiders|r, |cRXP_ENEMY_Green Recluses|r and |cRXP_ENEMY_Naraxis|r. Loot them for |cRXP_LOOT_Gooey Spider Leg|r
-    .complete 93,1 --Gooey Spider Leg (6)
-    .mob Venom Web Spider
-    .mob Pygmy Venom Web Spider
-    .mob Green Recluse
-    .mob Naraxis
-step
-    .goto 1431/0,-1157.92,-10499.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Grual|r
-    .turnin 93 >>Turn in Dusky Crab Cakes
-    .accept 240 >>Accept Return to Jitters
-    .target Chef Grual
-step
-    .goto 1431/0,337.07,-10731.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jitters|r
-    .turnin 240 >>Turn in Return to Jitters
-    .target Jitters
-step
-    .goto 1431/0,-1108.78,-10552.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
-    .turnin 145 >>Turn in Messenger to Darkshire
-    .target Lord Ello Ebonlocke
-    .isOnQuest 145
-step
-    .xp 22 >> Grind to 22
+    .goto 1431/0,-849.58,-11188.53,0
+    .goto 1431/0,-821.77,-11055.15,0
+    .goto 1431/0,-924.37,-11047.05,0
+    .goto 1431/0,-898.45,-10949.49,0
+    .xp 31+38100 >> Grind until 38100/50800 xp into level 31 << !Druid
+    .xp 31+43180 >> Grind until 43180/50800 xp into level 31 << Druid
+    >>Kill |cRXP_ENEMY_Nightbane Worgens|r until your Hearthstone cooldown is <25 minutes
+    >>|cRXP_WARN_If you know that you will be leveling in one session or generally not getting a lot of rested experience up to level 38, consider grinding to level 32 instead. This will help you reach a level 38 xp gate that is required later on|r
 step
     +|cRXP_WARN_That is all of Duskwood for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elwynn Forest|r: Elmpaw's Head
 step
     .xp 20 >>|cRXP_WARN_The rest of Duskwood is planned from level 20.|r Come back to this guide then
+step
+    .goto 1431/0,-1127.41,-10573.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r
+    .accept 96139 >>Accept The Valor Family
+    .target Sirra Von'Indi
+step
+    .goto 1431/0,-1161.16,-10516.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Trelayne|r
+    .target Innkeeper Trelayne
+    .home >>Set your Hearthstone to Innkeeper Trelayne's inn
 step
     .goto 1431/0,-1108.78,-10552.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
@@ -320,31 +321,30 @@ step
     .isQuestTurnedIn 145 --any of: Messenger to Darkshire
     .xp <18,1
 step
-    .goto 1431/0,623.27,-10329.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
-    .accept 95 >>Accept Sven's Revenge
-    .target Sven Yorgen
-step
     .goto 1431/0,625.16,-10314.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lars|r
     .accept 226 >>Accept Wolves at Our Heels
     .target Lars
 step
-    .goto 1431/0,74.36,-10282.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
-    .accept 148 >>Accept Supplies from Darkshire
-    .target Abercrombie
+    #completewith next
+    .hs >>Hearth to Innkeeper Trelayne's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
+    .goto 1431/0,-1152.25,-10559.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    .accept 56 >>Accept The Night Watch
+    .target Commander Althea Ebonlocke
 step
     #loop
-    .goto 1431/0,-61.45,-10244.97,0
-    .goto 1431/0,-61.45,-10244.97,40,0
-    .goto 1431/0,-113.83,-10184.85,40,0
-    .goto 1431/0,-185.11,-10062.45,40,0
-    .goto 1431/0,-247.48,-10060.83,40,0
-    .goto 1431/0,-313.09,-10052.55,40,0
-    .goto 1431/0,-423.52,-10018.53,40,0
-    .goto 1431/0,-352.78,-10082.97,40,0
+    .goto 1431/0,-249.37,-10113.75,0
     .goto 1431/0,-249.37,-10113.75,40,0
+    .goto 1431/0,-185.11,-10062.45,40,0
+    .goto 1431/0,-133.81,-10093.59,40,0
+    .goto 1431/0,-41.74,-10123.83,40,0
+    .goto 1431/0,10.10,-10176.93,40,0
+    .goto 1431/0,-61.45,-10244.97,40,0
+    .goto 1431/0,-72.79,-10198.17,40,0
+    .goto 1431/0,-128.68,-10158.03,40,0
     .goto 1431/0,-182.68,-10179.45,40,0
     >>Kill |cRXP_ENEMY_Starving Dire Wolfs|r
     >>Kill |cRXP_ENEMY_Rabid Dire Wolfs|r
@@ -353,26 +353,27 @@ step
     .mob Starving Dire Wolf
     .mob Rabid Dire Wolf
 step
-    .goto 1431/0,-1161.16,-10516.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Trelayne|r
-    .target Innkeeper Trelayne
-    .home >>Set your Hearthstone to Innkeeper Trelayne's inn
+    .goto 1431/0,623.27,-10329.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
+    .accept 95 >>Accept Sven's Revenge
+    .target Sven Yorgen
+step
+    .goto 1431/0,625.16,-10314.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lars|r
+    .turnin 226 >>Turn in Wolves at Our Heels while you are here
+    .isQuestComplete 226
+    .target Lars
+step
+    .goto 1431/0,74.36,-10282.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
+    .accept 148 >>Accept Supplies from Darkshire
+    .target Abercrombie
 step
     .goto 1431/0,-1213.00,-10532.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
     .turnin 148 >>Turn in Supplies from Darkshire
     .accept 149 >>Accept Ghost Hair Thread
     .target Madame Eva
-step
-    .goto 1431/0,-1152.25,-10559.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
-    .accept 56 >>Accept The Night Watch
-    .target Commander Althea Ebonlocke
-step
-    .goto 1431/0,-1127.41,-10573.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r
-    .accept 96139 >>Accept The Valor Family
-    .target Sirra Von'Indi
 step
     .goto 1431/0,-1380.40,-10780.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blind Mary|r
@@ -438,15 +439,6 @@ step
     .accept 262 >>Accept The Shadowy Figure
     .target Sven Yorgen
 step
-    #completewith next
-    .hs >>Hearth to Innkeeper Trelayne's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .goto 1431/0,-1158.73,-10517.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tavernkeep Smitts|r
-    .turnin 158 >>Turn in Zombie Juice
-    .target Tavernkeep Smitts
-step
     .goto 1431/0,-1213.00,-10532.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
     .turnin 262 >>Turn in The Shadowy Figure
@@ -461,6 +453,7 @@ step
 step
     .goto 1431/0,-1158.73,-10517.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tavernkeep Smitts|r
+    .turnin 158 >>Turn in Zombie Juice
     .turnin 266 >>Turn in Inquire at the Inn
     .accept 453 >>Accept Finding the Shadowy Figure
     .target Tavernkeep Smitts
@@ -490,6 +483,17 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: An Old History Book
 step
     .xp 23 >>|cRXP_WARN_The rest of Duskwood is planned from level 23.|r Come back to this guide then
+step
+    .goto 1431/0,-1213.00,-10532.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
+    .accept 66 >>Accept The Legend of Stalvan
+    .target Madame Eva
+step
+    .goto 1431/0,-1125.25,-10560.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Daltry|r
+    .turnin 66 >>Turn in The Legend of Stalvan
+    .accept 67 >>Accept The Legend of Stalvan
+    .target Clerk Daltry
 step
     .goto 1431/0,-1321.27,-10581.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viktori Prism'Antras|r
@@ -568,17 +572,6 @@ step << !Warrior
     .train 431611,1 << Hunter
     .train 431447,1 << Druid
     .train 429261,1 << Paladin
-step
-    .goto 1431/0,-1213.00,-10532.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
-    .accept 66 >>Accept The Legend of Stalvan
-    .target Madame Eva
-step
-    .goto 1431/0,-1125.25,-10560.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Daltry|r
-    .turnin 66 >>Turn in The Legend of Stalvan
-    .accept 67 >>Accept The Legend of Stalvan
-    .target Clerk Daltry
 step
     .goto 1431/0,-1152.25,-10559.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
@@ -707,25 +700,20 @@ step
 step
     .xp 26 >>|cRXP_WARN_The rest of Duskwood is planned from level 26.|r Come back to this guide then
 step
-    .goto 1431/0,-1380.40,-10780.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blind Mary|r
-    .accept 177 >>Accept Look To The Stars
-    .target Blind Mary
-step
     .goto 1431/0,-1161.16,-10516.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Trelayne|r
     .target Innkeeper Trelayne
     .home >>Set your Hearthstone to Innkeeper Trelayne's inn
 step
+    .goto 1431/0,-1138.48,-10516.05
+    >>Talk to |cRXP_FRIENDLY_Avette|r
+    .vendor 228 >> Vendor Trash. Repair
+    .target Avette Fellwood
+step
     .goto 1431/0,-1213.00,-10532.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
     .accept 101 >>Accept The Totem of Infliction
     .target Madame Eva
-step
-    .goto 1431/0,-1211.92,-10572.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
-    .accept 173 >>Accept Worgen in the Woods
-    .target Calor
 step
     #completewith Along4
     >>As you go: Kill |cRXP_ENEMY_Skeletal Warriors|r, |cRXP_ENEMY_Skeletal Horrors|r, |cRXP_ENEMY_Skeletal Mages|r and |cRXP_ENEMY_Skeletal Fiends|r. Loot them for |cRXP_LOOT_Skeleton Finger|r. |cRXP_WARN_Anything left is finished later|r
@@ -734,6 +722,16 @@ step
     .mob Skeletal Horror
     .mob Skeletal Mage
     .mob Skeletal Fiend
+step
+    .goto 1431/0,-1380.40,-10780.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blind Mary|r
+    .accept 177 >>Accept Look To The Stars
+    .target Blind Mary
+step
+    .goto 1431/0,-1211.92,-10572.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
+    .accept 173 >>Accept Worgen in the Woods
+    .target Calor
 step
     #label Along4
     .goto 1431/0,-1350.97,-11011.95
@@ -969,17 +967,6 @@ step
     .turnin 134 >>Turn in Ogre Thieves
     .accept 160 >>Accept Note to the Mayor
     .target Abercrombie
-step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avette Fellwood|r
-    .goto 1431/0,-1145.23,-10522.35
-    .vendor 228 >>|cRXP_BUY_Stock up on|r |T132382:0|t[Razor Arrows] |cRXP_WARN_Don't forget this, there is a grinding session ahead!|r
-    .target Avette Fellwood
-step
-    .goto 1431/0,-1108.78,-10552.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
-    .turnin 160 >>Turn in Note to the Mayor while you are here
-    .isQuestComplete 160
-    .target Lord Ello Ebonlocke
 step
     #loop
     .goto 1431/0,-1122.55,-10330.83,0
@@ -1015,6 +1002,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
     .accept 222 >>Accept Worgen in the Woods
     .target Calor
+step
+    .goto 1431/0,-1200.31,-10599.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jonathan Carevin|r
+    .accept 1043 >>Accept The Scythe of Elune
+    .target Jonathan Carevin
+    .isQuestTurnedIn 1042 --any of: The Carevin Family
+    .xp <25,1
 step
     .goto 1431/0,-1108.78,-10552.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
@@ -1065,6 +1059,11 @@ step
     .turnin 223 >>Turn in Worgen in the Woods
     .target Jonathan Carevin
 step
+    .goto 1431/0,-1151.98,-11141.19
+    >>Click the |cRXP_PICK_Mound of Dirt|r
+    .complete 1043,1 --Find evidence of the Scythe of Elune
+    .isOnQuest 1043
+step
     .goto 1431/0,55.19,-10273.05
     >>Kill |cRXP_ENEMY_Eliza|r and loot |cRXP_LOOT_The Embalmer's Heart|r
     .complete 253,1 --The Embalmer's Heart (1)
@@ -1074,18 +1073,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
     .turnin 253 >>Turn in Bride of the Embalmer
     .target Lord Ello Ebonlocke
-step
-    .goto 1431/0,-1200.31,-10599.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jonathan Carevin|r
-    .accept 1043 >>Accept The Scythe of Elune
-    .target Jonathan Carevin
-    .isQuestTurnedIn 1042 --any of: The Carevin Family
-    .xp <25,1
-step
-    .goto 1431/0,-1151.98,-11141.19
-    >>Click the |cRXP_PICK_Mound of Dirt|r
-    .complete 1043,1 --Find evidence of the Scythe of Elune
-    .isOnQuest 1043
 step
     .goto 1431/0,-1200.31,-10599.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jonathan Carevin|r

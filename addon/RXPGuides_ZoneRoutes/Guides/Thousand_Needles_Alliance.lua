@@ -170,13 +170,6 @@ step
     .target Razzeric
     .isQuestTurnedIn 1186 --any of: The Eighteenth Pilot
     .xp <29,1
-step << Mage
-    .goto 1441/1,-3878.09,-6187.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Tirth|r
-    .accept 1951 >>Accept Rituals of Power
-    .target Magus Tirth
-    .isQuestTurnedIn 1950 --any of: Get the Scoop
-    .xp <30,1
 step
     .goto 1441/1,-3856.09,-6233.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kravel Koalbeard|r
@@ -197,6 +190,24 @@ step
     .target Kravel Koalbeard
     .isQuestTurnedIn 1114 --any of: Delivery to the Gnomes
     .xp <30,1
+step
+    .goto 1441/1,-3867.97,-6229.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fizzle Brassbolts|r
+    .accept 1106 >>Accept Martek the Exiled
+    .target Fizzle Brassbolts
+step
+    .goto 1441/1,-3871.49,-6228.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzle Brassbolts|r
+    .turnin 1107 >>Turn in Encrusted Tail Fins
+    .target Wizzle Brassbolts
+    .isQuestComplete 1107
+step << Mage
+    .goto 1441/1,-3878.09,-6187.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Tirth|r
+    .accept 1951 >>Accept Rituals of Power
+    .target Magus Tirth
+    .isQuestTurnedIn 1950 --any of: Get the Scoop
+    .xp <30,1
 step << Shaman
     .goto 1441/1,-2463.49,-5483.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
@@ -210,17 +221,6 @@ step
     .accept 635 >>Accept Crystal in the Mountains
     .use 4614
     .mob Achellios the Banished
-step
-    .goto 1441/1,-3867.97,-6229.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fizzle Brassbolts|r
-    .accept 1106 >>Accept Martek the Exiled
-    .target Fizzle Brassbolts
-step
-    .goto 1441/1,-3871.49,-6228.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzle Brassbolts|r
-    .turnin 1107 >>Turn in Encrusted Tail Fins
-    .target Wizzle Brassbolts
-    .isQuestComplete 1107
 step
     .goto 1441/1,-3856.09,-6233.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kravel Koalbeard|r

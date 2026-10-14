@@ -1,12 +1,15 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-24 Westfall",
-  "saved": "2026-10-13 17:35",
+  "saved": "2026-10-14 00:11",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        "turnin:143 @1436:1045.12,-10508.8  TurnIn Messenger to Westfall",
+        "turnin:141 @1436:1045.12,-10508.8  TurnIn The Defias Brotherhood",
+        "turnin:132 @1436:1045.12,-10508.8  TurnIn The Defias Brotherhood",
         "accept:109 @1436:1055.27,-10128.7  Accept Report to Gryan Stoutmantle",
         "accept:64 @1436:918.42,-9851.73  Accept The Forgotten Heirloom",
         "accept:151 @1436:919.47,-9853.13  Accept Poor Old Blanchy",
@@ -20,7 +23,6 @@
         {"lines":[".goto 1436,48.249,46.729",".xp 11+5360 >> Grind to 5360+/8800xp"],"tag":"Paladin","from":"RestedXP: 6-11 Elwynn Forest"},
         "obj:38:4 @1436:1007.32,-9862.7  Objective Westfall Stew / Okra (3)",
         "obj:38:1 @1436:884.12,-10052.63  Objective Westfall Stew / Stringy Vulture Meat (3)",
-        "turnin:141 @1436:1045.12,-10508.8  TurnIn The Defias Brotherhood",
         "turnin:109 @1436:1045.12,-10508.8  TurnIn Report to Gryan Stoutmantle",
         "accept:12 @1436:1045.12,-10508.8  Accept The People's Militia",
         "accept:102 @1436:1041.97,-10511.13  Accept Patrolling Westfall",
@@ -72,10 +74,7 @@
         "accept:92747 @1436:1179.87,-10637.83  Accept Moonbrook Espionage",
         "turnin:92742 @1436:1179.87,-10637.83  TurnIn Testing the Wells",
         "turnin:92744 @1436:1179.87,-10637.83  TurnIn Murloc Gills",
-        {"lines":[".goto 1436/0,1037.42,-10628.27",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r",".fp Westfall >> Get the Westfall flight path",".target Thor",".isOnQuest 2360"],"tag":"NightElf Rogue","from":"RestedXP: 19-20 Redridge"},
         "obj:13:2 @1436:1475.27,-11015.6  Objective The People's Militia / Defias Looter slain (15)",
-        "turnin:2360 @1436:619.52,-11035.2  TurnIn Mathias and the Defias",
-        {"lines":[".collect 6452,1 >> Craft an |T134437:0|t[Anti-Venom]",".train 7934,3"],"tag":"!Dwarf Rogue","from":"RestedXP: 19-20 Redridge"},
         "accept:103 @1436:1966.32,-11407.13  Accept Keeper of the Flame",
         "accept:92748 @1436:1179.87,-10637.83  Accept Explosive Consultation",
         "obj:103:1 @1436:1081.52,-10186.33  Objective Keeper of the Flame / Flask of Oil (5)",
@@ -99,20 +98,22 @@
         "turnin:13 @1436:1045.12,-10508.8  TurnIn The People's Militia",
         "turnin:92910 @1436:1211.37,-10152.03  TurnIn Harvesting the Harvesters",
         "turnin:92911 @1436:1211.37,-10152.03  TurnIn Harvesting the Harvesters",
-        "turnin:1650 @1436:1557.52,-11482.27  TurnIn The Tome of Valor",
-        "turnin:132 @1436:1045.12,-10508.8  TurnIn The Defias Brotherhood",
-        "turnin:143 @1436:1045.12,-10508.8  TurnIn Messenger to Westfall",
         "turnin:139 @1436:1594.62,-9797.37  TurnIn Captain Sander's Hidden Treasure",
         "accept:140 @1436:1594.62,-9797.37  Accept Captain Sander's Hidden Treasure",
-        "turnin:140 @1436:2107.72,-9794.57  TurnIn Captain Sander's Hidden Treasure"
+        "turnin:140 @1436:2107.72,-9794.57  TurnIn Captain Sander's Hidden Treasure",
+        "turnin:2360 @1436:619.52,-11035.2  TurnIn Mathias and the Defias",
+        {"lines":[".collect 6452,1 >> Craft an |T134437:0|t[Anti-Venom]",".train 7934,3"],"tag":"!Dwarf Rogue","from":"RestedXP: 24-27 Duskwood/Redridge"},
+        "turnin:1650 @1436:1557.52,-11482.27  TurnIn The Tome of Valor"
       ]
     },
     {
       "part": 2,
       "steps": [
         "accept:65 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
-        "accept:142 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
+        "accept:144 @1436:1045.12,-10508.8  Accept Messenger to Westfall",
         "accept:14 @1436:1045.12,-10508.8  Accept The People's Militia",
+        "accept:135 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
+        "accept:142 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
         "obj:142:1 @1436:1438.17,-11017.7  Objective The Defias Brotherhood / A Mysterious Message (1)",
         "obj:14:3 @1436:1698.57,-11153.5  Objective The People's Militia / Defias Knuckleduster slain (5)",
         "obj:14:2 @1436:1722.02,-11155.13  Objective The People's Militia / Defias Pathstalker slain (5)",
@@ -128,9 +129,7 @@
         "obj:152:2 @1436:2142.02,-10540.53  Objective The Coast Isn't Clear / Murloc Warrior slain (7)",
         "obj:152:4 @1436:2072.72,-10691.27  Objective The Coast Isn't Clear / Murloc Oracle slain (7)",
         "obj:152:3 @1436:2079.72,-11082.8  Objective The Coast Isn't Clear / Murloc Tidehunter slain (7)",
-        "turnin:152 @1436:1966.32,-11407.13  TurnIn The Coast Isn't Clear",
-        "accept:135 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
-        "accept:144 @1436:1045.12,-10508.8  Accept Messenger to Westfall"
+        "turnin:152 @1436:1966.32,-11407.13  TurnIn The Coast Isn't Clear"
       ]
     },
     {

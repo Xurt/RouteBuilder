@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "24-38 Hillsbrad Foothills",
-  "saved": "2026-10-13 17:36",
+  "saved": "2026-10-14 00:12",
   "levels": "RestedXP",
   "parts": [
     {
@@ -18,10 +18,8 @@
         {"lines":[".goto 1424/0,-610.77,-793.81",">>Talk to |cRXP_FRIENDLY_Robert|r",".vendor 3543 >> Vendor Trash. Repair",".target Robert Aebischer",".isOnQuest 511"],"from":"RestedXP: 32-33 ADV Hillsbrad Mage AoE"},
         "turnin:511 @1424:-551.57,-817.92  TurnIn Encrypted Letter",
         "turnin:510 @1424:-473.81,-861.01  TurnIn Foreboding Plans",
-        "turnin:525 @1424:-473.81,-861.01  TurnIn Further Mysteries",
-        {"lines":[".goto 1424/0,-610.77,-793.81",">>Talk to |cRXP_FRIENDLY_Robert|r outside",".vendor 3543 >> Vendor Trash. Repair",".target Robert Aebischer",".isQuestTurnedIn 525"],"from":"RestedXP: 33-37 ADV Arathi Mage AoE"},
         "turnin:661 @1424:-544.53,-859.73  TurnIn Hints of a New Plague?",
-        {"lines":[".goto 1424/0,-610.77,-793.81",">>Talk to |cRXP_FRIENDLY_Robert|r",".vendor 3543 >> Vendor Trash. Repair",".target Robert Aebischer",".isOnQuest 1302"],"from":"RestedXP: 33-37 ADV Arathi Mage AoE"},
+        "turnin:525 @1424:-473.81,-861.01  TurnIn Further Mysteries",
         "accept:542 @1424:-551.57,-817.92  Accept Return to Milton"
       ]
     },

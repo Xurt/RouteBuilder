@@ -83,12 +83,6 @@ step
     .fp Hammerfall >> Get the Hammerfall flight path
     .target Urda
 step
-    .goto 1417/0,-2028.75,-2086.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
-    .turnin 670 >>Turn in Sunken Treasure
-    .target Shakes O'Breen
-    .isOnQuest 670
-step
     .goto 1417/0,-3539.31,-947.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drum Fel|r
     .turnin 676 >>Turn in The Hammer May Fall
@@ -211,12 +205,12 @@ step
     .accept 635 >>Accept Crystal in the Mountains
     .use 4614
 step
-    #completewith Along16
+    #completewith Along15
     >>As you go: Kill |cRXP_ENEMY_Witherbark Axe Throwers|r. |cRXP_WARN_Anything left is finished later|r
     .complete 677,1 --Witherbark Axe Thrower slain (10)
     .mob Witherbark Axe Thrower
 step
-    #label Along16
+    #label Along15
     #loop
     .goto 1417/0,-3215.67,-1787.65,0
     .goto 1417/0,-3215.67,-1787.65,40,0
@@ -283,12 +277,6 @@ step
     .turnin 677 >>Turn in Call to Arms
     .target Drum Fel
 step
-    .goto 1417/0,-3523.47,-948.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
-    .turnin 638 >>Turn in Trollbane
-    .target Zengu
-    .isOnQuest 638
-step
     .goto 1417/0,-3524.91,-912.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Adegwa|r
     .target Innkeeper Adegwa
@@ -325,6 +313,22 @@ step
     >>Click the |cRXP_PICK_Shards of Myzrael|r
     .turnin 635 >>Turn in Crystal in the Mountains
     .isOnQuest 635
+step
+    .goto 1417/0,-2028.75,-2086.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
+    .turnin 670 >>Turn in Sunken Treasure
+    .target Shakes O'Breen
+    .isOnQuest 670
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Adegwa's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
+    .goto 1417/0,-3523.47,-948.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
+    .turnin 638 >>Turn in Trollbane
+    .target Zengu
+    .isOnQuest 638
 step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_another zone|r: Silky Sutures
@@ -516,6 +520,11 @@ step
     .target Horde Warbringer
     .isQuestComplete 98887
 step
+    .goto 1417/0,-3524.91,-912.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Adegwa|r
+    .target Innkeeper Adegwa
+    .home >>Set your Hearthstone to Innkeeper Adegwa's inn
+step
     .goto 1417/0,-3523.47,-948.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
     .accept 640 >>Accept The Broken Sigil
@@ -530,6 +539,10 @@ step
     >>Kill |cRXP_ENEMY_Marez Cowl|r and loot |cRXP_LOOT_Befouled Bloodstone Orb|r
     .complete 673,1 --Befouled Bloodstone Orb (1)
     .mob Marez Cowl
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Adegwa's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
 step
     .goto 1417/0,-3556.59,-1004.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tor'gan|r
@@ -583,23 +596,6 @@ step
     .turnin 680 >>Turn in The Real Threat
     .target Korin Fel
 step
-    #loop
-    .goto 1417/0,-1907.07,-1546.69,0
-    .goto 1417/0,-1907.07,-1546.69,40,0
-    .goto 1417/0,-1831.11,-1533.01,40,0
-    .goto 1417/0,-1761.99,-1504.93,40,0
-    .goto 1417/0,-1722.75,-1503.97,40,0
-    .goto 1417/0,-1689.63,-1528.21,40,0
-    .goto 1417/0,-1628.79,-1586.05,40,0
-    .goto 1417/0,-1660.83,-1645.09,40,0
-    .goto 1417/0,-1708.71,-1633.09,40,0
-    .goto 1417/0,-1726.71,-1587.01,40,0
-    >>Kill |cRXP_ENEMY_Stromgarde Troll Hunters|r, |cRXP_ENEMY_Stromgarde Defenders|r and |cRXP_ENEMY_Stromgarde Vindicators|r. Loot them for |cRXP_LOOT_Sigil Fragment|r
-    .complete 640,1 --Sigil Fragment (11)
-    .mob Stromgarde Troll Hunter
-    .mob Stromgarde Defender
-    .mob Stromgarde Vindicator
-step
     .goto 1417/0,-2047.47,-2088.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Nilzlix|r
     .accept 662 >>Accept Deep Sea Salvage
@@ -617,7 +613,7 @@ step
     .isQuestTurnedIn 665 --any of: Sunken Treasure
     .xp <35,1
 step
-    #completewith Along17
+    #completewith Along18
     >>As you go: Kill |cRXP_ENEMY_Daggerspine Raiders|r. Kill |cRXP_ENEMY_Daggerspine Sorceress|r. |cRXP_WARN_Anything left is finished later|r
     .complete 664,1 --Daggerspine Raider slain (10)
     .complete 664,2 --Daggerspine Sorceress slain (3)
@@ -639,7 +635,24 @@ step
     .complete 662,3 --Spirit of Silverpine Charts (1)
     .complete 662,4 --Spirit of Silverpine Log (1)
 step
-    #label Along17
+    #loop
+    .goto 1417/0,-1660.83,-1645.09,0
+    .goto 1417/0,-1660.83,-1645.09,40,0
+    .goto 1417/0,-1708.71,-1633.09,40,0
+    .goto 1417/0,-1907.07,-1546.69,40,0
+    .goto 1417/0,-1831.11,-1533.01,40,0
+    .goto 1417/0,-1761.99,-1504.93,40,0
+    .goto 1417/0,-1722.75,-1503.97,40,0
+    .goto 1417/0,-1689.63,-1528.21,40,0
+    .goto 1417/0,-1726.71,-1587.01,40,0
+    .goto 1417/0,-1628.79,-1586.05,40,0
+    >>Kill |cRXP_ENEMY_Stromgarde Troll Hunters|r, |cRXP_ENEMY_Stromgarde Defenders|r and |cRXP_ENEMY_Stromgarde Vindicators|r. Loot them for |cRXP_LOOT_Sigil Fragment|r
+    .complete 640,1 --Sigil Fragment (11)
+    .mob Stromgarde Troll Hunter
+    .mob Stromgarde Defender
+    .mob Stromgarde Vindicator
+step
+    #label Along18
     #loop
     .goto 1417/0,-1694.67,-2149.33,0
     .goto 1417/0,-1694.67,-2149.33,40,0
@@ -708,24 +721,6 @@ step
     .accept 643 >>Accept Sigil of Arathor
     .target Zengu
 step
-    .goto 1417/0,-2028.75,-2086.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
-    .turnin 668 >>Turn in Sunken Treasure
-    .target Shakes O'Breen
-    .isOnQuest 668
-step
-    .goto 1417/0,-2028.75,-2086.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
-    .accept 669 >>Accept Sunken Treasure
-    .target Shakes O'Breen
-    .isQuestTurnedIn 668 --any of: Sunken Treasure
-    .xp <35,1
-step
-    .goto 1417/0,-3524.91,-912.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Adegwa|r
-    .target Innkeeper Adegwa
-    .home >>Set your Hearthstone to Innkeeper Adegwa's inn
-step
     .goto 1417/0,-2071.59,-1383.25
     >>Kill |cRXP_ENEMY_Lieutenant Valorcall|r and loot |cRXP_LOOT_Sigil of Arathor|r
     .complete 643,1 --Sigil of Arathor (1)
@@ -739,6 +734,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
     .turnin 643 >>Turn in Sigil of Arathor
     .target Zengu
+step
+    .goto 1417/0,-2028.75,-2086.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
+    .turnin 668 >>Turn in Sunken Treasure
+    .target Shakes O'Breen
+    .isOnQuest 668
+step
+    .goto 1417/0,-2028.75,-2086.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
+    .accept 669 >>Accept Sunken Treasure
+    .target Shakes O'Breen
+    .isQuestTurnedIn 668 --any of: Sunken Treasure
+    .xp <35,1
 step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Sunken Treasure

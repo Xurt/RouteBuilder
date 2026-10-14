@@ -611,6 +611,13 @@ step << Shaman
     .turnin 79364 >>Turn in Eyes on the Sky
     .target Prate Cloudseer
 step
+    .goto 1441/1,-3967.85,-6198.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzeric|r
+    .accept 1188 >>Accept Safety First
+    .target Razzeric
+    .isQuestTurnedIn 1187 --any of: Razzeric's Tweaking
+    .xp <29,1
+step
     .goto 1441/1,-2208.29,-4846.08
     >>Kill |cRXP_ENEMY_Achellios the Banished|r and loot |cRXP_LOOT_Pendant of Myzrael|r. Use it to start the quest
     .collect 4614,1,635 --Pendant of Myzrael (1)
@@ -661,17 +668,6 @@ step
     .turnin 1194 >>Turn in Rizzle's Schematics
     .target Pozzik
     .isOnQuest 1194
-step
-    .hs >> Hearth to Feralas
-    .subzoneskip 1099
-    .cooldown item,6948,>0,1
-step
-    .goto 1441/1,-3967.85,-6198.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzeric|r
-    .accept 1188 >>Accept Safety First
-    .target Razzeric
-    .isQuestTurnedIn 1187 --any of: Razzeric's Tweaking
-    .xp <29,1
 step
     .goto 1441/1,-3967.85,-6198.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzeric|r

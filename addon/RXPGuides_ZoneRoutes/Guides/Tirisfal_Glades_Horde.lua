@@ -14,218 +14,6 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 1-15 Tirisfal Glades
 
-step
-    #completewith next
-    .goto 1420/0,235.32,1883.89
-    .zone 1458 >>Go into the Ruins of Lordaeron and take a lift down into the Undercity
-    .zoneskip 1458
-step
-    .goto 1458/0,172.27,1667.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe|r
-    .turnin 84397 >>Turn in Northern Kalimdor - A Comprehensive Guide
-    .target Oran Snakewrithe
-    .isOnQuest 84397
-step
-    .goto 1458/0,172.27,1667.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe|r
-    .turnin 84399 >>Turn in Ka-Boom!
-    .target Oran Snakewrithe
-    .isOnQuest 84399
-step
-    #completewith next
-    .goto 1420/0,235.32,1883.89
-    .zone 1420 >>Take a lift back up and leave the Undercity
-    .zoneskip 1420
-step
-    #loop
-    .goto 1420/0,155.79,2063.74,0
-    .goto 1420/0,155.79,2063.74,40,0
-    .goto 1420/0,165.28,2133.93,40,0
-    .goto 1420/0,214.54,2162.85,40,0
-    .goto 1420/0,243.01,2199.30,40,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Terrence|r. |cRXP_WARN_This NPC walks a patrol route|r
-    .accept 96895 >>Accept The Argent Emissary
-    .unitscan Deathguard Terrence
-step << Warrior
-    .goto 1420/0,238.49,2254.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil de Mon|r
-    .accept 1818 >>Accept Speak with Dillinger
-    .target Austil de Mon
-step << Warrior
-    .goto 1420/0,403.42,2287.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Dillinger|r
-    .turnin 1818 >>Turn in Speak with Dillinger
-    .accept 1819 >>Accept Ulag the Cleaver
-    .target Deathguard Dillinger
-step << Warrior
-    .goto 1420/0,346.03,2383.06
-    >>Kill |cRXP_ENEMY_Ulag the Cleaver|r
-    .complete 1819,1 --Ulag the Cleaver slain (1)
-    .mob Ulag the Cleaver
-step << Warrior
-    .goto 1420/0,403.42,2287.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Dillinger|r
-    .turnin 1819 >>Turn in Ulag the Cleaver
-    .accept 1820 >>Accept Speak with Coleman
-    .target Deathguard Dillinger
-step << Warrior
-    .goto 1420/0,244.36,2262.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r
-    .turnin 1820 >>Turn in Speak with Coleman
-    .target Coleman Farthing
-step << Priest
-    .goto 1420/0,251.14,2265.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
-    .train 588 >>Train |T135926:0|t[Inner Fire]
-    .target Dark Cleric Beryl
-    .xp <12,1
-step << Mage
-    .goto 1420/0,233.06,2256.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r on the second floor
-    .train 145 >> Train |T135812:0|t[Fireball Rank 3]
-    .target Cain Firesong
-    .xp <12,1
-step << Warrior
-    .goto 1420/0,238.49,2255.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
-    .train 7384 >>Train |T132223:0|t[Overpower]
-    .target Austil de Mon
-    .xp <12,1
-step << Rogue
-    .goto 1420/0,243.01,2271.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
-    .train 1766 >> Train |T132219:0|t[Kick]
-    .target Marion Call
-    .xp <12,1
-step << Warlock
-    .goto 1420/0,250.24,2259.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rupert|r
-    .train 755 >> Train |T136168:0|t[Health Funnel]
-    .target Rupert Boch
-    .xp <12,1
-step << !Mage
-    .goto 1420/0,244.81,2269.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Mage/Priest/Shaman
-    >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushroom] |cRXP_BUY_from her|r << Warrior/Rogue
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushroom] |cRXP_BUY_from her|r << Warlock/Hunter
-    .vendor >> Vendor Trash
-    .collect 1179,20,96897,1 << Mage/Priest/Shaman
-    .collect 4605,20,96897,1 << Rogue/Warrior
-    .collect 1179,15,96897,1 << Warlock/Hunter
-    .collect 4605,15,96897,1 << Warlock/Hunter
-    .money <0.050 << !Warlock !Hunter
-    .money <0.075 << Warlock/Hunter
-    .target Innkeeper Renee
-step << Warlock
-    .goto 1420/0,248.88,2250.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ageron Kargal|r
-    .accept 1478 >>Accept Halgar's Summons
-    .target Ageron Kargal
-step << Undead Rogue
-    .goto 1420/0,243.01,2271.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion Call|r
-    .accept 1885 >>Accept Mennet Carkad
-    .target Marion Call
-step
-    .goto 1420/0,74.00,2022.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea|r
-    .accept 356 >>Accept Rear Guard Patrol
-    .target Deathguard Linnea
-step
-    .goto 1420/0,56.38,1996.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96895 >>Turn in The Argent Emissary
-    .accept 96897 >>Accept The Cult of the Damned
-    .accept 96898 >>Accept Remnants of War
-    .target Hadric Harlson
-step
-    #loop
-    .goto 1420/0,49.15,2027.29,0
-    .goto 1420/0,49.15,2027.29,40,0
-    .goto 1420/0,-76.92,2038.74,40,0
-    .goto 1420/0,-172.27,1929.38,40,0
-    .goto 1420/0,-158.26,1802.86,40,0
-    .goto 1420/0,-88.67,1829.07,40,0
-    .goto 1420/0,-16.82,1820.63,40,0
-    .goto 1420/0,-49.81,1911.01,40,0
-    .goto 1420/0,18.42,1952.88,40,0
-    .goto 1420/0,127.33,1943.54,40,0
-    >>Kill |cRXP_ENEMY_Dark Neophytes|r and |cRXP_ENEMY_Dark Enforcers|r. |cRXP_WARN_They hit hard; Enforcers have an instant 50-70 damage ability|r
-    >>Kill |cRXP_ENEMY_Dark Neophytes|r
-    >>Kill |cRXP_ENEMY_Dark Neophytes|r and |cRXP_ENEMY_Dark Enforcers|r. Loot them for |cRXP_LOOT_Necrotic Crystal Fragment|r. It can also be picked up from |cRXP_PICK_Naxxramas Crystal Fragment|r on the ground
-    .complete 96897,2 --Dark Enforcer slain (8)
-    .complete 96897,1 --Dark Neophyte slain (8)
-    .complete 96898,1 --Necrotic Crystal Fragment (12)
-    .mob Dark Enforcer
-    .mob Dark Neophyte
-step
-    #loop
-    .goto 1420/0,-317.77,1945.95,0
-    .goto 1420/0,-317.77,1945.95,40,0
-    .goto 1420/0,-349.85,1980.59,40,0
-    .goto 1420/0,-407.24,1997.46,40,0
-    .goto 1420/0,-438.87,1946.25,40,0
-    .goto 1420/0,-488.58,1991.14,40,0
-    .goto 1420/0,-512.08,2048.68,40,0
-    .goto 1420/0,-423.51,2068.26,40,0
-    .goto 1420/0,-366.12,2084.22,40,0
-    .goto 1420/0,-336.75,2044.76,40,0
-    >>Kill |cRXP_ENEMY_Bleeding Horrors|r
-    >>Kill |cRXP_ENEMY_Wandering Spirits|r
-    .complete 356,1 --Bleeding Horror slain (8)
-    .complete 356,2 --Wandering Spirit slain (8)
-    .mob Bleeding Horror
-    .mob Wandering Spirit
-step
-    .goto 1420/0,56.38,1996.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96897 >>Turn in The Cult of the Damned
-    .turnin 96898 >>Turn in Remnants of War
-    .target Hadric Harlson
-step << Horde !Hunter
-    .goto 1458/0,266.39,1567.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael Garrett::4551|r
-    .fp Undercity >> Get the Undercity flight path
-    .target Michael Garrett::4551
-step
-    .goto 1420/0,74.00,2022.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea|r
-    .turnin 356 >>Turn in Rear Guard Patrol
-    .target Deathguard Linnea
-step << !Undead
-    .goto 1458/0,266.39,1567.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
-    .fp Undercity >> Get the Undercity flight path
-    .target Michael Garrett
-step << Undead Rogue
-    #completewith next
-    .goto 1420/0,235.32,1883.89
-    .zone 1458 >>Go into the Ruins of Lordaeron and take a lift down into the Undercity
-    .zoneskip 1458
-step << Undead Rogue
-    .goto 1458/0,72.02,1435.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet Carkad|r
-    .turnin 1885 >>Turn in Mennet Carkad
-    .accept 1886 >>Accept The Deathstalkers
-    .target Mennet Carkad
-step << Rogue
-    .goto 1458/0,323.57,1668.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Archibald|r in the War Quarter
-    .train 201 >>Train 1h Swords
-    .target Archibald
-    .money <0.1
-step << Undead Rogue
-    .goto 1458/0,72.02,1435.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet Carkad|r
-    .turnin 1886 >>Turn in The Deathstalkers
-    .target Mennet Carkad
-    .isQuestComplete 1886
-step << Undead Rogue
-    #completewith next
-    .goto 1420/0,235.32,1883.89
-    .zone 1420 >>Take a lift back up and leave the Undercity
-    .zoneskip 1420
 step << Undead
     .goto 1420/0,1667.77,1679.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Undertaker Mordo|r
@@ -238,55 +26,10 @@ step << Priest/Mage
     .vendor >> Vendor Trash
     .collect 159,10,383,1
     .target Joshua Kien
-step << Undead
-    .goto 1420/0,1639.75,1843.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r
-    .turnin 363 >>Turn in Rude Awakening
-    .target Shadow Priest Sarvis
-step
-    #completewith next
-    .goto 1420/0,235.32,1883.89
-    .zone 1458 >>Go into the Ruins of Lordaeron and take a lift down into the Undercity
-    .zoneskip 1458
-step
-    .goto 1458/0,57.15,1711.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r
-    .turnin 1478 >>Turn in Halgar's Summons << Warlock
-    .accept 1473 >>Accept Creature of the Void << Undead Warlock
-    .target Carendin Halgar
-step
-    #completewith next
-    .goto 1420/0,235.32,1883.89
-    .zone 1420 >>Take a lift back up and leave the Undercity
-    .zoneskip 1420
-step << Undead Warlock
-    .goto 1420/0,726.06,1801.95
-    >>Open the |cRXP_PICK_Perrine's Chest|r. Loot it for |cRXP_LOOT_Egalin's Grimoire|r
-    .complete 1473,1 --Egalin's Grimoire (1)
-step << Undead Warlock
-    #completewith next
-    .goto 1420/0,235.32,1883.89
-    .zone 1458 >>Go into the Ruins of Lordaeron and take a lift down into the Undercity
-    .zoneskip 1458
-step << Undead Warlock
-    .goto 1458/0,57.15,1711.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r
-    .turnin 1473 >>Turn in Creature of the Void
-    .accept 1471 >>Accept The Binding
-    .target Carendin Halgar
-step << Undead Warlock
-    #completewith next
-    .goto 1420/0,235.32,1883.89
-    .zone 1420 >>Take a lift back up and leave the Undercity
-    .zoneskip 1420
-step << Warlock
-    .goto 1420/0,1633.42,1836.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Venya Marthand|r
-    .accept 1470 >>Accept Piercing the Veil
-    .target Venya Marthand
 step
     .goto 1420/0,1639.75,1843.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r
+    .turnin 363 >>Turn in Rude Awakening << Undead
     .accept 364 >>Accept The Mindless Ones
     .target Shadow Priest Sarvis
 step << Mage
@@ -310,6 +53,11 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dannal|r
     .train 6673 >>Train |T132333:0|t[Battle Shout]
     .target Dannal Stern
+step << Warlock
+    .goto 1420/0,1633.42,1836.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Venya Marthand|r
+    .accept 1470 >>Accept Piercing the Veil
+    .target Venya Marthand
 step << Warlock
     #loop
     .goto 1420/0,1543.05,1939.62,0
@@ -398,7 +146,7 @@ step
     .accept 376 >>Accept The Damned
     .target Novice Elreth
 step
-    #completewith Along34
+    #completewith Along12
     >>As you go: Kill |cRXP_ENEMY_Duskbats|r and |cRXP_ENEMY_Mangy Duskbats|r. Loot them for |cRXP_LOOT_Duskbat Wing|r. |cRXP_WARN_Anything left is finished later|r
     .complete 376,2 --Duskbat Wing (6)
     .mob Duskbat
@@ -425,12 +173,12 @@ step << Undead Warlock
     .turnin 3099 >>Turn in Tainted Scroll
     .target Maximillion
 step
-    #completewith Along34
+    #completewith Along12
     >>As you go: Kill |cRXP_ENEMY_Rattlecage Skeletons|r. |cRXP_WARN_Anything left is finished later|r
     .complete 3901,1 --Rattlecage Skeleton slain (12)
     .mob Rattlecage Skeleton
 step
-    #label Along34
+    #label Along12
     #loop
     .goto 1420/0,1673.64,1942.03,0
     .goto 1420/0,1673.64,1942.03,40,0
@@ -467,9 +215,6 @@ step
     .turnin 376 >>Turn in The Damned while you are here
     .isQuestComplete 376
     .target Novice Elreth
-step << Paladin
-    #completewith next
-    +|cRXP_WARN_Keep 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for the Paladin quest A Lesson in Divinity. Do not vendor it|r
 step
     #loop
     .goto 1420/0,1668.22,1889.92,0
@@ -598,11 +343,11 @@ step
     .accept 3902 >>Accept Scavenging Deathknell
     .target Deathguard Saltain
 step
-    #completewith Along41
+    #completewith Along19
     >>As you go: Loot the |cRXP_PICK_Equipment Boxes|r for |cRXP_LOOT_Scavenged Goods|r. |cRXP_WARN_Anything left is finished later|r
     .complete 3902,1 --Scavenged Goods (6)
 step
-    #label Along41
+    #label Along19
     .goto 1420/0,1580.56,1848.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Arren|r
     .accept 380 >>Accept Night Web's Hollow
@@ -680,12 +425,12 @@ step << Undead Paladin
     .skipgossip
     .mob Frightened Paladin
 step
-    #completewith Along46
+    #completewith Along24
     >>As you go: Attack the |cRXP_ENEMY_Webbed Forsaken|r cocoons inside Night Web's Hollow to free them. |cRXP_WARN_Anything left is finished later|r
     .complete 98389,1 --Webbed Forsaken freed (6)
     .mob Webbed Forsaken
 step
-    #label Along46
+    #label Along24
     #loop
     .goto 1420/0,1770.79,2016.14,0
     .goto 1420/0,1770.79,2016.14,40,0
@@ -888,33 +633,27 @@ step << Undead Paladin
     .isQuestComplete 91209
     .target Shari Stilwell
 step
-    #completewith Along62
+    #completewith Along40
     >>As you go: Pick up |cRXP_PICK_Dry Branch|r from the ground. |cRXP_WARN_Anything left is finished later|r
     .complete 86784,1 --Dry Branch (6)
 step
-    #label Along62
+    #label Along40
     .goto 1420/0,403.42,2287.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Dillinger|r
     .accept 404 >>Accept A Putrid Task
     .target Deathguard Dillinger
 step
-    .goto 1420/0,347.84,2265.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolai Anise|r
-    .accept 95314 >>Accept That Shadowvale Green Elixir
-    .target Carolai Anise
-    .xp <7,1
-step
-    #completewith Along66
+    #completewith Along44
     >>As you go: Pick up |cRXP_PICK_Gloom Weed|r from the ground. |cRXP_WARN_Anything left is finished later|r
     .complete 5481,1 --Gloom Weed (3)
 step
-    #completewith Along63
+    #completewith Along41
     >>As you go: Kill |cRXP_ENEMY_Rotting Dead|r and |cRXP_ENEMY_Ravaged Corpses|r. Loot them for |cRXP_LOOT_Putrid Claw|r. |cRXP_WARN_Anything left is finished later|r
     .complete 404,1 --Putrid Claw (7)
     .mob Rotting Dead
     .mob Ravaged Corpse
 step
-    #label Along63
+    #label Along41
     #loop
     .goto 1420/0,426.01,2295.10,0
     .goto 1420/0,426.01,2295.10,40,0
@@ -942,7 +681,7 @@ step
     .target Eleanor Shackleton
     .isQuestComplete 96607
 step
-    #label Along66
+    #label Along44
     .goto 1420/0,447.25,2166.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eleanor Shackleton|r
     .accept 96658 >>Accept Camping 101: Cooking
@@ -984,6 +723,12 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oliver|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T133053:0|t[Wooden Mallet] (6s 66c). You'll come back later if you don't have enough yet
     .target Oliver Dwor
+step
+    .goto 1420/0,346.94,2258.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Johaan|r
+    .accept 367 >>Accept A New Plague
+    .target Apothecary Johaan
+    .xp <6,1
 step
     .goto 1420/0,244.36,2269.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
@@ -1083,7 +828,7 @@ step << Undead Priest
     .complete 5650,1 --Deathguard Kel
     .target Deathguard Kel
 step
-    #completewith Along77
+    #completewith Along55
     >>As you go: Pick up |cRXP_PICK_Gloom Weed|r from the ground. |cRXP_WARN_Anything left is finished later|r
     .complete 5481,1 --Gloom Weed (3)
 step
@@ -1102,14 +847,17 @@ step
     .complete 404,1 --Putrid Claw (7)
     .mob Rotting Dead
     .mob Ravaged Corpse
+step << Paladin
+    #completewith next
+    +|cRXP_WARN_Keep 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for the Paladin quest A Lesson in Divinity. Do not vendor it|r
 step
-    #completewith Along78
+    #completewith Along56
     >>As you go: Kill |cRXP_ENEMY_Greater Duskbats|r and |cRXP_ENEMY_Vampiric Duskbats|r. Loot them for |cRXP_LOOT_Duskbat Wing Membrane|r. |cRXP_WARN_Anything left is finished later|r
     .complete 97558,1 --Duskbat Wing Membrane (8)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
 step
-    #label Along77
+    #label Along55
     #loop
     .goto 1420/0,496.96,2255.94,0
     .goto 1420/0,496.96,2255.94,40,0
@@ -1125,7 +873,7 @@ step
     .complete 99141,3 --Gordo's Report (1)
     .unitscan Gordo
 step
-    #label Along78
+    #label Along56
     #loop
     .goto 1420/0,985.89,2187.55,0
     .goto 1420/0,985.89,2187.55,40,0
@@ -1140,7 +888,7 @@ step
     >>Pick up |cRXP_PICK_Gloom Weed|r from the ground
     .complete 5481,1 --Gloom Weed (3)
 step
-    #completewith Along80
+    #completewith Along58
     >>As you go: Kill |cRXP_ENEMY_Scarlet Warriors|r. |cRXP_WARN_Anything left is finished later|r
     .complete 427,1 --Scarlet Warrior slain (10)
     .mob Scarlet Warrior
@@ -1159,14 +907,14 @@ step
     >>Pick up |cRXP_PICK_Tirisfal Pumpkin|r from the ground
     .complete 365,1 --Tirisfal Pumpkin (10)
 step
-    #label Along80
+    #label Along58
     .goto 1420/0,1589.14,2442.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bareth Dawnstone|r
     >>|cRXP_WARN_He is at the top of the tower and this starts an escort. It is easy to pull three Scarlet Warriors up there|r
     .accept 99144,1 >>Accept Seeking Refuge
     .target Bareth Dawnstone
 step
-    #completewith Along81
+    #completewith Along59
     >>As you go: Kill |cRXP_ENEMY_Decrepit Darkhounds|r, |cRXP_ENEMY_Cursed Darkhounds|r and |cRXP_ENEMY_Ravenous Darkhounds|r. Loot them for |cRXP_LOOT_Darkhound Blood|r. Kill |cRXP_ENEMY_Decrepit Darkhounds|r and |cRXP_ENEMY_Cursed Darkhounds|r. Loot them for |cRXP_LOOT_Darkhound Hide|r. |cRXP_WARN_Anything left is finished later|r
     .complete 367,1 --Darkhound Blood (5)
     .complete 97558,2 --Darkhound Hide (6)
@@ -1174,7 +922,7 @@ step
     .mob Cursed Darkhound
     .mob Ravenous Darkhound
 step
-    #label Along81
+    #label Along59
     .goto 1420/0,1267.86,2368.30
     >>Escort |cRXP_FRIENDLY_Bareth Dawnstone|r out of Solliden Farmstead
     .complete 99144,1 --Escort Bareth Dawnstone to safety
@@ -1438,6 +1186,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen Dedmar|r
     .turnin 375 >>Turn in The Chill of Death
     .target Gretchen Dedmar
+step << Undead Paladin
+    .goto 1420/0,310.79,2252.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shari Stilwell|r
+    .accept 91282 >>Accept A Second Home
+    .target Shari Stilwell
+    .xp <8,1
 step
     #loop
     .goto 1420/0,348.74,2505.37,0
@@ -1460,12 +1214,12 @@ step
     .mob Rot Hide Gnoll
     .mob Rot Hide Mongrel
 step
-    #completewith Along101
+    #completewith Along79
     >>As you go: Kill |cRXP_ENEMY_Rot Hide Mongrels|r. |cRXP_WARN_Anything left is finished later|r
     .complete 358,2 --Rot Hide Mongrel slain (5)
     .mob Rot Hide Mongrel
 step
-    #completewith Along101
+    #completewith Along79
     >>As you go: Kill |cRXP_ENEMY_Vile Fin Puddlejumpers|r, |cRXP_ENEMY_Vile Fin Minor Oracles|r, |cRXP_ENEMY_Vile Fin Muckdwellers|r and |cRXP_ENEMY_Vile Fin Seers|r. Loot them for |cRXP_LOOT_Vile Fin Scale|r. |cRXP_WARN_Anything left is finished later|r
     .complete 368,1 --Vile Fin Scale (5)
     .mob Vile Fin Puddlejumper
@@ -1473,7 +1227,7 @@ step
     .mob Vile Fin Muckdweller
     .mob Vile Fin Seer
 step
-    #label Along101
+    #label Along79
     .goto 1420/0,382.63,2910.55
     >>Kill |cRXP_ENEMY_Maggot Eye|r and loot |cRXP_LOOT_Maggot Eye's Paw|r
     .complete 398,1 --Maggot Eye's Paw (1)
@@ -1537,18 +1291,6 @@ step
     .accept 405 >>Accept The Prodigal Lich
     .accept 359 >>Accept Forsaken Duties
     .target Magistrate Sevren
-step << Warrior
-    .goto 1420/0,244.36,2262.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r
-    .accept 1821 >>Accept Agamand Heirlooms
-    .target Coleman Farthing
-    .xp <10,1
-step << Undead Mage/Troll Mage
-    .goto 1420/0,233.06,2256.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain Firesong|r
-    .accept 1881 >>Accept Speak with Anastasia
-    .target Cain Firesong
-    .xp <10,1
 step
     .goto 1420/0,76.72,2026.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shelene Rhobart|r
@@ -1579,7 +1321,7 @@ step
     .accept 361 >>Accept A Letter Undelivered
     .use 2839
 step
-    #completewith Along113
+    #completewith Along91
     >>As you go: Kill |cRXP_ENEMY_Darkeye Bonecasters|r and |cRXP_ENEMY_Shadowvale Mystics|r. Loot them for |cRXP_LOOT_Blackened Skull|r. |cRXP_WARN_Anything left is finished later|r
     .complete 426,2 --Blackened Skull (3)
     .mob Darkeye Bonecaster
@@ -1590,7 +1332,7 @@ step
     .complete 362,1 --Devlin's Remains (1)
     .mob Devlin Agamand
 step
-    #completewith Along113
+    #completewith Along91
     >>As you go: Kill |cRXP_ENEMY_Rattlecage Soldiers|r and |cRXP_ENEMY_Cracked Skull Soldiers|r. Loot them for |cRXP_LOOT_Notched Rib|r. |cRXP_WARN_Anything left is finished later|r
     .complete 426,1 --Notched Rib (5)
     .mob Rattlecage Soldier
@@ -1601,7 +1343,7 @@ step
     .complete 354,2 --Nissa's Remains (1)
     .mob Nissa Agamand
 step
-    #label Along113
+    #label Along91
     .goto 1420/0,1045.08,2824.09
     >>Kill |cRXP_ENEMY_Thurman Agamand|r and loot |cRXP_LOOT_Thurman's Remains|r
     .complete 354,3 --Thurman's Remains (1)
@@ -1670,14 +1412,12 @@ step
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
     .accept 355 >>Accept Speak with Sevren
-    .accept 1821 >>Accept Agamand Heirlooms << Warrior
     .target Coleman Farthing
 step
     .goto 1420/0,265.15,2305.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Sevren|r
     .turnin 360 >>Turn in Return to the Magistrate
     .turnin 355 >>Turn in Speak with Sevren
-    .accept 408 >>Accept The Family Crypt
     .target Magistrate Sevren
 step << Priest
     .goto 1420/0,251.14,2265.28
@@ -1714,11 +1454,83 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shari Stilwell|r
     .trainer >>Train your class spells
     .target Shari Stilwell
+step << Warlock
+    .goto 1420/0,248.88,2250.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ageron Kargal|r
+    .accept 1478 >>Accept Halgar's Summons
+    .target Ageron Kargal
+    .xp <10,1
+step << Undead Rogue
+    .goto 1420/0,243.01,2271.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion Call|r
+    .accept 1885 >>Accept Mennet Carkad
+    .target Marion Call
+    .xp <10,1
+step << Warrior
+    .goto 1420/0,238.49,2254.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil de Mon|r
+    .accept 1818 >>Accept Speak with Dillinger
+    .target Austil de Mon
+    .xp <10,1
 step
     #completewith next
     .goto 1420/0,235.32,1883.89
     .zone 1458 >>Go into the Ruins of Lordaeron and take a lift down into the Undercity
     .zoneskip 1458
+step << Undead
+    .goto 1458/0,283.27,1610.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordon Wendham|r
+    .turnin 6323 >>Turn in Ride to the Undercity
+    .target Gordon Wendham
+    .isOnQuest 6323
+step << Undead Priest
+    .goto 1458/0,400.60,1768.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
+    .turnin 5660 >>Turn in Touch of Weakness
+    .target Aelthalyste
+    .isOnQuest 5660
+step << Undead Priest
+    .goto 1458/0,400.60,1768.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
+    .turnin 5661 >>Turn in Touch of Weakness
+    .target Aelthalyste
+    .isOnQuest 5661
+step << Undead Priest
+    .goto 1458/0,400.60,1768.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
+    .turnin 5663 >>Turn in Touch of Weakness
+    .target Aelthalyste
+    .isOnQuest 5663
+step << Undead Priest
+    .goto 1458/0,400.60,1768.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
+    .turnin 5662 >>Turn in Touch of Weakness
+    .target Aelthalyste
+    .isOnQuest 5662
+step << Troll Priest
+    .goto 1458/0,400.60,1768.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
+    .accept 5657 >>Accept Hex of Weakness
+    .target Aelthalyste
+    .xp <10,1
+step << Undead Priest
+    .goto 1458/0,400.60,1768.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
+    .accept 5658 >>Accept Touch of Weakness
+    .target Aelthalyste
+    .xp <10,1
+step
+    .goto 1458/0,172.27,1667.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe|r
+    .turnin 84399 >>Turn in Ka-Boom!
+    .target Oran Snakewrithe
+    .isOnQuest 84399
+step
+    .goto 1458/0,172.27,1667.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe|r
+    .turnin 84397 >>Turn in Northern Kalimdor - A Comprehensive Guide
+    .target Oran Snakewrithe
+    .isOnQuest 84397
 step
     .goto 1458/0,66.65,1766.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor Iceshard|r
@@ -1813,15 +1625,28 @@ step
     .accept 371 >>Accept At War With The Scarlet Crusade
     .target Executor Zygand
 step
-    .goto 1420/0,74.00,2022.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea|r
-    .accept 99156 >>Accept Rear Guard Patrol
-    .target Deathguard Linnea
-step
-    .goto 1420/0,56.38,1996.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadric Harlson|r
-    .accept 96899 >>Accept Bandarion Keep
-    .target Hadric Harlson
+    .goto 1420/0,265.15,2305.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Sevren|r
+    .accept 408 >>Accept The Family Crypt
+    .target Magistrate Sevren
+step << Undead Rogue
+    .goto 1420/0,243.01,2271.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion Call|r
+    .accept 1885 >>Accept Mennet Carkad
+    .target Marion Call
+    .xp <10,1
+step << Warrior
+    .goto 1420/0,238.49,2254.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil de Mon|r
+    .accept 1818 >>Accept Speak with Dillinger
+    .target Austil de Mon
+    .xp <10,1
+step << Warlock
+    .goto 1420/0,248.88,2250.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ageron Kargal|r
+    .accept 1478 >>Accept Halgar's Summons
+    .target Ageron Kargal
+    .xp <10,1
 step
     #loop
     .goto 1420/0,-319.58,2023.97,0
@@ -1878,9 +1703,7 @@ step
 step
     .goto 1420/0,346.94,2258.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Johaan|r
-    >>|cRXP_WARN_This one is handed in at the Sepulcher in Silverpine Forest. It rides along until you head there|r
     .turnin 369 >>Turn in A New Plague
-    .accept 445 >>Accept Delivery to Silverpine Forest
     .accept 492 >>Accept A New Plague
     .target Apothecary Johaan
 step
@@ -1953,15 +1776,6 @@ step << Undead Paladin
     .accept 91285 >>Accept Murlocs at the Gates
     .target Breton Samuels
 step
-    .goto 1420/0,2040.56,2485.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r
-    >>|cRXP_WARN_Wait for Danitha Morr and Leonid to finish talking, then hand it in|r
-    .turnin 96899 >>Turn in Bandarion Keep
-    .accept 96896 >>Accept A Righteous Cause
-    .turnin 96896 >>Turn in A Righteous Cause
-    .accept 98545 >>Accept Leonid's Letter
-    .target Leonid Barthalomew the Revered
-step
     .goto 1420/0,2041.47,2423.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilda the Breaker|r
     .accept 99152 >>Accept As Above, So Below
@@ -2032,7 +1846,7 @@ step << Undead Paladin
     .accept 91316 >>Accept Making Repairs
     .target Jorin Croge
 step
-    #completewith Along150
+    #completewith Along133
     >>As you go: Kill |cRXP_ENEMY_Shadowvale Lurchers|r and |cRXP_ENEMY_Shadowvale Mystics|r. Loot them for |cRXP_LOOT_Faintly Glowing Bone|r. |cRXP_WARN_Anything left is finished later|r
     .complete 99152,1 --Faintly Glowing Bone (6)
     .mob Shadowvale Lurcher
@@ -2059,11 +1873,11 @@ step << Undead Paladin
     .mob Tarnished Zealot
     .mob Tarnished Drudge
 step
-    #completewith Along150
+    #completewith Along133
     >>As you go: Open the |cRXP_PICK_Bottle|r. Loot it for |cRXP_LOOT_Bottle of Whispering Elixir|r. |cRXP_WARN_Anything left is finished later|r
     .complete 95314,1 --Bottle of Whispering Elixir (1)
 step
-    #label Along150
+    #label Along133
     #loop
     .goto 1420/0,2610.38,1914.62,0
     .goto 1420/0,2610.38,1914.62,40,0
@@ -2148,8 +1962,7 @@ step
 step << Undead Mage/Troll Mage
     .goto 1458/0,56.38,1813.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia Hartwell|r
-    .turnin 1882 >>Turn in The Balnir Farmstead while you are here
-    .isQuestComplete 1882
+    .turnin 1882 >>Turn in The Balnir Farmstead
     .target Anastasia Hartwell
 step << Undead Paladin
     .goto 1458/0,243.84,1636.75
@@ -2161,295 +1974,11 @@ step << Undead Paladin
     .accept 94435 >>Accept A Lesson in Divinity
     .target Tanis Alderwood
 step
-    .goto 1458/0,202.88,1577.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Glix Xizzix|r
-    .turnin 98545 >>Turn in Leonid's Letter
-    .target Glix Xizzix
-step
-    #completewith next
-    .goto 1420/0,235.32,1883.89
-    .zone 1420 >>Take a lift back up and leave the Undercity
-    .zoneskip 1420
-step
-    .goto 1420/0,-48.45,2574.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Arcanus|r
-    .turnin 366 >>Turn in Return the Book
-    .accept 409 >>Accept Proving Allegiance
-    .target Gunther Arcanus
-step
-    .goto 1420/0,-46.65,2571.65
-    >>Open the |cRXP_PICK_Crate of Candles|r next to Gunther. Loot a |cRXP_LOOT_Candle of Beckoning|r
-    .collect 3080,1,409,1 --Candle of Beckoning (1)
-step
-    .goto 1420/0,22.04,2485.49
-    >>Click |cRXP_PICK_Lillith's Dinner Table|r on the smaller island to summon |cRXP_ENEMY_Lillith Nefara|r, then kill her
-    .complete 409,1 --Lillith Nefara slain (1)
-    .mob Lillith Nefara
-step
-    .goto 1420/0,-48.45,2574.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Arcanus|r
-    .turnin 409 >>Turn in Proving Allegiance
-    .accept 411 >>Accept The Prodigal Lich Returns
-    .target Gunther Arcanus
-step
-    #loop
-    .goto 1420/0,-606.07,2463.80,0
-    .goto 1420/0,-606.07,2463.80,40,0
-    .goto 1420/0,-681.53,2447.83,40,0
-    .goto 1420/0,-715.87,2517.72,40,0
-    .goto 1420/0,-766.94,2562.01,40,0
-    .goto 1420/0,-766.48,2648.47,40,0
-    .goto 1420/0,-710.45,2570.14,40,0
-    .goto 1420/0,-680.18,2591.53,40,0
-    .goto 1420/0,-639.05,2609.60,40,0
-    .goto 1420/0,-665.72,2495.73,40,0
-    >>Kill |cRXP_ENEMY_Riptear|r and loot |cRXP_LOOT_Riptear's Heart|r
-    >>|cRXP_WARN_Riptear is level 13|r
-    .complete 99156,1 --Riptear's Heart (1)
-    .mob Riptear
-step
-    .goto 1420/0,-559.98,3079.86
-    >>Kill |cRXP_ENEMY_Captain Melrache|r
-    >>Kill |cRXP_ENEMY_Scarlet Bodyguards|r
-    .complete 372,1 --Captain Melrache slain (1)
-    .complete 372,2 --Scarlet Bodyguard slain (2)
-    .mob Captain Melrache
-    .mob Scarlet Bodyguard
-step
-    #loop
-    .goto 1420/0,540.79,2934.95,0
-    .goto 1420/0,540.79,2934.95,40,0
-    .goto 1420/0,595.02,2939.17,40,0
-    .goto 1420/0,689.46,2889.16,40,0
-    .goto 1420/0,702.56,2830.42,40,0
-    .goto 1420/0,729.67,2917.78,40,0
-    .goto 1420/0,652.86,2954.23,40,0
-    .goto 1420/0,698.04,3063.59,40,0
-    .goto 1420/0,653.76,3022.92,40,0
-    .goto 1420/0,614.90,2994.00,40,0
-    >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Mace|r << Warrior
-    >>Kill |cRXP_ENEMY_Captain Dargol|r and loot |cRXP_LOOT_Dargol's Skull|r
-    >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Sword|r << Warrior
-    >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Axe|r << Warrior
-    >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Dagger|r << Warrior
-    >>Kill |cRXP_ENEMY_Wailing Ancestors|r
-    >>Kill |cRXP_ENEMY_Rotting Ancestors|r
-    .complete 1821,3 << Warrior --Agamand Family Mace (1)
-    .complete 408,3 --Dargol's Skull (1)
-    .complete 1821,4 << Warrior --Agamand Family Sword (1)
-    .complete 1821,1 << Warrior --Agamand Family Axe (1)
-    .complete 1821,2 << Warrior --Agamand Family Dagger (1)
-    .complete 408,1 --Wailing Ancestor slain (8)
-    .complete 408,2 --Rotting Ancestor slain (8)
-    .mob Captain Dargol
-    .mob Wailing Ancestor
-    .mob Rotting Ancestor
-step
-    .goto 1420/0,265.15,2305.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Sevren|r
-    .turnin 408 >>Turn in The Family Crypt
-    .target Magistrate Sevren
-step
-    .goto 1420/0,295.42,2278.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Zygand|r
-    .turnin 372 >>Turn in At War With The Scarlet Crusade
-    .target Executor Zygand
-step << Warrior
-    .goto 1420/0,244.36,2262.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r
-    .turnin 1821 >>Turn in Agamand Heirlooms
-    .accept 1822 >>Accept Heirloom Weapon
-    .turnin 1822 >>Turn in Heirloom Weapon
-    .target Coleman Farthing
-step
-    .goto 1420/0,74.00,2022.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea|r
-    .turnin 99156 >>Turn in Rear Guard Patrol
-    .target Deathguard Linnea
-step
-    #completewith next
-    .goto 1420/0,235.32,1883.89
-    .zone 1458 >>Go into the Ruins of Lordaeron and take a lift down into the Undercity
-    .zoneskip 1458
-step
-    .goto 1458/0,66.65,1766.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor Iceshard|r
-    .turnin 411 >>Turn in The Prodigal Lich Returns
-    .target Bethor Iceshard
-step << Undead Warlock
-    .goto 1458/0,57.15,1711.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r
-    .turnin 1471 >>Turn in The Binding
-    .target Carendin Halgar
-    .isQuestComplete 1471
-step << Priest
-    .goto 1458/0,273.87,1482.360
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lavinia|r
-    .train 7411 >> Train |T136244:0|t[Enchanting]
-    .target Lavinia Crowe
-step << Priest
-    .goto 1458/0,194.24,1681.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josef|r
-    .train 3908 >> Train |T136249:0|t[Tailoring]
-    .target Josef Gregorian
-step << Priest
-    .goto 1458/0,194.34,1681.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josef|r
-    .train 7623 >> Train |T132662:0|t[Brown Linen Robe]
-    .target Josef Gregorian
-step << Priest
-    .goto 1458/0,273.2,1491.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malcomb|r
-    .train 14293 >> Train |T135139:0|t[Lesser Magic Wand]
-    .target Malcomb Wynn
-step << Rogue
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 1766 >> Train |T132219:0|t[Kick]
-    .target Carolyn Ward
-    .xp <12,1
-    .money <0.08
-step << Mage
-    .goto 1458/0,56.38,1813.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r
-    .train 145 >> Train |T135812:0|t[Fireball Rank 3]
-    .target Anastasia Hartwell
-    .xp <12,1
-    .money <0.08
-step << Warlock
-    .goto 1458/0,20.02,1776.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
-    .train 755 >> Train |T136168:0|t[Health Funnel]
-    .target Richard Kerwin
-    .xp <12,1
-    .money <0.08
-step << Priest
-    .goto 1458/0,416.91,1757.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lazarus|r
-    .train 588 >>Train |T135926:0|t[Inner Fire]
-    .target Father Lazarus
-    .xp <12,1
-    .money <0.08
-step << Warrior
-    .goto 1458/0,418.35,1767.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baltus Fowler|r
-    .train 7384 >>Train |T132223:0|t[Overpower]
-    .target Baltus Fowler
-    .xp <12,1
-    .money <0.08
-step
-    .goto 1458/0,401.76,1784.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Lankester|r
-    .turnin 95328 >>Turn in Whispering Horror Residue while you are here
-    .isQuestComplete 95328
-    .target Father Lankester
-step << Undead Mage/Troll Mage
-    .goto 1458/0,56.38,1813.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia Hartwell|r
-    .turnin 1882 >>Turn in The Balnir Farmstead
-    .target Anastasia Hartwell
-step << Undead Priest
-    .goto 1458/0,400.60,1768.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .turnin 5663 >>Turn in Touch of Weakness
-    .target Aelthalyste
-    .isOnQuest 5663
-step << Undead Priest
-    .goto 1458/0,400.60,1768.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .turnin 5661 >>Turn in Touch of Weakness
-    .target Aelthalyste
-    .isOnQuest 5661
-step << Undead Priest
-    .goto 1458/0,400.60,1768.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .turnin 5662 >>Turn in Touch of Weakness
-    .target Aelthalyste
-    .isOnQuest 5662
-step
-    .goto 1458/0,400.60,1768.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .accept 5658 >>Accept Touch of Weakness << Undead Priest
-    .accept 5657 >>Accept Hex of Weakness << Troll Priest
-    .target Aelthalyste
-step << Undead Rogue
-    .goto 1458/0,72.02,1435.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet Carkad|r
-    .accept 1898 >>Accept The Deathstalkers
-    .target Mennet Carkad
-    .isQuestTurnedIn 1886 --any of: The Deathstalkers
-    .xp <10,1
-step << Undead Rogue
-    .goto 1458/0,347.36,1389.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andron Gant|r
-    .turnin 1898 >>Turn in The Deathstalkers
-    .target Andron Gant
-    .isOnQuest 1898
-step << Undead Rogue
-    .goto 1458/0,347.36,1389.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andron Gant|r
-    .accept 1899 >>Accept The Deathstalkers
-    .target Andron Gant
-    .isQuestTurnedIn 1898 --any of: The Deathstalkers
-    .xp <10,1
-step << Undead Rogue
-    .goto 1458/0,341.70,1385.32
-    >>Open the |cRXP_PICK_Andron's Bookshelf|r. Loot it for |cRXP_LOOT_Andron's Ledger|r
-    .complete 1899,1 --Andron's Ledger (1)
-    .isOnQuest 1899
-step << Undead Rogue
-    .goto 1458/0,72.02,1435.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet Carkad|r
-    .turnin 1899 >>Turn in The Deathstalkers
-    .target Mennet Carkad
-    .isOnQuest 1899
-step << Undead Rogue
-    .goto 1458/0,72.02,1435.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet Carkad|r
-    .accept 1978 >>Accept The Deathstalkers
-    .target Mennet Carkad
-    .isQuestTurnedIn 1899 --any of: The Deathstalkers
-    .xp <10,1
-step << Undead Rogue
-    .goto 1458/0,333.54,1287.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varimathras|r
-    .turnin 1978 >>Turn in The Deathstalkers
-    .target Varimathras
-    .isOnQuest 1978
-step << Undead Paladin
-    .goto 1458/0,316.28,1290.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r
-    .turnin 95803 >>Turn in A Token of Good Faith while you are here
-    .isQuestComplete 95803
-    .target Lady Sylvanas Windrunner
-step
     .goto 1458/0,401.76,1784.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Lankester|r
     .turnin 95328 >>Turn in Whispering Horror Residue
     .target Father Lankester
     .isOnQuest 95328
-step << Undead Priest
-    .goto 1458/0,400.60,1768.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    >>|cRXP_WARN_The database has no objectives for Touch of Weakness. Skip this step if the quest is not finished|r
-    .turnin 5658 >>Turn in Touch of Weakness
-    .target Aelthalyste
-    .isOnQuest 5658
-step << Priest
-    .goto 1458/0,403.29,1760.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .target Aelthalyste
-    .train 2652,1
-step << Priest
-    .goto 1458/0,201.05,1686.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Victor|r
-    .train 3908 >> Train |T136249:0|t[Tailoring]
-    .target Victor Ward
-step << Priest
-    .goto 1458/0,201.05,1686.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Victor|r
-    .train 7623 >> Train |T132662:0|t[Brown Linen Robe]
-    .target Victor Ward
 step << Undead Paladin
     .goto 1458/0,316.28,1290.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r
@@ -2512,12 +2041,39 @@ step
     .goto 1420/0,235.32,1883.89
     .zone 1458 >>Go into the Ruins of Lordaeron and take a lift down into the Undercity
     .zoneskip 1458
-step << Undead
-    .goto 1458/0,283.27,1610.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordon Wendham|r
-    .turnin 6323 >>Turn in Ride to the Undercity
-    .target Gordon Wendham
-    .isOnQuest 6323
+step
+    .goto 1458/0,400.60,1768.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
+    .accept 5658 >>Accept Touch of Weakness << Undead Priest
+    .accept 5657 >>Accept Hex of Weakness << Troll Priest
+    .target Aelthalyste
+step << Undead Priest
+    .goto 1458/0,400.60,1768.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
+    >>|cRXP_WARN_The database has no objectives for Touch of Weakness. Skip this step if the quest is not finished|r
+    .turnin 5658 >>Turn in Touch of Weakness
+    .target Aelthalyste
+    .isOnQuest 5658
+step << Priest
+    .goto 1458/0,403.29,1760.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
+    .target Aelthalyste
+    .train 2652,1
+step << Priest
+    .goto 1458/0,201.05,1686.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Victor|r
+    .train 3908 >> Train |T136249:0|t[Tailoring]
+    .target Victor Ward
+step << Priest
+    .goto 1458/0,201.05,1686.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Victor|r
+    .train 7623 >> Train |T132662:0|t[Brown Linen Robe]
+    .target Victor Ward
+step << Undead Priest
+    .goto 1458/0,403.29,1760.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
+    .target Aelthalyste
+    .train 2652,1
 step << Undead
     .goto 1458/0,283.27,1610.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordon Wendham|r
@@ -2552,46 +2108,6 @@ step << Rogue/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Mary|r in the Rogues' Quarter
     .train 3274 >> Train Journeyman First Aid
     .target Mary Edras
-step << Undead Rogue
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 1758 >> Train your class spells
-    .target Carolyn Ward
-    .xp <14,1
-    .xp >16,1
-    .isOnQuest 1898 << Undead
-step << Undead Rogue
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 6761 >> Train your class spells
-    .target Carolyn Ward
-    .xp <16,1
-    .isOnQuest 1898 << Undead
-step << Undead Rogue
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 1758 >> Train your class spells
-    .target Carolyn Ward
-    .xp <14,1
-    .xp >16,1
-step << Undead Rogue
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 6761 >> Train your class spells
-    .target Carolyn Ward
-    .xp <16,1
-step << Mage
-    .goto 1458/0,65.59,1778.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lexington|r
-    .train 3563 >> Train |T135766:0|t[Teleport: Undercity]
-    .target Lexington Mortaim
-step << !Undead
-    .goto 1458/0,266.20,1567.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
-    .fly The Sepulcher>> Fly to The Sepulcher << Mage/Warlock/Priest/Rogue
-    .fp Undercity >> Get the Undercity Flight Path << !Mage !Warlock !Priest !Rogue
-    .target Michael Garrett
-    .zoneskip Silverpine Forest
 step << Undead
     .goto 1458/0,266.39,1567.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael Garrett|r
@@ -2599,45 +2115,295 @@ step << Undead
     .target Michael Garrett
     .isQuestTurnedIn 6322 --any of: Michael Garrett
     .xp <10,1
+step
+    #completewith next
+    .goto 1420/0,235.32,1883.89
+    .zone 1420 >>Take a lift back up and leave the Undercity
+    .zoneskip 1420
+step
+    #loop
+    .goto 1420/0,155.79,2063.74,0
+    .goto 1420/0,155.79,2063.74,40,0
+    .goto 1420/0,165.28,2133.93,40,0
+    .goto 1420/0,214.54,2162.85,40,0
+    .goto 1420/0,243.01,2199.30,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Terrence|r. |cRXP_WARN_This NPC walks a patrol route|r
+    .accept 96895 >>Accept The Argent Emissary
+    .unitscan Deathguard Terrence
 step << Warrior
-    .goto 1458/0,409.62,1775.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angela|r
-    .train 5308 >> Train your class spells
-    .target Angela Curthas
-    .xp <24,1
-    .xp >26,1
+    .goto 1420/0,238.49,2254.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil de Mon|r
+    .accept 1818 >>Accept Speak with Dillinger
+    .target Austil de Mon
 step << Warrior
-    .goto 1458/0,409.62,1775.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angela|r
-    .train 6178 >> Train your class spells
-    .target Angela Curthas
-    .xp <26,1
-step << Rogue
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 6762 >> Train your class spells
-    .target Carolyn Ward
-    .xp <24,1
-    .xp >26,1
-step << Rogue
-    .goto 1458/0,68.66,1416.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 1833 >> Train your class spells
-    .target Carolyn Ward
-    .xp <26,1
+    .goto 1420/0,403.42,2287.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Dillinger|r
+    .turnin 1818 >>Turn in Speak with Dillinger
+    .accept 1819 >>Accept Ulag the Cleaver
+    .target Deathguard Dillinger
+step << Warrior
+    .goto 1420/0,346.03,2383.06
+    >>Kill |cRXP_ENEMY_Ulag the Cleaver|r
+    .complete 1819,1 --Ulag the Cleaver slain (1)
+    .mob Ulag the Cleaver
+step << Warrior
+    .goto 1420/0,403.42,2287.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Dillinger|r
+    .turnin 1819 >>Turn in Ulag the Cleaver
+    .accept 1820 >>Accept Speak with Coleman
+    .target Deathguard Dillinger
 step << Warlock
-    .goto 1458/0,20.02,1776.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
-    .train 6223 >> Train your class spells
-    .target Richard Kerwin
-    .xp <24,1
-    .xp >26,1
+    .goto 1420/0,248.88,2250.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ageron Kargal|r
+    .accept 1478 >>Accept Halgar's Summons
+    .target Ageron Kargal
+step << Undead Rogue
+    .goto 1420/0,243.01,2271.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion Call|r
+    .accept 1885 >>Accept Mennet Carkad
+    .target Marion Call
+step
+    .goto 1420/0,346.94,2258.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Johaan|r
+    >>|cRXP_WARN_This one is handed in at the Sepulcher in Silverpine Forest. It rides along until you head there|r
+    .accept 445 >>Accept Delivery to Silverpine Forest
+    .target Apothecary Johaan
+step << Warrior
+    .goto 1420/0,244.36,2262.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r
+    .turnin 1820 >>Turn in Speak with Coleman
+    .accept 1821 >>Accept Agamand Heirlooms
+    .target Coleman Farthing
+step << Priest
+    .goto 1420/0,251.14,2265.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
+    .train 588 >>Train |T135926:0|t[Inner Fire]
+    .target Dark Cleric Beryl
+    .xp <12,1
+step << Mage
+    .goto 1420/0,233.06,2256.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r on the second floor
+    .train 145 >> Train |T135812:0|t[Fireball Rank 3]
+    .target Cain Firesong
+    .xp <12,1
+step << Warrior
+    .goto 1420/0,238.49,2255.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
+    .train 7384 >>Train |T132223:0|t[Overpower]
+    .target Austil de Mon
+    .xp <12,1
+step << Rogue
+    .goto 1420/0,243.01,2271.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
+    .train 1766 >> Train |T132219:0|t[Kick]
+    .target Marion Call
+    .xp <12,1
 step << Warlock
-    .goto 1458/0,20.02,1776.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
-    .train 1456 >> Train your class spells
-    .target Richard Kerwin
-    .xp <26,1
+    .goto 1420/0,250.24,2259.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rupert|r
+    .train 755 >> Train |T136168:0|t[Health Funnel]
+    .target Rupert Boch
+    .xp <12,1
+step << !Mage
+    .goto 1420/0,244.81,2269.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Mage/Priest/Shaman
+    >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushroom] |cRXP_BUY_from her|r << Warrior/Rogue
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushroom] |cRXP_BUY_from her|r << Warlock/Hunter
+    .vendor >> Vendor Trash
+    .collect 1179,20,96897,1 << Mage/Priest/Shaman
+    .collect 4605,20,96897,1 << Rogue/Warrior
+    .collect 1179,15,96897,1 << Warlock/Hunter
+    .collect 4605,15,96897,1 << Warlock/Hunter
+    .money <0.050 << !Warlock !Hunter
+    .money <0.075 << Warlock/Hunter
+    .target Innkeeper Renee
+step
+    .goto 1420/0,74.00,2022.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea|r
+    .accept 356 >>Accept Rear Guard Patrol
+    .target Deathguard Linnea
+step
+    .goto 1420/0,56.38,1996.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadric Harlson|r
+    .turnin 96895 >>Turn in The Argent Emissary
+    .accept 96897 >>Accept The Cult of the Damned
+    .accept 96898 >>Accept Remnants of War
+    .target Hadric Harlson
+step
+    #loop
+    .goto 1420/0,49.15,2027.29,0
+    .goto 1420/0,49.15,2027.29,40,0
+    .goto 1420/0,-76.92,2038.74,40,0
+    .goto 1420/0,-172.27,1929.38,40,0
+    .goto 1420/0,-158.26,1802.86,40,0
+    .goto 1420/0,-88.67,1829.07,40,0
+    .goto 1420/0,-16.82,1820.63,40,0
+    .goto 1420/0,-49.81,1911.01,40,0
+    .goto 1420/0,18.42,1952.88,40,0
+    .goto 1420/0,127.33,1943.54,40,0
+    >>Kill |cRXP_ENEMY_Dark Neophytes|r and |cRXP_ENEMY_Dark Enforcers|r. |cRXP_WARN_They hit hard; Enforcers have an instant 50-70 damage ability|r
+    >>Kill |cRXP_ENEMY_Dark Neophytes|r
+    >>Kill |cRXP_ENEMY_Dark Neophytes|r and |cRXP_ENEMY_Dark Enforcers|r. Loot them for |cRXP_LOOT_Necrotic Crystal Fragment|r. It can also be picked up from |cRXP_PICK_Naxxramas Crystal Fragment|r on the ground
+    .complete 96897,2 --Dark Enforcer slain (8)
+    .complete 96897,1 --Dark Neophyte slain (8)
+    .complete 96898,1 --Necrotic Crystal Fragment (12)
+    .mob Dark Enforcer
+    .mob Dark Neophyte
+step
+    #loop
+    .goto 1420/0,-317.77,1945.95,0
+    .goto 1420/0,-317.77,1945.95,40,0
+    .goto 1420/0,-349.85,1980.59,40,0
+    .goto 1420/0,-407.24,1997.46,40,0
+    .goto 1420/0,-438.87,1946.25,40,0
+    .goto 1420/0,-488.58,1991.14,40,0
+    .goto 1420/0,-512.08,2048.68,40,0
+    .goto 1420/0,-423.51,2068.26,40,0
+    .goto 1420/0,-366.12,2084.22,40,0
+    .goto 1420/0,-336.75,2044.76,40,0
+    >>Kill |cRXP_ENEMY_Bleeding Horrors|r
+    >>Kill |cRXP_ENEMY_Wandering Spirits|r
+    .complete 356,1 --Bleeding Horror slain (8)
+    .complete 356,2 --Wandering Spirit slain (8)
+    .mob Bleeding Horror
+    .mob Wandering Spirit
+step
+    .goto 1420/0,56.38,1996.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadric Harlson|r
+    .turnin 96897 >>Turn in The Cult of the Damned
+    .turnin 96898 >>Turn in Remnants of War
+    .accept 96899 >>Accept Bandarion Keep
+    .target Hadric Harlson
+step << Horde !Hunter
+    .goto 1458/0,266.39,1567.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael Garrett::4551|r
+    .fp Undercity >> Get the Undercity flight path
+    .target Michael Garrett::4551
+step
+    .goto 1420/0,74.00,2022.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea|r
+    .turnin 356 >>Turn in Rear Guard Patrol while you are here
+    .isQuestComplete 356
+    .target Deathguard Linnea
+step
+    .goto 1420/0,-48.45,2574.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Arcanus|r
+    .turnin 366 >>Turn in Return the Book
+    .accept 409 >>Accept Proving Allegiance
+    .target Gunther Arcanus
+step
+    .goto 1420/0,-46.65,2571.65
+    >>Open the |cRXP_PICK_Crate of Candles|r next to Gunther. Loot a |cRXP_LOOT_Candle of Beckoning|r
+    .collect 3080,1,409,1 --Candle of Beckoning (1)
+step
+    .goto 1420/0,22.04,2485.49
+    >>Click |cRXP_PICK_Lillith's Dinner Table|r on the smaller island to summon |cRXP_ENEMY_Lillith Nefara|r, then kill her
+    .complete 409,1 --Lillith Nefara slain (1)
+    .mob Lillith Nefara
+step
+    .goto 1420/0,-48.45,2574.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Arcanus|r
+    .turnin 409 >>Turn in Proving Allegiance
+    .accept 411 >>Accept The Prodigal Lich Returns
+    .target Gunther Arcanus
+step
+    .goto 1420/0,-557.27,3076.84
+    >>Kill |cRXP_ENEMY_Scarlet Bodyguards|r
+    >>Kill |cRXP_ENEMY_Captain Melrache|r
+    .complete 372,2 --Scarlet Bodyguard slain (2)
+    .complete 372,1 --Captain Melrache slain (1)
+    .mob Scarlet Bodyguard
+    .mob Captain Melrache
+step
+    #loop
+    .goto 1420/0,540.79,2934.95,0
+    .goto 1420/0,540.79,2934.95,40,0
+    .goto 1420/0,595.02,2939.17,40,0
+    .goto 1420/0,689.46,2971.10,40,0
+    .goto 1420/0,689.46,2889.16,40,0
+    .goto 1420/0,837.22,2874.10,40,0
+    .goto 1420/0,784.80,2925.92,40,0
+    .goto 1420/0,786.16,2976.23,40,0
+    .goto 1420/0,656.92,3060.88,40,0
+    .goto 1420/0,614.90,2994.00,40,0
+    >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Mace|r << Warrior
+    >>Kill |cRXP_ENEMY_Wailing Ancestors|r
+    >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Dagger|r << Warrior
+    >>Kill |cRXP_ENEMY_Rotting Ancestors|r
+    >>Kill |cRXP_ENEMY_Captain Dargol|r and loot |cRXP_LOOT_Dargol's Skull|r
+    >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Sword|r << Warrior
+    >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Axe|r << Warrior
+    .complete 1821,3 << Warrior --Agamand Family Mace (1)
+    .complete 408,1 --Wailing Ancestor slain (8)
+    .complete 1821,2 << Warrior --Agamand Family Dagger (1)
+    .complete 408,2 --Rotting Ancestor slain (8)
+    .complete 408,3 --Dargol's Skull (1)
+    .complete 1821,4 << Warrior --Agamand Family Sword (1)
+    .complete 1821,1 << Warrior --Agamand Family Axe (1)
+    .mob Wailing Ancestor
+    .mob Rotting Ancestor
+    .mob Captain Dargol
+step
+    .goto 1420/0,2040.56,2485.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r
+    >>|cRXP_WARN_Wait for Danitha Morr and Leonid to finish talking, then hand it in|r
+    .turnin 96899 >>Turn in Bandarion Keep
+    .accept 96896 >>Accept A Righteous Cause
+    .turnin 96896 >>Turn in A Righteous Cause
+    .accept 98545 >>Accept Leonid's Letter
+    .target Leonid Barthalomew the Revered
+step << Warrior
+    #completewith next
+    .hs >>Hearth to Brill. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+    .subzoneskip 159
+step << Warrior
+    .goto 1420/0,244.36,2262.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r
+    .turnin 1821 >>Turn in Agamand Heirlooms
+    .accept 1822 >>Accept Heirloom Weapon
+    .turnin 1822 >>Turn in Heirloom Weapon
+    .target Coleman Farthing
+step
+    .goto 1420/0,295.42,2278.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Zygand|r
+    .turnin 372 >>Turn in At War With The Scarlet Crusade while you are here
+    .isQuestComplete 372
+    .target Executor Zygand
+step
+    #completewith next
+    .hs >>Hearth to Brill. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+    .subzoneskip 159
+step
+    .goto 1420/0,265.15,2305.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Sevren|r
+    .turnin 408 >>Turn in The Family Crypt
+    .target Magistrate Sevren
+step
+    .goto 1420/0,295.42,2278.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Zygand|r
+    .turnin 372 >>Turn in At War With The Scarlet Crusade
+    .target Executor Zygand
+step
+    #completewith next
+    .goto 1420/0,235.32,1883.89
+    .zone 1458 >>Go into the Ruins of Lordaeron and take a lift down into the Undercity
+    .zoneskip 1458
+step
+    .goto 1458/0,392.16,1442.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Zinge|r
+    .turnin 1359 >>Turn in Zinge's Delivery
+    .target Apothecary Zinge
+    .isOnQuest 1359
+step
+    .goto 1458/0,392.16,1442.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Zinge|r
+    .accept 1358 >>Accept Sample for Helbrim
+    .target Apothecary Zinge
+    .isQuestTurnedIn 1359 --any of: Zinge's Delivery
+    .xp <10,1
 step
     .goto 1458/0,404.83,1434.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Apothecary Faranell|r
@@ -2652,18 +2418,244 @@ step
     .isQuestTurnedIn 447 --any of: A Recipe For Death
     .xp <9,1
 step
-    .goto 1458/0,392.16,1442.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Zinge|r
-    .turnin 1359 >>Turn in Zinge's Delivery
-    .target Apothecary Zinge
-    .isOnQuest 1359
+    .goto 1458/0,202.88,1577.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Glix Xizzix|r
+    .turnin 98545 >>Turn in Leonid's Letter
+    .target Glix Xizzix
 step
-    .goto 1458/0,392.16,1442.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Zinge|r
-    .accept 1358 >>Accept Sample for Helbrim
-    .target Apothecary Zinge
-    .isQuestTurnedIn 1359 --any of: Zinge's Delivery
+    .goto 1458/0,66.65,1766.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor Iceshard|r
+    .turnin 411 >>Turn in The Prodigal Lich Returns
+    .target Bethor Iceshard
+step << Warlock
+    .goto 1458/0,57.15,1711.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r
+    .turnin 1478 >>Turn in Halgar's Summons while you are here
+    .isQuestComplete 1478
+    .target Carendin Halgar
+step
+    #completewith next
+    .goto 1420/0,235.32,1883.89
+    .zone 1420 >>Take a lift back up and leave the Undercity
+    .zoneskip 1420
+step
+    .goto 1420/0,74.00,2022.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea|r
+    .turnin 356 >>Turn in Rear Guard Patrol
+    .accept 99156 >>Accept Rear Guard Patrol
+    .target Deathguard Linnea
+step << !Undead
+    .goto 1458/0,266.39,1567.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
+    .fp Undercity >> Get the Undercity flight path
+    .target Michael Garrett
+step
+    #loop
+    .goto 1420/0,-606.07,2463.80,0
+    .goto 1420/0,-606.07,2463.80,40,0
+    .goto 1420/0,-681.53,2447.83,40,0
+    .goto 1420/0,-715.87,2517.72,40,0
+    .goto 1420/0,-766.94,2562.01,40,0
+    .goto 1420/0,-766.48,2648.47,40,0
+    .goto 1420/0,-710.45,2570.14,40,0
+    .goto 1420/0,-680.18,2591.53,40,0
+    .goto 1420/0,-639.05,2609.60,40,0
+    .goto 1420/0,-665.72,2495.73,40,0
+    >>Kill |cRXP_ENEMY_Riptear|r and loot |cRXP_LOOT_Riptear's Heart|r
+    >>|cRXP_WARN_Riptear is level 13|r
+    .complete 99156,1 --Riptear's Heart (1)
+    .mob Riptear
+step
+    .goto 1420/0,74.00,2022.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Linnea|r
+    .turnin 99156 >>Turn in Rear Guard Patrol
+    .target Deathguard Linnea
+step
+    #completewith next
+    .goto 1420/0,235.32,1883.89
+    .zone 1458 >>Go into the Ruins of Lordaeron and take a lift down into the Undercity
+    .zoneskip 1458
+step << Warlock
+    .goto 1458/0,57.15,1711.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r
+    .turnin 1478 >>Turn in Halgar's Summons
+    .target Carendin Halgar
+step << Undead Rogue
+    .goto 1458/0,72.02,1435.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet Carkad|r
+    .turnin 1885 >>Turn in Mennet Carkad
+    .accept 1886 >>Accept The Deathstalkers
+    .target Mennet Carkad
+step << Rogue
+    .goto 1458/0,323.57,1668.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Archibald|r in the War Quarter
+    .train 201 >>Train 1h Swords
+    .target Archibald
+    .money <0.1
+step << Undead Rogue
+    .goto 1458/0,72.02,1435.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet Carkad|r
+    .turnin 1886 >>Turn in The Deathstalkers
+    .target Mennet Carkad
+    .isQuestComplete 1886
+step << Undead Warlock
+    .goto 1458/0,57.15,1711.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r
+    .accept 1473 >>Accept Creature of the Void
+    .target Carendin Halgar
+step
+    #completewith next
+    .goto 1420/0,235.32,1883.89
+    .zone 1420 >>Take a lift back up and leave the Undercity
+    .zoneskip 1420
+step << Undead Warlock
+    .goto 1420/0,726.06,1801.95
+    >>Open the |cRXP_PICK_Perrine's Chest|r. Loot it for |cRXP_LOOT_Egalin's Grimoire|r
+    .complete 1473,1 --Egalin's Grimoire (1)
+step
+    #completewith next
+    .goto 1420/0,235.32,1883.89
+    .zone 1458 >>Go into the Ruins of Lordaeron and take a lift down into the Undercity
+    .zoneskip 1458
+step << Undead Warlock
+    .goto 1458/0,57.15,1711.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r
+    .turnin 1473 >>Turn in Creature of the Void
+    .accept 1471 >>Accept The Binding
+    .target Carendin Halgar
+step << Undead Warlock
+    .goto 1458/0,57.15,1711.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r
+    .turnin 1471 >>Turn in The Binding
+    .target Carendin Halgar
+    .isQuestComplete 1471
+step << Priest
+    .goto 1458/0,273.87,1482.360
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lavinia|r
+    .train 7411 >> Train |T136244:0|t[Enchanting]
+    .target Lavinia Crowe
+step << Priest
+    .goto 1458/0,194.24,1681.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josef|r
+    .train 3908 >> Train |T136249:0|t[Tailoring]
+    .target Josef Gregorian
+step << Priest
+    .goto 1458/0,194.34,1681.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josef|r
+    .train 7623 >> Train |T132662:0|t[Brown Linen Robe]
+    .target Josef Gregorian
+step << Priest
+    .goto 1458/0,273.2,1491.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malcomb|r
+    .train 14293 >> Train |T135139:0|t[Lesser Magic Wand]
+    .target Malcomb Wynn
+step << Rogue
+    .goto 1458/0,68.66,1416.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
+    .train 1766 >> Train |T132219:0|t[Kick]
+    .target Carolyn Ward
+    .xp <12,1
+    .money <0.08
+step << Mage
+    .goto 1458/0,56.38,1813.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r
+    .train 145 >> Train |T135812:0|t[Fireball Rank 3]
+    .target Anastasia Hartwell
+    .xp <12,1
+    .money <0.08
+step << Warlock
+    .goto 1458/0,20.02,1776.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
+    .train 755 >> Train |T136168:0|t[Health Funnel]
+    .target Richard Kerwin
+    .xp <12,1
+    .money <0.08
+step << Priest
+    .goto 1458/0,416.91,1757.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lazarus|r
+    .train 588 >>Train |T135926:0|t[Inner Fire]
+    .target Father Lazarus
+    .xp <12,1
+    .money <0.08
+step << Warrior
+    .goto 1458/0,418.35,1767.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baltus Fowler|r
+    .train 7384 >>Train |T132223:0|t[Overpower]
+    .target Baltus Fowler
+    .xp <12,1
+    .money <0.08
+step << Undead Rogue
+    .goto 1458/0,72.02,1435.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet Carkad|r
+    .accept 1898 >>Accept The Deathstalkers
+    .target Mennet Carkad
+    .isQuestTurnedIn 1886 --any of: The Deathstalkers
     .xp <10,1
+step << Undead Rogue
+    .goto 1458/0,68.66,1416.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
+    .train 1758 >> Train your class spells
+    .target Carolyn Ward
+    .xp <14,1
+    .xp >16,1
+    .isOnQuest 1898 << Undead
+step << Undead Rogue
+    .goto 1458/0,68.66,1416.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
+    .train 6761 >> Train your class spells
+    .target Carolyn Ward
+    .xp <16,1
+    .isOnQuest 1898 << Undead
+step << Undead Rogue
+    .goto 1458/0,68.66,1416.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
+    .train 1758 >> Train your class spells
+    .target Carolyn Ward
+    .xp <14,1
+    .xp >16,1
+step << Undead Rogue
+    .goto 1458/0,68.66,1416.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
+    .train 6761 >> Train your class spells
+    .target Carolyn Ward
+    .xp <16,1
+step << Undead Rogue
+    .goto 1458/0,347.36,1389.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andron Gant|r
+    .turnin 1898 >>Turn in The Deathstalkers
+    .target Andron Gant
+    .isOnQuest 1898
+step << Undead Rogue
+    .goto 1458/0,347.36,1389.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andron Gant|r
+    .accept 1899 >>Accept The Deathstalkers
+    .target Andron Gant
+    .isQuestTurnedIn 1898 --any of: The Deathstalkers
+    .xp <10,1
+step << Undead Rogue
+    .goto 1458/0,341.70,1385.32
+    >>Open the |cRXP_PICK_Andron's Bookshelf|r. Loot it for |cRXP_LOOT_Andron's Ledger|r
+    .complete 1899,1 --Andron's Ledger (1)
+    .isOnQuest 1899
+step << Undead Rogue
+    .goto 1458/0,72.02,1435.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet Carkad|r
+    .turnin 1899 >>Turn in The Deathstalkers
+    .target Mennet Carkad
+    .isOnQuest 1899
+step << Undead Rogue
+    .goto 1458/0,72.02,1435.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet Carkad|r
+    .accept 1978 >>Accept The Deathstalkers
+    .target Mennet Carkad
+    .isQuestTurnedIn 1899 --any of: The Deathstalkers
+    .xp <10,1
+step << Undead Rogue
+    .goto 1458/0,333.54,1287.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varimathras|r
+    .turnin 1978 >>Turn in The Deathstalkers
+    .target Varimathras
+    .isOnQuest 1978
 step << !Rogue !Warrior
     .goto 1458/0,171.03,1524.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Mary|r in the Rogues' Quarter
@@ -2713,36 +2705,6 @@ step << Paladin
     .train 7294 >>Train your class spells
     .target Garen Largo
     .xp <16,1
-step << Undead Priest
-    .goto 1458/0,403.29,1760.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .target Aelthalyste
-    .train 2652,1
-step << Undead Priest
-    .goto 1458/0,400.60,1768.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .turnin 5660 >>Turn in Touch of Weakness
-    .target Aelthalyste
-    .isOnQuest 5660
-step << !Undead Priest
-    .goto 1458/0,403.29,1760.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .target Aelthalyste
-    .train 2652,1
-    .isOnQuest 5660
-step << Undead Priest
-    .goto 1458/0,416.91,1757.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lazarus|r
-    .train 6074 >> Train your class spells
-    .target Father Lazarus
-    .xp <14,1
-    .xp >16,1
-step << Undead Priest
-    .goto 1458/0,416.91,1757.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lazarus|r
-    .train 8102 >> Train your class spells
-    .target Father Lazarus
-    .xp <16,1
 step
     +|cRXP_WARN_That is all of Tirisfal Glades for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Orgrimmar|r: Hex of Weakness << Troll Priest
@@ -2789,12 +2751,6 @@ step << Orc Mage/Undead Mage/Troll Mage
     .target Anastasia Hartwell
     .isQuestTurnedIn 1960 --any of: Investigate the Alchemist Shop
     .xp <15,1
-step << Undead Warlock
-    .goto 1458/0,57.15,1711.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r
-    .turnin 1471 >>Turn in The Binding
-    .target Carendin Halgar
-    .isQuestComplete 1471
 step
     #completewith next
     .goto 1420/0,235.32,1883.89
@@ -2828,6 +2784,12 @@ step << Undead Priest
     .turnin 5658 >>Turn in Touch of Weakness
     .target Aelthalyste
     .isOnQuest 5658
+step << Undead Warlock
+    .goto 1458/0,57.15,1711.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r
+    .turnin 1471 >>Turn in The Binding
+    .target Carendin Halgar
+    .isQuestComplete 1471
 step << Orc Mage/Undead Mage/Troll Mage
     .goto 1458/0,194.34,1681.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josef Gregorian|r

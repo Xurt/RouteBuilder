@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "45-50 Searing Gorge",
-  "saved": "2026-10-13 17:38",
+  "saved": "2026-10-14 00:14",
   "levels": "RestedXP",
   "parts": [
     {
@@ -49,6 +49,8 @@
         "obj:7722:1 @1427:-1225.46,-6631.63  Objective What the Flux? / Secret Plans: Fiery Flux (1)",
         "obj:7727:1 @1427:-1404.18,-6493.89  Objective Incendosaurs? Whateverosaur is More Like It / Incendosaur slain (20)",
         "accept:3452 @1427:-1194.44,-6679.98  Accept The Flame's Casing",
+        "accept:3378 @1427:-982.7,-6491.06  Accept Prayer to Elune",
+        "obj:3378:1 @1427:-920.22,-6479.01  Objective Prayer to Elune / Prayer to Elune (1)",
         "obj:3452:1 @1427:-920.22,-6479.01  Objective The Flame's Casing / Symbol of Ragnaros (1)",
         "turnin:3452 @1427:-1194.44,-6679.98  TurnIn The Flame's Casing",
         "obj:7724:1 @1427:-929.15,-6822.18  Objective Fiery Menace! / Greater Lava Spider slain (20)",
@@ -63,9 +65,7 @@
         "turnin:7722 @1427:-1188.64,-6524.09  TurnIn What the Flux?",
         "accept:7701 @1427:-1162.98,-6493.74  Accept WANTED: Overseer Maltorius",
         "obj:7701:1 @1427:-1232.6,-6633.86  Objective WANTED: Overseer Maltorius / Head of Overseer Maltorius (1)",
-        "turnin:7701 @1427:-1164.99,-6495.08  TurnIn WANTED: Overseer Maltorius",
-        "accept:3378 @1427:-982.7,-6491.06  Accept Prayer to Elune",
-        "obj:3378:1 @1427:-761.36,-6674.17  Objective Prayer to Elune / Prayer to Elune (1)"
+        "turnin:7701 @1427:-1164.99,-6495.08  TurnIn WANTED: Overseer Maltorius"
       ]
     }
   ]

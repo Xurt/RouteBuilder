@@ -33,9 +33,16 @@ step
     .target Horde Warbringer
     .isQuestComplete 98888
 step
-    .hs >> Hearth to Feralas
-    .subzoneskip 1099
-    .cooldown item,6948,>0,1
+    .goto 1425/0,-2874.38,-463.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atal'ai Exile|r
+    .accept 1446 >>Accept Jammal'an the Prophet
+    .target Atal'ai Exile
+step
+    .goto 1425/0,-2874.38,-463.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atal'ai Exile|r
+    .turnin 1446 >>Turn in Jammal'an the Prophet
+    .target Atal'ai Exile
+    .isQuestComplete 1446
 step
     .goto 1425/0,-2603.34,219.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilveradin Sunchaser|r
@@ -80,17 +87,6 @@ step
     .isQuestTurnedIn 1429 --any of: The Atal'ai Exile
     .xp <38,1
 step
-    .goto 1425/0,-2874.38,-463.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atal'ai Exile|r
-    .accept 1446 >>Accept Jammal'an the Prophet
-    .target Atal'ai Exile
-step
-    .goto 1425/0,-2874.38,-463.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atal'ai Exile|r
-    .turnin 1446 >>Turn in Jammal'an the Prophet
-    .target Atal'ai Exile
-    .isQuestComplete 1446
-step
     +|cRXP_WARN_That is all of The Hinterlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Swamp of Sorrows|r: Return to Fel'Zerul
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Conflict at Darkspear Islands, Conflict at Darkspear Islands, Jammal'an the Prophet
@@ -131,15 +127,21 @@ step
 step
     .goto 1425/0,-3512.71,-832.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
+    .turnin 98888 >>Turn in Conflict at Darkspear Islands
+    .target Horde Warbringer
+    .isQuestComplete 98888
+step
+    .goto 1425/0,-3512.71,-832.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
     .turnin 98887 >>Turn in Conflict at Darkspear Islands
     .target Horde Warbringer
     .isQuestComplete 98887
 step
-    .goto 1425/0,-3512.71,-832.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
-    .turnin 98888 >>Turn in Conflict at Darkspear Islands
-    .target Horde Warbringer
-    .isQuestComplete 98888
+    .goto 1425/0,-2874.38,-463.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atal'ai Exile|r
+    .turnin 1446 >>Turn in Jammal'an the Prophet
+    .target Atal'ai Exile
+    .isQuestComplete 1446
 step
     .goto 1425/0,-2603.34,219.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilveradin Sunchaser|r
@@ -170,12 +172,12 @@ step
     .accept 7830 >>Accept Avenging the Fallen
     .target Huntsman Markhor
 step
-    #completewith Along8
+    #completewith Along9
     >>As you go: Kill |cRXP_ENEMY_Vilebranch Scalpers|r. |cRXP_WARN_Anything left is finished later|r
     .complete 7844,1 --Vilebranch Scalper slain (30)
     .mob Vilebranch Scalper
 step
-    #label Along8
+    #label Along9
     .goto 1425/0,-4131.40,316.80
     >>Pick up |cRXP_PICK_Slagtree's Lost Tools|r from the ground
     .complete 7839,1 --Slagtree's Lost Tools (1)
@@ -220,12 +222,12 @@ step
     .mob Highvale Ranger
     .mob Highvale Marksman
 step
-    #completewith Along11
+    #completewith Along12
     >>As you go: Kill |cRXP_ENEMY_Savage Owlbeasts|r. |cRXP_WARN_Anything left is finished later|r
     .complete 7829,1 --Savage Owlbeast slain (20)
     .mob Savage Owlbeast
 step
-    #label Along11
+    #label Along12
     #loop
     .goto 1425/0,-3377.96,-59.73,0
     .goto 1425/0,-3377.96,-59.73,40,0
@@ -374,12 +376,6 @@ step
     .turnin 485 >>Turn in Find OOX-09/HL!
     .target Homing Robot OOX-09/HL
     .isOnQuest 485
-step
-    .goto 1425/0,-2874.38,-463.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atal'ai Exile|r
-    .turnin 1446 >>Turn in Jammal'an the Prophet
-    .target Atal'ai Exile
-    .isQuestComplete 1446
 step
     +|cRXP_WARN_That is all of The Hinterlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Orgrimmar|r: Ripple Delivery
@@ -549,15 +545,15 @@ step
 step
     .goto 1425/0,-3512.71,-832.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
-    .turnin 98887 >>Turn in Conflict at Darkspear Islands
-    .target Horde Warbringer
-    .isQuestComplete 98887
-step
-    .goto 1425/0,-3512.71,-832.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
     .turnin 98888 >>Turn in Conflict at Darkspear Islands
     .target Horde Warbringer
     .isQuestComplete 98888
+step
+    .goto 1425/0,-3512.71,-832.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
+    .turnin 98887 >>Turn in Conflict at Darkspear Islands
+    .target Horde Warbringer
+    .isQuestComplete 98887
 step
     .goto 1425/0,-2874.38,-463.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atal'ai Exile|r

@@ -137,6 +137,10 @@ the options of the build you will run next:
 * A hearth RestedXP uses before its guide has you set the hearthstone (back to where the character started, such
   as "Hearth to the Valley of Trials") is kept as a step of its own. Later hearths are RouteBuilder's own.
 * Setting the hearthstone is only taken from a step on this zone's maps, in a guide that does its quests.
+* Of all the guides in the files, it follows the ones that are about this zone: those named after it ("1-6 Mulgore")
+  and any doing at least a fifth as many of its steps as the busiest one, in order of their starting levels. Guides
+  that only pass through (a class quest in the capital, a hand-in on the way to the next zone) are listed and left
+  out; the build slots in what they had.
 * Where RestedXP offers a pickup early "if you are already level N" (`.xp <N`) and plans it again later, the
   later one is used.
 * RestedXP's own grind steps (`.xp 5+1740 >>Grind to ...`) go in too, and the lock is marked `"levels": "RestedXP"`.

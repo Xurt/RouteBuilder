@@ -14,11 +14,6 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 10-21 Darkshore
 
-step << Warrior
-    .goto 1439/1,383.89,6431.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r
-    .accept 1684 >>Accept Elanaria
-    .target Sentinel Elissa Starbreeze
 step
     .goto 1439/1,543.06,6342.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
@@ -81,6 +76,12 @@ step
     >>|cRXP_BUY_Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r
     .vendor >> Vendor Trash
     .collect 4592,20,983,1
+step << Warrior
+    .goto 1439/1,383.89,6431.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r
+    .accept 1684 >>Accept Elanaria
+    .target Sentinel Elissa Starbreeze
+    .xp <10,1
 step
     .goto 1439/1,503.76,6402.39
     >>Click the |cRXP_PICK_WANTED: Murkdeep!|r
@@ -107,6 +108,17 @@ step
     .mob Tide Crawler
     .mob Encrusted Tide Crawler
     .mob Young Reef Crawler
+step << Warrior
+    #completewith next
+    .hs >>Hearth to Innkeeper Shaussiy's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step << Warrior
+    .xp 10 >>Grind to level 10 (Elanaria needs it)
+step << Warrior
+    .goto 1439/1,383.89,6431.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r
+    .accept 1684 >>Accept Elanaria
+    .target Sentinel Elissa Starbreeze
 step
     .goto 1439/1,559.43,6109.83
     >>Open the |cRXP_PICK_Beached Sea Creature|r. Loot it for |cRXP_LOOT_Sea Creature Bones|r

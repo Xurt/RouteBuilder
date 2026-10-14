@@ -954,6 +954,12 @@ step << NightElf Druid
 step << NightElf Druid
     .goto 1457/1,2564.03,10179.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
+    .turnin 6125 >>Turn in Power over Poison
+    .target Mathrengyl Bearwalker
+    .isOnQuest 6125
+step << NightElf Druid
+    .goto 1457/1,2564.03,10179.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
     .turnin 5923 >>Turn in Heeding the Call
     .accept 5921 >>Accept Moonglade
     .target Mathrengyl Bearwalker
@@ -1066,7 +1072,7 @@ step
     .accept 935 >>Accept Crown of the Earth
     .target Corithras Moonrage
 step
-    #completewith Along107
+    #completewith Along108
     >>As you go: Kill |cRXP_ENEMY_Lasher Sproutlings|r, |cRXP_ENEMY_Blooming Lashers|r and |cRXP_ENEMY_Wrathvines|r. Loot them for |cRXP_LOOT_Dewy Lasher Frond|r. |cRXP_WARN_Anything left is finished later|r
     .complete 99050,1 --Dewy Lasher Frond (6)
     .mob Lasher Sproutling
@@ -1097,7 +1103,7 @@ step
     .turnin 941 >>Turn in Planting the Heart
     .isOnQuest 941
 step
-    #label Along107
+    #label Along108
     .goto 1438/1,719.87,9503.48
     >>Click the |cRXP_PICK_Sprouted Frond|r
     .accept 2399 >>Accept The Sprouted Fronds
@@ -1722,84 +1728,6 @@ step << NightElf
     .turnin 6341 >>Turn in The Bounty of Teldrassil
     .accept 6342 >>Accept Flight to Auberdine
     .target Vesprystus
-step << Druid NightElf
-    .goto 1457/1,2563.98,10179.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
-    .trainer >> Train your class spells
-    .target Mathrengyl Bearwalker
-    .isOnQuest 6001
-step << Druid
-    .goto 1457/1,2563.98,10179.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
-    .trainer >> Train your class spells
-    .target Mathrengyl Bearwalker
-step << Dwarf Hunter/Human Hunter/Skyborne Hunter
-    .goto 1438/1,841.56,8640.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
-    .fp Teldrassil >> Get the Teldrassil Flight Path
-    .target Vesprystus
-step << Dwarf Hunter/Human Hunter/Skyborne Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
-    .goto 1457/1,2329.19,9908.60
-    .train 264 >> Train Bows
-    .train 227 >> Train Staves
-    .target Ilyenia Moonfire
-step << !Warlock !NightElf
-    .goto 1438/1,841.56,8640.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
-    .fp Teldrassil >> Get the Rut'theran Village Flight Path
-    .target Vesprystus
-step << NightElf Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
-    .goto 1457/1,2329.19,9908.60
-    .train 2567 >> Train Thrown
-    .target Ilyenia Moonfire
-step << NightElf Druid
-    #completewith next
-    .zone 1457 >>Travel to Darnassus
-    .zoneskip 1457
-    .isOnQuest 6125
-step << NightElf Druid
-    .goto 1457/1,2564.03,10179.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
-    .turnin 6125 >>Turn in Power over Poison
-    .target Mathrengyl Bearwalker
-    .isOnQuest 6125
-step << Druid
-    .goto 1457/1,2563.98,10179.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
-    .trainer >> Train your class spells
-    .target Mathrengyl Bearwalker
-    .isOnQuest 6125
-step << Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arias'ta Bladesinger|r
-    .goto 1457/1,2316.91,9991.88
-    .trainer >> Train your class spells
-    .target Arias'ta Bladesinger
-step << Rogue
-    >>Enter the Cenarion Enclave
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
-    .goto 1457/1,2601.39,10120.53,30,0
-    .goto 1457/1,2546.78,10083.62
-    .trainer >> Train your class spells
-    .target Syurna
-step << Hunter
-    .goto 1457/1,2511.04,10178.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
-    .trainer >> Train your class spells
-    .target Jocaste
-step << Priest
-    .goto 1457/1,2537.25,9654.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandria|r
-    .trainer >> Train your class spells
-    .target Jandria
-step << Warlock
-    .goto 1438/1,841.56,8640.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
-    .fp Teldrassil >> Get the Ruth'theran Village Flight Path
-    .fly Ashenvale >> Fly to Ashenvale
-    .target Vesprystus
-    .zoneskip Ashenvale
 step
     +|cRXP_WARN_That is all of Teldrassil for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Darkshore|r: Flight to Auberdine << NightElf
@@ -1829,13 +1757,37 @@ step
     .mob Ferocitas the Dream Eater
     .isOnQuest 2459
 step
+    #completewith next
+    .zone 1457 >>Travel to Darnassus
+    .zoneskip 1457
+step << Warrior
+    .goto 1457/1,2331.94,9994.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
+    .turnin 1686 >>Turn in The Shade of Elura
+    .target Elanaria
+    .isQuestComplete 1686
+step << Druid
+    .goto 1457/1,2563.98,10179.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
+    .trainer >> Train your class spells
+    .target Mathrengyl Bearwalker
+step
+    .goto 1457/1,2607.74,9641.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
+    .accept 730 >>Accept Trouble In Darkshore?
+    .target Chief Archaeologist Greywhisker
+step
+    #completewith next
+    .zone 1438 >>Leave Darnassus for Teldrassil
+    .zoneskip 1438
+step
     #loop
-    .goto 1438/1,283.00,10025.44,0
-    .goto 1438/1,283.00,10025.44,40,0
-    .goto 1438/1,264.67,10036.30,40,0
-    .goto 1438/1,308.97,10054.62,40,0
-    .goto 1438/1,328.83,10076.34,40,0
+    .goto 1438/1,338.50,10060.39,0
     .goto 1438/1,338.50,10060.39,40,0
+    .goto 1438/1,328.83,10076.34,40,0
+    .goto 1438/1,308.97,10054.62,40,0
+    .goto 1438/1,264.67,10036.30,40,0
+    .goto 1438/1,283.00,10025.44,40,0
     .goto 1438/1,269.77,9953.83,40,0
     >>Kill |cRXP_ENEMY_Gnarlpine Mystics|r
     .complete 2459,1 --Gnarlpine Mystic slain (7)
@@ -1847,27 +1799,17 @@ step
     .turnin 2459 >>Turn in Ferocitas the Dream Eater
     .target Tallonkai Swiftroot
     .isQuestComplete 2459
-step
+step << NightElf Priest
     #completewith next
     .zone 1457 >>Travel to Darnassus
     .zoneskip 1457
-step << Warrior
-    .goto 1457/1,2331.94,9994.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
-    .turnin 1686 >>Turn in The Shade of Elura
-    .target Elanaria
-    .isQuestComplete 1686
+    .isOnQuest 5627
 step << NightElf Priest
     .goto 1457/1,2520.11,9665.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Alathea|r
     .turnin 5627 >>Turn in Stars of Elune
     .target Priestess Alathea
     .isOnQuest 5627
-step
-    .goto 1457/1,2607.74,9641.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
-    .accept 730 >>Accept Trouble In Darkshore?
-    .target Chief Archaeologist Greywhisker
 step
     +|cRXP_WARN_End of the Teldrassil route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Darkshore|r: Trouble In Darkshore?

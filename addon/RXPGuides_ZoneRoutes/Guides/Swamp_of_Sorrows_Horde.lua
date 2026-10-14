@@ -232,10 +232,6 @@ step
     .hs >>Hearth to Camp Mojache
     .zoneskip Feralas
 step
-    .hs >> Hearth to Feralas
-    .subzoneskip 1099
-    .cooldown item,6948,>0,1
-step
     .goto 1435/0,-3322.31,-10458.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fel'zerul|r
     .turnin 1444 >>Turn in Return to Fel'Zerul

@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "1-14 Teldrassil",
-  "saved": "2026-10-13 17:34",
+  "saved": "2026-10-14 00:10",
   "levels": "RestedXP",
   "parts": [
     {
@@ -175,6 +175,7 @@
         "accept:923 @1457:2534.29,10085.6  Accept Tumors",
         "accept:5923 @1457:2570.38,10186.3  Accept Heeding the Call",
         "turnin:5924 @1457:2564.03,10179.04  TurnIn Heeding the Call",
+        "turnin:6125 @1457:2564.03,10179.04  TurnIn Power over Poison",
         "turnin:5923 @1457:2564.03,10179.04  TurnIn Heeding the Call",
         "accept:5921 @1457:2564.03,10179.04  Accept Moonglade",
         {"lines":[".isOnQuest 5923",".goto 1457/1,2563.92,10179.040",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level",".trainer >> Train your class spells",".target Mathrengyl Bearwalker"],"tag":"Druid NightElf","from":"RestedXP: 6-11 Teldrassil"},
@@ -302,20 +303,7 @@
         "accept:6341 @1438:950.01,8694.07  Accept The Bounty of Teldrassil",
         "turnin:6343 @1438:950.01,8694.07  TurnIn Return to Nessa",
         "turnin:6341 @1438:841.05,8640.45  TurnIn The Bounty of Teldrassil",
-        "accept:6342 @1438:841.05,8640.45  Accept Flight to Auberdine",
-        {"lines":[".goto 1457/1,2563.98,10179.00",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r",".trainer >> Train your class spells",".target Mathrengyl Bearwalker",".isOnQuest 6001"],"tag":"Druid NightElf","from":"RestedXP: 14-16 Darkshore"},
-        {"lines":[".goto 1457/1,2563.98,10179.00",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r",".trainer >> Train your class spells",".target Mathrengyl Bearwalker"],"tag":"Druid","from":"RestedXP: 14-16 Darkshore"},
-        {"lines":[".goto 1438/1,841.56,8640.79",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r",".fp Teldrassil >> Get the Teldrassil Flight Path",".target Vesprystus"],"tag":"Dwarf Hunter/Human Hunter/Skyborne Hunter","from":"RestedXP: 16-19 Darkshore"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r",".goto 1457/1,2329.19,9908.60",".train 264 >> Train Bows",".train 227 >> Train Staves",".target Ilyenia Moonfire"],"tag":"Dwarf Hunter/Human Hunter/Skyborne Hunter","from":"RestedXP: 16-19 Darkshore"},
-        {"lines":[".goto 1438/1,841.56,8640.79",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r",".fp Teldrassil >> Get the Rut'theran Village Flight Path",".target Vesprystus"],"tag":"!Warlock !NightElf","from":"RestedXP: 21-23 Stonetalon/Ashenvale"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r",".goto 1457/1,2329.19,9908.60",".train 2567 >> Train Thrown",".target Ilyenia Moonfire"],"tag":"NightElf Warrior","from":"RestedXP: 21-23 Stonetalon/Ashenvale"},
-        "turnin:6125 @1457:2564.03,10179.04  TurnIn Power over Poison",
-        {"lines":[".goto 1457/1,2563.98,10179.00",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r",".trainer >> Train your class spells",".target Mathrengyl Bearwalker",".isOnQuest 6125"],"tag":"Druid","from":"RestedXP: 21-23 Stonetalon/Ashenvale"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arias'ta Bladesinger|r",".goto 1457/1,2316.91,9991.88",".trainer >> Train your class spells",".target Arias'ta Bladesinger"],"tag":"Warrior","from":"RestedXP: 21-23 Stonetalon/Ashenvale"},
-        {"lines":[">>Enter the Cenarion Enclave",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r",".goto 1457/1,2601.39,10120.53,30,0",".goto 1457/1,2546.78,10083.62",".trainer >> Train your class spells",".target Syurna"],"tag":"Rogue","from":"RestedXP: 21-23 Stonetalon/Ashenvale"},
-        {"lines":[".goto 1457/1,2511.04,10178.01",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r",".trainer >> Train your class spells",".target Jocaste"],"tag":"Hunter","from":"RestedXP: 21-23 Stonetalon/Ashenvale"},
-        {"lines":[".goto 1457/1,2537.25,9654.40",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandria|r",".trainer >> Train your class spells",".target Jandria"],"tag":"Priest","from":"RestedXP: 21-23 Stonetalon/Ashenvale"},
-        {"lines":[".goto 1438/1,841.56,8640.79",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r",".fp Teldrassil >> Get the Ruth'theran Village Flight Path",".fly Ashenvale >> Fly to Ashenvale",".target Vesprystus",".zoneskip Ashenvale"],"tag":"Warlock","from":"RestedXP: 21-23 Stonetalon/Ashenvale"}
+        "accept:6342 @1438:841.05,8640.45  Accept Flight to Auberdine"
       ]
     },
     {
@@ -323,11 +311,12 @@
       "steps": [
         "accept:6121 @1457:2564.03,10179.04  Accept Lessons Anew",
         "obj:2459:collect8049 @1438:282.49,10018.65  Objective Ferocitas the Dream Eater / Gnarlpine Necklace",
+        "turnin:1686 @1457:2331.94,9994.06  TurnIn The Shade of Elura",
+        {"lines":[".goto 1457/1,2563.98,10179.00",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r",".trainer >> Train your class spells",".target Mathrengyl Bearwalker"],"tag":"Druid","from":"RestedXP: 14-16 Darkshore"},
+        "accept:730 @1457:2607.74,9641.9  Accept Trouble In Darkshore?",
         "obj:2459:1 @1438:320.17,10037.65  Objective Ferocitas the Dream Eater / Gnarlpine Mystic slain (7)",
         "turnin:2459 @1438:985.14,9898.51  TurnIn Ferocitas the Dream Eater",
-        "turnin:1686 @1457:2331.94,9994.06  TurnIn The Shade of Elura",
-        "turnin:5627 @1457:2520.11,9665.26  TurnIn Stars of Elune",
-        "accept:730 @1457:2607.74,9641.9  Accept Trouble In Darkshore?"
+        "turnin:5627 @1457:2520.11,9665.26  TurnIn Stars of Elune"
       ]
     }
   ]

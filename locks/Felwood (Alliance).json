@@ -1,19 +1,19 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "48-56 Felwood",
-  "saved": "2026-10-13 17:38",
+  "saved": "2026-10-14 00:14",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
-        {"lines":[".zoneskip Searing Gorge",".hs >> Hearthstone to Stormwind",".cooldown item,6948,>0,1"],"tag":"!Mage","from":"RestedXP: 51-52 Searing Gorge SoD"},
         "accept:8460 @1448:-1286.81,3874.62  Accept Timbermaw Ally",
         "obj:8460:1 @1448:-1140.76,3629.67  Objective Timbermaw Ally / Deadwood Warrior slain (6)",
         "obj:8460:2 @1448:-1011.38,3688.32  Objective Timbermaw Ally / Deadwood Pathfinder slain (6)",
         "obj:8460:3 @1448:-1142.48,3689.47  Objective Timbermaw Ally / Deadwood Gardener slain (6)",
         "turnin:8460 @1448:-1286.81,3874.62  TurnIn Timbermaw Ally",
         "accept:8462 @1448:-1286.81,3874.62  Accept Speak to Nafien",
+        "turnin:8257 @1448:-1302.91,3985.78  TurnIn Blood of Morphaz",
         "obj:8419:1 @1448:-488.13,4521.68  Objective An Imp's Request / Felcloth (1)",
         "turnin:7623 @1448:-424.31,5430.57  TurnIn Lord Banehollow",
         "turnin:8419 @1448:-736.53,5407.57  TurnIn An Imp's Request",
@@ -22,10 +22,9 @@
         {"lines":[".goto 1448/1,-1934.26,6477.45",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Felpaw Ravager|r to tame it|r",".train 17267 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 7)]"],"tag":"Hunter","from":"RestedXP: 52-52 Felwood"},
         {"lines":[".goto 1448/1,-1303.48,5998.28,70,0",".goto 1448/1,-1213.78,5805.08,70,0",".goto 1448/1,-614.06,5721.13,70,0",".goto 1448/1,-565.18,5534.45,70,0",".goto 1448/1,-575.53,5209.77",">>|cRXP_WARN_Abandon your current|r |cRXP_FRIENDLY_Felpaw Ravager|r",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ironbeak Hunter|r or |cRXP_ENEMY_Angerclaw Mauler|r to tame it|r",".train 2977 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 7)]"],"tag":"Hunter","from":"RestedXP: 52-52 Felwood"},
         "turnin:5084 @1448:-1819.83,6909.47  TurnIn Falling to Corruption",
+        "turnin:5128 @1448:-1298.88,3999.58  TurnIn Words of the High Chief",
         "turnin:5159 @1448:-1302.91,3985.78  TurnIn Cleansed Water Returns to Felwood",
-        "turnin:3942 @1448:-1310.96,4008.78  TurnIn Linken's Memory",
-        "turnin:8257 @1448:-1302.91,3985.78  TurnIn Blood of Morphaz",
-        "turnin:5128 @1448:-1298.88,3999.58  TurnIn Words of the High Chief"
+        "turnin:3942 @1448:-1310.96,4008.78  TurnIn Linken's Memory"
       ]
     },
     {
@@ -94,6 +93,7 @@
         "turnin:4421 @1448:-1310.96,4008.78  TurnIn The Corruption of the Jadefire",
         "accept:4906 @1448:-1310.96,4008.78  Accept Further Corruption",
         "accept:7602 @1448:-736.53,5407.57  Accept Flawless Fel Essence",
+        "turnin:8422 @1448:-736.53,5407.57  TurnIn Trolls of a Feather",
         "accept:7603 @1448:-736.53,5407.57  Accept Kroshius' Infernal Core",
         "obj:7603:2 @1448:-986.08,5800.87  Objective Kroshius' Infernal Core / Kroshius' Infernal Core (1)",
         "obj:7603:1 @1448:-986.08,5800.87  Objective Kroshius' Infernal Core / Kroshius slain (1)",
@@ -101,6 +101,7 @@
         "obj:4906:1 @1448:-635.91,6289.62  Objective Further Corruption / Jadefire Hellcaller slain (8)",
         "obj:4906:2 @1448:-781.38,6417.65  Objective Further Corruption / Jadefire Betrayer slain (8)",
         "obj:4906:3 @1448:-853.83,6516.17  Objective Further Corruption / Jadefire Trickster slain (8)",
+        "turnin:7603 @1448:-737.68,5414.08  TurnIn Kroshius' Infernal Core",
         "obj:7602:2 @1448:-658.91,5249.25  Objective Flawless Fel Essence / Flawless Fel Essence (Jaedenar) (1)",
         "turnin:4906 @1448:-1310.96,4008.78  TurnIn Further Corruption",
         "accept:8461 @1448:-2082.61,6821.68  Accept Deadwood of the North",
@@ -121,9 +122,7 @@
         "obj:5204:1 @1448:-560.58,5197.12  Objective Retribution of the Light / Rakaiah slain (1)",
         "turnin:5204 @1448:-572.08,5200.95  TurnIn Retribution of the Light",
         "accept:5385 @1448:-572.08,5200.95  Accept The Remains of Trey Lightforge",
-        "turnin:5385 @1448:-1310.96,3989.62  TurnIn The Remains of Trey Lightforge",
-        "turnin:8422 @1448:-736.53,5407.57  TurnIn Trolls of a Feather",
-        "turnin:7603 @1448:-737.68,5414.08  TurnIn Kroshius' Infernal Core"
+        "turnin:5385 @1448:-1310.96,3989.62  TurnIn The Remains of Trey Lightforge"
       ]
     }
   ]

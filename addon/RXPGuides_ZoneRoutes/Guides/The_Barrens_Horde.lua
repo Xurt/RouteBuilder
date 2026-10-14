@@ -26,11 +26,6 @@ step
     .turnin 91901 >>Turn in A Sealed Crate
     .target Dokimi
     .isOnQuest 91901
-step
-    .goto 1413/1,-2645.40,-406.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand Plainswind|r
-    .target Innkeeper Boorand Plainswind
-    .home >>Set your Hearthstone to Innkeeper Boorand Plainswind's inn
 step << Skyborne
     .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
@@ -49,6 +44,42 @@ step
     .accept 1492 >>Accept Wharfmaster Dizzywig
     .target Apothecary Helbrim
     .xp <9,1
+step
+    .goto 1413/1,-2038.42,-3116.88
+    >>Kill |cRXP_ENEMY_Aean Swiftriver|r and loot |cRXP_LOOT_Runed Scroll|r. Use it to start the quest
+    .collect 10621,1,3513 --Runed Scroll (1)
+    .accept 3513 >>Accept The Runed Scroll
+    .use 10621
+    .mob Aean Swiftriver
+step << !Druid
+    .goto 1413/1,-1881.35,-2383.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
+    .fp Camp Taurajo >> Get the Camp Taurajo flight path
+    .target Omusa Thunderhorn
+step << Druid
+    .goto 1413/1,-1881.35,-2383.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
+    .fp Camp Taurajo >> Get the Camp Taurajo flight path
+    .fly Thunder Bluff >>Fly to Thunder Bluff << Tauren
+    .target Omusa Thunderhorn
+step << Tauren
+    .xp 9 >>Grind to level 9 (Journey to the Crossroads needs it)
+step << Tauren
+    .goto 1413/1,-1924.92,-2347.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirge Sternhorn|r
+    .accept 854 >>Accept Journey to the Crossroads
+    .target Kirge Sternhorn
+step << Tauren
+    .goto 1413/1,-2595.75,-473.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
+    .turnin 854 >>Turn in Journey to the Crossroads
+    .target Thork
+step
+    .goto 1413/1,-2672.76,-544.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga Runetotem|r
+    .turnin 886 >>Turn in The Barrens Oases
+    .target Tonga Runetotem
+    .isOnQuest 886
 step << Undead Mage/Troll Mage
     .goto 1413/1,-2666.68,-529.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kil'hala|r
@@ -56,93 +87,48 @@ step << Undead Mage/Troll Mage
     .target Kil'hala
     .isQuestComplete 1945
 step
-    .goto 1413/1,-1633.08,-3116.88
-    >>Kill |cRXP_ENEMY_Silithid Harvester|r and loot |cRXP_LOOT_Harvester's Head|r. Use it to start the quest
-    .collect 5138,1,897 --Harvester's Head (1)
-    .accept 897 >>Accept The Harvester
-    .use 5138
-    .mob Silithid Harvester
-step << Warrior
-    .goto 1413/1,-1903.64,-2402.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruga Ragetotem|r
-    .turnin 1823 >>Turn in Speak with Ruga
-    .target Ruga Ragetotem
-    .isOnQuest 1823
+    .goto 1413/1,-2669.72,-482.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra Darkthorn|r
+    .turnin 860 >>Turn in Sergra Darkthorn
+    .target Sergra Darkthorn
+    .isOnQuest 860
 step
-    .goto 1413/1,-1995.86,-2376.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
-    .target Innkeeper Byula
-step << !Rogue !Shaman
-    .goto 1413/1,-1995.86,-2376.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
-    .target Innkeeper Byula
+    .goto 1413/1,-2645.40,-406.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand Plainswind|r
+    .target Innkeeper Boorand Plainswind
+    .home >>Set your Hearthstone to Innkeeper Boorand Plainswind's inn
 step
-    .goto 1413/1,-1922.90,-2383.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
-    .turnin 897 >>Turn in The Harvester
-    .target Jorn Skyseer
-step << Rogue
-    .goto 1413/1,-2584.60,-427.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hula'mahi|r
-    .vendor >>|cRXP_BUY_Stock up on|r |T134387:0|t[Flash Powder] |cRXP_BUY_and supplies for|r |T132273:0|t[Instant Poison]
-    .target Hula'mahi
-    .subzoneskip 380,1
-step << Tauren
-    .goto 1413/1,-1924.92,-2347.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirge Sternhorn|r
-    .accept 854 >>Accept Journey to the Crossroads
-    .target Kirge Sternhorn
-step << Shaman
-    .goto 1413/1,-4047.86,-1345.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
-    .turnin 2986 >>Turn in Call of Water
-    .target Islen Waterseer
-    .isOnQuest 2986
-step << Shaman
-    .goto 1413/1,-4047.86,-1345.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
-    .turnin 1529 >>Turn in Call of Water
-    .target Islen Waterseer
-    .isOnQuest 1529
-step << Shaman
-    .goto 1413/1,-4047.86,-1345.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
-    .turnin 2985 >>Turn in Call of Water
-    .target Islen Waterseer
-    .isOnQuest 2985
-step << Shaman
-    .goto 1413/1,-4047.86,-1345.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
-    .turnin 96 >>Turn in Call of Water
-    .target Islen Waterseer
-    .isOnQuest 96
-step << Shaman
-    .goto 1413/1,-3054.79,268.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
-    .turnin 1523 >>Turn in Call of Fire
-    .target Kranal Fiss
-    .isOnQuest 1523
-step << Shaman
-    .goto 1413/1,-3054.79,268.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
-    .turnin 1522 >>Turn in Call of Fire
-    .target Kranal Fiss
-    .isOnQuest 1522
-step << Shaman
-    .goto 1413/1,-3054.79,268.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
-    .turnin 2983 >>Turn in Call of Fire
-    .target Kranal Fiss
-    .isOnQuest 2983
-step << Shaman
-    .goto 1413/1,-3054.79,268.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
-    .accept 1524 >>Accept Call of Fire
-    .target Kranal Fiss
+    .goto 1413/1,-2589.67,-424.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Helbrim|r
+    .accept 1492 >>Accept Wharfmaster Dizzywig
+    .target Apothecary Helbrim
+    .xp <9,1
+step
+    .goto 1413/1,-2595.75,-473.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
+    .accept 871 >>Accept Disrupt the Attacks
+    .target Thork
+    .xp <9,1
+step
+    .goto 1413/1,-2253.24,1246.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
+    .turnin 6542 >>Turn in Report to Kadrak
+    .target Kadrak
+    .isOnQuest 6542
+step
+    .goto 1413/1,-2253.24,1246.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
+    .turnin 3513 >>Turn in The Runed Scroll
+    .target Kadrak
+step << Orc/Troll
+    #completewith next
+    .hs >>Hearth to Innkeeper Boorand Plainswind's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step << Orc/Troll
+    .goto 1413/1,-2709.24,-403.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
+    .accept 6365 >>Accept Meats to Orgrimmar
+    .target Zargh
 step
     .goto 1413/1,-3686.10,303.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kargal Battlescar|r
@@ -156,133 +142,12 @@ step
     .target Kargal Battlescar
     .isQuestTurnedIn 840 --any of: Conscript of the Horde
     .xp <10,1
-step
-    .goto 1413/1,-3694.20,256.52
-    >>Destroy the Demon Seed
-    .complete 809,1 --Destroy the Demon Seed
-    .isOnQuest 809
-step
-    .goto 1413/1,-3694.20,256.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ak'Zeloth|r
-    .turnin 809 >>Turn in Ak'Zeloth
-    .target Ak'Zeloth
-    .isOnQuest 809
-step << !Druid
-    .goto 1413/1,-1881.35,-2383.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
-    .fp Camp Taurajo >> Get the Camp Taurajo flight path
-    .target Omusa Thunderhorn
-step << Druid
-    .goto 1413/1,-1881.35,-2383.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
-    .fp Camp Taurajo >> Get the Camp Taurajo flight path
-    .fly Thunder Bluff >>Fly to Thunder Bluff << Tauren
-    .target Omusa Thunderhorn
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Boorand Plainswind's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .goto 1413/1,-2672.76,-544.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga Runetotem|r
-    .turnin 886 >>Turn in The Barrens Oases
-    .target Tonga Runetotem
-    .isOnQuest 886
-step
-    .goto 1413/1,-2669.72,-482.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra Darkthorn|r
-    .turnin 860 >>Turn in Sergra Darkthorn
-    .target Sergra Darkthorn
-    .isOnQuest 860
-step << Tauren
-    .goto 1413/1,-2595.75,-473.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
-    .turnin 854 >>Turn in Journey to the Crossroads while you are here
-    .isQuestComplete 854
-    .target Thork
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Boorand Plainswind's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .goto 1413/1,-2669.72,-482.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra Darkthorn|r
-    .accept 844 >>Accept Plainstrider Menace
-    .target Sergra Darkthorn
-step
-    .goto 1413/1,-2595.75,-473.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
-    .turnin 854 >>Turn in Journey to the Crossroads << Tauren
-    .accept 871 >>Accept Disrupt the Attacks
-    .accept 5041 >>Accept Supplies for the Crossroads
-    .target Thork
-step
-    .goto 1413/1,-2607.91,-475.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok Swiftdagger|r
-    .accept 867 >>Accept Harpy Raiders
-    .target Darsok Swiftdagger
-step
-    .goto 1413/1,-2589.67,-424.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Helbrim|r
-    .accept 848 >>Accept Fungal Spores
-    .accept 1492 >>Accept Wharfmaster Dizzywig
-    .target Apothecary Helbrim
-step << Tauren
-    .goto 1413/1,-2566.36,-350.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jahan Hawkwing|r
-    .accept 6361 >>Accept A Bundle of Hides
-    .target Jahan Hawkwing
-step << Tauren
-    .goto 1413/1,-2595.75,-437.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
-    .turnin 6361 >>Turn in A Bundle of Hides
-    .accept 6362 >>Accept Ride to Thunder Bluff
-    .target Devrak
-step
-    .goto 1413/1,-2639.32,-436.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
-    .accept 869 >>Accept Raptor Thieves
-    .target Gazrog
-step << Orc/Troll
-    .goto 1413/1,-2709.24,-403.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
-    .accept 6365 >>Accept Meats to Orgrimmar
-    .target Zargh
-step << Orc/Troll
-    .goto 1413/1,-2595.75,-437.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
-    .turnin 6365 >>Turn in Meats to Orgrimmar
-    .accept 6384 >>Accept Ride to Orgrimmar
-    .target Devrak
-step << Undead/Skyborne
-    .goto 1413/1,-2595.75,-437.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
-    .fp >> Get the The Crossroads flight path
-    .target Devrak
 step << Warrior
     .goto 1413/1,-3596.92,185.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
     .turnin 1505 >>Turn in Veteran Uzzek
     .target Uzzek
     .isOnQuest 1505
-step << Warrior
-    .goto 1413/1,-3596.92,185.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
-    .accept 1498 >>Accept Path of Defense
-    .target Uzzek
-step << Warrior
-    .goto 1413/1,-3596.92,185.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
-    .turnin 1498 >>Turn in Path of Defense
-    .target Uzzek
-    .isQuestComplete 1498
-step << Warrior
-    .goto 1413/1,-3596.92,185.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
-    .accept 1502 >>Accept Thun'grim Firegaze
-    .target Uzzek
-    .isQuestTurnedIn 1498,1819 --any of: Path of Defense, Ulag the Cleaver
-    .xp <10,1
 step << Warrior
     .goto 1413/1,-3176.39,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thun'grim Firegaze|r
@@ -307,24 +172,65 @@ step << Warrior
     .turnin 1503 >>Turn in Forged Steel
     .target Thun'grim Firegaze
     .isOnQuest 1503
-step << Shaman
-    .goto 1413/1,-3054.79,268.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
-    .turnin 2984 >>Turn in Call of Fire
-    .target Kranal Fiss
-    .isOnQuest 2984
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Boorand Plainswind's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
 step
     .goto 1413/1,-2669.72,-482.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra Darkthorn|r
     .turnin 842 >>Turn in Crossroads Conscription
     .target Sergra Darkthorn
     .isOnQuest 842
+step << Orc/Troll
+    .goto 1413/1,-2595.75,-437.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .turnin 6365 >>Turn in Meats to Orgrimmar while you are here
+    .isQuestComplete 6365
+    .target Devrak
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Boorand Plainswind's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
+    .goto 1413/1,-2669.72,-482.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra Darkthorn|r
+    .accept 844 >>Accept Plainstrider Menace
+    .target Sergra Darkthorn
+step
+    .goto 1413/1,-2595.75,-473.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
+    .accept 871 >>Accept Disrupt the Attacks
+    .accept 5041 >>Accept Supplies for the Crossroads
+    .target Thork
+step << Orc/Troll
+    .goto 1413/1,-2595.75,-437.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .turnin 6365 >>Turn in Meats to Orgrimmar
+    .accept 6384 >>Accept Ride to Orgrimmar
+    .target Devrak
+step << Undead/Skyborne
+    .goto 1413/1,-2595.75,-437.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .fp >> Get the The Crossroads flight path
+    .target Devrak
+step
+    .goto 1413/1,-2589.67,-424.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Helbrim|r
+    .accept 1492 >>Accept Wharfmaster Dizzywig
+    .accept 848 >>Accept Fungal Spores
+    .target Apothecary Helbrim
 step
     .goto 1413/1,-2589.67,-424.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Helbrim|r
     .turnin 1358 >>Turn in Sample for Helbrim
     .target Apothecary Helbrim
     .isOnQuest 1358
+step
+    .goto 1413/1,-2639.32,-436.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
+    .accept 869 >>Accept Raptor Thieves
+    .target Gazrog
 step
     #loop
     .goto 1413/1,-2846.04,-148.18,0
@@ -373,8 +279,35 @@ step
     .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .turnin 871 >>Turn in Disrupt the Attacks
+    .target Thork
+step << Tauren
+    .xp 10 >>Grind to level 10 (A Bundle of Hides needs it)
+step << Tauren
+    .goto 1413/1,-2566.36,-350.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jahan Hawkwing|r
+    .accept 6361 >>Accept A Bundle of Hides
+    .target Jahan Hawkwing
+step << Tauren
+    .goto 1413/1,-2595.75,-437.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .turnin 6361 >>Turn in A Bundle of Hides
+    .target Devrak
+step
+    .goto 1413/1,-2595.75,-473.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .accept 872 >>Accept The Disruption Ends
     .target Thork
+step
+    .goto 1413/1,-2607.91,-475.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok Swiftdagger|r
+    .accept 867 >>Accept Harpy Raiders
+    .target Darsok Swiftdagger
+step << Tauren
+    .goto 1413/1,-2595.75,-437.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .accept 6362 >>Accept Ride to Thunder Bluff
+    .target Devrak
+    .xp <10,1
 step
     .goto 1413/1,-3307.11,-214.39
     >>Kill |cRXP_ENEMY_Kreenig Snarlsnout|r and loot |cRXP_LOOT_Kreenig Snarlsnout's Tusk|r
@@ -411,6 +344,30 @@ step
 step << Shaman
     .goto 1413/1,-3054.79,268.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
+    .turnin 2984 >>Turn in Call of Fire
+    .target Kranal Fiss
+    .isOnQuest 2984
+step << Shaman
+    .goto 1413/1,-3054.79,268.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
+    .turnin 2983 >>Turn in Call of Fire
+    .target Kranal Fiss
+    .isOnQuest 2983
+step << Shaman
+    .goto 1413/1,-3054.79,268.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
+    .turnin 1523 >>Turn in Call of Fire
+    .target Kranal Fiss
+    .isOnQuest 1523
+step << Shaman
+    .goto 1413/1,-3054.79,268.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
+    .turnin 1522 >>Turn in Call of Fire
+    .target Kranal Fiss
+    .isOnQuest 1522
+step << Shaman
+    .goto 1413/1,-3054.79,268.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
     .turnin 1527 >>Turn in Call of Fire
     .target Kranal Fiss
     .isOnQuest 1527
@@ -440,6 +397,12 @@ step
     .turnin 872 >>Turn in The Disruption Ends while you are here
     .isQuestComplete 872
     .target Thork
+step << Shaman
+    .goto 1413/1,-3054.79,268.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
+    .accept 1524 >>Accept Call of Fire
+    .target Kranal Fiss
+    .xp <10,1
 step
     .goto 1413/1,-3728.66,-835.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
@@ -507,6 +470,15 @@ step
     .turnin 892 >>Turn in The Missing Shipment
     .accept 888 >>Accept Stolen Booty
     .target Gazlowe
+step << Tauren
+    #completewith next
+    .hs >>Hearth to Innkeeper Boorand Plainswind's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step << Tauren
+    .goto 1413/1,-2595.75,-437.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .accept 6362 >>Accept Ride to Thunder Bluff
+    .target Devrak
 step
     #loop
     .goto 1413/1,-2686.95,-846.10,0
@@ -607,6 +579,24 @@ step
     .complete 95494,1 --Savannah Lion Hide (6)
     .mob Savannah Patriarch
     .mob Savannah Matriarch
+step << Warrior
+    .goto 1413/1,-3596.92,185.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
+    .accept 1498 >>Accept Path of Defense
+    .target Uzzek
+step << Warrior
+    .goto 1413/1,-3596.92,185.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
+    .turnin 1498 >>Turn in Path of Defense
+    .target Uzzek
+    .isQuestComplete 1498
+step << Warrior
+    .goto 1413/1,-3596.92,185.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
+    .accept 1502 >>Accept Thun'grim Firegaze
+    .target Uzzek
+    .isQuestTurnedIn 1498,1819 --any of: Path of Defense, Ulag the Cleaver
+    .xp <10,1
 step
     #loop
     .goto 1413/1,-2200.55,761.21,0
@@ -788,6 +778,11 @@ step
     .turnin 903 >>Turn in Prowlers of the Barrens
     .accept 881 >>Accept Echeyakee
     .target Sergra Darkthorn
+step << Shaman
+    .goto 1413/1,-3054.79,268.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal Fiss|r
+    .accept 1524 >>Accept Call of Fire
+    .target Kranal Fiss
 step << Orc/Troll
     .goto 1413/1,-2709.24,-403.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
@@ -872,17 +867,17 @@ step
     >>Pick up |cRXP_PICK_Stolen Silver|r from the ground
     .complete 3281,1 --Stolen Silver (1)
 step
-    #completewith Along100
+    #completewith Along97
     >>As you go: Loot the |cRXP_PICK_Laden Mushrooms|r for |cRXP_LOOT_Fungal Spores|r. |cRXP_WARN_Anything left is finished later|r
     .complete 848,1 --Fungal Spores (4)
 step
-    #label Along100
+    #label Along97
     .goto 1413/1,-3012.23,-1275.80
     >>Click the |cRXP_PICK_Bubbling Fissure|r
     .complete 877,1 --Test the Dried Seeds
     .isOnQuest 877
 step
-    #completewith Along101
+    #completewith Along98
     >>As you go: Kill |cRXP_ENEMY_Kolkar Wranglers|r, |cRXP_ENEMY_Kolkar Stormers|r, |cRXP_ENEMY_Kolkar Pack Runners|r and |cRXP_ENEMY_Kolkar Marauders|r. Loot them for |cRXP_LOOT_Centaur Bracers|r. |cRXP_WARN_Anything left is finished later|r
     .complete 855,1 --Centaur Bracers (15)
     .mob Kolkar Wrangler
@@ -890,7 +885,7 @@ step
     .mob Kolkar Pack Runner
     .mob Kolkar Marauder
 step
-    #label Along101
+    #label Along98
     #loop
     .goto 1413/1,-2977.78,-1303.50,0
     .goto 1413/1,-2977.78,-1303.50,40,0
@@ -1114,6 +1109,30 @@ step
 step << Shaman
     .goto 1413/1,-4047.86,-1345.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
+    .turnin 96 >>Turn in Call of Water
+    .target Islen Waterseer
+    .isOnQuest 96
+step << Shaman
+    .goto 1413/1,-4047.86,-1345.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
+    .turnin 2986 >>Turn in Call of Water
+    .target Islen Waterseer
+    .isOnQuest 2986
+step << Shaman
+    .goto 1413/1,-4047.86,-1345.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
+    .turnin 2985 >>Turn in Call of Water
+    .target Islen Waterseer
+    .isOnQuest 2985
+step << Shaman
+    .goto 1413/1,-4047.86,-1345.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
+    .turnin 1529 >>Turn in Call of Water
+    .target Islen Waterseer
+    .isOnQuest 1529
+step << Shaman
+    .goto 1413/1,-4047.86,-1345.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
     .turnin 1528 >>Turn in Call of Water
     .target Islen Waterseer
     .isOnQuest 1528
@@ -1275,18 +1294,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Helbrim|r
     .accept 853 >>Accept Apothecary Zamah
     .target Apothecary Helbrim
-step
-    .goto 1413/1,-2038.42,-3116.88
-    >>Kill |cRXP_ENEMY_Aean Swiftriver|r and loot |cRXP_LOOT_Runed Scroll|r. Use it to start the quest
-    .collect 10621,1,3513 --Runed Scroll (1)
-    .accept 3513 >>Accept The Runed Scroll
-    .use 10621
-    .mob Aean Swiftriver
-step
-    .goto 1413/1,-2072.87,-3379.02
-    >>Click the |cRXP_PICK_Burned-Out Remains|r
-    .accept 79007 >>Accept ... and that note you found
-    .accept 79192 >>Accept Stepping Stones
+step << Tauren Druid
+    .goto 1413/1,-2281.62,336.24
+    >>Open the |cRXP_PICK_Dreadmist Peak Pool|r. Loot it for |cRXP_LOOT_Filled Dreadmist Peak Sampler|r
+    .complete 6127,1 --Filled Dreadmist Peak Sampler (1)
+    .isOnQuest 6127
 step
     .goto 1413/1,-2347.48,857.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wenikee Boltbucket|r
@@ -1308,23 +1320,6 @@ step
     >>Loot the |cRXP_PICK_Tool Buckets|r for |cRXP_LOOT_Nugget Slug|r
     .complete 3922,1 --Nugget Slug (15)
 step
-    .goto 1413/1,-2347.48,857.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wenikee Boltbucket|r
-    .turnin 3922 >>Turn in Nugget Slugs
-    .accept 3923 >>Accept Rilli Greasygob
-    .target Wenikee Boltbucket
-step
-    .goto 1413/1,-2253.24,1246.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
-    .turnin 6542 >>Turn in Report to Kadrak
-    .target Kadrak
-    .isOnQuest 6542
-step
-    .goto 1413/1,-2253.24,1246.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
-    .turnin 3513 >>Turn in The Runed Scroll
-    .target Kadrak
-step
     .xp 15 >>Grind to level 15 (Horde Presence needs it)
 step
     .goto 1413/1,-2253.24,1246.31
@@ -1337,17 +1332,41 @@ step
     .turnin 3514 >>Turn in Horde Presence
     .target Kadrak
     .isQuestComplete 3514
-step << Tauren Druid
-    .goto 1413/1,-2281.62,336.24
-    >>Open the |cRXP_PICK_Dreadmist Peak Pool|r. Loot it for |cRXP_LOOT_Filled Dreadmist Peak Sampler|r
-    .complete 6127,1 --Filled Dreadmist Peak Sampler (1)
-    .isOnQuest 6127
+step
+    .goto 1413/1,-2347.48,857.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wenikee Boltbucket|r
+    .turnin 3922 >>Turn in Nugget Slugs
+    .accept 3923 >>Accept Rilli Greasygob
+    .target Wenikee Boltbucket
+step
+    .goto 1413/1,-3694.20,256.52
+    >>Destroy the Demon Seed
+    .complete 809,1 --Destroy the Demon Seed
+    .isOnQuest 809
+step
+    .goto 1413/1,-3694.20,256.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ak'Zeloth|r
+    .turnin 809 >>Turn in Ak'Zeloth
+    .target Ak'Zeloth
+    .isOnQuest 809
 step << Tauren Druid
     .goto 1413/1,-2672.76,-544.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga Runetotem|r
     .turnin 6127 >>Turn in The Principal Source
     .target Tonga Runetotem
     .isOnQuest 6127
+step
+    .goto 1413/1,-2072.87,-3379.02
+    >>Click the |cRXP_PICK_Burned-Out Remains|r
+    .accept 79007 >>Accept ... and that note you found
+    .accept 79192 >>Accept Stepping Stones
+step
+    .goto 1413/1,-1633.08,-3116.88
+    >>Kill |cRXP_ENEMY_Silithid Harvester|r and loot |cRXP_LOOT_Harvester's Head|r. Use it to start the quest
+    .collect 5138,1,897 --Harvester's Head (1)
+    .accept 897 >>Accept The Harvester
+    .use 5138
+    .mob Silithid Harvester
 step
     .goto 1413/1,-950.10,-271.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth Stonebreak|r
@@ -1382,21 +1401,30 @@ step << !Mage
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Boorand Plainswind
     .train 425343,3 << Shaman
+step << Warrior
+    .goto 1413/1,-1903.64,-2402.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruga Ragetotem|r
+    .turnin 1823 >>Turn in Speak with Ruga
+    .target Ruga Ragetotem
+    .isOnQuest 1823
 step
-    .goto 1413/1,-1891.48,-2391.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
-    .target Mangletooth
-    .train 783,1 << Druid
-    .train 2645,1 << Shaman
-    .train 5118,1 << Hunter
-step << Druid/Shaman/Hunter
-    .goto 1413/1,-1891.48,-2391.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
-    +|cRXP_WARN_If you have|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain buffs of your choice from|r |cRXP_FRIENDLY_Mangletooth|r
-    .target Mangletooth
-    .train 783,3 << Druid
-    .train 2645,3 << Shaman
-    .train 5118,3 << Hunter
+    .goto 1413/1,-1995.86,-2376.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
+    .target Innkeeper Byula
+step << !Rogue !Shaman
+    .goto 1413/1,-1995.86,-2376.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
+    .target Innkeeper Byula
+step
+    .goto 1413/1,-1922.90,-2383.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
+    .turnin 897 >>Turn in The Harvester while you are here
+    .isQuestComplete 897
+    .target Jorn Skyseer
 step << Rogue
     .goto 1413/1,-2995.00,1236.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taskmaster Fizzule|r
@@ -1409,6 +1437,17 @@ step << Warlock
     .turnin 1511 >>Turn in Ken'zigla's Draught
     .target Grunt Logmar
     .isOnQuest 1511
+step
+    .goto 1413/1,-1922.90,-2383.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
+    .turnin 897 >>Turn in The Harvester
+    .target Jorn Skyseer
+step << Rogue
+    .goto 1413/1,-2584.60,-427.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hula'mahi|r
+    .vendor >>|cRXP_BUY_Stock up on|r |T134387:0|t[Flash Powder] |cRXP_BUY_and supplies for|r |T132273:0|t[Instant Poison]
+    .target Hula'mahi
+    .subzoneskip 380,1
 step
     +|cRXP_WARN_That is all of The Barrens for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Durotar|r: Call of Fire << Shaman
@@ -1423,18 +1462,6 @@ step
     >>|cRXP_FRIENDLY_Stonetalon Mountains and back here|r: Avenge My Village, Goblin Invaders, Deepmoss Spider Eggs, Horde Presence
 step
     .xp 18 >>|cRXP_WARN_The rest of The Barrens is planned from level 18.|r Come back to this guide then
-step
-    .goto 1413/1,-1922.90,-2383.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
-    .turnin 884 >>Turn in Owatanka
-    .target Jorn Skyseer
-    .isOnQuest 884
-step << Warrior
-    .goto 1413/1,-3596.92,185.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
-    .turnin 1498 >>Turn in Path of Defense
-    .target Uzzek
-    .isQuestComplete 1498
 step
     .goto 1413/1,-3771.22,-894.07
     .fp Ratchet >> Get the Ratchet flight path
@@ -1508,6 +1535,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzlecrank's Shredder|r
     .turnin 858 >>Turn in Ignition
     .target Wizzlecrank's Shredder
+step << Warrior
+    .goto 1413/1,-3596.92,185.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
+    .turnin 1498 >>Turn in Path of Defense
+    .target Uzzek
+    .isQuestComplete 1498
 step
     .goto 1413/1,-2645.40,-406.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand Plainswind|r
@@ -1600,6 +1633,17 @@ step
     .turnin 4021 >>Turn in Counterattack!
     .target Regthar Deathgate
     .isQuestComplete 4021
+step << Tauren Druid
+    #loop
+    .goto 1413/1,-1516.55,-386.67,0
+    .goto 1413/1,-1516.55,-386.67,40,0
+    .goto 1413/1,-1525.67,-429.24,40,0
+    .goto 1413/1,-1511.48,-446.13,40,0
+    .goto 1413/1,-1508.44,-433.29,40,0
+    .goto 1413/1,-1476.02,-417.75,40,0
+    >>Pick up |cRXP_PICK_Earthroot|r from the ground
+    .complete 6128,1 --Earthroot (5)
+    .isOnQuest 6128
 step
     .goto 1413/1,-943.00,-263.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba Flathoof|r
@@ -1652,15 +1696,40 @@ step
     .mob Bristleback Geomancer
 step
     #loop
-    .goto 1413/1,-2714.31,-1047.44,0
-    .goto 1413/1,-2714.31,-1047.44,40,0
+    .goto 1413/1,-3500.66,-2087.90,0
+    .goto 1413/1,-3500.66,-2087.90,40,0
+    .goto 1413/1,-3547.27,-2102.76,40,0
+    .goto 1413/1,-3645.56,-2064.25,40,0
+    .goto 1413/1,-3653.67,-2122.36,40,0
+    .goto 1413/1,-3779.32,-2214.24,40,0
+    .goto 1413/1,-3729.67,-2231.13,40,0
+    .goto 1413/1,-3687.11,-2201.40,40,0
+    .goto 1413/1,-3585.78,-2150.06,40,0
+    .goto 1413/1,-3535.11,-2145.33,40,0
+    >>Kill |cRXP_ENEMY_Cannoneer Whessan|r
+    >>Kill |cRXP_ENEMY_Theramore Marines|r, |cRXP_ENEMY_Theramore Preservers|r, |cRXP_ENEMY_Captain Fairmounts|r and |cRXP_ENEMY_Cannoneer Smythes|r. Loot them for |cRXP_LOOT_Theramore Medal|r
+    >>Kill |cRXP_ENEMY_Cannoneer Smythe|r
+    >>Kill |cRXP_ENEMY_Captain Fairmount|r
+    .complete 891,2 --Cannoneer Whessan slain (1)
+    .complete 891,4 --Theramore Medal (10)
+    .complete 891,3 --Cannoneer Smythe slain (1)
+    .complete 891,1 --Captain Fairmount slain (1)
+    .mob Cannoneer Whessan
+    .mob Theramore Marine
+    .mob Theramore Preserver
+    .mob Captain Fairmount
+    .mob Cannoneer Smythe
+step
+    #loop
+    .goto 1413/1,-2782.20,-1025.14,0
     .goto 1413/1,-2782.20,-1025.14,40,0
-    .goto 1413/1,-2783.22,-872.45,40,0
-    .goto 1413/1,-2785.24,-785.97,40,0
-    .goto 1413/1,-2775.11,-822.45,40,0
-    .goto 1413/1,-2750.79,-915.01,40,0
-    .goto 1413/1,-2729.51,-927.17,40,0
+    .goto 1413/1,-2714.31,-1047.44,40,0
     .goto 1413/1,-2736.60,-996.76,40,0
+    .goto 1413/1,-2729.51,-927.17,40,0
+    .goto 1413/1,-2750.79,-915.01,40,0
+    .goto 1413/1,-2775.11,-822.45,40,0
+    .goto 1413/1,-2785.24,-785.97,40,0
+    .goto 1413/1,-2783.22,-872.45,40,0
     >>Kill |cRXP_ENEMY_Zhevra Runners|r, |cRXP_ENEMY_Zhevra Chargers|r and |cRXP_ENEMY_Zhevra Coursers|r. Loot them for |cRXP_LOOT_Fresh Zhevra Carcass|r
     .collect 10338,1,882,1 --Fresh Zhevra Carcass (1)
     .mob Zhevra Runner
@@ -1731,6 +1800,11 @@ step
     >>Click the |cRXP_PICK_WANTED|r
     .accept 92706 >>Accept WANTED: Bruuz
 step
+    .goto 1413/1,-3689.14,-1024.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Thalo'thas Brightsun|r
+    .turnin 891 >>Turn in The Guns of Northwatch
+    .target Captain Thalo'thas Brightsun
+step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
     .turnin 1069 >>Turn in Deepmoss Spider Eggs
@@ -1763,6 +1837,23 @@ step
     .turnin 92706 >>Turn in WANTED: Bruuz
     .target Gazlowe
 step
+    #loop
+    .goto 1413/1,-3234.15,-250.20,0
+    .goto 1413/1,-3234.15,-250.20,40,0
+    .goto 1413/1,-3244.28,-231.28,40,0
+    .goto 1413/1,-3260.50,-192.77,40,0
+    .goto 1413/1,-3244.28,-146.83,40,0
+    .goto 1413/1,-3199.70,-205.61,40,0
+    .goto 1413/1,-3208.82,-214.39,40,0
+    >>Kill |cRXP_ENEMY_Chol'aruk|r and loot |cRXP_LOOT_Chol'aruk's Head|r
+    .complete 97003,1 --Chol'aruk's Head (1)
+    .mob Chol'aruk
+step
+    .goto 1413/1,-2711.27,-350.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gur'ak|r
+    .turnin 97003 >>Turn in Chol'aruk the Ravener
+    .target Gur'ak
+step
     .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .accept 6541 >>Accept Report to Kadrak
@@ -1776,67 +1867,6 @@ step
     .goto 1413/1,-2552.18,-389.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
     .accept 868 >>Accept Egg Hunt
-    .target Korran
-step
-    #loop
-    .goto 1413/1,-3199.70,-205.61,0
-    .goto 1413/1,-3199.70,-205.61,40,0
-    .goto 1413/1,-3208.82,-214.39,40,0
-    .goto 1413/1,-3234.15,-250.20,40,0
-    .goto 1413/1,-3244.28,-231.28,40,0
-    .goto 1413/1,-3260.50,-192.77,40,0
-    .goto 1413/1,-3244.28,-146.83,40,0
-    >>Kill |cRXP_ENEMY_Chol'aruk|r and loot |cRXP_LOOT_Chol'aruk's Head|r
-    .complete 97003,1 --Chol'aruk's Head (1)
-    .mob Chol'aruk
-step << Tauren Druid
-    #loop
-    .goto 1413/1,-3444.92,-1417.00,0
-    .goto 1413/1,-3444.92,-1417.00,40,0
-    .goto 1413/1,-3445.94,-1427.81,40,0
-    .goto 1413/1,-3463.16,-1463.62,40,0
-    .goto 1413/1,-3495.59,-1435.24,40,0
-    .goto 1413/1,-3478.36,-1433.22,40,0
-    >>Pick up |cRXP_PICK_Earthroot|r from the ground
-    .complete 6128,1 --Earthroot (5)
-    .isOnQuest 6128
-step
-    #completewith Along47
-    >>As you go: Kill |cRXP_ENEMY_Theramore Marines|r, |cRXP_ENEMY_Theramore Preservers|r, |cRXP_ENEMY_Captain Fairmounts|r and |cRXP_ENEMY_Cannoneer Smythes|r. Loot them for |cRXP_LOOT_Theramore Medal|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 891,4 --Theramore Medal (10)
-    .mob Theramore Marine
-    .mob Theramore Preserver
-    .mob Captain Fairmount
-    .mob Cannoneer Smythe
-step
-    #label Along47
-    .goto 1413/1,-3500.66,-2087.90
-    >>Kill |cRXP_ENEMY_Cannoneer Whessan|r
-    .complete 891,2 --Cannoneer Whessan slain (1)
-    .mob Cannoneer Whessan
-step
-    #loop
-    .goto 1413/1,-2300.87,-3106.74,0
-    .goto 1413/1,-2300.87,-3106.74,40,0
-    .goto 1413/1,-2251.22,-3175.65,40,0
-    .goto 1413/1,-2217.78,-3179.03,40,0
-    .goto 1413/1,-2170.15,-3141.20,40,0
-    .goto 1413/1,-2188.39,-3105.39,40,0
-    >>Loot the |cRXP_PICK_Silithid Mounds|r for |cRXP_LOOT_Silithid Egg|r
-    .complete 868,1 --Silithid Egg (12)
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Boorand Plainswind's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .goto 1413/1,-2711.27,-350.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gur'ak|r
-    .turnin 97003 >>Turn in Chol'aruk the Ravener
-    .target Gur'ak
-step
-    .goto 1413/1,-2552.18,-389.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
-    .turnin 868 >>Turn in Egg Hunt
     .target Korran
 step
     .goto 1413/1,-1891.48,-2391.25
@@ -1902,79 +1932,6 @@ step
     .turnin 907 >>Turn in Enraged Thunder Lizards
     .accept 913 >>Accept Cry of the Thunderhawk
     .target Jorn Skyseer
-step << Tauren Druid
-    .goto 1413/1,-2018.15,-2989.86
-    >>Kill |cRXP_ENEMY_Lost Barrens Kodos|r and |cRXP_ENEMY_Barrens Kodos|r. Loot them for |cRXP_LOOT_Kodo Horn|r
-    .complete 6128,2 --Kodo Horn (5)
-    .mob Lost Barrens Kodo
-    .mob Barrens Kodo
-    .isOnQuest 6128
-step
-    #loop
-    .goto 1413/1,-2142.79,-3364.15,0
-    .goto 1413/1,-2142.79,-3364.15,40,0
-    .goto 1413/1,-2150.90,-3414.15,40,0
-    .goto 1413/1,-2190.42,-3470.90,40,0
-    >>Kill |cRXP_ENEMY_Thunderhawk Hatchlings|r, |cRXP_ENEMY_Greater Thunderhawks|r and |cRXP_ENEMY_Thunderhawk Cloudscrapers|r. Loot them for |cRXP_LOOT_Thunderhawk Wings|r
-    .complete 913,1 --Thunderhawk Wings (1)
-    .mob Thunderhawk Hatchling
-    .mob Greater Thunderhawk
-    .mob Thunderhawk Cloudscraper
-step
-    .goto 1413/1,-1922.90,-2383.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
-    .turnin 913 >>Turn in Cry of the Thunderhawk
-    .accept 874 >>Accept Mahren Skyseer
-    .target Jorn Skyseer
-step
-    #loop
-    .goto 1413/1,-3509.78,-2093.98,0
-    .goto 1413/1,-3509.78,-2093.98,40,0
-    .goto 1413/1,-3535.11,-2145.33,40,0
-    .goto 1413/1,-3585.78,-2150.06,40,0
-    .goto 1413/1,-3621.24,-2174.38,40,0
-    .goto 1413/1,-3729.67,-2231.13,40,0
-    .goto 1413/1,-3779.32,-2214.24,40,0
-    .goto 1413/1,-3706.36,-2198.70,40,0
-    .goto 1413/1,-3653.67,-2122.36,40,0
-    .goto 1413/1,-3644.55,-2079.79,40,0
-    >>Kill |cRXP_ENEMY_Captain Fairmount|r
-    >>Kill |cRXP_ENEMY_Theramore Marines|r, |cRXP_ENEMY_Theramore Preservers|r, |cRXP_ENEMY_Captain Fairmounts|r and |cRXP_ENEMY_Cannoneer Smythes|r. Loot them for |cRXP_LOOT_Theramore Medal|r
-    >>Kill |cRXP_ENEMY_Cannoneer Smythe|r
-    .complete 891,1 --Captain Fairmount slain (1)
-    .complete 891,4 --Theramore Medal (10)
-    .complete 891,3 --Cannoneer Smythe slain (1)
-    .mob Captain Fairmount
-    .mob Theramore Marine
-    .mob Theramore Preserver
-    .mob Cannoneer Smythe
-step
-    .goto 1413/1,-4048.87,-1350.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mahren Skyseer|r
-    .turnin 874 >>Turn in Mahren Skyseer
-    .target Mahren Skyseer
-step
-    .goto 1413/1,-3689.14,-1024.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Thalo'thas Brightsun|r
-    .turnin 891 >>Turn in The Guns of Northwatch
-    .target Captain Thalo'thas Brightsun
-step << Tauren Druid
-    #completewith next
-    .hs >>Hearth to Innkeeper Boorand Plainswind's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step << Tauren Druid
-    .goto 1413/1,-2672.76,-544.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga Runetotem|r
-    .turnin 6128 >>Turn in Gathering the Cure
-    .target Tonga Runetotem
-    .isOnQuest 6128
-step << Tauren Druid
-    .goto 1413/1,-2672.76,-544.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga Runetotem|r
-    .accept 6129 >>Accept Curing the Sick
-    .target Tonga Runetotem
-    .isQuestTurnedIn 6128 --any of: Gathering the Cure
-    .xp <14,1
 step
     .goto 1413/1,-1345.30,790.26
     >>Kill |cRXP_ENEMY_Serena Bloodfeather|r and loot |cRXP_LOOT_Serena's Head|r
@@ -1993,11 +1950,74 @@ step
     .target Kadrak
     .isQuestComplete 6543
 step
+    #completewith next
+    .hs >>Hearth to Innkeeper Boorand Plainswind's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
     .goto 1413/1,-2607.91,-475.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok Swiftdagger|r
     .turnin 876 >>Turn in Serena Bloodfeather
     .accept 1060 >>Accept Letter to Jin'Zil
     .target Darsok Swiftdagger
+step
+    .goto 1413/1,-950.10,-271.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth Stonebreak|r
+    .turnin 1062 >>Turn in Goblin Invaders
+    .target Seereth Stonebreak
+    .isQuestComplete 1062
+step << Tauren Druid
+    .goto 1413/1,-2018.15,-2989.86
+    >>Kill |cRXP_ENEMY_Lost Barrens Kodos|r and |cRXP_ENEMY_Barrens Kodos|r. Loot them for |cRXP_LOOT_Kodo Horn|r
+    .complete 6128,2 --Kodo Horn (5)
+    .mob Lost Barrens Kodo
+    .mob Barrens Kodo
+    .isOnQuest 6128
+step
+    #loop
+    .goto 1413/1,-2188.39,-3105.39,0
+    .goto 1413/1,-2188.39,-3105.39,40,0
+    .goto 1413/1,-2170.15,-3141.20,40,0
+    .goto 1413/1,-2217.78,-3179.03,40,0
+    .goto 1413/1,-2251.22,-3175.65,40,0
+    .goto 1413/1,-2300.87,-3106.74,40,0
+    >>Loot the |cRXP_PICK_Silithid Mounds|r for |cRXP_LOOT_Silithid Egg|r
+    .complete 868,1 --Silithid Egg (12)
+step
+    #loop
+    .goto 1413/1,-2142.79,-3364.15,0
+    .goto 1413/1,-2142.79,-3364.15,40,0
+    .goto 1413/1,-2150.90,-3414.15,40,0
+    .goto 1413/1,-2190.42,-3470.90,40,0
+    >>Kill |cRXP_ENEMY_Thunderhawk Hatchlings|r, |cRXP_ENEMY_Greater Thunderhawks|r and |cRXP_ENEMY_Thunderhawk Cloudscrapers|r. Loot them for |cRXP_LOOT_Thunderhawk Wings|r
+    .complete 913,1 --Thunderhawk Wings (1)
+    .mob Thunderhawk Hatchling
+    .mob Greater Thunderhawk
+    .mob Thunderhawk Cloudscraper
+step
+    .goto 1413/1,-1922.90,-2383.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
+    .turnin 884 >>Turn in Owatanka
+    .target Jorn Skyseer
+    .isOnQuest 884
+step
+    .goto 1413/1,-1922.90,-2383.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
+    .turnin 913 >>Turn in Cry of the Thunderhawk
+    .accept 874 >>Accept Mahren Skyseer
+    .target Jorn Skyseer
+step << Tauren Druid
+    .goto 1413/1,-2672.76,-544.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga Runetotem|r
+    .turnin 6128 >>Turn in Gathering the Cure
+    .target Tonga Runetotem
+    .isOnQuest 6128
+step << Tauren Druid
+    .goto 1413/1,-2672.76,-544.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga Runetotem|r
+    .accept 6129 >>Accept Curing the Sick
+    .target Tonga Runetotem
+    .isQuestTurnedIn 6128 --any of: Gathering the Cure
+    .xp <14,1
 step << Tauren Druid
     #loop
     .goto 1413/1,-2444.76,-492.07,0
@@ -2011,11 +2031,15 @@ step << Tauren Druid
     .target Sickly Gazelle
     .isOnQuest 6129
 step
-    .goto 1413/1,-950.10,-271.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth Stonebreak|r
-    .turnin 1062 >>Turn in Goblin Invaders
-    .target Seereth Stonebreak
-    .isQuestComplete 1062
+    .goto 1413/1,-2552.18,-389.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
+    .turnin 868 >>Turn in Egg Hunt
+    .target Korran
+step
+    .goto 1413/1,-4048.87,-1350.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mahren Skyseer|r
+    .turnin 874 >>Turn in Mahren Skyseer
+    .target Mahren Skyseer
 step
     +|cRXP_WARN_That is all of The Barrens for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Moonglade|r: Curing the Sick << Tauren Druid
@@ -2053,6 +2077,141 @@ step << Warrior
     .turnin 1824 >>Turn in Trial at the Field of Giants
     .accept 1825 >>Accept Speak with Thun'grim
     .target Ruga Ragetotem
+step << Shaman
+    .goto 1413/1,-4047.86,-1345.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
+    .accept 1530 >>Accept Call of Water
+    .target Islen Waterseer
+step << Shaman
+    .goto 1413/1,-1776.98,-3617.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
+    .accept 220 >>Accept Call of Water
+    .target Brine
+    .isQuestTurnedIn 1534 --any of: Call of Water
+    .xp <20,1
+step << Shaman
+    .goto 1413/1,-1776.98,-3617.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
+    .turnin 1530 >>Turn in Call of Water
+    .accept 1535 >>Accept Call of Water
+    .target Brine
+step << Shaman
+    .goto 1413/1,-1864.12,-3572.92
+    >>Open the |cRXP_PICK_Quilboar Watering Hole|r. Loot it for |cRXP_LOOT_Filled Brown Waterskin|r
+    .complete 1535,1 --Filled Brown Waterskin (1)
+step << Shaman
+    .goto 1413/1,-1776.98,-3617.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
+    .turnin 1535 >>Turn in Call of Water
+    .accept 1536 >>Accept Call of Water
+    .target Brine
+step << Shaman
+    .goto 1413/1,-1776.98,-3617.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
+    .turnin 1536 >>Turn in Call of Water
+    .target Brine
+    .isQuestComplete 1536
+step
+    .goto 1413/1,-2458.95,-370.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
+    .turnin 91901 >>Turn in A Sealed Crate
+    .target Dokimi
+    .isOnQuest 91901
+step
+    .goto 1413/1,-2253.24,1246.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
+    .turnin 3514 >>Turn in Horde Presence
+    .target Kadrak
+    .isQuestComplete 3514
+step
+    .goto 1413/1,-2253.24,1246.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
+    .turnin 6543 >>Turn in The Warsong Reports
+    .target Kadrak
+    .isQuestComplete 6543
+step
+    .goto 1413/1,-1634.10,839.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r
+    .turnin 95508 >>Turn in Unwelcome Guests
+    .target Walton
+    .isOnQuest 95508
+step
+    .goto 1413/1,-1971.54,-306.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar Deathgate|r
+    .turnin 4021 >>Turn in Counterattack!
+    .target Regthar Deathgate
+    .isQuestComplete 4021
+step
+    .goto 1413/1,-943.00,-263.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba Flathoof|r
+    .turnin 6548 >>Turn in Avenge My Village
+    .target Makaba Flathoof
+    .isQuestComplete 6548
+step
+    .goto 1413/1,-3697.24,-929.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
+    .turnin 1069 >>Turn in Deepmoss Spider Eggs
+    .target Mebok Mizzyrix
+    .isQuestComplete 1069
+step << Shaman
+    .goto 1413/1,-4047.86,-1345.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
+    .turnin 220 >>Turn in Call of Water
+    .target Islen Waterseer
+    .isOnQuest 220
+step << Shaman
+    .goto 1413/1,-4047.86,-1345.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
+    .accept 63 >>Accept Call of Water
+    .target Islen Waterseer
+    .isQuestTurnedIn 220 --any of: Call of Water
+    .xp <20,1
+step << Warlock
+    .goto 1413/1,-2639.32,-436.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
+    .accept 1510 >>Accept News of Dogran
+    .target Gazrog
+    .isQuestTurnedIn 1509 --any of: News of Dogran
+    .xp <20,1
+step
+    .goto 1413/1,-950.10,-271.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth Stonebreak|r
+    .turnin 1062 >>Turn in Goblin Invaders
+    .target Seereth Stonebreak
+    .isQuestComplete 1062
+step << Shaman
+    .goto 1413/1,-1776.98,-3617.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
+    .accept 1534 >>Accept Call of Water
+    .target Brine
+    .isQuestTurnedIn 1536 --any of: Call of Water
+    .xp <20,1
+step << Shaman
+    .goto 1413/1,-1776.98,-3617.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
+    .turnin 1534 >>Turn in Call of Water
+    .target Brine
+    .isQuestComplete 1534
+step << Warlock
+    .goto 1413/1,-1898.58,-2391.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Logmar|r
+    .accept 1515 >>Accept Dogran's Captivity
+    .target Grunt Logmar
+    .isQuestTurnedIn 1511 --any of: Ken'zigla's Draught
+    .xp <20,1
+step << Warlock
+    .goto 1413/1,-1764.82,-1623.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Dogran|r
+    .turnin 1515 >>Turn in Dogran's Captivity
+    .target Grunt Dogran
+    .isOnQuest 1515
+step << Warlock
+    .goto 1413/1,-1764.82,-1623.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Dogran|r
+    .accept 1512 >>Accept Love's Gift
+    .target Grunt Dogran
+    .isQuestTurnedIn 1515 --any of: Dogran's Captivity
+    .xp <20,1
 step
     .goto 1413/1,-1947.22,-2284.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack Steelforge|r
@@ -2123,53 +2282,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thun'grim Firegaze|r
     .turnin 1825 >>Turn in Speak with Thun'grim
     .target Thun'grim Firegaze
-step << Shaman
-    .goto 1413/1,-1776.98,-3617.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
-    .accept 220 >>Accept Call of Water
-    .target Brine
-    .isQuestTurnedIn 1534 --any of: Call of Water
-    .xp <20,1
-step << Shaman
-    .goto 1413/1,-4047.86,-1345.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
-    .turnin 220 >>Turn in Call of Water
-    .target Islen Waterseer
-    .isOnQuest 220
-step << Shaman
-    .goto 1413/1,-4047.86,-1345.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
-    .accept 63 >>Accept Call of Water
-    .target Islen Waterseer
-    .isQuestTurnedIn 220 --any of: Call of Water
-    .xp <20,1
-step << Shaman
-    .goto 1413/1,-4047.86,-1345.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen Waterseer|r
-    .accept 1530 >>Accept Call of Water
-    .target Islen Waterseer
-step << Shaman
-    .goto 1413/1,-1776.98,-3617.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
-    .turnin 1530 >>Turn in Call of Water
-    .accept 1535 >>Accept Call of Water
-    .target Brine
-step << Shaman
-    .goto 1413/1,-1864.12,-3572.92
-    >>Open the |cRXP_PICK_Quilboar Watering Hole|r. Loot it for |cRXP_LOOT_Filled Brown Waterskin|r
-    .complete 1535,1 --Filled Brown Waterskin (1)
-step << Shaman
-    .goto 1413/1,-1776.98,-3617.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
-    .turnin 1535 >>Turn in Call of Water
-    .accept 1536 >>Accept Call of Water
-    .target Brine
-step << Shaman
-    .goto 1413/1,-1776.98,-3617.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
-    .turnin 1536 >>Turn in Call of Water
-    .target Brine
-    .isQuestComplete 1536
 step << Warlock
     .goto 1413/1,-2373.83,-2252.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r
@@ -2181,100 +2293,12 @@ step << Warlock
     .turnin 1740 >>Turn in The Orb of Soran'ruk
     .target Doan Karhan
     .isQuestComplete 1740
-step << Shaman
-    .goto 1413/1,-1776.98,-3617.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
-    .accept 1534 >>Accept Call of Water
-    .target Brine
-    .isQuestTurnedIn 1536 --any of: Call of Water
-    .xp <20,1
-step << Shaman
-    .goto 1413/1,-1776.98,-3617.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
-    .turnin 1534 >>Turn in Call of Water
-    .target Brine
-    .isQuestComplete 1534
-step
-    .goto 1413/1,-2458.95,-370.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
-    .turnin 91901 >>Turn in A Sealed Crate
-    .target Dokimi
-    .isOnQuest 91901
-step
-    .goto 1413/1,-2253.24,1246.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
-    .turnin 3514 >>Turn in Horde Presence
-    .target Kadrak
-    .isQuestComplete 3514
-step
-    .goto 1413/1,-2253.24,1246.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
-    .turnin 6543 >>Turn in The Warsong Reports
-    .target Kadrak
-    .isQuestComplete 6543
 step << Warrior
     .goto 1413/1,-3596.92,185.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
     .turnin 1498 >>Turn in Path of Defense
     .target Uzzek
     .isQuestComplete 1498
-step
-    .goto 1413/1,-1634.10,839.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r
-    .turnin 95508 >>Turn in Unwelcome Guests
-    .target Walton
-    .isOnQuest 95508
-step
-    .goto 1413/1,-1971.54,-306.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar Deathgate|r
-    .turnin 4021 >>Turn in Counterattack!
-    .target Regthar Deathgate
-    .isQuestComplete 4021
-step
-    .goto 1413/1,-943.00,-263.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba Flathoof|r
-    .turnin 6548 >>Turn in Avenge My Village
-    .target Makaba Flathoof
-    .isQuestComplete 6548
-step
-    .goto 1413/1,-3697.24,-929.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
-    .turnin 1069 >>Turn in Deepmoss Spider Eggs
-    .target Mebok Mizzyrix
-    .isQuestComplete 1069
-step << Warlock
-    .goto 1413/1,-2639.32,-436.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
-    .accept 1510 >>Accept News of Dogran
-    .target Gazrog
-    .isQuestTurnedIn 1509 --any of: News of Dogran
-    .xp <20,1
-step
-    .goto 1413/1,-950.10,-271.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth Stonebreak|r
-    .turnin 1062 >>Turn in Goblin Invaders
-    .target Seereth Stonebreak
-    .isQuestComplete 1062
-step << Warlock
-    .goto 1413/1,-1898.58,-2391.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Logmar|r
-    .accept 1515 >>Accept Dogran's Captivity
-    .target Grunt Logmar
-    .isQuestTurnedIn 1511 --any of: Ken'zigla's Draught
-    .xp <20,1
-step << Warlock
-    .goto 1413/1,-1764.82,-1623.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Dogran|r
-    .turnin 1515 >>Turn in Dogran's Captivity
-    .target Grunt Dogran
-    .isOnQuest 1515
-step << Warlock
-    .goto 1413/1,-1764.82,-1623.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Dogran|r
-    .accept 1512 >>Accept Love's Gift
-    .target Grunt Dogran
-    .isQuestTurnedIn 1515 --any of: Dogran's Captivity
-    .xp <20,1
 step
     +|cRXP_WARN_That is all of The Barrens for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ashenvale|r: The Ashenvale Hunt
@@ -2315,6 +2339,96 @@ step
     .turnin 91901 >>Turn in A Sealed Crate
     .target Dokimi
     .isOnQuest 91901
+step
+    .goto 1413/1,-2253.24,1246.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
+    .turnin 3514 >>Turn in Horde Presence
+    .target Kadrak
+    .isQuestComplete 3514
+step
+    .goto 1413/1,-2253.24,1246.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
+    .turnin 6543 >>Turn in The Warsong Reports
+    .target Kadrak
+    .isQuestComplete 6543
+step
+    .goto 1413/1,-1634.10,839.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r
+    .turnin 95508 >>Turn in Unwelcome Guests
+    .target Walton
+    .isOnQuest 95508
+step
+    .goto 1413/1,-1971.54,-306.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar Deathgate|r
+    .turnin 4021 >>Turn in Counterattack!
+    .target Regthar Deathgate
+    .isQuestComplete 4021
+step
+    .goto 1413/1,-943.00,-263.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba Flathoof|r
+    .turnin 6548 >>Turn in Avenge My Village
+    .target Makaba Flathoof
+    .isQuestComplete 6548
+step << Warrior
+    .goto 1413/1,-3596.92,185.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
+    .turnin 1498 >>Turn in Path of Defense
+    .target Uzzek
+    .isQuestComplete 1498
+step
+    .goto 1413/1,-3697.24,-929.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
+    .turnin 1069 >>Turn in Deepmoss Spider Eggs
+    .target Mebok Mizzyrix
+    .isQuestComplete 1069
+step
+    .goto 1413/1,-950.10,-271.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth Stonebreak|r
+    .turnin 1062 >>Turn in Goblin Invaders
+    .target Seereth Stonebreak
+    .isQuestComplete 1062
+step << Rogue
+    .goto 1413/1,-2995.00,1236.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taskmaster Fizzule|r
+    .accept 2478 >>Accept Mission: Possible But Not Probable
+    .target Taskmaster Fizzule
+    .isQuestTurnedIn 2458 --any of: Deep Cover
+    .xp <20,1
+step << Rogue
+    .goto 1413/1,-2930.15,1209.15
+    >>Kill |cRXP_ENEMY_Foreman Silixiz|r and loot |cRXP_LOOT_Silixiz's Tower Key|r
+    .complete 2478,5 --Silixiz's Tower Key (1)
+    .mob Foreman Silixiz
+    .isOnQuest 2478
+step << Rogue
+    .goto 1413/1,-2922.04,1224.02
+    >>Kill |cRXP_ENEMY_Mutated Venture Co. Drones|r
+    .complete 2478,1 --Mutated Venture Co. Drone slain (2)
+    .mob Mutated Venture Co. Drone
+    .isOnQuest 2478
+step << Rogue
+    .goto 1413/1,-2931.16,1234.83
+    >>Kill |cRXP_ENEMY_Venture Co. Patrollers|r
+    .complete 2478,3 --Venture Co. Patroller slain (2)
+    .mob Venture Co. Patroller
+    .isOnQuest 2478
+step << Rogue
+    .goto 1413/1,-2928.12,1219.29
+    >>Kill |cRXP_ENEMY_Venture Co. Lookouts|r
+    .complete 2478,2 --Venture Co. Lookout slain (2)
+    .mob Venture Co. Lookout
+    .isOnQuest 2478
+step << Rogue
+    .goto 1413/1,-2925.08,1234.83
+    >>Kill |cRXP_ENEMY_Grand Foreman Puzik Gallywix|r and loot |cRXP_LOOT_Gallywix's Head|r
+    .complete 2478,4 --Gallywix's Head (1)
+    .mob Grand Foreman Puzik Gallywix
+    .isOnQuest 2478
+step << Rogue
+    .goto 1413/1,-2926.10,1236.85
+    >>Open the |cRXP_PICK_Gallywix's Lockbox|r. Loot it for |cRXP_LOOT_Cache of Zanzil's Altered Mixture|r
+    .complete 2478,6 --Cache of Zanzil's Altered Mixture (1)
+    .isOnQuest 2478
 step
     .goto 1413/1,-1891.48,-2391.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
@@ -2443,11 +2557,28 @@ step
     .turnin 849 >>Turn in Revenge of Gann
     .unitscan Gann Stonespire
 step
+    .goto 1413/1,-1947.22,-2284.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack Steelforge|r
+    .accept 1153 >>Accept A New Ore Sample
+    .target Tatternack Steelforge
+step
+    .goto 1413/1,-1947.22,-2284.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack Steelforge|r
+    .turnin 1153 >>Turn in A New Ore Sample
+    .target Tatternack Steelforge
+    .isQuestComplete 1153
+step
     .goto 1413/1,-1891.48,-2391.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     .turnin 879 >>Turn in Betrayal from Within
     .accept 906 >>Accept Betrayal from Within
     .target Mangletooth
+step << Warlock
+    .goto 1413/1,-2373.83,-2252.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r
+    .turnin 1740 >>Turn in The Orb of Soran'ruk
+    .target Doan Karhan
+    .isQuestComplete 1740
 step
     #completewith next
     .hs >>Hearth to Innkeeper Boorand Plainswind's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -2477,113 +2608,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mahren Skyseer|r
     .turnin 873 >>Turn in Isha Awak
     .target Mahren Skyseer
-step << Warlock
-    .goto 1413/1,-2373.83,-2252.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r
-    .turnin 1740 >>Turn in The Orb of Soran'ruk
-    .target Doan Karhan
-    .isQuestComplete 1740
-step
-    .goto 1413/1,-1947.22,-2284.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack Steelforge|r
-    .accept 1153 >>Accept A New Ore Sample
-    .target Tatternack Steelforge
-step
-    .goto 1413/1,-1947.22,-2284.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack Steelforge|r
-    .turnin 1153 >>Turn in A New Ore Sample
-    .target Tatternack Steelforge
-    .isQuestComplete 1153
-step << Warrior
-    .goto 1413/1,-3596.92,185.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
-    .turnin 1498 >>Turn in Path of Defense
-    .target Uzzek
-    .isQuestComplete 1498
-step
-    .goto 1413/1,-1634.10,839.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r
-    .turnin 95508 >>Turn in Unwelcome Guests
-    .target Walton
-    .isOnQuest 95508
-step
-    .goto 1413/1,-2253.24,1246.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
-    .turnin 3514 >>Turn in Horde Presence
-    .target Kadrak
-    .isQuestComplete 3514
-step
-    .goto 1413/1,-2253.24,1246.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
-    .turnin 6543 >>Turn in The Warsong Reports
-    .target Kadrak
-    .isQuestComplete 6543
-step
-    .goto 1413/1,-1971.54,-306.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar Deathgate|r
-    .turnin 4021 >>Turn in Counterattack!
-    .target Regthar Deathgate
-    .isQuestComplete 4021
-step
-    .goto 1413/1,-943.00,-263.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba Flathoof|r
-    .turnin 6548 >>Turn in Avenge My Village
-    .target Makaba Flathoof
-    .isQuestComplete 6548
-step
-    .goto 1413/1,-3697.24,-929.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
-    .turnin 1069 >>Turn in Deepmoss Spider Eggs
-    .target Mebok Mizzyrix
-    .isQuestComplete 1069
-step
-    .goto 1413/1,-950.10,-271.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth Stonebreak|r
-    .turnin 1062 >>Turn in Goblin Invaders
-    .target Seereth Stonebreak
-    .isQuestComplete 1062
-step << Rogue
-    .goto 1413/1,-2995.00,1236.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taskmaster Fizzule|r
-    .accept 2478 >>Accept Mission: Possible But Not Probable
-    .target Taskmaster Fizzule
-    .isQuestTurnedIn 2458 --any of: Deep Cover
-    .xp <20,1
-step << Rogue
-    .goto 1413/1,-2930.15,1209.15
-    >>Kill |cRXP_ENEMY_Foreman Silixiz|r and loot |cRXP_LOOT_Silixiz's Tower Key|r
-    .complete 2478,5 --Silixiz's Tower Key (1)
-    .mob Foreman Silixiz
-    .isOnQuest 2478
-step << Rogue
-    .goto 1413/1,-2922.04,1224.02
-    >>Kill |cRXP_ENEMY_Mutated Venture Co. Drones|r
-    .complete 2478,1 --Mutated Venture Co. Drone slain (2)
-    .mob Mutated Venture Co. Drone
-    .isOnQuest 2478
-step << Rogue
-    .goto 1413/1,-2931.16,1234.83
-    >>Kill |cRXP_ENEMY_Venture Co. Patrollers|r
-    .complete 2478,3 --Venture Co. Patroller slain (2)
-    .mob Venture Co. Patroller
-    .isOnQuest 2478
-step << Rogue
-    .goto 1413/1,-2928.12,1219.29
-    >>Kill |cRXP_ENEMY_Venture Co. Lookouts|r
-    .complete 2478,2 --Venture Co. Lookout slain (2)
-    .mob Venture Co. Lookout
-    .isOnQuest 2478
-step << Rogue
-    .goto 1413/1,-2925.08,1234.83
-    >>Kill |cRXP_ENEMY_Grand Foreman Puzik Gallywix|r and loot |cRXP_LOOT_Gallywix's Head|r
-    .complete 2478,4 --Gallywix's Head (1)
-    .mob Grand Foreman Puzik Gallywix
-    .isOnQuest 2478
-step << Rogue
-    .goto 1413/1,-2926.10,1236.85
-    >>Open the |cRXP_PICK_Gallywix's Lockbox|r. Loot it for |cRXP_LOOT_Cache of Zanzil's Altered Mixture|r
-    .complete 2478,6 --Cache of Zanzil's Altered Mixture (1)
-    .isOnQuest 2478
 step
     +|cRXP_WARN_End of the The Barrens route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Orgrimmar|r: Mission: Possible But Not Probable << Rogue

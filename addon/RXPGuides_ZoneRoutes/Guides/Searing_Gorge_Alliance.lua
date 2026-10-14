@@ -273,9 +273,15 @@ step
     .isQuestTurnedIn 3443 --any of: Forging the Shaft
     .xp <40,1
 step
+    .goto 1427/0,-982.70,-6491.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamael Lunthistle|r
+    .accept 3378 >>Accept Prayer to Elune
+    .target Zamael Lunthistle
+    .isQuestTurnedIn 3377 --any of: Prayer to Elune
+    .xp <40,1
+step
     #loop
-    .goto 1427/0,-1009.03,-6490.91,0
-    .goto 1427/0,-1009.03,-6490.91,40,0
+    .goto 1427/0,-981.80,-6497.61,0
     .goto 1427/0,-981.80,-6497.61,40,0
     .goto 1427/0,-847.93,-6512.19,40,0
     .goto 1427/0,-819.37,-6489.72,40,0
@@ -284,6 +290,26 @@ step
     .goto 1427/0,-937.40,-6454.17,40,0
     .goto 1427/0,-962.17,-6477.97,40,0
     .goto 1427/0,-985.15,-6482.14,40,0
+    .goto 1427/0,-1009.03,-6490.91,40,0
+    >>Kill |cRXP_ENEMY_Twilight Dark Shamans|r, |cRXP_ENEMY_Twilight Fire Guards|r, |cRXP_ENEMY_Twilight Geomancers|r and |cRXP_ENEMY_Twilight Idolaters|r. Loot them for |cRXP_LOOT_Prayer to Elune|r
+    .complete 3378,1 --Prayer to Elune (1)
+    .mob Twilight Dark Shaman
+    .mob Twilight Fire Guard
+    .mob Twilight Geomancer
+    .mob Twilight Idolater
+    .isOnQuest 3378
+step
+    #loop
+    .goto 1427/0,-920.22,-6479.01,0
+    .goto 1427/0,-920.22,-6479.01,40,0
+    .goto 1427/0,-981.80,-6497.61,40,0
+    .goto 1427/0,-1009.03,-6490.91,40,0
+    .goto 1427/0,-985.15,-6482.14,40,0
+    .goto 1427/0,-962.17,-6477.97,40,0
+    .goto 1427/0,-937.40,-6454.17,40,0
+    .goto 1427/0,-819.37,-6489.72,40,0
+    .goto 1427/0,-847.93,-6512.19,40,0
+    .goto 1427/0,-873.81,-6490.32,40,0
     >>Kill |cRXP_ENEMY_Twilight Dark Shamans|r, |cRXP_ENEMY_Twilight Fire Guards|r, |cRXP_ENEMY_Twilight Geomancers|r and |cRXP_ENEMY_Twilight Idolaters|r. Loot them for |cRXP_LOOT_Symbol of Ragnaros|r
     .complete 3452,1 --Symbol of Ragnaros (1)
     .mob Twilight Dark Shaman
@@ -378,32 +404,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lookout Captain Lolo Longstriker|r
     .turnin 7701 >>Turn in WANTED: Overseer Maltorius
     .target Lookout Captain Lolo Longstriker
-step
-    .goto 1427/0,-982.70,-6491.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamael Lunthistle|r
-    .accept 3378 >>Accept Prayer to Elune
-    .target Zamael Lunthistle
-    .isQuestTurnedIn 3377 --any of: Prayer to Elune
-    .xp <40,1
-step
-    #loop
-    .goto 1427/0,-885.64,-6613.04,0
-    .goto 1427/0,-885.64,-6613.04,40,0
-    .goto 1427/0,-805.54,-6639.96,40,0
-    .goto 1427/0,-761.36,-6674.17,40,0
-    .goto 1427/0,-748.86,-6632.08,40,0
-    .goto 1427/0,-679.92,-6596.68,40,0
-    .goto 1427/0,-648.90,-6648.89,40,0
-    .goto 1427/0,-619.45,-6731.29,40,0
-    .goto 1427/0,-714.28,-6752.12,40,0
-    .goto 1427/0,-844.58,-6711.66,40,0
-    >>Kill |cRXP_ENEMY_Twilight Dark Shamans|r, |cRXP_ENEMY_Twilight Fire Guards|r, |cRXP_ENEMY_Twilight Geomancers|r and |cRXP_ENEMY_Twilight Idolaters|r. Loot them for |cRXP_LOOT_Prayer to Elune|r
-    .complete 3378,1 --Prayer to Elune (1)
-    .mob Twilight Dark Shaman
-    .mob Twilight Fire Guard
-    .mob Twilight Geomancer
-    .mob Twilight Idolater
-    .isOnQuest 3378
 step
     +|cRXP_WARN_End of the Searing Gorge route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Darnassus|r: Prayer to Elune

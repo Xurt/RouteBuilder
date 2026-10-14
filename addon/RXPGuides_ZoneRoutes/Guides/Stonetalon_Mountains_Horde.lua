@@ -40,42 +40,11 @@ step
     >>Click the |cRXP_PICK_Mound of Dirt|r
     .turnin 79980 >>Turn in Scramble
 step
-    .goto 1442/1,928.20,1015.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra Windfield|r
-    .turnin 6401 >>Turn in Kaya's Alive
-    .target Tammra Windfield
-    .isOnQuest 6401
-step
-    .goto 1442/1,927.72,893.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
-    .target Innkeeper Jayka
-    .subzoneskip 460,1
-step
-    .goto 1442/1,920.88,911.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeeda|r on the second floor of the inn
-    .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r
-    .target Jeeda
-    .subzoneskip 460,1
-step
-    .goto 1442/1,365.16,878.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
-    .turnin 1095 >>Turn in Further Instructions
-    .target Ziz Fizziks
-    .isOnQuest 1095
-step
-    .goto 1442/1,183.98,1608.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nizzik|r
-    .vendor >>|cRXP_BUY_Buy gear upgrades if any are available|r
-    .target Nizzik
-    .isOnQuest 1096
-step
-    .goto 1442/1,-394.20,-272.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Jin'Zil|r
-    .turnin 1060 >>Turn in Letter to Jin'Zil
-    .target Witch Doctor Jin'Zil
-    .isOnQuest 1060
+    .goto 1442/1,-602.23,1428.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Braug Dimspirit|r
+    .turnin 1152 >>Turn in Test of Lore
+    .target Braug Dimspirit
+    .isOnQuest 1152
 step
     .goto 1442/1,-233.54,-177.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xen'Zilla|r
@@ -142,12 +111,6 @@ step << Undead Warrior/Skyborne Warrior
     >>|cRXP_WARN_If it's not up, buy a|r |T135280:0|t[Dacian Falx] |cRXP_WARN_instead|r
     .money <1.5024
     .target Veenix
-step
-    .goto 1442/1,-602.23,1428.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Braug Dimspirit|r
-    .turnin 1152 >>Turn in Test of Lore
-    .target Braug Dimspirit
-    .isOnQuest 1152
 step << Warlock
     .goto 1442/1,-331.21,-181.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'zigla|r
@@ -176,6 +139,43 @@ step
     .vendor 4083 >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from her if they're up|r << Warrior
     .target Jeeda
     .isOnQuest 1095
+step
+    .goto 1442/1,928.20,1015.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra Windfield|r
+    .turnin 6401 >>Turn in Kaya's Alive
+    .target Tammra Windfield
+    .isOnQuest 6401
+step
+    .goto 1442/1,927.72,893.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
+    .target Innkeeper Jayka
+    .subzoneskip 460,1
+step
+    .goto 1442/1,920.88,911.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeeda|r on the second floor of the inn
+    .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r
+    .target Jeeda
+    .subzoneskip 460,1
+step
+    .goto 1442/1,365.16,878.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
+    .turnin 1095 >>Turn in Further Instructions
+    .target Ziz Fizziks
+    .isOnQuest 1095
+step
+    .goto 1442/1,183.98,1608.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nizzik|r
+    .vendor >>|cRXP_BUY_Buy gear upgrades if any are available|r
+    .target Nizzik
+    .isOnQuest 1096
+step
+    .goto 1442/1,-394.20,-272.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Jin'Zil|r
+    .turnin 1060 >>Turn in Letter to Jin'Zil
+    .target Witch Doctor Jin'Zil
+    .isOnQuest 1060
 step
     .xp 18 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 18.|r Come back to this guide then
 step
@@ -252,6 +252,13 @@ step
     .turnin 78270 >>Turn in Goblin Lockpicks
     .target Veenix
     .isOnQuest 78270
+step << Warlock
+    .goto 1442/1,-331.21,-181.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'zigla|r
+    .accept 1511 >>Accept Ken'zigla's Draught
+    .target Ken'zigla
+    .isQuestTurnedIn 1510 --any of: News of Dogran
+    .xp <20,1
 step
     .goto 1442/1,928.20,1015.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra Windfield|r
@@ -295,18 +302,27 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra Windfield|r
     .turnin 6301 >>Turn in Cycle of Rebirth
     .target Tammra Windfield
-step << Warlock
-    .goto 1442/1,-331.21,-181.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'zigla|r
-    .accept 1511 >>Accept Ken'zigla's Draught
-    .target Ken'zigla
-    .isQuestTurnedIn 1510 --any of: News of Dogran
-    .xp <20,1
 step
     +|cRXP_WARN_That is all of Stonetalon Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_The Barrens|r: Ken'zigla's Draught << Warlock
 step
     .xp 24 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 24.|r Come back to this guide then
+step
+    .goto 1442/1,402.76,1231.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
+    .turnin 78270 >>Turn in Goblin Lockpicks
+    .target Veenix
+    .isOnQuest 78270
+step
+    .goto 1442/1,-394.20,-272.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Jin'Zil|r
+    .accept 1058 >>Accept Jin'Zil's Forest Magic
+    .target Witch Doctor Jin'Zil
+step
+    .goto 1442/1,927.72,893.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
+    .target Innkeeper Jayka
+    .home >>Set your Hearthstone to Innkeeper Jayka's inn
 step
     .goto 1442/1,1002.43,949.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Braelyn Firehand|r
@@ -320,38 +336,80 @@ step
     .accept 86576 >>Accept Bloodfury Trinkets
     .target Maggran Earthbinder
 step
-    .goto 1442/1,927.72,893.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
-    .target Innkeeper Jayka
-    .home >>Set your Hearthstone to Innkeeper Jayka's inn
-step
     .goto 1442/1,933.09,824.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tsunaman|r
     .accept 6393 >>Accept Elemental War
     .target Tsunaman
 step
     #loop
-    .goto 1442/1,1440.46,2428.88,0
-    .goto 1442/1,1440.46,2428.88,40,0
-    .goto 1442/1,1489.79,2442.23,40,0
-    .goto 1442/1,1515.18,2419.11,40,0
-    .goto 1442/1,1522.50,2489.77,40,0
+    .goto 1442/1,1619.68,2517.12,0
+    .goto 1442/1,1619.68,2517.12,40,0
+    .goto 1442/1,1677.79,2541.87,40,0
+    .goto 1442/1,1730.53,2542.52,40,0
+    .goto 1442/1,1736.39,2603.42,40,0
+    .goto 1442/1,1672.91,2627.19,40,0
+    .goto 1442/1,1631.89,2655.52,40,0
+    .goto 1442/1,1569.87,2657.47,40,0
+    .goto 1442/1,1559.62,2587.13,40,0
+    .goto 1442/1,1620.66,2593.32,40,0
+    >>Kill |cRXP_ENEMY_Twilight Runners|r. Loot them for |cRXP_LOOT_Twilight Whisker|r
+    .complete 1058,2 --Twilight Whisker (5)
+    .mob Twilight Runner
+step
+    #loop
+    .goto 1442/1,1522.99,2557.18,0
     .goto 1442/1,1522.99,2557.18,40,0
-    .goto 1442/1,1492.72,2574.43,40,0
-    .goto 1442/1,1379.42,2544.80,40,0
+    .goto 1442/1,1627.98,2486.52,40,0
+    .goto 1442/1,1515.18,2419.11,40,0
+    .goto 1442/1,1440.46,2428.88,40,0
     .goto 1442/1,1417.02,2488.80,40,0
+    .goto 1442/1,1379.42,2544.80,40,0
     .goto 1442/1,1465.86,2490.42,40,0
+    .goto 1442/1,1496.62,2506.70,40,0
+    .goto 1442/1,1492.72,2574.43,40,0
     >>Kill |cRXP_ENEMY_Son of Cenarius|r
     >>Kill |cRXP_ENEMY_Daughter of Cenarius|r
     >>Kill |cRXP_ENEMY_Cenarion Botanists|r
+    >>Kill |cRXP_ENEMY_Fey Dragons|r, |cRXP_ENEMY_Wily Fey Dragons|r and |cRXP_ENEMY_Nal'taszars|r. Loot them for |cRXP_LOOT_Fey Dragon Scale|r
     .complete 1087,1 --Son of Cenarius slain (4)
     .complete 1087,2 --Daughter of Cenarius slain (4)
     .complete 1087,3 --Cenarion Botanist slain (4)
+    .complete 1058,4 --Fey Dragon Scale (1)
     .mob Son of Cenarius
     .mob Daughter of Cenarius
     .mob Cenarion Botanist
+    .mob Fey Dragon
+    .mob Wily Fey Dragon
+    .mob Nal'taszar
 step
-    #completewith Along6
+    #loop
+    .goto 1442/1,1501.99,2319.47,0
+    .goto 1442/1,1501.99,2319.47,40,0
+    .goto 1442/1,1504.44,2262.49,40,0
+    .goto 1442/1,1431.67,2269.98,40,0
+    .goto 1442/1,1418.98,2253.37,40,0
+    .goto 1442/1,1383.82,2301.89,40,0
+    >>Kill |cRXP_ENEMY_Sap Beast|r and loot |cRXP_LOOT_Stonetalon Sap|r
+    .complete 1058,1 --Stonetalon Sap (1)
+    .mob Sap Beast
+step
+    #loop
+    .goto 1442/1,1290.06,2518.10,0
+    .goto 1442/1,1290.06,2518.10,40,0
+    .goto 1442/1,1239.76,2547.08,40,0
+    .goto 1442/1,1286.64,2645.42,40,0
+    .goto 1442/1,1257.83,2721.29,40,0
+    .goto 1442/1,1331.08,2724.55,40,0
+    .goto 1442/1,1318.87,2677.01,40,0
+    .goto 1442/1,1350.61,2654.86,40,0
+    .goto 1442/1,1312.03,2610.90,40,0
+    .goto 1442/1,1289.08,2558.48,40,0
+    >>Kill |cRXP_ENEMY_Antlered Coursers|r and |cRXP_ENEMY_Great Coursers|r. Loot them for |cRXP_LOOT_Courser Eye|r
+    .complete 1058,3 --Courser Eye (30)
+    .mob Antlered Courser
+    .mob Great Courser
+step
+    #completewith Along11
     >>As you go: Kill |cRXP_ENEMY_Bloodfury Harpies|r, |cRXP_ENEMY_Bloodfury Roguefeathers|r, |cRXP_ENEMY_Bloodfury Slayers|r and |cRXP_ENEMY_Bloodfury Ambushers|r. Loot them for |cRXP_LOOT_Glittering Sunstone|r. |cRXP_WARN_Anything left is finished later|r
     .complete 86576,1 --Glittering Sunstone (15)
     .mob Bloodfury Harpy
@@ -376,7 +434,7 @@ step
     .mob Bloodfury Harpy
     .mob Bloodfury Ambusher
 step
-    #label Along6
+    #label Along11
     #loop
     .goto 1442/1,1777.90,719.02,0
     .goto 1442/1,1777.90,719.02,40,0
@@ -416,11 +474,11 @@ step
     .accept 1088 >>Accept Ordanus
     .target Braelyn Firehand
 step
-    #completewith Along11
+    #completewith Along16
     >>As you go: Click the |cRXP_PICK_Gaea Dirt Mound|r. |cRXP_WARN_Anything left is finished later|r
     .complete 6381,1 --Gaea seed planted
 step
-    #completewith Along10
+    #completewith Along15
     >>As you go: Kill |cRXP_ENEMY_Bloodfury Harpies|r, |cRXP_ENEMY_Bloodfury Roguefeathers|r, |cRXP_ENEMY_Bloodfury Slayers|r and |cRXP_ENEMY_Bloodfury Ambushers|r. Loot them for |cRXP_LOOT_Glittering Sunstone|r. |cRXP_WARN_Anything left is finished later|r
     .complete 86576,1 --Glittering Sunstone (15)
     .mob Bloodfury Harpy
@@ -428,13 +486,13 @@ step
     .mob Bloodfury Slayer
     .mob Bloodfury Ambusher
 step
-    #label Along10
+    #label Along15
     .goto 1442/1,1744.21,900.72
     >>Kill |cRXP_ENEMY_Bloodfury Ripper|r and loot |cRXP_LOOT_Bloodfury Ripper's Remains|r
     .complete 6283,1 --Bloodfury Ripper's Remains (1)
     .mob Bloodfury Ripper
 step
-    #label Along11
+    #label Along16
     #loop
     .goto 1442/1,1785.23,519.09,0
     .goto 1442/1,1785.23,519.09,40,0
@@ -452,7 +510,7 @@ step
     .turnin 6393 >>Turn in Elemental War
     .target Tsunaman
 step
-    #completewith Along13
+    #completewith Along18
     >>As you go: Kill |cRXP_ENEMY_Bloodfury Harpies|r, |cRXP_ENEMY_Bloodfury Roguefeathers|r, |cRXP_ENEMY_Bloodfury Slayers|r and |cRXP_ENEMY_Bloodfury Ambushers|r. Loot them for |cRXP_LOOT_Glittering Sunstone|r. |cRXP_WARN_Anything left is finished later|r
     .complete 86576,1 --Glittering Sunstone (15)
     .mob Bloodfury Harpy
@@ -460,7 +518,7 @@ step
     .mob Bloodfury Slayer
     .mob Bloodfury Ambusher
 step
-    #label Along13
+    #label Along18
     #loop
     .goto 1442/1,1487.83,792.61,0
     .goto 1442/1,1487.83,792.61,40,0
@@ -474,6 +532,24 @@ step
     .goto 1442/1,1484.90,703.72,40,0
     >>Click the |cRXP_PICK_Gaea Dirt Mound|r
     .complete 6381,1 --Gaea seed planted
+step
+    #loop
+    .goto 1442/1,1514.20,749.31,0
+    .goto 1442/1,1514.20,749.31,40,0
+    .goto 1442/1,1522.99,857.74,40,0
+    .goto 1442/1,1560.59,936.87,40,0
+    .goto 1442/1,1628.96,959.99,40,0
+    .goto 1442/1,1730.05,894.21,40,0
+    .goto 1442/1,1646.54,818.01,40,0
+    .goto 1442/1,1685.61,750.93,40,0
+    .goto 1442/1,1742.25,790.66,40,0
+    .goto 1442/1,1741.77,672.78,40,0
+    >>Kill |cRXP_ENEMY_Bloodfury Harpies|r, |cRXP_ENEMY_Bloodfury Roguefeathers|r, |cRXP_ENEMY_Bloodfury Slayers|r and |cRXP_ENEMY_Bloodfury Ambushers|r. Loot them for |cRXP_LOOT_Glittering Sunstone|r
+    .complete 86576,1 --Glittering Sunstone (15)
+    .mob Bloodfury Harpy
+    .mob Bloodfury Roguefeather
+    .mob Bloodfury Slayer
+    .mob Bloodfury Ambusher
 step
     .goto 1442/1,928.20,1015.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra Windfield|r
@@ -490,86 +566,6 @@ step
     .turnin 1088 >>Turn in Ordanus
     .target Braelyn Firehand
     .isQuestComplete 1088
-step
-    .goto 1442/1,402.76,1231.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
-    .turnin 78270 >>Turn in Goblin Lockpicks
-    .target Veenix
-    .isOnQuest 78270
-step
-    .goto 1442/1,-394.20,-272.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Jin'Zil|r
-    .accept 1058 >>Accept Jin'Zil's Forest Magic
-    .target Witch Doctor Jin'Zil
-step
-    #loop
-    .goto 1442/1,1560.59,936.87,0
-    .goto 1442/1,1560.59,936.87,40,0
-    .goto 1442/1,1642.15,992.55,40,0
-    .goto 1442/1,1728.09,1035.86,40,0
-    .goto 1442/1,1781.81,901.70,40,0
-    .goto 1442/1,1735.91,862.30,40,0
-    .goto 1442/1,1772.04,821.92,40,0
-    .goto 1442/1,1685.61,750.93,40,0
-    .goto 1442/1,1663.14,841.13,40,0
-    .goto 1442/1,1718.33,918.31,40,0
-    >>Kill |cRXP_ENEMY_Bloodfury Harpies|r, |cRXP_ENEMY_Bloodfury Roguefeathers|r, |cRXP_ENEMY_Bloodfury Slayers|r and |cRXP_ENEMY_Bloodfury Ambushers|r. Loot them for |cRXP_LOOT_Glittering Sunstone|r
-    .complete 86576,1 --Glittering Sunstone (15)
-    .mob Bloodfury Harpy
-    .mob Bloodfury Roguefeather
-    .mob Bloodfury Slayer
-    .mob Bloodfury Ambusher
-step
-    #loop
-    .goto 1442/1,1627.98,2486.52,0
-    .goto 1442/1,1627.98,2486.52,40,0
-    .goto 1442/1,1648.49,2554.90,40,0
-    .goto 1442/1,1559.62,2587.13,40,0
-    .goto 1442/1,1569.87,2657.47,40,0
-    .goto 1442/1,1631.89,2655.52,40,0
-    .goto 1442/1,1672.91,2627.19,40,0
-    .goto 1442/1,1736.39,2603.42,40,0
-    .goto 1442/1,1730.53,2542.52,40,0
-    .goto 1442/1,1701.23,2503.77,40,0
-    >>Kill |cRXP_ENEMY_Twilight Runners|r. Loot them for |cRXP_LOOT_Twilight Whisker|r
-    >>Kill |cRXP_ENEMY_Fey Dragons|r, |cRXP_ENEMY_Wily Fey Dragons|r and |cRXP_ENEMY_Nal'taszars|r. Loot them for |cRXP_LOOT_Fey Dragon Scale|r
-    .complete 1058,2 --Twilight Whisker (5)
-    .complete 1058,4 --Fey Dragon Scale (1)
-    .mob Twilight Runner
-    .mob Fey Dragon
-    .mob Wily Fey Dragon
-    .mob Nal'taszar
-step
-    #loop
-    .goto 1442/1,1501.99,2319.47,0
-    .goto 1442/1,1501.99,2319.47,40,0
-    .goto 1442/1,1504.44,2262.49,40,0
-    .goto 1442/1,1431.67,2269.98,40,0
-    .goto 1442/1,1418.98,2253.37,40,0
-    .goto 1442/1,1383.82,2301.89,40,0
-    >>Kill |cRXP_ENEMY_Sap Beast|r and loot |cRXP_LOOT_Stonetalon Sap|r
-    .complete 1058,1 --Stonetalon Sap (1)
-    .mob Sap Beast
-step
-    #loop
-    .goto 1442/1,1290.06,2518.10,0
-    .goto 1442/1,1290.06,2518.10,40,0
-    .goto 1442/1,1239.76,2547.08,40,0
-    .goto 1442/1,1286.64,2645.42,40,0
-    .goto 1442/1,1257.83,2721.29,40,0
-    .goto 1442/1,1331.08,2724.55,40,0
-    .goto 1442/1,1318.87,2677.01,40,0
-    .goto 1442/1,1350.61,2654.86,40,0
-    .goto 1442/1,1312.03,2610.90,40,0
-    .goto 1442/1,1289.08,2558.48,40,0
-    >>Kill |cRXP_ENEMY_Antlered Coursers|r and |cRXP_ENEMY_Great Coursers|r. Loot them for |cRXP_LOOT_Courser Eye|r
-    .complete 1058,3 --Courser Eye (30)
-    .mob Antlered Courser
-    .mob Great Courser
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Jayka's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
 step
     .goto 1442/1,939.92,831.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
