@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "30-42 Arathi Highlands",
-  "saved": "2026-10-13 09:00",
+  "saved": "2026-10-13 17:37",
   "levels": "RestedXP",
   "parts": [
     {
@@ -22,6 +22,7 @@
         {"lines":[".goto 1417/0,-3138.27,-1531.81,30,0",".goto 1417/0,-3074.91,-1571.41,30,0",".goto 1417/0,-3073.47,-1518.61,30,0",".goto 1417/0,-3027.39,-1505.89,30,0",".goto 1417/0,-3106.23,-1483.81,30,0",".goto 1417/0,-3138.27,-1531.81,30,0",">>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r",">>Cast |T132797:0|t[Conjure Water r4] if you run out of |T132799:0|t[Sweet Nectar]",">>|cRXP_WARN_Whenever your bags get full, cast|r |T135757:0|t[Teleport: Ironforge] |cRXP_WARN_(you do NOT need to be 35 yet to do this)|r",".xp 35 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 35"],"from":"RestedXP: 33-37 ADV Arathi Mage AoE"},
         {"lines":[".goto 1417/0,-3138.27,-1531.81,30,0",".goto 1417/0,-3074.91,-1571.41,30,0",".goto 1417/0,-3073.47,-1518.61,30,0",".goto 1417/0,-3027.39,-1505.89,30,0",".goto 1417/0,-3106.23,-1483.81,30,0",".goto 1417/0,-3138.27,-1531.81,30,0",">>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r",".xp 36 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 36"],"from":"RestedXP: 33-37 ADV Arathi Mage AoE"},
         {"lines":[".goto 1417/0,-3138.27,-1531.81,30,0",".goto 1417/0,-3074.91,-1571.41,30,0",".goto 1417/0,-3073.47,-1518.61,30,0",".goto 1417/0,-3027.39,-1505.89,30,0",".goto 1417/0,-3106.23,-1483.81,30,0",".goto 1417/0,-3138.27,-1531.81,30,0",">>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r",".xp 37 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 37"],"from":"RestedXP: 33-37 ADV Arathi Mage AoE"},
+        {"lines":[".hs >> Hearth to Southshore"],"from":"RestedXP: 33-37 ADV Arathi Mage AoE"},
         {"lines":[".goto 1417/0,-2364.27,-1280.53,0",".goto 1417/0,-2371.47,-1539.73,0",".goto 1417/0,-2630.67,-1338.13,0",".goto 1417/0,-2364.27,-1280.53,40,0",".goto 1417/0,-2371.47,-1539.73,40,0",".goto 1417/0,-2630.67,-1338.13,40,0",".goto 1417/0,-2594.67,-1539.73",">>|cRXP_WARN_Cast|r |T132172:0|t[Eagle Eye] |cRXP_WARN_to try and find a |cRXP_ENEMY_Plains Creeper|r. Some of their locations are marked on your map|r",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Plains Creeper|r to tame it|r",".train 17265 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 5)]"],"tag":"Hunter","from":"RestedXP: 32-33 Hillsbrad/Arathi"},
         "turnin:94789 @1417:-3018.39,-795.73  TurnIn Call of Air"
       ]
@@ -122,7 +123,6 @@
         "turnin:694 @1417:-2529.87,-1279.33  TurnIn Trelane's Defenses",
         "accept:695 @1417:-2529.87,-1279.33  Accept An Apprentice's Enchantment",
         "turnin:695 @1417:-2546.07,-1261.57  TurnIn An Apprentice's Enchantment",
-        {"lines":[".xp 40 >> Grind to level 40"],"tag":"Warlock/Paladin","from":"RestedXP: 39-40 Alterac/Arathi"},
         "accept:696 @1417:-2546.07,-1261.57  Accept Attack on the Tower",
         "obj:696:3 @1417:-1515.75,-1762.21  Objective Attack on the Tower / Trelane's Ember Agate (1)",
         "obj:696:1 @1417:-1521.15,-1768.69  Objective Attack on the Tower / Trelane's Phylactery (1)",

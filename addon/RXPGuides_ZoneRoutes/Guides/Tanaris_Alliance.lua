@@ -15,6 +15,8 @@ RXPGuides.RegisterGuide([[
 #name 43-60 Tanaris
 
 step
+    .hs >> Hearth to Theramore
+step
     .goto 1446/1,-4811.39,-6899.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haughty Modiste|r
     .accept 8365 >>Accept Pirate Hats Ahoy!
@@ -234,6 +236,10 @@ step
     .turnin 8366 >>Turn in Southsea Shakedown
     .target Security Chief Bilgewhizzle
 step
+    .trainer >> Teleport to Stormwind or Ironforge. Train your level 46-48 spells
+step
+    .trainer >> Train your level 50-52 spells
+step
     .goto 1446/1,-4849.34,-6978.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stoley|r
     .turnin 2873 >>Turn in Stoley's Shipment
@@ -324,11 +330,6 @@ step
     .accept 3042 >>Accept Troll Temper
     .target Trenton Lighthammer
 step
-    .goto 1446/1,-3766.73,-7197.50
-    .target Trenton Lighthammer
-    >>Talk to |cRXP_FRIENDLY_Trenton Lighthammer|r
-    .vendor >> Vendor and Repair at Krinkle
-step
     .goto 1446/1,-3838.49,-7186.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Bilgewhizzle|r
     .accept 2768 >>Accept Divino-matic Rod
@@ -340,17 +341,11 @@ step
     .accept 2865 >>Accept Scarab Shells
     .target Tran'rek
 step
-    .trainer >> Teleport to Stormwind or Ironforge. Train your level 46-48 spells
-step
     .goto 1446/1,-3777.08,-7105.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
     .turnin 2865 >>Turn in Scarab Shells
     .target Tran'rek
     .isQuestComplete 2865
-step
-    .trainer >> Teleport to Stormwind or Ironforge. Train your level 50-52 spells
-step
-    .trainer >> Teleport to Ironforge. Train your level 54 spells
 step
     .goto 1446/1,-3831.59,-7112.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Curgle Cranklehop|r
@@ -469,6 +464,10 @@ step
     .target Alchemist Pestlezugg
     .isOnQuest 4493
 step
+    .hs >> Hearth to Ratchet
+    >>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
+    >>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
+step
     .goto 1446/1,-3939.23,-6948.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaeriyan|r
     .turnin 3912 >>Turn in Meet at the Grave
@@ -487,6 +486,10 @@ step
     .turnin 3528 >>Turn in The God Hakkar
     .target Yeh'kinya
     .isOnQuest 3528
+step
+    .hs >> Hearth to Everlook
+    >>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
+    >>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
 step
     .goto 1446/1,-4834.16,-6980.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironboot|r

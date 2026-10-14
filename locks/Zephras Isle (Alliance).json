@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "1-13 Zephras Isle",
-  "saved": "2026-10-13 08:57",
+  "saved": "2026-10-13 17:34",
   "levels": "RestedXP",
   "parts": [
     {
@@ -47,6 +47,7 @@
         {"lines":[".xp 3+300 >>Grind to 300+/1400xp"],"tag":"Alliance/!Shaman","from":"RestedXP: 1-14 Zephras Isle"},
         "turnin:92465 @2521:47.26,21.89  TurnIn Agitators",
         "accept:92469 @2521:47.26,21.89  Accept Return to Rorian",
+        {"lines":[".hs >>Hearth to Thendal Village",".cooldown item,6948,>0"],"tag":"Alliance/!Shaman","from":"RestedXP: 1-14 Zephras Isle"},
         "turnin:93552 @2521:43.34,23.99  TurnIn Harvesting Windstones",
         {"lines":[".goto 2521,43.44,24.80",".train 2575 >>Use |T4625105:0|t[Mining for Dummies] |cRXP_WARN_while walking towards the questgiver|r."],"from":"RestedXP: 1-14 Zephras Isle"},
         {"lines":[".goto 2521,43.44,24.80",".train 2366 >>Use |T4624731:0|t[Wild Harvest] |cRXP_WARN_while walking towards the questgiver|r."],"from":"RestedXP: 1-14 Zephras Isle"},

@@ -86,6 +86,10 @@ step << Shaman
     >>Click the |cRXP_PICK_Brazier of the Dormant Flame|r
     .turnin 94467 >>Turn in Call of Fire
     .isOnQuest 94467
+step << !Mage
+    .zoneskip Searing Gorge
+    .hs >> Hearthstone to Stormwind
+    .cooldown item,6948,>0,1
 step
     +|cRXP_WARN_That is all of Durotar for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Dun Morogh|r: Call of Earth << Shaman

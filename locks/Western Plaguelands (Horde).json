@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-57 Western Plaguelands",
-  "saved": "2026-10-13 08:56",
+  "saved": "2026-10-13 17:33",
   "levels": "RestedXP",
   "parts": [
     {
@@ -39,6 +39,7 @@
         "turnin:5050 @1422:-1234.53,1817.23  TurnIn Good Luck Charm",
         "accept:5051 @1422:-1234.53,1817.23  Accept Two Halves Become One",
         "turnin:5051 @1422:-1234.53,1817.23  TurnIn Two Halves Become One",
+        {"lines":[".hs >>Hearth to Everlook",".subzoneskip 255",".zoneskip Winterspring"],"from":"RestedXP: 58-59 Winterspring/Silithus I"},
         "turnin:5941 @1422:-1280.11,1452.88  TurnIn Return to Chromie",
         "turnin:5162 @1422:-1276.24,1452.31  TurnIn Wrath of the Blue Flight"
       ]

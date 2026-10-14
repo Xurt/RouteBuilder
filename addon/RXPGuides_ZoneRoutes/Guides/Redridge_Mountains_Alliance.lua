@@ -188,6 +188,9 @@ step
     .target Magistrate Solomon
     .isOnQuest 121
 step
+    .hs >> Hearth to Stormwind City
+    .zoneskip Stormwind City
+step
     .goto 1433/0,-2234.89,-9435.060
     >>Talk to |cRXP_FRIENDLY_Ariena|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
@@ -344,36 +347,27 @@ step << Rogue
     .isQuestTurnedIn 2281 --any of: Redridge Rendezvous
     .xp <16,1
 step
-    #completewith Along7
-    >>As you go: Kill |cRXP_ENEMY_Murloc Flesheaters|r, |cRXP_ENEMY_Murloc Nightcrawlers|r, |cRXP_ENEMY_Murloc Tidecallers|r and |cRXP_ENEMY_Murloc Minor Tidecallers|r. Loot them for |cRXP_LOOT_Spotted Sunfish|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 127,1 --Spotted Sunfish (10)
-    .mob Murloc Flesheater
-    .mob Murloc Nightcrawler
-    .mob Murloc Tidecaller
-    .mob Murloc Minor Tidecaller
-step
-    #label Along7
-    .goto 1433/0,-2472.08,-9366.43
-    >>Open the |cRXP_PICK_Sunken Chest|r. Loot it for |cRXP_LOOT_Oslow's Toolbox|r
-    .complete 125,1 --Oslow's Toolbox (1)
-step
     #loop
-    .goto 1433/0,-2533.52,-9493.56,0
-    .goto 1433/0,-2533.52,-9493.56,40,0
-    .goto 1433/0,-2559.35,-9524.11,40,0
-    .goto 1433/0,-2566.08,-9560.45,40,0
-    .goto 1433/0,-2607.11,-9564.22,40,0
-    .goto 1433/0,-2653.78,-9521.07,40,0
-    .goto 1433/0,-2676.79,-9578.84,40,0
-    .goto 1433/0,-2639.89,-9619.53,40,0
-    .goto 1433/0,-2458.19,-9554.23,40,0
+    .goto 1433/0,-2457.97,-9514.12,0
     .goto 1433/0,-2457.97,-9514.12,40,0
+    .goto 1433/0,-2458.19,-9554.23,40,0
+    .goto 1433/0,-2639.89,-9619.53,40,0
+    .goto 1433/0,-2676.79,-9578.84,40,0
+    .goto 1433/0,-2653.78,-9521.07,40,0
+    .goto 1433/0,-2607.11,-9564.22,40,0
+    .goto 1433/0,-2566.08,-9560.45,40,0
+    .goto 1433/0,-2559.35,-9524.11,40,0
+    .goto 1433/0,-2533.52,-9493.56,40,0
     >>Kill |cRXP_ENEMY_Murloc Flesheaters|r, |cRXP_ENEMY_Murloc Nightcrawlers|r, |cRXP_ENEMY_Murloc Tidecallers|r and |cRXP_ENEMY_Murloc Minor Tidecallers|r. Loot them for |cRXP_LOOT_Spotted Sunfish|r
     .complete 127,1 --Spotted Sunfish (10)
     .mob Murloc Flesheater
     .mob Murloc Nightcrawler
     .mob Murloc Tidecaller
     .mob Murloc Minor Tidecaller
+step
+    .goto 1433/0,-2472.08,-9366.43
+    >>Open the |cRXP_PICK_Sunken Chest|r. Loot it for |cRXP_LOOT_Oslow's Toolbox|r
+    .complete 125,1 --Oslow's Toolbox (1)
 step << Rogue
     .goto 1433/0,-2700.46,-9222.07
     >>Open the |cRXP_PICK_Lucius's Lockbox|r. Loot it for |cRXP_LOOT_Token of Thievery|r

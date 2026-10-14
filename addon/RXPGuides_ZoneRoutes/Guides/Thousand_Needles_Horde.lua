@@ -662,6 +662,10 @@ step
     .target Pozzik
     .isOnQuest 1194
 step
+    .hs >> Hearth to Feralas
+    .subzoneskip 1099
+    .cooldown item,6948,>0,1
+step
     .goto 1441/1,-3967.85,-6198.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzeric|r
     .accept 1188 >>Accept Safety First

@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "1-14 Teldrassil",
-  "saved": "2026-10-13 08:57",
+  "saved": "2026-10-13 17:34",
   "levels": "RestedXP",
   "parts": [
     {
@@ -19,6 +19,7 @@
         {"lines":[".goto 1438/1,769.77,10673.98",".xp 4-610 >> Grind until you are 610xp away from level 4 (790/1400)"],"tag":"Hunter/Warrior","from":"RestedXP: 1-6 Shadowglen"},
         "turnin:4495 @1438:1035.04,10711.65  TurnIn A Good Friend",
         "accept:3519 @1438:1035.04,10711.65  Accept A Friend in Need",
+        {"lines":[".hs >> Hearth to Shadowglen"],"tag":"Hunter/Warrior","from":"RestedXP: 1-6 Shadowglen"},
         "turnin:458 @1438:870.07,10296.94  TurnIn The Woodland Protector",
         "accept:459 @1438:870.07,10296.94  Accept The Woodland Protector",
         "accept:97977 @1438:870.07,10296.94  Accept Nature's Call",
@@ -30,8 +31,10 @@
         "turnin:3118 @1438:777.91,10519.23  TurnIn Encrypted Sigil",
         "accept:3119 @1438:826.28,10328.84  Accept Hallowed Sigil",
         "accept:3120 @1438:826.28,10328.84  Accept Verdant Sigil",
+        {"lines":[".hs >> Hearth to Shadowglen"],"tag":"!Hunter !Druid !Warrior","from":"RestedXP: 1-6 Shadowglen"},
         "obj:459:1 @1438:967.32,10298.97  Objective The Woodland Protector / Fel Moss (8)",
         "obj:97977:1 @1438:983.62,10293.88  Objective Nature's Call / Gnarlpine Totem (4)",
+        {"lines":[".hs >> Hearth to Shadowglen"],"tag":"Druid","from":"RestedXP: 1-6 Shadowglen"},
         "turnin:459 @1438:870.07,10296.94  TurnIn The Woodland Protector",
         "turnin:97977 @1438:870.07,10296.94  TurnIn Nature's Call",
         "turnin:3519 @1438:713.76,10407.23  TurnIn A Friend in Need",
@@ -144,7 +147,6 @@
         "turnin:489 @1438:741.76,9925.32  TurnIn Seek Redemption!",
         "obj:2459:collect8049 @1438:282.49,10018.65  Objective Ferocitas the Dream Eater / Gnarlpine Necklace",
         "obj:2459:1 @1438:320.17,10037.65  Objective Ferocitas the Dream Eater / Gnarlpine Mystic slain (7)",
-        {"lines":[".goto 1438/1,953.07,9788.21",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brannol Eaglemoon|r",".vendor >> |cRXP_BUY_Vendor and repair if necessary|r",".target Brannol Eaglemoon"],"from":"RestedXP: 6-11 Teldrassil"},
         "turnin:929 @1438:956.12,9736.97  TurnIn Crown of the Earth",
         "accept:933 @1438:956.12,9736.97  Accept Crown of the Earth",
         "accept:2541 @1438:1526.39,9741.04  Accept The Sleeping Druid",

@@ -1,12 +1,13 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "17-31 Duskwood",
-  "saved": "2026-10-13 08:59",
+  "saved": "2026-10-13 17:36",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        {"lines":[".hs >> Hearth to Stormwind City",".zoneskip Stormwind City"],"from":"RestedXP: 20-22 ADV Redridge 1 Mage AoE"},
         "accept:163 @1431:-1200.85,-10594.17  Accept Raven Hill",
         "accept:164 @1431:-1200.85,-10594.17  Accept Deliveries to Sven",
         "accept:165 @1431:-1200.85,-10594.17  Accept The Hermit",
@@ -152,6 +153,7 @@
         "obj:101:1 @1431:206.39,-10306.89  Objective The Totem of Infliction / Ghoul Fang (10)",
         "obj:133:1 @1431:206.39,-10306.89  Objective Ghoulish Effigy / Ghoul Rib (7)",
         "turnin:133 @1431:74.36,-10282.95  TurnIn Ghoulish Effigy",
+        {"lines":[".hs >> Hearth to Darkshire"],"from":"RestedXP: 27-32 ADV Duskwood Mage AoE"},
         "turnin:101 @1431:-1213,-10532.43  TurnIn The Totem of Infliction",
         "turnin:221 @1431:-1211.92,-10572.93  TurnIn Worgen in the Woods",
         "turnin:58 @1431:-1152.25,-10559.43  TurnIn The Night Watch",

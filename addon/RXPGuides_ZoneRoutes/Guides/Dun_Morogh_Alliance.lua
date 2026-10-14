@@ -398,6 +398,9 @@ step << Warlock
     .complete 1599,1 --Feather Charm (3)
     .mob Frostmane Novice
 step << Warlock
+    .hs >> Hearth to Coldridge Valley
+    .subzoneskip 77,1
+step << Warlock
     .goto 1426/0,391.07,-6048.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r
     .turnin 1599 >>Turn in Beginnings
@@ -1895,6 +1898,10 @@ step << Shaman
     .turnin 94468 >>Turn in Call of Fire
     .target Bruegs Kindleborn
     .isOnQuest 94468
+step << Dwarf Paladin
+    .hs >> Hearth to Ironforge
+    .cooldown item,6948,>2,1
+    .zoneskip Ironforge
 step << Rogue
     .goto 1455/0,-1197.27,-5041.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r inside

@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "47-57 Azshara",
-  "saved": "2026-10-13 08:56",
+  "saved": "2026-10-13 17:32",
   "levels": "RestedXP",
   "parts": [
     {
@@ -23,6 +23,7 @@
         "turnin:8254 @1447:-5427.12,3900.58  TurnIn Cenarion Aid",
         "turnin:3562 @1447:-4421.06,3603.03  TurnIn Magatha's Payment to Jediga",
         "turnin:3563 @1447:-4421.06,3603.03  TurnIn Jes'rimon's Payment to Jediga",
+        {"lines":[".hs >>Hearth to Everlook",".subzoneskip 255",".zoneskip Winterspring"],"from":"RestedXP: 58-59 Winterspring/Silithus I"},
         "turnin:3564 @1447:-4421.06,3603.03  TurnIn Andron's Payment to Jediga",
         "obj:8234:1 @1447:-5379.96,4683.34  Objective Sealed Azure Bag / Sealed Azure Bag (1)",
         "turnin:8234 @1447:-4760.3,3982.07  TurnIn Sealed Azure Bag",

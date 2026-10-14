@@ -1,12 +1,13 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "47-57 Azshara",
-  "saved": "2026-10-13 09:01",
+  "saved": "2026-10-13 17:38",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        {"lines":[".zoneskip Searing Gorge",".hs >> Hearthstone to Stormwind",".cooldown item,6948,>0,1"],"tag":"!Mage","from":"RestedXP: 51-52 Searing Gorge SoD"},
         {"lines":[".goto 1447/1,-3880.51,2718.83",".fp Azshara>> Get the Azshara flight path"],"from":"RestedXP: 52-52 Felwood"},
         "accept:5535 @1447:-3853.64,2698.54  Accept Spiritual Unrest",
         "accept:5536 @1447:-3853.64,2698.54  Accept A Land Filled with Hatred",

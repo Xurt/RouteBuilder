@@ -434,6 +434,10 @@ step
     .isQuestTurnedIn 3122 --any of: Return to Witch Doctor Uzer'i
     .xp <40,1
 step
+    .hs >> Hearth to Feralas
+    .subzoneskip 1099
+    .cooldown item,6948,>0,1
+step
     .goto 1444/1,269.48,-4375.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
     .accept 3124 >>Accept Hippogryph Muisek
@@ -700,6 +704,9 @@ step << Druid
     .target Jannos Lighthoof
     .xp <52,1
     .subzoneskip 1099,1
+step << !Mage
+    .hs >>Hearth to Camp Taurajo
+    .subzoneskip 378
 step
     +|cRXP_WARN_That is all of Feralas for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Orgrimmar|r: The Gordunni Orb, Zukk'ash Report

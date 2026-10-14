@@ -349,6 +349,8 @@ step
     .turnin 3881 >>Turn in Expedition Salvation
     .target Williden Marshal
 step
+    .hs >> Hearth to Gadgetzan
+step
     .goto 1449/1,-1119.09,-6166.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linken|r
     .accept 3908 >>Accept It's a Secret to Everybody
@@ -396,6 +398,11 @@ step << Warrior/Rogue/Paladin/Druid
     >>Fly or Hearth to Gadgetzan. Make sure you have the Flight Path before you Hearth
     .zoneskip Tanaris
     .target Gryfe
+step << !Warrior !Rogue !Paladin !Druid
+    .hs >> Hearth to Tanaris
+    >>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
+    >>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
+    .zoneskip Tanaris
 step
     .goto 1449/1,-2117.35,-7840.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r

@@ -177,75 +177,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mudcrush Durtfeet|r
     .turnin 1177 >>Turn in Hungry!
     .target Mudcrush Durtfeet
-step
-    .goto 1445/1,-3885.60,-2940.53
-    >>Click the |cRXP_PICK_Loose Dirt|r
-    .accept 1239 >>Accept The Severed Head
-step
-    .goto 1445/1,-3885.60,-2952.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
-    .turnin 1206 >>Turn in Jarl Needs Eyes
-    .accept 1203 >>Accept Jarl Needs a Blade
-    .target "Swamp Eye" Jarl
-step << Undead
-    .trainer >> Train your class spells
-step
-    .trainer >> Train your class spells
-step
-    .goto 1445/1,-3885.60,-2952.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
-    .turnin 1203 >>Turn in Jarl Needs a Blade
-    .target "Swamp Eye" Jarl
-    .isQuestComplete 1203
-step
-    .goto 1445/1,-3977.47,-2767.63,0
-    .goto 1445/1,-4007.92,-2599.98,0
-    .goto 1445/1,-3819.45,-2561.83,0
-    .goto 1445/1,-3977.47,-2767.63,60,0
-    .goto 1445/1,-4007.92,-2599.98,60,0
-    .goto 1445/1,-3819.45,-2561.83,60,0
-    .xp 37+71300 >> Grind |cRXP_ENEMY_Murlocs|r until you are at least 71300+/76100xp
-step
-    .goto 1445/1,-3977.47,-2767.63,0
-    .goto 1445/1,-4007.92,-2599.98,0
-    .goto 1445/1,-3819.45,-2561.83,0
-    .goto 1445/1,-3977.47,-2767.63,60,0
-    .goto 1445/1,-4007.92,-2599.98,60,0
-    .goto 1445/1,-3819.45,-2561.83,60,0
-    .xp 37+74000 >> Grind |cRXP_ENEMY_Murlocs|r until you are at least 74000+/76100xp
-step
-    .goto 1445/1,-3977.47,-2767.63,0
-    .goto 1445/1,-4007.92,-2599.98,0
-    .goto 1445/1,-3819.45,-2561.83,0
-    .goto 1445/1,-3977.47,-2767.63,60,0
-    .goto 1445/1,-4007.92,-2599.98,60,0
-    .goto 1445/1,-3819.45,-2561.83,60,0
-    .xp 37+64130 >> Grind |cRXP_ENEMY_Murlocs|r until you are at least 66500+/76100xp
-step
-    .goto 1445/1,-3977.47,-2767.63,0
-    .goto 1445/1,-4007.92,-2599.98,0
-    .goto 1445/1,-3819.45,-2561.83,0
-    .goto 1445/1,-3977.47,-2767.63,60,0
-    .goto 1445/1,-4007.92,-2599.98,60,0
-    .goto 1445/1,-3819.45,-2561.83,60,0
-    .xp 37+67980 >> Grind |cRXP_ENEMY_Murlocs|r until you are at least 71900+/76100xp
-step
-    .goto 1445/1,-3977.47,-2767.63,0
-    .goto 1445/1,-4007.92,-2599.98,0
-    .goto 1445/1,-3819.45,-2561.83,0
-    .goto 1445/1,-3977.47,-2767.63,60,0
-    .goto 1445/1,-4007.92,-2599.98,60,0
-    .goto 1445/1,-3819.45,-2561.83,60,0
-    .xp 39+80575 >>Grind |cRXP_ENEMY_Murlocs|r until you are at least 80575+/85700xp
-step
-    .goto 1445/1,-4470.97,-3616.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Janene|r
-    .target Innkeeper Janene
-    .home >>Set your Hearthstone to Innkeeper Janene's inn
-step
-    .goto 1445/1,-4730.32,-3824.98
-    >>Open the |cRXP_PICK_Captain's Footlocker|r. Loot it for |cRXP_LOOT_Captain's Documents|r
-    .complete 1202,1 --Captain's Documents (1)
 step << Mage
     .goto 1445/1,-3393.15,-4031.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
@@ -285,10 +216,63 @@ step << Mage
     .target Tabetha
     .isQuestComplete 1954
 step
+    .goto 1445/1,-4730.32,-3824.98
+    >>Open the |cRXP_PICK_Captain's Footlocker|r. Loot it for |cRXP_LOOT_Captain's Documents|r
+    .complete 1202,1 --Captain's Documents (1)
+step
+    .goto 1445/1,-4470.97,-3616.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Janene|r
+    .target Innkeeper Janene
+    .home >>Set your Hearthstone to Innkeeper Janene's inn
+step
+    .goto 1445/1,-3885.60,-2940.53
+    >>Click the |cRXP_PICK_Loose Dirt|r
+    .accept 1239 >>Accept The Severed Head
+step
+    .goto 1445/1,-3885.60,-2952.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
+    .turnin 1206 >>Turn in Jarl Needs Eyes
+    .accept 1203 >>Accept Jarl Needs a Blade
+    .target "Swamp Eye" Jarl
+step << Undead
+    .trainer >> Train your class spells
+step
+    .trainer >> Train your class spells
+step
+    .goto 1445/1,-3885.60,-2952.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
+    .turnin 1203 >>Turn in Jarl Needs a Blade
+    .target "Swamp Eye" Jarl
+    .isQuestComplete 1203
+step
+    .goto 1445/1,-3977.47,-2767.63,0
+    .goto 1445/1,-4007.92,-2599.98,0
+    .goto 1445/1,-3819.45,-2561.83,0
+    .goto 1445/1,-3977.47,-2767.63,60,0
+    .goto 1445/1,-4007.92,-2599.98,60,0
+    .goto 1445/1,-3819.45,-2561.83,60,0
+    .xp 37+74000 >> Grind |cRXP_ENEMY_Murlocs|r until you are at least 74000+/76100xp
+step
+    .goto 1445/1,-3977.47,-2767.63,0
+    .goto 1445/1,-4007.92,-2599.98,0
+    .goto 1445/1,-3819.45,-2561.83,0
+    .goto 1445/1,-3977.47,-2767.63,60,0
+    .goto 1445/1,-4007.92,-2599.98,60,0
+    .goto 1445/1,-3819.45,-2561.83,60,0
+    .xp 37+67980 >> Grind |cRXP_ENEMY_Murlocs|r until you are at least 71900+/76100xp
+step
+    .goto 1445/1,-3977.47,-2767.63,0
+    .goto 1445/1,-4007.92,-2599.98,0
+    .goto 1445/1,-3819.45,-2561.83,0
+    .goto 1445/1,-3977.47,-2767.63,60,0
+    .goto 1445/1,-4007.92,-2599.98,60,0
+    .goto 1445/1,-3819.45,-2561.83,60,0
+    .xp 39+80575 >>Grind |cRXP_ENEMY_Murlocs|r until you are at least 80575+/85700xp
+step
     .goto 1445/1,-2823.52,-3106.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazeer Bloodpike|r
-    .turnin 1239 >>Turn in The Severed Head
     .turnin 1202 >>Turn in The Theramore Docks
+    .turnin 1239 >>Turn in The Severed Head
     .accept 1240 >>Accept The Troll Witchdoctor
     .target Nazeer Bloodpike
 step << Warlock
@@ -335,6 +319,10 @@ step
     .target Nazeer Bloodpike
     .isQuestTurnedIn 1261 --any of: Marg Speaks
     .xp <30,1
+step
+    .hs >> Hearth to Feralas
+    .subzoneskip 1099
+    .cooldown item,6948,>0,1
 step
     .goto 1445/1,-2608.27,-4348.23
     >>Click the |cRXP_PICK_Musty Scroll|r

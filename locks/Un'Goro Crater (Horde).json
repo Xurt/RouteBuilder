@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "50-56 Un'Goro Crater",
-  "saved": "2026-10-13 08:56",
+  "saved": "2026-10-13 17:32",
   "levels": "RestedXP",
   "parts": [
     {
@@ -72,6 +72,7 @@
         "accept:3941 @1449:-1119.09,-6166.47  Accept A Gnome's Assistance",
         "turnin:3941 @1449:-1017.71,-6033.27  TurnIn A Gnome's Assistance",
         "accept:3942 @1449:-1017.71,-6033.27  Accept Linken's Memory",
+        {"lines":[".hs >>Hearth to Everlook",".subzoneskip 255",".zoneskip Winterspring"],"from":"RestedXP: 58-59 Winterspring/Silithus I"},
         "turnin:4005 @1449:-1017.71,-6033.27  TurnIn Aquementas",
         "accept:3961 @1449:-1017.71,-6033.27  Accept Linken's Adventure",
         "turnin:3961 @1449:-1119.09,-6166.47  TurnIn Linken's Adventure"

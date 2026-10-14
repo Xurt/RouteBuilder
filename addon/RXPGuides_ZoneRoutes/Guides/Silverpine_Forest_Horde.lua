@@ -351,6 +351,9 @@ step
     .fly Undercity >> Fly to the Undercity << !Undead
     .target Karos Razok
     .zoneskip Undercity
+step << Undead
+    .hs >> Hearth to the Undercity
+    .zoneskip Undercity
 step
     .goto 1421/0,1652.40,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r

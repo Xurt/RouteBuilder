@@ -1214,11 +1214,10 @@ step
     .mob Cursed Darkhound
     .mob Ravenous Darkhound
 step
-    .goto 1420/0,437.76,2365.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Junior Apothecary Holland|r
-    .turnin 5481 >>Turn in Gordo's Task
-    .accept 5482 >>Accept Doom Weed
-    .target Junior Apothecary Holland
+    #completewith next
+    .hs >>Hearth to Brill. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+    .subzoneskip 159
 step
     .goto 1420/0,403.42,2287.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Dillinger|r
@@ -1237,6 +1236,12 @@ step
     .turnin 365 >>Turn in Fields of Grief while you are here
     .isQuestComplete 365
     .target Apothecary Johaan
+step
+    .goto 1420/0,437.76,2365.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Junior Apothecary Holland|r
+    .turnin 5481 >>Turn in Gordo's Task while you are here
+    .isQuestComplete 5481
+    .target Junior Apothecary Holland
 step
     .goto 1420/0,403.42,2287.57
     >>Talk to |cRXP_FRIENDLY_Deathguard Dillinger|r and pick "I need a report for Executor Zygand"
@@ -1388,6 +1393,12 @@ step << Rogue/Warrior
     .train 3273 >>Train |T135966:0|t[First Aid]
     .target Nurse Neela
 step
+    .goto 1420/0,437.76,2365.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Junior Apothecary Holland|r
+    .turnin 5481 >>Turn in Gordo's Task
+    .accept 5482 >>Accept Doom Weed
+    .target Junior Apothecary Holland
+step
     #loop
     .goto 1420/0,514.13,1999.87,0
     .goto 1420/0,514.13,1999.87,40,0
@@ -1503,11 +1514,6 @@ step
     .mob Vile Fin Muckdweller
     .mob Vile Fin Seer
 step
-    #completewith next
-    .hs >>Hearth to Brill. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-    .subzoneskip 159
-step
     .goto 1420/0,244.36,2262.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r
     .accept 354 >>Accept Deaths in the Family
@@ -1531,11 +1537,6 @@ step
     .accept 405 >>Accept The Prodigal Lich
     .accept 359 >>Accept Forsaken Duties
     .target Magistrate Sevren
-step << skip
-    .goto 1420/0,308.08,2246.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eliza Callen|r
-    .vendor >>Repair your weapon
-    .target Eliza Callen
 step << Warrior
     .goto 1420/0,244.36,2262.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r
@@ -1647,6 +1648,11 @@ step
     .goto 1420/0,918.56,2780.11,60,0
     .goto 1420/0,953.35,2926.22,60,0
     .xp 9+3360 >> Grind to 3360+/6500xp
+step
+    #completewith next
+    .hs >>Hearth to Brill. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+    .subzoneskip 159
 step
     .goto 1420/0,403.42,2287.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Dillinger|r

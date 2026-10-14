@@ -15,6 +15,9 @@ RXPGuides.RegisterGuide([[
 #name 17-31 Duskwood
 
 step
+    .hs >> Hearth to Stormwind City
+    .zoneskip Stormwind City
+step
     .goto 1431/0,-1200.85,-10594.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Carevin|r
     .accept 163 >>Accept Raven Hill
@@ -884,6 +887,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
     .turnin 133 >>Turn in Ghoulish Effigy
     .target Abercrombie
+step
+    .hs >> Hearth to Darkshire
 step
     #completewith next
     .hs >>Hearth to Innkeeper Trelayne's inn. |cRXP_WARN_Walk instead if you are already nearby|r

@@ -278,9 +278,12 @@ step
     .turnin 1387 >>Turn in Centaur Bounty
     .target Corporal Melkins
 step << Hunter
+    .goto 1443/1,924.40,86.34,0
+    .goto 1443/1,654.65,-75.55,0
     .goto 1443/1,2273.15,-1418.62,0
     .goto 1443/1,690.62,-21.59,0
     >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Scorpashi Lasher|r to tame it|r
+    >>Use |T132172:0|t[Eagle Eye] to scout the spawn spots north of Sargeron (marked on your map) as they're much closer than the southen spawns
     .train 2975 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 5)]
 step
     +|cRXP_WARN_That is all of Desolace for now.|r Quests still in your log lead on from here; pick your next zone by them

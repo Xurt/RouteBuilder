@@ -33,6 +33,10 @@ step
     .target Horde Warbringer
     .isQuestComplete 98888
 step
+    .hs >> Hearth to Feralas
+    .subzoneskip 1099
+    .cooldown item,6948,>0,1
+step
     .goto 1425/0,-2603.34,219.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilveradin Sunchaser|r
     .turnin 650 >>Turn in Ripple Recovery

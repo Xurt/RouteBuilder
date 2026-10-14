@@ -152,6 +152,13 @@ step
     .target Crank Fizzlebub
     .isOnQuest 1118
 step
+    .hs >>Hearth to Camp Mojache
+    .zoneskip Feralas
+step
+    .hs >> Hearth to Feralas
+    .subzoneskip 1099
+    .cooldown item,6948,>0,1
+step
     .goto 1434/0,448.12,-14447.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
     .turnin 2874 >>Turn in Deliver to MacKinley

@@ -319,6 +319,10 @@ step
     .target Donova Snowden
     .isOnQuest 5087
 step
+    .hs >>Hearth to Everlook
+    .subzoneskip 255
+    .zoneskip Winterspring
+step
     .goto 1452/1,-4692.40,6705.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felnok Steelspring|r
     .accept 4809 >>Accept Chillwind Horns
@@ -425,6 +429,9 @@ step
     .mob Chillwind Chimaera
     .mob Chillwind Ravager
     .isOnQuest 4809
+step << Shaman
+    .hs >>Hearth or Astrall Recall to Everlook
+    .subzoneskip 255
 step << Shaman
     .goto 1452/1,-4673.23,6695.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vizzie|r

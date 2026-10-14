@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "14-26 Redridge Mountains",
-  "saved": "2026-10-13 08:58",
+  "saved": "2026-10-13 17:35",
   "levels": "RestedXP",
   "parts": [
     {
@@ -39,6 +39,7 @@
         {"lines":[".goto 1433/0,-2634.54,-9588.54",".xp 20 >> Grind until you are level 20"],"from":"RestedXP: 19-20 Redridge"},
         "turnin:119 @1433:-2243.06,-9259.43  TurnIn Return to Verner",
         "turnin:121 @1433:-2221.79,-9218.6  TurnIn Messenger to Stormwind",
+        {"lines":[".hs >> Hearth to Stormwind City",".zoneskip Stormwind City"],"from":"RestedXP: 20-22 ADV Redridge 1 Mage AoE"},
         {"lines":[".goto 1433/0,-2234.89,-9435.060",">>Talk to |cRXP_FRIENDLY_Ariena|r",".fp Redridge Mountains >> Get the Redridge Mountains flight path"],"from":"RestedXP: 20-22 ADV Redridge 1 Mage AoE"},
         "turnin:345 @1433:-2268.46,-9279.27  TurnIn Ink Supplies",
         "accept:116 @1433:-2145.59,-9211.5  Accept Dry Times",
@@ -66,8 +67,8 @@
         "obj:92:2 @1433:-2340.53,-9591.87  Objective Redridge Goulash / Tough Condor Meat (1)",
         "turnin:92 @1433:-2063.1,-9209.77  TurnIn Redridge Goulash",
         "accept:2282 @1433:-2179.89,-9328.5  Accept Alther's Mill",
-        "obj:125:1 @1433:-2472.08,-9366.43  Objective The Lost Tools / Oslow's Toolbox (1)",
         "obj:127:1 @1433:-2620.57,-9571.46  Objective Selling Fish / Spotted Sunfish (10)",
+        "obj:125:1 @1433:-2472.08,-9366.43  Objective The Lost Tools / Oslow's Toolbox (1)",
         "obj:2282:1 @1433:-2700.46,-9222.07  Objective Alther's Mill / Token of Thievery (1)",
         "turnin:125 @1433:-2268.46,-9279.27  TurnIn The Lost Tools",
         "accept:89 @1433:-2268.46,-9279.27  Accept The Everstill Bridge",

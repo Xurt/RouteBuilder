@@ -82,6 +82,8 @@ step
     .turnin 4495 >>Turn in A Good Friend
     .accept 3519 >>Accept A Friend in Need
     .target Iverron
+step << Hunter/Warrior
+    .hs >> Hearth to Shadowglen
 step
     .goto 1438/1,870.07,10296.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r
@@ -100,6 +102,8 @@ step
     .accept 3119 >>Accept Hallowed Sigil << NightElf Priest
     .accept 3120 >>Accept Verdant Sigil << NightElf Druid
     .target Conservator Ilthalaine
+step << !Hunter !Druid !Warrior
+    .hs >> Hearth to Shadowglen
 step << NightElf Rogue
     .goto 1438/1,777.91,10519.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frahun Shadewhisper|r
@@ -147,6 +151,8 @@ step
     .complete 97977,1 --Gnarlpine Totem (4)
     .mob Grell
     .mob Grellkin
+step << Druid
+    .hs >> Hearth to Shadowglen
 step
     .goto 1438/1,870.07,10296.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r
@@ -714,11 +720,6 @@ step
     >>Kill |cRXP_ENEMY_Gnarlpine Mystics|r
     .complete 2459,1 --Gnarlpine Mystic slain (7)
     .mob Gnarlpine Mystic
-step
-    .goto 1438/1,953.07,9788.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brannol Eaglemoon|r
-    .vendor >> |cRXP_BUY_Vendor and repair if necessary|r
-    .target Brannol Eaglemoon
 step
     #completewith next
     .hs >>Hearth to Innkeeper Keldamyr's inn. |cRXP_WARN_Walk instead if you are already nearby|r

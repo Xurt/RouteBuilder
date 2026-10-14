@@ -14,6 +14,10 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 48-56 Felwood
 
+step << !Mage
+    .zoneskip Searing Gorge
+    .hs >> Hearthstone to Stormwind
+    .cooldown item,6948,>0,1
 step
     .goto 1448/1,-1286.81,3874.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grazle|r
@@ -342,11 +346,6 @@ step << Warlock
     .target Impsy
     .isQuestComplete 8422
 step
-    .goto 1448/1,-1471.96,3804.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arathandris Silversky|r
-    .turnin 4101 >>Turn in Cleansing Felwood
-    .target Arathandris Silversky
-step
     .goto 1448/1,-1302.91,3985.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greta Mosshoof|r
     .turnin 5157 >>Turn in Collection of the Corrupt Water
@@ -369,6 +368,11 @@ step
     .turnin 4441 >>Turn in Felbound Ancients
     .target Eridan Bluewind
     .isQuestComplete 4441
+step
+    .goto 1448/1,-1471.96,3804.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arathandris Silversky|r
+    .turnin 4101 >>Turn in Cleansing Felwood
+    .target Arathandris Silversky
 step
     .goto 1448/1,-1310.96,4008.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eridan Bluewind|r

@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-52 Swamp of Sorrows",
-  "saved": "2026-10-13 08:55",
+  "saved": "2026-10-13 17:31",
   "levels": "RestedXP",
   "parts": [
     {
@@ -40,6 +40,8 @@
         {"lines":[".goto 1435/0,-3328.27,-10506.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greshka|r",".train 10431 >> Train your class spells",".target Haromm",".xp <48,1"],"tag":"Shaman","from":"RestedXP: 45-46 Swamp of Sorrows"},
         {"lines":[".goto 1435/0,-3252.58,-10501.94",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malosh|r",".train 11578 >> Train your class spells",".target Malosh",".xp <46,1",".xp >48,1"],"tag":"Warrior","from":"RestedXP: 45-46 Swamp of Sorrows"},
         {"lines":[".goto 1435/0,-3252.58,-10501.94",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malosh|r",".train 20661 >> Train your class spells",".target Malosh",".xp <48,1"],"tag":"Warrior","from":"RestedXP: 45-46 Swamp of Sorrows"},
+        {"lines":[".hs >>Hearth to Camp Mojache",".zoneskip Feralas"],"from":"RestedXP: 45-46 Swamp of Sorrows"},
+        {"lines":[".hs >> Hearth to Feralas",".subzoneskip 1099",".cooldown item,6948,>0,1"],"from":"RestedXP: 46-48 Tanaris"},
         "turnin:1444 @1435:-3322.31,-10458.51  TurnIn Return to Fel'Zerul",
         {"lines":[".goto 1435/0,-3307.17,-10437.71",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogrom|r",".train 13554 >> Train your class spells",".target Ogrom",".xp <50,1",".xp >52,1"],"tag":"Hunter","from":"RestedXP: 50-51 Stranglethorn/Blasted Lands"},
         {"lines":[".goto 1435/0,-3307.17,-10437.71",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogrom|r",".train 13543 >> Train your class spells",".target Ogrom",".xp <52,1"],"tag":"Hunter","from":"RestedXP: 50-51 Stranglethorn/Blasted Lands"},
@@ -102,6 +104,7 @@
         "accept:1445 @1435:-3322.31,-10458.51  Accept The Temple of Atal'Hakkar",
         "obj:1445:1 @1435:-4071.22,-10347.03  Objective The Temple of Atal'Hakkar / Fetish of Hakkar (20)",
         "turnin:1445 @1435:-3322.31,-10458.51  TurnIn The Temple of Atal'Hakkar",
+        {"lines":[".hs >>Hearth to Camp Taurajo"],"tag":"!Mage","from":"RestedXP: 55-56 Felwood/Winterspring"},
         "turnin:93176 @1435:-2800.25,-10449.18  TurnIn My Little Friends",
         "turnin:93663 @1435:-2818.83,-10100.99  TurnIn Lost in Transit"
       ]

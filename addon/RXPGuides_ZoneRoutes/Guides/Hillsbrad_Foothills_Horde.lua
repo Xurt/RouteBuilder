@@ -874,8 +874,8 @@ step
 step
     .goto 1424/0,-904.53,-44.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
-    .accept 92434 >>Accept Blood in the Streets
     .accept 93680 >>Accept Key to the City
+    .accept 92434 >>Accept Blood in the Streets
     .accept 544 >>Accept Prison Break In
     .target Magus Wordeen Voidglare
 step
@@ -883,22 +883,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Bel'varil|r
     .accept 556 >>Accept Stone Tokens
     .target Keeper Bel'varil
-step
-    .goto 1424/0,-957.01,-40.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
-    .accept 1361 >>Accept Regthar Deathgate
-    .target Krusk
-step
-    .goto 1424/0,-977.49,-19.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Novice Thaivand|r
-    .accept 553 >>Accept Helcular's Revenge
-    .target Novice Thaivand
-step
-    .goto 1424/0,-337.81,-198.61
-    >>Click the |cRXP_PICK_Flame of Azel|r
-    >>Click the |cRXP_PICK_Flame of Veraz|r
-    .complete 553,1 --Flame of Azel charged
-    .complete 553,2 --Flame of Veraz charged
 step
     .goto 1424/0,-927.89,-36.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
@@ -915,6 +899,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallow|r
     .accept 676 >>Accept The Hammer May Fall
     .target Tallow
+step
+    .goto 1424/0,-977.49,-19.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Novice Thaivand|r
+    .accept 553 >>Accept Helcular's Revenge
+    .target Novice Thaivand
+step
+    .goto 1424/0,-957.01,-40.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
+    .accept 1361 >>Accept Regthar Deathgate
+    .target Krusk
 step << Undead Paladin
     .goto 1424/0,-867.09,-158.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r
@@ -983,6 +977,12 @@ step
     .target Magus Wordeen Voidglare
     .isQuestComplete 544
 step
+    .goto 1424/0,-342.93,-166.40
+    >>Click the |cRXP_PICK_Flame of Veraz|r
+    >>Click the |cRXP_PICK_Flame of Azel|r
+    .complete 553,2 --Flame of Veraz charged
+    .complete 553,1 --Flame of Azel charged
+step
     .goto 1424/0,-621.33,-738.56
     >>Click the |cRXP_PICK_Helcular's Grave|r
     .turnin 553 >>Turn in Helcular's Revenge
@@ -1026,20 +1026,6 @@ step
 step
     .goto 1424/0,-937.49,-40.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melisara|r
-    .accept 521 >>Accept The Crown of Will
-    .target Melisara
-    .isQuestTurnedIn 520 --any of: The Crown of Will
-    .xp <34,1
-step
-    .goto 1424/0,-937.49,-40.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melisara|r
-    .accept 520 >>Accept The Crown of Will
-    .target Melisara
-    .isQuestTurnedIn 519 --any of: The Crown of Will
-    .xp <34,1
-step
-    .goto 1424/0,-937.49,-40.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melisara|r
     .accept 518 >>Accept The Crown of Will
     .target Melisara
 step
@@ -1051,32 +1037,24 @@ step
 step
     .goto 1424/0,-937.49,-40.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melisara|r
+    .accept 520 >>Accept The Crown of Will
+    .target Melisara
+    .isQuestTurnedIn 519 --any of: The Crown of Will
+    .xp <34,1
+step
+    .goto 1424/0,-937.49,-40.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melisara|r
     .accept 519 >>Accept The Crown of Will
     .target Melisara
     .isQuestTurnedIn 518 --any of: The Crown of Will
     .xp <34,1
 step
-    .goto 1424/0,-904.53,-44.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
-    .turnin 93680 >>Turn in Key to the City
-    .target Magus Wordeen Voidglare
-    .isQuestComplete 93680
-step << Undead Paladin
-    .goto 1424/0,-867.09,-158.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r
-    .turnin 95125 >>Turn in Ott's Masterwork
-    .target Ott
-    .isOnQuest 95125
-step
-    .goto 1424/0,-337.81,-198.61
-    >>Click the |cRXP_PICK_Flame of Azel|r
-    .complete 553,1 --Flame of Azel charged
-    .isOnQuest 553
-step
-    .goto 1424/0,-342.93,-166.40
-    >>Click the |cRXP_PICK_Flame of Veraz|r
-    .complete 553,2 --Flame of Veraz charged
-    .isOnQuest 553
+    .goto 1424/0,-937.49,-40.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melisara|r
+    .accept 521 >>Accept The Crown of Will
+    .target Melisara
+    .isQuestTurnedIn 520 --any of: The Crown of Will
+    .xp <34,1
 step
     .goto 1424/0,-901.33,-46.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Bel'varil|r
@@ -1089,6 +1067,12 @@ step
     .turnin 544 >>Turn in Prison Break In
     .target Magus Wordeen Voidglare
     .isQuestComplete 544
+step
+    .goto 1424/0,-904.53,-44.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
+    .turnin 93680 >>Turn in Key to the City
+    .target Magus Wordeen Voidglare
+    .isQuestComplete 93680
 step
     .goto 1424/0,-957.01,-40.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
@@ -1107,23 +1091,6 @@ step
     .turnin 520 >>Turn in The Crown of Will
     .target Melisara
     .isQuestComplete 520
-step
-    .goto 1424/0,-982.93,-748.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
-    .turnin 98095 >>Turn in Valuable Vantages
-    .target Deathstalker Masoj
-    .isOnQuest 98095
-step
-    .goto 1424/0,-621.33,-738.56
-    >>Click the |cRXP_PICK_Helcular's Grave|r
-    .turnin 553 >>Turn in Helcular's Revenge
-    .isQuestComplete 553
-step
-    +|cRXP_WARN_That is all of Hillsbrad Foothills for now.|r Quests still in your log lead on from here; pick your next zone by them
-    >>|cRXP_FRIENDLY_Undercity|r: The Crown of Will
-    >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: The Crown of Will
-step
-    .xp 38 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 38.|r Come back to this guide then
 step << Undead Paladin
     .goto 1424/0,-867.09,-158.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r
@@ -1131,15 +1098,32 @@ step << Undead Paladin
     .target Ott
     .isOnQuest 95125
 step
+    .goto 1424/0,-342.93,-166.40
+    >>Click the |cRXP_PICK_Flame of Veraz|r
+    .complete 553,2 --Flame of Veraz charged
+    .isOnQuest 553
+step
     .goto 1424/0,-337.81,-198.61
     >>Click the |cRXP_PICK_Flame of Azel|r
     .complete 553,1 --Flame of Azel charged
     .isOnQuest 553
 step
-    .goto 1424/0,-342.93,-166.40
-    >>Click the |cRXP_PICK_Flame of Veraz|r
-    .complete 553,2 --Flame of Veraz charged
-    .isOnQuest 553
+    .goto 1424/0,-621.33,-738.56
+    >>Click the |cRXP_PICK_Helcular's Grave|r
+    .turnin 553 >>Turn in Helcular's Revenge
+    .isQuestComplete 553
+step
+    .goto 1424/0,-982.93,-748.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
+    .turnin 98095 >>Turn in Valuable Vantages
+    .target Deathstalker Masoj
+    .isOnQuest 98095
+step
+    +|cRXP_WARN_That is all of Hillsbrad Foothills for now.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Undercity|r: The Crown of Will
+    >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: The Crown of Will
+step
+    .xp 38 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 38.|r Come back to this guide then
 step
     .goto 1424/0,-901.33,-46.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Bel'varil|r
@@ -1149,15 +1133,15 @@ step
 step
     .goto 1424/0,-904.53,-44.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
-    .turnin 93680 >>Turn in Key to the City
-    .target Magus Wordeen Voidglare
-    .isQuestComplete 93680
-step
-    .goto 1424/0,-904.53,-44.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
     .turnin 544 >>Turn in Prison Break In
     .target Magus Wordeen Voidglare
     .isQuestComplete 544
+step
+    .goto 1424/0,-904.53,-44.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
+    .turnin 93680 >>Turn in Key to the City
+    .target Magus Wordeen Voidglare
+    .isQuestComplete 93680
 step
     .goto 1424/0,-937.49,-40.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melisara|r
@@ -1171,17 +1155,6 @@ step
     .target Krusk
     .isQuestComplete 533
 step
-    .goto 1424/0,-982.93,-748.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
-    .turnin 98095 >>Turn in Valuable Vantages
-    .target Deathstalker Masoj
-    .isOnQuest 98095
-step
-    .goto 1424/0,-621.33,-738.56
-    >>Click the |cRXP_PICK_Helcular's Grave|r
-    .turnin 553 >>Turn in Helcular's Revenge
-    .isQuestComplete 553
-step
     .goto 1424/0,-937.49,-42.67
     >>Click the |cRXP_PICK_WANTED|r
     .accept 566 >>Accept WANTED: Baron Vardus
@@ -1191,6 +1164,33 @@ step
     .turnin 566 >>Turn in WANTED: Baron Vardus
     .target High Executor Darthalia
     .isQuestComplete 566
+step << Undead Paladin
+    .goto 1424/0,-867.09,-158.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r
+    .turnin 95125 >>Turn in Ott's Masterwork
+    .target Ott
+    .isOnQuest 95125
+step
+    .goto 1424/0,-342.93,-166.40
+    >>Click the |cRXP_PICK_Flame of Veraz|r
+    .complete 553,2 --Flame of Veraz charged
+    .isOnQuest 553
+step
+    .goto 1424/0,-337.81,-198.61
+    >>Click the |cRXP_PICK_Flame of Azel|r
+    .complete 553,1 --Flame of Azel charged
+    .isOnQuest 553
+step
+    .goto 1424/0,-621.33,-738.56
+    >>Click the |cRXP_PICK_Helcular's Grave|r
+    .turnin 553 >>Turn in Helcular's Revenge
+    .isQuestComplete 553
+step
+    .goto 1424/0,-982.93,-748.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
+    .turnin 98095 >>Turn in Valuable Vantages
+    .target Deathstalker Masoj
+    .isOnQuest 98095
 step
     +|cRXP_WARN_End of the Hillsbrad Foothills route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: WANTED: Baron Vardus

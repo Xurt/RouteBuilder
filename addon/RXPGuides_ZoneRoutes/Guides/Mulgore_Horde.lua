@@ -644,6 +644,8 @@ step
     .xp 5+880 >> Grind to 880+/2800xp << !Shaman
     .xp 5 >> Grind to level 5 << Shaman
 step
+    .hs >> Hearth to Camp Narache
+step
     .goto 1412/1,-257.59,-2912.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull Hawkwind|r
     .turnin 780 >>Turn in The Battleboars
@@ -677,6 +679,13 @@ step << Shaman
     .target Minor Manifestation of Earth
     .isQuestTurnedIn 1517 --any of: Call of Earth
     .xp <4,1
+step << Skyborne
+    .hs >> Hearth to Orgrimmar
+    .zoneskip Thunder Bluff,1
+    .cooldown item,6948,>0,1
+step << !Undead !Skyborne
+    .hs >> Hearth to Razor Hill
+    .subzoneskip 362
 step << Shaman
     .goto 1412/1,-250.21,-2882.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seer Ravenfeather|r
@@ -768,21 +777,6 @@ step
     .accept 96661 >>Accept Camping 101: Cooking
     .target Kaga Wildhoof
 step
-    .goto 1412/1,-408.98,-2180.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
-    .accept 96130 >>Accept Chakuyak
-    .target Yaw Sharpmane
-step
-    .goto 1412/1,-430.52,-2097.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r
-    .accept 99411 >>Accept Kyle's Gone Missing!
-    .target Ahab Wheathoof
-step
-    .goto 1412/1,-365.90,-2227.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r
-    .accept 766 >>Accept Mazzranache
-    .target Maur Raincaller
-step
     .goto 1412/1,-384.98,-2397.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul Eagletalon|r
     .accept 743 >>Accept Dangers of the Windfury
@@ -821,6 +815,21 @@ step
     .turnin 767 >>Turn in Rite of Vision
     .accept 771 >>Accept Rite of Vision
     .target Zarlman Two-Moons
+step
+    .goto 1412/1,-365.90,-2227.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r
+    .accept 766 >>Accept Mazzranache
+    .target Maur Raincaller
+step
+    .goto 1412/1,-408.98,-2180.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
+    .accept 96130 >>Accept Chakuyak
+    .target Yaw Sharpmane
+step
+    .goto 1412/1,-430.52,-2097.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r
+    .accept 99411 >>Accept Kyle's Gone Missing!
+    .target Ahab Wheathoof
 step
     .goto 1412/1,-454.52,-2304.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken Windtotem|r

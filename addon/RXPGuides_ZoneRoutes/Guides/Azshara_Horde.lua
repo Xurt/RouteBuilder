@@ -107,6 +107,10 @@ step
     .target Jediga
     .isOnQuest 3563
 step
+    .hs >>Hearth to Everlook
+    .subzoneskip 255
+    .zoneskip Winterspring
+step
     .goto 1447/1,-4421.06,3603.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jediga|r
     .turnin 3564 >>Turn in Andron's Payment to Jediga

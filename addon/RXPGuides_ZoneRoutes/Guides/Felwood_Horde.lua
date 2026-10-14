@@ -109,8 +109,8 @@ step
     .turnin 8462 >>Turn in Speak to Nafien
     .target Nafien
 step
+    .hs >>Hearth to Orgrimmar
     .zoneskip Orgrimmar
-    .train 3567,1 << Mage
 step << Mage
     .zoneskip Orgrimmar
     .train 3567,3
@@ -149,6 +149,10 @@ step
     .turnin 3942 >>Turn in Linken's Memory
     .target Eridan Bluewind
     .isOnQuest 3942
+step
+    .hs >>Hearth to Everlook
+    .subzoneskip 255
+    .zoneskip Winterspring
 step
     .goto 1448/1,-1298.88,3999.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelek Skykeeper|r

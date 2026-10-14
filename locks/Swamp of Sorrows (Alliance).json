@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "34-52 Swamp of Sorrows",
-  "saved": "2026-10-13 09:01",
+  "saved": "2026-10-13 17:37",
   "levels": "RestedXP",
   "parts": [
     {
@@ -22,6 +22,7 @@
         "turnin:1389 @1435:-2818.83,-10100.99  TurnIn Draenethyst Crystals",
         "accept:93585 @1435:-2731.21,-10388.93  Accept This Light of Mine",
         "turnin:1421 @1435:-2836.27,-10535.73  TurnIn The Lost Caravan",
+        {"lines":[".hs >> Hearth to Booty Bay",">>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue",">>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue",".zoneskip Swamp of Sorrows,1"],"from":"RestedXP: 38-39 Swamp of Sorrows"},
         "turnin:8417 @1435:-3009.44,-10632.22  TurnIn A Troubled Spirit",
         "turnin:2783 @1435:-3009.44,-10632.22  TurnIn Petty Squabbles"
       ]

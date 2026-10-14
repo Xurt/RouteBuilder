@@ -193,6 +193,10 @@ step
     .target Janice Felstone
     .isOnQuest 5051
 step
+    .hs >>Hearth to Everlook
+    .subzoneskip 255
+    .zoneskip Winterspring
+step
     .goto 1422/0,-1280.11,1452.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
     .turnin 5941 >>Turn in Return to Chromie

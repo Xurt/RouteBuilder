@@ -1,12 +1,13 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "43-60 Tanaris",
-  "saved": "2026-10-13 09:01",
+  "saved": "2026-10-13 17:38",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        {"lines":[".hs >> Hearth to Theramore"],"from":"RestedXP: 42-50 ADV Tanaris Mage AoE"},
         "accept:8365 @1446:-4811.39,-6899.42  Accept Pirate Hats Ahoy!",
         "accept:8366 @1446:-4845.89,-6973.94  Accept Southsea Shakedown",
         "accept:2873 @1446:-4849.34,-6978.08  Accept Stoley's Shipment",
@@ -38,6 +39,8 @@
         {"lines":[".goto 1446/1,-5414.45,-7978.12,20,0",".goto 1446/1,-5364.08,-8076.56,20,0",".goto 1446/1,-5283.35,-8004.34,20,0",".goto 1446/1,-5969.90,-8051.72,20,0",".goto 1446/1,-5281.28,-8099.10,20,0",".goto 1446/1,-5240.57,-8078.40,20,0",".goto 1446/1,-5205.38,-8009.86,20,0",".goto 1446/1,-5414.45,-7978.12,20,0",".xp 50 >>AoE |cRXP_ENEMY_Southsea Swashbucklers|r, |cRXP_ENEMY_Southsea Dock Workers|r, |cRXP_ENEMY_Southsea Freebooters|r, and |cRXP_ENEMY_Southsea Pirates|r to Level 50. Loot them for their Silk Cloth",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Southsea Pirates|r cast|r |T132282:0|t[Strike] |cRXP_WARN_(deals double damage every 10 seconds) and |cRXP_ENEMY_Southsea Freebooters|r cast|r |T132222:0|t[Shoot] |cRXP_WARN_(Deals ranged damage)|r",">>|cRXP_WARN_MAKE SURE You keep an extra 15|r |T132905:0|t[Silk Cloth] |cRXP_WARN_on your character for Searing Gorge|r"],"from":"RestedXP: 42-50 ADV Tanaris Mage AoE"},
         "turnin:2875 @1446:-4845.89,-6973.94  TurnIn WANTED: Andre Firebeard",
         "turnin:8366 @1446:-4845.89,-6973.94  TurnIn Southsea Shakedown",
+        {"lines":[".trainer >> Teleport to Stormwind or Ironforge. Train your level 46-48 spells"],"from":"RestedXP: 33-60 Mage AoE"},
+        {"lines":[".trainer >> Train your level 50-52 spells"],"from":"RestedXP: 33-60 Mage AoE"},
         "turnin:2873 @1446:-4849.34,-6978.08  TurnIn Stoley's Shipment",
         "accept:8182 @1446:-4834.16,-6980.38  Accept The Hand of Rastakhan",
         "turnin:8365 @1446:-4811.39,-6899.42  TurnIn Pirate Hats Ahoy!",
@@ -45,8 +48,6 @@
         "accept:992 @1446:-3683.24,-7139.08  Accept Gadgetzan Water Survey",
         "obj:992:1 @1446:-2909.75,-7209  Objective Gadgetzan Water Survey / Tapped Dowsing Widget (1)",
         "turnin:992 @1446:-3683.24,-7139.08  TurnIn Gadgetzan Water Survey",
-        {"lines":[".trainer >> Teleport to Stormwind or Ironforge. Train your level 50-52 spells"],"from":"RestedXP: 33-60 Mage AoE"},
-        {"lines":[".trainer >> Teleport to Ironforge. Train your level 54 spells"],"from":"RestedXP: 33-60 Mage AoE"},
         {"lines":[".goto 1446/1,-3949.58,-7356.66",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Scorpid Hunter|r to tame it|r",".train 2976 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 6)]"],"tag":"Hunter","from":"RestedXP: 40-40 Dustwallow Marsh"},
         "accept:3022 @1446:-3831.59,-7112.86  Accept Handle With Care",
         "accept:2741 @1446:-3833.66,-7115.62  Accept The Super Egg-O-Matic",
@@ -56,10 +57,8 @@
         "accept:3520 @1446:-4841.06,-6903.56  Accept Screecher Spirits",
         "turnin:2872 @1446:-4849.34,-6978.08  TurnIn Stoley's Debt",
         "accept:3042 @1446:-3766.04,-7197.5  Accept Troll Temper",
-        {"lines":[".goto 1446/1,-3766.73,-7197.50",".target Trenton Lighthammer",">>Talk to |cRXP_FRIENDLY_Trenton Lighthammer|r",".vendor >> Vendor and Repair at Krinkle"],"from":"RestedXP: 33-60 Mage AoE"},
         "accept:2768 @1446:-3838.49,-7186.46  Accept Divino-matic Rod",
         "accept:2865 @1446:-3777.08,-7105.96  Accept Scarab Shells",
-        {"lines":[".trainer >> Teleport to Stormwind or Ironforge. Train your level 46-48 spells"],"from":"RestedXP: 33-60 Mage AoE"},
         "turnin:2941 @1446:-3831.59,-7112.86  TurnIn The Borrower",
         "accept:2944 @1446:-3831.59,-7112.86  Accept The Super Snapper FX",
         "accept:1691 @1446:-3838.49,-7186.46  Accept More Wastewander Justice",
@@ -74,9 +73,11 @@
         "turnin:1691 @1446:-3838.49,-7186.46  TurnIn More Wastewander Justice",
         {"lines":[".goto 1446/1,-4842.44,-6886.08",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jabbey|r",".vendor 8139 >> |cRXP_BUY_Buy|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_before leaving the port|r",".target Jabbey"],"tag":"Hunter","from":"RestedXP: 48-50 Tanaris/UnGoro/Hinterlands SoD"},
         "turnin:4493 @1446:-3730.16,-7115.16  TurnIn March of the Silithid",
+        {"lines":[".hs >> Hearth to Ratchet",">>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue",">>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue"],"from":"RestedXP: 53-54 UnGoro Crater"},
         "turnin:3912 @1446:-3939.23,-6948.18  TurnIn Meet at the Grave",
         "accept:3528 @1446:-4841.06,-6903.56  Accept The God Hakkar",
         "turnin:3528 @1446:-4841.06,-6903.56  TurnIn The God Hakkar",
+        {"lines":[".hs >> Hearth to Everlook",">>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue",">>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue"],"from":"RestedXP: 59-60 Winterspring/Silithus part 2"},
         "accept:5065 @1446:-4834.16,-6980.38  Accept The Lost Tablets of Mosh'aru",
         "turnin:2946 @1446:-2815.22,-9619.4  TurnIn Seeing What Happens"
       ]

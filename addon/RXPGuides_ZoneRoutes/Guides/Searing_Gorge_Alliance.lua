@@ -185,6 +185,8 @@ step
     .goto 1427/0,-1188.64,-6523.94
     .target +Master Smith Burninate
 step
+    .hs >> Hearth to Gadgetzan
+step
     #completewith Drop4451x1
     >>|cRXP_LOOT_Grimesilt Outhouse Key|r can drop from |cRXP_ENEMY_Dark Iron Steamsmith|r, |cRXP_ENEMY_Dark Iron Slaver|r, |cRXP_ENEMY_Dark Iron Taskmaster|r. Use it to start the quest if you get one
     .collect 11818,1,4451 --Grimesilt Outhouse Key (1)

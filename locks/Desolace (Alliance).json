@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "31-40 Desolace",
-  "saved": "2026-10-13 09:00",
+  "saved": "2026-10-13 17:37",
   "levels": "RestedXP",
   "parts": [
     {
@@ -44,7 +44,7 @@
         "obj:6161:2 @1443:2922.8,181.37  Objective Claim Rackmore's Treasure! / Rackmore's Golden Key (1)",
         "turnin:6161 @1443:2884.58,190.96  TurnIn Claim Rackmore's Treasure!",
         "turnin:1387 @1443:1232.81,126.21  TurnIn Centaur Bounty",
-        {"lines":[".goto 1443/1,2273.15,-1418.62,0",".goto 1443/1,690.62,-21.59,0",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Scorpashi Lasher|r to tame it|r",".train 2975 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 5)]"],"tag":"Hunter","from":"RestedXP: 35-36 Desolace"}
+        {"lines":[".goto 1443/1,924.40,86.34,0",".goto 1443/1,654.65,-75.55,0",".goto 1443/1,2273.15,-1418.62,0",".goto 1443/1,690.62,-21.59,0",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Scorpashi Lasher|r to tame it|r",">>Use |T132172:0|t[Eagle Eye] to scout the spawn spots north of Sargeron (marked on your map) as they're much closer than the southen spawns",".train 2975 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 5)]"],"tag":"Hunter","from":"RestedXP: 35-36 Desolace"}
       ]
     },
     {

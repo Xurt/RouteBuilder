@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "9-52 Durotar",
-  "saved": "2026-10-13 08:58",
+  "saved": "2026-10-13 17:34",
   "levels": "RestedXP",
   "parts": [
     {
@@ -17,7 +17,8 @@
         "turnin:94374 @1411:-4290.59,-877.72  TurnIn Call of Earth",
         "accept:94375 @1411:-4290.59,-877.72  Accept Call of Earth",
         "obj:94467:1 @1411:-4009.82,-246.39  Objective Call of Fire / Glowing Ember (1)",
-        "turnin:94467 @1411:-4022.51,-243.92  TurnIn Call of Fire"
+        "turnin:94467 @1411:-4022.51,-243.92  TurnIn Call of Fire",
+        {"lines":[".zoneskip Searing Gorge",".hs >> Hearthstone to Stormwind",".cooldown item,6948,>0,1"],"tag":"!Mage","from":"RestedXP: 51-52 Searing Gorge SoD"}
       ]
     },
     {

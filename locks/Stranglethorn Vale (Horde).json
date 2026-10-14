@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "1-50 Stranglethorn Vale",
-  "saved": "2026-10-13 08:54",
+  "saved": "2026-10-13 17:31",
   "levels": "RestedXP",
   "parts": [
     {
@@ -31,6 +31,8 @@
         {"lines":[".goto 1434/0,509.38,-14450.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn",".train 6774 >> Train your class spells",".target Ian Strom",".xp <42,1",".xp >44,1"],"tag":"Rogue","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
         {"lines":[".goto 1434/0,509.38,-14450.84",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ian|r on the second floor of the inn",".train 11341 >> Train your class spells",".target Ian Strom",".xp <44,1"],"tag":"Rogue","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
         "turnin:1118 @1434:490.24,-14453.39  TurnIn Back to Booty Bay",
+        {"lines":[".hs >>Hearth to Camp Mojache",".zoneskip Feralas"],"from":"RestedXP: 44-45 Southern Stranglethorn"},
+        {"lines":[".hs >> Hearth to Feralas",".subzoneskip 1099",".cooldown item,6948,>0,1"],"from":"RestedXP: 46-48 Tanaris"},
         "turnin:2874 @1434:448.12,-14447.44  TurnIn Deliver to MacKinley",
         "turnin:1122 @1434:490.24,-14453.39  TurnIn Report Back to Fizzlebub",
         {"lines":[".goto 1434/0,495.34,-14451.69,0",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nixxrax|r",">>|cRXP_WARN_If you didn't get|r |T133974:0|t[Barbecued Buzzard Wings] |cRXP_WARN_earlier (and none of your group members do either), then skip this step. You need 10 wings in total to summon|r |cRXP_ENEMY_Negolash|r",".vendor >>Buy |cRXP_BUY_Junglevine Wine|r from |cRXP_FRIENDLY_Nixxrax|r",".collect 4457,10",".collect 4595,5",".target Nixxrax Fillamug",".isOnQuest 8554"],"from":"RestedXP: 50-51 Stranglethorn/Blasted Lands"}

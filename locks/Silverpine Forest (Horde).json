@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-24 Silverpine Forest",
-  "saved": "2026-10-13 08:53",
+  "saved": "2026-10-13 17:29",
   "levels": "RestedXP",
   "parts": [
     {
@@ -60,6 +60,7 @@
         "turnin:6321 @1421:1533.96,473.87  TurnIn Supplying the Sepulcher",
         "accept:6323 @1421:1533.96,473.87  Accept Ride to the Undercity",
         {"lines":[".goto 1421/0,1533.96,474.43",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r",".fp Sepulcher >> Get the Sepulcher flight path << !Undead",".fly Undercity >> Fly to the Undercity << !Undead",".target Karos Razok",".zoneskip Undercity"],"from":"RestedXP: 12-14 Silverpine Forest"},
+        {"lines":[".hs >> Hearth to the Undercity",".zoneskip Undercity"],"tag":"Undead","from":"RestedXP: 12-14 Silverpine Forest"},
         "turnin:450 @1421:1652.4,522.59  TurnIn A Recipe For Death",
         "accept:448 @1421:1652.4,522.59  Accept Report to Hadrec",
         "turnin:448 @1421:1626.36,522.59  TurnIn Report to Hadrec"

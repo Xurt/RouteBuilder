@@ -13,6 +13,16 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 1-13 Durotar
 
+step << Warrior/Shaman/Warlock/Mage/Priest
+    #completewith next
+    +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock
+    +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 60 copper worth of vendor items (including your armor)|r << Mage
+    +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 50 copper worth of vendor items (including your armor)|r << Priest
+    +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Shaman
+    .goto 1411/1,-4281.07,-720.15,30,0 << Warlock/Mage/Priest
+    .goto 1411/1,-4299.05,-494.9,30,0 << Warrior/Shaman
+    .mob Mottled Boar
+    .money >0.01
 step
     .goto 1411/1,-4251.46,-607.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaltunk|r
@@ -51,7 +61,6 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hraug|r
     .vendor >>Vendor Trash
     .target Hraug
-    .money >0.01
 step << Warlock
     .goto 1411/1,-4111.87,-607.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
@@ -239,6 +248,12 @@ step << Rogue/Warrior
     .collect 2901,1,792,1
     >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Norzsh
+step << Warlock
+    .goto 1411/1,-4107.11,-604.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hraug|r
+    .vendor >>Vendor Trash
+    .target Hraug
+    .money >0.01
 step
     .goto 1411/1,-4221.85,-561.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r
@@ -575,6 +590,11 @@ step
     .goto 1411/1,-4250.40,-88.82,25,0
     .xp 5+1300 >> Grind to 1300+/2800xp << !Shaman
     .xp 5+310 >> Grind to 310+/2800xp << Shaman
+step
+    .goto 1411/1,-4664.94,311.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
+    .accept 96825 >>Accept This Fruit Could Bite Back
+    .target Cook Torka
 step << Orc Hunter/Troll Hunter
     .goto 1411/1,-4704.07,275.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r
@@ -582,36 +602,12 @@ step << Orc Hunter/Troll Hunter
     .target Thotar
     .isOnQuest 6070
 step
-    .goto 1411/1,-4709.36,274.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
-    .accept 784 >>Accept Vanquish the Betrayers
-    .target Gar'Thok
-step
-    .goto 1411/1,-4664.94,311.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
-    .accept 96825 >>Accept This Fruit Could Bite Back
-    .target Cook Torka
-step
-    .goto 1411/1,-4599.90,384.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl Scornbrow|r
-    .accept 791 >>Accept Carry Your Weight
-    .target Furl Scornbrow
-step << Warrior/Rogue
-    .goto 1411/1,-4701.95,366.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >> Train |T136248:0|t[Mining]
-    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
-    .target Krunn
-step << Warrior/Rogue
-    .goto 1411/1,-4714.64,372.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
-    .train 2018 >> Train |T136241:0|t[Blacksmithing]
-    .target Dwukk
-step
     .goto 1411/1,-4815.11,307.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turroc|r
     .accept 96822 >>Accept For Honor
     .target Turroc
+step
+    .hs >>Hearth to the Valley of Trials
 step
     .goto 1411/1,-4322.31,-611.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Thazz'ril|r
@@ -818,14 +814,6 @@ step << Mage
     .train 2136 >>Train |T135807:0|t[Fire Blast]
     .target Un'Thuwa
 step
-    #completewith Along52
-    >>As you go: Kill |cRXP_ENEMY_Kolkar Drudges|r, |cRXP_ENEMY_Kolkar Outrunners|r, |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for |cRXP_LOOT_Canvas Scraps|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 791,1 --Canvas Scraps (8)
-    .mob Kolkar Drudge
-    .mob Kolkar Outrunner
-    .mob Kul Tiras Sailor
-    .mob Kul Tiras Marine
-step
     .goto 1411/1,-4596.20,-1057.14
     >>Click the |cRXP_PICK_Attack Plan: Valley of Trials|r
     .complete 786,1 --Attack Plan: Valley of Trials destroyed
@@ -841,15 +829,14 @@ step
     .accept 99123 >>Accept Lost in the Shadows
     .target Pal'juh
 step
-    #label Along52
-    .goto 1411/1,-4680.80,-986.64
-    >>Escort Pal'juh out of Kolkar Crag.
-    .complete 99123,1 --Escort Pal'juh out of Kolkar Crag.
-step
     .goto 1411/1,-4841.01,-812.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar Prowltusk|r
     .turnin 786 >>Turn in Thwarting Kolkar Aggression
     .target Lar Prowltusk
+step
+    .goto 1411/1,-4680.80,-986.64
+    >>Escort Pal'juh out of Kolkar Crag.
+    .complete 99123,1 --Escort Pal'juh out of Kolkar Crag.
 step
     .goto 1411/1,-4920.33,-813.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Vornal|r
@@ -902,12 +889,6 @@ step
     .accept 806 >>Accept Dark Storms
     .target Orgnil Soulscar
 step
-    .goto 1411/1,-4709.36,274.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 96821 >>Turn in Legging It while you are here
-    .isQuestComplete 96821
-    .target Gar'Thok
-step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
     .turnin 2161 >>Turn in A Peon's Burden while you are here
@@ -916,6 +897,8 @@ step
 step
     .goto 1411/1,-4709.36,274.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
+    .turnin 96821 >>Turn in Legging It
+    .accept 784 >>Accept Vanquish the Betrayers
     .accept 837 >>Accept Encroachment
     .target Gar'Thok
 step
@@ -923,6 +906,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
     .accept 815 >>Accept Break a Few Eggs
     .target Cook Torka
+    .xp <6,1
 step
     .goto 1411/1,-4664.94,311.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
@@ -932,9 +916,31 @@ step
     .goto 1411/1,-4664.94,311.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
     .turnin 96655 >>Turn in Camping 101: Cooking
+    .accept 815 >>Accept Break a Few Eggs
     .target Cook Torka
 step
-    #completewith Along65
+    .goto 1411/1,-4663.88,310.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r
+    .train 2550 >>Train Cooking
+    .target Cook Torka
+step
+    .goto 1411/1,-4599.90,384.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl Scornbrow|r
+    .accept 791 >>Accept Carry Your Weight
+    .target Furl Scornbrow
+step << Warrior/Rogue
+    .goto 1411/1,-4701.95,366.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
+    .train 2575 >> Train |T136248:0|t[Mining]
+    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
+    .target Krunn
+step << Warrior/Rogue
+    .goto 1411/1,-4714.64,372.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
+    .target Dwukk
+step
+    #completewith Along63
     >>As you go: Kill |cRXP_ENEMY_Kul Tiras Sailors|r. Kill |cRXP_ENEMY_Kolkar Drudges|r, |cRXP_ENEMY_Kolkar Outrunners|r, |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for |cRXP_LOOT_Canvas Scraps|r. |cRXP_WARN_Anything left is finished later|r
     .complete 784,1 --Kul Tiras Sailor slain (10)
     .complete 791,1 --Canvas Scraps (8)
@@ -943,12 +949,12 @@ step
     .mob Kolkar Outrunner
     .mob Kul Tiras Marine
 step
-    #completewith Along64
+    #completewith Along62
     >>As you go: Kill |cRXP_ENEMY_Kul Tiras Marines|r. |cRXP_WARN_Anything left is finished later|r
     .complete 784,2 --Kul Tiras Marine slain (8)
     .mob Kul Tiras Marine
 step
-    #label Along64
+    #label Along62
     #loop
     .goto 1411/1,-4995.94,-180.82,0
     .goto 1411/1,-4995.94,-180.82,40,0
@@ -962,7 +968,7 @@ step
     .complete 784,3 --Lieutenant Benedict slain (1)
     .mob Lieutenant Benedict
 step
-    #label Along65
+    #label Along63
     .goto 1411/1,-4952.05,-59.92
     >>Pick up |cRXP_PICK_Raider's Shield|r from the ground
     .complete 96822,3 --Raider's Shield (1)
@@ -1024,7 +1030,6 @@ step
     .goto 1411/1,-4709.36,274.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 784 >>Turn in Vanquish the Betrayers
-    .turnin 96821 >>Turn in Legging It
     .accept 825 >>Accept From The Wreckage....
     .target Gar'Thok
 step
@@ -1033,11 +1038,6 @@ step
     .accept 831 >>Accept The Admiral's Orders
     .target Gar'Thok
     .isQuestTurnedIn 830 --any of: The Admiral's Orders
-step
-    .goto 1411/1,-4663.88,310.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r
-    .train 2550 >>Train Cooking
-    .target Cook Torka
 step
     .goto 1411/1,-4599.90,384.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl Scornbrow|r
@@ -1171,7 +1171,7 @@ step << Rogue/Warrior
     .money <0.01
     .target Rawrk
 step
-    #completewith Along75
+    #completewith Along73
     >>As you go: Kill |cRXP_ENEMY_Makrura Clackers|r, |cRXP_ENEMY_Makrura Shellhides|r, |cRXP_ENEMY_Makrura Snapclaws|r and |cRXP_ENEMY_Makrura Elders|r. Loot them for |cRXP_LOOT_Intact Makrura Eye|r. |cRXP_WARN_Anything left is finished later|r
     .complete 818,1 --Intact Makrura Eye (4)
     .mob Makrura Clacker
@@ -1179,7 +1179,7 @@ step
     .mob Makrura Snapclaw
     .mob Makrura Elder
 step
-    #label Along75
+    #label Along73
     #loop
     .goto 1411/1,-5308.96,-211.84,0
     .goto 1411/1,-5308.96,-211.84,40,0
@@ -1189,14 +1189,14 @@ step
     >>Loot the |cRXP_PICK_Gnomish Toolboxes|r for |cRXP_LOOT_Gnomish Tools|r
     .complete 825,1 --Gnomish Tools (3)
 step
-    #completewith Along76
+    #completewith Along74
     >>As you go: Kill |cRXP_ENEMY_Durotar Tigers|r and |cRXP_ENEMY_Shal'mas|r. Loot them for |cRXP_LOOT_Durotar Tiger Fur|r. Loot the |cRXP_PICK_Taillasher Eggs|r for |cRXP_LOOT_Taillasher Egg|r. |cRXP_WARN_Anything left is finished later|r
     .complete 817,1 --Durotar Tiger Fur (4)
     .complete 815,1 --Taillasher Egg (3)
     .mob Durotar Tiger
     .mob Shal'ma
 step
-    #label Along76
+    #label Along74
     .goto 1411/1,-5600.83,-721.91
     >>Kill |cRXP_ENEMY_Bloodtalon Matriarch|r and loot |cRXP_LOOT_Bloodtalon Martriarch Eggs|r
     .complete 97223,1 --Bloodtalon Martriarch Eggs (1)
@@ -1907,13 +1907,13 @@ step
     .target Rezlak
     .isOnQuest 97282
 step
-    #completewith Along131
+    #completewith Along129
     >>As you go: Kill |cRXP_ENEMY_Burning Blade Fanatics|r and |cRXP_ENEMY_Burning Blade Apprentices|r. Loot them for |cRXP_LOOT_Lieutenant's Insignia|r. |cRXP_WARN_Anything left is finished later|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
 step
-    #label Along131
+    #label Along129
     .goto 1411/1,-4744.25,1497.43
     >>Kill |cRXP_ENEMY_Gazz'uz|r and loot |cRXP_LOOT_Eye of Burning Shadow|r. Use it to start the quest
     .collect 4903,1,832 --Eye of Burning Shadow (1)

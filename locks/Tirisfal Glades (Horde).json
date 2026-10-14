@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "1-15 Tirisfal Glades",
-  "saved": "2026-10-13 08:52",
+  "saved": "2026-10-13 17:29",
   "levels": "RestedXP",
   "parts": [
     {
@@ -187,8 +187,6 @@
         "obj:427:1 @1420:1583.72,2409.57  Objective At War With The Scarlet Crusade / Scarlet Warrior slain (10)",
         "obj:367:1 @1420:1122.35,2422.23  Objective A New Plague / Darkhound Blood (5)",
         "obj:97558:2 @1420:1122.35,2422.23  Objective Hides for the Forsaken / Darkhound Hide (6)",
-        "turnin:5481 @1420:437.76,2365.89  TurnIn Gordo's Task",
-        "accept:5482 @1420:437.76,2365.89  Accept Doom Weed",
         "turnin:404 @1420:403.42,2287.57  TurnIn A Putrid Task",
         "accept:426 @1420:403.42,2287.57  Accept The Mills Overrun",
         "obj:99141:1 @1420:403.42,2287.57  Objective Patience / Dillinger's Report (1)",
@@ -217,6 +215,8 @@
         {"lines":[".goto 1420/0,250.24,2259.25",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rupert|r",".train 980 >> Train your class spells",".target Rupert Boch",".xp <8,1"],"tag":"Warlock","from":"RestedXP: 6-12 Tirisfal Glades"},
         {"lines":[".goto 1420/0,243.200,2288.100",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William|r",".train 2550 >>Train Cooking",".target William Pickman"],"from":"RestedXP: 6-12 Tirisfal Glades"},
         {"lines":[".goto 1420/0,240.29,2246.30",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neela|r",">>|cRXP_WARN_Try to make them during points at which you're waiting for things, such as Zeppelins|r",".train 3273 >>Train |T135966:0|t[First Aid]",".target Nurse Neela"],"tag":"Rogue/Warrior","from":"RestedXP: 6-12 Tirisfal Glades"},
+        "turnin:5481 @1420:437.76,2365.89  TurnIn Gordo's Task",
+        "accept:5482 @1420:437.76,2365.89  Accept Doom Weed",
         "obj:375:1 @1420:621.22,1905.28  Objective The Chill of Death / Duskbat Pelt (5)",
         "obj:97558:1 @1420:621.22,1905.28  Objective Hides for the Forsaken / Duskbat Wing Membrane (8)",
         {"lines":[".goto 1420/0,482.50,1951.07,0",".goto 1420/0,403.42,2085.73,50,0",".goto 1420/0,413.36,1979.99,50,0",".goto 1420/0,482.50,1951.07,50,0",".goto 1420/0,560.22,1901.06,50,0",".goto 1420/0,645.63,1961.92,50,0",".goto 1420/0,750.46,1993.55,50,0",".goto 1420/0,869.76,2003.79,50,0",".goto 1420/0,950.64,2039.040,50,0",".goto 1420/0,1068.13,1975.47,50,0",".xp 7+3260 >> Grind to 3260+/4500"],"tag":"Rogue/Warrior","from":"RestedXP: 6-12 Tirisfal Glades"},
@@ -235,7 +235,6 @@
         "turnin:358 @1420:265.15,2305.94  TurnIn Graverobbers",
         "accept:405 @1420:265.15,2305.94  Accept The Prodigal Lich",
         "accept:359 @1420:265.15,2305.94  Accept Forsaken Duties",
-        {"lines":[".goto 1420/0,308.08,2246.30",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eliza Callen|r",".vendor >>Repair your weapon",".target Eliza Callen"],"tag":"skip","from":"RestedXP: 6-12 Tirisfal Glades"},
         "turnin:97558 @1420:76.72,2026.38  TurnIn Hides for the Forsaken",
         "turnin:359 @1420:74,2022.47  TurnIn Forsaken Duties",
         "accept:360 @1420:74,2022.47  Accept Return to the Magistrate",

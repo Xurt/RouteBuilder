@@ -15,11 +15,29 @@ RXPGuides.RegisterGuide([[
 #name 43-60 Tanaris
 
 step
+    .goto 1446/1,-3769.49,-7200.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krinkle Goodsteel|r
+    .turnin 5514 >>Turn in Mold Rhymes With...
+    .target Krinkle Goodsteel
+    .isOnQuest 5514
+step
+    .goto 1446/1,-3769.49,-7200.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krinkle Goodsteel|r
+    .turnin 4450 >>Turn in Ledger from Tanaris
+    .target Krinkle Goodsteel
+    .isQuestComplete 4450
+step
     .goto 1446/1,-3777.08,-7105.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
     .turnin 2864 >>Turn in Tran'rek
     .target Tran'rek
     .isOnQuest 2864
+step
+    .goto 1446/1,-3839.18,-7127.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mux Manascrambler|r
+    .turnin 8923 >>Turn in A Supernatural Device
+    .target Mux Manascrambler
+    .isOnQuest 8923
 step
     .goto 1446/1,-3841.94,-7158.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Fizzgrimble|r
@@ -48,23 +66,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spigot Operator Luglunket|r
     .accept 1707 >>Accept Water Pouch Bounty
     .target Spigot Operator Luglunket
-step
-    .goto 1446/1,-3769.49,-7200.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krinkle Goodsteel|r
-    .turnin 4450 >>Turn in Ledger from Tanaris
-    .target Krinkle Goodsteel
-    .isQuestComplete 4450
-step
-    .goto 1446/1,-3769.49,-7200.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krinkle Goodsteel|r
-    .turnin 5514 >>Turn in Mold Rhymes With...
-    .target Krinkle Goodsteel
-    .isOnQuest 5514
-step
-    .goto 1446/1,-3683.24,-7139.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senior Surveyor Fizzledowser|r
-    .accept 992 >>Accept Gadgetzan Water Survey
-    .target Senior Surveyor Fizzledowser
 step << Hunter
     .goto 1446/1,-3949.58,-7356.66
     >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Scorpid Hunter|r to tame it|r
@@ -77,12 +78,6 @@ step << Hunter
     .target Laziphus
     .train 2976,3
     .zoneskip Tanaris,1
-step
-    .goto 1446/1,-3839.18,-7127.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mux Manascrambler|r
-    .turnin 8923 >>Turn in A Supernatural Device
-    .target Mux Manascrambler
-    .isOnQuest 8923
 step
     #completewith Drop351x1
     >>|cRXP_LOOT_OOX-17/TN Distress Beacon|r can drop from |cRXP_ENEMY_Glasshide Basilisk|r, |cRXP_ENEMY_Glasshide Gazer|r, |cRXP_ENEMY_Glasshide Petrifier|r. Use it to start the quest if you get one
@@ -207,15 +202,6 @@ step
     .accept 1691 >>Accept More Wastewander Justice
     .target Chief Engineer Bilgewhizzle
 step
-    .goto 1446/1,-2909.75,-7209.00
-    >>Open the |cRXP_PICK_Sandsorrow Watch Water Hole|r. Loot it for |cRXP_LOOT_Tapped Dowsing Widget|r
-    .complete 992,1 --Tapped Dowsing Widget (1)
-step
-    .goto 1446/1,-3683.24,-7139.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senior Surveyor Fizzledowser|r
-    .turnin 992 >>Turn in Gadgetzan Water Survey
-    .target Senior Surveyor Fizzledowser
-step
     #completewith Drop351x3
     >>|cRXP_LOOT_OOX-17/TN Distress Beacon|r can drop from |cRXP_ENEMY_Glasshide Basilisk|r, |cRXP_ENEMY_Glasshide Gazer|r, |cRXP_ENEMY_Glasshide Petrifier|r. Use it to start the quest if you get one
     .collect 8623,1,351 --OOX-17/TN Distress Beacon (1)
@@ -264,6 +250,10 @@ step
     .turnin 1691 >>Turn in More Wastewander Justice
     .target Chief Engineer Bilgewhizzle
 step
+    .hs >> Hearth to Feralas
+    .subzoneskip 1099
+    .cooldown item,6948,>0,1
+step
     .goto 1446/1,-3734.99,-7128.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shreev|r
     .turnin 1188 >>Turn in Safety First
@@ -276,6 +266,20 @@ step
     .target Shreev
     .isQuestTurnedIn 1188 --any of: Safety First
     .xp <29,1
+step
+    .goto 1446/1,-3683.24,-7139.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senior Surveyor Fizzledowser|r
+    .accept 992 >>Accept Gadgetzan Water Survey
+    .target Senior Surveyor Fizzledowser
+step
+    .goto 1446/1,-2909.75,-7209.00
+    >>Open the |cRXP_PICK_Sandsorrow Watch Water Hole|r. Loot it for |cRXP_LOOT_Tapped Dowsing Widget|r
+    .complete 992,1 --Tapped Dowsing Widget (1)
+step
+    .goto 1446/1,-3683.24,-7139.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senior Surveyor Fizzledowser|r
+    .turnin 992 >>Turn in Gadgetzan Water Survey
+    .target Senior Surveyor Fizzledowser
 step
     .goto 1446/1,-4829.33,-6900.34
     >>Click the |cRXP_PICK_Wanted Poster|r
@@ -490,13 +494,9 @@ step
     .target Gaeriyan
     .isOnQuest 3912
 step
-    .goto 1446/1,-3766.73,-7197.50
-    .target Trenton Lighthammer
-    >>Talk to |cRXP_FRIENDLY_Trenton Lighthammer|r
-    .vendor >> Vendor and Repair at Krinkle
-step
-    .xp 44 >> AoE Zul'Farrak to level 44
-    >>Start saving the Silk Cloth and Mageweave Cloth you get. You need 12 stacks of each for later
+    .hs >>Hearth to Everlook
+    .subzoneskip 255
+    .zoneskip Winterspring
 step
     #completewith Drop351x5
     >>|cRXP_LOOT_OOX-17/TN Distress Beacon|r can drop from |cRXP_ENEMY_Glasshide Basilisk|r, |cRXP_ENEMY_Glasshide Gazer|r, |cRXP_ENEMY_Glasshide Petrifier|r. Use it to start the quest if you get one
@@ -524,10 +524,6 @@ step
     .mob Wastewander Bandit
 step
     .goto 1446/1,-5305.43,-8030.56
-    .xp 43+91000 >> AoE Grind to 43 & 91000+/106300xp
-    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
-step
-    .goto 1446/1,-5305.43,-8030.56
     .xp 44 >> AoE Grind to 44
     >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
     >>Start saving the Silk Cloth and Mageweave Cloth you get. You need 12 stacks of each for later
@@ -536,20 +532,11 @@ step
     .xp 48 >> AoE grind to 48
     >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
 step
-    .xp 48 >> AoE Zul'Farrak to level 48
-step
     .trainer >> Teleport to Orgrimmar or Undercity. Train your level 46-48 spells
-step
-    .xp 52 >> AoE Zul'Farrak to level 52
 step
     .goto 1446/1,-5305.43,-8030.56
     .xp 52 >> AoE grind to 52
     >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
-    >>Remember to save 12 stacks of Mageweave. You'll need it for cloth turnins later
-step
-    .trainer >> Teleport to Orgrimmar or Undercity. Train your level 50-52 spells
-step
-    .xp 54 >> AoE Zul'Farrak to level 54
     >>Remember to save 12 stacks of Mageweave. You'll need it for cloth turnins later
 step
     .goto 1446/1,-3840.56,-7183.70

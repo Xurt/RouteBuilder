@@ -229,6 +229,13 @@ step << Warrior
     .target Malosh
     .xp <48,1
 step
+    .hs >>Hearth to Camp Mojache
+    .zoneskip Feralas
+step
+    .hs >> Hearth to Feralas
+    .subzoneskip 1099
+    .cooldown item,6948,>0,1
+step
     .goto 1435/0,-3322.31,-10458.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fel'zerul|r
     .turnin 1444 >>Turn in Return to Fel'Zerul
@@ -534,6 +541,8 @@ step
     .turnin 1445 >>Turn in The Temple of Atal'Hakkar
     .target Fel'zerul
     .isOnQuest 1445
+step << !Mage
+    .hs >>Hearth to Camp Taurajo
 step
     .goto 1435/0,-2800.25,-10449.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r

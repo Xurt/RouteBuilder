@@ -36,6 +36,10 @@ step
     .target Windcaller Proudhorn
     .isOnQuest 8276
 step
+    .hs >>Hearth to Everlook
+    .subzoneskip 255
+    .zoneskip Winterspring
+step
     .goto 1451/1,-314.31,-6398.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Layo Starstrike|r
     .turnin 1124 >>Turn in Wasteland

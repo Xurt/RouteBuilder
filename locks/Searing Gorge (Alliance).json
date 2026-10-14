@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "45-50 Searing Gorge",
-  "saved": "2026-10-13 09:01",
+  "saved": "2026-10-13 17:38",
   "levels": "RestedXP",
   "parts": [
     {
@@ -30,6 +30,7 @@
         "accept:3368 @1427:-1984.08,-6386.94  Accept Suntara Stones",
         {"lines":[">>Talk to |cRXP_FRIENDLY_Hansel|r, |cRXP_FRIENDLY_Scrange|r, and |cRXP_FRIENDLY_Burninate|r",".target +Hansel Heavyhands",".goto 1427/0,-1183.73,-6513.67",".target +Taskmaster Scrange",".goto 1427/0,-1192.66,-6509.06",".vendor 14624 >> Vendor Trash. Repair",">>|cRXP_BUY_Buy some|r |T134712:0|t[Morning Glory Dew] |cRXP_BUY_from him|r",".collect 8766,160,82,1",".goto 1427/0,-1188.64,-6523.94",".isQuestComplete 7728"],"from":"RestedXP: 50-51 ADV Searing Gorge Mage AoE"},
         {"lines":[">>Talk to |cRXP_FRIENDLY_Hansel|r, |cRXP_FRIENDLY_Scrange|r, and |cRXP_FRIENDLY_Burninate|r",".target +Hansel Heavyhands",".goto 1427/0,-1183.73,-6513.67",".target +Taskmaster Scrange",".goto 1427/0,-1192.66,-6509.06",".vendor 14624 >> Vendor Trash. Repair",">>|cRXP_BUY_Buy some|r |T134712:0|t[Morning Glory Dew] |cRXP_BUY_from him|r",".collect 8766,160,82,1",".goto 1427/0,-1188.64,-6523.94",".target +Master Smith Burninate"],"from":"RestedXP: 50-51 ADV Searing Gorge Mage AoE"},
+        {"lines":[".hs >> Hearth to Gadgetzan"],"from":"RestedXP: 50-51 ADV Searing Gorge Mage AoE"},
         "obj:3443:1 @1427:-1216.76,-6684.59  Objective Forging the Shaft / Thorium Plated Dagger (8)",
         "turnin:3443 @1427:-1194.44,-6679.98  TurnIn Forging the Shaft"
       ]

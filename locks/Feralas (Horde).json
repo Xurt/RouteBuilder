@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "42-52 Feralas",
-  "saved": "2026-10-13 08:55",
+  "saved": "2026-10-13 17:32",
   "levels": "RestedXP",
   "parts": [
     {
@@ -63,6 +63,7 @@
         {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 22828 >>Train your class spells",".target Jannos Lighthoof",".xp <48,1"],"tag":"Druid","from":"RestedXP: 45-46 Swamp of Sorrows"},
         "turnin:3122 @1444:269.48,-4375.68  TurnIn Return to Witch Doctor Uzer'i",
         "accept:3123 @1444:269.48,-4375.68  Accept Testing the Vessel",
+        {"lines":[".hs >> Hearth to Feralas",".subzoneskip 1099",".cooldown item,6948,>0,1"],"from":"RestedXP: 46-48 Tanaris"},
         "accept:3124 @1444:269.48,-4375.68  Accept Hippogryph Muisek",
         "obj:3124:1 @1444:1681.02,-5619.27  Objective Hippogryph Muisek / Hippogryph Muisek (1)",
         "turnin:3124 @1444:269.48,-4375.68  TurnIn Hippogryph Muisek",
@@ -95,7 +96,8 @@
         "turnin:3128 @1444:269.48,-4375.68  TurnIn Natural Materials",
         "turnin:7734 @1444:268.78,-4354.83  TurnIn Improved Quality",
         {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 9884 >>Train your class spells",".target Jannos Lighthoof",".xp <50,1",".xp >52,1",".subzoneskip 1099,1"],"tag":"Druid","from":"RestedXP: 49-50 Feralas"},
-        {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 9894 >>Train your class spells",".target Jannos Lighthoof",".xp <52,1",".subzoneskip 1099,1"],"tag":"Druid","from":"RestedXP: 49-50 Feralas"}
+        {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 9894 >>Train your class spells",".target Jannos Lighthoof",".xp <52,1",".subzoneskip 1099,1"],"tag":"Druid","from":"RestedXP: 49-50 Feralas"},
+        {"lines":[".hs >>Hearth to Camp Taurajo",".subzoneskip 378"],"tag":"!Mage","from":"RestedXP: 54-55 Un'Goro Crater"}
       ]
     },
     {

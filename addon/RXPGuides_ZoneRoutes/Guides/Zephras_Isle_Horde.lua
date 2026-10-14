@@ -227,6 +227,9 @@ step
     .turnin 92465 >>Turn in Agitators
     .accept 92469 >>Accept Return to Rorian
     .target Yala Windwatcher
+step << Horde Shaman
+    .subzoneskip 16622,1
+    .hs >>Hearth to Thendal Village
 step
     #completewith Along19
     >>As you go: Loot the |cRXP_PICK_Raw Windstones|r for |cRXP_LOOT_Windstone Cluster|r. |cRXP_WARN_Anything left is finished later|r
@@ -277,6 +280,9 @@ step
     .complete 93552,1 --Windstone Cluster (15)
 step << Alliance/!Shaman
     .xp 3+300 >>Grind to 300+/1400xp
+step << Alliance/!Shaman
+    .hs >>Hearth to Thendal Village
+    .cooldown item,6948,>0
 step
     .goto 2521,43.40,24.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r

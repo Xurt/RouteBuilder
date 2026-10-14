@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "1-30 Dun Morogh",
-  "saved": "2026-10-13 08:58",
+  "saved": "2026-10-13 17:34",
   "levels": "RestedXP",
   "parts": [
     {
@@ -64,6 +64,7 @@
         "accept:233 @1426:328.03,-6214.82  Accept Coldridge Valley Mail Delivery",
         "accept:3115 @1426:328.03,-6214.82  Accept Tainted Memorandum",
         "obj:1599:1 @1426:355.12,-6538.55  Objective Beginnings / Feather Charm (3)",
+        {"lines":[".hs >> Hearth to Coldridge Valley",".subzoneskip 77,1"],"tag":"Warlock","from":"RestedXP: 1-5 Coldridge Valley"},
         "turnin:1599 @1426:391.07,-6048.68  TurnIn Beginnings",
         "accept:3106 @1426:328.03,-6214.82  Accept Simple Rune",
         "accept:3107 @1426:328.03,-6214.82  Accept Consecrated Rune",
@@ -316,6 +317,7 @@
         "accept:6392 @1455:-1152.39,-4821.12  Accept Return to Brock",
         {"lines":[".goto 1455/0,-1197.200,-5041.500",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r and |cRXP_FRIENDLY_Bixi Wobblebonk|r",".trainer >> Train any weapon skills you desire with left over money",".target Buliwyf Stonehand"],"tag":"Shaman","from":"RestedXP: 5-11 Dun Morogh"},
         "turnin:94468 @1426:-2528.96,-5348.02  TurnIn Call of Fire",
+        {"lines":[".hs >> Hearth to Ironforge",".cooldown item,6948,>2,1",".zoneskip Ironforge"],"tag":"Dwarf Paladin","from":"RestedXP: 12-14 Loch Modan (Dwarf/Gnome)"},
         {"lines":[".goto 1455/0,-1197.27,-5041.49",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r inside",".train 196 >> Train 1h Axes",".target Buliwyf Stonehand"],"tag":"Rogue","from":"RestedXP: 12-14 Loch Modan (Dwarf/Gnome)"},
         {"lines":[".goto 1455/0,-907.69,-4592.93",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldruk Doombrow|r",".trainer >> Train your class spells",".target Beldruk Doombrow"],"tag":"Paladin","from":"RestedXP: 12-14 Loch Modan (Dwarf/Gnome)"},
         {"lines":[".goto 1455/0,-928.48,-4614.620",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r",".trainer >> Train your class spells",".target Dink"],"tag":"Mage","from":"RestedXP: 12-14 Loch Modan (Dwarf/Gnome)"},

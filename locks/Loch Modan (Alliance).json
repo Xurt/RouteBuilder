@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-32 Loch Modan",
-  "saved": "2026-10-13 08:58",
+  "saved": "2026-10-13 17:35",
   "levels": "RestedXP",
   "parts": [
     {
@@ -77,7 +77,8 @@
         {"lines":[".goto 1432/0,-2952.55,-5381.91",".vendor >> Buy 6 slots until your bag containers are full. Also buy 1 Flint and Tinder, and 2 Simple Wood",".collect 4470,2",".collect 4471,1"],"from":"RestedXP: 10-12 Loch Modan Mage AoE"},
         {"lines":[".xp 12 >> Grind to 12"],"from":"RestedXP: 10-12 Loch Modan Mage AoE"},
         {"lines":[".goto 1432/0,-2929.93,-5424.95",".fp Thelsamar >> Get the Thelsamar flight path",">>Talk to |cRXP_FRIENDLY_Thorgrum Borrelson|r",".target Thorgrum Borrelson",".fly Ironforge >> Fly to Ironforge"],"from":"RestedXP: 10-12 Loch Modan Mage AoE"},
-        "turnin:302 @1432:-3020.95,-5359.09  TurnIn Powder to Ironband"
+        "turnin:302 @1432:-3020.95,-5359.09  TurnIn Powder to Ironband",
+        {"lines":[".hs >> Hearth to Kharanos"],"tag":"Gnome","from":"RestedXP: 10-12 Loch Modan Mage AoE"}
       ]
     },
     {

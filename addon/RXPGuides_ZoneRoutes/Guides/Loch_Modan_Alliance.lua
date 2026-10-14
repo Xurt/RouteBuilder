@@ -504,6 +504,8 @@ step
     .turnin 302 >>Turn in Powder to Ironband
     .target Jern Hornhelm
     .isOnQuest 302
+step << Gnome
+    .hs >> Hearth to Kharanos
 step
     +|cRXP_WARN_That is all of Loch Modan for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Dun Morogh|r: Call of Fire << Shaman

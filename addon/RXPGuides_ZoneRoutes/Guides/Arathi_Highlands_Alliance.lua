@@ -108,6 +108,8 @@ step
     .goto 1417/0,-3138.27,-1531.81,30,0
     >>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r
     .xp 37 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 37
+step
+    .hs >> Hearth to Southshore
 step << Hunter
     .goto 1417/0,-2364.27,-1280.53,0
     .goto 1417/0,-2371.47,-1539.73,0
@@ -710,8 +712,6 @@ step
     .turnin 695 >>Turn in An Apprentice's Enchantment
     .accept 696 >>Accept Attack on the Tower
     .target Skuerto
-step << Warlock/Paladin
-    .xp 40 >> Grind to level 40
 step
     .goto 1417/0,-1521.15,-1768.69
     >>Open the |cRXP_PICK_Trelane's Lockbox|r. Loot it for |cRXP_LOOT_Trelane's Ember Agate|r

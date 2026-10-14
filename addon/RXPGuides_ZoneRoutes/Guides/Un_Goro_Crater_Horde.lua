@@ -464,6 +464,10 @@ step
     .isQuestTurnedIn 3941 --any of: A Gnome's Assistance
     .xp <47,1
 step
+    .hs >>Hearth to Everlook
+    .subzoneskip 255
+    .zoneskip Winterspring
+step
     .goto 1449/1,-1017.71,-6033.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_J.D. Collie|r
     .turnin 4005 >>Turn in Aquementas

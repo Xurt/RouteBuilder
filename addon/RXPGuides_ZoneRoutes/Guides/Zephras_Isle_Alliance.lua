@@ -245,6 +245,9 @@ step
     .turnin 92465 >>Turn in Agitators
     .accept 92469 >>Accept Return to Rorian
     .target Yala Windwatcher
+step << Alliance/!Shaman
+    .hs >>Hearth to Thendal Village
+    .cooldown item,6948,>0
 step
     .goto 2521,43.34,23.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r

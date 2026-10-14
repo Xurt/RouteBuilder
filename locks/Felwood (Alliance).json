@@ -1,12 +1,13 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "48-56 Felwood",
-  "saved": "2026-10-13 09:01",
+  "saved": "2026-10-13 17:38",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        {"lines":[".zoneskip Searing Gorge",".hs >> Hearthstone to Stormwind",".cooldown item,6948,>0,1"],"tag":"!Mage","from":"RestedXP: 51-52 Searing Gorge SoD"},
         "accept:8460 @1448:-1286.81,3874.62  Accept Timbermaw Ally",
         "obj:8460:1 @1448:-1140.76,3629.67  Objective Timbermaw Ally / Deadwood Warrior slain (6)",
         "obj:8460:2 @1448:-1011.38,3688.32  Objective Timbermaw Ally / Deadwood Pathfinder slain (6)",
@@ -56,12 +57,12 @@
         "obj:4101:1 @1448:-1581.21,6481.28  Objective Cleansing Felwood / Blood Amber (15)",
         "turnin:8421 @1448:-736.53,5407.57  TurnIn The Wrong Stuff",
         "accept:8422 @1448:-736.53,5407.57  Accept Trolls of a Feather",
-        "turnin:4101 @1448:-1471.96,3804.85  TurnIn Cleansing Felwood",
         "turnin:5157 @1448:-1302.91,3985.78  TurnIn Collection of the Corrupt Water",
         "accept:5158 @1448:-1302.91,3985.78  Accept Seeking Spiritual Aid",
         "turnin:939 @1448:-1310.96,4008.78  TurnIn Flute of Xavaric",
         "accept:4441 @1448:-1310.96,4008.78  Accept Felbound Ancients",
         "turnin:5156 @1448:-1284.51,4004.57  TurnIn Verifying the Corruption",
+        "turnin:4101 @1448:-1471.96,3804.85  TurnIn Cleansing Felwood",
         "accept:4442 @1448:-1310.96,4008.78  Accept Purified!",
         "turnin:4442 @1448:-1310.96,4008.78  TurnIn Purified!",
         "accept:5882 @1448:-1471.96,3804.85  Accept Salve via Hunting",

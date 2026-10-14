@@ -709,15 +709,15 @@ step
     .mob Lesser Water Elemental
     .isOnQuest 601
 step
-    .goto 1434/0,-206.59,-11296.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Doren|r
-    .turnin 574 >>Turn in Special Forces
-    .target Lieutenant Doren
-step
     .goto 1434/0,-54.72,-11628.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .turnin 195 >>Turn in Raptor Mastery
     .target Hemet Nesingwary
+step
+    .goto 1434/0,-206.59,-11296.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Doren|r
+    .turnin 574 >>Turn in Special Forces
+    .target Lieutenant Doren
 step
     .goto 1434/0,483.22,-14438.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
@@ -863,17 +863,6 @@ step
     >>Open the |cRXP_PICK_Gri'lek the Wanderer|r. Loot it for |cRXP_LOOT_The Second Troll Legend|r
     .complete 207,2 --The Second Troll Legend (1)
 step
-    .goto 1434/0,-193.19,-11320.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Nimetz|r
-    .turnin 207 >>Turn in Kurzen's Mystery
-    .accept 205 >>Accept Troll Witchery
-    .target Brother Nimetz
-step
-    .goto 1434/0,-206.59,-11296.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Doren|r
-    .accept 202 >>Accept Colonel Kurzen
-    .target Lieutenant Doren
-step
     .goto 1434/0,-54.72,-11628.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .accept 196 >>Accept Raptor Mastery
@@ -889,6 +878,17 @@ step
     .turnin 192 >>Turn in Panther Mastery
     .accept 193 >>Accept Panther Mastery
     .target Sir S. J. Erlgadin
+step
+    .goto 1434/0,-193.19,-11320.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Nimetz|r
+    .turnin 207 >>Turn in Kurzen's Mystery
+    .accept 205 >>Accept Troll Witchery
+    .target Brother Nimetz
+step
+    .goto 1434/0,-206.59,-11296.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Doren|r
+    .accept 202 >>Accept Colonel Kurzen
+    .target Lieutenant Doren
 step
     .goto 1434/0,211.38,-12434.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Thulbek|r

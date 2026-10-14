@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-24 Westfall",
-  "saved": "2026-10-13 08:58",
+  "saved": "2026-10-13 17:35",
   "levels": "RestedXP",
   "parts": [
     {
@@ -39,6 +39,8 @@
         "turnin:22 @1436:1041.97,-10112.13  TurnIn Goretusk Liver Pie",
         "accept:153 @1436:1127.37,-10636.2  Accept Red Leather Bandanas",
         {"lines":[".goto 1436/0,1037.42,-10628.27",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r",".fp Sentinel Hill >> Get the Sentinel Hill flight path",".target Thor"],"from":"RestedXP: 11-12 Elwynn (Dwarf/Gnome)"},
+        {"lines":[".hs >> Hearth to Ironforge",">>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue",">>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue",".cooldown item,6948,>2,1"],"tag":"Dwarf Paladin","from":"RestedXP: 11-12 Elwynn (Dwarf/Gnome)"},
+        {"lines":[".hs >> Hearth to Thelsamar",">>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue",">>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue",".cooldown item,6948,>2,1",".zoneskip Loch Modan"],"tag":"!Paladin","from":"RestedXP: 11-12 Elwynn (Dwarf/Gnome)"},
         "home @1436:1166.57,-10653.23  Home inn",
         "turnin:92752 @1436:1179.87,-10637.83  TurnIn Explosive Consultation",
         "accept:92745 @1436:1179.87,-10637.83  Accept The State of the Mines",

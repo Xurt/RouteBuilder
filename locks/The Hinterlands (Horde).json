@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "39-53 The Hinterlands",
-  "saved": "2026-10-13 08:55",
+  "saved": "2026-10-13 17:32",
   "levels": "RestedXP",
   "parts": [
     {
@@ -9,6 +9,7 @@
       "steps": [
         "accept:98888 @1425:-3512.71,-832.3  Accept Conflict at Darkspear Islands",
         "accept:98887 @1425:-3512.71,-832.3  Accept Conflict at Darkspear Islands",
+        {"lines":[".hs >> Hearth to Feralas",".subzoneskip 1099",".cooldown item,6948,>0,1"],"from":"RestedXP: 46-48 Tanaris"},
         "turnin:650 @1425:-2603.34,219.52  TurnIn Ripple Recovery",
         {"lines":[".goto 1425/0,-4655.00,-42.53,0",".goto 1425/0,-4655.00,-42.53,50,0",".goto 1425/0,-4547.20,-119.53,50,0",".goto 1425/0,-4547.20,-181.13,50,0",".goto 1425/0,-4454.80,-294.07,50,0",".goto 1425/0,-4485.60,-381.33,50,0",".goto 1425/0,-4585.70,-309.47,50,0",".goto 1425/0,-4578.00,-181.13,50,0",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Saltwater Snapjaw|r to tame it|r",".train 17267 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 7)]",".xp <49,1"],"tag":"Hunter","from":"RestedXP: 48-49 The Hinterlands"},
         {"lines":[".goto 1425/0,-4620.35,-573.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Markhor|r",".target Huntsman Markhor",".train 17267,3",".zoneskip The Hinterlands,1",".xp <49,1"],"tag":"Hunter","from":"RestedXP: 48-49 The Hinterlands"},
