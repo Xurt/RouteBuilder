@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
-  "guide": "52-57 Western Plaguelands",
-  "saved": "2026-10-14 09:57",
+  "guide": "52-58 Western Plaguelands",
+  "saved": "2026-10-14 10:42",
   "levels": "RestedXP",
   "parts": [
     {
@@ -76,15 +76,20 @@
         "accept:5543 @1422:-1903.18,2665.77  Accept Blood Tinged Skies",
         "accept:5544 @1422:-1903.18,2665.77  Accept Carrion Grubbage",
         "accept:4987 @1422:-1893.72,1513.08  Accept Glyphed Oaken Branch",
+        "accept:6570 @1422:-1767.3,1134.97  Accept Emberstrife",
         "accept:5862 @1422:-1767.3,1134.97  Accept Scarlet Subterfuge",
         "accept:5153 @1422:-1697.64,1114.33  Accept A Strange Historian",
         "obj:5153:1 @1422:-1720.43,1166.21  Objective A Strange Historian / Joseph's Wedding Ring (1)",
         "turnin:5153 @1422:-1280.11,1452.88  TurnIn A Strange Historian",
+        "accept:5721 @1422:-1280.11,1452.88  Accept The Battle of Darrowshire",
         "accept:5154 @1422:-1280.11,1452.88  Accept The Annals of Darrowshire",
         "obj:5154:1 @1422:-1448.24,1374.05  Objective The Annals of Darrowshire / Annals of Darrowshire (1)",
         "turnin:5154 @1422:-1280.11,1452.88  TurnIn The Annals of Darrowshire",
         "accept:5210 @1422:-1280.11,1452.88  Accept Brother Carlin",
-        "turnin:5862 @1422:-1390.19,2942.69  TurnIn Scarlet Subterfuge"
+        "accept:6025 @1422:-1815.89,2562.28  Accept Unfinished Business",
+        "obj:6025:1 @1422:-1553.16,2843.5  Objective Unfinished Business / Overlook Hearthglen from a high vantage point",
+        "turnin:5862 @1422:-1390.19,2942.69  TurnIn Scarlet Subterfuge",
+        "turnin:6025 @1422:-1815.89,2562.28  TurnIn Unfinished Business"
       ]
     }
   ]

@@ -28,6 +28,11 @@ step << Druid
 step
     .goto 1449/1,-1055.45,-6204.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muigin|r
+    .accept 4141 >>Accept Muigin and Larion
+    .target Muigin
+step
+    .goto 1449/1,-1055.45,-6204.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muigin|r
     .turnin 4143 >>Turn in Haze of Evil
     .target Muigin
     .isQuestComplete 4143
@@ -38,11 +43,6 @@ step
     .target Muigin
     .isQuestTurnedIn 4143 --any of: Haze of Evil
     .xp <47,1
-step
-    .goto 1449/1,-1055.45,-6204.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muigin|r
-    .accept 4141 >>Accept Muigin and Larion
-    .target Muigin
 step
     .goto 1449/1,-1119.09,-6166.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linken|r
@@ -55,25 +55,6 @@ step
     .accept 3941 >>Accept A Gnome's Assistance
     .target Linken
     .isQuestTurnedIn 3914 --any of: Linken's Sword
-    .xp <47,1
-step
-    .goto 1449/1,-1017.71,-6033.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_J.D. Collie|r
-    .turnin 3941 >>Turn in A Gnome's Assistance
-    .target J.D. Collie
-    .isOnQuest 3941
-step
-    .goto 1449/1,-1017.71,-6033.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_J.D. Collie|r
-    .turnin 4005 >>Turn in Aquementas
-    .target J.D. Collie
-    .isQuestComplete 4005
-step
-    .goto 1449/1,-1017.71,-6033.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_J.D. Collie|r
-    .accept 3942 >>Accept Linken's Memory
-    .target J.D. Collie
-    .isQuestTurnedIn 3941 --any of: A Gnome's Assistance
     .xp <47,1
 step
     #completewith Drop3884x1
@@ -100,6 +81,18 @@ step
     .mob Bloodpetal Flayer
     .mob Bloodpetal Thresher
     .mob Bloodpetal Trapper
+step
+    .goto 1449/1,-1017.71,-6033.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_J.D. Collie|r
+    .turnin 3941 >>Turn in A Gnome's Assistance
+    .target J.D. Collie
+    .isOnQuest 3941
+step
+    .goto 1449/1,-1017.71,-6033.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_J.D. Collie|r
+    .turnin 4005 >>Turn in Aquementas
+    .target J.D. Collie
+    .isQuestComplete 4005
 step
     .goto 1449/1,-1055.45,-6204.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muigin|r
@@ -191,7 +184,7 @@ step
     .accept 4284 >>Accept Crystals of Power
     .target J.D. Collie
 step
-    #completewith Along24
+    #completewith Along23
     >>As you go: Kill |cRXP_ENEMY_Pterrordaxes|r. Kill |cRXP_ENEMY_Fledgling Pterrordaxes|r, |cRXP_ENEMY_Pterrordaxes|r and |cRXP_ENEMY_Frenzied Pterrordaxes|r. Loot them for |cRXP_LOOT_Webbed Pterrordax Scale|r. |cRXP_WARN_Anything left is finished later|r
     .complete 4501,1 --Pterrordax slain (10)
     .complete 4503,2 --Webbed Pterrordax Scale (8)
@@ -199,7 +192,7 @@ step
     .mob Fledgling Pterrordax
     .mob Frenzied Pterrordax
 step
-    #label Along24
+    #label Along23
     #loop
     .goto 1449/1,-1553.47,-6270.07,0
     .goto 1449/1,-1553.47,-6270.07,40,0
@@ -219,14 +212,10 @@ step
     .goto 1449/1,-1017.71,-6033.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_J.D. Collie|r
     .turnin 4284 >>Turn in Crystals of Power
+    .accept 4285 >>Accept The Northern Pylon
+    .accept 4287 >>Accept The Eastern Pylon
+    .accept 4288 >>Accept The Western Pylon
     .target J.D. Collie
-step
-    .goto 1449/1,-1017.71,-6033.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_J.D. Collie|r
-    .accept 3961 >>Accept Linken's Adventure
-    .target J.D. Collie
-    .isQuestTurnedIn 4005 --any of: Aquementas
-    .xp <47,1
 step
     .goto 1449/1,-1090.60,-6145.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hol'anyee Marshal|r
@@ -249,20 +238,27 @@ step << !Warrior !Rogue !Paladin !Druid
     .fp Un'Goro >> Get the Un'Goro Crater Flight Path
     .target Gryfe
 step
-    .goto 1449/1,-1119.09,-6166.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linken|r
-    .turnin 3961 >>Turn in Linken's Adventure
-    .target Linken
-    .isOnQuest 3961
+    #completewith Along28
+    >>As you go: Kill |cRXP_ENEMY_Pterrordaxes|r. Kill |cRXP_ENEMY_Fledgling Pterrordaxes|r, |cRXP_ENEMY_Pterrordaxes|r and |cRXP_ENEMY_Frenzied Pterrordaxes|r. Loot them for |cRXP_LOOT_Webbed Pterrordax Scale|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 4501,1 --Pterrordax slain (10)
+    .complete 4503,2 --Webbed Pterrordax Scale (8)
+    .mob Pterrordax
+    .mob Fledgling Pterrordax
+    .mob Frenzied Pterrordax
 step
-    #completewith Along31
+    #label Along28
+    .goto 1449/1,-1557.91,-6275.99
+    >>Click the |cRXP_PICK_Northern Crystal Pylon|r
+    .complete 4285,1 --Northern Crystal Pylon
+step
+    #completewith Along29
     >>As you go: Kill |cRXP_ENEMY_Un'Goro Gorillas|r. Loot them for |cRXP_LOOT_Un'Goro Gorilla Pelt|r. Kill |cRXP_ENEMY_Un'Goro Stompers|r. Loot them for |cRXP_LOOT_Un'Goro Stomper Pelt|r. |cRXP_WARN_Anything left is finished later|r
     .complete 4289,1 --Un'Goro Gorilla Pelt (2)
     .complete 4289,2 --Un'Goro Stomper Pelt (2)
     .mob Un'Goro Gorilla
     .mob Un'Goro Stomper
 step
-    #label Along31
+    #label Along29
     .goto 1449/1,-1970.09,-6380.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_A-Me 01|r
     .turnin 4243 >>Turn in Chasing A-Me 01
@@ -299,6 +295,10 @@ step
     .goto 1449/1,-2002.65,-6867.99
     >>Pick up |cRXP_PICK_Crate of Foodstuffs|r from the ground
     .complete 3881,1 --Crate of Foodstuffs (1)
+step
+    .goto 1449/1,-2321.59,-7199.51
+    >>Click the |cRXP_PICK_Eastern Crystal Pylon|r
+    .complete 4287,1 --Eastern Crystal Pylon
 step
     .goto 1449/1,-2117.35,-7840.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
@@ -387,6 +387,10 @@ step
     .goto 1449/1,-889.32,-7596.15
     >>Pick up |cRXP_PICK_Research Equipment|r from the ground
     .complete 3881,2 --Research Equipment (1)
+step
+    .goto 1449/1,-349.49,-7426.69
+    >>Click the |cRXP_PICK_Western Crystal Pylon|r
+    .complete 4288,1 --Western Crystal Pylon
 step
     #completewith Drop3884x6
     >>|cRXP_LOOT_A Mangled Journal|r can drop from |cRXP_ENEMY_Devilsaur|r, |cRXP_ENEMY_Ironhide Devilsaur|r, |cRXP_ENEMY_Tyrant Devilsaur|r. Use it to start the quest if you get one
@@ -483,6 +487,15 @@ step
     .turnin 3881 >>Turn in Expedition Salvation
     .target Williden Marshal
 step
+    .goto 1449/1,-1017.71,-6033.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_J.D. Collie|r
+    .turnin 4285 >>Turn in The Northern Pylon
+    .turnin 4287 >>Turn in The Eastern Pylon
+    .turnin 4288 >>Turn in The Western Pylon
+    .accept 4321 >>Accept Making Sense of It
+    .turnin 4321 >>Turn in Making Sense of It
+    .target J.D. Collie
+step
     .hs >> Hearth to Gadgetzan
 step << Druid
     #loop
@@ -498,6 +511,26 @@ step << Druid
     .complete 9052,1 --Gorishi Sting (8)
     .mob Gorishi Wasp
     .mob Gorishi Stinger
+step
+    .goto 1449/1,-1017.71,-6033.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_J.D. Collie|r
+    .accept 3961 >>Accept Linken's Adventure
+    .target J.D. Collie
+    .isQuestTurnedIn 4005 --any of: Aquementas
+    .xp <47,1
+step
+    .goto 1449/1,-1017.71,-6033.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_J.D. Collie|r
+    .accept 3942 >>Accept Linken's Memory
+    .target J.D. Collie
+    .isQuestTurnedIn 3941 --any of: A Gnome's Assistance
+    .xp <47,1
+step
+    .goto 1449/1,-1119.09,-6166.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linken|r
+    .turnin 3961 >>Turn in Linken's Adventure
+    .target Linken
+    .isOnQuest 3961
 step
     .goto 1449/1,-1970.09,-6380.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_A-Me 01|r
@@ -522,19 +555,24 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
     .turnin 9052 >>Turn in Bloodpetal Poison
     .target Torwa Pathfinder
-step << Druid
-    .goto 1449/1,-2117.35,-7840.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
-    .accept 9053 >>Accept A Better Ingredient
-    .target Torwa Pathfinder
-    .isQuestTurnedIn 9051 --any of: Toxic Test
-    .xp <50,1
-step << Druid
-    .goto 1449/1,-2117.35,-7840.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
-    .turnin 9053 >>Turn in A Better Ingredient
-    .target Torwa Pathfinder
-    .isQuestComplete 9053
+step
+    .goto 1449/1,-1970.09,-6380.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_A-Me 01|r
+    .accept 4245 >>Accept Chasing A-Me 01
+    .target A-Me 01
+    .isQuestTurnedIn 4244 --any of: Chasing A-Me 01
+    .xp <48,1
+step
+    .goto 1449/1,-1184.58,-6306.57
+    >>Protect A-Me 01 until you reach Karna Remtravel
+    .complete 4245,1 --Protect A-Me 01 until you reach Karna Remtravel
+    .isOnQuest 4245
+step
+    .goto 1449/1,-1182.73,-6298.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karna Remtravel|r
+    .turnin 4245 >>Turn in Chasing A-Me 01
+    .target Karna Remtravel
+    .isOnQuest 4245
 step
     +|cRXP_WARN_That is all of Un'Goro Crater for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Felwood|r: Linken's Memory
@@ -561,6 +599,7 @@ step
     .goto 1449/1,-1386.97,-7196.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ringo|r
     .turnin 4492 >>Turn in Lost!
+    .accept 4491 >>Accept A Little Help From My Friends
     .target Ringo
 step
     .goto 1449/1,-2117.35,-7840.35
@@ -578,6 +617,15 @@ step
     .accept 980 >>Accept The New Springs
     .target Krakle
 step
+    .goto 1449/1,-1083.94,-6171.15
+    >>Escort Ringo to Spraggle Frock at Marshal's Refuge
+    .complete 4491,1 --Escort Ringo to Spraggle Frock at Marshal's Refuge
+step
+    .goto 1449/1,-1080.61,-6176.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spraggle Frock|r
+    .turnin 4491 >>Turn in A Little Help From My Friends
+    .target Spraggle Frock
+step
     .goto 1449/1,-1987.85,-6276.48
     >>Kill |cRXP_ENEMY_U'cha|r and loot |cRXP_LOOT_U'cha's Pelt|r
     .complete 4301,1 --U'cha's Pelt (1)
@@ -592,12 +640,39 @@ step
     .goto 1449/1,-2117.35,-7840.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
     .turnin 4301 >>Turn in The Mighty U'cha
+    .accept 9051 >>Accept Toxic Test << Druid
     .target Torwa Pathfinder
+step << Druid
+    .goto 1449/1,-2212.07,-6781.65
+    >>Kill |cRXP_ENEMY_Devilsaurs|r, |cRXP_ENEMY_Ironhide Devilsaurs|r and |cRXP_ENEMY_Tyrant Devilsaurs|r
+    .complete 9051,1 --Devilsaur (8)
+    .mob Devilsaur
+    .mob Ironhide Devilsaur
+    .mob Tyrant Devilsaur
+step << Druid
+    .goto 1449/1,-2117.35,-7840.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
+    .turnin 9051 >>Turn in Toxic Test
+    .accept 9053 >>Accept A Better Ingredient
+    .target Torwa Pathfinder
+step << Druid
+    .goto 1449/1,-2117.35,-7840.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
+    .turnin 9053 >>Turn in A Better Ingredient
+    .target Torwa Pathfinder
+    .isQuestComplete 9053
 step
     +|cRXP_WARN_That is all of Un'Goro Crater for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Winterspring|r: The New Springs
+    >>|cRXP_FRIENDLY_Elsewhere and back here|r: A Better Ingredient << Druid
 step
     .xp 56 >>|cRXP_WARN_The rest of Un'Goro Crater is planned from level 56.|r Come back to this guide then
+step << Druid
+    .goto 1449/1,-2117.35,-7840.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
+    .turnin 9053 >>Turn in A Better Ingredient
+    .target Torwa Pathfinder
+    .isQuestComplete 9053
 step
     .goto 1449/1,-2117.35,-7840.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r

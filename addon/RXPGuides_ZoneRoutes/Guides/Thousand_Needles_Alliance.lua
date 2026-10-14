@@ -144,6 +144,19 @@ step
     .turnin 1105 >>Turn in Hardened Shells
     .accept 1107 >>Accept Encrusted Tail Fins
     .target Wizzle Brassbolts
+step << Mage
+    .goto 1441/1,-3878.09,-6187.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Tirth|r
+    .accept 1950 >>Accept Get the Scoop
+    .target Magus Tirth
+    .isQuestTurnedIn 1949 --any of: Hidden Secrets
+    .xp <30,1
+step << Mage
+    .goto 1441/1,-3936.17,-6185.15
+    >>Find the phrase to Tirth's strongbox, then return to Tirth.
+    .complete 1950,1 --"Plucky" Johnson
+    .target "Plucky" Johnson
+    .isOnQuest 1950
 step
     .goto 1441/1,-3961.25,-6192.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pozzik|r
@@ -201,6 +214,12 @@ step
     .turnin 1107 >>Turn in Encrusted Tail Fins
     .target Wizzle Brassbolts
     .isQuestComplete 1107
+step << Mage
+    .goto 1441/1,-3878.09,-6187.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Tirth|r
+    .turnin 1950 >>Turn in Get the Scoop
+    .target Magus Tirth
+    .isOnQuest 1950
 step << Mage
     .goto 1441/1,-3878.09,-6187.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Tirth|r

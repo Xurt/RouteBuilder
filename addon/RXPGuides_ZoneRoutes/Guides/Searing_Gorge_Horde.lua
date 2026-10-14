@@ -1,8 +1,8 @@
--- 45-50 Searing Gorge: Zone Routes (Horde).
+-- 45-52 Searing Gorge: Zone Routes (Horde).
 -- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 45, 48).
+-- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 45, 48, 51).
 -- Edit zones/Searing Gorge.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -12,7 +12,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 45-50 Searing Gorge
+#name 45-52 Searing Gorge
 
 step
     .goto 1427/0,-1786.39,-7024.78
@@ -39,10 +39,24 @@ step
 step
     .goto 1427/0,-1194.44,-6679.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
+    .accept 3441 >>Accept Divine Retribution
+    .target Kalaran Windblade
+step
+    .goto 1427/0,-1194.44,-6679.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
+    .complete 3441,1 --Kalaran Windblade (10)
+    .target Kalaran Windblade
+step
+    .goto 1427/0,-1194.44,-6679.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
+    .turnin 3441 >>Turn in Divine Retribution
     .accept 3442 >>Accept The Flawless Flame
     .target Kalaran Windblade
-    .isQuestTurnedIn 3441 --any of: Divine Retribution
-    .xp <40,1
+step
+    .goto 1427/0,-1162.98,-6493.74
+    >>Click the |cRXP_PICK_Wanted/Missing/Lost & Found|r
+    .accept 7728 >>Accept STOLEN: Smithing Tuyere and Lookout's Spyglass
+    .accept 7729 >>Accept JOB OPPORTUNITY: Culling the Competition
 step
     .goto 1427/0,-1100.28,-6559.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grisha|r
@@ -50,6 +64,12 @@ step
     .target Grisha
     .subzoneskip 1446,1
 step
+    #completewith Along6
+    >>As you go: Kill |cRXP_ENEMY_Dark Iron Slavers|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 7729,2 --Dark Iron Slaver slain (15)
+    .mob Dark Iron Slaver
+step
+    #label Along6
     #loop
     .goto 1427/0,-1337.91,-6811.17,0
     .goto 1427/0,-1337.91,-6811.17,40,0
@@ -64,7 +84,6 @@ step
     .mob Blazing Elemental
     .mob Inferno Elemental
     .mob Magma Elemental
-    .isOnQuest 3442
 step
     #loop
     .goto 1427/0,-1176.82,-6813.55,0
@@ -82,20 +101,12 @@ step
     .mob Tempered War Golem
     .mob Heavy War Golem
     .mob Magma Elemental
-    .isOnQuest 3442
 step
     .goto 1427/0,-1194.44,-6679.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
     .turnin 3442 >>Turn in The Flawless Flame
-    .target Kalaran Windblade
-    .isOnQuest 3442
-step
-    .goto 1427/0,-1194.44,-6679.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
     .accept 3443 >>Accept Forging the Shaft
     .target Kalaran Windblade
-    .isQuestTurnedIn 3442 --any of: The Flawless Flame
-    .xp <40,1
 step
     .goto 1427/0,-1471.79,-6643.68,40,0
     .goto 1427/0,-1468.89,-6579.57,0
@@ -150,7 +161,6 @@ step
     .mob Dark Iron Steamsmith
     .mob Slave Worker
     .mob Dark Iron Slaver
-    .isOnQuest 3443
 step
     .goto 1427/0,-1357.32,-6901.91,0
     .goto 1427/0,-1357.32,-6901.91,50,0
@@ -181,58 +191,95 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
     .turnin 3443 >>Turn in Forging the Shaft
     .target Kalaran Windblade
-    .isOnQuest 3443
 step
-    .goto 1427/0,-1194.44,-6679.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
-    .accept 3454 >>Accept The Torch of Retribution
-    .target Kalaran Windblade
-    .isQuestTurnedIn 3453 --any of: The Torch of Retribution
-    .xp <40,1
+    #completewith Drop4451x2
+    >>|cRXP_LOOT_Grimesilt Outhouse Key|r can drop from |cRXP_ENEMY_Dark Iron Steamsmith|r, |cRXP_ENEMY_Dark Iron Slaver|r, |cRXP_ENEMY_Dark Iron Taskmaster|r. Use it to start the quest if you get one
+    .collect 11818,1,4451 --Grimesilt Outhouse Key (1)
+    .accept 4451 >>Accept The Key to Freedom
+    .use 11818
 step
-    .goto 1427/0,-1194.44,-6681.17
-    >>Click the |cRXP_PICK_Torch of Retribution|r
-    .turnin 3454 >>Turn in The Torch of Retribution
-    .isOnQuest 3454
+    #completewith Drop4451x2
+    >>As you go: Kill |cRXP_ENEMY_Dark Iron Slavers|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 7729,2 --Dark Iron Slaver slain (15)
+    .mob Dark Iron Slaver
 step
-    .goto 1427/0,-1194.44,-6679.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
-    .accept 3462 >>Accept Squire Maltrake
-    .target Kalaran Windblade
-    .isQuestTurnedIn 3454 --any of: The Torch of Retribution
-    .xp <40,1
-step
-    .goto 1427/0,-1196.90,-6680.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Maltrake|r
-    .turnin 3462 >>Turn in Squire Maltrake
-    .target Squire Maltrake
-    .isOnQuest 3462
+    #label Drop4451x2
+    #loop
+    .goto 1427/0,-1228.36,-6836.01,0
+    .goto 1427/0,-1228.36,-6836.01,40,0
+    .goto 1427/0,-1163.87,-6838.54,40,0
+    .goto 1427/0,-1174.14,-6863.98,40,0
+    .goto 1427/0,-1281.91,-6868.74,40,0
+    >>Kill |cRXP_ENEMY_Dark Iron Steamsmith|r and loot |cRXP_LOOT_Smithing Tuyere|r
+    .complete 7728,1 --Smithing Tuyere (1)
+    .mob Dark Iron Steamsmith
 step
     .goto 1427/0,-1786.39,-7024.78
     >>Click the |cRXP_PICK_Wooden Outhouse|r
     .turnin 4449 >>Turn in Caught!
     .accept 4450 >>Accept Ledger from Tanaris
 step
-    #completewith Along14
-    >>As you go: Pick up |cRXP_PICK_Goodsteel Ledger|r from the ground. |cRXP_WARN_Anything left is finished later|r
+    .goto 1427/0,-1784.39,-7025.08
+    >>Pick up |cRXP_PICK_Goodsteel Ledger|r from the ground
     .complete 4450,1 --Goodsteel Ledger (1)
 step
-    #label Along14
+    #completewith Drop4451x3
+    >>|cRXP_LOOT_Grimesilt Outhouse Key|r can drop from |cRXP_ENEMY_Dark Iron Steamsmith|r, |cRXP_ENEMY_Dark Iron Slaver|r, |cRXP_ENEMY_Dark Iron Taskmaster|r. Use it to start the quest if you get one
+    .collect 11818,1,4451 --Grimesilt Outhouse Key (1)
+    .accept 4451 >>Accept The Key to Freedom
+    .use 11818
+step
+    #loop
+    .goto 1427/0,-1075.07,-6872.31,0
+    .goto 1427/0,-1075.07,-6872.31,40,0
+    .goto 1427/0,-1063.47,-6896.41,40,0
+    .goto 1427/0,-1050.97,-6925.86,40,0
+    >>Kill |cRXP_ENEMY_Dark Iron Lookout|r and loot |cRXP_LOOT_Lookout's Spyglass|r
+    .complete 7728,2 --Lookout's Spyglass (1)
+    .mob Dark Iron Lookout
+step
+    #label Drop4451x3
+    #loop
+    .goto 1427/0,-1285.03,-6700.50,0
+    .goto 1427/0,-1285.03,-6700.50,40,0
+    .goto 1427/0,-1276.55,-6641.00,40,0
+    .goto 1427/0,-1220.99,-6576.59,40,0
+    .goto 1427/0,-1288.82,-6520.07,40,0
+    .goto 1427/0,-1363.35,-6478.72,40,0
+    .goto 1427/0,-1347.73,-6527.80,40,0
+    .goto 1427/0,-1303.77,-6600.69,40,0
+    .goto 1427/0,-1422.03,-6685.18,40,0
+    .goto 1427/0,-1345.50,-6682.65,40,0
+    >>Kill |cRXP_ENEMY_Dark Iron Taskmasters|r
+    >>Kill |cRXP_ENEMY_Dark Iron Slavers|r
+    .complete 7729,1 --Dark Iron Taskmaster slain (15)
+    .complete 7729,2 --Dark Iron Slaver slain (15)
+    .mob Dark Iron Taskmaster
+    .mob Dark Iron Slaver
+step
+    #loop
+    .goto 1427/0,-1637.57,-6882.87,0
+    .goto 1427/0,-1637.57,-6882.87,40,0
+    .goto 1427/0,-1700.04,-6860.11,40,0
+    .goto 1427/0,-1740.43,-6855.50,40,0
+    .goto 1427/0,-1784.16,-6826.79,40,0
+    .goto 1427/0,-1870.29,-6853.86,40,0
+    .goto 1427/0,-1808.93,-6888.08,40,0
+    .goto 1427/0,-1724.59,-6906.37,40,0
+    >>Kill |cRXP_ENEMY_Glassweb Spider|r and loot |cRXP_LOOT_Solid Crystal Leg Shaft|r
+    .complete 4450,2 --Solid Crystal Leg Shaft (1)
+    .mob Glassweb Spider
+step
     .goto 1427/0,-1786.39,-7024.78
     >>Click the |cRXP_PICK_Wooden Outhouse|r
     .turnin 4451 >>Turn in The Key to Freedom
     .isOnQuest 4451
 step
-    #loop
-    .goto 1427/0,-1784.39,-7025.08,0
-    .goto 1427/0,-1784.39,-7025.08,40,0
-    .goto 1427/0,-1751.14,-7111.20,40,0
-    .goto 1427/0,-1837.27,-7119.98,40,0
-    >>Pick up |cRXP_PICK_Goodsteel Ledger|r from the ground
-    >>Kill |cRXP_ENEMY_Glassweb Spider|r and loot |cRXP_LOOT_Solid Crystal Leg Shaft|r
-    .complete 4450,1 --Goodsteel Ledger (1)
-    .complete 4450,2 --Solid Crystal Leg Shaft (1)
-    .mob Glassweb Spider
+    .goto 1427/0,-1192.43,-6509.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taskmaster Scrange|r
+    .turnin 7728 >>Turn in STOLEN: Smithing Tuyere and Lookout's Spyglass
+    .turnin 7729 >>Turn in JOB OPPORTUNITY: Culling the Competition
+    .target Taskmaster Scrange
 step
     +|cRXP_WARN_That is all of Searing Gorge for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Tanaris|r: Ledger from Tanaris
@@ -248,8 +295,6 @@ step
 step
     .goto 1427/0,-1162.98,-6493.74
     >>Click the |cRXP_PICK_Wanted/Missing/Lost & Found|r
-    .accept 7728 >>Accept STOLEN: Smithing Tuyere and Lookout's Spyglass
-    .accept 7729 >>Accept JOB OPPORTUNITY: Culling the Competition
     .accept 7701 >>Accept WANTED: Overseer Maltorius
 step
     .goto 1427/0,-1188.64,-6524.09
@@ -287,14 +332,6 @@ step
     .complete 7727,1 --Incendosaur slain (20)
     .mob Incendosaur
 step
-    #completewith Along5
-    >>As you go: Kill |cRXP_ENEMY_Dark Iron Taskmasters|r. Kill |cRXP_ENEMY_Dark Iron Slavers|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 7729,1 --Dark Iron Taskmaster slain (15)
-    .complete 7729,2 --Dark Iron Slaver slain (15)
-    .mob Dark Iron Taskmaster
-    .mob Dark Iron Slaver
-step
-    #label Along5
     .goto 1427/0,-1225.46,-6631.63
     >>Pick up |cRXP_PICK_Secret Plans: Fiery Flux|r from the ground
     >>Kill |cRXP_ENEMY_Overseer Maltorius|r and loot |cRXP_LOOT_Head of Overseer Maltorius|r
@@ -306,8 +343,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
     .accept 3452 >>Accept The Flame's Casing
     .target Kalaran Windblade
-    .isQuestTurnedIn 3443 --any of: Forging the Shaft
-    .xp <40,1
 step
     #loop
     .goto 1427/0,-1009.03,-6490.91,0
@@ -326,66 +361,52 @@ step
     .mob Twilight Fire Guard
     .mob Twilight Geomancer
     .mob Twilight Idolater
-    .isOnQuest 3452
 step
     .goto 1427/0,-1194.44,-6679.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
     .turnin 3452 >>Turn in The Flame's Casing
+    .accept 3453 >>Accept The Torch of Retribution
     .target Kalaran Windblade
-    .isOnQuest 3452
 step
-    #completewith Along9
-    >>As you go: Kill |cRXP_ENEMY_Dark Iron Taskmasters|r. Kill |cRXP_ENEMY_Dark Iron Slavers|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 7729,1 --Dark Iron Taskmaster slain (15)
-    .complete 7729,2 --Dark Iron Slaver slain (15)
-    .mob Dark Iron Taskmaster
-    .mob Dark Iron Slaver
+    .goto 1427/0,-1194.44,-6679.98
+    >>Wait for Kalaran Windblade to complete the Torch of Retribution.
+    .complete 3453,1 --Kalaran Windblade
+    .target Kalaran Windblade
 step
-    #label Along9
+    .goto 1427/0,-1194.44,-6679.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
+    .turnin 3453 >>Turn in The Torch of Retribution
+    .accept 3454 >>Accept The Torch of Retribution
+    .target Kalaran Windblade
+step
+    .goto 1427/0,-1194.44,-6681.17
+    >>Click the |cRXP_PICK_Torch of Retribution|r
+    .turnin 3454 >>Turn in The Torch of Retribution
+step
+    .goto 1427/0,-1194.44,-6679.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
+    .accept 3462 >>Accept Squire Maltrake
+    .target Kalaran Windblade
+step
+    .goto 1427/0,-1196.90,-6680.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Maltrake|r
+    .turnin 3462 >>Turn in Squire Maltrake
+    .target Squire Maltrake
+step
     #loop
-    .goto 1427/0,-1212.29,-6757.03,0
-    .goto 1427/0,-1212.29,-6757.03,40,0
-    .goto 1427/0,-1288.16,-6754.80,40,0
-    .goto 1427/0,-1321.62,-6675.96,40,0
-    .goto 1427/0,-1386.33,-6687.26,40,0
-    .goto 1427/0,-1458.62,-6675.81,40,0
-    .goto 1427/0,-1281.91,-6868.74,40,0
-    .goto 1427/0,-1174.14,-6863.98,40,0
-    .goto 1427/0,-1048.07,-6782.32,40,0
+    .goto 1427/0,-1252.46,-6715.68,0
+    .goto 1427/0,-1252.46,-6715.68,40,0
     .goto 1427/0,-1109.21,-6708.54,40,0
+    .goto 1427/0,-1048.07,-6782.32,40,0
+    .goto 1427/0,-1106.75,-6772.94,40,0
+    .goto 1427/0,-1176.82,-6813.55,40,0
+    .goto 1427/0,-1212.29,-6757.03,40,0
+    .goto 1427/0,-1344.83,-6718.95,40,0
+    .goto 1427/0,-1458.62,-6675.81,40,0
+    .goto 1427/0,-1359.33,-6665.40,40,0
     >>Kill |cRXP_ENEMY_Heavy War Golems|r
-    >>Kill |cRXP_ENEMY_Dark Iron Steamsmith|r and loot |cRXP_LOOT_Smithing Tuyere|r
     .complete 7723,1 --Heavy War Golem slain (20)
-    .complete 7728,1 --Smithing Tuyere (1)
     .mob Heavy War Golem
-    .mob Dark Iron Steamsmith
-step
-    #loop
-    .goto 1427/0,-1075.07,-6872.31,0
-    .goto 1427/0,-1075.07,-6872.31,40,0
-    .goto 1427/0,-1063.47,-6896.41,40,0
-    .goto 1427/0,-1050.97,-6925.86,40,0
-    >>Kill |cRXP_ENEMY_Dark Iron Lookout|r and loot |cRXP_LOOT_Lookout's Spyglass|r
-    .complete 7728,2 --Lookout's Spyglass (1)
-    .mob Dark Iron Lookout
-step
-    #loop
-    .goto 1427/0,-1285.03,-6700.50,0
-    .goto 1427/0,-1285.03,-6700.50,40,0
-    .goto 1427/0,-1276.55,-6641.00,40,0
-    .goto 1427/0,-1220.99,-6576.59,40,0
-    .goto 1427/0,-1288.82,-6520.07,40,0
-    .goto 1427/0,-1363.35,-6478.72,40,0
-    .goto 1427/0,-1347.73,-6527.80,40,0
-    .goto 1427/0,-1303.77,-6600.69,40,0
-    .goto 1427/0,-1422.03,-6685.18,40,0
-    .goto 1427/0,-1345.50,-6682.65,40,0
-    >>Kill |cRXP_ENEMY_Dark Iron Taskmasters|r
-    >>Kill |cRXP_ENEMY_Dark Iron Slavers|r
-    .complete 7729,1 --Dark Iron Taskmaster slain (15)
-    .complete 7729,2 --Dark Iron Slaver slain (15)
-    .mob Dark Iron Taskmaster
-    .mob Dark Iron Slaver
 step
     .goto 1427/0,-1183.73,-6513.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hansel Heavyhands|r
@@ -393,12 +414,6 @@ step
     .turnin 7724 >>Turn in Fiery Menace!
     .turnin 7727 >>Turn in Incendosaurs? Whateverosaur is More Like It
     .target Hansel Heavyhands
-step
-    .goto 1427/0,-1192.43,-6509.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taskmaster Scrange|r
-    .turnin 7728 >>Turn in STOLEN: Smithing Tuyere and Lookout's Spyglass
-    .turnin 7729 >>Turn in JOB OPPORTUNITY: Culling the Competition
-    .target Taskmaster Scrange
 step
     .goto 1427/0,-1164.99,-6495.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lookout Captain Lolo Longstriker|r
@@ -409,6 +424,36 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Smith Burninate|r
     .turnin 7722 >>Turn in What the Flux?
     .target Master Smith Burninate
+step
+    .xp 51 >>|cRXP_WARN_The rest of Searing Gorge is planned from level 51.|r Come back to this guide then
+step
+    .goto 1427/0,-1196.90,-6680.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Maltrake|r
+    .accept 3463 >>Accept Set Them Ablaze!
+    .target Squire Maltrake
+step
+    .goto 1427/0,-1118.80,-7002.61
+    >>Click the |cRXP_PICK_Sentry Brazier|r
+    .complete 3463,4 --Northern Tower Ablaze
+    .complete 3463,1 --Western Tower Ablaze
+step
+    .goto 1427/0,-1305.34,-7006.04
+    >>Click the |cRXP_PICK_Sentry Brazier|r
+    .complete 3463,2 --Southern Tower Ablaze
+step
+    .goto 1427/0,-1440.10,-6914.26
+    >>Click the |cRXP_PICK_Sentry Brazier|r
+    .complete 3463,3 --Eastern Tower Ablaze
+step
+    .goto 1427/0,-1196.90,-6680.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Maltrake|r
+    .turnin 3463 >>Turn in Set Them Ablaze!
+    .target Squire Maltrake
+step
+    .goto 1427/0,-1189.76,-6679.98
+    >>Click the |cRXP_PICK_Hoard of the Black Dragonflight|r
+    .accept 3481 >>Accept Trinkets...
+    .turnin 3481 >>Turn in Trinkets...
 step
     +|cRXP_WARN_End of the Searing Gorge route.|r
 ]])

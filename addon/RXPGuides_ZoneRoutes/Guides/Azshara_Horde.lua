@@ -115,16 +115,15 @@ step << Rogue
 step
     .goto 1447/1,-6361.16,3098.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
-    .accept 3509 >>Accept The Name of the Beast
+    .complete 2744,1 --Loramus Thalipedes
     .target Loramus Thalipedes
-    .isQuestTurnedIn 3508 --any of: Breaking the Ward
-    .xp <45,1
+    .isOnQuest 2744
 step
-    .goto 1447/1,-7188.22,3894.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Arkkoroc|r
-    .turnin 3509 >>Turn in The Name of the Beast
-    .target Lord Arkkoroc
-    .isOnQuest 3509
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .turnin 2744 >>Turn in The Demon Hunter
+    .target Loramus Thalipedes
+    .isOnQuest 2744
 step << Hunter
     .goto 1447/1,-5427.12,3900.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogtinc|r
@@ -146,6 +145,13 @@ step << Priest
 step
     .xp 50 >>|cRXP_WARN_The rest of Azshara is planned from level 50.|r Come back to this guide then
 step
+    .goto 1447/1,-4405.85,3601.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ag'tor Bloodfist|r
+    .accept 3505 >>Accept Betrayed
+    .target Ag'tor Bloodfist
+    .isQuestTurnedIn 3504 --any of: Betrayed
+    .xp <44,1
+step
     .goto 1447/1,-4421.06,3603.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jediga|r
     .accept 3517 >>Accept Stealing Knowledge
@@ -160,30 +166,83 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kim'jael|r
     .accept 3601 >>Accept Kim'jael Indeed!
     .target Kim'jael
-step
+step << Mage
     #loop
     .goto 1447/1,-6083.79,4447.33,0
     .goto 1447/1,-6083.79,4447.33,40,0
     .goto 1447/1,-6148.70,4480.46,40,0
-    .goto 1447/1,-6243.52,4496.35,40,0
-    .goto 1447/1,-6257.72,4414.87,40,0
-    .goto 1447/1,-6278.51,4357.05,40,0
+    .goto 1447/1,-6215.63,4447.33,40,0
+    .goto 1447/1,-6219.18,4388.83,40,0
+    .goto 1447/1,-6279.02,4375.64,40,0
     .goto 1447/1,-6230.34,4288.07,40,0
-    .goto 1447/1,-6167.46,4381.39,40,0
     .goto 1447/1,-6107.62,4300.92,40,0
-    .goto 1447/1,-6089.87,4378.69,40,0
-    >>Kill |cRXP_ENEMY_Blood Elf Surveyors|r and |cRXP_ENEMY_Blood Elf Reclaimers|r. Loot them for |cRXP_LOOT_Glittering Dust|r << Mage
+    .goto 1447/1,-6136.53,4366.18,40,0
+    .goto 1447/1,-6154.78,4419.26,40,0
+    >>Kill |cRXP_ENEMY_Blood Elf Surveyors|r and |cRXP_ENEMY_Blood Elf Reclaimers|r. Loot them for |cRXP_LOOT_Glittering Dust|r
+    .complete 8251,1 --Glittering Dust (10)
+    .mob Blood Elf Surveyor
+    .mob Blood Elf Reclaimer
+step
+    #loop
+    .goto 1447/1,-6154.78,4419.26,0
+    .goto 1447/1,-6154.78,4419.26,40,0
+    .goto 1447/1,-6148.70,4480.46,40,0
+    .goto 1447/1,-6080.75,4408.78,40,0
+    .goto 1447/1,-6136.53,4366.18,40,0
+    .goto 1447/1,-6096.47,4322.90,40,0
+    .goto 1447/1,-6162.39,4312.75,40,0
+    .goto 1447/1,-6214.11,4312.41,40,0
+    .goto 1447/1,-6279.02,4375.64,40,0
+    .goto 1447/1,-6220.19,4411.48,40,0
+    >>Kill |cRXP_ENEMY_Blood Elf Reclaimers|r
+    .complete 3505,1 --Blood Elf Reclaimer slain (10)
+    .mob Blood Elf Reclaimer
+    .isOnQuest 3505
+step
+    #loop
+    .goto 1447/1,-6152.75,4393.23,0
+    .goto 1447/1,-6152.75,4393.23,40,0
+    .goto 1447/1,-6215.63,4447.33,40,0
+    .goto 1447/1,-6257.72,4414.87,40,0
+    .goto 1447/1,-6256.70,4378.35,40,0
+    .goto 1447/1,-6219.18,4388.83,40,0
+    .goto 1447/1,-6124.86,4330.33,40,0
+    .goto 1447/1,-6107.62,4300.92,40,0
+    .goto 1447/1,-6089.37,4344.20,40,0
+    >>Kill |cRXP_ENEMY_Blood Elf Surveyors|r
+    .complete 3505,2 --Blood Elf Surveyor slain (10)
+    .mob Blood Elf Surveyor
+    .isOnQuest 3505
+step
+    .goto 1447/1,-6295.75,4277.59
+    >>Find Magus Rimtori's camp
+    .complete 3505,3 --Find Magus Rimtori's camp
+    .isOnQuest 3505
+step
+    .goto 1447/1,-6294.74,4283.34
+    >>Click the |cRXP_PICK_Kaldorei Tome of Summoning|r
+    .turnin 3505 >>Turn in Betrayed
+    .isOnQuest 3505
+step
+    #loop
+    .goto 1447/1,-6263.80,4381.39,0
+    .goto 1447/1,-6263.80,4381.39,40,0
+    .goto 1447/1,-6213.10,4357.72,40,0
+    .goto 1447/1,-6167.46,4330.67,40,0
+    .goto 1447/1,-6121.82,4323.91,40,0
+    .goto 1447/1,-6142.10,4367.87,40,0
+    .goto 1447/1,-6167.46,4381.39,40,0
+    .goto 1447/1,-6228.31,4405.06,40,0
+    .goto 1447/1,-6243.52,4496.35,40,0
+    .goto 1447/1,-6248.59,4462.54,40,0
     >>Open the |cRXP_PICK_Kim'jael's Equipment|r. Loot it for |cRXP_LOOT_Kim'Jael's Compass|r
     >>Open the |cRXP_PICK_Kim'jael's Equipment|r. Loot it for |cRXP_LOOT_Kim'Jael's Scope|r
     >>Open the |cRXP_PICK_Kim'jael's Equipment|r. Loot it for |cRXP_LOOT_Kim'Jael's Stuffed Chicken|r
     >>Open the |cRXP_PICK_Kim'jael's Equipment|r. Loot it for |cRXP_LOOT_Kim'Jael's Wizzlegoober|r
-    .complete 8251,1 << Mage --Glittering Dust (10)
     .complete 3601,1 --Kim'Jael's Compass (1)
     .complete 3601,2 --Kim'Jael's Scope (1)
     .complete 3601,3 --Kim'Jael's Stuffed Chicken (1)
     .complete 3601,4 --Kim'Jael's Wizzlegoober (1)
-    .mob Blood Elf Surveyor << Mage
-    .mob Blood Elf Reclaimer << Mage
 step
     .goto 1447/1,-6106.61,4465.92,50,0
     .goto 1447/1,-6208.02,4449.02,50,0
@@ -209,7 +268,7 @@ step << Mage
     .accept 8252 >>Accept The Siren's Coral
     .target Archmage Xylem
 step
-    #completewith Along6
+    #completewith Along12
     >>As you go: Kill |cRXP_ENEMY_Spitelash Sirens|r, |cRXP_ENEMY_Spitelash Myrmidons|r, |cRXP_ENEMY_Spitelash Battlemasters|r and |cRXP_ENEMY_Spitelash Enchantress|r. Loot them for |cRXP_LOOT_Some Rune|r. |cRXP_WARN_Anything left is finished later|r
     .complete 5534,1 --Some Rune (1)
     .mob Spitelash Siren
@@ -217,12 +276,12 @@ step
     .mob Spitelash Battlemaster
     .mob Spitelash Enchantress
 step << Mage
-    #completewith Along6
+    #completewith Along12
     >>As you go: Kill |cRXP_ENEMY_Spitelash Sirens|r. Loot them for |cRXP_LOOT_Enchanted Coral|r. |cRXP_WARN_Anything left is finished later|r
     .complete 8252,1 --Enchanted Coral (6)
     .mob Spitelash Siren
 step
-    #label Along6
+    #label Along12
     #loop
     .goto 1447/1,-5156.84,3588.15,0
     .goto 1447/1,-5156.84,3588.15,40,0
@@ -326,6 +385,51 @@ step
     .target Duke Hydraxis
     .isQuestComplete 6805
 step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .accept 3141 >>Accept Loramus
+    .target Loramus Thalipedes
+    .isQuestTurnedIn 2744 --any of: The Demon Hunter
+    .xp <45,1
+step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .complete 3141,1 --Loramus Thalipedes (10)
+    .target Loramus Thalipedes
+    .isOnQuest 3141
+step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .turnin 3141 >>Turn in Loramus
+    .target Loramus Thalipedes
+    .isOnQuest 3141
+step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .accept 3508 >>Accept Breaking the Ward
+    .target Loramus Thalipedes
+    .isQuestTurnedIn 3141 --any of: Loramus
+    .xp <45,1
+step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .turnin 3508 >>Turn in Breaking the Ward
+    .target Loramus Thalipedes
+    .isOnQuest 3508
+step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .accept 3509 >>Accept The Name of the Beast
+    .target Loramus Thalipedes
+    .isQuestTurnedIn 3508 --any of: Breaking the Ward
+    .xp <45,1
+step
+    .goto 1447/1,-7188.22,3894.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Arkkoroc|r
+    .turnin 3509 >>Turn in The Name of the Beast
+    .target Lord Arkkoroc
+    .isOnQuest 3509
+step
     .goto 1447/1,-7188.22,3894.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Arkkoroc|r
     .accept 3510 >>Accept The Name of the Beast
@@ -334,8 +438,8 @@ step
     .xp <45,1
 step
     .goto 1447/1,-6153.77,3827.20
-    >>Kill |cRXP_ENEMY_Hetaeras|r. Loot them for |cRXP_LOOT_Hetaera's Bruised Head|r
-    .complete 3510,3 --Hetaera's Bruised Head (10)
+    >>Kill |cRXP_ENEMY_Hetaeras|r. Loot them for |cRXP_LOOT_Hetaera's Beaten Head|r
+    .complete 3510,1 --Hetaera's Beaten Head (10)
     .mob Hetaera
     .isOnQuest 3510
 step
@@ -346,8 +450,8 @@ step
     .isOnQuest 3510
 step
     .goto 1447/1,-6153.77,3827.20
-    >>Kill |cRXP_ENEMY_Hetaeras|r. Loot them for |cRXP_LOOT_Hetaera's Beaten Head|r
-    .complete 3510,1 --Hetaera's Beaten Head (10)
+    >>Kill |cRXP_ENEMY_Hetaeras|r. Loot them for |cRXP_LOOT_Hetaera's Bruised Head|r
+    .complete 3510,3 --Hetaera's Bruised Head (10)
     .mob Hetaera
     .isOnQuest 3510
 step << Hunter

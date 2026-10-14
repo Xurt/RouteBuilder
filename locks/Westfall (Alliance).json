@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-24 Westfall",
-  "saved": "2026-10-14 09:59",
+  "saved": "2026-10-14 10:44",
   "levels": "RestedXP",
   "parts": [
     {
@@ -109,19 +109,22 @@
     {
       "part": 2,
       "steps": [
-        "accept:65 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
         "accept:144 @1436:1045.12,-10508.8  Accept Messenger to Westfall",
-        "accept:14 @1436:1045.12,-10508.8  Accept The People's Militia",
-        "accept:135 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
         "accept:142 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
+        "accept:135 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
+        "accept:65 @1436:1045.12,-10508.8  Accept The Defias Brotherhood",
         "obj:142:1 @1436:1438.17,-11017.7  Objective The Defias Brotherhood / A Mysterious Message (1)",
+        "accept:14 @1436:1045.12,-10508.8  Accept The People's Militia",
+        "turnin:142 @1436:1045.12,-10508.8  TurnIn The Defias Brotherhood",
+        "accept:155 @1436:1067.87,-10508.33  Accept The Defias Brotherhood",
+        "obj:155:1 @1436:1527.42,-11069.03  Objective The Defias Brotherhood / Escort The Defias Traitor to discover where VanCleef is hiding",
         "obj:14:3 @1436:1698.57,-11153.5  Objective The People's Militia / Defias Knuckleduster slain (5)",
         "obj:14:2 @1436:1722.02,-11155.13  Objective The People's Militia / Defias Pathstalker slain (5)",
         "accept:152 @1436:1966.32,-11407.13  Accept The Coast Isn't Clear",
         "turnin:92819 @1436:1665.32,-11353  TurnIn Destruction in Deadmines",
         "obj:14:1 @1436:1683.52,-11281.6  Objective The People's Militia / Defias Highwayman slain (8)",
-        "turnin:142 @1436:1045.12,-10508.8  TurnIn The Defias Brotherhood",
         "turnin:14 @1436:1045.12,-10508.8  TurnIn The People's Militia",
+        "turnin:155 @1436:1045.12,-10508.8  TurnIn The Defias Brotherhood",
         "accept:93928 @1436:909.67,-10411.27  Accept Of Mice and Milk",
         "obj:152:1 @1436:1122.82,-9623.53  Objective The Coast Isn't Clear / Murloc Coastrunner slain (7)",
         "accept:79008 @1436:1708.02,-10580.2  Accept ... and that note you found",

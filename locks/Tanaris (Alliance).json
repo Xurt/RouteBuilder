@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "43-60 Tanaris",
-  "saved": "2026-10-14 10:02",
+  "saved": "2026-10-14 10:47",
   "levels": "RestedXP",
   "parts": [
     {
@@ -91,13 +91,14 @@
         "turnin:2768 @1446:-3838.49,-7186.46  TurnIn Divino-matic Rod",
         "turnin:2865 @1446:-3777.08,-7105.96  TurnIn Scarab Shells",
         "turnin:2741 @1446:-3833.66,-7115.62  TurnIn The Super Egg-O-Matic",
+        "accept:648 @1446:-4374.62,-8852.12  Accept Rescue OOX-17/TN!",
+        "obj:648:1 @1446:-4845.89,-6940.36  Objective Rescue OOX-17/TN! / Escort OOX-17/TN to Steamwheedle Port",
         "turnin:3520 @1446:-4841.06,-6903.56  TurnIn Screecher Spirits",
         "turnin:2781 @1446:-3838.49,-7186.46  TurnIn WANTED: Caliph Scorpidsting",
         "accept:2605 @1446:-3793.64,-7193.36  Accept The Thirsty Goblin",
         "accept:82 @1446:-3683.24,-7139.08  Accept Noxious Lair Investigation",
         "obj:82:1 @1446:-2577.17,-7790.44  Objective Noxious Lair Investigation / Centipaar Insect Parts (5)",
         "obj:2605:1 @1446:-2217.68,-8980.46  Objective The Thirsty Goblin / Laden Dew Gland (1)",
-        "accept:2977 @1446:-2815.22,-9619.4  Accept Return to Ironforge",
         "turnin:2605 @1446:-3793.64,-7193.36  TurnIn The Thirsty Goblin",
         "accept:2606 @1446:-3793.64,-7193.36  Accept In Good Taste",
         "turnin:2606 @1446:-3741.89,-7111.02  TurnIn In Good Taste",
@@ -119,6 +120,12 @@
     {
       "part": 3,
       "steps": [
+        "accept:1560 @1446:-2252.87,-8658.46  Accept Tooga's Quest",
+        "obj:1560:1 @1446:-4812.77,-7055.82  Objective Tooga's Quest / Torta",
+        "turnin:1560 @1446:-4812.77,-7055.82  TurnIn Tooga's Quest",
+        "accept:3913 @1446:-3939.23,-6948.18  Accept A Grave Situation",
+        "turnin:3913 @1446:-3931.64,-7211.76  TurnIn A Grave Situation",
+        "accept:3914 @1446:-3931.64,-7211.76  Accept Linken's Sword",
         "turnin:3042 @1446:-3766.04,-7197.5  TurnIn Troll Temper",
         "turnin:2768 @1446:-3838.49,-7186.46  TurnIn Divino-matic Rod",
         "turnin:2865 @1446:-3777.08,-7105.96  TurnIn Scarab Shells",
@@ -128,9 +135,6 @@
         "accept:3446 @1446:-3855.74,-7987.32  Accept Into the Depths",
         "accept:3447 @1446:-3855.74,-7987.32  Accept Secret of the Circle",
         "turnin:3520 @1446:-4841.06,-6903.56  TurnIn Screecher Spirits",
-        "accept:3913 @1446:-3939.23,-6948.18  Accept A Grave Situation",
-        "turnin:3913 @1446:-3931.64,-7211.76  TurnIn A Grave Situation",
-        "accept:3914 @1446:-3931.64,-7211.76  Accept Linken's Sword",
         "accept:5863 @1446:-3863.33,-7135.4  Accept The Dunemaul Compound",
         "accept:4504 @1446:-3777.08,-7105.96  Accept Super Sticky",
         "accept:3362 @1446:-3777.08,-7105.96  Accept Thistleshrub Valley",
@@ -139,6 +143,10 @@
         "obj:5863:1 @1446:-3086.39,-8477.68  Objective The Dunemaul Compound / Dunemaul Brute slain (10)",
         "obj:3362:1 @1446:-2264.6,-8929.4  Objective Thistleshrub Valley / Gnarled Thistleshrub slain (8)",
         "obj:3362:2 @1446:-2309.45,-8947.34  Objective Thistleshrub Valley / Thistleshrub Rootshaper slain (8)",
+        "accept:2954 @1446:-2813.15,-9619.4  Accept The Stone Watcher",
+        "obj:2954:1 @1446:-2813.15,-9619.4  Objective The Stone Watcher / Stone Watcher of Norgannon",
+        "turnin:2954 @1446:-2815.22,-9619.4  TurnIn The Stone Watcher",
+        "accept:2977 @1446:-2815.22,-9619.4  Accept Return to Ironforge",
         "turnin:5863 @1446:-3863.33,-7135.4  TurnIn The Dunemaul Compound",
         "turnin:3362 @1446:-3777.08,-7105.96  TurnIn Thistleshrub Valley"
       ]

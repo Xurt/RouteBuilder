@@ -2,7 +2,7 @@
 -- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 34, 39, 51).
+-- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 34, 37, 40, 51).
 -- Edit zones/Swamp of Sorrows.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -31,18 +31,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Biggs|r
     .accept 1396 >>Accept Encroaching Wildlife
     .target Watcher Biggs
-step << Warrior
-    .goto 1435/0,-3009.44,-10632.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
-    .turnin 8417 >>Turn in A Troubled Spirit
-    .target Fallen Hero of the Horde
-    .isOnQuest 8417
-step
-    .goto 1435/0,-3009.44,-10632.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
-    .turnin 2783 >>Turn in Petty Squabbles
-    .target Fallen Hero of the Horde
-    .isOnQuest 2783
 step
     .goto 1435/0,-3482.19,-10142.28
     >>Kill |cRXP_ENEMY_Noboru the Cudgel|r and loot |cRXP_LOOT_Noboru's Cudgel|r. Use it to start the quest
@@ -104,11 +92,11 @@ step
     .accept 1421 >>Accept The Lost Caravan
     .target Watcher Biggs
 step
-    #completewith Along11
+    #completewith Along9
     >>As you go: Loot the |cRXP_PICK_Draenethyst Crystals|r for |cRXP_LOOT_Draenethyst Crystal|r. |cRXP_WARN_Anything left is finished later|r
     .complete 1389,1 --Draenethyst Crystal (6)
 step
-    #label Along11
+    #label Along9
     .goto 1435/0,-3701.47,-9900.67
     >>Open the |cRXP_PICK_Caravan Chest|r. Loot it for |cRXP_LOOT_Wizards' Reagents|r
     .complete 1421,1 --Wizards' Reagents (1)
@@ -143,11 +131,36 @@ step
     >>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
     >>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
     .zoneskip Swamp of Sorrows,1
+step << Warrior
+    .goto 1435/0,-3009.44,-10632.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
+    .turnin 8417 >>Turn in A Troubled Spirit
+    .target Fallen Hero of the Horde
+    .isOnQuest 8417
+step
+    .goto 1435/0,-3009.44,-10632.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
+    .turnin 2783 >>Turn in Petty Squabbles
+    .target Fallen Hero of the Horde
+    .isOnQuest 2783
 step
     +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_another zone|r: This Light of Mine
 step
-    .xp 39 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 39.|r Come back to this guide then
+    .xp 37 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 37.|r Come back to this guide then
+step
+    .goto 1435/0,-3724.63,-9898.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galen Goodward|r
+    .accept 1393 >>Accept Galen's Escape
+    .target Galen Goodward
+step
+    .goto 1435/0,-3440.44,-10072.70
+    >>Escort Galen out of the Fallow Sanctuary.
+    .complete 1393,1 --Escort Galen out of the Fallow Sanctuary.
+step
+    .goto 1435/0,-3319.56,-10228.83
+    >>Click the |cRXP_PICK_Galen's Strongbox|r
+    .turnin 1393 >>Turn in Galen's Escape
 step
     .goto 1435/0,-2800.25,-10449.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r
@@ -161,10 +174,21 @@ step
     .isQuestTurnedIn 624 --any of: Cortello's Riddle
     .xp <35,1
 step
+    +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Dustwallow Marsh|r: Cortello's Riddle
+step
+    .xp 40 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 40.|r Come back to this guide then
+step
     .goto 1435/0,-2836.27,-10535.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Biggs|r
     .accept 1398 >>Accept Driftwood
     .target Watcher Biggs
+step
+    .goto 1435/0,-2800.25,-10449.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r
+    .turnin 93176 >>Turn in My Little Friends
+    .target Amaryllis Webb
+    .isOnQuest 93176
 step
     #loop
     .goto 1435/0,-4282.70,-10753.64,0
@@ -186,7 +210,6 @@ step
 step
     +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Blasted Lands|r: Deliver the Shipment
-    >>|cRXP_FRIENDLY_Dustwallow Marsh|r: Cortello's Riddle
 step << Warrior
     .xp 51 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 51.|r Come back to this guide then
 step << Warrior
@@ -200,44 +223,6 @@ step << Warrior
     .turnin 8423 >>Turn in Warrior Kinship
     .target Fallen Hero of the Horde
     .isQuestComplete 8423
-step
-    .goto 1435/0,-3009.44,-10632.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
-    .accept 2702 >>Accept Heroes of Old
-    .target Fallen Hero of the Horde
-    .isQuestTurnedIn 2681 --any of: The Stones That Bind Us
-    .xp <45,1
-step
-    .goto 1435/0,-3009.44,-10632.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
-    .accept 2681 >>Accept The Stones That Bind Us
-    .target Fallen Hero of the Horde
-    .isQuestTurnedIn 2801 --any of: A Tale of Sorrow
-    .xp <45,1
-step
-    .goto 1435/0,-2991.09,-10629.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Thund Splithoof|r
-    .turnin 2702 >>Turn in Heroes of Old
-    .target Corporal Thund Splithoof
-    .isOnQuest 2702
-step
-    .goto 1435/0,-2991.09,-10629.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Thund Splithoof|r
-    .accept 2701 >>Accept Heroes of Old
-    .target Corporal Thund Splithoof
-    .isQuestTurnedIn 2702 --any of: Heroes of Old
-    .xp <45,1
-step
-    .goto 1435/0,-2985.82,-10633.45
-    >>Click the |cRXP_PICK_Spectral Lockbox|r
-    .turnin 2701 >>Turn in Heroes of Old
-    .isOnQuest 2701
-step
-    .goto 1435/0,-3009.44,-10632.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
-    .turnin 2681 >>Turn in The Stones That Bind Us
-    .target Fallen Hero of the Horde
-    .isQuestComplete 2681
 step
     .goto 1435/0,-2800.25,-10449.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r

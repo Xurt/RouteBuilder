@@ -109,14 +109,14 @@ step
 step
     .goto 1437/0,-865.16,-3585.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarrel Rockweaver|r
-    .accept 305 >>Accept In Search of The Excavation Team
-    .target Tarrel Rockweaver
-step
-    .goto 1437/0,-865.16,-3585.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarrel Rockweaver|r
     .turnin 98461 >>Turn in Unrequited Love
     .target Tarrel Rockweaver
     .isOnQuest 98461
+step
+    .goto 1437/0,-865.16,-3585.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarrel Rockweaver|r
+    .accept 305 >>Accept In Search of The Excavation Team
+    .target Tarrel Rockweaver
 step
     .goto 1437/0,-1968.49,-3550.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
@@ -387,6 +387,41 @@ step
     .mob Leech Stalker
     .mob Cave Stalker
 step
+    #loop
+    .goto 1437/0,-2367.97,-4197.19,0
+    .goto 1437/0,-2367.97,-4197.19,40,0
+    .goto 1437/0,-2358.46,-4231.09,40,0
+    .goto 1437/0,-2340.26,-4272.16,40,0
+    .goto 1437/0,-2404.36,-4277.40,40,0
+    .goto 1437/0,-2519.32,-4310.75,40,0
+    .goto 1437/0,-2456.88,-4270.50,40,0
+    .goto 1437/0,-2383.27,-4236.33,40,0
+    >>Kill |cRXP_ENEMY_Dragonmaw Grunts|r
+    .complete 455,2 --Dragonmaw Grunt slain (6)
+    .mob Dragonmaw Grunt
+    .isOnQuest 455
+step
+    #loop
+    .goto 1437/0,-2384.09,-4207.39,0
+    .goto 1437/0,-2384.09,-4207.39,40,0
+    .goto 1437/0,-2360.94,-4265.27,40,0
+    .goto 1437/0,-2384.51,-4304.41,40,0
+    .goto 1437/0,-2430.00,-4346.03,40,0
+    .goto 1437/0,-2460.60,-4340.51,40,0
+    .goto 1437/0,-2506.92,-4339.69,40,0
+    .goto 1437/0,-2486.24,-4268.02,40,0
+    .goto 1437/0,-2454.40,-4245.97,40,0
+    .goto 1437/0,-2428.34,-4268.85,40,0
+    >>Kill |cRXP_ENEMY_Dragonmaw Scouts|r
+    .complete 455,1 --Dragonmaw Scout slain (8)
+    .mob Dragonmaw Scout
+    .isOnQuest 455
+step
+    .goto 1437/0,-2611.13,-4086.39
+    >>Traverse Dun Algaz
+    .complete 455,3 --Traverse Dun Algaz
+    .isOnQuest 455
+step
     .goto 1437/0,-2720.72,-3261.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rethiel the Greenwarden|r
     .turnin 275 >>Turn in Blisters on The Land
@@ -470,6 +505,12 @@ step
     .accept 98190 >>Accept A Friend of the Family
     .accept 98230 >>Accept This Land Was Their Land
     .target Captain Stoutfist
+step
+    .goto 1437/0,-807.26,-3716.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valstag Ironjaw|r
+    .turnin 455 >>Turn in The Algaz Gauntlet
+    .target Valstag Ironjaw
+    .isOnQuest 455
 step
     .goto 1437/0,-2430.82,-3306.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Howin Kindfeather|r
@@ -898,27 +939,7 @@ step
     .hs >>Hearth to Innkeeper Helbrek's inn. |cRXP_WARN_Walk instead if you are already nearby|r
     .cooldown item,6948,>0,1
 step
-    .goto 1437/0,-825.46,-3808.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tapoke "Slim" Jahn|r
-    .accept 1250 >>Accept The Missing Diplomat
-    .target Tapoke "Slim" Jahn
-    .isQuestTurnedIn 1249 --any of: The Missing Diplomat
-    .xp <28,1
-step
-    .goto 1437/0,-827.94,-3822.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mikhail|r
-    .turnin 1250 >>Turn in The Missing Diplomat
-    .target Mikhail
-    .isOnQuest 1250
-step
-    .goto 1437/0,-827.94,-3822.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mikhail|r
-    .accept 1264 >>Accept The Missing Diplomat
-    .target Mikhail
-    .isQuestTurnedIn 1250 --any of: The Missing Diplomat
-    .xp <28,1
-step
-    #completewith Along15
+    #completewith Along12
     >>As you go: Kill |cRXP_ENEMY_Bluegill Raiders|r. Loot them for |cRXP_LOOT_Lightforge Ingot|r. |cRXP_WARN_Anything left is finished later|r
     .complete 526,1 --Lightforge Ingot (5)
     .mob Bluegill Raider
@@ -929,7 +950,7 @@ step
     .isQuestTurnedIn 321 --any of: Lightforge Iron
     .xp <20,1
 step
-    #label Along15
+    #label Along12
     #loop
     .goto 1437/0,-885.01,-3899.51,0
     .goto 1437/0,-885.01,-3899.51,40,0
@@ -952,12 +973,12 @@ step
     .target Sylessa Duskwhisper
     .isQuestComplete 98208
 step
-    #completewith Along17
+    #completewith Along14
     >>As you go: Kill |cRXP_ENEMY_Cursed Marines|r. |cRXP_WARN_Anything left is finished later|r
     .complete 289,2 --Cursed Marine slain (5)
     .mob Cursed Marine
 step
-    #label Along17
+    #label Along14
     .goto 1437/0,-959.86,-2979.75
     >>Kill |cRXP_ENEMY_First Mate Snellig|r and loot |cRXP_LOOT_Snellig's Snuffbox|r
     >>Kill |cRXP_ENEMY_Cursed Sailors|r
@@ -1180,7 +1201,6 @@ step
 step
     +|cRXP_WARN_That is all of Wetlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Plea To The Alliance
-    >>|cRXP_FRIENDLY_Dustwallow Marsh|r: The Missing Diplomat
     >>|cRXP_FRIENDLY_Stormwind City|r: Blessed Arm, Cleansing the Eye
     >>|cRXP_FRIENDLY_Arathi Highlands and back here|r: The Thandol Span
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Bring Back a Bang, Accessories of the Lost
@@ -1364,17 +1384,11 @@ step
     .target Ashlan Stonesmirk
     .isQuestComplete 88756
 step
-    .goto 1437/0,-2520.98,-2395.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Essene Villard|r
-    .turnin 88757 >>Turn in Accessories of the Lost
-    .target Essene Villard
-    .isQuestComplete 88757
-step
     #loop
-    .goto 1437/0,-2973.81,-2931.24,0
-    .goto 1437/0,-2973.81,-2931.24,40,0
+    .goto 1437/0,-2937.00,-2969.28,0
     .goto 1437/0,-2937.00,-2969.28,40,0
     .goto 1437/0,-2937.00,-3018.89,40,0
+    .goto 1437/0,-2973.81,-2931.24,40,0
     >>Kill |cRXP_ENEMY_Balgaras the Foul|r and loot |cRXP_LOOT_Ear of Balgaras|r
     .complete 304,1 --Ear of Balgaras (1)
     .mob Balgaras the Foul
@@ -1403,17 +1417,44 @@ step
     .turnin 304 >>Turn in A Grim Task
     .target Longbraid the Grim
 step
-    .goto 1437/0,-2453.16,-2650.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
-    .turnin 633 >>Turn in The Thandol Span
-    .target Rhag Garmason
-    .isQuestComplete 633
+    .goto 1437/0,-827.94,-3822.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mikhail|r
+    .accept 1249 >>Accept The Missing Diplomat
+    .target Mikhail
+    .isQuestTurnedIn 1248 --any of: The Missing Diplomat
+    .xp <28,1
 step
-    .goto 1437/0,-797.34,-3732.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
-    .turnin 98293 >>Turn in Forced Disarmament
-    .target Captain Stoutfist
-    .isQuestComplete 98293
+    .goto 1437/0,-825.46,-3808.83
+    >>Kill |cRXP_ENEMY_Tapoke "Slim" Jahn|r
+    .complete 1249,1 --Tapoke "Slim" Jahn slain (1)
+    .mob Tapoke "Slim" Jahn
+    .isOnQuest 1249
+step
+    .goto 1437/0,-827.94,-3822.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mikhail|r
+    .turnin 1249 >>Turn in The Missing Diplomat
+    .target Mikhail
+    .isOnQuest 1249
+step
+    .goto 1437/0,-825.46,-3808.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tapoke "Slim" Jahn|r
+    .accept 1250 >>Accept The Missing Diplomat
+    .target Tapoke "Slim" Jahn
+    .isQuestTurnedIn 1249 --any of: The Missing Diplomat
+    .xp <28,1
+step
+    .goto 1437/0,-827.94,-3822.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mikhail|r
+    .turnin 1250 >>Turn in The Missing Diplomat
+    .target Mikhail
+    .isOnQuest 1250
+step
+    .goto 1437/0,-827.94,-3822.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mikhail|r
+    .accept 1264 >>Accept The Missing Diplomat
+    .target Mikhail
+    .isQuestTurnedIn 1250 --any of: The Missing Diplomat
+    .xp <28,1
 step
     .goto 1437/0,-797.34,-3732.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
@@ -1421,11 +1462,30 @@ step
     .target Captain Stoutfist
     .isOnQuest 98221
 step
+    .goto 1437/0,-797.34,-3732.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
+    .turnin 98293 >>Turn in Forced Disarmament
+    .target Captain Stoutfist
+    .isQuestComplete 98293
+step
     .goto 1437/0,-718.76,-3687.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylessa Duskwhisper|r
     .turnin 98208 >>Turn in Bloom of the Heavens
     .target Sylessa Duskwhisper
     .isQuestComplete 98208
 step
-    +|cRXP_WARN_End of the Wetlands route.|r
+    .goto 1437/0,-2453.16,-2650.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhag Garmason|r
+    .turnin 633 >>Turn in The Thandol Span
+    .target Rhag Garmason
+    .isQuestComplete 633
+step
+    .goto 1437/0,-2520.98,-2395.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Essene Villard|r
+    .turnin 88757 >>Turn in Accessories of the Lost
+    .target Essene Villard
+    .isQuestComplete 88757
+step
+    +|cRXP_WARN_End of the Wetlands route.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Dustwallow Marsh|r: The Missing Diplomat
 ]])

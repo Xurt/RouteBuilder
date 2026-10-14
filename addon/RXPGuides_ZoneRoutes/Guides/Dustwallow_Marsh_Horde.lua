@@ -71,6 +71,24 @@ step
     .turnin 1321 >>Turn in The Black Shield
     .target Do'gol
 step
+    .goto 1445/1,-3125.40,-3317.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogron|r
+    .accept 1273 >>Accept Questioning Reethe
+    .target Ogron
+step
+    .goto 1445/1,-3204.67,-3365.78
+    >>Question Reethe with Ogron
+    .complete 1273,1 --Question Reethe with Ogron
+step
+    .goto 1445/1,-3436.20,-2646.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Stinky" Ignatz|r
+    .accept 1270 >>Accept Stinky's Escape
+    .target "Stinky" Ignatz
+step
+    .goto 1445/1,-3540.67,-2893.63
+    >>Help Stinky find Bogbean Leaves
+    .complete 1270,1 --Help Stinky find Bogbean Leaves
+step
     .goto 1445/1,-3885.60,-2952.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
     .accept 1218 >>Accept Soothing Spices
@@ -168,10 +186,9 @@ step
 step
     .goto 1445/1,-2887.05,-3149.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krog|r
+    .turnin 1273 >>Turn in Questioning Reethe
     .accept 1276 >>Accept The Black Shield
     .target Krog
-    .isQuestTurnedIn 1273 --any of: Questioning Reethe
-    .xp <30,1
 step
     .goto 1445/1,-2820.37,-3372.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mudcrush Durtfeet|r
@@ -348,6 +365,7 @@ step
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Crystal in the Mountains
     >>|cRXP_FRIENDLY_Orgrimmar|r: Report to Zor
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: The Troll Witchdoctor
+    >>|cRXP_FRIENDLY_The Barrens|r: Stinky's Escape
     >>|cRXP_FRIENDLY_The Hinterlands|r: Cortello's Riddle
     >>|cRXP_FRIENDLY_Thousand Needles|r: Hidden Secrets << Mage
     >>|cRXP_FRIENDLY_Thunder Bluff|r: The Black Shield
@@ -425,19 +443,6 @@ step
 step << Mage
     .goto 1445/1,-3393.15,-4031.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
-    .turnin 1954 >>Turn in The Infernal Orb
-    .target Tabetha
-    .isQuestComplete 1954
-step << Mage
-    .goto 1445/1,-3393.15,-4031.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
-    .accept 1957 >>Accept Mana Surges
-    .target Tabetha
-    .isQuestTurnedIn 1956 --any of: Power in Uldaman
-    .xp <35,1
-step << Mage
-    .goto 1445/1,-3393.15,-4031.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
     .accept 1952 >>Accept Mage's Wand
     .target Tabetha
     .isQuestTurnedIn 1948 --Items of Power
@@ -459,9 +464,22 @@ step << Mage
 step << Mage
     .goto 1445/1,-3393.15,-4031.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
+    .turnin 1954 >>Turn in The Infernal Orb
+    .target Tabetha
+    .isQuestComplete 1954
+step << Mage
+    .goto 1445/1,-3393.15,-4031.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
     .accept 1955 >>Accept The Exorcism
     .target Tabetha
     .isQuestTurnedIn 1954 --any of: The Infernal Orb
+    .xp <35,1
+step << Mage
+    .goto 1445/1,-3393.15,-4031.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
+    .accept 1957 >>Accept Mana Surges
+    .target Tabetha
+    .isQuestTurnedIn 1956 --any of: Power in Uldaman
     .xp <35,1
 step << Mage
     .goto 1445/1,-3381.07,-4026.23
@@ -502,16 +520,16 @@ step << Mage
 step << Mage
     .goto 1445/1,-3393.15,-4031.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
-    .turnin 1958 >>Turn in Celestial Power
-    .target Tabetha
-    .isOnQuest 1958
-step << Mage
-    .goto 1445/1,-3393.15,-4031.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
     .accept 1956 >>Accept Power in Uldaman
     .target Tabetha
     .isQuestTurnedIn 1955 --any of: The Exorcism
     .xp <35,1
+step << Mage
+    .goto 1445/1,-3393.15,-4031.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
+    .turnin 1958 >>Turn in Celestial Power
+    .target Tabetha
+    .isOnQuest 1958
 step << Mage
     .goto 1445/1,-3393.15,-4031.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
@@ -717,6 +735,20 @@ step
     .goto 1445/1,-2925.37,-3191.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Draz'Zilb|r
     .turnin 1172 >>Turn in The Brood of Onyxia
+    .target Draz'Zilb
+step
+    .goto 1445/1,-2880.22,-3132.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Mok'Morokk|r
+    .accept 1173 >>Accept Challenge Overlord Mok'Morokk
+    .target Overlord Mok'Morokk
+step
+    .goto 1445/1,-2886.52,-3133.38
+    >>Drive Overlord Mok'Morokk from Brackenwall Village
+    .complete 1173,1 --Drive Overlord Mok'Morokk from Brackenwall Village
+step
+    .goto 1445/1,-2925.37,-3191.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Draz'Zilb|r
+    .turnin 1173 >>Turn in Challenge Overlord Mok'Morokk
     .target Draz'Zilb
 step
     +|cRXP_WARN_End of the Dustwallow Marsh route.|r

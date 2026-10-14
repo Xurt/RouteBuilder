@@ -2,7 +2,7 @@
 -- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 1, 13).
+-- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 1, 14).
 -- Edit zones/Elwynn Forest.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -574,12 +574,6 @@ step
     .goto 1429/0,63.78,-10008.82
     .vendor >>Vendor, buy as much milk as you can
 step
-    .goto 1429/0,-22.99,-9406.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sam Sarsaparilla|r
-    .turnin 96627 >>Turn in The Adventurer while you are here
-    .isQuestComplete 96627
-    .target Sam Sarsaparilla
-step
     .goto 1429/0,16.23,-9462.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
     .turnin 2158 >>Turn in Rest and Relaxation while you are here
@@ -597,120 +591,6 @@ step
     .turnin 54 >>Turn in Report to Goldshire while you are here
     .isQuestComplete 54
     .target Marshal Dughan
-step << Human Mage/Gnome Mage
-    .xp 10 >>Grind to level 10 (Speak with Jennea needs it)
-step << Human Mage/Gnome Mage
-    .goto 1429/0,34.28,-9471.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
-    .accept 1860 >>Accept Speak with Jennea
-    .target Zaldimar Wefhellt
-step
-    #completewith next
-    .zone 1453 >>Travel to Stormwind City
-    .zoneskip 1453
-step
-    .goto 1453/0,615.09,-8848.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renato Gallina|r
-    .accept 332 >>Accept Wine Shop Advert
-    .target Renato Gallina
-step
-    .goto 1453/0,675.55,-8884.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suzetta Gallina|r
-    .turnin 332 >>Turn in Wine Shop Advert while you are here
-    .isQuestComplete 332
-    .target Suzetta Gallina
-step
-    .goto 1453/0,640.11,-8782.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harlan Bagley|r
-    .accept 333 >>Accept Harlan Needs a Resupply
-    .target Harlan Bagley
-step
-    .goto 1453/0,713.60,-8777.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rema Schneider|r
-    .turnin 333 >>Turn in Harlan Needs a Resupply while you are here
-    .isQuestComplete 333
-    .target Rema Schneider
-step << Dwarf Priest
-    .goto 1453/0,862.33,-8512.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .turnin 5636 >>Turn in Desperate Prayer
-    .target High Priestess Laurena
-    .isOnQuest 5636
-step << Human Priest/Dwarf Priest
-    .goto 1453/0,862.33,-8512.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .turnin 5640 >>Turn in Desperate Prayer
-    .target High Priestess Laurena
-    .isOnQuest 5640
-step << Human Priest/Dwarf Priest
-    .goto 1453/0,862.33,-8512.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .turnin 5639 >>Turn in Desperate Prayer
-    .target High Priestess Laurena
-    .isOnQuest 5639
-step << Human Priest/Dwarf Priest
-    .goto 1453/0,862.33,-8512.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .turnin 5637 >>Turn in Desperate Prayer
-    .target High Priestess Laurena
-    .isOnQuest 5637
-step
-    .goto 1453/0,713.60,-8777.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rema Schneider|r
-    .turnin 333 >>Turn in Harlan Needs a Resupply
-    .accept 334 >>Accept Package for Thurman
-    .target Rema Schneider
-step
-    .goto 1453/0,675.55,-8884.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suzetta Gallina|r
-    .turnin 332 >>Turn in Wine Shop Advert
-    .target Suzetta Gallina
-step
-    .goto 1453/0,809.17,-8961.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Schneider|r
-    .turnin 334 >>Turn in Package for Thurman
-    .target Thurman Schneider
-step
-    .goto 1453/0,861.81,-8989.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
-    .turnin 1860 >>Turn in Speak with Jennea << Human Mage/Gnome Mage
-    .accept 84397 >>Accept Northern Kalimdor - A Comprehensive Guide
-    .accept 84398 >>Accept A Study of the Light
-    .accept 84399 >>Accept Ka-Boom!
-    .accept 84402 >>Accept Necromancy 101
-    .target Jennea Cannon
-step
-    .goto 1453/0,861.81,-8989.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
-    >>|cRXP_WARN_The database has no objectives for Northern Kalimdor - A Comprehensive Guide. Skip this step if the quest is not finished|r
-    .turnin 84397 >>Turn in Northern Kalimdor - A Comprehensive Guide
-    .target Jennea Cannon
-    .isOnQuest 84397
-step
-    .goto 1453/0,861.81,-8989.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
-    >>|cRXP_WARN_The database has no objectives for A Study of the Light. Skip this step if the quest is not finished|r
-    .turnin 84398 >>Turn in A Study of the Light
-    .target Jennea Cannon
-    .isOnQuest 84398
-step
-    .goto 1453/0,861.81,-8989.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
-    >>|cRXP_WARN_The database has no objectives for Ka-Boom!. Skip this step if the quest is not finished|r
-    .turnin 84399 >>Turn in Ka-Boom!
-    .target Jennea Cannon
-    .isOnQuest 84399
-step
-    .goto 1453/0,861.81,-8989.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
-    >>|cRXP_WARN_The database has no objectives for Necromancy 101. Skip this step if the quest is not finished|r
-    .turnin 84402 >>Turn in Necromancy 101
-    .target Jennea Cannon
-    .isOnQuest 84402
-step
-    #completewith next
-    .zone 1429 >>Leave Stormwind City for Elwynn Forest
-    .zoneskip 1429
 step
     .goto 1429/0,-22.99,-9406.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sam Sarsaparilla|r
@@ -770,6 +650,7 @@ step
     .goto 1429/0,73.85,-9465.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 54 >>Turn in Report to Goldshire
+    .accept 62 >>Accept The Fargodeep Mine
     .target Marshal Dughan
 step
     .goto 1429/0,73.85,-9465.59
@@ -805,6 +686,112 @@ step
     >>Talk to |cRXP_FRIENDLY_Zaldimar|r through the wall
     .trainer >> Train your class spells (Fireball R2, Fire Blast)
     .target Zaldimar Wefhellt
+step << Human Mage/Gnome Mage
+    .xp 10 >>Grind to level 10 (Speak with Jennea needs it)
+step << Human Mage/Gnome Mage
+    .goto 1429/0,34.28,-9471.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
+    .accept 1860 >>Accept Speak with Jennea
+    .target Zaldimar Wefhellt
+step
+    #completewith next
+    .zone 1453 >>Travel to Stormwind City
+    .zoneskip 1453
+step
+    .goto 1453/0,615.09,-8848.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renato Gallina|r
+    .accept 332 >>Accept Wine Shop Advert
+    .target Renato Gallina
+step
+    .goto 1453/0,640.11,-8782.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harlan Bagley|r
+    .accept 333 >>Accept Harlan Needs a Resupply
+    .target Harlan Bagley
+step
+    .goto 1453/0,713.60,-8777.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rema Schneider|r
+    .turnin 333 >>Turn in Harlan Needs a Resupply
+    .accept 334 >>Accept Package for Thurman
+    .target Rema Schneider
+step
+    .goto 1453/0,675.55,-8884.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suzetta Gallina|r
+    .turnin 332 >>Turn in Wine Shop Advert
+    .target Suzetta Gallina
+step
+    .goto 1453/0,809.17,-8961.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Schneider|r
+    .turnin 334 >>Turn in Package for Thurman
+    .target Thurman Schneider
+step
+    .goto 1453/0,861.81,-8989.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
+    .turnin 1860 >>Turn in Speak with Jennea << Human Mage/Gnome Mage
+    .accept 84397 >>Accept Northern Kalimdor - A Comprehensive Guide
+    .accept 84398 >>Accept A Study of the Light
+    .accept 84399 >>Accept Ka-Boom!
+    .accept 84402 >>Accept Necromancy 101
+    .target Jennea Cannon
+step
+    .goto 1453/0,861.81,-8989.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
+    >>|cRXP_WARN_The database has no objectives for Northern Kalimdor - A Comprehensive Guide. Skip this step if the quest is not finished|r
+    .turnin 84397 >>Turn in Northern Kalimdor - A Comprehensive Guide
+    .target Jennea Cannon
+    .isOnQuest 84397
+step
+    .goto 1453/0,861.81,-8989.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
+    >>|cRXP_WARN_The database has no objectives for A Study of the Light. Skip this step if the quest is not finished|r
+    .turnin 84398 >>Turn in A Study of the Light
+    .target Jennea Cannon
+    .isOnQuest 84398
+step
+    .goto 1453/0,861.81,-8989.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
+    >>|cRXP_WARN_The database has no objectives for Ka-Boom!. Skip this step if the quest is not finished|r
+    .turnin 84399 >>Turn in Ka-Boom!
+    .target Jennea Cannon
+    .isOnQuest 84399
+step
+    .goto 1453/0,861.81,-8989.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
+    >>|cRXP_WARN_The database has no objectives for Necromancy 101. Skip this step if the quest is not finished|r
+    .turnin 84402 >>Turn in Necromancy 101
+    .target Jennea Cannon
+    .isOnQuest 84402
+step << Dwarf Priest
+    .goto 1453/0,862.33,-8512.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
+    .turnin 5636 >>Turn in Desperate Prayer
+    .target High Priestess Laurena
+    .isOnQuest 5636
+step << Human Priest/Dwarf Priest
+    .goto 1453/0,862.33,-8512.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
+    .turnin 5640 >>Turn in Desperate Prayer
+    .target High Priestess Laurena
+    .isOnQuest 5640
+step << Human Priest/Dwarf Priest
+    .goto 1453/0,862.33,-8512.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
+    .turnin 5637 >>Turn in Desperate Prayer
+    .target High Priestess Laurena
+    .isOnQuest 5637
+step << Human Priest/Dwarf Priest
+    .goto 1453/0,862.33,-8512.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
+    .turnin 5639 >>Turn in Desperate Prayer
+    .target High Priestess Laurena
+    .isOnQuest 5639
+step
+    #completewith next
+    .zone 1429 >>Leave Stormwind City for Elwynn Forest
+    .zoneskip 1429
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Farley's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
 step
     .goto 1429/0,-4.59,-9466.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tomas|r
@@ -1043,6 +1030,10 @@ step
     .accept 87 >>Accept Goldtooth
     .target Billy Maclure
 step
+    .goto 1429/0,127.65,-9843.56
+    >>Scout through the Fargodeep Mine
+    .complete 62,1 --Scout through the Fargodeep Mine
+step
     .goto 1429/0,87.73,-9745.65
     >>Kill |cRXP_ENEMY_Goldtooth|r and loot |cRXP_LOOT_Bernice's Necklace|r
     .complete 87,1 --Bernice's Necklace (1)
@@ -1083,7 +1074,9 @@ step
 step
     .goto 1429/0,73.85,-9465.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 62 >>Turn in The Fargodeep Mine
     .turnin 40 >>Turn in A Fishy Peril
+    .accept 76 >>Accept The Jasperlode Mine
     .accept 35 >>Accept Further Concerns
     .target Marshal Dughan
 step
@@ -1185,13 +1178,13 @@ step
     .accept 99127 >>Accept A Net Disaster
     .target Jason Mathers
 step
-    #completewith Along94
+    #completewith Along95
     >>As you go: Kill |cRXP_ENEMY_Murlocs|r and |cRXP_ENEMY_Murloc Streamrunners|r. Loot them for |cRXP_LOOT_Crystal Kelp Frond|r. |cRXP_WARN_Anything left is finished later|r
     .complete 112,1 --Crystal Kelp Frond (4)
     .mob Murloc
     .mob Murloc Streamrunner
 step
-    #label Along94
+    #label Along95
     #loop
     .goto 1429/0,-141.00,-9349.16,0
     .goto 1429/0,-141.00,-9349.16,40,0
@@ -1250,6 +1243,10 @@ step
     .accept 99129 >>Accept A Man About a Murloc
     .target Jason Mathers
 step
+    .goto 1429/0,-614.07,-9170.02
+    >>Scout through the Jasperlode Mine
+    .complete 76,1 --Scout through the Jasperlode Mine
+step
     .goto 1429/0,-594.98,-9072.11
     >>Kill |cRXP_ENEMY_Geosculptor Yip|r and loot |cRXP_LOOT_Geomancy for Curious Young Wizards|r
     .complete 91777,1 --Geomancy for Curious Young Wizards (1)
@@ -1291,7 +1288,7 @@ step
     .target Rallic Finn
     .subzoneskip 88,1
 step
-    #completewith Along107
+    #completewith Along109
     >>As you go: Pick up |cRXP_PICK_Bundle of Wood|r from the ground. |cRXP_WARN_Anything left is finished later|r
     .complete 5545,1 --Bundle of Wood (8)
 step
@@ -1300,18 +1297,23 @@ step
     .accept 91732 >>Accept Good Steel
     .target Hagar Lowe
 step
-    #label Along107
+    #label Along109
     .goto 1429/0,-1234.31,-9224.18
     >>Click the |cRXP_PICK_Rolf's corpse|r
     .turnin 45 >>Turn in Discover Rolf's Fate
     .accept 71 >>Accept Report to Thomas
 step
-    #completewith Along108
+    #completewith Along110
+    >>As you go: Kill |cRXP_ENEMY_Prowlers|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 52,1 --Prowler slain (8)
+    .mob Prowler
+step
+    #completewith Along110
     >>As you go: Kill |cRXP_ENEMY_Young Forest Bears|r. |cRXP_WARN_Anything left is finished later|r
     .complete 52,2 --Young Forest Bear slain (5)
     .mob Young Forest Bear
 step
-    #label Along108
+    #label Along110
     #loop
     .goto 1429/0,-1207.93,-9318.15,0
     .goto 1429/0,-1207.93,-9318.15,40,0
@@ -1347,12 +1349,12 @@ step
     .isQuestComplete 71
     .target Guard Thomas
 step
-    #completewith Along112
+    #completewith Along114
     >>As you go: Kill |cRXP_ENEMY_Prowlers|r. |cRXP_WARN_Anything left is finished later|r
     .complete 52,1 --Prowler slain (8)
     .mob Prowler
 step
-    #label Along112
+    #label Along114
     .goto 1429/0,-1050.35,-9707.92
     >>Pick up |cRXP_PICK_Waterlogged Saw|r from the ground
     .complete 91733,2 --Waterlogged Saw (1)
@@ -1363,10 +1365,35 @@ step
     .complete 91733,1 --Waterlogged Axe (1)
     .complete 91733,3 --Waterlogged Toolbox (1)
 step
-    .goto 1429/0,-658.15,-9619.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blixie Fitzwink|r
-    .accept 91725 >>Accept Stolen Enchanting Supplies
-    .target Blixie Fitzwink
+    .goto 1429/0,-724.10,-9556.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r
+    .accept 91723 >>Accept Delicate Instruments
+    .target Hamish Bergwort
+step
+    .goto 1429/0,-711.95,-9256.35
+    >>Kill |cRXP_ENEMY_Kobold Geomancers|r
+    .complete 91723,1 --Kobold Geomancer slain (8)
+    .mob Kobold Geomancer
+step
+    #loop
+    .goto 1429/0,-912.56,-8908.47,0
+    .goto 1429/0,-912.56,-8908.47,40,0
+    .goto 1429/0,-890.70,-8885.09,40,0
+    .goto 1429/0,-918.81,-8847.83,40,0
+    .goto 1429/0,-943.80,-8806.39,40,0
+    .goto 1429/0,-1035.08,-8809.63,40,0
+    .goto 1429/0,-1081.94,-8803.62,40,0
+    .goto 1429/0,-1075.34,-8874.91,40,0
+    .goto 1429/0,-1019.46,-8865.18,40,0
+    .goto 1429/0,-968.10,-8889.95,40,0
+    >>Kill |cRXP_ENEMY_Prowlers|r
+    .complete 52,1 --Prowler slain (8)
+    .mob Prowler
+step
+    .goto 1429/0,-1310.67,-9319.07
+    >>Kill |cRXP_ENEMY_Young Forest Bears|r
+    .complete 52,2 --Young Forest Bear slain (5)
+    .mob Young Forest Bear
 step
     #loop
     .goto 1429/0,-606.09,-9177.88,0
@@ -1377,69 +1404,11 @@ step
     >>Pick up |cRXP_PICK_Mining Tools|r from the ground
     .complete 91732,1 --Mining Tools (4)
 step
-    #loop
-    .goto 1429/0,-720.62,-8890.88,0
-    .goto 1429/0,-720.62,-8890.88,40,0
-    .goto 1429/0,-706.74,-8874.67,40,0
-    .goto 1429/0,-772.69,-8837.64,40,0
-    .goto 1429/0,-817.81,-8846.90,40,0
-    .goto 1429/0,-876.81,-8826.07,40,0
-    .goto 1429/0,-828.22,-8897.82,40,0
-    .goto 1429/0,-842.10,-8997.35,40,0
-    .goto 1429/0,-807.40,-8927.91,40,0
-    .goto 1429/0,-769.22,-8909.39,40,0
-    >>Pick up |cRXP_PICK_Stolen Enchanting Supplies|r from the ground
-    .complete 91725,1 --Stolen Enchanting Supplies (5)
-step
-    #loop
-    .goto 1429/0,-890.70,-8885.09,0
-    .goto 1429/0,-890.70,-8885.09,40,0
-    .goto 1429/0,-912.56,-8908.47,40,0
-    .goto 1429/0,-968.10,-8889.95,40,0
-    .goto 1429/0,-1019.46,-8865.18,40,0
-    .goto 1429/0,-1075.34,-8874.91,40,0
-    .goto 1429/0,-1081.94,-8803.62,40,0
-    .goto 1429/0,-1035.08,-8809.63,40,0
-    .goto 1429/0,-943.80,-8806.39,40,0
-    .goto 1429/0,-918.81,-8847.83,40,0
-    >>Kill |cRXP_ENEMY_Prowlers|r
-    .complete 52,1 --Prowler slain (8)
-    .mob Prowler
-step
-    .goto 1429/0,-1310.67,-9319.07
-    >>Kill |cRXP_ENEMY_Young Forest Bears|r
-    .complete 52,2 --Young Forest Bear slain (5)
-    .mob Young Forest Bear
-step
-    .goto 1429/0,-1326.98,-9416.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hagar Lowe|r
-    .turnin 91732 >>Turn in Good Steel
-    .target Hagar Lowe
-step
-    #completewith Drop91740x1
-    >>|cRXP_LOOT_Croaky's Head|r can drop from |cRXP_ENEMY_Croaky|r. Use it to start the quest if you get one
-    .collect 247826,1,91740 --Croaky's Head (1)
-    .accept 91740 >>Accept Croaky's Head
-    .use 247826
-step
-    #label Drop91740x1
-    #loop
-    .goto 1429/0,-1188.49,-9883.60,0
-    .goto 1429/0,-1188.49,-9883.60,40,0
-    .goto 1429/0,-1239.86,-9918.09,40,0
-    .goto 1429/0,-1407.50,-9944.71,40,0
-    .goto 1429/0,-1342.60,-9958.83,40,0
-    .goto 1429/0,-1278.73,-9950.49,40,0
-    .goto 1429/0,-1235.35,-9962.76,40,0
-    .goto 1429/0,-1206.54,-9925.03,40,0
-    .goto 1429/0,-1189.53,-9916.93,40,0
-    .goto 1429/0,-1156.56,-9918.55,40,0
-    >>Kill |cRXP_ENEMY_Murloc Foragers|r, |cRXP_ENEMY_Murloc Lurkers|r, |cRXP_ENEMY_Croakies|r and |cRXP_ENEMY_Elder Finseers|r. Loot them for |cRXP_LOOT_Torn Murloc Fin|r
-    .complete 46,1 --Torn Murloc Fin (8)
-    .mob Murloc Forager
-    .mob Murloc Lurker
-    .mob Croaky
-    .mob Elder Finseer
+    .goto 1429/0,-724.10,-9556.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r
+    .turnin 91723 >>Turn in Delicate Instruments
+    .accept 91724 >>Accept Delicate Instruments
+    .target Hamish Bergwort
 step
     #completewith Drop184x1
     >>|cRXP_LOOT_Westfall Deed|r can drop from |cRXP_ENEMY_Defias Bandit|r, |cRXP_ENEMY_Defias Rogue Wizard|r, |cRXP_ENEMY_Defias Ambusher|r. Use it to start the quest if you get one
@@ -1449,16 +1418,16 @@ step
 step
     #label Drop184x1
     #loop
-    .goto 1429/0,-927.14,-9805.83,0
-    .goto 1429/0,-927.14,-9805.83,40,0
-    .goto 1429/0,-918.81,-9826.66,40,0
-    .goto 1429/0,-840.02,-9836.62,40,0
-    .goto 1429/0,-828.91,-9802.59,40,0
-    .goto 1429/0,-816.07,-9744.73,40,0
+    .goto 1429/0,-846.62,-9714.17,0
     .goto 1429/0,-846.62,-9714.17,40,0
-    .goto 1429/0,-939.63,-9715.10,40,0
-    .goto 1429/0,-917.42,-9766.95,40,0
+    .goto 1429/0,-816.07,-9744.73,40,0
+    .goto 1429/0,-828.91,-9802.59,40,0
+    .goto 1429/0,-840.02,-9836.62,40,0
+    .goto 1429/0,-918.81,-9826.66,40,0
+    .goto 1429/0,-927.14,-9805.83,40,0
     .goto 1429/0,-882.37,-9773.89,40,0
+    .goto 1429/0,-917.42,-9766.95,40,0
+    .goto 1429/0,-939.63,-9715.10,40,0
     >>Kill |cRXP_ENEMY_Princess|r and loot |cRXP_LOOT_Brass Collar|r
     >>Kill |cRXP_ENEMY_Defias Bandits|r, |cRXP_ENEMY_Morgan the Collectors|r, |cRXP_ENEMY_Defias Rogue Wizards|r and |cRXP_ENEMY_Defias Ambushers|r. Loot them for |cRXP_LOOT_Red Linen Bandana|r
     .complete 88,1 --Brass Collar (1)
@@ -1468,21 +1437,6 @@ step
     .mob Morgan the Collector
     .mob Defias Rogue Wizard
     .mob Defias Ambusher
-step
-    .goto 1429/0,-658.15,-9619.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blixie Fitzwink|r
-    .turnin 91725 >>Turn in Stolen Enchanting Supplies
-    .target Blixie Fitzwink
-step
-    .goto 1429/0,-724.10,-9556.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r
-    .accept 91723 >>Accept Delicate Instruments
-    .target Hamish Bergwort
-step
-    .goto 1429/0,-711.95,-9256.35
-    >>Kill |cRXP_ENEMY_Kobold Geomancers|r
-    .complete 91723,1 --Kobold Geomancer slain (8)
-    .mob Kobold Geomancer
 step
     .goto 1429/0,-1031.96,-9610.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
@@ -1508,6 +1462,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
     .turnin 83 >>Turn in Red Linen Goods
     .target Sara Timberlain
+step
+    .goto 1429/0,-1326.98,-9416.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hagar Lowe|r
+    .turnin 91732 >>Turn in Good Steel
+    .target Hagar Lowe
 step
     .goto 1429/0,-1406.11,-9775.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merell Ross|r
@@ -1547,6 +1506,8 @@ step
     .goto 1429/0,73.85,-9465.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 39 >>Turn in Deliver Thomas' Report
+    .turnin 76 >>Turn in The Jasperlode Mine
+    .accept 239 >>Accept Westbrook Garrison Needs Help!
     .accept 59 >>Accept Cloth and Leather Armor
     .accept 109 >>Accept Report to Gryan Stoutmantle
     .target Marshal Dughan
@@ -1558,13 +1519,18 @@ step
     .money >0.75
 step << Warlock/Warrior/Hunter
     .xp 10 >> Grind to 10
-step
-    .goto 1429/0,73.85,-9465.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
-    .accept 239 >>Accept Westbrook Garrison Needs Help!
-    .target Marshal Dughan
-    .isQuestTurnedIn 76 --any of: The Jasperlode Mine
-    .xp <6,1
+step << Rogue
+    .goto 1429/0,12.76,-9465.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
+    .accept 2205 >>Accept Seek out SI: 7
+    .target Keryn Sylvius
+    .xp <10,1
+step << Warlock
+    .goto 1429/0,-8.76,-9473.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remen Marcot|r
+    .accept 1685 >>Accept Gakin's Summons
+    .target Remen Marcot
+    .xp <10,1
 step << Warrior
     .goto 1429/0,109.25,-9461.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
@@ -1606,6 +1572,18 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
     .trainer >> Train your class spells
+step << NightElf Priest
+    .goto 1429/0,33.24,-9460.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
+    .accept 5628 >>Accept Returning Home
+    .target Priestess Josetta
+    .xp <10,1
+step << Human Priest
+    .goto 1429/0,33.24,-9460.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
+    .accept 94774 >>Accept Divine Grace
+    .target Priestess Josetta
+    .xp <10,1
 step << Hunter
     #loop
     .goto 1429/0,-490.86,-9623.67,0
@@ -1628,6 +1606,18 @@ step << Hunter
     .turnin 94792 >>Turn in Taming the Beast
     .accept 94863 >>Accept Taming the Beast
     .target Josephine Carson
+step << NightElf Priest
+    .goto 1429/0,33.24,-9460.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
+    .accept 5628 >>Accept Returning Home
+    .target Priestess Josetta
+    .xp <10,1
+step << Human Priest
+    .goto 1429/0,33.24,-9460.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
+    .accept 94774 >>Accept Divine Grace
+    .target Priestess Josetta
+    .xp <10,1
 step << Hunter
     #loop
     .goto 1429/0,-561.31,-9321.39,0
@@ -1647,6 +1637,18 @@ step << Hunter
     .turnin 94863 >>Turn in Taming the Beast
     .accept 94864 >>Accept Taming the Beast
     .target Josephine Carson
+step << NightElf Priest
+    .goto 1429/0,33.24,-9460.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
+    .accept 5628 >>Accept Returning Home
+    .target Priestess Josetta
+    .xp <10,1
+step << Human Priest
+    .goto 1429/0,33.24,-9460.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
+    .accept 94774 >>Accept Divine Grace
+    .target Priestess Josetta
+    .xp <10,1
 step << Hunter
     #loop
     .goto 1429/0,-1463.38,-9439.43,0
@@ -1709,6 +1711,24 @@ step
     .turnin 99129 >>Turn in A Man About a Murloc
     .accept 99130 >>Accept An Enticing Offer
     .target Remy "Two Times"
+step << NightElf Priest
+    .goto 1429/0,33.24,-9460.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
+    .accept 5628 >>Accept Returning Home
+    .target Priestess Josetta
+    .xp <10,1
+step << Human Priest
+    .goto 1429/0,33.24,-9460.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
+    .accept 94774 >>Accept Divine Grace
+    .target Priestess Josetta
+    .xp <10,1
+step << Rogue
+    .goto 1429/0,12.76,-9465.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
+    .accept 2205 >>Accept Seek out SI: 7
+    .target Keryn Sylvius
+    .xp <10,1
 step
     #loop
     .goto 1429/0,105.43,-9932.44,0
@@ -1767,6 +1787,23 @@ step
     .turnin 88 >>Turn in Princess Must Die!
     .target Ma Stonefield
 step
+    #completewith Drop184x2
+    >>|cRXP_LOOT_Westfall Deed|r can drop from |cRXP_ENEMY_Defias Bandit|r, |cRXP_ENEMY_Defias Rogue Wizard|r, |cRXP_ENEMY_Defias Ambusher|r. Use it to start the quest if you get one
+    .collect 1972,1,184 --Westfall Deed (1)
+    .accept 184 >>Accept Furlbrow's Deed
+    .use 1972
+step
+    #label Drop184x2
+    #loop
+    .goto 1429/0,529.22,-9389.67,0
+    .goto 1429/0,529.22,-9389.67,40,0
+    .goto 1429/0,503.88,-9352.17,40,0
+    .goto 1429/0,524.36,-9348.70,40,0
+    .goto 1429/0,552.13,-9321.16,40,0
+    >>Kill |cRXP_ENEMY_Defias Rogue Wizards|r
+    .complete 91724,1 --Defias Rogue Wizard slain (6)
+    .mob Defias Rogue Wizard
+step
     .goto 1429/0,699.64,-9633.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant De Vries|r
     .accept 91738 >>Accept An Apple Treat
@@ -1775,25 +1812,12 @@ step
     .goto 1429/0,694.43,-9662.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
     .turnin 239 >>Turn in Westbrook Garrison Needs Help!
-    .target Deputy Rainer
-    .isOnQuest 239
-step
-    .goto 1429/0,694.43,-9662.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
     .accept 11 >>Accept Riverpaw Gnoll Bounty
     .target Deputy Rainer
-    .isQuestTurnedIn 76 --any of: The Jasperlode Mine
-    .xp <6,1
 step
     .goto 1429/0,683.33,-9668.35
     >>Click the |cRXP_PICK_Wanted Poster|r
     .accept 176 >>Accept Wanted:  "Hogger"
-step
-    .goto 1429/0,699.64,-9633.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant De Vries|r
-    .turnin 91738 >>Turn in An Apple Treat
-    .target Sergeant De Vries
-    .isQuestComplete 91738
 step
     #completewith Drop123x1
     >>|cRXP_LOOT_Gold Pickup Schedule|r can drop from |cRXP_ENEMY_Riverpaw Runt|r, |cRXP_ENEMY_Gruff Swiftbite|r, |cRXP_ENEMY_Hogger|r. Use it to start the quest if you get one
@@ -1802,14 +1826,72 @@ step
     .use 1307
 step
     #label Drop123x1
-    .goto 1429/0,667.01,-10089.83
+    #loop
+    .goto 1429/0,653.82,-9990.77,0
+    .goto 1429/0,653.82,-9990.77,40,0
+    .goto 1429/0,581.28,-10010.67,40,0
+    .goto 1429/0,542.76,-10091.91,40,0
+    .goto 1429/0,573.65,-10127.10,40,0
+    .goto 1429/0,616.34,-10147.00,40,0
+    .goto 1429/0,653.48,-10120.15,40,0
+    .goto 1429/0,686.45,-10117.84,40,0
+    .goto 1429/0,667.01,-10089.83,40,0
+    .goto 1429/0,629.18,-10071.31,40,0
     >>Kill |cRXP_ENEMY_Hogger|r and loot |cRXP_LOOT_Huge Gnoll Claw|r
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for |cRXP_LOOT_Painted Gnoll Armband|r
     .complete 176,1 --Huge Gnoll Claw (1)
+    .complete 11,1 --Painted Gnoll Armband (8)
     .mob Hogger
+    .mob Riverpaw Runt
+    .mob Riverpaw Outrunner
+step
+    .goto 1429/0,694.43,-9662.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
+    .turnin 11 >>Turn in Riverpaw Gnoll Bounty
+    .target Deputy Rainer
+step
+    .goto 1429/0,699.64,-9633.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant De Vries|r
+    .turnin 91738 >>Turn in An Apple Treat
+    .target Sergeant De Vries
+    .isQuestComplete 91738
+step << Rogue
+    .xp 10 >>Grind to level 10 (Seek out SI: 7 needs it)
+step << Rogue
+    .goto 1429/0,12.76,-9465.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
+    .accept 2205 >>Accept Seek out SI: 7
+    .target Keryn Sylvius
+step
+    .goto 1429/0,73.85,-9465.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 176 >>Turn in Wanted:  "Hogger" while you are here
+    .isQuestComplete 176
+    .target Marshal Dughan
 step
     #completewith next
     .zone 1453 >>Travel to Stormwind City
     .zoneskip 1453
+step << NightElf Druid
+    .xp 10 >>Grind to level 10 (Heeding the Call needs it)
+step << NightElf Druid
+    .goto 1453/0,1095.51,-8741.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
+    .accept 5924 >>Accept Heeding the Call
+    .target Theridran
+step << Skyborne Druid
+    .goto 1453/0,1100.20,-8776.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
+    .turnin 94912 >>Turn in Child of Nature
+    .target Sheldras Moontree
+    .isOnQuest 94912
+step << Skyborne Druid
+    .xp 10 >>Grind to level 10 (Moonglade needs it)
+step << Skyborne Druid
+    .goto 1453/0,1100.20,-8776.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
+    .accept 94914 >>Accept Moonglade
+    .target Sheldras Moontree
 step << Warlock
     .goto 1453/0,1041.47,-8983.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
@@ -1822,67 +1904,74 @@ step << Warlock
     .turnin 1685 >>Turn in Gakin's Summons while you are here
     .isQuestComplete 1685
     .target Gakin the Darkbinder
-step << Skyborne Druid
-    .goto 1453/0,1100.20,-8776.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
-    .turnin 94912 >>Turn in Child of Nature
-    .target Sheldras Moontree
-    .isOnQuest 94912
-step << Skyborne Druid
-    .goto 1453/0,1100.20,-8776.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
-    .accept 94914 >>Accept Moonglade
-    .target Sheldras Moontree
-    .xp <10,1
-step << NightElf Druid
-    .goto 1453/0,1095.51,-8741.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
-    .accept 5924 >>Accept Heeding the Call
-    .target Theridran
-    .xp <10,1
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
+    .target Woo Ping
+    .goto 1453/0,613.0,-8796.03
+    .trainer >>Train Staves
 step
     .goto 1453/0,1266.48,-8541.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilbert Gray|r
     .accept 95065 >>Accept Fishin' Time
     .target Gilbert Gray
 step
-    #completewith next
-    .zone 1429 >>Leave Stormwind City for Elwynn Forest
-    .zoneskip 1429
+    .goto 1453/0,625.51,-8857.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Pestle|r
+    .turnin 61 >>Turn in Shipment to Stormwind while you are here
+    .isQuestComplete 61
+    .target Morgan Pestle
+step << Human Priest
+    .xp 10 >>Grind to level 10 (Divine Grace needs it)
+step << Dwarf Priest
+    .xp 10 >>Grind to level 10 (Desperate Prayer needs it)
 step
-    #completewith Drop123x2
-    >>|cRXP_LOOT_Gold Pickup Schedule|r can drop from |cRXP_ENEMY_Riverpaw Runt|r, |cRXP_ENEMY_Gruff Swiftbite|r, |cRXP_ENEMY_Hogger|r. Use it to start the quest if you get one
-    .collect 1307,1,123 --Gold Pickup Schedule (1)
-    .accept 123 >>Accept The Collector
-    .use 1307
+    .goto 1453/0,862.33,-8512.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
+    .accept 94773 >>Accept Divine Grace << Human Priest
+    .accept 5634 >>Accept Desperate Prayer << Dwarf Priest
+    .target High Priestess Laurena
+step << Dwarf Priest
+    .goto 1453/0,862.33,-8512.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
+    >>|cRXP_WARN_The database has no objectives for Desperate Prayer. Skip this step if the quest is not finished|r
+    .turnin 5634 >>Turn in Desperate Prayer
+    .target High Priestess Laurena
+    .isOnQuest 5634
+step << Priest
+    .goto 1453/0,862.89,-8519.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
+    .train 8092 >> Train your class spells
+    .target High Priestess Laurena
+    .train 13908,1
+step << Priest
+    .goto 1453/0,862.89,-8519.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
+    .trainer >> Train your class spells
+    .target High Priestess Laurena
+    .train 13908,3
+step << Warrior/Paladin/Rogue
+    .goto 1453/0,624.15,-8431.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaita Deepforge|r
+    .collect 2901,1,432,1 >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_You'll train|r |T134708:0|t[Mining] |cRXP_WARN_later|r
+    .target Kaita Deepforge
+    .train 2018,3
 step
-    #label Drop123x2
-    #loop
-    .goto 1429/0,653.82,-9990.77,0
-    .goto 1429/0,653.82,-9990.77,40,0
-    .goto 1429/0,581.28,-10010.67,40,0
-    .goto 1429/0,542.76,-10091.91,40,0
-    .goto 1429/0,573.65,-10127.10,40,0
-    .goto 1429/0,616.34,-10147.00,40,0
-    .goto 1429/0,653.48,-10120.15,40,0
-    .goto 1429/0,686.45,-10117.84,40,0
-    .goto 1429/0,673.96,-10089.83,40,0
-    .goto 1429/0,629.18,-10071.31,40,0
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for |cRXP_LOOT_Painted Gnoll Armband|r
-    .complete 11,1 --Painted Gnoll Armband (8)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-    .isOnQuest 11
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fp Stormwind >> Get the Stormwind City flight path
+    .target Dungar Longdrink
+step << Human Paladin
+    .goto 1453/0,845.83,-8545.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 3681 >>Turn in Tome of Divinity
+    .target Duthorian Rall
+    .isOnQuest 3681
 step
-    .goto 1429/0,694.43,-9662.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
-    .turnin 11 >>Turn in Riverpaw Gnoll Bounty
-    .target Deputy Rainer
-    .isOnQuest 11
-step
-    #completewith next
-    .zone 1453 >>Travel to Stormwind City
-    .zoneskip 1453
+    .goto 1453/0,598.23,-8821.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy |cRXP_LOOT_Nightcrawlers|r from |cRXP_FRIENDLY_Edna Mullby|r
+    .complete 95065,1 --Nightcrawlers (3)
+    .target Edna Mullby
 step
     .goto 1453/0,625.51,-8857.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Pestle|r
@@ -1935,33 +2024,16 @@ step << skip
     >>Remember you may want money for Healing Potions (3s each), Bronze Tube (8s each), and level 5 food (20c per 5)
     .target Jennea Cannon
 step
-    .goto 1453/0,598.23,-8821.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy |cRXP_LOOT_Nightcrawlers|r from |cRXP_FRIENDLY_Edna Mullby|r
-    .complete 95065,1 --Nightcrawlers (3)
-    .target Edna Mullby
-step << Human Paladin
-    .goto 1453/0,845.83,-8545.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
-    .turnin 3681 >>Turn in Tome of Divinity
-    .target Duthorian Rall
-    .isOnQuest 3681
-step << Dwarf Priest
-    .goto 1453/0,862.33,-8512.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .accept 5634 >>Accept Desperate Prayer
-    .target High Priestess Laurena
-    .xp <10,1
-step << Human Priest
-    .goto 1453/0,862.33,-8512.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .accept 94773 >>Accept Divine Grace
-    .target High Priestess Laurena
-    .xp <10,1
-step
     .goto 1453/0,1266.48,-8541.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilbert Gray|r
     .turnin 95065 >>Turn in Fishin' Time
     .target Gilbert Gray
+step << Rogue
+    .goto 1453/0,362.28,-8815.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
+    .turnin 2205 >>Turn in Seek out SI: 7
+    .accept 2206 >>Accept Snatch and Grab
+    .target Master Mathias Shaw
 step << Human Mage/Gnome Mage/Skyborne Mage
     .xp 10 >>Grind to level 10 (Mirror Lake needs it)
 step << Human Mage/Gnome Mage/Skyborne Mage
@@ -2000,84 +2072,12 @@ step << !Hunter
     .trainer >>Train 1h Swords and Staves << Warlock
     .trainer >>Train 2h Swords << Warrior/Paladin
     .target Woo Ping
-step << Dwarf Hunter
-    .xp 10 >>Grind to level 10 (The Hunter's Path needs it)
-step << Dwarf Hunter
-    .goto 1453/0,552.71,-8415.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
-    .accept 6076 >>Accept The Hunter's Path
-    .target Einris Brightspear
-step << NightElf Hunter
-    .goto 1453/0,552.71,-8415.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
-    .accept 6073 >>Accept The Hunter's Path
-    .target Einris Brightspear
-    .xp <10,1
-step << Dwarf Priest
-    .xp 10 >>Grind to level 10 (Desperate Prayer needs it)
-step << Dwarf Priest
-    .goto 1453/0,862.33,-8512.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .accept 5634 >>Accept Desperate Prayer
-    .target High Priestess Laurena
-step << Dwarf Priest
-    .goto 1453/0,862.33,-8512.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    >>|cRXP_WARN_The database has no objectives for Desperate Prayer. Skip this step if the quest is not finished|r
-    .turnin 5634 >>Turn in Desperate Prayer
-    .target High Priestess Laurena
-    .isOnQuest 5634
-step << Priest
-    .goto 1453/0,862.89,-8519.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .train 8092 >> Train your class spells
-    .target High Priestess Laurena
-    .train 13908,1
-step << Priest
-    .goto 1453/0,862.89,-8519.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .trainer >> Train your class spells
-    .target High Priestess Laurena
-    .train 13908,3
-step << Warrior/Paladin/Rogue
-    .goto 1453/0,624.15,-8431.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaita Deepforge|r
-    .collect 2901,1,432,1 >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from her|r
-    >>|cRXP_WARN_You'll train|r |T134708:0|t[Mining] |cRXP_WARN_later|r
-    .target Kaita Deepforge
-    .train 2018,3
 step
-    .goto 1453/0,490.03,-8835.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .fp Stormwind >> Get the Stormwind City flight path
-    .target Dungar Longdrink
-step << Human Priest
-    .goto 1453/0,862.33,-8512.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .accept 94773 >>Accept Divine Grace
-    .target High Priestess Laurena
-    .xp <10,1
-step << NightElf Hunter
-    .xp 10 >>Grind to level 10 (The Hunter's Path needs it)
-step << NightElf Hunter
     .goto 1453/0,552.71,-8415.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
-    .accept 6073 >>Accept The Hunter's Path
+    .accept 6076 >>Accept The Hunter's Path << Dwarf Hunter
+    .accept 6073 >>Accept The Hunter's Path << NightElf Hunter
     .target Einris Brightspear
-step << NightElf Druid
-    .xp 10 >>Grind to level 10 (Heeding the Call needs it)
-step << NightElf Druid
-    .goto 1453/0,1095.51,-8741.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
-    .accept 5924 >>Accept Heeding the Call
-    .target Theridran
-step << Skyborne Druid
-    .xp 10 >>Grind to level 10 (Moonglade needs it)
-step << Skyborne Druid
-    .goto 1453/0,1100.20,-8776.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
-    .accept 94914 >>Accept Moonglade
-    .target Sheldras Moontree
 step
     #completewith next
     .zone 1429 >>Leave Stormwind City for Elwynn Forest
@@ -2094,47 +2094,10 @@ step
     .target Marshal Dughan
     .isOnQuest 123
 step << Rogue
-    .xp 10 >>Grind to level 10 (Seek out SI: 7 needs it)
-step << Rogue
-    .goto 1429/0,12.76,-9465.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
-    .accept 2205 >>Accept Seek out SI: 7
-    .target Keryn Sylvius
-step << NightElf Priest
-    .goto 1429/0,33.24,-9460.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
-    .accept 5628 >>Accept Returning Home
-    .target Priestess Josetta
-    .xp <10,1
-step << Human Priest
-    .goto 1429/0,33.24,-9460.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
-    .accept 94774 >>Accept Divine Grace
-    .target Priestess Josetta
-    .xp <10,1
-step << Rogue
-    #completewith next
-    .zone 1453 >>Travel to Stormwind City
-    .zoneskip 1453
-step << Rogue
-    .goto 1453/0,362.28,-8815.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
-    .turnin 2205 >>Turn in Seek out SI: 7
-    .accept 2206 >>Accept Snatch and Grab
-    .target Master Mathias Shaw
-step << Rogue
-    #completewith next
-    .zone 1429 >>Leave Stormwind City for Elwynn Forest
-    .zoneskip 1429
-step << Rogue
     .goto 1429/0,-132.67,-9952.34
     >>Kill |cRXP_ENEMY_Defias Dockmaster|r and loot |cRXP_LOOT_Defias Shipping Schedule|r
     .complete 2206,1 --Defias Shipping Schedule (1)
     .mob Defias Dockmaster
-step << Human Priest
-    .xp 10 >>Grind to level 10 (Divine Grace needs it)
-step << NightElf Priest
-    .xp 10 >>Grind to level 10 (Returning Home needs it)
 step
     .goto 1429/0,33.24,-9460.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
@@ -2142,16 +2105,19 @@ step
     .accept 5628 >>Accept Returning Home << NightElf Priest
     .target Priestess Josetta
 step
+    .goto 1429/0,-658.15,-9619.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blixie Fitzwink|r
+    .accept 91725 >>Accept Stolen Enchanting Supplies
+    .target Blixie Fitzwink
+step
     .goto 1429/0,-724.10,-9556.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r
-    .turnin 91723 >>Turn in Delicate Instruments
-    .accept 91724 >>Accept Delicate Instruments
+    .turnin 91724 >>Turn in Delicate Instruments
     .target Hamish Bergwort
 step
     .goto 1429/0,-1031.96,-9610.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
     .accept 46 >>Accept Bounty on Murlocs
-    .turnin 46 >>Turn in Bounty on Murlocs
     .target Guard Thomas
 step << Warlock
     .goto 1429/0,-929.22,-9809.07
@@ -2176,32 +2142,54 @@ step << Warlock
     .isQuestComplete 1688
     .target Gakin the Darkbinder
 step
-    #completewith Drop184x2
-    >>|cRXP_LOOT_Westfall Deed|r can drop from |cRXP_ENEMY_Defias Bandit|r, |cRXP_ENEMY_Defias Rogue Wizard|r, |cRXP_ENEMY_Defias Ambusher|r. Use it to start the quest if you get one
-    .collect 1972,1,184 --Westfall Deed (1)
-    .accept 184 >>Accept Furlbrow's Deed
-    .use 1972
+    #completewith Drop91740x1
+    >>|cRXP_LOOT_Croaky's Head|r can drop from |cRXP_ENEMY_Croaky|r. Use it to start the quest if you get one
+    .collect 247826,1,91740 --Croaky's Head (1)
+    .accept 91740 >>Accept Croaky's Head
+    .use 247826
 step
-    #label Drop184x2
+    #label Drop91740x1
     #loop
-    .goto 1429/0,-1122.89,-9175.11,0
-    .goto 1429/0,-1122.89,-9175.11,40,0
-    .goto 1429/0,-1131.22,-9065.16,40,0
-    .goto 1429/0,-1048.27,-9026.74,40,0
-    .goto 1429/0,-983.37,-9012.62,40,0
-    .goto 1429/0,-951.78,-9090.86,40,0
-    .goto 1429/0,-1020.16,-9123.72,40,0
-    .goto 1429/0,-954.56,-9143.86,40,0
-    .goto 1429/0,-980.94,-9245.24,40,0
-    .goto 1429/0,-1051.05,-9188.30,40,0
-    >>Kill |cRXP_ENEMY_Defias Rogue Wizards|r
-    .complete 91724,1 --Defias Rogue Wizard slain (6)
-    .mob Defias Rogue Wizard
+    .goto 1429/0,-1189.88,-9332.96,0
+    .goto 1429/0,-1189.88,-9332.96,40,0
+    .goto 1429/0,-1121.85,-9304.03,40,0
+    .goto 1429/0,-1165.24,-9282.97,40,0
+    .goto 1429/0,-1161.42,-9255.89,40,0
+    .goto 1429/0,-1199.60,-9229.50,40,0
+    .goto 1429/0,-1229.45,-9212.14,40,0
+    .goto 1429/0,-1255.83,-9173.49,40,0
+    .goto 1429/0,-1232.92,-9254.73,40,0
+    .goto 1429/0,-1220.08,-9283.20,40,0
+    >>Kill |cRXP_ENEMY_Murloc Foragers|r, |cRXP_ENEMY_Murloc Lurkers|r, |cRXP_ENEMY_Croakies|r and |cRXP_ENEMY_Elder Finseers|r. Loot them for |cRXP_LOOT_Torn Murloc Fin|r
+    .complete 46,1 --Torn Murloc Fin (8)
+    .mob Murloc Forager
+    .mob Murloc Lurker
+    .mob Croaky
+    .mob Elder Finseer
 step
-    .goto 1429/0,-724.10,-9556.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r
-    .turnin 91724 >>Turn in Delicate Instruments
-    .target Hamish Bergwort
+    #loop
+    .goto 1429/0,-842.10,-8997.35,0
+    .goto 1429/0,-842.10,-8997.35,40,0
+    .goto 1429/0,-807.40,-8927.91,40,0
+    .goto 1429/0,-769.22,-8909.39,40,0
+    .goto 1429/0,-720.62,-8890.88,40,0
+    .goto 1429/0,-706.74,-8874.67,40,0
+    .goto 1429/0,-772.69,-8837.64,40,0
+    .goto 1429/0,-817.81,-8846.90,40,0
+    .goto 1429/0,-876.81,-8826.07,40,0
+    .goto 1429/0,-828.22,-8897.82,40,0
+    >>Pick up |cRXP_PICK_Stolen Enchanting Supplies|r from the ground
+    .complete 91725,1 --Stolen Enchanting Supplies (5)
+step
+    .goto 1429/0,-658.15,-9619.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blixie Fitzwink|r
+    .turnin 91725 >>Turn in Stolen Enchanting Supplies
+    .target Blixie Fitzwink
+step
+    .goto 1429/0,-1031.96,-9610.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
+    .turnin 46 >>Turn in Bounty on Murlocs
+    .target Guard Thomas
 step
     #completewith next
     .zone 1453 >>Travel to Stormwind City
@@ -2260,7 +2248,6 @@ step << Human Priest
     .goto 1453/0,862.33,-8512.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
     .turnin 94774 >>Turn in Divine Grace
-    .accept 94773 >>Accept Divine Grace
     .target High Priestess Laurena
 step << Human Priest
     .goto 1453/0,862.33,-8512.45
@@ -2282,12 +2269,6 @@ step << Human
     .target Osric Strang
     .isQuestTurnedIn 6281 --any of: Continue to Stormwind
     .xp <10,1
-step
-    .goto 1453/0,638.26,-8342.22
-    >>Talk to |cRXP_FRIENDLY_Billibub|r
-    .vendor 5519 >>|cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him if its up|r
-    .target Billibub Cogspinner
-    .money <0.08
 step << Warlock/Mage/Rogue/Priest/Warrior/Paladin
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
@@ -2356,6 +2337,25 @@ step << Human
 step << Warrior
     .goto 1453/0,389.21,-8604.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartleby|r
+    .accept 1640 >>Accept Beat Bartleby
+    .target Bartleby
+    .isQuestTurnedIn 1639,1678,1683 --any of: Bartleby the Drunk, Vejrek, Vorlus Vilehoof
+    .xp <10,1
+step << Warrior
+    .goto 1453/0,389.21,-8604.54
+    >>Kill |cRXP_ENEMY_Bartleby|r
+    .complete 1640,1 --Bartleby slain (1)
+    .mob Bartleby
+    .isOnQuest 1640
+step << Warrior
+    .goto 1453/0,389.21,-8604.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartleby|r
+    .turnin 1640 >>Turn in Beat Bartleby
+    .target Bartleby
+    .isOnQuest 1640
+step << Warrior
+    .goto 1453/0,389.21,-8604.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartleby|r
     .accept 1665 >>Accept Bartleby's Mug
     .target Bartleby
     .isQuestTurnedIn 1640 --any of: Beat Bartleby
@@ -2383,6 +2383,10 @@ step
     #completewith next
     .zone 1429 >>Leave Stormwind City for Elwynn Forest
     .zoneskip 1429
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Farley's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
 step
     .goto 1429/0,73.85,-9465.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
@@ -2432,10 +2436,6 @@ step << Warrior
     .target Marshal Haggard
     .isOnQuest 1667
 step
-    #completewith next
-    .hs >>Hearth to Innkeeper Farley's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
     .goto 1429/0,73.85,-9465.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 147 >>Turn in Manhunt
@@ -2483,7 +2483,7 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: The Binding << Warlock
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: An Apple Treat
 step << Human Paladin/Dwarf Paladin
-    .xp 13 >>|cRXP_WARN_The rest of Elwynn Forest is planned from level 13.|r Come back to this guide then
+    .xp 14 >>|cRXP_WARN_The rest of Elwynn Forest is planned from level 14.|r Come back to this guide then
 step << Human Paladin
     .goto 1429/0,108.90,-9468.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r

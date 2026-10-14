@@ -40,13 +40,6 @@ step
 step
     .goto 1425/0,-1950.38,325.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryphon Master Talonaxe|r
-    .accept 2990 >>Accept Thadius Grimshade
-    .target Gryphon Master Talonaxe
-    .isQuestTurnedIn 2989 --any of: The Altar of Zul
-    .xp <40,1
-step
-    .goto 1425/0,-1950.38,325.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryphon Master Talonaxe|r
     .turnin 1450 >>Turn in Gryphon Master Talonaxe
     .target Gryphon Master Talonaxe
     .isOnQuest 1450
@@ -149,7 +142,12 @@ step
     .goto 1425/0,-1950.38,325.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryphon Master Talonaxe|r
     .turnin 2988 >>Turn in Witherbark Cages
+    .accept 2989 >>Accept The Altar of Zul
     .target Gryphon Master Talonaxe
+step
+    .goto 1425/0,-3460.73,-295.61
+    >>Search the Altar of Zul
+    .complete 2989,1 --Search the Altar of Zul
 step
     #completewith Drop485x2
     >>|cRXP_LOOT_OOX-09/HL Distress Beacon|r can drop from |cRXP_ENEMY_Saltwater Snapjaw|r, |cRXP_ENEMY_Vilebranch Axe Thrower|r, |cRXP_ENEMY_Vilebranch Witch Doctor|r. Use it to start the quest if you get one
@@ -158,16 +156,33 @@ step
     .use 8704
 step
     #loop
-    .goto 1425/0,-3713.68,337.08,0
+    .goto 1425/0,-3820.71,62.70,0
+    .goto 1425/0,-3820.71,62.70,40,0
+    .goto 1425/0,-3824.17,134.57,40,0
+    .goto 1425/0,-3840.34,246.47,40,0
+    .goto 1425/0,-3960.08,277.27,40,0
+    .goto 1425/0,-3980.10,176.15,40,0
+    .goto 1425/0,-4091.36,99.40,40,0
+    .goto 1425/0,-4039.00,53.20,40,0
+    .goto 1425/0,-3990.49,14.96,40,0
+    .goto 1425/0,-3913.49,80.41,40,0
+    >>Kill |cRXP_ENEMY_Silvermane Stalkers|r. Loot them for |cRXP_LOOT_Silvermane Stalker Flank|r
+    .complete 4297,1 --Silvermane Stalker Flank (5)
+    .mob Silvermane Stalker
+    .isOnQuest 4297
+step
+    #label Drop485x2
+    #loop
+    .goto 1425/0,-3788.75,288.82,0
+    .goto 1425/0,-3788.75,288.82,40,0
     .goto 1425/0,-3713.68,337.08,40,0
     .goto 1425/0,-3716.37,414.08,40,0
     .goto 1425/0,-3738.32,465.41,40,0
     .goto 1425/0,-3821.09,477.22,40,0
-    .goto 1425/0,-3785.67,414.59,40,0
-    .goto 1425/0,-3789.91,368.65,40,0
     .goto 1425/0,-3844.58,418.18,40,0
     .goto 1425/0,-3897.32,376.60,40,0
-    .goto 1425/0,-3788.75,288.82,40,0
+    .goto 1425/0,-3785.67,414.59,40,0
+    .goto 1425/0,-3789.91,368.65,40,0
     >>Kill |cRXP_ENEMY_Green Sludges|r
     >>Kill |cRXP_ENEMY_Jade Oozes|r
     .complete 2877,1 --Green Sludge slain (10)
@@ -175,28 +190,16 @@ step
     .mob Green Sludge
     .mob Jade Ooze
 step
-    #label Drop485x2
-    #loop
-    .goto 1425/0,-3723.69,342.72,0
-    .goto 1425/0,-3723.69,342.72,40,0
-    .goto 1425/0,-3840.34,246.47,40,0
-    .goto 1425/0,-3960.08,277.27,40,0
-    .goto 1425/0,-3931.20,234.67,40,0
-    .goto 1425/0,-3871.14,163.57,40,0
-    .goto 1425/0,-3820.71,62.70,40,0
-    .goto 1425/0,-3824.17,134.57,40,0
-    .goto 1425/0,-3746.40,280.87,40,0
-    .goto 1425/0,-3661.32,369.16,40,0
-    >>Kill |cRXP_ENEMY_Silvermane Stalkers|r. Loot them for |cRXP_LOOT_Silvermane Stalker Flank|r
-    .complete 4297,1 --Silvermane Stalker Flank (5)
-    .mob Silvermane Stalker
-    .isOnQuest 4297
-step
     .goto 1425/0,-3474.98,500.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homing Robot OOX-09/HL|r
     .turnin 485 >>Turn in Find OOX-09/HL!
     .target Homing Robot OOX-09/HL
     .isOnQuest 485
+step
+    .goto 1425/0,-2145.96,322.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fraggar Thundermantle|r
+    .turnin 2877 >>Turn in Skulk Rock Clean-up
+    .target Fraggar Thundermantle
 step
     .goto 1425/0,-2120.16,347.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agnar Beastamer|r
@@ -217,10 +220,23 @@ step
     .target Agnar Beastamer
     .isOnQuest 4298
 step
-    .goto 1425/0,-2145.96,322.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fraggar Thundermantle|r
-    .turnin 2877 >>Turn in Skulk Rock Clean-up
-    .target Fraggar Thundermantle
+    .goto 1425/0,-1950.38,325.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryphon Master Talonaxe|r
+    .turnin 2989 >>Turn in The Altar of Zul
+    .accept 2990 >>Accept Thadius Grimshade
+    .target Gryphon Master Talonaxe
+step
+    .goto 1425/0,-3474.98,500.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homing Robot OOX-09/HL|r
+    .accept 836 >>Accept Rescue OOX-09/HL!
+    .target Homing Robot OOX-09/HL
+    .isQuestTurnedIn 485 --any of: Find OOX-09/HL!
+    .xp <43,1
+step
+    .goto 1425/0,-4621.89,-108.24
+    >>Escort OOX-09/HL to the shoreline beyond Overlook Cliff
+    .complete 836,1 --Escort OOX-09/HL to the shoreline beyond Overlook Cliff
+    .isOnQuest 836
 step
     .goto 1425/0,-4685.42,264.95
     >>Click the |cRXP_PICK_Cortello's Treasure|r
@@ -230,4 +246,5 @@ step
     +|cRXP_WARN_End of the The Hinterlands route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Blasted Lands|r: Thadius Grimshade
     >>|cRXP_FRIENDLY_Stormwind City|r: Rhapsody's Tale
+    >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Rescue OOX-09/HL!
 ]])

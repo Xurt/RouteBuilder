@@ -241,6 +241,13 @@ step
 step
     .goto 1452/1,-2536.84,6395.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donova Snowden|r
+    .accept 4842 >>Accept Strange Sources
+    .target Donova Snowden
+    .isQuestTurnedIn 980 --any of: The New Springs
+    .xp <51,1
+step
+    .goto 1452/1,-2536.84,6395.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donova Snowden|r
     .accept 5086 >>Accept Toxic Horrors
     .target Donova Snowden
     .isQuestTurnedIn 5085 --any of: Mystery Goo
@@ -290,6 +297,17 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Umi Rumplesnicker|r
     .turnin 3783 >>Turn in Are We There, Yeti?
     .target Umi Rumplesnicker
+step
+    .goto 1452/1,-4563.89,5018.83
+    >>Discover Darkwhisper Gorge
+    .complete 4842,1 --Discover Darkwhisper Gorge
+    .isOnQuest 4842
+step
+    .goto 1452/1,-2536.84,6395.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donova Snowden|r
+    .turnin 4842 >>Turn in Strange Sources
+    .target Donova Snowden
+    .isOnQuest 4842
 step
     .goto 1452/1,-2536.84,6395.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donova Snowden|r
@@ -572,6 +590,7 @@ step
     .goto 1452/1,-4712.99,6720.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Mau'ari|r
     .turnin 969 >>Turn in Luck Be With You
+    .accept 975 >>Accept Cache of Mau'ari
     .target Witch Doctor Mau'ari
 step
     .goto 1452/1,-4713.70,6716.68
@@ -626,6 +645,13 @@ step
     .accept 5057 >>Accept Past Endeavors
     .turnin 5057 >>Turn in Past Endeavors
     .target Storm Shadowhoof
+step
+    .goto 1452/1,-4712.99,6720.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Mau'ari|r
+    >>|cRXP_WARN_The database has no objectives for Cache of Mau'ari. Skip this step if the quest is not finished|r
+    .turnin 975 >>Turn in Cache of Mau'ari
+    .target Witch Doctor Mau'ari
+    .isOnQuest 975
 step
     .goto 1452/1,-4686.01,6705.79
     >>Take Umi's Mechanical Yeti and scare her friends with it:

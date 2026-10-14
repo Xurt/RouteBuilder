@@ -640,18 +640,12 @@ step
     .mob Centipaar Swarmer
     .mob Centipaar Worker
 step
-    .goto 1446/1,-2815.22,-9619.40
-    >>Click the |cRXP_PICK_Uldum Pedestal|r
-    .accept 2967 >>Accept Return to Thunder Bluff
-    .isQuestTurnedIn 2954 --any of: The Stone Watcher
-    .xp <45,1
-step
     #loop
-    .goto 1446/1,-2244.59,-8923.88,0
-    .goto 1446/1,-2244.59,-8923.88,40,0
-    .goto 1446/1,-2155.58,-8845.68,40,0
+    .goto 1446/1,-2163.86,-8769.78,0
     .goto 1446/1,-2163.86,-8769.78,40,0
     .goto 1446/1,-2172.83,-8824.06,40,0
+    .goto 1446/1,-2244.59,-8923.88,40,0
+    .goto 1446/1,-2155.58,-8845.68,40,0
     >>Kill |cRXP_ENEMY_Thistleshrub Dew Collector|r and loot |cRXP_LOOT_Laden Dew Gland|r
     .complete 2605,1 --Laden Dew Gland (1)
     .mob Thistleshrub Dew Collector
@@ -681,6 +675,18 @@ step
     .goto 1446/1,-4079.99,-9148.82
     >>Pick up |cRXP_PICK_Scrimshank's Surveying Gear|r from the ground
     .complete 10,1 --Scrimshank's Surveying Gear (1)
+step
+    .goto 1446/1,-4374.62,-8852.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homing Robot OOX-17/TN|r
+    .accept 648 >>Accept Rescue OOX-17/TN!
+    .target Homing Robot OOX-17/TN
+    .isQuestTurnedIn 351 --any of: Find OOX-17/TN!
+    .xp <43,1
+step
+    .goto 1446/1,-4845.89,-6940.36
+    >>Escort OOX-17/TN to Steamwheedle Port
+    .complete 648,1 --Escort OOX-17/TN to Steamwheedle Port
+    .isOnQuest 648
 step
     .goto 1446/1,-3683.24,-7139.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senior Surveyor Fizzledowser|r
@@ -753,17 +759,10 @@ step
 step
     +|cRXP_WARN_That is all of Tanaris for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Orgrimmar|r: Rise of the Silithid
-    >>|cRXP_FRIENDLY_Thunder Bluff|r: Return to Thunder Bluff
+    >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Rescue OOX-17/TN!
     >>|cRXP_FRIENDLY_The Hinterlands and back here|r: Sprinkle's Secret Ingredient
 step
     .xp 49 >>|cRXP_WARN_The rest of Tanaris is planned from level 49.|r Come back to this guide then
-step
-    .goto 1446/1,-3939.23,-6948.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaeriyan|r
-    .accept 3913 >>Accept A Grave Situation
-    .target Gaeriyan
-    .isQuestTurnedIn 3912 --any of: Meet at the Grave
-    .xp <47,1
 step
     .goto 1446/1,-3741.89,-7111.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sprinkle|r
@@ -787,6 +786,19 @@ step
     .accept 5863 >>Accept The Dunemaul Compound
     .target Andi Lynn
 step
+    .goto 1446/1,-3939.23,-6948.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaeriyan|r
+    .accept 3913 >>Accept A Grave Situation
+    .target Gaeriyan
+    .isQuestTurnedIn 3912 --any of: Meet at the Grave
+    .xp <47,1
+step
+    .goto 1446/1,-4841.06,-6903.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
+    .turnin 3520 >>Turn in Screecher Spirits
+    .target Yeh'kinya
+    .isQuestComplete 3520
+step
     .goto 1446/1,-3931.64,-7211.76
     >>Click the |cRXP_PICK_A Conspicuous Gravestone|r
     .turnin 3913 >>Turn in A Grave Situation
@@ -798,25 +810,19 @@ step
     .isQuestTurnedIn 3913 --any of: A Grave Situation
     .xp <47,1
 step
-    .goto 1446/1,-4841.06,-6903.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
-    .turnin 3520 >>Turn in Screecher Spirits
-    .target Yeh'kinya
-    .isQuestComplete 3520
-step
-    .goto 1446/1,-3855.74,-7987.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
-    .accept 3444 >>Accept The Stone Circle
-    .target Marvon Rivetseeker
-    .isQuestTurnedIn 3380,3445 --any of: The Sunken Temple, The Sunken Temple
-    .xp <46,1
-step
     .goto 1446/1,-3855.74,-7987.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
     .accept 3446 >>Accept Into the Depths
     .accept 3447 >>Accept Secret of the Circle
     .target Marvon Rivetseeker
     .isQuestTurnedIn 3444 --any of: The Stone Circle
+    .xp <46,1
+step
+    .goto 1446/1,-3855.74,-7987.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marvon Rivetseeker|r
+    .accept 3444 >>Accept The Stone Circle
+    .target Marvon Rivetseeker
+    .isQuestTurnedIn 3380,3445 --any of: The Sunken Temple, The Sunken Temple
     .xp <46,1
 step
     .goto 1446/1,-3855.74,-7987.32
@@ -856,22 +862,66 @@ step
     .complete 5863,2 --Dunemaul Enforcer slain (10)
     .mob Dunemaul Enforcer
 step
+    .goto 1446/1,-2813.15,-9619.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stone Watcher of Norgannon|r
+    .accept 2954 >>Accept The Stone Watcher
+    .target Stone Watcher of Norgannon
+    .isQuestTurnedIn 2946,2966 --any of: Seeing What Happens, Seeing What Happens
+    .xp <45,1
+step
+    .goto 1446/1,-2813.15,-9619.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stone Watcher of Norgannon|r
+    .complete 2954,1 --Stone Watcher of Norgannon
+    .target Stone Watcher of Norgannon
+    .isOnQuest 2954
+step
+    .goto 1446/1,-2815.22,-9619.40
+    >>Click the |cRXP_PICK_Uldum Pedestal|r
+    .turnin 2954 >>Turn in The Stone Watcher
+    .isOnQuest 2954
+step
+    .goto 1446/1,-2815.22,-9619.40
+    >>Click the |cRXP_PICK_Uldum Pedestal|r
+    .accept 2967 >>Accept Return to Thunder Bluff
+    .isQuestTurnedIn 2954 --any of: The Stone Watcher
+    .xp <45,1
+step
     #loop
-    .goto 1446/1,-2358.44,-8879.72,0
-    .goto 1446/1,-2358.44,-8879.72,40,0
-    .goto 1446/1,-2343.95,-8918.82,40,0
+    .goto 1446/1,-2309.45,-8947.34,0
     .goto 1446/1,-2309.45,-8947.34,40,0
     .goto 1446/1,-2253.56,-8985.06,40,0
     .goto 1446/1,-2243.90,-8954.24,40,0
     .goto 1446/1,-2264.60,-8929.40,40,0
     .goto 1446/1,-2243.21,-8747.24,40,0
     .goto 1446/1,-2287.37,-8785.42,40,0
+    .goto 1446/1,-2358.44,-8879.72,40,0
+    .goto 1446/1,-2343.95,-8918.82,40,0
     >>Kill |cRXP_ENEMY_Gnarled Thistleshrubs|r
     >>Kill |cRXP_ENEMY_Thistleshrub Rootshapers|r
     .complete 3362,1 --Gnarled Thistleshrub slain (8)
     .complete 3362,2 --Thistleshrub Rootshaper slain (8)
     .mob Gnarled Thistleshrub
     .mob Thistleshrub Rootshaper
+step
+    #loop
+    .goto 1446/1,-2252.87,-8658.46,0
+    .goto 1446/1,-2252.87,-8658.46,40,0
+    .goto 1446/1,-2288.75,-8865.00,40,0
+    .goto 1446/1,-2288.75,-9095.00,40,0
+    .goto 1446/1,-2412.95,-9285.90,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tooga|r. |cRXP_WARN_This NPC walks a patrol route|r
+    .accept 1560 >>Accept Tooga's Quest
+    .unitscan Tooga
+step
+    .goto 1446/1,-4812.77,-7055.82
+    >>Show Tooga the way back to his wife, Torta.
+    .complete 1560,1 --Torta
+    .target Torta
+step
+    .goto 1446/1,-4812.77,-7055.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torta|r
+    .turnin 1560 >>Turn in Tooga's Quest
+    .target Torta
 step
     .goto 1446/1,-3777.08,-7105.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
@@ -908,6 +958,7 @@ step
     .isQuestComplete 2865
 step
     +|cRXP_WARN_End of the Tanaris route.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Thunder Bluff|r: Return to Thunder Bluff
     >>|cRXP_FRIENDLY_Un'Goro Crater|r: Linken's Sword
     >>|cRXP_FRIENDLY_another zone|r: Into the Depths, Secret of the Circle
     >>|cRXP_FRIENDLY_Un'Goro Crater and back here|r: Super Sticky

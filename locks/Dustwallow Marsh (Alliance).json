@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "26-40 Dustwallow Marsh",
-  "saved": "2026-10-14 10:00",
+  "saved": "2026-10-14 10:45",
   "levels": "RestedXP",
   "parts": [
     {
@@ -20,8 +20,6 @@
         "turnin:1953 @1445:-3393.15,-4031.48  TurnIn Return to the Marsh",
         "turnin:1951 @1445:-3393.15,-4031.48  TurnIn Rituals of Power",
         "turnin:1947 @1445:-3393.15,-4031.48  TurnIn Journey to the Marsh",
-        {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Delete all|r |T132382:0|t[Razor Arrows] |cRXP_BUY_you have and fill your quiver with|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_instead|r",".target Jensen Farran",".xp <40,1"],"tag":"Hunter","from":"RestedXP: 40-40 Dustwallow Marsh"},
-        {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed. Buy a couple stacks of|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_if you're close to level 40|r",".target Jensen Farran",".xp >40,1"],"tag":"Hunter","from":"RestedXP: 40-40 Dustwallow Marsh"},
         {"lines":[".goto 1445/1,-4538.44,-3727.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Evencane|r up stairs in the Keep",".trainer >> Train your class spells",".target Captain Evencane"],"tag":"Warrior","from":"RestedXP: 43-44 Tanaris/Dustwallow"},
         {"lines":[".goto 1445/1,-4513.29,-3692.68",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Karman|r",".trainer >> Train your class spells",".target Brother Karman"],"tag":"Paladin","from":"RestedXP: 43-44 Tanaris/Dustwallow"},
         "turnin:1799 @1445:-3393.15,-4031.48  TurnIn Fragments of the Orb of Orahil"
@@ -33,15 +31,11 @@
         "turnin:1135 @1445:-4464.15,-3613.58  TurnIn Highperch Venom",
         "accept:1282 @1445:-4447.87,-3645.78  Accept They Call Him Smiling Jim",
         "turnin:1282 @1445:-4556.02,-3735.03  TurnIn They Call Him Smiling Jim",
-        "accept:1266 @1445:-4462.05,-3757.43  Accept The Missing Diplomat",
         "accept:1219 @1445:-3885.6,-2940.53  Accept The Orc Report",
         "turnin:1219 @1445:-4387.5,-3678.33  TurnIn The Orc Report",
         "accept:1220 @1445:-4387.5,-3678.33  Accept Captain Vimes",
         {"lines":[".goto 1445/1,-4366.50,-3785.78",">>Talk to |cRXP_FRIENDLY_Marie|r",".vendor 4888 >> Vendor Trash. Repair",".target Marie Holdston"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
         {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2448.78,30,0",".goto 1445/1,-3809.47,-2725.63,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 39 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to Level 39",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
-        "turnin:1266 @1445:-3350.1,-2896.08  TurnIn The Missing Diplomat",
-        "accept:1267 @1445:-4454.17,-3749.73  Accept The Missing Diplomat",
-        "turnin:1267 @1445:-4454.17,-3749.73  TurnIn The Missing Diplomat",
         "accept:1284 @1445:-2534.25,-3700.73  Accept Suspicious Hoofprints",
         "accept:1252 @1445:-2541.07,-3721.73  Accept Lieutenant Paval Reethe",
         "accept:1253 @1445:-2530.57,-3735.03  Accept The Black Shield",
@@ -66,7 +60,9 @@
         "turnin:1287 @1445:-4556.02,-3735.03  TurnIn The Deserters",
         "turnin:1320 @1445:-4556.02,-3735.03  TurnIn The Black Shield",
         {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2448.78,30,0",".goto 1445/1,-3809.47,-2725.63,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 41+33530 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 33530+/95800xp",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
-        {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2448.78,30,0",".goto 1445/1,-3809.47,-2725.63,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 41+43110 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 43110+/95800xp",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"}
+        {"lines":[".goto 1445/1,-3971.70,-2767.63,30,0",".goto 1445/1,-3979.57,-2822.23,30,0",".goto 1445/1,-3984.82,-2566.38,30,0",".goto 1445/1,-4044.15,-2587.38,30,0",".goto 1445/1,-3818.40,-2561.83,30,0",".goto 1445/1,-3815.25,-2448.78,30,0",".goto 1445/1,-3809.47,-2725.63,30,0",".goto 1445/1,-3971.70,-2767.63,30,0",".xp 41+43110 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 43110+/95800xp",">>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]"],"from":"RestedXP: 37-41 ADV Dustwallow Mage AoE"},
+        {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Delete all|r |T132382:0|t[Razor Arrows] |cRXP_BUY_you have and fill your quiver with|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_instead|r",".target Jensen Farran",".xp <40,1"],"tag":"Hunter","from":"RestedXP: 40-40 Dustwallow Marsh"},
+        {"lines":[".goto 1445/1,-4534.50,-3776.33",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r",".vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed. Buy a couple stacks of|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_if you're close to level 40|r",".target Jensen Farran",".xp >40,1"],"tag":"Hunter","from":"RestedXP: 40-40 Dustwallow Marsh"}
       ]
     },
     {
@@ -76,11 +72,21 @@
         {"lines":[".goto 1445/1,-4517.17,-3828.83",".fp Theramore >> Get the Theramore Flight Path"],"from":"RestedXP: 33-60 Mage AoE"},
         "accept:1204 @1445:-4457.85,-3624.78  Accept Mudrock Soup and Bugs",
         {"lines":[".goto 1445/1,-4470.97,-3616.03",".vendor >> Buy up to 180 level 35 drink"],"from":"RestedXP: 33-60 Mage AoE"},
+        "accept:1265 @1445:-4546.05,-3738.18  Accept The Missing Diplomat",
         {"lines":[".trainer >>Train your spells",".train 19752 >>Train |T136106:0|t[|cRXP_FRIENDLY_Divine Intervention|r]. You will need it for a rune later << sod"],"tag":"Paladin","from":"RestedXP: 34-36 Thousand Needles SoD"},
+        "obj:1265:1 @1445:-4120.8,-3464.83  Objective The Missing Diplomat / Sentry Point explored",
+        "turnin:1265 @1445:-4462.05,-3757.43  TurnIn The Missing Diplomat",
+        "accept:1266 @1445:-4462.05,-3757.43  Accept The Missing Diplomat",
         "accept:1218 @1445:-3885.6,-2952.78  Accept Soothing Spices",
         "obj:1218:1 @1445:-4463.1,-3834.43  Objective Soothing Spices / Soothing Spices (3)",
         "turnin:1218 @1445:-3885.6,-2952.78  TurnIn Soothing Spices",
         {"lines":[".trainer >> Teleport to Stormwind or Ironforge. Train your level 38 spells",">>Start being very careful with your money too, as it's very nice to have your mount at level 40"],"from":"RestedXP: 33-60 Mage AoE"},
+        "turnin:1266 @1445:-3350.1,-2896.08  TurnIn The Missing Diplomat",
+        "accept:1324 @1445:-3350.1,-2896.08  Accept The Missing Diplomat",
+        "obj:1324:1 @1445:-3350.1,-2896.08  Objective The Missing Diplomat / Private Hendel slain (1)",
+        "turnin:1324 @1445:-4462.05,-3757.43  TurnIn The Missing Diplomat",
+        "accept:1267 @1445:-4454.17,-3749.73  Accept The Missing Diplomat",
+        "turnin:1267 @1445:-4454.17,-3749.73  TurnIn The Missing Diplomat",
         "accept:1177 @1445:-2820.37,-3372.43  Accept Hungry!",
         "obj:1177:1 @1445:-3974.32,-2559.38  Objective Hungry! / Mirefin Head (12)",
         "obj:1204:1 @1445:-4251,-3035.73  Objective Mudrock Soup and Bugs / Forked Mudrock Tongue (8)",
@@ -88,6 +94,9 @@
         "turnin:1204 @1445:-4457.85,-3624.78  TurnIn Mudrock Soup and Bugs",
         {"lines":[".trainer >> Train your class spells"],"from":"RestedXP: 33-60 Mage AoE"},
         "turnin:1177 @1445:-2820.37,-3372.43  TurnIn Hungry!",
+        "accept:1222 @1445:-3436.2,-2646.53  Accept Stinky's Escape",
+        "obj:1222:1 @1445:-3540.67,-2893.63  Objective Stinky's Escape / Help Stinky find Bogbean Leaves",
+        "turnin:1222 @1445:-4457.85,-3624.78  TurnIn Stinky's Escape",
         "accept:1258 @1445:-4457.85,-3624.78  Accept ... and Bugs"
       ]
     },

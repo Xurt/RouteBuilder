@@ -334,19 +334,6 @@ step
     .turnin 237 >>Turn in In Defense of the King's Lands
     .target Mountaineer Gravelgaw
 step
-    .goto 1432/0,-3433.32,-5762.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huldar|r
-    .accept 454 >>Accept After the Ambush
-    .target Huldar
-    .isQuestTurnedIn 273 --any of: Resupplying the Excavation
-    .xp <10,1
-step
-    .goto 1432/0,-3433.88,-5764.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miran|r
-    .turnin 454 >>Turn in After the Ambush
-    .target Miran
-    .isOnQuest 454
-step
     .goto 1432/0,-3812.32,-5694.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironband|r
     .accept 298 >>Accept Excavation Progress Report
@@ -528,6 +515,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
     .target Innkeeper Hearthstove
     .home >>Set your Hearthstone to Innkeeper Hearthstove's inn
+step
+    .goto 1432/0,-3020.95,-5359.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r
+    .accept 273 >>Accept Resupplying the Excavation
+    .target Jern Hornhelm
+    .isQuestTurnedIn 302 --any of: Powder to Ironband
+    .xp <10,1
 step << NightElf
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
@@ -558,39 +552,15 @@ step
     .turnin 307 >>Turn in Filthy Paws
     .target Mountaineer Stormpike
 step
-    .goto 1432/0,-2641.13,-5858.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Wallbang|r
-    .accept 263 >>Accept In Defense of the King's Lands
-    .target Mountaineer Wallbang
-step
-    #loop
-    .goto 1432/0,-2913.38,-6161.34,0
-    .goto 1432/0,-2913.38,-6161.34,40,0
-    .goto 1432/0,-2947.03,-6171.09,40,0
-    .goto 1432/0,-2952.55,-6223.15,40,0
-    .goto 1432/0,-3007.99,-6214.68,40,0
-    .goto 1432/0,-3023.44,-6186.91,40,0
-    .goto 1432/0,-2993.65,-6161.89,40,0
-    .goto 1432/0,-3028.68,-6144.41,40,0
-    .goto 1432/0,-3048.26,-6100.81,40,0
-    .goto 1432/0,-3027.30,-6073.77,40,0
-    >>Kill |cRXP_ENEMY_Stonesplinter Bonesnappers|r
-    >>Kill |cRXP_ENEMY_Stonesplinter Shamans|r
-    .complete 263,2 --Stonesplinter Bonesnapper slain (10)
-    .complete 263,1 --Stonesplinter Shaman slain (10)
-    .mob Stonesplinter Bonesnapper
-    .mob Stonesplinter Shaman
+    .goto 1432/0,-3746.95,-5369.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r
+    .accept 2038 >>Accept Bingles' Missing Supplies
+    .target Bingles Blastenheimer
 step
     .goto 1432/0,-4296.13,-5691.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
     .accept 257 >>Accept A Hunter's Boast
     .target Daryl the Youngling
-step
-    .goto 1432/0,-4248.96,-5621.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
-    .accept 86758 >>Accept Twisting the Knife
-    .accept 385 >>Accept Crocolisk Hunting
-    .target Marek Ironheart
 step
     #loop
     .goto 1432/0,-4178.35,-5659.13,0
@@ -603,44 +573,38 @@ step
     .complete 257,1 --Mountain Buzzard slain (6)
     .mob Mountain Buzzard
 step
+    .goto 1432/0,-4248.96,-5621.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
+    .accept 86758 >>Accept Twisting the Knife
+    .accept 385 >>Accept Crocolisk Hunting
+    .target Marek Ironheart
+step
     .goto 1432/0,-4296.13,-5691.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
     .turnin 257 >>Turn in A Hunter's Boast
     .accept 258 >>Accept A Hunter's Challenge
     .target Daryl the Youngling
 step
-    #completewith Along10
-    >>As you go: Kill |cRXP_ENEMY_Daggerfang|r and loot |cRXP_LOOT_Marek's Croc-Hunting Knife|r. Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Skin|r. Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Meat|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 86758,1 --Marek's Croc-Hunting Knife (1)
-    .complete 385,2 --Crocolisk Skin (6)
-    .complete 385,1 --Crocolisk Meat (1)
-    .mob Daggerfang
-    .mob Loch Crocolisk
-    .mob Large Loch Crocolisk
-step
-    #label Along10
-    .goto 1432/0,-3746.95,-5369.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r
-    .accept 2038 >>Accept Bingles' Missing Supplies
-    .target Bingles Blastenheimer
-step
     #loop
-    .goto 1432/0,-3727.09,-5359.65,0
-    .goto 1432/0,-3727.09,-5359.65,40,0
-    .goto 1432/0,-3703.36,-5266.38,40,0
-    .goto 1432/0,-3724.33,-5304.83,40,0
-    .goto 1432/0,-3765.15,-5334.26,40,0
-    .goto 1432/0,-3820.59,-5363.14,40,0
-    .goto 1432/0,-3763.77,-5395.70,40,0
-    .goto 1432/0,-3741.43,-5426.61,40,0
-    .goto 1432/0,-3724.05,-5459.90,40,0
-    .goto 1432/0,-3710.54,-5486.76,40,0
+    .goto 1432/0,-3852.04,-5247.25,0
+    .goto 1432/0,-3852.04,-5247.25,40,0
+    .goto 1432/0,-3785.01,-5201.81,40,0
+    .goto 1432/0,-3737.02,-5133.19,40,0
+    .goto 1432/0,-3654.54,-5111.30,40,0
+    .goto 1432/0,-3577.86,-5069.36,40,0
+    .goto 1432/0,-3529.59,-5149.01,40,0
+    .goto 1432/0,-3476.63,-5230.88,40,0
+    .goto 1432/0,-3648.75,-5184.52,40,0
+    .goto 1432/0,-3686.81,-5287.35,40,0
+    >>Kill |cRXP_ENEMY_Elder Mountain Boars|r
     >>Kill |cRXP_ENEMY_Daggerfang|r and loot |cRXP_LOOT_Marek's Croc-Hunting Knife|r
     >>Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Skin|r
     >>Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Meat|r
+    .complete 258,1 --Elder Mountain Boar slain (5)
     .complete 86758,1 --Marek's Croc-Hunting Knife (1)
     .complete 385,2 --Crocolisk Skin (6)
     .complete 385,1 --Crocolisk Meat (1)
+    .mob Elder Mountain Boar
     .mob Daggerfang
     .mob Loch Crocolisk
     .mob Large Loch Crocolisk
@@ -684,41 +648,91 @@ step
     .accept 436 >>Accept Ironband's Excavation
     .target Jern Hornhelm
 step
-    .goto 1432/0,-3746.95,-5369.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r
-    .turnin 2038 >>Turn in Bingles' Missing Supplies
-    .target Bingles Blastenheimer
+    .goto 1432/0,-3404.91,-5756.08
+    >>Find Huldar, Miran, and Saean
+    .complete 273,1 --Find Huldar, Miran, and Saean
+    .isOnQuest 273
 step
-    #loop
-    .goto 1432/0,-3796.87,-5259.02,0
-    .goto 1432/0,-3796.87,-5259.02,40,0
-    .goto 1432/0,-3852.04,-5247.25,40,0
-    .goto 1432/0,-3818.11,-5192.24,40,0
-    .goto 1432/0,-3737.02,-5133.19,40,0
-    .goto 1432/0,-3654.54,-5111.30,40,0
-    .goto 1432/0,-3648.75,-5184.52,40,0
-    .goto 1432/0,-3685.44,-5249.09,40,0
-    .goto 1432/0,-3730.95,-5222.41,40,0
-    .goto 1432/0,-3785.01,-5201.81,40,0
-    >>Kill |cRXP_ENEMY_Elder Mountain Boars|r
-    .complete 258,1 --Elder Mountain Boar slain (5)
-    .mob Elder Mountain Boar
+    .goto 1432/0,-3433.32,-5762.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huldar|r
+    .turnin 273 >>Turn in Resupplying the Excavation
+    .target Huldar
+    .isOnQuest 273
 step
-    .goto 1432/0,-4248.96,-5621.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
-    .turnin 86758 >>Turn in Twisting the Knife
-    .turnin 385 >>Turn in Crocolisk Hunting
-    .target Marek Ironheart
+    .goto 1432/0,-3433.32,-5762.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huldar|r
+    .accept 454 >>Accept After the Ambush
+    .target Huldar
+    .isQuestTurnedIn 273 --any of: Resupplying the Excavation
+    .xp <10,1
+step
+    .goto 1432/0,-3433.88,-5764.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miran|r
+    .turnin 454 >>Turn in After the Ambush
+    .target Miran
+    .isOnQuest 454
+step
+    .goto 1432/0,-3433.88,-5764.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miran|r
+    .accept 309 >>Accept Protecting the Shipment
+    .target Miran
+    .isQuestTurnedIn 454 --any of: After the Ambush
+    .xp <10,1
+step
+    .goto 1432/0,-3789.98,-5697.39
+    >>Escort Miran to the excavation site
+    .complete 309,1 --Escort Miran to the excavation site
+    .isOnQuest 309
+step
+    .goto 1432/0,-3783.91,-5713.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magmar Fellhew|r
+    .turnin 436 >>Turn in Ironband's Excavation
+    .target Magmar Fellhew
+step
+    .goto 1432/0,-3812.32,-5694.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironband|r
+    .turnin 309 >>Turn in Protecting the Shipment
+    .target Prospector Ironband
+    .isOnQuest 309
 step
     .goto 1432/0,-4296.13,-5691.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
     .turnin 258 >>Turn in A Hunter's Challenge
     .target Daryl the Youngling
 step
-    .goto 1432/0,-3783.91,-5713.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magmar Fellhew|r
-    .turnin 436 >>Turn in Ironband's Excavation
-    .target Magmar Fellhew
+    .goto 1432/0,-4248.96,-5621.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
+    .turnin 385 >>Turn in Crocolisk Hunting
+    .turnin 86758 >>Turn in Twisting the Knife
+    .target Marek Ironheart
+step
+    .goto 1432/0,-3746.95,-5369.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r
+    .turnin 2038 >>Turn in Bingles' Missing Supplies
+    .target Bingles Blastenheimer
+step
+    .goto 1432/0,-2641.13,-5858.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Wallbang|r
+    .accept 263 >>Accept In Defense of the King's Lands
+    .target Mountaineer Wallbang
+step
+    #loop
+    .goto 1432/0,-2913.38,-6161.34,0
+    .goto 1432/0,-2913.38,-6161.34,40,0
+    .goto 1432/0,-2947.03,-6171.09,40,0
+    .goto 1432/0,-2952.55,-6223.15,40,0
+    .goto 1432/0,-3007.99,-6214.68,40,0
+    .goto 1432/0,-3023.44,-6186.91,40,0
+    .goto 1432/0,-2993.65,-6161.89,40,0
+    .goto 1432/0,-3028.68,-6144.41,40,0
+    .goto 1432/0,-3048.26,-6100.81,40,0
+    .goto 1432/0,-3027.30,-6073.77,40,0
+    >>Kill |cRXP_ENEMY_Stonesplinter Bonesnappers|r
+    >>Kill |cRXP_ENEMY_Stonesplinter Shamans|r
+    .complete 263,2 --Stonesplinter Bonesnapper slain (10)
+    .complete 263,1 --Stonesplinter Shaman slain (10)
+    .mob Stonesplinter Bonesnapper
+    .mob Stonesplinter Shaman
 step
     .goto 1432/0,-2869.24,-6075.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Ylva|r
@@ -996,8 +1010,8 @@ step << Shaman
     .goto 1432/0,-3148.39,-4837.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane|r
     .accept 94495 >>Accept Call of Water
-    .accept 94616 >>Accept Water Sapta
     .accept 94502 >>Accept Call of Water
+    .accept 94616 >>Accept Water Sapta
     .target Norric Lochthane
 step << Shaman
     .goto 1432/0,-3148.39,-4837.39
@@ -1032,10 +1046,12 @@ step
     .goto 1432/0,-2695.47,-4678.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Rockgar|r
     .turnin 468 >>Turn in Report to Mountaineer Rockgar
+    .accept 455 >>Accept The Algaz Gauntlet
     .target Mountaineer Rockgar
 step
     +|cRXP_WARN_End of the Loch Modan route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Dun Morogh|r: Stonegear's Search
     >>|cRXP_FRIENDLY_Westfall|r: Call of Water << Shaman
+    >>|cRXP_FRIENDLY_Wetlands|r: The Algaz Gauntlet
     >>|cRXP_FRIENDLY_Wetlands|r: Call of Water << Shaman
 ]])

@@ -359,6 +359,18 @@ step
     .target Homing Robot OOX-22/FE
     .isOnQuest 2766
 step
+    .goto 1444/1,1733.84,-4947.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homing Robot OOX-22/FE|r
+    .accept 2767 >>Accept Rescue OOX-22/FE!
+    .target Homing Robot OOX-22/FE
+    .isQuestTurnedIn 2766 --any of: Find OOX-22/FE!
+    .xp <40,1
+step
+    .goto 1444/1,2270.38,-4377.07
+    >>Escort OOX-22/FE to the dock along the Forgotten Coast
+    .complete 2767,1 --Escort OOX-22/FE to the dock along the Forgotten Coast
+    .isOnQuest 2767
+step
     .goto 1444/1,3621.46,-5494.63
     >>Kill |cRXP_ENEMY_Hatecrest Nagas|r
     .xp 44+40000 >> Grind to level 44 40000/111800 or higher
@@ -499,6 +511,7 @@ step
 step
     +|cRXP_WARN_That is all of Feralas for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Orgrimmar|r: A Grim Discovery, A Strange Request
+    >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Rescue OOX-22/FE!
 step
     .xp 45 >>|cRXP_WARN_The rest of Feralas is planned from level 45.|r Come back to this guide then
 step

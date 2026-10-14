@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-60 Winterspring",
-  "saved": "2026-10-14 10:03",
+  "saved": "2026-10-14 10:48",
   "levels": "RestedXP",
   "parts": [
     {
@@ -30,11 +30,15 @@
     {
       "part": 2,
       "steps": [
+        "accept:5252 @1452:-4302.61,6433.63  Accept Remorseful Highborne",
         "accept:6603 @1452:-4623.53,6726.62  Accept Trouble in Winterspring!",
         "home @1452:-4673.23,6695.38  Home inn",
+        "turnin:5252 @1452:-4006.54,7094.87  TurnIn Remorseful Highborne",
+        "accept:5253 @1452:-4006.54,7094.87  Accept The Crystal of Zin-Malor",
         "turnin:6603 @1452:-2536.84,6395.76  TurnIn Trouble in Winterspring!",
         "accept:5082 @1452:-2536.84,6395.76  Accept Threat of the Winterfall",
         "accept:5086 @1452:-2536.84,6395.76  Accept Toxic Horrors",
+        "accept:4842 @1452:-2536.84,6395.76  Accept Strange Sources",
         "obj:5082:1 @1452:-3217.02,6520.72  Objective Threat of the Winterfall / Winterfall Pathfinder slain (8)",
         "accept:6604 @1452:-4656.19,6714.31  Accept Enraged Wildkin",
         "obj:5082:2 @1452:-5071.54,6900.81  Objective Threat of the Winterfall / Winterfall Den Watcher slain (8)",
@@ -53,7 +57,9 @@
         "turnin:4861 @1452:-4504.96,5703.27  TurnIn Enraged Wildkin",
         "accept:4863 @1452:-4504.96,5703.27  Accept Enraged Wildkin",
         "turnin:4863 @1452:-4678.91,5661.15  TurnIn Enraged Wildkin",
+        "obj:4842:1 @1452:-4563.89,5018.83  Objective Strange Sources / Discover Darkwhisper Gorge",
         "obj:5087:1 @1452:-2301.83,6899.39  Objective Winterfall Runners / Winterfall Crate (1)",
+        "turnin:4842 @1452:-2536.84,6395.76  TurnIn Strange Sources",
         "turnin:5087 @1452:-2536.84,6395.76  TurnIn Winterfall Runners",
         "accept:8464 @1452:-2285.5,6900.33  Accept Winterfall Activity",
         "accept:4809 @1452:-4692.4,6705.79  Accept Chillwind Horns",
@@ -78,10 +84,7 @@
         "turnin:4809 @1452:-4692.4,6705.79  TurnIn Chillwind Horns",
         "accept:4810 @1452:-4692.4,6705.79  Accept Return to Tinkee",
         "turnin:5123 @1452:-2536.84,6395.76  TurnIn The Final Piece",
-        "accept:5128 @1452:-2536.84,6395.76  Accept Words of the High Chief",
-        "accept:5252 @1452:-4302.61,6433.63  Accept Remorseful Highborne",
-        "turnin:5252 @1452:-4006.54,7094.87  TurnIn Remorseful Highborne",
-        "accept:5253 @1452:-4006.54,7094.87  Accept The Crystal of Zin-Malor"
+        "accept:5128 @1452:-2536.84,6395.76  Accept Words of the High Chief"
       ]
     },
     {
@@ -90,12 +93,15 @@
         "accept:969 @1452:-4712.99,6720.47  Accept Luck Be With You",
         "accept:4864 @1452:-4678.91,5661.15  Accept Enraged Wildkin",
         "obj:4864:1 @1452:-4676.78,5658.78  Objective Enraged Wildkin / Jaron's Supplies (1)",
+        "accept:4901 @1452:-4794.64,5717.95  Accept Guardians of the Altar",
+        "obj:4901:1 @1452:-4921.02,5516.78  Objective Guardians of the Altar / Discover the secret of the Altar of Elune",
         "obj:4864:2 @1452:-4928.12,5679.61  Objective Enraged Wildkin / Blue-feathered Amulet (1)",
         "obj:969:1 @1452:-4515.61,5362  Objective Luck Be With You / Frostmaul Shards (4)",
         "accept:5161 @1452:-4189.72,6109.87  Accept Wrath of the Blue Flight",
         "turnin:5161 @1452:-4189.72,6109.87  TurnIn Wrath of the Blue Flight",
         "accept:5162 @1452:-4189.72,6109.87  Accept Wrath of the Blue Flight",
         "turnin:969 @1452:-4712.99,6720.47  TurnIn Luck Be With You",
+        "accept:975 @1452:-4712.99,6720.47  Accept Cache of Mau'ari",
         "turnin:4864 @1452:-4018.61,7092.98  TurnIn Enraged Wildkin",
         "accept:5121 @1452:-2536.84,6395.76  Accept High Chief Winterfall",
         "obj:5121:1 @1452:-5255.43,6719.99  Objective High Chief Winterfall / High Chief Winterfall slain (1)",

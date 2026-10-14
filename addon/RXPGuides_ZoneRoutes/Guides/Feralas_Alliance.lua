@@ -45,13 +45,6 @@ step
     .target Falfindel Waywarder
     .isQuestComplete 1101
 step
-    .goto 1444/1,858.84,-4481.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kindal Moonweaver|r
-    .accept 3841 >>Accept An Orphan Looking For a Home
-    .target Kindal Moonweaver
-    .isQuestTurnedIn 2972 --any of: Doling Justice
-    .xp <38,1
-step
     .goto 1444/1,3340.13,-4370.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fyldren Moonfeather|r
     .fp Feathermoon >> Get the Feathermoon Flight Path
@@ -172,72 +165,6 @@ step
     .accept 4131 >>Accept The Woodpaw Gnolls
     .target Ginro Hearthkindle
 step
-    .goto 1444/1,858.14,-4479.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jer'kai Moonweaver|r
-    .accept 2970 >>Accept Doling Justice
-    .target Jer'kai Moonweaver
-    .isQuestTurnedIn 2969 --any of: Freedom for All Creatures
-    .xp <38,1
-step
-    #completewith Drop2766x2
-    >>|cRXP_LOOT_OOX-22/FE Distress Beacon|r can drop from |cRXP_ENEMY_Gordunni Ogre|r, |cRXP_ENEMY_Gordunni Brute|r, |cRXP_ENEMY_Gordunni Mauler|r. Use it to start the quest if you get one
-    .collect 8705,1,2766 --OOX-22/FE Distress Beacon (1)
-    .accept 2766 >>Accept Find OOX-22/FE!
-    .use 8705
-step
-    #loop
-    .goto 1444/1,763.62,-4190.35,0
-    .goto 1444/1,763.62,-4190.35,40,0
-    .goto 1444/1,784.47,-4182.47,40,0
-    .goto 1444/1,826.87,-4165.79,40,0
-    .goto 1444/1,792.81,-4148.65,40,0
-    .goto 1444/1,651.73,-4147.26,40,0
-    .goto 1444/1,656.59,-4171.81,40,0
-    .goto 1444/1,664.24,-4185.25,40,0
-    .goto 1444/1,648.25,-4227.41,40,0
-    .goto 1444/1,646.17,-4245.48,40,0
-    >>Kill |cRXP_ENEMY_Grimtotem Naturalists|r
-    .complete 2970,1 --Grimtotem Naturalist slain (12)
-    .mob Grimtotem Naturalist
-    .isOnQuest 2970
-step
-    #loop
-    .goto 1444/1,660.76,-4123.16,0
-    .goto 1444/1,660.76,-4123.16,40,0
-    .goto 1444/1,578.06,-4117.14,40,0
-    .goto 1444/1,598.21,-4185.71,40,0
-    .goto 1444/1,648.25,-4254.75,40,0
-    .goto 1444/1,668.41,-4213.98,40,0
-    .goto 1444/1,623.23,-4171.35,40,0
-    >>Kill |cRXP_ENEMY_Grimtotem Raiders|r
-    .complete 2970,2 --Grimtotem Raider slain (10)
-    .mob Grimtotem Raider
-    .isOnQuest 2970
-step
-    #label Drop2766x2
-    #loop
-    .goto 1444/1,643.39,-4196.37,0
-    .goto 1444/1,643.39,-4196.37,40,0
-    .goto 1444/1,648.95,-4226.49,40,0
-    .goto 1444/1,581.53,-4218.15,40,0
-    >>Kill |cRXP_ENEMY_Grimtotem Shamans|r
-    .complete 2970,3 --Grimtotem Shaman slain (6)
-    .mob Grimtotem Shaman
-    .isOnQuest 2970
-step
-    .goto 1444/1,858.14,-4479.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jer'kai Moonweaver|r
-    .turnin 2970 >>Turn in Doling Justice
-    .target Jer'kai Moonweaver
-    .isOnQuest 2970
-step
-    .goto 1444/1,858.14,-4479.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jer'kai Moonweaver|r
-    .accept 2972 >>Accept Doling Justice
-    .target Jer'kai Moonweaver
-    .isQuestTurnedIn 2970 --any of: Doling Justice
-    .xp <38,1
-step
     .goto 1444/1,345.93,-4975.70
     >>Click the |cRXP_PICK_Large Leather Backpacks|r
     .turnin 4131 >>Turn in The Woodpaw Gnolls
@@ -246,31 +173,6 @@ step
     .goto 1444/1,432.80,-5319.03
     >>Click the |cRXP_PICK_Zukk'ash Pod|r
     .turnin 4135 >>Turn in The Writhing Deep
-step
-    .goto 1444/1,3227.40,-4457.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ginro Hearthkindle|r
-    .accept 4266 >>Accept A Hero's Welcome
-    .target Ginro Hearthkindle
-    .isQuestTurnedIn 4265 --any of: Freed from the Hive
-    .xp <40,1
-step
-    .goto 1444/1,3337.21,-4505.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shandris Feathermoon|r
-    .turnin 4266 >>Turn in A Hero's Welcome
-    .target Shandris Feathermoon
-    .isOnQuest 4266
-step
-    .goto 1444/1,3337.21,-4505.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shandris Feathermoon|r
-    .accept 4267 >>Accept Rise of the Silithid
-    .target Shandris Feathermoon
-    .isQuestTurnedIn 4266 --any of: A Hero's Welcome
-    .xp <40,1
-step << Hunter
-    .goto 1444/1,3311.84,-4379.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faralorn|r
-    .vendor >>|cRXP_BUY_Buy Ammo if needed|r
-    .target Faralorn
 step << Hunter
     .goto 1444/1,3311.84,-4379.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faralorn|r
@@ -280,24 +182,24 @@ step
     .goto 1444/1,3524.86,-5564.59
     .xp 45+87500 >> Do loops around the cave, grinding |cRXP_ENEMY_Nagas|r to level 45+87500xp
 step
-    #completewith Drop2766x3
+    #completewith Drop2766x2
     >>|cRXP_LOOT_OOX-22/FE Distress Beacon|r can drop from |cRXP_ENEMY_Gordunni Ogre|r, |cRXP_ENEMY_Gordunni Brute|r, |cRXP_ENEMY_Gordunni Mauler|r. Use it to start the quest if you get one
     .collect 8705,1,2766 --OOX-22/FE Distress Beacon (1)
     .accept 2766 >>Accept Find OOX-22/FE!
     .use 8705
 step
-    #label Drop2766x3
+    #label Drop2766x2
     #loop
-    .goto 1444/1,1772.76,-5009.06,0
-    .goto 1444/1,1772.76,-5009.06,40,0
-    .goto 1444/1,1749.13,-4967.36,40,0
-    .goto 1444/1,1722.03,-4926.12,40,0
-    .goto 1444/1,1599.01,-4857.55,40,0
+    .goto 1444/1,1513.53,-4984.50,0
     .goto 1444/1,1513.53,-4984.50,40,0
     .goto 1444/1,1558.01,-5091.53,40,0
     .goto 1444/1,1582.33,-5015.54,40,0
     .goto 1444/1,1617.78,-4976.62,40,0
+    .goto 1444/1,1772.76,-5009.06,40,0
+    .goto 1444/1,1749.13,-4967.36,40,0
+    .goto 1444/1,1722.03,-4926.12,40,0
     .goto 1444/1,1668.51,-4944.19,40,0
+    .goto 1444/1,1599.01,-4857.55,40,0
     >>Kill |cRXP_ENEMY_Feral Scar Yetis|r, |cRXP_ENEMY_Hulking Feral Scars|r, |cRXP_ENEMY_Enraged Feral Scars|r and |cRXP_ENEMY_Bloodroar the Stalkers|r. Loot them for |cRXP_LOOT_Thick Yeti Hide|r
     .complete 2821,1 --Thick Yeti Hide (10)
     .mob Feral Scar Yeti
@@ -319,6 +221,12 @@ step
     .goto 1444/1,3621.46,-5494.63
     .xp 48.5 >> Head back to the |cRXP_ENEMY_Naga|r cave and grind to level 48 + 50%
 step
+    .goto 1444/1,3312.88,-4345.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pratt McGrubben|r
+    .turnin 2821 >>Turn in The Mark of Quality while you are here
+    .isQuestComplete 2821
+    .target Pratt McGrubben
+step
     .goto 1444/1,1733.84,-4947.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homing Robot OOX-22/FE|r
     .turnin 2766 >>Turn in Find OOX-22/FE!
@@ -329,6 +237,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pratt McGrubben|r
     .turnin 2821 >>Turn in The Mark of Quality
     .target Pratt McGrubben
+step << Hunter
+    .goto 1444/1,3311.84,-4379.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faralorn|r
+    .vendor >>|cRXP_BUY_Buy Ammo if needed|r
+    .target Faralorn
 step
     .goto 1444/1,3232.96,-4474.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Troyas Moonbreeze|r
@@ -343,21 +256,110 @@ step
     .isOnQuest 4142
 step
     +|cRXP_WARN_That is all of Feralas for now.|r Quests still in your log lead on from here; pick your next zone by them
-    >>|cRXP_FRIENDLY_Darnassus|r: Rise of the Silithid, Doling Justice
-    >>|cRXP_FRIENDLY_Thousand Needles|r: An Orphan Looking For a Home
     >>|cRXP_FRIENDLY_Thousand Needles and back here|r: Pristine Pesterhide Pelts
 step
     .xp 44 >>|cRXP_WARN_The rest of Feralas is planned from level 44.|r Come back to this guide then
+step
+    .goto 1444/1,858.84,-4481.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kindal Moonweaver|r
+    .accept 3841 >>Accept An Orphan Looking For a Home
+    .target Kindal Moonweaver
+    .isQuestTurnedIn 2972 --any of: Doling Justice
+    .xp <38,1
 step
     .goto 1444/1,3232.96,-4474.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Troyas Moonbreeze|r
     .accept 2939 >>Accept In Search of Knowledge
     .target Troyas Moonbreeze
 step
+    .goto 1444/1,858.84,-4481.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kindal Moonweaver|r
+    .accept 2969 >>Accept Freedom for All Creatures
+    .target Kindal Moonweaver
+step
+    .goto 1444/1,766.40,-4529.04
+    >>Save at least 6 Sprite Darters from capture
+    .complete 2969,1 --Save at least 6 Sprite Darters from capture
+step
+    .goto 1444/1,858.84,-4481.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kindal Moonweaver|r
+    .turnin 2969 >>Turn in Freedom for All Creatures
+    .target Kindal Moonweaver
+step
+    .goto 1444/1,858.14,-4479.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jer'kai Moonweaver|r
+    .accept 2970 >>Accept Doling Justice
+    .target Jer'kai Moonweaver
+step
+    #loop
+    .goto 1444/1,763.62,-4190.35,0
+    .goto 1444/1,763.62,-4190.35,40,0
+    .goto 1444/1,826.87,-4165.79,40,0
+    .goto 1444/1,792.81,-4148.65,40,0
+    .goto 1444/1,651.73,-4147.26,40,0
+    .goto 1444/1,623.23,-4171.35,40,0
+    .goto 1444/1,578.06,-4117.14,40,0
+    .goto 1444/1,581.53,-4218.15,40,0
+    .goto 1444/1,648.25,-4254.75,40,0
+    .goto 1444/1,664.24,-4185.25,40,0
+    >>Kill |cRXP_ENEMY_Grimtotem Naturalists|r
+    >>Kill |cRXP_ENEMY_Grimtotem Raiders|r
+    >>Kill |cRXP_ENEMY_Grimtotem Shamans|r
+    .complete 2970,1 --Grimtotem Naturalist slain (12)
+    .complete 2970,2 --Grimtotem Raider slain (10)
+    .complete 2970,3 --Grimtotem Shaman slain (6)
+    .mob Grimtotem Naturalist
+    .mob Grimtotem Raider
+    .mob Grimtotem Shaman
+step
+    .goto 1444/1,858.14,-4479.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jer'kai Moonweaver|r
+    .turnin 2970 >>Turn in Doling Justice
+    .accept 2972 >>Accept Doling Justice
+    .target Jer'kai Moonweaver
+step
+    .goto 1444/1,-773.02,-4497.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kristy Grant|r
+    .turnin 98155 >>Turn in Pristine Pesterhide Pelts
+    .target Kristy Grant
+    .isQuestComplete 98155
+step
+    .goto 1444/1,432.80,-5319.03
+    >>Click the |cRXP_PICK_Zukk'ash Pod|r
+    .accept 4265 >>Accept Freed from the Hive
+step
+    .goto 1444/1,428.63,-5324.59
+    >>Free Raschal.
+    .complete 4265,1 --Free Raschal.
+step
+    .goto 1444/1,3227.40,-4457.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ginro Hearthkindle|r
+    .turnin 4265 >>Turn in Freed from the Hive
+    .accept 4266 >>Accept A Hero's Welcome
+    .target Ginro Hearthkindle
+step
+    .goto 1444/1,3337.21,-4505.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shandris Feathermoon|r
+    .turnin 4266 >>Turn in A Hero's Welcome
+    .accept 4267 >>Accept Rise of the Silithid
+    .target Shandris Feathermoon
+step
     .goto 1444/1,3229.48,-4479.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angelas Moonbreeze|r
     .accept 2982 >>Accept The High Wilderness
     .target Angelas Moonbreeze
+step
+    .goto 1444/1,1733.84,-4947.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homing Robot OOX-22/FE|r
+    .accept 2767 >>Accept Rescue OOX-22/FE!
+    .target Homing Robot OOX-22/FE
+    .isQuestTurnedIn 2766 --any of: Find OOX-22/FE!
+    .xp <40,1
+step
+    .goto 1444/1,2270.38,-4377.07
+    >>Escort OOX-22/FE to the dock along the Forgotten Coast
+    .complete 2767,1 --Escort OOX-22/FE to the dock along the Forgotten Coast
+    .isOnQuest 2767
 step
     #loop
     .goto 1444/1,1309.20,-5426.98,0
@@ -388,19 +390,26 @@ step
     .mob Gordunni Warlock
     .mob Gordunni Brute
 step
-    .goto 1444/1,-773.02,-4497.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kristy Grant|r
-    .turnin 98155 >>Turn in Pristine Pesterhide Pelts
-    .target Kristy Grant
-    .isQuestComplete 98155
-step
     .goto 1444/1,3229.48,-4479.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angelas Moonbreeze|r
     .turnin 2982 >>Turn in The High Wilderness
     .target Angelas Moonbreeze
 step
+    .goto 1444/1,2495.56,-3386.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rockbiter|r
+    .accept 2844 >>Accept The Giant Guardian
+    .target Rockbiter
+step
+    .goto 1444/1,2785.38,-2843.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shay Leafrunner|r
+    .turnin 2844 >>Turn in The Giant Guardian
+    .target Shay Leafrunner
+step
     +|cRXP_WARN_That is all of Feralas for now.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Darnassus|r: Rise of the Silithid, Doling Justice
+    >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Rescue OOX-22/FE!
     >>|cRXP_FRIENDLY_Teldrassil|r: In Search of Knowledge
+    >>|cRXP_FRIENDLY_Thousand Needles|r: An Orphan Looking For a Home
 step
     .xp 47 >>|cRXP_WARN_The rest of Feralas is planned from level 47.|r Come back to this guide then
 step
@@ -508,34 +517,33 @@ step
     .isQuestTurnedIn 4142 --any of: A Visit to Gregan
     .xp <47,1
 step
-    .goto 1444/1,2495.56,-3386.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rockbiter|r
-    .accept 2844 >>Accept The Giant Guardian
-    .target Rockbiter
-step
     .goto 1444/1,2765.92,-3098.27
     >>Open the |cRXP_PICK_Flame of Byltan|r. Loot it for |cRXP_LOOT_Byltan Essence|r
     .collect 9258,1,2879,1 --Byltan Essence (1)
     .isOnQuest 2879
 step
-    .goto 1444/1,2818.04,-2931.01
-    >>Open the |cRXP_PICK_Flame of Lahassa|r. Loot it for |cRXP_LOOT_Lahassa Essence|r
-    .collect 9255,1,2879,1 --Lahassa Essence (1)
+    .goto 1444/1,2624.14,-2953.25
+    >>Open the |cRXP_PICK_Flame of Samha|r. Loot it for |cRXP_LOOT_Samha Essence|r
+    .collect 9257,1,2879,1 --Samha Essence (1)
     .isOnQuest 2879
-step
-    .goto 1444/1,2785.38,-2843.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shay Leafrunner|r
-    .turnin 2844 >>Turn in The Giant Guardian
-    .target Shay Leafrunner
 step
     .goto 1444/1,2667.23,-2804.05
     >>Open the |cRXP_PICK_Flame of Imbel|r. Loot it for |cRXP_LOOT_Imbel Essence|r
     .collect 9256,1,2879,1 --Imbel Essence (1)
     .isOnQuest 2879
 step
-    .goto 1444/1,2624.14,-2953.25
-    >>Open the |cRXP_PICK_Flame of Samha|r. Loot it for |cRXP_LOOT_Samha Essence|r
-    .collect 9257,1,2879,1 --Samha Essence (1)
+    .goto 1444/1,2785.38,-2843.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shay Leafrunner|r
+    .accept 2845 >>Accept Wandering Shay
+    .target Shay Leafrunner
+step
+    .goto 1444/1,2783.29,-2843.44
+    >>Open the |cRXP_PICK_Shay's Chest|r. Loot it for |cRXP_LOOT_Shay's Bell|r
+    .complete 2845,1 --Shay's Bell (1)
+step
+    .goto 1444/1,2818.04,-2931.01
+    >>Open the |cRXP_PICK_Flame of Lahassa|r. Loot it for |cRXP_LOOT_Lahassa Essence|r
+    .collect 9255,1,2879,1 --Lahassa Essence (1)
     .isOnQuest 2879
 step
     .goto 1444/1,2742.98,-2976.88
@@ -553,6 +561,15 @@ step
     .accept 2942 >>Accept The Morrow Stone
     .isQuestTurnedIn 2879 --any of: The Stave of Equinex
     .xp <42,1
+step
+    .goto 1444/1,2499.73,-3379.05
+    >>Take Shay Leafrunner to Rockbiter's camp
+    .complete 2845,2 --Take Shay Leafrunner to Rockbiter's camp
+step
+    .goto 1444/1,2495.56,-3386.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rockbiter|r
+    .turnin 2845 >>Turn in Wandering Shay
+    .target Rockbiter
 step
     .goto 1444/1,3232.96,-4474.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Troyas Moonbreeze|r

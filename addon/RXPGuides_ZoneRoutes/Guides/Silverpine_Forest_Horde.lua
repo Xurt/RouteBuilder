@@ -2,7 +2,7 @@
 -- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 10, 14, 18, 21).
+-- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 10, 15, 18, 21).
 -- Edit zones/Silverpine Forest.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -15,35 +15,35 @@ RXPGuides.RegisterGuide([[
 #name 10-24 Silverpine Forest
 
 step
-    .goto 1421/0,1652.40,522.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
-    .turnin 446 >>Turn in Thule Ravenclaw
-    .target Apothecary Renferrel
-    .isOnQuest 446
-step
-    .goto 1421/0,1636.44,510.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Bates|r
-    .target Innkeeper Bates
-    .home >>Set your Hearthstone to Innkeeper Bates's inn
-step << Undead
-    .goto 1421/0,1626.36,499.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Podrig|r
-    .turnin 6324 >>Turn in Return to Podrig
-    .target Deathguard Podrig
-    .isOnQuest 6324
-step << Undead Paladin
-    .goto 1421/0,1629.72,518.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trevan Rol|r
-    .turnin 91858 >>Turn in Diplomatic Incident
-    .target Trevan Rol
-    .isOnQuest 91858
-step
     .xp 10 >>Grind to level 10 (Lost Deathstalkers needs it)
 step
     .goto 1421/0,1626.36,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Hadrec|r
     .accept 428 >>Accept Lost Deathstalkers
     .target High Executor Hadrec
+step << Undead Paladin
+    .goto 1421/0,1629.72,518.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trevan Rol|r
+    .turnin 91858 >>Turn in Diplomatic Incident
+    .target Trevan Rol
+    .isOnQuest 91858
+step << Undead
+    .goto 1421/0,1626.36,499.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Podrig|r
+    .turnin 6324 >>Turn in Return to Podrig
+    .target Deathguard Podrig
+    .isOnQuest 6324
+step
+    .goto 1421/0,1636.44,510.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Bates|r
+    .target Innkeeper Bates
+    .home >>Set your Hearthstone to Innkeeper Bates's inn
+step
+    .goto 1421/0,1652.40,522.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
+    .turnin 446 >>Turn in Thule Ravenclaw
+    .target Apothecary Renferrel
+    .isOnQuest 446
 step << Undead
     .goto 1421/0,1626.36,499.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Podrig|r
@@ -54,8 +54,34 @@ step
     .goto 1421/0,1204.68,1290.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rane Yorick|r
     .turnin 428 >>Turn in Lost Deathstalkers
+    .target Rane Yorick
+step
+    .goto 1421/0,1204.68,1290.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rane Yorick|r
     .accept 429 >>Accept Wild Hearts
     .target Rane Yorick
+    .xp <10,1
+step
+    .goto 1421/0,1090.44,1409.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Erland|r
+    .accept 435 >>Accept Escorting Erland
+    .target Deathstalker Erland
+step
+    .goto 1421/0,1166.46,1292.03
+    >>Erland must reach Rane Yorick
+    .complete 435,1 --Erland must reach Rane Yorick
+step
+    .goto 1421/0,1204.68,1290.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rane Yorick|r
+    .turnin 435 >>Turn in Escorting Erland
+    .accept 429 >>Accept Wild Hearts
+    .target Rane Yorick
+step
+    .goto 1421/0,1204.68,1290.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rane Yorick|r
+    .accept 449 >>Accept The Deathstalkers' Report
+    .target Rane Yorick
+    .xp <10,1
 step
     #loop
     .goto 1421/0,1145.04,1285.59,0
@@ -79,8 +105,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rane Yorick|r
     .accept 449 >>Accept The Deathstalkers' Report
     .target Rane Yorick
-    .isQuestTurnedIn 435 --any of: Escorting Erland
-    .xp <10,1
 step
     #completewith next
     .hs >>Hearth to Innkeeper Bates's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -89,9 +113,12 @@ step
     .goto 1421/0,1652.40,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
     .turnin 429 >>Turn in Wild Hearts
-    .accept 447 >>Accept A Recipe For Death
-    .accept 430 >>Accept Return to Quinn
     .target Apothecary Renferrel
+step
+    .goto 1421/0,1593.60,551.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
+    .accept 421 >>Accept Prove Your Worth
+    .target Dalar Dawnweaver
 step << !Mage !Priest
     .goto 1421/0,1599.90,552.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
@@ -123,15 +150,9 @@ step
     .goto 1421/0,1626.36,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Hadrec|r
     .turnin 449 >>Turn in The Deathstalkers' Report
-    .target High Executor Hadrec
-    .isOnQuest 449
-step
-    .goto 1421/0,1626.36,522.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Hadrec|r
     .accept 3221 >>Accept Speak with Renferrel
+    .accept 437 >>Accept The Dead Fields
     .target High Executor Hadrec
-    .isQuestTurnedIn 449 --any of: The Deathstalkers' Report
-    .xp <10,1
 step
     .goto 1421/0,1652.40,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
@@ -142,15 +163,31 @@ step
     .goto 1421/0,1652.40,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
     .turnin 3221 >>Turn in Speak with Renferrel
-    .target Apothecary Renferrel
-    .isOnQuest 3221
-step
-    .goto 1421/0,1652.40,522.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
     .accept 1359 >>Accept Zinge's Delivery
+    .accept 447 >>Accept A Recipe For Death
+    .accept 430 >>Accept Return to Quinn
     .target Apothecary Renferrel
-    .isQuestTurnedIn 3221 --any of: Speak with Renferrel
-    .xp <10,1
+step
+    #loop
+    .goto 1421/0,1287.42,460.15,0
+    .goto 1421/0,1287.42,460.15,40,0
+    .goto 1421/0,1257.60,497.67,40,0
+    .goto 1421/0,1274.82,408.63,40,0
+    .goto 1421/0,1275.24,362.99,40,0
+    .goto 1421/0,1318.92,328.83,40,0
+    >>Kill |cRXP_ENEMY_Moonrage Whitescalps|r
+    .complete 421,1 --Moonrage Whitescalp slain (5)
+    .mob Moonrage Whitescalp
+step
+    .goto 1421/0,1593.60,551.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
+    .turnin 421 >>Turn in Prove Your Worth
+    .accept 422 >>Accept Arugal's Folly
+    .target Dalar Dawnweaver
+step
+    .goto 1421/0,1231.14,866.43
+    >>Open the |cRXP_PICK_Dusty Spellbooks|r. Loot it for |cRXP_LOOT_Remedy of Arugal|r
+    .complete 422,1 --Remedy of Arugal (1)
 step
     .goto 1421/0,1205.94,1314.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quinn Yorick|r
@@ -158,27 +195,40 @@ step
     .accept 91920 >>Accept Wild Eyes
     .target Quinn Yorick
 step
+    #loop
+    .goto 1421/0,1025.34,1073.07,0
+    .goto 1421/0,1025.34,1073.07,40,0
+    .goto 1421/0,1050.54,1049.83,40,0
+    .goto 1421/0,1055.16,1000.27,40,0
+    .goto 1421/0,1077.84,940.07,40,0
+    .goto 1421/0,1111.86,877.63,40,0
+    .goto 1421/0,1037.94,943.43,40,0
+    .goto 1421/0,1020.30,976.75,40,0
+    .goto 1421/0,1024.92,1008.95,40,0
+    .goto 1421/0,1031.22,1037.51,40,0
+    >>Kill |cRXP_ENEMY_Vile Fin Tidecallers|r and |cRXP_ENEMY_Vile Fin Shredders|r. Loot them for |cRXP_LOOT_Murloc Eye|r
+    .complete 91920,1 --Murloc Eye (3)
+    .mob Vile Fin Tidecaller
+    .mob Vile Fin Shredder
+step
+    .goto 1421/0,1521.78,1071.11
+    >>Enter the Dead Fields
+    .complete 437,1 --Enter the Dead Fields
+step
+    #loop
+    .goto 1421/0,1560.00,1078.67,0
+    .goto 1421/0,1560.00,1078.67,40,0
+    .goto 1421/0,1560.00,1106.67,40,0
+    .goto 1421/0,1602.00,1078.67,40,0
+    >>Kill |cRXP_ENEMY_Nightlash|r and loot |cRXP_LOOT_Essence of Nightlash|r
+    .complete 437,2 --Essence of Nightlash (1)
+    .mob Nightlash
+step
     .goto 1421/0,2064.0,1167.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Killian|r
     .vendor >> Vendor trash
     .target Killian Sanatha
     .isOnQuest 447
-step
-    #loop
-    .goto 1421/0,1059.36,1125.71,0
-    .goto 1421/0,1059.36,1125.71,40,0
-    .goto 1421/0,990.06,1180.31,40,0
-    .goto 1421/0,927.06,1250.03,40,0
-    .goto 1421/0,883.38,1260.95,40,0
-    .goto 1421/0,898.50,1289.51,40,0
-    .goto 1421/0,860.70,1288.11,40,0
-    .goto 1421/0,875.82,1220.35,40,0
-    .goto 1421/0,923.70,1203.27,40,0
-    .goto 1421/0,933.78,1178.07,40,0
-    >>Kill |cRXP_ENEMY_Vile Fin Tidecallers|r and |cRXP_ENEMY_Vile Fin Shredders|r. Loot them for |cRXP_LOOT_Murloc Eye|r
-    .complete 91920,1 --Murloc Eye (3)
-    .mob Vile Fin Tidecaller
-    .mob Vile Fin Shredder
 step
     #loop
     .goto 1421/0,1887.60,1221.19,0
@@ -213,6 +263,18 @@ step
     .mob Giant Grizzled Bear
     .mob Old Vicejaw
 step
+    .goto 1421/0,1593.60,551.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
+    .turnin 422 >>Turn in Arugal's Folly
+    .accept 423 >>Accept Arugal's Folly
+    .target Dalar Dawnweaver
+step
+    .goto 1421/0,1626.36,522.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Hadrec|r
+    .turnin 437 >>Turn in The Dead Fields
+    .accept 438 >>Accept The Decrepit Ferry
+    .target High Executor Hadrec
+step
     .goto 1421/0,1652.40,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
     .turnin 91920 >>Turn in Wild Eyes
@@ -245,6 +307,24 @@ step << Rogue
     .target Alexandre Lefevre
     .money <0.2633
 step
+    #loop
+    .goto 1421/0,1720.44,820.79,0
+    .goto 1421/0,1720.44,820.79,40,0
+    .goto 1421/0,1818.72,844.59,40,0
+    .goto 1421/0,1840.56,907.03,40,0
+    .goto 1421/0,1870.80,980.39,40,0
+    .goto 1421/0,1824.60,1051.51,40,0
+    .goto 1421/0,1784.70,1011.19,40,0
+    .goto 1421/0,1712.46,1020.71,40,0
+    .goto 1421/0,1722.54,951.55,40,0
+    .goto 1421/0,1785.54,943.15,40,0
+    >>Kill |cRXP_ENEMY_Moonrage Gluttons|r. Loot them for |cRXP_LOOT_Glutton Shackle|r
+    >>Kill |cRXP_ENEMY_Moonrage Darksouls|r. Loot them for |cRXP_LOOT_Darksoul Shackle|r
+    .complete 423,1 --Glutton Shackle (6)
+    .complete 423,2 --Darksoul Shackle (3)
+    .mob Moonrage Glutton
+    .mob Moonrage Darksoul
+step
     .goto 1421/0,1205.94,1314.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quinn Yorick|r
     .turnin 91921 >>Turn in Return to Quinn (Again)
@@ -265,21 +345,37 @@ step
     .turnin 425 >>Turn in Ivar the Foul
     .target Rane Yorick
 step
+    .goto 1421/0,995.52,689.47
+    >>Click the |cRXP_PICK_Corpse Laden Boat|r
+    .turnin 438 >>Turn in The Decrepit Ferry
+    .accept 439 >>Accept Rot Hide Clues
+step
+    .goto 1421/0,1593.60,551.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
+    .turnin 423 >>Turn in Arugal's Folly
+    .target Dalar Dawnweaver
+step
+    .goto 1421/0,1626.36,522.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Hadrec|r
+    .turnin 439 >>Turn in Rot Hide Clues
+    .target High Executor Hadrec
+step
     .goto 1421/0,1354.62,-22.57
     >>Click the |cRXP_PICK_Dalaran Crate|r
     .turnin 477 >>Turn in Border Crossings
     .accept 478 >>Accept Maps and Runes
-step
-    .goto 1421/0,1644.84,-382.37
-    >>Open the |cRXP_PICK_Berard's Bookshelf|r. Loot it for |cRXP_LOOT_Berard's Journal|r
-    .complete 450,1 --Berard's Journal (1)
-    .isOnQuest 450
 step
     .goto 1421/0,1602.84,520.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Allister|r
     .turnin 478 >>Turn in Maps and Runes
     .accept 481 >>Accept Dalar's Analysis
     .target Shadow Priest Allister
+step << Undead
+    .goto 1421/0,1533.96,473.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos Razok|r
+    .turnin 6321 >>Turn in Supplying the Sepulcher while you are here
+    .isQuestComplete 6321
+    .target Karos Razok
 step
     .goto 1421/0,1593.60,551.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
@@ -290,7 +386,59 @@ step
     .goto 1421/0,1602.84,520.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Allister|r
     .turnin 482 >>Turn in Dalaran's Intentions
+    .accept 479 >>Accept Ambermill Investigations
     .target Shadow Priest Allister
+step
+    #loop
+    .goto 1421/0,1012.32,-65.41,0
+    .goto 1421/0,1012.32,-65.41,40,0
+    .goto 1421/0,935.46,-80.25,40,0
+    .goto 1421/0,875.40,-85.01,40,0
+    .goto 1421/0,893.04,-153.61,40,0
+    .goto 1421/0,912.78,-200.09,40,0
+    .goto 1421/0,970.32,-211.85,40,0
+    .goto 1421/0,1032.48,-223.05,40,0
+    .goto 1421/0,944.70,-159.77,40,0
+    .goto 1421/0,1014.42,-135.69,40,0
+    >>Kill |cRXP_ENEMY_Dalaran Protectors|r, |cRXP_ENEMY_Dalaran Mages|r and |cRXP_ENEMY_Dalaran Conjurors|r. Loot them for |cRXP_LOOT_Dalaran Pendant|r
+    .complete 479,1 --Dalaran Pendant (8)
+    .mob Dalaran Protector
+    .mob Dalaran Mage
+    .mob Dalaran Conjuror
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Bates's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
+    .goto 1421/0,1602.84,520.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Allister|r
+    .turnin 479 >>Turn in Ambermill Investigations
+    .target Shadow Priest Allister
+step
+    .goto 1421/0,1626.36,522.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Hadrec|r
+    .accept 440 >>Accept The Engraved Ring
+    .target High Executor Hadrec
+step
+    .xp 12 >>Grind to level 12 (Pyrewood Ambush needs it)
+step
+    .goto 1421/0,1497.00,-416.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Faerleia|r
+    .accept 452 >>Accept Pyrewood Ambush
+    .target Deathstalker Faerleia
+step
+    .goto 1421/0,1496.58,-406.73
+    >>Kill |cRXP_ENEMY_Councilman Smithers|r, |cRXP_ENEMY_Councilman Thatchers|r, |cRXP_ENEMY_Councilman Hendricks|r and |cRXP_ENEMY_Councilman Wilhelms|r
+    .complete 452,1 --Councilman Smithers (8)
+    .mob Councilman Smithers
+    .mob Councilman Thatcher
+    .mob Councilman Hendricks
+    .mob Councilman Wilhelm
+step
+    .goto 1421/0,1497.00,-416.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Faerleia|r
+    .turnin 452 >>Turn in Pyrewood Ambush
+    .target Deathstalker Faerleia
 step << Undead
     .goto 1421/0,1533.96,473.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos Razok|r
@@ -307,6 +455,28 @@ step
 step << Undead
     .hs >> Hearth to the Undercity
     .zoneskip Undercity
+step
+    .goto 1421/0,1644.84,-382.37
+    >>Open the |cRXP_PICK_Berard's Bookshelf|r. Loot it for |cRXP_LOOT_Berard's Journal|r
+    .complete 450,1 --Berard's Journal (1)
+    .isOnQuest 450
+step << Shaman
+    .goto 1421/0,1821.24,427.39
+    >>Kill |cRXP_ENEMY_Corrupt Minor Manifestation of Water|r and loot |cRXP_LOOT_Corrupt Manifestation's Bracers|r
+    .complete 63,1 --Corrupt Manifestation's Bracers (1)
+    .mob Corrupt Minor Manifestation of Water
+    .isOnQuest 63
+step << Shaman
+    .goto 1421/0,1843.08,418.99
+    >>Click the |cRXP_PICK_Brazier of Everfount|r
+    .turnin 63 >>Turn in Call of Water
+    .isOnQuest 63
+step
+    .goto 1421/0,1647.78,490.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mura Runetotem|r
+    .turnin 3301 >>Turn in Mura Runetotem
+    .target Mura Runetotem
+    .isOnQuest 3301
 step
     .goto 1421/0,1652.40,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
@@ -327,12 +497,6 @@ step
     .target High Executor Hadrec
     .isOnQuest 448
 step
-    .goto 1421/0,1647.78,490.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mura Runetotem|r
-    .turnin 3301 >>Turn in Mura Runetotem
-    .target Mura Runetotem
-    .isOnQuest 3301
-step
     .goto 1421/0,1594.02,471.91
     >>Click the |cRXP_PICK_Yuriv's Tombstone|r
     .turnin 264 >>Turn in Until Death Do Us Part
@@ -340,179 +504,74 @@ step
 step
     .goto 1421/0,1513.80,-734.33
     .xp 22 >> Run south to The Greymane Wall. AoE here until 22
-step << Shaman
-    .goto 1421/0,1821.24,427.39
-    >>Kill |cRXP_ENEMY_Corrupt Minor Manifestation of Water|r and loot |cRXP_LOOT_Corrupt Manifestation's Bracers|r
-    .complete 63,1 --Corrupt Manifestation's Bracers (1)
-    .mob Corrupt Minor Manifestation of Water
-    .isOnQuest 63
-step << Shaman
-    .goto 1421/0,1843.08,418.99
-    >>Click the |cRXP_PICK_Brazier of Everfount|r
-    .turnin 63 >>Turn in Call of Water
-    .isOnQuest 63
 step
     +|cRXP_WARN_That is all of Silverpine Forest for now.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Tirisfal Glades|r: The Engraved Ring
     >>|cRXP_FRIENDLY_Undercity|r: Ride to the Undercity << Undead
     >>|cRXP_FRIENDLY_Undercity|r: A Recipe For Death, Zinge's Delivery
 step
-    .xp 14 >>|cRXP_WARN_The rest of Silverpine Forest is planned from level 14.|r Come back to this guide then
+    .xp 15 >>|cRXP_WARN_The rest of Silverpine Forest is planned from level 15.|r Come back to this guide then
 step
     .goto 1421/0,1593.60,551.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
-    .accept 421 >>Accept Prove Your Worth
     .accept 98298 >>Accept Arugal's Folly
-    .target Dalar Dawnweaver
-step
-    .goto 1421/0,1626.36,522.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Hadrec|r
-    .accept 437 >>Accept The Dead Fields
-    .target High Executor Hadrec
-step
-    .goto 1421/0,1636.44,510.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Bates|r
-    .target Innkeeper Bates
-    .home >>Set your Hearthstone to Innkeeper Bates's inn
-step
-    .goto 1421/0,1602.84,520.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Allister|r
-    .accept 479 >>Accept Ambermill Investigations
-    .target Shadow Priest Allister
-step
-    #loop
-    .goto 1421/0,1287.42,460.15,0
-    .goto 1421/0,1287.42,460.15,40,0
-    .goto 1421/0,1257.60,497.67,40,0
-    .goto 1421/0,1274.82,408.63,40,0
-    .goto 1421/0,1275.24,362.99,40,0
-    .goto 1421/0,1318.92,328.83,40,0
-    >>Kill |cRXP_ENEMY_Moonrage Whitescalps|r
-    .complete 421,1 --Moonrage Whitescalp slain (5)
-    .mob Moonrage Whitescalp
-step
-    #loop
-    .goto 1421/0,1012.32,-65.41,0
-    .goto 1421/0,1012.32,-65.41,40,0
-    .goto 1421/0,935.46,-80.25,40,0
-    .goto 1421/0,875.40,-85.01,40,0
-    .goto 1421/0,893.04,-153.61,40,0
-    .goto 1421/0,912.78,-200.09,40,0
-    .goto 1421/0,970.32,-211.85,40,0
-    .goto 1421/0,1032.48,-223.05,40,0
-    .goto 1421/0,944.70,-159.77,40,0
-    .goto 1421/0,1014.42,-135.69,40,0
-    >>Kill |cRXP_ENEMY_Dalaran Protectors|r, |cRXP_ENEMY_Dalaran Mages|r and |cRXP_ENEMY_Dalaran Conjurors|r. Loot them for |cRXP_LOOT_Dalaran Pendant|r
-    .complete 479,1 --Dalaran Pendant (8)
-    .mob Dalaran Protector
-    .mob Dalaran Mage
-    .mob Dalaran Conjuror
-step
-    #loop
-    .goto 1421/0,1218.96,-443.41,0
-    .goto 1421/0,1218.96,-443.41,40,0
-    .goto 1421/0,1304.22,-412.61,40,0
-    .goto 1421/0,1360.92,-399.17,40,0
-    .goto 1421/0,1317.66,-488.21,40,0
-    .goto 1421/0,1387.38,-545.33,40,0
-    .goto 1421/0,1356.30,-588.73,40,0
-    .goto 1421/0,1316.40,-562.41,40,0
-    .goto 1421/0,1276.92,-541.41,40,0
-    .goto 1421/0,1150.92,-524.33,40,0
-    >>Kill |cRXP_ENEMY_Moonrage Bloodhowlers|r. Loot them for |cRXP_LOOT_Worgen Bits|r
-    .complete 98298,1 --Worgen Bits (6)
-    .mob Moonrage Bloodhowler
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Bates's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .goto 1421/0,1602.84,520.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Allister|r
-    .turnin 479 >>Turn in Ambermill Investigations
-    .target Shadow Priest Allister
-step
-    .goto 1421/0,1593.60,551.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
-    .turnin 421 >>Turn in Prove Your Worth
-    .turnin 98298 >>Turn in Arugal's Folly
-    .accept 422 >>Accept Arugal's Folly
-    .target Dalar Dawnweaver
-step
-    .goto 1421/0,1231.14,866.43
-    >>Open the |cRXP_PICK_Dusty Spellbooks|r. Loot it for |cRXP_LOOT_Remedy of Arugal|r
-    .complete 422,1 --Remedy of Arugal (1)
-step
-    #completewith Along10
-    >>As you go: Kill |cRXP_ENEMY_Nightlash|r and loot |cRXP_LOOT_Essence of Nightlash|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 437,2 --Essence of Nightlash (1)
-    .mob Nightlash
-step
-    #label Along10
-    .goto 1421/0,1521.78,1071.11
-    >>Enter the Dead Fields
-    .complete 437,1 --Enter the Dead Fields
-step
-    #loop
-    .goto 1421/0,1560.00,1078.67,0
-    .goto 1421/0,1560.00,1078.67,40,0
-    .goto 1421/0,1560.00,1106.67,40,0
-    .goto 1421/0,1602.00,1078.67,40,0
-    >>Kill |cRXP_ENEMY_Nightlash|r and loot |cRXP_LOOT_Essence of Nightlash|r
-    .complete 437,2 --Essence of Nightlash (1)
-    .mob Nightlash
-step
-    .goto 1421/0,1593.60,551.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
-    .turnin 422 >>Turn in Arugal's Folly
-    .accept 423 >>Accept Arugal's Folly
-    .target Dalar Dawnweaver
-step
-    .goto 1421/0,1626.36,522.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Hadrec|r
-    .turnin 437 >>Turn in The Dead Fields
-    .accept 438 >>Accept The Decrepit Ferry
-    .target High Executor Hadrec
-step
-    #loop
-    .goto 1421/0,1720.44,820.79,0
-    .goto 1421/0,1720.44,820.79,40,0
-    .goto 1421/0,1818.72,844.59,40,0
-    .goto 1421/0,1840.56,907.03,40,0
-    .goto 1421/0,1870.80,980.39,40,0
-    .goto 1421/0,1824.60,1051.51,40,0
-    .goto 1421/0,1784.70,1011.19,40,0
-    .goto 1421/0,1712.46,1020.71,40,0
-    .goto 1421/0,1722.54,951.55,40,0
-    .goto 1421/0,1785.54,943.15,40,0
-    >>Kill |cRXP_ENEMY_Moonrage Gluttons|r. Loot them for |cRXP_LOOT_Glutton Shackle|r
-    >>Kill |cRXP_ENEMY_Moonrage Darksouls|r. Loot them for |cRXP_LOOT_Darksoul Shackle|r
-    .complete 423,1 --Glutton Shackle (6)
-    .complete 423,2 --Darksoul Shackle (3)
-    .mob Moonrage Glutton
-    .mob Moonrage Darksoul
-step
-    .goto 1421/0,995.52,689.47
-    >>Click the |cRXP_PICK_Corpse Laden Boat|r
-    .turnin 438 >>Turn in The Decrepit Ferry
-    .accept 439 >>Accept Rot Hide Clues
-step
-    .goto 1421/0,1593.60,551.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
-    .turnin 423 >>Turn in Arugal's Folly
     .accept 424 >>Accept Arugal's Folly
     .target Dalar Dawnweaver
 step
     .goto 1421/0,1626.36,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Hadrec|r
-    .turnin 439 >>Turn in Rot Hide Clues
     .accept 443 >>Accept Rot Hide Ichor
-    .accept 440 >>Accept The Engraved Ring
     .target High Executor Hadrec
 step
     .goto 1421/0,989.64,410.59
     >>Kill |cRXP_ENEMY_Grimson the Pale|r and loot |cRXP_LOOT_Head of Grimson|r
     .complete 424,1 --Head of Grimson (1)
     .mob Grimson the Pale
+step
+    .goto 1421/0,1593.60,551.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
+    .turnin 424 >>Turn in Arugal's Folly
+    .accept 99 >>Accept Arugal's Folly
+    .target Dalar Dawnweaver
+step
+    #loop
+    .goto 1421/0,1545.72,-329.45,0
+    .goto 1421/0,1545.72,-329.45,40,0
+    .goto 1421/0,1602.00,-345.13,40,0
+    .goto 1421/0,1633.08,-385.73,40,0
+    .goto 1421/0,1564.20,-433.33,40,0
+    .goto 1421/0,1543.62,-397.49,40,0
+    .goto 1421/0,1518.00,-439.49,40,0
+    .goto 1421/0,1453.32,-410.93,40,0
+    .goto 1421/0,1421.82,-354.37,40,0
+    .goto 1421/0,1487.76,-361.65,40,0
+    >>Kill |cRXP_ENEMY_Pyrewood Watchers|r, |cRXP_ENEMY_Moonrage Watchers|r, |cRXP_ENEMY_Moonrage Sentries|r and |cRXP_ENEMY_Pyrewood Sentries|r. Loot them for |cRXP_LOOT_Pyrewood Shackle|r
+    .complete 99,1 --Pyrewood Shackle (6)
+    .mob Pyrewood Watcher
+    .mob Moonrage Watcher
+    .mob Moonrage Sentry
+    .mob Pyrewood Sentry
+step
+    #loop
+    .goto 1421/0,1429.38,-452.65,0
+    .goto 1421/0,1429.38,-452.65,40,0
+    .goto 1421/0,1317.66,-488.21,40,0
+    .goto 1421/0,1316.40,-562.41,40,0
+    .goto 1421/0,1356.30,-588.73,40,0
+    .goto 1421/0,1387.38,-545.33,40,0
+    .goto 1421/0,1431.48,-525.17,40,0
+    .goto 1421/0,1485.24,-558.77,40,0
+    .goto 1421/0,1552.44,-587.05,40,0
+    .goto 1421/0,1581.42,-549.81,40,0
+    >>Kill |cRXP_ENEMY_Moonrage Bloodhowlers|r. Loot them for |cRXP_LOOT_Worgen Bits|r
+    .complete 98298,1 --Worgen Bits (6)
+    .mob Moonrage Bloodhowler
+step
+    .goto 1421/0,1593.60,551.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
+    .turnin 98298 >>Turn in Arugal's Folly
+    .turnin 99 >>Turn in Arugal's Folly
+    .target Dalar Dawnweaver
 step
     #completewith Drop460x1
     >>|cRXP_LOOT_A Talking Head|r can drop from |cRXP_ENEMY_Rot Hide Brute|r, |cRXP_ENEMY_Rot Hide Plague Weaver|r, |cRXP_ENEMY_Rot Hide Savage|r. Use it to start the quest if you get one
@@ -522,8 +581,7 @@ step
 step
     #label Drop460x1
     #loop
-    .goto 1421/0,659.10,687.23,0
-    .goto 1421/0,659.10,687.23,40,0
+    .goto 1421/0,715.80,770.67,0
     .goto 1421/0,715.80,770.67,40,0
     .goto 1421/0,610.80,798.67,40,0
     .goto 1421/0,581.40,739.03,40,0
@@ -532,6 +590,7 @@ step
     .goto 1421/0,584.34,686.11,40,0
     .goto 1421/0,620.04,649.99,40,0
     .goto 1421/0,636.00,695.07,40,0
+    .goto 1421/0,659.10,687.23,40,0
     >>Kill |cRXP_ENEMY_Rot Hide Brutes|r, |cRXP_ENEMY_Rot Hide Plague Weavers|r, |cRXP_ENEMY_Rot Hide Savages|r and |cRXP_ENEMY_Raging Rot Hides|r. Loot them for |cRXP_LOOT_Rot Hide Ichor|r
     .complete 443,1 --Rot Hide Ichor (1)
     .mob Rot Hide Brute
@@ -561,43 +620,13 @@ step
     .isQuestTurnedIn 461 --any of: The Hidden Niche
     .xp <12,1
 step
-    .goto 1421/0,1593.60,551.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
-    .turnin 424 >>Turn in Arugal's Folly
-    .accept 99 >>Accept Arugal's Folly
-    .target Dalar Dawnweaver
-step
     .goto 1421/0,1652.40,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
     .turnin 443 >>Turn in Rot Hide Ichor
     .accept 444 >>Accept Rot Hide Origins
     .target Apothecary Renferrel
 step
-    #loop
-    .goto 1421/0,1545.72,-329.45,0
-    .goto 1421/0,1545.72,-329.45,40,0
-    .goto 1421/0,1602.00,-345.13,40,0
-    .goto 1421/0,1633.08,-385.73,40,0
-    .goto 1421/0,1564.20,-433.33,40,0
-    .goto 1421/0,1543.62,-397.49,40,0
-    .goto 1421/0,1518.00,-439.49,40,0
-    .goto 1421/0,1453.32,-410.93,40,0
-    .goto 1421/0,1421.82,-354.37,40,0
-    .goto 1421/0,1487.76,-361.65,40,0
-    >>Kill |cRXP_ENEMY_Pyrewood Watchers|r, |cRXP_ENEMY_Moonrage Watchers|r, |cRXP_ENEMY_Moonrage Sentries|r and |cRXP_ENEMY_Pyrewood Sentries|r. Loot them for |cRXP_LOOT_Pyrewood Shackle|r
-    .complete 99,1 --Pyrewood Shackle (6)
-    .mob Pyrewood Watcher
-    .mob Moonrage Watcher
-    .mob Moonrage Sentry
-    .mob Pyrewood Sentry
-step
-    .goto 1421/0,1593.60,551.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
-    .turnin 99 >>Turn in Arugal's Folly
-    .target Dalar Dawnweaver
-step
     +|cRXP_WARN_That is all of Silverpine Forest for now.|r Quests still in your log lead on from here; pick your next zone by them
-    >>|cRXP_FRIENDLY_Tirisfal Glades|r: The Engraved Ring
     >>|cRXP_FRIENDLY_Undercity|r: Rot Hide Origins, Wand to Bethor
 step
     .xp 18 >>|cRXP_WARN_The rest of Silverpine Forest is planned from level 18.|r Come back to this guide then

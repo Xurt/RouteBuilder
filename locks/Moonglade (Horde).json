@@ -1,7 +1,7 @@
 {
   "about": "Step order taken from RestedXP's guide by RxpToLock. RouteBuilder follows it and slots in this zone's other quests. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "from RestedXP: 1-10 ADV Elwynn Forest Human Mage AoE, 10-11 ADV Dun Morogh Human Mage AoE, 1-10 ADV Dun Morogh Gnome Mage AoE, 1-10 Elwynn Forest Mage AoE, 1-10 Dun Morogh Mage AoE, 22-24 Hillsbrad, 23-24 Hillsbrad Class Quests, 24-26 Southern Barrens, 24-26 Southern Barrens/Stonetalon, 26-28 Ashenvale, 26-28 SoD Ashenvale, 28-30 Thousand Needles, 30-33 Hillsbrad/Arathi, 33-34 Shimmering Flats, 34-35 Desolace, 35-37 Northern Stranglethorn, 37-38 Dustwallow Marsh, 38-39 Alterac/Arathi, 39-40 Badlands, 40-41 Stranglethorn Vale, 41-400_41-41 Swamp of Sorrows, 41-41 Desolace II, 41-43 Tanaris/Dustwallow, 43-44 Feralas, 44-45 Southern Stranglethorn, 45-46 Swamp of Sorrows, 46-48 Tanaris, 48-49 The Hinterlands, 49-50 Feralas, 50-51 Stranglethorn/Blasted Lands, 51-52 Searing Gorge/Burning Steppes, 52-53 Azshara, 53-54 Felwood, 54-55 Un'Goro Crater, 55-56 Felwood/Winterspring, 56-58 Western PL/Eastern PL, 58-59 Winterspring/Silithus I, 59-60 Winterspring/Silithus II, 21-30 Silverpine/Hillsbrad AoE, 30-36 Arathi/Alterac AoE, 36-60 Mage AoE, 1-6 Durotar, 6-10 Durotar, 10-12 Durotar, 10-12 Tirisfal (Orc/Troll), 1-6 Tirisfal Glades, 6-12 Tirisfal Glades, 12-14 Silverpine Forest, 1-6 Mulgore, 6-12 Mulgore, 12-17 The Barrens, 17-22 Stonetalon/Barrens/Ashenvale, 12-17 The Barrens AoE, 17-21 Stonetalon/Barrens AoE, 1-14 Zephras Isle, Random Stuff",
-  "saved": "2026-10-14 09:58",
+  "saved": "2026-10-14 10:42",
   "levels": "RestedXP",
   "parts": [
     {
@@ -9,6 +9,9 @@
       "steps": [
         "accept:5922 @1456:-283.89,-1039.96  Accept Moonglade [5922]  (RestedXP: 6-12 Mulgore)",
         "turnin:5922 @1450:-2678.76,8019.94  TurnIn Moonglade [5922]  (RestedXP: 6-12 Mulgore)",
+        "accept:5930 @1450:-2678.76,8019.94  Accept Great Bear Spirit [5930]  (RestedXP: 6-12 Mulgore)",
+        "obj:5930:1 @1450:-2286.12,8068.28  Objective 1 of Great Bear Spirit [5930]  (RestedXP: 6-12 Mulgore)",
+        "turnin:5930 @1450:-2678.76,8019.94  TurnIn Great Bear Spirit [5930]  (RestedXP: 6-12 Mulgore)",
         "accept:5932 @1450:-2678.76,8019.94  Accept Back to Thunder Bluff [5932]  (RestedXP: 6-12 Mulgore)",
         "turnin:5932 @1456:-283.89,-1039.96  TurnIn Back to Thunder Bluff [5932]  (RestedXP: 6-12 Mulgore)",
         {"lines":[".goto 1450/1,-2593.82,7866.90",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r",".train 1430 >> Train your class spells",".target Loganaar",".xp <18,1",".xp >20,1"],"tag":"Druid","from":"RestedXP: 17-22 Stonetalon/Barrens/Ashenvale"},
@@ -16,6 +19,9 @@
         {"lines":[".hs >> Hearth to Camp Taurajo",".subzoneskip 378"],"from":"RestedXP: 17-22 Stonetalon/Barrens/Ashenvale"},
         "accept:27 @1456:-281.59,-1039.61  Accept A Lesson to Learn [27]  (RestedXP: 17-22 Stonetalon/Barrens/Ashenvale)",
         "turnin:27 @1450:-2678.76,8019.94  TurnIn A Lesson to Learn [27]  (RestedXP: 17-22 Stonetalon/Barrens/Ashenvale)",
+        "accept:28 @1450:-2678.76,8019.94  Accept Trial of the Lake [28]  (RestedXP: 17-22 Stonetalon/Barrens/Ashenvale)",
+        "obj:28:1 @1450:-2221.48,7844.89  Objective 1 of Trial of the Lake [28]  (RestedXP: 17-22 Stonetalon/Barrens/Ashenvale)",
+        "turnin:28 @1450:-2224.25,7874.29  TurnIn Trial of the Lake [28]  (RestedXP: 17-22 Stonetalon/Barrens/Ashenvale)",
         "accept:30 @1450:-2224.25,7874.29  Accept Trial of the Sea Lion [30]  (RestedXP: 17-22 Stonetalon/Barrens/Ashenvale)",
         "obj:30:1 @1450:-2212.85,7854.68  Objective 1 of Trial of the Sea Lion [30]  (RestedXP: 22-24 Hillsbrad)",
         "turnin:30 @1450:-2678.76,8019.94  TurnIn Trial of the Sea Lion [30]  (RestedXP: 22-24 Hillsbrad)",

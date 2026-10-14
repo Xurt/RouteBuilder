@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "32-42 Arathi Highlands",
-  "saved": "2026-10-14 09:56",
+  "saved": "2026-10-14 10:40",
   "levels": "RestedXP",
   "parts": [
     {
@@ -100,14 +100,17 @@
         "obj:679:2 @1417:-1558.59,-1757.17  Objective Call to Arms / Boulderfist Lord slain (3)",
         "turnin:679 @1417:-3539.31,-947.41  TurnIn Call to Arms",
         "turnin:680 @1417:-3532.11,-927.01  TurnIn The Real Threat",
+        "obj:640:1 @1417:-1744.71,-1545.01  Objective The Broken Sigil / Sigil Fragment (11)",
         "accept:662 @1417:-2047.47,-2088.85  Accept Deep Sea Salvage",
         "accept:664 @1417:-2090.67,-2072.53  Accept Drowned Sorrows",
+        "accept:665 @1417:-2085.99,-2066.53  Accept Sunken Treasure",
+        "obj:665:1 @1417:-2085.99,-2067.73  Objective Sunken Treasure / Defend Professor Phizzlethorpe",
+        "turnin:665 @1417:-2085.63,-2064.13  TurnIn Sunken Treasure",
         "accept:666 @1417:-2085.63,-2064.13  Accept Sunken Treasure",
         "obj:662:2 @1417:-1708.71,-2175.49  Objective Deep Sea Salvage / Maiden's Folly Log (1)",
         "obj:662:1 @1417:-1696.47,-2161.57  Objective Deep Sea Salvage / Maiden's Folly Charts (1)",
         "obj:662:3 @1417:-1603.23,-2187.97  Objective Deep Sea Salvage / Spirit of Silverpine Charts (1)",
         "obj:662:4 @1417:-1610.07,-2175.73  Objective Deep Sea Salvage / Spirit of Silverpine Log (1)",
-        "obj:640:1 @1417:-1744.71,-1545.01  Objective The Broken Sigil / Sigil Fragment (11)",
         "obj:666:1 @1417:-1694.67,-2245.33  Objective Sunken Treasure / Elven Gem (10)",
         "obj:664:1 @1417:-1679.19,-2219.17  Objective Drowned Sorrows / Daggerspine Raider slain (10)",
         "obj:664:2 @1417:-1674.87,-2157.73  Objective Drowned Sorrows / Daggerspine Sorceress slain (3)",
@@ -115,26 +118,29 @@
         "turnin:666 @1417:-2085.63,-2064.13  TurnIn Sunken Treasure",
         "accept:668 @1417:-2085.63,-2064.13  Accept Sunken Treasure",
         "turnin:664 @1417:-2090.67,-2072.53  TurnIn Drowned Sorrows",
+        "turnin:668 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure",
+        "accept:669 @1417:-2028.75,-2086.45  Accept Sunken Treasure",
         "turnin:640 @1417:-3556.59,-1004.29  TurnIn The Broken Sigil",
         "accept:641 @1417:-3556.59,-1004.29  Accept Sigil of Thoradin",
         "turnin:641 @1417:-3523.47,-948.37  TurnIn Sigil of Thoradin",
         "accept:643 @1417:-3523.47,-948.37  Accept Sigil of Arathor",
         "obj:643:1 @1417:-2071.59,-1383.25  Objective Sigil of Arathor / Sigil of Arathor (1)",
-        "turnin:643 @1417:-3523.47,-948.37  TurnIn Sigil of Arathor",
-        "turnin:668 @1417:-2028.75,-2086.45  TurnIn Sunken Treasure",
-        "accept:669 @1417:-2028.75,-2086.45  Accept Sunken Treasure"
+        "turnin:643 @1417:-3523.47,-948.37  TurnIn Sigil of Arathor"
       ]
     },
     {
       "part": 4,
       "steps": [
-        "turnin:98888 @1417:-3512.67,-832.45  TurnIn Conflict at Darkspear Islands",
         "turnin:98887 @1417:-3512.67,-832.45  TurnIn Conflict at Darkspear Islands",
+        "turnin:98888 @1417:-3512.67,-832.45  TurnIn Conflict at Darkspear Islands",
         "turnin:79358 @1417:-3018.39,-795.73  TurnIn Storm, Earth, and Fire",
         "accept:652 @1417:-2170.95,-1510.45  Accept Breaking the Keystone",
         "obj:652:1 @1417:-3167.07,-853.33  Objective Breaking the Keystone / Rod of Order (1)",
         "turnin:652 @1417:-2165.55,-1527.49  TurnIn Breaking the Keystone",
         "accept:688 @1417:-2165.55,-1527.49  Accept Myzrael's Allies",
+        "accept:667 @1417:-2028.75,-2086.45  Accept Death From Below",
+        "obj:667:1 @1417:-2016.15,-2097.01  Objective Death From Below / Defend Shakes O'Breen",
+        "turnin:667 @1417:-2028.75,-2086.45  TurnIn Death From Below",
         "turnin:688 @1417:-3550.11,-988.69  TurnIn Myzrael's Allies",
         "accept:687 @1417:-3550.11,-988.69  Accept Theldurin the Lost"
       ]

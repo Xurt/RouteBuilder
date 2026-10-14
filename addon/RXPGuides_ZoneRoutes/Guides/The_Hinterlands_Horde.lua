@@ -120,29 +120,6 @@ step
 step
     .xp 45 >>|cRXP_WARN_The rest of The Hinterlands is planned from level 45.|r Come back to this guide then
 step
-    .goto 1425/0,-4583.39,-622.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lard|r
-    .target Lard
-    .home >>Set your Hearthstone to Lard's inn
-step
-    .goto 1425/0,-3512.71,-832.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
-    .turnin 98888 >>Turn in Conflict at Darkspear Islands
-    .target Horde Warbringer
-    .isQuestComplete 98888
-step
-    .goto 1425/0,-3512.71,-832.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
-    .turnin 98887 >>Turn in Conflict at Darkspear Islands
-    .target Horde Warbringer
-    .isQuestComplete 98887
-step
-    .goto 1425/0,-2874.38,-463.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atal'ai Exile|r
-    .turnin 1446 >>Turn in Jammal'an the Prophet
-    .target Atal'ai Exile
-    .isQuestComplete 1446
-step
     .goto 1425/0,-2603.34,219.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilveradin Sunchaser|r
     .accept 77 >>Accept A Sticky Situation
@@ -150,10 +127,33 @@ step
     .isQuestTurnedIn 650 --any of: Ripple Recovery
     .xp <42,1
 step
+    .goto 1425/0,-2874.38,-463.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atal'ai Exile|r
+    .turnin 1446 >>Turn in Jammal'an the Prophet
+    .target Atal'ai Exile
+    .isQuestComplete 1446
+step
+    .goto 1425/0,-3512.71,-832.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
+    .turnin 98887 >>Turn in Conflict at Darkspear Islands
+    .target Horde Warbringer
+    .isQuestComplete 98887
+step
+    .goto 1425/0,-3512.71,-832.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
+    .turnin 98888 >>Turn in Conflict at Darkspear Islands
+    .target Horde Warbringer
+    .isQuestComplete 98888
+step
     .goto 1425/0,-4548.36,-590.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Slagtree|r
     .accept 7839 >>Accept Vilebranch Hooligans
     .target Smith Slagtree
+step
+    .goto 1425/0,-4583.39,-622.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lard|r
+    .target Lard
+    .home >>Set your Hearthstone to Lard's inn
 step
     .goto 1425/0,-4608.80,-541.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mystic Yayo'jin|r
@@ -192,6 +192,25 @@ step
     .complete 77,1 --Hinterlands Honey Ripple (1)
     .isOnQuest 77
 step
+    #completewith Along11
+    >>As you go: Kill |cRXP_ENEMY_Highvale Scouts|r. Kill |cRXP_ENEMY_Highvale Rangers|r. Kill |cRXP_ENEMY_Highvale Marksmans|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 7841,1 --Highvale Scout slain (15)
+    .complete 7841,3 --Highvale Ranger slain (15)
+    .complete 7841,4 --Highvale Marksman slain (15)
+    .mob Highvale Scout
+    .mob Highvale Ranger
+    .mob Highvale Marksman
+step
+    #label Along11
+    .goto 1425/0,-2758.11,262.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rin'ji|r
+    .accept 2742 >>Accept Rin'ji is Trapped!
+    .target Rin'ji
+step
+    .goto 1425/0,-2906.33,20.86
+    >>Escort Rin'ji to safety
+    .complete 2742,1 --Escort Rin'ji to safety
+step
     #completewith Drop485x1
     >>|cRXP_LOOT_OOX-09/HL Distress Beacon|r can drop from |cRXP_ENEMY_Saltwater Snapjaw|r, |cRXP_ENEMY_Vilebranch Axe Thrower|r, |cRXP_ENEMY_Vilebranch Witch Doctor|r. Use it to start the quest if you get one
     .collect 8704,1,485 --OOX-09/HL Distress Beacon (1)
@@ -199,13 +218,13 @@ step
     .use 8704
 step
     #loop
-    .goto 1425/0,-2887.08,214.39,0
-    .goto 1425/0,-2887.08,214.39,40,0
+    .goto 1425/0,-2847.04,144.32,0
     .goto 1425/0,-2847.04,144.32,40,0
     .goto 1425/0,-2776.20,140.47,40,0
     .goto 1425/0,-2680.72,151.76,40,0
     .goto 1425/0,-2665.71,279.33,40,0
     .goto 1425/0,-2816.63,370.70,40,0
+    .goto 1425/0,-2887.08,214.39,40,0
     .goto 1425/0,-2799.69,258.28,40,0
     .goto 1425/0,-2739.63,215.42,40,0
     .goto 1425/0,-2803.92,195.91,40,0
@@ -222,12 +241,12 @@ step
     .mob Highvale Ranger
     .mob Highvale Marksman
 step
-    #completewith Along12
+    #completewith Along14
     >>As you go: Kill |cRXP_ENEMY_Savage Owlbeasts|r. |cRXP_WARN_Anything left is finished later|r
     .complete 7829,1 --Savage Owlbeast slain (20)
     .mob Savage Owlbeast
 step
-    #label Along12
+    #label Along14
     #loop
     .goto 1425/0,-3377.96,-59.73,0
     .goto 1425/0,-3377.96,-59.73,40,0
@@ -290,9 +309,8 @@ step
 step
     .goto 1425/0,-4897.55,-47.92
     >>Click the |cRXP_PICK_Rin'ji's Secret|r
+    .turnin 2742 >>Turn in Rin'ji is Trapped!
     .accept 2782 >>Accept Rin'ji's Secret
-    .isQuestTurnedIn 2742 --any of: Rin'ji is Trapped!
-    .xp <42,1
 step
     #completewith next
     .hs >>Hearth to Lard's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -377,8 +395,21 @@ step
     .target Homing Robot OOX-09/HL
     .isOnQuest 485
 step
+    .goto 1425/0,-3474.98,500.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homing Robot OOX-09/HL|r
+    .accept 836 >>Accept Rescue OOX-09/HL!
+    .target Homing Robot OOX-09/HL
+    .isQuestTurnedIn 485 --any of: Find OOX-09/HL!
+    .xp <43,1
+step
+    .goto 1425/0,-4621.89,-108.24
+    >>Escort OOX-09/HL to the shoreline beyond Overlook Cliff
+    .complete 836,1 --Escort OOX-09/HL to the shoreline beyond Overlook Cliff
+    .isOnQuest 836
+step
     +|cRXP_WARN_That is all of The Hinterlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Orgrimmar|r: Ripple Delivery
+    >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Rescue OOX-09/HL!
     >>|cRXP_FRIENDLY_Undercity|r: Rin'ji's Secret
 step
     .xp 48 >>|cRXP_WARN_The rest of The Hinterlands is planned from level 48.|r Come back to this guide then
@@ -387,6 +418,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lard|r
     .accept 7840 >>Accept Lard Lost His Lunch
     .target Lard
+    .home >>Set your Hearthstone to Lard's inn
 step
     .goto 1425/0,-4667.71,-626.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katoom the Angler|r
@@ -440,6 +472,11 @@ step
     >>Click the |cRXP_PICK_Call to Arms!|r
     .accept 7862 >>Accept Job Opening: Guard Captain of Revantusk Village
 step
+    .goto 1425/0,-4631.13,-563.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Otho Moji'ko|r
+    .accept 7843 >>Accept The Final Message to the Wildhammer
+    .target Otho Moji'ko
+step
     .goto 1425/0,-4622.66,-574.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Markhor|r
     .accept 7849 >>Accept Separation Anxiety
@@ -455,7 +492,7 @@ step
     >>Open the |cRXP_PICK_Pile of Bones|r. Loot it for |cRXP_LOOT_Huntsman Malkhor's Bones|r
     .complete 7849,2 --Huntsman Malkhor's Bones (1)
 step
-    #completewith Along15
+    #completewith Along16
     >>As you go: Pick up |cRXP_PICK_Vessel of Tainted Blood|r from the ground. |cRXP_WARN_Anything left is finished later|r
     .complete 7850,1 --Vessel of Tainted Blood (1)
 step
@@ -478,12 +515,12 @@ step
     .complete 7862,4 --Vilebranch Soul Eater slain (20)
     .mob Vilebranch Soul Eater
 step
-    #completewith Along14
+    #completewith Along15
     >>As you go: Kill |cRXP_ENEMY_Vilebranch Shadow Hunters|r. |cRXP_WARN_Anything left is finished later|r
     .complete 7862,2 --Vilebranch Shadow Hunter slain (20)
     .mob Vilebranch Shadow Hunter
 step
-    #label Along14
+    #label Along15
     #loop
     .goto 1425/0,-4010.51,-241.96,0
     .goto 1425/0,-4010.51,-241.96,40,0
@@ -499,7 +536,7 @@ step
     .complete 7862,1 --Vilebranch Berserker slain (20)
     .mob Vilebranch Berserker
 step
-    #label Along15
+    #label Along16
     #loop
     .goto 1425/0,-3997.81,-529.69,0
     .goto 1425/0,-3997.81,-529.69,40,0
@@ -545,21 +582,34 @@ step
 step
     .goto 1425/0,-3512.71,-832.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
-    .turnin 98888 >>Turn in Conflict at Darkspear Islands
-    .target Horde Warbringer
-    .isQuestComplete 98888
-step
-    .goto 1425/0,-3512.71,-832.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
     .turnin 98887 >>Turn in Conflict at Darkspear Islands
     .target Horde Warbringer
     .isQuestComplete 98887
+step
+    .goto 1425/0,-3512.71,-832.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
+    .turnin 98888 >>Turn in Conflict at Darkspear Islands
+    .target Horde Warbringer
+    .isQuestComplete 98888
 step
     .goto 1425/0,-2874.38,-463.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atal'ai Exile|r
     .turnin 1446 >>Turn in Jammal'an the Prophet
     .target Atal'ai Exile
     .isQuestComplete 1446
+step
+    .goto 1425/0,-2127.09,232.87
+    >>Message to the Wildhammer Delivered
+    .complete 7843,1 --Message to the Wildhammer Delivered
+step
+    #completewith next
+    .hs >>Hearth to Lard's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
+    .goto 1425/0,-4631.13,-563.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Otho Moji'ko|r
+    .turnin 7843 >>Turn in The Final Message to the Wildhammer
+    .target Otho Moji'ko
 step
     .xp 51 >>|cRXP_WARN_The rest of The Hinterlands is planned from level 51.|r Come back to this guide then
 step

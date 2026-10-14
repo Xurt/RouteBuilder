@@ -131,16 +131,15 @@ step
 step
     .goto 1447/1,-6361.16,3098.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
-    .accept 3509 >>Accept The Name of the Beast
+    .complete 2744,1 --Loramus Thalipedes
     .target Loramus Thalipedes
-    .isQuestTurnedIn 3508 --any of: Breaking the Ward
-    .xp <45,1
+    .isOnQuest 2744
 step
-    .goto 1447/1,-7188.22,3894.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Arkkoroc|r
-    .turnin 3509 >>Turn in The Name of the Beast
-    .target Lord Arkkoroc
-    .isOnQuest 3509
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .turnin 2744 >>Turn in The Demon Hunter
+    .target Loramus Thalipedes
+    .isOnQuest 2744
 step
     .goto 1447/1,-7222.70,2251.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Xiggs Fuselighter|r
@@ -275,50 +274,6 @@ step << Mage
     .turnin 8253 >>Turn in Destroy Morphaz
     .target Archmage Xylem
     .isQuestComplete 8253
-step
-    .goto 1447/1,-7188.22,3894.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Arkkoroc|r
-    .accept 3510 >>Accept The Name of the Beast
-    .target Lord Arkkoroc
-    .isQuestTurnedIn 3509 --any of: The Name of the Beast
-    .xp <45,1
-step
-    .goto 1447/1,-6153.77,3827.20
-    >>Kill |cRXP_ENEMY_Hetaeras|r. Loot them for |cRXP_LOOT_Hetaera's Bruised Head|r
-    .complete 3510,3 --Hetaera's Bruised Head (10)
-    .mob Hetaera
-    .isOnQuest 3510
-step
-    .goto 1447/1,-6153.77,3827.20
-    >>Kill |cRXP_ENEMY_Hetaeras|r. Loot them for |cRXP_LOOT_Hetaera's Bloodied Head|r
-    .complete 3510,2 --Hetaera's Bloodied Head (10)
-    .mob Hetaera
-    .isOnQuest 3510
-step
-    .goto 1447/1,-6153.77,3827.20
-    >>Kill |cRXP_ENEMY_Hetaeras|r. Loot them for |cRXP_LOOT_Hetaera's Beaten Head|r
-    .complete 3510,1 --Hetaera's Beaten Head (10)
-    .mob Hetaera
-    .isOnQuest 3510
-step
-    .goto 1447/1,-7188.22,3894.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Arkkoroc|r
-    .turnin 3510 >>Turn in The Name of the Beast
-    .target Lord Arkkoroc
-    .isOnQuest 3510
-step
-    .goto 1447/1,-7188.22,3894.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Arkkoroc|r
-    .accept 3511 >>Accept The Name of the Beast
-    .target Lord Arkkoroc
-    .isQuestTurnedIn 3510 --any of: The Name of the Beast
-    .xp <45,1
-step
-    .goto 1447/1,-6361.16,3098.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
-    .turnin 3511 >>Turn in The Name of the Beast
-    .target Loramus Thalipedes
-    .isOnQuest 3511
 step << Rogue
     .goto 1447/1,-4760.30,3982.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Xylem|r
@@ -512,6 +467,95 @@ step
     .turnin 6805 >>Turn in Stormers and Rumblers
     .target Duke Hydraxis
     .isQuestComplete 6805
+step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .accept 3141 >>Accept Loramus
+    .target Loramus Thalipedes
+    .isQuestTurnedIn 2744 --any of: The Demon Hunter
+    .xp <45,1
+step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .complete 3141,1 --Loramus Thalipedes (10)
+    .target Loramus Thalipedes
+    .isOnQuest 3141
+step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .turnin 3141 >>Turn in Loramus
+    .target Loramus Thalipedes
+    .isOnQuest 3141
+step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .accept 3508 >>Accept Breaking the Ward
+    .target Loramus Thalipedes
+    .isQuestTurnedIn 3141 --any of: Loramus
+    .xp <45,1
+step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .turnin 3508 >>Turn in Breaking the Ward
+    .target Loramus Thalipedes
+    .isOnQuest 3508
+step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .accept 3509 >>Accept The Name of the Beast
+    .target Loramus Thalipedes
+    .isQuestTurnedIn 3508 --any of: Breaking the Ward
+    .xp <45,1
+step
+    .goto 1447/1,-7188.22,3894.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Arkkoroc|r
+    .turnin 3509 >>Turn in The Name of the Beast
+    .target Lord Arkkoroc
+    .isOnQuest 3509
+step
+    .goto 1447/1,-7188.22,3894.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Arkkoroc|r
+    .accept 3510 >>Accept The Name of the Beast
+    .target Lord Arkkoroc
+    .isQuestTurnedIn 3509 --any of: The Name of the Beast
+    .xp <45,1
+step
+    .goto 1447/1,-6153.77,3827.20
+    >>Kill |cRXP_ENEMY_Hetaeras|r. Loot them for |cRXP_LOOT_Hetaera's Bruised Head|r
+    .complete 3510,3 --Hetaera's Bruised Head (10)
+    .mob Hetaera
+    .isOnQuest 3510
+step
+    .goto 1447/1,-6153.77,3827.20
+    >>Kill |cRXP_ENEMY_Hetaeras|r. Loot them for |cRXP_LOOT_Hetaera's Bloodied Head|r
+    .complete 3510,2 --Hetaera's Bloodied Head (10)
+    .mob Hetaera
+    .isOnQuest 3510
+step
+    .goto 1447/1,-6153.77,3827.20
+    >>Kill |cRXP_ENEMY_Hetaeras|r. Loot them for |cRXP_LOOT_Hetaera's Beaten Head|r
+    .complete 3510,1 --Hetaera's Beaten Head (10)
+    .mob Hetaera
+    .isOnQuest 3510
+step
+    .goto 1447/1,-7188.22,3894.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Arkkoroc|r
+    .turnin 3510 >>Turn in The Name of the Beast
+    .target Lord Arkkoroc
+    .isOnQuest 3510
+step
+    .goto 1447/1,-7188.22,3894.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Arkkoroc|r
+    .accept 3511 >>Accept The Name of the Beast
+    .target Lord Arkkoroc
+    .isQuestTurnedIn 3510 --any of: The Name of the Beast
+    .xp <45,1
+step
+    .goto 1447/1,-6361.16,3098.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .turnin 3511 >>Turn in The Name of the Beast
+    .target Loramus Thalipedes
+    .isOnQuest 3511
 step
     .goto 1447/1,-6361.16,3098.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loramus Thalipedes|r

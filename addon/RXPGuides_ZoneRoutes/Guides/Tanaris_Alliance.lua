@@ -580,6 +580,18 @@ step
     .turnin 2741 >>Turn in The Super Egg-O-Matic
     .isQuestComplete 2741
 step
+    .goto 1446/1,-4374.62,-8852.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homing Robot OOX-17/TN|r
+    .accept 648 >>Accept Rescue OOX-17/TN!
+    .target Homing Robot OOX-17/TN
+    .isQuestTurnedIn 351 --any of: Find OOX-17/TN!
+    .xp <43,1
+step
+    .goto 1446/1,-4845.89,-6940.36
+    >>Escort OOX-17/TN to Steamwheedle Port
+    .complete 648,1 --Escort OOX-17/TN to Steamwheedle Port
+    .isOnQuest 648
+step
     .goto 1446/1,-4841.06,-6903.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
     .turnin 3520 >>Turn in Screecher Spirits
@@ -631,12 +643,6 @@ step
     >>Kill |cRXP_ENEMY_Thistleshrub Dew Collector|r and loot |cRXP_LOOT_Laden Dew Gland|r
     .complete 2605,1 --Laden Dew Gland (1)
     .mob Thistleshrub Dew Collector
-step
-    .goto 1446/1,-2815.22,-9619.40
-    >>Click the |cRXP_PICK_Uldum Pedestal|r
-    .accept 2977 >>Accept Return to Ironforge
-    .isQuestTurnedIn 2954 --any of: The Stone Watcher
-    .xp <45,1
 step
     .goto 1446/1,-3793.64,-7193.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r
@@ -717,10 +723,48 @@ step
 step
     +|cRXP_WARN_That is all of Tanaris for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Darnassus|r: Rise of the Silithid
-    >>|cRXP_FRIENDLY_Ironforge|r: Return to Ironforge
+    >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Rescue OOX-17/TN!
     >>|cRXP_FRIENDLY_The Hinterlands and back here|r: Sprinkle's Secret Ingredient
 step
     .xp 49 >>|cRXP_WARN_The rest of Tanaris is planned from level 49.|r Come back to this guide then
+step
+    #loop
+    .goto 1446/1,-2252.87,-8658.46,0
+    .goto 1446/1,-2252.87,-8658.46,40,0
+    .goto 1446/1,-2288.75,-8865.00,40,0
+    .goto 1446/1,-2288.75,-9095.00,40,0
+    .goto 1446/1,-2412.95,-9285.90,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tooga|r. |cRXP_WARN_This NPC walks a patrol route|r
+    .accept 1560 >>Accept Tooga's Quest
+    .unitscan Tooga
+step
+    .goto 1446/1,-4812.77,-7055.82
+    >>Show Tooga the way back to his wife, Torta.
+    .complete 1560,1 --Torta
+    .target Torta
+step
+    .goto 1446/1,-4812.77,-7055.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torta|r
+    .turnin 1560 >>Turn in Tooga's Quest
+    .target Torta
+step
+    .goto 1446/1,-3939.23,-6948.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaeriyan|r
+    .accept 3913 >>Accept A Grave Situation
+    .target Gaeriyan
+    .isQuestTurnedIn 3912 --any of: Meet at the Grave
+    .xp <47,1
+step
+    .goto 1446/1,-3931.64,-7211.76
+    >>Click the |cRXP_PICK_A Conspicuous Gravestone|r
+    .turnin 3913 >>Turn in A Grave Situation
+    .isOnQuest 3913
+step
+    .goto 1446/1,-3931.64,-7211.76
+    >>Click the |cRXP_PICK_A Conspicuous Gravestone|r
+    .accept 3914 >>Accept Linken's Sword
+    .isQuestTurnedIn 3913 --any of: A Grave Situation
+    .xp <47,1
 step
     .goto 1446/1,-3766.04,-7197.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trenton Lighthammer|r
@@ -778,24 +822,6 @@ step
     .target Yeh'kinya
     .isQuestComplete 3520
 step
-    .goto 1446/1,-3939.23,-6948.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaeriyan|r
-    .accept 3913 >>Accept A Grave Situation
-    .target Gaeriyan
-    .isQuestTurnedIn 3912 --any of: Meet at the Grave
-    .xp <47,1
-step
-    .goto 1446/1,-3931.64,-7211.76
-    >>Click the |cRXP_PICK_A Conspicuous Gravestone|r
-    .turnin 3913 >>Turn in A Grave Situation
-    .isOnQuest 3913
-step
-    .goto 1446/1,-3931.64,-7211.76
-    >>Click the |cRXP_PICK_A Conspicuous Gravestone|r
-    .accept 3914 >>Accept Linken's Sword
-    .isQuestTurnedIn 3913 --any of: A Grave Situation
-    .xp <47,1
-step
     .goto 1446/1,-3863.33,-7135.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andi Lynn|r
     .accept 5863 >>Accept The Dunemaul Compound
@@ -807,7 +833,7 @@ step
     .accept 3362 >>Accept Thistleshrub Valley
     .target Tran'rek
 step
-    #completewith Along15
+    #completewith Along18
     >>As you go: Kill |cRXP_ENEMY_Dunemaul Brutes|r. |cRXP_WARN_Anything left is finished later|r
     .complete 5863,1 --Dunemaul Brute slain (10)
     .mob Dunemaul Brute
@@ -817,7 +843,7 @@ step
     .complete 5863,3 --Gor'marok the Ravager slain (1)
     .mob Gor'marok the Ravager
 step
-    #label Along15
+    #label Along18
     #loop
     .goto 1446/1,-2861.45,-8504.82,0
     .goto 1446/1,-2861.45,-8504.82,40,0
@@ -862,6 +888,30 @@ step
     .mob Gnarled Thistleshrub
     .mob Thistleshrub Rootshaper
 step
+    .goto 1446/1,-2813.15,-9619.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stone Watcher of Norgannon|r
+    .accept 2954 >>Accept The Stone Watcher
+    .target Stone Watcher of Norgannon
+    .isQuestTurnedIn 2946,2966 --any of: Seeing What Happens, Seeing What Happens
+    .xp <45,1
+step
+    .goto 1446/1,-2813.15,-9619.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stone Watcher of Norgannon|r
+    .complete 2954,1 --Stone Watcher of Norgannon
+    .target Stone Watcher of Norgannon
+    .isOnQuest 2954
+step
+    .goto 1446/1,-2815.22,-9619.40
+    >>Click the |cRXP_PICK_Uldum Pedestal|r
+    .turnin 2954 >>Turn in The Stone Watcher
+    .isOnQuest 2954
+step
+    .goto 1446/1,-2815.22,-9619.40
+    >>Click the |cRXP_PICK_Uldum Pedestal|r
+    .accept 2977 >>Accept Return to Ironforge
+    .isQuestTurnedIn 2954 --any of: The Stone Watcher
+    .xp <45,1
+step
     .goto 1446/1,-3863.33,-7135.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andi Lynn|r
     .turnin 5863 >>Turn in The Dunemaul Compound
@@ -879,6 +929,7 @@ step
     .isQuestComplete 4504
 step
     +|cRXP_WARN_End of the Tanaris route.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Ironforge|r: Return to Ironforge
     >>|cRXP_FRIENDLY_Un'Goro Crater|r: Linken's Sword
     >>|cRXP_FRIENDLY_another zone|r: Into the Depths, Secret of the Circle
     >>|cRXP_FRIENDLY_Un'Goro Crater and back here|r: Super Sticky

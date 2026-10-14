@@ -1,4 +1,4 @@
--- 52-57 Western Plaguelands: Zone Routes (Horde).
+-- 52-58 Western Plaguelands: Zone Routes (Horde).
 -- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
@@ -12,7 +12,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 52-57 Western Plaguelands
+#name 52-58 Western Plaguelands
 
 step
     .goto 1422/0,-1582.40,1871.70
@@ -386,6 +386,13 @@ step
 step
     .goto 1422/0,-1767.30,1134.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myranda the Hag|r
+    .accept 6570 >>Accept Emberstrife
+    .target Myranda the Hag
+    .isQuestTurnedIn 6569 --any of: Oculus Illusions
+    .xp <55,1
+step
+    .goto 1422/0,-1767.30,1134.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myranda the Hag|r
     .accept 5862 >>Accept Scarlet Subterfuge
     .target Myranda the Hag
     .isQuestTurnedIn 5861 --any of: Find Myranda
@@ -408,6 +415,13 @@ step
     .turnin 5153 >>Turn in A Strange Historian
     .target Chromie
     .isOnQuest 5153
+step
+    .goto 1422/0,-1280.11,1452.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
+    .accept 5721 >>Accept The Battle of Darrowshire
+    .target Chromie
+    .isQuestTurnedIn 5941 --any of: Return to Chromie
+    .xp <55,1
 step
     .goto 1422/0,-1280.11,1452.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
@@ -434,13 +448,28 @@ step
     .isQuestTurnedIn 5154 --any of: The Annals of Darrowshire
     .xp <50,1
 step
+    .goto 1422/0,-1815.89,2562.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirsta Deepshadow|r
+    .accept 6025 >>Accept Unfinished Business
+    .target Kirsta Deepshadow
+step
+    .goto 1422/0,-1553.16,2843.50
+    >>Overlook Hearthglen from a high vantage point
+    .complete 6025,1 --Overlook Hearthglen from a high vantage point
+step
     .goto 1422/0,-1390.19,2942.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Taelan Fordring|r
     .turnin 5862 >>Turn in Scarlet Subterfuge
     .target Highlord Taelan Fordring
     .isOnQuest 5862
 step
+    .goto 1422/0,-1815.89,2562.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirsta Deepshadow|r
+    .turnin 6025 >>Turn in Unfinished Business
+    .target Kirsta Deepshadow
+step
     +|cRXP_WARN_End of the Western Plaguelands route.|r Quests still in your log lead on from here; pick your next zone by them
-    >>|cRXP_FRIENDLY_Eastern Plaguelands|r: Brother Carlin, Demon Dogs, Blood Tinged Skies, Carrion Grubbage
+    >>|cRXP_FRIENDLY_Dustwallow Marsh|r: Emberstrife
+    >>|cRXP_FRIENDLY_Eastern Plaguelands|r: Brother Carlin, Demon Dogs, Blood Tinged Skies, Carrion Grubbage, The Battle of Darrowshire
     >>|cRXP_FRIENDLY_Thunder Bluff|r: Glyphed Oaken Branch
 ]])

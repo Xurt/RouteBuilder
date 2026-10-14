@@ -1591,12 +1591,11 @@ step << Hunter
     .target Grimtak
     .isQuestTurnedIn 6062
 step << Orc Rogue
-    .xp 10 >>Grind to level 10 (Therzok needs it)
-step << Orc Rogue
     .goto 1411/1,-4710.94,268.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
     .accept 1859 >>Accept Therzok
     .target Kaplak
+    .xp <10,1
 step
     .goto 1411/1,-4650.66,271.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Takrin Pathseeker|r
@@ -1656,6 +1655,12 @@ step
 step << Troll Priest
     .goto 1454/1,-4179.79,1452.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ur'kyo|r
+    .turnin 5656 >>Turn in Hex of Weakness
+    .target Ur'kyo
+    .isOnQuest 5656
+step << Troll Priest
+    .goto 1454/1,-4179.79,1452.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ur'kyo|r
     .turnin 5655 >>Turn in Hex of Weakness
     .target Ur'kyo
     .isOnQuest 5655
@@ -1665,12 +1670,6 @@ step << Troll Priest
     .turnin 5657 >>Turn in Hex of Weakness
     .target Ur'kyo
     .isOnQuest 5657
-step << Troll Priest
-    .goto 1454/1,-4179.79,1452.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ur'kyo|r
-    .turnin 5656 >>Turn in Hex of Weakness
-    .target Ur'kyo
-    .isOnQuest 5656
 step << Troll Priest
     .goto 1454/1,-4179.79,1452.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ur'kyo|r
@@ -1688,11 +1687,6 @@ step
     >>Kill |cRXP_ENEMY_Kor'ghan|r and loot |cRXP_LOOT_Venomtail Antidote|r
     .complete 812,1 --Venomtail Antidote (1)
     .mob Kor'ghan
-step << Orc Rogue
-    .goto 1454/1,-4279.93,1772.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
-    .turnin 1859 >>Turn in Therzok
-    .target Therzok
 step
     .goto 1454/1,-4161.41,1905.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r
@@ -1847,6 +1841,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Takrin Pathseeker|r
     .accept 840 >>Accept Conscript of the Horde
     .target Takrin Pathseeker
+step << Orc Rogue
+    .goto 1411/1,-4710.94,268.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
+    .accept 1859 >>Accept Therzok
+    .target Kaplak
+    .xp <10,1
 step
     #loop
     .goto 1411/1,-4977.96,745.90,0
@@ -1968,13 +1968,13 @@ step
     .target Rezlak
     .isOnQuest 97282
 step
-    #completewith Along133
+    #completewith Along131
     >>As you go: Kill |cRXP_ENEMY_Burning Blade Fanatics|r and |cRXP_ENEMY_Burning Blade Apprentices|r. Loot them for |cRXP_LOOT_Lieutenant's Insignia|r. |cRXP_WARN_Anything left is finished later|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
 step
-    #label Along133
+    #label Along131
     .goto 1411/1,-4744.25,1497.43
     >>Kill |cRXP_ENEMY_Gazz'uz|r and loot |cRXP_LOOT_Eye of Burning Shadow|r. Use it to start the quest
     .collect 4903,1,832 --Eye of Burning Shadow (1)
@@ -2050,6 +2050,7 @@ step
     .goto 1454/1,-4125.65,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >>Turn in Hidden Enemies
+    .accept 5727 >>Accept Hidden Enemies
     .target Thrall
 step << Shaman
     .goto 1454/1,-4225.09,1933.29
@@ -2144,6 +2145,210 @@ step
     .mob Dreadmaw Crocolisk
     .mob Corrupted Dreadmaw Crocolisk
 step
+    .goto 1411/1,-4241.41,742.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Misha Tor'kren|r
+    .turnin 816 >>Turn in Lost But Not Forgotten
+    .target Misha Tor'kren
+step << Orc Rogue
+    .goto 1411/1,-4710.94,268.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
+    .accept 1859 >>Accept Therzok
+    .target Kaplak
+step
+    .goto 1411/1,-4724.69,287.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
+    .turnin 99051 >>Turn in Threat from Below
+    .accept 99052 >>Accept Threat from Below
+    .target Orgnil Soulscar
+step << Warrior
+    .goto 1411/1,-4827.80,311.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw Jaggedscar|r
+    .accept 1505 >>Accept Veteran Uzzek
+    .target Tarshaw Jaggedscar
+step
+    .goto 1411/1,-5093.76,1187.93
+    >>Kill |cRXP_ENEMY_Aggor the Young|r and loot |cRXP_LOOT_Aggor's Belt|r
+    .complete 99052,1 --Aggor's Belt (1)
+    .mob Aggor the Young
+step << Shaman
+    .goto 1411/1,-4000.83,-270.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Telf Joolam|r
+    .accept 1526 >>Accept Call of Fire
+    .target Telf Joolam
+    .isQuestTurnedIn 1525 --any of: Call of Fire
+    .xp <10,1
+step << Shaman
+    .goto 1411/1,-4009.82,-246.39
+    >>Kill |cRXP_ENEMY_Minor Manifestation of Fire|r and loot |cRXP_LOOT_Glowing Ember|r
+    .complete 1526,1 --Glowing Ember (1)
+    .mob Minor Manifestation of Fire
+    .isOnQuest 1526
+step << Shaman
+    .goto 1411/1,-4022.51,-243.92
+    >>Click the |cRXP_PICK_Brazier of the Dormant Flame|r
+    .turnin 1526 >>Turn in Call of Fire
+    .isOnQuest 1526
+step << Shaman
+    .goto 1411/1,-4022.51,-243.92
+    >>Click the |cRXP_PICK_Brazier of the Dormant Flame|r
+    .accept 1527 >>Accept Call of Fire
+    .isQuestTurnedIn 1526 --any of: Call of Fire
+    .xp <10,1
+step << Tauren
+    .goto 1454/1,-4313.60,1676.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
+    >>|cRXP_WARN_Don't fly anywhere!|r
+    .fp Orgrimmar >> Get the Orgrimmar flight path
+    .target Doras
+step << Shaman
+    .goto 1411/1,-4000.83,-270.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Telf Joolam|r
+    .turnin 1525 >>Turn in Call of Fire
+    .target Telf Joolam
+    .isQuestComplete 1525
+step
+    #completewith next
+    .zone 1454 >>Travel to Orgrimmar
+    .zoneskip 1454
+step
+    .goto 1454/1,-4374.47,1800.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
+    .complete 5727,1 --Neeru Fireblade
+    .target Neeru Fireblade
+step << Orc Rogue
+    .goto 1454/1,-4279.93,1772.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
+    .turnin 1859 >>Turn in Therzok
+    .target Therzok
+step << Skyborne
+    .goto 1454/1,-4162.26,1934.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'jin|r
+    .complete 93739,2 --Vol'jin
+    .target Vol'jin
+    .isOnQuest 93739
+step << Horde Shaman
+    .goto 1454/1,-4225.09,1933.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris Dreamseeker::3344|r
+    .train 408341 >> Train your class spells
+    .target Kardris Dreamseeker::3344
+    .xp <12,1
+    .xp >14,1
+step << Horde Shaman
+    .goto 1454/1,-4225.09,1933.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris Dreamseeker::3344|r
+    .train 8045 >> Train your class spells
+    .target Kardris Dreamseeker::3344
+    .xp <14,1
+step << Horde Rogue
+    .goto 1454/1,-4296.34,1762.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormok::3328|r
+    .train 1766 >> Train your class spells
+    .target Ormok::3328
+    .xp <12,1
+    .xp >14,1
+step << Horde Rogue
+    .goto 1454/1,-4296.34,1762.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormok::3328|r
+    .train 1758 >> Train your class spells
+    .target Ormok::3328
+    .xp <14,1
+step << Horde Mage
+    .goto 1454/1,-4218.64,1473.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo::5882|r
+    .train 145 >> Train your class spells
+    .target Pephredo::5882
+    .xp <12,1
+    .xp >14,1
+step << Horde Mage
+    .goto 1454/1,-4218.64,1473.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo::5882|r
+    .train 1449 >> Train your class spells
+    .target Pephredo::5882
+    .xp <14,1
+step
+    .goto 1454/1,-4125.65,1920.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 5727 >>Turn in Hidden Enemies while you are here
+    .isQuestComplete 5727
+    .target Thrall
+step << Skyborne
+    .goto 1454/1,-4133.64,1939.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
+    .complete 93739,1 --Nazgrel
+    .target Nazgrel
+    .isOnQuest 93739
+step
+    .goto 1454/1,-4125.65,1920.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 5727 >>Turn in Hidden Enemies
+    .target Thrall
+step
+    .goto 1454/1,-4160.01,1483.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Arnok|r
+    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 40 skill|r
+    .train 3276 >> Train |T133688:0|t[Heavy Linen Bandage]
+    .target Arnok
+step
+    .goto 1454/1,-4160.01,1483.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Arnok|r
+    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 50 skill|r
+    .train 3274 >> Train Journeyman First Aid
+    .target Arnok
+step << Priest
+    .goto 1454/1,-4179.79,1452.580
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
+    .train 8102 >> Train your class spells
+    .target Ur'kyo
+    .xp <16,1
+    .xp >18,1
+step << Priest
+    .goto 1454/1,-4179.79,1452.580
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
+    .train 970 >> Train your class spells
+    .target Ur'kyo
+    .xp <18,1
+step << Mage
+    .goto 1454/1,-4218.64,1473.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
+    .train 2120 >> Train your class spells
+    .target Pephredo
+    .xp <16,1
+    .xp >18,1
+step << Mage
+    .goto 1454/1,-4218.64,1473.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
+    .train 3140 >> Train your class spells
+    .target Pephredo
+    .xp <18,1
+step << Skyborne
+    .goto 1454/1,-4125.65,1920.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 93739 >>Turn in Exploring the Horde
+    .target Thrall
+    .isQuestComplete 93739
+step
+    #completewith next
+    .zone 1411 >>Leave Orgrimmar for Durotar
+    .zoneskip 1411
+step << Warlock
+    #completewith next
+    .hs >>Hearth to Innkeeper Grosk's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step << Warlock
+    .goto 1411/1,-4837.31,352.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ophek|r
+    .accept 1506 >>Accept Gan'rul's Summons
+    .target Ophek
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Grosk's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
+    .goto 1411/1,-4724.69,287.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
+    .turnin 99052 >>Turn in Threat from Below
+    .target Orgnil Soulscar
+step
     .goto 1411/1,-4186.42,-600.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
     .turnin 787 >>Turn in The New Horde
@@ -2164,27 +2369,6 @@ step << Orc Mage/Undead Mage/Troll Mage
     .turnin 1884 >>Turn in Ju-Ju Heaps
     .target Un'Thuwa
 step
-    .goto 1411/1,-4724.69,287.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
-    .turnin 99051 >>Turn in Threat from Below
-    .accept 99052 >>Accept Threat from Below
-    .target Orgnil Soulscar
-step << Warrior
-    .goto 1411/1,-4827.80,311.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw Jaggedscar|r
-    .accept 1505 >>Accept Veteran Uzzek
-    .target Tarshaw Jaggedscar
-step << Warlock
-    .goto 1411/1,-4837.31,352.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ophek|r
-    .accept 1506 >>Accept Gan'rul's Summons
-    .target Ophek
-step
-    .goto 1411/1,-5093.76,1187.93
-    >>Kill |cRXP_ENEMY_Aggor the Young|r and loot |cRXP_LOOT_Aggor's Belt|r
-    .complete 99052,1 --Aggor's Belt (1)
-    .mob Aggor the Young
-step
     #completewith next
     .zone 1454 >>Travel to Orgrimmar
     .zoneskip 1454
@@ -2202,7 +2386,7 @@ step << Orc Warlock
     .goto 1411/1,-4691.91,1464.29
     >>Open the |cRXP_PICK_Burning Blade Stash|r. Loot it for |cRXP_LOOT_Tablet of Verga|r
     .complete 1501,1 --Tablet of Verga (1)
-step << Orc Warlock
+step
     #completewith next
     .zone 1454 >>Travel to Orgrimmar
     .zoneskip 1454
@@ -2218,28 +2402,6 @@ step << Orc Warlock
     .turnin 1504 >>Turn in The Binding
     .target Gan'rul Bloodeye
     .isQuestComplete 1504
-step << Orc Warlock
-    #completewith next
-    .zone 1411 >>Leave Orgrimmar for Durotar
-    .zoneskip 1411
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Grosk's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .goto 1411/1,-4724.69,287.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
-    .turnin 99052 >>Turn in Threat from Below
-    .target Orgnil Soulscar
-step
-    .goto 1411/1,-4241.41,742.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Misha Tor'kren|r
-    .turnin 816 >>Turn in Lost But Not Forgotten
-    .target Misha Tor'kren
-step
-    #completewith next
-    .zone 1454 >>Travel to Orgrimmar
-    .zoneskip 1454
 step
     .goto 1454/1,-4224.67,1472.41
     .trainer >> Train your class spells
@@ -2376,145 +2538,6 @@ step << Rogue
     .train 1804 >> Train |T136058:0|t[Pick Lock]
     .train 921 >> Train |T133644:0|t[Pick Pocket]
     .target Shenthul
-step << Skyborne
-    .goto 1454/1,-4162.26,1934.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'jin|r
-    .complete 93739,2 --Vol'jin
-    .target Vol'jin
-    .isOnQuest 93739
-step << Horde Shaman
-    .goto 1454/1,-4225.09,1933.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris Dreamseeker::3344|r
-    .train 408341 >> Train your class spells
-    .target Kardris Dreamseeker::3344
-    .xp <12,1
-    .xp >14,1
-step << Horde Shaman
-    .goto 1454/1,-4225.09,1933.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris Dreamseeker::3344|r
-    .train 8045 >> Train your class spells
-    .target Kardris Dreamseeker::3344
-    .xp <14,1
-step << Horde Rogue
-    .goto 1454/1,-4296.34,1762.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormok::3328|r
-    .train 1766 >> Train your class spells
-    .target Ormok::3328
-    .xp <12,1
-    .xp >14,1
-step << Horde Rogue
-    .goto 1454/1,-4296.34,1762.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormok::3328|r
-    .train 1758 >> Train your class spells
-    .target Ormok::3328
-    .xp <14,1
-step << Horde Mage
-    .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo::5882|r
-    .train 145 >> Train your class spells
-    .target Pephredo::5882
-    .xp <12,1
-    .xp >14,1
-step << Horde Mage
-    .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo::5882|r
-    .train 1449 >> Train your class spells
-    .target Pephredo::5882
-    .xp <14,1
-step << Skyborne
-    .goto 1454/1,-4133.64,1939.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
-    .complete 93739,1 --Nazgrel
-    .target Nazgrel
-    .isOnQuest 93739
-step << Skyborne
-    .goto 1454/1,-4125.65,1920.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 93739 >>Turn in Exploring the Horde
-    .target Thrall
-    .isQuestComplete 93739
-step
-    #completewith next
-    .zone 1411 >>Leave Orgrimmar for Durotar
-    .zoneskip 1411
-step << Shaman
-    .goto 1411/1,-4000.83,-270.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Telf Joolam|r
-    .accept 1526 >>Accept Call of Fire
-    .target Telf Joolam
-    .isQuestTurnedIn 1525 --any of: Call of Fire
-    .xp <10,1
-step << Shaman
-    .goto 1411/1,-4009.82,-246.39
-    >>Kill |cRXP_ENEMY_Minor Manifestation of Fire|r and loot |cRXP_LOOT_Glowing Ember|r
-    .complete 1526,1 --Glowing Ember (1)
-    .mob Minor Manifestation of Fire
-    .isOnQuest 1526
-step << Shaman
-    .goto 1411/1,-4022.51,-243.92
-    >>Click the |cRXP_PICK_Brazier of the Dormant Flame|r
-    .turnin 1526 >>Turn in Call of Fire
-    .isOnQuest 1526
-step << Shaman
-    .goto 1411/1,-4022.51,-243.92
-    >>Click the |cRXP_PICK_Brazier of the Dormant Flame|r
-    .accept 1527 >>Accept Call of Fire
-    .isQuestTurnedIn 1526 --any of: Call of Fire
-    .xp <10,1
-step << Tauren
-    .goto 1454/1,-4313.60,1676.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
-    >>|cRXP_WARN_Don't fly anywhere!|r
-    .fp Orgrimmar >> Get the Orgrimmar flight path
-    .target Doras
-step
-    .goto 1454/1,-4160.01,1483.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Arnok|r
-    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 40 skill|r
-    .train 3276 >> Train |T133688:0|t[Heavy Linen Bandage]
-    .target Arnok
-step
-    .goto 1454/1,-4160.01,1483.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Arnok|r
-    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 50 skill|r
-    .train 3274 >> Train Journeyman First Aid
-    .target Arnok
-step << Priest
-    .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
-    .train 8102 >> Train your class spells
-    .target Ur'kyo
-    .xp <16,1
-    .xp >18,1
-step << Priest
-    .goto 1454/1,-4179.79,1452.580
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
-    .train 970 >> Train your class spells
-    .target Ur'kyo
-    .xp <18,1
-step << Mage
-    .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
-    .train 2120 >> Train your class spells
-    .target Pephredo
-    .xp <16,1
-    .xp >18,1
-step << Mage
-    .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
-    .train 3140 >> Train your class spells
-    .target Pephredo
-    .xp <18,1
-step << Shaman
-    .goto 1411/1,-4000.83,-270.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Telf Joolam|r
-    .turnin 1525 >>Turn in Call of Fire
-    .target Telf Joolam
-    .isQuestComplete 1525
-step << Orc Rogue/Troll Rogue
-    #completewith next
-    .zone 1454 >>Travel to Orgrimmar
-    .zoneskip 1454
 step << Orc Rogue/Troll Rogue
     .goto 1454/1,-4279.93,1772.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r

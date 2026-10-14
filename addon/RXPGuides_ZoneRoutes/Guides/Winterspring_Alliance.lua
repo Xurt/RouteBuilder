@@ -131,6 +131,13 @@ step
 step
     .xp 55 >>|cRXP_WARN_The rest of Winterspring is planned from level 55.|r Come back to this guide then
 step
+    .goto 1452/1,-4302.61,6433.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remorseful Highborne|r
+    .accept 5252 >>Accept Remorseful Highborne
+    .target Remorseful Highborne
+    .isQuestTurnedIn 5248 --any of: Tormented By the Past
+    .xp <53,1
+step
     .goto 1452/1,-4623.53,6726.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meggi Peppinrocker|r
     .accept 6603 >>Accept Trouble in Winterspring!
@@ -140,6 +147,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Vizzie|r
     .target Innkeeper Vizzie
     .home >>Set your Hearthstone to Innkeeper Vizzie's inn
+step
+    .goto 1452/1,-4006.54,7094.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wynd Nightchaser|r
+    .turnin 5252 >>Turn in Remorseful Highborne
+    .target Wynd Nightchaser
+    .isOnQuest 5252
+step
+    .goto 1452/1,-4006.54,7094.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wynd Nightchaser|r
+    .accept 5253 >>Accept The Crystal of Zin-Malor
+    .target Wynd Nightchaser
+    .isQuestTurnedIn 5252 --any of: Remorseful Highborne
+    .xp <53,1
 step
     .goto 1452/1,-2536.84,6395.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donova Snowden|r
@@ -153,6 +173,13 @@ step
     .target Donova Snowden
     .isQuestTurnedIn 5085 --any of: Mystery Goo
     .xp <52,1
+step
+    .goto 1452/1,-2536.84,6395.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donova Snowden|r
+    .accept 4842 >>Accept Strange Sources
+    .target Donova Snowden
+    .isQuestTurnedIn 980 --any of: The New Springs
+    .xp <51,1
 step
     #completewith Drop5083x1
     >>|cRXP_LOOT_Empty Firewater Flask|r can drop from |cRXP_ENEMY_Winterfall Ursa|r, |cRXP_ENEMY_Winterfall Shaman|r, |cRXP_ENEMY_Winterfall Den Watcher|r. Use it to start the quest if you get one
@@ -275,6 +302,11 @@ step
     >>Click the |cRXP_PICK_Jaron's Wagon|r
     .turnin 4863 >>Turn in Enraged Wildkin
 step
+    .goto 1452/1,-4563.89,5018.83
+    >>Discover Darkwhisper Gorge
+    .complete 4842,1 --Discover Darkwhisper Gorge
+    .isOnQuest 4842
+step
     #completewith Drop5083x3
     >>|cRXP_LOOT_Empty Firewater Flask|r can drop from |cRXP_ENEMY_Winterfall Ursa|r, |cRXP_ENEMY_Winterfall Shaman|r, |cRXP_ENEMY_Winterfall Den Watcher|r. Use it to start the quest if you get one
     .collect 12771,1,5083 --Empty Firewater Flask (1)
@@ -293,6 +325,12 @@ step
     .complete 5087,1 --Winterfall Crate (1)
     .mob Winterfall Runner
     .isOnQuest 5087
+step
+    .goto 1452/1,-2536.84,6395.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donova Snowden|r
+    .turnin 4842 >>Turn in Strange Sources
+    .target Donova Snowden
+    .isOnQuest 4842
 step
     .goto 1452/1,-2536.84,6395.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donova Snowden|r
@@ -493,31 +531,11 @@ step
     .target Donova Snowden
     .isQuestComplete 5086
 step
-    .goto 1452/1,-4302.61,6433.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remorseful Highborne|r
-    .accept 5252 >>Accept Remorseful Highborne
-    .target Remorseful Highborne
-    .isQuestTurnedIn 5248 --any of: Tormented By the Past
-    .xp <53,1
-step
     .goto 1452/1,-4639.15,6752.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Umi Rumplesnicker|r
     .turnin 5163 >>Turn in Are We There, Yeti?
     .target Umi Rumplesnicker
     .isQuestComplete 5163
-step
-    .goto 1452/1,-4006.54,7094.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wynd Nightchaser|r
-    .turnin 5252 >>Turn in Remorseful Highborne
-    .target Wynd Nightchaser
-    .isOnQuest 5252
-step
-    .goto 1452/1,-4006.54,7094.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wynd Nightchaser|r
-    .accept 5253 >>Accept The Crystal of Zin-Malor
-    .target Wynd Nightchaser
-    .isQuestTurnedIn 5252 --any of: Remorseful Highborne
-    .xp <53,1
 step
     +|cRXP_WARN_That is all of Winterspring for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Burning Steppes|r: Return to Tinkee
@@ -541,10 +559,28 @@ step
     >>Pick up |cRXP_PICK_Jaron's Supplies|r from the ground
     .complete 4864,1 --Jaron's Supplies (1)
 step
+    #completewith Along4
+    >>As you go: Kill |cRXP_ENEMY_Crazed Owlbeasts|r, |cRXP_ENEMY_Moontouched Owlbeasts|r and |cRXP_ENEMY_Berserk Owlbeasts|r. Loot them for |cRXP_LOOT_Blue-feathered Amulet|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 4864,2 --Blue-feathered Amulet (1)
+    .mob Crazed Owlbeast
+    .mob Moontouched Owlbeast
+    .mob Berserk Owlbeast
+step
+    .goto 1452/1,-4794.64,5717.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranshalla|r
+    .accept 4901 >>Accept Guardians of the Altar
+    .target Ranshalla
+    .isQuestTurnedIn 979 --any of: Find Ranshalla
+    .xp <52,1
+step
+    #label Along4
+    .goto 1452/1,-4921.02,5516.78
+    >>Discover the secret of the Altar of Elune
+    .complete 4901,1 --Discover the secret of the Altar of Elune
+    .isOnQuest 4901
+step
     #loop
-    .goto 1452/1,-4851.44,5643.16,0
-    .goto 1452/1,-4851.44,5643.16,40,0
-    .goto 1452/1,-4890.49,5582.57,40,0
+    .goto 1452/1,-4971.43,5565.06,0
     .goto 1452/1,-4971.43,5565.06,40,0
     .goto 1452/1,-5026.81,5610.50,40,0
     .goto 1452/1,-5046.69,5693.81,40,0
@@ -552,6 +588,8 @@ step
     .goto 1452/1,-4887.65,5784.21,40,0
     .goto 1452/1,-4839.37,5735.46,40,0
     .goto 1452/1,-4928.12,5679.61,40,0
+    .goto 1452/1,-4851.44,5643.16,40,0
+    .goto 1452/1,-4890.49,5582.57,40,0
     >>Kill |cRXP_ENEMY_Crazed Owlbeasts|r, |cRXP_ENEMY_Moontouched Owlbeasts|r and |cRXP_ENEMY_Berserk Owlbeasts|r. Loot them for |cRXP_LOOT_Blue-feathered Amulet|r
     .complete 4864,2 --Blue-feathered Amulet (1)
     .mob Crazed Owlbeast
@@ -598,7 +636,15 @@ step
     .goto 1452/1,-4712.99,6720.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Mau'ari|r
     .turnin 969 >>Turn in Luck Be With You
+    .accept 975 >>Accept Cache of Mau'ari
     .target Witch Doctor Mau'ari
+step
+    .goto 1452/1,-4712.99,6720.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Mau'ari|r
+    >>|cRXP_WARN_The database has no objectives for Cache of Mau'ari. Skip this step if the quest is not finished|r
+    .turnin 975 >>Turn in Cache of Mau'ari
+    .target Witch Doctor Mau'ari
+    .isOnQuest 975
 step
     .goto 1452/1,-4018.61,7092.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaron Stoneshaper|r
@@ -637,5 +683,6 @@ step
     .isQuestComplete 5163
 step
     +|cRXP_WARN_End of the Winterspring route.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Teldrassil|r: Guardians of the Altar
     >>|cRXP_FRIENDLY_Western Plaguelands|r: Wrath of the Blue Flight
 ]])

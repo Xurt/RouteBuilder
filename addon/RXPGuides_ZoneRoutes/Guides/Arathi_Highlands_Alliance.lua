@@ -114,8 +114,6 @@ step
     .goto 1417/0,-3138.27,-1531.81,30,0
     >>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r
     .xp 37 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 37
-step
-    .hs >> Hearth to Southshore
 step << Shaman
     .goto 1417/0,-3018.39,-795.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
@@ -195,12 +193,7 @@ step
     .target Kinelory
     .isOnQuest 657
 step
-    .goto 1417/0,-3033.15,-1425.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quae|r
-    .accept 661 >>Accept Hints of a New Plague?
-    .target Quae
-    .isQuestTurnedIn 660 --any of: Hints of a New Plague?
-    .xp <30,1
+    .hs >> Hearth to Southshore
 step
     .trainer >> Train your class spells
     >>Bank your cloth too if needed
@@ -332,7 +325,6 @@ step
 step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Alterac Mountains|r: The Tempest's Weapons << Shaman
-    >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: Hints of a New Plague?
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Elemental Aid << Shaman
     >>|cRXP_FRIENDLY_Dustwallow Marsh, Swamp of Sorrows, Badlands, Desolace and back here|r: Storm, Earth, and Fire << Shaman
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Darkspear Islands Clash, Darkspear Islands Clash
@@ -342,15 +334,48 @@ step
 step
     .goto 1417/0,-2510.07,-1231.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alliance Brigadier General|r
+    .turnin 98896 >>Turn in Darkspear Islands Clash
+    .target Alliance Brigadier General
+    .isQuestComplete 98896
+step
+    .goto 1417/0,-2510.07,-1231.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alliance Brigadier General|r
     .turnin 98895 >>Turn in Darkspear Islands Clash
     .target Alliance Brigadier General
     .isQuestComplete 98895
 step
-    .goto 1417/0,-2510.07,-1231.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alliance Brigadier General|r
-    .turnin 98896 >>Turn in Darkspear Islands Clash
-    .target Alliance Brigadier General
-    .isQuestComplete 98896
+    .goto 1417/0,-3035.31,-1427.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kinelory|r
+    .accept 660 >>Accept Hints of a New Plague?
+    .target Kinelory
+    .isQuestTurnedIn 657 --any of: Hints of a New Plague?
+    .xp <30,1
+step
+    .goto 1417/0,-3030.27,-1425.25
+    >>Protect Kinelory
+    .complete 660,1 --Protect Kinelory
+    .isOnQuest 660
+step
+    .goto 1417/0,-3033.15,-1425.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quae|r
+    .turnin 660 >>Turn in Hints of a New Plague?
+    .target Quae
+    .isOnQuest 660
+step
+    .goto 1417/0,-3033.15,-1425.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quae|r
+    .accept 661 >>Accept Hints of a New Plague?
+    .target Quae
+    .isQuestTurnedIn 660 --any of: Hints of a New Plague?
+    .xp <30,1
+step
+    .goto 1417/0,-3901.83,-876.13
+    >>Click the |cRXP_PICK_Iridescent Shards|r
+    .accept 651 >>Accept Stones of Binding
+step
+    .goto 1417/0,-3267.87,-846.61
+    >>Open the |cRXP_PICK_Stone of East Binding|r. Loot it for |cRXP_LOOT_Cresting Key|r
+    .complete 651,2 --Cresting Key (1)
 step << Shaman
     .goto 1417/0,-3018.39,-795.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
@@ -360,23 +385,15 @@ step << Shaman
 step << Shaman
     .goto 1417/0,-3018.39,-795.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
-    .turnin 96264 >>Turn in Elemental Aid
-    .target Veyric Thunderhame
-    .isQuestComplete 96264
-step << Shaman
-    .goto 1417/0,-3018.39,-795.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 79358 >>Turn in Storm, Earth, and Fire
     .target Veyric Thunderhame
     .isQuestComplete 79358
-step
-    .goto 1417/0,-3901.83,-876.13
-    >>Click the |cRXP_PICK_Iridescent Shards|r
-    .accept 651 >>Accept Stones of Binding
-step
-    .goto 1417/0,-3267.87,-846.61
-    >>Open the |cRXP_PICK_Stone of East Binding|r. Loot it for |cRXP_LOOT_Cresting Key|r
-    .complete 651,2 --Cresting Key (1)
+step << Shaman
+    .goto 1417/0,-3018.39,-795.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
+    .turnin 96264 >>Turn in Elemental Aid
+    .target Veyric Thunderhame
+    .isQuestComplete 96264
 step
     .goto 1417/0,-2740.11,-1350.85
     >>Open the |cRXP_PICK_Stone of Outer Binding|r. Loot it for |cRXP_LOOT_Thundering Key|r
@@ -426,6 +443,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
     .turnin 663 >>Turn in Land Ho!
     .target Shakes O'Breen
+step
+    +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: Hints of a New Plague?
 step
     .xp 39 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 39.|r Come back to this guide then
 step
@@ -601,12 +621,20 @@ step
     .accept 664 >>Accept Drowned Sorrows
     .target Captain Steelgut
 step
+    .goto 1417/0,-2085.99,-2066.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Phizzlethorpe|r
+    .accept 665 >>Accept Sunken Treasure
+    .target Professor Phizzlethorpe
+step
+    .goto 1417/0,-2085.99,-2067.73
+    >>Defend Professor Phizzlethorpe
+    .complete 665,1 --Defend Professor Phizzlethorpe
+step
     .goto 1417/0,-2085.63,-2064.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
+    .turnin 665 >>Turn in Sunken Treasure
     .accept 666 >>Accept Sunken Treasure
     .target Doctor Draxlegauge
-    .isQuestTurnedIn 665 --any of: Sunken Treasure
-    .xp <35,1
 step
     #loop
     .goto 1417/0,-1781.79,-2178.85,0
@@ -614,40 +642,27 @@ step
     .goto 1417/0,-1680.63,-2215.57,40,0
     .goto 1417/0,-1656.15,-2147.41,40,0
     .goto 1417/0,-1553.19,-2145.97,40,0
-    .goto 1417/0,-1589.19,-2219.65,40,0
-    .goto 1417/0,-1624.47,-2294.29,40,0
+    .goto 1417/0,-1593.87,-2222.53,40,0
+    .goto 1417/0,-1514.67,-2269.33,40,0
+    .goto 1417/0,-1622.67,-2341.33,40,0
     .goto 1417/0,-1694.31,-2301.49,40,0
     .goto 1417/0,-1785.39,-2326.69,40,0
-    .goto 1417/0,-1735.71,-2257.57,40,0
     >>Pick up |cRXP_PICK_Maiden's Folly Log|r from the ground
     >>Pick up |cRXP_PICK_Maiden's Folly Charts|r from the ground
     >>Pick up |cRXP_PICK_Spirit of Silverpine Charts|r from the ground
     >>Pick up |cRXP_PICK_Spirit of Silverpine Log|r from the ground
     >>Kill |cRXP_ENEMY_Daggerspine Raiders|r
     >>Kill |cRXP_ENEMY_Daggerspine Sorceress|r
+    >>Loot the |cRXP_PICK_Calcified Elven Gems|r for |cRXP_LOOT_Elven Gem|r
     .complete 662,2 --Maiden's Folly Log (1)
     .complete 662,1 --Maiden's Folly Charts (1)
     .complete 662,3 --Spirit of Silverpine Charts (1)
     .complete 662,4 --Spirit of Silverpine Log (1)
     .complete 664,1 --Daggerspine Raider slain (10)
     .complete 664,2 --Daggerspine Sorceress slain (3)
+    .complete 666,1 --Elven Gem (10)
     .mob Daggerspine Raider
     .mob Daggerspine Sorceress
-step
-    #loop
-    .goto 1417/0,-1694.67,-2149.33,0
-    .goto 1417/0,-1694.67,-2149.33,40,0
-    .goto 1417/0,-1694.67,-2245.33,40,0
-    .goto 1417/0,-1622.67,-2221.33,40,0
-    .goto 1417/0,-1586.67,-2173.33,40,0
-    .goto 1417/0,-1514.67,-2269.33,40,0
-    .goto 1417/0,-1622.67,-2341.33,40,0
-    .goto 1417/0,-1694.67,-2341.33,40,0
-    .goto 1417/0,-1766.67,-2317.33,40,0
-    .goto 1417/0,-1766.67,-2221.33,40,0
-    >>Loot the |cRXP_PICK_Calcified Elven Gems|r for |cRXP_LOOT_Elven Gem|r
-    .complete 666,1 --Elven Gem (10)
-    .isOnQuest 666
 step
     .goto 1417/0,-2047.47,-2088.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Nilzlix|r
@@ -662,28 +677,14 @@ step
     .goto 1417/0,-2085.63,-2064.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
     .turnin 666 >>Turn in Sunken Treasure
-    .target Doctor Draxlegauge
-    .isOnQuest 666
-step
-    .goto 1417/0,-2085.63,-2064.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
     .accept 668 >>Accept Sunken Treasure
     .target Doctor Draxlegauge
-    .isQuestTurnedIn 666 --any of: Sunken Treasure
-    .xp <35,1
 step
     .goto 1417/0,-2028.75,-2086.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
     .turnin 668 >>Turn in Sunken Treasure
-    .target Shakes O'Breen
-    .isOnQuest 668
-step
-    .goto 1417/0,-2028.75,-2086.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
     .accept 669 >>Accept Sunken Treasure
     .target Shakes O'Breen
-    .isQuestTurnedIn 668 --any of: Sunken Treasure
-    .xp <35,1
 step
     .goto 1417/0,-2516.55,-1274.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
@@ -764,6 +765,12 @@ step
 step << Shaman
     .goto 1417/0,-3018.39,-795.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
+    .turnin 96264 >>Turn in Elemental Aid
+    .target Veyric Thunderhame
+    .isQuestComplete 96264
+step << Shaman
+    .goto 1417/0,-3018.39,-795.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 96135 >>Turn in Heed My Call
     .target Veyric Thunderhame
     .isQuestComplete 96135
@@ -773,12 +780,6 @@ step << Shaman
     .turnin 79358 >>Turn in Storm, Earth, and Fire
     .target Veyric Thunderhame
     .isQuestComplete 79358
-step << Shaman
-    .goto 1417/0,-3018.39,-795.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
-    .turnin 96264 >>Turn in Elemental Aid
-    .target Veyric Thunderhame
-    .isQuestComplete 96264
 step
     .goto 1417/0,-3167.07,-853.33
     >>Kill |cRXP_ENEMY_Fozruk|r and loot |cRXP_LOOT_Rod of Order|r
@@ -796,6 +797,24 @@ step
     >>Click the |cRXP_PICK_Keystone|r
     .turnin 652 >>Turn in Breaking the Keystone
     .accept 653 >>Accept Myzrael's Allies
+step
+    .goto 1417/0,-2028.75,-2086.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
+    .accept 667 >>Accept Death From Below
+    .target Shakes O'Breen
+    .isQuestTurnedIn 670 --any of: Sunken Treasure
+    .xp <35,1
+step
+    .goto 1417/0,-2016.15,-2097.01
+    >>Defend Shakes O'Breen
+    .complete 667,1 --Defend Shakes O'Breen
+    .isOnQuest 667
+step
+    .goto 1417/0,-2028.75,-2086.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
+    .turnin 667 >>Turn in Death From Below
+    .target Shakes O'Breen
+    .isOnQuest 667
 step
     +|cRXP_WARN_End of the Arathi Highlands route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Badlands|r: Theldurin the Lost

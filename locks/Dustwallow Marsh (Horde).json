@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-46 Dustwallow Marsh",
-  "saved": "2026-10-14 09:56",
+  "saved": "2026-10-14 10:40",
   "levels": "RestedXP",
   "parts": [
     {
@@ -18,6 +18,10 @@
         "turnin:1251 @1445:-2887.05,-3149.13  TurnIn The Black Shield",
         "accept:1321 @1445:-2887.05,-3149.13  Accept The Black Shield",
         "turnin:1321 @1445:-2892.82,-3110.98  TurnIn The Black Shield",
+        "accept:1273 @1445:-3125.4,-3317.48  Accept Questioning Reethe",
+        "obj:1273:1 @1445:-3204.67,-3365.78  Objective Questioning Reethe / Question Reethe with Ogron",
+        "accept:1270 @1445:-3436.2,-2646.53  Accept Stinky's Escape",
+        "obj:1270:1 @1445:-3540.67,-2893.63  Objective Stinky's Escape / Help Stinky find Bogbean Leaves",
         "accept:1218 @1445:-3885.6,-2952.78  Accept Soothing Spices",
         "obj:1218:1 @1445:-4463.1,-3834.43  Objective Soothing Spices / Soothing Spices (3)",
         "turnin:1218 @1445:-3885.6,-2952.78  TurnIn Soothing Spices",
@@ -31,6 +35,7 @@
         "turnin:1201 @1445:-2823.52,-3106.43  TurnIn Theramore Spies",
         "accept:1202 @1445:-2823.52,-3106.43  Accept The Theramore Docks",
         "turnin:1238 @1445:-2823.52,-3106.43  TurnIn The Lost Report",
+        "turnin:1273 @1445:-2887.05,-3149.13  TurnIn Questioning Reethe",
         "accept:1276 @1445:-2887.05,-3149.13  Accept The Black Shield",
         "turnin:1177 @1445:-2820.37,-3372.43  TurnIn Hungry!",
         "turnin:1953 @1445:-3393.15,-4031.48  TurnIn Return to the Marsh",
@@ -76,20 +81,20 @@
         "turnin:4961 @1445:-3393.15,-4031.48  TurnIn Cleansing of the Orb of Orahil",
         "accept:4976 @1445:-3393.15,-4031.48  Accept Returning the Cleansed Orb",
         "turnin:1203 @1445:-3885.6,-2952.78  TurnIn Jarl Needs a Blade",
-        "turnin:1954 @1445:-3393.15,-4031.48  TurnIn The Infernal Orb",
-        "accept:1957 @1445:-3393.15,-4031.48  Accept Mana Surges",
         "accept:1952 @1445:-3393.15,-4031.48  Accept Mage's Wand",
         "accept:1948 @1445:-3393.15,-4031.48  Accept Items of Power",
         "turnin:1952 @1445:-3393.15,-4031.48  TurnIn Mage's Wand",
+        "turnin:1954 @1445:-3393.15,-4031.48  TurnIn The Infernal Orb",
         "accept:1955 @1445:-3393.15,-4031.48  Accept The Exorcism",
+        "accept:1957 @1445:-3393.15,-4031.48  Accept Mana Surges",
         "obj:1957:1 @1445:-3381.07,-4026.23  Objective Mana Surges / Mana Surge slain (12)",
         "obj:1955:1 @1445:-3378.97,-4027.28  Objective The Exorcism / Demon of the Orb slain (1)",
         "obj:1955:2 @1445:-3369,-4035.33  Objective The Exorcism / Kill the Demon of the Orb",
         "turnin:1957 @1445:-3393.15,-4031.48  TurnIn Mana Surges",
         "accept:1958 @1445:-3393.15,-4031.48  Accept Celestial Power",
         "turnin:1955 @1445:-3393.15,-4031.48  TurnIn The Exorcism",
-        "turnin:1958 @1445:-3393.15,-4031.48  TurnIn Celestial Power",
         "accept:1956 @1445:-3393.15,-4031.48  Accept Power in Uldaman",
+        "turnin:1958 @1445:-3393.15,-4031.48  TurnIn Celestial Power",
         "obj:1948:1 @1445:-3289.72,-4306.23  Objective Items of Power / Jade (1)"
       ]
     },
@@ -127,7 +132,10 @@
         "turnin:1954 @1445:-3393.15,-4031.48  TurnIn The Infernal Orb",
         "obj:1172:1 @1445:-3786.9,-4571.88  Objective The Brood of Onyxia / Egg of Onyxia destroyed",
         "turnin:2846 @1445:-3393.15,-4031.48  TurnIn Tiara of the Deep",
-        "turnin:1172 @1445:-2925.37,-3191.48  TurnIn The Brood of Onyxia"
+        "turnin:1172 @1445:-2925.37,-3191.48  TurnIn The Brood of Onyxia",
+        "accept:1173 @1445:-2880.22,-3132.68  Accept Challenge Overlord Mok'Morokk",
+        "obj:1173:1 @1445:-2886.52,-3133.38  Objective Challenge Overlord Mok'Morokk / Drive Overlord Mok'Morokk from Brackenwall Village",
+        "turnin:1173 @1445:-2925.37,-3191.48  TurnIn Challenge Overlord Mok'Morokk"
       ]
     }
   ]

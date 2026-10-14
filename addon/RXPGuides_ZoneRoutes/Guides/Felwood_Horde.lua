@@ -373,6 +373,11 @@ step
     .turnin 5156 >>Turn in Verifying the Corruption
     .target Taronn Redfeather
 step
+    .goto 1448/1,-325.41,5126.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Winna Hazzard|r
+    .accept 4506 >>Accept Corrupted Sabers
+    .target Winna Hazzard
+step
     .goto 1448/1,-1046.46,3946.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maybess Riverbreeze|r
     .accept 5887 >>Accept Salve via Hunting
@@ -419,6 +424,15 @@ step
     .turnin 5202 >>Turn in A Strange Red Key
     .target Captured Arko'narin
     .isOnQuest 5202
+step
+    .goto 1448/1,-328.28,5127.73
+    >>Return the corrupted cat to Winna Hazzard
+    .complete 4506,1 --Return the corrupted cat to Winna Hazzard
+step
+    .goto 1448/1,-325.41,5126.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Winna Hazzard|r
+    .turnin 4506 >>Turn in Corrupted Sabers
+    .target Winna Hazzard
 step
     .goto 1448/1,-1821.56,6912.92
     >>Kill |cRXP_ENEMY_Winterfall Runner|r and loot |cRXP_LOOT_Winterfall Ritual Totem|r. Use it to start the quest
@@ -575,10 +589,22 @@ step
     .isQuestTurnedIn 5159 --any of: Cleansed Water Returns to Felwood
     .xp <48,1
 step << Warlock
-    #completewith Along10
+    #completewith Along12
     >>As you go: Kill |cRXP_ENEMY_Jaedenar Legionnaire|r and loot |cRXP_LOOT_Flawless Fel Essence (Jaedenar)|r. |cRXP_WARN_Anything left is finished later|r
     .complete 7602,2 --Flawless Fel Essence (Jaedenar) (1)
     .mob Jaedenar Legionnaire
+step
+    .goto 1448/1,-440.41,5006.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Arko'narin|r
+    .accept 5203 >>Accept Rescue From Jaedenar
+    .target Captured Arko'narin
+    .isQuestTurnedIn 5202 --any of: A Strange Red Key
+    .xp <49,1
+step
+    .goto 1448/1,-396.71,4869.37
+    >>Protect Arko'narin out of Shadow Hold
+    .complete 5203,1 --Protect Arko'narin out of Shadow Hold
+    .isOnQuest 5203
 step
     .goto 1448/1,-443.86,4975.17
     >>Click the |cRXP_PICK_Brazier of Pain|r
@@ -595,7 +621,7 @@ step
     .complete 5165,3 --Extinguish the Brazier of Suffering
     .isOnQuest 5165
 step
-    #label Along10
+    #label Along12
     .goto 1448/1,-524.93,5113.55
     >>Click the |cRXP_PICK_Brazier of Malice|r
     .complete 5165,2 --Extinguish the Brazier of Malice
@@ -619,14 +645,14 @@ step << Warlock
     .mob Jaedenar Legionnaire
 step << Warlock
     .goto 1448/1,-986.08,5800.87
-    >>Kill |cRXP_ENEMY_Kroshius|r
-    .complete 7603,1 --Kroshius slain (1)
+    >>Kill |cRXP_ENEMY_Kroshius|r and loot |cRXP_LOOT_Kroshius' Infernal Core|r
+    .complete 7603,2 --Kroshius' Infernal Core (1)
     .mob Kroshius
     .isOnQuest 7603
 step << Warlock
     .goto 1448/1,-986.08,5800.87
-    >>Kill |cRXP_ENEMY_Kroshius|r and loot |cRXP_LOOT_Kroshius' Infernal Core|r
-    .complete 7603,2 --Kroshius' Infernal Core (1)
+    >>Kill |cRXP_ENEMY_Kroshius|r
+    .complete 7603,1 --Kroshius slain (1)
     .mob Kroshius
     .isOnQuest 7603
 step
@@ -687,6 +713,12 @@ step
     .turnin 5165 >>Turn in Dousing the Flames of Protection
     .target Greta Mosshoof
     .isOnQuest 5165
+step
+    .goto 1448/1,-1310.96,3989.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jessir Moonbow|r
+    .turnin 5203 >>Turn in Rescue From Jaedenar
+    .target Jessir Moonbow
+    .isOnQuest 5203
 step
     .goto 1448/1,-1310.96,3989.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jessir Moonbow|r

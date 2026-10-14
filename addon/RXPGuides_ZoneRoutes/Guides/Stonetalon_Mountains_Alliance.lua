@@ -124,23 +124,17 @@ step
     .accept 1071 >>Accept A Gnome's Respite
     .target Gaxim Rustfizzle
 step
-    .goto 1442/1,402.76,1231.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
-    .turnin 78270 >>Turn in Goblin Lockpicks
-    .target Veenix
-    .isOnQuest 78270
-step
     #loop
-    .goto 1442/1,163.96,1414.56,0
+    .goto 1442/1,34.55,1112.38,0
+    .goto 1442/1,34.55,1112.38,40,0
+    .goto 1442/1,81.43,1202.90,40,0
     .goto 1442/1,163.96,1414.56,40,0
     .goto 1442/1,78.99,1454.61,40,0
     .goto 1442/1,-27.95,1447.45,40,0
+    .goto 1442/1,18.93,1308.40,40,0
     .goto 1442/1,-107.55,1282.68,40,0
     .goto 1442/1,-30.39,1210.07,40,0
     .goto 1442/1,-74.34,1055.39,40,0
-    .goto 1442/1,34.55,1112.38,40,0
-    .goto 1442/1,81.43,1202.90,40,0
-    .goto 1442/1,18.93,1308.40,40,0
     >>Kill |cRXP_ENEMY_Venture Co. Operator|r and loot |cRXP_LOOT_Super Reaper 6000 Blueprints|r
     >>Kill |cRXP_ENEMY_Venture Co. Loggers|r
     >>Kill |cRXP_ENEMY_Venture Co. Deforesters|r
@@ -151,18 +145,11 @@ step
     .mob Venture Co. Logger
     .mob Venture Co. Deforester
 step
-    .goto 1442/1,-263.82,962.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
-    .accept 1092 >>Accept Gerenzo's Orders
-    .target Piznik
-    .isQuestTurnedIn 1090 --any of: Gerenzo's Orders
-    .xp <17,1
-step
-    .goto 1442/1,365.16,878.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
-    .turnin 1092 >>Turn in Gerenzo's Orders
-    .target Ziz Fizziks
-    .isOnQuest 1092
+    .goto 1442/1,402.76,1231.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
+    .turnin 78270 >>Turn in Goblin Lockpicks
+    .target Veenix
+    .isOnQuest 78270
 step
     .goto 1442/1,365.16,878.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
@@ -184,23 +171,26 @@ step
 step
     .xp 21 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 21.|r Come back to this guide then
 step
-    .goto 1442/1,866.19,1619.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Night Elf Courier|r
-    .accept 86574 >>Accept Stonetalon Supply Run
-    .target Night Elf Courier
+    .goto 1442/1,-263.82,962.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
+    .accept 1090 >>Accept Gerenzo's Orders
+    .target Piznik
 step
-    .goto 1442/1,887.67,1566.95
-    >>Kill |cRXP_ENEMY_Young Pridewings|r, |cRXP_ENEMY_Pridewing Wyverns|r, |cRXP_ENEMY_Pridewing Skyhunters|r and |cRXP_ENEMY_Pridewing Consorts|r. Loot them for |cRXP_LOOT_Stonetalon Supply Bundle|r
-    .complete 86574,1 --Stonetalon Supply Bundle (1)
-    .mob Young Pridewing
-    .mob Pridewing Wyvern
-    .mob Pridewing Skyhunter
-    .mob Pridewing Consort
+    .goto 1442/1,-263.82,962.92
+    >>Get the mysterious ore from Piznik after he finishes mining it.
+    .complete 1090,1 --Piznik
+    .target Piznik
+step
+    .goto 1442/1,-263.82,962.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
+    .turnin 1090 >>Turn in Gerenzo's Orders
+    .accept 1092 >>Accept Gerenzo's Orders
+    .target Piznik
 step
     .goto 1442/1,339.27,730.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaxim Rustfizzle|r
-    .accept 1080 >>Accept Covert Ops - Beta
     .accept 1079 >>Accept Covert Ops - Alpha
+    .accept 1080 >>Accept Covert Ops - Beta
     .target Gaxim Rustfizzle
     .isQuestTurnedIn 1074 --Ineptitude + Chemicals = Fun
     .isQuestTurnedIn 1077 --Special Delivery for Gaxim
@@ -242,11 +232,29 @@ step
     .target Kaela Shadowspear
     .isOnQuest 1091
 step
+    .goto 1442/1,365.16,878.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
+    .turnin 1092 >>Turn in Gerenzo's Orders
+    .target Ziz Fizziks
+step
     .goto 1442/1,402.76,1231.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
     .turnin 78270 >>Turn in Goblin Lockpicks
     .target Veenix
     .isOnQuest 78270
+step
+    .goto 1442/1,866.19,1619.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Night Elf Courier|r
+    .accept 86574 >>Accept Stonetalon Supply Run
+    .target Night Elf Courier
+step
+    .goto 1442/1,887.67,1566.95
+    >>Kill |cRXP_ENEMY_Young Pridewings|r, |cRXP_ENEMY_Pridewing Wyverns|r, |cRXP_ENEMY_Pridewing Skyhunters|r and |cRXP_ENEMY_Pridewing Consorts|r. Loot them for |cRXP_LOOT_Stonetalon Supply Bundle|r
+    .complete 86574,1 --Stonetalon Supply Bundle (1)
+    .mob Young Pridewing
+    .mob Pridewing Wyvern
+    .mob Pridewing Skyhunter
+    .mob Pridewing Consort
 step
     .goto 1442/1,1498.09,2729.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Faralia|r

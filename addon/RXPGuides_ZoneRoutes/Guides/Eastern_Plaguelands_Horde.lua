@@ -47,23 +47,18 @@ step
     .target Leonid Barthalomew the Revered
     .isOnQuest 5522
 step
-    .goto 1423/0,-5305.57,2303.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smokey LaRue|r
-    .accept 6026 >>Accept That's Asking A Lot
-    .target Smokey LaRue
-step
-    .goto 1423/0,-3379.52,3367.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anthion Harmon|r
-    .turnin 8930 >>Turn in In Search of Anthion
-    .target Anthion Harmon
-    .isOnQuest 8930
-step
     .goto 1423/0,-2478.24,2671.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
     .accept 5542 >>Accept Demon Dogs
     .accept 5543 >>Accept Blood Tinged Skies
     .accept 5544 >>Accept Carrion Grubbage
     .target Tirion Fordring
+step
+    .goto 1423/0,-2478.24,2671.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
+    .turnin 5944 >>Turn in In Dreams
+    .target Tirion Fordring
+    .isQuestComplete 5944
 step
     .goto 1423/0,-2478.24,2671.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
@@ -75,20 +70,9 @@ step
     .goto 1423/0,-3212.60,1871.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
     .accept 6022 >>Accept To Kill With Purpose
+    .turnin 6022 >>Turn in To Kill With Purpose
     .accept 6042 >>Accept Un-Life's Little Annoyances
     .target Nathanos Blightcaller
-step
-    .goto 1423/0,-3212.60,1871.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
-    .turnin 6022 >>Turn in To Kill With Purpose while you are here
-    .isQuestComplete 6022
-    .target Nathanos Blightcaller
-step
-    .goto 1423/0,-3596.35,1456.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pamela Redpath|r
-    .turnin 5142 >>Turn in Little Pamela
-    .target Pamela Redpath
-    .isOnQuest 5142
 step
     .goto 1423/0,-3596.35,1456.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pamela Redpath|r
@@ -98,8 +82,41 @@ step
 step
     .goto 1423/0,-3596.35,1456.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pamela Redpath|r
+    .turnin 5142 >>Turn in Little Pamela
+    .target Pamela Redpath
+    .isOnQuest 5142
+step
+    .goto 1423/0,-3596.35,1456.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pamela Redpath|r
     .accept 5149 >>Accept Pamela's Doll
     .target Pamela Redpath
+step
+    #loop
+    .goto 1423/0,-3663.89,1423.56,0
+    .goto 1423/0,-3663.89,1423.56,40,0
+    .goto 1423/0,-3680.24,1407.79,40,0
+    .goto 1423/0,-3716.81,1405.50,40,0
+    .goto 1423/0,-3715.95,1477.17,40,0
+    >>Pick up |cRXP_PICK_Pamela's Doll's Left Side|r from the ground
+    >>Pick up |cRXP_PICK_Pamela's Doll's Right Side|r from the ground
+    >>Pick up |cRXP_PICK_Pamela's Doll's Head|r from the ground
+    .collect 12887,1,5149,1 --Pamela's Doll's Left Side (1)
+    .collect 12888,1,5149,1 --Pamela's Doll's Right Side (1)
+    .collect 12886,1,5149,1 --Pamela's Doll's Head (1)
+step
+    .goto 1423/0,-3596.35,1456.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pamela Redpath|r
+    .turnin 5149 >>Turn in Pamela's Doll
+    .target Pamela Redpath
+    .isQuestComplete 5149
+step
+    .goto 1423/0,-3596.35,1456.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pamela Redpath|r
+    .accept 5152 >>Accept Auntie Marlene
+    .accept 5241 >>Accept Uncle Carlin
+    .target Pamela Redpath
+    .isQuestTurnedIn 5149 --any of: Pamela's Doll
+    .xp <50,1
 step
     #loop
     .goto 1423/0,-2980.29,1757.81,0
@@ -143,9 +160,10 @@ step
     .complete 6042,1 --Noxious Plaguebat slain (20)
     .mob Noxious Plaguebat
 step
-    #completewith next
-    .hs >>Hearth to Jessica Chambers's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
+    .goto 1423/0,-5305.57,2303.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smokey LaRue|r
+    .accept 6026 >>Accept That's Asking A Lot
+    .target Smokey LaRue
 step
     .goto 1423/0,-5337.83,2255.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Nicholas Zverenhoff|r
@@ -153,9 +171,11 @@ step
     .target Duke Nicholas Zverenhoff
     .isOnQuest 6030
 step
-    #completewith next
-    .hs >>Hearth to Jessica Chambers's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
+    .goto 1423/0,-5340.84,2257.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
+    .turnin 5241 >>Turn in Uncle Carlin
+    .target Carlin Redpath
+    .isOnQuest 5241
 step
     .goto 1423/0,-5340.84,2257.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
@@ -202,6 +222,12 @@ step
     .mob Carrion Grub
     .mob Carrion Devourer
 step
+    .goto 1423/0,-3379.52,3367.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anthion Harmon|r
+    .turnin 8930 >>Turn in In Search of Anthion
+    .target Anthion Harmon
+    .isOnQuest 8930
+step
     .goto 1423/0,-2744.97,2929.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Egan|r
     .turnin 5281 >>Turn in The Restless Souls
@@ -230,85 +256,47 @@ step
     .turnin 5542 >>Turn in Demon Dogs
     .turnin 5543 >>Turn in Blood Tinged Skies
     .turnin 5544 >>Turn in Carrion Grubbage
+    .accept 5742 >>Accept Redemption
     .target Tirion Fordring
 step
     .goto 1423/0,-2478.24,2671.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
+    .complete 5742,1 --Tirion Fordring
+    .target Tirion Fordring
+step
+    .goto 1423/0,-2478.24,2671.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
+    .turnin 5742 >>Turn in Redemption
     .accept 5781 >>Accept Of Forgotten Memories
     .target Tirion Fordring
-    .isQuestTurnedIn 5742 --any of: Redemption
-    .xp <52,1
 step
     .goto 1423/0,-3212.60,1871.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
-    .turnin 6022 >>Turn in To Kill With Purpose
     .turnin 6042 >>Turn in Un-Life's Little Annoyances
     .target Nathanos Blightcaller
 step
-    #completewith Along28
-    >>As you go: Kill |cRXP_ENEMY_Zaeldarr the Outcast|r and loot |cRXP_LOOT_Zaeldarr's Head|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 6021,1 --Zaeldarr's Head (1)
-    .mob Zaeldarr the Outcast
-step
-    #label Along28
     .goto 1423/0,-3282.30,1564.03
     >>Kill |cRXP_ENEMY_Mercutio Filthgorger|r and loot |cRXP_LOOT_Taelan's Hammer|r
-    .complete 5781,1 --Taelan's Hammer (1)
-    .mob Mercutio Filthgorger
-    .isOnQuest 5781
-step
-    .goto 1423/0,-3248.74,1609.61
     >>Kill |cRXP_ENEMY_Zaeldarr the Outcast|r and loot |cRXP_LOOT_Zaeldarr's Head|r
+    .complete 5781,1 --Taelan's Hammer (1)
     .complete 6021,1 --Zaeldarr's Head (1)
+    .mob Mercutio Filthgorger
     .mob Zaeldarr the Outcast
 step
-    #completewith Along31
-    >>As you go: Pick up |cRXP_PICK_Pamela's Doll's Right Side|r from the ground. Pick up |cRXP_PICK_Pamela's Doll's Head|r from the ground. |cRXP_WARN_Anything left is finished later|r
-    .collect 12888,1,5149,1 --Pamela's Doll's Right Side (1)
-    .collect 12886,1,5149,1 --Pamela's Doll's Head (1)
+    .goto 1423/0,-2478.24,2671.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
+    .turnin 5781 >>Turn in Of Forgotten Memories
+    .accept 5845 >>Accept Of Lost Honor
+    .target Tirion Fordring
 step
-    .goto 1423/0,-3663.89,1423.56
-    >>Pick up |cRXP_PICK_Pamela's Doll's Left Side|r from the ground
-    .collect 12887,1,5149,1 --Pamela's Doll's Left Side (1)
+    #completewith next
+    .hs >>Hearth to Jessica Chambers's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
 step
-    #label Along31
-    .goto 1423/0,-3702.61,1442.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Joseph Redpath|r
-    .complete 5721,1 --Joseph Redpath
-    .target Joseph Redpath
-    .isOnQuest 5721
-step
-    .goto 1423/0,-3596.35,1456.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pamela Redpath|r
-    .turnin 5149 >>Turn in Pamela's Doll
-    .target Pamela Redpath
-    .isQuestComplete 5149
-step
-    .goto 1423/0,-3596.35,1456.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pamela Redpath|r
-    .turnin 5721 >>Turn in The Battle of Darrowshire
-    .target Pamela Redpath
-    .isOnQuest 5721
-step
-    .goto 1423/0,-3596.35,1456.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pamela Redpath|r
-    .accept 5152 >>Accept Auntie Marlene
-    .accept 5241 >>Accept Uncle Carlin
-    .target Pamela Redpath
-    .isQuestTurnedIn 5149 --any of: Pamela's Doll
-    .xp <50,1
-step
-    .goto 1423/0,-3596.35,1456.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pamela Redpath|r
-    .accept 5942 >>Accept Hidden Treasures
-    .target Pamela Redpath
-    .isQuestTurnedIn 5721 --any of: The Battle of Darrowshire
-    .xp <50,1
-step
-    .goto 1423/0,-3586.45,1461.97
-    >>Click the |cRXP_PICK_Joseph's Chest|r
-    .turnin 5942 >>Turn in Hidden Treasures
-    .isOnQuest 5942
+    .goto 1423/0,-5264.70,2151.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Alen|r
+    .turnin 6021 >>Turn in Zaeldarr the Outcast
+    .target Caretaker Alen
 step
     .goto 1423/0,-5337.83,2255.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Nicholas Zverenhoff|r
@@ -319,9 +307,17 @@ step
 step
     .goto 1423/0,-5340.84,2257.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
-    .turnin 5241 >>Turn in Uncle Carlin
+    .turnin 5210 >>Turn in Brother Carlin
     .target Carlin Redpath
-    .isOnQuest 5241
+    .isOnQuest 5210
+step
+    .goto 1423/0,-5340.84,2257.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
+    .accept 5181 >>Accept Villains of Darrowshire
+    .accept 5168 >>Accept Heroes of Darrowshire
+    .target Carlin Redpath
+    .isQuestTurnedIn 5210 --any of: Brother Carlin
+    .xp <50,1
 step
     .goto 1423/0,-5349.45,2303.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
@@ -341,44 +337,6 @@ step
     .turnin 5265 >>Turn in The Argent Hold
     .isOnQuest 5265
 step
-    .goto 1423/0,-3715.95,1477.17
-    >>Pick up |cRXP_PICK_Pamela's Doll's Right Side|r from the ground
-    >>Pick up |cRXP_PICK_Pamela's Doll's Head|r from the ground
-    .collect 12888,1,5149,1 --Pamela's Doll's Right Side (1)
-    .collect 12886,1,5149,1 --Pamela's Doll's Head (1)
-step
-    .goto 1423/0,-2478.24,2671.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
-    .turnin 5781 >>Turn in Of Forgotten Memories
-    .target Tirion Fordring
-    .isOnQuest 5781
-step
-    .goto 1423/0,-2478.24,2671.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
-    .accept 5845 >>Accept Of Lost Honor
-    .target Tirion Fordring
-    .isQuestTurnedIn 5781 --any of: Of Forgotten Memories
-    .xp <52,1
-step
-    .goto 1423/0,-5264.70,2151.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Alen|r
-    .turnin 6021 >>Turn in Zaeldarr the Outcast
-    .target Caretaker Alen
-step
-    .goto 1423/0,-5340.84,2257.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
-    .turnin 5210 >>Turn in Brother Carlin
-    .target Carlin Redpath
-    .isOnQuest 5210
-step
-    .goto 1423/0,-5340.84,2257.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
-    .accept 5181 >>Accept Villains of Darrowshire
-    .accept 5168 >>Accept Heroes of Darrowshire
-    .target Carlin Redpath
-    .isQuestTurnedIn 5210 --any of: Brother Carlin
-    .xp <50,1
-step
     .goto 1423/0,-4163.79,2511.17
     >>Open the |cRXP_PICK_Horgus' Skull|r. Loot it for |cRXP_LOOT_Skull of Horgus|r
     .complete 5181,1 --Skull of Horgus (1)
@@ -388,10 +346,6 @@ step
     >>Pick up |cRXP_PICK_Shattered Sword of Marduk|r from the ground
     .complete 5181,2 --Shattered Sword of Marduk (1)
     .isOnQuest 5181
-step
-    #completewith next
-    .hs >>Hearth to Jessica Chambers's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
 step
     .goto 1423/0,-5340.84,2257.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
@@ -423,7 +377,6 @@ step
     .goto 1423/0,-4946.34,2923.11
     >>Pick up |cRXP_PICK_Symbol of Lost Honor|r from the ground
     .complete 5845,1 --Symbol of Lost Honor (1)
-    .isOnQuest 5845
 step
     #loop
     .goto 1423/0,-4738.98,2872.66,0
@@ -479,6 +432,30 @@ step
     .target Carlin Redpath
     .isQuestComplete 5168
 step
+    .goto 1423/0,-3702.61,1442.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Joseph Redpath|r
+    .complete 5721,1 --Joseph Redpath
+    .target Joseph Redpath
+    .isOnQuest 5721
+step
+    .goto 1423/0,-3596.35,1456.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pamela Redpath|r
+    .turnin 5721 >>Turn in The Battle of Darrowshire
+    .target Pamela Redpath
+    .isOnQuest 5721
+step
+    .goto 1423/0,-3596.35,1456.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pamela Redpath|r
+    .accept 5942 >>Accept Hidden Treasures
+    .target Pamela Redpath
+    .isQuestTurnedIn 5721 --any of: The Battle of Darrowshire
+    .xp <50,1
+step
+    .goto 1423/0,-3586.45,1461.97
+    >>Click the |cRXP_PICK_Joseph's Chest|r
+    .turnin 5942 >>Turn in Hidden Treasures
+    .isOnQuest 5942
+step
     .goto 1423/0,-3212.60,1871.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
     .turnin 6145 >>Turn in The Crimson Courier
@@ -494,15 +471,8 @@ step
     .goto 1423/0,-2478.24,2671.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
     .turnin 5845 >>Turn in Of Lost Honor
-    .target Tirion Fordring
-    .isOnQuest 5845
-step
-    .goto 1423/0,-2478.24,2671.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
     .accept 5846 >>Accept Of Love and Family
     .target Tirion Fordring
-    .isQuestTurnedIn 5845 --any of: Of Lost Honor
-    .xp <52,1
 step
     +|cRXP_WARN_That is all of Eastern Plaguelands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Western Plaguelands|r: Auntie Marlene, Of Love and Family, Find Myranda, Return to Chromie

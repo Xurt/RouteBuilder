@@ -755,15 +755,16 @@ step
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .accept 65 >>Accept The Defias Brotherhood
-    .accept 14 >>Accept The People's Militia
-    .target Gryan Stoutmantle
-step
-    .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 144 >>Accept Messenger to Westfall
     .target Gryan Stoutmantle
     .isQuestTurnedIn 143 --any of: Messenger to Westfall
+    .xp <14,1
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .accept 142 >>Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+    .isQuestTurnedIn 141 --any of: The Defias Brotherhood
     .xp <14,1
 step
     .goto 1436/0,1045.12,-10508.80
@@ -775,16 +776,37 @@ step
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .accept 142 >>Accept The Defias Brotherhood
+    .accept 65 >>Accept The Defias Brotherhood
     .target Gryan Stoutmantle
-    .isQuestTurnedIn 141 --any of: The Defias Brotherhood
-    .xp <14,1
 step
     .goto 1436/0,1438.17,-11017.70
     >>Kill |cRXP_ENEMY_Defias Messenger|r and loot |cRXP_LOOT_A Mysterious Message|r
     .complete 142,1 --A Mysterious Message (1)
     .mob Defias Messenger
     .isOnQuest 142
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .accept 14 >>Accept The People's Militia
+    .target Gryan Stoutmantle
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 142 >>Turn in The Defias Brotherhood
+    .target Gryan Stoutmantle
+    .isOnQuest 142
+step
+    .goto 1436/0,1067.87,-10508.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Defias Traitor|r
+    .accept 155 >>Accept The Defias Brotherhood
+    .target The Defias Traitor
+    .isQuestTurnedIn 142 --any of: The Defias Brotherhood
+    .xp <14,1
+step
+    .goto 1436/0,1527.42,-11069.03
+    >>Escort The Defias Traitor to discover where VanCleef is hiding
+    .complete 155,1 --Escort The Defias Traitor to discover where VanCleef is hiding
+    .isOnQuest 155
 step
     #loop
     .goto 1436/0,1661.47,-11113.60,0
@@ -804,12 +826,12 @@ step
     .accept 152 >>Accept The Coast Isn't Clear
     .target Captain Grayson
 step
-    #completewith Along7
+    #completewith Along11
     >>As you go: Kill |cRXP_ENEMY_Defias Highwaymans|r. |cRXP_WARN_Anything left is finished later|r
     .complete 14,1 --Defias Highwayman slain (8)
     .mob Defias Highwayman
 step
-    #label Along7
+    #label Along11
     .goto 1436/0,1665.32,-11353.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .turnin 92819 >>Turn in Destruction in Deadmines
@@ -833,14 +855,14 @@ step
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 142 >>Turn in The Defias Brotherhood
+    .turnin 14 >>Turn in The People's Militia
     .target Gryan Stoutmantle
-    .isOnQuest 142
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 14 >>Turn in The People's Militia
+    .turnin 155 >>Turn in The Defias Brotherhood
     .target Gryan Stoutmantle
+    .isOnQuest 155
 step
     #loop
     .goto 1436/0,909.67,-10411.27,0

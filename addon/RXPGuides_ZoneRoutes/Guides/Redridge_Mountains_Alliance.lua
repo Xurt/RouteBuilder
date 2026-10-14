@@ -530,6 +530,12 @@ step
     .accept 150 >>Accept Murloc Poachers
     .target Dockmaster Baren
     .xp <20,1
+step << Warrior
+    .goto 1433/0,-2147.76,-9222.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorus Barleybrew|r
+    .accept 1699 >>Accept The Rethban Gauntlet
+    .target Yorus Barleybrew
+    .xp <20,1
 step
     .goto 1433/0,-2297.98,-9284.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
@@ -564,6 +570,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
     .accept 150 >>Accept Murloc Poachers
     .target Dockmaster Baren
+step << Warrior
+    .goto 1433/0,-2147.76,-9222.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorus Barleybrew|r
+    .accept 1699 >>Accept The Rethban Gauntlet
+    .target Yorus Barleybrew
+    .xp <20,1
 step
     #loop
     .goto 1433/0,-2347.70,-9392.49,0
@@ -587,19 +599,29 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
     .turnin 150 >>Turn in Murloc Poachers
     .target Dockmaster Baren
+step << Warrior
+    .xp 20 >>Grind to level 20 (The Rethban Gauntlet needs it)
+step << Warrior
+    .goto 1433/0,-2147.76,-9222.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorus Barleybrew|r
+    .accept 1699 >>Accept The Rethban Gauntlet
+    .target Yorus Barleybrew
+step << Warrior
+    .goto 1433/0,-1986.25,-8932.78
+    >>Enter the Rethban Caverns
+    .complete 1699,1 --Enter the Rethban Caverns
+step << Warrior
+    .goto 1433/0,-2147.76,-9222.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorus Barleybrew|r
+    .turnin 1699 >>Turn in The Rethban Gauntlet
+    .accept 1702 >>Accept The Shieldsmith
+    .target Yorus Barleybrew
 step
     .goto 1433/0,-2268.46,-9279.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
     .accept 347 >>Accept Rethban Ore
     .target Foreman Oslow
     .isQuestTurnedIn 345 --any of: Ink Supplies
-    .xp <20,1
-step << Warrior
-    .goto 1433/0,-2147.76,-9222.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorus Barleybrew|r
-    .accept 1702 >>Accept The Shieldsmith
-    .target Yorus Barleybrew
-    .isQuestTurnedIn 1699 --any of: The Rethban Gauntlet
     .xp <20,1
 step
     .goto 1433/0,-2145.59,-9211.50
@@ -789,17 +811,31 @@ step
     .complete 128,1 --Blackrock Champion slain (15)
     .mob Blackrock Champion
 step
-    .goto 1433/0,-2243.06,-9259.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
-    .turnin 126 >>Turn in Howling in the Hills
-    .target Verner Osgood
-    .isOnQuest 126
+    .goto 1433/0,-2187.05,-8756.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Keeshan|r
+    .accept 219 >>Accept Missing In Action
+    .target Corporal Keeshan
+step
+    .goto 1433/0,-2294.94,-9280.14
+    >>Escort Corporal Keeshan back to Redridge
+    .complete 219,1 --Escort Corporal Keeshan back to Redridge
 step
     .goto 1433/0,-2297.98,-9284.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
     .turnin 19 >>Turn in Tharil'zun while you are here
     .isQuestComplete 19
     .target Marshal Marris
+step
+    .goto 1433/0,-2297.98,-9284.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    .turnin 219 >>Turn in Missing In Action
+    .target Marshal Marris
+step
+    .goto 1433/0,-2243.06,-9259.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+    .turnin 126 >>Turn in Howling in the Hills
+    .target Verner Osgood
+    .isOnQuest 126
 step
     .goto 1433/0,-2255.44,-9412.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Howe|r

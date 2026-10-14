@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "15-28 Stonetalon Mountains",
-  "saved": "2026-10-14 10:01",
+  "saved": "2026-10-14 10:45",
   "levels": "RestedXP",
   "parts": [
     {
@@ -32,12 +32,10 @@
         "accept:1085 @1442:320.72,739.86  Accept On Guard in Stonetalon",
         "turnin:1085 @1442:339.27,730.09  TurnIn On Guard in Stonetalon",
         "accept:1071 @1442:339.27,730.09  Accept A Gnome's Respite",
-        "turnin:78270 @1442:402.76,1231.88  TurnIn Goblin Lockpicks",
         "obj:1093:1 @1442:10.63,1234.49  Objective Super Reaper 6000 / Super Reaper 6000 Blueprints (1)",
         "obj:1071:1 @1442:18.93,1308.4  Objective A Gnome's Respite / Venture Co. Logger slain (10)",
         "obj:1071:2 @1442:1.84,1213  Objective A Gnome's Respite / Venture Co. Deforester slain (10)",
-        "accept:1092 @1442:-263.82,962.92  Accept Gerenzo's Orders",
-        "turnin:1092 @1442:365.16,878.25  TurnIn Gerenzo's Orders",
+        "turnin:78270 @1442:402.76,1231.88  TurnIn Goblin Lockpicks",
         "turnin:1093 @1442:365.16,878.25  TurnIn Super Reaper 6000",
         "accept:1094 @1442:365.16,878.25  Accept Further Instructions",
         "turnin:1071 @1442:339.27,730.09  TurnIn A Gnome's Respite",
@@ -48,17 +46,22 @@
     {
       "part": 3,
       "steps": [
-        "accept:86574 @1442:866.19,1619.05  Accept Stonetalon Supply Run",
-        "obj:86574:1 @1442:887.67,1566.95  Objective Stonetalon Supply Run / Stonetalon Supply Bundle (1)",
-        "accept:1080 @1442:339.27,730.09  Accept Covert Ops - Beta",
+        "accept:1090 @1442:-263.82,962.92  Accept Gerenzo's Orders",
+        "obj:1090:1 @1442:-263.82,962.92  Objective Gerenzo's Orders / Piznik",
+        "turnin:1090 @1442:-263.82,962.92  TurnIn Gerenzo's Orders",
+        "accept:1092 @1442:-263.82,962.92  Accept Gerenzo's Orders",
         "accept:1079 @1442:339.27,730.09  Accept Covert Ops - Alpha",
+        "accept:1080 @1442:339.27,730.09  Accept Covert Ops - Beta",
         "obj:1079:1 @1442:18.44,1245.23  Objective Covert Ops - Alpha / Venture Co. Engineering Plans (1)",
         "obj:1080:1 @1442:-390.3,985.71  Objective Covert Ops - Beta / Venture Co. Letters (1)",
         "turnin:1080 @1442:339.27,730.09  TurnIn Covert Ops - Beta",
         "turnin:1079 @1442:339.27,730.09  TurnIn Covert Ops - Alpha",
         "accept:1091 @1442:339.27,730.09  Accept Kaela's Update",
         "turnin:1091 @1442:320.72,739.86  TurnIn Kaela's Update",
+        "turnin:1092 @1442:365.16,878.25  TurnIn Gerenzo's Orders",
         "turnin:78270 @1442:402.76,1231.88  TurnIn Goblin Lockpicks",
+        "accept:86574 @1442:866.19,1619.05  Accept Stonetalon Supply Run",
+        "obj:86574:1 @1442:887.67,1566.95  Objective Stonetalon Supply Run / Stonetalon Supply Bundle (1)",
         "turnin:86574 @1442:1498.09,2729.76  TurnIn Stonetalon Supply Run"
       ]
     },

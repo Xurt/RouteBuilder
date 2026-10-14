@@ -91,18 +91,6 @@ step << Mage
     .turnin 1947 >>Turn in Journey to the Marsh
     .target Tabetha
     .isOnQuest 1947
-step << Hunter
-    .goto 1445/1,-4534.50,-3776.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
-    .vendor >> |cRXP_BUY_Delete all|r |T132382:0|t[Razor Arrows] |cRXP_BUY_you have and fill your quiver with|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_instead|r
-    .target Jensen Farran
-    .xp <40,1
-step << Hunter
-    .goto 1445/1,-4534.50,-3776.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
-    .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed. Buy a couple stacks of|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_if you're close to level 40|r
-    .target Jensen Farran
-    .xp >40,1
 step << Warrior
     .goto 1445/1,-4538.44,-3727.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Evencane|r up stairs in the Keep
@@ -142,13 +130,6 @@ step
     .turnin 1282 >>Turn in They Call Him Smiling Jim
     .target Captain Garran Vimes
 step
-    .goto 1445/1,-4462.05,-3757.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Tervosh|r
-    .accept 1266 >>Accept The Missing Diplomat
-    .target Archmage Tervosh
-    .isQuestTurnedIn 1265 --any of: The Missing Diplomat
-    .xp <28,1
-step
     .goto 1445/1,-3885.60,-2940.53
     >>Click the |cRXP_PICK_Loose Dirt|r
     .accept 1219 >>Accept The Orc Report
@@ -178,25 +159,6 @@ step
     .goto 1445/1,-3971.70,-2767.63,30,0
     .xp 39 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to Level 39
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
-step
-    .goto 1445/1,-3350.10,-2896.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Private Hendel|r
-    .turnin 1266 >>Turn in The Missing Diplomat
-    .target Private Hendel
-    .isOnQuest 1266
-step
-    .goto 1445/1,-4454.17,-3749.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
-    .accept 1267 >>Accept The Missing Diplomat
-    .target Lady Jaina Proudmoore
-    .isQuestTurnedIn 1324 --any of: The Missing Diplomat
-    .xp <28,1
-step
-    .goto 1445/1,-4454.17,-3749.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
-    .turnin 1267 >>Turn in The Missing Diplomat
-    .target Lady Jaina Proudmoore
-    .isOnQuest 1267
 step
     .goto 1445/1,-2534.25,-3700.73
     >>Click the |cRXP_PICK_Hoofprints|r
@@ -306,6 +268,18 @@ step
     .goto 1445/1,-3971.70,-2767.63,30,0
     .xp 41+43110 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 43110+/95800xp
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
+step << Hunter
+    .goto 1445/1,-4534.50,-3776.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
+    .vendor >> |cRXP_BUY_Delete all|r |T132382:0|t[Razor Arrows] |cRXP_BUY_you have and fill your quiver with|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_instead|r
+    .target Jensen Farran
+    .xp <40,1
+step << Hunter
+    .goto 1445/1,-4534.50,-3776.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
+    .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed. Buy a couple stacks of|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_if you're close to level 40|r
+    .target Jensen Farran
+    .xp >40,1
 step
     +|cRXP_WARN_That is all of Dustwallow Marsh for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Thousand Needles|r: Hidden Secrets << Mage
@@ -328,9 +302,34 @@ step
 step
     .goto 1445/1,-4470.97,-3616.03
     .vendor >> Buy up to 180 level 35 drink
+step
+    .goto 1445/1,-4546.05,-3738.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Samaul|r
+    .accept 1265 >>Accept The Missing Diplomat
+    .target Commander Samaul
+    .isQuestTurnedIn 1264 --any of: The Missing Diplomat
+    .xp <28,1
 step << Paladin
     .trainer >>Train your spells
     .train 19752 >>Train |T136106:0|t[|cRXP_FRIENDLY_Divine Intervention|r]. You will need it for a rune later << sod
+step
+    .goto 1445/1,-4120.80,-3464.83
+    >>Sentry Point explored
+    .complete 1265,1 --Sentry Point explored
+    .isOnQuest 1265
+step
+    .goto 1445/1,-4462.05,-3757.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Tervosh|r
+    .turnin 1265 >>Turn in The Missing Diplomat
+    .target Archmage Tervosh
+    .isOnQuest 1265
+step
+    .goto 1445/1,-4462.05,-3757.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Tervosh|r
+    .accept 1266 >>Accept The Missing Diplomat
+    .target Archmage Tervosh
+    .isQuestTurnedIn 1265 --any of: The Missing Diplomat
+    .xp <28,1
 step
     .goto 1445/1,-3885.60,-2952.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
@@ -349,6 +348,44 @@ step
 step
     .trainer >> Teleport to Stormwind or Ironforge. Train your level 38 spells
     >>Start being very careful with your money too, as it's very nice to have your mount at level 40
+step
+    .goto 1445/1,-3350.10,-2896.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Private Hendel|r
+    .turnin 1266 >>Turn in The Missing Diplomat
+    .target Private Hendel
+    .isOnQuest 1266
+step
+    .goto 1445/1,-3350.10,-2896.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Private Hendel|r
+    .accept 1324 >>Accept The Missing Diplomat
+    .target Private Hendel
+    .isQuestTurnedIn 1266 --any of: The Missing Diplomat
+    .xp <28,1
+step
+    .goto 1445/1,-3350.10,-2896.08
+    >>Kill |cRXP_ENEMY_Private Hendel|r
+    .complete 1324,1 --Private Hendel slain (1)
+    .mob Private Hendel
+    .isOnQuest 1324
+step
+    .goto 1445/1,-4462.05,-3757.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Tervosh|r
+    .turnin 1324 >>Turn in The Missing Diplomat
+    .target Archmage Tervosh
+    .isOnQuest 1324
+step
+    .goto 1445/1,-4454.17,-3749.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .accept 1267 >>Accept The Missing Diplomat
+    .target Lady Jaina Proudmoore
+    .isQuestTurnedIn 1324 --any of: The Missing Diplomat
+    .xp <28,1
+step
+    .goto 1445/1,-4454.17,-3749.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .turnin 1267 >>Turn in The Missing Diplomat
+    .target Lady Jaina Proudmoore
+    .isOnQuest 1267
 step
     .goto 1445/1,-2820.37,-3372.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mudcrush Durtfeet|r
@@ -412,8 +449,18 @@ step
     .turnin 1177 >>Turn in Hungry!
     .target Mudcrush Durtfeet
 step
+    .goto 1445/1,-3436.20,-2646.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Stinky" Ignatz|r
+    .accept 1222 >>Accept Stinky's Escape
+    .target "Stinky" Ignatz
+step
+    .goto 1445/1,-3540.67,-2893.63
+    >>Help Stinky find Bogbean Leaves
+    .complete 1222,1 --Help Stinky find Bogbean Leaves
+step
     .goto 1445/1,-4457.85,-3624.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Stern|r
+    .turnin 1222 >>Turn in Stinky's Escape
     .accept 1258 >>Accept ... and Bugs
     .target Morgan Stern
 step

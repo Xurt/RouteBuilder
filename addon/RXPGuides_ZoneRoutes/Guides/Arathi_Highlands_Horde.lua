@@ -596,6 +596,23 @@ step
     .turnin 680 >>Turn in The Real Threat
     .target Korin Fel
 step
+    #loop
+    .goto 1417/0,-1907.07,-1546.69,0
+    .goto 1417/0,-1907.07,-1546.69,40,0
+    .goto 1417/0,-1831.11,-1533.01,40,0
+    .goto 1417/0,-1761.99,-1504.93,40,0
+    .goto 1417/0,-1722.75,-1503.97,40,0
+    .goto 1417/0,-1689.63,-1528.21,40,0
+    .goto 1417/0,-1628.79,-1586.05,40,0
+    .goto 1417/0,-1660.83,-1645.09,40,0
+    .goto 1417/0,-1708.71,-1633.09,40,0
+    .goto 1417/0,-1726.71,-1587.01,40,0
+    >>Kill |cRXP_ENEMY_Stromgarde Troll Hunters|r, |cRXP_ENEMY_Stromgarde Defenders|r and |cRXP_ENEMY_Stromgarde Vindicators|r. Loot them for |cRXP_LOOT_Sigil Fragment|r
+    .complete 640,1 --Sigil Fragment (11)
+    .mob Stromgarde Troll Hunter
+    .mob Stromgarde Defender
+    .mob Stromgarde Vindicator
+step
     .goto 1417/0,-2047.47,-2088.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Nilzlix|r
     .accept 662 >>Accept Deep Sea Salvage
@@ -606,81 +623,44 @@ step
     .accept 664 >>Accept Drowned Sorrows
     .target Captain Steelgut
 step
+    .goto 1417/0,-2085.99,-2066.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Phizzlethorpe|r
+    .accept 665 >>Accept Sunken Treasure
+    .target Professor Phizzlethorpe
+step
+    .goto 1417/0,-2085.99,-2067.73
+    >>Defend Professor Phizzlethorpe
+    .complete 665,1 --Defend Professor Phizzlethorpe
+step
     .goto 1417/0,-2085.63,-2064.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
+    .turnin 665 >>Turn in Sunken Treasure
     .accept 666 >>Accept Sunken Treasure
     .target Doctor Draxlegauge
-    .isQuestTurnedIn 665 --any of: Sunken Treasure
-    .xp <35,1
-step
-    #completewith Along18
-    >>As you go: Kill |cRXP_ENEMY_Daggerspine Raiders|r. Kill |cRXP_ENEMY_Daggerspine Sorceress|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 664,1 --Daggerspine Raider slain (10)
-    .complete 664,2 --Daggerspine Sorceress slain (3)
-    .mob Daggerspine Raider
-    .mob Daggerspine Sorceress
 step
     #loop
-    .goto 1417/0,-1708.71,-2175.49,0
-    .goto 1417/0,-1708.71,-2175.49,40,0
-    .goto 1417/0,-1696.47,-2161.57,40,0
-    .goto 1417/0,-1610.07,-2175.73,40,0
-    .goto 1417/0,-1603.23,-2187.97,40,0
+    .goto 1417/0,-1781.79,-2178.85,0
+    .goto 1417/0,-1781.79,-2178.85,40,0
+    .goto 1417/0,-1680.63,-2215.57,40,0
+    .goto 1417/0,-1658.67,-2149.33,40,0
+    .goto 1417/0,-1553.19,-2145.97,40,0
+    .goto 1417/0,-1593.87,-2222.53,40,0
+    .goto 1417/0,-1514.67,-2269.33,40,0
+    .goto 1417/0,-1622.67,-2341.33,40,0
+    .goto 1417/0,-1694.67,-2293.33,40,0
+    .goto 1417/0,-1785.39,-2326.69,40,0
     >>Pick up |cRXP_PICK_Maiden's Folly Log|r from the ground
     >>Pick up |cRXP_PICK_Maiden's Folly Charts|r from the ground
     >>Pick up |cRXP_PICK_Spirit of Silverpine Charts|r from the ground
     >>Pick up |cRXP_PICK_Spirit of Silverpine Log|r from the ground
+    >>Loot the |cRXP_PICK_Calcified Elven Gems|r for |cRXP_LOOT_Elven Gem|r
+    >>Kill |cRXP_ENEMY_Daggerspine Raiders|r
+    >>Kill |cRXP_ENEMY_Daggerspine Sorceress|r
     .complete 662,2 --Maiden's Folly Log (1)
     .complete 662,1 --Maiden's Folly Charts (1)
     .complete 662,3 --Spirit of Silverpine Charts (1)
     .complete 662,4 --Spirit of Silverpine Log (1)
-step
-    #loop
-    .goto 1417/0,-1660.83,-1645.09,0
-    .goto 1417/0,-1660.83,-1645.09,40,0
-    .goto 1417/0,-1708.71,-1633.09,40,0
-    .goto 1417/0,-1907.07,-1546.69,40,0
-    .goto 1417/0,-1831.11,-1533.01,40,0
-    .goto 1417/0,-1761.99,-1504.93,40,0
-    .goto 1417/0,-1722.75,-1503.97,40,0
-    .goto 1417/0,-1689.63,-1528.21,40,0
-    .goto 1417/0,-1726.71,-1587.01,40,0
-    .goto 1417/0,-1628.79,-1586.05,40,0
-    >>Kill |cRXP_ENEMY_Stromgarde Troll Hunters|r, |cRXP_ENEMY_Stromgarde Defenders|r and |cRXP_ENEMY_Stromgarde Vindicators|r. Loot them for |cRXP_LOOT_Sigil Fragment|r
-    .complete 640,1 --Sigil Fragment (11)
-    .mob Stromgarde Troll Hunter
-    .mob Stromgarde Defender
-    .mob Stromgarde Vindicator
-step
-    #label Along18
-    #loop
-    .goto 1417/0,-1694.67,-2149.33,0
-    .goto 1417/0,-1694.67,-2149.33,40,0
-    .goto 1417/0,-1694.67,-2245.33,40,0
-    .goto 1417/0,-1622.67,-2221.33,40,0
-    .goto 1417/0,-1586.67,-2173.33,40,0
-    .goto 1417/0,-1514.67,-2269.33,40,0
-    .goto 1417/0,-1622.67,-2341.33,40,0
-    .goto 1417/0,-1694.67,-2341.33,40,0
-    .goto 1417/0,-1766.67,-2317.33,40,0
-    .goto 1417/0,-1766.67,-2221.33,40,0
-    >>Loot the |cRXP_PICK_Calcified Elven Gems|r for |cRXP_LOOT_Elven Gem|r
     .complete 666,1 --Elven Gem (10)
-    .isOnQuest 666
-step
-    #loop
-    .goto 1417/0,-1680.63,-2215.57,0
-    .goto 1417/0,-1680.63,-2215.57,40,0
-    .goto 1417/0,-1656.15,-2147.41,40,0
-    .goto 1417/0,-1553.19,-2145.97,40,0
-    .goto 1417/0,-1589.19,-2219.65,40,0
-    .goto 1417/0,-1624.47,-2294.29,40,0
-    .goto 1417/0,-1694.31,-2301.49,40,0
-    .goto 1417/0,-1785.39,-2326.69,40,0
-    .goto 1417/0,-1735.71,-2257.57,40,0
-    .goto 1417/0,-1781.79,-2178.85,40,0
-    >>Kill |cRXP_ENEMY_Daggerspine Raiders|r
-    >>Kill |cRXP_ENEMY_Daggerspine Sorceress|r
     .complete 664,1 --Daggerspine Raider slain (10)
     .complete 664,2 --Daggerspine Sorceress slain (3)
     .mob Daggerspine Raider
@@ -694,20 +674,19 @@ step
     .goto 1417/0,-2085.63,-2064.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
     .turnin 666 >>Turn in Sunken Treasure
-    .target Doctor Draxlegauge
-    .isOnQuest 666
-step
-    .goto 1417/0,-2085.63,-2064.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
     .accept 668 >>Accept Sunken Treasure
     .target Doctor Draxlegauge
-    .isQuestTurnedIn 666 --any of: Sunken Treasure
-    .xp <35,1
 step
     .goto 1417/0,-2090.67,-2072.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Steelgut|r
     .turnin 664 >>Turn in Drowned Sorrows
     .target Captain Steelgut
+step
+    .goto 1417/0,-2028.75,-2086.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
+    .turnin 668 >>Turn in Sunken Treasure
+    .accept 669 >>Accept Sunken Treasure
+    .target Shakes O'Breen
 step
     .goto 1417/0,-3556.59,-1004.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tor'gan|r
@@ -735,19 +714,6 @@ step
     .turnin 643 >>Turn in Sigil of Arathor
     .target Zengu
 step
-    .goto 1417/0,-2028.75,-2086.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
-    .turnin 668 >>Turn in Sunken Treasure
-    .target Shakes O'Breen
-    .isOnQuest 668
-step
-    .goto 1417/0,-2028.75,-2086.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
-    .accept 669 >>Accept Sunken Treasure
-    .target Shakes O'Breen
-    .isQuestTurnedIn 668 --any of: Sunken Treasure
-    .xp <35,1
-step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Sunken Treasure
 step
@@ -755,15 +721,15 @@ step
 step
     .goto 1417/0,-3512.67,-832.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
-    .turnin 98888 >>Turn in Conflict at Darkspear Islands
-    .target Horde Warbringer
-    .isQuestComplete 98888
-step
-    .goto 1417/0,-3512.67,-832.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
     .turnin 98887 >>Turn in Conflict at Darkspear Islands
     .target Horde Warbringer
     .isQuestComplete 98887
+step
+    .goto 1417/0,-3512.67,-832.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
+    .turnin 98888 >>Turn in Conflict at Darkspear Islands
+    .target Horde Warbringer
+    .isQuestComplete 98888
 step << Shaman
     .goto 1417/0,-3018.39,-795.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
@@ -784,6 +750,24 @@ step
     >>Click the |cRXP_PICK_Keystone|r
     .turnin 652 >>Turn in Breaking the Keystone
     .accept 688 >>Accept Myzrael's Allies
+step
+    .goto 1417/0,-2028.75,-2086.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
+    .accept 667 >>Accept Death From Below
+    .target Shakes O'Breen
+    .isQuestTurnedIn 670 --any of: Sunken Treasure
+    .xp <35,1
+step
+    .goto 1417/0,-2016.15,-2097.01
+    >>Defend Shakes O'Breen
+    .complete 667,1 --Defend Shakes O'Breen
+    .isOnQuest 667
+step
+    .goto 1417/0,-2028.75,-2086.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
+    .turnin 667 >>Turn in Death From Below
+    .target Shakes O'Breen
+    .isOnQuest 667
 step
     .goto 1417/0,-3550.11,-988.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaruk|r

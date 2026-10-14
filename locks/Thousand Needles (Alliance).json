@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "30-37 Thousand Needles",
-  "saved": "2026-10-14 10:01",
+  "saved": "2026-10-14 10:45",
   "levels": "RestedXP",
   "parts": [
     {
@@ -27,6 +27,8 @@
         "accept:5762 @1441:-3856.09,-6233.25  Accept Hemet Nesingwary",
         "turnin:1112 @1441:-3856.09,-6233.25  TurnIn Parts for Kravel",
         "accept:1107 @1441:-3871.49,-6228.85  Accept Encrusted Tail Fins",
+        "accept:1950 @1441:-3878.09,-6187.2  Accept Get the Scoop",
+        "obj:1950:1 @1441:-3936.17,-6185.15  Objective Get the Scoop / \"Plucky\" Johnson",
         "turnin:1183 @1441:-3961.25,-6192.48  TurnIn Goblin Sponsorship",
         "accept:1186 @1441:-3961.25,-6192.48  Accept The Eighteenth Pilot",
         "turnin:1186 @1441:-3967.85,-6198.64  TurnIn The Eighteenth Pilot",
@@ -35,6 +37,7 @@
         "turnin:1114 @1441:-3867.97,-6229.15  TurnIn Delivery to the Gnomes",
         "accept:1115 @1441:-3856.09,-6233.25  Accept The Rumormonger",
         "accept:1106 @1441:-3867.97,-6229.15  Accept Martek the Exiled",
+        "turnin:1950 @1441:-3878.09,-6187.2  TurnIn Get the Scoop",
         "accept:1951 @1441:-3878.09,-6187.2  Accept Rituals of Power",
         "turnin:79358 @1441:-2463.49,-5483.49  TurnIn Storm, Earth, and Fire",
         "item:635 @1441:-2208.29,-4846.08  ItemAccept Crystal in the Mountains",

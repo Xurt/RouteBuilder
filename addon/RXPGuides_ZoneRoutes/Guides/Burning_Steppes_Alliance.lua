@@ -15,6 +15,11 @@ RXPGuides.RegisterGuide([[
 #name 52-56 Burning Steppes
 
 step
+    .goto 1428/0,-2768.47,-8398.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jalinda Sprig|r
+    .accept 4262 >>Accept Overmaster Pyron
+    .target Jalinda Sprig
+step
     .goto 1428/0,-2743.57,-8371.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
     .accept 3823 >>Accept Extinguish the Firegut
@@ -46,22 +51,17 @@ step
     .turnin 3823 >>Turn in Extinguish the Firegut
     .target Oralius
 step
-    .goto 1428/0,-2748.84,-8378.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
-    .turnin 4223 >>Turn in The True Masters
-    .target Marshal Maxwell
-    .isOnQuest 4223
-step
-    .goto 1428/0,-2768.47,-8398.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jalinda Sprig|r
-    .accept 4262 >>Accept Overmaster Pyron
-    .target Jalinda Sprig
-step
     .goto 1428/0,-2768.47,-8398.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jalinda Sprig|r
     .turnin 4262 >>Turn in Overmaster Pyron
     .target Jalinda Sprig
     .isQuestComplete 4262
+step
+    .goto 1428/0,-2748.84,-8378.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
+    .turnin 4223 >>Turn in The True Masters
+    .target Marshal Maxwell
+    .isOnQuest 4223
 step
     .goto 1428/0,-2177.65,-7499.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tinkee Steamboil|r
@@ -79,6 +79,12 @@ step
     .accept 3824 >>Accept Gor'tesh the Brute Lord
     .accept 4283 >>Accept FIFTY! YEP!
     .target Oralius
+step
+    .goto 1428/0,-2768.47,-8398.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jalinda Sprig|r
+    .turnin 4262 >>Turn in Overmaster Pyron
+    .target Jalinda Sprig
+    .isQuestComplete 4262
 step
     .goto 1428/0,-2780.48,-8377.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helendis Riverhorn|r
@@ -120,12 +126,12 @@ step
     .target Cyrus Therepentous
     .isOnQuest 4022
 step
-    #completewith Along8
+    #completewith Along9
     >>As you go: Kill |cRXP_ENEMY_Black Dragonspawns|r. |cRXP_WARN_Anything left is finished later|r
     .complete 4182,2 --Black Dragonspawn slain (10)
     .mob Black Dragonspawn
 step
-    #label Along8
+    #label Along9
     #loop
     .goto 1428/0,-2853.71,-7612.58,0
     .goto 1428/0,-2853.71,-7612.58,40,0
@@ -142,12 +148,12 @@ step
     .complete 4182,1 --Black Broodling slain (15)
     .mob Black Broodling
 step
-    #completewith Along9
+    #completewith Along10
     >>As you go: Kill |cRXP_ENEMY_Black Wyrmkins|r. |cRXP_WARN_Anything left is finished later|r
     .complete 4182,4 --Black Wyrmkin slain (4)
     .mob Black Wyrmkin
 step
-    #label Along9
+    #label Along10
     #loop
     .goto 1428/0,-2916.68,-8051.80,0
     .goto 1428/0,-2916.68,-8051.80,40,0
@@ -213,6 +219,25 @@ step
     .accept 4183 >>Accept The True Masters
     .target Helendis Riverhorn
 step
+    .goto 1428/0,-2748.84,-8378.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
+    .accept 4224 >>Accept The True Masters
+    .target Marshal Maxwell
+    .isQuestTurnedIn 4223 --any of: The True Masters
+    .xp <48,1
+step
+    .goto 1428/0,-2170.92,-7495.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragged John|r
+    .complete 4224,1 --Ragged John
+    .target Ragged John
+    .isOnQuest 4224
+step
+    .goto 1428/0,-2175.02,-7497.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxwort Uberglint|r
+    .turnin 4296 >>Turn in Tablet of the Seven while you are here
+    .isQuestComplete 4296
+    .target Maxwort Uberglint
+step
     .goto 1428/0,-2177.65,-7499.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tinkee Steamboil|r
     .turnin 4726 >>Turn in Broodling Essence
@@ -233,11 +258,11 @@ step
     .turnin 3825 >>Turn in Ogre Head On A Stick = Party
     .target Oralius
 step
-    .goto 1428/0,-2768.47,-8398.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jalinda Sprig|r
-    .turnin 4262 >>Turn in Overmaster Pyron
-    .target Jalinda Sprig
-    .isQuestComplete 4262
+    .goto 1428/0,-2748.84,-8378.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
+    .turnin 4224 >>Turn in The True Masters
+    .target Marshal Maxwell
+    .isOnQuest 4224
 step
     +|cRXP_WARN_End of the Burning Steppes route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Redridge Mountains|r: The True Masters

@@ -16,6 +16,25 @@ RXPGuides.RegisterGuide([[
 step
     .goto 1419/0,-3482.82,-11001.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thadius Grimshade|r
+    .accept 2992 >>Accept The Divination
+    .target Thadius Grimshade
+    .isQuestTurnedIn 2991 --any of: Nekrum's Medallion
+    .xp <40,1
+step
+    .goto 1419/0,-3482.82,-11001.50
+    >>Wait until Grimshade performs the ritual of divination.
+    .complete 2992,1 --Thadius Grimshade
+    .target Thadius Grimshade
+    .isOnQuest 2992
+step
+    .goto 1419/0,-3482.82,-11001.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thadius Grimshade|r
+    .turnin 2992 >>Turn in The Divination
+    .target Thadius Grimshade
+    .isOnQuest 2992
+step
+    .goto 1419/0,-3482.82,-11001.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thadius Grimshade|r
     .accept 2993 >>Accept Return to the Hinterlands
     .target Thadius Grimshade
     .isQuestTurnedIn 2992 --any of: The Divination
@@ -234,14 +253,14 @@ step
     .accept 2583 >>Accept A Boar's Vitality
     .target Bloodmage Drazial
 step
-    #completewith Along23
+    #completewith Along26
     >>As you go: Kill |cRXP_ENEMY_Redstone Basilisks|r, |cRXP_ENEMY_Redstone Crystalhides|r and |cRXP_ENEMY_Deatheyes|r. Loot them for |cRXP_LOOT_Basilisk Brain|r. |cRXP_WARN_Anything left is finished later|r
     .complete 2583,3 --Basilisk Brain (1)
     .mob Redstone Basilisk
     .mob Redstone Crystalhide
     .mob Deatheye
 step
-    #label Along23
+    #label Along26
     #loop
     .goto 1419/0,-2916.67,-10910.60,0
     .goto 1419/0,-2916.67,-10910.60,40,0

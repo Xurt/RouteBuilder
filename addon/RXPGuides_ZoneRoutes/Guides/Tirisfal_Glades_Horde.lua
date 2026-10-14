@@ -888,13 +888,29 @@ step
     >>Pick up |cRXP_PICK_Gloom Weed|r from the ground
     .complete 5481,1 --Gloom Weed (3)
 step
-    #completewith Along58
+    .goto 1420/0,1305.82,2126.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calvin Montague|r
+    .accept 590 >>Accept A Rogue's Deal
+    .target Calvin Montague
+step
+    .goto 1420/0,1307.62,2128.21
+    >>Defeat Calvin Montague
+    .complete 590,1 --Defeat Calvin Montague
+step
+    .goto 1420/0,1305.82,2126.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calvin Montague|r
+    .turnin 590 >>Turn in A Rogue's Deal
+    .target Calvin Montague
+step
+    #completewith Along61
     >>As you go: Kill |cRXP_ENEMY_Scarlet Warriors|r. |cRXP_WARN_Anything left is finished later|r
     .complete 427,1 --Scarlet Warrior slain (10)
     .mob Scarlet Warrior
 step
     #loop
-    .goto 1420/0,1324.79,2351.13,0
+    .goto 1420/0,1354.17,2265.58,0
+    .goto 1420/0,1354.17,2265.58,40,0
+    .goto 1420/0,1346.94,2305.04,40,0
     .goto 1420/0,1324.79,2351.13,40,0
     .goto 1420/0,1348.29,2363.78,40,0
     .goto 1420/0,1399.81,2360.47,40,0
@@ -902,19 +918,17 @@ step
     .goto 1420/0,1471.20,2304.74,40,0
     .goto 1420/0,1439.12,2304.14,40,0
     .goto 1420/0,1396.64,2293.59,40,0
-    .goto 1420/0,1354.17,2265.58,40,0
-    .goto 1420/0,1346.94,2305.04,40,0
     >>Pick up |cRXP_PICK_Tirisfal Pumpkin|r from the ground
     .complete 365,1 --Tirisfal Pumpkin (10)
 step
-    #label Along58
+    #label Along61
     .goto 1420/0,1589.14,2442.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bareth Dawnstone|r
     >>|cRXP_WARN_He is at the top of the tower and this starts an escort. It is easy to pull three Scarlet Warriors up there|r
     .accept 99144,1 >>Accept Seeking Refuge
     .target Bareth Dawnstone
 step
-    #completewith Along59
+    #completewith Along62
     >>As you go: Kill |cRXP_ENEMY_Decrepit Darkhounds|r, |cRXP_ENEMY_Cursed Darkhounds|r and |cRXP_ENEMY_Ravenous Darkhounds|r. Loot them for |cRXP_LOOT_Darkhound Blood|r. Kill |cRXP_ENEMY_Decrepit Darkhounds|r and |cRXP_ENEMY_Cursed Darkhounds|r. Loot them for |cRXP_LOOT_Darkhound Hide|r. |cRXP_WARN_Anything left is finished later|r
     .complete 367,1 --Darkhound Blood (5)
     .complete 97558,2 --Darkhound Hide (6)
@@ -922,7 +936,7 @@ step
     .mob Cursed Darkhound
     .mob Ravenous Darkhound
 step
-    #label Along59
+    #label Along62
     .goto 1420/0,1267.86,2368.30
     >>Escort |cRXP_FRIENDLY_Bareth Dawnstone|r out of Solliden Farmstead
     .complete 99144,1 --Escort Bareth Dawnstone to safety
@@ -1214,12 +1228,12 @@ step
     .mob Rot Hide Gnoll
     .mob Rot Hide Mongrel
 step
-    #completewith Along79
+    #completewith Along82
     >>As you go: Kill |cRXP_ENEMY_Rot Hide Mongrels|r. |cRXP_WARN_Anything left is finished later|r
     .complete 358,2 --Rot Hide Mongrel slain (5)
     .mob Rot Hide Mongrel
 step
-    #completewith Along79
+    #completewith Along82
     >>As you go: Kill |cRXP_ENEMY_Vile Fin Puddlejumpers|r, |cRXP_ENEMY_Vile Fin Minor Oracles|r, |cRXP_ENEMY_Vile Fin Muckdwellers|r and |cRXP_ENEMY_Vile Fin Seers|r. Loot them for |cRXP_LOOT_Vile Fin Scale|r. |cRXP_WARN_Anything left is finished later|r
     .complete 368,1 --Vile Fin Scale (5)
     .mob Vile Fin Puddlejumper
@@ -1227,7 +1241,7 @@ step
     .mob Vile Fin Muckdweller
     .mob Vile Fin Seer
 step
-    #label Along79
+    #label Along82
     .goto 1420/0,382.63,2910.55
     >>Kill |cRXP_ENEMY_Maggot Eye|r and loot |cRXP_LOOT_Maggot Eye's Paw|r
     .complete 398,1 --Maggot Eye's Paw (1)
@@ -1321,7 +1335,7 @@ step
     .accept 361 >>Accept A Letter Undelivered
     .use 2839
 step
-    #completewith Along91
+    #completewith Along94
     >>As you go: Kill |cRXP_ENEMY_Darkeye Bonecasters|r and |cRXP_ENEMY_Shadowvale Mystics|r. Loot them for |cRXP_LOOT_Blackened Skull|r. |cRXP_WARN_Anything left is finished later|r
     .complete 426,2 --Blackened Skull (3)
     .mob Darkeye Bonecaster
@@ -1332,7 +1346,7 @@ step
     .complete 362,1 --Devlin's Remains (1)
     .mob Devlin Agamand
 step
-    #completewith Along91
+    #completewith Along94
     >>As you go: Kill |cRXP_ENEMY_Rattlecage Soldiers|r and |cRXP_ENEMY_Cracked Skull Soldiers|r. Loot them for |cRXP_LOOT_Notched Rib|r. |cRXP_WARN_Anything left is finished later|r
     .complete 426,1 --Notched Rib (5)
     .mob Rattlecage Soldier
@@ -1343,7 +1357,7 @@ step
     .complete 354,2 --Nissa's Remains (1)
     .mob Nissa Agamand
 step
-    #label Along91
+    #label Along94
     .goto 1420/0,1045.08,2824.09
     >>Kill |cRXP_ENEMY_Thurman Agamand|r and loot |cRXP_LOOT_Thurman's Remains|r
     .complete 354,3 --Thurman's Remains (1)
@@ -1492,9 +1506,9 @@ step << Undead Priest
 step << Undead Priest
     .goto 1458/0,400.60,1768.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .turnin 5661 >>Turn in Touch of Weakness
+    .turnin 5662 >>Turn in Touch of Weakness
     .target Aelthalyste
-    .isOnQuest 5661
+    .isOnQuest 5662
 step << Undead Priest
     .goto 1458/0,400.60,1768.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
@@ -1504,9 +1518,9 @@ step << Undead Priest
 step << Undead Priest
     .goto 1458/0,400.60,1768.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .turnin 5662 >>Turn in Touch of Weakness
+    .turnin 5661 >>Turn in Touch of Weakness
     .target Aelthalyste
-    .isOnQuest 5662
+    .isOnQuest 5661
 step << Troll Priest
     .goto 1458/0,400.60,1768.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
@@ -1522,15 +1536,15 @@ step << Undead Priest
 step
     .goto 1458/0,172.27,1667.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe|r
-    .turnin 84399 >>Turn in Ka-Boom!
-    .target Oran Snakewrithe
-    .isOnQuest 84399
-step
-    .goto 1458/0,172.27,1667.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe|r
     .turnin 84397 >>Turn in Northern Kalimdor - A Comprehensive Guide
     .target Oran Snakewrithe
     .isOnQuest 84397
+step
+    .goto 1458/0,172.27,1667.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe|r
+    .turnin 84399 >>Turn in Ka-Boom!
+    .target Oran Snakewrithe
+    .isOnQuest 84399
 step
     .goto 1458/0,66.65,1766.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor Iceshard|r
@@ -1846,7 +1860,7 @@ step << Undead Paladin
     .accept 91316 >>Accept Making Repairs
     .target Jorin Croge
 step
-    #completewith Along133
+    #completewith Along136
     >>As you go: Kill |cRXP_ENEMY_Shadowvale Lurchers|r and |cRXP_ENEMY_Shadowvale Mystics|r. Loot them for |cRXP_LOOT_Faintly Glowing Bone|r. |cRXP_WARN_Anything left is finished later|r
     .complete 99152,1 --Faintly Glowing Bone (6)
     .mob Shadowvale Lurcher
@@ -1873,11 +1887,11 @@ step << Undead Paladin
     .mob Tarnished Zealot
     .mob Tarnished Drudge
 step
-    #completewith Along133
+    #completewith Along136
     >>As you go: Open the |cRXP_PICK_Bottle|r. Loot it for |cRXP_LOOT_Bottle of Whispering Elixir|r. |cRXP_WARN_Anything left is finished later|r
     .complete 95314,1 --Bottle of Whispering Elixir (1)
 step
-    #label Along133
+    #label Along136
     #loop
     .goto 1420/0,2610.38,1914.62,0
     .goto 1420/0,2610.38,1914.62,40,0
@@ -2327,23 +2341,23 @@ step
     .goto 1420/0,786.16,2976.23,40,0
     .goto 1420/0,656.92,3060.88,40,0
     .goto 1420/0,614.90,2994.00,40,0
-    >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Mace|r << Warrior
     >>Kill |cRXP_ENEMY_Wailing Ancestors|r
-    >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Dagger|r << Warrior
-    >>Kill |cRXP_ENEMY_Rotting Ancestors|r
+    >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Mace|r << Warrior
     >>Kill |cRXP_ENEMY_Captain Dargol|r and loot |cRXP_LOOT_Dargol's Skull|r
     >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Sword|r << Warrior
     >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Axe|r << Warrior
-    .complete 1821,3 << Warrior --Agamand Family Mace (1)
+    >>Open the |cRXP_PICK_Agamand Weapon Rack|r. Loot it for |cRXP_LOOT_Agamand Family Dagger|r << Warrior
+    >>Kill |cRXP_ENEMY_Rotting Ancestors|r
     .complete 408,1 --Wailing Ancestor slain (8)
-    .complete 1821,2 << Warrior --Agamand Family Dagger (1)
-    .complete 408,2 --Rotting Ancestor slain (8)
+    .complete 1821,3 << Warrior --Agamand Family Mace (1)
     .complete 408,3 --Dargol's Skull (1)
     .complete 1821,4 << Warrior --Agamand Family Sword (1)
     .complete 1821,1 << Warrior --Agamand Family Axe (1)
+    .complete 1821,2 << Warrior --Agamand Family Dagger (1)
+    .complete 408,2 --Rotting Ancestor slain (8)
     .mob Wailing Ancestor
-    .mob Rotting Ancestor
     .mob Captain Dargol
+    .mob Rotting Ancestor
 step
     .goto 1420/0,2040.56,2485.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r

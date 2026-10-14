@@ -726,6 +726,22 @@ step
     .goto 1422/0,-1815.89,2562.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirsta Deepshadow|r
     .turnin 6023 >>Turn in Unfinished Business
+    .accept 6025 >>Accept Unfinished Business
+    .target Kirsta Deepshadow
+step
+    .goto 1422/0,-1553.16,2843.50
+    >>Overlook Hearthglen from a high vantage point
+    .complete 6025,1 --Overlook Hearthglen from a high vantage point
+step
+    .goto 1422/0,-1390.19,2942.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Taelan Fordring|r
+    .turnin 5862 >>Turn in Scarlet Subterfuge
+    .target Highlord Taelan Fordring
+    .isOnQuest 5862
+step
+    .goto 1422/0,-1815.89,2562.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirsta Deepshadow|r
+    .turnin 6025 >>Turn in Unfinished Business
     .target Kirsta Deepshadow
 step
     .goto 1422/0,-1280.11,1452.88
@@ -782,12 +798,6 @@ step
     .accept 5544 >>Accept Carrion Grubbage
     .target Lord Tirion Fordring
 step
-    .goto 1422/0,-1390.19,2942.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Taelan Fordring|r
-    .turnin 5862 >>Turn in Scarlet Subterfuge
-    .target Highlord Taelan Fordring
-    .isOnQuest 5862
-step
     .goto 1422/0,-1280.11,1452.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
     .accept 4971 >>Accept A Matter of Time
@@ -814,11 +824,11 @@ step
     .accept 4972 >>Accept Counting Out Time
     .target Chromie
 step
-    #completewith Along49
+    #completewith Along51
     >>As you go: Loot the |cRXP_PICK_Small Lockboxes|r for |cRXP_LOOT_Andorhal Watch|r. |cRXP_WARN_Anything left is finished later|r
     .complete 4972,1 --Andorhal Watch (5)
 step
-    #label Along49
+    #label Along51
     .goto 1422/0,-1280.11,1452.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
     .accept 5210 >>Accept Brother Carlin
@@ -888,35 +898,12 @@ step
     .turnin 5058 >>Turn in Mrs. Dalson's Diary
     .isOnQuest 5058
 step
-    #loop
-    .goto 1422/0,-1879.53,1549.20,0
-    .goto 1422/0,-1879.53,1549.20,40,0
-    .goto 1422/0,-1875.23,1500.47,40,0
-    .goto 1422/0,-1870.93,1460.33,40,0
-    .goto 1422/0,-1827.93,1460.33,40,0
-    .goto 1422/0,-1557.03,1319.87,40,0
-    .goto 1422/0,-1496.83,1311.27,40,0
-    .goto 1422/0,-1462.43,1345.67,40,0
-    .goto 1422/0,-1385.03,1345.67,40,0
-    .goto 1422/0,-1445.23,1408.73,40,0
-    >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
-    .complete 5166,3 --Blood of Heroes (10)
-    .isOnQuest 5166
-step
-    #loop
-    .goto 1422/0,-1462.43,1345.67,0
-    .goto 1422/0,-1462.43,1345.67,40,0
-    .goto 1422/0,-1385.03,1345.67,40,0
-    .goto 1422/0,-1445.23,1408.73,40,0
-    .goto 1422/0,-1879.53,1549.20,40,0
-    .goto 1422/0,-1875.23,1500.47,40,0
-    .goto 1422/0,-1870.93,1460.33,40,0
-    .goto 1422/0,-1827.93,1460.33,40,0
-    .goto 1422/0,-1557.03,1319.87,40,0
-    .goto 1422/0,-1496.83,1311.27,40,0
-    >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
-    .complete 5167,3 --Blood of Heroes (10)
-    .isOnQuest 5167
+    .goto 1422/0,-1458.56,944.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Flint Shadowmore|r
+    .accept 6185 >>Accept The Eastern Plagues
+    .target Flint Shadowmore
+    .isQuestTurnedIn 6184 --any of: Flint Shadowmore
+    .xp <56,1
 step
     .goto 1422/0,-1431.04,944.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
@@ -935,14 +922,19 @@ step
     .isQuestTurnedIn 5801 --any of: Fire Plume Forged
     .xp <55,1
 step
-    .goto 1422/0,-1529.94,1382.65
-    >>Open the |cRXP_PICK_Araj's Phylactery|r. Loot it for |cRXP_LOOT_Araj's Phylactery Shard|r
+    #completewith Along10
+    >>As you go: Open the |cRXP_PICK_Araj's Phylactery|r. Loot it for |cRXP_LOOT_Araj's Phylactery Shard|r. |cRXP_WARN_Anything left is finished later|r
     .complete 211,1 --Araj's Phylactery Shard (1)
 step
+    #label Along10
     .goto 1422/0,-1529.94,1382.65
     >>Open the |cRXP_PICK_Araj's Phylactery|r. Loot it for |cRXP_LOOT_Araj's Scarab|r
     .complete 5803,1 --Araj's Scarab (1)
     .isOnQuest 5803
+step
+    .goto 1422/0,-1529.94,1382.65
+    >>Open the |cRXP_PICK_Araj's Phylactery|r. Loot it for |cRXP_LOOT_Araj's Phylactery Shard|r
+    .complete 211,1 --Araj's Phylactery Shard (1)
 step
     .goto 1422/0,-2257.07,1673.61
     >>Kill |cRXP_ENEMY_Cauldron Lord Soulwrath|r and loot |cRXP_LOOT_Gahrron's Withering Cauldron Key|r
@@ -953,6 +945,36 @@ step
     >>Click the |cRXP_PICK_Scourge Cauldron|r
     .turnin 5225 >>Turn in Target: Gahrron's Withering
     .accept 5226 >>Accept Return to Chillwind Camp
+step
+    #loop
+    .goto 1422/0,-2288.03,1706.87,0
+    .goto 1422/0,-2288.03,1706.87,40,0
+    .goto 1422/0,-2339.63,1706.87,40,0
+    .goto 1422/0,-2300.93,1669.60,40,0
+    .goto 1422/0,-1870.93,1460.33,40,0
+    .goto 1422/0,-1832.23,1466.07,40,0
+    .goto 1422/0,-1875.23,1500.47,40,0
+    .goto 1422/0,-1862.33,1526.27,40,0
+    .goto 1422/0,-1883.83,1552.07,40,0
+    .goto 1422/0,-2249.33,1689.67,40,0
+    >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
+    .complete 5167,3 --Blood of Heroes (10)
+    .isOnQuest 5167
+step
+    #loop
+    .goto 1422/0,-2288.03,1706.87,0
+    .goto 1422/0,-2288.03,1706.87,40,0
+    .goto 1422/0,-2339.63,1706.87,40,0
+    .goto 1422/0,-2300.93,1669.60,40,0
+    .goto 1422/0,-1870.93,1460.33,40,0
+    .goto 1422/0,-1832.23,1466.07,40,0
+    .goto 1422/0,-1875.23,1500.47,40,0
+    .goto 1422/0,-1862.33,1526.27,40,0
+    .goto 1422/0,-1883.83,1552.07,40,0
+    .goto 1422/0,-2249.33,1689.67,40,0
+    >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
+    .complete 5166,3 --Blood of Heroes (10)
+    .isOnQuest 5166
 step
     .goto 1422/0,-2617.84,1242.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Marduke|r
@@ -1028,6 +1050,30 @@ step
     .turnin 5505 >>Turn in The Key to Scholomance
     .target Alchemist Arbington
     .isOnQuest 5505
+step
+    .goto 1422/0,-1458.56,944.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Flint Shadowmore|r
+    .turnin 6185 >>Turn in The Eastern Plagues
+    .target Flint Shadowmore
+    .isQuestComplete 6185
+step
+    .goto 1422/0,-1390.19,2942.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Taelan Fordring|r
+    .accept 5944 >>Accept In Dreams
+    .target Highlord Taelan Fordring
+    .isQuestTurnedIn 5862 --any of: Scarlet Subterfuge
+    .xp <52,1
+step
+    .goto 1422/0,-1899.31,2669.49
+    >>Redemption?
+    .complete 5944,1 --Redemption?
+    .isOnQuest 5944
+step
+    .goto 1422/0,-1903.18,2665.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Tirion Fordring|r
+    .turnin 5944 >>Turn in In Dreams
+    .target Lord Tirion Fordring
+    .isOnQuest 5944
 step
     +|cRXP_WARN_End of the Western Plaguelands route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Eastern Plaguelands|r: The Dying, Ras Frostwhisper

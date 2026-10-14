@@ -48,6 +48,24 @@ step << Rogue
     .turnin 2479 >>Turn in Hinott's Assistance
     .target Serge Hinott
     .isOnQuest 2479
+step << Rogue
+    .goto 1424/0,-905.49,-9.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Serge Hinott|r
+    .accept 2480 >>Accept Hinott's Assistance
+    .target Serge Hinott
+    .isQuestTurnedIn 2479 --any of: Hinott's Assistance
+    .xp <20,1
+step << Rogue
+    .goto 1424/0,-903.57,-9.81
+    >>Cure Completed
+    .complete 2480,1 --Cure Completed
+    .isOnQuest 2480
+step << Rogue
+    .goto 1424/0,-905.49,-9.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Serge Hinott|r
+    .turnin 2480 >>Turn in Hinott's Assistance
+    .target Serge Hinott
+    .isOnQuest 2480
 step
     .goto 1424/0,-899.41,-6.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Lydon|r
@@ -157,17 +175,17 @@ step
     .target Krusk
     .isOnQuest 508
 step
-    #completewith Along13
+    #completewith Along16
     >>As you go: Kill |cRXP_ENEMY_Syndicate Watchmans|r. |cRXP_WARN_Anything left is finished later|r
     .complete 549,2 --Syndicate Watchman slain (8)
     .mob Syndicate Watchman
 step
-    #completewith Along12
+    #completewith Along15
     >>As you go: Kill |cRXP_ENEMY_Syndicate Rogues|r. |cRXP_WARN_Anything left is finished later|r
     .complete 549,1 --Syndicate Rogue slain (10)
     .mob Syndicate Rogue
 step
-    #label Along12
+    #label Along15
     #loop
     .goto 1424/0,-1066.13,-581.33,0
     .goto 1424/0,-1066.13,-581.33,40,0
@@ -180,7 +198,7 @@ step
     .mob Syndicate Shadow Mage
     .isOnQuest 1066
 step
-    #label Along13
+    #label Along16
     #loop
     .goto 1424/0,-1047.89,-639.57,0
     .goto 1424/0,-1047.89,-639.57,40,0
@@ -837,15 +855,22 @@ step
 step
     .goto 1424/0,-957.01,-40.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
+    .accept 507 >>Accept Lord Aliden Perenolde
+    .target Krusk
+    .isQuestTurnedIn 506 --any of: Blackmoore's Legacy
+    .xp <29,1
+step
+    .goto 1424/0,-957.01,-40.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
     .turnin 533 >>Turn in Infiltration
     .target Krusk
     .isQuestComplete 533
 step
     .goto 1424/0,-957.01,-40.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
-    .accept 507 >>Accept Lord Aliden Perenolde
+    .accept 503 >>Accept Gol'dir
     .target Krusk
-    .isQuestTurnedIn 506 --any of: Blackmoore's Legacy
+    .isQuestTurnedIn 533 --any of: Infiltration
     .xp <29,1
 step
     .goto 1424/0,-899.41,-6.61
@@ -867,7 +892,7 @@ step
     .isOnQuest 524
 step
     +|cRXP_WARN_That is all of Hillsbrad Foothills for now.|r Quests still in your log lead on from here; pick your next zone by them
-    >>|cRXP_FRIENDLY_Alterac Mountains|r: Lord Aliden Perenolde
+    >>|cRXP_FRIENDLY_Alterac Mountains|r: Gol'dir, Lord Aliden Perenolde
     >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: Infiltration
 step
     .xp 32 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 32.|r Come back to this guide then

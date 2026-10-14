@@ -64,12 +64,6 @@ step << Warlock
     >>Open the |cRXP_PICK_Solid Chest|r. Loot it for |cRXP_LOOT_Gold Bar|r
     .complete 4781,1 --Gold Bar (1)
     .isOnQuest 4781
-step << Warlock
-    .goto 1434/0,388.78,-14439.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xizk Goodstitch|r
-    .turnin 4781 >>Turn in Components for the Enchanted Gold Bloodrobe
-    .target Xizk Goodstitch
-    .isOnQuest 4781
 step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
@@ -108,6 +102,30 @@ step
     .turnin 1122 >>Turn in Report Back to Fizzlebub
     .target Crank Fizzlebub
     .isOnQuest 1122
+step
+    .goto 1434/0,411.11,-14416.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oglethorpe Obnoticus|r
+    .turnin 2767 >>Turn in Rescue OOX-22/FE!
+    .target Oglethorpe Obnoticus
+    .isQuestComplete 2767
+step
+    .goto 1434/0,411.11,-14416.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oglethorpe Obnoticus|r
+    .turnin 648 >>Turn in Rescue OOX-17/TN!
+    .target Oglethorpe Obnoticus
+    .isQuestComplete 648
+step
+    .goto 1434/0,411.11,-14416.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oglethorpe Obnoticus|r
+    .turnin 836 >>Turn in Rescue OOX-09/HL!
+    .target Oglethorpe Obnoticus
+    .isQuestComplete 836
+step << Warlock
+    .goto 1434/0,388.78,-14439.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xizk Goodstitch|r
+    .turnin 4781 >>Turn in Components for the Enchanted Gold Bloodrobe
+    .target Xizk Goodstitch
+    .isOnQuest 4781
 step
     +|cRXP_WARN_That is all of Stranglethorn Vale for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_another zone|r: Tip the Scales - Keefer's Angelfish, Tip the Scales - Brownell's Blue Striped Racer, Tip the Scales - Dezian Queenfish
@@ -241,6 +259,7 @@ step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
     .accept 198 >>Accept Supplies to Private Thorsen
+    .accept 201 >>Accept Investigate the Camp
     .target Krazek
 step
     .goto 1434/0,483.22,-14438.93
@@ -346,6 +365,16 @@ step
     .turnin 204 >>Turn in Bad Medicine
     .target Sergeant Yohwa
 step
+    .goto 1434/0,-54.08,-11619.27
+    >>Locate the hunters' camp
+    .complete 201,1 --Locate the hunters' camp
+step
+    .goto 1434/0,-52.17,-11620.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ajeck Rouack|r
+    .turnin 186 >>Turn in Tiger Mastery while you are here
+    .isQuestComplete 186
+    .target Ajeck Rouack
+step
     .goto 1434/0,-54.72,-11628.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .accept 194 >>Accept Raptor Mastery
@@ -400,6 +429,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir S. J. Erlgadin|r
     .turnin 191 >>Turn in Panther Mastery
     .target Sir S. J. Erlgadin
+step
+    .goto 1434/0,501.09,-14453.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
+    .turnin 201 >>Turn in Investigate the Camp
+    .target Krazek
 step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
@@ -541,6 +575,7 @@ step
     .goto 1434/0,483.22,-14438.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
     .turnin 616 >>Turn in The Haunted Isle
+    .accept 578 >>Accept The Stone of the Tides
     .target Baron Revilgaz
 step
     #loop
@@ -600,6 +635,10 @@ step
     .mob Cold Eye Basilisk
     .mob Thrashtail Basilisk
 step
+    .goto 1434/0,894.17,-12153.59
+    >>Locate the haunted island
+    .complete 578,1 --Locate the haunted island
+step
     .goto 1434/0,-54.72,-11628.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .accept 195 >>Accept Raptor Mastery
@@ -628,10 +667,9 @@ step
 step
     .goto 1434/0,483.22,-14438.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
+    .turnin 578 >>Turn in The Stone of the Tides
     .accept 601 >>Accept Water Elementals
     .target Baron Revilgaz
-    .isQuestTurnedIn 578 --any of: The Stone of the Tides
-    .xp <32,1
 step
     .goto 1434/0,415.58,-14469.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizzlik|r
@@ -705,7 +743,6 @@ step
     >>Kill |cRXP_ENEMY_Lesser Water Elementals|r. Loot them for |cRXP_LOOT_Water Elemental Bracers|r
     .complete 601,1 --Water Elemental Bracers (6)
     .mob Lesser Water Elemental
-    .isOnQuest 601
 step
     .goto 1434/0,-54.72,-11628.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
@@ -720,15 +757,8 @@ step
     .goto 1434/0,483.22,-14438.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
     .turnin 601 >>Turn in Water Elementals
-    .target Baron Revilgaz
-    .isOnQuest 601
-step
-    .goto 1434/0,483.22,-14438.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
     .accept 602 >>Accept Magical Analysis
     .target Baron Revilgaz
-    .isQuestTurnedIn 601 --any of: Water Elementals
-    .xp <32,1
 step
     .goto 1434/0,415.58,-14469.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizzlik|r

@@ -15,11 +15,22 @@ RXPGuides.RegisterGuide([[
 #name 18-32 Ashenvale
 
 step
-    .goto 1440/1,189.13,3185.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
-    .turnin 981 >>Turn in The Tower of Althalaxx
-    .target Delgren the Purifier
-    .isOnQuest 981
+    .goto 1440/1,156.26,3254.19
+    >>Escort Kerlonian Evershade to Maestra's Post
+    .complete 5321,2 --Escort Kerlonian Evershade to Maestra's Post
+    .isOnQuest 5321
+step
+    .goto 1440/1,128.01,3305.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liladris Moonriver|r
+    .turnin 5321 >>Turn in The Sleeper Has Awakened
+    .target Liladris Moonriver
+    .isQuestComplete 5321
+step
+    .goto 1440/1,166.07,3261.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Onaeya|r
+    .turnin 5713 >>Turn in One Shot. One Kill.
+    .target Sentinel Onaeya
+    .isQuestComplete 5713
 step
     .goto 1440/1,189.13,3185.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
@@ -33,6 +44,12 @@ step
     .target Delgren the Purifier
     .isQuestTurnedIn 967 --any of: The Tower of Althalaxx
     .xp <13,1
+step
+    .goto 1440/1,189.13,3185.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+    .turnin 981 >>Turn in The Tower of Althalaxx
+    .target Delgren the Purifier
+    .isOnQuest 981
 step
     #loop
     .goto 1440/1,-76.13,3457.91,0
@@ -64,6 +81,12 @@ step
 step
     .goto 1440/1,-138.99,3806.92
     .xp 20 >> Grind to level 20
+step
+    .goto 1440/1,394.43,2677.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therysil|r
+    .turnin 945 >>Turn in Therylune's Escape
+    .target Therysil
+    .isQuestComplete 945
 step << Hunter
     .goto 1440/1,663.38,2365.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bolyun|r
@@ -437,6 +460,19 @@ step
     .target Delgren the Purifier
     .isOnQuest 973
 step
+    .goto 1440/1,188.56,3178.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Feero Ironhand|r
+    .accept 976 >>Accept Supplies to Auberdine
+    .target Feero Ironhand
+    .isQuestTurnedIn 973 --any of: The Tower of Althalaxx
+    .xp <19,1
+step
+    .goto 1440/1,189.13,3185.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+    .turnin 976 >>Turn in Supplies to Auberdine
+    .target Delgren the Purifier
+    .isQuestComplete 976
+step
     .goto 1440/1,-299.30,2795.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
     .turnin 1134 >>Turn in Pridewings of Stonetalon
@@ -448,12 +484,12 @@ step
     .accept 1025 >>Accept An Aggressive Defense
     .target Raene Wolfrunner
 step
-    #completewith Along6
+    #completewith Along8
     >>As you go: Kill |cRXP_ENEMY_Foulweald Ursas|r. |cRXP_WARN_Anything left is finished later|r
     .complete 1025,2 --Foulweald Ursa slain (2)
     .mob Foulweald Ursa
 step
-    #label Along6
+    #label Along8
     #loop
     .goto 1440/1,-1351.72,2222.14,0
     .goto 1440/1,-1351.72,2222.14,40,0
@@ -488,6 +524,12 @@ step
 step
     .goto 1440/1,-802.73,1966.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .turnin 78132 >>Turn in Dragonslayer's Helm
+    .target Alonso
+    .isOnQuest 78132
+step
+    .goto 1440/1,-802.73,1966.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
     .turnin 78133 >>Turn in Dragonslayer's Shield
     .target Alonso
     .isOnQuest 78133
@@ -497,12 +539,6 @@ step
     .turnin 78134 >>Turn in Dragonslayer's Lance
     .target Alonso
     .isOnQuest 78134
-step
-    .goto 1440/1,-802.73,1966.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
-    .turnin 78132 >>Turn in Dragonslayer's Helm
-    .target Alonso
-    .isOnQuest 78132
 step
     .goto 1440/1,-411.75,2767.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r

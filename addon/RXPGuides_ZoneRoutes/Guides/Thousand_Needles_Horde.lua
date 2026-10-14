@@ -96,12 +96,6 @@ step
     .mob Galak Scout
     .mob Galak Wrangler
     .mob Galak Windchaser
-step
-    .goto 1441/1,-2807.13,-5183.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
-    .turnin 1394 >>Turn in Final Passage
-    .target Dorn Plainstalker
-    .isOnQuest 1394
 step << Orc Shaman/Tauren Shaman/Troll Shaman
     .goto 1441/1,-2789.09,-5217.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prate Cloudseer|r
@@ -114,6 +108,26 @@ step << Shaman
     .turnin 1532 >>Turn in Call of Air
     .target Prate Cloudseer
     .isOnQuest 1532
+step
+    .goto 1441/1,-2807.13,-5183.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
+    .turnin 1394 >>Turn in Final Passage
+    .target Dorn Plainstalker
+    .isOnQuest 1394
+step
+    .goto 1441/1,-2807.13,-5183.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
+    .accept 1149 >>Accept Test of Faith
+    .target Dorn Plainstalker
+step
+    .goto 1441/1,-1596.25,-4932.61
+    >>If you have faith, leap from the planks overlooking Thousand Needles.
+    .complete 1149,1 --If you have faith, leap from the planks overlooking Thousand Needles.
+step
+    .goto 1441/1,-2807.13,-5183.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
+    .turnin 1149 >>Turn in Test of Faith
+    .target Dorn Plainstalker
 step
     .goto 1441/1,-2913.17,-5444.77
     >>Pick up |cRXP_PICK_Alien Egg|r from the ground
@@ -130,6 +144,11 @@ step
     .turnin 4821 >>Turn in Alien Egg
     .accept 4865 >>Accept Serpent Wild
     .target Hagar Lightninghoof
+step
+    .goto 1441/1,-2460.41,-5477.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Abeqwa|r
+    .target Innkeeper Abeqwa
+    .home >>Set your Hearthstone to Innkeeper Abeqwa's inn
 step << Mage
     .goto 1441/1,-2460.41,-5477.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Abeqwa|r
@@ -152,6 +171,17 @@ step
     .goto 1441/1,-1368.33,-4907.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kanati Greycloud|r
     .turnin 4881 >>Turn in Assassination Plot
+    .accept 4966 >>Accept Protect Kanati Greycloud
+    .target Kanati Greycloud
+step
+    .goto 1441/1,-1368.77,-4899.76
+    >>Kill |cRXP_ENEMY_Galak Assassins|r
+    .complete 4966,1 --Galak Assassin slain (8)
+    .mob Galak Assassin
+step
+    .goto 1441/1,-1368.33,-4907.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kanati Greycloud|r
+    .turnin 4966 >>Turn in Protect Kanati Greycloud
     .target Kanati Greycloud
 step
     .goto 1441/1,-1381.09,-4915.60
@@ -191,6 +221,23 @@ step
     .goto 1441/1,-2164.29,-5184.88
     >>Open the |cRXP_PICK_Document Chest|r. Loot it for |cRXP_LOOT_Secret Note #3|r
     .complete 5064,3 --Secret Note #3 (1)
+step
+    .goto 1441/1,-2109.29,-5004.48
+    >>Kill |cRXP_ENEMY_Arikara|r and loot |cRXP_LOOT_Arikara Serpent Skin|r
+    .complete 5088,2 --Arikara Serpent Skin (1)
+    .mob Arikara
+    .isOnQuest 5088
+step
+    .goto 1441/1,-2107.97,-5004.19
+    >>Click the |cRXP_PICK_Sacred Fire of Life|r
+    .complete 5088,1 --Sacred Fire of Life
+    .isOnQuest 5088
+step
+    .goto 1441/1,-1381.09,-4915.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Motega Firemane|r
+    .turnin 5088 >>Turn in Arikara
+    .target Motega Firemane
+    .isOnQuest 5088
 step
     .goto 1441/1,-2442.81,-5455.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cliffwatcher Longhorn|r
@@ -234,15 +281,15 @@ step
 step
     .goto 1441/1,-3856.09,-6233.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kravel Koalbeard|r
-    .turnin 1112 >>Turn in Parts for Kravel
-    .target Kravel Koalbeard
-    .isOnQuest 1112
-step
-    .goto 1441/1,-3856.09,-6233.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kravel Koalbeard|r
     .turnin 1117 >>Turn in Rumors for Kravel
     .target Kravel Koalbeard
     .isOnQuest 1117
+step
+    .goto 1441/1,-3856.09,-6233.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kravel Koalbeard|r
+    .turnin 1112 >>Turn in Parts for Kravel
+    .target Kravel Koalbeard
+    .isOnQuest 1112
 step
     .goto 1441/1,-3867.97,-6229.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fizzle Brassbolts|r
@@ -273,12 +320,6 @@ step
 step
     .xp 28 >>|cRXP_WARN_The rest of Thousand Needles is planned from level 28.|r Come back to this guide then
 step
-    .goto 1441/1,-2466.57,-5477.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
-    .accept 98069 >>Accept Stolen Freewind Supplies
-    .accept 98070 >>Accept Stop the Screeching
-    .target Jandia
-step
     .goto 1441/1,-2457.33,-5458.56
     >>Click the |cRXP_PICK_Wanted Poster - Arnak Grimtotem|r
     .accept 5147 >>Accept Wanted - Arnak Grimtotem
@@ -295,26 +336,11 @@ step
     .accept 4767 >>Accept Wind Rider
     .target Elu
 step
-    #loop
-    .goto 1441/1,-1685.57,-5440.37,0
-    .goto 1441/1,-1685.57,-5440.37,40,0
-    .goto 1441/1,-1683.37,-5394.91,40,0
-    .goto 1441/1,-1647.29,-5401.65,40,0
-    .goto 1441/1,-1606.81,-5359.71,40,0
-    .goto 1441/1,-1636.73,-5462.67,40,0
-    .goto 1441/1,-1609.01,-5494.93,40,0
-    .goto 1441/1,-1602.85,-5533.07,40,0
-    .goto 1441/1,-1584.37,-5615.49,40,0
-    .goto 1441/1,-1623.97,-5585.57,40,0
-    >>Kill |cRXP_ENEMY_Screeching Harpies|r
-    >>Kill |cRXP_ENEMY_Screeching Roguefeathers|r
-    >>Kill |cRXP_ENEMY_Screeching Windcallers|r
-    .complete 98070,1 --Screeching Harpy slain (5)
-    .complete 98070,2 --Screeching Roguefeather slain (5)
-    .complete 98070,3 --Screeching Windcaller slain (5)
-    .mob Screeching Harpy
-    .mob Screeching Roguefeather
-    .mob Screeching Windcaller
+    .goto 1441/1,-2466.57,-5477.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
+    .accept 98069 >>Accept Stolen Freewind Supplies
+    .accept 98070 >>Accept Stop the Screeching
+    .target Jandia
 step
     .goto 1441/1,-2281.77,-4889.79
     >>Open the |cRXP_PICK_Ancient Brazier|r. Loot it for |cRXP_LOOT_Cloven Hoof|r
@@ -327,22 +353,50 @@ step
     .target Rau Cliffrunner
     .isOnQuest 1197
 step
-    .goto 1441/1,-2466.57,-5477.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
-    .turnin 98070 >>Turn in Stop the Screeching while you are here
-    .isQuestComplete 98070
-    .target Jandia
+    .goto 1441/1,-2460.41,-5477.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Abeqwa|r
+    .target Innkeeper Abeqwa
+    .home >>Set your Hearthstone to Innkeeper Abeqwa's inn
+step
+    #completewith Along7
+    >>As you go: Kill |cRXP_ENEMY_Screeching Roguefeathers|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 98070,2 --Screeching Roguefeather slain (5)
+    .mob Screeching Roguefeather
+step
+    #label Along7
+    #loop
+    .goto 1441/1,-1683.37,-5394.91,0
+    .goto 1441/1,-1683.37,-5394.91,40,0
+    .goto 1441/1,-1673.69,-5363.81,40,0
+    .goto 1441/1,-1647.29,-5401.65,40,0
+    >>Kill |cRXP_ENEMY_Screeching Harpies|r
+    .complete 98070,1 --Screeching Harpy slain (5)
+    .mob Screeching Harpy
+step
+    .goto 1441/1,-1220.49,-5156.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pao'ka Swiftmountain|r
+    .accept 4770 >>Accept Homeward Bound
+    .target Pao'ka Swiftmountain
+step
+    .goto 1441/1,-1099.93,-4924.40
+    >>Escort Pao'ka from Highperch
+    .complete 4770,1 --Escort Pao'ka from Highperch
 step
     #loop
-    .goto 1441/1,-985.97,-5062.85,0
-    .goto 1441/1,-985.97,-5062.85,40,0
-    .goto 1441/1,-969.69,-5026.48,40,0
+    .goto 1441/1,-953.85,-4939.95,0
     .goto 1441/1,-953.85,-4939.95,40,0
     .goto 1441/1,-922.17,-4979.84,40,0
     .goto 1441/1,-899.29,-5046.72,40,0
     .goto 1441/1,-941.97,-5055.23,40,0
+    .goto 1441/1,-985.97,-5062.85,40,0
+    .goto 1441/1,-969.69,-5026.48,40,0
     >>Pick up |cRXP_PICK_Highperch Wyvern Egg|r from the ground
     .complete 4767,1 --Highperch Wyvern Egg (10)
+step
+    .goto 1441/1,-1381.09,-4915.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Motega Firemane|r
+    .turnin 4770 >>Turn in Homeward Bound
+    .target Motega Firemane
 step
     .goto 1441/1,-1376.25,-4921.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizlo Bearingshiner|r
@@ -359,10 +413,9 @@ step
     .turnin 5151 >>Turn in Hypercapacitor Gizmo
     .target Wizlo Bearingshiner
 step
-    .goto 1441/1,-2466.57,-5477.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
-    .turnin 98070 >>Turn in Stop the Screeching
-    .target Jandia
+    #completewith next
+    .hs >>Hearth to Innkeeper Abeqwa's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
 step
     .goto 1441/1,-2410.25,-5401.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elu|r
@@ -374,10 +427,47 @@ step
     .complete 5147,1 --Arnak's Hoof (1)
     .mob Arnak Grimtotem
 step
+    .goto 1441/1,-2103.13,-4742.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lakota Windsong|r
+    .accept 4904 >>Accept Free at Last
+    .target Lakota Windsong
+step
+    .goto 1441/1,-1794.25,-5055.52
+    >>Escort Lakota Windsong from the Darkcloud Pinnacle.
+    .complete 4904,1 --Escort Lakota Windsong from the Darkcloud Pinnacle.
+step
+    #loop
+    .goto 1441/1,-1638.93,-5356.48,0
+    .goto 1441/1,-1638.93,-5356.48,40,0
+    .goto 1441/1,-1606.81,-5359.71,40,0
+    .goto 1441/1,-1636.73,-5462.67,40,0
+    .goto 1441/1,-1628.81,-5499.04,40,0
+    .goto 1441/1,-1590.97,-5540.99,40,0
+    .goto 1441/1,-1584.37,-5615.49,40,0
+    .goto 1441/1,-1634.53,-5560.64,40,0
+    .goto 1441/1,-1685.57,-5440.37,40,0
+    .goto 1441/1,-1659.17,-5379.65,40,0
+    >>Kill |cRXP_ENEMY_Screeching Roguefeathers|r
+    >>Kill |cRXP_ENEMY_Screeching Windcallers|r
+    .complete 98070,2 --Screeching Roguefeather slain (5)
+    .complete 98070,3 --Screeching Windcaller slain (5)
+    .mob Screeching Roguefeather
+    .mob Screeching Windcaller
+step
     .goto 1441/1,-2442.81,-5455.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cliffwatcher Longhorn|r
     .turnin 5147 >>Turn in Wanted - Arnak Grimtotem
     .target Cliffwatcher Longhorn
+step
+    .goto 1441/1,-2456.01,-5480.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thalia Amberhide|r
+    .turnin 4904 >>Turn in Free at Last
+    .target Thalia Amberhide
+step
+    .goto 1441/1,-2466.57,-5477.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
+    .turnin 98070 >>Turn in Stop the Screeching
+    .target Jandia
 step
     .goto 1441/1,-2466.57,-5477.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
@@ -415,20 +505,18 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Stolen Freewind Supplies
 step
     .xp 31 >>|cRXP_WARN_The rest of Thousand Needles is planned from level 31.|r Come back to this guide then
-step << Mage
-    .goto 1441/1,-3878.09,-6187.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Tirth|r
-    .accept 1951 >>Accept Rituals of Power
-    .target Magus Tirth
-    .isQuestTurnedIn 1950 --any of: Get the Scoop
-    .xp <30,1
 step
     .goto 1441/1,-2807.13,-5183.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
     .accept 1150 >>Accept Test of Endurance
     .target Dorn Plainstalker
-    .isQuestTurnedIn 1149 --any of: Test of Faith
-    .xp <25,1
+step
+    .goto 1441/1,-2463.49,-5483.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
+    .accept 79442 >>Accept The Tempest's Weapons << Orc Shaman/Tauren Shaman/Troll Shaman
+    .accept 79360 >>Accept Elemental Aid << Shaman
+    .accept 79364 >>Accept Eyes on the Sky << Shaman
+    .target Rau Cliffrunner
 step
     .goto 1441/1,-2466.57,-5477.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
@@ -436,43 +524,66 @@ step
     .target Jandia
     .isQuestComplete 98069
 step
+    .goto 1441/1,-2460.41,-5477.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Abeqwa|r
+    .target Innkeeper Abeqwa
+    .home >>Set your Hearthstone to Innkeeper Abeqwa's inn
+step
     .goto 1441/1,-1612.53,-5591.73
     >>Kill |cRXP_ENEMY_Grenka Bloodscreech|r and loot |cRXP_LOOT_Grenka's Claw|r
     .complete 1150,1 --Grenka's Claw (1)
     .mob Grenka Bloodscreech
-    .isOnQuest 1150
+step << Shaman
+    .goto 1441/1,-2789.09,-5217.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prate Cloudseer|r
+    .turnin 79364 >>Turn in Eyes on the Sky
+    .target Prate Cloudseer
 step
     .goto 1441/1,-2807.13,-5183.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
     .turnin 1150 >>Turn in Test of Endurance
-    .target Dorn Plainstalker
-    .isOnQuest 1150
-step
-    .goto 1441/1,-2807.13,-5183.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
     .accept 1151 >>Accept Test of Strength
     .target Dorn Plainstalker
-    .isQuestTurnedIn 1150 --any of: Test of Endurance
-    .xp <25,1
+step
+    .goto 1441/1,-1433.45,-5065.49
+    >>Kill |cRXP_ENEMY_Achellios the Banished|r and loot |cRXP_LOOT_Pendant of Myzrael|r. Use it to start the quest
+    .collect 4614,1,635 --Pendant of Myzrael (1)
+    .accept 635 >>Accept Crystal in the Mountains
+    .use 4614
+    .mob Achellios the Banished
 step
     .goto 1441/1,-1185.73,-5084.27
     >>Kill |cRXP_ENEMY_Rok'Alim the Pounder|r and loot |cRXP_LOOT_Fragments of Rok'Alim|r
     .complete 1151,1 --Fragments of Rok'Alim (1)
     .mob Rok'Alim the Pounder
-    .isOnQuest 1151
+step << Shaman
+    #completewith next
+    .hs >>Hearth to Innkeeper Abeqwa's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step << Shaman
+    .goto 1441/1,-2463.49,-5483.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
+    .accept 79366 >>Accept Heed My Call
+    .target Rau Cliffrunner
+step << Shaman
+    .goto 1441/1,-2463.49,-5483.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
+    .turnin 79360 >>Turn in Elemental Aid
+    .target Rau Cliffrunner
+    .isQuestComplete 79360
+step << Shaman
+    .goto 1441/1,-2463.49,-5483.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
+    >>|cRXP_WARN_The database has no objectives for Heed My Call. Skip this step if the quest is not finished|r
+    .turnin 79366 >>Turn in Heed My Call
+    .target Rau Cliffrunner
+    .isOnQuest 79366
 step
     .goto 1441/1,-2807.13,-5183.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
     .turnin 1151 >>Turn in Test of Strength
-    .target Dorn Plainstalker
-    .isOnQuest 1151
-step
-    .goto 1441/1,-2807.13,-5183.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
     .accept 1152 >>Accept Test of Lore
     .target Dorn Plainstalker
-    .isQuestTurnedIn 1151 --any of: Test of Strength
-    .xp <25,1
 step
     .goto 1441/1,-3856.09,-6233.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kravel Koalbeard|r
@@ -488,6 +599,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzle Brassbolts|r
     .accept 1105 >>Accept Hardened Shells
     .target Wizzle Brassbolts
+step << Mage
+    .goto 1441/1,-3878.09,-6187.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Tirth|r
+    .accept 1950 >>Accept Get the Scoop
+    .target Magus Tirth
+    .isQuestTurnedIn 1949 --any of: Hidden Secrets
+    .xp <30,1
+step << Mage
+    .goto 1441/1,-3936.17,-6185.15
+    >>Find the phrase to Tirth's strongbox, then return to Tirth.
+    .complete 1950,1 --"Plucky" Johnson
+    .target "Plucky" Johnson
+    .isOnQuest 1950
 step
     .goto 1441/1,-3961.25,-6192.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pozzik|r
@@ -513,6 +637,12 @@ step
     .target Kravel Koalbeard
     .isQuestTurnedIn 1114 --any of: Delivery to the Gnomes
     .xp <30,1
+step << Mage
+    .goto 1441/1,-3878.09,-6187.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Tirth|r
+    .turnin 1950 >>Turn in Get the Scoop
+    .target Magus Tirth
+    .isOnQuest 1950
 step
     #loop
     .goto 1441/1,-4278.93,-5870.99,0
@@ -581,49 +711,10 @@ step
 step
     .goto 1441/1,-3961.25,-6192.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pozzik|r
-    .turnin 1176 >>Turn in Load Lightening
-    .accept 1178 >>Accept Goblin Sponsorship
+    .accept 1190 >>Accept Keeping Pace
     .target Pozzik
-step
-    .goto 1441/1,-2463.49,-5483.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
-    .accept 79442 >>Accept The Tempest's Weapons << Orc Shaman/Tauren Shaman/Troll Shaman
-    .accept 79360 >>Accept Elemental Aid << Shaman
-    .accept 79364 >>Accept Eyes on the Sky << Shaman
-    .accept 79366 >>Accept Heed My Call << Shaman
-    .target Rau Cliffrunner
-step << Shaman
-    .goto 1441/1,-2463.49,-5483.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
-    .turnin 79360 >>Turn in Elemental Aid
-    .target Rau Cliffrunner
-    .isQuestComplete 79360
-step << Shaman
-    .goto 1441/1,-2463.49,-5483.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
-    >>|cRXP_WARN_The database has no objectives for Heed My Call. Skip this step if the quest is not finished|r
-    .turnin 79366 >>Turn in Heed My Call
-    .target Rau Cliffrunner
-    .isOnQuest 79366
-step << Shaman
-    .goto 1441/1,-2789.09,-5217.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prate Cloudseer|r
-    .turnin 79364 >>Turn in Eyes on the Sky
-    .target Prate Cloudseer
-step
-    .goto 1441/1,-3967.85,-6198.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzeric|r
-    .accept 1188 >>Accept Safety First
-    .target Razzeric
-    .isQuestTurnedIn 1187 --any of: Razzeric's Tweaking
+    .isQuestTurnedIn 1137 --any of: News for Fizzle
     .xp <29,1
-step
-    .goto 1441/1,-2208.29,-4846.08
-    >>Kill |cRXP_ENEMY_Achellios the Banished|r and loot |cRXP_LOOT_Pendant of Myzrael|r. Use it to start the quest
-    .collect 4614,1,635 --Pendant of Myzrael (1)
-    .accept 635 >>Accept Crystal in the Mountains
-    .use 4614
-    .mob Achellios the Banished
 step
     .goto 1441/1,-3961.25,-6192.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pozzik|r
@@ -634,9 +725,15 @@ step
 step
     .goto 1441/1,-3961.25,-6192.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pozzik|r
-    .accept 1190 >>Accept Keeping Pace
+    .turnin 1176 >>Turn in Load Lightening
+    .accept 1178 >>Accept Goblin Sponsorship
     .target Pozzik
-    .isQuestTurnedIn 1137 --any of: News for Fizzle
+step
+    .goto 1441/1,-3967.85,-6198.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzeric|r
+    .accept 1188 >>Accept Safety First
+    .target Razzeric
+    .isQuestTurnedIn 1187 --any of: Razzeric's Tweaking
     .xp <29,1
 step
     .goto 1441/1,-3967.85,-6198.64
@@ -662,6 +759,13 @@ step
     .accept 1194 >>Accept Rizzle's Schematics
     .isQuestTurnedIn 1190 --any of: Keeping Pace
     .xp <29,1
+step << Mage
+    .goto 1441/1,-3878.09,-6187.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Tirth|r
+    .accept 1951 >>Accept Rituals of Power
+    .target Magus Tirth
+    .isQuestTurnedIn 1950 --any of: Get the Scoop
+    .xp <30,1
 step
     .goto 1441/1,-3961.25,-6192.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pozzik|r

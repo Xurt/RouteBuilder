@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "39-53 The Hinterlands",
-  "saved": "2026-10-14 09:56",
+  "saved": "2026-10-14 10:41",
   "levels": "RestedXP",
   "parts": [
     {
@@ -30,12 +30,12 @@
     {
       "part": 3,
       "steps": [
-        "home @1425:-4583.39,-622.09  Home inn",
-        "turnin:98888 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
-        "turnin:98887 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
-        "turnin:1446 @1425:-2874.38,-463.72  TurnIn Jammal'an the Prophet",
         "accept:77 @1425:-2603.34,219.52  Accept A Sticky Situation",
+        "turnin:1446 @1425:-2874.38,-463.72  TurnIn Jammal'an the Prophet",
+        "turnin:98887 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
+        "turnin:98888 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
         "accept:7839 @1425:-4548.36,-590  Accept Vilebranch Hooligans",
+        "home @1425:-4583.39,-622.09  Home inn",
         "accept:7844 @1425:-4608.8,-541.75  Accept Cannibalistic Cousins",
         "accept:7841 @1425:-4631.13,-563.05  Accept Message to the Wildhammer",
         "accept:7828 @1425:-4622.66,-574.6  Accept Stalking the Stalkers",
@@ -43,6 +43,8 @@
         "accept:7830 @1425:-4622.66,-574.6  Accept Avenging the Fallen",
         "obj:7839:1 @1425:-4131.4,316.8  Objective Vilebranch Hooligans / Slagtree's Lost Tools (1)",
         "obj:77:1 @1425:-3779.9,412.02  Objective A Sticky Situation / Hinterlands Honey Ripple (1)",
+        "accept:2742 @1425:-2758.11,262.9  Accept Rin'ji is Trapped!",
+        "obj:2742:1 @1425:-2906.33,20.86  Objective Rin'ji is Trapped! / Escort Rin'ji to safety",
         "obj:7841:1 @1425:-2800.46,225.94  Objective Message to the Wildhammer / Highvale Scout slain (15)",
         "obj:7841:2 @1425:-2819.32,145.86  Objective Message to the Wildhammer / Highvale Outrunner slain (15)",
         "obj:7841:3 @1425:-2760.8,244.68  Objective Message to the Wildhammer / Highvale Ranger slain (15)",
@@ -53,6 +55,7 @@
         "obj:7830:1 @1425:-3923.5,106.33  Objective Avenging the Fallen / Skylord Plume (1)",
         "obj:7828:1 @1425:-4025.14,201.3  Objective Stalking the Stalkers / Silvermane Stalker slain (10)",
         "obj:7829:1 @1425:-3977.4,142.27  Objective Hunt the Savages / Savage Owlbeast slain (20)",
+        "turnin:2742 @1425:-4897.55,-47.92  TurnIn Rin'ji is Trapped!",
         "accept:2782 @1425:-4897.55,-47.92  Accept Rin'ji's Secret",
         "turnin:7839 @1425:-4548.36,-590  TurnIn Vilebranch Hooligans",
         "turnin:7844 @1425:-4608.8,-541.75  TurnIn Cannibalistic Cousins",
@@ -66,12 +69,15 @@
         {"lines":[".goto 1425/0,-4585.70,-620.03,15,0",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lard|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Lard",".subzoneskip 3317,1"],"from":"RestedXP: 48-49 The Hinterlands"},
         "turnin:77 @1425:-2603.34,219.52  TurnIn A Sticky Situation",
         "accept:81 @1425:-2603.34,219.52  Accept Ripple Delivery",
-        "turnin:485 @1425:-3474.98,500.06  TurnIn Find OOX-09/HL!"
+        "turnin:485 @1425:-3474.98,500.06  TurnIn Find OOX-09/HL!",
+        "accept:836 @1425:-3474.98,500.06  Accept Rescue OOX-09/HL!",
+        "obj:836:1 @1425:-4621.89,-108.24  Objective Rescue OOX-09/HL! / Escort OOX-09/HL to the shoreline beyond Overlook Cliff"
       ]
     },
     {
       "part": 4,
       "steps": [
+        "home @1425:-4583.39,-622.09  Home inn",
         "accept:7840 @1425:-4583.39,-622.09  Accept Lard Lost His Lunch",
         "accept:7815 @1425:-4667.71,-626.19  Accept Snapjaws, Mon!",
         "accept:7816 @1425:-4667.71,-626.19  Accept Gammerita, Mon!",
@@ -82,6 +88,7 @@
         "turnin:7816 @1425:-4667.71,-626.19  TurnIn Gammerita, Mon!",
         "turnin:7840 @1425:-4583.39,-622.09  TurnIn Lard Lost His Lunch",
         "accept:7862 @1425:-4619.58,-560.74  Accept Job Opening: Guard Captain of Revantusk Village",
+        "accept:7843 @1425:-4631.13,-563.05  Accept The Final Message to the Wildhammer",
         "accept:7849 @1425:-4622.66,-574.6  Accept Separation Anxiety",
         "accept:7845 @1425:-4585.7,-616.95  Accept Kidnapped Elder Torntusk!",
         "accept:7850 @1425:-4585.7,-616.95  Accept Dark Vessels",
@@ -96,9 +103,11 @@
         "turnin:7862 @1425:-4585.7,-616.95  TurnIn Job Opening: Guard Captain of Revantusk Village",
         "turnin:7849 @1425:-4622.66,-574.6  TurnIn Separation Anxiety",
         "turnin:7850 @1425:-4585.7,-616.95  TurnIn Dark Vessels",
-        "turnin:98888 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
         "turnin:98887 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
-        "turnin:1446 @1425:-2874.38,-463.72  TurnIn Jammal'an the Prophet"
+        "turnin:98888 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",
+        "turnin:1446 @1425:-2874.38,-463.72  TurnIn Jammal'an the Prophet",
+        "obj:7843:1 @1425:-2127.09,232.87  Objective The Final Message to the Wildhammer / Message to the Wildhammer Delivered",
+        "turnin:7843 @1425:-4631.13,-563.05  TurnIn The Final Message to the Wildhammer"
       ]
     },
     {

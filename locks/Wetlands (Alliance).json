@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "21-34 Wetlands",
-  "saved": "2026-10-14 10:00",
+  "saved": "2026-10-14 10:44",
   "levels": "RestedXP",
   "parts": [
     {
@@ -23,8 +23,8 @@
         "obj:98197:1 @1437:-637.71,-3603.22  Objective Spoils of War / Khaz Modan Timber (6)",
         "obj:98197:2 @1437:-666.66,-3567.39  Objective Spoils of War / Khaz Modan Iron (30)",
         "turnin:98197 @1437:-807.26,-3716.22  TurnIn Spoils of War",
-        "accept:305 @1437:-865.16,-3585.85  Accept In Search of The Excavation Team",
         "turnin:98461 @1437:-865.16,-3585.85  TurnIn Unrequited Love",
+        "accept:305 @1437:-865.16,-3585.85  Accept In Search of The Excavation Team",
         "accept:294 @1437:-1968.49,-3550.57  Accept Ormer's Revenge",
         "turnin:305 @1437:-1998.67,-3590.54  TurnIn In Search of The Excavation Team",
         "accept:306 @1437:-1998.67,-3590.54  Accept In Search of The Excavation Team",
@@ -73,6 +73,9 @@
         "obj:943:1 @1437:-1789.42,-3478.36  Objective The Absent Minded Prospector / Stone of Relu (1)",
         "obj:275:1 @1437:-1521.86,-3171.04  Objective Blisters on The Land / Fen Creeper slain (12)",
         "obj:98282:1 @1437:-2325.79,-3855.96  Objective Alchemical Hazards / Unruptured Stalker Gland (1)",
+        "obj:455:2 @1437:-2383.27,-4236.33  Objective The Algaz Gauntlet / Dragonmaw Grunt slain (6)",
+        "obj:455:1 @1437:-2428.34,-4268.85  Objective The Algaz Gauntlet / Dragonmaw Scout slain (8)",
+        "obj:455:3 @1437:-2611.13,-4086.39  Objective The Algaz Gauntlet / Traverse Dun Algaz",
         "turnin:275 @1437:-2720.72,-3261.44  TurnIn Blisters on The Land",
         "turnin:98282 @1437:-880.87,-3769.14  TurnIn Alchemical Hazards",
         "turnin:943 @1437:-837.86,-3813.52  TurnIn The Absent Minded Prospector",
@@ -89,6 +92,7 @@
         "accept:98240 @1437:-743.16,-3684.25  Accept Crimson Crate Delivery",
         "accept:98190 @1437:-797.34,-3732.48  Accept A Friend of the Family",
         "accept:98230 @1437:-797.34,-3732.48  Accept This Land Was Their Land",
+        "turnin:455 @1437:-807.26,-3716.22  TurnIn The Algaz Gauntlet",
         "turnin:98230 @1437:-2430.82,-3306.92  TurnIn This Land Was Their Land",
         "turnin:98240 @1437:-2430.82,-3306.92  TurnIn Crimson Crate Delivery",
         "accept:98246 @1437:-2430.82,-3306.92  Accept Trying Times",
@@ -166,9 +170,6 @@
         "obj:303:3 @1437:-2955.61,-2907.81  Objective The Dark Iron War / Dark Iron Saboteur slain (5)",
         "obj:303:4 @1437:-2946.51,-2880.25  Objective The Dark Iron War / Dark Iron Demolitionist slain (5)",
         "turnin:303 @1437:-2443.64,-2650.38  TurnIn The Dark Iron War",
-        "accept:1250 @1437:-825.46,-3808.83  Accept The Missing Diplomat",
-        "turnin:1250 @1437:-827.94,-3822.89  TurnIn The Missing Diplomat",
-        "accept:1264 @1437:-827.94,-3822.89  Accept The Missing Diplomat",
         "accept:324 @1437:-890.38,-3917.15  Accept The Lost Ingots",
         "obj:324:1 @1437:-812.22,-3975.59  Objective The Lost Ingots / Lightforge Ingot (5)",
         "turnin:98208 @1437:-718.76,-3687.28  TurnIn Bloom of the Heavens",
@@ -244,15 +245,21 @@
         "accept:98297 @1437:-2430.82,-3306.92  Accept Stopping the Cycle",
         "accept:304 @1437:-2449.02,-2651.21  Accept A Grim Task",
         "turnin:88756 @1437:-2459.36,-2648.73  TurnIn Bring Back a Bang",
-        "turnin:88757 @1437:-2520.98,-2395.98  TurnIn Accessories of the Lost",
         "obj:304:1 @1437:-2937,-2969.28  Objective A Grim Task / Ear of Balgaras (1)",
         "obj:98297:1 @1437:-3557.73,-3413.31  Objective Stopping the Cycle / Subdued Dragonspawn slain (8)",
         "turnin:98297 @1437:-2430.82,-3306.92  TurnIn Stopping the Cycle",
         "turnin:304 @1437:-2449.02,-2651.21  TurnIn A Grim Task",
-        "turnin:633 @1437:-2453.16,-2650.66  TurnIn The Thandol Span",
-        "turnin:98293 @1437:-797.34,-3732.48  TurnIn Forced Disarmament",
+        "accept:1249 @1437:-827.94,-3822.89  Accept The Missing Diplomat",
+        "obj:1249:1 @1437:-825.46,-3808.83  Objective The Missing Diplomat / Tapoke \"Slim\" Jahn slain (1)",
+        "turnin:1249 @1437:-827.94,-3822.89  TurnIn The Missing Diplomat",
+        "accept:1250 @1437:-825.46,-3808.83  Accept The Missing Diplomat",
+        "turnin:1250 @1437:-827.94,-3822.89  TurnIn The Missing Diplomat",
+        "accept:1264 @1437:-827.94,-3822.89  Accept The Missing Diplomat",
         "turnin:98221 @1437:-797.34,-3732.48  TurnIn From the Ashes",
-        "turnin:98208 @1437:-718.76,-3687.28  TurnIn Bloom of the Heavens"
+        "turnin:98293 @1437:-797.34,-3732.48  TurnIn Forced Disarmament",
+        "turnin:98208 @1437:-718.76,-3687.28  TurnIn Bloom of the Heavens",
+        "turnin:633 @1437:-2453.16,-2650.66  TurnIn The Thandol Span",
+        "turnin:88757 @1437:-2520.98,-2395.98  TurnIn Accessories of the Lost"
       ]
     }
   ]

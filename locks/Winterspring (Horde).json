@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-60 Winterspring",
-  "saved": "2026-10-14 09:57",
+  "saved": "2026-10-14 10:42",
   "levels": "RestedXP",
   "parts": [
     {
@@ -42,6 +42,7 @@
         "obj:5082:3 @1452:-2661.8,6790.05  Objective Threat of the Winterfall / Winterfall Totemic slain (8)",
         "turnin:5082 @1452:-2536.84,6395.76  TurnIn Threat of the Winterfall",
         "accept:8464 @1452:-2285.5,6900.33  Accept Winterfall Activity",
+        "accept:4842 @1452:-2536.84,6395.76  Accept Strange Sources",
         "accept:5086 @1452:-2536.84,6395.76  Accept Toxic Horrors",
         "accept:3783 @1452:-4639.15,6752.65  Accept Are We There, Yeti?",
         "accept:5054 @1452:-4713.7,6716.68  Accept Ursius of the Shardtooth",
@@ -49,6 +50,8 @@
         "obj:3783:1 @1452:-5280.99,6632.9  Objective Are We There, Yeti? / Thick Yeti Fur (10)",
         "turnin:5054 @1452:-4713.7,6716.68  TurnIn Ursius of the Shardtooth",
         "turnin:3783 @1452:-4639.15,6752.65  TurnIn Are We There, Yeti?",
+        "obj:4842:1 @1452:-4563.89,5018.83  Objective Strange Sources / Discover Darkwhisper Gorge",
+        "turnin:4842 @1452:-2536.84,6395.76  TurnIn Strange Sources",
         "accept:5087 @1452:-2536.84,6395.76  Accept Winterfall Runners",
         "obj:5087:1 @1452:-2301.83,6899.39  Objective Winterfall Runners / Winterfall Crate (1)",
         "turnin:5087 @1452:-2536.84,6395.76  TurnIn Winterfall Runners",
@@ -80,14 +83,15 @@
       "steps": [
         "accept:6606 @1452:-4656.19,6714.31  Accept A Little Luck",
         "accept:5055 @1452:-4713.7,6716.68  Accept Brumeran of the Chillwind",
-        "turnin:6606 @1452:-4712.99,6720.47  TurnIn A Little Luck",
         "accept:969 @1452:-4712.99,6720.47  Accept Luck Be With You",
+        "turnin:6606 @1452:-4712.99,6720.47  TurnIn A Little Luck",
         "obj:5055:1 @1452:-4757.01,5792.73  Objective Brumeran of the Chillwind / Brumeran slain (1)",
         "obj:969:1 @1452:-4515.61,5362  Objective Luck Be With You / Frostmaul Shards (4)",
         "accept:5161 @1452:-4189.72,6109.87  Accept Wrath of the Blue Flight",
         "turnin:5161 @1452:-4189.72,6109.87  TurnIn Wrath of the Blue Flight",
         "accept:5162 @1452:-4189.72,6109.87  Accept Wrath of the Blue Flight",
         "turnin:969 @1452:-4712.99,6720.47  TurnIn Luck Be With You",
+        "accept:975 @1452:-4712.99,6720.47  Accept Cache of Mau'ari",
         "turnin:5055 @1452:-4713.7,6716.68  TurnIn Brumeran of the Chillwind",
         "accept:5121 @1452:-2536.84,6395.76  Accept High Chief Winterfall",
         "accept:5056 @1452:-4713.7,6716.68  Accept Shy-Rotam",

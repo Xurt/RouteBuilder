@@ -514,6 +514,24 @@ step
     .accept 5561 >>Accept Kodo Roundup
     .target Smeed Scrabblescrew
 step
+    #loop
+    .goto 1443/1,1242.70,-1618.58,0
+    .goto 1443/1,1242.70,-1618.58,40,0
+    .goto 1443/1,1146.94,-1678.84,40,0
+    .goto 1443/1,1029.15,-1689.93,40,0
+    .goto 1443/1,958.57,-1879.40,40,0
+    .goto 1443/1,1147.84,-1846.12,40,0
+    .goto 1443/1,1084.00,-1981.93,40,0
+    .goto 1443/1,1213.93,-2049.08,40,0
+    .goto 1443/1,1314.19,-1884.79,40,0
+    .goto 1443/1,1242.26,-1757.98,40,0
+    >>Kill |cRXP_ENEMY_Kolkar Centaurs|r, |cRXP_ENEMY_Kolkar Scouts|r, |cRXP_ENEMY_Kolkar Maulers|r and |cRXP_ENEMY_Kolkar Windchasers|r. Loot them for |cRXP_LOOT_Centaur Ear|r
+    .complete 1366,1 --Centaur Ear (15)
+    .mob Kolkar Centaur
+    .mob Kolkar Scout
+    .mob Kolkar Mauler
+    .mob Kolkar Windchaser
+step
     .goto 1443/1,862.81,-1591.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
     .turnin 92743 >>Turn in A Conqueror's Crown
@@ -521,22 +539,30 @@ step
     .isOnQuest 92743
 step
     #loop
-    .goto 1443/1,1029.15,-1689.93,0
-    .goto 1443/1,1029.15,-1689.93,40,0
-    .goto 1443/1,1146.94,-1678.84,40,0
-    .goto 1443/1,1242.70,-1618.58,40,0
-    .goto 1443/1,1242.26,-1757.98,40,0
-    .goto 1443/1,1314.19,-1884.79,40,0
-    .goto 1443/1,1213.93,-2049.08,40,0
-    .goto 1443/1,1084.00,-1981.93,40,0
-    .goto 1443/1,1147.84,-1846.12,40,0
-    .goto 1443/1,958.57,-1879.40,40,0
-    >>Kill |cRXP_ENEMY_Kolkar Centaurs|r, |cRXP_ENEMY_Kolkar Scouts|r, |cRXP_ENEMY_Kolkar Maulers|r and |cRXP_ENEMY_Kolkar Windchasers|r. Loot them for |cRXP_LOOT_Centaur Ear|r
-    .complete 1366,1 --Centaur Ear (15)
-    .mob Kolkar Centaur
-    .mob Kolkar Scout
-    .mob Kolkar Mauler
-    .mob Kolkar Windchaser
+    .goto 1443/1,1287.21,-546.22,0
+    .goto 1443/1,1287.21,-546.22,40,0
+    .goto 1443/1,1228.32,-689.82,40,0
+    .goto 1443/1,1184.26,-858.91,40,0
+    .goto 1443/1,1183.36,-1037.28,40,0
+    .goto 1443/1,1212.58,-1389.24,40,0
+    .goto 1443/1,1434.68,-1487.57,40,0
+    .goto 1443/1,1658.12,-1500.76,40,0
+    .goto 1443/1,1858.18,-1681.53,40,0
+    .goto 1443/1,2082.53,-1810.44,40,0
+    .goto 1443/1,2379.25,-1893.79,40,0
+    .goto 1443/1,2433.65,-1893.79,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cork Gizelton|r. |cRXP_WARN_This NPC walks a patrol route|r
+    .accept 5821 >>Accept Bodyguard for Hire
+    .unitscan Cork Gizelton
+step
+    .goto 1443/1,1213.48,-1245.34
+    >>Escort Gizelton Caravan past Kolkar Centaur Village
+    .complete 5821,1 --Escort Gizelton Caravan past Kolkar Centaur Village
+step
+    .goto 1443/1,1497.17,-1402.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
+    .turnin 5821 >>Turn in Bodyguard for Hire
+    .target Smeed Scrabblescrew
 step
     #loop
     .goto 1443/1,1730.05,-1426.11,0
@@ -566,7 +592,7 @@ step
     .accept 6143 >>Accept Other Fish to Fry
     .target Drulzegar Skraghook
 step
-    #completewith Along12
+    #completewith Along15
     >>As you go: Kill |cRXP_ENEMY_Slitherblade Sorceress|r. |cRXP_WARN_Anything left is finished later|r
     .complete 6143,3 --Slitherblade Sorceress slain (5)
     .mob Slitherblade Sorceress
@@ -577,7 +603,7 @@ step
     .mob Slitherblade Oracle
     .isOnQuest 1482
 step
-    #label Along12
+    #label Along15
     #loop
     .goto 1443/1,2821.19,-77.65,0
     .goto 1443/1,2821.19,-77.65,40,0
@@ -658,10 +684,64 @@ step
     >>Loot the |cRXP_PICK_Kodo Bones|r for |cRXP_LOOT_Kodo Bone|r
     .complete 5501,1 --Kodo Bone (10)
 step
+    #loop
+    .goto 1443/1,2552.34,-1375.15,0
+    .goto 1443/1,2552.34,-1375.15,40,0
+    .goto 1443/1,2644.96,-1153.90,40,0
+    .goto 1443/1,2693.51,-1179.98,40,0
+    .goto 1443/1,2758.70,-1151.20,40,0
+    .goto 1443/1,2716.89,-1219.26,40,0
+    .goto 1443/1,2682.27,-1248.93,40,0
+    .goto 1443/1,2654.85,-1288.51,40,0
+    .goto 1443/1,2617.08,-1318.19,40,0
+    .goto 1443/1,2647.20,-1388.94,40,0
+    >>Kill |cRXP_ENEMY_Maraudine Scouts|r, |cRXP_ENEMY_Maraudine Wranglers|r, |cRXP_ENEMY_Maraudine Maulers|r and |cRXP_ENEMY_Maraudine Windchasers|r. Loot them for |cRXP_LOOT_Carved Centaur Totem|r
+    .complete 93225,1 --Carved Centaur Totem (5)
+    .mob Maraudine Scout
+    .mob Maraudine Wrangler
+    .mob Maraudine Mauler
+    .mob Maraudine Windchaser
+step
     .goto 1443/1,3072.51,-1592.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taiga Wisemane|r
     .accept 5381 >>Accept Hand of Iruxos
     .target Taiga Wisemane
+step
+    .goto 1443/1,3150.29,-1592.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Sikewa|r
+    .target Innkeeper Sikewa
+    .home >>Set your Hearthstone to Innkeeper Sikewa's inn
+step
+    #loop
+    .goto 1443/1,2433.65,-1893.79,0
+    .goto 1443/1,2433.65,-1893.79,40,0
+    .goto 1443/1,2379.25,-1893.79,40,0
+    .goto 1443/1,2082.53,-1810.44,40,0
+    .goto 1443/1,1858.18,-1681.53,40,0
+    .goto 1443/1,1658.12,-1500.76,40,0
+    .goto 1443/1,1434.68,-1487.57,40,0
+    .goto 1443/1,1212.58,-1389.24,40,0
+    .goto 1443/1,1183.36,-1037.28,40,0
+    .goto 1443/1,1184.26,-858.91,40,0
+    .goto 1443/1,1228.32,-689.82,40,0
+    .goto 1443/1,1287.21,-546.22,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rigger Gizelton|r. |cRXP_WARN_This NPC walks a patrol route|r
+    .accept 5943 >>Accept Gizelton Caravan
+    .unitscan Rigger Gizelton
+step
+    .goto 1443/1,1729.60,-1580.20
+    >>Escort Gizelton Caravan past Mannoroc Coven
+    .complete 5943,1 --Escort Gizelton Caravan past Mannoroc Coven
+step
+    .goto 1443/1,1702.63,-1337.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gurda Wildmane|r
+    .turnin 93225 >>Turn in Carved Centaur Totems
+    .target Gurda Wildmane
+step
+    .goto 1443/1,1497.17,-1402.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
+    .turnin 5943 >>Turn in Gizelton Caravan
+    .target Smeed Scrabblescrew
 step
     .goto 1443/1,1431.08,-716.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
@@ -693,6 +773,16 @@ step
     .accept 5386 >>Accept Catch of the Day
     .target Nataka Longhorn
 step
+    .goto 1443/1,862.81,-1591.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
+    .turnin 92743 >>Turn in A Conqueror's Crown
+    .target Warug
+    .isOnQuest 92743
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Sikewa's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
     .goto 1443/1,3224.02,-1739.99
     >>Kill |cRXP_ENEMY_Jinar'Zillens|r. Loot them for |cRXP_LOOT_Bloodbelly Fish|r
     .complete 5386,1 --Bloodbelly Fish (2)
@@ -702,24 +792,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nataka Longhorn|r
     .turnin 5386 >>Turn in Catch of the Day
     .target Nataka Longhorn
-step
-    #loop
-    .goto 1443/1,2552.34,-1375.15,0
-    .goto 1443/1,2552.34,-1375.15,40,0
-    .goto 1443/1,2644.96,-1153.90,40,0
-    .goto 1443/1,2693.51,-1179.98,40,0
-    .goto 1443/1,2758.70,-1151.20,40,0
-    .goto 1443/1,2716.89,-1219.26,40,0
-    .goto 1443/1,2682.27,-1248.93,40,0
-    .goto 1443/1,2654.85,-1288.51,40,0
-    .goto 1443/1,2617.08,-1318.19,40,0
-    .goto 1443/1,2647.20,-1388.94,40,0
-    >>Kill |cRXP_ENEMY_Maraudine Scouts|r, |cRXP_ENEMY_Maraudine Wranglers|r, |cRXP_ENEMY_Maraudine Maulers|r and |cRXP_ENEMY_Maraudine Windchasers|r. Loot them for |cRXP_LOOT_Carved Centaur Totem|r
-    .complete 93225,1 --Carved Centaur Totem (5)
-    .mob Maraudine Scout
-    .mob Maraudine Wrangler
-    .mob Maraudine Mauler
-    .mob Maraudine Windchaser
 step
     .goto 1443/1,3072.51,-1592.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taiga Wisemane|r
@@ -731,17 +803,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hornizz Brimbuzzle|r
     .accept 6134 >>Accept Ghost-o-plasm Round Up
     .target Hornizz Brimbuzzle
-step
-    .goto 1443/1,1702.63,-1337.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gurda Wildmane|r
-    .turnin 93225 >>Turn in Carved Centaur Totems
-    .target Gurda Wildmane
-step
-    .goto 1443/1,862.81,-1591.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
-    .turnin 92743 >>Turn in A Conqueror's Crown
-    .target Warug
-    .isOnQuest 92743
 step
     .goto 1443/1,1347.91,-2294.91
     >>Kill |cRXP_ENEMY_Magrami Spectres|r. Loot them for |cRXP_LOOT_Ghost-o-plasm|r
@@ -765,6 +826,20 @@ step
     .goto 1443/1,2082.98,-1401.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hornizz Brimbuzzle|r
     .turnin 6134 >>Turn in Ghost-o-plasm Round Up
+    .target Hornizz Brimbuzzle
+step
+    .goto 1443/1,2707.00,-1151.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melizza Brimbuzzle|r
+    .accept 6132 >>Accept Get Me Out of Here!
+    .target Melizza Brimbuzzle
+step
+    .goto 1443/1,2428.26,-1394.03
+    >>Melizza Brimbuzzle escorted to safety
+    .complete 6132,1 --Melizza Brimbuzzle escorted to safety
+step
+    .goto 1443/1,2082.98,-1401.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hornizz Brimbuzzle|r
+    .turnin 6132 >>Turn in Get Me Out of Here!
     .target Hornizz Brimbuzzle
 step
     .goto 1443/1,3072.51,-1592.80

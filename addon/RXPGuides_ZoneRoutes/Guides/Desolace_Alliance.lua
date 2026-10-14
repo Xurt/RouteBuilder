@@ -319,10 +319,43 @@ step
     .goto 1443/1,1766.92,-331.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalinda Malem|r
     .turnin 1439 >>Turn in Search for Tyranis
+    .accept 1440 >>Accept Return to Vahlarriel
     .target Dalinda Malem
+step
+    .goto 1443/1,1613.61,-474.57
+    >>Rescue Dalinda Malem
+    .complete 1440,1 --Rescue Dalinda Malem
+step
+    #loop
+    .goto 1443/1,1287.21,-546.22,0
+    .goto 1443/1,1287.21,-546.22,40,0
+    .goto 1443/1,1228.32,-689.82,40,0
+    .goto 1443/1,1184.26,-858.91,40,0
+    .goto 1443/1,1183.36,-1037.28,40,0
+    .goto 1443/1,1212.58,-1389.24,40,0
+    .goto 1443/1,1434.68,-1487.57,40,0
+    .goto 1443/1,1658.12,-1500.76,40,0
+    .goto 1443/1,1858.18,-1681.53,40,0
+    .goto 1443/1,2082.53,-1810.44,40,0
+    .goto 1443/1,2379.25,-1893.79,40,0
+    .goto 1443/1,2433.65,-1893.79,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cork Gizelton|r. |cRXP_WARN_This NPC walks a patrol route|r
+    .accept 5821 >>Accept Bodyguard for Hire
+    .unitscan Cork Gizelton
+step
+    .goto 1443/1,1213.48,-1245.34
+    >>Escort Gizelton Caravan past Kolkar Centaur Village
+    .complete 5821,1 --Escort Gizelton Caravan past Kolkar Centaur Village
+step
+    .goto 1443/1,862.81,-1591.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
+    .turnin 92743 >>Turn in A Conqueror's Crown
+    .target Warug
+    .isOnQuest 92743
 step
     .goto 1443/1,1497.17,-1402.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
+    .turnin 5821 >>Turn in Bodyguard for Hire
     .accept 5561 >>Accept Kodo Roundup
     .target Smeed Scrabblescrew
 step
@@ -343,12 +376,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
     .turnin 5561 >>Turn in Kodo Roundup
     .target Smeed Scrabblescrew
-step
-    .goto 1443/1,862.81,-1591.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
-    .turnin 92743 >>Turn in A Conqueror's Crown
-    .target Warug
-    .isOnQuest 92743
 step
     #loop
     .goto 1443/1,1378.48,-596.59,0
@@ -409,6 +436,11 @@ step
     .target Kreldig Ungor
     .isOnQuest 1459
 step
+    .goto 1443/1,1246.30,97.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahlarriel Demonslayer|r
+    .turnin 1440 >>Turn in Return to Vahlarriel
+    .target Vahlarriel Demonslayer
+step
     +|cRXP_WARN_That is all of Desolace for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ironforge|r: The Karnitol Shipwreck
 step
@@ -451,6 +483,27 @@ step
     .mob Undead Ravager
 step
     #loop
+    .goto 1443/1,2433.65,-1893.79,0
+    .goto 1443/1,2433.65,-1893.79,40,0
+    .goto 1443/1,2379.25,-1893.79,40,0
+    .goto 1443/1,2082.53,-1810.44,40,0
+    .goto 1443/1,1858.18,-1681.53,40,0
+    .goto 1443/1,1658.12,-1500.76,40,0
+    .goto 1443/1,1434.68,-1487.57,40,0
+    .goto 1443/1,1212.58,-1389.24,40,0
+    .goto 1443/1,1183.36,-1037.28,40,0
+    .goto 1443/1,1184.26,-858.91,40,0
+    .goto 1443/1,1228.32,-689.82,40,0
+    .goto 1443/1,1287.21,-546.22,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rigger Gizelton|r. |cRXP_WARN_This NPC walks a patrol route|r
+    .accept 5943 >>Accept Gizelton Caravan
+    .unitscan Rigger Gizelton
+step
+    .goto 1443/1,1729.60,-1580.20
+    >>Escort Gizelton Caravan past Mannoroc Coven
+    .complete 5943,1 --Escort Gizelton Caravan past Mannoroc Coven
+step
+    #loop
     .goto 1443/1,1785.80,-1461.49,0
     .goto 1443/1,1785.80,-1461.49,40,0
     .goto 1443/1,1838.85,-1383.84,40,0
@@ -463,6 +516,11 @@ step
     .goto 1443/1,1787.15,-1358.06,40,0
     >>Loot the |cRXP_PICK_Kodo Bones|r for |cRXP_LOOT_Kodo Bone|r
     .complete 5501,1 --Kodo Bone (10)
+step
+    .goto 1443/1,1497.17,-1402.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
+    .turnin 5943 >>Turn in Gizelton Caravan
+    .target Smeed Scrabblescrew
 step
     .goto 1443/1,1431.08,-716.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
@@ -507,6 +565,20 @@ step
     .mob Maraudine Wrangler
     .mob Maraudine Mauler
     .mob Maraudine Windchaser
+step
+    .goto 1443/1,2707.00,-1151.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melizza Brimbuzzle|r
+    .accept 6132 >>Accept Get Me Out of Here!
+    .target Melizza Brimbuzzle
+step
+    .goto 1443/1,2428.26,-1394.03
+    >>Melizza Brimbuzzle escorted to safety
+    .complete 6132,1 --Melizza Brimbuzzle escorted to safety
+step
+    .goto 1443/1,2082.98,-1401.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hornizz Brimbuzzle|r
+    .turnin 6132 >>Turn in Get Me Out of Here!
+    .target Hornizz Brimbuzzle
 step
     .goto 1443/1,1257.09,163.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r

@@ -612,16 +612,16 @@ step << Warlock
 step << Warlock
     .goto 1448/1,-736.53,5407.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Impsy|r
-    .turnin 8422 >>Turn in Trolls of a Feather
-    .target Impsy
-    .isQuestComplete 8422
-step << Warlock
-    .goto 1448/1,-736.53,5407.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Impsy|r
     .accept 7603 >>Accept Kroshius' Infernal Core
     .target Impsy
     .isQuestTurnedIn 7602 --any of: Flawless Fel Essence
     .xp <50,1
+step << Warlock
+    .goto 1448/1,-736.53,5407.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Impsy|r
+    .turnin 8422 >>Turn in Trolls of a Feather
+    .target Impsy
+    .isQuestComplete 8422
 step << Warlock
     .goto 1448/1,-986.08,5800.87
     >>Kill |cRXP_ENEMY_Kroshius|r and loot |cRXP_LOOT_Kroshius' Infernal Core|r
@@ -743,6 +743,18 @@ step
     .isQuestTurnedIn 5159 --any of: Cleansed Water Returns to Felwood
     .xp <48,1
 step
+    .goto 1448/1,-440.41,5006.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Arko'narin|r
+    .accept 5203 >>Accept Rescue From Jaedenar
+    .target Captured Arko'narin
+    .isQuestTurnedIn 5202 --any of: A Strange Red Key
+    .xp <49,1
+step
+    .goto 1448/1,-396.71,4869.37
+    >>Protect Arko'narin out of Shadow Hold
+    .complete 5203,1 --Protect Arko'narin out of Shadow Hold
+    .isOnQuest 5203
+step
     .goto 1448/1,-443.86,4975.17
     >>Click the |cRXP_PICK_Brazier of Pain|r
     .complete 5165,1 --Extinguish the Brazier of Pain
@@ -771,6 +783,12 @@ step
 step
     .goto 1448/1,-1310.96,3989.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jessir Moonbow|r
+    .turnin 5203 >>Turn in Rescue From Jaedenar
+    .target Jessir Moonbow
+    .isOnQuest 5203
+step
+    .goto 1448/1,-1310.96,3989.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jessir Moonbow|r
     .accept 5204 >>Accept Retribution of the Light
     .target Jessir Moonbow
     .isQuestTurnedIn 5203 --any of: Rescue From Jaedenar
@@ -795,6 +813,18 @@ step
     .isQuestTurnedIn 5204 --any of: Retribution of the Light
     .xp <49,1
 step
+    .goto 1448/1,-1208.61,5998.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arei|r
+    .accept 4261 >>Accept Ancient Spirit
+    .target Arei
+    .isQuestTurnedIn 4442 --any of: Purified!
+    .xp <49,1
+step
+    .goto 1448/1,-1199.98,6575.97
+    >>Help Arei get to Safety
+    .complete 4261,1 --Help Arei get to Safety
+    .isOnQuest 4261
+step
     .goto 1448/1,-1310.96,3989.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jessir Moonbow|r
     .turnin 5385 >>Turn in The Remains of Trey Lightforge
@@ -802,6 +832,7 @@ step
     .isOnQuest 5385
 step
     +|cRXP_WARN_End of the Felwood route.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Ashenvale|r: Ancient Spirit
     >>|cRXP_FRIENDLY_Winterspring|r: Speak to Salfa, Winterfall Firewater, Mystery Goo, To Winterspring!
     >>|cRXP_FRIENDLY_Azshara, Blasted Lands and back here|r: Flawless Fel Essence << Warlock
 ]])

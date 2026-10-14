@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "20-40 Hillsbrad Foothills",
-  "saved": "2026-10-14 09:55",
+  "saved": "2026-10-14 10:39",
   "levels": "RestedXP",
   "parts": [
     {
@@ -12,6 +12,9 @@
         {"lines":[".goto 1424/0,-857.81,2.77",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarise|r",".fp Tarren Mill >> Get the Tarren Mill Flight Path",".target Zarise"],"from":"RestedXP: 22-24 Hillsbrad"},
         "turnin:2933 @1424:-899.41,-6.61  TurnIn Venom Bottles",
         "turnin:2479 @1424:-905.49,-9.39  TurnIn Hinott's Assistance",
+        "accept:2480 @1424:-905.49,-9.39  Accept Hinott's Assistance",
+        "obj:2480:1 @1424:-903.57,-9.81  Objective Hinott's Assistance / Cure Completed",
+        "turnin:2480 @1424:-905.49,-9.39  TurnIn Hinott's Assistance",
         "turnin:1065 @1424:-899.41,-6.61  TurnIn Journey to Tarren Mill",
         {"lines":[".goto 1424/0,-857.81,2.77",".fp Hillsbrad >> Get the Tarren Mill Flight Path"],"from":"RestedXP: 21-30 Silverpine/Hillsbrad AoE"},
         "accept:1066 @1424:-899.41,-6.61  Accept Blood of Innocents",
@@ -141,6 +144,7 @@
         "obj:517:1 @1424:-1225.17,-1309.87  Objective Elixir of Agony / Keg of Shindigger Stout (1)",
         "turnin:547 @1424:-941.65,-31.15  TurnIn Humbert's Sword",
         "accept:507 @1424:-957.01,-40.75  Accept Lord Aliden Perenolde",
+        "accept:503 @1424:-957.01,-40.75  Accept Gol'dir",
         "turnin:517 @1424:-899.41,-6.61  TurnIn Elixir of Agony",
         "accept:524 @1424:-899.41,-6.61  Accept Elixir of Agony",
         "turnin:524 @1424:-943.25,0.43  TurnIn Elixir of Agony"

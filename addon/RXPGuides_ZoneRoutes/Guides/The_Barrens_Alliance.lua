@@ -29,9 +29,21 @@ step
 step << Warlock
     .goto 1413/1,-3711.43,-782.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Menara Voidrender|r
+    .turnin 4968 >>Turn in Knowledge of the Orb of Orahil
+    .target Menara Voidrender
+    .isOnQuest 4968
+step << Warlock
+    .goto 1413/1,-3711.43,-782.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Menara Voidrender|r
     .turnin 4782 >>Turn in Components for the Enchanted Gold Bloodrobe
     .target Menara Voidrender
     .isOnQuest 4782
+step << Warlock
+    .goto 1413/1,-3711.43,-782.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Menara Voidrender|r
+    .turnin 4965 >>Turn in Knowledge of the Orb of Orahil
+    .target Menara Voidrender
+    .isOnQuest 4965
 step << Warlock
     .goto 1413/1,-3723.59,-785.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strahad Farsan|r
@@ -168,18 +180,6 @@ step
     >>Click the |cRXP_PICK_Burned-Out Remains|r
     .turnin 79008 >>Turn in ... and that note you found
     .isOnQuest 79008
-step << Warlock
-    .goto 1413/1,-3711.43,-782.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Menara Voidrender|r
-    .turnin 4965 >>Turn in Knowledge of the Orb of Orahil
-    .target Menara Voidrender
-    .isOnQuest 4965
-step << Warlock
-    .goto 1413/1,-3711.43,-782.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Menara Voidrender|r
-    .turnin 4968 >>Turn in Knowledge of the Orb of Orahil
-    .target Menara Voidrender
-    .isOnQuest 4968
 step
     .xp 14 >>|cRXP_WARN_The rest of The Barrens is planned from level 14.|r Come back to this guide then
 step
@@ -287,7 +287,12 @@ step
     .goto 1413/1,-3104.44,1109.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzlecrank's Shredder|r
     .turnin 858 >>Turn in Ignition
+    .accept 863 >>Accept The Escape
     .target Wizzlecrank's Shredder
+step
+    .goto 1413/1,-2986.90,1093.62
+    >>Escort Wizzlecrank out of the Venture Co. drill site
+    .complete 863,1 --Escort Wizzlecrank out of the Venture Co. drill site
 step
     .goto 1413/1,-2458.95,-370.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
@@ -301,6 +306,19 @@ step
     .target Falla Sagewind
     .isQuestTurnedIn 6981 --any of: The Glowing Shard
     .xp <15,1
+step
+    .goto 1413/1,-3759.06,-902.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
+    .accept 1095 >>Accept Further Instructions
+    .target Sputtervalve
+    .isQuestTurnedIn 1094 --any of: Further Instructions
+    .xp <16,1
+step
+    .goto 1413/1,-3759.06,-902.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
+    .turnin 863 >>Turn in The Escape
+    .accept 1483 >>Accept Ziz Fizziks
+    .target Sputtervalve
 step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
@@ -319,18 +337,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
     .turnin 865 >>Turn in Raptor Horns
     .target Mebok Mizzyrix
-step
-    .goto 1413/1,-3759.06,-902.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
-    .accept 1095 >>Accept Further Instructions
-    .target Sputtervalve
-    .isQuestTurnedIn 1094 --any of: Further Instructions
-    .xp <16,1
-step
-    .goto 1413/1,-3759.06,-902.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
-    .accept 1483 >>Accept Ziz Fizziks
-    .target Sputtervalve
 step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
@@ -449,6 +455,30 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strahad Farsan|r
     .accept 1758 >>Accept Tome of the Cabal
     .target Strahad Farsan
+step << Warrior
+    .goto 1413/1,-4330.58,-1708.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Klannoc Macleod|r
+    .accept 1719 >>Accept The Affray
+    .target Klannoc Macleod
+    .isQuestTurnedIn 1718 --any of: The Islander
+    .xp <30,1
+step << Warrior
+    .goto 1413/1,-4328.55,-1679.15
+    >>Step on the grate to begin the Affray
+    .complete 1719,2 --Step on the grate to begin the Affray
+    .isOnQuest 1719
+step << Warrior
+    .goto 1413/1,-4329.56,-1679.15
+    >>Kill |cRXP_ENEMY_Big Will|r
+    .complete 1719,1 --Big Will slain (1)
+    .mob Big Will
+    .isOnQuest 1719
+step << Warrior
+    .goto 1413/1,-4330.58,-1708.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Klannoc Macleod|r
+    .turnin 1719 >>Turn in The Affray
+    .target Klannoc Macleod
+    .isOnQuest 1719
 step << Warrior
     .goto 1413/1,-4330.58,-1708.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Klannoc Macleod|r

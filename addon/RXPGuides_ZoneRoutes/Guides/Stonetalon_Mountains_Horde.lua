@@ -40,11 +40,19 @@ step
     >>Click the |cRXP_PICK_Mound of Dirt|r
     .turnin 79980 >>Turn in Scramble
 step
-    .goto 1442/1,-602.23,1428.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Braug Dimspirit|r
-    .turnin 1152 >>Turn in Test of Lore
-    .target Braug Dimspirit
-    .isOnQuest 1152
+    .goto 1442/1,939.92,831.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
+    .accept 6421 >>Accept Boulderslide Ravine
+    .target Mor'rogal
+step
+    .goto 1442/1,-342.44,129.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaya Flathoof|r
+    .accept 6523 >>Accept Protect Kaya
+    .target Kaya Flathoof
+step
+    .goto 1442/1,-519.22,-41.64
+    >>Kaya Escorted to Camp Aparaje
+    .complete 6523,1 --Kaya Escorted to Camp Aparaje
 step
     .goto 1442/1,-233.54,-177.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xen'Zilla|r
@@ -140,6 +148,29 @@ step
     .target Jeeda
     .isOnQuest 1095
 step
+    #loop
+    .goto 1442/1,246.49,-49.13,0
+    .goto 1442/1,246.49,-49.13,40,0
+    .goto 1442/1,271.88,-93.74,40,0
+    .goto 1442/1,377.36,-123.69,40,0
+    .goto 1442/1,384.20,-83.64,40,0
+    .goto 1442/1,419.36,-53.68,40,0
+    .goto 1442/1,441.34,-4.19,40,0
+    .goto 1442/1,354.90,-11.03,40,0
+    .goto 1442/1,333.90,-62.48,40,0
+    .goto 1442/1,301.67,-32.19,40,0
+    >>Pick up |cRXP_PICK_Resonite Crystal|r from the ground
+    .complete 6421,1 --Resonite Crystal (10)
+step
+    .goto 1442/1,402.76,2.00
+    >>Investigate Cave in Boulderslide Ravine
+    .complete 6421,2 --Investigate Cave in Boulderslide Ravine
+step
+    .goto 1442/1,939.92,831.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
+    .turnin 6421 >>Turn in Boulderslide Ravine
+    .target Mor'rogal
+step
     .goto 1442/1,928.20,1015.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra Windfield|r
     .turnin 6401 >>Turn in Kaya's Alive
@@ -171,13 +202,27 @@ step
     .target Nizzik
     .isOnQuest 1096
 step
+    .goto 1442/1,-602.23,1428.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Braug Dimspirit|r
+    .turnin 1152 >>Turn in Test of Lore
+    .target Braug Dimspirit
+    .isOnQuest 1152
+step
     .goto 1442/1,-394.20,-272.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Jin'Zil|r
     .turnin 1060 >>Turn in Letter to Jin'Zil
     .target Witch Doctor Jin'Zil
     .isOnQuest 1060
 step
+    +|cRXP_WARN_That is all of Stonetalon Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_The Barrens|r: Protect Kaya
+step
     .xp 18 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 18.|r Come back to this guide then
+step
+    .goto 1442/1,939.92,831.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
+    .accept 6481 >>Accept Earthen Arise
+    .target Mor'rogal
 step
     .goto 1442/1,365.16,878.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
@@ -205,53 +250,25 @@ step
     .accept 1094 >>Accept Further Instructions
     .target Ziz Fizziks
 step
-    .goto 1442/1,939.92,831.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
-    .accept 6481 >>Accept Earthen Arise
-    .target Mor'rogal
-    .isQuestTurnedIn 6421 --any of: Boulderslide Ravine
-    .xp <14,1
-step
-    .goto 1442/1,442.80,5.58
-    >>Kill |cRXP_ENEMY_Goggeroc|r
-    .complete 6481,1 --Goggeroc slain (1)
-    .mob Goggeroc
-    .isOnQuest 6481
-step
     .goto 1442/1,-331.21,-173.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darn Talongrip|r
     .accept 6542 >>Accept Report to Kadrak
     .target Darn Talongrip
 step
-    .goto 1442/1,-263.82,962.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
-    .accept 1092 >>Accept Gerenzo's Orders
-    .target Piznik
-    .isQuestTurnedIn 1090 --any of: Gerenzo's Orders
-    .xp <17,1
-step
-    .goto 1442/1,365.16,878.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
-    .turnin 1092 >>Turn in Gerenzo's Orders
-    .target Ziz Fizziks
-    .isOnQuest 1092
+    .goto 1442/1,442.80,5.58
+    >>Kill |cRXP_ENEMY_Goggeroc|r
+    .complete 6481,1 --Goggeroc slain (1)
+    .mob Goggeroc
 step
     .goto 1442/1,939.92,831.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
     .turnin 6481 >>Turn in Earthen Arise
     .target Mor'rogal
-    .isOnQuest 6481
 step
     +|cRXP_WARN_That is all of Stonetalon Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_The Barrens|r: Report to Kadrak, Further Instructions
 step
     .xp 21 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 21.|r Come back to this guide then
-step
-    .goto 1442/1,402.76,1231.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
-    .turnin 78270 >>Turn in Goblin Lockpicks
-    .target Veenix
-    .isOnQuest 78270
 step << Warlock
     .goto 1442/1,-331.21,-181.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'zigla|r
@@ -259,6 +276,33 @@ step << Warlock
     .target Ken'zigla
     .isQuestTurnedIn 1510 --any of: News of Dogran
     .xp <20,1
+step
+    .goto 1442/1,-263.82,962.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
+    .accept 1090 >>Accept Gerenzo's Orders
+    .target Piznik
+step
+    .goto 1442/1,-263.82,962.92
+    >>Get the mysterious ore from Piznik after he finishes mining it.
+    .complete 1090,1 --Piznik
+    .target Piznik
+step
+    .goto 1442/1,-263.82,962.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
+    .turnin 1090 >>Turn in Gerenzo's Orders
+    .accept 1092 >>Accept Gerenzo's Orders
+    .target Piznik
+step
+    .goto 1442/1,365.16,878.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
+    .turnin 1092 >>Turn in Gerenzo's Orders
+    .target Ziz Fizziks
+step
+    .goto 1442/1,402.76,1231.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
+    .turnin 78270 >>Turn in Goblin Lockpicks
+    .target Veenix
+    .isOnQuest 78270
 step
     .goto 1442/1,928.20,1015.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra Windfield|r
