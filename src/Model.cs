@@ -150,6 +150,8 @@ public sealed class Obj
 public sealed class Quest
 {
     public QuestRow Row = null!; public QuestFix Fix = new();
+    /// <summary>Starts the moment you accept it: an escort or a short timer (from the data), unless the zone file says otherwise.</summary>
+    public bool Tight => Fix.Tight ?? (Row.Escort || Row.TimedShort);
     public int Id => Row.Id; public string Name => Row.Name; public int Req => Row.ReqLevel; public int Level => Row.Level;
     public string Tag = ""; public ulong Elig;
     public Ent? Start, End; public StartItemFix? StartItem;
@@ -537,7 +539,7 @@ public sealed class ZoneModel
         // the zone's own level range, from the quests filed under it
         bool Mine(QuestRow q) => q.ZoneOrSort > 0 && (q.ZoneOrSort == Main.Id || Data.Parent(q.ZoneOrSort) == Main.Id);
         bool ForUs(QuestRow q) => q.Races == 0 || (q.Races & FactionMask) != 0;
-        var own = Data.Quests.Values.Where(q => Mine(q) && ForUs(q) && !q.Repeatable && !q.EventOnly).Select(q => q.Level).OrderBy(l => l).ToList();
+        var own = Data.Quests.Values.Where(q => Mine(q) && ForUs(q) && !q.Repeatable).Select(q => q.Level).OrderBy(l => l).ToList();
         if (own.Count >= 5)
         {
             LevelLo = own[0];
@@ -566,7 +568,6 @@ public sealed class ZoneModel
             {
                 string? reason =
                     row.Repeatable ? "repeatable" :
-                    row.EventOnly ? "world-event quest" :
                     row.Parent != 0 ? $"helper for {Data.Quests.GetValueOrDefault(row.Parent)?.Name ?? "quest " + row.Parent}" :
                     row.NeedsSkill ? "needs a profession" :
                     row.NeedsReputation ? "needs reputation" :
@@ -1021,7 +1022,7 @@ public sealed class ZoneModel
             if (a != null) t?.Pre.Add(a.Id);
             // "tight": what the quest is about starts the moment you accept it (an escort, a timer): its first objective, or for a
             // quest with nothing to do but get somewhere in time (a timed delivery), its hand-in, comes straight after the pickup
-            if (q.Fix.Tight && a != null)
+            if (q.Tight && a != null)
             {
                 if (os.Count > 0) os[0].Tight = a.Id;
                 else if (t != null && !t.Deferred) t.Tight = a.Id;

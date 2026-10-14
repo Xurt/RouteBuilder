@@ -485,7 +485,7 @@ public sealed class Emitter
             double lvl = Game.FracLevel(xp);
             foreach (var t in m.Tasks)
             {
-                if (done.Contains(t.Id) || t.Kind != TaskKind.Accept || t.Ent == null || t.Cond || t.Q!.Fix.Tight || planned.GetValueOrDefault(t.Id) <= i + 1) continue;
+                if (done.Contains(t.Id) || t.Kind != TaskKind.Accept || t.Ent == null || t.Cond || t.Q!.Tight || planned.GetValueOrDefault(t.Id) <= i + 1) continue;
                 if (planned.TryGetValue(t.Id, out int pu) && visitOf[pu] == visitOf[i]) continue;      // picked up later on this same visit anyway
                 if (t.Pre.Any(p => !done.Contains(p) && !m.Tasks[p].Deferred) || (t.PreAny.Count > 0 && !t.PreAny.Any(done.Contains))) continue;
                 if (t.MinLevel <= 1 || !(t.MinLevel - 0.5 <= lvl && lvl < t.MinLevel + Tuning.Safety)) continue;

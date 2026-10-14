@@ -86,7 +86,8 @@ public sealed class QuestFix
     public List<string> TurninPreLines = new(), TurninExtraLines = new();
     public string? TurninText, AcceptText;
     public int? AcceptFlags;
-    public bool Tight;                             // the first objective must directly follow the pickup (escorts)
+    public bool? Tight;                            // the first objective (or a delivery's hand-in) must directly follow the pickup;
+                                                   // left out: yes for escorts and quests with a short time limit, no otherwise
     public bool Optional;                          // steps hide themselves if the player is not on the quest
     public bool NoTurnin;                          // pick up only
     public StartItemFix? StartItem;

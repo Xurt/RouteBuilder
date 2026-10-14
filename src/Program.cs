@@ -80,7 +80,7 @@ public static class Program
     {
         long mask = Game.Races(faction).Aggregate(0L, (m, r) => m | r.Bit);
         var rows = new List<(AreaInfo, int, int, int)>();
-        foreach (var grp in d.Quests.Values.Where(q => q.ZoneOrSort > 0 && !q.Repeatable && !q.EventOnly && (q.Races == 0 || (q.Races & mask) != 0)).GroupBy(q => d.Parent(q.ZoneOrSort)))
+        foreach (var grp in d.Quests.Values.Where(q => q.ZoneOrSort > 0 && !q.Repeatable && (q.Races == 0 || (q.Races & mask) != 0)).GroupBy(q => d.Parent(q.ZoneOrSort)))
         {
             if (d.Instances.Contains(grp.Key) || !d.Areas.TryGetValue(grp.Key, out var a)) continue;
             var lv = grp.Select(q => q.Level).OrderBy(l => l).ToList();

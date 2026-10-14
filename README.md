@@ -192,8 +192,8 @@ build; the folder is rebuilt from scratch each time.
 ## How a zone is planned
 
 * **Which quests.** Everything that starts or ends in the zone (or its capital city) for the faction,
-  within the zone's level range. Repeatable, event, profession, reputation and dungeon quests are left
-  out. The report lists every quest left out with the reason.
+  within the zone's level range. Repeatable, holiday, profession, reputation and dungeon quests are left
+  out; escorts, exploration and other scripted quests are planned like any other. The report lists every quest left out with the reason.
 * **Quests that leave the zone** are picked up and carried. The last step of the guide lists what is
   still in the log and where each one goes, so you can pick the next zone by it.
 * **Quests that arrive from another zone** get a hand-in step that only shows if you have the quest.

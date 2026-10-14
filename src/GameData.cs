@@ -23,7 +23,44 @@ public sealed class QuestRow
     public int ZoneOrSort, NextInChain, Flags, SpecialFlags, Parent, BreadcrumbFor;
     public bool NeedsSkill, NeedsReputation;
     public bool Repeatable => (SpecialFlags & 1) != 0;
-    public bool EventOnly => (SpecialFlags & 2) != 0;
+    // SpecialFlags 2 is "completed by exploring or by a scripted event" (escorts, "reach this spot", wells to cleanse), not a
+    // holiday: those are told apart by their quest-log category (zoneOrSort below 0), which the zone filter already leaves out
+    public bool ScriptedOrExplore => (SpecialFlags & 2) != 0;
+    // Party-accept plus scripted: escorts, and scenes that play out at the quest giver ("listen to his story", a duel). The same
+    // two flags are on quests that send you off with something to use somewhere (a totem for a well, a fogger to place) or a
+    // place to find (an object): those are not done on the spot.
+    public bool Escort => (Flags & 2) != 0 && ScriptedOrExplore && SourceItem == 0 && UseObjects.Count == 0;
+
+    // The database has no time-limit field, but the quest text says so: "within 15 minutes", "before the time limit is up",
+    // "before the incense burns to ash in ten minutes". Minutes of the limit, 0 when the text gives none, null when not timed.
+    static readonly string Num = "(\\d+|one|two|three|four|five|six|seven|eight|nine|ten|twelve|fifteen|twenty|thirty|an?)";
+    static readonly System.Text.RegularExpressions.Regex[] TimedRx =
+    {
+        new($@"\b(?:within|in under|in)\s+{Num}\s+(minutes?|hours?)\b", System.Text.RegularExpressions.RegexOptions.IgnoreCase),
+        new($@"\b{Num}\s+(minutes?|hours?)\s+(?:before|to)\b", System.Text.RegularExpressions.RegexOptions.IgnoreCase),
+        new(@"\btime limit\b|\btimer\b|\bbefore (?:the|it|they|its)\b[^.!]{0,40}\b(?:runs? out|expires?|burns?|gets? cold|is up)\b", System.Text.RegularExpressions.RegexOptions.IgnoreCase),
+    };
+    public double? TimeLimit
+    {
+        get
+        {
+            string all = string.Join(" ", Text);
+            double? found = null;
+            foreach (var rx in TimedRx)
+                foreach (System.Text.RegularExpressions.Match m in rx.Matches(all))
+                {
+                    if (m.Groups.Count < 3 || !m.Groups[1].Success) { found ??= 0; continue; }
+                    string w = m.Groups[1].Value.ToLowerInvariant();
+                    double n = double.TryParse(w, out double d) ? d : Array.IndexOf(new[] { "a", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten" }, w) is int k && k >= 0 ? Math.Max(1, k)
+                             : w switch { "an" => 1, "twelve" => 12, "fifteen" => 15, "twenty" => 20, "thirty" => 30, _ => 0 };
+                    double minutes = m.Groups[2].Value.StartsWith("hour", StringComparison.OrdinalIgnoreCase) ? n * 60 : n;
+                    found = found is > 0 ? Math.Min(found.Value, minutes) : minutes;
+                }
+            return found;
+        }
+    }
+    /// <summary>A limit short enough to plan around (under an hour): do it straight after the pickup.</summary>
+    public bool TimedShort => TimeLimit is { } t && t < 60;
     public bool HasObjectives => KillNpcs.Count + UseObjects.Count + NeedItems.Count + KillCredits.Count > 0 || TriggerText != null || HasOtherObjectives;
 }
 
