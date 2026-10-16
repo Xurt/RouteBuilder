@@ -30,6 +30,8 @@ param(
     [switch]$Update,
     # don't run Make-Addon.ps1 at the end
     [switch]$NoAddon,
+    # don't write suggested next zones into the guides (RouteBuilder link)
+    [switch]$NoLink,
     [double]$Effort = 1
 )
 
@@ -124,6 +126,13 @@ if ($problems.Count) { Write-Host "Built, but the report lists problems: $($prob
 if ($failed.Count) { Write-Host "Not built (see rebuild.log): $($failed -join ', ')" -ForegroundColor Red }
 if ($skipped.Count) { Write-Host "Skipped, built with their zone: $($skipped -join ', ')" }
 if ($noRxp.Count) { Write-Host "RestedXP's guides have nothing for these, so their lock was kept as it was: $($noRxp -join ', ')" }
+
+# suggested next zones, from every guide in the folder (also those built before this run)
+if (-not $NoLink) {
+    Write-Host ''
+    Write-Host 'Suggesting next zones (link)...'
+    $null = Invoke-Step 'link' @($routeBuilder, 'link') '^\s+\S.*: (at |no other)|^Error|^No guide'
+}
 
 if (-not $NoAddon) {
     Write-Host ''

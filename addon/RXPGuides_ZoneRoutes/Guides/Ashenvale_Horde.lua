@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 19, 22, 25, 32).
+-- Sections (the guide starts at the one for your level): start from 19; around Karang Amakkar from 22; part 3 from 25; part 4 from 32.
 -- Edit zones/Ashenvale.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,21 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 19-30 Ashenvale
 
+step
+    .xp <22,1,RBSection1_1
+    .xp 22 >>Finding the place in this guide for your level
+step
+    .xp <25,1,RBSection2_1
+    .xp 25 >>Finding the place in this guide for your level
+step
+    .xp <32,1,RBSection3_1
+    .xp 32 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection4_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Ashenvale: start|r (planned from level 19)
 step
     .goto 1440/1,-802.73,1966.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
@@ -196,7 +212,13 @@ step
     .fp Splintertree Post >> Get the Splintertree Post flight path
     .target Vhulgra
 step
+    +|cRXP_WARN_Until level 22, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 1.3 levels of quests, starting around Tonga Runetotem). Then come back to this Ashenvale guide --RouteBuilder:next
+step
     .xp 22 >>|cRXP_WARN_The rest of Ashenvale is planned from level 22.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Ashenvale: around Karang Amakkar|r (planned from level 22)
 step
     .goto 1440/1,-631.46,2309.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Va'xug Firefure|r
@@ -480,6 +502,10 @@ step
 step
     .xp 25 >>|cRXP_WARN_The rest of Ashenvale is planned from level 25.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Ashenvale: part 3|r (planned from level 25)
+step
     .goto 1440/1,-2554.65,2310.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani Thunderheart|r
     .turnin 6383 >>Turn in The Ashenvale Hunt
@@ -596,6 +622,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karang Amakkar|r
     .accept 6621 >>Accept King of the Foulweald
     .target Karang Amakkar
+    .isQuestTurnedIn 216 --any of: Between a Rock and a Thistlefur
 step
     #completewith Along16
     >>As you go: Kill |cRXP_ENEMY_Saltspittle Oracle|r and loot |cRXP_LOOT_Shredder Operating Manual - Page 11|r. |cRXP_WARN_Anything left is finished later|r
@@ -612,6 +639,7 @@ step
     >>Kill |cRXP_ENEMY_Chief Murgut|r and loot |cRXP_LOOT_Murgut's Totem|r. It can also be picked up from |cRXP_PICK_Murgut's Totem Basket|r on the ground
     .complete 6621,1 --Murgut's Totem (1)
     .mob Chief Murgut
+    .isOnQuest 6621
 step
     #loop
     .goto 1440/1,483.23,2982.05,0
@@ -628,11 +656,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karang Amakkar|r
     .turnin 6621 >>Turn in King of the Foulweald
     .target Karang Amakkar
+    .isOnQuest 6621
 step
     +|cRXP_WARN_That is all of Ashenvale for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: The Lost Pages
 step
     .xp 32 >>|cRXP_WARN_The rest of Ashenvale is planned from level 32.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Ashenvale: part 4|r (planned from level 32)
 step
     .goto 1440/1,-2417.40,2073.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locke Okarr|r

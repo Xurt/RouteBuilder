@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 41, 44, 47).
+-- Sections (the guide starts at the one for your level): around Latronicus Moonspear from 41; part 2 from 44; part 3 from 47.
 -- Edit zones/Feralas.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 41-51 Feralas
 
+step
+    .xp <44,1,RBSection1_1
+    .xp 44 >>Finding the place in this guide for your level
+step
+    .xp <47,1,RBSection2_1
+    .xp 47 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Feralas: around Latronicus Moonspear|r (planned from level 41)
 step
     .goto 1444/1,-773.02,-4497.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kristy Grant|r
@@ -260,6 +273,10 @@ step
 step
     .xp 44 >>|cRXP_WARN_The rest of Feralas is planned from level 44.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Feralas: part 2|r (planned from level 44)
+step
     .goto 1444/1,858.84,-4481.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kindal Moonweaver|r
     .accept 3841 >>Accept An Orphan Looking For a Home
@@ -327,22 +344,36 @@ step
     .goto 1444/1,432.80,-5319.03
     >>Click the |cRXP_PICK_Zukk'ash Pod|r
     .accept 4265 >>Accept Freed from the Hive
+    .isQuestTurnedIn 4135 --any of: The Writhing Deep
 step
     .goto 1444/1,428.63,-5324.59
     >>Free Raschal.
     .complete 4265,1 --Free Raschal.
+    .isOnQuest 4265
 step
     .goto 1444/1,3227.40,-4457.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ginro Hearthkindle|r
     .turnin 4265 >>Turn in Freed from the Hive
+    .target Ginro Hearthkindle
+    .isOnQuest 4265
+step
+    .goto 1444/1,3227.40,-4457.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ginro Hearthkindle|r
     .accept 4266 >>Accept A Hero's Welcome
     .target Ginro Hearthkindle
+    .isQuestTurnedIn 4265 --any of: Freed from the Hive
 step
     .goto 1444/1,3337.21,-4505.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shandris Feathermoon|r
     .turnin 4266 >>Turn in A Hero's Welcome
+    .target Shandris Feathermoon
+    .isOnQuest 4266
+step
+    .goto 1444/1,3337.21,-4505.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shandris Feathermoon|r
     .accept 4267 >>Accept Rise of the Silithid
     .target Shandris Feathermoon
+    .isQuestTurnedIn 4266 --any of: A Hero's Welcome
 step
     .goto 1444/1,3229.48,-4479.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angelas Moonbreeze|r
@@ -413,26 +444,39 @@ step
 step
     .xp 47 >>|cRXP_WARN_The rest of Feralas is planned from level 47.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Feralas: part 3|r (planned from level 47)
+step
     .goto 1444/1,3330.26,-4505.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Latronicus Moonspear|r
     .accept 2870 >>Accept Against Lord Shalzaru
     .target Latronicus Moonspear
+    .isQuestTurnedIn 2869 --any of: Against the Hatecrest
 step
     .goto 1444/1,3460.92,-5631.31
     >>Kill |cRXP_ENEMY_Lord Shalzaru|r and loot |cRXP_LOOT_Mysterious Relic|r
     .complete 2870,1 --Mysterious Relic (1)
     .mob Lord Shalzaru
+    .isOnQuest 2870
 step
     .goto 1444/1,3330.26,-4505.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Latronicus Moonspear|r
     .turnin 2870 >>Turn in Against Lord Shalzaru
+    .target Latronicus Moonspear
+    .isOnQuest 2870
+step
+    .goto 1444/1,3330.26,-4505.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Latronicus Moonspear|r
     .accept 2871 >>Accept Delivering the Relic
     .target Latronicus Moonspear
+    .isQuestTurnedIn 2870 --any of: Against Lord Shalzaru
 step
     .goto 1444/1,3351.11,-4454.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vestia Moonspear|r
     .turnin 2871 >>Turn in Delivering the Relic
     .target Vestia Moonspear
+    .isOnQuest 2871
 step
     .goto 1444/1,3229.48,-4479.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angelas Moonbreeze|r
@@ -443,6 +487,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pratt McGrubben|r
     .accept 7733 >>Accept Improved Quality
     .target Pratt McGrubben
+    .isQuestTurnedIn 2821 --any of: The Mark of Quality
 step
     .goto 1444/1,3232.96,-4474.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Troyas Moonbreeze|r
@@ -509,6 +554,7 @@ step
     .mob Elder Rage Scar
     .mob Ferocious Rage Scar
     .mob Lurking Feral Scar
+    .isOnQuest 7733
 step
     .goto 1444/1,2305.83,-3551.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gregan Brewspewer|r
@@ -536,10 +582,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shay Leafrunner|r
     .accept 2845 >>Accept Wandering Shay
     .target Shay Leafrunner
+    .isQuestTurnedIn 2844 --any of: The Giant Guardian
 step
     .goto 1444/1,2783.29,-2843.44
     >>Open the |cRXP_PICK_Shay's Chest|r. Loot it for |cRXP_LOOT_Shay's Bell|r
     .complete 2845,1 --Shay's Bell (1)
+    .isOnQuest 2845
 step
     .goto 1444/1,2818.04,-2931.01
     >>Open the |cRXP_PICK_Flame of Lahassa|r. Loot it for |cRXP_LOOT_Lahassa Essence|r
@@ -565,11 +613,13 @@ step
     .goto 1444/1,2499.73,-3379.05
     >>Take Shay Leafrunner to Rockbiter's camp
     .complete 2845,2 --Take Shay Leafrunner to Rockbiter's camp
+    .isOnQuest 2845
 step
     .goto 1444/1,2495.56,-3386.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rockbiter|r
     .turnin 2845 >>Turn in Wandering Shay
     .target Rockbiter
+    .isOnQuest 2845
 step
     .goto 1444/1,3232.96,-4474.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Troyas Moonbreeze|r
@@ -581,6 +631,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pratt McGrubben|r
     .turnin 7733 >>Turn in Improved Quality
     .target Pratt McGrubben
+    .isOnQuest 7733
 step
     .goto 1444/1,3289.25,-4381.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shyria|r

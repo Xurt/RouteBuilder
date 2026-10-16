@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 8 parts with a level check between them (from level 35, 38, 41, 44, 47, 50, 53, 56).
+-- Sections (the guide starts at the one for your level): start from 35; part 2 from 38; around Tok'Kar from 41; part 4 from 44; part 5 from 47; part 6 from 50; part 7 from 53; part 8 from 56.
 -- Edit zones/Swamp of Sorrows.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,33 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 35-57 Swamp of Sorrows
 
+step
+    .xp <38,1,RBSection1_1
+    .xp 38 >>Finding the place in this guide for your level
+step
+    .xp <41,1,RBSection2_1
+    .xp 41 >>Finding the place in this guide for your level
+step
+    .xp <44,1,RBSection3_1
+    .xp 44 >>Finding the place in this guide for your level
+step
+    .xp <47,1,RBSection4_1
+    .xp 47 >>Finding the place in this guide for your level
+step
+    .xp <50,1,RBSection5_1
+    .xp 50 >>Finding the place in this guide for your level
+step
+    .xp <53,1,RBSection6_1
+    .xp 53 >>Finding the place in this guide for your level
+step
+    .xp <56,1,RBSection7_1
+    .xp 56 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection8_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Swamp of Sorrows: start|r (planned from level 35)
 step
     .goto 1435/0,-2800.25,-10449.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r
@@ -324,6 +352,10 @@ step
 step
     .xp 38 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 38.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Swamp of Sorrows: part 2|r (planned from level 38)
+step
     .goto 1435/0,-3248.22,-10495.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dar|r
     .accept 698 >>Accept Lack of Surplus
@@ -371,7 +403,13 @@ step
     +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Dustwallow Marsh|r: Cortello's Riddle
 step
+    +|cRXP_WARN_Until level 41, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Far Seer Mok'thardin). Then come back to this Swamp of Sorrows guide --RouteBuilder:next
+step
     .xp 41 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 41.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Swamp of Sorrows: around Tok'Kar|r (planned from level 41)
 step
     .goto 1435/0,-3248.22,-10495.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dar|r
@@ -387,6 +425,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tok'Kar|r
     .accept 699 >>Accept Lack of Surplus
     .target Tok'Kar
+    .isQuestTurnedIn 698 --any of: Lack of Surplus
 step
     #loop
     .goto 1435/0,-3971.90,-10591.85,0
@@ -421,38 +460,73 @@ step
     >>Kill |cRXP_ENEMY_Sawtooth Snappers|r. Loot them for |cRXP_LOOT_Sawtooth Snapper Claw|r
     .complete 699,1 --Sawtooth Snapper Claw (6)
     .mob Sawtooth Snapper
+    .isOnQuest 699
 step
     .goto 1435/0,-4088.19,-10859.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tok'Kar|r
     .turnin 699 >>Turn in Lack of Surplus
+    .target Tok'Kar
+    .isOnQuest 699
+step
+    .goto 1435/0,-4088.19,-10859.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tok'Kar|r
     .accept 1422 >>Accept Threat From the Sea
     .target Tok'Kar
+    .isQuestTurnedIn 699 --any of: Lack of Surplus
 step
     .goto 1435/0,-4144.16,-10850.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katar|r
     .turnin 1422 >>Turn in Threat From the Sea
+    .target Katar
+    .isOnQuest 1422
+step
+    .goto 1435/0,-4144.16,-10850.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katar|r
     .accept 1426 >>Accept Threat From the Sea
     .target Katar
+    .isQuestTurnedIn 1422 --any of: Threat From the Sea
+step
+    #loop
+    .goto 1435/0,-4220.77,-10854.26,0
+    .goto 1435/0,-4220.77,-10854.26,40,0
+    .goto 1435/0,-4215.73,-10920.93,40,0
+    .goto 1435/0,-4207.01,-10955.03,40,0
+    .goto 1435/0,-4142.56,-10974.76,40,0
+    .goto 1435/0,-4156.09,-10926.44,40,0
+    >>Kill |cRXP_ENEMY_Marsh Murlocs|r
+    .complete 1426,1 --Marsh Murloc slain (10)
+    .mob Marsh Murloc
+    .isOnQuest 1426
 step
     #loop
     .goto 1435/0,-4180.17,-10888.82,0
     .goto 1435/0,-4180.17,-10888.82,40,0
-    .goto 1435/0,-4142.56,-10974.76,40,0
-    .goto 1435/0,-4259.77,-11000.14,40,0
-    .goto 1435/0,-4190.95,-11107.18,40,0
-    .goto 1435/0,-4310.23,-11094.95,40,0
-    .goto 1435/0,-4452.44,-11110.24,40,0
-    .goto 1435/0,-4397.39,-11003.20,40,0
-    .goto 1435/0,-4333.17,-10917.57,40,0
+    .goto 1435/0,-4252.20,-10788.96,40,0
     .goto 1435/0,-4290.04,-10775.66,40,0
-    >>Kill |cRXP_ENEMY_Marsh Murlocs|r
+    .goto 1435/0,-4274.22,-10809.76,40,0
+    .goto 1435/0,-4291.88,-10846.00,40,0
+    .goto 1435/0,-4245.77,-10846.92,40,0
+    .goto 1435/0,-4253.57,-10874.14,40,0
+    .goto 1435/0,-4221.23,-10885.76,40,0
+    .goto 1435/0,-4186.37,-10954.27,40,0
     >>Kill |cRXP_ENEMY_Marsh Inkspewers|r
-    >>Kill |cRXP_ENEMY_Monstrous Crawlers|r. Loot them for |cRXP_LOOT_Monstrous Crawler Leg|r
-    .complete 1426,1 --Marsh Murloc slain (10)
     .complete 1426,2 --Marsh Inkspewer slain (10)
-    .complete 1430,1 --Monstrous Crawler Leg (10)
-    .mob Marsh Murloc
     .mob Marsh Inkspewer
+    .isOnQuest 1426
+step
+    #loop
+    .goto 1435/0,-4218.48,-10917.57,0
+    .goto 1435/0,-4218.48,-10917.57,40,0
+    .goto 1435/0,-4333.17,-10917.57,40,0
+    .goto 1435/0,-4415.74,-11024.61,40,0
+    .goto 1435/0,-4452.44,-11110.24,40,0
+    .goto 1435/0,-4351.52,-11107.18,40,0
+    .goto 1435/0,-4319.40,-11033.78,40,0
+    .goto 1435/0,-4259.77,-11000.14,40,0
+    .goto 1435/0,-4250.59,-11079.66,40,0
+    .goto 1435/0,-4145.08,-11046.02,40,0
+    >>Kill |cRXP_ENEMY_Monstrous Crawlers|r. Loot them for |cRXP_LOOT_Monstrous Crawler Leg|r
+    .complete 1430,1 --Monstrous Crawler Leg (10)
     .mob Monstrous Crawler
 step
     #loop
@@ -467,17 +541,25 @@ step
     >>Kill |cRXP_ENEMY_Marsh Flesheaters|r
     .complete 1426,3 --Marsh Flesheater slain (10)
     .mob Marsh Flesheater
+    .isOnQuest 1426
 step
     .goto 1435/0,-4144.16,-10850.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katar|r
     .turnin 1426 >>Turn in Threat From the Sea
+    .target Katar
+    .isOnQuest 1426
+step
+    .goto 1435/0,-4144.16,-10850.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katar|r
     .accept 1427 >>Accept Threat From the Sea
     .target Katar
+    .isQuestTurnedIn 1426 --any of: Threat From the Sea
 step
     .goto 1435/0,-4088.19,-10859.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tok'Kar|r
     .turnin 1427 >>Turn in Threat From the Sea
     .target Tok'Kar
+    .isOnQuest 1427
 step
     .goto 1435/0,-3248.22,-10495.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dar|r
@@ -501,36 +583,59 @@ step
 step
     .xp 44 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 44.|r Come back to this guide then
 step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Swamp of Sorrows: part 4|r (planned from level 44)
+step
     .goto 1435/0,-4144.16,-10850.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katar|r
     .accept 1428 >>Accept Continued Threat
     .target Katar
+    .isQuestTurnedIn 1427 --any of: Threat From the Sea
 step
     #loop
     .goto 1435/0,-3737.02,-10858.69,0
     .goto 1435/0,-3737.02,-10858.69,40,0
     .goto 1435/0,-3701.93,-10868.63,40,0
-    .goto 1435/0,-3671.42,-10850.59,40,0
-    .goto 1435/0,-3619.81,-10898.91,40,0
-    .goto 1435/0,-3610.18,-10944.48,40,0
-    .goto 1435/0,-3653.53,-10968.49,40,0
+    .goto 1435/0,-3652.38,-10859.46,40,0
+    .goto 1435/0,-3697.80,-10853.65,40,0
+    >>Kill |cRXP_ENEMY_Marsh Inkspewers|r
+    .complete 1428,1 --Marsh Inkspewer slain (10)
+    .mob Marsh Inkspewer
+    .isOnQuest 1428
+step
+    #loop
+    .goto 1435/0,-3652.38,-10861.29,0
+    .goto 1435/0,-3652.38,-10861.29,40,0
+    .goto 1435/0,-3645.04,-10883.31,40,0
+    .goto 1435/0,-3612.93,-10915.27,40,0
     .goto 1435/0,-3671.42,-11016.35,40,0
     .goto 1435/0,-3707.66,-10981.18,40,0
+    .goto 1435/0,-3675.32,-10973.99,40,0
     .goto 1435/0,-3673.03,-10919.25,40,0
-    >>Kill |cRXP_ENEMY_Marsh Inkspewers|r
     >>Kill |cRXP_ENEMY_Marsh Flesheaters|r
-    >>Kill |cRXP_ENEMY_Marsh Oracles|r
-    .complete 1428,1 --Marsh Inkspewer slain (10)
     .complete 1428,2 --Marsh Flesheater slain (10)
-    .complete 1428,3 --Marsh Oracle slain (10)
-    .mob Marsh Inkspewer
     .mob Marsh Flesheater
+    .isOnQuest 1428
+step
+    #loop
+    .goto 1435/0,-3681.51,-10947.84,0
+    .goto 1435/0,-3681.51,-10947.84,40,0
+    .goto 1435/0,-3653.53,-10968.49,40,0
+    .goto 1435/0,-3610.18,-10944.48,40,0
+    .goto 1435/0,-3631.51,-10910.53,40,0
+    .goto 1435/0,-3619.81,-10898.91,40,0
+    .goto 1435/0,-3671.42,-10850.59,40,0
+    >>Kill |cRXP_ENEMY_Marsh Oracles|r
+    .complete 1428,3 --Marsh Oracle slain (10)
     .mob Marsh Oracle
+    .isOnQuest 1428
 step
     .goto 1435/0,-4144.16,-10850.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katar|r
     .turnin 1428 >>Turn in Continued Threat
     .target Katar
+    .isOnQuest 1428
 step
     .goto 1435/0,-3273.00,-10429.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thultazor|r
@@ -571,6 +676,10 @@ step
     .isQuestComplete 93663
 step
     .xp 47 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 47.|r Come back to this guide then
+step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_Swamp of Sorrows: part 5|r (planned from level 47)
 step
     .goto 1435/0,-3009.44,-10632.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
@@ -613,10 +722,15 @@ step
 step
     .xp 50 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 50.|r Come back to this guide then
 step
+    #label RBSection6_1
+    #completewith next
+    +|cRXP_WARN_Swamp of Sorrows: part 6|r (planned from level 50)
+step
     .goto 1435/0,-3254.42,-10498.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bengor|r
     .accept 2623 >>Accept The Swamp Talker
     .target Bengor
+    .isQuestTurnedIn 2622 --any of: The Missing Orders
 step
     #loop
     .goto 1435/0,-3654.22,-10859.46,0
@@ -632,11 +746,13 @@ step
     >>Kill |cRXP_ENEMY_Swamp Talker|r and loot |cRXP_LOOT_Warchief's Orders|r
     .complete 2623,1 --Warchief's Orders (1)
     .mob Swamp Talker
+    .isOnQuest 2623
 step
     .goto 1435/0,-3009.44,-10632.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
     .turnin 2623 >>Turn in The Swamp Talker
     .target Fallen Hero of the Horde
+    .isOnQuest 2623
 step
     .goto 1435/0,-2536.47,-10717.55
     >>Kill |cRXP_ENEMY_Itharius|r and loot |cRXP_LOOT_Oathstone of Ysera's Dragonflight|r. Use it to start the quest
@@ -676,6 +792,10 @@ step
     >>|cRXP_FRIENDLY_Winterspring|r: In Eranikus' Own Words
 step << Warrior
     .xp 53 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 53.|r Come back to this guide then
+step
+    #label RBSection7_1
+    #completewith next
+    +|cRXP_WARN_Swamp of Sorrows: part 7|r (planned from level 53)
 step << Warrior
     .goto 1435/0,-3009.44,-10632.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
@@ -731,21 +851,33 @@ step
 step
     .xp 56 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 56.|r Come back to this guide then
 step
+    #label RBSection8_1
+    #completewith next
+    +|cRXP_WARN_Swamp of Sorrows: part 8|r (planned from level 56)
+step
     .goto 1435/0,-3009.44,-10632.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
     .accept 2801 >>Accept A Tale of Sorrow
     .target Fallen Hero of the Horde
+    .isQuestTurnedIn 2623,2783 --any of: The Swamp Talker, Petty Squabbles
 step
     .goto 1435/0,-3009.44,-10632.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
     .complete 2801,1 --Fallen Hero of the Horde
     .target Fallen Hero of the Horde
+    .isOnQuest 2801
 step
     .goto 1435/0,-3009.44,-10632.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
     .turnin 2801 >>Turn in A Tale of Sorrow
+    .target Fallen Hero of the Horde
+    .isOnQuest 2801
+step
+    .goto 1435/0,-3009.44,-10632.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
     .accept 2681 >>Accept The Stones That Bind Us
     .target Fallen Hero of the Horde
+    .isQuestTurnedIn 2801 --any of: A Tale of Sorrow
 step
     .goto 1435/0,-3009.44,-10632.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r

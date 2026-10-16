@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 55, 58).
+-- Sections (the guide starts at the one for your level): around Windcaller Proudhorn from 55; around Commander Mar'alith from 58.
 -- Edit zones/Silithus.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,15 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 55-60 Silithus
 
+step
+    .xp <58,1,RBSection1_1
+    .xp 58 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection2_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Silithus: around Windcaller Proudhorn|r (planned from level 55)
 step
     .goto 1451/1,772.15,-6764.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rifleman Torrig|r
@@ -246,6 +256,10 @@ step
 step
     .xp 58 >>|cRXP_WARN_The rest of Silithus is planned from level 58.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Silithus: around Commander Mar'alith|r (planned from level 58)
+step
     .goto 1451/1,1377.90,-7144.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Bluewall|r
     .accept 9419 >>Accept Scouring the Desert
@@ -329,6 +343,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beetix Ficklespragg|r
     .accept 8278 >>Accept Noggle's Last Hope
     .target Beetix Ficklespragg
+    .isQuestTurnedIn 8277 --any of: Deadly Desert Venom
 step
     .goto 1451/1,730.00,-6867.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calandrath|r
@@ -360,11 +375,6 @@ step
     .mob Hive'Regal Spitfire
     .mob Hive'Regal Slavemaker
 step
-    #completewith Along13
-    >>As you go: Kill |cRXP_ENEMY_Rock Stalkers|r. Loot them for |cRXP_LOOT_Rock Stalker Fang|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 8278,3 --Rock Stalker Fang (3)
-    .mob Rock Stalker
-step
     .goto 1451/1,1099.58,-8012.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rutgar Glyphshaper|r
     .turnin 8308 >>Turn in Brann Bronzebeard's Lost Letter
@@ -377,7 +387,6 @@ step
     .isQuestComplete 8310
     .target Frankal Stonebridge
 step
-    #label Along13
     .goto 1451/1,1099.58,-8012.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rutgar Glyphshaper|r
     .complete 8304,2 --Rutgar Glyphshaper
@@ -393,12 +402,6 @@ step
     .complete 8304,1 --Frankal Stonebridge
     .target Frankal Stonebridge
 step
-    #completewith Along16
-    >>As you go: Kill |cRXP_ENEMY_Stonelash Flayers|r. Loot them for |cRXP_LOOT_Stonelash Flayer Stinger|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 8278,1 --Stonelash Flayer Stinger (3)
-    .mob Stonelash Flayer
-step
-    #label Along16
     .goto 1451/1,967.56,-8102.62
     >>Kill |cRXP_ENEMY_Deathclasp|r and loot |cRXP_LOOT_Deathclasp's Pincer|r
     .complete 8283,1 --Deathclasp's Pincer (1)
@@ -408,13 +411,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hermit Ortell|r
     .accept 8279 >>Accept The Twilight Lexicon
     .target Hermit Ortell
+    .isQuestTurnedIn 8285 --any of: The Deserter
 step
-    #completewith Along18
-    >>As you go: Kill |cRXP_ENEMY_Rock Stalkers|r. Loot them for |cRXP_LOOT_Rock Stalker Fang|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 8278,3 --Rock Stalker Fang (3)
-    .mob Rock Stalker
-step
-    #label Along18
     #loop
     .goto 1451/1,929.24,-7921.89,0
     .goto 1451/1,929.24,-7921.89,40,0
@@ -429,6 +427,7 @@ step
     >>Kill |cRXP_ENEMY_Stonelash Flayers|r. Loot them for |cRXP_LOOT_Stonelash Flayer Stinger|r
     .complete 8278,1 --Stonelash Flayer Stinger (3)
     .mob Stonelash Flayer
+    .isOnQuest 8278
 step
     #loop
     .goto 1451/1,1065.44,-7459.87,0
@@ -444,6 +443,7 @@ step
     >>Kill |cRXP_ENEMY_Stonelash Pincers|r. Loot them for |cRXP_LOOT_Stonelash Pincer Stinger|r
     .complete 8278,2 --Stonelash Pincer Stinger (3)
     .mob Stonelash Pincer
+    .isOnQuest 8278
 step
     #loop
     .goto 1451/1,1094.01,-7895.65,0
@@ -459,6 +459,7 @@ step
     >>Kill |cRXP_ENEMY_Rock Stalkers|r. Loot them for |cRXP_LOOT_Rock Stalker Fang|r
     .complete 8278,3 --Rock Stalker Fang (3)
     .mob Rock Stalker
+    .isOnQuest 8278
 step
     #completewith next
     .hs >>Hearth to Calandrath's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -468,11 +469,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beetix Ficklespragg|r
     .turnin 8278 >>Turn in Noggle's Last Hope
     .target Beetix Ficklespragg
+    .isOnQuest 8278
 step
     .goto 1451/1,739.05,-6852.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Noggle Ficklespragg|r
     .accept 8282 >>Accept Noggle's Lost Satchel
     .target Noggle Ficklespragg
+    .isQuestTurnedIn 8278 --any of: Noggle's Last Hope
 step
     .goto 1451/1,823.70,-6752.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Mar'alith|r
@@ -485,20 +488,33 @@ step
     .turnin 8283 >>Turn in Wanted - Deathclasp, Terror of the Sands
     .target Vish Kozus
 step
-    #loop
-    .goto 1451/1,1073.45,-6972.05,0
-    .goto 1451/1,1073.45,-6972.05,40,0
-    .goto 1451/1,1114.21,-6939.07,40,0
-    .goto 1451/1,1153.92,-6906.32,40,0
-    .goto 1451/1,1246.58,-6953.94,40,0
-    .goto 1451/1,1258.42,-7008.29,40,0
-    .goto 1451/1,1235.43,-7052.89,40,0
-    .goto 1451/1,1178.65,-6999.93,40,0
-    .goto 1451/1,1170.29,-7054.98,40,0
-    .goto 1451/1,1111.77,-7049.87,40,0
+    #completewith Along25
+    >>As you go: Kill |cRXP_ENEMY_Twilight Keeper Havunths|r, |cRXP_ENEMY_Twilight Avengers|r, |cRXP_ENEMY_Twilight Geolords|r and |cRXP_ENEMY_Twilight Stonecallers|r. Loot them for |cRXP_LOOT_Encrypted Twilight Text|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 8318,1 --Encrypted Twilight Text (10)
+    .mob Twilight Keeper Havunth
+    .mob Twilight Avenger
+    .mob Twilight Geolord
+    .mob Twilight Stonecaller
+step
+    #label Along25
+    .goto 1451/1,1114.21,-6939.07
     >>Kill |cRXP_ENEMY_Twilight Keeper Havunth|r and loot |cRXP_LOOT_Twilight Lexicon - Chapter 3|r
-    >>Kill |cRXP_ENEMY_Twilight Keeper Havunths|r, |cRXP_ENEMY_Twilight Avengers|r, |cRXP_ENEMY_Twilight Geolords|r and |cRXP_ENEMY_Twilight Stonecallers|r. Loot them for |cRXP_LOOT_Encrypted Twilight Text|r
     .complete 8279,3 --Twilight Lexicon - Chapter 3 (1)
+    .mob Twilight Keeper Havunth
+    .isOnQuest 8279
+step
+    #loop
+    .goto 1451/1,1114.21,-6939.07,0
+    .goto 1451/1,1114.21,-6939.07,40,0
+    .goto 1451/1,1073.45,-6972.05,40,0
+    .goto 1451/1,1111.77,-7049.87,40,0
+    .goto 1451/1,1170.29,-7054.98,40,0
+    .goto 1451/1,1235.43,-7052.89,40,0
+    .goto 1451/1,1258.42,-7008.29,40,0
+    .goto 1451/1,1246.58,-6953.94,40,0
+    .goto 1451/1,1178.65,-6999.93,40,0
+    .goto 1451/1,1153.92,-6906.32,40,0
+    >>Kill |cRXP_ENEMY_Twilight Keeper Havunths|r, |cRXP_ENEMY_Twilight Avengers|r, |cRXP_ENEMY_Twilight Geolords|r and |cRXP_ENEMY_Twilight Stonecallers|r. Loot them for |cRXP_LOOT_Encrypted Twilight Text|r
     .complete 8318,1 --Encrypted Twilight Text (10)
     .mob Twilight Keeper Havunth
     .mob Twilight Avenger
@@ -509,11 +525,13 @@ step
     >>Kill |cRXP_ENEMY_Twilight Keeper Mayna|r and loot |cRXP_LOOT_Twilight Lexicon - Chapter 1|r
     .complete 8279,1 --Twilight Lexicon - Chapter 1 (1)
     .mob Twilight Keeper Mayna
+    .isOnQuest 8279
 step
     .goto 1451/1,1977.03,-7964.64
     >>Kill |cRXP_ENEMY_Twilight Keeper Exeter|r and loot |cRXP_LOOT_Twilight Lexicon - Chapter 2|r
     .complete 8279,2 --Twilight Lexicon - Chapter 2 (1)
     .mob Twilight Keeper Exeter
+    .isOnQuest 8279
 step
     .goto 1451/1,1099.58,-8012.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rutgar Glyphshaper|r
@@ -536,13 +554,20 @@ step
     .goto 1451/1,985.33,-8081.01
     >>Pick up |cRXP_PICK_Noggle's Satchel|r from the ground
     .complete 8282,1 --Noggle's Satchel (1)
+    .isOnQuest 8282
 step
     .goto 1451/1,197.05,-7578.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hermit Ortell|r
     .turnin 8279 >>Turn in The Twilight Lexicon
+    .target Hermit Ortell
+    .isOnQuest 8279
+step
+    .goto 1451/1,197.05,-7578.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hermit Ortell|r
     .accept 8287 >>Accept A Terrible Purpose
     .accept 8323 >>Accept True Believers
     .target Hermit Ortell
+    .isQuestTurnedIn 8279 --any of: The Twilight Lexicon
 step
     #loop
     .goto 1451/1,230.84,-6477.74,0
@@ -561,11 +586,13 @@ step
     .mob Twilight Avenger
     .mob Twilight Geolord
     .mob Twilight Stonecaller
+    .isOnQuest 8323
 step
     .goto 1451/1,197.05,-7578.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hermit Ortell|r
     .turnin 8323 >>Turn in True Believers
     .target Hermit Ortell
+    .isOnQuest 8323
 step
     .goto 1451/1,1239.26,-7410.16
     >>Open the |cRXP_PICK_Hive'Zora Glyphed Crystal|r. Loot it for |cRXP_LOOT_Hive'Zora Rubbing|r
@@ -580,6 +607,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Mar'alith|r
     .turnin 8287 >>Turn in A Terrible Purpose
     .target Commander Mar'alith
+    .isOnQuest 8287
 step
     .goto 1451/1,823.70,-6752.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Mar'alith|r
@@ -597,6 +625,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Noggle Ficklespragg|r
     .turnin 8282 >>Turn in Noggle's Lost Satchel
     .target Noggle Ficklespragg
+    .isOnQuest 8282
 step
     .goto 1451/1,765.53,-6579.95
     >>Open the |cRXP_PICK_Hive'Ashi Glyphed Crystal|r. Loot it for |cRXP_LOOT_Hive'Ashi Rubbing|r

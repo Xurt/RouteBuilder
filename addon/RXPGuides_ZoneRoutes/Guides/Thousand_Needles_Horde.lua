@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 25, 28, 31, 34).
+-- Sections (the guide starts at the one for your level): around Cliffwatcher Longhorn from 25; around Jandia from 28; around Pozzik from 31; part 4 from 34.
 -- Edit zones/Thousand Needles.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,21 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 25-40 Thousand Needles
 
+step
+    .xp <28,1,RBSection1_1
+    .xp 28 >>Finding the place in this guide for your level
+step
+    .xp <31,1,RBSection2_1
+    .xp 31 >>Finding the place in this guide for your level
+step
+    .xp <34,1,RBSection3_1
+    .xp 34 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection4_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Thousand Needles: around Cliffwatcher Longhorn|r (planned from level 25)
 step
     .goto 1441/1,-1835.17,-4602.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grish Longrunner|r
@@ -320,6 +336,10 @@ step
 step
     .xp 28 >>|cRXP_WARN_The rest of Thousand Needles is planned from level 28.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Thousand Needles: around Jandia|r (planned from level 28)
+step
     .goto 1441/1,-2457.33,-5458.56
     >>Click the |cRXP_PICK_Wanted Poster - Arnak Grimtotem|r
     .accept 5147 >>Accept Wanted - Arnak Grimtotem
@@ -506,10 +526,15 @@ step
 step
     .xp 31 >>|cRXP_WARN_The rest of Thousand Needles is planned from level 31.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Thousand Needles: around Pozzik|r (planned from level 31)
+step
     .goto 1441/1,-2807.13,-5183.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
     .accept 1150 >>Accept Test of Endurance
     .target Dorn Plainstalker
+    .isQuestTurnedIn 1149 --any of: Test of Faith
 step
     .goto 1441/1,-2463.49,-5483.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
@@ -533,6 +558,7 @@ step
     >>Kill |cRXP_ENEMY_Grenka Bloodscreech|r and loot |cRXP_LOOT_Grenka's Claw|r
     .complete 1150,1 --Grenka's Claw (1)
     .mob Grenka Bloodscreech
+    .isOnQuest 1150
 step << Shaman
     .goto 1441/1,-2789.09,-5217.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prate Cloudseer|r
@@ -542,8 +568,14 @@ step
     .goto 1441/1,-2807.13,-5183.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
     .turnin 1150 >>Turn in Test of Endurance
+    .target Dorn Plainstalker
+    .isOnQuest 1150
+step
+    .goto 1441/1,-2807.13,-5183.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
     .accept 1151 >>Accept Test of Strength
     .target Dorn Plainstalker
+    .isQuestTurnedIn 1150 --any of: Test of Endurance
 step
     .goto 1441/1,-1433.45,-5065.49
     >>Kill |cRXP_ENEMY_Achellios the Banished|r and loot |cRXP_LOOT_Pendant of Myzrael|r. Use it to start the quest
@@ -556,6 +588,7 @@ step
     >>Kill |cRXP_ENEMY_Rok'Alim the Pounder|r and loot |cRXP_LOOT_Fragments of Rok'Alim|r
     .complete 1151,1 --Fragments of Rok'Alim (1)
     .mob Rok'Alim the Pounder
+    .isOnQuest 1151
 step << Shaman
     #completewith next
     .hs >>Hearth to Innkeeper Abeqwa's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -582,8 +615,14 @@ step
     .goto 1441/1,-2807.13,-5183.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
     .turnin 1151 >>Turn in Test of Strength
+    .target Dorn Plainstalker
+    .isOnQuest 1151
+step
+    .goto 1441/1,-2807.13,-5183.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
     .accept 1152 >>Accept Test of Lore
     .target Dorn Plainstalker
+    .isQuestTurnedIn 1151 --any of: Test of Strength
 step
     .goto 1441/1,-3856.09,-6233.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kravel Koalbeard|r
@@ -792,6 +831,10 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale and back here|r: Encrusted Tail Fins
 step
     .xp 34 >>|cRXP_WARN_The rest of Thousand Needles is planned from level 34.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Thousand Needles: part 4|r (planned from level 34)
 step
     .goto 1441/1,-4025.05,-6253.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trackmaster Zherin|r

@@ -14,6 +14,10 @@ RXPGuides.RegisterGuide([[
 #name 42-42 Duskwood
 
 step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Duskwood: start|r (planned from level 42)
+step
     .goto 1431/0,-1537.54,-10358.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Zraedus|r
     .accept 1372 >>Accept Nothing But The Truth

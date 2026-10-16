@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 24, 27, 30, 33).
+-- Sections (the guide starts at the one for your level): start from 24; part 2 from 27; around Lieutenant Farren Orinelle from 30; part 4 from 33.
 -- Edit zones/Hillsbrad Foothills.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,21 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 24-38 Hillsbrad Foothills
 
+step
+    .xp <27,1,RBSection1_1
+    .xp 27 >>Finding the place in this guide for your level
+step
+    .xp <30,1,RBSection2_1
+    .xp 30 >>Finding the place in this guide for your level
+step
+    .xp <33,1,RBSection3_1
+    .xp 33 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection4_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Hillsbrad Foothills: start|r (planned from level 24)
 step
     .goto 1424/0,-571.41,-1015.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tom "Half-fish" Wilson|r
@@ -123,7 +139,13 @@ step
     >>|cRXP_FRIENDLY_Wetlands|r: A Lack of Virtue
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Brewer's Trade
 step
+    +|cRXP_WARN_Until level 27, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.8 levels of quests, starting around Karl Boran; 1 quest from here hands in there). Then come back to this Hillsbrad Foothills guide --RouteBuilder:next
+step
     .xp 27 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 27.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Hillsbrad Foothills: part 2|r (planned from level 27)
 step
     .goto 1424/0,-473.81,-861.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
@@ -165,6 +187,10 @@ step
     >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: Syndicate Assassins
 step
     .xp 30 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 30.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Hillsbrad Foothills: around Lieutenant Farren Orinelle|r (planned from level 30)
 step
     .goto 1424/0,-583.57,-849.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Kelly|r
@@ -421,6 +447,10 @@ step
     >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: Costly Menace, Crushridge Bounty
 step
     .xp 33 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 33.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Hillsbrad Foothills: part 4|r (planned from level 33)
 step
     .goto 1424/0,-420.37,-669.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain McManus|r

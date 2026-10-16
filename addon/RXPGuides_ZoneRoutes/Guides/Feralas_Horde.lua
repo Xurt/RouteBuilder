@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 42, 45, 48).
+-- Sections (the guide starts at the one for your level): around Hadoken Swiftstrider from 42; part 2 from 45; part 3 from 48.
 -- Edit zones/Feralas.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 42-52 Feralas
 
+step
+    .xp <45,1,RBSection1_1
+    .xp 45 >>Finding the place in this guide for your level
+step
+    .xp <48,1,RBSection2_1
+    .xp 48 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Feralas: around Hadoken Swiftstrider|r (planned from level 42)
 step
     .goto 1444/1,173.57,-4385.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rok Orhan|r
@@ -515,6 +528,10 @@ step
 step
     .xp 45 >>|cRXP_WARN_The rest of Feralas is planned from level 45.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Feralas: part 2|r (planned from level 45)
+step
     .goto 1444/1,173.57,-4385.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rok Orhan|r
     .accept 2979 >>Accept Dark Ceremony
@@ -526,11 +543,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadoken Swiftstrider|r
     .accept 7731 >>Accept Stinglasher
     .target Hadoken Swiftstrider
+    .isQuestTurnedIn 2903 --any of: The Battle Plans
 step
     .goto 1444/1,188.86,-5186.05
     >>Kill |cRXP_ENEMY_Stinglasher|r and loot |cRXP_LOOT_Stinglasher's Glands|r
     .complete 7731,1 --Stinglasher's Glands (1)
     .mob Stinglasher
+    .isOnQuest 7731
 step
     .goto 1444/1,1252.90,-5482.12
     >>Kill |cRXP_ENEMY_Gordunni Mage-Lord|r and loot |cRXP_LOOT_Gordunni Orb|r
@@ -554,13 +573,21 @@ step
     .goto 1444/1,235.42,-4333.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadoken Swiftstrider|r
     .turnin 7731 >>Turn in Stinglasher
+    .target Hadoken Swiftstrider
+    .isOnQuest 7731
+step
+    .goto 1444/1,235.42,-4333.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadoken Swiftstrider|r
     .accept 7732 >>Accept Zukk'ash Report
     .target Hadoken Swiftstrider
+    .isQuestTurnedIn 7730 --Zukk'ash Infestation
+    .isQuestTurnedIn 7731 --Stinglasher
 step
     .goto 1444/1,268.78,-4354.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jangdor Swiftstrider|r
     .accept 7734 >>Accept Improved Quality
     .target Jangdor Swiftstrider
+    .isQuestTurnedIn 2822 --any of: The Mark of Quality
 step
     .goto 1444/1,269.48,-4375.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
@@ -668,6 +695,7 @@ step
     .mob Elder Rage Scar
     .mob Ferocious Rage Scar
     .mob Lurking Feral Scar
+    .isOnQuest 7734
 step
     .goto 1444/1,269.48,-4375.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
@@ -679,6 +707,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jangdor Swiftstrider|r
     .turnin 7734 >>Turn in Improved Quality
     .target Jangdor Swiftstrider
+    .isOnQuest 7734
 step << Druid
     .goto 1444/1,159.67,-4326.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r
@@ -699,6 +728,10 @@ step
     >>|cRXP_FRIENDLY_Orgrimmar|r: The Gordunni Orb, Zukk'ash Report
 step
     .xp 48 >>|cRXP_WARN_The rest of Feralas is planned from level 48.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Feralas: part 3|r (planned from level 48)
 step
     .goto 1444/1,147.16,-4397.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talo Thornhoof|r

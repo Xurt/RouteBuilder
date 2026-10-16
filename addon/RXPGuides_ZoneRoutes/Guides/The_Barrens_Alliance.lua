@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 7 parts with a level check between them (from level 11, 14, 17, 20, 23, 31, 34).
+-- Sections (the guide starts at the one for your level): start from 11; part 2 from 14; part 3 from 17; part 4 from 20; part 5 from 23; part 6 from 31; part 7 from 34.
 -- Edit zones/The Barrens.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,30 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 11-31 The Barrens
 
+step
+    .xp <14,1,RBSection1_1
+    .xp 14 >>Finding the place in this guide for your level
+step
+    .xp <17,1,RBSection2_1
+    .xp 17 >>Finding the place in this guide for your level
+step
+    .xp <20,1,RBSection3_1
+    .xp 20 >>Finding the place in this guide for your level
+step
+    .xp <23,1,RBSection4_1
+    .xp 23 >>Finding the place in this guide for your level
+step
+    .xp <31,1,RBSection5_1
+    .xp 31 >>Finding the place in this guide for your level
+step
+    .xp <34,1,RBSection6_1
+    .xp 34 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection7_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_The Barrens: start|r (planned from level 11)
 step
     .goto 1413/1,-2458.95,-370.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
@@ -181,29 +206,38 @@ step
     .turnin 79008 >>Turn in ... and that note you found
     .isOnQuest 79008
 step
+    +|cRXP_WARN_Until level 14, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 2.7 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.6 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Westfall|r (about 1.4 levels of quests, starting around Farmer Saldean). Then come back to this The Barrens guide --RouteBuilder:next
+step
     .xp 14 >>|cRXP_WARN_The rest of The Barrens is planned from level 14.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_The Barrens: part 2|r (planned from level 14)
 step
     .goto 1413/1,-3728.66,-835.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
     .accept 888 >>Accept Stolen Booty
     .target Gazlowe
+    .isQuestTurnedIn 892 --any of: The Missing Shipment
 step
     .goto 1413/1,-3719.54,-919.07
     >>Click the |cRXP_PICK_WANTED|r
     .accept 895 >>Accept WANTED: Baron Longshore
 step
-    #loop
-    .goto 1413/1,-3791.48,-1698.06,0
-    .goto 1413/1,-3791.48,-1698.06,40,0
-    .goto 1413/1,-3819.86,-1714.95,40,0
-    .goto 1413/1,-3723.59,-1740.63,40,0
+    .goto 1413/1,-3791.48,-1698.06
     >>Kill |cRXP_ENEMY_Baron Longshore|r and loot |cRXP_LOOT_Baron Longshore's Head|r
-    >>Open the |cRXP_PICK_Fragile - Do Not Drop|r. Loot it for |cRXP_LOOT_Telescopic Lens|r
-    >>Open the |cRXP_PICK_Drizzlik's Emporium|r. Loot it for |cRXP_LOOT_Shipment of Boots|r
     .complete 895,1 --Baron Longshore's Head (1)
-    .complete 888,2 --Telescopic Lens (1)
-    .complete 888,1 --Shipment of Boots (1)
     .mob Baron Longshore
+step
+    .goto 1413/1,-3819.86,-1714.95
+    >>Open the |cRXP_PICK_Fragile - Do Not Drop|r. Loot it for |cRXP_LOOT_Telescopic Lens|r
+    .complete 888,2 --Telescopic Lens (1)
+    .isOnQuest 888
+step
+    .goto 1413/1,-3723.59,-1740.63
+    >>Open the |cRXP_PICK_Drizzlik's Emporium|r. Loot it for |cRXP_LOOT_Shipment of Boots|r
+    .complete 888,1 --Shipment of Boots (1)
+    .isOnQuest 888
 step
     .goto 1413/1,-3796.55,-985.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wharfmaster Dizzywig|r
@@ -213,6 +247,11 @@ step
     .goto 1413/1,-3728.66,-835.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
     .turnin 888 >>Turn in Stolen Booty
+    .target Gazlowe
+    .isOnQuest 888
+step
+    .goto 1413/1,-3728.66,-835.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
     .turnin 895 >>Turn in WANTED: Baron Longshore
     .target Gazlowe
 step
@@ -236,16 +275,23 @@ step
     .goto 1413/1,-2686.95,825.40
     >>Click the |cRXP_PICK_Control Console|r
     .accept 901 >>Accept Samophlange
+    .isQuestTurnedIn 900 --any of: Samophlange
 step
     .goto 1413/1,-2731.54,910.53
     >>Kill |cRXP_ENEMY_Tinkerer Sniggles|r and loot |cRXP_LOOT_Console Key|r
     .complete 901,1 --Console Key (1)
     .mob Tinkerer Sniggles
+    .isOnQuest 901
 step
     .goto 1413/1,-2686.95,825.40
     >>Click the |cRXP_PICK_Control Console|r
     .turnin 901 >>Turn in Samophlange
+    .isOnQuest 901
+step
+    .goto 1413/1,-2686.95,825.40
+    >>Click the |cRXP_PICK_Control Console|r
     .accept 902 >>Accept Samophlange
+    .isQuestTurnedIn 901 --any of: Samophlange
 step
     .goto 1413/1,-2458.95,-370.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
@@ -257,6 +303,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .turnin 902 >>Turn in Samophlange
     .target Sputtervalve
+    .isOnQuest 902
 step
     .goto 1413/1,-3796.55,-985.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wharfmaster Dizzywig|r
@@ -272,7 +319,13 @@ step
     +|cRXP_WARN_That is all of The Barrens for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Stonetalon Mountains|r: Stepping Stones
 step
+    +|cRXP_WARN_Until level 17, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 2.3 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.1 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling). Then come back to this The Barrens guide --RouteBuilder:next
+step
     .xp 17 >>|cRXP_WARN_The rest of The Barrens is planned from level 17.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_The Barrens: part 3|r (planned from level 17)
 step
     .goto 1413/1,-3104.44,1109.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzlecrank's Shredder|r
@@ -349,7 +402,13 @@ step
     >>|cRXP_FRIENDLY_Stonetalon Mountains|r: Ziz Fizziks, Further Instructions
     >>|cRXP_FRIENDLY_Stonetalon Mountains and back here|r: Deepmoss Spider Eggs
 step
+    +|cRXP_WARN_Until level 20, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 1.1 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.5 levels of quests, starting around Daryl the Youngling). Then come back to this The Barrens guide --RouteBuilder:next
+step
     .xp 20 >>|cRXP_WARN_The rest of The Barrens is planned from level 20.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_The Barrens: part 4|r (planned from level 20)
 step
     .goto 1413/1,-3650.63,-1050.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bainham|r
@@ -385,7 +444,13 @@ step
     .turnin 97005 >>Turn in Chol'aruk the Ravener
     .target Bainham
 step
+    +|cRXP_WARN_Until level 23, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 0.9 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Wetlands|r (about 0.8 levels of quests, starting around Karl Boran). Then come back to this The Barrens guide --RouteBuilder:next
+step
     .xp 23 >>|cRXP_WARN_The rest of The Barrens is planned from level 23.|r Come back to this guide then
+step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_The Barrens: part 5|r (planned from level 23)
 step << Warlock
     .goto 1413/1,-2373.83,-2252.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r
@@ -442,7 +507,13 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: The Orb of Soran'ruk << Warlock
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Blueleaf Tubers
 step << Warlock
+    +|cRXP_WARN_Until level 31, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.7 levels of quests, starting around Karl Boran). Then come back to this The Barrens guide --RouteBuilder:next
+step << Warlock
     .xp 31 >>|cRXP_WARN_The rest of The Barrens is planned from level 31.|r Come back to this guide then
+step
+    #label RBSection6_1
+    #completewith next
+    +|cRXP_WARN_The Barrens: part 6|r (planned from level 31)
 step << Warlock
     .goto 1413/1,-3723.59,-785.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strahad Farsan|r
@@ -559,6 +630,10 @@ step
     >>|cRXP_FRIENDLY_Thousand Needles|r: Parts for Kravel
 step << Warlock
     .xp 34 >>|cRXP_WARN_The rest of The Barrens is planned from level 34.|r Come back to this guide then
+step
+    #label RBSection7_1
+    #completewith next
+    +|cRXP_WARN_The Barrens: part 7|r (planned from level 34)
 step << Warlock
     .goto 1413/1,-3711.43,-782.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Menara Voidrender|r

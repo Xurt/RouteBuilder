@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 52, 55).
+-- Sections (the guide starts at the one for your level): start from 52; part 2 from 55.
 -- Edit zones/Western Plaguelands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,15 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 52-58 Western Plaguelands
 
+step
+    .xp <55,1,RBSection1_1
+    .xp 55 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection2_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Western Plaguelands: start|r (planned from level 52)
 step
     .goto 1422/0,-1582.40,1871.70
     .xp 53+100000 >>AoE Undead in the area to 53 & 100000+/167100xp
@@ -225,6 +235,10 @@ step
 step
     .xp 55 >>|cRXP_WARN_The rest of Western Plaguelands is planned from level 55.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Western Plaguelands: part 2|r (planned from level 55)
+step
     .goto 1422/0,-1619.38,1943.94
     >>Click the |cRXP_PICK_Locked Cabinet|r
     .accept 5060 >>Accept Locked Away
@@ -351,6 +365,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulgris Deepriver|r
     .accept 4985 >>Accept The Wildlife Suffers Too
     .target Mulgris Deepriver
+    .isQuestTurnedIn 4984 --any of: The Wildlife Suffers Too
 step
     #loop
     .goto 1422/0,-2115.17,1821.25,0
@@ -366,11 +381,13 @@ step
     >>Kill |cRXP_ENEMY_Diseased Grizzlies|r
     .complete 4985,1 --Diseased Grizzly slain (8)
     .mob Diseased Grizzly
+    .isOnQuest 4985
 step
     .goto 1422/0,-1893.72,1513.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulgris Deepriver|r
     .turnin 4985 >>Turn in The Wildlife Suffers Too
     .target Mulgris Deepriver
+    .isOnQuest 4985
 step
     .goto 1422/0,-1903.18,2665.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Tirion Fordring|r
@@ -383,6 +400,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulgris Deepriver|r
     .accept 4987 >>Accept Glyphed Oaken Branch
     .target Mulgris Deepriver
+    .isQuestTurnedIn 4985 --any of: The Wildlife Suffers Too
 step
     .goto 1422/0,-1767.30,1134.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myranda the Hag|r

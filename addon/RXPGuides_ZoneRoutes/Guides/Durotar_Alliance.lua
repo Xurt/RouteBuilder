@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 7 parts with a level check between them (from level 9, 12, 25, 31, 36, 41, 51).
+-- Sections (the guide starts at the one for your level): start from 9; part 2 from 12; part 3 from 25; part 4 from 31; part 5 from 36; part 6 from 41; part 7 from 51.
 -- Edit zones/Durotar.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,30 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 9-52 Durotar
 
+step
+    .xp <12,1,RBSection1_1
+    .xp 12 >>Finding the place in this guide for your level
+step
+    .xp <25,1,RBSection2_1
+    .xp 25 >>Finding the place in this guide for your level
+step
+    .xp <31,1,RBSection3_1
+    .xp 31 >>Finding the place in this guide for your level
+step
+    .xp <36,1,RBSection4_1
+    .xp 36 >>Finding the place in this guide for your level
+step
+    .xp <41,1,RBSection5_1
+    .xp 41 >>Finding the place in this guide for your level
+step
+    .xp <51,1,RBSection6_1
+    .xp 51 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection7_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Durotar: start|r (planned from level 9)
 step
     .goto 1411/1,-4414.31,999.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
@@ -94,7 +119,13 @@ step
     +|cRXP_WARN_That is all of Durotar for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Dun Morogh|r: Call of Earth << Shaman
 step << Mage
+    +|cRXP_WARN_Until level 12, suggested zones|r: |cRXP_FRIENDLY_Zephras Isle|r (about 3.5 levels of quests, starting around Valennia Stormfist), |cRXP_FRIENDLY_Teldrassil|r (about 2.4 levels of quests, starting around Priestess A'moora), |cRXP_FRIENDLY_Darkshore|r (about 2.0 levels of quests, starting around Thundris Windweaver). Then come back to this Durotar guide --RouteBuilder:next
+step << Mage
     .xp 12 >>|cRXP_WARN_The rest of Durotar is planned from level 12.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Durotar: part 2|r (planned from level 12)
 step << Mage
     .goto 1454/1,-4229.86,1466.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthel'nay|r
@@ -119,7 +150,13 @@ step
     +|cRXP_WARN_That is all of Durotar for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Dun Morogh|r: Call of Fire << Shaman
 step << Rogue
+    +|cRXP_WARN_Until level 25, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 2.9 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.4 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Dun Morogh|r (about 0.9 levels of quests, starting around Maxan Anvol). Then come back to this Durotar guide --RouteBuilder:next
+step << Rogue
     .xp 25 >>|cRXP_WARN_The rest of Durotar is planned from level 25.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Durotar: part 3|r (planned from level 25)
 step << Rogue
     .goto 1454/1,-4284.42,1771.18
     >>Kill |cRXP_ENEMY_Gest|r and loot |cRXP_LOOT_Elegant Letter|r. Use it to start the quest
@@ -132,6 +169,10 @@ step
     >>|cRXP_FRIENDLY_Alterac Mountains|r: The Manor, Ravenholdt << Rogue
 step << Warrior/Mage
     .xp 31 >>|cRXP_WARN_The rest of Durotar is planned from level 31.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Durotar: part 4|r (planned from level 31)
 step << Warrior
     .goto 1454/1,-4808.15,1970.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sorek|r
@@ -148,6 +189,10 @@ step
     >>|cRXP_FRIENDLY_The Barrens|r: The Islander << Warrior
 step << Mage
     .xp 36 >>|cRXP_WARN_The rest of Durotar is planned from level 36.|r Come back to this guide then
+step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_Durotar: part 5|r (planned from level 36)
 step << Mage
     .goto 1454/1,-4219.90,1468.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deino|r
@@ -159,6 +204,10 @@ step
 step
     .xp 41 >>|cRXP_WARN_The rest of Durotar is planned from level 41.|r Come back to this guide then
 step
+    #label RBSection6_1
+    #completewith next
+    +|cRXP_WARN_Durotar: part 6|r (planned from level 41)
+step
     .goto 1454/1,-4219.90,1468.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deino|r
     .accept 2861 >>Accept Tabetha's Task
@@ -168,6 +217,10 @@ step
     >>|cRXP_FRIENDLY_Dustwallow Marsh|r: Tabetha's Task
 step << Hunter/Rogue/Mage/Priest/Warrior/Warlock
     .xp 51 >>|cRXP_WARN_The rest of Durotar is planned from level 51.|r Come back to this guide then
+step
+    #label RBSection7_1
+    #completewith next
+    +|cRXP_WARN_Durotar: part 7|r (planned from level 51)
 step << Warrior
     .goto 1454/1,-4808.15,1970.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sorek|r

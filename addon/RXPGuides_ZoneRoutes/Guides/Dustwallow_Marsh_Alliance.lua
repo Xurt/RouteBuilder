@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 26, 31, 34, 37).
+-- Sections (the guide starts at the one for your level): start from 26; around Captain Garran Vimes from 31; part 3 from 34; part 4 from 37.
 -- Edit zones/Dustwallow Marsh.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,21 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 26-40 Dustwallow Marsh
 
+step
+    .xp <31,1,RBSection1_1
+    .xp 31 >>Finding the place in this guide for your level
+step
+    .xp <34,1,RBSection2_1
+    .xp 34 >>Finding the place in this guide for your level
+step
+    .xp <37,1,RBSection3_1
+    .xp 37 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection4_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Dustwallow Marsh: start|r (planned from level 26)
 step
     .goto 1445/1,-4464.15,-3613.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
@@ -113,6 +129,10 @@ step
     >>|cRXP_FRIENDLY_Thousand Needles and back here|r: Highperch Venom
 step
     .xp 31 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 31.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Dustwallow Marsh: around Captain Garran Vimes|r (planned from level 31)
 step
     .goto 1445/1,-4464.15,-3613.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
@@ -285,6 +305,10 @@ step
     >>|cRXP_FRIENDLY_Thousand Needles|r: Hidden Secrets << Mage
 step
     .xp 34 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 34.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Dustwallow Marsh: part 3|r (planned from level 34)
 step
     .goto 1445/1,-4464.15,-3613.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
@@ -476,6 +500,10 @@ step
 step
     .xp 37 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 37.|r Come back to this guide then
 step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Dustwallow Marsh: part 4|r (planned from level 37)
+step
     .goto 1445/1,-4464.15,-3613.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
     .turnin 1135 >>Turn in Highperch Venom
@@ -486,6 +514,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
     .accept 1206 >>Accept Jarl Needs Eyes
     .target "Swamp Eye" Jarl
+    .isQuestTurnedIn 1218 --any of: Soothing Spices
 step
     #loop
     .goto 1445/1,-2850.82,-2770.08,0
@@ -504,12 +533,19 @@ step
     .mob Darkmist Lurker
     .mob Darkmist Recluse
     .mob Darkmist Silkspinner
+    .isOnQuest 1206
 step
     .goto 1445/1,-3885.60,-2952.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
     .turnin 1206 >>Turn in Jarl Needs Eyes
+    .target "Swamp Eye" Jarl
+    .isOnQuest 1206
+step
+    .goto 1445/1,-3885.60,-2952.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
     .accept 1203 >>Accept Jarl Needs a Blade
     .target "Swamp Eye" Jarl
+    .isQuestTurnedIn 1206 --any of: Jarl Needs Eyes
 step
     .goto 1445/1,-3885.60,-2952.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r

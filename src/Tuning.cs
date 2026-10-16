@@ -43,6 +43,14 @@ public static class Tuning
     public static double SpreadRange = 700;   // a step's loop may reach this far for spawns when its patch has too few (a third of it for kills)
     public static int MaxPatches = 8;         // candidate patches kept per objective
     public static double PatrolRange = 120;   // an NPC whose points span more than this is treated as patrolling
+    // --- sections (places to start a zone part-way, by level) ---
+    public static int SectionHubPickups = 4;   // a quest hub with at least this many pickups can start a section
+    public static int SectionMinSteps = 40;    // a section runs at least this many tasks before the next can start
+    public static int SectionLevelStep = 2;
+    // link: suggested next zones
+    public static int LinkSuggestions = 3;            // how many zones a guide suggests
+    public static double LinkMinLevels = 0.5;         // a zone must still hold this many levels of quest experience
+    public static double LinkOtherContinent = 0.8;    // a zone across the sea counts for this much (the trip there)    // and the next starts at least this many levels higher
     // --- travel ---
     public static double RunSpeed = 7;        // yards per second on foot
     public static double AreaChange = 150;    // extra cost of crossing between a zone and a linked city with no gate defined

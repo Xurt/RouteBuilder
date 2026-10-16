@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 17, 20, 23, 26, 29).
+-- Sections (the guide starts at the one for your level): around Elaine Carevin from 17; around Madame Eva from 20; around Clerk Daltry from 23; around Calor from 26; around Calor from 29.
 -- Edit zones/Duskwood.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,7 +14,26 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group Zone Routes (Alliance)
 #name 17-31 Duskwood
+#next Zone Routes (Alliance)\21-34 Wetlands
 
+step
+    .xp <20,1,RBSection1_1
+    .xp 20 >>Finding the place in this guide for your level
+step
+    .xp <23,1,RBSection2_1
+    .xp 23 >>Finding the place in this guide for your level
+step
+    .xp <26,1,RBSection3_1
+    .xp 26 >>Finding the place in this guide for your level
+step
+    .xp <29,1,RBSection4_1
+    .xp 29 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection5_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Duskwood: around Elaine Carevin|r (planned from level 17)
 step
     .goto 1431/0,-1250.26,-10020.33
     >>Kill |cRXP_ENEMY_Elmpaw|r and loot |cRXP_LOOT_Elmpaw's Head|r. Use it to start the quest
@@ -302,7 +322,13 @@ step
     +|cRXP_WARN_That is all of Duskwood for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elwynn Forest|r: Elmpaw's Head
 step
+    +|cRXP_WARN_Until level 20, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 0.9 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.6 levels of quests, starting around Daryl the Youngling). Then come back to this Duskwood guide --RouteBuilder:next
+step
     .xp 20 >>|cRXP_WARN_The rest of Duskwood is planned from level 20.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Duskwood: around Madame Eva|r (planned from level 20)
 step
     .goto 1431/0,-1127.41,-10573.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r
@@ -482,7 +508,13 @@ step
     >>|cRXP_FRIENDLY_Redridge Mountains|r: Messenger to Darkshire
     >>|cRXP_FRIENDLY_Stormwind City|r: An Old History Book
 step
+    +|cRXP_WARN_Until level 23, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 1.0 levels of quests, starting around Karl Boran), |cRXP_FRIENDLY_Darkshore|r (about 0.7 levels of quests, starting around Archaeologist Hollee). Then come back to this Duskwood guide --RouteBuilder:next
+step
     .xp 23 >>|cRXP_WARN_The rest of Duskwood is planned from level 23.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Duskwood: around Clerk Daltry|r (planned from level 23)
 step
     .goto 1431/0,-1213.00,-10532.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
@@ -577,11 +609,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
     .accept 57 >>Accept The Night Watch
     .target Commander Althea Ebonlocke
+    .isQuestTurnedIn 56 --any of: The Night Watch
 step
     .goto 1431/0,-1158.73,-10517.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tavernkeep Smitts|r
     .accept 156 >>Accept Gather Rot Blossoms
     .target Tavernkeep Smitts
+    .isQuestTurnedIn 158 --any of: Zombie Juice
 step
     .goto 1431/0,-1125.25,-10560.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Daltry|r
@@ -589,12 +623,6 @@ step
     .target Clerk Daltry
     .isQuestTurnedIn 68 --any of: The Legend of Stalvan
     .xp <22,1
-step
-    #completewith Along10
-    >>As you go: Kill |cRXP_ENEMY_Skeletal Horrors|r and |cRXP_ENEMY_Skeletal Fiends|r. Loot them for |cRXP_LOOT_Rot Blossom|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 156,1 --Rot Blossom (8)
-    .mob Skeletal Horror
-    .mob Skeletal Fiend
 step
     #loop
     .goto 1431/0,191.27,-10508.67,0
@@ -606,8 +634,8 @@ step
     >>Kill |cRXP_ENEMY_Skeletal Fiends|r
     .complete 57,1 --Skeletal Fiend slain (15)
     .mob Skeletal Fiend
+    .isOnQuest 57
 step
-    #label Along10
     #loop
     .goto 1431/0,210.71,-10564.65,0
     .goto 1431/0,210.71,-10564.65,40,0
@@ -622,11 +650,13 @@ step
     >>Kill |cRXP_ENEMY_Skeletal Horrors|r
     .complete 57,2 --Skeletal Horror slain (15)
     .mob Skeletal Horror
+    .isOnQuest 57
 step
     .goto 1431/0,-1152.25,-10559.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
     .turnin 57 >>Turn in The Night Watch
     .target Commander Althea Ebonlocke
+    .isOnQuest 57
 step
     #loop
     .goto 1431/0,169.67,-10470.33,0
@@ -643,6 +673,7 @@ step
     .complete 156,1 --Rot Blossom (8)
     .mob Skeletal Horror
     .mob Skeletal Fiend
+    .isOnQuest 156
 step
     .goto 1431/0,-1158.73,-10517.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tavernkeep Smitts|r
@@ -654,8 +685,14 @@ step
     .goto 1431/0,-1158.73,-10517.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tavernkeep Smitts|r
     .turnin 156 >>Turn in Gather Rot Blossoms
+    .target Tavernkeep Smitts
+    .isOnQuest 156
+step
+    .goto 1431/0,-1158.73,-10517.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tavernkeep Smitts|r
     .accept 159 >>Accept Juice Delivery
     .target Tavernkeep Smitts
+    .isQuestTurnedIn 156 --any of: Gather Rot Blossoms
 step
     .goto 1431/0,-1152.25,-10559.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
@@ -693,12 +730,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
     .turnin 159 >>Turn in Juice Delivery
     .target Abercrombie
+    .isOnQuest 159
 step
     +|cRXP_WARN_That is all of Duskwood for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elwynn Forest|r: The Legend of Stalvan
     >>|cRXP_FRIENDLY_Westfall|r: The Legend of Stalvan
 step
+    +|cRXP_WARN_Until level 26, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.9 levels of quests, starting around Karl Boran). Then come back to this Duskwood guide --RouteBuilder:next
+step
     .xp 26 >>|cRXP_WARN_The rest of Duskwood is planned from level 26.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Duskwood: around Calor|r (planned from level 26)
 step
     .goto 1431/0,-1161.16,-10516.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Trelayne|r
@@ -727,6 +771,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blind Mary|r
     .accept 177 >>Accept Look To The Stars
     .target Blind Mary
+    .isQuestTurnedIn 175 --any of: Look To The Stars
 step
     .goto 1431/0,-1211.92,-10572.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
@@ -738,11 +783,13 @@ step
     >>Kill |cRXP_ENEMY_Insane Ghoul|r and loot |cRXP_LOOT_Mary's Looking Glass|r
     .complete 177,1 --Mary's Looking Glass (1)
     .mob Insane Ghoul
+    .isOnQuest 177
 step
     .goto 1431/0,-1321.27,-10581.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viktori Prism'Antras|r
     .turnin 177 >>Turn in Look To The Stars
     .target Viktori Prism'Antras
+    .isOnQuest 177
 step
     #loop
     .goto 1431/0,-920.32,-10540.17,0
@@ -788,11 +835,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
     .accept 58 >>Accept The Night Watch
     .target Commander Althea Ebonlocke
+    .isQuestTurnedIn 57 --any of: The Night Watch
 step
     .goto 1431/0,623.27,-10329.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
     .accept 323 >>Accept Proving Your Worth
     .target Sven Yorgen
+    .isQuestTurnedIn 268 --any of: Return to Sven
 step
     #loop
     .goto 1431/0,394.85,-10487.25,0
@@ -817,27 +866,60 @@ step
     .goto 1431/0,343.55,-10426.23,40,0
     .goto 1431/0,359.21,-10382.67,40,0
     .goto 1431/0,370.01,-10345.59,40,0
+    .goto 1431/0,354.89,-10304.55,40,0
     .goto 1431/0,377.30,-10280.79,40,0
-    .goto 1431/0,369.74,-10222.29,40,0
     .goto 1431/0,464.24,-10317.69,40,0
     .goto 1431/0,445.34,-10368.45,40,0
-    .goto 1431/0,407.27,-10401.03,40,0
-    .goto 1431/0,404.84,-10455.39,40,0
+    .goto 1431/0,418.34,-10422.27,40,0
+    .goto 1431/0,391.34,-10410.57,40,0
     >>Kill |cRXP_ENEMY_Skeletal Raiders|r
-    >>Kill |cRXP_ENEMY_Skeletal Healers|r
-    >>Kill |cRXP_ENEMY_Skeletal Warders|r
     .complete 323,1 --Skeletal Raider slain (15)
-    .complete 323,2 --Skeletal Healer slain (3)
-    .complete 323,3 --Skeletal Warder slain (3)
     .mob Skeletal Raider
+    .isOnQuest 323
+step
+    #loop
+    .goto 1431/0,377.03,-10346.67,0
+    .goto 1431/0,377.03,-10346.67,40,0
+    .goto 1431/0,383.51,-10396.17,40,0
+    .goto 1431/0,374.06,-10422.09,40,0
+    .goto 1431/0,404.84,-10455.39,40,0
+    .goto 1431/0,429.68,-10445.13,40,0
+    .goto 1431/0,456.41,-10372.23,40,0
+    .goto 1431/0,431.03,-10331.73,40,0
+    .goto 1431/0,393.77,-10295.37,40,0
+    .goto 1431/0,378.65,-10238.49,40,0
+    >>Kill |cRXP_ENEMY_Skeletal Healers|r
+    .complete 323,2 --Skeletal Healer slain (3)
     .mob Skeletal Healer
+    .isOnQuest 323
+step
+    #loop
+    .goto 1431/0,366.23,-10389.69,0
+    .goto 1431/0,366.23,-10389.69,40,0
+    .goto 1431/0,340.04,-10358.55,40,0
+    .goto 1431/0,402.41,-10340.37,40,0
+    .goto 1431/0,393.77,-10305.27,40,0
+    .goto 1431/0,379.73,-10258.83,40,0
+    .goto 1431/0,369.74,-10222.29,40,0
+    .goto 1431/0,453.98,-10302.93,40,0
+    .goto 1431/0,462.62,-10367.55,40,0
+    .goto 1431/0,403.49,-10414.17,40,0
+    >>Kill |cRXP_ENEMY_Skeletal Warders|r
+    .complete 323,3 --Skeletal Warder slain (3)
     .mob Skeletal Warder
+    .isOnQuest 323
 step
     .goto 1431/0,623.27,-10329.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
     .turnin 323 >>Turn in Proving Your Worth
+    .target Sven Yorgen
+    .isOnQuest 323
+step
+    .goto 1431/0,623.27,-10329.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
     .accept 269 >>Accept Seeking Wisdom
     .target Sven Yorgen
+    .isQuestTurnedIn 323 --any of: Proving Your Worth
 step
     #loop
     .goto 1431/0,-844.45,-10485.99,0
@@ -858,33 +940,75 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
     .accept 133 >>Accept Ghoulish Effigy
     .target Abercrombie
+    .isQuestTurnedIn 159 --any of: Juice Delivery
 step
-    #loop
-    .goto 1431/0,107.84,-10333.71,0
-    .goto 1431/0,107.84,-10333.71,40,0
-    .goto 1431/0,148.34,-10419.21,40,0
-    .goto 1431/0,181.55,-10365.57,40,0
-    .goto 1431/0,233.93,-10381.95,40,0
-    .goto 1431/0,278.21,-10257.57,40,0
-    .goto 1431/0,351.11,-10228.77,40,0
-    .goto 1431/0,237.17,-10202.31,40,0
-    .goto 1431/0,143.75,-10222.47,40,0
-    .goto 1431/0,206.39,-10306.89,40,0
-    >>Kill |cRXP_ENEMY_Plague Spreaders|r
-    >>Kill |cRXP_ENEMY_Flesh Eaters|r, |cRXP_ENEMY_Bone Chewers|r, |cRXP_ENEMY_Brain Eaters|r and |cRXP_ENEMY_Plague Spreaders|r. Loot them for |cRXP_LOOT_Ghoul Fang|r
-    >>Kill |cRXP_ENEMY_Flesh Eaters|r, |cRXP_ENEMY_Bone Chewers|r, |cRXP_ENEMY_Brain Eaters|r and |cRXP_ENEMY_Plague Spreaders|r. Loot them for |cRXP_LOOT_Ghoul Rib|r
-    .complete 58,1 --Plague Spreader slain (20)
+    #completewith Along19
+    >>As you go: Kill |cRXP_ENEMY_Flesh Eaters|r, |cRXP_ENEMY_Bone Chewers|r, |cRXP_ENEMY_Brain Eaters|r and |cRXP_ENEMY_Plague Spreaders|r. Loot them for |cRXP_LOOT_Ghoul Fang|r. |cRXP_WARN_Anything left is finished later|r
     .complete 101,1 --Ghoul Fang (10)
-    .complete 133,1 --Ghoul Rib (7)
-    .mob Plague Spreader
     .mob Flesh Eater
     .mob Bone Chewer
     .mob Brain Eater
+    .mob Plague Spreader
+step
+    #label Along19
+    #loop
+    .goto 1431/0,122.96,-10332.27,0
+    .goto 1431/0,122.96,-10332.27,40,0
+    .goto 1431/0,142.40,-10305.99,40,0
+    .goto 1431/0,146.18,-10268.37,40,0
+    .goto 1431/0,182.36,-10212.03,40,0
+    .goto 1431/0,214.76,-10224.63,40,0
+    .goto 1431/0,290.09,-10227.51,40,0
+    .goto 1431/0,193.16,-10329.93,40,0
+    .goto 1431/0,195.86,-10377.81,40,0
+    .goto 1431/0,172.64,-10341.63,40,0
+    >>Kill |cRXP_ENEMY_Plague Spreaders|r
+    .complete 58,1 --Plague Spreader slain (20)
+    .mob Plague Spreader
+    .isOnQuest 58
+step
+    #loop
+    .goto 1431/0,206.39,-10306.89,0
+    .goto 1431/0,206.39,-10306.89,40,0
+    .goto 1431/0,233.93,-10381.95,40,0
+    .goto 1431/0,181.55,-10365.57,40,0
+    .goto 1431/0,148.34,-10419.21,40,0
+    .goto 1431/0,107.84,-10333.71,40,0
+    .goto 1431/0,143.75,-10222.47,40,0
+    .goto 1431/0,237.17,-10202.31,40,0
+    .goto 1431/0,351.11,-10228.77,40,0
+    .goto 1431/0,278.21,-10257.57,40,0
+    >>Kill |cRXP_ENEMY_Flesh Eaters|r, |cRXP_ENEMY_Bone Chewers|r, |cRXP_ENEMY_Brain Eaters|r and |cRXP_ENEMY_Plague Spreaders|r. Loot them for |cRXP_LOOT_Ghoul Fang|r
+    .complete 101,1 --Ghoul Fang (10)
+    .mob Flesh Eater
+    .mob Bone Chewer
+    .mob Brain Eater
+    .mob Plague Spreader
+step
+    #loop
+    .goto 1431/0,206.39,-10306.89,0
+    .goto 1431/0,206.39,-10306.89,40,0
+    .goto 1431/0,233.93,-10381.95,40,0
+    .goto 1431/0,181.55,-10365.57,40,0
+    .goto 1431/0,148.34,-10419.21,40,0
+    .goto 1431/0,107.84,-10333.71,40,0
+    .goto 1431/0,143.75,-10222.47,40,0
+    .goto 1431/0,237.17,-10202.31,40,0
+    .goto 1431/0,351.11,-10228.77,40,0
+    .goto 1431/0,278.21,-10257.57,40,0
+    >>Kill |cRXP_ENEMY_Flesh Eaters|r, |cRXP_ENEMY_Bone Chewers|r, |cRXP_ENEMY_Brain Eaters|r and |cRXP_ENEMY_Plague Spreaders|r. Loot them for |cRXP_LOOT_Ghoul Rib|r
+    .complete 133,1 --Ghoul Rib (7)
+    .mob Flesh Eater
+    .mob Bone Chewer
+    .mob Brain Eater
+    .mob Plague Spreader
+    .isOnQuest 133
 step
     .goto 1431/0,74.36,-10282.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
     .turnin 133 >>Turn in Ghoulish Effigy
     .target Abercrombie
+    .isOnQuest 133
 step
     .hs >> Hearth to Darkshire
 step
@@ -906,6 +1030,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
     .turnin 58 >>Turn in The Night Watch
     .target Commander Althea Ebonlocke
+    .isOnQuest 58
 step
     .goto 1431/0,-1125.25,-10560.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Daltry|r
@@ -925,10 +1050,15 @@ step
 step
     .xp 29 >>|cRXP_WARN_The rest of Duskwood is planned from level 29.|r Come back to this guide then
 step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_Duskwood: around Calor|r (planned from level 29)
+step
     .goto 1431/0,-1321.27,-10581.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viktori Prism'Antras|r
     .accept 181 >>Accept Look To The Stars
     .target Viktori Prism'Antras
+    .isQuestTurnedIn 177 --any of: Look To The Stars
 step
     #loop
     .goto 1431/0,-1186.54,-10513.89,0
@@ -947,6 +1077,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
     .accept 134 >>Accept Ogre Thieves
     .target Abercrombie
+    .isQuestTurnedIn 133 --any of: Ghoulish Effigy
 step
     .goto 1431/0,187.49,-11013.93
     >>Open the |cRXP_PICK_Defias Strongbox|r. Loot it for |cRXP_LOOT_Defias Docket|r
@@ -956,17 +1087,25 @@ step
     .goto 1431/0,-69.01,-11090.97
     >>Pick up |cRXP_PICK_Abercrombie's Crate|r from the ground
     .complete 134,1 --Abercrombie's Crate (1)
+    .isOnQuest 134
 step
     .goto 1431/0,-160.54,-11224.89
     >>Kill |cRXP_ENEMY_Zzarc' Vul|r and loot |cRXP_LOOT_Ogre's Monocle|r
     .complete 181,1 --Ogre's Monocle (1)
     .mob Zzarc' Vul
+    .isOnQuest 181
 step
     .goto 1431/0,74.36,-10282.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
     .turnin 134 >>Turn in Ogre Thieves
+    .target Abercrombie
+    .isOnQuest 134
+step
+    .goto 1431/0,74.36,-10282.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
     .accept 160 >>Accept Note to the Mayor
     .target Abercrombie
+    .isQuestTurnedIn 134 --any of: Ogre Thieves
 step
     #loop
     .goto 1431/0,-1122.55,-10330.83,0
@@ -997,11 +1136,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viktori Prism'Antras|r
     .turnin 181 >>Turn in Look To The Stars
     .target Viktori Prism'Antras
+    .isOnQuest 181
 step
     .goto 1431/0,-1211.92,-10572.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
     .accept 222 >>Accept Worgen in the Woods
     .target Calor
+    .isQuestTurnedIn 221 --any of: Worgen in the Woods
 step
     .goto 1431/0,-1200.31,-10599.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jonathan Carevin|r
@@ -1013,51 +1154,95 @@ step
     .goto 1431/0,-1108.78,-10552.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
     .turnin 160 >>Turn in Note to the Mayor
+    .target Lord Ello Ebonlocke
+    .isOnQuest 160
+step
+    .goto 1431/0,-1108.78,-10552.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
     .accept 251 >>Accept Translate Abercrombie's Note
     .target Lord Ello Ebonlocke
+    .isQuestTurnedIn 160 --any of: Note to the Mayor
 step
     .goto 1431/0,-1127.41,-10573.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r
     .turnin 251 >>Turn in Translate Abercrombie's Note
+    .target Sirra Von'Indi
+    .isOnQuest 251
+step
+    .goto 1431/0,-1127.41,-10573.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r
     .accept 401 >>Accept Wait for Sirra to Finish
+    .target Sirra Von'Indi
+    .isQuestTurnedIn 251 --any of: Translate Abercrombie's Note
+step
+    .goto 1431/0,-1127.41,-10573.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r
     .turnin 401 >>Turn in Wait for Sirra to Finish
+    .target Sirra Von'Indi
+    .isOnQuest 401
+step
+    .goto 1431/0,-1127.41,-10573.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r
     .accept 252 >>Accept Translation to Ello
     .target Sirra Von'Indi
+    .isQuestTurnedIn 401 --any of: Wait for Sirra to Finish
 step
     .goto 1431/0,-1108.78,-10552.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
     .turnin 252 >>Turn in Translation to Ello
+    .target Lord Ello Ebonlocke
+    .isOnQuest 252
+step
+    .goto 1431/0,-1108.78,-10552.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
     .accept 253 >>Accept Bride of the Embalmer
     .target Lord Ello Ebonlocke
+    .isQuestTurnedIn 252 --any of: Translation to Ello
 step
     #loop
     .goto 1431/0,-1121.74,-10929.51,0
     .goto 1431/0,-1121.74,-10929.51,40,0
-    .goto 1431/0,-1122.82,-10969.11,40,0
-    .goto 1431/0,-1099.06,-11006.55,40,0
-    .goto 1431/0,-1111.75,-11061.45,40,0
-    .goto 1431/0,-1141.18,-11076.03,40,0
-    .goto 1431/0,-1166.29,-11149.29,40,0
-    .goto 1431/0,-1161.97,-11106.63,40,0
-    .goto 1431/0,-1147.93,-11023.29,40,0
+    .goto 1431/0,-1151.17,-10950.39,40,0
     .goto 1431/0,-1157.38,-10974.87,40,0
+    .goto 1431/0,-1135.78,-11014.29,40,0
+    .goto 1431/0,-1147.93,-11023.29,40,0
+    .goto 1431/0,-1111.75,-11061.45,40,0
+    .goto 1431/0,-1099.06,-11006.55,40,0
+    .goto 1431/0,-1119.31,-10980.09,40,0
+    .goto 1431/0,-1122.82,-10969.11,40,0
     >>Kill |cRXP_ENEMY_Nightbane Vile Fangs|r
-    >>Kill |cRXP_ENEMY_Nightbane Tainted Ones|r
     .complete 222,1 --Nightbane Vile Fang slain (8)
-    .complete 222,2 --Nightbane Tainted One slain (8)
     .mob Nightbane Vile Fang
+    .isOnQuest 222
+step
+    #loop
+    .goto 1431/0,-1141.18,-11076.03,0
+    .goto 1431/0,-1141.18,-11076.03,40,0
+    .goto 1431/0,-1161.97,-11106.63,40,0
+    .goto 1431/0,-1167.64,-11133.27,40,0
+    .goto 1431/0,-1166.29,-11149.29,40,0
+    >>Kill |cRXP_ENEMY_Nightbane Tainted Ones|r
+    .complete 222,2 --Nightbane Tainted One slain (8)
     .mob Nightbane Tainted One
+    .isOnQuest 222
 step
     .goto 1431/0,-1211.92,-10572.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
     .turnin 222 >>Turn in Worgen in the Woods
+    .target Calor
+    .isOnQuest 222
+step
+    .goto 1431/0,-1211.92,-10572.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
     .accept 223 >>Accept Worgen in the Woods
     .target Calor
+    .isQuestTurnedIn 222 --any of: Worgen in the Woods
 step
     .goto 1431/0,-1200.31,-10599.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jonathan Carevin|r
     .turnin 223 >>Turn in Worgen in the Woods
     .target Jonathan Carevin
+    .isOnQuest 223
 step
     .goto 1431/0,-1151.98,-11141.19
     >>Click the |cRXP_PICK_Mound of Dirt|r
@@ -1068,11 +1253,13 @@ step
     >>Kill |cRXP_ENEMY_Eliza|r and loot |cRXP_LOOT_The Embalmer's Heart|r
     .complete 253,1 --The Embalmer's Heart (1)
     .mob Eliza
+    .isOnQuest 253
 step
     .goto 1431/0,-1108.78,-10552.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
     .turnin 253 >>Turn in Bride of the Embalmer
     .target Lord Ello Ebonlocke
+    .isOnQuest 253
 step
     .goto 1431/0,-1200.31,-10599.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jonathan Carevin|r
@@ -1090,4 +1277,6 @@ step
     +|cRXP_WARN_End of the Duskwood route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Darnassus|r: Answered Questions
     >>|cRXP_FRIENDLY_Stormwind City|r: The Missing Diplomat
+step
+    +|cRXP_WARN_Suggested next zones at level 29|r: |cRXP_FRIENDLY_Wetlands|r (about 0.5 levels of quests, starting around Glorin Steelbrow). Completing this step loads the guide for Wetlands --RouteBuilder:next
 ]])

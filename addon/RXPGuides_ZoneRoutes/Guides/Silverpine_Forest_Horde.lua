@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 10, 15, 18, 21).
+-- Sections (the guide starts at the one for your level): around High Executor Hadrec from 10; around Dalar Dawnweaver from 15; around Shadow Priest Allister from 18; part 4 from 21.
 -- Edit zones/Silverpine Forest.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,7 +14,23 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group Zone Routes (Horde)
 #name 10-24 Silverpine Forest
+#next Zone Routes (Horde)\8-29 The Barrens
 
+step
+    .xp <15,1,RBSection1_1
+    .xp 15 >>Finding the place in this guide for your level
+step
+    .xp <18,1,RBSection2_1
+    .xp 18 >>Finding the place in this guide for your level
+step
+    .xp <21,1,RBSection3_1
+    .xp 21 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection4_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Silverpine Forest: around High Executor Hadrec|r (planned from level 10)
 step
     .xp 10 >>Grind to level 10 (Lost Deathstalkers needs it)
 step
@@ -510,29 +527,48 @@ step
     >>|cRXP_FRIENDLY_Undercity|r: Ride to the Undercity << Undead
     >>|cRXP_FRIENDLY_Undercity|r: A Recipe For Death, Zinge's Delivery
 step
+    +|cRXP_WARN_Until level 15, suggested zones|r: |cRXP_FRIENDLY_Zephras Isle|r (about 1.9 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_The Barrens|r (about 1.4 levels of quests, starting around Gazlowe), |cRXP_FRIENDLY_Tirisfal Glades|r (about 0.6 levels of quests, starting around Danitha Morr; 2 quests from here hand in there). Then come back to this Silverpine Forest guide --RouteBuilder:next
+step
     .xp 15 >>|cRXP_WARN_The rest of Silverpine Forest is planned from level 15.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Silverpine Forest: around Dalar Dawnweaver|r (planned from level 15)
 step
     .goto 1421/0,1593.60,551.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
     .accept 98298 >>Accept Arugal's Folly
+    .target Dalar Dawnweaver
+step
+    .goto 1421/0,1593.60,551.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
     .accept 424 >>Accept Arugal's Folly
     .target Dalar Dawnweaver
+    .isQuestTurnedIn 423 --any of: Arugal's Folly
 step
     .goto 1421/0,1626.36,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Hadrec|r
     .accept 443 >>Accept Rot Hide Ichor
     .target High Executor Hadrec
+    .isQuestTurnedIn 439 --any of: Rot Hide Clues
 step
     .goto 1421/0,989.64,410.59
     >>Kill |cRXP_ENEMY_Grimson the Pale|r and loot |cRXP_LOOT_Head of Grimson|r
     .complete 424,1 --Head of Grimson (1)
     .mob Grimson the Pale
+    .isOnQuest 424
 step
     .goto 1421/0,1593.60,551.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
     .turnin 424 >>Turn in Arugal's Folly
+    .target Dalar Dawnweaver
+    .isOnQuest 424
+step
+    .goto 1421/0,1593.60,551.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
     .accept 99 >>Accept Arugal's Folly
     .target Dalar Dawnweaver
+    .isQuestTurnedIn 424 --any of: Arugal's Folly
 step
     #loop
     .goto 1421/0,1545.72,-329.45,0
@@ -551,6 +587,7 @@ step
     .mob Moonrage Watcher
     .mob Moonrage Sentry
     .mob Pyrewood Sentry
+    .isOnQuest 99
 step
     #loop
     .goto 1421/0,1429.38,-452.65,0
@@ -570,8 +607,13 @@ step
     .goto 1421/0,1593.60,551.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
     .turnin 98298 >>Turn in Arugal's Folly
+    .target Dalar Dawnweaver
+step
+    .goto 1421/0,1593.60,551.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
     .turnin 99 >>Turn in Arugal's Folly
     .target Dalar Dawnweaver
+    .isOnQuest 99
 step
     #completewith Drop460x1
     >>|cRXP_LOOT_A Talking Head|r can drop from |cRXP_ENEMY_Rot Hide Brute|r, |cRXP_ENEMY_Rot Hide Plague Weaver|r, |cRXP_ENEMY_Rot Hide Savage|r. Use it to start the quest if you get one
@@ -597,6 +639,7 @@ step
     .mob Rot Hide Plague Weaver
     .mob Rot Hide Savage
     .mob Raging Rot Hide
+    .isOnQuest 443
 step
     .goto 1421/0,599.46,970.87
     >>Click the |cRXP_PICK_Shallow Grave|r
@@ -623,13 +666,25 @@ step
     .goto 1421/0,1652.40,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
     .turnin 443 >>Turn in Rot Hide Ichor
+    .target Apothecary Renferrel
+    .isOnQuest 443
+step
+    .goto 1421/0,1652.40,522.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
     .accept 444 >>Accept Rot Hide Origins
     .target Apothecary Renferrel
+    .isQuestTurnedIn 443 --any of: Rot Hide Ichor
 step
     +|cRXP_WARN_That is all of Silverpine Forest for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Undercity|r: Rot Hide Origins, Wand to Bethor
 step
+    +|cRXP_WARN_Until level 18, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 0.5 levels of quests, starting around Sergra Darkthorn). Then come back to this Silverpine Forest guide --RouteBuilder:next
+step
     .xp 18 >>|cRXP_WARN_The rest of Silverpine Forest is planned from level 18.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Silverpine Forest: around Shadow Priest Allister|r (planned from level 18)
 step
     .goto 1421/0,1593.60,551.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
@@ -834,7 +889,13 @@ step
     +|cRXP_WARN_That is all of Silverpine Forest for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Undercity|r: A Recipe For Death
 step
+    +|cRXP_WARN_Until level 21, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 1.1 levels of quests, starting around Tonga Runetotem). Then come back to this Silverpine Forest guide --RouteBuilder:next
+step
     .xp 21 >>|cRXP_WARN_The rest of Silverpine Forest is planned from level 21.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Silverpine Forest: part 4|r (planned from level 21)
 step << Undead Paladin
     .goto 1421/0,1630.14,519.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lumina Windsinger|r
@@ -856,11 +917,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Allister|r
     .accept 480 >>Accept The Weaver
     .target Shadow Priest Allister
+    .isQuestTurnedIn 479 --any of: Ambermill Investigations
 step
     .goto 1421/0,787.20,-132.89
     >>Kill |cRXP_ENEMY_Archmage Ataeric|r and loot |cRXP_LOOT_Ataeric's Staff|r
     .complete 480,1 --Ataeric's Staff (1)
     .mob Archmage Ataeric
+    .isOnQuest 480
 step
     .goto 1421/0,1010.22,-288.85
     >>Click the |cRXP_PICK_Offering Stone|r
@@ -914,6 +977,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Allister|r
     .turnin 480 >>Turn in The Weaver
     .target Shadow Priest Allister
+    .isOnQuest 480
 step << Shaman
     .goto 1421/0,1843.08,418.99
     >>Click the |cRXP_PICK_Brazier of Everfount|r
@@ -937,4 +1001,6 @@ step
     +|cRXP_WARN_End of the Silverpine Forest route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: Journey to Hillsbrad Foothills
     >>|cRXP_FRIENDLY_The Barrens|r: Call of Water << Shaman
+step
+    +|cRXP_WARN_Suggested next zones at level 21|r: |cRXP_FRIENDLY_The Barrens|r (about 0.9 levels of quests, starting around Tonga Runetotem). Completing this step loads the guide for The Barrens --RouteBuilder:next
 ]])

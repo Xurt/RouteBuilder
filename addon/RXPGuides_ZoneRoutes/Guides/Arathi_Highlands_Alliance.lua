@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 30, 33, 36, 39, 42).
+-- Sections (the guide starts at the one for your level): start from 30; around Alliance Brigadier General from 33; part 3 from 36; around Skuerto from 39; part 5 from 42.
 -- Edit zones/Arathi Highlands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,24 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 30-42 Arathi Highlands
 
+step
+    .xp <33,1,RBSection1_1
+    .xp 33 >>Finding the place in this guide for your level
+step
+    .xp <36,1,RBSection2_1
+    .xp 36 >>Finding the place in this guide for your level
+step
+    .xp <39,1,RBSection3_1
+    .xp 39 >>Finding the place in this guide for your level
+step
+    .xp <42,1,RBSection4_1
+    .xp 42 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection5_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Arathi Highlands: start|r (planned from level 30)
 step
     .goto 1417/0,-1675.23,-714.37
     >>Click the |cRXP_PICK_Messenger Bag|r
@@ -125,6 +144,10 @@ step
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: MacKreel's Moonshine
 step
     .xp 33 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 33.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Arathi Highlands: around Alliance Brigadier General|r (planned from level 33)
 step
     .goto 1417/0,-2516.55,-1274.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
@@ -332,6 +355,10 @@ step
 step
     .xp 36 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 36.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Arathi Highlands: part 3|r (planned from level 36)
+step
     .goto 1417/0,-2510.07,-1231.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alliance Brigadier General|r
     .turnin 98896 >>Turn in Darkspear Islands Clash
@@ -372,10 +399,12 @@ step
     .goto 1417/0,-3901.83,-876.13
     >>Click the |cRXP_PICK_Iridescent Shards|r
     .accept 651 >>Accept Stones of Binding
+    .isQuestTurnedIn 642 --any of: The Princess Trapped
 step
     .goto 1417/0,-3267.87,-846.61
     >>Open the |cRXP_PICK_Stone of East Binding|r. Loot it for |cRXP_LOOT_Cresting Key|r
     .complete 651,2 --Cresting Key (1)
+    .isOnQuest 651
 step << Shaman
     .goto 1417/0,-3018.39,-795.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
@@ -398,15 +427,18 @@ step
     .goto 1417/0,-2740.11,-1350.85
     >>Open the |cRXP_PICK_Stone of Outer Binding|r. Loot it for |cRXP_LOOT_Thundering Key|r
     .complete 651,3 --Thundering Key (1)
+    .isOnQuest 651
 step
     .goto 1417/0,-2516.55,-1274.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
     .accept 682 >>Accept Stromgarde Badges
     .target Captain Nials
+    .isQuestTurnedIn 681 --any of: Northfold Manor
 step
     .goto 1417/0,-1783.23,-855.97
     >>Open the |cRXP_PICK_Stone of West Binding|r. Loot it for |cRXP_LOOT_Burning Key|r
     .complete 651,1 --Burning Key (1)
+    .isOnQuest 651
 step
     #loop
     .goto 1417/0,-1881.87,-1587.01,0
@@ -424,15 +456,18 @@ step
     .mob Syndicate Prowler
     .mob Syndicate Conjuror
     .mob Syndicate Magus
+    .isOnQuest 682
 step
     .goto 1417/0,-2170.95,-1510.45
     >>Click the |cRXP_PICK_Stone of Inner Binding|r
     .turnin 651 >>Turn in Stones of Binding
+    .isOnQuest 651
 step
     .goto 1417/0,-2516.55,-1274.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
     .turnin 682 >>Turn in Stromgarde Badges
     .target Captain Nials
+    .isOnQuest 682
 step
     .goto 1417/0,-2010.75,-2117.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lolo the Lookout|r
@@ -448,6 +483,10 @@ step
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: Hints of a New Plague?
 step
     .xp 39 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 39.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Arathi Highlands: around Skuerto|r (planned from level 39)
 step
     .goto 1417/0,-2510.07,-1231.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alliance Brigadier General|r
@@ -465,11 +504,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skuerto|r
     .accept 693 >>Accept Wand over Fist
     .target Skuerto
+    .isQuestTurnedIn 691 --any of: Worth Its Weight in Gold
 step
     .goto 1417/0,-2837.67,-2098.21
     >>Kill |cRXP_ENEMY_Kor'gresh Coldrage|r and loot |cRXP_LOOT_Trelane's Wand of Invocation|r
     .complete 693,1 --Trelane's Wand of Invocation (1)
     .mob Kor'gresh Coldrage
+    .isOnQuest 693
 step << NightElf
     .train 431663,1 << Priest
     .train 416031,1 << Paladin
@@ -573,8 +614,14 @@ step
     .goto 1417/0,-2546.07,-1261.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skuerto|r
     .turnin 693 >>Turn in Wand over Fist
+    .target Skuerto
+    .isOnQuest 693
+step
+    .goto 1417/0,-2546.07,-1261.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skuerto|r
     .accept 694 >>Accept Trelane's Defenses
     .target Skuerto
+    .isQuestTurnedIn 693 --any of: Wand over Fist
 step
     .goto 1417/0,-2524.11,-1279.57
     >>Click the |cRXP_PICK_Wanted Board|r
@@ -610,81 +657,140 @@ step
     >>Kill |cRXP_ENEMY_Boulderfist Shaman|r and loot |cRXP_LOOT_Azure Agate|r
     .complete 694,1 --Azure Agate (1)
     .mob Boulderfist Shaman
+    .isOnQuest 694
 step
     .goto 1417/0,-2047.47,-2088.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Nilzlix|r
     .accept 662 >>Accept Deep Sea Salvage
     .target First Mate Nilzlix
+    .isQuestTurnedIn 663 --any of: Land Ho!
 step
     .goto 1417/0,-2090.67,-2072.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Steelgut|r
     .accept 664 >>Accept Drowned Sorrows
     .target Captain Steelgut
+    .isQuestTurnedIn 663 --any of: Land Ho!
 step
     .goto 1417/0,-2085.99,-2066.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Phizzlethorpe|r
     .accept 665 >>Accept Sunken Treasure
     .target Professor Phizzlethorpe
+    .isQuestTurnedIn 663 --any of: Land Ho!
 step
     .goto 1417/0,-2085.99,-2067.73
     >>Defend Professor Phizzlethorpe
     .complete 665,1 --Defend Professor Phizzlethorpe
+    .isOnQuest 665
 step
     .goto 1417/0,-2085.63,-2064.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
     .turnin 665 >>Turn in Sunken Treasure
+    .target Doctor Draxlegauge
+    .isOnQuest 665
+step
+    .goto 1417/0,-2085.63,-2064.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
     .accept 666 >>Accept Sunken Treasure
     .target Doctor Draxlegauge
+    .isQuestTurnedIn 665 --any of: Sunken Treasure
+step
+    .goto 1417/0,-1708.71,-2175.49
+    >>Pick up |cRXP_PICK_Maiden's Folly Log|r from the ground
+    .complete 662,2 --Maiden's Folly Log (1)
+    .isOnQuest 662
+step
+    .goto 1417/0,-1696.47,-2161.57
+    >>Pick up |cRXP_PICK_Maiden's Folly Charts|r from the ground
+    .complete 662,1 --Maiden's Folly Charts (1)
+    .isOnQuest 662
+step
+    .goto 1417/0,-1603.23,-2187.97
+    >>Pick up |cRXP_PICK_Spirit of Silverpine Charts|r from the ground
+    .complete 662,3 --Spirit of Silverpine Charts (1)
+    .isOnQuest 662
+step
+    .goto 1417/0,-1610.07,-2175.73
+    >>Pick up |cRXP_PICK_Spirit of Silverpine Log|r from the ground
+    .complete 662,4 --Spirit of Silverpine Log (1)
+    .isOnQuest 662
 step
     #loop
-    .goto 1417/0,-1781.79,-2178.85,0
-    .goto 1417/0,-1781.79,-2178.85,40,0
-    .goto 1417/0,-1680.63,-2215.57,40,0
-    .goto 1417/0,-1656.15,-2147.41,40,0
+    .goto 1417/0,-1589.19,-2219.65,0
+    .goto 1417/0,-1589.19,-2219.65,40,0
     .goto 1417/0,-1553.19,-2145.97,40,0
-    .goto 1417/0,-1593.87,-2222.53,40,0
+    .goto 1417/0,-1656.15,-2147.41,40,0
+    .goto 1417/0,-1680.63,-2215.57,40,0
+    .goto 1417/0,-1781.79,-2178.85,40,0
+    .goto 1417/0,-1735.71,-2257.57,40,0
+    .goto 1417/0,-1785.39,-2326.69,40,0
+    .goto 1417/0,-1694.31,-2301.49,40,0
+    .goto 1417/0,-1624.47,-2294.29,40,0
+    >>Kill |cRXP_ENEMY_Daggerspine Raiders|r
+    .complete 664,1 --Daggerspine Raider slain (10)
+    .mob Daggerspine Raider
+    .isOnQuest 664
+step
+    #loop
+    .goto 1417/0,-1685.31,-2164.45,0
+    .goto 1417/0,-1685.31,-2164.45,40,0
+    .goto 1417/0,-1721.67,-2169.49,40,0
+    .goto 1417/0,-1610.07,-2173.33,40,0
+    .goto 1417/0,-1632.39,-2151.25,40,0
+    >>Kill |cRXP_ENEMY_Daggerspine Sorceress|r
+    .complete 664,2 --Daggerspine Sorceress slain (3)
+    .mob Daggerspine Sorceress
+    .isOnQuest 664
+step
+    #loop
+    .goto 1417/0,-1694.67,-2149.33,0
+    .goto 1417/0,-1694.67,-2149.33,40,0
+    .goto 1417/0,-1694.67,-2245.33,40,0
+    .goto 1417/0,-1622.67,-2221.33,40,0
+    .goto 1417/0,-1586.67,-2173.33,40,0
     .goto 1417/0,-1514.67,-2269.33,40,0
     .goto 1417/0,-1622.67,-2341.33,40,0
-    .goto 1417/0,-1694.31,-2301.49,40,0
-    .goto 1417/0,-1785.39,-2326.69,40,0
-    >>Pick up |cRXP_PICK_Maiden's Folly Log|r from the ground
-    >>Pick up |cRXP_PICK_Maiden's Folly Charts|r from the ground
-    >>Pick up |cRXP_PICK_Spirit of Silverpine Charts|r from the ground
-    >>Pick up |cRXP_PICK_Spirit of Silverpine Log|r from the ground
-    >>Kill |cRXP_ENEMY_Daggerspine Raiders|r
-    >>Kill |cRXP_ENEMY_Daggerspine Sorceress|r
+    .goto 1417/0,-1694.67,-2341.33,40,0
+    .goto 1417/0,-1766.67,-2317.33,40,0
+    .goto 1417/0,-1766.67,-2221.33,40,0
     >>Loot the |cRXP_PICK_Calcified Elven Gems|r for |cRXP_LOOT_Elven Gem|r
-    .complete 662,2 --Maiden's Folly Log (1)
-    .complete 662,1 --Maiden's Folly Charts (1)
-    .complete 662,3 --Spirit of Silverpine Charts (1)
-    .complete 662,4 --Spirit of Silverpine Log (1)
-    .complete 664,1 --Daggerspine Raider slain (10)
-    .complete 664,2 --Daggerspine Sorceress slain (3)
     .complete 666,1 --Elven Gem (10)
-    .mob Daggerspine Raider
-    .mob Daggerspine Sorceress
+    .isOnQuest 666
 step
     .goto 1417/0,-2047.47,-2088.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Nilzlix|r
     .turnin 662 >>Turn in Deep Sea Salvage
     .target First Mate Nilzlix
+    .isOnQuest 662
 step
     .goto 1417/0,-2090.67,-2072.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Steelgut|r
     .turnin 664 >>Turn in Drowned Sorrows
     .target Captain Steelgut
+    .isOnQuest 664
 step
     .goto 1417/0,-2085.63,-2064.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
     .turnin 666 >>Turn in Sunken Treasure
+    .target Doctor Draxlegauge
+    .isOnQuest 666
+step
+    .goto 1417/0,-2085.63,-2064.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
     .accept 668 >>Accept Sunken Treasure
     .target Doctor Draxlegauge
+    .isQuestTurnedIn 666 --any of: Sunken Treasure
 step
     .goto 1417/0,-2028.75,-2086.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
     .turnin 668 >>Turn in Sunken Treasure
+    .target Shakes O'Breen
+    .isOnQuest 668
+step
+    .goto 1417/0,-2028.75,-2086.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
     .accept 669 >>Accept Sunken Treasure
     .target Shakes O'Breen
+    .isQuestTurnedIn 668 --any of: Sunken Treasure
 step
     .goto 1417/0,-2516.55,-1274.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
@@ -695,28 +801,53 @@ step
     .goto 1417/0,-2529.87,-1279.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Kryten|r
     .turnin 694 >>Turn in Trelane's Defenses
+    .target Apprentice Kryten
+    .isOnQuest 694
+step
+    .goto 1417/0,-2529.87,-1279.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Kryten|r
     .accept 695 >>Accept An Apprentice's Enchantment
     .target Apprentice Kryten
+    .isQuestTurnedIn 694 --any of: Trelane's Defenses
 step
     .goto 1417/0,-2546.07,-1261.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skuerto|r
     .turnin 695 >>Turn in An Apprentice's Enchantment
+    .target Skuerto
+    .isOnQuest 695
+step
+    .goto 1417/0,-2546.07,-1261.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skuerto|r
     .accept 696 >>Accept Attack on the Tower
     .target Skuerto
+    .isQuestTurnedIn 695 --any of: An Apprentice's Enchantment
+step
+    .goto 1417/0,-1515.75,-1762.21
+    >>Open the |cRXP_PICK_Trelane's Lockbox|r. Loot it for |cRXP_LOOT_Trelane's Ember Agate|r
+    .complete 696,3 --Trelane's Ember Agate (1)
+    .isOnQuest 696
 step
     .goto 1417/0,-1521.15,-1768.69
-    >>Open the |cRXP_PICK_Trelane's Lockbox|r. Loot it for |cRXP_LOOT_Trelane's Ember Agate|r
     >>Open the |cRXP_PICK_Trelane's Footlocker|r. Loot it for |cRXP_LOOT_Trelane's Phylactery|r
-    >>Open the |cRXP_PICK_Trelane's Chest|r. Loot it for |cRXP_LOOT_Trelane's Orb|r
-    .complete 696,3 --Trelane's Ember Agate (1)
     .complete 696,1 --Trelane's Phylactery (1)
+    .isOnQuest 696
+step
+    .goto 1417/0,-1520.79,-1792.93
+    >>Open the |cRXP_PICK_Trelane's Chest|r. Loot it for |cRXP_LOOT_Trelane's Orb|r
     .complete 696,2 --Trelane's Orb (1)
+    .isOnQuest 696
 step
     .goto 1417/0,-2546.07,-1261.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skuerto|r
     .turnin 696 >>Turn in Attack on the Tower
+    .target Skuerto
+    .isOnQuest 696
+step
+    .goto 1417/0,-2546.07,-1261.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skuerto|r
     .accept 697 >>Accept Malin's Request
     .target Skuerto
+    .isQuestTurnedIn 696 --any of: Attack on the Tower
 step << Shaman
     .goto 1417/0,-3018.39,-795.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
@@ -745,11 +876,18 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: Malin's Request
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Sunken Treasure
 step
+    +|cRXP_WARN_Until level 42, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Sir S. J. Erlgadin). Then come back to this Arathi Highlands guide --RouteBuilder:next
+step
     .xp 42 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 42.|r Come back to this guide then
+step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_Arathi Highlands: part 5|r (planned from level 42)
 step
     .goto 1417/0,-2170.95,-1510.45
     >>Click the |cRXP_PICK_Stone of Inner Binding|r
     .accept 652 >>Accept Breaking the Keystone
+    .isQuestTurnedIn 651 --any of: Stones of Binding
 step
     .goto 1417/0,-2510.07,-1231.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alliance Brigadier General|r
@@ -785,6 +923,7 @@ step
     >>Kill |cRXP_ENEMY_Fozruk|r and loot |cRXP_LOOT_Rod of Order|r
     .complete 652,1 --Rod of Order (1)
     .mob Fozruk
+    .isOnQuest 652
 step
     .goto 1417/0,-3550.11,-988.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaruk|r
@@ -796,7 +935,12 @@ step
     .goto 1417/0,-2165.55,-1527.49
     >>Click the |cRXP_PICK_Keystone|r
     .turnin 652 >>Turn in Breaking the Keystone
+    .isOnQuest 652
+step
+    .goto 1417/0,-2165.55,-1527.49
+    >>Click the |cRXP_PICK_Keystone|r
     .accept 653 >>Accept Myzrael's Allies
+    .isQuestTurnedIn 652 --any of: Breaking the Keystone
 step
     .goto 1417/0,-2028.75,-2086.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r

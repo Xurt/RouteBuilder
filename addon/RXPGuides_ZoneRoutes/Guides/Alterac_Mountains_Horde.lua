@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 25, 28, 31).
+-- Sections (the guide starts at the one for your level): start from 25; part 2 from 28; part 3 from 31.
 -- Edit zones/Alterac Mountains.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 25-38 Alterac Mountains
 
+step
+    .xp <28,1,RBSection1_1
+    .xp 28 >>Finding the place in this guide for your level
+step
+    .xp <31,1,RBSection2_1
+    .xp 31 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Alterac Mountains: start|r (planned from level 25)
 step << Orc Shaman/Tauren Shaman/Troll Shaman
     .goto 1416/0,-1470.67,250.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
@@ -120,6 +133,10 @@ step
     >>|cRXP_FRIENDLY_Duskwood and back here|r: Grant's Shield, Silvia's Sword << Orc Shaman/Tauren Shaman/Troll Shaman
 step << Rogue
     .xp 28 >>|cRXP_WARN_The rest of Alterac Mountains is planned from level 28.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Alterac Mountains: part 2|r (planned from level 28)
 step << Rogue
     .goto 1416/0,-1594.71,-0.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myrokos Silentform|r
@@ -158,6 +175,10 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: What's the Big Idea? << Rogue
 step << Orc Shaman/Tauren Shaman/Troll Shaman/Shaman
     .xp 31 >>|cRXP_WARN_The rest of Alterac Mountains is planned from level 31.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Alterac Mountains: part 3|r (planned from level 31)
 step << Orc Shaman/Tauren Shaman/Troll Shaman
     .goto 1416/0,-1470.67,250.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r

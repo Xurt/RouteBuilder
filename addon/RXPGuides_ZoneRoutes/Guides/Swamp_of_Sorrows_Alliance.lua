@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 34, 37, 40, 51).
+-- Sections (the guide starts at the one for your level): start from 34; part 2 from 37; part 3 from 40; part 4 from 51.
 -- Edit zones/Swamp of Sorrows.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,21 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 34-52 Swamp of Sorrows
 
+step
+    .xp <37,1,RBSection1_1
+    .xp 37 >>Finding the place in this guide for your level
+step
+    .xp <40,1,RBSection2_1
+    .xp 40 >>Finding the place in this guide for your level
+step
+    .xp <51,1,RBSection3_1
+    .xp 51 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection4_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Swamp of Sorrows: start|r (planned from level 34)
 step
     .goto 1435/0,-2800.25,-10449.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r
@@ -149,6 +165,10 @@ step
 step
     .xp 37 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 37.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Swamp of Sorrows: part 2|r (planned from level 37)
+step
     .goto 1435/0,-3724.63,-9898.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galen Goodward|r
     .accept 1393 >>Accept Galen's Escape
@@ -177,12 +197,19 @@ step
     +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Dustwallow Marsh|r: Cortello's Riddle
 step
+    +|cRXP_WARN_Until level 40, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.6 levels of quests, starting around Sir S. J. Erlgadin). Then come back to this Swamp of Sorrows guide --RouteBuilder:next
+step
     .xp 40 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 40.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Swamp of Sorrows: part 3|r (planned from level 40)
 step
     .goto 1435/0,-2836.27,-10535.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Biggs|r
     .accept 1398 >>Accept Driftwood
     .target Watcher Biggs
+    .isQuestTurnedIn 1421 --any of: The Lost Caravan
 step
     .goto 1435/0,-2800.25,-10449.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r
@@ -201,17 +228,28 @@ step
     .goto 1435/0,-4378.12,-10493.83,40,0
     >>Pick up |cRXP_PICK_Sundried Driftwood|r from the ground
     .complete 1398,1 --Sundried Driftwood (1)
+    .isOnQuest 1398
 step
     .goto 1435/0,-2836.27,-10535.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Biggs|r
     .turnin 1398 >>Turn in Driftwood
+    .target Watcher Biggs
+    .isOnQuest 1398
+step
+    .goto 1435/0,-2836.27,-10535.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Biggs|r
     .accept 1425 >>Accept Deliver the Shipment
     .target Watcher Biggs
+    .isQuestTurnedIn 1398 --any of: Driftwood
 step
     +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Blasted Lands|r: Deliver the Shipment
 step << Warrior
     .xp 51 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 51.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Swamp of Sorrows: part 4|r (planned from level 51)
 step << Warrior
     .goto 1435/0,-3009.44,-10632.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r

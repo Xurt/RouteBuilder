@@ -12,7 +12,12 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group Zone Routes (Horde)
 #name 15-60 Redridge Mountains
+#next Zone Routes (Horde)\8-29 The Barrens
 
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Redridge Mountains: around Marcy Baker|r (planned from level 15)
 step
     .goto 1433/0,-1892.26,-9603.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marcy Baker|r
@@ -69,4 +74,6 @@ step
 step
     +|cRXP_WARN_End of the Redridge Mountains route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: A Sealed Crate, A Sealed Crate, A Sealed Crate, A Sealed Crate
+step
+    +|cRXP_WARN_Suggested next zones at level 15|r: |cRXP_FRIENDLY_The Barrens|r (about 0.5 levels of quests, starting around Sergra Darkthorn). Completing this step loads the guide for The Barrens --RouteBuilder:next
 ]])

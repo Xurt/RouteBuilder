@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 55, 58, 60).
+-- Sections (the guide starts at the one for your level): around Tirion Fordring from 55; part 2 from 58; part 3 from 60.
 -- Edit zones/Eastern Plaguelands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 55-60 Eastern Plaguelands
 
+step
+    .xp <58,1,RBSection1_1
+    .xp 58 >>Finding the place in this guide for your level
+step
+    .xp <60,1,RBSection2_1
+    .xp 60 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Eastern Plaguelands: around Tirion Fordring|r (planned from level 55)
 step
     .goto 1423/0,-5337.83,2255.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Nicholas Zverenhoff|r
@@ -480,6 +493,10 @@ step
 step
     .xp 58 >>|cRXP_WARN_The rest of Eastern Plaguelands is planned from level 58.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Eastern Plaguelands: part 2|r (planned from level 58)
+step
     .goto 1423/0,-3657.87,1410.95
     >>Pick up |cRXP_PICK_Pamela's Doll's Head|r from the ground
     .collect 12886,1,5149,1 --Pamela's Doll's Head (1)
@@ -581,18 +598,26 @@ step
     .goto 1423/0,-3212.60,1871.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
     .turnin 6133 >>Turn in The Ranger Lord's Behest
+    .target Nathanos Blightcaller
+step
+    .goto 1423/0,-3212.60,1871.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
     .accept 6135 >>Accept Duskwing, Oh How I Hate Thee...
     .target Nathanos Blightcaller
+    .isQuestTurnedIn 6022 --To Kill With Purpose
+    .isQuestTurnedIn 6042 --Un-Life's Little Annoyances
 step
     .goto 1423/0,-3378.23,1999.47
     >>Kill |cRXP_ENEMY_Duskwing|r and loot |cRXP_LOOT_Patch of Duskwing's Fur|r
     .complete 6135,1 --Patch of Duskwing's Fur (1)
     .mob Duskwing
+    .isOnQuest 6135
 step
     .goto 1423/0,-3212.60,1871.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
     .turnin 6135 >>Turn in Duskwing, Oh How I Hate Thee...
     .target Nathanos Blightcaller
+    .isOnQuest 6135
 step
     .goto 1423/0,-3270.68,1576.35
     >>Click the |cRXP_PICK_Mound of Dirt|r
@@ -644,10 +669,17 @@ step
 step
     .xp 60 >>|cRXP_WARN_The rest of Eastern Plaguelands is planned from level 60.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Eastern Plaguelands: part 3|r (planned from level 60)
+step
     .goto 1423/0,-3212.60,1871.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
     .accept 6136 >>Accept The Corpulent One
     .target Nathanos Blightcaller
+    .isQuestTurnedIn 6022 --To Kill With Purpose
+    .isQuestTurnedIn 6042 --Un-Life's Little Annoyances
+    .isQuestTurnedIn 6133 --The Ranger Lord's Behest
 step
     .goto 1423/0,-3212.60,1871.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
@@ -660,6 +692,7 @@ step
     >>Kill |cRXP_ENEMY_Borelgore|r
     .complete 6136,1 --Borelgore slain (1)
     .mob Borelgore
+    .isOnQuest 6136
 step
     .goto 1423/0,-3379.52,3367.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anthion Harmon|r
@@ -691,8 +724,15 @@ step
     .goto 1423/0,-3212.60,1871.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
     .turnin 6136 >>Turn in The Corpulent One
+    .target Nathanos Blightcaller
+    .isOnQuest 6136
+step
+    .goto 1423/0,-3212.60,1871.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
     .accept 6144 >>Accept The Call to Command
     .target Nathanos Blightcaller
+    .isQuestTurnedIn 6135 --Duskwing, Oh How I Hate Thee...
+    .isQuestTurnedIn 6136 --The Corpulent One
 step
     .goto 1423/0,-5305.57,2303.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smokey LaRue|r

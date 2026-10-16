@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 8 parts with a level check between them (from level 1, 28, 31, 34, 37, 41, 44, 47).
+-- Sections (the guide starts at the one for your level): start from 1; part 2 from 28; around Barnil Stonepot from 31; around Krazek from 34; around Sir S. J. Erlgadin from 37; around "Sea Wolf" MacKinley from 41; part 7 from 44; part 8 from 47.
 -- Edit zones/Stranglethorn Vale.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,33 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 1-50 Stranglethorn Vale
 
+step
+    .xp <28,1,RBSection1_1
+    .xp 28 >>Finding the place in this guide for your level
+step
+    .xp <31,1,RBSection2_1
+    .xp 31 >>Finding the place in this guide for your level
+step
+    .xp <34,1,RBSection3_1
+    .xp 34 >>Finding the place in this guide for your level
+step
+    .xp <37,1,RBSection4_1
+    .xp 37 >>Finding the place in this guide for your level
+step
+    .xp <41,1,RBSection5_1
+    .xp 41 >>Finding the place in this guide for your level
+step
+    .xp <44,1,RBSection6_1
+    .xp 44 >>Finding the place in this guide for your level
+step
+    .xp <47,1,RBSection7_1
+    .xp 47 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection8_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Stranglethorn Vale: start|r (planned from level 1)
 step
     .goto 1434/0,451.31,-14441.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Flipfin"|r
@@ -130,7 +158,13 @@ step
     +|cRXP_WARN_That is all of Stranglethorn Vale for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_another zone|r: Tip the Scales - Keefer's Angelfish, Tip the Scales - Brownell's Blue Striped Racer, Tip the Scales - Dezian Queenfish
 step
+    +|cRXP_WARN_Until level 28, suggested zones|r: |cRXP_FRIENDLY_Teldrassil|r (about 4.6 levels of quests, starting around Conservator Ilthalaine), |cRXP_FRIENDLY_Dun Morogh|r (about 4.4 levels of quests, starting around Sten Stoutarm), |cRXP_FRIENDLY_Elwynn Forest|r (about 3.2 levels of quests, starting around Marshal McBride). Then come back to this Stranglethorn Vale guide --RouteBuilder:next
+step
     .xp 28 >>|cRXP_WARN_The rest of Stranglethorn Vale is planned from level 28.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Stranglethorn Vale: part 2|r (planned from level 28)
 step
     .goto 1434/0,474.29,-14320.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caravaneer Ruzzgot|r
@@ -163,7 +197,13 @@ step
     +|cRXP_WARN_That is all of Stranglethorn Vale for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Duskwood|r: The Caravan Road
 step
+    +|cRXP_WARN_Until level 31, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.6 levels of quests, starting around Glorin Steelbrow). Then come back to this Stranglethorn Vale guide --RouteBuilder:next
+step
     .xp 31 >>|cRXP_WARN_The rest of Stranglethorn Vale is planned from level 31.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Stranglethorn Vale: around Barnil Stonepot|r (planned from level 31)
 step
     #loop
     .goto 1434/0,-332.30,-11524.82,0
@@ -552,6 +592,10 @@ step
 step
     .xp 34 >>|cRXP_WARN_The rest of Stranglethorn Vale is planned from level 34.|r Come back to this guide then
 step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Stranglethorn Vale: around Krazek|r (planned from level 34)
+step
     .goto 1434/0,211.38,-12434.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Thulbek|r
     .target Innkeeper Thulbek
@@ -602,6 +646,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ajeck Rouack|r
     .accept 187 >>Accept Tiger Mastery
     .target Ajeck Rouack
+    .isQuestTurnedIn 186 --any of: Tiger Mastery
 step
     #loop
     .goto 1434/0,49.93,-11916.21,0
@@ -617,6 +662,7 @@ step
     >>Kill |cRXP_ENEMY_Elder Stranglethorn Tigers|r
     .complete 187,1 --Elder Stranglethorn Tiger slain (10)
     .mob Elder Stranglethorn Tiger
+    .isOnQuest 187
 step
     #loop
     .goto 1434/0,492.15,-11957.90,0
@@ -643,11 +689,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .accept 195 >>Accept Raptor Mastery
     .target Hemet Nesingwary
+    .isQuestTurnedIn 194 --any of: Raptor Mastery
 step
     .goto 1434/0,-52.17,-11620.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ajeck Rouack|r
     .turnin 187 >>Turn in Tiger Mastery
     .target Ajeck Rouack
+    .isOnQuest 187
 step
     .goto 1434/0,490.24,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
@@ -675,11 +723,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizzlik|r
     .accept 577 >>Accept Some Assembly Required
     .target Drizzlik
+    .isQuestTurnedIn 575 --any of: Supply and Demand
 step
     .goto 1434/0,-205.32,-11310.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Yohwa|r
     .accept 574 >>Accept Special Forces
     .target Sergeant Yohwa
+    .isQuestTurnedIn 203 --The Second Rebellion
+    .isQuestTurnedIn 204 --Bad Medicine
 step
     #loop
     .goto 1434/0,-610.53,-11507.81,0
@@ -687,17 +738,29 @@ step
     .goto 1434/0,-622.65,-11530.35,40,0
     .goto 1434/0,-680.08,-11526.95,40,0
     .goto 1434/0,-711.99,-11537.16,40,0
-    .goto 1434/0,-849.19,-11525.67,40,0
-    .goto 1434/0,-864.50,-11472.07,40,0
     .goto 1434/0,-796.22,-11492.49,40,0
-    .goto 1434/0,-739.43,-11453.35,40,0
+    .goto 1434/0,-864.50,-11472.07,40,0
+    .goto 1434/0,-759.21,-11469.09,40,0
     .goto 1434/0,-730.49,-11500.57,40,0
+    .goto 1434/0,-713.90,-11512.91,40,0
     >>Kill |cRXP_ENEMY_Kurzen Commandos|r
-    >>Kill |cRXP_ENEMY_Kurzen Headshrinkers|r
     .complete 574,1 --Kurzen Commando slain (10)
-    .complete 574,2 --Kurzen Headshrinker slain (6)
     .mob Kurzen Commando
+    .isOnQuest 574
+step
+    #loop
+    .goto 1434/0,-741.98,-11503.55,0
+    .goto 1434/0,-741.98,-11503.55,40,0
+    .goto 1434/0,-735.60,-11464.84,40,0
+    .goto 1434/0,-739.43,-11453.35,40,0
+    .goto 1434/0,-774.53,-11478.88,40,0
+    .goto 1434/0,-849.82,-11475.48,40,0
+    .goto 1434/0,-868.33,-11480.58,40,0
+    .goto 1434/0,-849.19,-11525.67,40,0
+    >>Kill |cRXP_ENEMY_Kurzen Headshrinkers|r
+    .complete 574,2 --Kurzen Headshrinker slain (6)
     .mob Kurzen Headshrinker
+    .isOnQuest 574
 step
     #loop
     .goto 1434/0,-378.89,-12112.32,0
@@ -713,6 +776,7 @@ step
     >>Kill |cRXP_ENEMY_Snapjaw Crocolisks|r. Loot them for |cRXP_LOOT_Snapjaw Crocolisk Skin|r
     .complete 577,1 --Snapjaw Crocolisk Skin (5)
     .mob Snapjaw Crocolisk
+    .isOnQuest 577
 step
     #loop
     .goto 1434/0,153.31,-12214.85,0
@@ -728,6 +792,7 @@ step
     >>Kill |cRXP_ENEMY_Lashtail Raptors|r
     .complete 195,1 --Lashtail Raptor slain (10)
     .mob Lashtail Raptor
+    .isOnQuest 195
 step
     #loop
     .goto 1434/0,783.14,-12152.74,0
@@ -748,11 +813,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .turnin 195 >>Turn in Raptor Mastery
     .target Hemet Nesingwary
+    .isOnQuest 195
 step
     .goto 1434/0,-206.59,-11296.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Doren|r
     .turnin 574 >>Turn in Special Forces
     .target Lieutenant Doren
+    .isOnQuest 574
 step
     .goto 1434/0,483.22,-14438.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
@@ -764,6 +831,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizzlik|r
     .turnin 577 >>Turn in Some Assembly Required
     .target Drizzlik
+    .isOnQuest 577
 step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
@@ -796,6 +864,10 @@ step
 step
     .xp 37 >>|cRXP_WARN_The rest of Stranglethorn Vale is planned from level 37.|r Come back to this guide then
 step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_Stranglethorn Vale: around Sir S. J. Erlgadin|r (planned from level 37)
+step
     .goto 1434/0,487.05,-14444.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Master Seahorn|r
     .accept 670 >>Accept Sunken Treasure
@@ -825,11 +897,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ajeck Rouack|r
     .accept 188 >>Accept Tiger Mastery
     .target Ajeck Rouack
+    .isQuestTurnedIn 187 --any of: Tiger Mastery
 step
     .goto 1434/0,-47.70,-11617.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir S. J. Erlgadin|r
     .accept 192 >>Accept Panther Mastery
     .target Sir S. J. Erlgadin
+    .isQuestTurnedIn 191 --any of: Panther Mastery
 step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
@@ -854,6 +928,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Nimetz|r
     .accept 207 >>Accept Kurzen's Mystery
     .target Brother Nimetz
+    .isQuestTurnedIn 203 --The Second Rebellion
+    .isQuestTurnedIn 204 --Bad Medicine
 step
     #loop
     .goto 1434/0,-680.72,-12244.63,0
@@ -869,54 +945,75 @@ step
     >>Kill |cRXP_ENEMY_Shadowmaw Panthers|r
     .complete 192,1 --Shadowmaw Panther slain (10)
     .mob Shadowmaw Panther
+    .isOnQuest 192
 step
     .goto 1434/0,165.43,-11908.55
     >>Kill |cRXP_ENEMY_Sin'Dall|r and loot |cRXP_LOOT_Paw of Sin'Dall|r
     .complete 188,1 --Paw of Sin'Dall (1)
     .mob Sin'Dall
+    .isOnQuest 188
 step
     .goto 1434/0,339.64,-11983.00
     >>Open the |cRXP_PICK_Moon Over the Vale|r. Loot it for |cRXP_LOOT_The First Troll Legend|r
     .complete 207,1 --The First Troll Legend (1)
+    .isOnQuest 207
 step
     .goto 1434/0,644.66,-11548.65
     >>Open the |cRXP_PICK_The Emperor's Tomb|r. Loot it for |cRXP_LOOT_The Fourth Troll Legend|r
     .complete 207,4 --The Fourth Troll Legend (1)
+    .isOnQuest 207
 step
     .goto 1434/0,756.34,-11680.10
     >>Open the |cRXP_PICK_Fall of Gurubashi|r. Loot it for |cRXP_LOOT_The Third Troll Legend|r
     .complete 207,3 --The Third Troll Legend (1)
+    .isOnQuest 207
 step
     .goto 1434/0,637.01,-12148.48
     >>Open the |cRXP_PICK_Gri'lek the Wanderer|r. Loot it for |cRXP_LOOT_The Second Troll Legend|r
     .complete 207,2 --The Second Troll Legend (1)
+    .isOnQuest 207
 step
     .goto 1434/0,-54.72,-11628.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .accept 196 >>Accept Raptor Mastery
     .target Hemet Nesingwary
+    .isQuestTurnedIn 195 --any of: Raptor Mastery
 step
     .goto 1434/0,-52.17,-11620.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ajeck Rouack|r
     .turnin 188 >>Turn in Tiger Mastery
     .target Ajeck Rouack
+    .isOnQuest 188
 step
     .goto 1434/0,-47.70,-11617.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir S. J. Erlgadin|r
     .turnin 192 >>Turn in Panther Mastery
+    .target Sir S. J. Erlgadin
+    .isOnQuest 192
+step
+    .goto 1434/0,-47.70,-11617.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir S. J. Erlgadin|r
     .accept 193 >>Accept Panther Mastery
     .target Sir S. J. Erlgadin
+    .isQuestTurnedIn 192 --any of: Panther Mastery
 step
     .goto 1434/0,-193.19,-11320.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Nimetz|r
     .turnin 207 >>Turn in Kurzen's Mystery
+    .target Brother Nimetz
+    .isOnQuest 207
+step
+    .goto 1434/0,-193.19,-11320.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Nimetz|r
     .accept 205 >>Accept Troll Witchery
     .target Brother Nimetz
+    .isQuestTurnedIn 207 --any of: Kurzen's Mystery
 step
     .goto 1434/0,-206.59,-11296.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Doren|r
     .accept 202 >>Accept Colonel Kurzen
     .target Lieutenant Doren
+    .isQuestTurnedIn 574 --any of: Special Forces
 step
     .goto 1434/0,211.38,-12434.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Thulbek|r
@@ -932,6 +1029,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizzlik|r
     .accept 628 >>Accept Excelsior
     .target Drizzlik
+    .isQuestTurnedIn 577 --any of: Some Assembly Required
 step
     .goto 1434/0,427.70,-14411.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Crazz|r
@@ -993,6 +1091,7 @@ step
     >>Kill |cRXP_ENEMY_Jungle Stalkers|r
     .complete 196,1 --Jungle Stalker slain (10)
     .mob Jungle Stalker
+    .isOnQuest 196
 step
     #loop
     .goto 1434/0,-607.34,-12964.43,0
@@ -1009,6 +1108,7 @@ step
     .complete 205,1 --Skullsplitter Fetish (4)
     .mob Skullsplitter Witch Doctor
     .mob Skullsplitter Mystic
+    .isOnQuest 205
 step
     #loop
     .goto 1434/0,-905.98,-12045.11,0
@@ -1019,52 +1119,71 @@ step
     >>Kill |cRXP_ENEMY_Bhag'thera|r and loot |cRXP_LOOT_Fang of Bhag'thera|r
     .complete 193,1 --Fang of Bhag'thera (1)
     .mob Bhag'thera
+    .isOnQuest 193
 step
     #loop
     .goto 1434/0,-867.69,-11536.74,0
     .goto 1434/0,-867.69,-11536.74,40,0
     .goto 1434/0,-897.68,-11532.91,40,0
     .goto 1434/0,-927.04,-11503.13,40,0
+    .goto 1434/0,-942.35,-11497.60,40,0
+    .goto 1434/0,-923.21,-11488.24,40,0
+    >>Kill |cRXP_ENEMY_Kurzen Elites|r
+    .complete 202,1 --Kurzen Elite slain (6)
+    .mob Kurzen Elite
+    .isOnQuest 202
+step
+    #loop
+    .goto 1434/0,-916.83,-11438.46,0
+    .goto 1434/0,-916.83,-11438.46,40,0
+    .goto 1434/0,-933.42,-11430.81,40,0
     .goto 1434/0,-948.10,-11424.85,40,0
+    .goto 1434/0,-964.05,-11340.62,40,0
     .goto 1434/0,-947.46,-11332.11,40,0
+    .goto 1434/0,-925.12,-11343.17,40,0
     .goto 1434/0,-893.22,-11362.31,40,0
     .goto 1434/0,-888.11,-11415.92,40,0
     .goto 1434/0,-914.27,-11412.51,40,0
-    .goto 1434/0,-916.83,-11438.46,40,0
-    >>Kill |cRXP_ENEMY_Kurzen Elites|r
     >>Kill |cRXP_ENEMY_Kurzen Subchiefs|r
-    >>Kill |cRXP_ENEMY_Colonel Kurzen|r and loot |cRXP_LOOT_Kurzen's Head|r
-    .complete 202,1 --Kurzen Elite slain (6)
     .complete 202,2 --Kurzen Subchief slain (4)
-    .complete 202,3 --Kurzen's Head (1)
-    .mob Kurzen Elite
     .mob Kurzen Subchief
+    .isOnQuest 202
+step
+    .goto 1434/0,-965.96,-11336.79
+    >>Kill |cRXP_ENEMY_Colonel Kurzen|r and loot |cRXP_LOOT_Kurzen's Head|r
+    .complete 202,3 --Kurzen's Head (1)
     .mob Colonel Kurzen
+    .isOnQuest 202
 step
     .goto 1434/0,-193.19,-11320.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Nimetz|r
     .turnin 205 >>Turn in Troll Witchery
     .target Brother Nimetz
+    .isOnQuest 205
 step
     .goto 1434/0,-206.59,-11296.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Doren|r
     .turnin 202 >>Turn in Colonel Kurzen
     .target Lieutenant Doren
+    .isOnQuest 202
 step
     .goto 1434/0,-47.70,-11617.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir S. J. Erlgadin|r
     .turnin 193 >>Turn in Panther Mastery
     .target Sir S. J. Erlgadin
+    .isOnQuest 193
 step
     .goto 1434/0,-54.72,-11628.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .turnin 196 >>Turn in Raptor Mastery
     .target Hemet Nesingwary
+    .isOnQuest 196
 step
     .goto 1434/0,603.19,-11986.40
     >>Kill |cRXP_ENEMY_Elder Saltwater Crocolisk|r and loot |cRXP_LOOT_Elder Crocolisk Skin|r
     .complete 628,1 --Elder Crocolisk Skin (1)
     .mob Elder Saltwater Crocolisk
+    .isOnQuest 628
 step
     .goto 1434/0,504.28,-14299.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Shaky" Phillipe|r
@@ -1081,6 +1200,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizzlik|r
     .turnin 628 >>Turn in Excelsior
     .target Drizzlik
+    .isOnQuest 628
 step
     #loop
     .goto 1434/0,419.41,-14674.18,0
@@ -1120,6 +1240,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
     .accept 209 >>Accept Skullsplitter Tusks
     .target Kebok
+    .isQuestTurnedIn 189 --any of: Bloodscalp Ears
 step
     .goto 1434/0,480.03,-14467.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catelyn the Blade|r
@@ -1163,6 +1284,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
     .accept 600 >>Accept Venture Company Mining
     .target Crank Fizzlebub
+    .isQuestTurnedIn 605 --any of: Singing Blue Shards
 step
     #loop
     .goto 1434/0,-470.14,-13135.03,0
@@ -1181,6 +1303,7 @@ step
     .mob Venture Co. Foreman
     .mob Venture Co. Surveyor
     .mob Venture Co. Tinkerer
+    .isOnQuest 600
 step
     #loop
     .goto 1434/0,-560.75,-13106.95,0
@@ -1199,22 +1322,29 @@ step
     .mob Skullsplitter Hunter
     .mob Skullsplitter Witch Doctor
     .mob Skullsplitter Spiritchaser
+    .isOnQuest 209
 step
     .goto 1434/0,490.24,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
     .turnin 600 >>Turn in Venture Company Mining
     .target Crank Fizzlebub
+    .isOnQuest 600
 step
     .goto 1434/0,497.90,-14449.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kebok|r
     .turnin 209 >>Turn in Skullsplitter Tusks
     .target Kebok
+    .isOnQuest 209
 step
     +|cRXP_WARN_That is all of Stranglethorn Vale for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Sunken Treasure
     >>|cRXP_FRIENDLY_Thousand Needles|r: Goblin Sponsorship
 step
     .xp 41 >>|cRXP_WARN_The rest of Stranglethorn Vale is planned from level 41.|r Come back to this guide then
+step
+    #label RBSection6_1
+    #completewith next
+    +|cRXP_WARN_Stranglethorn Vale: around "Sea Wolf" MacKinley|r (planned from level 41)
 step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
@@ -1226,16 +1356,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .accept 197 >>Accept Raptor Mastery
     .target Hemet Nesingwary
+    .isQuestTurnedIn 196 --any of: Raptor Mastery
 step
     .goto 1434/0,166.07,-12989.53
     >>Kill |cRXP_ENEMY_Tethis|r and loot |cRXP_LOOT_Talon of Tethis|r
     .complete 197,1 --Talon of Tethis (1)
     .mob Tethis
+    .isOnQuest 197
 step
     .goto 1434/0,487.05,-14444.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Master Seahorn|r
     .accept 604 >>Accept The Bloodsail Buccaneers
     .target Fleet Master Seahorn
+    .isQuestTurnedIn 599 --any of: The Bloodsail Buccaneers
 step
     .goto 1434/0,495.34,-14457.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Skindle|r
@@ -1246,41 +1379,63 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
     .accept 609 >>Accept Voodoo Dues
     .target "Sea Wolf" MacKinley
+    .isQuestTurnedIn 607 --any of: Return to MacKinley
+step
+    .goto 1434/0,527.89,-14721.40
+    >>Kill |cRXP_ENEMY_Bloodsail Swashbucklers|r
+    .complete 604,1 --Bloodsail Swashbuckler slain (10)
+    .mob Bloodsail Swashbuckler
+    .isOnQuest 604
 step
     #loop
-    .goto 1434/0,500.45,-14678.44,0
+    .goto 1434/0,488.32,-14686.09,0
+    .goto 1434/0,488.32,-14686.09,40,0
     .goto 1434/0,500.45,-14678.44,40,0
-    .goto 1434/0,518.95,-14692.90,40,0
-    .goto 1434/0,527.89,-14721.40,40,0
-    .goto 1434/0,506.83,-14735.87,40,0
-    .goto 1434/0,485.13,-14715.45,40,0
     .goto 1434/0,451.31,-14703.96,40,0
-    >>Kill |cRXP_ENEMY_Bloodsail Swashbucklers|r
     >>Pick up |cRXP_PICK_Bloodsail Charts|r from the ground
-    >>Pick up |cRXP_PICK_Bloodsail Orders|r from the ground
-    .complete 604,1 --Bloodsail Swashbuckler slain (10)
     .complete 604,2 --Bloodsail Charts (1)
+    .isOnQuest 604
+step
+    #loop
+    .goto 1434/0,486.41,-14685.24,0
+    .goto 1434/0,486.41,-14685.24,40,0
+    .goto 1434/0,500.45,-14680.99,40,0
+    .goto 1434/0,450.67,-14705.24,40,0
+    >>Pick up |cRXP_PICK_Bloodsail Orders|r from the ground
     .complete 604,3 --Bloodsail Orders (1)
-    .mob Bloodsail Swashbuckler
+    .isOnQuest 604
 step
     .goto 1434/0,-331.67,-13646.38
     >>Kill |cRXP_ENEMY_Chucky "Ten Thumbs"|r and loot |cRXP_LOOT_Chucky's Huge Ring|r
     .complete 609,3 --Chucky's Huge Ring (1)
     .mob Chucky "Ten Thumbs"
+    .isOnQuest 609
+step
+    .goto 1434/0,-29.20,-13349.86
+    >>Kill |cRXP_ENEMY_Maury "Club Foot" Wilkins|r and loot |cRXP_LOOT_Maury's Clubbed Foot|r
+    .complete 609,1 --Maury's Clubbed Foot (1)
+    .mob Maury "Club Foot" Wilkins
+    .isOnQuest 609
 step
     .goto 1434/0,-7.50,-13374.11
-    >>Kill |cRXP_ENEMY_Maury "Club Foot" Wilkins|r and loot |cRXP_LOOT_Maury's Clubbed Foot|r
     >>Kill |cRXP_ENEMY_Jon-Jon the Crow|r and loot |cRXP_LOOT_Jon-Jon's Golden Spyglass|r
-    .complete 609,1 --Maury's Clubbed Foot (1)
     .complete 609,2 --Jon-Jon's Golden Spyglass (1)
-    .mob Maury "Club Foot" Wilkins
     .mob Jon-Jon the Crow
+    .isOnQuest 609
 step
     .goto 1434/0,-54.72,-11628.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .turnin 197 >>Turn in Raptor Mastery
+    .target Hemet Nesingwary
+    .isOnQuest 197
+step
+    .goto 1434/0,-54.72,-11628.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .accept 208 >>Accept Big Game Hunter
     .target Hemet Nesingwary
+    .isQuestTurnedIn 188 --Tiger Mastery
+    .isQuestTurnedIn 193 --Panther Mastery
+    .isQuestTurnedIn 197 --Raptor Mastery
 step
     .goto 1434/0,-54.72,-11616.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barnil Stonepot|r
@@ -1292,11 +1447,13 @@ step
     >>Kill |cRXP_ENEMY_King Bangalash|r and loot |cRXP_LOOT_Head of Bangalash|r
     .complete 208,1 --Head of Bangalash (1)
     .mob King Bangalash
+    .isOnQuest 208
 step
     .goto 1434/0,-54.72,-11628.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .turnin 208 >>Turn in Big Game Hunter
     .target Hemet Nesingwary
+    .isOnQuest 208
 step
     #completewith next
     .hs >>Hearth to Innkeeper Skindle's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -1311,6 +1468,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Master Seahorn|r
     .turnin 604 >>Turn in The Bloodsail Buccaneers
     .target Fleet Master Seahorn
+    .isOnQuest 604
 step
     .goto 1434/0,488.96,-14463.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Whiskey Slim|r
@@ -1320,7 +1478,17 @@ step
     .goto 1434/0,448.12,-14447.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
     .turnin 609 >>Turn in Voodoo Dues
+    .target "Sea Wolf" MacKinley
+    .isOnQuest 609
+step
+    .goto 1434/0,448.12,-14447.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
     .accept 613 >>Accept Cracking Maury's Foot
+    .target "Sea Wolf" MacKinley
+    .isQuestTurnedIn 609 --any of: Voodoo Dues
+step
+    .goto 1434/0,448.12,-14447.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
     .accept 2872 >>Accept Stoley's Debt
     .target "Sea Wolf" MacKinley
 step
@@ -1364,11 +1532,13 @@ step
     .mob Mosh'Ogg Shaman
     .mob Mosh'Ogg Lord
     .mob Mosh'Ogg Warmonger
+    .isOnQuest 613
 step
     .goto 1434/0,448.12,-14447.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Sea Wolf" MacKinley|r
     .turnin 613 >>Turn in Cracking Maury's Foot
     .target "Sea Wolf" MacKinley
+    .isOnQuest 613
 step
     .goto 1434/0,490.24,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crank Fizzlebub|r
@@ -1441,6 +1611,10 @@ step
 step
     .xp 44 >>|cRXP_WARN_The rest of Stranglethorn Vale is planned from level 44.|r Come back to this guide then
 step
+    #label RBSection7_1
+    #completewith next
+    +|cRXP_WARN_Stranglethorn Vale: part 7|r (planned from level 44)
+step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
     .turnin 627 >>Turn in Favor for Krazek
@@ -1476,20 +1650,28 @@ step
 step
     .xp 47 >>|cRXP_WARN_The rest of Stranglethorn Vale is planned from level 47.|r Come back to this guide then
 step
+    #label RBSection8_1
+    #completewith next
+    +|cRXP_WARN_Stranglethorn Vale: part 8|r (planned from level 47)
+step
     .goto 1434/0,-193.19,-11320.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Nimetz|r
     .accept 206 >>Accept Mai'Zoth
     .target Brother Nimetz
+    .isQuestTurnedIn 202 --Colonel Kurzen
+    .isQuestTurnedIn 205 --Troll Witchery
 step
     .goto 1434/0,-1156.76,-12342.90
     >>Kill |cRXP_ENEMY_Mai'Zoth|r and loot |cRXP_LOOT_Mind's Eye|r
     .complete 206,1 --Mind's Eye (1)
     .mob Mai'Zoth
+    .isOnQuest 206
 step
     .goto 1434/0,-193.19,-11320.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Nimetz|r
     .turnin 206 >>Turn in Mai'Zoth
     .target Brother Nimetz
+    .isOnQuest 206
 step
     .goto 1434/0,501.09,-14453.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krazek|r
@@ -1518,6 +1700,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Master Seahorn|r
     .accept 608 >>Accept The Bloodsail Buccaneers
     .target Fleet Master Seahorn
+    .isQuestTurnedIn 604 --any of: The Bloodsail Buccaneers
 step
     .goto 1434/0,411.11,-14416.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oglethorpe Obnoticus|r
@@ -1536,16 +1719,21 @@ step
 step
     .goto 1434/0,349.85,-14924.75
     >>Kill |cRXP_ENEMY_Captain Keelhaul|r
-    >>Kill |cRXP_ENEMY_Fleet Master Firallon|r
     .complete 608,2 --Captain Keelhaul slain (1)
-    .complete 608,3 --Fleet Master Firallon slain (1)
     .mob Captain Keelhaul
+    .isOnQuest 608
+step
+    .goto 1434/0,269.45,-15024.30
+    >>Kill |cRXP_ENEMY_Fleet Master Firallon|r
+    .complete 608,3 --Fleet Master Firallon slain (1)
     .mob Fleet Master Firallon
+    .isOnQuest 608
 step
     .goto 1434/0,123.32,-14920.92
     >>Kill |cRXP_ENEMY_Captain Stillwater|r
     .complete 608,1 --Captain Stillwater slain (1)
     .mob Captain Stillwater
+    .isOnQuest 608
 step
     .goto 1434/0,-137.04,-14135.18
     >>Kill |cRXP_ENEMY_Gorlash|r and loot |cRXP_LOOT_Smotts' Chest|r
@@ -1561,6 +1749,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Master Seahorn|r
     .turnin 608 >>Turn in The Bloodsail Buccaneers
     .target Fleet Master Seahorn
+    .isOnQuest 608
 step
     +|cRXP_WARN_End of the Stranglethorn Vale route.|r
 ]])

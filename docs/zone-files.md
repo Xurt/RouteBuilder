@@ -109,6 +109,10 @@ These sit at the top level of the file.
 | `quests` | Corrections per quest. See [Quest corrections](#quest-corrections). | |
 | `reminders` | Notes shown at a certain level. See [Reminders](#reminders). | |
 | `steps` | Hand-written steps placed next to a planned one. See [Extra steps](#extra-steps-vendors-trainers-flight-paths). | |
+| `hubs` | Names for the zone's sections (and so its guides), by the town's middle on the zone's map: `{ "Razor Hill": [52.0, 43.0] }`. A section whose quest givers are within about 375 yards of it takes its name. | "around" plus the busiest quest giver there. |
+| `sections` | `false`: no sections, so the zone is one guide that always starts at the top. | Sections at each new main hub (see the README). |
+| `split` | `false`: the sections stay in one guide, which starts at the one for your level by itself. | A guide per section, listed under the zone's name. |
+| `suggest` | `false`: `link` never suggests this zone to other guides. This zone's own guide still gets its suggestions. | Suggested when it suits the level. |
 
 Hearthstone steps are only planned for a part of the guide with at least 25 things to do.
 

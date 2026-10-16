@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 35, 38, 41, 44).
+-- Sections (the guide starts at the one for your level): around Nazeer Bloodpike from 35; part 2 from 38; around Overlord Mok'Morokk from 41; part 4 from 44.
 -- Edit zones/Dustwallow Marsh.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,21 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 35-46 Dustwallow Marsh
 
+step
+    .xp <38,1,RBSection1_1
+    .xp 38 >>Finding the place in this guide for your level
+step
+    .xp <41,1,RBSection2_1
+    .xp 41 >>Finding the place in this guide for your level
+step
+    .xp <44,1,RBSection3_1
+    .xp 44 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection4_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Dustwallow Marsh: around Nazeer Bloodpike|r (planned from level 35)
 step
     .goto 1445/1,-2534.25,-3700.73
     >>Click the |cRXP_PICK_Hoofprints|r
@@ -374,10 +390,15 @@ step
 step
     .xp 38 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 38.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Dustwallow Marsh: part 2|r (planned from level 38)
+step
     .goto 1445/1,-2892.82,-3110.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Do'gol|r
     .accept 1322 >>Accept The Black Shield
     .target Do'gol
+    .isQuestTurnedIn 1321 --any of: The Black Shield
 step
     #loop
     .goto 1445/1,-3322.27,-3324.13,0
@@ -396,17 +417,25 @@ step
     .mob Darkfang Spider
     .mob Darkfang Venomspitter
     .mob Giant Darkfang Spider
+    .isOnQuest 1322
 step
     .goto 1445/1,-2892.82,-3110.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Do'gol|r
     .turnin 1322 >>Turn in The Black Shield
+    .target Do'gol
+    .isOnQuest 1322
+step
+    .goto 1445/1,-2892.82,-3110.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Do'gol|r
     .accept 1323 >>Accept The Black Shield
     .target Do'gol
+    .isQuestTurnedIn 1322 --any of: The Black Shield
 step
     .goto 1445/1,-2887.05,-3149.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krog|r
     .turnin 1323 >>Turn in The Black Shield
     .target Krog
+    .isOnQuest 1323
 step << Warlock
     .goto 1445/1,-3393.15,-4031.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
@@ -558,6 +587,10 @@ step
 step
     .xp 41 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 41.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Dustwallow Marsh: around Overlord Mok'Morokk|r (planned from level 41)
+step
     .goto 1445/1,-3885.60,-2952.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
     .turnin 1203 >>Turn in Jarl Needs a Blade
@@ -705,6 +738,10 @@ step
 step
     .xp 44 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 44.|r Come back to this guide then
 step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Dustwallow Marsh: part 4|r (planned from level 44)
+step
     .goto 1445/1,-3885.60,-2952.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
     .turnin 1203 >>Turn in Jarl Needs a Blade
@@ -715,6 +752,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Draz'Zilb|r
     .accept 1172 >>Accept The Brood of Onyxia
     .target Draz'Zilb
+    .isQuestTurnedIn 1171 --any of: The Brood of Onyxia
 step << Mage
     .goto 1445/1,-3393.15,-4031.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
@@ -725,6 +763,7 @@ step
     .goto 1445/1,-3787.42,-4572.58
     >>Click the |cRXP_PICK_Egg of Onyxia|r
     .complete 1172,1 --Egg of Onyxia destroyed
+    .isOnQuest 1172
 step
     .goto 1445/1,-3393.15,-4031.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
@@ -736,20 +775,24 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Draz'Zilb|r
     .turnin 1172 >>Turn in The Brood of Onyxia
     .target Draz'Zilb
+    .isOnQuest 1172
 step
     .goto 1445/1,-2880.22,-3132.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Mok'Morokk|r
     .accept 1173 >>Accept Challenge Overlord Mok'Morokk
     .target Overlord Mok'Morokk
+    .isQuestTurnedIn 1172 --any of: The Brood of Onyxia
 step
     .goto 1445/1,-2886.52,-3133.38
     >>Drive Overlord Mok'Morokk from Brackenwall Village
     .complete 1173,1 --Drive Overlord Mok'Morokk from Brackenwall Village
+    .isOnQuest 1173
 step
     .goto 1445/1,-2925.37,-3191.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Draz'Zilb|r
     .turnin 1173 >>Turn in Challenge Overlord Mok'Morokk
     .target Draz'Zilb
+    .isOnQuest 1173
 step
     +|cRXP_WARN_End of the Dustwallow Marsh route.|r
 ]])

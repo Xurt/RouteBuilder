@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 48, 51, 54).
+-- Sections (the guide starts at the one for your level): start from 48; around Greta Mosshoof from 51; part 3 from 54.
 -- Edit zones/Felwood.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 48-56 Felwood
 
+step
+    .xp <51,1,RBSection1_1
+    .xp 51 >>Finding the place in this guide for your level
+step
+    .xp <54,1,RBSection2_1
+    .xp 54 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Felwood: start|r (planned from level 48)
 step
     .goto 1448/1,-1286.81,3874.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grazle|r
@@ -161,6 +174,10 @@ step
     .isOnQuest 5128
 step
     .xp 51 >>|cRXP_WARN_The rest of Felwood is planned from level 51.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Felwood: around Greta Mosshoof|r (planned from level 51)
 step << Warlock
     .goto 1448/1,-737.68,5414.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Niby the Almighty|r
@@ -546,6 +563,10 @@ step
 step
     .xp 54 >>|cRXP_WARN_The rest of Felwood is planned from level 54.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Felwood: part 3|r (planned from level 54)
+step
     .goto 1448/1,-1821.56,6912.92
     >>Kill |cRXP_ENEMY_Winterfall Runner|r and loot |cRXP_LOOT_Empty Firewater Flask|r. Use it to start the quest
     .collect 12771,1,5083 --Empty Firewater Flask (1)
@@ -557,6 +578,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Impsy|r
     .accept 7602 >>Accept Flawless Fel Essence
     .target Impsy
+    .isQuestTurnedIn 7601 --any of: What Niby Commands
 step << Warlock
     .goto 1448/1,-736.53,5407.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Impsy|r
@@ -588,11 +610,6 @@ step
     .target Greta Mosshoof
     .isQuestTurnedIn 5159 --any of: Cleansed Water Returns to Felwood
     .xp <48,1
-step << Warlock
-    #completewith Along12
-    >>As you go: Kill |cRXP_ENEMY_Jaedenar Legionnaire|r and loot |cRXP_LOOT_Flawless Fel Essence (Jaedenar)|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 7602,2 --Flawless Fel Essence (Jaedenar) (1)
-    .mob Jaedenar Legionnaire
 step
     .goto 1448/1,-440.41,5006.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Arko'narin|r
@@ -621,7 +638,6 @@ step
     .complete 5165,3 --Extinguish the Brazier of Suffering
     .isOnQuest 5165
 step
-    #label Along12
     .goto 1448/1,-524.93,5113.55
     >>Click the |cRXP_PICK_Brazier of Malice|r
     .complete 5165,2 --Extinguish the Brazier of Malice
@@ -643,6 +659,7 @@ step << Warlock
     >>Kill |cRXP_ENEMY_Jaedenar Legionnaire|r and loot |cRXP_LOOT_Flawless Fel Essence (Jaedenar)|r
     .complete 7602,2 --Flawless Fel Essence (Jaedenar) (1)
     .mob Jaedenar Legionnaire
+    .isOnQuest 7602
 step << Warlock
     .goto 1448/1,-986.08,5800.87
     >>Kill |cRXP_ENEMY_Kroshius|r and loot |cRXP_LOOT_Kroshius' Infernal Core|r

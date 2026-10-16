@@ -29,8 +29,11 @@ scales how long the search runs: `--effort 0.2` is good for test builds while yo
 (a few seconds, with a route up to about 10% longer), and values above 1 rarely find a shorter route.
 Each build writes two files into `guides`:
 
-* `<Zone> (<who>).lua` - the guide. See "Getting the guides into the game" below.
+* `<Zone> (<who>).lua` - the zone's guides (one per section, see "A guide per section"). See "Getting the
+  guides into the game" below.
 * `<Zone> (<who>).report.txt` - what went in, what was left out and why, and what to check in game.
+* `<Zone> (<who>).meta.json` - a short summary of the guide (levels, sections, quests) that `link` reads to
+  suggest next zones. It is not packed into the addon.
 
 The console also lists any other guide files of the same zone still in `guides` (other level ranges,
 for instance); delete the ones a build replaces, or the addon loads both.
@@ -156,6 +159,56 @@ the options of the build you will run next:
   in the report than RouteBuilder's own plan; RestedXP plans around terrain and grinding, which RouteBuilder
   does not see.
 
+## A guide per section
+
+A zone's route is split into sections where it arrives at a new main quest hub (a place with four or more
+pickups) a couple of levels further on, and each section is a guide of its own. In RestedXP's guide list
+they sit under the zone's name inside "Zone Routes (Horde)", so Durotar shows as one entry that opens to
+"1-4 Durotar: around Gornek", "4-7 Durotar: around Orgnil Soulscar" and so on. Pick the one for your level,
+or start at the first and do everything.
+
+* Each guide leads on to the next with `#next`, so playing from the first is the same as one long guide.
+* Start at any of them: a step that needs a quest from an earlier one hides itself unless you did that
+  quest. A pickup whose prerequisite was handed in earlier gets `.isQuestTurnedIn`, and an objective or
+  hand-in of a quest picked up earlier gets `.isOnQuest`. Played in order, these always pass.
+* A zone planned in several parts ("the rest is planned from level 20") gets a guide per part as well, such
+  as "20-21 The Barrens". A part that only some classes have quests in is only listed for them.
+* The range in a guide's name runs from the level it is planned from to where the next one starts (the
+  last one: to the level you are expected to finish at). A last stretch of only a few steps, or less than
+  a level, stays with the section before it.
+* Sections are named after the town when the zone file names it under `hubs`, otherwise after the busiest
+  quest giver there. In a zone file, `"split": false` keeps the zone in one guide, which then starts at
+  the section for your level by itself (level jumps at its top; you can still scroll back), and
+  `"sections": false` makes it one guide that always starts at the top. See docs/zone-files.md.
+* The settings `SectionHubPickups`, `SectionMinSteps` and `SectionLevelStep` set how big a hub has to be,
+  how many steps a section has at least, and how many levels apart sections start.
+* It is still one .lua file per zone, and one lock file: the zone is planned as one route and only split
+  when it is written out.
+
+## Suggesting the next zone (link)
+
+    dotnet run -c Release -- link
+
+Run this after building. It reads the `.meta.json` of every guide in `guides` and writes into each guide
+the zones that suit its end level best:
+
+* At the end of the zone's last guide, a step listing up to three zones, and `#next` in that guide's
+  header, so RestedXP loads the best one when you complete that step. It loads the guide for the section
+  of that zone you would start at, not necessarily its first.
+* At the end of each earlier part ("the rest of this zone is planned from level N"), the same for the
+  level you are at there.
+* Zones are ranked by how many levels of quest experience they still hold for a player of that level,
+  starting from the section they would start at, with less counted for quests five or more levels below
+  you (as the game does). Quests carried from this zone that are handed in there count in its favour
+  ("2 quests from here hand in there"), and a zone across the sea counts for a little less.
+* Only guides that are built are considered, so build the zones you want suggested first. A guide made
+  for one race and class is suggested over the faction's guide of the same zone for that character.
+* `"suggest": false` in a zone file keeps that zone out of everyone's suggestions (for a starting zone
+  others cannot reach, say). `LinkSuggestions`, `LinkMinLevels` and `LinkOtherContinent` in settings.json
+  change how many are listed, the least worth listing, and the sea crossing's weight.
+* Running it again replaces the suggestions. Building a guide again takes them out of that guide until
+  you link again (Rebuild-All.ps1 does that for you).
+
 ## Rebuilding every zone (Rebuild-All.ps1)
 
 `Rebuild-All.ps1` runs RxpToLock and then the build for every zone of both factions, and packs the addon
@@ -166,7 +219,9 @@ at the end:
 * It reads every RestedXP guide file in that folder (not its subfolders; `-Recurse` adds them). A zone
   RestedXP's guides do not cover keeps its lock as it was.
 * `-Faction Horde` or `-Zone "Durotar","Mulgore"` narrows it down; `-NoRxpToLock` builds from the locks as
-  they are; `-Fresh` plans every zone from scratch; `-Update` fetches QuestieDB first; `-NoAddon` skips
+  they are; `-Fresh` plans every zone from scratch; `-Update` fetches QuestieDB first; `-NoLink` skips
+  the next-zone suggestions; `-NoAddon` skips Make-Addon.ps1.
+* After the builds it runs `link` over every guide in `guides` (also ones built before this run), then
   Make-Addon.ps1.
 * The console shows a line or two per zone and a summary of zones with problems; everything else goes to
   `rebuild.log`.
@@ -195,7 +250,7 @@ build; the folder is rebuilt from scratch each time.
   within the zone's level range. Repeatable, holiday, profession, reputation and dungeon quests are left
   out; escorts, exploration and other scripted quests are planned like any other. The report lists every quest left out with the reason.
 * **Quests that leave the zone** are picked up and carried. The last step of the guide lists what is
-  still in the log and where each one goes, so you can pick the next zone by it.
+  still in the log and where each one goes, and `link` adds the zones that suit your level best.
 * **Quests that arrive from another zone** get a hand-in step that only shows if you have the quest.
   The same goes for quests whose prerequisite is in another zone: their steps show once that is done.
 * **Level.** The plan assumes you arrive at the zone's lowest quest level and tracks experience as it

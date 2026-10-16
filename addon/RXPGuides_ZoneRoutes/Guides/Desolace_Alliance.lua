@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 31, 34, 37).
+-- Sections (the guide starts at the one for your level): around Vahlarriel Demonslayer from 31; part 2 from 34; part 3 from 37.
 -- Edit zones/Desolace.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 31-40 Desolace
 
+step
+    .xp <34,1,RBSection1_1
+    .xp 34 >>Finding the place in this guide for your level
+step
+    .xp <37,1,RBSection2_1
+    .xp 37 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Desolace: around Vahlarriel Demonslayer|r (planned from level 31)
 step
     .goto 1443/1,1246.30,97.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahlarriel Demonslayer|r
@@ -292,6 +305,10 @@ step
 step
     .xp 34 >>|cRXP_WARN_The rest of Desolace is planned from level 34.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Desolace: part 2|r (planned from level 34)
+step
     .goto 1443/1,1257.09,163.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
     .accept 1459 >>Accept Reagents for Reclaimers Inc.
@@ -310,21 +327,30 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalinda Malem|r
     .accept 1439 >>Accept Search for Tyranis
     .target Dalinda Malem
+    .isQuestTurnedIn 1438 --any of: Vahlarriel's Search
 step
     .goto 1443/1,1850.09,-419.71
     >>Kill |cRXP_ENEMY_Tyranis Malem|r and loot |cRXP_LOOT_Tyranis' Pendant|r
     .complete 1439,1 --Tyranis' Pendant (1)
     .mob Tyranis Malem
+    .isOnQuest 1439
 step
     .goto 1443/1,1766.92,-331.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalinda Malem|r
     .turnin 1439 >>Turn in Search for Tyranis
+    .target Dalinda Malem
+    .isOnQuest 1439
+step
+    .goto 1443/1,1766.92,-331.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalinda Malem|r
     .accept 1440 >>Accept Return to Vahlarriel
     .target Dalinda Malem
+    .isQuestTurnedIn 1439 --any of: Search for Tyranis
 step
     .goto 1443/1,1613.61,-474.57
     >>Rescue Dalinda Malem
     .complete 1440,1 --Rescue Dalinda Malem
+    .isOnQuest 1440
 step
     #loop
     .goto 1443/1,1287.21,-546.22,0
@@ -440,11 +466,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahlarriel Demonslayer|r
     .turnin 1440 >>Turn in Return to Vahlarriel
     .target Vahlarriel Demonslayer
+    .isOnQuest 1440
 step
     +|cRXP_WARN_That is all of Desolace for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ironforge|r: The Karnitol Shipwreck
 step
     .xp 37 >>|cRXP_WARN_The rest of Desolace is planned from level 37.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Desolace: part 3|r (planned from level 37)
 step
     .goto 1443/1,1242.70,214.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Anton|r
@@ -531,16 +562,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azore Aldamort|r
     .accept 6027 >>Accept Book of the Ancients
     .target Azore Aldamort
+    .isQuestTurnedIn 5741 --any of: Sceptre of Light
 step
     .goto 1443/1,2963.71,252.12
     >>Kill |cRXP_ENEMY_Lord Kragaru|r and loot |cRXP_LOOT_Book of the Ancients|r
     .complete 6027,1 --Book of the Ancients (1)
     .mob Lord Kragaru
+    .isOnQuest 6027
 step
     .goto 1443/1,2485.35,-362.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azore Aldamort|r
     .turnin 6027 >>Turn in Book of the Ancients
     .target Azore Aldamort
+    .isOnQuest 6027
 step
     .goto 1443/1,1242.70,214.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Anton|r

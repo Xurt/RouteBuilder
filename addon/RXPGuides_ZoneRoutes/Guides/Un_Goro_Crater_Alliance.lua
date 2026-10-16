@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 50, 53, 56).
+-- Sections (the guide starts at the one for your level): around Muigin from 50; part 2 from 53; part 3 from 56.
 -- Edit zones/Un'Goro Crater.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 50-56 Un'Goro Crater
 
+step
+    .xp <53,1,RBSection1_1
+    .xp 53 >>Finding the place in this guide for your level
+step
+    .xp <56,1,RBSection2_1
+    .xp 56 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Un'Goro Crater: around Muigin|r (planned from level 50)
 step << Druid
     .goto 1449/1,-2117.35,-7840.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
@@ -582,6 +595,10 @@ step
 step
     .xp 53 >>|cRXP_WARN_The rest of Un'Goro Crater is planned from level 53.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Un'Goro Crater: part 2|r (planned from level 53)
+step
     .goto 1449/1,-1080.61,-6176.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spraggle Frock|r
     .accept 4492 >>Accept Lost!
@@ -606,6 +623,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
     .accept 4301 >>Accept The Mighty U'cha
     .target Torwa Pathfinder
+    .isQuestTurnedIn 4289 --any of: The Apes of Un'Goro
 step
     .goto 1449/1,-1305.20,-7092.45
     >>Click the |cRXP_PICK_Fire Plume Ridge Hot Spot|r
@@ -630,6 +648,7 @@ step
     >>Kill |cRXP_ENEMY_U'cha|r and loot |cRXP_LOOT_U'cha's Pelt|r
     .complete 4301,1 --U'cha's Pelt (1)
     .mob U'cha
+    .isOnQuest 4301
 step
     .goto 1449/1,-1970.09,-6380.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_A-Me 01|r
@@ -640,8 +659,14 @@ step
     .goto 1449/1,-2117.35,-7840.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
     .turnin 4301 >>Turn in The Mighty U'cha
-    .accept 9051 >>Accept Toxic Test << Druid
     .target Torwa Pathfinder
+    .isOnQuest 4301
+step << Druid
+    .goto 1449/1,-2117.35,-7840.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
+    .accept 9051 >>Accept Toxic Test
+    .target Torwa Pathfinder
+    .isQuestTurnedIn 9052 --any of: Bloodpetal Poison
 step << Druid
     .goto 1449/1,-2212.07,-6781.65
     >>Kill |cRXP_ENEMY_Devilsaurs|r, |cRXP_ENEMY_Ironhide Devilsaurs|r and |cRXP_ENEMY_Tyrant Devilsaurs|r
@@ -649,12 +674,19 @@ step << Druid
     .mob Devilsaur
     .mob Ironhide Devilsaur
     .mob Tyrant Devilsaur
+    .isOnQuest 9051
 step << Druid
     .goto 1449/1,-2117.35,-7840.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
     .turnin 9051 >>Turn in Toxic Test
+    .target Torwa Pathfinder
+    .isOnQuest 9051
+step << Druid
+    .goto 1449/1,-2117.35,-7840.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
     .accept 9053 >>Accept A Better Ingredient
     .target Torwa Pathfinder
+    .isQuestTurnedIn 9051 --any of: Toxic Test
 step << Druid
     .goto 1449/1,-2117.35,-7840.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
@@ -667,6 +699,10 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: A Better Ingredient << Druid
 step
     .xp 56 >>|cRXP_WARN_The rest of Un'Goro Crater is planned from level 56.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Un'Goro Crater: part 3|r (planned from level 56)
 step << Druid
     .goto 1449/1,-2117.35,-7840.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
@@ -678,16 +714,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
     .accept 4292 >>Accept The Bait for Lar'korwi
     .target Torwa Pathfinder
+    .isQuestTurnedIn 4291 --any of: The Scent of Lar'korwi
 step
     .goto 1449/1,-2413.72,-7195.81
     >>Kill |cRXP_ENEMY_Lar'korwi|r and loot |cRXP_LOOT_Lar'korwi's Head|r
     .complete 4292,1 --Lar'korwi's Head (1)
     .mob Lar'korwi
+    .isOnQuest 4292
 step
     .goto 1449/1,-2117.35,-7840.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torwa Pathfinder|r
     .turnin 4292 >>Turn in The Bait for Lar'korwi
     .target Torwa Pathfinder
+    .isOnQuest 4292
 step
     .goto 1449/1,-1970.09,-6380.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_A-Me 01|r

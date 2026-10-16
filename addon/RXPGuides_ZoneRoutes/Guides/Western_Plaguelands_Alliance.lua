@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 52, 55, 58).
+-- Sections (the guide starts at the one for your level): around Commander Ashlam Valorfist from 52; around Commander Ashlam Valorfist from 55; part 3 from 58.
 -- Edit zones/Western Plaguelands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 52-60 Western Plaguelands
 
+step
+    .xp <55,1,RBSection1_1
+    .xp 55 >>Finding the place in this guide for your level
+step
+    .xp <58,1,RBSection2_1
+    .xp 58 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Western Plaguelands: around Commander Ashlam Valorfist|r (planned from level 52)
 step << Human Paladin/Dwarf Paladin
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
@@ -485,25 +498,33 @@ step
 step
     .xp 55 >>|cRXP_WARN_The rest of Western Plaguelands is planned from level 55.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Western Plaguelands: around Commander Ashlam Valorfist|r (planned from level 55)
+step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .accept 5097 >>Accept All Along the Watchtowers
     .target Commander Ashlam Valorfist
+    .isQuestTurnedIn 5092 --any of: Clear the Way
 step
     .goto 1422/0,-1305.48,1314.13
     >>Using the Beacon Torch, mark each tower in Andorhal; you will need to stand in the doorway of the tower to successfully mark it.
     .complete 5097,1 --Andorhal Tower One
     .target Andorhal Tower One
+    .isOnQuest 5097
 step
     .goto 1422/0,-1403.52,1467.79
     >>Using the Beacon Torch, mark each tower in Andorhal; you will need to stand in the doorway of the tower to successfully mark it.
     .complete 5097,2 --Andorhal Tower Two
     .target Andorhal Tower Two
+    .isOnQuest 5097
 step
     .goto 1422/0,-1431.04,944.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
     .accept 5219 >>Accept Target: Dalson's Tears
     .target High Priestess MacDonnell
+    .isQuestTurnedIn 5217 --any of: Return to Chillwind Camp
 step
     .goto 1422/0,-1451.68,966.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Weldon Barov|r
@@ -516,11 +537,17 @@ step
     >>Kill |cRXP_ENEMY_Cauldron Lord Malvinious|r and loot |cRXP_LOOT_Dalson's Tears Cauldron Key|r
     .complete 5219,1 --Dalson's Tears Cauldron Key (1)
     .mob Cauldron Lord Malvinious
+    .isOnQuest 5219
 step
     .goto 1422/0,-1569.07,1878.87
     >>Click the |cRXP_PICK_Scourge Cauldron|r
     .turnin 5219 >>Turn in Target: Dalson's Tears
+    .isOnQuest 5219
+step
+    .goto 1422/0,-1569.07,1878.87
+    >>Click the |cRXP_PICK_Scourge Cauldron|r
     .accept 5220 >>Accept Return to Chillwind Camp
+    .isQuestTurnedIn 5219 --any of: Target: Dalson's Tears
 step
     .goto 1422/0,-1619.38,1943.94
     >>Click the |cRXP_PICK_Locked Cabinet|r
@@ -529,60 +556,78 @@ step
     .goto 1422/0,-1431.04,944.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
     .turnin 5220 >>Turn in Return to Chillwind Camp
+    .target High Priestess MacDonnell
+    .isOnQuest 5220
+step
+    .goto 1422/0,-1431.04,944.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
     .accept 5222 >>Accept Target: Writhing Haunt
     .target High Priestess MacDonnell
+    .isQuestTurnedIn 5220 --any of: Return to Chillwind Camp
 step
     .goto 1422/0,-1587.99,1329.90
     >>Using the Beacon Torch, mark each tower in Andorhal; you will need to stand in the doorway of the tower to successfully mark it.
     .complete 5097,4 --Andorhal Tower Four
     .target Andorhal Tower Four
+    .isOnQuest 5097
 step
     .goto 1422/0,-1488.23,1553.50
     >>Using the Beacon Torch, mark each tower in Andorhal; you will need to stand in the doorway of the tower to successfully mark it.
     .complete 5097,3 --Andorhal Tower Three
     .target Andorhal Tower Three
+    .isOnQuest 5097
 step
     .goto 1422/0,-1857.17,1472.37
     >>Kill |cRXP_ENEMY_Cauldron Lord Razarch|r and loot |cRXP_LOOT_Writhing Haunt Cauldron Key|r
     .complete 5222,1 --Writhing Haunt Cauldron Key (1)
     .mob Cauldron Lord Razarch
+    .isOnQuest 5222
 step
     .goto 1422/0,-1863.19,1485.85
     >>Click the |cRXP_PICK_Scourge Cauldron|r
     .turnin 5222 >>Turn in Target: Writhing Haunt
+    .isOnQuest 5222
+step
+    .goto 1422/0,-1863.19,1485.85
+    >>Click the |cRXP_PICK_Scourge Cauldron|r
     .accept 5223 >>Accept Return to Chillwind Camp
+    .isQuestTurnedIn 5222 --any of: Target: Writhing Haunt
 step
     .goto 1422/0,-1431.04,944.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
     .turnin 5223 >>Turn in Return to Chillwind Camp
     .target High Priestess MacDonnell
+    .isOnQuest 5223
 step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .turnin 5097 >>Turn in All Along the Watchtowers
+    .target Commander Ashlam Valorfist
+    .isOnQuest 5097
+step
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .accept 5533 >>Accept Scholomance
     .target Commander Ashlam Valorfist
+    .isQuestTurnedIn 5097 --any of: All Along the Watchtowers
 step
     .goto 1422/0,-1417.71,965.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .turnin 5533 >>Turn in Scholomance
+    .target Alchemist Arbington
+    .isOnQuest 5533
+step
+    .goto 1422/0,-1417.71,965.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .accept 5537 >>Accept Skeletal Fragments
     .target Alchemist Arbington
-step
-    #completewith Along17
-    >>As you go: Kill |cRXP_ENEMY_Skeletal Flayers|r, |cRXP_ENEMY_Skeletal Sorcerers|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Skeletal Executioners|r. Loot them for |cRXP_LOOT_Skeletal Fragments|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 5537,1 --Skeletal Fragments (15)
-    .mob Skeletal Flayer
-    .mob Skeletal Sorcerer
-    .mob Skeletal Terror
-    .mob Skeletal Executioner
+    .isQuestTurnedIn 5533 --any of: Scholomance
 step
     .goto 1422/0,-1657.22,1942.79
     >>Kill |cRXP_ENEMY_Farmer Dalson|r and loot |cRXP_LOOT_Dalson Cabinet Key|r
     .complete 5060,1 --Dalson Cabinet Key (1)
     .mob Farmer Dalson
 step
-    #label Along17
     .goto 1422/0,-1619.38,1943.94
     >>Click the |cRXP_PICK_Locked Cabinet|r
     .turnin 5060 >>Turn in Locked Away
@@ -604,11 +649,13 @@ step
     .mob Skeletal Sorcerer
     .mob Skeletal Terror
     .mob Skeletal Executioner
+    .isOnQuest 5537
 step
     .goto 1422/0,-1893.72,1513.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulgris Deepriver|r
     .accept 4985 >>Accept The Wildlife Suffers Too
     .target Mulgris Deepriver
+    .isQuestTurnedIn 4984 --any of: The Wildlife Suffers Too
 step
     #loop
     .goto 1422/0,-2323.72,1940.50,0
@@ -624,6 +671,7 @@ step
     >>Kill |cRXP_ENEMY_Diseased Grizzlies|r
     .complete 4985,1 --Diseased Grizzly slain (8)
     .mob Diseased Grizzly
+    .isOnQuest 4985
 step
     .goto 1422/0,-1450.39,934.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathaniel Dumah|r
@@ -635,13 +683,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .turnin 5537 >>Turn in Skeletal Fragments
     .target Alchemist Arbington
-step
-    .xp 55 >>Grind to level 55 (Mold Rhymes With... needs it)
+    .isOnQuest 5537
 step
     .goto 1422/0,-1417.71,965.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .accept 5538 >>Accept Mold Rhymes With...
     .target Alchemist Arbington
+    .isQuestTurnedIn 5537 --any of: Skeletal Fragments
 step
     .goto 1422/0,-1451.68,966.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Weldon Barov|r
@@ -671,8 +719,14 @@ step
     .goto 1422/0,-1893.72,1513.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulgris Deepriver|r
     .turnin 4985 >>Turn in The Wildlife Suffers Too
+    .target Mulgris Deepriver
+    .isOnQuest 4985
+step
+    .goto 1422/0,-1893.72,1513.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulgris Deepriver|r
     .accept 4986 >>Accept Glyphed Oaken Branch
     .target Mulgris Deepriver
+    .isQuestTurnedIn 4985 --any of: The Wildlife Suffers Too
 step
     .goto 1422/0,-1815.89,2562.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirsta Deepshadow|r
@@ -687,12 +741,12 @@ step
     .mob Scarlet Medic
     .mob Scarlet Hunter
 step
-    #completewith Along30
+    #completewith Along37
     >>As you go: Kill |cRXP_ENEMY_Scarlet Knights|r. |cRXP_WARN_Anything left is finished later|r
     .complete 6004,4 --Scarlet Knight slain (2)
     .mob Scarlet Knight
 step
-    #label Along30
+    #label Along37
     .goto 1422/0,-1852.44,2289.95
     >>Kill |cRXP_ENEMY_Scarlet Mages|r
     .complete 6004,3 --Scarlet Mage slain (8)
@@ -824,11 +878,11 @@ step
     .accept 4972 >>Accept Counting Out Time
     .target Chromie
 step
-    #completewith Along51
+    #completewith Along58
     >>As you go: Loot the |cRXP_PICK_Small Lockboxes|r for |cRXP_LOOT_Andorhal Watch|r. |cRXP_WARN_Anything left is finished later|r
     .complete 4972,1 --Andorhal Watch (5)
 step
-    #label Along51
+    #label Along58
     .goto 1422/0,-1280.11,1452.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
     .accept 5210 >>Accept Brother Carlin
@@ -861,6 +915,10 @@ step
     >>|cRXP_FRIENDLY_Tanaris|r: Mold Rhymes With...
 step
     .xp 58 >>|cRXP_WARN_The rest of Western Plaguelands is planned from level 58.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Western Plaguelands: part 3|r (planned from level 58)
 step
     .goto 1422/0,-1276.24,1452.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeziba|r
@@ -909,11 +967,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
     .accept 5225 >>Accept Target: Gahrron's Withering
     .target High Priestess MacDonnell
+    .isQuestTurnedIn 5223 --any of: Return to Chillwind Camp
 step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .accept 211 >>Accept Alas, Andorhal
     .target Commander Ashlam Valorfist
+    .isQuestTurnedIn 5097 --any of: All Along the Watchtowers
 step
     .goto 1422/0,-1417.71,965.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
@@ -922,11 +982,6 @@ step
     .isQuestTurnedIn 5801 --any of: Fire Plume Forged
     .xp <55,1
 step
-    #completewith Along10
-    >>As you go: Open the |cRXP_PICK_Araj's Phylactery|r. Loot it for |cRXP_LOOT_Araj's Phylactery Shard|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 211,1 --Araj's Phylactery Shard (1)
-step
-    #label Along10
     .goto 1422/0,-1529.94,1382.65
     >>Open the |cRXP_PICK_Araj's Phylactery|r. Loot it for |cRXP_LOOT_Araj's Scarab|r
     .complete 5803,1 --Araj's Scarab (1)
@@ -935,16 +990,23 @@ step
     .goto 1422/0,-1529.94,1382.65
     >>Open the |cRXP_PICK_Araj's Phylactery|r. Loot it for |cRXP_LOOT_Araj's Phylactery Shard|r
     .complete 211,1 --Araj's Phylactery Shard (1)
+    .isOnQuest 211
 step
     .goto 1422/0,-2257.07,1673.61
     >>Kill |cRXP_ENEMY_Cauldron Lord Soulwrath|r and loot |cRXP_LOOT_Gahrron's Withering Cauldron Key|r
     .complete 5225,1 --Gahrron's Withering Cauldron Key (1)
     .mob Cauldron Lord Soulwrath
+    .isOnQuest 5225
 step
     .goto 1422/0,-2272.55,1690.53
     >>Click the |cRXP_PICK_Scourge Cauldron|r
     .turnin 5225 >>Turn in Target: Gahrron's Withering
+    .isOnQuest 5225
+step
+    .goto 1422/0,-2272.55,1690.53
+    >>Click the |cRXP_PICK_Scourge Cauldron|r
     .accept 5226 >>Accept Return to Chillwind Camp
+    .isQuestTurnedIn 5225 --any of: Target: Gahrron's Withering
 step
     #loop
     .goto 1422/0,-2288.03,1706.87,0
@@ -1018,19 +1080,31 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
     .turnin 5226 >>Turn in Return to Chillwind Camp
     .target High Priestess MacDonnell
+    .isOnQuest 5226
 step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .turnin 211 >>Turn in Alas, Andorhal
-    .accept 5237 >>Accept Mission Accomplished!
-    .turnin 5237 >>Turn in Mission Accomplished!
     .target Commander Ashlam Valorfist
+    .isOnQuest 211
 step << Human Paladin/Dwarf Paladin
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .turnin 8418 >>Turn in Forging the Mightstone
     .target Commander Ashlam Valorfist
     .isQuestComplete 8418
+step
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .accept 5237 >>Accept Mission Accomplished!
+    .target Commander Ashlam Valorfist
+    .isQuestTurnedIn 5226 --any of: Return to Chillwind Camp
+step
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 5237 >>Turn in Mission Accomplished!
+    .target Commander Ashlam Valorfist
+    .isOnQuest 5237
 step
     .goto 1422/0,-1417.71,965.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r

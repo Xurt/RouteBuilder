@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 35, 38, 41).
+-- Sections (the guide starts at the one for your level): start from 35; part 2 from 38; part 3 from 41.
 -- Edit zones/Badlands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 35-43 Badlands
 
+step
+    .xp <38,1,RBSection1_1
+    .xp 38 >>Finding the place in this guide for your level
+step
+    .xp <41,1,RBSection2_1
+    .xp 41 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Badlands: start|r (planned from level 35)
 step
     .goto 1418/0,-2240.61,-6672.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeka Bloodscar|r
@@ -206,6 +219,10 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Coolant Heads Prevail
 step
     .xp 38 >>|cRXP_WARN_The rest of Badlands is planned from level 38.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Badlands: part 2|r (planned from level 38)
 step
     .goto 1418/0,-3357.49,-7164.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theldurin the Lost|r
@@ -414,7 +431,13 @@ step
     >>|cRXP_FRIENDLY_Thousand Needles|r: News for Fizzle
     >>|cRXP_FRIENDLY_Undercity|r: To the Undercity for Yagyin's Digest
 step
+    +|cRXP_WARN_Until level 41, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Far Seer Mok'thardin). Then come back to this Badlands guide --RouteBuilder:next
+step
     .xp 41 >>|cRXP_WARN_The rest of Badlands is planned from level 41.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Badlands: part 3|r (planned from level 41)
 step
     .goto 1418/0,-2724.67,-6633.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotwil Veriatus|r
@@ -498,6 +521,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarkal Mossmeld|r
     .accept 2202 >>Accept Uldaman Reagent Run
     .target Jarkal Mossmeld
+    .isQuestTurnedIn 2258 --any of: Badlands Reagent Run
 step
     .goto 1418/0,-2393.09,-7141.46
     >>Kill |cRXP_ENEMY_Boss Tho'grun|r and loot |cRXP_LOOT_Sign of the Earth|r
@@ -515,11 +539,13 @@ step
     .goto 1418/0,-3013.72,-6142.64,40,0
     >>Loot the |cRXP_PICK_Magenta Cap Clusters|r for |cRXP_LOOT_Magenta Fungus Cap|r
     .complete 2202,1 --Magenta Fungus Cap (12)
+    .isOnQuest 2202
 step
     .goto 1418/0,-2724.67,-6633.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotwil Veriatus|r
     .accept 712 >>Accept Study of the Elements: Rock
     .target Lotwil Veriatus
+    .isQuestTurnedIn 711 --any of: Study of the Elements: Rock
 step
     #loop
     .goto 1418/0,-2244.59,-7114.26,0
@@ -535,16 +561,19 @@ step
     >>Kill |cRXP_ENEMY_Greater Rock Elementals|r. Loot them for |cRXP_LOOT_Bracers of Rock Binding|r
     .complete 712,1 --Bracers of Rock Binding (5)
     .mob Greater Rock Elemental
+    .isOnQuest 712
 step
     .goto 1418/0,-2724.67,-6633.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotwil Veriatus|r
     .turnin 712 >>Turn in Study of the Elements: Rock
     .target Lotwil Veriatus
+    .isOnQuest 712
 step
     .goto 1418/0,-2721.44,-6623.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucien Tosselwrench|r
     .accept 716 >>Accept Stone Is Better than Cloth
     .target Lucien Tosselwrench
+    .isQuestTurnedIn 712 --any of: Study of the Elements: Rock
 step
     .goto 1418/0,-2721.44,-6623.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucien Tosselwrench|r
@@ -558,6 +587,7 @@ step
     .target Lotwil Veriatus
     .isQuestTurnedIn 714 --Gyro... What?
     .xp <35,1
+    .isQuestTurnedIn 712 --Study of the Elements: Rock
 step
     .goto 1418/0,-2721.44,-6623.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucien Tosselwrench|r
@@ -587,6 +617,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarkal Mossmeld|r
     .turnin 2202 >>Turn in Uldaman Reagent Run
     .target Jarkal Mossmeld
+    .isOnQuest 2202
 step
     +|cRXP_WARN_End of the Badlands route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Stone Is Better than Cloth

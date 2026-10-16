@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 32, 35, 38, 41, 44).
+-- Sections (the guide starts at the one for your level): around Tor'gan from 32; around Tor'gan from 35; around Zengu from 38; part 4 from 41; part 5 from 44.
 -- Edit zones/Arathi Highlands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,24 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 32-42 Arathi Highlands
 
+step
+    .xp <35,1,RBSection1_1
+    .xp 35 >>Finding the place in this guide for your level
+step
+    .xp <38,1,RBSection2_1
+    .xp 38 >>Finding the place in this guide for your level
+step
+    .xp <41,1,RBSection3_1
+    .xp 41 >>Finding the place in this guide for your level
+step
+    .xp <44,1,RBSection4_1
+    .xp 44 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection5_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Arathi Highlands: around Tor'gan|r (planned from level 32)
 step
     .goto 1417/0,-1675.23,-714.37
     >>Click the |cRXP_PICK_Messenger Bag|r
@@ -337,6 +356,10 @@ step
 step
     .xp 35 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 35.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Arathi Highlands: around Tor'gan|r (planned from level 35)
+step
     .goto 1417/0,-3116.67,-942.85
     >>Click the |cRXP_PICK_Shards of Myzrael|r
     .accept 642 >>Accept The Princess Trapped
@@ -345,11 +368,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drum Fel|r
     .accept 678 >>Accept Call to Arms
     .target Drum Fel
+    .isQuestTurnedIn 677 --any of: Call to Arms
 step
     .goto 1417/0,-3556.59,-1004.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tor'gan|r
     .accept 701 >>Accept Guile of the Raptor
     .target Tor'gan
+    .isQuestTurnedIn 675 --any of: Raising Spirits
 step
     #loop
     .goto 1417/0,-3812.19,-993.73,0
@@ -411,19 +436,32 @@ step
     .goto 1417/0,-2652.63,-1945.57,0
     .goto 1417/0,-2652.63,-1945.57,40,0
     .goto 1417/0,-2649.75,-2018.77,40,0
-    .goto 1417/0,-2832.63,-2085.01,40,0
-    .goto 1417/0,-2835.15,-2013.25,40,0
+    .goto 1417/0,-2836.23,-2063.41,40,0
     .goto 1417/0,-2778.27,-1955.65,40,0
     .goto 1417/0,-2852.07,-1879.09,40,0
     .goto 1417/0,-2790.87,-1882.69,40,0
     .goto 1417/0,-2748.03,-1848.85,40,0
     .goto 1417/0,-2735.43,-1908.85,40,0
+    .goto 1417/0,-2696.55,-1970.77,40,0
     >>Kill |cRXP_ENEMY_Boulderfist Brutes|r
-    >>Kill |cRXP_ENEMY_Boulderfist Magus|r
     .complete 678,1 --Boulderfist Brute slain (10)
-    .complete 678,2 --Boulderfist Magus slain (8)
     .mob Boulderfist Brute
+    .isOnQuest 678
+step
+    #loop
+    .goto 1417/0,-2753.07,-1947.73,0
+    .goto 1417/0,-2753.07,-1947.73,40,0
+    .goto 1417/0,-2716.71,-2001.01,40,0
+    .goto 1417/0,-2798.43,-2053.33,40,0
+    .goto 1417/0,-2832.63,-2085.01,40,0
+    .goto 1417/0,-2819.31,-1999.09,40,0
+    .goto 1417/0,-2773.23,-1981.81,40,0
+    .goto 1417/0,-2786.19,-1918.69,40,0
+    .goto 1417/0,-2812.47,-1855.57,40,0
+    >>Kill |cRXP_ENEMY_Boulderfist Magus|r
+    .complete 678,2 --Boulderfist Magus slain (8)
     .mob Boulderfist Magus
+    .isOnQuest 678
 step
     #loop
     .goto 1417/0,-2668.47,-1823.41,0
@@ -439,23 +477,31 @@ step
     >>Kill |cRXP_ENEMY_Highland Fleshstalkers|r. Loot them for |cRXP_LOOT_Raptor Heart|r
     .complete 701,1 --Raptor Heart (12)
     .mob Highland Fleshstalker
+    .isOnQuest 701
 step
     .goto 1417/0,-3556.59,-1004.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tor'gan|r
     .turnin 701 >>Turn in Guile of the Raptor
+    .target Tor'gan
+    .isOnQuest 701
+step
+    .goto 1417/0,-3556.59,-1004.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tor'gan|r
     .accept 702 >>Accept Guile of the Raptor
     .target Tor'gan
+    .isQuestTurnedIn 701 --any of: Guile of the Raptor
 step
     .goto 1417/0,-3481.71,-947.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gor'mul|r
     .turnin 702 >>Turn in Guile of the Raptor
-    .accept 847 >>Accept Guile of the Raptor
     .target Gor'mul
+    .isOnQuest 702
 step
     .goto 1417/0,-3539.31,-947.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drum Fel|r
     .turnin 678 >>Turn in Call to Arms
     .target Drum Fel
+    .isOnQuest 678
 step
     .goto 1417/0,-3524.91,-912.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Adegwa|r
@@ -464,10 +510,17 @@ step
     .target Innkeeper Adegwa
     .subzoneskip 321,1
 step
+    .goto 1417/0,-3481.71,-947.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gor'mul|r
+    .accept 847 >>Accept Guile of the Raptor
+    .target Gor'mul
+    .isQuestTurnedIn 702 --any of: Guile of the Raptor
+step
     .goto 1417/0,-3556.59,-1004.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tor'gan|r
     .turnin 847 >>Turn in Guile of the Raptor
     .target Tor'gan
+    .isOnQuest 847
 step
     .goto 1417/0,-3523.47,-948.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
@@ -508,6 +561,10 @@ step
 step
     .xp 38 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 38.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Arathi Highlands: around Zengu|r (planned from level 38)
+step
     .goto 1417/0,-3512.67,-832.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
     .turnin 98888 >>Turn in Conflict at Darkspear Islands
@@ -529,16 +586,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
     .accept 640 >>Accept The Broken Sigil
     .target Zengu
+    .isQuestTurnedIn 639 --any of: Sigil of Strom
 step
     .goto 1417/0,-3556.59,-1004.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tor'gan|r
     .accept 673 >>Accept Foul Magics
     .target Tor'gan
+    .isQuestTurnedIn 671 --any of: Foul Magics
 step
     .goto 1417/0,-1932.99,-1644.61
     >>Kill |cRXP_ENEMY_Marez Cowl|r and loot |cRXP_LOOT_Befouled Bloodstone Orb|r
     .complete 673,1 --Befouled Bloodstone Orb (1)
     .mob Marez Cowl
+    .isOnQuest 673
 step
     #completewith next
     .hs >>Hearth to Innkeeper Adegwa's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -548,16 +608,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tor'gan|r
     .turnin 673 >>Turn in Foul Magics
     .target Tor'gan
+    .isOnQuest 673
 step
     .goto 1417/0,-3539.31,-947.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drum Fel|r
     .accept 679 >>Accept Call to Arms
     .target Drum Fel
+    .isQuestTurnedIn 678 --any of: Call to Arms
 step
     .goto 1417/0,-3532.11,-927.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korin Fel|r
     .accept 680 >>Accept The Real Threat
     .target Korin Fel
+    .isQuestTurnedIn 678 --any of: Call to Arms
 step << Shaman
     .goto 1417/0,-3018.39,-795.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
@@ -565,36 +628,55 @@ step << Shaman
     .target Veyric Thunderhame
     .isQuestComplete 79358
 step
+    .goto 1417/0,-1537.35,-1716.37
+    >>Kill |cRXP_ENEMY_Or'Kalar|r and loot |cRXP_LOOT_Or'Kalar's Head|r
+    .complete 680,1 --Or'Kalar's Head (1)
+    .mob Or'Kalar
+    .isOnQuest 680
+step
     #loop
-    .goto 1417/0,-1643.19,-1740.37,0
-    .goto 1417/0,-1643.19,-1740.37,40,0
-    .goto 1417/0,-1642.47,-1773.97,40,0
+    .goto 1417/0,-1539.15,-1730.29,0
+    .goto 1417/0,-1539.15,-1730.29,40,0
+    .goto 1417/0,-1518.27,-1774.45,40,0
     .goto 1417/0,-1594.95,-1792.69,40,0
-    .goto 1417/0,-1537.35,-1795.09,40,0
-    .goto 1417/0,-1509.27,-1765.57,40,0
-    .goto 1417/0,-1537.35,-1716.37,40,0
-    .goto 1417/0,-1568.31,-1684.21,40,0
+    .goto 1417/0,-1642.47,-1773.97,40,0
+    .goto 1417/0,-1643.19,-1740.37,40,0
+    .goto 1417/0,-1619.79,-1751.89,40,0
     .goto 1417/0,-1585.59,-1753.57,40,0
     .goto 1417/0,-1617.99,-1709.65,40,0
-    >>Kill |cRXP_ENEMY_Or'Kalar|r and loot |cRXP_LOOT_Or'Kalar's Head|r
+    .goto 1417/0,-1568.31,-1684.21,40,0
     >>Kill |cRXP_ENEMY_Boulderfist Shamans|r
-    >>Kill |cRXP_ENEMY_Boulderfist Lords|r
-    .complete 680,1 --Or'Kalar's Head (1)
     .complete 679,1 --Boulderfist Shaman slain (7)
-    .complete 679,2 --Boulderfist Lord slain (3)
-    .mob Or'Kalar
     .mob Boulderfist Shaman
+    .isOnQuest 679
+step
+    #loop
+    .goto 1417/0,-1558.59,-1757.17,0
+    .goto 1417/0,-1558.59,-1757.17,40,0
+    .goto 1417/0,-1584.15,-1710.61,40,0
+    .goto 1417/0,-1548.51,-1715.65,40,0
+    .goto 1417/0,-1522.95,-1750.69,40,0
+    .goto 1417/0,-1509.27,-1765.57,40,0
+    .goto 1417/0,-1515.39,-1790.29,40,0
+    .goto 1417/0,-1537.35,-1795.09,40,0
+    .goto 1417/0,-1569.03,-1790.77,40,0
+    .goto 1417/0,-1609.35,-1772.05,40,0
+    >>Kill |cRXP_ENEMY_Boulderfist Lords|r
+    .complete 679,2 --Boulderfist Lord slain (3)
     .mob Boulderfist Lord
+    .isOnQuest 679
 step
     .goto 1417/0,-3539.31,-947.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drum Fel|r
     .turnin 679 >>Turn in Call to Arms
     .target Drum Fel
+    .isOnQuest 679
 step
     .goto 1417/0,-3532.11,-927.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korin Fel|r
     .turnin 680 >>Turn in The Real Threat
     .target Korin Fel
+    .isOnQuest 680
 step
     #loop
     .goto 1417/0,-1907.07,-1546.69,0
@@ -612,98 +694,170 @@ step
     .mob Stromgarde Troll Hunter
     .mob Stromgarde Defender
     .mob Stromgarde Vindicator
+    .isOnQuest 640
 step
     .goto 1417/0,-2047.47,-2088.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Nilzlix|r
     .accept 662 >>Accept Deep Sea Salvage
     .target First Mate Nilzlix
+    .isQuestTurnedIn 663 --any of: Land Ho!
 step
     .goto 1417/0,-2090.67,-2072.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Steelgut|r
     .accept 664 >>Accept Drowned Sorrows
     .target Captain Steelgut
+    .isQuestTurnedIn 663 --any of: Land Ho!
 step
     .goto 1417/0,-2085.99,-2066.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Phizzlethorpe|r
     .accept 665 >>Accept Sunken Treasure
     .target Professor Phizzlethorpe
+    .isQuestTurnedIn 663 --any of: Land Ho!
 step
     .goto 1417/0,-2085.99,-2067.73
     >>Defend Professor Phizzlethorpe
     .complete 665,1 --Defend Professor Phizzlethorpe
+    .isOnQuest 665
 step
     .goto 1417/0,-2085.63,-2064.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
     .turnin 665 >>Turn in Sunken Treasure
+    .target Doctor Draxlegauge
+    .isOnQuest 665
+step
+    .goto 1417/0,-2085.63,-2064.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
     .accept 666 >>Accept Sunken Treasure
     .target Doctor Draxlegauge
+    .isQuestTurnedIn 665 --any of: Sunken Treasure
+step
+    .goto 1417/0,-1708.71,-2175.49
+    >>Pick up |cRXP_PICK_Maiden's Folly Log|r from the ground
+    .complete 662,2 --Maiden's Folly Log (1)
+    .isOnQuest 662
+step
+    .goto 1417/0,-1696.47,-2161.57
+    >>Pick up |cRXP_PICK_Maiden's Folly Charts|r from the ground
+    .complete 662,1 --Maiden's Folly Charts (1)
+    .isOnQuest 662
+step
+    .goto 1417/0,-1603.23,-2187.97
+    >>Pick up |cRXP_PICK_Spirit of Silverpine Charts|r from the ground
+    .complete 662,3 --Spirit of Silverpine Charts (1)
+    .isOnQuest 662
+step
+    .goto 1417/0,-1610.07,-2175.73
+    >>Pick up |cRXP_PICK_Spirit of Silverpine Log|r from the ground
+    .complete 662,4 --Spirit of Silverpine Log (1)
+    .isOnQuest 662
 step
     #loop
-    .goto 1417/0,-1781.79,-2178.85,0
-    .goto 1417/0,-1781.79,-2178.85,40,0
-    .goto 1417/0,-1680.63,-2215.57,40,0
-    .goto 1417/0,-1658.67,-2149.33,40,0
-    .goto 1417/0,-1553.19,-2145.97,40,0
-    .goto 1417/0,-1593.87,-2222.53,40,0
+    .goto 1417/0,-1586.67,-2173.33,0
+    .goto 1417/0,-1586.67,-2173.33,40,0
     .goto 1417/0,-1514.67,-2269.33,40,0
     .goto 1417/0,-1622.67,-2341.33,40,0
-    .goto 1417/0,-1694.67,-2293.33,40,0
-    .goto 1417/0,-1785.39,-2326.69,40,0
-    >>Pick up |cRXP_PICK_Maiden's Folly Log|r from the ground
-    >>Pick up |cRXP_PICK_Maiden's Folly Charts|r from the ground
-    >>Pick up |cRXP_PICK_Spirit of Silverpine Charts|r from the ground
-    >>Pick up |cRXP_PICK_Spirit of Silverpine Log|r from the ground
+    .goto 1417/0,-1694.67,-2341.33,40,0
+    .goto 1417/0,-1766.67,-2317.33,40,0
+    .goto 1417/0,-1766.67,-2221.33,40,0
+    .goto 1417/0,-1694.67,-2245.33,40,0
+    .goto 1417/0,-1694.67,-2149.33,40,0
+    .goto 1417/0,-1622.67,-2221.33,40,0
     >>Loot the |cRXP_PICK_Calcified Elven Gems|r for |cRXP_LOOT_Elven Gem|r
-    >>Kill |cRXP_ENEMY_Daggerspine Raiders|r
-    >>Kill |cRXP_ENEMY_Daggerspine Sorceress|r
-    .complete 662,2 --Maiden's Folly Log (1)
-    .complete 662,1 --Maiden's Folly Charts (1)
-    .complete 662,3 --Spirit of Silverpine Charts (1)
-    .complete 662,4 --Spirit of Silverpine Log (1)
     .complete 666,1 --Elven Gem (10)
+    .isOnQuest 666
+step
+    #loop
+    .goto 1417/0,-1680.63,-2215.57,0
+    .goto 1417/0,-1680.63,-2215.57,40,0
+    .goto 1417/0,-1656.15,-2147.41,40,0
+    .goto 1417/0,-1553.19,-2145.97,40,0
+    .goto 1417/0,-1589.19,-2219.65,40,0
+    .goto 1417/0,-1624.47,-2294.29,40,0
+    .goto 1417/0,-1694.31,-2301.49,40,0
+    .goto 1417/0,-1785.39,-2326.69,40,0
+    .goto 1417/0,-1735.71,-2257.57,40,0
+    .goto 1417/0,-1781.79,-2178.85,40,0
+    >>Kill |cRXP_ENEMY_Daggerspine Raiders|r
     .complete 664,1 --Daggerspine Raider slain (10)
-    .complete 664,2 --Daggerspine Sorceress slain (3)
     .mob Daggerspine Raider
+    .isOnQuest 664
+step
+    #loop
+    .goto 1417/0,-1685.31,-2164.45,0
+    .goto 1417/0,-1685.31,-2164.45,40,0
+    .goto 1417/0,-1721.67,-2169.49,40,0
+    .goto 1417/0,-1610.07,-2173.33,40,0
+    .goto 1417/0,-1632.39,-2151.25,40,0
+    >>Kill |cRXP_ENEMY_Daggerspine Sorceress|r
+    .complete 664,2 --Daggerspine Sorceress slain (3)
     .mob Daggerspine Sorceress
+    .isOnQuest 664
 step
     .goto 1417/0,-2047.47,-2088.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Nilzlix|r
     .turnin 662 >>Turn in Deep Sea Salvage
     .target First Mate Nilzlix
+    .isOnQuest 662
 step
     .goto 1417/0,-2085.63,-2064.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
     .turnin 666 >>Turn in Sunken Treasure
+    .target Doctor Draxlegauge
+    .isOnQuest 666
+step
+    .goto 1417/0,-2085.63,-2064.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Draxlegauge|r
     .accept 668 >>Accept Sunken Treasure
     .target Doctor Draxlegauge
+    .isQuestTurnedIn 666 --any of: Sunken Treasure
 step
     .goto 1417/0,-2090.67,-2072.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Steelgut|r
     .turnin 664 >>Turn in Drowned Sorrows
     .target Captain Steelgut
+    .isOnQuest 664
 step
     .goto 1417/0,-2028.75,-2086.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
     .turnin 668 >>Turn in Sunken Treasure
+    .target Shakes O'Breen
+    .isOnQuest 668
+step
+    .goto 1417/0,-2028.75,-2086.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
     .accept 669 >>Accept Sunken Treasure
     .target Shakes O'Breen
+    .isQuestTurnedIn 668 --any of: Sunken Treasure
 step
     .goto 1417/0,-3556.59,-1004.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tor'gan|r
     .turnin 640 >>Turn in The Broken Sigil
+    .target Tor'gan
+    .isOnQuest 640
+step
+    .goto 1417/0,-3556.59,-1004.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tor'gan|r
     .accept 641 >>Accept Sigil of Thoradin
     .target Tor'gan
+    .isQuestTurnedIn 640 --any of: The Broken Sigil
 step
     .goto 1417/0,-3523.47,-948.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
     .turnin 641 >>Turn in Sigil of Thoradin
+    .target Zengu
+    .isOnQuest 641
+step
+    .goto 1417/0,-3523.47,-948.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
     .accept 643 >>Accept Sigil of Arathor
     .target Zengu
+    .isQuestTurnedIn 641 --any of: Sigil of Thoradin
 step
     .goto 1417/0,-2071.59,-1383.25
     >>Kill |cRXP_ENEMY_Lieutenant Valorcall|r and loot |cRXP_LOOT_Sigil of Arathor|r
     .complete 643,1 --Sigil of Arathor (1)
     .mob Lieutenant Valorcall
+    .isOnQuest 643
 step
     #completewith next
     .hs >>Hearth to Innkeeper Adegwa's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -713,11 +867,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
     .turnin 643 >>Turn in Sigil of Arathor
     .target Zengu
+    .isOnQuest 643
 step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Sunken Treasure
 step
+    +|cRXP_WARN_Until level 41, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Far Seer Mok'thardin). Then come back to this Arathi Highlands guide --RouteBuilder:next
+step
     .xp 41 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 41.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Arathi Highlands: part 4|r (planned from level 41)
 step
     .goto 1417/0,-3512.67,-832.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
@@ -740,16 +901,23 @@ step
     .goto 1417/0,-2170.95,-1510.45
     >>Click the |cRXP_PICK_Stone of Inner Binding|r
     .accept 652 >>Accept Breaking the Keystone
+    .isQuestTurnedIn 651 --any of: Stones of Binding
 step
     .goto 1417/0,-3167.07,-853.33
     >>Kill |cRXP_ENEMY_Fozruk|r and loot |cRXP_LOOT_Rod of Order|r
     .complete 652,1 --Rod of Order (1)
     .mob Fozruk
+    .isOnQuest 652
 step
     .goto 1417/0,-2165.55,-1527.49
     >>Click the |cRXP_PICK_Keystone|r
     .turnin 652 >>Turn in Breaking the Keystone
+    .isOnQuest 652
+step
+    .goto 1417/0,-2165.55,-1527.49
+    >>Click the |cRXP_PICK_Keystone|r
     .accept 688 >>Accept Myzrael's Allies
+    .isQuestTurnedIn 652 --any of: Breaking the Keystone
 step
     .goto 1417/0,-2028.75,-2086.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
@@ -772,18 +940,29 @@ step
     .goto 1417/0,-3550.11,-988.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaruk|r
     .turnin 688 >>Turn in Myzrael's Allies
+    .target Zaruk
+    .isOnQuest 688
+step
+    .goto 1417/0,-3550.11,-988.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaruk|r
     .accept 687 >>Accept Theldurin the Lost
     .target Zaruk
+    .isQuestTurnedIn 653,688 --any of: Myzrael's Allies, Myzrael's Allies
 step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Badlands|r: Theldurin the Lost
 step
     .xp 44 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 44.|r Come back to this guide then
 step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_Arathi Highlands: part 5|r (planned from level 44)
+step
     .goto 1417/0,-3523.47,-948.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
     .accept 644 >>Accept Sigil of Trollbane
     .target Zengu
+    .isQuestTurnedIn 643 --any of: Sigil of Arathor
 step
     .goto 1417/0,-3512.67,-832.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
@@ -807,22 +986,35 @@ step
     >>Kill |cRXP_ENEMY_Prince Galen Trollbane|r and loot |cRXP_LOOT_Sigil of Trollbane|r
     .complete 644,1 --Sigil of Trollbane (1)
     .mob Prince Galen Trollbane
+    .isOnQuest 644
 step
     .goto 1417/0,-3523.47,-948.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
     .turnin 644 >>Turn in Sigil of Trollbane
+    .target Zengu
+    .isOnQuest 644
+step
+    .goto 1417/0,-3523.47,-948.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
     .accept 645 >>Accept Trol'kalar
     .target Zengu
+    .isQuestTurnedIn 644 --any of: Sigil of Trollbane
 step
     .goto 1417/0,-1905.63,-1564.21
     >>Click the |cRXP_PICK_Trollbane's Tomb|r
     .turnin 645 >>Turn in Trol'kalar
+    .isOnQuest 645
+step
+    .goto 1417/0,-1905.63,-1564.21
+    >>Click the |cRXP_PICK_Trollbane's Tomb|r
     .accept 646 >>Accept Trol'kalar
+    .isQuestTurnedIn 645 --any of: Trol'kalar
 step
     .goto 1417/0,-3523.47,-948.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
     .turnin 646 >>Turn in Trol'kalar
     .target Zengu
+    .isOnQuest 646
 step
     +|cRXP_WARN_End of the Arathi Highlands route.|r
 ]])

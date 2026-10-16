@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 52, 55, 58).
+-- Sections (the guide starts at the one for your level): start from 52; around Umi Rumplesnicker from 55; part 3 from 58.
 -- Edit zones/Winterspring.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 52-60 Winterspring
 
+step
+    .xp <55,1,RBSection1_1
+    .xp 55 >>Finding the place in this guide for your level
+step
+    .xp <58,1,RBSection2_1
+    .xp 58 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Winterspring: start|r (planned from level 52)
 step
     .goto 1452/1,-4302.61,6433.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remorseful Highborne|r
@@ -130,6 +143,10 @@ step
     >>|cRXP_FRIENDLY_Western Plaguelands|r: The Everlook Report
 step
     .xp 55 >>|cRXP_WARN_The rest of Winterspring is planned from level 55.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Winterspring: around Umi Rumplesnicker|r (planned from level 55)
 step
     .goto 1452/1,-4302.61,6433.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remorseful Highborne|r
@@ -546,6 +563,10 @@ step
 step
     .xp 58 >>|cRXP_WARN_The rest of Winterspring is planned from level 58.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Winterspring: part 3|r (planned from level 58)
+step
     .goto 1452/1,-4712.99,6720.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Mau'ari|r
     .accept 969 >>Accept Luck Be With You
@@ -554,17 +575,12 @@ step
     .goto 1452/1,-4678.91,5661.15
     >>Click the |cRXP_PICK_Jaron's Wagon|r
     .accept 4864 >>Accept Enraged Wildkin
+    .isQuestTurnedIn 4863 --any of: Enraged Wildkin
 step
     .goto 1452/1,-4676.78,5658.78
     >>Pick up |cRXP_PICK_Jaron's Supplies|r from the ground
     .complete 4864,1 --Jaron's Supplies (1)
-step
-    #completewith Along4
-    >>As you go: Kill |cRXP_ENEMY_Crazed Owlbeasts|r, |cRXP_ENEMY_Moontouched Owlbeasts|r and |cRXP_ENEMY_Berserk Owlbeasts|r. Loot them for |cRXP_LOOT_Blue-feathered Amulet|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 4864,2 --Blue-feathered Amulet (1)
-    .mob Crazed Owlbeast
-    .mob Moontouched Owlbeast
-    .mob Berserk Owlbeast
+    .isOnQuest 4864
 step
     .goto 1452/1,-4794.64,5717.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranshalla|r
@@ -573,7 +589,6 @@ step
     .isQuestTurnedIn 979 --any of: Find Ranshalla
     .xp <52,1
 step
-    #label Along4
     .goto 1452/1,-4921.02,5516.78
     >>Discover the secret of the Altar of Elune
     .complete 4901,1 --Discover the secret of the Altar of Elune
@@ -595,6 +610,7 @@ step
     .mob Crazed Owlbeast
     .mob Moontouched Owlbeast
     .mob Berserk Owlbeast
+    .isOnQuest 4864
 step
     #loop
     .goto 1452/1,-4619.98,5452.41,0
@@ -650,6 +666,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaron Stoneshaper|r
     .turnin 4864 >>Turn in Enraged Wildkin
     .target Jaron Stoneshaper
+    .isOnQuest 4864
 step
     .goto 1452/1,-2536.84,6395.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donova Snowden|r

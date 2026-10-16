@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 15, 18, 21, 24, 27).
+-- Sections (the guide starts at the one for your level): start from 15; around Gaxim Rustfizzle from 18; part 3 from 21; part 4 from 24; part 5 from 27.
 -- Edit zones/Stonetalon Mountains.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,24 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 15-28 Stonetalon Mountains
 
+step
+    .xp <18,1,RBSection1_1
+    .xp 18 >>Finding the place in this guide for your level
+step
+    .xp <21,1,RBSection2_1
+    .xp 21 >>Finding the place in this guide for your level
+step
+    .xp <24,1,RBSection3_1
+    .xp 24 >>Finding the place in this guide for your level
+step
+    .xp <27,1,RBSection4_1
+    .xp 27 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection5_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Stonetalon Mountains: start|r (planned from level 15)
 step
     .goto 1442/1,402.76,1231.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
@@ -106,7 +125,13 @@ step << Warlock
     .vendor >> |cRXP_WARN_Vendor trash|r
     .target Illyanie
 step
+    +|cRXP_WARN_Until level 18, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 2.1 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.0 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.6 levels of quests, starting around Daryl the Youngling). Then come back to this Stonetalon Mountains guide --RouteBuilder:next
+step
     .xp 18 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 18.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Stonetalon Mountains: around Gaxim Rustfizzle|r (planned from level 18)
 step
     .goto 1442/1,365.16,878.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
@@ -169,7 +194,13 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: A Scroll from Mauren
     >>|cRXP_FRIENDLY_The Barrens|r: Further Instructions
 step
+    +|cRXP_WARN_Until level 21, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 1.0 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.6 levels of quests, starting around Elegael Thornpaw). Then come back to this Stonetalon Mountains guide --RouteBuilder:next
+step
     .xp 21 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 21.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Stonetalon Mountains: part 3|r (planned from level 21)
 step
     .goto 1442/1,-263.82,962.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
@@ -261,7 +292,13 @@ step
     .turnin 86574 >>Turn in Stonetalon Supply Run
     .target Innkeeper Faralia
 step
+    +|cRXP_WARN_Until level 24, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.8 levels of quests, starting around Karl Boran). Then come back to this Stonetalon Mountains guide --RouteBuilder:next
+step
     .xp 24 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 24.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Stonetalon Mountains: part 4|r (planned from level 24)
 step
     .goto 1442/1,1434.12,2652.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Albagorm|r
@@ -388,7 +425,13 @@ step
     >>|cRXP_FRIENDLY_Ashenvale|r: Update for Sentinel Thenysil
     >>|cRXP_FRIENDLY_Feralas|r: Reclaiming the Charred Vale
 step
+    +|cRXP_WARN_Until level 27, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.7 levels of quests, starting around Karl Boran). Then come back to this Stonetalon Mountains guide --RouteBuilder:next
+step
     .xp 27 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 27.|r Come back to this guide then
+step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_Stonetalon Mountains: part 5|r (planned from level 27)
 step
     .goto 1442/1,339.27,730.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaxim Rustfizzle|r

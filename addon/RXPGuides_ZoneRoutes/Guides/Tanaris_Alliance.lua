@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 43, 46, 49).
+-- Sections (the guide starts at the one for your level): around Yeh'kinya from 43; around Senior Surveyor Fizzledowser from 46; part 3 from 49.
 -- Edit zones/Tanaris.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,7 +14,20 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group Zone Routes (Alliance)
 #name 43-60 Tanaris
+#next Zone Routes (Alliance)\50-56 Un'Goro Crater
 
+step
+    .xp <46,1,RBSection1_1
+    .xp 46 >>Finding the place in this guide for your level
+step
+    .xp <49,1,RBSection2_1
+    .xp 49 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Tanaris: around Yeh'kinya|r (planned from level 43)
 step
     .goto 1446/1,-3939.23,-6948.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaeriyan|r
@@ -518,6 +532,10 @@ step
 step
     .xp 46 >>|cRXP_WARN_The rest of Tanaris is planned from level 46.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Tanaris: around Senior Surveyor Fizzledowser|r (planned from level 46)
+step
     .goto 1446/1,-4829.33,-6900.34
     >>Click the |cRXP_PICK_Wanted Poster|r
     .accept 2781 >>Accept WANTED: Caliph Scorpidsting
@@ -612,6 +630,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senior Surveyor Fizzledowser|r
     .accept 82 >>Accept Noxious Lair Investigation
     .target Senior Surveyor Fizzledowser
+    .isQuestTurnedIn 992 --any of: Gadgetzan Water Survey
 step
     #loop
     .goto 1446/1,-2752.43,-7714.54,0
@@ -630,6 +649,7 @@ step
     .mob Centipaar Stinger
     .mob Centipaar Swarmer
     .mob Centipaar Worker
+    .isOnQuest 82
 step
     #loop
     .goto 1446/1,-2244.59,-8923.88,0
@@ -660,33 +680,54 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Pestlezugg|r
     .turnin 82 >>Turn in Noxious Lair Investigation
     .target Alchemist Pestlezugg
+    .isOnQuest 82
 step
     .goto 1446/1,-3683.24,-7139.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senior Surveyor Fizzledowser|r
     .accept 10 >>Accept The Scrimshank Redemption
     .target Senior Surveyor Fizzledowser
+    .isQuestTurnedIn 82 --any of: Noxious Lair Investigation
 step
     .goto 1446/1,-4079.99,-9148.82
     >>Pick up |cRXP_PICK_Scrimshank's Surveying Gear|r from the ground
     .complete 10,1 --Scrimshank's Surveying Gear (1)
+    .isOnQuest 10
 step
     .goto 1446/1,-3683.24,-7139.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senior Surveyor Fizzledowser|r
     .turnin 10 >>Turn in The Scrimshank Redemption
+    .target Senior Surveyor Fizzledowser
+    .isOnQuest 10
+step
+    .goto 1446/1,-3683.24,-7139.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senior Surveyor Fizzledowser|r
     .accept 110 >>Accept Insect Part Analysis
     .target Senior Surveyor Fizzledowser
+    .isQuestTurnedIn 10 --any of: The Scrimshank Redemption
 step
     .goto 1446/1,-3730.16,-7115.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Pestlezugg|r
     .turnin 110 >>Turn in Insect Part Analysis
+    .target Alchemist Pestlezugg
+    .isOnQuest 110
+step
+    .goto 1446/1,-3730.16,-7115.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Pestlezugg|r
     .accept 113 >>Accept Insect Part Analysis
     .target Alchemist Pestlezugg
+    .isQuestTurnedIn 110 --any of: Insect Part Analysis
 step
     .goto 1446/1,-3683.24,-7139.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senior Surveyor Fizzledowser|r
     .turnin 113 >>Turn in Insect Part Analysis
+    .target Senior Surveyor Fizzledowser
+    .isOnQuest 113
+step
+    .goto 1446/1,-3683.24,-7139.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senior Surveyor Fizzledowser|r
     .accept 162 >>Accept Rise of the Silithid
     .target Senior Surveyor Fizzledowser
+    .isQuestTurnedIn 113 --any of: Insect Part Analysis
 step
     .goto 1446/1,-3741.89,-7111.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sprinkle|r
@@ -727,6 +768,10 @@ step
     >>|cRXP_FRIENDLY_The Hinterlands and back here|r: Sprinkle's Secret Ingredient
 step
     .xp 49 >>|cRXP_WARN_The rest of Tanaris is planned from level 49.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Tanaris: part 3|r (planned from level 49)
 step
     #loop
     .goto 1446/1,-2252.87,-8658.46,0
@@ -933,4 +978,6 @@ step
     >>|cRXP_FRIENDLY_Un'Goro Crater|r: Linken's Sword
     >>|cRXP_FRIENDLY_another zone|r: Into the Depths, Secret of the Circle
     >>|cRXP_FRIENDLY_Un'Goro Crater and back here|r: Super Sticky
+step
+    +|cRXP_WARN_Suggested next zones at level 49|r: |cRXP_FRIENDLY_Un'Goro Crater|r (about 0.5 levels of quests, starting around Muigin; 1 quest from here hands in there). Completing this step loads the guide for Un'Goro Crater --RouteBuilder:next
 ]])

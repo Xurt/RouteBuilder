@@ -14,6 +14,10 @@ RXPGuides.RegisterGuide([[
 #name 50-57 Blasted Lands
 
 step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Blasted Lands: around Bloodmage Drazial|r (planned from level 50)
+step
     .goto 1419/0,-3482.82,-11001.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thadius Grimshade|r
     .accept 2992 >>Accept The Divination

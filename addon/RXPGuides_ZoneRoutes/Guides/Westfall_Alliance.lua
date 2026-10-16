@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 10, 16, 19, 22).
+-- Sections (the guide starts at the one for your level): around Farmer Saldean from 10; around Gryan Stoutmantle from 12; part 2 from 16; part 3 from 19; part 4 from 22.
 -- Edit zones/Westfall.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,7 +14,26 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group Zone Routes (Alliance)
 #name 10-24 Westfall
+#next Zone Routes (Alliance)\21-34 Wetlands
 
+step
+    .xp <12,1,RBSection1_1
+    .xp 12 >>Finding the place in this guide for your level
+step
+    .xp <16,1,RBSection1_2
+    .xp 16 >>Finding the place in this guide for your level
+step
+    .xp <19,1,RBSection2_1
+    .xp 19 >>Finding the place in this guide for your level
+step
+    .xp <22,1,RBSection3_1
+    .xp 22 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection4_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Westfall: around Farmer Saldean|r (planned from level 10)
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
@@ -505,28 +525,50 @@ step
     .complete 92745,1 --Kobold Digger slain (4)
     .mob Kobold Digger
 step
+    #label RBSection1_2
+    #completewith next
+    +|cRXP_WARN_Westfall: around Gryan Stoutmantle|r (planned from level 12)
+step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 12 >>Turn in The People's Militia
+    .target Gryan Stoutmantle
+    .isOnQuest 12
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 13 >>Accept The People's Militia
     .target Gryan Stoutmantle
+    .isQuestTurnedIn 12 --any of: The People's Militia
 step
     .goto 1436/0,1041.97,-10511.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
     .turnin 102 >>Turn in Patrolling Westfall
     .target Captain Danuvin
+    .isOnQuest 102
 step
     .goto 1436/0,1127.37,-10636.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
     .turnin 153 >>Turn in Red Leather Bandanas
     .target Scout Galiaan
+    .isOnQuest 153
+step
+    .goto 1436/0,1179.87,-10637.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
+    .accept 92747 >>Accept Moonbrook Espionage
+    .target Alba Fairmoon
 step
     .goto 1436/0,1179.87,-10637.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .turnin 92742 >>Turn in Testing the Wells
-    .turnin 92744 >>Turn in Murloc Gills
-    .accept 92747 >>Accept Moonbrook Espionage
     .target Alba Fairmoon
+    .isOnQuest 92742
+step
+    .goto 1436/0,1179.87,-10637.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
+    .turnin 92744 >>Turn in Murloc Gills
+    .target Alba Fairmoon
+    .isOnQuest 92744
 step
     #loop
     .goto 1436/0,1460.57,-10933.70,0
@@ -542,6 +584,7 @@ step
     >>Kill |cRXP_ENEMY_Defias Looters|r
     .complete 13,2 --Defias Looter slain (15)
     .mob Defias Looter
+    .isOnQuest 13
 step
     .goto 1436/0,1966.32,-11407.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
@@ -608,20 +651,46 @@ step
     .goto 1436/0,1406.32,-11059.47,40,0
     .goto 1436/0,1495.57,-11052.00,40,0
     .goto 1436/0,1563.82,-11062.27,40,0
-    .goto 1436/0,1529.17,-11003.00,40,0
+    .goto 1436/0,1526.37,-11013.97,40,0
     .goto 1436/0,1572.22,-10949.57,40,0
     .goto 1436/0,1463.72,-10979.90,40,0
     >>Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Harvest Watchers|r, |cRXP_ENEMY_Harvest Reapers|r and |cRXP_ENEMY_Murloc Hunters|r. Loot them for |cRXP_LOOT_Copper Modulator|r. It can also be picked up from |cRXP_PICK_Box of Assorted Parts|r on the ground
-    >>Loot the |cRXP_PICK_Suspicious Crates|r for |cRXP_LOOT_Suspicious Industrial Supplies|r
-    >>Kill |cRXP_ENEMY_Defias Pillagers|r
     .complete 92911,2 --Copper Modulator (4)
-    .complete 92747,1 --Suspicious Industrial Supplies (8)
-    .complete 13,1 --Defias Pillager slain (15)
     .mob Harvest Golem
     .mob Harvest Watcher
     .mob Harvest Reaper
     .mob Murloc Hunter
+    .isOnQuest 92911
+step
+    #loop
+    .goto 1436/0,1462.67,-10989.00,0
+    .goto 1436/0,1462.67,-10989.00,40,0
+    .goto 1436/0,1497.67,-10991.33,40,0
+    .goto 1436/0,1494.17,-10963.33,40,0
+    .goto 1436/0,1553.67,-10970.33,40,0
+    .goto 1436/0,1529.17,-11003.00,40,0
+    .goto 1436/0,1536.17,-11024.00,40,0
+    .goto 1436/0,1546.67,-11056.67,40,0
+    .goto 1436/0,1455.67,-11052.00,40,0
+    .goto 1436/0,1427.67,-11038.00,40,0
+    >>Loot the |cRXP_PICK_Suspicious Crates|r for |cRXP_LOOT_Suspicious Industrial Supplies|r
+    .complete 92747,1 --Suspicious Industrial Supplies (8)
+step
+    #loop
+    .goto 1436/0,1490.67,-10989.00,0
+    .goto 1436/0,1490.67,-10989.00,40,0
+    .goto 1436/0,1461.62,-10971.50,40,0
+    .goto 1436/0,1397.57,-10971.50,40,0
+    .goto 1436/0,1419.97,-11019.10,40,0
+    .goto 1436/0,1466.17,-11001.13,40,0
+    .goto 1436/0,1500.82,-11023.53,40,0
+    .goto 1436/0,1495.57,-11052.00,40,0
+    .goto 1436/0,1563.82,-11062.27,40,0
+    .goto 1436/0,1526.37,-11013.97,40,0
+    >>Kill |cRXP_ENEMY_Defias Pillagers|r
+    .complete 13,1 --Defias Pillager slain (15)
     .mob Defias Pillager
+    .isOnQuest 13
 step
     .goto 1436/0,1665.32,-11353.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
@@ -682,6 +751,7 @@ step
     >>Kill |cRXP_ENEMY_Riverpaw Miners|r
     .complete 92745,2 --Riverpaw Miner slain (6)
     .mob Riverpaw Miner
+    .isOnQuest 92745
 step
     .goto 1436/0,1598.47,-10515.10
     >>Click the |cRXP_PICK_Broken Barrel|r
@@ -697,6 +767,11 @@ step
     .goto 1436/0,1179.87,-10637.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .turnin 92745 >>Turn in The State of the Mines
+    .target Alba Fairmoon
+    .isOnQuest 92745
+step
+    .goto 1436/0,1179.87,-10637.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .turnin 92747 >>Turn in Moonbrook Espionage
     .target Alba Fairmoon
 step
@@ -704,6 +779,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 13 >>Turn in The People's Militia
     .target Gryan Stoutmantle
+    .isOnQuest 13
 step
     .goto 1436/0,1211.37,-10152.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket|r
@@ -715,6 +791,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket|r
     .turnin 92911 >>Turn in Harvesting the Harvesters
     .target Ozwin Ironsprocket
+    .isOnQuest 92911
 step
     .goto 1436/0,1594.62,-9797.37
     >>Click the |cRXP_PICK_Old Jug|r
@@ -751,7 +828,13 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: Continue to Stormwind << Human
     >>|cRXP_FRIENDLY_Stormwind City|r: Explosive Consultation
 step
+    +|cRXP_WARN_Until level 16, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 2.1 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.3 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Elwynn Forest|r (about 0.9 levels of quests, starting around Marshal Dughan). Then come back to this Westfall guide --RouteBuilder:next
+step
     .xp 16 >>|cRXP_WARN_The rest of Westfall is planned from level 16.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Westfall: part 2|r (planned from level 16)
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
@@ -789,6 +872,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 14 >>Accept The People's Militia
     .target Gryan Stoutmantle
+    .isQuestTurnedIn 13 --any of: The People's Militia
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
@@ -812,26 +896,23 @@ step
     .goto 1436/0,1661.47,-11113.60,0
     .goto 1436/0,1661.47,-11113.60,40,0
     .goto 1436/0,1698.57,-11153.50,40,0
-    .goto 1436/0,1755.97,-11195.03,40,0
     .goto 1436/0,1742.32,-11139.97,40,0
     >>Kill |cRXP_ENEMY_Defias Knuckledusters|r
-    >>Kill |cRXP_ENEMY_Defias Pathstalkers|r
     .complete 14,3 --Defias Knuckleduster slain (5)
-    .complete 14,2 --Defias Pathstalker slain (5)
     .mob Defias Knuckleduster
+    .isOnQuest 14
+step
+    .goto 1436/0,1707.32,-11158.87
+    >>Kill |cRXP_ENEMY_Defias Pathstalkers|r
+    .complete 14,2 --Defias Pathstalker slain (5)
     .mob Defias Pathstalker
+    .isOnQuest 14
 step
     .goto 1436/0,1966.32,-11407.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
     .accept 152 >>Accept The Coast Isn't Clear
     .target Captain Grayson
 step
-    #completewith Along11
-    >>As you go: Kill |cRXP_ENEMY_Defias Highwaymans|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 14,1 --Defias Highwayman slain (8)
-    .mob Defias Highwayman
-step
-    #label Along11
     .goto 1436/0,1665.32,-11353.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .turnin 92819 >>Turn in Destruction in Deadmines
@@ -852,11 +933,13 @@ step
     >>Kill |cRXP_ENEMY_Defias Highwaymans|r
     .complete 14,1 --Defias Highwayman slain (8)
     .mob Defias Highwayman
+    .isOnQuest 14
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 14 >>Turn in The People's Militia
     .target Gryan Stoutmantle
+    .isOnQuest 14
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
@@ -943,7 +1026,13 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Of Mice and Milk
     >>|cRXP_FRIENDLY_The Barrens|r: ... and that note you found
 step
+    +|cRXP_WARN_Until level 19, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 1.6 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 0.9 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling). Then come back to this Westfall guide --RouteBuilder:next
+step
     .xp 19 >>|cRXP_WARN_The rest of Westfall is planned from level 19.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Westfall: part 3|r (planned from level 19)
 step
     .goto 1436/0,1966.32,-11407.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
@@ -966,7 +1055,13 @@ step
     .target Alba Fairmoon
     .isOnQuest 92819
 step << Shaman
+    +|cRXP_WARN_Until level 22, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 0.8 levels of quests, starting around Archaeologist Hollee). Then come back to this Westfall guide --RouteBuilder:next
+step << Shaman
     .xp 22 >>|cRXP_WARN_The rest of Westfall is planned from level 22.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Westfall: part 4|r (planned from level 22)
 step << Shaman
     .goto 1436/0,1421.72,-10797.20
     >>Click the |cRXP_PICK_Forgotten Shrine|r
@@ -999,4 +1094,6 @@ step
     +|cRXP_WARN_End of the Westfall route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Silverpine Forest|r: Call of Water << Shaman
     >>|cRXP_FRIENDLY_Stormwind City|r: Klaven's Tower << Rogue
+step
+    +|cRXP_WARN_Suggested next zones at level 22|r: |cRXP_FRIENDLY_Wetlands|r (about 1.0 levels of quests, starting around Karl Boran). Completing this step loads the guide for Wetlands --RouteBuilder:next
 ]])

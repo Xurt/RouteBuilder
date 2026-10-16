@@ -14,6 +14,10 @@ RXPGuides.RegisterGuide([[
 #name 50-55 Blasted Lands
 
 step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Blasted Lands: around Bloodmage Drazial|r (planned from level 50)
+step
     .goto 1419/0,-2935.09,-10883.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bloodmage Drazial|r
     .accept 2585 >>Accept The Decisive Striker

@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 7 parts with a level check between them (from level 20, 23, 26, 29, 32, 35, 38).
+-- Sections (the guide starts at the one for your level): around Apothecary Lydon from 20; around Apothecary Lydon from 23; around Apothecary Lydon from 26; around Krusk from 29; around Magus Wordeen Voidglare from 32; part 6 from 35; part 7 from 38.
 -- Edit zones/Hillsbrad Foothills.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,7 +14,32 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group Zone Routes (Horde)
 #name 20-40 Hillsbrad Foothills
+#next Zone Routes (Horde)\1-50 Stranglethorn Vale
 
+step
+    .xp <23,1,RBSection1_1
+    .xp 23 >>Finding the place in this guide for your level
+step
+    .xp <26,1,RBSection2_1
+    .xp 26 >>Finding the place in this guide for your level
+step
+    .xp <29,1,RBSection3_1
+    .xp 29 >>Finding the place in this guide for your level
+step
+    .xp <32,1,RBSection4_1
+    .xp 32 >>Finding the place in this guide for your level
+step
+    .xp <35,1,RBSection5_1
+    .xp 35 >>Finding the place in this guide for your level
+step
+    .xp <38,1,RBSection6_1
+    .xp 38 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection7_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Hillsbrad Foothills: around Apothecary Lydon|r (planned from level 20)
 step << Undead Paladin
     .goto 1424/0,-867.09,-158.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r
@@ -402,7 +428,13 @@ step
     >>|cRXP_FRIENDLY_Silverpine Forest|r: The Moonsilver Blade << Undead Paladin
     >>|cRXP_FRIENDLY_Thunder Bluff|r: Return to Thunder Bluff
 step
+    +|cRXP_WARN_Until level 23, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 1.0 levels of quests, starting around Tonga Runetotem). Then come back to this Hillsbrad Foothills guide --RouteBuilder:next
+step
     .xp 23 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 23.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Hillsbrad Foothills: around Apothecary Lydon|r (planned from level 23)
 step
     .goto 1424/0,-899.41,-6.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Lydon|r
@@ -617,10 +649,15 @@ step
 step
     .xp 26 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 26.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Hillsbrad Foothills: around Apothecary Lydon|r (planned from level 26)
+step
     .goto 1424/0,-927.89,-36.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
     .accept 529 >>Accept Battle of Hillsbrad
     .target High Executor Darthalia
+    .isQuestTurnedIn 528 --any of: Battle of Hillsbrad
 step
     .goto 1424/0,-904.53,-44.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
@@ -633,26 +670,34 @@ step << Undead Paladin
     .target Ott
     .isOnQuest 95125
 step
-    #loop
-    .goto 1424/0,42.35,-569.60,0
-    .goto 1424/0,42.35,-569.60,40,0
-    .goto 1424/0,43.95,-577.71,40,0
-    .goto 1424/0,69.87,-596.69,40,0
-    .goto 1424/0,69.23,-536.53,40,0
-    .goto 1424/0,55.15,-548.91,40,0
+    .goto 1424/0,42.35,-569.60
     >>Pick up |cRXP_PICK_Shipment of Iron|r from the ground
-    >>Kill |cRXP_ENEMY_Blacksmith Verringtan|r
-    >>Kill |cRXP_ENEMY_Hillsbrad Apprentice Blacksmiths|r
     .complete 529,3 --Shipment of Iron (1)
+    .isOnQuest 529
+step
+    .goto 1424/0,39.15,-547.63
+    >>Kill |cRXP_ENEMY_Blacksmith Verringtan|r
     .complete 529,1 --Blacksmith Verringtan slain (1)
-    .complete 529,2 --Hillsbrad Apprentice Blacksmith slain (4)
     .mob Blacksmith Verringtan
+    .isOnQuest 529
+step
+    #loop
+    .goto 1424/0,55.15,-548.91,0
+    .goto 1424/0,55.15,-548.91,40,0
+    .goto 1424/0,69.23,-536.53,40,0
+    .goto 1424/0,69.87,-596.69,40,0
+    .goto 1424/0,43.95,-577.71,40,0
+    .goto 1424/0,22.83,-562.99,40,0
+    >>Kill |cRXP_ENEMY_Hillsbrad Apprentice Blacksmiths|r
+    .complete 529,2 --Hillsbrad Apprentice Blacksmith slain (4)
     .mob Hillsbrad Apprentice Blacksmith
+    .isOnQuest 529
 step
     .goto 1424/0,-927.89,-36.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
     .turnin 529 >>Turn in Battle of Hillsbrad
     .target High Executor Darthalia
+    .isOnQuest 529
 step
     .goto 1424/0,-899.41,-6.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Lydon|r
@@ -696,6 +741,10 @@ step
 step
     .xp 29 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 29.|r Come back to this guide then
 step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Hillsbrad Foothills: around Krusk|r (planned from level 29)
+step
     .goto 1424/0,-935.25,-19.41
     >>Click the |cRXP_PICK_Dangerous!|r
     .accept 567 >>Accept Dangerous!
@@ -727,11 +776,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
     .accept 532 >>Accept Battle of Hillsbrad
     .target High Executor Darthalia
+    .isQuestTurnedIn 529 --any of: Battle of Hillsbrad
 step
     .goto 1424/0,-957.01,-40.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
     .accept 533 >>Accept Infiltration
     .target Krusk
+    .isQuestTurnedIn 498 --any of: The Rescue
 step
     .goto 1424/0,-977.49,-19.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Novice Thaivand|r
@@ -754,41 +805,73 @@ step
     .mob Cave Yeti
     .mob Ferocious Yeti
 step
-    #loop
-    .goto 1424/0,40.75,-505.17,0
-    .goto 1424/0,40.75,-505.17,40,0
-    .goto 1424/0,98.99,-529.07,40,0
-    .goto 1424/0,123.63,-520.32,40,0
-    .goto 1424/0,117.23,-488.32,40,0
-    .goto 1424/0,129.07,-472.11,40,0
-    .goto 1424/0,119.79,-447.36,40,0
-    >>Kill |cRXP_ENEMY_Magistrate Burnside|r
-    >>Kill |cRXP_ENEMY_Clerk Horrace Whitesteed|r
-    >>Pick up |cRXP_PICK_Hillsbrad Town Registry|r from the ground
-    >>Click the |cRXP_PICK_Hillsbrad Proclamation|r
-    >>Kill |cRXP_ENEMY_Hillsbrad Councilmans|r
-    .complete 532,1 --Magistrate Burnside slain (1)
+    #completewith Along9
+    >>As you go: Kill |cRXP_ENEMY_Clerk Horrace Whitesteed|r. |cRXP_WARN_Anything left is finished later|r
     .complete 567,1 --Clerk Horrace Whitesteed slain (1)
-    .complete 532,4 --Hillsbrad Town Registry (1)
-    .complete 532,3 --Hillsbrad Proclamation destroyed
-    .complete 532,2 --Hillsbrad Councilman slain (8)
-    .mob Magistrate Burnside
     .mob Clerk Horrace Whitesteed
+step
+    #label Along9
+    .goto 1424/0,117.23,-488.32
+    >>Kill |cRXP_ENEMY_Magistrate Burnside|r
+    .complete 532,1 --Magistrate Burnside slain (1)
+    .mob Magistrate Burnside
+    .isOnQuest 532
+step
+    .goto 1424/0,122.35,-504.75
+    >>Kill |cRXP_ENEMY_Clerk Horrace Whitesteed|r
+    .complete 567,1 --Clerk Horrace Whitesteed slain (1)
+    .mob Clerk Horrace Whitesteed
+step
+    .goto 1424/0,122.03,-485.97
+    >>Pick up |cRXP_PICK_Hillsbrad Town Registry|r from the ground
+    .complete 532,4 --Hillsbrad Town Registry (1)
+    .isOnQuest 532
+step
+    .goto 1424/0,115.31,-490.67
+    >>Click the |cRXP_PICK_Hillsbrad Proclamation|r
+    .complete 532,3 --Hillsbrad Proclamation destroyed
+    .isOnQuest 532
+step
+    #loop
+    .goto 1424/0,100.59,-499.41,0
+    .goto 1424/0,100.59,-499.41,40,0
+    .goto 1424/0,119.79,-447.36,40,0
+    .goto 1424/0,129.07,-472.11,40,0
+    .goto 1424/0,123.63,-520.32,40,0
+    .goto 1424/0,98.99,-529.07,40,0
+    .goto 1424/0,40.75,-505.17,40,0
+    >>Kill |cRXP_ENEMY_Hillsbrad Councilmans|r
+    .complete 532,2 --Hillsbrad Councilman slain (8)
     .mob Hillsbrad Councilman
+    .isOnQuest 532
 step
     .goto 1424/0,-927.89,-36.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
     .turnin 532 >>Turn in Battle of Hillsbrad
+    .target High Executor Darthalia
+    .isOnQuest 532
+step
+    .goto 1424/0,-927.89,-36.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
     .accept 539 >>Accept Battle of Hillsbrad
     .target High Executor Darthalia
+    .isQuestTurnedIn 532 --any of: Battle of Hillsbrad
 step
     .goto 1424/0,-977.49,-19.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Novice Thaivand|r
     .turnin 552 >>Turn in Helcular's Revenge
     .target Novice Thaivand
 step
+    .goto 1424/0,67.95,-794.88
+    >>Kill |cRXP_ENEMY_Foreman Bonds|r
+    .complete 539,1 --Foreman Bonds slain (1)
+    .mob Foreman Bonds
+    .isOnQuest 539
+step
     #loop
-    .goto 1424/0,29.87,-710.40,0
+    .goto 1424/0,92.59,-786.56,0
+    .goto 1424/0,92.59,-786.56,40,0
+    .goto 1424/0,35.95,-784.21,40,0
     .goto 1424/0,29.87,-710.40,40,0
     .goto 1424/0,166.19,-691.41,40,0
     .goto 1424/0,161.07,-769.07,40,0
@@ -796,23 +879,26 @@ step
     .goto 1424/0,140.27,-822.83,40,0
     .goto 1424/0,100.27,-846.08,40,0
     .goto 1424/0,61.87,-869.33,40,0
-    .goto 1424/0,92.59,-786.56,40,0
-    .goto 1424/0,35.95,-784.21,40,0
-    >>Kill |cRXP_ENEMY_Foreman Bonds|r
     >>Kill |cRXP_ENEMY_Hillsbrad Miners|r
-    >>Kill |cRXP_ENEMY_Miner Hackett|r
-    .complete 539,1 --Foreman Bonds slain (1)
     .complete 539,2 --Hillsbrad Miner slain (10)
-    .complete 567,3 --Miner Hackett slain (1)
-    .mob Foreman Bonds
     .mob Hillsbrad Miner
+    .isOnQuest 539
+step
+    .goto 1424/0,49.07,-724.27
+    >>Kill |cRXP_ENEMY_Miner Hackett|r
+    .complete 567,3 --Miner Hackett slain (1)
     .mob Miner Hackett
 step
     .goto 1424/0,-927.89,-36.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
     .turnin 567 >>Turn in Dangerous!
+    .target High Executor Darthalia
+step
+    .goto 1424/0,-927.89,-36.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
     .turnin 539 >>Turn in Battle of Hillsbrad
     .target High Executor Darthalia
+    .isOnQuest 539
 step
     .goto 1424/0,-941.65,-31.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Humbert|r
@@ -897,6 +983,10 @@ step
 step
     .xp 32 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 32.|r Come back to this guide then
 step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_Hillsbrad Foothills: around Magus Wordeen Voidglare|r (planned from level 32)
+step
     .goto 1424/0,-904.53,-44.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
     .accept 93680 >>Accept Key to the City
@@ -913,6 +1003,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
     .accept 541 >>Accept Battle of Hillsbrad
     .target High Executor Darthalia
+    .isQuestTurnedIn 539 --any of: Battle of Hillsbrad
 step
     .goto 1424/0,-957.01,-40.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
@@ -929,6 +1020,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Novice Thaivand|r
     .accept 553 >>Accept Helcular's Revenge
     .target Novice Thaivand
+    .isQuestTurnedIn 552 --any of: Helcular's Revenge
 step
     .goto 1424/0,-957.01,-40.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
@@ -953,7 +1045,6 @@ step
     .accept 635 >>Accept Crystal in the Mountains
     .use 4614
 step
-    #label Drop635x1
     #loop
     .goto 1424/0,-1177.81,-1149.01,0
     .goto 1424/0,-1177.81,-1149.01,40,0
@@ -962,27 +1053,58 @@ step
     .goto 1424/0,-1137.17,-1296.85,40,0
     .goto 1424/0,-1189.97,-1300.91,40,0
     .goto 1424/0,-1262.61,-1334.83,40,0
+    .goto 1424/0,-1258.45,-1304.96,40,0
     .goto 1424/0,-1242.13,-1285.97,40,0
     .goto 1424/0,-1206.93,-1266.99,40,0
-    .goto 1424/0,-1222.61,-1201.71,40,0
     >>Kill |cRXP_ENEMY_Dun Garok Mountaineers|r
-    >>Kill |cRXP_ENEMY_Dun Garok Riflemans|r
-    >>Kill |cRXP_ENEMY_Dun Garok Priests|r
-    >>Kill |cRXP_ENEMY_Captain Ironhills|r
     .complete 541,1 --Dun Garok Mountaineer slain (8)
-    .complete 541,2 --Dun Garok Rifleman slain (8)
-    .complete 541,3 --Dun Garok Priest slain (2)
-    .complete 541,4 --Captain Ironhill slain (8)
     .mob Dun Garok Mountaineer
+    .isOnQuest 541
+step
+    #loop
+    .goto 1424/0,-1220.69,-1310.72,0
+    .goto 1424/0,-1220.69,-1310.72,40,0
+    .goto 1424/0,-1223.89,-1335.68,40,0
+    .goto 1424/0,-1257.17,-1311.57,40,0
+    .goto 1424/0,-1222.61,-1201.71,40,0
+    .goto 1424/0,-1172.37,-1232.64,40,0
+    .goto 1424/0,-1173.97,-1293.65,40,0
+    .goto 1424/0,-1195.09,-1276.80,40,0
+    .goto 1424/0,-1221.01,-1276.59,40,0
+    >>Kill |cRXP_ENEMY_Dun Garok Riflemans|r
+    .complete 541,2 --Dun Garok Rifleman slain (8)
     .mob Dun Garok Rifleman
+    .isOnQuest 541
+step
+    #loop
+    .goto 1424/0,-1230.29,-1316.27,0
+    .goto 1424/0,-1230.29,-1316.27,40,0
+    .goto 1424/0,-1258.45,-1320.96,40,0
+    .goto 1424/0,-1240.21,-1307.73,40,0
+    .goto 1424/0,-1195.73,-1216.64,40,0
+    >>Kill |cRXP_ENEMY_Dun Garok Priests|r
+    .complete 541,3 --Dun Garok Priest slain (2)
     .mob Dun Garok Priest
+    .isOnQuest 541
+step
+    #label Drop635x1
+    .goto 1424/0,-1255.89,-1307.31
+    >>Kill |cRXP_ENEMY_Captain Ironhills|r
+    .complete 541,4 --Captain Ironhill slain (8)
     .mob Captain Ironhill
+    .isOnQuest 541
 step
     .goto 1424/0,-927.89,-36.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
     .turnin 541 >>Turn in Battle of Hillsbrad
+    .target High Executor Darthalia
+    .isOnQuest 541
+step
+    .goto 1424/0,-927.89,-36.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
     .accept 550 >>Accept Battle of Hillsbrad
     .target High Executor Darthalia
+    .isQuestTurnedIn 541 --any of: Battle of Hillsbrad
 step
     .goto 1424/0,-901.33,-46.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Bel'varil|r
@@ -1004,9 +1126,13 @@ step
 step
     .goto 1424/0,-342.93,-166.40
     >>Click the |cRXP_PICK_Flame of Veraz|r
-    >>Click the |cRXP_PICK_Flame of Azel|r
     .complete 553,2 --Flame of Veraz charged
+    .isOnQuest 553
+step
+    .goto 1424/0,-337.81,-198.61
+    >>Click the |cRXP_PICK_Flame of Azel|r
     .complete 553,1 --Flame of Azel charged
+    .isOnQuest 553
 step
     .goto 1424/0,-621.33,-738.56
     >>Click the |cRXP_PICK_Helcular's Grave|r
@@ -1048,6 +1174,10 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Key to the City
 step
     .xp 35 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 35.|r Come back to this guide then
+step
+    #label RBSection6_1
+    #completewith next
+    +|cRXP_WARN_Hillsbrad Foothills: part 6|r (planned from level 35)
 step
     .goto 1424/0,-937.49,-40.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melisara|r
@@ -1150,9 +1280,14 @@ step
 step
     .xp 38 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 38.|r Come back to this guide then
 step
+    #label RBSection7_1
+    #completewith next
+    +|cRXP_WARN_Hillsbrad Foothills: part 7|r (planned from level 38)
+step
     .goto 1424/0,-937.49,-42.67
     >>Click the |cRXP_PICK_WANTED|r
     .accept 566 >>Accept WANTED: Baron Vardus
+    .isQuestTurnedIn 549 --any of: WANTED: Syndicate Personnel
 step
     .goto 1424/0,-937.49,-40.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melisara|r
@@ -1219,4 +1354,6 @@ step
 step
     +|cRXP_WARN_End of the Hillsbrad Foothills route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: WANTED: Baron Vardus
+step
+    +|cRXP_WARN_Suggested next zones at level 38|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Far Seer Mok'thardin). Completing this step loads the guide for Stranglethorn Vale --RouteBuilder:next
 ]])

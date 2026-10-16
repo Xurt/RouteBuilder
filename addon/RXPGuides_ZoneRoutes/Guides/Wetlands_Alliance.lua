@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 21, 25, 28, 31, 34).
+-- Sections (the guide starts at the one for your level): around Karl Boran from 21; around Captain Stoutfist from 25; around Glorin Steelbrow from 28; part 4 from 31; part 5 from 34.
 -- Edit zones/Wetlands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,24 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 21-34 Wetlands
 
+step
+    .xp <25,1,RBSection1_1
+    .xp 25 >>Finding the place in this guide for your level
+step
+    .xp <28,1,RBSection2_1
+    .xp 28 >>Finding the place in this guide for your level
+step
+    .xp <31,1,RBSection3_1
+    .xp 31 >>Finding the place in this guide for your level
+step
+    .xp <34,1,RBSection4_1
+    .xp 34 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection5_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Wetlands: around Karl Boran|r (planned from level 21)
 step
     .goto 1437/0,-718.35,-3701.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r
@@ -615,6 +634,10 @@ step
 step
     .xp 25 >>|cRXP_WARN_The rest of Wetlands is planned from level 25.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Wetlands: around Captain Stoutfist|r (planned from level 25)
+step
     .goto 1437/0,-2430.82,-3306.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Howin Kindfeather|r
     .turnin 98246 >>Turn in Trying Times
@@ -688,42 +711,76 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
     .accept 295 >>Accept Ormer's Revenge
     .target Ormer Ironbraid
+    .isQuestTurnedIn 294 --any of: Ormer's Revenge
 step
     .goto 1437/0,-1994.54,-3591.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Whelgar|r
     .accept 299 >>Accept Uncovering the Past
     .target Prospector Whelgar
 step
-    #loop
-    .goto 1437/0,-1862.62,-3577.03,0
-    .goto 1437/0,-1862.62,-3577.03,40,0
-    .goto 1437/0,-1880.40,-3481.11,40,0
-    .goto 1437/0,-1844.42,-3422.96,40,0
-    .goto 1437/0,-1845.25,-3374.45,40,0
-    .goto 1437/0,-1779.91,-3421.03,40,0
-    .goto 1437/0,-1725.32,-3481.94,40,0
-    .goto 1437/0,-1721.19,-3548.09,40,0
-    .goto 1437/0,-1789.42,-3478.36,40,0
-    .goto 1437/0,-1813.82,-3551.12,40,0
-    >>Kill |cRXP_ENEMY_Mottled Scytheclaws|r
-    >>Kill |cRXP_ENEMY_Mottled Razormaws|r
-    >>Loot the |cRXP_PICK_Ancient Relics|r for |cRXP_LOOT_Ados Fragment|r
-    >>Loot the |cRXP_PICK_Ancient Relics|r for |cRXP_LOOT_Modr Fragment|r
-    >>Loot the |cRXP_PICK_Ancient Relics|r for |cRXP_LOOT_Golm Fragment|r
-    >>Loot the |cRXP_PICK_Loose Soils|r for |cRXP_LOOT_Neru Fragment|r
-    .complete 295,1 --Mottled Scytheclaw slain (10)
-    .complete 295,2 --Mottled Razormaw slain (10)
+    #completewith Along12
+    >>As you go: Loot the |cRXP_PICK_Ancient Relics|r for |cRXP_LOOT_Ados Fragment|r. Loot the |cRXP_PICK_Ancient Relics|r for |cRXP_LOOT_Modr Fragment|r. Loot the |cRXP_PICK_Ancient Relics|r for |cRXP_LOOT_Golm Fragment|r. Loot the |cRXP_PICK_Loose Soils|r for |cRXP_LOOT_Neru Fragment|r. |cRXP_WARN_Anything left is finished later|r
     .complete 299,1 --Ados Fragment (4)
     .complete 299,2 --Modr Fragment (4)
     .complete 299,3 --Golm Fragment (4)
     .complete 299,4 --Neru Fragment (4)
+step
+    #loop
+    .goto 1437/0,-1862.62,-3577.03,0
+    .goto 1437/0,-1862.62,-3577.03,40,0
+    .goto 1437/0,-1842.77,-3549.19,40,0
+    .goto 1437/0,-1813.82,-3551.12,40,0
+    .goto 1437/0,-1746.83,-3554.16,40,0
+    .goto 1437/0,-1849.39,-3511.98,40,0
+    .goto 1437/0,-1880.40,-3481.11,40,0
+    .goto 1437/0,-1874.20,-3510.61,40,0
+    >>Kill |cRXP_ENEMY_Mottled Scytheclaws|r
+    .complete 295,1 --Mottled Scytheclaw slain (10)
     .mob Mottled Scytheclaw
+    .isOnQuest 295
+step
+    #label Along12
+    #loop
+    .goto 1437/0,-1809.27,-3513.64,0
+    .goto 1437/0,-1809.27,-3513.64,40,0
+    .goto 1437/0,-1783.63,-3521.63,40,0
+    .goto 1437/0,-1789.42,-3478.36,40,0
+    .goto 1437/0,-1748.89,-3478.08,40,0
+    .goto 1437/0,-1721.60,-3489.93,40,0
+    .goto 1437/0,-1767.09,-3441.98,40,0
+    .goto 1437/0,-1779.91,-3421.03,40,0
+    .goto 1437/0,-1844.42,-3422.96,40,0
+    .goto 1437/0,-1823.75,-3445.83,40,0
+    >>Kill |cRXP_ENEMY_Mottled Razormaws|r
+    .complete 295,2 --Mottled Razormaw slain (10)
     .mob Mottled Razormaw
+    .isOnQuest 295
+step
+    #loop
+    .goto 1437/0,-1787.35,-3487.45,0
+    .goto 1437/0,-1787.35,-3487.45,40,0
+    .goto 1437/0,-1725.32,-3481.94,40,0
+    .goto 1437/0,-1721.19,-3548.09,40,0
+    .goto 1437/0,-1824.57,-3594.95,40,0
+    .goto 1437/0,-1828.71,-3534.31,40,0
+    .goto 1437/0,-1882.47,-3492.97,40,0
+    .goto 1437/0,-1832.84,-3443.35,40,0
+    .goto 1437/0,-1845.25,-3374.45,40,0
+    .goto 1437/0,-1762.54,-3426.82,40,0
+    >>Loot the |cRXP_PICK_Ancient Relics|r for |cRXP_LOOT_Ados Fragment|r
+    >>Loot the |cRXP_PICK_Ancient Relics|r for |cRXP_LOOT_Modr Fragment|r
+    >>Loot the |cRXP_PICK_Ancient Relics|r for |cRXP_LOOT_Golm Fragment|r
+    >>Loot the |cRXP_PICK_Loose Soils|r for |cRXP_LOOT_Neru Fragment|r
+    .complete 299,1 --Ados Fragment (4)
+    .complete 299,2 --Modr Fragment (4)
+    .complete 299,3 --Golm Fragment (4)
+    .complete 299,4 --Neru Fragment (4)
 step
     .goto 1437/0,-1968.49,-3550.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
     .turnin 295 >>Turn in Ormer's Revenge
     .target Ormer Ironbraid
+    .isOnQuest 295
 step
     .goto 1437/0,-1994.54,-3591.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Whelgar|r
@@ -847,6 +904,10 @@ step
 step
     .xp 28 >>|cRXP_WARN_The rest of Wetlands is planned from level 28.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Wetlands: around Glorin Steelbrow|r (planned from level 28)
+step
     .goto 1437/0,-827.11,-3817.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Glorin Steelbrow|r
     .accept 526 >>Accept Lightforge Ingots
@@ -861,6 +922,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
     .accept 289 >>Accept The Cursed Crew
     .target First Mate Fitzsimmons
+    .isQuestTurnedIn 288 --any of: The Third Fleet
 step
     .goto 1437/0,-797.34,-3732.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
@@ -878,16 +940,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
     .accept 296 >>Accept Ormer's Revenge
     .target Ormer Ironbraid
+    .isQuestTurnedIn 295 --any of: Ormer's Revenge
 step
     .goto 1437/0,-1765.02,-3567.66
     >>Kill |cRXP_ENEMY_Sarltooth|r and loot |cRXP_LOOT_Sarltooth's Talon|r
     .complete 296,1 --Sarltooth's Talon (1)
     .mob Sarltooth
+    .isOnQuest 296
 step
     .goto 1437/0,-1968.49,-3550.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
     .turnin 296 >>Turn in Ormer's Revenge
     .target Ormer Ironbraid
+    .isOnQuest 296
 step
     .goto 1437/0,-2443.64,-2650.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Motley Garmason|r
@@ -973,19 +1038,17 @@ step
     .target Sylessa Duskwhisper
     .isQuestComplete 98208
 step
-    #completewith Along14
-    >>As you go: Kill |cRXP_ENEMY_Cursed Marines|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 289,2 --Cursed Marine slain (5)
-    .mob Cursed Marine
-step
-    #label Along14
     .goto 1437/0,-959.86,-2979.75
     >>Kill |cRXP_ENEMY_First Mate Snellig|r and loot |cRXP_LOOT_Snellig's Snuffbox|r
-    >>Kill |cRXP_ENEMY_Cursed Sailors|r
     .complete 289,3 --Snellig's Snuffbox (1)
-    .complete 289,1 --Cursed Sailor slain (13)
     .mob First Mate Snellig
+    .isOnQuest 289
+step
+    .goto 1437/0,-957.79,-2967.90
+    >>Kill |cRXP_ENEMY_Cursed Sailors|r
+    .complete 289,1 --Cursed Sailor slain (13)
     .mob Cursed Sailor
+    .isOnQuest 289
 step
     #loop
     .goto 1437/0,-1002.04,-2827.06,0
@@ -997,6 +1060,7 @@ step
     >>Kill |cRXP_ENEMY_Cursed Marines|r
     .complete 289,2 --Cursed Marine slain (5)
     .mob Cursed Marine
+    .isOnQuest 289
 step
     #completewith next
     .hs >>Hearth to Innkeeper Helbrek's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -1005,18 +1069,30 @@ step
     .goto 1437/0,-840.34,-3791.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
     .turnin 289 >>Turn in The Cursed Crew
+    .target First Mate Fitzsimmons
+    .isOnQuest 289
+step
+    .goto 1437/0,-840.34,-3791.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
     .accept 290 >>Accept Lifting the Curse
     .target First Mate Fitzsimmons
+    .isQuestTurnedIn 289 --any of: The Cursed Crew
 step
     .goto 1437/0,-1028.51,-2798.67
     >>Kill |cRXP_ENEMY_Captain Halyndor|r and loot |cRXP_LOOT_Intrepid Strongbox Key|r
     .complete 290,1 --Intrepid Strongbox Key (1)
     .mob Captain Halyndor
+    .isOnQuest 290
 step
     .goto 1437/0,-984.26,-2810.52
     >>Click the |cRXP_PICK_Intrepid's Locked Strongbox|r
     .turnin 290 >>Turn in Lifting the Curse
+    .isOnQuest 290
+step
+    .goto 1437/0,-984.26,-2810.52
+    >>Click the |cRXP_PICK_Intrepid's Locked Strongbox|r
     .accept 292 >>Accept The Eye of Paleth
+    .isQuestTurnedIn 290 --any of: Lifting the Curse
 step
     #loop
     .goto 1437/0,-1387.87,-2612.90,0
@@ -1122,8 +1198,18 @@ step
     .goto 1437/0,-827.11,-3817.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Glorin Steelbrow|r
     .turnin 292 >>Turn in The Eye of Paleth
-    .turnin 526 >>Turn in Lightforge Ingots
+    .target Glorin Steelbrow
+    .isOnQuest 292
+step
+    .goto 1437/0,-827.11,-3817.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Glorin Steelbrow|r
     .accept 293 >>Accept Cleansing the Eye
+    .target Glorin Steelbrow
+    .isQuestTurnedIn 292 --any of: The Eye of Paleth
+step
+    .goto 1437/0,-827.11,-3817.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Glorin Steelbrow|r
+    .turnin 526 >>Turn in Lightforge Ingots
     .target Glorin Steelbrow
 step
     .goto 1437/0,-2430.82,-3306.92
@@ -1207,6 +1293,10 @@ step
 step
     .xp 31 >>|cRXP_WARN_The rest of Wetlands is planned from level 31.|r Come back to this guide then
 step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Wetlands: part 4|r (planned from level 31)
+step
     .goto 1437/0,-1994.54,-3591.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Whelgar|r
     .accept 98310 >>Accept Gleaning Our Future
@@ -1236,6 +1326,7 @@ step
     .goto 1437/0,-2352.25,-3443.63
     >>Click the |cRXP_PICK_Dragonmaw Catapult|r
     .accept 474 >>Accept Defeat Nek'rosh
+    .isQuestTurnedIn 465 --any of: Nek'rosh's Gambit
 step
     .goto 1437/0,-2430.82,-3306.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Howin Kindfeather|r
@@ -1311,6 +1402,7 @@ step
     >>Kill |cRXP_ENEMY_Chieftain Nek'rosh|r and loot |cRXP_LOOT_Nek'rosh's Head|r
     .complete 474,1 --Nek'rosh's Head (1)
     .mob Chieftain Nek'rosh
+    .isOnQuest 474
 step
     .goto 1437/0,-1994.54,-3591.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Whelgar|r
@@ -1338,6 +1430,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
     .turnin 474 >>Turn in Defeat Nek'rosh
     .target Captain Stoutfist
+    .isOnQuest 474
 step
     .goto 1437/0,-718.76,-3687.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylessa Duskwhisper|r
@@ -1361,6 +1454,10 @@ step
     >>|cRXP_FRIENDLY_Dustwallow Marsh|r: Fiora Longears
 step
     .xp 34 >>|cRXP_WARN_The rest of Wetlands is planned from level 34.|r Come back to this guide then
+step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_Wetlands: part 5|r (planned from level 34)
 step
     .goto 1437/0,-2430.82,-3306.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Howin Kindfeather|r

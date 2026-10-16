@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 18, 21, 24, 27, 30).
+-- Sections (the guide starts at the one for your level): around Shindrell Swiftfire from 18; part 2 from 21; part 3 from 24; part 4 from 27; part 5 from 30.
 -- Edit zones/Ashenvale.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,24 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 18-32 Ashenvale
 
+step
+    .xp <21,1,RBSection1_1
+    .xp 21 >>Finding the place in this guide for your level
+step
+    .xp <24,1,RBSection2_1
+    .xp 24 >>Finding the place in this guide for your level
+step
+    .xp <27,1,RBSection3_1
+    .xp 27 >>Finding the place in this guide for your level
+step
+    .xp <30,1,RBSection4_1
+    .xp 30 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection5_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Ashenvale: around Shindrell Swiftfire|r (planned from level 18)
 step
     .goto 1440/1,156.26,3254.19
     >>Escort Kerlonian Evershade to Maestra's Post
@@ -303,7 +322,13 @@ step
     >>|cRXP_FRIENDLY_Stonetalon Mountains|r: Journey to Stonetalon Peak, On Guard in Stonetalon
     >>|cRXP_FRIENDLY_Stonetalon Mountains and back here|r: Pridewings of Stonetalon
 step
+    +|cRXP_WARN_Until level 21, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 1.0 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.6 levels of quests, starting around Elegael Thornpaw). Then come back to this Ashenvale guide --RouteBuilder:next
+step
     .xp 21 >>|cRXP_WARN_The rest of Ashenvale is planned from level 21.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Ashenvale: part 2|r (planned from level 21)
 step
     .goto 1440/1,175.29,3189.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
@@ -434,7 +459,13 @@ step
     +|cRXP_WARN_That is all of Ashenvale for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_The Barrens and back here|r: Mage Summoner
 step
+    +|cRXP_WARN_Until level 24, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.8 levels of quests, starting around Karl Boran). Then come back to this Ashenvale guide --RouteBuilder:next
+step
     .xp 24 >>|cRXP_WARN_The rest of Ashenvale is planned from level 24.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Ashenvale: part 3|r (planned from level 24)
 step
     .goto 1440/1,189.13,3185.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
@@ -483,38 +514,43 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .accept 1025 >>Accept An Aggressive Defense
     .target Raene Wolfrunner
+    .isQuestTurnedIn 1023 --any of: Raene's Cleansing
 step
-    #completewith Along8
-    >>As you go: Kill |cRXP_ENEMY_Foulweald Ursas|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 1025,2 --Foulweald Ursa slain (2)
-    .mob Foulweald Ursa
-step
-    #label Along8
     #loop
     .goto 1440/1,-1351.72,2222.14,0
     .goto 1440/1,-1351.72,2222.14,40,0
-    .goto 1440/1,-1386.90,2251.35,40,0
-    .goto 1440/1,-1447.45,2251.35,40,0
-    .goto 1440/1,-1512.03,2282.49,40,0
-    .goto 1440/1,-1544.90,2288.64,40,0
+    .goto 1440/1,-1381.71,2222.53,40,0
     .goto 1440/1,-1421.50,2215.99,40,0
+    .goto 1440/1,-1544.90,2288.64,40,0
+    .goto 1440/1,-1512.03,2282.49,40,0
+    .goto 1440/1,-1447.45,2251.35,40,0
+    >>Kill |cRXP_ENEMY_Foulweald Warriors|r
+    .complete 1025,4 --Foulweald Warrior slain (12)
+    .mob Foulweald Warrior
+    .isOnQuest 1025
+step
+    #loop
+    .goto 1440/1,-1412.85,2205.61,0
     .goto 1440/1,-1412.85,2205.61,40,0
     .goto 1440/1,-1411.69,2181.01,40,0
-    .goto 1440/1,-1381.71,2222.53,40,0
-    >>Kill |cRXP_ENEMY_Foulweald Warriors|r
+    .goto 1440/1,-1355.76,2251.74,40,0
+    .goto 1440/1,-1386.90,2251.35,40,0
     >>Kill |cRXP_ENEMY_Foulweald Totemics|r
-    .complete 1025,4 --Foulweald Warrior slain (12)
     .complete 1025,3 --Foulweald Totemic slain (10)
-    .mob Foulweald Warrior
     .mob Foulweald Totemic
+    .isOnQuest 1025
 step
-    .goto 1440/1,-1195.44,2351.29
+    .goto 1440/1,-1197.17,2363.98
     >>Kill |cRXP_ENEMY_Foulweald Ursas|r
-    >>Kill |cRXP_ENEMY_Foulweald Den Watcher|r
     .complete 1025,2 --Foulweald Ursa slain (2)
-    .complete 1025,1 --Foulweald Den Watcher slain (1)
     .mob Foulweald Ursa
+    .isOnQuest 1025
+step
+    .goto 1440/1,-1181.60,2370.51
+    >>Kill |cRXP_ENEMY_Foulweald Den Watcher|r
+    .complete 1025,1 --Foulweald Den Watcher slain (1)
     .mob Foulweald Den Watcher
+    .isOnQuest 1025
 step
     .goto 1440/1,-1171.80,2089.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
@@ -544,6 +580,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .turnin 1025 >>Turn in An Aggressive Defense
     .target Raene Wolfrunner
+    .isOnQuest 1025
 step
     .goto 1440/1,-584.18,3277.25
     >>Kill |cRXP_ENEMY_Dal Bloodclaw|r and loot |cRXP_LOOT_Dal Bloodclaw's Skull|r
@@ -564,6 +601,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shael'dryn|r
     .accept 1026 >>Accept Raene's Cleansing
     .target Shael'dryn
+    .isQuestTurnedIn 1024 --any of: Raene's Cleansing
 step
     #loop
     .goto 1440/1,-1457.83,3327.99,0
@@ -575,10 +613,12 @@ step
     .collect 5475,1,1026,1 --Wooden Key (1)
     .mob Withered Ancient
     .mob Crazed Ancient
+    .isOnQuest 1026
 step
     .goto 1440/1,-1438.22,3312.23
     >>Open the |cRXP_PICK_Worn Chest|r. Loot it for |cRXP_LOOT_Iron Shaft|r
     .complete 1026,1 --Iron Shaft (1)
+    .isOnQuest 1026
 step
     .goto 1440/1,-3215.51,2954.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayneth Stillwind|r
@@ -604,6 +644,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shael'dryn|r
     .turnin 1026 >>Turn in Raene's Cleansing
     .target Shael'dryn
+    .isOnQuest 1026
 step << Human Paladin/Dwarf Paladin
     .goto 1440/1,189.13,3185.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
@@ -615,7 +656,13 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: Advice From Stormwind << Human Paladin/Dwarf Paladin
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Vengeful Trail
 step
+    +|cRXP_WARN_Until level 27, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.7 levels of quests, starting around Karl Boran). Then come back to this Ashenvale guide --RouteBuilder:next
+step
     .xp 27 >>|cRXP_WARN_The rest of Ashenvale is planned from level 27.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Ashenvale: part 4|r (planned from level 27)
 step
     .goto 1440/1,-433.09,2781.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
@@ -725,6 +772,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shael'dryn|r
     .accept 1027 >>Accept Raene's Cleansing
     .target Shael'dryn
+    .isQuestTurnedIn 1026 --any of: Raene's Cleansing
 step
     .goto 1440/1,-2642.88,1908.11
     >>Pick up |cRXP_PICK_Bottle of Disease|r from the ground
@@ -743,6 +791,7 @@ step
     .goto 1440/1,-2481.41,1785.49,40,0
     >>Open the |cRXP_PICK_Rusty Chest|r. Loot it for |cRXP_LOOT_Iron Pommel|r
     .complete 1027,1 --Iron Pommel (1)
+    .isOnQuest 1027
 step
     .goto 1440/1,-3276.63,2914.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maseara Autumnmoon|r
@@ -767,19 +816,36 @@ step
     .goto 1440/1,-1387.47,2896.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shael'dryn|r
     .turnin 1027 >>Turn in Raene's Cleansing
+    .target Shael'dryn
+    .isOnQuest 1027
+step
+    .goto 1440/1,-1387.47,2896.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shael'dryn|r
     .accept 1028 >>Accept Raene's Cleansing
     .target Shael'dryn
+    .isQuestTurnedIn 1027 --any of: Raene's Cleansing
 step
     .goto 1440/1,-1549.52,2781.79
     >>Click the |cRXP_PICK_Hidden Shrine|r
     .turnin 1028 >>Turn in Raene's Cleansing
+    .isOnQuest 1028
+step
+    .goto 1440/1,-1549.52,2781.79
+    >>Click the |cRXP_PICK_Hidden Shrine|r
     .accept 1055 >>Accept Raene's Cleansing
+    .isQuestTurnedIn 1028 --any of: Raene's Cleansing
 step
     .goto 1440/1,-1387.47,2896.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shael'dryn|r
     .turnin 1055 >>Turn in Raene's Cleansing
+    .target Shael'dryn
+    .isOnQuest 1055
+step
+    .goto 1440/1,-1387.47,2896.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shael'dryn|r
     .accept 1029 >>Accept Raene's Cleansing
     .target Shael'dryn
+    .isQuestTurnedIn 1055 --any of: Raene's Cleansing
 step
     #completewith next
     .hs >>Hearth to Innkeeper Kimlya's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -788,8 +854,14 @@ step
     .goto 1440/1,-411.75,2767.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .turnin 1029 >>Turn in Raene's Cleansing
+    .target Raene Wolfrunner
+    .isOnQuest 1029
+step
+    .goto 1440/1,-411.75,2767.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .accept 1030 >>Accept Raene's Cleansing
     .target Raene Wolfrunner
+    .isQuestTurnedIn 1029 --any of: Raene's Cleansing
 step
     .xp 27 >>Grind to level 27 (Slowing the Orc Advance needs it)
 step
@@ -802,6 +874,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krolg|r
     .turnin 1030 >>Turn in Raene's Cleansing
     .target Krolg
+    .isOnQuest 1030
 step
     #loop
     .goto 1440/1,-2296.30,1506.05,0
@@ -854,6 +927,10 @@ step
 step
     .xp 30 >>|cRXP_WARN_The rest of Ashenvale is planned from level 30.|r Come back to this guide then
 step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_Ashenvale: part 5|r (planned from level 30)
+step
     .goto 1440/1,-802.73,1966.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
     .turnin 78134 >>Turn in Dragonslayer's Lance
@@ -882,6 +959,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .accept 1035 >>Accept Fallen Sky Lake
     .target Pelturas Whitemoon
+    .isQuestTurnedIn 1034 --any of: The Ruins of Stardust
 step
     .goto 1440/1,-1171.80,2089.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
@@ -893,27 +971,37 @@ step
     >>Kill |cRXP_ENEMY_Shadethicket Oracle|r and loot |cRXP_LOOT_Fallen Moonstone|r
     .complete 1035,1 --Fallen Moonstone (1)
     .mob Shadethicket Oracle
+    .isOnQuest 1035
 step
     .goto 1440/1,-455.00,2682.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .turnin 1035 >>Turn in Fallen Sky Lake
     .target Pelturas Whitemoon
+    .isOnQuest 1035
 step
     .goto 1440/1,-2817.03,2950.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anilia|r
     .accept 1031 >>Accept The Branch of Cenarius
     .target Anilia
+    .isQuestTurnedIn 1021 --any of: Vile Satyr! Dryads in Danger!
 step
     .goto 1440/1,-2797.42,3042.40
     >>Kill |cRXP_ENEMY_Geltharis|r and loot |cRXP_LOOT_Branch of Cenarius|r
     .complete 1031,1 --Branch of Cenarius (1)
     .mob Geltharis
+    .isOnQuest 1031
 step
     .goto 1440/1,446.90,2622.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illiyana|r
     .turnin 1031 >>Turn in The Branch of Cenarius
+    .target Illiyana
+    .isOnQuest 1031
+step
+    .goto 1440/1,446.90,2622.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illiyana|r
     .accept 1032 >>Accept Satyr Slaying!
     .target Illiyana
+    .isQuestTurnedIn 1031 --any of: The Branch of Cenarius
 step
     #loop
     .goto 1440/1,-2822.22,2847.90,0
@@ -932,11 +1020,13 @@ step
     .mob Xavian Betrayer
     .mob Xavian Felsworn
     .mob Xavian Hellcaller
+    .isOnQuest 1032
 step
     .goto 1440/1,-3215.51,2954.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayneth Stillwind|r
     .accept 1012 >>Accept Insane Druids
     .target Kayneth Stillwind
+    .isQuestTurnedIn 1011 --any of: Forsaken Diseases
 step
     .goto 1440/1,-3276.63,2914.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maseara Autumnmoon|r
@@ -946,26 +1036,33 @@ step
 step
     .goto 1440/1,-2795.69,1876.97
     >>Kill |cRXP_ENEMY_Uthil Mooncall|r
-    >>Kill |cRXP_ENEMY_Taneel Darkwood|r
     .complete 1012,2 --Uthil Mooncall slain (1)
-    .complete 1012,1 --Taneel Darkwood slain (1)
     .mob Uthil Mooncall
+    .isOnQuest 1012
+step
+    .goto 1440/1,-2750.71,1828.93
+    >>Kill |cRXP_ENEMY_Taneel Darkwood|r
+    .complete 1012,1 --Taneel Darkwood slain (1)
     .mob Taneel Darkwood
+    .isOnQuest 1012
 step
     .goto 1440/1,-2627.88,1820.85
     >>Kill |cRXP_ENEMY_Mavoris Cloudsbreak|r
     .complete 1012,3 --Mavoris Cloudsbreak slain (1)
     .mob Mavoris Cloudsbreak
+    .isOnQuest 1012
 step
     .goto 1440/1,-3215.51,2954.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayneth Stillwind|r
     .turnin 1012 >>Turn in Insane Druids
     .target Kayneth Stillwind
+    .isOnQuest 1012
 step
     .goto 1440/1,-1231.77,1787.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krolg|r
     .accept 1045 >>Accept Raene's Cleansing
     .target Krolg
+    .isQuestTurnedIn 1030 --any of: Raene's Cleansing
 step
     #loop
     .goto 1440/1,-1467.63,1753.20,0
@@ -978,27 +1075,39 @@ step
     .goto 1440/1,-1437.07,1614.06,40,0
     .goto 1440/1,-1457.83,1686.71,40,0
     >>Kill |cRXP_ENEMY_Bloodtooth Guards|r
-    >>Kill |cRXP_ENEMY_Ran Bloodtooths|r
     .complete 1045,2 --Bloodtooth Guard slain (4)
-    .complete 1045,1 --Ran Bloodtooth slain (4)
     .mob Bloodtooth Guard
+    .isOnQuest 1045
+step
+    .goto 1440/1,-1457.25,1612.52
+    >>Kill |cRXP_ENEMY_Ran Bloodtooths|r
+    .complete 1045,1 --Ran Bloodtooth slain (4)
     .mob Ran Bloodtooth
+    .isOnQuest 1045
 step
     .goto 1440/1,-1231.77,1787.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krolg|r
     .turnin 1045 >>Turn in Raene's Cleansing
+    .target Krolg
+    .isOnQuest 1045
+step
+    .goto 1440/1,-1231.77,1787.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krolg|r
     .accept 1046 >>Accept Raene's Cleansing
     .target Krolg
+    .isQuestTurnedIn 1045 --any of: Raene's Cleansing
 step
     .goto 1440/1,-1457.25,1612.52
     >>Kill |cRXP_ENEMY_Ran Bloodtooth|r and loot |cRXP_LOOT_Ran Bloodtooth's Skull|r
     .complete 1046,1 --Ran Bloodtooth's Skull (1)
     .mob Ran Bloodtooth
+    .isOnQuest 1046
 step
     .goto 1440/1,446.90,2622.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illiyana|r
     .turnin 1032 >>Turn in Satyr Slaying!
     .target Illiyana
+    .isOnQuest 1032
 step
     .goto 1440/1,-411.75,2767.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r

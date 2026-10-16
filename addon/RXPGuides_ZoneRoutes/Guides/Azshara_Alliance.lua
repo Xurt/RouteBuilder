@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 47, 50, 53, 56).
+-- Sections (the guide starts at the one for your level): start from 47; part 2 from 50; part 3 from 53; part 4 from 56.
 -- Edit zones/Azshara.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,21 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 47-57 Azshara
 
+step
+    .xp <50,1,RBSection1_1
+    .xp 50 >>Finding the place in this guide for your level
+step
+    .xp <53,1,RBSection2_1
+    .xp 53 >>Finding the place in this guide for your level
+step
+    .xp <56,1,RBSection3_1
+    .xp 56 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection4_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Azshara: start|r (planned from level 47)
 step
     .goto 1447/1,-3880.51,2718.83
     .fp Azshara>> Get the Azshara flight path
@@ -159,6 +175,10 @@ step
 step
     .xp 50 >>|cRXP_WARN_The rest of Azshara is planned from level 50.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Azshara: part 2|r (planned from level 50)
+step
     .goto 1447/1,-5987.44,4603.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kim'jael|r
     .accept 3601 >>Accept Kim'jael Indeed!
@@ -220,6 +240,10 @@ step
     .xp 54+20000 >> Grind |cRXP_ENEMY_Blood Elves|r until you are 20,000XP into level 54
 step << Mage
     .xp 53 >>|cRXP_WARN_The rest of Azshara is planned from level 53.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Azshara: part 3|r (planned from level 53)
 step << Mage
     .goto 1447/1,-4760.30,3982.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Xylem|r
@@ -449,6 +473,10 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Destroy Morphaz << Mage
 step
     .xp 56 >>|cRXP_WARN_The rest of Azshara is planned from level 56.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Azshara: part 4|r (planned from level 56)
 step
     .goto 1447/1,-7297.24,2849.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Hydraxis|r

@@ -14,6 +14,10 @@ RXPGuides.RegisterGuide([[
 #name 45-48 The Hinterlands
 
 step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_The Hinterlands: start|r (planned from level 45)
+step
     .goto 1425/0,-2029.69,266.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falstad Wildhammer|r
     .turnin 1449 >>Turn in To The Hinterlands

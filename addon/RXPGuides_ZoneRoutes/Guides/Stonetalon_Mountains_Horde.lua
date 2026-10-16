@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 15, 18, 21, 24).
+-- Sections (the guide starts at the one for your level): start from 15; part 2 from 18; part 3 from 21; around Maggran Earthbinder from 24.
 -- Edit zones/Stonetalon Mountains.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,21 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 15-29 Stonetalon Mountains
 
+step
+    .xp <18,1,RBSection1_1
+    .xp 18 >>Finding the place in this guide for your level
+step
+    .xp <21,1,RBSection2_1
+    .xp 21 >>Finding the place in this guide for your level
+step
+    .xp <24,1,RBSection3_1
+    .xp 24 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection4_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Stonetalon Mountains: start|r (planned from level 15)
 step
     .goto 1442/1,402.76,1231.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
@@ -217,12 +233,19 @@ step
     +|cRXP_WARN_That is all of Stonetalon Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_The Barrens|r: Protect Kaya
 step
+    +|cRXP_WARN_Until level 18, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 0.8 levels of quests, starting around Sergra Darkthorn; 1 quest from here hands in there). Then come back to this Stonetalon Mountains guide --RouteBuilder:next
+step
     .xp 18 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 18.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Stonetalon Mountains: part 2|r (planned from level 18)
 step
     .goto 1442/1,939.92,831.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
     .accept 6481 >>Accept Earthen Arise
     .target Mor'rogal
+    .isQuestTurnedIn 6421 --any of: Boulderslide Ravine
 step
     .goto 1442/1,365.16,878.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
@@ -259,16 +282,24 @@ step
     >>Kill |cRXP_ENEMY_Goggeroc|r
     .complete 6481,1 --Goggeroc slain (1)
     .mob Goggeroc
+    .isOnQuest 6481
 step
     .goto 1442/1,939.92,831.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
     .turnin 6481 >>Turn in Earthen Arise
     .target Mor'rogal
+    .isOnQuest 6481
 step
     +|cRXP_WARN_That is all of Stonetalon Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_The Barrens|r: Report to Kadrak, Further Instructions
 step
+    +|cRXP_WARN_Until level 21, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 1.4 levels of quests, starting around Tonga Runetotem). Then come back to this Stonetalon Mountains guide --RouteBuilder:next
+step
     .xp 21 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 21.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Stonetalon Mountains: part 3|r (planned from level 21)
 step << Warlock
     .goto 1442/1,-331.21,-181.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'zigla|r
@@ -350,7 +381,13 @@ step
     +|cRXP_WARN_That is all of Stonetalon Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_The Barrens|r: Ken'zigla's Draught << Warlock
 step
+    +|cRXP_WARN_Until level 24, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 1.1 levels of quests, starting around Tonga Runetotem). Then come back to this Stonetalon Mountains guide --RouteBuilder:next
+step
     .xp 24 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 24.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Stonetalon Mountains: around Maggran Earthbinder|r (planned from level 24)
 step
     .goto 1442/1,402.76,1231.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
@@ -505,6 +542,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra Windfield|r
     .accept 6381 >>Accept New Life
     .target Tammra Windfield
+    .isQuestTurnedIn 6301 --any of: Cycle of Rebirth
 step
     .goto 1442/1,940.90,925.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maggran Earthbinder|r
@@ -517,10 +555,6 @@ step
     .turnin 1087 >>Turn in Cenarius' Legacy
     .accept 1088 >>Accept Ordanus
     .target Braelyn Firehand
-step
-    #completewith Along16
-    >>As you go: Click the |cRXP_PICK_Gaea Dirt Mound|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 6381,1 --Gaea seed planted
 step
     #completewith Along15
     >>As you go: Kill |cRXP_ENEMY_Bloodfury Harpies|r, |cRXP_ENEMY_Bloodfury Roguefeathers|r, |cRXP_ENEMY_Bloodfury Slayers|r and |cRXP_ENEMY_Bloodfury Ambushers|r. Loot them for |cRXP_LOOT_Glittering Sunstone|r. |cRXP_WARN_Anything left is finished later|r
@@ -536,7 +570,6 @@ step
     .complete 6283,1 --Bloodfury Ripper's Remains (1)
     .mob Bloodfury Ripper
 step
-    #label Along16
     #loop
     .goto 1442/1,1785.23,519.09,0
     .goto 1442/1,1785.23,519.09,40,0
@@ -576,6 +609,7 @@ step
     .goto 1442/1,1484.90,703.72,40,0
     >>Click the |cRXP_PICK_Gaea Dirt Mound|r
     .complete 6381,1 --Gaea seed planted
+    .isOnQuest 6381
 step
     #loop
     .goto 1442/1,1514.20,749.31,0
@@ -599,6 +633,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra Windfield|r
     .turnin 6381 >>Turn in New Life
     .target Tammra Windfield
+    .isOnQuest 6381
 step
     .goto 1442/1,940.90,925.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maggran Earthbinder|r

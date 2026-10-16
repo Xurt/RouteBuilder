@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 45, 48, 51).
+-- Sections (the guide starts at the one for your level): start from 45; around Hansel Heavyhands from 48; part 3 from 51.
 -- Edit zones/Searing Gorge.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 45-52 Searing Gorge
 
+step
+    .xp <48,1,RBSection1_1
+    .xp 48 >>Finding the place in this guide for your level
+step
+    .xp <51,1,RBSection2_1
+    .xp 51 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Searing Gorge: start|r (planned from level 45)
 step
     .goto 1427/0,-1786.39,-7024.78
     >>Click the |cRXP_PICK_Wooden Outhouse|r
@@ -286,6 +299,10 @@ step
 step
     .xp 48 >>|cRXP_WARN_The rest of Searing Gorge is planned from level 48.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Searing Gorge: around Hansel Heavyhands|r (planned from level 48)
+step
     .goto 1427/0,-1183.73,-6513.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hansel Heavyhands|r
     .accept 7723 >>Accept Curse These Fat Fingers
@@ -343,6 +360,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
     .accept 3452 >>Accept The Flame's Casing
     .target Kalaran Windblade
+    .isQuestTurnedIn 3443 --any of: Forging the Shaft
 step
     #loop
     .goto 1427/0,-1009.03,-6490.91,0
@@ -361,37 +379,54 @@ step
     .mob Twilight Fire Guard
     .mob Twilight Geomancer
     .mob Twilight Idolater
+    .isOnQuest 3452
 step
     .goto 1427/0,-1194.44,-6679.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
     .turnin 3452 >>Turn in The Flame's Casing
+    .target Kalaran Windblade
+    .isOnQuest 3452
+step
+    .goto 1427/0,-1194.44,-6679.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
     .accept 3453 >>Accept The Torch of Retribution
     .target Kalaran Windblade
+    .isQuestTurnedIn 3452 --any of: The Flame's Casing
 step
     .goto 1427/0,-1194.44,-6679.98
     >>Wait for Kalaran Windblade to complete the Torch of Retribution.
     .complete 3453,1 --Kalaran Windblade
     .target Kalaran Windblade
+    .isOnQuest 3453
 step
     .goto 1427/0,-1194.44,-6679.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
     .turnin 3453 >>Turn in The Torch of Retribution
+    .target Kalaran Windblade
+    .isOnQuest 3453
+step
+    .goto 1427/0,-1194.44,-6679.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
     .accept 3454 >>Accept The Torch of Retribution
     .target Kalaran Windblade
+    .isQuestTurnedIn 3453 --any of: The Torch of Retribution
 step
     .goto 1427/0,-1194.44,-6681.17
     >>Click the |cRXP_PICK_Torch of Retribution|r
     .turnin 3454 >>Turn in The Torch of Retribution
+    .isOnQuest 3454
 step
     .goto 1427/0,-1194.44,-6679.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalaran Windblade|r
     .accept 3462 >>Accept Squire Maltrake
     .target Kalaran Windblade
+    .isQuestTurnedIn 3454 --any of: The Torch of Retribution
 step
     .goto 1427/0,-1196.90,-6680.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Maltrake|r
     .turnin 3462 >>Turn in Squire Maltrake
     .target Squire Maltrake
+    .isOnQuest 3462
 step
     #loop
     .goto 1427/0,-1252.46,-6715.68,0
@@ -427,33 +462,51 @@ step
 step
     .xp 51 >>|cRXP_WARN_The rest of Searing Gorge is planned from level 51.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Searing Gorge: part 3|r (planned from level 51)
+step
     .goto 1427/0,-1196.90,-6680.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Maltrake|r
     .accept 3463 >>Accept Set Them Ablaze!
     .target Squire Maltrake
+    .isQuestTurnedIn 3462 --any of: Squire Maltrake
+step
+    .goto 1427/0,-1065.92,-6910.39
+    >>Click the |cRXP_PICK_Sentry Brazier|r
+    .complete 3463,4 --Northern Tower Ablaze
+    .isOnQuest 3463
 step
     .goto 1427/0,-1118.80,-7002.61
     >>Click the |cRXP_PICK_Sentry Brazier|r
-    .complete 3463,4 --Northern Tower Ablaze
     .complete 3463,1 --Western Tower Ablaze
+    .isOnQuest 3463
 step
     .goto 1427/0,-1305.34,-7006.04
     >>Click the |cRXP_PICK_Sentry Brazier|r
     .complete 3463,2 --Southern Tower Ablaze
+    .isOnQuest 3463
 step
     .goto 1427/0,-1440.10,-6914.26
     >>Click the |cRXP_PICK_Sentry Brazier|r
     .complete 3463,3 --Eastern Tower Ablaze
+    .isOnQuest 3463
 step
     .goto 1427/0,-1196.90,-6680.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Maltrake|r
     .turnin 3463 >>Turn in Set Them Ablaze!
     .target Squire Maltrake
+    .isOnQuest 3463
 step
     .goto 1427/0,-1189.76,-6679.98
     >>Click the |cRXP_PICK_Hoard of the Black Dragonflight|r
     .accept 3481 >>Accept Trinkets...
+    .isQuestTurnedIn 3463 --any of: Set Them Ablaze!
+step
+    .goto 1427/0,-1189.76,-6679.98
+    >>Click the |cRXP_PICK_Hoard of the Black Dragonflight|r
     .turnin 3481 >>Turn in Trinkets...
+    .isOnQuest 3481
 step
     +|cRXP_WARN_End of the Searing Gorge route.|r
 ]])

@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 10, 17, 21).
+-- Sections (the guide starts at the one for your level): around Thundris Windweaver from 10; around Archaeologist Hollee from 17; part 3 from 21.
 -- Edit zones/Darkshore.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,7 +14,20 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group Zone Routes (Alliance)
 #name 10-22 Darkshore
+#next Zone Routes (Alliance)\21-34 Wetlands
 
+step
+    .xp <17,1,RBSection1_1
+    .xp 17 >>Finding the place in this guide for your level
+step
+    .xp <21,1,RBSection2_1
+    .xp 21 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Darkshore: around Thundris Windweaver|r (planned from level 10)
 step
     .goto 1439/1,543.06,6342.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
@@ -864,7 +878,13 @@ step
     >>|cRXP_FRIENDLY_Teldrassil|r: Return to Nessa << NightElf
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: The Family and the Fishing Pole
 step
+    +|cRXP_WARN_Until level 17, suggested zones|r: |cRXP_FRIENDLY_Zephras Isle|r (about 1.1 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling), |cRXP_FRIENDLY_Westfall|r (about 0.6 levels of quests, starting around Gryan Stoutmantle). Then come back to this Darkshore guide --RouteBuilder:next
+step
     .xp 17 >>|cRXP_WARN_The rest of Darkshore is planned from level 17.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Darkshore: around Archaeologist Hollee|r (planned from level 17)
 step
     .goto 1439/1,515.55,6406.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shaussiy|r
@@ -881,11 +901,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2139 >>Accept Tharnariun's Hope
     .target Tharnariun Treetender
+    .isQuestTurnedIn 2138 --any of: Cleansing of the Infected
 step
     .goto 1439/1,362.93,6434.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .accept 986 >>Accept A Lost Master
     .target Terenthis
+    .isQuestTurnedIn 985 --any of: How Big a Threat?
 step
     .goto 1439/1,577.12,6371.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
@@ -896,6 +918,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .accept 4763 >>Accept The Blackwood Corrupted
     .target Thundris Windweaver
+    .isQuestTurnedIn 4762 --any of: The Cliffspring River
 step
     .goto 1439/1,489.35,6506.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
@@ -915,11 +938,6 @@ step
     .target Dalmond
     .money <0.2500
 step
-    #completewith Along7
-    >>As you go: Open the |cRXP_PICK_Auberdine Moonwell|r. Loot it for |cRXP_LOOT_Filled Cleansing Bowl|r. |cRXP_WARN_Anything left is finished later|r
-    .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
-step
-    #label Along7
     .goto 1439/1,503.76,6402.39
     >>Click the |cRXP_PICK_WANTED: Murkdeep!|r
     .accept 4740 >>Accept WANTED: Murkdeep!
@@ -981,6 +999,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
     .accept 951 >>Accept Mathystra Relics
     .target Onu
+    .isQuestTurnedIn 950 --any of: Return to Onu
 step
     .goto 1439/1,601.35,4678.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r
@@ -1004,6 +1023,7 @@ step
     .goto 1439/1,467.08,6410.69
     >>Open the |cRXP_PICK_Auberdine Moonwell|r. Loot it for |cRXP_LOOT_Filled Cleansing Bowl|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
+    .isOnQuest 4763
 step
     .goto 1439/1,472.32,6437.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
@@ -1025,37 +1045,56 @@ step
     >>Kill |cRXP_ENEMY_Den Mother|r
     .complete 2139,1 --Den Mother slain (1)
     .mob Den Mother
+    .isOnQuest 2139
+step
+    .goto 1439/1,-376.56,6807.62
+    >>Open the |cRXP_PICK_Blackwood Grain Stores|r. Loot it for |cRXP_LOOT_Blackwood Grain Sample|r
+    .collect 12342,1,4763,1 --Blackwood Grain Sample (1)
+    .isOnQuest 4763
 step
     .goto 1439/1,-453.20,6870.50
-    >>Open the |cRXP_PICK_Blackwood Grain Stores|r. Loot it for |cRXP_LOOT_Blackwood Grain Sample|r
     >>Open the |cRXP_PICK_Blackwood Nut Stores|r. Loot it for |cRXP_LOOT_Blackwood Nut Sample|r
-    .collect 12342,1,4763,1 --Blackwood Grain Sample (1)
     .collect 12343,1,4763,1 --Blackwood Nut Sample (1)
+    .isOnQuest 4763
 step
     .goto 1439/1,-520.66,6873.99
     >>Open the |cRXP_PICK_Blackwood Fruit Stores|r. Loot it for |cRXP_LOOT_Blackwood Fruit Sample|r
     .collect 12341,1,4763,1 --Blackwood Fruit Sample (1)
+    .isOnQuest 4763
 step
     .goto 1439/1,-495.77,6875.30
     >>Open the |cRXP_PICK_Xabraxxis' Demon Bag|r. Loot it for |cRXP_LOOT_Talisman of Corruption|r
     .complete 4763,1 --Talisman of Corruption (1)
+    .isOnQuest 4763
 step
     #loop
     .goto 1439/1,-861.92,7259.57,0
     .goto 1439/1,-861.92,7259.57,40,0
     .goto 1439/1,-873.05,7344.28,40,0
-    .goto 1439/1,-918.25,7420.70,40,0
-    .goto 1439/1,-985.06,7284.46,40,0
-    .goto 1439/1,-1008.64,7384.89,40,0
-    .goto 1439/1,-1123.26,7395.37,40,0
-    .goto 1439/1,-975.89,7502.36,40,0
-    .goto 1439/1,-804.28,7475.72,40,0
     .goto 1439/1,-782.01,7352.58,40,0
+    .goto 1439/1,-835.72,7401.92,40,0
+    .goto 1439/1,-804.28,7475.72,40,0
+    .goto 1439/1,-918.25,7420.70,40,0
+    .goto 1439/1,-982.44,7377.91,40,0
+    .goto 1439/1,-1028.29,7328.56,40,0
+    .goto 1439/1,-954.93,7247.78,40,0
     >>Kill |cRXP_ENEMY_Stormscale Myrmidons|r
-    >>Pick up |cRXP_PICK_Mathystra Relic|r from the ground
     .complete 98013,1 --Stormscale Myrmidon slain (12)
-    .complete 951,1 --Mathystra Relic (6)
     .mob Stormscale Myrmidon
+step
+    #loop
+    .goto 1439/1,-892.05,7274.42,0
+    .goto 1439/1,-892.05,7274.42,40,0
+    .goto 1439/1,-886.81,7240.36,40,0
+    .goto 1439/1,-985.06,7284.46,40,0
+    .goto 1439/1,-1041.39,7319.83,40,0
+    .goto 1439/1,-1123.26,7395.37,40,0
+    .goto 1439/1,-1085.93,7439.04,40,0
+    .goto 1439/1,-975.89,7502.36,40,0
+    .goto 1439/1,-1008.64,7384.89,40,0
+    >>Pick up |cRXP_PICK_Mathystra Relic|r from the ground
+    .complete 951,1 --Mathystra Relic (6)
+    .isOnQuest 951
 step
     .goto 1439/1,-769.56,7744.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
@@ -1089,18 +1128,22 @@ step
     .goto 1439/1,-884.19,7712.83,40,0
     .goto 1439/1,-916.28,7752.13,40,0
     .goto 1439/1,-954.93,7782.70,40,0
-    .goto 1439/1,-981.78,7818.94,40,0
-    .goto 1439/1,-1080.03,7846.01,40,0
-    .goto 1439/1,-1051.21,7815.01,40,0
-    .goto 1439/1,-1048.59,7747.76,40,0
-    .goto 1439/1,-992.92,7749.51,40,0
     >>Kill |cRXP_ENEMY_Giant Foreststrider|r and loot |cRXP_LOOT_Top of Gelkak's Key|r
-    >>Kill |cRXP_ENEMY_Moonstalker Matriarches|r and |cRXP_ENEMY_Moonstalker Sires|r. Loot them for |cRXP_LOOT_Fine Moonstalker Pelt|r
     .complete 2098,1 --Top of Gelkak's Key (1)
-    .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Giant Foreststrider
+step
+    #loop
+    .goto 1439/1,-992.92,7749.51,0
+    .goto 1439/1,-992.92,7749.51,40,0
+    .goto 1439/1,-1048.59,7747.76,40,0
+    .goto 1439/1,-1051.21,7815.01,40,0
+    .goto 1439/1,-1080.03,7846.01,40,0
+    .goto 1439/1,-981.78,7818.94,40,0
+    >>Kill |cRXP_ENEMY_Moonstalker Matriarches|r and |cRXP_ENEMY_Moonstalker Sires|r. Loot them for |cRXP_LOOT_Fine Moonstalker Pelt|r
+    .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Matriarch
     .mob Moonstalker Sire
+    .isOnQuest 986
 step
     .goto 1439/1,-769.56,7744.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
@@ -1122,17 +1165,25 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 4763 >>Turn in The Blackwood Corrupted
     .target Thundris Windweaver
+    .isOnQuest 4763
 step
     .goto 1439/1,397.65,6437.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2139 >>Turn in Tharnariun's Hope
     .target Tharnariun Treetender
+    .isOnQuest 2139
 step
     .goto 1439/1,362.93,6434.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >>Turn in A Lost Master
+    .target Terenthis
+    .isOnQuest 986
+step
+    .goto 1439/1,362.93,6434.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >>Accept A Lost Master
     .target Terenthis
+    .isQuestTurnedIn 986 --any of: A Lost Master
 step
     #loop
     .goto 1439/1,-189.23,7707.15,0
@@ -1192,6 +1243,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
     .turnin 951 >>Turn in Mathystra Relics
     .target Onu
+    .isOnQuest 951
 step
     .goto 1439/1,74.08,4993.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arbal|r
@@ -1211,6 +1263,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >>Turn in A Lost Master
     .target Volcor
+    .isOnQuest 993
 step
     #loop
     .goto 1439/1,783.44,4714.24,0
@@ -1242,7 +1295,13 @@ step
     >>|cRXP_FRIENDLY_Ironforge|r: The Powers Below
     >>|cRXP_FRIENDLY_Wetlands|r: Unrequited Love
 step
+    +|cRXP_WARN_Until level 21, suggested zones|r: |cRXP_FRIENDLY_Ashenvale|r (about 0.7 levels of quests, starting around Shindrell Swiftfire; 6 quests from here hand in there), |cRXP_FRIENDLY_Zephras Isle|r (about 0.6 levels of quests, starting around Elegael Thornpaw). Then come back to this Darkshore guide --RouteBuilder:next
+step
     .xp 21 >>|cRXP_WARN_The rest of Darkshore is planned from level 21.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Darkshore: part 3|r (planned from level 21)
 step
     .goto 1439/1,577.12,6371.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
@@ -1254,21 +1313,27 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
     .accept 994 >>Accept Escape Through Force
     .target Volcor
+    .isQuestTurnedIn 993 --any of: A Lost Master
 step
     .goto 1439/1,195.91,4763.15
     >>Help Volcor to the road
     .complete 994,1 --Help Volcor to the road
+    .isOnQuest 994
 step
     .goto 1439/1,362.93,6434.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 994 >>Turn in Escape Through Force
     .target Terenthis
+    .isOnQuest 994
 step
     .goto 1439/1,368.83,6435.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Selarin|r
     .accept 990 >>Accept Trek to Ashenvale
     .target Sentinel Selarin
+    .isQuestTurnedIn 994,995 --any of: Escape Through Force, Escape Through Stealth
 step
     +|cRXP_WARN_End of the Darkshore route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ashenvale|r: Trek to Ashenvale
+step
+    +|cRXP_WARN_Suggested next zones at level 21|r: |cRXP_FRIENDLY_Wetlands|r (about 0.8 levels of quests, starting around Karl Boran; 1 quest from here hands in there). Completing this step loads the guide for Wetlands --RouteBuilder:next
 ]])

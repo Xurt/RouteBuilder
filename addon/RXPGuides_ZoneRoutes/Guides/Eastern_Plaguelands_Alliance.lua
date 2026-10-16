@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 55, 58).
+-- Sections (the guide starts at the one for your level): around Tirion Fordring from 55; part 2 from 58.
 -- Edit zones/Eastern Plaguelands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,15 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 55-60 Eastern Plaguelands
 
+step
+    .xp <58,1,RBSection1_1
+    .xp 58 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection2_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Eastern Plaguelands: around Tirion Fordring|r (planned from level 55)
 step
     .goto 1423/0,-2478.24,2671.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
@@ -474,6 +484,10 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Pamela's Doll, That's Asking A Lot
 step
     .xp 58 >>|cRXP_WARN_The rest of Eastern Plaguelands is planned from level 58.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Eastern Plaguelands: part 2|r (planned from level 58)
 step
     .goto 1423/0,-3657.87,1410.95
     >>Pick up |cRXP_PICK_Pamela's Doll's Head|r from the ground

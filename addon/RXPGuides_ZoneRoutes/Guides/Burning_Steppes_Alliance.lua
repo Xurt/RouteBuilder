@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 52, 55).
+-- Sections (the guide starts at the one for your level): start from 52; around Oralius from 55.
 -- Edit zones/Burning Steppes.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,15 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 52-56 Burning Steppes
 
+step
+    .xp <55,1,RBSection1_1
+    .xp 55 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection2_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Burning Steppes: start|r (planned from level 52)
 step
     .goto 1428/0,-2768.47,-8398.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jalinda Sprig|r
@@ -74,9 +84,18 @@ step
 step
     .xp 55 >>|cRXP_WARN_The rest of Burning Steppes is planned from level 55.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Burning Steppes: around Oralius|r (planned from level 55)
+step
     .goto 1428/0,-2743.57,-8371.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
     .accept 3824 >>Accept Gor'tesh the Brute Lord
+    .target Oralius
+    .isQuestTurnedIn 3823 --any of: Extinguish the Firegut
+step
+    .goto 1428/0,-2743.57,-8371.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
     .accept 4283 >>Accept FIFTY! YEP!
     .target Oralius
 step
@@ -126,12 +145,12 @@ step
     .target Cyrus Therepentous
     .isOnQuest 4022
 step
-    #completewith Along9
+    #completewith Along10
     >>As you go: Kill |cRXP_ENEMY_Black Dragonspawns|r. |cRXP_WARN_Anything left is finished later|r
     .complete 4182,2 --Black Dragonspawn slain (10)
     .mob Black Dragonspawn
 step
-    #label Along9
+    #label Along10
     #loop
     .goto 1428/0,-2853.71,-7612.58,0
     .goto 1428/0,-2853.71,-7612.58,40,0
@@ -148,12 +167,12 @@ step
     .complete 4182,1 --Black Broodling slain (15)
     .mob Black Broodling
 step
-    #completewith Along10
+    #completewith Along11
     >>As you go: Kill |cRXP_ENEMY_Black Wyrmkins|r. |cRXP_WARN_Anything left is finished later|r
     .complete 4182,4 --Black Wyrmkin slain (4)
     .mob Black Wyrmkin
 step
-    #label Along10
+    #label Along11
     #loop
     .goto 1428/0,-2916.68,-8051.80,0
     .goto 1428/0,-2916.68,-8051.80,40,0
@@ -187,6 +206,7 @@ step
     .complete 3824,1 --Gor'tesh's Lopped Off Head (1)
     .mob Gor'tesh
     .mob Grubbub
+    .isOnQuest 3824
 step
     #loop
     .goto 1428/0,-1701.96,-8144.52,0
@@ -209,9 +229,19 @@ step
     .goto 1428/0,-2743.57,-8371.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
     .turnin 4283 >>Turn in FIFTY! YEP!
+    .target Oralius
+step
+    .goto 1428/0,-2743.57,-8371.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
     .turnin 3824 >>Turn in Gor'tesh the Brute Lord
+    .target Oralius
+    .isOnQuest 3824
+step
+    .goto 1428/0,-2743.57,-8371.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
     .accept 3825 >>Accept Ogre Head On A Stick = Party
     .target Oralius
+    .isQuestTurnedIn 3824 --any of: Gor'tesh the Brute Lord
 step
     .goto 1428/0,-2780.48,-8377.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helendis Riverhorn|r
@@ -252,11 +282,13 @@ step
     .goto 1428/0,-2639.29,-7944.63
     >>Click the |cRXP_PICK_Soft Dirt Mound|r
     .complete 3825,1 --Gor'tesh Head Planted
+    .isOnQuest 3825
 step
     .goto 1428/0,-2743.57,-8371.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
     .turnin 3825 >>Turn in Ogre Head On A Stick = Party
     .target Oralius
+    .isOnQuest 3825
 step
     .goto 1428/0,-2748.84,-8378.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r

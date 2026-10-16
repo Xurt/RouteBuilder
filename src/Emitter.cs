@@ -15,6 +15,18 @@ public sealed class GuideOutput
     public int GateLine = -1;               // index of the "step" line of the level check that leads to the next part
     public List<string> GrindSteps = new();
     public List<(string dest, string tag, string quest)> Carried = new();
+    public List<SectionInfo> Sections = new();                              // places to start part-way, in order
+    public string OnlyFor = "";                                              // a later part only some characters have quests in: who
+    public double EndLevel;                                                  // the predicted level at the end of this part
+    public int? NextPartLevel;                                               // the level the next part is planned from
+    public Dictionary<int, int> QuestSection = new();                        // quest -> the section its hand-in (or pickup) is in
+}
+
+/// <summary>A section of one part of a guide: where it starts in the part's lines, and the guide it becomes when the zone is split.</summary>
+public sealed class SectionInfo
+{
+    public string Label = "", Name = "", Guide = "";
+    public int Level, Index, Line;
 }
 
 /// <summary>Turns an ordered list of tasks into RXPGuides guide text.</summary>
@@ -38,6 +50,9 @@ public sealed class Emitter
     readonly ZoneModel m; readonly RouteResult r; readonly GuideOutput g = new();
     readonly HashSet<(int, string)> guards = new();
     HashSet<int>? trusted;                       // pickups placed by a RestedXP order
+    Dictionary<int, int>? sectionOf;             // task -> the section of this part it is in
+    readonly HashSet<int> uncertain = new();     // tasks that may be skipped by a player who started at their section
+    readonly List<(int Task, int Level, int Hub)> sectionStart = new();
 
     public Emitter(ZoneModel model, RouteResult route) { m = model; r = route; }
 
@@ -120,7 +135,7 @@ public sealed class Emitter
         if (q == null) return o;
         if (t.Kind is TaskKind.Accept or TaskKind.ItemAccept)
         {
-            if (!q.Conditional) return o;
+            if (!q.Conditional) { o.AddRange(SectionGuards(t, o)); return o; }
             foreach (int p in q.NeedAll) o.Add($"    .isQuestTurnedIn {p} --{m.Data.Quests.GetValueOrDefault(p)?.Name ?? "?"}");
             if (q.NeedAny.Count > 0) o.Add($"    .isQuestTurnedIn {string.Join(",", q.NeedAny)} --any of: {string.Join(", ", q.NeedAny.Select(p => m.Data.Quests.GetValueOrDefault(p)?.Name ?? "?"))}");
             if (q.Req > 1) o.Add($"    .xp <{q.Req},1");
@@ -131,7 +146,144 @@ public sealed class Emitter
             bool needsComplete = q.Unrouted.Count > 0 || (q.Arrival && q.Objs.Count == 0 && q.Row.HasObjectives);
             o.Add(needsComplete ? $"    .isQuestComplete {q.Id}" : $"    .isOnQuest {q.Id}");
         }
+        o.AddRange(SectionGuards(t, o));
         return o;
+    }
+
+    /// <summary>
+    /// A player can start the guide at a later section (by level), skipping what comes before it. A step that needs a quest
+    /// from a section that may have been skipped hides itself unless that quest was done: a pickup whose prerequisite is
+    /// handed in earlier gets .isQuestTurnedIn, an objective or hand-in of a quest picked up earlier gets .isOnQuest.
+    /// </summary>
+    IEnumerable<string> SectionGuards(RouteTask t, List<string> have)
+    {
+        var q = t.Q;
+        if (q == null || sectionOf == null || !sectionOf.TryGetValue(t.Id, out int sec) || sec == 0 && m.Visit.Number == 1) yield break;
+        // done before this section, or by a step that may itself be skipped (a chain reaching back into a skipped section)
+        bool Earlier(int quest) => m.Visit.Done.Contains(quest) || m.Find(TaskKind.TurnIn, quest) is { } pt && sectionOf.TryGetValue(pt.Id, out int ps) && (ps < sec || uncertain.Contains(pt.Id));
+        bool Has(string s) => have.Any(l => l.StartsWith(s, StringComparison.Ordinal));
+        string QName(int p) => m.Data.Quests.GetValueOrDefault(p)?.Name ?? "?";
+        if (t.Kind is TaskKind.Accept or TaskKind.ItemAccept)
+        {
+            foreach (int p in AllPre(q).OrderBy(x => x))
+                if (Earlier(p) && !Has($"    .isQuestTurnedIn {p} ")) yield return $"    .isQuestTurnedIn {p} --{QName(p)}";
+            var any = AnyPre(q).OrderBy(x => x).ToList();
+            // one of several: only when none of them is surely done in this section or later (then it is done before this anyway)
+            bool notLater = any.All(p => m.Find(TaskKind.TurnIn, p) is not { } pt || !sectionOf.TryGetValue(pt.Id, out int s2) || s2 < sec || uncertain.Contains(pt.Id));
+            if (any.Count > 0 && notLater && any.Any(Earlier) && !Has($"    .isQuestTurnedIn {string.Join(",", any)} "))
+                yield return $"    .isQuestTurnedIn {string.Join(",", any)} --any of: {string.Join(", ", any.Select(QName))}";
+        }
+        else if (t.Kind is TaskKind.Objective or TaskKind.TurnIn)
+        {
+            var a = m.Find(TaskKind.Accept, q.Id) ?? m.Find(TaskKind.ItemAccept, q.Id);
+            if (a != null && sectionOf.TryGetValue(a.Id, out int sa) && (sa < sec || uncertain.Contains(a.Id)) && !Has($"    .isOnQuest {q.Id}") && !Has($"    .isQuestComplete {q.Id}"))
+                yield return $"    .isOnQuest {q.Id}";
+        }
+    }
+
+    // a quest's prerequisites including those done on an earlier visit (a player can start a later part's guide directly)
+    HashSet<int> AllPre(Quest q)
+    {
+        var s = q.PreAll.ToHashSet();
+        foreach (int p in q.Row.PreGroup) if (p != q.Id && !q.Row.Exclusive.Contains(p) && m.Visit.Done.Contains(p)) s.Add(p);
+        if (q.Fix.Pre != null) foreach (int p in q.Fix.Pre) if (m.Visit.Done.Contains(p)) s.Add(p);
+        return s;
+    }
+    HashSet<int> AnyPre(Quest q) =>
+        q.PreAny.Count > 0 ? q.PreAny : q.Row.PreSingle.Where(p => p != q.Id && !q.Row.Exclusive.Contains(p)).ToHashSet() is var a && a.Overlaps(m.Visit.Done) ? a : new HashSet<int>();
+
+    /// <summary>
+    /// An early offer is a bare self-skipping step, so it is only made where a player who started the guide at this
+    /// section is sure to have the quest's prerequisites.
+    /// </summary>
+    bool OfferSafe(RouteTask t, Unit u)
+    {
+        int sec = (u.AllTasks ?? u.Tasks).Select(x => sectionOf!.GetValueOrDefault(x.Id, 0)).DefaultIfEmpty(0).Max();
+        if (t.Q == null || sec == 0 && m.Visit.Number == 1) return true;
+        bool Gone(int p) => m.Visit.Done.Contains(p) || m.Find(TaskKind.TurnIn, p) is { } pt && sectionOf!.TryGetValue(pt.Id, out int ps) && (ps < sec || uncertain.Contains(pt.Id));
+        if (AllPre(t.Q).Any(Gone)) return false;
+        var any = AnyPre(t.Q).Where(p => m.Visit.Done.Contains(p) || m.Find(TaskKind.TurnIn, p) != null).ToList();
+        return !(any.Count > 0 && any.All(Gone));
+    }
+
+    /// <summary>
+    /// Splits this part of the route into sections, each starting where the route arrives at a new main quest hub (one with
+    /// several pickups) a few levels further on. A player can start the guide at any of them (see FileText).
+    /// </summary>
+    void ComputeSections()
+    {
+        sectionOf = new Dictionary<int, int>();
+        bool on = m.Cfg.Sections ?? true;
+        var seq = r.Seq;
+        int Hub(int t)
+        {
+            var tk = m.Tasks[t];
+            return tk.Ent == null || tk.Kind is not (TaskKind.Accept or TaskKind.TurnIn) ? -1 : m.HubOf.GetValueOrDefault(tk.Cands[r.Choice[t]], -1);
+        }
+        var pickups = new Dictionary<int, int>();
+        foreach (int t in seq)
+            if (m.Tasks[t].Kind == TaskKind.Accept && !m.Tasks[t].Cond && Hub(t) is var h && h >= 0) pickups[h] = pickups.GetValueOrDefault(h) + 1;
+        bool Main(int h) => h >= 0 && pickups.GetValueOrDefault(h) >= Tuning.SectionHubPickups;
+        int sec = 0, startPos = 0, cur = -1; double startLvl = Math.Floor(m.StartLevel);
+        sectionStart.Add((seq.Count > 0 ? seq[0] : -1, (int)startLvl, -1));
+        for (int pos = 0; pos < seq.Count; pos++)
+        {
+            int t = seq[pos], h = Hub(t);
+            if (on && Main(h) && !m.Tasks[t].Cond && m.Tasks[t].Tag.Length == 0)
+            {
+                if (cur < 0) { cur = h; sectionStart[0] = (sectionStart[0].Task, sectionStart[0].Level, h); }
+                else if (h != cur)
+                {
+                    double lv = Math.Floor(r.Level[t]);
+                    if (pos - startPos >= Tuning.SectionMinSteps && lv >= startLvl + Tuning.SectionLevelStep)
+                    {
+                        sec++; startPos = pos; startLvl = lv;
+                        sectionStart.Add((t, (int)lv, h));
+                    }
+                    cur = h;
+                }
+            }
+            sectionOf[t] = sec;
+        }
+        // a last section that is only a short stretch (a few steps, or less than a level) joins the one before it
+        double end = r.Views.Count > 0 ? r.Views[0].EndLevel : m.StartLevel;
+        while (sec > 0 && (sectionOf.Count(kv => kv.Value == sec) < Tuning.SectionMinSteps || end - sectionStart[sec].Level < 1))
+        {
+            foreach (var t in sectionOf.Where(kv => kv.Value == sec).Select(kv => kv.Key).ToList()) sectionOf[t] = sec - 1;
+            sectionStart.RemoveAt(sec); sec--;
+        }
+        // which steps a player who started at a step's own section may not be able to do, in route order so a chain carries through
+        foreach (int t in seq)
+        {
+            var tk = m.Tasks[t]; int st = sectionOf[t]; if (tk.Q == null || st == 0 && m.Visit.Number == 1) continue;
+            bool Shaky(int other) => sectionOf.TryGetValue(other, out int so) && (so < st || uncertain.Contains(other));
+            if (tk.Kind is TaskKind.Accept or TaskKind.ItemAccept)
+            {
+                bool Gone(int p) => m.Visit.Done.Contains(p) || m.Find(TaskKind.TurnIn, p) is { } pt && Shaky(pt.Id);
+                bool shaky = AllPre(tk.Q).Any(Gone);
+                var any = AnyPre(tk.Q).Where(p => m.Visit.Done.Contains(p) || m.Find(TaskKind.TurnIn, p) != null).ToList();
+                if (any.Count > 0 && any.All(Gone)) shaky = true;
+                if (shaky) uncertain.Add(t);
+            }
+            else if ((m.Find(TaskKind.Accept, tk.Q.Id) ?? m.Find(TaskKind.ItemAccept, tk.Q.Id)) is { } a && Shaky(a.Id)) uncertain.Add(t);
+        }
+    }
+
+    /// <summary>A section's name: the zone file's name for the town there, or after its busiest quest giver.</summary>
+    string SectionName(int hub)
+    {
+        if (hub < 0) return m.Visit.Number > 1 ? $"part {m.Visit.Number}" : "start";
+        var here = r.Seq.Select(t => m.Tasks[t]).Where(t => t.Ent != null && t.Kind is TaskKind.Accept or TaskKind.TurnIn && m.HubOf.GetValueOrDefault(t.Cands[r.Choice[t.Id]], -1) == hub).ToList();
+        if (here.Count == 0) return m.Main.Name;
+        var spots = here.Select(t => t.Cands[r.Choice[t.Id]]).ToList();
+        int area = spots[0].Area; var mid = new Pt(spots.Average(c => c.Pos.X), spots.Average(c => c.Pos.Y));
+        foreach (var (name, spot) in m.Cfg.Hubs)
+        {
+            var (a, p) = m.World(spot);
+            if (a == area && p.To(mid) <= Tuning.TownRadius * 1.5) return name;
+        }
+        var giver = here.Where(t => t.Kind == TaskKind.Accept).GroupBy(t => t.Ent!.Name).OrderByDescending(g => g.Count()).FirstOrDefault()?.Key ?? here[0].Ent!.Name;
+        return "around " + giver;
     }
 
     // ------------------------------------------------------------------ stops
@@ -459,6 +611,7 @@ public sealed class Emitter
     /// <param name="nextVisitLevel">When the zone continues in a later visit: the level that one is planned from.</param>
     public GuideOutput Write(int? nextVisitLevel)
     {
+        ComputeSections();
         var units = BuildUnits();
         bool Far(int i) => i > 0 && (units[i].Area != units[i - 1].Area || units[i].Pos.To(units[i - 1].Pos) > 150);
         // quest-giver stops next to each other, or in the same hub, make one visit to a town
@@ -488,6 +641,7 @@ public sealed class Emitter
                 if (done.Contains(t.Id) || t.Kind != TaskKind.Accept || t.Ent == null || t.Cond || t.Q!.Tight || planned.GetValueOrDefault(t.Id) <= i + 1) continue;
                 if (planned.TryGetValue(t.Id, out int pu) && visitOf[pu] == visitOf[i]) continue;      // picked up later on this same visit anyway
                 if (t.Pre.Any(p => !done.Contains(p) && !m.Tasks[p].Deferred) || (t.PreAny.Count > 0 && !t.PreAny.Any(done.Contains))) continue;
+                if (!OfferSafe(t, units[i])) continue;
                 if (t.MinLevel <= 1 || !(t.MinLevel - 0.5 <= lvl && lvl < t.MinLevel + Tuning.Safety)) continue;
                 if (t.Q.Level > lvl + Tuning.PickupAhead) continue;                  // not offered far ahead of its level either
                 var near = t.Cands.FirstOrDefault(c => c.Area == u.Area && c.Pos.To(u.Pos) <= Tuning.HubRadius);
@@ -645,10 +799,27 @@ public sealed class Emitter
             if (sf.After != null || sf.Before != null) g.CustomSteps++;
         }
 
+        // a header step at the start of each section, carrying the label the level jumps at the top of the guide go to.
+        // It is shown to everyone (RestedXP drops other classes' steps, and a jump to a dropped label would stall there).
+        // When the zone is split into a guide per section, the guide's name says it instead, and there are no jumps
+        int lastSec = -1; bool split = m.Cfg.Split ?? true;
+        int UnitSection(Unit u) => (u.AllTasks ?? u.Tasks).Select(t => sectionOf!.GetValueOrDefault(t.Id, -1)).DefaultIfEmpty(-1).Min();
+        void SectionHeader(int k)
+        {
+            var (_, lvl, hub) = sectionStart[k];
+            string label = $"RBSection{m.Visit.Number}_{k + 1}", name = SectionName(hub);
+            g.Sections.Add(new SectionInfo { Label = label, Level = lvl, Name = name, Index = k, Line = L.Count });
+            if (split) return;
+            L.Add("step"); L.Add("    #label " + label); L.Add("    #completewith next");
+            L.Add($"    +|cRXP_WARN_{m.Main.Name}: {name}|r (planned from level {lvl})");
+        }
+
         Pt prev = m.Start; int prevArea = m.StartArea;
         for (int i = 0; i < units.Count; i++)
         {
             var u = units[i];
+            int us = UnitSection(u);
+            if (us > lastSec && us < sectionStart.Count) { SectionHeader(us); lastSec = us; }
             if (Far(i)) Reminders(u.Level);
             if (u.Area != prevArea)
             {
@@ -707,7 +878,9 @@ public sealed class Emitter
             }
             g.GateLine = L.Count;
             L.Add("step");
-            L.Add($"    .xp {nl} >>|cRXP_WARN_The rest of {m.Main.Name} is planned from level {nl}.|r Come back to this guide then");
+            L.Add(m.Cfg.Split ?? true
+                ? $"    +|cRXP_WARN_The rest of {m.Main.Name} is planned from level {nl}.|r Load its guide for level {nl} then"
+                : $"    .xp {nl} >>|cRXP_WARN_The rest of {m.Main.Name} is planned from level {nl}.|r Come back to this guide then");
         }
         else
         {
@@ -717,22 +890,57 @@ public sealed class Emitter
         }
 
         g.Steps = L.Count(l => l.StartsWith("step"));
+        g.NextPartLevel = nextVisitLevel;
+        foreach (var q in m.Quests.Values)
+            if ((m.Find(TaskKind.TurnIn, q.Id) ?? m.Find(TaskKind.Accept, q.Id)) is { } qt && sectionOf!.TryGetValue(qt.Id, out int qs)) g.QuestSection[q.Id] = qs;
+        g.EndLevel = r.Views.Count > 0 ? r.Views[0].EndLevel : m.StartLevel;
         return g;
     }
 
     static string Proper(string s) => s.Length == 0 ? s : char.ToUpperInvariant(s[0]) + s[1..];
 
-    /// <summary>The .lua file: a header, the faction check, and one guide holding every visit in order.</summary>
+    /// <summary>
+    /// The .lua file: a header, the faction check, and the guide. Split (the default), each section of each part is a guide
+    /// of its own, listed under the zone's name in RestedXP and chained to the next with #next; otherwise one guide holds
+    /// every part, with level jumps at the top to the section for your level.
+    /// </summary>
     public static string FileText(List<(ZoneModel m, GuideOutput g)> visits)
     {
         var m = visits[0].m; var sb = new StringBuilder();
-        string who = Who(m);
+        string who = Who(m), zone = m.Main.Name;
         // the range in the name runs from the level the plan starts at to the highest quest level in it
         int lo = (int)Math.Floor(m.StartLevel), hi = Math.Max(lo, visits.Max(v => v.m.LevelHi));
-        string name = $"{lo}-{hi} {m.Main.Name}", group = $"Zone Routes ({who})";
+        string name = $"{lo}-{hi} {zone}", group = $"Zone Routes ({who})";
         // a build limited with --min-level/--max-level gets the range in its file name, so several ranges of one zone sit side by side
         string range = m.Opt.MinLevel != null || m.Opt.MaxLevel != null ? $" {m.Opt.MinLevel ?? lo}-{m.Opt.MaxLevel ?? hi}" : "";
-        foreach (var (_, g) in visits) { g.Name = name; g.Group = group; g.FileName = $"{m.Main.Name}{range} ({who}).lua"; }
+        foreach (var (_, g) in visits) { g.Name = name; g.Group = group; g.FileName = $"{zone}{range} ({who}).lua"; }
+
+        // every part has at least one section (a part with no header gets one covering all of it)
+        foreach (var (vm, g) in visits)
+            if (g.Sections.Count == 0 || g.Sections[0].Line > 0 && g.Sections[0].Index != 0)
+                g.Sections.Insert(0, new SectionInfo { Label = "", Level = (int)Math.Floor(vm.StartLevel), Name = vm.Visit.Number > 1 ? $"part {vm.Visit.Number}" : "start", Index = 0, Line = 0 });
+        bool split = (m.Cfg.Split ?? true) && visits.Sum(v => v.g.Sections.Count) > 1;
+        var chunks = new List<(GuideOutput g, SectionInfo s, int from, int to, string only)>();
+        if (split)
+        {
+            var used = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var (vm, g) in visits)
+                for (int k = 0; k < g.Sections.Count; k++)
+                {
+                    var sec = g.Sections[k];
+                    int a = k == 0 ? 0 : sec.Line, b = k + 1 < g.Sections.Count ? g.Sections[k + 1].Line : g.Lines.Count;
+                    int slo = k == 0 ? (int)Math.Floor(vm.StartLevel) : sec.Level;
+                    // up to where the next one starts; the last one of a part up to the level you are expected to finish at
+                    int shi = Math.Max(slo + 1, k + 1 < g.Sections.Count ? g.Sections[k + 1].Level : (int)Math.Ceiling(g.EndLevel - 0.05));
+                    string place = sec.Name == "start" || sec.Name.StartsWith("part ") ? "" : ": " + sec.Name;
+                    string gn = $"{slo}-{shi} {zone}{range}{place}";
+                    for (int n = 2; !used.Add(gn); n++) gn = $"{slo}-{shi} {zone}{range}{place} ({n})";
+                    sec.Guide = gn;
+                    chunks.Add((g, sec, a, b, g.OnlyFor));
+                }
+        }
+        else foreach (var (_, g) in visits) foreach (var sec in g.Sections) sec.Guide = name;
+
         string other = m.Opt.Faction == "Horde" ? "Alliance" : "Horde";
         sb.AppendLine($"-- {name}: {group}.");
         sb.AppendLine($"-- Made by RouteBuilder from QuestieDB's Forever data ({m.Data.Version}; QuestieDB is GPL-3.0).");
@@ -741,16 +949,67 @@ public sealed class Emitter
             : "-- One route for the whole faction. Steps marked << Class or << Race only show for those characters.");
         sb.AppendLine("-- Steps that depend on quests from other zones hide themselves unless you have those quests.");
         if (visits.Count > 1)
-            sb.AppendLine($"-- The zone covers more levels than one visit gives, so the guide has {visits.Count} parts with a level check between them (from level {string.Join(", ", visits.Select(v => v.m.StartLevel.ToString("0", Inv)))}).");
-        sb.AppendLine($"-- Edit zones/{m.Main.Name}.json and re-run rather than editing this file, or your changes are lost on the next build.");
+            sb.AppendLine($"-- The zone covers more levels than one visit gives, so it is planned in {visits.Count} parts (from level {string.Join(", ", visits.Select(v => v.m.StartLevel.ToString("0", Inv)))}).");
+        if (split)
+            sb.AppendLine($"-- Split into {chunks.Count} guides, listed under \"{zone}\" in RestedXP. Each leads on to the next; start at any of them: " +
+                          "a step that needs a quest from an earlier one hides itself unless you did that quest.");
+        else if (visits.Sum(v => v.g.Sections.Count) > 1)
+            sb.AppendLine($"-- Sections (the guide starts at the one for your level): {string.Join("; ", visits.SelectMany(v => v.g.Sections).Select(x => $"{x.Name} from {x.Level}"))}.");
+        sb.AppendLine($"-- Edit zones/{zone}.json and re-run rather than editing this file, or your changes are lost on the next build.");
         sb.AppendLine();
         sb.AppendLine($"if UnitFactionGroup(\"player\") == \"{other}\" then return end");
-        sb.AppendLine();
-        sb.AppendLine("RXPGuides.RegisterGuide([[");
-        foreach (var l in new[] { "#classic", "<< " + m.Opt.Faction, "#version 1", "#group " + group, "#name " + name, "" }) sb.AppendLine(l);
-        foreach (var (_, g) in visits) foreach (var l in g.Lines) sb.AppendLine(l.Replace("]]", "] ]"));    // "]]" would end the Lua string
-        sb.AppendLine("]])");
+        string Esc(string l) => l.Replace("]]", "] ]");    // "]]" would end the Lua string
+        if (!split)
+        {
+            sb.AppendLine();
+            sb.AppendLine("RXPGuides.RegisterGuide([[");
+            foreach (var l in new[] { "#classic", "<< " + m.Opt.Faction, "#version 1", "#group " + group, "#name " + name, "" }) sb.AppendLine(l);
+            foreach (var l in EntryJumps(visits.SelectMany(v => v.g.Sections).Where(x => x.Label.Length > 0).ToList())) sb.AppendLine(l);
+            foreach (var (_, g) in visits) foreach (var l in g.Lines) sb.AppendLine(Esc(l));
+            sb.AppendLine("]])");
+            return sb.ToString();
+        }
+        for (int c = 0; c < chunks.Count; c++)
+        {
+            var (g, sec, a, b, only) = chunks[c];
+            sb.AppendLine();
+            sb.AppendLine("RXPGuides.RegisterGuide([[");
+            sb.AppendLine("#classic");
+            sb.AppendLine("<< " + (only.Length > 0 ? only : m.Opt.Faction));
+            sb.AppendLine("#version 1");
+            sb.AppendLine("#group " + group);
+            sb.AppendLine("#subgroup " + zone + range);
+            sb.AppendLine("#name " + sec.Guide);
+            // on to the next section of the same part (the next part is for a higher level: link suggests where to go meanwhile)
+            if (c + 1 < chunks.Count && chunks[c + 1].g == g) sb.AppendLine($"#next {group}\\{chunks[c + 1].s.Guide}");
+            sb.AppendLine();
+            for (int i = a; i < b; i++) sb.AppendLine(Esc(g.Lines[i]));
+            sb.AppendLine("]])");
+        }
         return sb.ToString();
+    }
+
+    /// <summary>
+    /// Steps at the top of the guide that send a player to the first section planned for their level: a level 1 character
+    /// starts at the top, one arriving at level 9 from another zone starts at the section planned from 9. RestedXP's
+    /// ".xp &lt;N,1,label" jumps when you are below N (it works with or without the "skip steps by level" setting);
+    /// the plain ".xp N" next to it lets the step finish when you are not.
+    /// </summary>
+    static List<string> EntryJumps(List<SectionInfo> sections)
+    {
+        var use = new List<SectionInfo>();
+        foreach (var s in sections) if (use.Count == 0 || s.Level > use[^1].Level) use.Add(s);
+        var o = new List<string>();
+        if (use.Count < 2) return o;
+        for (int k = 0; k + 1 < use.Count; k++)
+        {
+            o.Add("step");
+            o.Add($"    .xp <{use[k + 1].Level},1,{use[k].Label}");
+            o.Add($"    .xp {use[k + 1].Level} >>Finding the place in this guide for your level");
+        }
+        o.Add("step");
+        o.Add($"    .xp <{Game.MaxLevel + 1},1,{use[^1].Label}");
+        return o;
     }
 
     /// <summary>Who a guide is for: the faction, or the race and class it was tuned for.</summary>

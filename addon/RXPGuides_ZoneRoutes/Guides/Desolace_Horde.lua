@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 31, 34, 37, 40).
+-- Sections (the guide starts at the one for your level): around Gurda Wildmane from 31; part 2 from 34; part 3 from 37; part 4 from 40.
 -- Edit zones/Desolace.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,21 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 31-45 Desolace
 
+step
+    .xp <34,1,RBSection1_1
+    .xp 34 >>Finding the place in this guide for your level
+step
+    .xp <37,1,RBSection2_1
+    .xp 37 >>Finding the place in this guide for your level
+step
+    .xp <40,1,RBSection3_1
+    .xp 40 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection4_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Desolace: around Gurda Wildmane|r (planned from level 31)
 step << Warrior/Hunter/Rogue/Druid/Shaman
     .goto 1443/1,1718.36,-423.01
     .xp 35 >> Grind Burning Blade mobs at Thunder Axe Fortress to level 35
@@ -479,6 +495,10 @@ step
 step
     .xp 34 >>|cRXP_WARN_The rest of Desolace is planned from level 34.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Desolace: part 2|r (planned from level 34)
+step
     .goto 1443/1,1707.12,-1333.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felgur Twocuts|r
     .accept 1365 >>Accept Khan Dez'hepah
@@ -660,6 +680,10 @@ step
 step
     .xp 37 >>|cRXP_WARN_The rest of Desolace is planned from level 37.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Desolace: part 3|r (planned from level 37)
+step
     .goto 1443/1,1431.08,-716.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
     .accept 5501 >>Accept Bone Collector
@@ -757,16 +781,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azore Aldamort|r
     .accept 6027 >>Accept Book of the Ancients
     .target Azore Aldamort
+    .isQuestTurnedIn 5741 --any of: Sceptre of Light
 step
     .goto 1443/1,2963.71,252.12
     >>Kill |cRXP_ENEMY_Lord Kragaru|r and loot |cRXP_LOOT_Book of the Ancients|r
     .complete 6027,1 --Book of the Ancients (1)
     .mob Lord Kragaru
+    .isOnQuest 6027
 step
     .goto 1443/1,2485.35,-362.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azore Aldamort|r
     .turnin 6027 >>Turn in Book of the Ancients
     .target Azore Aldamort
+    .isOnQuest 6027
 step
     .goto 1443/1,1742.19,-1221.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nataka Longhorn|r
@@ -848,6 +875,10 @@ step
     .target Taiga Wisemane
 step
     .xp 40 >>|cRXP_WARN_The rest of Desolace is planned from level 40.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Desolace: part 4|r (planned from level 40)
 step
     .goto 1443/1,2277.20,-1914.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Umarak|r

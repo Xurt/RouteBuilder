@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 1, 15).
+-- Sections (the guide starts at the one for your level): around Conservator Ilthalaine from 1; around Tallonkai Swiftroot from 5; around Tallonkai Swiftroot from 7; around Priestess A'moora from 9; around Priestess A'moora from 11; part 2 from 15.
 -- Edit zones/Teldrassil.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,7 +14,29 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group Zone Routes (Alliance)
 #name 1-14 Teldrassil
+#next Zone Routes (Alliance)\10-22 Darkshore;Zone Routes (Alliance)\1-13 Zephras Isle;Zone Routes (Alliance)\10-32 Loch Modan
 
+step
+    .xp <5,1,RBSection1_1
+    .xp 5 >>Finding the place in this guide for your level
+step
+    .xp <7,1,RBSection1_2
+    .xp 7 >>Finding the place in this guide for your level
+step
+    .xp <9,1,RBSection1_3
+    .xp 9 >>Finding the place in this guide for your level
+step
+    .xp <11,1,RBSection1_4
+    .xp 11 >>Finding the place in this guide for your level
+step
+    .xp <15,1,RBSection1_5
+    .xp 15 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection2_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Teldrassil: around Conservator Ilthalaine|r (planned from level 1)
 step
     .goto 1438/1,826.28,10328.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
@@ -388,9 +411,18 @@ step
     .accept 488 >>Accept Zenn's Bidding
     .target Zenn Foulhoof
 step
+    #label RBSection1_2
+    #completewith next
+    +|cRXP_WARN_Teldrassil: around Tallonkai Swiftroot|r (planned from level 5)
+step
     .goto 1438/1,882.80,9909.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyreena Duskblade|r
     .turnin 96630 >>Turn in The Adventurer
+    .target Lyreena Duskblade
+    .isOnQuest 96630
+step
+    .goto 1438/1,882.80,9909.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyreena Duskblade|r
     .accept 96606 >>Accept The Great Outdoors
     .target Lyreena Duskblade
 step
@@ -418,6 +450,11 @@ step << NightElf Priest
     .goto 1438/1,985.65,9905.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
     .turnin 5622 >>Turn in In Favor of Elune
+    .target Laurna Morninglight
+    .isOnQuest 5622
+step << NightElf Priest
+    .goto 1438/1,985.65,9905.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
     .accept 5621 >>Accept Garments of the Moon
     .target Laurna Morninglight
 step << Priest
@@ -484,6 +521,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r
     .turnin 2159 >>Turn in Dolanaar Delivery
     .target Innkeeper Keldamyr
+    .isOnQuest 2159
+step
+    .goto 1438/1,982.60,9802.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r
+    .target Innkeeper Keldamyr
     .home >>Set your Hearthstone to Innkeeper Keldamyr's inn
 step
     .goto 1438/1,982.65,9802.19
@@ -506,8 +548,14 @@ step
     .goto 1438/1,956.12,9736.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 928 >>Turn in Crown of the Earth
+    .target Corithras Moonrage
+    .isOnQuest 928
+step
+    .goto 1438/1,956.12,9736.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .accept 929 >>Accept Crown of the Earth
     .target Corithras Moonrage
+    .isQuestTurnedIn 928 --any of: Crown of the Earth
 step
     .goto 1438/1,906.22,9750.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarrin|r
@@ -576,18 +624,20 @@ step
     .goto 1438/1,605.31,9653.48,40,0
     .goto 1438/1,555.92,9655.86,40,0
     .goto 1438/1,392.98,9747.15,40,0
-    .goto 1438/1,351.23,9806.88,40,0
     .goto 1438/1,345.63,9722.03,40,0
     .goto 1438/1,316.10,9713.55,40,0
     .goto 1438/1,460.19,9556.42,40,0
     .goto 1438/1,477.00,9576.10,40,0
     >>Kill |cRXP_ENEMY_Strigid Owls|r, |cRXP_ENEMY_Strigid Screechers|r and |cRXP_ENEMY_Strigid Hunters|r. Loot them for |cRXP_LOOT_Strigid Owl Feather|r
-    >>Open the |cRXP_PICK_Tallonkai's Dresser|r. Loot it for |cRXP_LOOT_Emerald Dreamcatcher|r
     .complete 488,2 --Strigid Owl Feather (3)
-    .complete 2438,1 --Emerald Dreamcatcher (1)
     .mob Strigid Owl
     .mob Strigid Screecher
     .mob Strigid Hunter
+    .isOnQuest 488
+step
+    .goto 1438/1,351.23,9806.88
+    >>Open the |cRXP_PICK_Tallonkai's Dresser|r. Loot it for |cRXP_LOOT_Emerald Dreamcatcher|r
+    .complete 2438,1 --Emerald Dreamcatcher (1)
 step
     .goto 1438/1,440.85,9845.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaerolas Talvethren|r
@@ -595,43 +645,75 @@ step
     .accept 476 >>Accept Gnarlpine Corruption
     .target Gaerolas Talvethren
 step
+    .goto 1438/1,587.49,9859.82
+    >>Open the |cRXP_PICK_Starbreeze Village Moonwell|r. Loot it for |cRXP_LOOT_Filled Jade Phial|r
+    .complete 929,1 --Filled Jade Phial (1)
+    .isOnQuest 929
+step
     #loop
-    .goto 1438/1,587.49,9859.82,0
-    .goto 1438/1,587.49,9859.82,40,0
+    .goto 1438/1,618.54,9785.16,0
     .goto 1438/1,618.54,9785.16,40,0
+    .goto 1438/1,617.53,9759.71,40,0
     .goto 1438/1,649.60,9737.65,40,0
     .goto 1438/1,782.50,9693.53,40,0
-    .goto 1438/1,782.50,9805.18,40,0
-    .goto 1438/1,702.05,9752.58,40,0
+    .goto 1438/1,791.66,9736.63,40,0
+    .goto 1438/1,783.01,9747.49,40,0
     .goto 1438/1,681.68,9828.26,40,0
-    .goto 1438/1,720.38,9892.40,40,0
-    .goto 1438/1,720.38,9978.94,40,0
-    >>Open the |cRXP_PICK_Starbreeze Village Moonwell|r. Loot it for |cRXP_LOOT_Filled Jade Phial|r
+    .goto 1438/1,652.15,9791.61,40,0
     >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for |cRXP_LOOT_Soft Nightsaber Pelt|r
-    >>Kill |cRXP_ENEMY_Elder Nightsabers|r, |cRXP_ENEMY_Feral Nightsabers|r, |cRXP_ENEMY_Nightsabers|r and |cRXP_ENEMY_Nightsaber Stalkers|r. Loot them for |cRXP_LOOT_Nightsaber Fang|r
-    >>Kill |cRXP_ENEMY_Webwood Lurkers|r, |cRXP_ENEMY_Webwood Venomfangs|r, |cRXP_ENEMY_Webwood Silkspinners|r and |cRXP_ENEMY_Giant Webwood Spiders|r. Loot them for |cRXP_LOOT_Webwood Spider Silk|r
-    .complete 929,1 --Filled Jade Phial (1)
     .complete 87288,1 --Soft Nightsaber Pelt (6)
-    .complete 488,1 --Nightsaber Fang (3)
-    .complete 488,3 --Webwood Spider Silk (3)
     .mob Nightsaber
+step
+    #loop
+    .goto 1438/1,652.15,9791.61,0
+    .goto 1438/1,652.15,9791.61,40,0
+    .goto 1438/1,618.54,9785.16,40,0
+    .goto 1438/1,617.53,9759.71,40,0
+    .goto 1438/1,649.60,9737.65,40,0
+    .goto 1438/1,782.50,9693.53,40,0
+    .goto 1438/1,791.66,9736.63,40,0
+    .goto 1438/1,783.01,9747.49,40,0
+    .goto 1438/1,681.68,9828.26,40,0
+    >>Kill |cRXP_ENEMY_Elder Nightsabers|r, |cRXP_ENEMY_Feral Nightsabers|r, |cRXP_ENEMY_Nightsabers|r and |cRXP_ENEMY_Nightsaber Stalkers|r. Loot them for |cRXP_LOOT_Nightsaber Fang|r
+    .complete 488,1 --Nightsaber Fang (3)
     .mob Elder Nightsaber
     .mob Feral Nightsaber
+    .mob Nightsaber
     .mob Nightsaber Stalker
+    .isOnQuest 488
+step
+    #loop
+    .goto 1438/1,702.05,9752.58,0
+    .goto 1438/1,702.05,9752.58,40,0
+    .goto 1438/1,747.87,9811.63,40,0
+    .goto 1438/1,782.50,9805.18,40,0
+    .goto 1438/1,755.51,9854.73,40,0
+    .goto 1438/1,720.38,9892.40,40,0
+    .goto 1438/1,720.38,9978.94,40,0
+    .goto 1438/1,686.77,9978.26,40,0
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r, |cRXP_ENEMY_Webwood Venomfangs|r, |cRXP_ENEMY_Webwood Silkspinners|r and |cRXP_ENEMY_Giant Webwood Spiders|r. Loot them for |cRXP_LOOT_Webwood Spider Silk|r
+    .complete 488,3 --Webwood Spider Silk (3)
     .mob Webwood Lurker
     .mob Webwood Venomfang
     .mob Webwood Silkspinner
     .mob Giant Webwood Spider
+    .isOnQuest 488
 step
     .goto 1438/1,741.76,9925.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .turnin 488 >>Turn in Zenn's Bidding
     .target Zenn Foulhoof
+    .isOnQuest 488
+step
+    #label RBSection1_3
+    #completewith next
+    +|cRXP_WARN_Teldrassil: around Tallonkai Swiftroot|r (planned from level 7)
 step
     .goto 1438/1,963.25,9811.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Kyra Starsong|r
     .accept 489 >>Accept Seek Redemption!
     .target Sentinel Kyra Starsong
+    .isQuestTurnedIn 488 --any of: Zenn's Bidding
 step
     .goto 1438/1,956.12,9736.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
@@ -642,25 +724,38 @@ step
     .goto 1438/1,965.29,9887.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
     .turnin 476 >>Turn in Gnarlpine Corruption
+    .target Athridas Bearmantle
+    .isOnQuest 476
+step
+    .goto 1438/1,965.29,9887.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
     .accept 483 >>Accept The Relics of Wakening
     .target Athridas Bearmantle
-step
+    .isQuestTurnedIn 476 --any of: Gnarlpine Corruption
+step << NightElf Priest
     .goto 1438/1,985.65,9905.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
-    .turnin 5621 >>Turn in Garments of the Moon << NightElf Priest
-    .accept 98391 >>Accept The Sisterhood of Elune
+    .turnin 5621 >>Turn in Garments of the Moon
     .target Laurna Morninglight
+    .isOnQuest 5621
 step
     .goto 1438/1,988.20,9891.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aldia|r
     .turnin 87288 >>Turn in Soft Saber Pelts
     .target Aldia
+    .isOnQuest 87288
 step
     .goto 1438/1,985.14,9898.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r
     .turnin 2438 >>Turn in The Emerald Dreamcatcher
+    .target Tallonkai Swiftroot
+    .isOnQuest 2438
+step
+    .goto 1438/1,985.14,9898.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r
     .accept 2459 >>Accept Ferocitas the Dream Eater
     .target Tallonkai Swiftroot
+    .isQuestTurnedIn 2438 --any of: The Emerald Dreamcatcher
 step << Hunter
     .goto 1438/1,968.85,9821.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
@@ -691,10 +786,16 @@ step << Druid
     .target Kal
     .xp <8,1
 step
+    .goto 1438/1,985.65,9905.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
+    .accept 98391 >>Accept The Sisterhood of Elune
+    .target Laurna Morninglight
+step
     .goto 1438/1,1202.05,10127.93
     >>Kill |cRXP_ENEMY_Lord Melenas|r and loot |cRXP_LOOT_Melenas' Head|r
     .complete 932,1 --Melenas' Head (1)
     .mob Lord Melenas
+    .isOnQuest 932
 step
     #loop
     .goto 1438/1,853.78,9952.13,0
@@ -704,16 +805,19 @@ step
     .goto 1438/1,808.46,9719.32,40,0
     >>Pick up |cRXP_PICK_Fel Cone|r from the ground
     .complete 489,1 --Fel Cone (3)
+    .isOnQuest 489
 step
     .goto 1438/1,741.76,9925.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .turnin 489 >>Turn in Seek Redemption!
     .target Zenn Foulhoof
+    .isOnQuest 489
 step
     .goto 1438/1,282.49,10018.65
     >>Kill |cRXP_ENEMY_Ferocitas the Dream Eater|r and loot |cRXP_LOOT_Gnarlpine Necklace|r
     .collect 8049,1,2459,1 --Gnarlpine Necklace (1)
     .mob Ferocitas the Dream Eater
+    .isOnQuest 2459
 step
     #loop
     .goto 1438/1,283.00,10025.44,0
@@ -726,6 +830,7 @@ step
     >>Kill |cRXP_ENEMY_Gnarlpine Mystics|r
     .complete 2459,1 --Gnarlpine Mystic slain (7)
     .mob Gnarlpine Mystic
+    .isOnQuest 2459
 step
     #completewith next
     .hs >>Hearth to Innkeeper Keldamyr's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -734,22 +839,36 @@ step
     .goto 1438/1,956.12,9736.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 929 >>Turn in Crown of the Earth
+    .target Corithras Moonrage
+    .isOnQuest 929
+step
+    .goto 1438/1,956.12,9736.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .accept 933 >>Accept Crown of the Earth
     .target Corithras Moonrage
+    .isQuestTurnedIn 929 --any of: Crown of the Earth
 step
     .goto 1438/1,1655.21,9555.06
     >>Open the |cRXP_PICK_Pools of Arlithrien Moonwell|r. Loot it for |cRXP_LOOT_Filled Tourmaline Phial|r
     .complete 933,1 --Filled Tourmaline Phial (1)
+    .isOnQuest 933
 step
     .goto 1438/1,1645.02,9245.55
     >>Click the |cRXP_PICK_Strange Fruited Plant|r
     .accept 930 >>Accept The Glowing Fruit
+    .isQuestTurnedIn 918 --any of: Timberling Seeds
 step
     .goto 1438/1,956.12,9736.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 933 >>Turn in Crown of the Earth
+    .target Corithras Moonrage
+    .isOnQuest 933
+step
+    .goto 1438/1,956.12,9736.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .accept 7383 >>Accept Crown of the Earth
     .target Corithras Moonrage
+    .isQuestTurnedIn 933 --any of: Crown of the Earth
 step
     .goto 1438/1,906.17,9751.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarrin|r
@@ -765,6 +884,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r
     .turnin 932 >>Turn in Twisted Hatred
     .target Tallonkai Swiftroot
+    .isOnQuest 932
 step
     #loop
     .goto 1438/1,988.71,9847.94,0
@@ -823,11 +943,6 @@ step
     .accept 490 >>Accept Bounty: Gnarlpine Furbolg
     .unitscan Sentinel Shayla Nightbreeze
 step
-    #completewith Along75
-    >>As you go: Open the |cRXP_PICK_Chest of the Raven Claw|r. Loot it for |cRXP_LOOT_Raven Claw Talisman|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 483,1 --Raven Claw Talisman (1)
-step
-    #label Along75
     #loop
     .goto 1438/1,1497.37,10035.62,0
     .goto 1438/1,1497.37,10035.62,40,0
@@ -863,14 +978,14 @@ step
     .goto 1438/1,1903.17,10582.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Eralya Leafshadow|r
     .turnin 99046 >>Turn in The Lost Runner
+    .target Sentinel Eralya Leafshadow
+    .isOnQuest 99046
+step
+    .goto 1438/1,1903.17,10582.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Eralya Leafshadow|r
     .accept 99047 >>Accept Not Dead Yet
     .target Sentinel Eralya Leafshadow
 step
-    #completewith Along78
-    >>As you go: Open the |cRXP_PICK_Oracle Glade Moonwell|r. Loot it for |cRXP_LOOT_Filled Amethyst Phial|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 7383,1 --Filled Amethyst Phial (1)
-step
-    #label Along78
     .goto 1438/1,1863.46,10665.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .accept 937 >>Accept The Enchanted Glade
@@ -879,16 +994,8 @@ step
     .goto 1438/1,1857.35,10675.34
     >>Open the |cRXP_PICK_Oracle Glade Moonwell|r. Loot it for |cRXP_LOOT_Filled Amethyst Phial|r
     .complete 7383,1 --Filled Amethyst Phial (1)
+    .isOnQuest 7383
 step
-    #completewith Along80
-    >>As you go: Kill |cRXP_ENEMY_Bloodfeather Harpies|r, |cRXP_ENEMY_Bloodfeather Rogues|r, |cRXP_ENEMY_Bloodfeather Sorceress|r and |cRXP_ENEMY_Bloodfeather Furies|r. Loot them for |cRXP_LOOT_Bloodfeather Belt|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 937,1 --Bloodfeather Belt (6)
-    .mob Bloodfeather Harpy
-    .mob Bloodfeather Rogue
-    .mob Bloodfeather Sorceress
-    .mob Bloodfeather Fury
-step
-    #label Along80
     .goto 1438/1,2208.67,10758.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
     .accept 938 >>Accept Mist
@@ -903,18 +1010,10 @@ step
     .turnin 938 >>Turn in Mist
     .target Sentinel Arynia Cloudsbreak
 step
-    #completewith Along83
-    >>As you go: Kill |cRXP_ENEMY_Bloodfeather Harpies|r, |cRXP_ENEMY_Bloodfeather Rogues|r, |cRXP_ENEMY_Bloodfeather Sorceress|r and |cRXP_ENEMY_Bloodfeather Furies|r. Loot them for |cRXP_LOOT_Bloodfeather Belt|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 937,1 --Bloodfeather Belt (6)
-    .mob Bloodfeather Harpy
-    .mob Bloodfeather Rogue
-    .mob Bloodfeather Sorceress
-    .mob Bloodfeather Fury
-step
-    #label Along83
     .goto 1438/1,2052.36,10855.21
     >>Click the |cRXP_PICK_Strange Fronded Plant|r
     .accept 931 >>Accept The Shimmering Frond
+    .isQuestTurnedIn 918 --any of: Timberling Seeds
 step
     #completewith next
     .zone 1457 >>Travel to Darnassus
@@ -930,8 +1029,14 @@ step
     .goto 1457/1,2534.29,10085.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
     .turnin 922 >>Turn in Rellian Greenspyre
+    .target Rellian Greenspyre
+    .isOnQuest 922
+step
+    .goto 1457/1,2534.29,10085.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
     .accept 923 >>Accept Tumors
     .target Rellian Greenspyre
+    .isQuestTurnedIn 922 --any of: Rellian Greenspyre
 step << NightElf Druid
     .goto 1457/1,2570.38,10186.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denatharion|r
@@ -998,6 +1103,10 @@ step << NightElf Priest
     .target Priestess Alathea
     .isOnQuest 5628
 step
+    #label RBSection1_4
+    #completewith next
+    +|cRXP_WARN_Teldrassil: around Priestess A'moora|r (planned from level 9)
+step
     .goto 1457/1,2518.73,9606.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Dalia Sunblade|r
     .accept 98067 >>Accept Eyes of the Sentinels
@@ -1015,40 +1124,33 @@ step
     .goto 1438/1,1538.61,9712.19
     >>Open the |cRXP_PICK_Chest of the Sky|r. Loot it for |cRXP_LOOT_Sapphire of Sky|r
     .complete 483,3 --Sapphire of Sky (1)
+    .isOnQuest 483
 step
-    #completewith Along98
-    >>As you go: Open the |cRXP_PICK_Chest of Nesting|r. Loot it for |cRXP_LOOT_Rune of Nesting|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 483,4 --Rune of Nesting (1)
-step
-    #label Along98
     .goto 1438/1,1526.39,9741.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oben Rageclaw|r
     .accept 2541 >>Accept The Sleeping Druid
     .target Oben Rageclaw
 step
-    #completewith Along101
+    #completewith Along116
     >>As you go: Kill |cRXP_ENEMY_Gnarlpine Shaman|r and loot |cRXP_LOOT_Shaman Voodoo Charm|r. |cRXP_WARN_Anything left is finished later|r
     .complete 2541,1 --Shaman Voodoo Charm (1)
     .mob Gnarlpine Shaman
 step
-    #completewith Along99
-    >>As you go: Open the |cRXP_PICK_Chest of the Black Feather|r. Loot it for |cRXP_LOOT_Black Feather Quill|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 483,2 --Black Feather Quill (1)
-step
-    #label Along99
     .goto 1438/1,1553.88,9772.60
     >>Open the |cRXP_PICK_Chest of Nesting|r. Loot it for |cRXP_LOOT_Rune of Nesting|r
     .complete 483,4 --Rune of Nesting (1)
+    .isOnQuest 483
 step
     .goto 1438/1,1539.63,9831.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Lynessa Duskblossom|r
     .accept 99053 >>Accept Escaping Ban'ethil
     .target Sentinel Lynessa Duskblossom
 step
-    #label Along101
+    #label Along116
     .goto 1438/1,1490.24,9881.88
     >>Open the |cRXP_PICK_Chest of the Raven Claw|r. Loot it for |cRXP_LOOT_Raven Claw Talisman|r
     .complete 483,1 --Raven Claw Talisman (1)
+    .isOnQuest 483
 step << NightElf Priest
     #completewith next
     .zone 1457 >>Travel to Darnassus
@@ -1066,8 +1168,14 @@ step
     .goto 1438/1,999.40,9902.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Byancie|r
     .turnin 99047 >>Turn in Not Dead Yet
+    .target Byancie
+    .isOnQuest 99047
+step
+    .goto 1438/1,999.40,9902.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Byancie|r
     .accept 99050 >>Accept The Great Tree Provides
     .target Byancie
+    .isQuestTurnedIn 99047 --any of: Not Dead Yet
 step << Hunter
     .goto 1438/1,968.85,9821.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
@@ -1078,18 +1186,30 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r
     .accept 98403 >>Accept Twisted Hatred
     .target Tallonkai Swiftroot
+    .isQuestTurnedIn 932 --any of: Twisted Hatred
 step << NightElf Hunter
     .goto 1438/1,928.63,9812.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
     .turnin 6071 >>Turn in The Hunter's Path
+    .target Dazalar
+    .isOnQuest 6071
+step << NightElf Hunter
+    .goto 1438/1,928.63,9812.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
     .accept 6063 >>Accept Taming the Beast
     .target Dazalar
 step
     .goto 1438/1,956.12,9736.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 7383 >>Turn in Crown of the Earth
+    .target Corithras Moonrage
+    .isOnQuest 7383
+step
+    .goto 1438/1,956.12,9736.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .accept 935 >>Accept Crown of the Earth
     .target Corithras Moonrage
+    .isQuestTurnedIn 7383 --any of: Crown of the Earth
 step
     #loop
     .goto 1438/1,918.95,9285.60,0
@@ -1100,18 +1220,17 @@ step
     .complete 2541,1 --Shaman Voodoo Charm (1)
     .mob Gnarlpine Shaman
 step
-    #completewith Along112
-    >>As you go: Kill |cRXP_ENEMY_Lasher Sproutlings|r, |cRXP_ENEMY_Blooming Lashers|r and |cRXP_ENEMY_Wrathvines|r. Loot them for |cRXP_LOOT_Dewy Lasher Frond|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 99050,1 --Dewy Lasher Frond (6)
-    .mob Lasher Sproutling
-    .mob Blooming Lasher
-    .mob Wrathvine
-step
     .goto 1438/1,713.76,9506.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .turnin 931 >>Turn in The Shimmering Frond
+    .target Denalan
+    .isOnQuest 931
+step
+    .goto 1438/1,713.76,9506.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .turnin 930 >>Turn in The Glowing Fruit
     .target Denalan
+    .isOnQuest 930
 step
     .goto 1438/1,713.76,9506.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
@@ -1131,11 +1250,15 @@ step
     .turnin 941 >>Turn in Planting the Heart
     .isOnQuest 941
 step
-    #label Along112
     .goto 1438/1,719.87,9503.48
     >>Click the |cRXP_PICK_Sprouted Frond|r
     .accept 2399 >>Accept The Sprouted Fronds
+    .isQuestTurnedIn 931 --any of: The Shimmering Frond
+step
+    .goto 1438/1,719.87,9503.48
+    >>Click the |cRXP_PICK_Sprouted Frond|r
     .turnin 2399 >>Turn in The Sprouted Fronds
+    .isOnQuest 2399
 step
     #loop
     .goto 1438/1,717.83,9508.91,0
@@ -1153,6 +1276,7 @@ step
     .mob Lasher Sproutling
     .mob Blooming Lasher
     .mob Wrathvine
+    .isOnQuest 99050
 step
     .xp 10-850 << !Hunter !Druid
     .xp 10 << Hunter
@@ -1164,6 +1288,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy |cRXP_LOOT_Refreshing Spring Water|r from |cRXP_FRIENDLY_Lyrai|r
     .complete 99050,3 --Refreshing Spring Water (1)
     .target Lyrai
+    .isOnQuest 99050
 step
     #loop
     .goto 1438/1,1295.74,10224.65,0
@@ -1179,6 +1304,7 @@ step
     >>Kill |cRXP_ENEMY_Befouled Webwoods|r
     .complete 98403,1 --Befouled Webwood slain (8)
     .mob Befouled Webwood
+    .isOnQuest 98403
 step
     .goto 1438/1,1621.09,10078.38
     >>Escort Lynessa Duskblossom out of Ban'ethil
@@ -1191,6 +1317,11 @@ step
     .goto 1457/1,2632.08,9915.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Aquinne|r
     .turnin 98391 >>Turn in The Sisterhood of Elune
+    .target Sister Aquinne
+    .isOnQuest 98391
+step
+    .goto 1457/1,2632.08,9915.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Aquinne|r
     .accept 2519 >>Accept The Temple of the Moon
     .target Sister Aquinne
 step
@@ -1198,6 +1329,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy |cRXP_LOOT_Empty Vial|r from |cRXP_FRIENDLY_Kyrai|r
     .complete 99050,2 --Empty Vial (1)
     .target Kyrai
+    .isOnQuest 99050
 step
     .goto 1457/1,2569.96,10172.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
@@ -1227,8 +1359,14 @@ step
     .goto 1438/1,999.40,9902.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Byancie|r
     .turnin 99050 >>Turn in The Great Tree Provides
+    .target Byancie
+    .isOnQuest 99050
+step
+    .goto 1438/1,999.40,9902.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Byancie|r
     .accept 99073 >>Accept Easing Suffering
     .target Byancie
+    .isQuestTurnedIn 99050 --any of: The Great Tree Provides
 step << Dwarf Priest
     .goto 1438/1,985.65,9905.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
@@ -1255,6 +1393,7 @@ step
     .goto 1438/1,1589.52,9753.60
     >>Open the |cRXP_PICK_Chest of the Black Feather|r. Loot it for |cRXP_LOOT_Black Feather Quill|r
     .complete 483,2 --Black Feather Quill (1)
+    .isOnQuest 483
 step << Warrior
     #loop
     .goto 1438/1,1258.57,10003.72,0
@@ -1397,6 +1536,7 @@ step
     .mob Timberling Trampler
     .mob Timberling Mire Beast
     .mob Elder Timberling
+    .isOnQuest 923
 step
     #loop
     .goto 1438/1,1676.08,10962.45,0
@@ -1431,38 +1571,59 @@ step
     .mob Bloodfeather Rogue
     .mob Bloodfeather Sorceress
     .mob Bloodfeather Fury
+    .isOnQuest 937
 step
     .goto 1438/1,1863.46,10665.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 937 >>Turn in The Enchanted Glade
+    .target Sentinel Arynia Cloudsbreak
+    .isOnQuest 937
+step
+    .goto 1438/1,1863.46,10665.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .accept 98392 >>Accept Darkness in the Glade
     .target Sentinel Arynia Cloudsbreak
+    .isQuestTurnedIn 937 --any of: The Enchanted Glade
 step
     .goto 1438/1,2029.95,10497.85
     >>Kill |cRXP_ENEMY_Hatescreech|r and loot |cRXP_LOOT_Hatescreech's Amulet|r
     .complete 98392,1 --Hatescreech's Amulet (1)
     .mob Hatescreech
+    .isOnQuest 98392
 step
     .goto 1438/1,2125.17,10605.09
     >>Kill |cRXP_ENEMY_Windmistress Gaedress|r and loot |cRXP_LOOT_Windmistress Gaedress' Amulet|r
     .complete 98392,2 --Windmistress Gaedress' Amulet (1)
     .mob Windmistress Gaedress
+    .isOnQuest 98392
 step
     .goto 1438/1,2072.21,10883.04
     >>Kill |cRXP_ENEMY_Witchmother Arysa|r and loot |cRXP_LOOT_Witchmother Arysa's Amulet|r
     .complete 98392,3 --Witchmother Arysa's Amulet (1)
     .mob Witchmother Arysa
+    .isOnQuest 98392
 step
     .goto 1438/1,1863.46,10665.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 98392 >>Turn in Darkness in the Glade
+    .target Sentinel Arynia Cloudsbreak
+    .isOnQuest 98392
+step
+    .goto 1438/1,1863.46,10665.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .accept 98398 >>Accept The Oracle Tree
     .target Sentinel Arynia Cloudsbreak
+    .isQuestTurnedIn 98392 --any of: Darkness in the Glade
 step
     .goto 1438/1,1931.68,10678.39
     >>Click the |cRXP_PICK_Oracle Tree Bark|r
     .turnin 98398 >>Turn in The Oracle Tree
+    .isOnQuest 98398
+step
+    .goto 1438/1,1931.68,10678.39
+    >>Click the |cRXP_PICK_Oracle Tree Bark|r
     .accept 940 >>Accept Teldrassil
+    .isQuestTurnedIn 98398 --any of: The Oracle Tree
 step << Druid/Priest
     .xp 10-900 >> Grind until you are 900 xp off level 10 (5600/6500)
 step << Hunter
@@ -1499,11 +1660,13 @@ step
     #completewith next
     .zone 1457 >>Travel to Darnassus
     .zoneskip 1457
+    .isOnQuest 940
 step
     .goto 1457/1,2569.96,10172.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
     .turnin 940 >>Turn in Teldrassil
     .target Arch Druid Fandral Staghelm
+    .isOnQuest 940
 step << NightElf Hunter
     .goto 1457/1,2511.01,10177.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
@@ -1519,6 +1682,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Eralya Leafshadow|r
     .turnin 99073 >>Turn in Easing Suffering
     .target Sentinel Eralya Leafshadow
+    .isOnQuest 99073
 step
     #completewith next
     .zone 1457 >>Travel to Darnassus
@@ -1607,8 +1771,14 @@ step
     .goto 1457/1,2569.96,10172.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
     .turnin 935 >>Turn in Crown of the Earth
+    .target Arch Druid Fandral Staghelm
+    .isOnQuest 935
+step
+    .goto 1457/1,2569.96,10172.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
     .accept 98046 >>Accept Crown of the Earth
     .target Arch Druid Fandral Staghelm
+    .isQuestTurnedIn 935 --any of: Crown of the Earth
 step << NightElf Hunter
     .goto 1457/1,2511.01,10177.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
@@ -1652,19 +1822,35 @@ step
     .goto 1457/1,2534.29,10085.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
     .turnin 923 >>Turn in Tumors
+    .target Rellian Greenspyre
+    .isOnQuest 923
+step
+    .goto 1457/1,2534.29,10085.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
     .accept 2498 >>Accept Return to Denalan
     .target Rellian Greenspyre
+    .isQuestTurnedIn 923 --any of: Tumors
 step
     .goto 1457/1,2504.02,9930.97
     >>Place Sentinel Owls at the entrance to the Cenarion Hold depths, the Darnassus Bank, the Craftsman's Terrace Inn, and the City Gate for Sentinel Dalia Sunblade in the Temple of the Moon in Darnassus.
     .complete 98067,2 --Credit
     .target Credit
 step
+    #label RBSection1_5
+    #completewith next
+    +|cRXP_WARN_Teldrassil: around Priestess A'moora|r (planned from level 11)
+step
     .goto 1457/1,2511.33,9612.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lariia|r
     .turnin 98046 >>Turn in Crown of the Earth
+    .target Lariia
+    .isOnQuest 98046
+step
+    .goto 1457/1,2511.33,9612.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lariia|r
     .accept 98065 >>Accept Crown of the Earth
     .target Lariia
+    .isQuestTurnedIn 98046 --any of: Crown of the Earth
 step
     .goto 1457/1,2524.55,9662.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tyrande Whisperwind|r
@@ -1676,22 +1862,36 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Dalia Sunblade|r
     .turnin 98067 >>Turn in Eyes of the Sentinels
     .target Sentinel Dalia Sunblade
+    .isOnQuest 98067
 step
     .goto 1457/1,2550.48,9631.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .turnin 2519 >>Turn in The Temple of the Moon
+    .target Priestess A'moora
+    .isOnQuest 2519
+step
+    .goto 1457/1,2550.48,9631.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .turnin 2518 >>Turn in Tears of the Moon
+    .target Priestess A'moora
+    .isOnQuest 2518
+step
+    .goto 1457/1,2550.48,9631.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .accept 2520 >>Accept Sathrah's Sacrifice
     .target Priestess A'moora
+    .isQuestTurnedIn 2518 --any of: Tears of the Moon
 step
     .goto 1457/1,2523.71,9634.28
     >>Click the |cRXP_PICK_Temple of the Moon Fountain|r
     .complete 2520,1 --Temple of the Moon Fountain
+    .isOnQuest 2520
 step
     .goto 1457/1,2550.48,9631.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .turnin 2520 >>Turn in Sathrah's Sacrifice
     .target Priestess A'moora
+    .isOnQuest 2520
 step << Hunter/Warrior/Priest/Sod Rogue
     .goto 1457/1,2329.19,9908.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
@@ -1710,6 +1910,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tyrande Whisperwind|r
     .turnin 98065 >>Turn in Crown of the Earth
     .target Tyrande Whisperwind
+    .isOnQuest 98065
 step << NightElf Priest
     .goto 1457/1,2520.11,9665.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Alathea|r
@@ -1726,6 +1927,7 @@ step
     >>Kill |cRXP_ENEMY_Xethorr the Wicked|r and loot |cRXP_LOOT_Mature Fel Moss|r
     .complete 98403,2 --Mature Fel Moss (1)
     .mob Xethorr the Wicked
+    .isOnQuest 98403
 step << Dwarf Priest
     .goto 1438/1,985.65,9905.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
@@ -1736,28 +1938,43 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r
     .turnin 98403 >>Turn in Twisted Hatred
     .target Tallonkai Swiftroot
+    .isOnQuest 98403
 step
     .goto 1438/1,965.29,9887.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
     .turnin 483 >>Turn in The Relics of Wakening
+    .target Athridas Bearmantle
+    .isOnQuest 483
+step
+    .goto 1438/1,965.29,9887.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
     .accept 486 >>Accept Ursal the Mauler
     .target Athridas Bearmantle
+    .isQuestTurnedIn 483 --any of: The Relics of Wakening
 step
     .goto 1438/1,713.76,9506.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .turnin 2498 >>Turn in Return to Denalan
+    .target Denalan
+    .isOnQuest 2498
+step
+    .goto 1438/1,713.76,9506.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .accept 2499 >>Accept Oakenscowl
     .target Denalan
+    .isQuestTurnedIn 2498 --any of: Return to Denalan
 step
     .goto 1438/1,1077.30,9281.87
     >>Kill |cRXP_ENEMY_Oakenscowl|r and loot |cRXP_LOOT_Gargantuan Tumor|r
     .complete 2499,1 --Gargantuan Tumor (1)
     .mob Oakenscowl
+    .isOnQuest 2499
 step
     .goto 1438/1,1837.49,9122.70
     >>Kill |cRXP_ENEMY_Ursal the Mauler|r
     .complete 486,1 --Ursal the Mauler slain (1)
     .mob Ursal the Mauler
+    .isOnQuest 486
 step
     #completewith next
     .hs >>Hearth to Innkeeper Keldamyr's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -1767,6 +1984,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
     .turnin 486 >>Turn in Ursal the Mauler
     .target Athridas Bearmantle
+    .isOnQuest 486
 step
     .goto 1438/1,985.14,9898.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r
@@ -1778,10 +1996,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .turnin 2499 >>Turn in Oakenscowl
     .target Denalan
+    .isOnQuest 2499
 step << NightElf
     .goto 1438/1,950.01,8694.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
     .turnin 6344 >>Turn in Nessa Shadowsong
+    .target Nessa Shadowsong
+    .isOnQuest 6344
+step << NightElf
+    .goto 1438/1,950.01,8694.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
     .accept 6341 >>Accept The Bounty of Teldrassil
     .target Nessa Shadowsong
 step << NightElf
@@ -1804,7 +2028,13 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Ferocitas the Dream Eater
     >>|cRXP_FRIENDLY_Darkshore and back here|r: The Shade of Elura << Warrior
 step
+    +|cRXP_WARN_Until level 15, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 2.8 levels of quests, starting around Thundris Windweaver; 1 quest from here hands in there), |cRXP_FRIENDLY_Zephras Isle|r (about 1.6 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Westfall|r (about 1.4 levels of quests, starting around Farmer Saldean). Then come back to this Teldrassil guide --RouteBuilder:next
+step
     .xp 15 >>|cRXP_WARN_The rest of Teldrassil is planned from level 15.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Teldrassil: part 2|r (planned from level 15)
 step << NightElf Druid/Skyborne Druid
     #completewith next
     .zone 1457 >>Travel to Darnassus
@@ -1882,4 +2112,6 @@ step
     +|cRXP_WARN_End of the Teldrassil route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Darkshore|r: Trouble In Darkshore?
     >>|cRXP_FRIENDLY_Moonglade|r: Lessons Anew << NightElf Druid/Skyborne Druid
+step
+    +|cRXP_WARN_Suggested next zones at level 15|r: |cRXP_FRIENDLY_Darkshore|r (about 2.2 levels of quests, starting around Thundris Windweaver; 2 quests from here hand in there), |cRXP_FRIENDLY_Zephras Isle|r (about 1.0 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.6 levels of quests, starting around Daryl the Youngling). Completing this step loads the guide for Darkshore --RouteBuilder:next
 ]])

@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 35, 38, 41).
+-- Sections (the guide starts at the one for your level): around Prospector Ryedol from 35; part 2 from 38; part 3 from 41.
 -- Edit zones/Badlands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 35-45 Badlands
 
+step
+    .xp <38,1,RBSection1_1
+    .xp 38 >>Finding the place in this guide for your level
+step
+    .xp <41,1,RBSection2_1
+    .xp 41 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Badlands: around Prospector Ryedol|r (planned from level 35)
 step
     .goto 1418/0,-3407.99,-6609.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ryedol|r
@@ -271,6 +284,10 @@ step
 step
     .xp 38 >>|cRXP_WARN_The rest of Badlands is planned from level 38.|r Come back to this guide then
 step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Badlands: part 2|r (planned from level 38)
+step
     .goto 1418/0,-2724.67,-6633.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotwil Veriatus|r
     .accept 710 >>Accept Study of the Elements: Rock
@@ -374,19 +391,34 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hammertoe Grez|r
     .accept 722 >>Accept Amulet of Secrets
     .target Hammertoe Grez
+    .isQuestTurnedIn 721 --any of: A Sign of Hope
+step
+    #completewith Along13
+    >>As you go: Open the |cRXP_PICK_Ancient Chest|r. Loot it for |cRXP_LOOT_Tablet of Ryun'eh|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 709,1 --Tablet of Ryun'eh (1)
+step
+    #label Along13
+    .goto 1418/0,-3049.04,-6216.77
+    >>Kill |cRXP_ENEMY_Magregan Deepshadow|r and loot |cRXP_LOOT_Hammertoe's Amulet|r
+    .complete 722,1 --Hammertoe's Amulet (1)
+    .mob Magregan Deepshadow
+    .isOnQuest 722
 step
     .goto 1418/0,-3057.75,-6201.68
-    >>Kill |cRXP_ENEMY_Magregan Deepshadow|r and loot |cRXP_LOOT_Hammertoe's Amulet|r
     >>Open the |cRXP_PICK_Ancient Chest|r. Loot it for |cRXP_LOOT_Tablet of Ryun'eh|r
-    .complete 722,1 --Hammertoe's Amulet (1)
     .complete 709,1 --Tablet of Ryun'eh (1)
-    .mob Magregan Deepshadow
 step
     .goto 1418/0,-3021.93,-6065.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hammertoe Grez|r
     .turnin 722 >>Turn in Amulet of Secrets
+    .target Hammertoe Grez
+    .isOnQuest 722
+step
+    .goto 1418/0,-3021.93,-6065.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hammertoe Grez|r
     .accept 723 >>Accept Prospect of Faith
     .target Hammertoe Grez
+    .isQuestTurnedIn 722 --any of: Amulet of Secrets
 step
     .goto 1418/0,-3357.49,-7164.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theldurin the Lost|r
@@ -397,19 +429,32 @@ step
     .goto 1418/0,-3407.99,-6609.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ryedol|r
     .turnin 723 >>Turn in Prospect of Faith
+    .target Prospector Ryedol
+    .isOnQuest 723
+step
+    .goto 1418/0,-3407.99,-6609.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ryedol|r
     .accept 724 >>Accept Prospect of Faith
     .target Prospector Ryedol
+    .isQuestTurnedIn 723 --any of: Prospect of Faith
 step
     +|cRXP_WARN_That is all of Badlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ironforge|r: Prospect of Faith, To Ironforge for Yagyin's Digest
     >>|cRXP_FRIENDLY_Thousand Needles|r: News for Fizzle
 step
+    +|cRXP_WARN_Until level 41, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Sir S. J. Erlgadin). Then come back to this Badlands guide --RouteBuilder:next
+step
     .xp 41 >>|cRXP_WARN_The rest of Badlands is planned from level 41.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Badlands: part 3|r (planned from level 41)
 step
     .goto 1418/0,-3619.92,-6789.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garek|r
     .accept 732 >>Accept Tremors of the Earth
     .target Garek
+    .isQuestTurnedIn 718 --any of: Mirages
 step
     .goto 1418/0,-3345.06,-6924.38
     >>Click the |cRXP_PICK_Battered Dwarven Skeleton|r
@@ -443,6 +488,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotwil Veriatus|r
     .accept 712 >>Accept Study of the Elements: Rock
     .target Lotwil Veriatus
+    .isQuestTurnedIn 711 --any of: Study of the Elements: Rock
 step
     #loop
     .goto 1418/0,-2244.59,-7114.26,0
@@ -458,21 +504,25 @@ step
     >>Kill |cRXP_ENEMY_Greater Rock Elementals|r. Loot them for |cRXP_LOOT_Bracers of Rock Binding|r
     .complete 712,1 --Bracers of Rock Binding (5)
     .mob Greater Rock Elemental
+    .isOnQuest 712
 step
     .goto 1418/0,-2724.67,-6633.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotwil Veriatus|r
     .turnin 712 >>Turn in Study of the Elements: Rock
     .target Lotwil Veriatus
+    .isOnQuest 712
 step
     .goto 1418/0,-2393.09,-7141.46
     >>Kill |cRXP_ENEMY_Boss Tho'grun|r and loot |cRXP_LOOT_Sign of the Earth|r
     .complete 732,1 --Sign of the Earth (1)
     .mob Boss Tho'grun
+    .isOnQuest 732
 step
     .goto 1418/0,-3619.92,-6789.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garek|r
     .turnin 732 >>Turn in Tremors of the Earth
     .target Garek
+    .isOnQuest 732
 step
     .goto 1418/0,-3417.44,-6607.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sigrun Ironhew|r
@@ -573,6 +623,7 @@ step
     .target Lotwil Veriatus
     .isQuestTurnedIn 714 --Gyro... What?
     .xp <35,1
+    .isQuestTurnedIn 712 --Study of the Elements: Rock
 step
     .goto 1418/0,-2721.44,-6623.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucien Tosselwrench|r
@@ -591,6 +642,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucien Tosselwrench|r
     .accept 716 >>Accept Stone Is Better than Cloth
     .target Lucien Tosselwrench
+    .isQuestTurnedIn 712 --any of: Study of the Elements: Rock
 step
     .goto 1418/0,-2721.44,-6623.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucien Tosselwrench|r

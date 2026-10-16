@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 8 parts with a level check between them (from level 14, 17, 20, 25, 28, 31, 51, 54).
+-- Sections (the guide starts at the one for your level): start from 14; part 2 from 17; part 3 from 20; part 4 from 25; part 5 from 28; part 6 from 31; part 7 from 51; part 8 from 54.
 -- Edit zones/Alterac Mountains.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -14,6 +15,33 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #name 14-60 Alterac Mountains
 
+step
+    .xp <17,1,RBSection1_1
+    .xp 17 >>Finding the place in this guide for your level
+step
+    .xp <20,1,RBSection2_1
+    .xp 20 >>Finding the place in this guide for your level
+step
+    .xp <25,1,RBSection3_1
+    .xp 25 >>Finding the place in this guide for your level
+step
+    .xp <28,1,RBSection4_1
+    .xp 28 >>Finding the place in this guide for your level
+step
+    .xp <31,1,RBSection5_1
+    .xp 31 >>Finding the place in this guide for your level
+step
+    .xp <51,1,RBSection6_1
+    .xp 51 >>Finding the place in this guide for your level
+step
+    .xp <54,1,RBSection7_1
+    .xp 54 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection8_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Alterac Mountains: start|r (planned from level 14)
 step
     .goto 1416/0,437.25,448.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denaaris Stargale|r
@@ -81,7 +109,13 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: Welcome to Azeroth << Skyborne
     >>|cRXP_FRIENDLY_another zone|r: A Donation of Wool
 step << NightElf Druid/Skyborne Druid
+    +|cRXP_WARN_Until level 17, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 1.9 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.1 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.9 levels of quests, starting around Daryl the Youngling). Then come back to this Alterac Mountains guide --RouteBuilder:next
+step << NightElf Druid/Skyborne Druid
     .xp 17 >>|cRXP_WARN_The rest of Alterac Mountains is planned from level 17.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Alterac Mountains: part 2|r (planned from level 17)
 step << NightElf Druid/Skyborne Druid
     .goto 1416/0,453.21,443.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alfina Nightgaze|r
@@ -91,7 +125,13 @@ step
     +|cRXP_WARN_That is all of Alterac Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Moonglade|r: Lessons Anew << NightElf Druid/Skyborne Druid
 step
+    +|cRXP_WARN_Until level 20, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 0.9 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.6 levels of quests, starting around Daryl the Youngling). Then come back to this Alterac Mountains guide --RouteBuilder:next
+step
     .xp 20 >>|cRXP_WARN_The rest of Alterac Mountains is planned from level 20.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Alterac Mountains: part 3|r (planned from level 20)
 step
     .goto 1416/0,-1470.67,250.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
@@ -101,7 +141,13 @@ step
     +|cRXP_WARN_That is all of Alterac Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Duskwood|r: Ira's Dagger
 step << Rogue
+    +|cRXP_WARN_Until level 25, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 1.0 levels of quests, starting around Karl Boran), |cRXP_FRIENDLY_Darkshore|r (about 0.7 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Duskwood|r (about 0.5 levels of quests, starting around Madame Eva). Then come back to this Alterac Mountains guide --RouteBuilder:next
+step << Rogue
     .xp 25 >>|cRXP_WARN_The rest of Alterac Mountains is planned from level 25.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Alterac Mountains: part 4|r (planned from level 25)
 step << Rogue
     .goto 1416/0,-1594.71,-0.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myrokos Silentform|r
@@ -129,6 +175,10 @@ step
 step
     .xp 28 >>|cRXP_WARN_The rest of Alterac Mountains is planned from level 28.|r Come back to this guide then
 step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_Alterac Mountains: part 5|r (planned from level 28)
+step
     .goto 1416/0,-849.63,232.16
     >>Click the |cRXP_PICK_Syndicate Documents|r
     .accept 510 >>Accept Foreboding Plans
@@ -148,7 +198,13 @@ step
     +|cRXP_WARN_That is all of Alterac Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: Foreboding Plans
 step
+    +|cRXP_WARN_Until level 31, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.6 levels of quests, starting around Glorin Steelbrow). Then come back to this Alterac Mountains guide --RouteBuilder:next
+step
     .xp 31 >>|cRXP_WARN_The rest of Alterac Mountains is planned from level 31.|r Come back to this guide then
+step
+    #label RBSection6_1
+    #completewith next
+    +|cRXP_WARN_Alterac Mountains: part 6|r (planned from level 31)
 step
     .goto 1416/0,-1428.95,928.24
     .fp Chillwind Camp >> Get the Chillwind Camp flight path
@@ -194,6 +250,10 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Darkspear Islands Clash, Darkspear Islands Clash
 step << Rogue
     .xp 51 >>|cRXP_WARN_The rest of Alterac Mountains is planned from level 51.|r Come back to this guide then
+step
+    #label RBSection7_1
+    #completewith next
+    +|cRXP_WARN_Alterac Mountains: part 7|r (planned from level 51)
 step << Rogue
     .goto 1416/0,-1625.23,27.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
@@ -295,6 +355,10 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Ansirem's Key
 step
     .xp 54 >>|cRXP_WARN_The rest of Alterac Mountains is planned from level 54.|r Come back to this guide then
+step
+    #label RBSection8_1
+    #completewith next
+    +|cRXP_WARN_Alterac Mountains: part 8|r (planned from level 54)
 step
     .goto 1416/0,-316.79,-36.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alliance Brigadier General|r

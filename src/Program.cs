@@ -33,6 +33,12 @@ public static class Program
               --order-from <guide>   keep the step order of a guide built earlier (for guides made before locks/)
               --effort <x>           search effort from 0.01 to 100: 1 = normal, 0.2 = quick look, 3 = slow and thorough
 
+          RouteBuilder link [--out <folder>]
+              Suggests where to go next. Each build saves a summary next to its guide (.meta.json); this reads
+              them all and writes into every guide the zones that suit its end level best (and those for each
+              "come back at level N" break), with "#next" so RestedXP loads the best one when the guide ends.
+              Run it after building; build again and the suggestions are taken out until you link again.
+
         Numbers the router's judgement rests on can be changed in settings.json (see README).
         """;
 
@@ -62,6 +68,7 @@ public static class Program
                     return 0;
                 case "zones": return Zones(GameData.Load(data), Faction(opt));
                 case "build": return Build(data, opt);
+                case "link": return Linker.Run(opt.GetValueOrDefault("out", "guides"));
                 default: Console.Error.WriteLine($"Unknown command '{argv[0]}'.\n"); Console.WriteLine(Help); return 2;
             }
         }
@@ -163,7 +170,7 @@ public static class Program
         if (bo.OrderFrom != null) Console.WriteLine($"  keeping the step order of {bo.OrderFrom}");
         else if (lk != null) Console.WriteLine($"  keeping the step order saved in {lockPath} (--fresh plans from scratch)");
         var visit = new Visit(); var visits = new List<(ZoneModel m, RouteResult r, GuideOutput g, Verifier v)>();
-        bool debug = Environment.GetEnvironmentVariable("ROUTEBUILDER_DEBUG") == "1"; int bumps = 0;
+        bool debug = Environment.GetEnvironmentVariable("ROUTEBUILDER_DEBUG") == "1"; int bumps = 0; string onlyFor = "";
         while (true)
         {
             var model = new ZoneModel(data, area, cfg, bo, visit);
@@ -186,7 +193,8 @@ public static class Program
             {
                 // when everything left is for particular classes, only they need to be told to come back
                 var tags = model.Quests.Values.Where(q => !q.Cond).Select(q => q.Tag).Distinct().ToList();
-                if (!tags.Contains("")) visits[^1].g.Lines[visits[^1].g.GateLine] = "step << " + string.Join("/", tags.SelectMany(t => t.Split('/')).Distinct());
+                if (!tags.Contains("")) visits[^1].g.Lines[visits[^1].g.GateLine] = "step << " + (onlyFor = string.Join("/", tags.SelectMany(t => t.Split('/')).Distinct()));
+                else onlyFor = "";
             }
             Console.WriteLine($"  {(visit.Number > 1 ? $"part {visit.Number}" : "planned")} from level {model.StartLevel:0}: {model.Quests.Count} quests, {model.Tasks.Count} tasks; quest levels {model.LevelLo}-{model.LevelHi}" +
                               (visit.Number == 1 ? $"; {model.Excluded.Count} left out" : "") + (model.Later.Count > 0 ? $"; {model.Later.Count} need a higher level" : ""));
@@ -199,6 +207,7 @@ public static class Program
             bool more = firmLater.Count > 0 && visit.Number < Tuning.MaxVisits && !(visit.Only != null && visit.Only.SetEquals(model.Later.Keys));
             int nextStart = more ? (int)Math.Min(Game.MaxLevel, Math.Max(Math.Floor(main.EndLevel) + Tuning.VisitGap, Math.Ceiling(firmLater.Min(v => v.Need)))) : 0;
             var guide = new Emitter(model, route).Write(more ? nextStart : null);
+            guide.OnlyFor = visit.Number > 1 ? onlyFor : "";     // a part only some characters have quests in is a guide only they see
             var check = new Verifier(); check.Run(model, guide);
             visits.Add((model, route, guide, check));
             Console.WriteLine($"    {guide.Steps} steps, {Math.Round(main.Travel):N0} yd on foot for the shared route, ends about level {main.EndLevel:0.0}, quest log peak {check.LogPeak}/40" +
@@ -231,6 +240,7 @@ public static class Program
         string text = Emitter.FileText(visits.Select(v => (v.m, v.g)).ToList());
         string path = Path.Combine(outDir, visits[0].g.FileName);
         File.WriteAllText(path, text);
+        GuideMeta.From(data, visits.Select(v => (v.m, v.g)).ToList()).Save(GuideMeta.PathFor(path));
         var reports = visits.Select((v, i) => Report.Write(v.m, v.r, v.g, v.v, path, zoneFile, i == visits.Count - 1, visits.Count));
         File.WriteAllText(Path.ChangeExtension(path, ".report.txt"), string.Join("\n\n" + new string('=', 100) + "\n\n", reports));
         RouteLock.Save(lockPath, visits[0].g.Name, visits.Select((v, i) => (i + 1, v.m, v.r, v.g)), lk?.RestedXpLevels == true ? "RestedXP" : null);

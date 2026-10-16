@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 47, 50, 56).
+-- Sections (the guide starts at the one for your level): start from 47; around Jediga from 50; part 3 from 56.
 -- Edit zones/Azshara.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 47-57 Azshara
 
+step
+    .xp <50,1,RBSection1_1
+    .xp 50 >>Finding the place in this guide for your level
+step
+    .xp <56,1,RBSection2_1
+    .xp 56 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Azshara: start|r (planned from level 47)
 step
     .goto 1447/1,-3853.64,2698.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loh'atu|r
@@ -144,6 +157,10 @@ step << Priest
     .isOnQuest 8254
 step
     .xp 50 >>|cRXP_WARN_The rest of Azshara is planned from level 50.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Azshara: around Jediga|r (planned from level 50)
 step
     .goto 1447/1,-4405.85,3601.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ag'tor Bloodfist|r
@@ -366,6 +383,10 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Destroy Morphaz << Mage
 step
     .xp 56 >>|cRXP_WARN_The rest of Azshara is planned from level 56.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Azshara: part 3|r (planned from level 56)
 step
     .goto 1447/1,-7297.24,2849.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Hydraxis|r

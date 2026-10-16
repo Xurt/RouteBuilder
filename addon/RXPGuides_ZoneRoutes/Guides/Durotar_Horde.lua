@@ -2,6 +2,7 @@
 -- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
+-- Sections (the guide starts at the one for your level): around Gornek from 1; around Orgnil Soulscar from 4; around Orgnil Soulscar from 6; around Orgnil Soulscar from 9; around Orgnil Soulscar from 11.
 -- Edit zones/Durotar.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -12,7 +13,26 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group Zone Routes (Horde)
 #name 1-13 Durotar
+#next Zone Routes (Horde)\8-29 The Barrens;Zone Routes (Horde)\1-13 Zephras Isle;Zone Routes (Horde)\10-24 Silverpine Forest
 
+step
+    .xp <4,1,RBSection1_1
+    .xp 4 >>Finding the place in this guide for your level
+step
+    .xp <6,1,RBSection1_2
+    .xp 6 >>Finding the place in this guide for your level
+step
+    .xp <9,1,RBSection1_3
+    .xp 9 >>Finding the place in this guide for your level
+step
+    .xp <11,1,RBSection1_4
+    .xp 11 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection1_5
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Durotar: around Gornek|r (planned from level 1)
 step << Warrior/Shaman/Warlock/Mage/Priest
     #completewith next
     +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock
@@ -591,6 +611,10 @@ step
     .xp 5+1300 >> Grind to 1300+/2800xp << !Shaman
     .xp 5+310 >> Grind to 310+/2800xp << Shaman
 step
+    #label RBSection1_2
+    #completewith next
+    +|cRXP_WARN_Durotar: around Orgnil Soulscar|r (planned from level 4)
+step
     .goto 1411/1,-4664.94,311.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
     .accept 96825 >>Accept This Fruit Could Bite Back
@@ -613,6 +637,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Thazz'ril|r
     .turnin 6394 >>Turn in Thazz'ril's Pick
     .target Foreman Thazz'ril
+    .isOnQuest 6394
 step
     .goto 1411/1,-4214.45,-565.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
@@ -631,18 +656,31 @@ step << Shaman
     .goto 1411/1,-4204.40,-629.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Canaga Earthcaller|r
     .turnin 1516 >>Turn in Call of Earth
+    .target Canaga Earthcaller
+    .isOnQuest 1516
+step << Shaman
+    .goto 1411/1,-4204.40,-629.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Canaga Earthcaller|r
     .accept 1517 >>Accept Call of Earth
     .target Canaga Earthcaller
+    .isQuestTurnedIn 1516,1519 --any of: Call of Earth, Call of Earth
 step
     .goto 1411/1,-4228.19,-629.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha Fargaze|r
     .turnin 794 >>Turn in Burning Blade Medallion
+    .target Zureetha Fargaze
+    .isOnQuest 794
+step
+    .goto 1411/1,-4228.19,-629.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha Fargaze|r
     .accept 805 >>Accept Report to Sen'jin Village
     .target Zureetha Fargaze
+    .isQuestTurnedIn 794 --any of: Burning Blade Medallion
 step
     .goto 1411/1,-4225.02,-628.15
     >>Click the |cRXP_PICK_Lost Journal|r
     .accept 96652 >>Accept The Adventurer
+    .isQuestTurnedIn 794 --any of: Burning Blade Medallion
 step << Troll Priest
     .goto 1411/1,-4202.28,-617.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
@@ -666,13 +704,20 @@ step << Shaman
     .goto 1411/1,-4290.59,-877.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth|r
     .turnin 1517 >>Turn in Call of Earth
+    .target Minor Manifestation of Earth
+    .isOnQuest 1517
+step << Shaman
+    .goto 1411/1,-4290.59,-877.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth|r
     .accept 1518 >>Accept Call of Earth
     .target Minor Manifestation of Earth
+    .isQuestTurnedIn 1517 --any of: Call of Earth
 step << Shaman
     .goto 1411/1,-4204.40,-629.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Canaga Earthcaller|r
     .turnin 1518 >>Turn in Call of Earth
     .target Canaga Earthcaller
+    .isOnQuest 1518
 step << Shaman
     .goto 1411/1,-4203.87,-623.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r
@@ -776,16 +821,22 @@ step
     .accept 96821 >>Accept Legging It
     .target Vel'rin Fang
 step
+    .goto 1411/1,-4920.33,-813.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Vornal|r
+    .accept 818 >>Accept A Solvent Spirit
+    .target Master Vornal
+step
     .goto 1411/1,-4920.86,-825.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Gadrin|r
     .turnin 805 >>Turn in Report to Sen'jin Village
     .target Master Gadrin
+    .isOnQuest 805
 step
     .goto 1411/1,-4920.33,-813.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Vornal|r
-    .accept 818 >>Accept A Solvent Spirit
     .accept 97225 >>Accept Forgotten Loa Idols
     .target Master Vornal
+    .isQuestTurnedIn 805 --Report to Sen'jin Village
 step
     .goto 1411/1,-4920.86,-825.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Gadrin|r
@@ -900,6 +951,11 @@ step
     .goto 1411/1,-4714.64,140.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
     .turnin 96652 >>Turn in The Adventurer
+    .target Brakk
+    .isOnQuest 96652
+step
+    .goto 1411/1,-4714.64,140.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
     .accept 96604 >>Accept The Great Outdoors
     .target Brakk
 step
@@ -914,11 +970,15 @@ step
     .accept 96655 >>Accept Camping 101: Cooking
     .target Brakk
 step
-    .goto 1411/1,-4724.69,287.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
-    .turnin 823 >>Turn in Report to Orgnil
-    .accept 806 >>Accept Dark Storms
-    .target Orgnil Soulscar
+    #label RBSection1_3
+    #completewith next
+    +|cRXP_WARN_Durotar: around Orgnil Soulscar|r (planned from level 6)
+step
+    .goto 1411/1,-4709.36,274.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
+    .turnin 96821 >>Turn in Legging It
+    .target Gar'Thok
+    .isOnQuest 96821
 step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
@@ -926,9 +986,20 @@ step
     .isQuestComplete 2161
     .target Innkeeper Grosk
 step
+    .goto 1411/1,-4724.69,287.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
+    .turnin 823 >>Turn in Report to Orgnil
+    .target Orgnil Soulscar
+    .isOnQuest 823
+step
+    .goto 1411/1,-4724.69,287.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
+    .accept 806 >>Accept Dark Storms
+    .target Orgnil Soulscar
+    .isQuestTurnedIn 823 --any of: Report to Orgnil
+step
     .goto 1411/1,-4709.36,274.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 96821 >>Turn in Legging It
     .accept 784 >>Accept Vanquish the Betrayers
     .accept 837 >>Accept Encroachment
     .target Gar'Thok
@@ -943,12 +1014,24 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
     .complete 96655,1 --Cook Torka
     .target Cook Torka
+    .isOnQuest 96655
+step
+    .goto 1411/1,-4664.94,311.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
+    .turnin 96655 >>Turn in Camping 101: Cooking while you are here
+    .isQuestComplete 96655
+    .target Cook Torka
+step
+    .goto 1411/1,-4664.94,311.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
+    .accept 815 >>Accept Break a Few Eggs
+    .target Cook Torka
 step
     .goto 1411/1,-4664.94,311.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
     .turnin 96655 >>Turn in Camping 101: Cooking
-    .accept 815 >>Accept Break a Few Eggs
     .target Cook Torka
+    .isOnQuest 96655
 step
     .goto 1411/1,-4663.88,310.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r
@@ -971,38 +1054,45 @@ step << Warrior/Rogue
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
 step
-    #completewith Along66
-    >>As you go: Kill |cRXP_ENEMY_Kul Tiras Sailors|r. Kill |cRXP_ENEMY_Kolkar Drudges|r, |cRXP_ENEMY_Kolkar Outrunners|r, |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for |cRXP_LOOT_Canvas Scraps|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 784,1 --Kul Tiras Sailor slain (10)
+    #completewith Along76
+    >>As you go: Kill |cRXP_ENEMY_Kolkar Drudges|r, |cRXP_ENEMY_Kolkar Outrunners|r, |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for |cRXP_LOOT_Canvas Scraps|r. |cRXP_WARN_Anything left is finished later|r
     .complete 791,1 --Canvas Scraps (8)
-    .mob Kul Tiras Sailor
     .mob Kolkar Drudge
     .mob Kolkar Outrunner
+    .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
 step
-    #completewith Along65
+    #completewith Along75
     >>As you go: Kill |cRXP_ENEMY_Kul Tiras Marines|r. |cRXP_WARN_Anything left is finished later|r
     .complete 784,2 --Kul Tiras Marine slain (8)
     .mob Kul Tiras Marine
 step
-    #label Along65
-    #loop
-    .goto 1411/1,-4995.94,-180.82,0
-    .goto 1411/1,-4995.94,-180.82,40,0
-    .goto 1411/1,-5102.75,-180.12,40,0
-    .goto 1411/1,-5120.19,-245.68,40,0
+    .goto 1411/1,-5102.75,-180.12
     >>Pick up |cRXP_PICK_Raider's Bow|r from the ground
-    >>Pick up |cRXP_PICK_Raider's Battleaxe|r from the ground
-    >>Kill |cRXP_ENEMY_Lieutenant Benedict|r
     .complete 96822,1 --Raider's Bow (1)
+    .isOnQuest 96822
+step
+    #completewith Along76
+    >>As you go: Kill |cRXP_ENEMY_Kul Tiras Sailors|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 784,1 --Kul Tiras Sailor slain (10)
+    .mob Kul Tiras Sailor
+step
+    .goto 1411/1,-4995.94,-180.82
+    >>Pick up |cRXP_PICK_Raider's Battleaxe|r from the ground
     .complete 96822,2 --Raider's Battleaxe (1)
+    .isOnQuest 96822
+step
+    #label Along75
+    .goto 1411/1,-5120.19,-245.68
+    >>Kill |cRXP_ENEMY_Lieutenant Benedict|r
     .complete 784,3 --Lieutenant Benedict slain (1)
     .mob Lieutenant Benedict
 step
-    #label Along66
+    #label Along76
     .goto 1411/1,-4952.05,-59.92
     >>Pick up |cRXP_PICK_Raider's Shield|r from the ground
     .complete 96822,3 --Raider's Shield (1)
+    .isOnQuest 96822
 step
     #loop
     .goto 1411/1,-5003.34,-141.34,0
@@ -1102,9 +1192,14 @@ step << Hunter
 step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
-    .turnin 2161 >>Turn in A Peon's Burden
     .target Innkeeper Grosk
     .home >>Set your Hearthstone to Innkeeper Grosk's inn
+step
+    .goto 1411/1,-4686.09,340.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
+    .turnin 2161 >>Turn in A Peon's Burden
+    .target Innkeeper Grosk
+    .isOnQuest 2161
 step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
@@ -1136,6 +1231,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turroc|r
     .turnin 96822 >>Turn in For Honor
     .target Turroc
+    .isOnQuest 96822
 step << Warrior
     .goto 1411/1,-4827.27,311.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
@@ -1173,6 +1269,11 @@ step << Troll Priest
     .goto 1411/1,-4831.50,295.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >>Turn in In Favor of Spirituality
+    .target Tai'jin
+    .isOnQuest 5649
+step << Troll Priest
+    .goto 1411/1,-4831.50,295.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
     .accept 5648 >>Accept Garments of Spirituality
     .target Tai'jin
 step << Priest
@@ -1202,15 +1303,6 @@ step << Rogue/Warrior
     .money <0.01
     .target Rawrk
 step
-    #completewith Along76
-    >>As you go: Kill |cRXP_ENEMY_Makrura Clackers|r, |cRXP_ENEMY_Makrura Shellhides|r, |cRXP_ENEMY_Makrura Snapclaws|r and |cRXP_ENEMY_Makrura Elders|r. Loot them for |cRXP_LOOT_Intact Makrura Eye|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 818,1 --Intact Makrura Eye (4)
-    .mob Makrura Clacker
-    .mob Makrura Shellhide
-    .mob Makrura Snapclaw
-    .mob Makrura Elder
-step
-    #label Along76
     #loop
     .goto 1411/1,-5308.96,-211.84,0
     .goto 1411/1,-5308.96,-211.84,40,0
@@ -1220,61 +1312,102 @@ step
     >>Loot the |cRXP_PICK_Gnomish Toolboxes|r for |cRXP_LOOT_Gnomish Tools|r
     .complete 825,1 --Gnomish Tools (3)
 step
-    #completewith Along77
-    >>As you go: Kill |cRXP_ENEMY_Durotar Tigers|r and |cRXP_ENEMY_Shal'mas|r. Loot them for |cRXP_LOOT_Durotar Tiger Fur|r. Loot the |cRXP_PICK_Taillasher Eggs|r for |cRXP_LOOT_Taillasher Egg|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 817,1 --Durotar Tiger Fur (4)
+    #completewith Along89
+    >>As you go: Loot the |cRXP_PICK_Taillasher Eggs|r for |cRXP_LOOT_Taillasher Egg|r. |cRXP_WARN_Anything left is finished later|r
     .complete 815,1 --Taillasher Egg (3)
-    .mob Durotar Tiger
-    .mob Shal'ma
 step
-    #label Along77
+    #label Along89
     .goto 1411/1,-5600.83,-721.91
     >>Kill |cRXP_ENEMY_Bloodtalon Matriarch|r and loot |cRXP_LOOT_Bloodtalon Martriarch Eggs|r
     .complete 97223,1 --Bloodtalon Martriarch Eggs (1)
     .mob Bloodtalon Matriarch
+    .isOnQuest 97223
 step
-    #loop
-    .goto 1411/1,-5547.42,-1061.02,0
-    .goto 1411/1,-5547.42,-1061.02,40,0
-    .goto 1411/1,-5485.56,-1118.83,40,0
-    .goto 1411/1,-5404.66,-1089.22,40,0
-    .goto 1411/1,-5394.09,-1198.49,40,0
-    .goto 1411/1,-5409.95,-1290.14,40,0
-    .goto 1411/1,-5520.46,-1317.64,40,0
-    .goto 1411/1,-5582.32,-1251.01,40,0
-    .goto 1411/1,-5616.16,-1180.87,40,0
-    .goto 1411/1,-5512.53,-1187.56,40,0
+    .goto 1411/1,-5529.98,-1287.32
     >>Open the |cRXP_PICK_Imprisoned Darkspear|r. Loot it for |cRXP_LOOT_Minshina's Skull|r
-    >>Kill |cRXP_ENEMY_Zalazane|r and loot |cRXP_LOOT_Zalazane's Head|r
-    >>Kill |cRXP_ENEMY_Hexed Trolls|r
-    >>Kill |cRXP_ENEMY_Voodoo Trolls|r
-    >>Pick up |cRXP_PICK_Forgotten Loa Idol|r from the ground
     .complete 808,1 --Minshina's Skull (1)
+    .isOnQuest 808
+step
+    .goto 1411/1,-5534.21,-1286.97
+    >>Kill |cRXP_ENEMY_Zalazane|r and loot |cRXP_LOOT_Zalazane's Head|r
     .complete 826,3 --Zalazane's Head (1)
-    .complete 826,1 --Hexed Troll slain (8)
-    .complete 826,2 --Voodoo Troll slain (8)
-    .complete 97225,1 --Forgotten Loa Idol (8)
     .mob Zalazane
-    .mob Hexed Troll
-    .mob Voodoo Troll
+    .isOnQuest 826
 step
     #loop
-    .goto 1411/1,-5336.45,-1141.39,0
-    .goto 1411/1,-5336.45,-1141.39,40,0
+    .goto 1411/1,-5520.46,-1317.64,0
+    .goto 1411/1,-5520.46,-1317.64,40,0
+    .goto 1411/1,-5480.27,-1248.90,40,0
+    .goto 1411/1,-5446.43,-1153.02,40,0
+    .goto 1411/1,-5485.56,-1118.83,40,0
+    .goto 1411/1,-5542.14,-1141.03,40,0
+    .goto 1411/1,-5597.66,-1138.21,40,0
+    .goto 1411/1,-5512.53,-1187.56,40,0
+    .goto 1411/1,-5552.71,-1220.35,40,0
+    .goto 1411/1,-5582.32,-1251.01,40,0
+    >>Kill |cRXP_ENEMY_Hexed Trolls|r
+    .complete 826,1 --Hexed Troll slain (8)
+    .mob Hexed Troll
+    .isOnQuest 826
+step
+    #loop
+    .goto 1411/1,-5508.83,-1252.07,0
+    .goto 1411/1,-5508.83,-1252.07,40,0
+    .goto 1411/1,-5448.02,-1247.84,40,0
+    .goto 1411/1,-5508.83,-1285.21,40,0
+    .goto 1411/1,-5534.73,-1253.48,40,0
+    .goto 1411/1,-5588.67,-1165.36,40,0
+    >>Kill |cRXP_ENEMY_Voodoo Trolls|r
+    .complete 826,2 --Voodoo Troll slain (8)
+    .mob Voodoo Troll
+    .isOnQuest 826
+step
+    #loop
+    .goto 1411/1,-5515.70,-1240.79,0
+    .goto 1411/1,-5515.70,-1240.79,40,0
+    .goto 1411/1,-5409.95,-1290.14,40,0
+    .goto 1411/1,-5431.10,-1216.12,40,0
+    .goto 1411/1,-5378.22,-1152.67,40,0
+    .goto 1411/1,-5404.66,-1089.22,40,0
+    .goto 1411/1,-5510.41,-1135.04,40,0
+    .goto 1411/1,-5547.42,-1061.02,40,0
+    .goto 1411/1,-5610.87,-1117.42,40,0
+    .goto 1411/1,-5616.16,-1180.87,40,0
+    >>Pick up |cRXP_PICK_Forgotten Loa Idol|r from the ground
+    .complete 97225,1 --Forgotten Loa Idol (8)
+    .isOnQuest 97225
+step
+    #completewith Along95
+    >>As you go: Loot the |cRXP_PICK_Taillasher Eggs|r for |cRXP_LOOT_Taillasher Egg|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 815,1 --Taillasher Egg (3)
+step
+    #label Along95
+    #loop
+    .goto 1411/1,-5383.51,-1046.92,0
     .goto 1411/1,-5383.51,-1046.92,40,0
-    .goto 1411/1,-5182.06,-969.37,40,0
     .goto 1411/1,-5170.95,-1092.74,40,0
     .goto 1411/1,-5126.01,-1127.64,40,0
     .goto 1411/1,-5114.91,-1178.05,40,0
+    .goto 1411/1,-5118.61,-1323.63,40,0
     .goto 1411/1,-5082.12,-1383.55,40,0
-    .goto 1411/1,-5145.05,-1344.07,40,0
+    .goto 1411/1,-5170.95,-1359.94,40,0
     .goto 1411/1,-5215.37,-1350.42,40,0
+    .goto 1411/1,-5179.94,-1320.10,40,0
     >>Kill |cRXP_ENEMY_Durotar Tigers|r and |cRXP_ENEMY_Shal'mas|r. Loot them for |cRXP_LOOT_Durotar Tiger Fur|r
-    >>Loot the |cRXP_PICK_Taillasher Eggs|r for |cRXP_LOOT_Taillasher Egg|r
     .complete 817,1 --Durotar Tiger Fur (4)
-    .complete 815,1 --Taillasher Egg (3)
     .mob Durotar Tiger
     .mob Shal'ma
+    .isOnQuest 817
+step
+    #loop
+    .goto 1411/1,-5108.56,-1143.85,0
+    .goto 1411/1,-5108.56,-1143.85,40,0
+    .goto 1411/1,-5152.98,-1112.83,40,0
+    .goto 1411/1,-5182.06,-969.37,40,0
+    .goto 1411/1,-5207.44,-953.15,40,0
+    .goto 1411/1,-5336.45,-1141.39,40,0
+    >>Loot the |cRXP_PICK_Taillasher Eggs|r for |cRXP_LOOT_Taillasher Egg|r
+    .complete 815,1 --Taillasher Egg (3)
 step
     #loop
     .goto 1411/1,-5039.30,-969.72,0
@@ -1293,6 +1426,7 @@ step
     .mob Surf Crawler
     .mob Encrusted Surf Crawler
     .mob Corrupted Surf Crawler
+    .isOnQuest 818
 step
     #loop
     .goto 1411/1,-5149.80,-782.54,0
@@ -1309,6 +1443,7 @@ step
     .mob Makrura Shellhide
     .mob Makrura Snapclaw
     .mob Makrura Elder
+    .isOnQuest 818
 step
     .goto 1411/1,-4948.88,-768.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
@@ -1356,6 +1491,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Vornal|r
     .turnin 818 >>Turn in A Solvent Spirit
     .target Master Vornal
+    .isOnQuest 818
 step << Warlock/Mage/Priest
     .goto 1411/1,-4938.83,-779.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r
@@ -1373,39 +1509,63 @@ step
     .goto 1411/1,-4920.86,-825.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Gadrin|r
     .turnin 808 >>Turn in Minshina's Skull
+    .target Master Gadrin
+    .isOnQuest 808
+step
+    .goto 1411/1,-4920.86,-825.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Gadrin|r
     .turnin 826 >>Turn in Zalazane
+    .target Master Gadrin
+    .isOnQuest 826
+step
+    .goto 1411/1,-4920.86,-825.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Gadrin|r
     .turnin 97225 >>Turn in Forgotten Loa Idols
     .target Master Gadrin
+    .isOnQuest 97225
 step
     .goto 1411/1,-4921.38,-797.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vel'rin Fang|r
     .turnin 817 >>Turn in Practical Prey
     .target Vel'rin Fang
+    .isOnQuest 817
 step
     .goto 1411/1,-4885.43,-852.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xar'Ti|r
     .turnin 97223 >>Turn in Bloodtalon Matriarch
     .target Xar'Ti
+    .isOnQuest 97223
 step
     #loop
     .goto 1411/1,-4616.82,24.68,0
     .goto 1411/1,-4616.82,24.68,40,0
+    .goto 1411/1,-4616.82,59.93,40,0
     .goto 1411/1,-4659.12,109.28,40,0
     .goto 1411/1,-4585.10,130.43,40,0
+    .goto 1411/1,-4585.10,116.33,40,0
+    .goto 1411/1,-4563.95,102.23,40,0
+    .goto 1411/1,-4585.10,74.03,40,0
+    >>Kill |cRXP_ENEMY_Razormane Quilboars|r
+    >>Kill |cRXP_ENEMY_Razormane Scouts|r
+    .complete 837,1 --Razormane Quilboar slain (4)
+    .complete 837,2 --Razormane Scout slain (4)
+    .mob Razormane Quilboar
+    .mob Razormane Scout
+step
+    #loop
+    .goto 1411/1,-4553.37,74.03,0
+    .goto 1411/1,-4553.37,74.03,40,0
+    .goto 1411/1,-4579.81,126.91,40,0
     .goto 1411/1,-4489.92,88.13,40,0
+    .goto 1411/1,-4437.05,81.08,40,0
     .goto 1411/1,-4331.30,66.98,40,0
     .goto 1411/1,-4278.42,35.26,40,0
     .goto 1411/1,-4336.59,28.21,40,0
     .goto 1411/1,-4452.91,49.36,40,0
-    .goto 1411/1,-4553.37,74.03,40,0
-    >>Kill |cRXP_ENEMY_Razormane Quilboars|r
-    >>Kill |cRXP_ENEMY_Razormane Scouts|r
+    .goto 1411/1,-4479.35,56.41,40,0
     >>Pick up |cRXP_PICK_Prickly Pear Fruit|r from the ground
-    .complete 837,1 --Razormane Quilboar slain (4)
-    .complete 837,2 --Razormane Scout slain (4)
     .complete 96825,1 --Prickly Pear Fruit (8)
-    .mob Razormane Quilboar
-    .mob Razormane Scout
+    .isOnQuest 96825
 step
     #loop
     .goto 1411/1,-4320.72,377.18,0
@@ -1436,11 +1596,27 @@ step << Hunter
     .goto 1411/1,-4456.61,65.57,50,0
     .xp 9+4470 >> Grind to 4470+/6500xp
 step
+    #label RBSection1_4
+    #completewith next
+    +|cRXP_WARN_Durotar: around Orgnil Soulscar|r (planned from level 9)
+step
     .goto 1411/1,-4664.94,311.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
     .turnin 815 >>Turn in Break a Few Eggs
+    .target Cook Torka
+    .isOnQuest 815
+step
+    .goto 1411/1,-4664.94,311.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
     .turnin 96825 >>Turn in This Fruit Could Bite Back
     .target Cook Torka
+    .isOnQuest 96825
+step
+    .goto 1411/1,-4709.36,274.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
+    .turnin 825 >>Turn in From The Wreckage....
+    .target Gar'Thok
+    .isOnQuest 825
 step
     .goto 1411/1,-4724.69,287.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
@@ -1450,9 +1626,9 @@ step
 step
     .goto 1411/1,-4709.36,274.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 825 >>Turn in From The Wreckage....
     .turnin 837 >>Turn in Encroachment
     .target Gar'Thok
+    .isOnQuest 837
 step << Orc Hunter/Troll Hunter
     #completewith next
     .zone 1454 >>Travel to Orgrimmar
@@ -1637,6 +1813,7 @@ step
     >>Kill |cRXP_ENEMY_Fizzle Darkstorm|r and loot |cRXP_LOOT_Fizzle's Claw|r
     .complete 806,1 --Fizzle's Claw (1)
     .mob Fizzle Darkstorm
+    .isOnQuest 806
 step
     .goto 1411/1,-4158.93,1152.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhinag|r
@@ -1789,8 +1966,14 @@ step
     .goto 1411/1,-4724.69,287.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .turnin 806 >>Turn in Dark Storms
+    .target Orgnil Soulscar
+    .isOnQuest 806
+step
+    .goto 1411/1,-4724.69,287.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .accept 828 >>Accept Margoz
     .target Orgnil Soulscar
+    .isQuestTurnedIn 806 --any of: Dark Storms
 step << Warrior
     .goto 1411/1,-4827.27,311.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
@@ -1893,8 +2076,39 @@ step
     .goto 1411/1,-4945.18,1101.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Margoz|r
     .turnin 828 >>Turn in Margoz
+    .target Margoz
+    .isOnQuest 828
+step
+    .goto 1411/1,-4945.18,1101.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Margoz|r
     .accept 827 >>Accept Skull Rock
     .target Margoz
+    .isQuestTurnedIn 828 --any of: Margoz
+step
+    #completewith Along149
+    >>As you go: Kill |cRXP_ENEMY_Dustwind Savages|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 835,1 --Dustwind Savage slain (12)
+    .mob Dustwind Savage
+step
+    #label Along149
+    #loop
+    .goto 1411/1,-4724.16,943.30,0
+    .goto 1411/1,-4724.16,943.30,40,0
+    .goto 1411/1,-4707.77,923.91,40,0
+    .goto 1411/1,-4706.18,902.06,40,0
+    .goto 1411/1,-4733.68,863.63,40,0
+    .goto 1411/1,-4738.44,779.39,40,0
+    .goto 1411/1,-4772.81,781.15,40,0
+    .goto 1411/1,-4753.24,804.41,40,0
+    .goto 1411/1,-4786.02,859.05,40,0
+    .goto 1411/1,-4747.43,914.39,40,0
+    >>Kill |cRXP_ENEMY_Burning Blade Thugs|r, |cRXP_ENEMY_Burning Blade Neophytes|r, |cRXP_ENEMY_Burning Blade Fanatics|r and |cRXP_ENEMY_Burning Blade Apprentices|r. Loot them for |cRXP_LOOT_Searing Collar|r
+    .complete 827,1 --Searing Collar (6)
+    .mob Burning Blade Thug
+    .mob Burning Blade Neophyte
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+    .isOnQuest 827
 step
     #completewith Drop97281x1
     >>|cRXP_LOOT_Dull Storm Orb|r can drop from |cRXP_ENEMY_Dustwind Storm Witch|r, |cRXP_ENEMY_Dustwind Eggtender|r. Use it to start the quest if you get one
@@ -1904,26 +2118,20 @@ step
 step
     #label Drop97281x1
     #loop
-    .goto 1411/1,-4801.36,1036.71,0
-    .goto 1411/1,-4801.36,1036.71,40,0
-    .goto 1411/1,-4820.92,945.77,40,0
-    .goto 1411/1,-4815.63,880.55,40,0
-    .goto 1411/1,-4772.81,781.15,40,0
-    .goto 1411/1,-4705.65,880.91,40,0
-    .goto 1411/1,-4732.62,965.15,40,0
-    .goto 1411/1,-4670.76,988.77,40,0
-    .goto 1411/1,-4688.73,1045.17,40,0
+    .goto 1411/1,-4821.45,844.95,0
+    .goto 1411/1,-4821.45,844.95,40,0
+    .goto 1411/1,-4810.88,925.67,40,0
+    .goto 1411/1,-4812.99,1008.16,40,0
+    .goto 1411/1,-4751.66,1055.75,40,0
     .goto 1411/1,-4689.26,1137.53,40,0
-    >>Kill |cRXP_ENEMY_Burning Blade Thugs|r, |cRXP_ENEMY_Burning Blade Neophytes|r, |cRXP_ENEMY_Burning Blade Fanatics|r and |cRXP_ENEMY_Burning Blade Apprentices|r. Loot them for |cRXP_LOOT_Searing Collar|r
+    .goto 1411/1,-4681.86,1073.02,40,0
+    .goto 1411/1,-4670.76,988.77,40,0
+    .goto 1411/1,-4702.48,968.68,40,0
+    .goto 1411/1,-4765.40,967.27,40,0
     >>Kill |cRXP_ENEMY_Dustwind Savages|r
     >>Kill |cRXP_ENEMY_Dustwind Storm Witches|r
-    .complete 827,1 --Searing Collar (6)
     .complete 835,1 --Dustwind Savage slain (12)
     .complete 835,2 --Dustwind Storm Witch slain (8)
-    .mob Burning Blade Thug
-    .mob Burning Blade Neophyte
-    .mob Burning Blade Fanatic
-    .mob Burning Blade Apprentice
     .mob Dustwind Savage
     .mob Dustwind Storm Witch
 step
@@ -1968,13 +2176,13 @@ step
     .target Rezlak
     .isOnQuest 97282
 step
-    #completewith Along131
+    #completewith Along156
     >>As you go: Kill |cRXP_ENEMY_Burning Blade Fanatics|r and |cRXP_ENEMY_Burning Blade Apprentices|r. Loot them for |cRXP_LOOT_Lieutenant's Insignia|r. |cRXP_WARN_Anything left is finished later|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
 step
-    #label Along131
+    #label Along156
     .goto 1411/1,-4744.25,1497.43
     >>Kill |cRXP_ENEMY_Gazz'uz|r and loot |cRXP_LOOT_Eye of Burning Shadow|r. Use it to start the quest
     .collect 4903,1,832 --Eye of Burning Shadow (1)
@@ -2001,8 +2209,14 @@ step
     .goto 1411/1,-4945.18,1101.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Margoz|r
     .turnin 827 >>Turn in Skull Rock
+    .target Margoz
+    .isOnQuest 827
+step
+    .goto 1411/1,-4945.18,1101.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Margoz|r
     .accept 829 >>Accept Neeru Fireblade
     .target Margoz
+    .isQuestTurnedIn 827 --any of: Skull Rock
 step << !Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trak'gen|r
@@ -2088,9 +2302,19 @@ step
     .goto 1454/1,-4374.47,1800.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 829 >>Turn in Neeru Fireblade
+    .target Neeru Fireblade
+    .isOnQuest 829
+step
+    .goto 1454/1,-4374.47,1800.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 832 >>Turn in Burning Shadows
+    .target Neeru Fireblade
+step
+    .goto 1454/1,-4374.47,1800.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .accept 809 >>Accept Ak'Zeloth
     .target Neeru Fireblade
+    .isQuestTurnedIn 829 --any of: Neeru Fireblade
 step << Mage
     .goto 1454/1,-4229.86,1466.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthel'nay|r
@@ -2155,11 +2379,21 @@ step << Orc Rogue
     .accept 1859 >>Accept Therzok
     .target Kaplak
 step
+    #label RBSection1_5
+    #completewith next
+    +|cRXP_WARN_Durotar: around Orgnil Soulscar|r (planned from level 11)
+step
     .goto 1411/1,-4724.69,287.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .turnin 99051 >>Turn in Threat from Below
+    .target Orgnil Soulscar
+    .isOnQuest 99051
+step
+    .goto 1411/1,-4724.69,287.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .accept 99052 >>Accept Threat from Below
     .target Orgnil Soulscar
+    .isQuestTurnedIn 99051 --any of: Threat from Below
 step << Warrior
     .goto 1411/1,-4827.80,311.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw Jaggedscar|r
@@ -2170,6 +2404,7 @@ step
     >>Kill |cRXP_ENEMY_Aggor the Young|r and loot |cRXP_LOOT_Aggor's Belt|r
     .complete 99052,1 --Aggor's Belt (1)
     .mob Aggor the Young
+    .isOnQuest 99052
 step << Shaman
     .goto 1411/1,-4000.83,-270.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Telf Joolam|r
@@ -2215,11 +2450,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .complete 5727,1 --Neeru Fireblade
     .target Neeru Fireblade
+    .isOnQuest 5727
 step << Orc Rogue
     .goto 1454/1,-4279.93,1772.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
     .turnin 1859 >>Turn in Therzok
     .target Therzok
+    .isOnQuest 1859
 step << Skyborne
     .goto 1454/1,-4162.26,1934.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'jin|r
@@ -2282,6 +2519,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5727 >>Turn in Hidden Enemies
     .target Thrall
+    .isOnQuest 5727
 step
     .goto 1454/1,-4160.01,1483.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Arnok|r
@@ -2348,16 +2586,23 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .turnin 99052 >>Turn in Threat from Below
     .target Orgnil Soulscar
+    .isOnQuest 99052
 step
     .goto 1411/1,-4186.42,-600.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
     .turnin 787 >>Turn in The New Horde
     .target Gornek
-step
+    .isOnQuest 787
+step << Mage
     .goto 1411/1,-4939.89,-839.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
-    .turnin 1883 >>Turn in Speak with Un'thuwa << Mage
-    .accept 1884 >>Accept Ju-Ju Heaps << Orc Mage/Undead Mage/Troll Mage
+    .turnin 1883 >>Turn in Speak with Un'thuwa
+    .target Un'Thuwa
+    .isOnQuest 1883
+step << Orc Mage/Undead Mage/Troll Mage
+    .goto 1411/1,-4939.89,-839.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
+    .accept 1884 >>Accept Ju-Ju Heaps
     .target Un'Thuwa
 step << Orc Mage/Undead Mage/Troll Mage
     .goto 1411/1,-5510.41,-1237.97
@@ -2577,4 +2822,6 @@ step
     >>|cRXP_FRIENDLY_Undercity|r: Touch of Weakness << Undead Priest
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: The Binding << Orc Warlock
     >>|cRXP_FRIENDLY_The Barrens and back here|r: The Shattered Hand << Orc Rogue/Troll Rogue
+step
+    +|cRXP_WARN_Suggested next zones at level 11|r: |cRXP_FRIENDLY_The Barrens|r (about 3.1 levels of quests, starting around Sergra Darkthorn; 2 quests from here hand in there), |cRXP_FRIENDLY_Zephras Isle|r (about 2.1 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Silverpine Forest|r (about 1.2 levels of quests, starting around High Executor Hadrec). Completing this step loads the guide for The Barrens --RouteBuilder:next
 ]])

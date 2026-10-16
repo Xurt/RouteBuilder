@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 10, 14, 18, 21).
+-- Sections (the guide starts at the one for your level): around Mountaineer Kadrell from 10; around Daryl the Youngling from 14; part 3 from 18; part 4 from 21.
 -- Edit zones/Loch Modan.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,7 +14,23 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group Zone Routes (Alliance)
 #name 10-32 Loch Modan
+#next Zone Routes (Alliance)\21-34 Wetlands
 
+step
+    .xp <14,1,RBSection1_1
+    .xp 14 >>Finding the place in this guide for your level
+step
+    .xp <18,1,RBSection2_1
+    .xp 18 >>Finding the place in this guide for your level
+step
+    .xp <21,1,RBSection3_1
+    .xp 21 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection4_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Loch Modan: around Mountaineer Kadrell|r (planned from level 10)
 step
     #loop
     .goto 1432/0,-2893.79,-5402.51,0
@@ -509,7 +526,13 @@ step
     >>|cRXP_FRIENDLY_Ironforge|r: Report to Ironforge
     >>|cRXP_FRIENDLY_Stormwind City|r: Stormpike's Order
 step
+    +|cRXP_WARN_Until level 14, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 2.2 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Westfall|r (about 1.8 levels of quests, starting around Farmer Saldean), |cRXP_FRIENDLY_Zephras Isle|r (about 1.6 levels of quests, starting around Elegael Thornpaw). Then come back to this Loch Modan guide --RouteBuilder:next
+step
     .xp 14 >>|cRXP_WARN_The rest of Loch Modan is planned from level 14.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Loch Modan: around Daryl the Youngling|r (planned from level 14)
 step
     .goto 1432/0,-2973.79,-5377.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
@@ -715,24 +738,35 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Wallbang|r
     .accept 263 >>Accept In Defense of the King's Lands
     .target Mountaineer Wallbang
+    .isQuestTurnedIn 237 --any of: In Defense of the King's Lands
 step
     #loop
     .goto 1432/0,-2913.38,-6161.34,0
     .goto 1432/0,-2913.38,-6161.34,40,0
     .goto 1432/0,-2947.03,-6171.09,40,0
-    .goto 1432/0,-2952.55,-6223.15,40,0
-    .goto 1432/0,-3007.99,-6214.68,40,0
+    .goto 1432/0,-2982.61,-6181.57,40,0
     .goto 1432/0,-3023.44,-6186.91,40,0
-    .goto 1432/0,-2993.65,-6161.89,40,0
-    .goto 1432/0,-3028.68,-6144.41,40,0
-    .goto 1432/0,-3048.26,-6100.81,40,0
-    .goto 1432/0,-3027.30,-6073.77,40,0
+    .goto 1432/0,-2983.16,-6215.42,40,0
     >>Kill |cRXP_ENEMY_Stonesplinter Bonesnappers|r
-    >>Kill |cRXP_ENEMY_Stonesplinter Shamans|r
     .complete 263,2 --Stonesplinter Bonesnapper slain (10)
-    .complete 263,1 --Stonesplinter Shaman slain (10)
     .mob Stonesplinter Bonesnapper
+    .isOnQuest 263
+step
+    #loop
+    .goto 1432/0,-2989.51,-6189.67,0
+    .goto 1432/0,-2989.51,-6189.67,40,0
+    .goto 1432/0,-3007.99,-6214.68,40,0
+    .goto 1432/0,-2952.55,-6223.15,40,0
+    .goto 1432/0,-2939.03,-6172.93,40,0
+    .goto 1432/0,-2961.10,-6169.25,40,0
+    .goto 1432/0,-3027.30,-6073.77,40,0
+    .goto 1432/0,-3048.26,-6100.81,40,0
+    .goto 1432/0,-3028.68,-6144.41,40,0
+    .goto 1432/0,-2993.65,-6161.89,40,0
+    >>Kill |cRXP_ENEMY_Stonesplinter Shamans|r
+    .complete 263,1 --Stonesplinter Shaman slain (10)
     .mob Stonesplinter Shaman
+    .isOnQuest 263
 step
     .goto 1432/0,-2869.24,-6075.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Ylva|r
@@ -754,33 +788,54 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Wallbang|r
     .turnin 263 >>Turn in In Defense of the King's Lands
     .target Mountaineer Wallbang
+    .isOnQuest 263
+step
+    .goto 1432/0,-2634.51,-5842.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r
+    .accept 217 >>Accept In Defense of the King's Lands
+    .target Captain Rugelfuss
+    .isQuestTurnedIn 263 --In Defense of the King's Lands
+    .isQuestTurnedIn 267 --The Trogg Threat
 step
     .goto 1432/0,-2634.51,-5842.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r
     .turnin 86585 >>Turn in Banner of the Fallen
-    .accept 217 >>Accept In Defense of the King's Lands
     .target Captain Rugelfuss
 step
     .goto 1432/0,-2949.24,-6153.24
     >>Kill |cRXP_ENEMY_Brawler|r
-    >>Kill |cRXP_ENEMY_Gnasher|r
-    >>Kill |cRXP_ENEMY_Grawmug|r
     .complete 217,3 --Brawler slain (1)
-    .complete 217,2 --Gnasher slain (1)
-    .complete 217,1 --Grawmug slain (1)
     .mob Brawler
+    .isOnQuest 217
+step
+    .goto 1432/0,-2951.17,-6158.21
+    >>Kill |cRXP_ENEMY_Gnasher|r
+    .complete 217,2 --Gnasher slain (1)
     .mob Gnasher
+    .isOnQuest 217
+step
+    .goto 1432/0,-2952.82,-6151.40
+    >>Kill |cRXP_ENEMY_Grawmug|r
+    .complete 217,1 --Grawmug slain (1)
     .mob Grawmug
+    .isOnQuest 217
 step
     .goto 1432/0,-2634.51,-5842.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r
     .turnin 217 >>Turn in In Defense of the King's Lands
     .target Captain Rugelfuss
+    .isOnQuest 217
 step
     +|cRXP_WARN_That is all of Loch Modan for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Eagle's Fist
 step
+    +|cRXP_WARN_Until level 18, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 1.7 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.0 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Westfall|r (about 0.6 levels of quests, starting around Gryan Stoutmantle). Then come back to this Loch Modan guide --RouteBuilder:next
+step
     .xp 18 >>|cRXP_WARN_The rest of Loch Modan is planned from level 18.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Loch Modan: part 3|r (planned from level 18)
 step
     .goto 1432/0,-3783.91,-5713.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magmar Fellhew|r
@@ -808,6 +863,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vyrin Swiftwind|r
     .accept 271 >>Accept Vyrin's Revenge
     .target Vyrin Swiftwind
+    .isQuestTurnedIn 258 --any of: A Hunter's Challenge
 step
     .goto 1432/0,-3783.91,-5713.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magmar Fellhew|r
@@ -979,23 +1035,37 @@ step
     >>Kill |cRXP_ENEMY_Ol' Sooty|r and loot |cRXP_LOOT_Ol' Sooty's Head|r
     .complete 271,1 --Ol' Sooty's Head (1)
     .mob Ol' Sooty
+    .isOnQuest 271
 step
     .goto 1432/0,-4296.13,-5691.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
     .turnin 271 >>Turn in Vyrin's Revenge
+    .target Daryl the Youngling
+    .isOnQuest 271
+step
+    .goto 1432/0,-4296.13,-5691.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
     .accept 531 >>Accept Vyrin's Revenge
     .target Daryl the Youngling
+    .isQuestTurnedIn 271 --any of: Vyrin's Revenge
 step
     .goto 1432/0,-4248.14,-5667.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vyrin Swiftwind|r
     .turnin 531 >>Turn in Vyrin's Revenge
     .target Vyrin Swiftwind
+    .isOnQuest 531
 step
     +|cRXP_WARN_That is all of Loch Modan for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Wetlands|r: A Dark Threat Looms
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Ingredients for the Forge
 step
+    +|cRXP_WARN_Until level 21, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 0.8 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.6 levels of quests, starting around Elegael Thornpaw). Then come back to this Loch Modan guide --RouteBuilder:next
+step
     .xp 21 >>|cRXP_WARN_The rest of Loch Modan is planned from level 21.|r Come back to this guide then
+step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_Loch Modan: part 4|r (planned from level 21)
 step
     .goto 1432/0,-2932.13,-5343.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morhan Coppertongue|r
@@ -1054,4 +1124,6 @@ step
     >>|cRXP_FRIENDLY_Westfall|r: Call of Water << Shaman
     >>|cRXP_FRIENDLY_Wetlands|r: The Algaz Gauntlet
     >>|cRXP_FRIENDLY_Wetlands|r: Call of Water << Shaman
+step
+    +|cRXP_WARN_Suggested next zones at level 21|r: |cRXP_FRIENDLY_Wetlands|r (about 1.1 levels of quests, starting around Karl Boran; 2 quests from here hand in there). Completing this step loads the guide for Wetlands --RouteBuilder:next
 ]])

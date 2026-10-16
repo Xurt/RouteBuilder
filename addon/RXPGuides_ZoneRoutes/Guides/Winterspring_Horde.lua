@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 52, 55, 58).
+-- Sections (the guide starts at the one for your level): around Gregor Greystone from 52; around Umi Rumplesnicker from 55; around Storm Shadowhoof from 58.
 -- Edit zones/Winterspring.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,18 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 52-60 Winterspring
 
+step
+    .xp <55,1,RBSection1_1
+    .xp 55 >>Finding the place in this guide for your level
+step
+    .xp <58,1,RBSection2_1
+    .xp 58 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection3_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_Winterspring: around Gregor Greystone|r (planned from level 52)
 step
     .goto 1452/1,-4656.19,6714.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harlo Wigglesworth|r
@@ -155,6 +168,10 @@ step
     >>|cRXP_FRIENDLY_Tirisfal Glades|r: The Everlook Report
 step
     .xp 55 >>|cRXP_WARN_The rest of Winterspring is planned from level 55.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_Winterspring: around Umi Rumplesnicker|r (planned from level 55)
 step
     .goto 1452/1,-4623.53,6726.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meggi Peppinrocker|r
@@ -529,6 +546,10 @@ step
 step
     .xp 58 >>|cRXP_WARN_The rest of Winterspring is planned from level 58.|r Come back to this guide then
 step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_Winterspring: around Storm Shadowhoof|r (planned from level 58)
+step
     .goto 1452/1,-4656.19,6714.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harlo Wigglesworth|r
     .accept 6606 >>Accept A Little Luck
@@ -538,6 +559,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Storm Shadowhoof|r
     .accept 5055 >>Accept Brumeran of the Chillwind
     .target Storm Shadowhoof
+    .isQuestTurnedIn 5054 --any of: Ursius of the Shardtooth
 step
     .goto 1452/1,-4712.99,6720.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Mau'ari|r
@@ -549,6 +571,7 @@ step
     >>Kill |cRXP_ENEMY_Brumeran|r
     .complete 5055,1 --Brumeran slain (1)
     .mob Brumeran
+    .isOnQuest 5055
 step
     #loop
     .goto 1452/1,-4619.98,5452.41,0
@@ -597,6 +620,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Storm Shadowhoof|r
     .turnin 5055 >>Turn in Brumeran of the Chillwind
     .target Storm Shadowhoof
+    .isOnQuest 5055
 step
     .goto 1452/1,-2536.84,6395.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donova Snowden|r
@@ -609,6 +633,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Storm Shadowhoof|r
     .accept 5056 >>Accept Shy-Rotam
     .target Storm Shadowhoof
+    .isQuestTurnedIn 5055 --any of: Brumeran of the Chillwind
 step
     #loop
     .goto 1452/1,-4086.06,7738.61,0
@@ -627,11 +652,13 @@ step
     .mob Frostsaber Huntress
     .mob Frostsaber Cub
     .mob Frostsaber Stalker
+    .isOnQuest 5056
 step
     .goto 1452/1,-3853.18,8069.47
     >>Kill |cRXP_ENEMY_Shy-Rotam|r
     .complete 5056,1 --Shy-Rotam slain (1)
     .mob Shy-Rotam
+    .isOnQuest 5056
 step
     .goto 1452/1,-5255.43,6719.99
     >>Kill |cRXP_ENEMY_High Chief Winterfall|r
@@ -642,9 +669,20 @@ step
     .goto 1452/1,-4713.70,6716.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Storm Shadowhoof|r
     .turnin 5056 >>Turn in Shy-Rotam
+    .target Storm Shadowhoof
+    .isOnQuest 5056
+step
+    .goto 1452/1,-4713.70,6716.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Storm Shadowhoof|r
     .accept 5057 >>Accept Past Endeavors
+    .target Storm Shadowhoof
+    .isQuestTurnedIn 5056 --any of: Shy-Rotam
+step
+    .goto 1452/1,-4713.70,6716.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Storm Shadowhoof|r
     .turnin 5057 >>Turn in Past Endeavors
     .target Storm Shadowhoof
+    .isOnQuest 5057
 step
     .goto 1452/1,-4712.99,6720.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Mau'ari|r

@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy ByPass -File ".\Rebuild-All.ps1" -Rxp "D:\XurtProjects\RouteBuilder\forever"

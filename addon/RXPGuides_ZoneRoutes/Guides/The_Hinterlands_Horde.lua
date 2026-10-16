@@ -3,6 +3,7 @@
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 39, 42, 45, 48, 51).
+-- Sections (the guide starts at the one for your level): start from 39; part 2 from 42; around Huntsman Markhor from 45; around Katoom the Angler from 48; part 5 from 51.
 -- Edit zones/The Hinterlands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -14,6 +15,24 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Horde)
 #name 39-53 The Hinterlands
 
+step
+    .xp <42,1,RBSection1_1
+    .xp 42 >>Finding the place in this guide for your level
+step
+    .xp <45,1,RBSection2_1
+    .xp 45 >>Finding the place in this guide for your level
+step
+    .xp <48,1,RBSection3_1
+    .xp 48 >>Finding the place in this guide for your level
+step
+    .xp <51,1,RBSection4_1
+    .xp 51 >>Finding the place in this guide for your level
+step
+    .xp <61,1,RBSection5_1
+step
+    #label RBSection1_1
+    #completewith next
+    +|cRXP_WARN_The Hinterlands: start|r (planned from level 39)
 step
     .goto 1425/0,-3512.71,-832.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
@@ -91,7 +110,13 @@ step
     >>|cRXP_FRIENDLY_Swamp of Sorrows|r: Return to Fel'Zerul
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Conflict at Darkspear Islands, Conflict at Darkspear Islands, Jammal'an the Prophet
 step
+    +|cRXP_WARN_Until level 42, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Far Seer Mok'thardin). Then come back to this The Hinterlands guide --RouteBuilder:next
+step
     .xp 42 >>|cRXP_WARN_The rest of The Hinterlands is planned from level 42.|r Come back to this guide then
+step
+    #label RBSection2_1
+    #completewith next
+    +|cRXP_WARN_The Hinterlands: part 2|r (planned from level 42)
 step
     .goto 1425/0,-2481.29,-42.53
     >>Click the |cRXP_PICK_Venom Bottle|r
@@ -119,6 +144,10 @@ step
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: Venom Bottles
 step
     .xp 45 >>|cRXP_WARN_The rest of The Hinterlands is planned from level 45.|r Come back to this guide then
+step
+    #label RBSection3_1
+    #completewith next
+    +|cRXP_WARN_The Hinterlands: around Huntsman Markhor|r (planned from level 45)
 step
     .goto 1425/0,-2603.34,219.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilveradin Sunchaser|r
@@ -414,6 +443,10 @@ step
 step
     .xp 48 >>|cRXP_WARN_The rest of The Hinterlands is planned from level 48.|r Come back to this guide then
 step
+    #label RBSection4_1
+    #completewith next
+    +|cRXP_WARN_The Hinterlands: around Katoom the Angler|r (planned from level 48)
+step
     .goto 1425/0,-4583.39,-622.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lard|r
     .accept 7840 >>Accept Lard Lost His Lunch
@@ -476,6 +509,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Otho Moji'ko|r
     .accept 7843 >>Accept The Final Message to the Wildhammer
     .target Otho Moji'ko
+    .isQuestTurnedIn 7842 --any of: Another Message to the Wildhammer
 step
     .goto 1425/0,-4622.66,-574.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Markhor|r
@@ -601,6 +635,7 @@ step
     .goto 1425/0,-2127.09,232.87
     >>Message to the Wildhammer Delivered
     .complete 7843,1 --Message to the Wildhammer Delivered
+    .isOnQuest 7843
 step
     #completewith next
     .hs >>Hearth to Lard's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -610,14 +645,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Otho Moji'ko|r
     .turnin 7843 >>Turn in The Final Message to the Wildhammer
     .target Otho Moji'ko
+    .isOnQuest 7843
 step
     .xp 51 >>|cRXP_WARN_The rest of The Hinterlands is planned from level 51.|r Come back to this guide then
+step
+    #label RBSection5_1
+    #completewith next
+    +|cRXP_WARN_The Hinterlands: part 5|r (planned from level 51)
 step
     .goto 1425/0,-4619.58,-560.74
     >>Click the |cRXP_PICK_Call to Arms!|r
     .accept 7861 >>Accept Wanted: Vile Priestess Hexx and Her Minions
 step
-    #completewith Along2
+    #completewith Along3
     >>As you go: Kill |cRXP_ENEMY_Vilebranch Aman'zasi Guards|r. |cRXP_WARN_Anything left is finished later|r
     .complete 7861,2 --Vilebranch Aman'zasi Guard slain (20)
     .mob Vilebranch Aman'zasi Guard
@@ -632,42 +672,57 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Torntusk|r
     .accept 7846 >>Accept Recover the Key!
     .target Elder Torntusk
+    .isQuestTurnedIn 7845 --any of: Kidnapped Elder Torntusk!
 step
-    #label Along2
     .goto 1425/0,-3864.60,-542.01
     >>Kill |cRXP_ENEMY_Vile Priestess Hexx|r
     .complete 7861,1 --Vile Priestess Hexx slain (1)
     .mob Vile Priestess Hexx
 step
+    #label Along3
+    .goto 1425/0,-3781.82,-757.09
+    >>Kill |cRXP_ENEMY_Hitah'ya the Keeper|r and loot |cRXP_LOOT_Shackle Key|r
+    .complete 7846,1 --Shackle Key (1)
+    .mob Hitah'ya the Keeper
+    .isOnQuest 7846
+step
     #loop
-    .goto 1425/0,-3871.53,-560.23,0
+    .goto 1425/0,-3782.98,-754.78,0
+    .goto 1425/0,-3782.98,-754.78,40,0
+    .goto 1425/0,-3780.67,-692.67,40,0
+    .goto 1425/0,-3952.38,-625.94,40,0
     .goto 1425/0,-3871.53,-560.23,40,0
     .goto 1425/0,-3806.08,-500.43,40,0
     .goto 1425/0,-3794.91,-625.42,40,0
     .goto 1425/0,-3730.62,-638.77,40,0
     .goto 1425/0,-3672.48,-688.82,40,0
     .goto 1425/0,-3720.22,-708.84,40,0
-    .goto 1425/0,-3781.82,-757.09,40,0
-    .goto 1425/0,-3780.67,-692.67,40,0
-    .goto 1425/0,-3952.38,-625.94,40,0
-    >>Kill |cRXP_ENEMY_Hitah'ya the Keeper|r and loot |cRXP_LOOT_Shackle Key|r
     >>Kill |cRXP_ENEMY_Vilebranch Aman'zasi Guards|r
-    .complete 7846,1 --Shackle Key (1)
     .complete 7861,2 --Vilebranch Aman'zasi Guard slain (20)
-    .mob Hitah'ya the Keeper
     .mob Vilebranch Aman'zasi Guard
 step
     .goto 1425/0,-3873.07,-531.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Torntusk|r
     .turnin 7846 >>Turn in Recover the Key!
+    .target Elder Torntusk
+    .isOnQuest 7846
+step
+    .goto 1425/0,-3873.07,-531.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Torntusk|r
     .accept 7847 >>Accept Return to Primal Torntusk
     .target Elder Torntusk
+    .isQuestTurnedIn 7846 --any of: Recover the Key!
 step
     .goto 1425/0,-4585.70,-616.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Primal Torntusk|r
     .turnin 7861 >>Turn in Wanted: Vile Priestess Hexx and Her Minions
+    .target Primal Torntusk
+step
+    .goto 1425/0,-4585.70,-616.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Primal Torntusk|r
     .turnin 7847 >>Turn in Return to Primal Torntusk
     .target Primal Torntusk
+    .isOnQuest 7847
 step
     .goto 1425/0,-3512.71,-832.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
