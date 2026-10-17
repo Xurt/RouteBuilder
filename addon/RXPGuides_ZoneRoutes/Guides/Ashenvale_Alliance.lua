@@ -1,9 +1,9 @@
 -- 18-32 Ashenvale: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 18, 21, 24, 27, 30).
--- Sections (the guide starts at the one for your level): around Shindrell Swiftfire from 18; part 2 from 21; part 3 from 24; part 4 from 27; part 5 from 30.
+-- The zone covers more levels than one visit gives, so it is planned in 5 parts (from level 18, 21, 24, 27, 30).
+-- Split into 5 guides, listed under "18 - 31 Ashenvale" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Ashenvale.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,26 +13,12 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 18-32 Ashenvale
+#subgroup 18 - 31 Ashenvale
+#subweight -18
+#name 18-19 Ashenvale: around Shindrell Swiftfire
+--RouteBuilder:next
+#next Zone Routes (Alliance)\17-19 Darkshore: around Archaeologist Hollee;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw
 
-step
-    .xp <21,1,RBSection1_1
-    .xp 21 >>Finding the place in this guide for your level
-step
-    .xp <24,1,RBSection2_1
-    .xp 24 >>Finding the place in this guide for your level
-step
-    .xp <27,1,RBSection3_1
-    .xp 27 >>Finding the place in this guide for your level
-step
-    .xp <30,1,RBSection4_1
-    .xp 30 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection5_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Ashenvale: around Shindrell Swiftfire|r (planned from level 18)
 step
     .goto 1440/1,156.26,3254.19
     >>Escort Kerlonian Evershade to Maestra's Post
@@ -322,13 +308,20 @@ step
     >>|cRXP_FRIENDLY_Stonetalon Mountains|r: Journey to Stonetalon Peak, On Guard in Stonetalon
     >>|cRXP_FRIENDLY_Stonetalon Mountains and back here|r: Pridewings of Stonetalon
 step
-    +|cRXP_WARN_Until level 21, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 1.0 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.6 levels of quests, starting around Elegael Thornpaw). Then come back to this Ashenvale guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 18|r: |cRXP_FRIENDLY_Darkshore|r (about 1.0 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.6 levels of quests, starting around Elegael Thornpaw). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 21 >>|cRXP_WARN_The rest of Ashenvale is planned from level 21.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Ashenvale: part 2|r (planned from level 21)
+    +|cRXP_WARN_The rest of Ashenvale is planned from level 21.|r Load its guide for level 21 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 18 - 31 Ashenvale
+#subweight -18
+#name 21-22 Ashenvale
+
 step
     .goto 1440/1,175.29,3189.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
@@ -459,13 +452,20 @@ step
     +|cRXP_WARN_That is all of Ashenvale for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_The Barrens and back here|r: Mage Summoner
 step
-    +|cRXP_WARN_Until level 24, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.8 levels of quests, starting around Karl Boran). Then come back to this Ashenvale guide --RouteBuilder:next
-step
-    .xp 24 >>|cRXP_WARN_The rest of Ashenvale is planned from level 24.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Ashenvale: part 3|r (planned from level 24)
+    +|cRXP_WARN_The rest of Ashenvale is planned from level 24.|r Load its guide for level 24 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 18 - 31 Ashenvale
+#subweight -18
+#name 24-25 Ashenvale
+--RouteBuilder:next
+#next Zone Routes (Alliance)\23-24 Wetlands: around Captain Stoutfist
+
 step
     .goto 1440/1,189.13,3185.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
@@ -656,13 +656,20 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: Advice From Stormwind << Human Paladin/Dwarf Paladin
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Vengeful Trail
 step
-    +|cRXP_WARN_Until level 27, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.7 levels of quests, starting around Karl Boran). Then come back to this Ashenvale guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 24|r: |cRXP_FRIENDLY_Wetlands|r (about 0.5 levels of quests, starting around Captain Stoutfist). Completing this step loads the guide for Wetlands --RouteBuilder:next
 step
-    .xp 27 >>|cRXP_WARN_The rest of Ashenvale is planned from level 27.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Ashenvale: part 4|r (planned from level 27)
+    +|cRXP_WARN_The rest of Ashenvale is planned from level 27.|r Load its guide for level 27 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 18 - 31 Ashenvale
+#subweight -18
+#name 27-28 Ashenvale
+
 step
     .goto 1440/1,-433.09,2781.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
@@ -925,11 +932,18 @@ step
     >>|cRXP_FRIENDLY_Darkshore|r: The Tower of Althalaxx
     >>|cRXP_FRIENDLY_Darnassus|r: Velinde Starsong
 step
-    .xp 30 >>|cRXP_WARN_The rest of Ashenvale is planned from level 30.|r Come back to this guide then
-step
-    #label RBSection5_1
-    #completewith next
-    +|cRXP_WARN_Ashenvale: part 5|r (planned from level 30)
+    +|cRXP_WARN_The rest of Ashenvale is planned from level 30.|r Load its guide for level 30 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 18 - 31 Ashenvale
+#subweight -18
+#name 30-31 Ashenvale
+
 step
     .goto 1440/1,-802.73,1966.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r

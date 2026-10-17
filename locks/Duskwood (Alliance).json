@@ -1,12 +1,13 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "17-31 Duskwood",
-  "saved": "2026-10-15 16:55",
+  "saved": "2026-10-17 13:24",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        "accept:78147 @1431:382.43,-10227.87  Accept Crimes Against Anatomy",
         "item:91746 @1431:-1250.26,-10020.33  ItemAccept Elmpaw's Head",
         "turnin:95161 @1431:-1138.48,-10516.23  TurnIn Remember That I Love You",
         "turnin:145 @1431:-1108.78,-10552.23  TurnIn Messenger to Darkshire",
@@ -35,6 +36,7 @@
         "accept:240 @1431:-1157.92,-10499.31  Accept Return to Jitters",
         "turnin:68 @1431:-1125.25,-10560.33  TurnIn The Legend of Stalvan",
         "turnin:240 @1431:337.07,-10731.33  TurnIn Return to Jitters",
+        "obj:78147:1 @1431:382.43,-10227.87  Objective Crimes Against Anatomy / Crimes Against Anatomy (1)",
         {"lines":[".goto 1431/0,395.39,-10312.47,40,0",".goto 1431/0,345.17,-10307.07,40,0",".goto 1431/0,239.33,-10401.75,40,0",".goto 1431/0,242.03,-10322.19,40,0",".goto 1431/0,147.26,-10323.99,40,0",".goto 1431/0,170.75,-10417.95,40,0",".goto 1431/0,202.61,-10451.25,40,0",".goto 1431/0,178.31,-10481.67,40,0",".goto 1431/0,217.19,-10556.73,40,0",".goto 1431/0,237.98,-10584.99,40,0",".goto 1431/0,280.37,-10567.35,40,0",".goto 1431/0,354.89,-10577.97,40,0",".goto 1431/0,438.32,-10577.43,40,0",".goto 1431/0,444.26,-10468.17,40,0",".goto 1431/0,395.39,-10312.47,40,0",".xp 27+36025 >> Grind to 36025+/38900xp"],"from":"RestedXP: 27-32 ADV Duskwood Mage AoE"},
         "turnin:1243 @1431:-1147.12,-10301.85  TurnIn The Missing Diplomat",
         "turnin:78 @1431:-1158.73,-10517.49  TurnIn The Legend of Stalvan",

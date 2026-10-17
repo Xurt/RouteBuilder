@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "25-38 Alterac Mountains",
-  "saved": "2026-10-15 16:51",
+  "saved": "2026-10-17 13:20",
   "levels": "RestedXP",
   "parts": [
     {
@@ -19,7 +19,7 @@
         "obj:503:3 @1416:-912.07,683.71  Objective Gol'dir / Find where Gol'dir is being held",
         "obj:503:1 @1416:-895.55,683.52  Objective Gol'dir / Gol'dir",
         "turnin:503 @1416:-895.55,683.52  TurnIn Gol'dir",
-        "turnin:97287 @1416:383.77,378.69  TurnIn Shrewd Negotiations"
+        "turnin:97287 @1416:387.13,379.07  TurnIn Shrewd Negotiations"
       ]
     },
     {
@@ -42,6 +42,19 @@
         "turnin:96781 @1416:-1594.71,-0.43  TurnIn What's the Big Idea?",
         "turnin:96779 @1416:-1594.71,-0.43  TurnIn Syndicate Sabotage",
         "accept:506 @1416:-895.55,683.52  Accept Blackmoore's Legacy"
+      ]
+    },
+    {
+      "part": 4,
+      "steps": [
+        "accept:79948 @1416:-571.87,424.8  Accept Defensive Magics 101",
+        "obj:79948:1 @1416:-574.67,422.93  Objective Defensive Magics 101 / Defensive Magics 101 (1)",
+        "turnin:79361 @1416:-1470.67,250.83  TurnIn Storm, Earth, and Fire",
+        "turnin:79363 @1416:-1470.67,250.83  TurnIn Silvia's Sword",
+        "turnin:79362 @1416:-1470.67,250.83  TurnIn Grant's Shield",
+        "turnin:79364 @1416:-1470.67,250.83  TurnIn Eyes on the Sky",
+        "turnin:96781 @1416:-1594.71,-0.43  TurnIn What's the Big Idea?",
+        "turnin:96779 @1416:-1594.71,-0.43  TurnIn Syndicate Sabotage"
       ]
     }
   ]

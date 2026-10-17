@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "55-60 Eastern Plaguelands",
-  "saved": "2026-10-15 16:58",
+  "saved": "2026-10-17 13:27",
   "levels": "RestedXP",
   "parts": [
     {
@@ -91,26 +91,32 @@
     {
       "part": 2,
       "steps": [
-        "obj:5149:collect12886 @1423:-3657.87,1410.95  Objective Pamela's Doll / Pamela's Doll's Head",
-        "obj:5149:collect12888 @1423:-3680.24,1407.79  Objective Pamela's Doll / Pamela's Doll's Right Side",
+        "accept:84398 @1423:-5347.73,2307.93  Accept A Study of the Light",
+        "obj:84398:1 @1423:-5347.73,2307.93  Objective A Study of the Light / A Study of the Light (1)",
+        "accept:5465 @1423:-5349.02,2307.35  Accept Soulbound Keepsake",
+        "accept:9664 @1423:-5332.67,2268.08  Accept Establishing New Outposts",
+        "obj:9664:2 @1423:-4796.2,2561.91  Objective Establishing New Outposts / <TXT>Eastwall Capture Quest Doodad",
+        "obj:9664:3 @1423:-4375.03,3169.93  Objective Establishing New Outposts / <TXT>Northpass Capture Quest Doodad",
+        "accept:84401 @1423:-3393.29,3257.94  Accept Scourge: Undead Menace or Misunderstood?",
+        "obj:84401:1 @1423:-3393.29,3257.94  Objective Scourge: Undead Menace or Misunderstood? / Scourge: Undead Menace or Misunderstood? (1)",
+        "obj:9664:4 @1423:-3037.51,2973.28  Objective Establishing New Outposts / <TXT>Plaguewood Capture Quest Doodad",
         "obj:5149:collect12887 @1423:-3663.89,1423.56  Objective Pamela's Doll / Pamela's Doll's Left Side",
+        "obj:5149:collect12888 @1423:-3680.24,1407.79  Objective Pamela's Doll / Pamela's Doll's Right Side",
+        "obj:5149:collect12886 @1423:-3657.87,1410.95  Objective Pamela's Doll / Pamela's Doll's Head",
         "turnin:5149 @1423:-3596.35,1456.24  TurnIn Pamela's Doll",
         {"lines":[".goto 1423/0,-5457.00,1894.27",".goto 1423/0,-5375.26,1788.20,0",".goto 1423/0,-5379.56,1865.60,0",".goto 1423/0,-5555.95,1897.13,0",".goto 1423/0,-5474.21,2003.20,0",".goto 1423/0,-5555.95,2008.93,0",".goto 1423/0,-4648.21,1771.00,0",".goto 1423/0,-4592.28,1682.13,0",".goto 1423/0,-4489.03,1685.00,0",">>Kill and loot any |cRXP_ENEMY_Rotting Sludges|r and |cRXP_ENEMY_Living Decay|r untill you loot a |T132108:0|t[|cRXP_LOOT_Bubbling Green Ichor|r]. You will need it to get the rune of |T132178:0|t[|cRXP_FRIENDLY_Resourcefulness|r] soon",">>|cRXP_WARN_The ichor is a gray item, be careful not to vendor it!|r",".collect 20770,1",".train 440557,1"],"tag":"Hunter","from":"RestedXP: 58-60 Western/Eastern Plaguelands SoD"},
-        "accept:5465 @1423:-5349.02,2307.35  Accept Soulbound Keepsake",
         "turnin:6026 @1423:-5305.57,2303.34  TurnIn That's Asking A Lot",
         {"lines":[".goto 1423/0,-3022.02,2825.93",">>Head to Terrordale and kill |cRXP_ENEMY_Plagued Swines|r untill you loot a |T134046:0|t[|cRXP_LOOT_Tainted Boar Meat|r]",".collect 225942,1",".train 440557,1"],"tag":"Hunter","from":"RestedXP: 58-60 Western/Eastern Plaguelands SoD"},
         {"lines":[">>Use the |T134046:0|t[|cRXP_LOOT_Tainted Boar Meat|r] to combine it with the |T132108:0|t[|cRXP_LOOT_Bubbling Green Ichor|r] and create a |T134047:0|t[Rancid Hunk of Flesh]",".collect 225943,1",".train 440557,1"],"tag":"Hunter","from":"RestedXP: 58-60 Western/Eastern Plaguelands SoD"},
         {"lines":[".goto 1423/0,-3231.96,2627.56,-1",".goto 1423/0,-3089.56,2934.29,-1",".goto 1423/0,-3539.56,2572.23,-1",">>Look for a |cRXP_ENEMY_Carrion Grub|r or a |cRXP_ENEMY_Carrion Devourer|r. The closest possible spawns to Terrordale are just north and south of it",">>Use the |T134047:0|t[Rancid Hunk of Flesh] on it to feed it. |cRXP_WARN_The grub will spawn a skeleton after a short animation, loot it for|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Resourceful|r]",".collect 225955,1",".train 440557,1"],"tag":"Hunter","from":"RestedXP: 58-60 Western/Eastern Plaguelands SoD"},
         {"lines":[".train 440557 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Resourceful|r] |cRXP_WARN_to train|r |T132178:0|t[Resourcefulness]",".train 440557,1"],"tag":"Hunter","from":"RestedXP: 58-60 Western/Eastern Plaguelands SoD"},
         "accept:6024 @1423:-3241.43,1600.15  Accept Hameya's Plea",
-        "accept:9664 @1423:-5332.67,2268.08  Accept Establishing New Outposts",
-        "obj:9664:2 @1423:-4796.2,2561.91  Objective Establishing New Outposts / <TXT>Eastwall Capture Quest Doodad",
-        "obj:6024:1 @1423:-4921.82,3373.18  Objective Hameya's Plea / Hameya's Key (1)",
-        "obj:9664:3 @1423:-4375.03,3169.93  Objective Establishing New Outposts / <TXT>Northpass Capture Quest Doodad",
-        "obj:9664:4 @1423:-3037.51,2973.28  Objective Establishing New Outposts / <TXT>Plaguewood Capture Quest Doodad",
-        "turnin:6024 @1423:-3270.68,1576.35  TurnIn Hameya's Plea",
         "obj:9664:1 @1423:-3722.83,1854.13  Objective Establishing New Outposts / <TXT>Crown Guard Capture Quest Doodad",
-        "turnin:9664 @1423:-5332.67,2268.08  TurnIn Establishing New Outposts"
+        "accept:84400 @1423:-4291.14,2481.07  Accept The Knight and the Lady",
+        "obj:84400:1 @1423:-4291.14,2481.07  Objective The Knight and the Lady / The Knight and the Lady (1)",
+        "obj:6024:1 @1423:-4921.82,3373.18  Objective Hameya's Plea / Hameya's Key (1)",
+        "turnin:9664 @1423:-5332.67,2268.08  TurnIn Establishing New Outposts",
+        "turnin:6024 @1423:-3270.68,1576.35  TurnIn Hameya's Plea"
       ]
     }
   ]

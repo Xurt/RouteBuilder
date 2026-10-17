@@ -1,18 +1,18 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "14-60 Alterac Mountains",
-  "saved": "2026-10-15 16:57",
+  "saved": "2026-10-17 13:26",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
-        "turnin:94946 @1416:437.25,448.88  TurnIn The Magical City of Dalaran",
+        "turnin:94946 @1416:438.93,449.07  TurnIn The Magical City of Dalaran",
         "accept:99191 @1416:457.13,422.37  Accept A Donation of Wool",
-        "accept:94947 @1416:437.25,448.88  Accept Welcome to Azeroth",
+        "accept:94947 @1416:438.93,449.07  Accept Welcome to Azeroth",
         "accept:94912 @1416:255.81,34.85  Accept Child of Nature",
         "obj:94947:1 @1416:446.21,450.75  Objective Welcome to Azeroth / Skyborne Portal to Stormwind",
-        "turnin:92459 @1416:383.77,378.69  TurnIn Friend of the Kirin Tor",
+        "turnin:92459 @1416:387.13,379.07  TurnIn Friend of the Kirin Tor",
         "turnin:1791 @1416:-1470.67,250.83  TurnIn The Windwatcher",
         "turnin:602 @1416:255.81,34.85  TurnIn Magical Analysis",
         "turnin:8236 @1416:-1625.23,27.57  TurnIn The Azure Key",
@@ -63,6 +63,18 @@
     {
       "part": 7,
       "steps": [
+        "accept:79948 @1416:-571.87,424.8  Accept Defensive Magics 101",
+        "obj:79948:1 @1416:-574.67,422.93  Objective Defensive Magics 101 / Defensive Magics 101 (1)",
+        "turnin:98896 @1416:-316.79,-36.83  TurnIn Darkspear Islands Clash",
+        "turnin:98895 @1416:-316.79,-36.83  TurnIn Darkspear Islands Clash",
+        "accept:603 @1416:255.81,34.85  Accept Ansirem's Key",
+        "turnin:96781 @1416:-1594.71,-0.43  TurnIn What's the Big Idea?",
+        "turnin:96779 @1416:-1594.71,-0.43  TurnIn Syndicate Sabotage"
+      ]
+    },
+    {
+      "part": 8,
+      "steps": [
         "accept:8234 @1416:-1625.23,27.57  Accept Sealed Azure Bag",
         "turnin:96781 @1416:-1594.71,-0.43  TurnIn What's the Big Idea?",
         "turnin:96779 @1416:-1594.71,-0.43  TurnIn Syndicate Sabotage",
@@ -70,22 +82,11 @@
         "turnin:98895 @1416:-316.79,-36.83  TurnIn Darkspear Islands Clash",
         "accept:1712 @1416:-1470.67,250.83  Accept Cyclonian",
         "obj:1712:1 @1416:-189.95,1317.07  Objective Cyclonian / Liferoot (1)",
-        "accept:603 @1416:255.81,34.85  Accept Ansirem's Key",
         "accept:1713 @1416:-1470.67,250.83  Accept The Summoning",
         "obj:1713:1 @1416:-1465.63,340.05  Objective The Summoning / Whirlwind Heart (1)",
         "turnin:1713 @1416:-1470.67,250.83  TurnIn The Summoning",
         "accept:1792 @1416:-1470.67,250.83  Accept Whirlwind Weapon",
         "turnin:1792 @1416:-1470.67,250.83  TurnIn Whirlwind Weapon"
-      ]
-    },
-    {
-      "part": 8,
-      "steps": [
-        "turnin:98896 @1416:-316.79,-36.83  TurnIn Darkspear Islands Clash",
-        "turnin:98895 @1416:-316.79,-36.83  TurnIn Darkspear Islands Clash",
-        "accept:8371 @1416:-316.79,-36.83  Accept Concerted Efforts",
-        "turnin:96781 @1416:-1594.71,-0.43  TurnIn What's the Big Idea?",
-        "turnin:96779 @1416:-1594.71,-0.43  TurnIn Syndicate Sabotage"
       ]
     }
   ]

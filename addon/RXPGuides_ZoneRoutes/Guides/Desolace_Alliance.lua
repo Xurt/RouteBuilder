@@ -1,9 +1,9 @@
 -- 31-40 Desolace: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 31, 34, 37).
--- Sections (the guide starts at the one for your level): around Vahlarriel Demonslayer from 31; part 2 from 34; part 3 from 37.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 31, 34, 37).
+-- Split into 3 guides, listed under "31 - 38 Desolace" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Desolace.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,20 +13,10 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 31-40 Desolace
+#subgroup 31 - 38 Desolace
+#subweight -31
+#name 31-32 Desolace: around Vahlarriel Demonslayer
 
-step
-    .xp <34,1,RBSection1_1
-    .xp 34 >>Finding the place in this guide for your level
-step
-    .xp <37,1,RBSection2_1
-    .xp 37 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Desolace: around Vahlarriel Demonslayer|r (planned from level 31)
 step
     .goto 1443/1,1246.30,97.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahlarriel Demonslayer|r
@@ -303,11 +293,26 @@ step
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Crystal in the Mountains
     >>|cRXP_FRIENDLY_Shen'dralas|r: Valley of Bones, Valley of Bones
 step
-    .xp 34 >>|cRXP_WARN_The rest of Desolace is planned from level 34.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Desolace is planned from level 34.|r Load its guide for level 34 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 31 - 38 Desolace
+#subweight -31
+#name 34-35 Desolace
+
 step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Desolace: part 2|r (planned from level 34)
+    .goto 1443/1,1760.62,-333.37
+    >>Click the |cRXP_PICK_Mysterious Book|r
+    .accept 79950 >>Accept Demons and You
+step
+    .goto 1443/1,1760.62,-333.37
+    >>Open the |cRXP_PICK_Mysterious Book|r. Loot it for |cRXP_LOOT_Demons and You|r
+    .complete 79950,1 --Demons and You (1)
 step
     .goto 1443/1,1257.09,163.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
@@ -470,12 +475,20 @@ step
 step
     +|cRXP_WARN_That is all of Desolace for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ironforge|r: The Karnitol Shipwreck
+    >>|cRXP_FRIENDLY_Undercity|r: Demons and You
 step
-    .xp 37 >>|cRXP_WARN_The rest of Desolace is planned from level 37.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Desolace: part 3|r (planned from level 37)
+    +|cRXP_WARN_The rest of Desolace is planned from level 37.|r Load its guide for level 37 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 31 - 38 Desolace
+#subweight -31
+#name 37-38 Desolace
+
 step
     .goto 1443/1,1242.70,214.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Anton|r

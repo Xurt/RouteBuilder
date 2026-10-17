@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "9-52 Durotar",
-  "saved": "2026-10-15 16:54",
+  "saved": "2026-10-17 13:23",
   "levels": "RestedXP",
   "parts": [
     {
@@ -32,30 +32,37 @@
     {
       "part": 3,
       "steps": [
-        "item:6681 @1454:-4284.42,1771.18  ItemAccept The Manor, Ravenholdt"
+        "accept:79094 @1454:-4223.41,1540.51  Accept The Lessons of Ta'zo",
+        "obj:79094:1 @1454:-4223.41,1540.51  Objective The Lessons of Ta'zo / The Lessons of Ta'zo (1)"
       ]
     },
     {
       "part": 4,
+      "steps": [
+        "item:6681 @1454:-4284.42,1771.18  ItemAccept The Manor, Ravenholdt"
+      ]
+    },
+    {
+      "part": 5,
       "steps": [
         "accept:1718 @1454:-4808.15,1970.99  Accept The Islander",
         "accept:1947 @1454:-4219.9,1468.2  Accept Journey to the Marsh"
       ]
     },
     {
-      "part": 5,
+      "part": 6,
       "steps": [
         "accept:1953 @1454:-4219.9,1468.2  Accept Return to the Marsh"
       ]
     },
     {
-      "part": 6,
+      "part": 7,
       "steps": [
         "accept:2861 @1454:-4219.9,1468.2  Accept Tabetha's Task"
       ]
     },
     {
-      "part": 7,
+      "part": 8,
       "steps": [
         "accept:8417 @1454:-4808.15,1970.99  Accept A Troubled Spirit",
         "accept:8233 @1454:-4296.34,1762.86  Accept A Simple Request",

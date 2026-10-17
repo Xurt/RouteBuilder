@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "30-37 Thousand Needles",
-  "saved": "2026-10-15 16:56",
+  "saved": "2026-10-17 13:25",
   "levels": "RestedXP",
   "parts": [
     {
@@ -55,6 +55,8 @@
     {
       "part": 2,
       "steps": [
+        "accept:79947 @1441:-1946.93,-5142.93  Accept Geomancy: The Stone-Cold Truth",
+        "obj:79947:1 @1441:-1951.33,-5142.93  Objective Geomancy: The Stone-Cold Truth / Geomancy: The Stone-Cold Truth (1)",
         "accept:1175 @1441:-4025.05,-6253.2  Accept A Bump in the Road",
         "obj:1175:1 @1441:-3754.89,-5649.52  Objective A Bump in the Road / Saltstone Basilisk slain (10)",
         "obj:1175:2 @1441:-3888.21,-6577.33  Objective A Bump in the Road / Saltstone Crystalhide slain (10)",

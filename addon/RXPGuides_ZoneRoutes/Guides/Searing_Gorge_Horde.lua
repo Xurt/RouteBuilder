@@ -1,9 +1,9 @@
 -- 45-52 Searing Gorge: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 45, 48, 51).
--- Sections (the guide starts at the one for your level): start from 45; around Hansel Heavyhands from 48; part 3 from 51.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 45, 48, 51).
+-- Split into 3 guides, listed under "45 - 52 Searing Gorge" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Searing Gorge.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,20 +13,14 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 45-52 Searing Gorge
+#subgroup 45 - 52 Searing Gorge
+#subweight -45
+#name 45-46 Searing Gorge
 
 step
-    .xp <48,1,RBSection1_1
-    .xp 48 >>Finding the place in this guide for your level
-step
-    .xp <51,1,RBSection2_1
-    .xp 51 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Searing Gorge: start|r (planned from level 45)
+    .goto 1427/0,-1166.33,-6833.34
+    >>Click the |cRXP_PICK_Book|r
+    .accept 81955 >>Accept A Mind of Metal
 step
     .goto 1427/0,-1786.39,-7024.78
     >>Click the |cRXP_PICK_Wooden Outhouse|r
@@ -77,23 +71,26 @@ step
     .target Grisha
     .subzoneskip 1446,1
 step
-    #completewith Along6
+    #completewith Along7
     >>As you go: Kill |cRXP_ENEMY_Dark Iron Slavers|r. |cRXP_WARN_Anything left is finished later|r
     .complete 7729,2 --Dark Iron Slaver slain (15)
     .mob Dark Iron Slaver
 step
-    #label Along6
+    #label Along7
     #loop
-    .goto 1427/0,-1337.91,-6811.17,0
+    .goto 1427/0,-1168.56,-6837.80,0
+    .goto 1427/0,-1168.56,-6837.80,40,0
     .goto 1427/0,-1337.91,-6811.17,40,0
     .goto 1427/0,-1394.59,-6835.42,40,0
     .goto 1427/0,-1431.40,-6864.72,40,0
     .goto 1427/0,-1237.06,-6949.81,40,0
+    .goto 1427/0,-1197.57,-6931.81,40,0
     .goto 1427/0,-1005.90,-7060.33,40,0
     .goto 1427/0,-993.41,-6988.04,40,0
-    .goto 1427/0,-1197.57,-6931.81,40,0
     >>Kill |cRXP_ENEMY_Blazing Elementals|r, |cRXP_ENEMY_Inferno Elementals|r and |cRXP_ENEMY_Magma Elementals|r. Loot them for |cRXP_LOOT_Heart of Flame|r
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_A Mind of Metal|r
     .complete 3442,1 --Heart of Flame (4)
+    .complete 81955,1 --A Mind of Metal (1)
     .mob Blazing Elemental
     .mob Inferno Elemental
     .mob Magma Elemental
@@ -296,12 +293,20 @@ step
 step
     +|cRXP_WARN_That is all of Searing Gorge for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Tanaris|r: Ledger from Tanaris
+    >>|cRXP_FRIENDLY_Undercity|r: A Mind of Metal
 step
-    .xp 48 >>|cRXP_WARN_The rest of Searing Gorge is planned from level 48.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Searing Gorge: around Hansel Heavyhands|r (planned from level 48)
+    +|cRXP_WARN_The rest of Searing Gorge is planned from level 48.|r Load its guide for level 48 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 45 - 52 Searing Gorge
+#subweight -45
+#name 48-49 Searing Gorge: around Hansel Heavyhands
+
 step
     .goto 1427/0,-1183.73,-6513.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hansel Heavyhands|r
@@ -460,11 +465,18 @@ step
     .turnin 7722 >>Turn in What the Flux?
     .target Master Smith Burninate
 step
-    .xp 51 >>|cRXP_WARN_The rest of Searing Gorge is planned from level 51.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Searing Gorge: part 3|r (planned from level 51)
+    +|cRXP_WARN_The rest of Searing Gorge is planned from level 51.|r Load its guide for level 51 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 45 - 52 Searing Gorge
+#subweight -45
+#name 51-52 Searing Gorge
+
 step
     .goto 1427/0,-1196.90,-6680.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Maltrake|r

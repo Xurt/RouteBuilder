@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "31-45 Desolace",
-  "saved": "2026-10-15 16:50",
+  "saved": "2026-10-17 13:19",
   "levels": "RestedXP",
   "parts": [
     {
@@ -69,6 +69,8 @@
     {
       "part": 2,
       "steps": [
+        "accept:79950 @1443:1760.62,-333.37  Accept Demons and You",
+        "obj:79950:1 @1443:1760.62,-333.37  Objective Demons and You / Demons and You (1)",
         "accept:1365 @1443:1707.12,-1333.78  Accept Khan Dez'hepah",
         "obj:1365:1 @1443:906.42,-855.01  Objective Khan Dez'hepah / Khan Dez'hepah's Head (1)",
         "accept:1482 @1443:1884.26,-1150  Accept The Corrupter",

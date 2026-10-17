@@ -1,9 +1,9 @@
 -- 55-60 Eastern Plaguelands: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 55, 58).
--- Sections (the guide starts at the one for your level): around Tirion Fordring from 55; part 2 from 58.
+-- The zone covers more levels than one visit gives, so it is planned in 2 parts (from level 55, 58).
+-- Split into 2 guides, listed under "55 - 59 Eastern Plaguelands" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Eastern Plaguelands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,17 +13,10 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 55-60 Eastern Plaguelands
+#subgroup 55 - 59 Eastern Plaguelands
+#subweight -55
+#name 55-56 Eastern Plaguelands: around Tirion Fordring
 
-step
-    .xp <58,1,RBSection1_1
-    .xp 58 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection2_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Eastern Plaguelands: around Tirion Fordring|r (planned from level 55)
 step
     .goto 1423/0,-2478.24,2671.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
@@ -483,15 +476,65 @@ step
     >>|cRXP_FRIENDLY_Winterspring|r: Tormented By the Past
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Pamela's Doll, That's Asking A Lot
 step
-    .xp 58 >>|cRXP_WARN_The rest of Eastern Plaguelands is planned from level 58.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Eastern Plaguelands is planned from level 58.|r Load its guide for level 58 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 55 - 59 Eastern Plaguelands
+#subweight -55
+#name 58-59 Eastern Plaguelands
+
 step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Eastern Plaguelands: part 2|r (planned from level 58)
+    .goto 1423/0,-5347.73,2307.93
+    >>Click the |cRXP_PICK_Book|r
+    .accept 84398 >>Accept A Study of the Light
 step
-    .goto 1423/0,-3657.87,1410.95
-    >>Pick up |cRXP_PICK_Pamela's Doll's Head|r from the ground
-    .collect 12886,1,5149,1 --Pamela's Doll's Head (1)
+    .goto 1423/0,-5347.73,2307.93
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_A Study of the Light|r
+    .complete 84398,1 --A Study of the Light (1)
+step
+    .goto 1423/0,-5349.02,2307.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r
+    .accept 5465 >>Accept Soulbound Keepsake
+    .target Leonid Barthalomew the Revered
+    .isQuestTurnedIn 5464 --any of: Menethil's Gift
+    .xp <57,1
+step
+    .goto 1423/0,-5332.67,2268.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmisary Whitebeard|r
+    .accept 9664 >>Accept Establishing New Outposts
+    .target Emmisary Whitebeard
+step
+    .goto 1423/0,-4796.20,2561.91
+    >>Capture Crown Guard Tower, Eastwall Tower, Northpass Tower and Plaguewood Tower in the Eastern Plaguelands, then return to Emmisary Whitebeard at Light's Hope Chapel.
+    .complete 9664,2 --<TXT>Eastwall Capture Quest Doodad
+    .target <TXT>Eastwall Capture Quest Doodad
+step
+    .goto 1423/0,-4375.03,3169.93
+    >>Capture Crown Guard Tower, Eastwall Tower, Northpass Tower and Plaguewood Tower in the Eastern Plaguelands, then return to Emmisary Whitebeard at Light's Hope Chapel.
+    .complete 9664,3 --<TXT>Northpass Capture Quest Doodad
+    .target <TXT>Northpass Capture Quest Doodad
+step
+    .goto 1423/0,-3393.29,3257.94
+    >>Click the |cRXP_PICK_Book|r
+    .accept 84401 >>Accept Scourge: Undead Menace or Misunderstood?
+step
+    .goto 1423/0,-3393.29,3257.94
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Scourge: Undead Menace or Misunderstood?|r
+    .complete 84401,1 --Scourge: Undead Menace or Misunderstood? (1)
+step
+    .goto 1423/0,-3037.51,2973.28
+    >>Capture Crown Guard Tower, Eastwall Tower, Northpass Tower and Plaguewood Tower in the Eastern Plaguelands, then return to Emmisary Whitebeard at Light's Hope Chapel.
+    .complete 9664,4 --<TXT>Plaguewood Capture Quest Doodad
+    .target <TXT>Plaguewood Capture Quest Doodad
+step
+    .goto 1423/0,-3663.89,1423.56
+    >>Pick up |cRXP_PICK_Pamela's Doll's Left Side|r from the ground
+    .collect 12887,1,5149,1 --Pamela's Doll's Left Side (1)
     .isOnQuest 5149
 step
     .goto 1423/0,-3715.95,1477.17
@@ -499,9 +542,9 @@ step
     .collect 12888,1,5149,1 --Pamela's Doll's Right Side (1)
     .isOnQuest 5149
 step
-    .goto 1423/0,-3663.89,1423.56
-    >>Pick up |cRXP_PICK_Pamela's Doll's Left Side|r from the ground
-    .collect 12887,1,5149,1 --Pamela's Doll's Left Side (1)
+    .goto 1423/0,-3657.87,1410.95
+    >>Pick up |cRXP_PICK_Pamela's Doll's Head|r from the ground
+    .collect 12886,1,5149,1 --Pamela's Doll's Head (1)
     .isOnQuest 5149
 step
     .goto 1423/0,-3596.35,1456.24
@@ -523,13 +566,6 @@ step << Hunter
     >>|cRXP_WARN_The ichor is a gray item, be careful not to vendor it!|r
     .collect 20770,1
     .train 440557,1
-step
-    .goto 1423/0,-5349.02,2307.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r
-    .accept 5465 >>Accept Soulbound Keepsake
-    .target Leonid Barthalomew the Revered
-    .isQuestTurnedIn 5464 --any of: Menethil's Gift
-    .xp <57,1
 step
     .goto 1423/0,-5305.57,2303.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smokey LaRue|r
@@ -561,46 +597,35 @@ step
     >>Click the |cRXP_PICK_Torn Scroll|r
     .accept 6024 >>Accept Hameya's Plea
 step
-    .goto 1423/0,-5332.67,2268.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmisary Whitebeard|r
-    .accept 9664 >>Accept Establishing New Outposts
-    .target Emmisary Whitebeard
-step
-    .goto 1423/0,-4796.20,2561.91
+    .goto 1423/0,-3722.83,1854.13
     >>Capture Crown Guard Tower, Eastwall Tower, Northpass Tower and Plaguewood Tower in the Eastern Plaguelands, then return to Emmisary Whitebeard at Light's Hope Chapel.
-    .complete 9664,2 --<TXT>Eastwall Capture Quest Doodad
-    .target <TXT>Eastwall Capture Quest Doodad
+    .complete 9664,1 --<TXT>Crown Guard Capture Quest Doodad
+    .target <TXT>Crown Guard Capture Quest Doodad
+step
+    .goto 1423/0,-4291.14,2481.07
+    >>Click the |cRXP_PICK_Book|r
+    .accept 84400 >>Accept The Knight and the Lady
+step
+    .goto 1423/0,-4291.14,2481.07
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_The Knight and the Lady|r
+    .complete 84400,1 --The Knight and the Lady (1)
 step
     .goto 1423/0,-4921.82,3373.18
     >>Kill |cRXP_ENEMY_Infiltrator Hameya|r and loot |cRXP_LOOT_Hameya's Key|r
     .complete 6024,1 --Hameya's Key (1)
     .mob Infiltrator Hameya
 step
-    .goto 1423/0,-4375.03,3169.93
-    >>Capture Crown Guard Tower, Eastwall Tower, Northpass Tower and Plaguewood Tower in the Eastern Plaguelands, then return to Emmisary Whitebeard at Light's Hope Chapel.
-    .complete 9664,3 --<TXT>Northpass Capture Quest Doodad
-    .target <TXT>Northpass Capture Quest Doodad
-step
-    .goto 1423/0,-3037.51,2973.28
-    >>Capture Crown Guard Tower, Eastwall Tower, Northpass Tower and Plaguewood Tower in the Eastern Plaguelands, then return to Emmisary Whitebeard at Light's Hope Chapel.
-    .complete 9664,4 --<TXT>Plaguewood Capture Quest Doodad
-    .target <TXT>Plaguewood Capture Quest Doodad
-step
-    .goto 1423/0,-3270.68,1576.35
-    >>Click the |cRXP_PICK_Mound of Dirt|r
-    .turnin 6024 >>Turn in Hameya's Plea
-step
-    .goto 1423/0,-3722.83,1854.13
-    >>Capture Crown Guard Tower, Eastwall Tower, Northpass Tower and Plaguewood Tower in the Eastern Plaguelands, then return to Emmisary Whitebeard at Light's Hope Chapel.
-    .complete 9664,1 --<TXT>Crown Guard Capture Quest Doodad
-    .target <TXT>Crown Guard Capture Quest Doodad
-step
     .goto 1423/0,-5332.67,2268.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmisary Whitebeard|r
     .turnin 9664 >>Turn in Establishing New Outposts
     .target Emmisary Whitebeard
 step
+    .goto 1423/0,-3270.68,1576.35
+    >>Click the |cRXP_PICK_Mound of Dirt|r
+    .turnin 6024 >>Turn in Hameya's Plea
+step
     +|cRXP_WARN_That is all of Eastern Plaguelands for now.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Stormwind City|r: A Study of the Light, The Knight and the Lady, Scourge: Undead Menace or Misunderstood?
     >>|cRXP_FRIENDLY_Western Plaguelands|r: Soulbound Keepsake
 step
     +|cRXP_WARN_End of the Eastern Plaguelands route.|r

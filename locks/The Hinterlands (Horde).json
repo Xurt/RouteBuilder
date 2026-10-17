@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "39-53 The Hinterlands",
-  "saved": "2026-10-15 16:51",
+  "saved": "2026-10-17 13:20",
   "levels": "RestedXP",
   "parts": [
     {
@@ -21,6 +21,8 @@
     {
       "part": 2,
       "steps": [
+        "accept:81954 @1425:-2961,-401.87  Accept Venomous Journeys",
+        "obj:81954:1 @1425:-2961,-401.87  Objective Venomous Journeys / Venomous Journeys (1)",
         "accept:2933 @1425:-2481.29,-42.53  Accept Venom Bottles",
         "turnin:1446 @1425:-2874.38,-463.72  TurnIn Jammal'an the Prophet",
         "turnin:98888 @1425:-3512.71,-832.3  TurnIn Conflict at Darkspear Islands",

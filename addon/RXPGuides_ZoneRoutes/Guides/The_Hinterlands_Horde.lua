@@ -1,9 +1,9 @@
 -- 39-53 The Hinterlands: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 39, 42, 45, 48, 51).
--- Sections (the guide starts at the one for your level): start from 39; part 2 from 42; around Huntsman Markhor from 45; around Katoom the Angler from 48; part 5 from 51.
+-- The zone covers more levels than one visit gives, so it is planned in 5 parts (from level 39, 42, 45, 48, 51).
+-- Split into 5 guides, listed under "39 - 52 The Hinterlands" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/The Hinterlands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,26 +13,12 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 39-53 The Hinterlands
+#subgroup 39 - 52 The Hinterlands
+#subweight -39
+#name 39-40 The Hinterlands
+--RouteBuilder:next
+#next Zone Routes (Horde)\39-40 Stranglethorn Vale: around First Mate Crazz
 
-step
-    .xp <42,1,RBSection1_1
-    .xp 42 >>Finding the place in this guide for your level
-step
-    .xp <45,1,RBSection2_1
-    .xp 45 >>Finding the place in this guide for your level
-step
-    .xp <48,1,RBSection3_1
-    .xp 48 >>Finding the place in this guide for your level
-step
-    .xp <51,1,RBSection4_1
-    .xp 51 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection5_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_The Hinterlands: start|r (planned from level 39)
 step
     .goto 1425/0,-3512.71,-832.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
@@ -110,13 +96,28 @@ step
     >>|cRXP_FRIENDLY_Swamp of Sorrows|r: Return to Fel'Zerul
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Conflict at Darkspear Islands, Conflict at Darkspear Islands, Jammal'an the Prophet
 step
-    +|cRXP_WARN_Until level 42, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Far Seer Mok'thardin). Then come back to this The Hinterlands guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 39|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around First Mate Crazz). Completing this step loads the guide for Stranglethorn Vale --RouteBuilder:next
 step
-    .xp 42 >>|cRXP_WARN_The rest of The Hinterlands is planned from level 42.|r Come back to this guide then
+    +|cRXP_WARN_The rest of The Hinterlands is planned from level 42.|r Load its guide for level 42 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 39 - 52 The Hinterlands
+#subweight -39
+#name 42-43 The Hinterlands
+
 step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_The Hinterlands: part 2|r (planned from level 42)
+    .goto 1425/0,-2961.00,-401.87
+    >>Click the |cRXP_PICK_Book|r
+    .accept 81954 >>Accept Venomous Journeys
+step
+    .goto 1425/0,-2961.00,-401.87
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Venomous Journeys|r
+    .complete 81954,1 --Venomous Journeys (1)
 step
     .goto 1425/0,-2481.29,-42.53
     >>Click the |cRXP_PICK_Venom Bottle|r
@@ -142,12 +143,20 @@ step
 step
     +|cRXP_WARN_That is all of The Hinterlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: Venom Bottles
+    >>|cRXP_FRIENDLY_Undercity|r: Venomous Journeys
 step
-    .xp 45 >>|cRXP_WARN_The rest of The Hinterlands is planned from level 45.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_The Hinterlands: around Huntsman Markhor|r (planned from level 45)
+    +|cRXP_WARN_The rest of The Hinterlands is planned from level 45.|r Load its guide for level 45 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 39 - 52 The Hinterlands
+#subweight -39
+#name 45-46 The Hinterlands: around Huntsman Markhor
+
 step
     .goto 1425/0,-2603.34,219.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilveradin Sunchaser|r
@@ -441,11 +450,18 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Rescue OOX-09/HL!
     >>|cRXP_FRIENDLY_Undercity|r: Rin'ji's Secret
 step
-    .xp 48 >>|cRXP_WARN_The rest of The Hinterlands is planned from level 48.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_The Hinterlands: around Katoom the Angler|r (planned from level 48)
+    +|cRXP_WARN_The rest of The Hinterlands is planned from level 48.|r Load its guide for level 48 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 39 - 52 The Hinterlands
+#subweight -39
+#name 48-49 The Hinterlands: around Katoom the Angler
+
 step
     .goto 1425/0,-4583.39,-622.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lard|r
@@ -647,11 +663,18 @@ step
     .target Otho Moji'ko
     .isOnQuest 7843
 step
-    .xp 51 >>|cRXP_WARN_The rest of The Hinterlands is planned from level 51.|r Come back to this guide then
-step
-    #label RBSection5_1
-    #completewith next
-    +|cRXP_WARN_The Hinterlands: part 5|r (planned from level 51)
+    +|cRXP_WARN_The rest of The Hinterlands is planned from level 51.|r Load its guide for level 51 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 39 - 52 The Hinterlands
+#subweight -39
+#name 51-52 The Hinterlands
+
 step
     .goto 1425/0,-4619.58,-560.74
     >>Click the |cRXP_PICK_Call to Arms!|r

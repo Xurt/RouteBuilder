@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
-  "guide": "52-58 Western Plaguelands",
-  "saved": "2026-10-15 16:52",
+  "guide": "52-60 Western Plaguelands",
+  "saved": "2026-10-17 13:21",
   "levels": "RestedXP",
   "parts": [
     {
@@ -90,6 +90,27 @@
         "obj:6025:1 @1422:-1553.16,2843.5  Objective Unfinished Business / Overlook Hearthglen from a high vantage point",
         "turnin:5862 @1422:-1390.19,2942.69  TurnIn Scarlet Subterfuge",
         "turnin:6025 @1422:-1815.89,2562.28  TurnIn Unfinished Business"
+      ]
+    },
+    {
+      "part": 3,
+      "steps": [
+        "accept:84395 @1422:-1225.93,1801.47  Accept Undead Potatoes",
+        "obj:84395:1 @1422:-1225.93,1801.47  Objective Undead Potatoes / Undead Potatoes (1)",
+        "accept:5164 @1422:-1276.24,1452.31  Accept Catalogue of the Wayward",
+        "turnin:5164 @1422:-1275.38,1457.47  TurnIn Catalogue of the Wayward",
+        "accept:5166 @1422:-1275.38,1457.47  Accept Breastplate of the Chromatic Flight",
+        "accept:5167 @1422:-1275.38,1457.47  Accept Legplates of the Chromatic Defier",
+        "obj:5166:3 @1422:-1462.43,1345.67  Objective Breastplate of the Chromatic Flight / Blood of Heroes (10)",
+        "obj:5167:3 @1422:-1462.43,1345.67  Objective Legplates of the Chromatic Defier / Blood of Heroes (10)",
+        "accept:5461 @1422:-2617.84,1242.18  Accept The Human, Ras Frostwhisper",
+        "accept:5462 @1422:-2617.84,1242.18  Accept The Dying, Ras Frostwhisper",
+        "accept:84402 @1422:-2567.96,1278.59  Accept Necromancy 101",
+        "obj:84402:1 @1422:-2567.96,1278.59  Objective Necromancy 101 / Necromancy 101 (1)",
+        "turnin:5058 @1422:-1638.73,1914.13  TurnIn Mrs. Dalson's Diary",
+        "accept:5944 @1422:-1390.19,2942.69  Accept In Dreams",
+        "obj:5944:1 @1422:-1899.31,2669.49  Objective In Dreams / Redemption?",
+        "turnin:5944 @1422:-1903.18,2665.77  TurnIn In Dreams"
       ]
     }
   ]

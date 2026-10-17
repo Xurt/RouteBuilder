@@ -1,12 +1,15 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "34-52 Swamp of Sorrows",
-  "saved": "2026-10-15 16:57",
+  "saved": "2026-10-17 13:26",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        "accept:79953 @1435:-3633.57,-9964.9  Accept A Ludite's Guide to Caring for Your Demonic Pet",
+        "obj:79953:1 @1435:-3633.57,-9964.9  Objective A Ludite's Guide to Caring for Your Demonic Pet / A Luddite's Guide to Caring for Your Demonic Pet (1)",
+        "accept:93585 @1435:-2733.96,-10388.93  Accept This Light of Mine",
         "accept:93176 @1435:-2800.25,-10449.18  Accept My Little Friends",
         "accept:1396 @1435:-2836.27,-10535.73  Accept Encroaching Wildlife",
         "item:1392 @1435:-3482.19,-10142.28  ItemAccept Noboru the Cudgel",
@@ -20,7 +23,6 @@
         "obj:1421:1 @1435:-3701.47,-9900.67  Objective The Lost Caravan / Wizards' Reagents (1)",
         "obj:1389:1 @1435:-3501.22,-10063.37  Objective Draenethyst Crystals / Draenethyst Crystal (6)",
         "turnin:1389 @1435:-2818.83,-10100.99  TurnIn Draenethyst Crystals",
-        "accept:93585 @1435:-2731.21,-10388.93  Accept This Light of Mine",
         "turnin:1421 @1435:-2836.27,-10535.73  TurnIn The Lost Caravan",
         {"lines":[".hs >> Hearth to Booty Bay",">>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue",">>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue",".zoneskip Swamp of Sorrows,1"],"from":"RestedXP: 38-39 Swamp of Sorrows"},
         "turnin:8417 @1435:-3009.44,-10632.22  TurnIn A Troubled Spirit",
@@ -49,6 +51,14 @@
     },
     {
       "part": 4,
+      "steps": [
+        "accept:81947 @1435:-3828.54,-10400.71  Accept Sanguine Sorcery",
+        "obj:81947:1 @1435:-3828.54,-10400.71  Objective Sanguine Sorcery / Sanguine Sorcery (1)",
+        "turnin:93176 @1435:-2800.25,-10449.18  TurnIn My Little Friends"
+      ]
+    },
+    {
+      "part": 5,
       "steps": [
         "accept:8423 @1435:-3009.44,-10632.22  Accept Warrior Kinship",
         "turnin:93176 @1435:-2800.25,-10449.18  TurnIn My Little Friends",

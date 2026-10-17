@@ -1,7 +1,7 @@
 ## Interface: 11509, 38002, 50504, 120100, 120005, 120007, 16001
 ## Title: RestedXP Zone Routes
-## Notes: 68 zone guide file(s) made by RouteBuilder, packed 2026-10-15 16:59
-## Version: 2026.10.15
+## Notes: 70 zone guide file(s) made by RouteBuilder, packed 2026-10-17 13:28
+## Version: 2026.10.17
 ## Dependencies: RXPGuides
 
 Guides\Alterac_Mountains_Alliance.lua
@@ -17,14 +17,15 @@ Guides\Badlands_Horde.lua
 Guides\Blasted_Lands_Alliance.lua
 Guides\Blasted_Lands_Horde.lua
 Guides\Burning_Steppes_Alliance.lua
+Guides\Burning_Steppes_Horde.lua
 Guides\Darkshore_Alliance.lua
 Guides\Desolace_Alliance.lua
 Guides\Desolace_Horde.lua
 Guides\Dun_Morogh_Alliance.lua
+Guides\Dun_Morogh_Horde.lua
 Guides\Durotar_Alliance.lua
 Guides\Durotar_Horde.lua
 Guides\Duskwood_Alliance.lua
-Guides\Duskwood_Horde.lua
 Guides\Dustwallow_Marsh_Alliance.lua
 Guides\Dustwallow_Marsh_Horde.lua
 Guides\Eastern_Plaguelands_Alliance.lua
@@ -37,6 +38,7 @@ Guides\Feralas_Horde.lua
 Guides\Hillsbrad_Foothills_Alliance.lua
 Guides\Hillsbrad_Foothills_Horde.lua
 Guides\Loch_Modan_Alliance.lua
+Guides\Loch_Modan_Horde.lua
 Guides\Mulgore_Horde.lua
 Guides\Redridge_Mountains_Alliance.lua
 Guides\Redridge_Mountains_Horde.lua

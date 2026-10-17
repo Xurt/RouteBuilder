@@ -1,26 +1,39 @@
 {
-  "about": "Step order taken from RestedXP's guide by RxpToLock. RouteBuilder follows it and slots in this zone's other quests. Lines can be moved by hand. Delete the file, or build with --fresh, to plan the guide from scratch.",
-  "guide": "from RestedXP: 1-10 ADV Elwynn Forest Human Mage AoE, 10-11 ADV Dun Morogh Human Mage AoE, 1-10 ADV Dun Morogh Gnome Mage AoE, 1-10 Elwynn Forest Mage AoE, 1-10 Dun Morogh Mage AoE, 22-24 Hillsbrad, 23-24 Hillsbrad Class Quests, 24-26 Southern Barrens, 24-26 Southern Barrens/Stonetalon, 26-28 Ashenvale, 26-28 SoD Ashenvale, 28-30 Thousand Needles, 30-33 Hillsbrad/Arathi, 33-34 Shimmering Flats, 34-35 Desolace, 35-37 Northern Stranglethorn, 37-38 Dustwallow Marsh, 38-39 Alterac/Arathi, 39-40 Badlands, 40-41 Stranglethorn Vale, 41-400_41-41 Swamp of Sorrows, 41-41 Desolace II, 41-43 Tanaris/Dustwallow, 43-44 Feralas, 44-45 Southern Stranglethorn, 45-46 Swamp of Sorrows, 46-48 Tanaris, 48-49 The Hinterlands, 49-50 Feralas, 50-51 Stranglethorn/Blasted Lands, 51-52 Searing Gorge/Burning Steppes, 52-53 Azshara, 53-54 Felwood, 54-55 Un'Goro Crater, 55-56 Felwood/Winterspring, 56-58 Western PL/Eastern PL, 58-59 Winterspring/Silithus I, 59-60 Winterspring/Silithus II, 21-30 Silverpine/Hillsbrad AoE, 30-36 Arathi/Alterac AoE, 36-60 Mage AoE, 1-6 Durotar, 6-10 Durotar, 10-12 Durotar, 10-12 Tirisfal (Orc/Troll), 1-6 Tirisfal Glades, 6-12 Tirisfal Glades, 12-14 Silverpine Forest, 1-6 Mulgore, 6-12 Mulgore, 12-17 The Barrens, 17-22 Stonetalon/Barrens/Ashenvale, 12-17 The Barrens AoE, 17-21 Stonetalon/Barrens AoE, 1-14 Zephras Isle, Random Stuff",
-  "saved": "2026-10-15 16:52",
+  "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
+  "guide": "51-60 Burning Steppes",
+  "saved": "2026-10-17 13:21",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
-        "accept:3821 @1418:-2163.74,-6687.24  Accept Dreadmaul Rock [3821]  (RestedXP: 51-52 Searing Gorge/Burning Steppes)",
+        "accept:81953 @1428:-1114.95,-7595.99  Accept Stonewrought Design",
+        "obj:81953:1 @1428:-1114.95,-7595.99  Objective Stonewrought Design / Stonewrought Design (1)",
+        "turnin:7562 @1428:-638.38,-7648.89  TurnIn Mor'zul Bloodbringer",
+        "turnin:7625 @1428:-631.05,-7648.69  TurnIn Xorothian Stardust",
+        "turnin:4810 @1428:-2177.65,-7499.75  TurnIn Return to Tinkee",
         {"lines":[".goto 1428/0,-2190.84,-7504.24",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahgruk|r",".fp Flame Crest >>Get the Burning Steppes Flight Path",".target Vahgruk"],"from":"RestedXP: 51-52 Searing Gorge/Burning Steppes"},
-        "accept:4726 @1428:-2175.02,-7498.58  Accept Broodling Essence [4726]  (RestedXP: 51-52 Searing Gorge/Burning Steppes)",
-        "accept:4296 @1428:-2175.02,-7498.58  Accept Tablet of the Seven [4296]  (RestedXP: 51-52 Searing Gorge/Burning Steppes)",
-        "obj:4296:1 @1428:-1851.35,-7825.75  Objective 1 of Tablet of the Seven [4296]  (RestedXP: 51-52 Searing Gorge/Burning Steppes)",
-        "turnin:3821 @1428:-2604.14,-7921.4  TurnIn Dreadmaul Rock [3821]  (RestedXP: 51-52 Searing Gorge/Burning Steppes)",
-        "obj:3822:1 @1428:-2656.87,-7972.15  Objective 1 of Krom'Grul [3822]  (RestedXP: 51-52 Searing Gorge/Burning Steppes)",
-        "obj:4726:1 @1428:-2834.29,-7886.26  Objective 1 of Broodling Essence [4726]  (RestedXP: 51-52 Searing Gorge/Burning Steppes)",
-        "turnin:4726 @1428:-2175.02,-7498.58  TurnIn Broodling Essence [4726]  (RestedXP: 51-52 Searing Gorge/Burning Steppes)",
-        "accept:4808 @1428:-2175.02,-7498.58  Accept Felnok Steelspring [4808]  (RestedXP: 51-52 Searing Gorge/Burning Steppes)",
-        "turnin:4296 @1428:-2175.02,-7498.58  TurnIn Tablet of the Seven [4296]  (RestedXP: 51-52 Searing Gorge/Burning Steppes)",
-        "turnin:3822 @1418:-2163.74,-6687.24  TurnIn Krom'Grul [3822]  (RestedXP: 51-52 Searing Gorge/Burning Steppes)",
-        "accept:4022 @1428:-3051.16,-7647.39  Accept A Taste of Flame [4022]  (RestedXP: 56-58 Western PL/Eastern PL)",
-        "turnin:4022 @1428:-3051.16,-7647.39  TurnIn A Taste of Flame [4022]  (RestedXP: 56-58 Western PL/Eastern PL)"
+        "accept:4726 @1428:-2177.65,-7499.75  Accept Broodling Essence",
+        "accept:4296 @1428:-2175.02,-7497.99  Accept Tablet of the Seven",
+        "obj:4296:1 @1428:-1851.93,-7826.92  Objective Tablet of the Seven / Tablet Transcript (1)",
+        "turnin:3821 @1428:-2608.54,-7917.5  TurnIn Dreadmaul Rock",
+        "obj:4726:1 @1428:-2919.61,-7956.34  Objective Broodling Essence / Broodling Essence (8)",
+        "turnin:4726 @1428:-2177.65,-7499.75  TurnIn Broodling Essence",
+        "accept:4808 @1428:-2177.65,-7499.75  Accept Felnok Steelspring",
+        "turnin:4296 @1428:-2175.02,-7497.99  TurnIn Tablet of the Seven"
+      ]
+    },
+    {
+      "part": 2,
+      "steps": [
+        "accept:84396 @1428:-1039.97,-7508.53  Accept Magma or Lava?",
+        "obj:84396:1 @1428:-1039.97,-7508.53  Objective Magma or Lava? / Magma or Lava? (1)",
+        "accept:3822 @1428:-2608.54,-7917.5  Accept Krom'Grul",
+        "obj:3822:1 @1428:-2600.04,-7957.12  Objective Krom'Grul / Sha'ni's Nose-Ring (1)",
+        "accept:4022 @1428:-3052.01,-7647.33  Accept A Taste of Flame",
+        "obj:4022:2 @1428:-3052.01,-7647.33  Objective A Taste of Flame / Cyrus Therepentous (1)",
+        "obj:4022:1 @1428:-3031.8,-7652.01  Objective A Taste of Flame / Black Dragonflight Molt (1)",
+        "turnin:4022 @1428:-3052.01,-7647.33  TurnIn A Taste of Flame"
       ]
     }
   ]

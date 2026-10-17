@@ -1,9 +1,9 @@
 -- 24-38 Hillsbrad Foothills: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 24, 27, 30, 33).
--- Sections (the guide starts at the one for your level): start from 24; part 2 from 27; around Lieutenant Farren Orinelle from 30; part 4 from 33.
+-- The zone covers more levels than one visit gives, so it is planned in 4 parts (from level 24, 27, 30, 33).
+-- Split into 4 guides, listed under "24 - 34 Hillsbrad Foothills" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Hillsbrad Foothills.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,23 +13,12 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 24-38 Hillsbrad Foothills
+#subgroup 24 - 34 Hillsbrad Foothills
+#subweight -24
+#name 24-25 Hillsbrad Foothills
+--RouteBuilder:next
+#next Zone Routes (Alliance)\23-24 Wetlands: around Captain Stoutfist
 
-step
-    .xp <27,1,RBSection1_1
-    .xp 27 >>Finding the place in this guide for your level
-step
-    .xp <30,1,RBSection2_1
-    .xp 30 >>Finding the place in this guide for your level
-step
-    .xp <33,1,RBSection3_1
-    .xp 33 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection4_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Hillsbrad Foothills: start|r (planned from level 24)
 step
     .goto 1424/0,-571.41,-1015.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tom "Half-fish" Wilson|r
@@ -53,12 +42,12 @@ step
     .target Lieutenant Farren Orinelle
     .isOnQuest 98219
 step
-    .goto 1424/0,-420.37,-669.44
+    .goto 1424/0,-419.09,-670.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain McManus|r
     .accept 98059 >>Accept Hillsbrad's Hoard
     .target Captain McManus
 step
-    .goto 1424/0,-420.37,-669.44
+    .goto 1424/0,-419.09,-670.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain McManus|r
     >>|cRXP_WARN_The database has no objectives for Hillsbrad's Hoard. Skip this step if the quest is not finished|r
     .turnin 98059 >>Turn in Hillsbrad's Hoard
@@ -139,13 +128,20 @@ step
     >>|cRXP_FRIENDLY_Wetlands|r: A Lack of Virtue
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Brewer's Trade
 step
-    +|cRXP_WARN_Until level 27, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.8 levels of quests, starting around Karl Boran; 1 quest from here hands in there). Then come back to this Hillsbrad Foothills guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 24|r: |cRXP_FRIENDLY_Wetlands|r (about 0.7 levels of quests, starting around Captain Stoutfist). Completing this step loads the guide for Wetlands --RouteBuilder:next
 step
-    .xp 27 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 27.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Hillsbrad Foothills: part 2|r (planned from level 27)
+    +|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 27.|r Load its guide for level 27 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 24 - 34 Hillsbrad Foothills
+#subweight -24
+#name 27-28 Hillsbrad Foothills
+
 step
     .goto 1424/0,-473.81,-861.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
@@ -177,7 +173,7 @@ step
     .target Brewmeister Bilger
     .isQuestComplete 98071
 step
-    .goto 1424/0,-420.37,-669.44
+    .goto 1424/0,-419.09,-670.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain McManus|r
     .turnin 98059 >>Turn in Hillsbrad's Hoard
     .target Captain McManus
@@ -186,11 +182,20 @@ step
     +|cRXP_WARN_That is all of Hillsbrad Foothills for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: Syndicate Assassins
 step
-    .xp 30 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 30.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Hillsbrad Foothills: around Lieutenant Farren Orinelle|r (planned from level 30)
+    +|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 30.|r Load its guide for level 30 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 24 - 34 Hillsbrad Foothills
+#subweight -24
+#name 30-31 Hillsbrad Foothills: around Lieutenant Farren Orinelle
+--RouteBuilder:next
+#next Zone Routes (Alliance)\30-31 Wetlands
+
 step
     .goto 1424/0,-583.57,-849.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Kelly|r
@@ -257,7 +262,7 @@ step
     .accept 564 >>Accept Costly Menace
     .target Darren Malvew
 step
-    .goto 1424/0,-420.37,-669.44
+    .goto 1424/0,-419.09,-670.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain McManus|r
     .turnin 98059 >>Turn in Hillsbrad's Hoard
     .target Captain McManus
@@ -446,13 +451,22 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Talk of the Town
     >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: Costly Menace, Crushridge Bounty
 step
-    .xp 33 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 33.|r Come back to this guide then
+    +|cRXP_WARN_Suggested next zones at level 30|r: |cRXP_FRIENDLY_Wetlands|r (about 0.5 levels of quests). Completing this step loads the guide for Wetlands --RouteBuilder:next
 step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Hillsbrad Foothills: part 4|r (planned from level 33)
+    +|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 33.|r Load its guide for level 33 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 24 - 34 Hillsbrad Foothills
+#subweight -24
+#name 33-34 Hillsbrad Foothills
+
 step
-    .goto 1424/0,-420.37,-669.44
+    .goto 1424/0,-419.09,-670.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain McManus|r
     .turnin 98059 >>Turn in Hillsbrad's Hoard
     .target Captain McManus

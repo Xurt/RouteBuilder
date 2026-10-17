@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "24-38 Hillsbrad Foothills",
-  "saved": "2026-10-15 16:56",
+  "saved": "2026-10-17 13:25",
   "levels": "RestedXP",
   "parts": [
     {
@@ -10,7 +10,7 @@
         "accept:98459 @1424:-571.41,-1015.68  Accept A Lack of Virtue",
         "accept:98071 @1424:-601.49,-853.12  Accept Brewer's Trade",
         "turnin:98219 @1424:-580.05,-845.65  TurnIn The Shamed Lieutenant",
-        "accept:98059 @1424:-420.37,-669.44  Accept Hillsbrad's Hoard",
+        "accept:98059 @1424:-419.09,-670.93  Accept Hillsbrad's Hoard",
         "turnin:647 @1424:-601.49,-853.12  TurnIn MacKreel's Moonshine",
         "turnin:538 @1424:-551.57,-817.92  TurnIn Southshore",
         "accept:540 @1424:-551.57,-817.92  Accept Preserving Knowledge",
@@ -29,7 +29,7 @@
         "accept:505 @1424:-473.81,-861.01  Accept Syndicate Assassins",
         "accept:512 @1424:-473.81,-861.01  Accept Noble Deaths",
         "turnin:98071 @1424:-601.49,-853.12  TurnIn Brewer's Trade",
-        "turnin:98059 @1424:-420.37,-669.44  TurnIn Hillsbrad's Hoard"
+        "turnin:98059 @1424:-419.09,-670.93  TurnIn Hillsbrad's Hoard"
       ]
     },
     {
@@ -44,7 +44,7 @@
         {"lines":[".goto 1424/0,-512.21,-715.09",".fp Southshore >> Get the Southshore flight path",".fly Menethil >> Fly to Menethil"],"from":"RestedXP: 31-33 Hillsbrad Mage AoE"},
         "turnin:522 @1424:-473.81,-861.01  TurnIn Assassin's Contract",
         "accept:564 @1424:-610.77,-793.81  Accept Costly Menace",
-        "turnin:98059 @1424:-420.37,-669.44  TurnIn Hillsbrad's Hoard",
+        "turnin:98059 @1424:-419.09,-670.93  TurnIn Hillsbrad's Hoard",
         "obj:564:1 @1424:-174.93,-125.23  Objective Costly Menace / Mountain Lion slain (8)",
         "accept:514 @1424:-551.57,-817.92  Accept Letter to Stormpike",
         "turnin:505 @1424:-473.81,-861.01  TurnIn Syndicate Assassins",
@@ -76,7 +76,7 @@
     {
       "part": 4,
       "steps": [
-        "turnin:98059 @1424:-420.37,-669.44  TurnIn Hillsbrad's Hoard",
+        "turnin:98059 @1424:-419.09,-670.93  TurnIn Hillsbrad's Hoard",
         "obj:564:1 @1424:-174.93,-125.23  Objective Costly Menace / Mountain Lion slain (8)",
         "turnin:564 @1424:-610.77,-793.81  TurnIn Costly Menace",
         "turnin:98071 @1424:-601.49,-853.12  TurnIn Brewer's Trade",

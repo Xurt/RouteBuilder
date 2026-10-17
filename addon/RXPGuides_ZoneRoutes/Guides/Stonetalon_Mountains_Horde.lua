@@ -1,9 +1,9 @@
--- 15-29 Stonetalon Mountains: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- 18-29 Stonetalon Mountains: Zone Routes (Horde).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 15, 18, 21, 24).
--- Sections (the guide starts at the one for your level): start from 15; part 2 from 18; part 3 from 21; around Maggran Earthbinder from 24.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 18, 21, 24).
+-- Split into 3 guides, listed under "18 - 25 Stonetalon Mountains" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Stonetalon Mountains.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,53 +13,20 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 15-29 Stonetalon Mountains
+#subgroup 18 - 25 Stonetalon Mountains
+#subweight -18
+#name 18-19 Stonetalon Mountains
+--RouteBuilder:next
+#next Zone Routes (Horde)\18-20 The Barrens: around Tonga Runetotem;Zone Routes (Horde)\11-15 Zephras Isle: around Elegael Thornpaw
 
 step
-    .xp <18,1,RBSection1_1
-    .xp 18 >>Finding the place in this guide for your level
+    .goto 1442/1,-387.37,126.06
+    >>Click the |cRXP_PICK_Scrolls|r
+    .accept 78149 >>Accept Fury of the Land
 step
-    .xp <21,1,RBSection2_1
-    .xp 21 >>Finding the place in this guide for your level
-step
-    .xp <24,1,RBSection3_1
-    .xp 24 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection4_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Stonetalon Mountains: start|r (planned from level 15)
-step
-    .goto 1442/1,402.76,1231.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
-    .accept 78270 >>Accept Goblin Lockpicks
-    .target Veenix
-step
-    .goto 1442/1,402.76,1231.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
-    >>|cRXP_WARN_The database has no objectives for Goblin Lockpicks. Skip this step if the quest is not finished|r
-    .turnin 78270 >>Turn in Goblin Lockpicks
-    .target Veenix
-    .isOnQuest 78270
-step
-    .goto 1442/1,1255.39,1204.86
-    >>Click the |cRXP_PICK_Pocket Litter|r
-    .turnin 79192 >>Turn in Stepping Stones
-    .isOnQuest 79192
-step
-    .goto 1442/1,1255.39,1204.86
-    >>Click the |cRXP_PICK_Pocket Litter|r
-    .accept 79980 >>Accept Scramble
-step
-    .goto 1442/1,1311.06,1293.10
-    >>Click the |cRXP_PICK_Mound of Dirt|r
-    .turnin 79980 >>Turn in Scramble
-step
-    .goto 1442/1,939.92,831.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
-    .accept 6421 >>Accept Boulderslide Ravine
-    .target Mor'rogal
+    .goto 1442/1,-387.37,126.06
+    >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_Fury of the Land|r
+    .complete 78149,1 --Fury of the Land (1)
 step
     .goto 1442/1,-342.44,129.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaya Flathoof|r
@@ -70,10 +37,20 @@ step
     >>Kaya Escorted to Camp Aparaje
     .complete 6523,1 --Kaya Escorted to Camp Aparaje
 step
+    .goto 1442/1,-331.21,-173.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darn Talongrip|r
+    .accept 6542 >>Accept Report to Kadrak
+    .target Darn Talongrip
+step
     .goto 1442/1,-233.54,-177.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xen'Zilla|r
     .accept 6461 >>Accept Blood Feeders
     .target Xen'Zilla
+step
+    #completewith Along8
+    >>As you go: Kill |cRXP_ENEMY_Deepmoss Venomspitters|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 6461,2 --Deepmoss Venomspitter slain (7)
+    .mob Deepmoss Venomspitter
 step
     #loop
     .goto 1442/1,367.60,452.99,0
@@ -114,6 +91,12 @@ step
     .target Ziz Fizziks
     .isOnQuest 1483
 step
+    #label Along8
+    .goto 1442/1,365.16,878.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
+    .accept 1093 >>Accept Super Reaper 6000
+    .target Ziz Fizziks
+step
     #loop
     .goto 1442/1,365.64,940.77,0
     .goto 1442/1,365.64,940.77,40,0
@@ -135,6 +118,67 @@ step << Undead Warrior/Skyborne Warrior
     >>|cRXP_WARN_If it's not up, buy a|r |T135280:0|t[Dacian Falx] |cRXP_WARN_instead|r
     .money <1.5024
     .target Veenix
+step
+    #loop
+    .goto 1442/1,43.34,1234.81,0
+    .goto 1442/1,43.34,1234.81,40,0
+    .goto 1442/1,10.63,1234.49,40,0
+    .goto 1442/1,-30.39,1210.07,40,0
+    >>Kill |cRXP_ENEMY_Venture Co. Operator|r and loot |cRXP_LOOT_Super Reaper 6000 Blueprints|r
+    .complete 1093,1 --Super Reaper 6000 Blueprints (1)
+    .mob Venture Co. Operator
+step
+    .goto 1442/1,-602.23,1428.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Braug Dimspirit|r
+    .turnin 1152 >>Turn in Test of Lore
+    .target Braug Dimspirit
+    .isOnQuest 1152
+step
+    .goto 1442/1,402.76,1231.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
+    .accept 78270 >>Accept Goblin Lockpicks
+    .target Veenix
+step
+    .goto 1442/1,402.76,1231.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
+    >>|cRXP_WARN_The database has no objectives for Goblin Lockpicks. Skip this step if the quest is not finished|r
+    .turnin 78270 >>Turn in Goblin Lockpicks
+    .target Veenix
+    .isOnQuest 78270
+step
+    .goto 1442/1,365.16,878.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
+    .turnin 1093 >>Turn in Super Reaper 6000
+    .accept 1094 >>Accept Further Instructions
+    .target Ziz Fizziks
+step
+    .goto 1442/1,939.92,831.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
+    .accept 6421 >>Accept Boulderslide Ravine
+    .target Mor'rogal
+step
+    #completewith Along16
+    >>As you go: Pick up |cRXP_PICK_Resonite Crystal|r from the ground. |cRXP_WARN_Anything left is finished later|r
+    .complete 6421,1 --Resonite Crystal (10)
+step
+    #label Along16
+    .goto 1442/1,402.76,2.00
+    >>Investigate Cave in Boulderslide Ravine
+    .complete 6421,2 --Investigate Cave in Boulderslide Ravine
+step
+    #loop
+    .goto 1442/1,441.34,-4.19,0
+    .goto 1442/1,441.34,-4.19,40,0
+    .goto 1442/1,419.36,-53.68,40,0
+    .goto 1442/1,384.20,-83.64,40,0
+    .goto 1442/1,377.36,-123.69,40,0
+    .goto 1442/1,271.88,-93.74,40,0
+    .goto 1442/1,246.49,-49.13,40,0
+    .goto 1442/1,301.67,-32.19,40,0
+    .goto 1442/1,333.90,-62.48,40,0
+    .goto 1442/1,354.90,-11.03,40,0
+    >>Pick up |cRXP_PICK_Resonite Crystal|r from the ground
+    .complete 6421,1 --Resonite Crystal (10)
 step << Warlock
     .goto 1442/1,-331.21,-181.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'zigla|r
@@ -164,28 +208,34 @@ step
     .target Jeeda
     .isOnQuest 1095
 step
-    #loop
-    .goto 1442/1,246.49,-49.13,0
-    .goto 1442/1,246.49,-49.13,40,0
-    .goto 1442/1,271.88,-93.74,40,0
-    .goto 1442/1,377.36,-123.69,40,0
-    .goto 1442/1,384.20,-83.64,40,0
-    .goto 1442/1,419.36,-53.68,40,0
-    .goto 1442/1,441.34,-4.19,40,0
-    .goto 1442/1,354.90,-11.03,40,0
-    .goto 1442/1,333.90,-62.48,40,0
-    .goto 1442/1,301.67,-32.19,40,0
-    >>Pick up |cRXP_PICK_Resonite Crystal|r from the ground
-    .complete 6421,1 --Resonite Crystal (10)
-step
-    .goto 1442/1,402.76,2.00
-    >>Investigate Cave in Boulderslide Ravine
-    .complete 6421,2 --Investigate Cave in Boulderslide Ravine
-step
     .goto 1442/1,939.92,831.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
     .turnin 6421 >>Turn in Boulderslide Ravine
+    .accept 6481 >>Accept Earthen Arise
     .target Mor'rogal
+step
+    .goto 1442/1,442.80,5.58
+    >>Kill |cRXP_ENEMY_Goggeroc|r
+    .complete 6481,1 --Goggeroc slain (1)
+    .mob Goggeroc
+step
+    .goto 1442/1,939.92,831.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
+    .turnin 6481 >>Turn in Earthen Arise
+    .target Mor'rogal
+step
+    .goto 1442/1,1255.39,1204.86
+    >>Click the |cRXP_PICK_Pocket Litter|r
+    .turnin 79192 >>Turn in Stepping Stones
+    .isOnQuest 79192
+step
+    .goto 1442/1,1255.39,1204.86
+    >>Click the |cRXP_PICK_Pocket Litter|r
+    .accept 79980 >>Accept Scramble
+step
+    .goto 1442/1,1311.06,1293.10
+    >>Click the |cRXP_PICK_Mound of Dirt|r
+    .turnin 79980 >>Turn in Scramble
 step
     .goto 1442/1,928.20,1015.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra Windfield|r
@@ -206,6 +256,9 @@ step
     .target Jeeda
     .subzoneskip 460,1
 step
+    .goto 1442/1,1042.47,968.13
+    .fp Sun Rock>> Get the Sun Rock Retreat flight path
+step
     .goto 1442/1,365.16,878.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
     .turnin 1095 >>Turn in Further Instructions
@@ -218,12 +271,6 @@ step
     .target Nizzik
     .isOnQuest 1096
 step
-    .goto 1442/1,-602.23,1428.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Braug Dimspirit|r
-    .turnin 1152 >>Turn in Test of Lore
-    .target Braug Dimspirit
-    .isOnQuest 1152
-step
     .goto 1442/1,-394.20,-272.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Jin'Zil|r
     .turnin 1060 >>Turn in Letter to Jin'Zil
@@ -231,75 +278,25 @@ step
     .isOnQuest 1060
 step
     +|cRXP_WARN_That is all of Stonetalon Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
-    >>|cRXP_FRIENDLY_The Barrens|r: Protect Kaya
+    >>|cRXP_FRIENDLY_The Barrens|r: Protect Kaya, Report to Kadrak, Further Instructions
+    >>|cRXP_FRIENDLY_Undercity|r: Fury of the Land
 step
-    +|cRXP_WARN_Until level 18, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 0.8 levels of quests, starting around Sergra Darkthorn; 1 quest from here hands in there). Then come back to this Stonetalon Mountains guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 18|r: |cRXP_FRIENDLY_The Barrens|r (about 1.4 levels of quests, starting around Tonga Runetotem), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw). Completing this step loads the guide for The Barrens --RouteBuilder:next
 step
-    .xp 18 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 18.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Stonetalon Mountains: part 2|r (planned from level 18)
-step
-    .goto 1442/1,939.92,831.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
-    .accept 6481 >>Accept Earthen Arise
-    .target Mor'rogal
-    .isQuestTurnedIn 6421 --any of: Boulderslide Ravine
-step
-    .goto 1442/1,365.16,878.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
-    .accept 1093 >>Accept Super Reaper 6000
-    .target Ziz Fizziks
-step
-    #loop
-    .goto 1442/1,43.34,1234.81,0
-    .goto 1442/1,43.34,1234.81,40,0
-    .goto 1442/1,10.63,1234.49,40,0
-    .goto 1442/1,-30.39,1210.07,40,0
-    >>Kill |cRXP_ENEMY_Venture Co. Operator|r and loot |cRXP_LOOT_Super Reaper 6000 Blueprints|r
-    .complete 1093,1 --Super Reaper 6000 Blueprints (1)
-    .mob Venture Co. Operator
-step
-    .goto 1442/1,402.76,1231.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
-    .turnin 78270 >>Turn in Goblin Lockpicks
-    .target Veenix
-    .isOnQuest 78270
-step
-    .goto 1442/1,365.16,878.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
-    .turnin 1093 >>Turn in Super Reaper 6000
-    .accept 1094 >>Accept Further Instructions
-    .target Ziz Fizziks
-step
-    .goto 1442/1,-331.21,-173.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darn Talongrip|r
-    .accept 6542 >>Accept Report to Kadrak
-    .target Darn Talongrip
-step
-    .goto 1442/1,442.80,5.58
-    >>Kill |cRXP_ENEMY_Goggeroc|r
-    .complete 6481,1 --Goggeroc slain (1)
-    .mob Goggeroc
-    .isOnQuest 6481
-step
-    .goto 1442/1,939.92,831.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'rogal|r
-    .turnin 6481 >>Turn in Earthen Arise
-    .target Mor'rogal
-    .isOnQuest 6481
-step
-    +|cRXP_WARN_That is all of Stonetalon Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
-    >>|cRXP_FRIENDLY_The Barrens|r: Report to Kadrak, Further Instructions
-step
-    +|cRXP_WARN_Until level 21, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 1.4 levels of quests, starting around Tonga Runetotem). Then come back to this Stonetalon Mountains guide --RouteBuilder:next
-step
-    .xp 21 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 21.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Stonetalon Mountains: part 3|r (planned from level 21)
+    +|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 21.|r Load its guide for level 21 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 18 - 25 Stonetalon Mountains
+#subweight -18
+#name 21-22 Stonetalon Mountains
+--RouteBuilder:next
+#next Zone Routes (Horde)\18-20 The Barrens: around Tonga Runetotem
+
 step << Warlock
     .goto 1442/1,-331.21,-181.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'zigla|r
@@ -381,13 +378,20 @@ step
     +|cRXP_WARN_That is all of Stonetalon Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_The Barrens|r: Ken'zigla's Draught << Warlock
 step
-    +|cRXP_WARN_Until level 24, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 1.1 levels of quests, starting around Tonga Runetotem). Then come back to this Stonetalon Mountains guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 21|r: |cRXP_FRIENDLY_The Barrens|r (about 1.1 levels of quests, starting around Tonga Runetotem). Completing this step loads the guide for The Barrens --RouteBuilder:next
 step
-    .xp 24 >>|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 24.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Stonetalon Mountains: around Maggran Earthbinder|r (planned from level 24)
+    +|cRXP_WARN_The rest of Stonetalon Mountains is planned from level 24.|r Load its guide for level 24 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 18 - 25 Stonetalon Mountains
+#subweight -18
+#name 24-25 Stonetalon Mountains: around Maggran Earthbinder
+
 step
     .goto 1442/1,402.76,1231.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r

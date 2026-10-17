@@ -1,9 +1,9 @@
 -- 10-22 Darkshore: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 10, 17, 21).
--- Sections (the guide starts at the one for your level): around Thundris Windweaver from 10; around Archaeologist Hollee from 17; part 3 from 21.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 10, 17, 21).
+-- Split into 3 guides, listed under "10 - 22 Darkshore" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Darkshore.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,21 +13,12 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 10-22 Darkshore
-#next Zone Routes (Alliance)\21-34 Wetlands
+#subgroup 10 - 22 Darkshore
+#subweight -10
+#name 10-15 Darkshore: around Thundris Windweaver
+--RouteBuilder:next
+#next Zone Routes (Alliance)\9-12 Teldrassil: around Priestess A'moora;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Daryl the Youngling
 
-step
-    .xp <17,1,RBSection1_1
-    .xp 17 >>Finding the place in this guide for your level
-step
-    .xp <21,1,RBSection2_1
-    .xp 21 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Darkshore: around Thundris Windweaver|r (planned from level 10)
 step
     .goto 1439/1,543.06,6342.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
@@ -878,13 +869,26 @@ step
     >>|cRXP_FRIENDLY_Teldrassil|r: Return to Nessa << NightElf
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: The Family and the Fishing Pole
 step
-    +|cRXP_WARN_Until level 17, suggested zones|r: |cRXP_FRIENDLY_Zephras Isle|r (about 1.1 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling), |cRXP_FRIENDLY_Westfall|r (about 0.6 levels of quests, starting around Gryan Stoutmantle). Then come back to this Darkshore guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 14|r: |cRXP_FRIENDLY_Teldrassil|r (about 1.2 levels of quests, starting around Priestess A'moora), |cRXP_FRIENDLY_Zephras Isle|r (about 1.1 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling). Completing this step loads the guide for Teldrassil --RouteBuilder:next
 step
-    .xp 17 >>|cRXP_WARN_The rest of Darkshore is planned from level 17.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Darkshore is planned from level 17.|r Load its guide for level 17 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 10 - 22 Darkshore
+#subweight -10
+#name 17-19 Darkshore: around Archaeologist Hollee
+--RouteBuilder:next
+#next Zone Routes (Alliance)\18-19 Ashenvale: around Shindrell Swiftfire;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw
+
 step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Darkshore: around Archaeologist Hollee|r (planned from level 17)
+    .goto 1439/1,-962.13,7363.93
+    >>Click the |cRXP_PICK_Scrolls|r
+    .accept 78124 >>Accept Nar'thalas Almanac
 step
     .goto 1439/1,515.55,6406.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shaussiy|r
@@ -951,13 +955,13 @@ step
     >>Click the |cRXP_PICK_Twilight Tome|r
     .accept 98042 >>Accept It's All Fun and Games Until...
 step
-    #completewith Along10
+    #completewith Along11
     >>As you go: Kill |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for |cRXP_LOOT_Peerless Eye|r. |cRXP_WARN_Anything left is finished later|r
     .complete 98042,1 --Peerless Eye (1)
     .mob Twilight Disciple
     .mob Twilight Thug
 step
-    #label Along10
+    #label Along11
     .goto 1439/1,410.75,4519.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therylune|r
     .accept 945 >>Accept Therylune's Escape
@@ -990,7 +994,7 @@ step
     .mob Twilight Disciple
     .mob Twilight Thug
 step
-    .goto 1439/1,74.08,4993.71
+    .goto 1439/1,76.04,4992.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arbal|r
     .accept 98013 >>Accept Swelling Forces
     .target Arbal
@@ -1161,6 +1165,21 @@ step
     .turnin 2078 >>Turn in Gyromast's Revenge
     .target Gelkak Gyromast
 step
+    #loop
+    .goto 1439/1,-351.02,7834.22,0
+    .goto 1439/1,-351.02,7834.22,40,0
+    .goto 1439/1,-286.83,7861.30,40,0
+    .goto 1439/1,-224.60,7839.46,40,0
+    .goto 1439/1,-226.57,7763.92,40,0
+    .goto 1439/1,-189.23,7707.15,40,0
+    .goto 1439/1,-280.28,7667.85,40,0
+    .goto 1439/1,-345.12,7674.40,40,0
+    .goto 1439/1,-309.10,7724.18,40,0
+    .goto 1439/1,-281.59,7775.71,40,0
+    >>Kill |cRXP_ENEMY_Stormscale Beastmistress|r and loot |cRXP_LOOT_Rod of Deep Dominion|r
+    .complete 87760,1 --Rod of Deep Dominion (1)
+    .mob Stormscale Beastmistress
+step
     .goto 1439/1,491.97,6580.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 4763 >>Turn in The Blackwood Corrupted
@@ -1185,55 +1204,6 @@ step
     .target Terenthis
     .isQuestTurnedIn 986 --any of: A Lost Master
 step
-    #loop
-    .goto 1439/1,-189.23,7707.15,0
-    .goto 1439/1,-189.23,7707.15,40,0
-    .goto 1439/1,-280.28,7667.85,40,0
-    .goto 1439/1,-345.12,7674.40,40,0
-    .goto 1439/1,-309.10,7723.31,40,0
-    .goto 1439/1,-351.02,7834.22,40,0
-    .goto 1439/1,-286.83,7861.30,40,0
-    .goto 1439/1,-224.60,7839.46,40,0
-    .goto 1439/1,-281.59,7775.71,40,0
-    .goto 1439/1,-226.57,7763.92,40,0
-    >>Kill |cRXP_ENEMY_Stormscale Beastmistress|r and loot |cRXP_LOOT_Rod of Deep Dominion|r
-    .complete 87760,1 --Rod of Deep Dominion (1)
-    .mob Stormscale Beastmistress
-step
-    #loop
-    .goto 1439/1,-821.31,7486.20,0
-    .goto 1439/1,-821.31,7486.20,40,0
-    .goto 1439/1,-858.64,7457.82,40,0
-    .goto 1439/1,-905.15,7442.97,40,0
-    .goto 1439/1,-901.87,7368.30,40,0
-    .goto 1439/1,-890.08,7329.87,40,0
-    .goto 1439/1,-887.46,7254.77,40,0
-    .goto 1439/1,-880.26,7267.87,40,0
-    .goto 1439/1,-841.61,7377.03,40,0
-    .goto 1439/1,-793.14,7387.08,40,0
-    >>Kill |cRXP_ENEMY_Stormscale Sorceress|r
-    .complete 98013,2 --Stormscale Sorceress slain (8)
-    .mob Stormscale Sorceress
-step
-    #loop
-    .goto 1439/1,-1007.33,7357.82,0
-    .goto 1439/1,-1007.33,7357.82,40,0
-    .goto 1439/1,-1059.73,7323.76,40,0
-    .goto 1439/1,-1120.64,7370.92,40,0
-    .goto 1439/1,-1131.12,7439.91,40,0
-    .goto 1439/1,-1080.69,7494.93,40,0
-    .goto 1439/1,-1055.14,7559.12,40,0
-    .goto 1439/1,-994.88,7513.27,40,0
-    .goto 1439/1,-1006.67,7450.83,40,0
-    .goto 1439/1,-1072.17,7424.63,40,0
-    >>Kill |cRXP_ENEMY_Stormscale Warriors|r
-    .complete 98013,3 --Stormscale Warrior slain (6)
-    .mob Stormscale Warrior
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Shaussiy's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
     .goto 1439/1,543.06,6342.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 87760 >>Turn in Holy Diver
@@ -1244,11 +1214,6 @@ step
     .turnin 951 >>Turn in Mathystra Relics
     .target Onu
     .isOnQuest 951
-step
-    .goto 1439/1,74.08,4993.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arbal|r
-    .turnin 98013 >>Turn in Swelling Forces
-    .target Arbal
 step
     .goto 1439/1,33.47,4995.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kerlonian Evershade|r
@@ -1277,6 +1242,10 @@ step
     .mob Encrusted Tide Crawler
     .mob Reef Crawler
 step
+    #completewith next
+    .hs >>Hearth to Innkeeper Shaussiy's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
     .goto 1439/1,577.12,6371.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
     .turnin 1138 >>Turn in Fruit of the Sea
@@ -1289,19 +1258,64 @@ step
     .accept 98461 >>Accept Unrequited Love
     .target Archaeologist Hollee
 step
+    #loop
+    .goto 1439/1,-793.14,7387.08,0
+    .goto 1439/1,-793.14,7387.08,40,0
+    .goto 1439/1,-841.61,7377.03,40,0
+    .goto 1439/1,-887.46,7254.77,40,0
+    .goto 1439/1,-890.08,7329.87,40,0
+    .goto 1439/1,-901.87,7368.30,40,0
+    .goto 1439/1,-962.13,7363.93,40,0
+    .goto 1439/1,-905.15,7442.97,40,0
+    .goto 1439/1,-858.64,7457.82,40,0
+    .goto 1439/1,-821.31,7486.20,40,0
+    >>Kill |cRXP_ENEMY_Stormscale Sorceress|r
+    >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_Nar'thalas Almanac, Vol. 74|r
+    .complete 98013,2 --Stormscale Sorceress slain (8)
+    .complete 78124,1 --Nar'thalas Almanac, Vol. 74 (1)
+    .mob Stormscale Sorceress
+step
+    #loop
+    .goto 1439/1,-1007.33,7357.82,0
+    .goto 1439/1,-1007.33,7357.82,40,0
+    .goto 1439/1,-1059.73,7323.76,40,0
+    .goto 1439/1,-1120.64,7370.92,40,0
+    .goto 1439/1,-1131.12,7439.91,40,0
+    .goto 1439/1,-1080.69,7494.93,40,0
+    .goto 1439/1,-1055.14,7559.12,40,0
+    .goto 1439/1,-994.88,7513.27,40,0
+    .goto 1439/1,-1006.67,7450.83,40,0
+    .goto 1439/1,-1072.17,7424.63,40,0
+    >>Kill |cRXP_ENEMY_Stormscale Warriors|r
+    .complete 98013,3 --Stormscale Warrior slain (6)
+    .mob Stormscale Warrior
+step
+    .goto 1439/1,76.04,4992.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arbal|r
+    .turnin 98013 >>Turn in Swelling Forces
+    .target Arbal
+step
     +|cRXP_WARN_That is all of Darkshore for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ashenvale|r: Therylune's Escape, The Sleeper Has Awakened
     >>|cRXP_FRIENDLY_Darnassus|r: The Absent Minded Prospector
     >>|cRXP_FRIENDLY_Ironforge|r: The Powers Below
+    >>|cRXP_FRIENDLY_Undercity|r: Nar'thalas Almanac
     >>|cRXP_FRIENDLY_Wetlands|r: Unrequited Love
 step
-    +|cRXP_WARN_Until level 21, suggested zones|r: |cRXP_FRIENDLY_Ashenvale|r (about 0.7 levels of quests, starting around Shindrell Swiftfire; 6 quests from here hand in there), |cRXP_FRIENDLY_Zephras Isle|r (about 0.6 levels of quests, starting around Elegael Thornpaw). Then come back to this Darkshore guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 18|r: |cRXP_FRIENDLY_Ashenvale|r (about 0.7 levels of quests, starting around Shindrell Swiftfire; 6 quests from here hand in there), |cRXP_FRIENDLY_Zephras Isle|r (about 0.6 levels of quests, starting around Elegael Thornpaw). Completing this step loads the guide for Ashenvale --RouteBuilder:next
 step
-    .xp 21 >>|cRXP_WARN_The rest of Darkshore is planned from level 21.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Darkshore: part 3|r (planned from level 21)
+    +|cRXP_WARN_The rest of Darkshore is planned from level 21.|r Load its guide for level 21 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 10 - 22 Darkshore
+#subweight -10
+#name 21-22 Darkshore
+
 step
     .goto 1439/1,577.12,6371.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
@@ -1334,6 +1348,4 @@ step
 step
     +|cRXP_WARN_End of the Darkshore route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ashenvale|r: Trek to Ashenvale
-step
-    +|cRXP_WARN_Suggested next zones at level 21|r: |cRXP_FRIENDLY_Wetlands|r (about 0.8 levels of quests, starting around Karl Boran; 1 quest from here hands in there). Completing this step loads the guide for Wetlands --RouteBuilder:next
 ]])

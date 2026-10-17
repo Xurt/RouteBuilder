@@ -1,12 +1,14 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-45 Badlands",
-  "saved": "2026-10-15 16:57",
+  "saved": "2026-10-17 13:26",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        "accept:79951 @1418:-3489.58,-6551.26  Accept Mummies: A Guide to the Unsavory Undead",
+        "obj:79951:1 @1418:-3489.58,-6551.26  Objective Mummies: A Guide to the Unsavory Undead / Mummies: A Guide to the Unsavory Undead (1)",
         "accept:719 @1418:-3407.99,-6609.13  Accept A Dwarf and His Tools",
         "accept:718 @1418:-3417.44,-6607.64  Accept Mirages",
         "obj:719:1 @1418:-3405.75,-6431.86  Objective A Dwarf and His Tools / Ryedol's Lucky Pick (1)",
@@ -19,12 +21,10 @@
         "turnin:738 @1418:-3345.06,-6924.38  TurnIn Find Agmond",
         "obj:733:1 @1418:-2346.32,-7147.59  Objective Scrounging / Scrap Metal (1)",
         {"lines":[".goto 1418/0,-3135.61,-6760.21",">>Talk to |cRXP_FRIENDLY_Jazzrik|r",".vendor 9179 >> Vendor Trash. Repair",".target Jazzrik"],"from":"RestedXP: 41-42 ADV Badlands Mage AoE"},
+        "home @1418:-2149.31,-6650.09  Home inn",
         "accept:2418 @1418:-3133.62,-6767.34  Accept Power Stones",
         "accept:703 @1418:-3133.62,-6767.34  Accept Barbecued Buzzard Wings",
         "turnin:733 @1418:-3417.44,-6607.64  TurnIn Scrounging",
-        "obj:2418:1 @1418:-3362.72,-6144.97  Objective Power Stones / Dentrium Power Stone (8)",
-        "obj:2418:2 @1418:-3362.72,-6144.97  Objective Power Stones / An'Alleum Power Stone (8)",
-        "turnin:2418 @1418:-3133.62,-6767.34  TurnIn Power Stones",
         "turnin:1106 @1418:-3129.39,-6763.36  TurnIn Martek the Exiled",
         "accept:705 @1418:-3133.62,-6767.34  Accept Pearl Diving",
         "turnin:737 @1418:-3357.49,-7164.34  TurnIn Forbidden Knowledge",
@@ -36,7 +36,10 @@
         "accept:715 @1418:-2721.44,-6623.23  Accept Liquid Stone",
         "accept:721 @1418:-3407.99,-6609.13  Accept A Sign of Hope",
         "obj:715:1 @1418:-3387.34,-6448.28  Objective Liquid Stone / Healing Potion (1)",
-        "turnin:721 @1418:-3021.93,-6065.2  TurnIn A Sign of Hope"
+        "obj:2418:2 @1418:-3258.24,-6068.68  Objective Power Stones / An'Alleum Power Stone (8)",
+        "obj:2418:1 @1418:-3258.24,-6068.68  Objective Power Stones / Dentrium Power Stone (8)",
+        "turnin:721 @1418:-3021.93,-6065.2  TurnIn A Sign of Hope",
+        "turnin:2418 @1418:-3133.62,-6767.34  TurnIn Power Stones"
       ]
     },
     {

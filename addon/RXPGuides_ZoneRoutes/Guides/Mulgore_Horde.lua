@@ -1,9 +1,9 @@
 -- 1-30 Mulgore: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 1, 13, 16, 19, 22).
--- Sections (the guide starts at the one for your level): around Grull Hawkwind from 1; around Mull Thunderhorn from 5; around Boarton Shadetotem from 9; part 2 from 13; part 3 from 16; part 4 from 19; part 5 from 22.
+-- The zone covers more levels than one visit gives, so it is planned in 5 parts (from level 1, 13, 16, 19, 22).
+-- Split into 8 guides, listed under "1 - 23 Mulgore" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Mulgore.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,33 +13,11 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 1-30 Mulgore
-#next Zone Routes (Horde)\19-30 Ashenvale
+#subgroup 1 - 23 Mulgore
+#subweight -1
+#name 1-5 Mulgore: around Grull Hawkwind
+#next Zone Routes (Horde)\5-7 Mulgore: around Mull Thunderhorn
 
-step
-    .xp <5,1,RBSection1_1
-    .xp 5 >>Finding the place in this guide for your level
-step
-    .xp <9,1,RBSection1_2
-    .xp 9 >>Finding the place in this guide for your level
-step
-    .xp <13,1,RBSection1_3
-    .xp 13 >>Finding the place in this guide for your level
-step
-    .xp <16,1,RBSection2_1
-    .xp 16 >>Finding the place in this guide for your level
-step
-    .xp <19,1,RBSection3_1
-    .xp 19 >>Finding the place in this guide for your level
-step
-    .xp <22,1,RBSection4_1
-    .xp 22 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection5_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Mulgore: around Grull Hawkwind|r (planned from level 1)
 step
     .goto 1412/1,-257.59,-2912.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull Hawkwind|r
@@ -181,7 +159,7 @@ step
     .accept 95805 >>Accept Grace of An'she and Mu'sha
     .target Seer Graytongue
 step
-    .goto 1412/1,-1004.09,-3376.39
+    .goto 1412/1,-1004.71,-3371.88
     >>Click the |cRXP_PICK_Ritual Fire|r
     .turnin 95805 >>Turn in Grace of An'she and Mu'sha
 step
@@ -420,7 +398,7 @@ step
     .accept 1656 >>Accept A Task Unfinished
     .target Antur Fallow
 step
-    .goto 1412/1,-364.06,-2491.16
+    .goto 1412/1,-359.75,-2498.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaga Wildhoof|r
     .turnin 96659 >>Turn in The Adventurer
     .accept 96605 >>Accept The Great Outdoors
@@ -431,15 +409,23 @@ step
     .complete 96605,1 --Basic Campfire
     .complete 96605,2 --Basic Campfire
 step
-    .goto 1412/1,-364.06,-2491.16
+    .goto 1412/1,-359.75,-2498.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaga Wildhoof|r
     .turnin 96605 >>Turn in The Great Outdoors
     .accept 96661 >>Accept Camping 101: Cooking
     .target Kaga Wildhoof
-step
-    #label RBSection1_2
-    #completewith next
-    +|cRXP_WARN_Mulgore: around Mull Thunderhorn|r (planned from level 5)
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 1 - 23 Mulgore
+#subweight -1
+#name 5-7 Mulgore: around Mull Thunderhorn
+#next Zone Routes (Horde)\7-9 Mulgore: around Boarton Shadetotem
+
 step
     .goto 1412/1,-384.98,-2397.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul Eagletalon|r
@@ -542,6 +528,16 @@ step
     .goto 1412/1,-496.37,-2348.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang Stonehoof|r
     .accept 99108 >>Accept Sparring Match
+    .target Krang Stonehoof
+step
+    .goto 1412/1,-528.99,-2348.00
+    >>Kill |cRXP_ENEMY_Novice Warriors|r
+    .complete 99108,1 --Novice Warrior slain (8)
+    .mob Novice Warrior
+step
+    .goto 1412/1,-496.37,-2348.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang Stonehoof|r
+    .turnin 99108 >>Turn in Sparring Match
     .target Krang Stonehoof
 step << Tauren
     .goto 1412/1,-445.29,-2341.44
@@ -684,7 +680,13 @@ step
     .turnin 771 >>Turn in Rite of Vision
     .accept 772 >>Accept Rite of Vision
     .target Zarlman Two-Moons
+step << Tauren
+    #completewith Along59
+    >>As you go: Kill |cRXP_ENEMY_Prairie Stalkers|r. Loot them for |cRXP_LOOT_Stalker Claws|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 756,1 --Stalker Claws (6)
+    .mob Prairie Stalker
 step
+    #label Along59
     #loop
     .goto 1412/1,-598.53,-2302.06,0
     .goto 1412/1,-598.53,-2302.06,40,0
@@ -700,7 +702,7 @@ step
     .accept 749 >>Accept The Ravaged Caravan
     .unitscan Morin Cloudstalker
 step
-    .goto 1412/1,-1065.63,-2325.85
+    .goto 1412/1,-1066.86,-2325.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malah Longwind|r
     .turnin 99079 >>Turn in Longwalker Malah
     .accept 99081 >>Accept Grim Tidings
@@ -711,12 +713,12 @@ step
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step << Tauren
-    #completewith Along60
+    #completewith Along62
     >>As you go: Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for |cRXP_LOOT_Cougar Claws|r. |cRXP_WARN_Anything left is finished later|r
     .complete 756,2 --Cougar Claws (6)
     .mob Flatland Cougar
 step << Tauren
-    #label Along60
+    #label Along62
     #loop
     .goto 1412/1,-716.69,-1816.78,0
     .goto 1412/1,-716.69,-1816.78,40,0
@@ -743,38 +745,28 @@ step << Tauren
     .complete 756,2 --Cougar Claws (6)
     .mob Flatland Cougar
 step
-    #loop
-    .goto 1412/1,-19.42,-2341.03,0
-    .goto 1412/1,-19.42,-2341.03,40,0
-    .goto 1412/1,67.35,-2288.11,40,0
-    .goto 1412/1,101.81,-2333.64,40,0
-    .goto 1412/1,55.04,-2345.54,40,0
-    .goto 1412/1,23.04,-2380.41,40,0
-    .goto 1412/1,54.43,-2425.94,40,0
-    .goto 1412/1,95.04,-2448.09,40,0
-    .goto 1412/1,1.50,-2461.22,40,0
-    .goto 1412/1,-25.58,-2421.02,40,0
+    .goto 1412/1,50.73,-2448.09
     >>Kill |cRXP_ENEMY_Chakuyak|r and loot |cRXP_LOOT_Chakuyak's Pelt|r
     .complete 96130,1 --Chakuyak's Pelt (1)
     .mob Chakuyak
 step
-    #completewith Along63
+    #completewith Along65
     >>As you go: Kill |cRXP_ENEMY_Palemane Poachers|r. |cRXP_WARN_Anything left is finished later|r
     .complete 745,3 --Palemane Poacher slain (5)
     .mob Palemane Poacher
 step
-    #label Along63
-    .goto 1412/1,440.29,-2437.84
+    #label Along65
+    .goto 1412/1,441.52,-2432.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Perith Stormhoof|r
     .accept 98430 >>Accept The Longwalkers
     .target Perith Stormhoof
 step
-    #completewith Along64
+    #completewith Along66
     >>As you go: Kill |cRXP_ENEMY_Palemane Tanners|r. |cRXP_WARN_Anything left is finished later|r
     .complete 745,1 --Palemane Tanner slain (10)
     .mob Palemane Tanner
 step
-    #label Along64
+    #label Along66
     .goto 1412/1,190.43,-2384.10
     >>Escort Perith Stormhoof out of Palemane Rock
     .complete 98430,1 --Escort Perith Stormhoof out of Palemane Rock
@@ -858,7 +850,14 @@ step
     .target Innkeeper Kauth
     .money <0.025
 step
-    .goto 1412/1,-402.21,-2352.10
+    .goto 1412/1,-445.29,-2341.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r
+    .accept 98435 >>Accept Thunderhorn's Report
+    .target Mull Thunderhorn
+    .isQuestTurnedIn 760 --any of: Wildmane Cleansing
+    .xp <4,1
+step
+    .goto 1412/1,-368.98,-2290.57
     >>Interact with |cRXP_FRIENDLY_Kyle the Frenzied|r
     .complete 99411,1 --Kyle the Frenzied
     .target Kyle the Frenzied
@@ -916,12 +915,6 @@ step
     >>Loot the |cRXP_PICK_Forges|r for |cRXP_LOOT_Broken Tools|r
     .complete 746,1 --Broken Tools (5)
 step
-    #completewith Along76
-    >>As you go: Kill |cRXP_ENEMY_Flatland Cougar|r and loot |cRXP_LOOT_Flatland Cougar Femur|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 766,2 --Flatland Cougar Femur (1)
-    .mob Flatland Cougar
-step
-    #label Along76
     #loop
     .goto 1412/1,411.37,-1745.82,0
     .goto 1412/1,411.37,-1745.82,40,0
@@ -943,26 +936,55 @@ step
     .turnin 772 >>Turn in Rite of Vision
     .accept 773 >>Accept Rite of Wisdom
     .target Seer Wiserunner
-step << Orc Warrior/Orc Shaman/Orc Druid/Tauren Warrior/Tauren Shaman/Tauren Druid/Troll Warrior/Troll Shaman/Troll Druid
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 1 - 23 Mulgore
+#subweight -1
+#name 7-9 Mulgore: around Boarton Shadetotem
+#next Zone Routes (Horde)\9-11 Mulgore: around Boarton Shadetotem
+
+step
     #completewith next
     .zone 1456 >>Travel to Thunder Bluff
     .zoneskip 1456
-step << Orc Warrior/Orc Shaman/Orc Druid/Tauren Warrior/Tauren Shaman/Tauren Druid/Troll Warrior/Troll Shaman/Troll Druid
-    .goto 1456/1,103.03,-1307.09
+step
+    .goto 1456/1,120.04,-1238.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eylah Sunhorn|r
+    .accept 97485 >>Accept Traditions of the Bluff
+    .target Eylah Sunhorn
+step << Warrior
+    .goto 1456/1,109.71,-1239.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orm Stonehoof|r
+    .turnin 1840 >>Turn in Orm Stonehoof and the Brutal Helm
+    .target Orm Stonehoof
+    .isOnQuest 1840
+step
+    .goto 1456/1,105.01,-1308.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
     .accept 76156 >>Accept Stalk With The Earthmother
     .target Boarton Shadetotem
-step << Orc Warrior/Orc Shaman/Orc Druid/Tauren Warrior/Tauren Shaman/Tauren Druid/Troll Warrior/Troll Shaman/Troll Druid
+step << Tauren
+    .goto 1456/1,38.94,-1238.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahanu|r
+    .turnin 6362 >>Turn in Ride to Thunder Bluff
+    .target Ahanu
+    .isOnQuest 6362
+step
+    .goto 1456/1,-125.66,-1413.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor Stonehoof|r
+    .turnin 1130 >>Turn in Melor Sends Word
+    .target Melor Stonehoof
+    .isOnQuest 1130
+step
     #completewith next
     .zone 1412 >>Leave Thunder Bluff for Mulgore
     .zoneskip 1412
 step
-    #completewith Along79
-    >>As you go: Kill |cRXP_ENEMY_Flatland Cougar|r and loot |cRXP_LOOT_Flatland Cougar Femur|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 766,2 --Flatland Cougar Femur (1)
-    .mob Flatland Cougar
-step
-    #label Along79
     .goto 1412/1,-420.06,-1692.08
     >>Kill |cRXP_ENEMY_Ghost Howl|r and loot |cRXP_LOOT_Demon Scarred Cloak|r. Use it to start the quest
     .collect 4854,1,770 --Demon Scarred Cloak (1)
@@ -970,14 +992,6 @@ step
     .use 4854
     .mob Ghost Howl
 step
-    #completewith Along80
-    >>As you go: Kill |cRXP_ENEMY_Adult Plainstriders|r, |cRXP_ENEMY_Elder Plainstriders|r and |cRXP_ENEMY_Mazzranaches|r. Loot them for |cRXP_LOOT_Plainstrider Scale|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 766,3 --Plainstrider Scale (1)
-    .mob Adult Plainstrider
-    .mob Elder Plainstrider
-    .mob Mazzranache
-step
-    #label Along80
     .goto 1412/1,-1027.48,-1150.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorekeeper Raintotem|r
     .accept 833 >>Accept A Sacred Burial
@@ -986,8 +1000,14 @@ step
     .goto 1412/1,-1109.33,-992.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ancestral Spirit|r
     .turnin 773 >>Turn in Rite of Wisdom
+    .target Ancestral Spirit
+    .isOnQuest 773
+step
+    .goto 1412/1,-1109.33,-992.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ancestral Spirit|r
     .accept 775 >>Accept Journey into Thunder Bluff
     .target Ancestral Spirit
+    .isQuestTurnedIn 773 --any of: Rite of Wisdom
 step
     #loop
     .goto 1412/1,-1087.79,-1001.70,0
@@ -1004,47 +1024,28 @@ step
     .complete 833,1 --Bristleback Interloper slain (8)
     .mob Bristleback Interloper
 step
-    #completewith Along83
-    >>As you go: Kill |cRXP_ENEMY_Adult Plainstriders|r, |cRXP_ENEMY_Elder Plainstriders|r and |cRXP_ENEMY_Mazzranaches|r. Loot them for |cRXP_LOOT_Plainstrider Scale|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 766,3 --Plainstrider Scale (1)
-    .mob Adult Plainstrider
-    .mob Elder Plainstrider
-    .mob Mazzranache
-step
-    #label Along83
     .goto 1412/1,-1027.48,-1150.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorekeeper Raintotem|r
     .turnin 833 >>Turn in A Sacred Burial
     .target Lorekeeper Raintotem
 step
-    #completewith Along84
-    >>As you go: Kill |cRXP_ENEMY_Flatland Cougar|r and loot |cRXP_LOOT_Flatland Cougar Femur|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 766,2 --Flatland Cougar Femur (1)
-    .mob Flatland Cougar
-step
-    #completewith Along84
-    >>As you go: Kill |cRXP_ENEMY_Wiry Swoops|r, |cRXP_ENEMY_Swoops|r and |cRXP_ENEMY_Taloned Swoops|r. Loot them for |cRXP_LOOT_Swoop Gizzard|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 766,4 --Swoop Gizzard (1)
-    .mob Wiry Swoop
-    .mob Swoop
-    .mob Taloned Swoop
-step
-    #label Along84
     .goto 1412/1,-354.21,-1466.05
     >>Kill |cRXP_ENEMY_Wiry Swoops|r, |cRXP_ENEMY_Swoops|r and |cRXP_ENEMY_Taloned Swoops|r. Loot them for |cRXP_LOOT_Trophy Swoop Quill|r
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Wiry Swoop
     .mob Swoop
     .mob Taloned Swoop
+    .isOnQuest 761
 step
     #completewith next
     .hs >>Hearth to Innkeeper Kauth's inn. |cRXP_WARN_Walk instead if you are already nearby|r
     .cooldown item,6948,>0,1
 step
-    .goto 1412/1,-445.29,-2341.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r
-    .accept 98435 >>Accept Thunderhorn's Report
-    .target Mull Thunderhorn
+    .goto 1412/1,-454.52,-2304.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken Windtotem|r
+    .turnin 761 >>Turn in Swoop Hunting
+    .target Harken Windtotem
+    .isOnQuest 761
 step << Tauren
     .goto 1412/1,-445.29,-2341.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r
@@ -1058,41 +1059,24 @@ step
     .isQuestComplete 746
     .target Baine Bloodhoof
 step
-    .goto 1412/1,-384.98,-2397.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul Eagletalon|r
-    .turnin 743 >>Turn in Dangers of the Windfury while you are here
-    .isQuestComplete 743
-    .target Ruul Eagletalon
-step
-    .goto 1412/1,-454.52,-2304.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken Windtotem|r
-    .turnin 761 >>Turn in Swoop Hunting
-    .target Harken Windtotem
-step
-    .goto 1412/1,-496.37,-2348.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang Stonehoof|r
-    >>|cRXP_WARN_The database has no objectives for Sparring Match. Skip this step if the quest is not finished|r
-    .turnin 99108 >>Turn in Sparring Match
-    .target Krang Stonehoof
-    .isOnQuest 99108
-step
     #loop
-    .goto 1412/1,-1058.25,-2441.94,0
-    .goto 1412/1,-1058.25,-2441.94,40,0
-    .goto 1412/1,-1113.64,-2382.05,40,0
-    .goto 1412/1,-1180.10,-2386.97,40,0
-    .goto 1412/1,-1199.18,-2283.19,40,0
-    .goto 1412/1,-1150.56,-2249.55,40,0
-    .goto 1412/1,-1140.71,-2199.10,40,0
+    .goto 1412/1,-1047.79,-2171.61,0
     .goto 1412/1,-1047.79,-2171.61,40,0
-    .goto 1412/1,-1079.79,-2285.65,40,0
+    .goto 1412/1,-1140.71,-2199.10,40,0
+    .goto 1412/1,-1150.56,-2249.55,40,0
+    .goto 1412/1,-1199.18,-2283.19,40,0
+    .goto 1412/1,-1180.10,-2386.97,40,0
+    .goto 1412/1,-1113.64,-2382.05,40,0
+    .goto 1412/1,-1058.25,-2441.94,40,0
     .goto 1412/1,-1067.48,-2352.10,40,0
+    .goto 1412/1,-1079.79,-2285.65,40,0
     >>Kill |cRXP_ENEMY_Prairie Wolfs|r, |cRXP_ENEMY_Prairie Stalkers|r, |cRXP_ENEMY_Prairie Wolf Alphas|r and |cRXP_ENEMY_Chakuyaks|r. Loot them for |cRXP_LOOT_Prairie Wolf Heart|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .mob Prairie Wolf
     .mob Prairie Stalker
     .mob Prairie Wolf Alpha
     .mob Chakuyak
+    .isOnQuest 766
 step
     #loop
     .goto 1412/1,-965.94,-2076.03,0
@@ -1102,6 +1086,7 @@ step
     >>Kill |cRXP_ENEMY_Flatland Cougar|r and loot |cRXP_LOOT_Flatland Cougar Femur|r
     .complete 766,2 --Flatland Cougar Femur (1)
     .mob Flatland Cougar
+    .isOnQuest 766
 step
     #loop
     .goto 1412/1,-649.00,-1480.00,0
@@ -1114,6 +1099,7 @@ step
     .mob Adult Plainstrider
     .mob Elder Plainstrider
     .mob Mazzranache
+    .isOnQuest 766
 step
     .goto 1412/1,-511.76,-1792.17
     >>Kill |cRXP_ENEMY_Wiry Swoops|r, |cRXP_ENEMY_Swoops|r and |cRXP_ENEMY_Taloned Swoops|r. Loot them for |cRXP_LOOT_Swoop Gizzard|r
@@ -1121,6 +1107,7 @@ step
     .mob Wiry Swoop
     .mob Swoop
     .mob Taloned Swoop
+    .isOnQuest 766
 step
     .goto 1412/1,-1009.92,-1073.00,60,0
     .goto 1412/1,-906.66,-926.41,60,0
@@ -1209,10 +1196,17 @@ step
     .isQuestComplete 770
     .target Skorn Whitecloud
 step
+    .goto 1412/1,-384.98,-2397.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul Eagletalon|r
+    .turnin 743 >>Turn in Dangers of the Windfury while you are here
+    .isQuestComplete 743
+    .target Ruul Eagletalon
+step
     .goto 1412/1,-365.90,-2227.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r
     .turnin 766 >>Turn in Mazzranache
     .target Maur Raincaller
+    .isOnQuest 766
 step
     .goto 1412/1,-353.60,-2335.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skorn Whitecloud|r
@@ -1223,11 +1217,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r
     .turnin 746 >>Turn in Dwarven Digging
     .target Baine Bloodhoof
+    .isOnQuest 746
 step
     .goto 1412/1,-384.98,-2397.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul Eagletalon|r
     .turnin 743 >>Turn in Dangers of the Windfury
     .target Ruul Eagletalon
+    .isOnQuest 743
 step << Warrior
     #completewith next
     .zone 1456 >>Travel to Thunder Bluff
@@ -1255,8 +1251,14 @@ step << Tauren
     .goto 1412/1,-445.29,-2341.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r
     .turnin 758 >>Turn in Thunderhorn Cleansing
+    .target Mull Thunderhorn
+    .isOnQuest 758
+step << Tauren
+    .goto 1412/1,-445.29,-2341.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r
     .accept 759 >>Accept Wildmane Totem
     .target Mull Thunderhorn
+    .isQuestTurnedIn 758 --any of: Thunderhorn Cleansing
 step << Tauren Hunter
     .goto 1412/1,-408.98,-2180.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
@@ -1343,35 +1345,50 @@ step
     .goto 1412/1,-997.32,-2404.61,40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r. |cRXP_WARN_This NPC walks a patrol route|r
     .turnin 751 >>Turn in The Ravaged Caravan
+    .unitscan Morin Cloudstalker
+    .isOnQuest 751
+step
+    #loop
+    .goto 1412/1,-997.32,-2404.61,0
+    .goto 1412/1,-997.32,-2404.61,40,0
+    .goto 1412/1,-931.47,-2380.82,40,0
+    .goto 1412/1,-908.70,-2373.02,40,0
+    .goto 1412/1,-890.85,-2369.74,40,0
+    .goto 1412/1,-796.70,-2351.69,40,0
+    .goto 1412/1,-724.69,-2343.49,40,0
+    .goto 1412/1,-679.77,-2337.34,40,0
+    .goto 1412/1,-624.99,-2318.47,40,0
+    .goto 1412/1,-598.53,-2302.06,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r. |cRXP_WARN_This NPC walks a patrol route|r
     .accept 764 >>Accept The Venture Co.
     .accept 765 >>Accept Supervisor Fizsprocket
     .unitscan Morin Cloudstalker
-step << Tauren
-    #completewith Along108
-    >>As you go: Kill |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |cRXP_LOOT_Prairie Alpha Tooth|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 759,1 --Prairie Alpha Tooth (8)
-    .mob Prairie Wolf Alpha
+    .isQuestTurnedIn 751 --any of: The Ravaged Caravan
 step
     #loop
     .goto 1412/1,-1236.72,-2265.14,0
     .goto 1412/1,-1236.72,-2265.14,40,0
     .goto 1412/1,-1240.41,-2239.30,40,0
-    .goto 1412/1,-1241.03,-2197.86,40,0
+    .goto 1412/1,-1240.41,-2209.35,40,0
     .goto 1412/1,-1252.72,-2169.56,40,0
     .goto 1412/1,-1249.03,-2214.27,40,0
     .goto 1412/1,-1250.26,-2231.09,40,0
     >>Kill |cRXP_ENEMY_Herak the Pillager|r and loot |cRXP_LOOT_Herak's Head|r
     .complete 99080,3 --Herak's Head (1)
     .mob Herak the Pillager
+    .isOnQuest 99080
 step
-    #label Along108
     .goto 1412/1,-1393.03,-2227.40
     >>Kill |cRXP_ENEMY_Galak Outrunners|r
-    >>Kill |cRXP_ENEMY_Galak Centaurs|r
     .complete 99080,2 --Galak Outrunner slain (4)
-    .complete 99080,1 --Galak Centaur slain (6)
     .mob Galak Outrunner
+    .isOnQuest 99080
+step
+    .goto 1412/1,-1393.03,-2227.40
+    >>Kill |cRXP_ENEMY_Galak Centaurs|r
+    .complete 99080,1 --Galak Centaur slain (6)
     .mob Galak Centaur
+    .isOnQuest 99080
 step << Tauren
     #loop
     .goto 1412/1,-1386.88,-2340.62,0
@@ -1387,20 +1404,14 @@ step << Tauren
     >>Kill |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |cRXP_LOOT_Prairie Alpha Tooth|r
     .complete 759,1 --Prairie Alpha Tooth (8)
     .mob Prairie Wolf Alpha
-step
-    #completewith Along111
-    >>As you go: Kill |cRXP_ENEMY_Venture Co. Workers|r. Kill |cRXP_ENEMY_Venture Co. Supervisors|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 764,1 --Venture Co. Worker slain (14)
-    .complete 764,2 --Venture Co. Supervisor slain (6)
-    .mob Venture Co. Worker
-    .mob Venture Co. Supervisor
+    .isOnQuest 759
 step
     .goto 1412/1,-1286.57,-1756.48
     >>Kill |cRXP_ENEMY_Supervisor Fizsprocket|r and loot |cRXP_LOOT_Fizsprocket's Clipboard|r
     .complete 765,1 --Fizsprocket's Clipboard (1)
     .mob Supervisor Fizsprocket
+    .isOnQuest 765
 step
-    #label Along111
     .goto 1412/1,-1286.57,-1756.48
     >>Kill |cRXP_ENEMY_Supervisor Fizsprocket|r and loot |cRXP_LOOT_Mulgore Expansion Plans|r. Use it to start the quest
     .collect 281031,1,98424 --Mulgore Expansion Plans (1)
@@ -1408,23 +1419,68 @@ step
     .use 281031
     .mob Supervisor Fizsprocket
 step
+    #completewith Along123
+    >>As you go: Loot the |cRXP_PICK_Blasting Supplies|r for |cRXP_LOOT_Seaforium Mining Charge|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 76156,1 --Seaforium Mining Charge (5)
+step
+    #completewith Along121
+    >>As you go: Pick up |cRXP_PICK_One "Gerenzo", of Stonetalon|r from the ground. |cRXP_WARN_Anything left is finished later|r
+    .complete 98424,3 --One "Gerenzo", of Stonetalon (1)
+step
+    #label Along121
+    .goto 1412/1,-1129.02,-1674.03
+    >>Pick up |cRXP_PICK_Shredder Operation Instructions|r from the ground
+    .complete 98424,1 --Shredder Operation Instructions (1)
+step
+    .goto 1412/1,-1316.11,-1674.03
+    >>Pick up |cRXP_PICK_Barrens Operations Best Practices|r from the ground
+    .complete 98424,2 --Barrens Operations Best Practices (1)
+step
+    #label Along123
+    .goto 1412/1,-1153.02,-1637.11
+    >>Pick up |cRXP_PICK_One "Gerenzo", of Stonetalon|r from the ground
+    .complete 98424,3 --One "Gerenzo", of Stonetalon (1)
+step
     #loop
-    .goto 1412/1,-1281.64,-1770.84,0
-    .goto 1412/1,-1281.64,-1770.84,40,0
-    .goto 1412/1,-1186.25,-1764.69,40,0
+    .goto 1412/1,-1091.48,-1733.51,0
     .goto 1412/1,-1091.48,-1733.51,40,0
-    .goto 1412/1,-1042.25,-1751.56,40,0
-    .goto 1412/1,-1090.87,-1902.51,40,0
-    .goto 1412/1,-1056.40,-1957.48,40,0
-    .goto 1412/1,-1143.18,-1922.62,40,0
-    .goto 1412/1,-1140.71,-1833.60,40,0
+    .goto 1412/1,-1136.41,-1753.20,40,0
+    .goto 1412/1,-1186.25,-1764.69,40,0
     .goto 1412/1,-1194.87,-1829.91,40,0
+    .goto 1412/1,-1130.87,-1860.67,40,0
+    .goto 1412/1,-1143.18,-1922.62,40,0
+    .goto 1412/1,-1090.87,-1902.51,40,0
+    .goto 1412/1,-1032.40,-1935.33,40,0
+    .goto 1412/1,-1042.25,-1751.56,40,0
     >>Kill |cRXP_ENEMY_Venture Co. Workers|r
-    >>Kill |cRXP_ENEMY_Venture Co. Supervisors|r
     .complete 764,1 --Venture Co. Worker slain (14)
-    .complete 764,2 --Venture Co. Supervisor slain (6)
     .mob Venture Co. Worker
+    .isOnQuest 764
+step
+    #loop
+    .goto 1412/1,-1126.56,-1851.65,0
+    .goto 1412/1,-1126.56,-1851.65,40,0
+    .goto 1412/1,-1154.87,-1835.65,40,0
+    .goto 1412/1,-1201.64,-1810.22,40,0
+    .goto 1412/1,-1259.49,-1749.51,40,0
+    .goto 1412/1,-1281.64,-1770.84,40,0
+    .goto 1412/1,-1269.95,-1798.32,40,0
+    .goto 1412/1,-1154.25,-1845.09,40,0
+    .goto 1412/1,-1121.02,-1873.39,40,0
+    .goto 1412/1,-1055.79,-1936.97,40,0
+    >>Kill |cRXP_ENEMY_Venture Co. Supervisors|r
+    .complete 764,2 --Venture Co. Supervisor slain (6)
     .mob Venture Co. Supervisor
+    .isOnQuest 764
+step
+    #loop
+    .goto 1412/1,-1059.48,-1735.15,0
+    .goto 1412/1,-1059.48,-1735.15,40,0
+    .goto 1412/1,-1114.87,-1694.13,40,0
+    .goto 1412/1,-1164.10,-1657.21,40,0
+    .goto 1412/1,-1207.18,-1624.39,40,0
+    >>Loot the |cRXP_PICK_Blasting Supplies|r for |cRXP_LOOT_Seaforium Mining Charge|r
+    .complete 76156,1 --Seaforium Mining Charge (5)
 step
     #loop
     .goto 1412/1,-997.32,-2404.61,0
@@ -1439,42 +1495,151 @@ step
     .goto 1412/1,-598.53,-2302.06,40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r. |cRXP_WARN_This NPC walks a patrol route|r
     .turnin 764 >>Turn in The Venture Co.
+    .unitscan Morin Cloudstalker
+    .isOnQuest 764
+step
+    #loop
+    .goto 1412/1,-997.32,-2404.61,0
+    .goto 1412/1,-997.32,-2404.61,40,0
+    .goto 1412/1,-931.47,-2380.82,40,0
+    .goto 1412/1,-908.70,-2373.02,40,0
+    .goto 1412/1,-890.85,-2369.74,40,0
+    .goto 1412/1,-796.70,-2351.69,40,0
+    .goto 1412/1,-724.69,-2343.49,40,0
+    .goto 1412/1,-679.77,-2337.34,40,0
+    .goto 1412/1,-624.99,-2318.47,40,0
+    .goto 1412/1,-598.53,-2302.06,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r. |cRXP_WARN_This NPC walks a patrol route|r
     .turnin 765 >>Turn in Supervisor Fizsprocket
+    .unitscan Morin Cloudstalker
+    .isOnQuest 765
+step
+    #loop
+    .goto 1412/1,-997.32,-2404.61,0
+    .goto 1412/1,-997.32,-2404.61,40,0
+    .goto 1412/1,-931.47,-2380.82,40,0
+    .goto 1412/1,-908.70,-2373.02,40,0
+    .goto 1412/1,-890.85,-2369.74,40,0
+    .goto 1412/1,-796.70,-2351.69,40,0
+    .goto 1412/1,-724.69,-2343.49,40,0
+    .goto 1412/1,-679.77,-2337.34,40,0
+    .goto 1412/1,-624.99,-2318.47,40,0
+    .goto 1412/1,-598.53,-2302.06,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r. |cRXP_WARN_This NPC walks a patrol route|r
+    .turnin 98424 >>Turn in Fizsprocket's Notes
     .accept 98427 >>Accept Ceasing Operations
     .unitscan Morin Cloudstalker
 step
     .goto 1412/1,-392.98,-2333.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r
     .turnin 99080 >>Turn in Drive Them Out
-    .accept 99082 >>Accept The High Chieftain
     .target Baine Bloodhoof
+    .isOnQuest 99080
 step << Tauren
     .goto 1412/1,-445.29,-2341.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r
-    .turnin 759 >>Turn in Wildmane Totem
-    .accept 760 >>Accept Wildmane Cleansing
+    .turnin 759 >>Turn in Wildmane Totem while you are here
+    .isQuestComplete 759
     .target Mull Thunderhorn
+step
+    .goto 1412/1,-392.98,-2333.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r
+    .accept 99082 >>Accept The High Chieftain
+    .target Baine Bloodhoof
+    .isQuestTurnedIn 99080 --any of: Drive Them Out
+step << Troll Priest
+    .goto 1412/1,-364.06,-2287.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Var'jun|r
+    .accept 5655 >>Accept Hex of Weakness
+    .target Var'jun
+    .xp <10,1
+step << Undead Priest
+    .goto 1412/1,-364.06,-2287.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Var'jun|r
+    .accept 5661 >>Accept Touch of Weakness
+    .target Var'jun
+    .xp <10,1
 step
     #completewith next
     .zone 1456 >>Travel to Thunder Bluff
     .zoneskip 1456
-step << Tauren Druid
-    .xp 10 >>Grind to level 10 (Heeding the Call needs it)
+step
+    .goto 1456/1,-36.73,-1461.22
+    >>Click the |cRXP_PICK_Incense Burner|r
+    .complete 97485,1 --Incense Burner
+step << Tauren Hunter
+    .goto 1456/1,-81.40,-1474.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holt Thunderhorn|r
+    .turnin 6089 >>Turn in Training the Beast while you are here
+    .isQuestComplete 6089
+    .target Holt Thunderhorn
+step
+    #completewith next
+    .zone 1412 >>Leave Thunder Bluff for Mulgore
+    .zoneskip 1412
+step << Tauren
+    #completewith next
+    .hs >>Hearth to Innkeeper Kauth's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step << Tauren
+    .goto 1412/1,-445.29,-2341.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r
+    .turnin 759 >>Turn in Wildmane Totem
+    .target Mull Thunderhorn
+    .isOnQuest 759
+step << Tauren
+    .goto 1412/1,-445.29,-2341.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r
+    .accept 760 >>Accept Wildmane Cleansing
+    .target Mull Thunderhorn
+    .isQuestTurnedIn 759 --any of: Wildmane Totem
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 1 - 23 Mulgore
+#subweight -1
+#name 9-11 Mulgore: around Boarton Shadetotem
+--RouteBuilder:next
+#next Zone Routes (Horde)\8-12 The Barrens: around Sergra Darkthorn;Zone Routes (Horde)\9-11 Zephras Isle: around Quel'ana Quickgale;Zone Routes (Horde)\9-12 Durotar: around Orgnil Soulscar
+
+step
+    #completewith next
+    .zone 1456 >>Travel to Thunder Bluff
+    .zoneskip 1456
+step
+    .goto 1456/1,105.01,-1308.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    .turnin 76156 >>Turn in Stalk With The Earthmother
+    .target Boarton Shadetotem
+    .isOnQuest 76156
+step
+    .goto 1456/1,105.01,-1308.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    .accept 76160 >>Accept Stalk With The Earthmother
+    .target Boarton Shadetotem
+    .isQuestTurnedIn 76156 --any of: Stalk With The Earthmother
+step
+    .goto 1456/1,105.01,-1308.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    .turnin 76160 >>Turn in Stalk With The Earthmother while you are here
+    .isQuestComplete 76160
+    .target Boarton Shadetotem
 step << Tauren Druid
     .goto 1456/1,38.52,-1300.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
     .accept 5926 >>Accept Heeding the Call
     .target Innkeeper Pala
-step << Orc/Tauren/Troll
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .accept 76160 >>Accept Stalk With The Earthmother
-    .target Boarton Shadetotem
+    .xp <10,1
 step << Tauren Hunter
     .goto 1456/1,-81.40,-1474.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holt Thunderhorn|r
     .turnin 6089 >>Turn in Training the Beast
     .target Holt Thunderhorn
+    .isOnQuest 6089
 step << Hunter
     .goto 1456/1,-47.79,-1435.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hesuwa|r
@@ -1492,32 +1657,22 @@ step << Hunter
     .train 227 >>Train Staves
     .target Ansekhwa
     .money <0.100
-step
-    #label RBSection1_3
-    #completewith next
-    +|cRXP_WARN_Mulgore: around Boarton Shadetotem|r (planned from level 9)
+step << Orc Hunter/Troll Hunter
+    .goto 1456/1,-93.82,-1464.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kary Thunderhorn|r
+    .accept 6070 >>Accept The Hunter's Path
+    .target Kary Thunderhorn
+    .xp <10,1
 step
     .goto 1456/1,122.65,-1264.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eyahn Eagletalon|r
     .accept 744 >>Accept Preparation for Ceremony
     .target Eyahn Eagletalon
-step
-    .goto 1456/1,120.04,-1238.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eylah Sunhorn|r
-    .accept 97485 >>Accept Traditions of the Bluff
-    .target Eylah Sunhorn
-step << Warrior
-    .goto 1456/1,109.71,-1239.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orm Stonehoof|r
-    .turnin 1840 >>Turn in Orm Stonehoof and the Brutal Helm
-    .target Orm Stonehoof
-    .isOnQuest 1840
-step << Tauren
-    .goto 1456/1,38.94,-1238.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahanu|r
-    .turnin 6362 >>Turn in Ride to Thunder Bluff
-    .target Ahanu
-    .isOnQuest 6362
+step << Tauren Druid
+    .goto 1456/1,38.52,-1300.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
+    .accept 5926 >>Accept Heeding the Call
+    .target Innkeeper Pala
 step << Tauren
     .goto 1456/1,38.94,-1238.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahanu|r
@@ -1565,14 +1720,33 @@ step
 step
     .goto 1456/1,-303.93,-1048.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Hamuul Runetotem|r
-    .turnin 98435 >>Turn in Thunderhorn's Report
-    .target Arch Druid Hamuul Runetotem
-    .isOnQuest 98435
-step
-    .goto 1456/1,-303.93,-1048.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Hamuul Runetotem|r
     .accept 886 >>Accept The Barrens Oases
     .target Arch Druid Hamuul Runetotem
+step << Tauren Druid
+    .goto 1456/1,-281.59,-1039.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem|r
+    .turnin 5926 >>Turn in Heeding the Call while you are here
+    .isQuestComplete 5926
+    .target Turak Runetotem
+step << Skyborne Druid
+    .goto 1456/1,-281.59,-1039.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem|r
+    .accept 94913 >>Accept Moonglade
+    .target Turak Runetotem
+    .xp <10,1
+step << Shaman
+    .xp 10 >>Grind to level 10 (Call of Fire needs it)
+step << Shaman
+    .goto 1456/1,254.06,-992.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xanis Flameweaver|r
+    .accept 1523 >>Accept Call of Fire
+    .target Xanis Flameweaver
+step << Mage
+    .goto 1456/1,253.85,-995.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurston Xane|r
+    .accept 1883 >>Accept Speak with Un'thuwa
+    .target Thurston Xane
+    .xp <10,1
 step << Tauren Druid
     .goto 1456/1,-281.59,-1039.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem|r
@@ -1595,11 +1769,6 @@ step << Tauren Druid
     .goto 1456/1,-281.59,-1039.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem|r
     .turnin 5926 >>Turn in Heeding the Call
-    .target Turak Runetotem
-    .isOnQuest 5926
-step << Tauren Druid
-    .goto 1456/1,-281.59,-1039.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem|r
     .accept 5922 >>Accept Moonglade
     .target Turak Runetotem
 step
@@ -1608,6 +1777,12 @@ step
     .turnin 3369 >>Turn in In Nightmares
     .target Arch Druid Hamuul Runetotem
     .isOnQuest 3369
+step
+    .goto 1456/1,-303.93,-1048.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Hamuul Runetotem|r
+    .turnin 98435 >>Turn in Thunderhorn's Report
+    .target Arch Druid Hamuul Runetotem
+    .isOnQuest 98435
 step << Tauren Druid/Skyborne Druid
     .goto 1456/1,-281.59,-1039.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem|r
@@ -1617,15 +1792,15 @@ step << Tauren Druid/Skyborne Druid
 step
     .goto 1456/1,-212.39,-1065.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magatha Grimtotem|r
-    .turnin 1063 >>Turn in The Elder Crone
-    .target Magatha Grimtotem
-    .isOnQuest 1063
-step
-    .goto 1456/1,-212.39,-1065.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magatha Grimtotem|r
     .turnin 5062 >>Turn in Sacred Fire
     .target Magatha Grimtotem
     .isQuestComplete 5062
+step
+    .goto 1456/1,-212.39,-1065.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magatha Grimtotem|r
+    .turnin 1063 >>Turn in The Elder Crone
+    .target Magatha Grimtotem
+    .isOnQuest 1063
 step << Skyborne Druid
     .goto 1456/1,-281.59,-1039.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem|r
@@ -1644,12 +1819,6 @@ step
     .turnin 1067 >>Turn in Return to Thunder Bluff
     .target Apothecary Zamah
     .isOnQuest 1067
-step << Shaman
-    .goto 1456/1,254.06,-992.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xanis Flameweaver|r
-    .accept 1523 >>Accept Call of Fire
-    .target Xanis Flameweaver
-    .xp <10,1
 step << Mage
     .goto 1456/1,253.85,-995.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurston Xane|r
@@ -1710,12 +1879,12 @@ step
     .mob Windfury Sorceress
     .mob Windfury Matriarch
 step << Skyborne
-    .goto 1412/1,423.68,-656.30
+    .goto 1412/1,424.91,-659.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alaana Stormwalker|r
     .accept 95350 >>Accept Welcome to Azeroth
     .target Alaana Stormwalker
 step << Skyborne Druid
-    .goto 1412/1,422.44,-657.12
+    .goto 1412/1,423.06,-659.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muln Earthfury|r
     .accept 94911 >>Accept Child of Nature
     .target Muln Earthfury
@@ -1725,18 +1894,19 @@ step << Tauren
     >>Cleanse the Wildmane Well
     .complete 760,1 --Cleanse the Wildmane Well
     .isOnQuest 760
+step << Skyborne Druid
+    .xp 10 >>Grind to level 10 (Child of Nature needs it)
+step << Skyborne Druid
+    .goto 1412/1,423.06,-659.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muln Earthfury|r
+    .accept 94911 >>Accept Child of Nature
+    .target Muln Earthfury
 step
-    .goto 1412/1,423.68,-656.30
+    .goto 1412/1,424.91,-659.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alaana Stormwalker|r
     .turnin 95349 >>Turn in The Earthen Ring
     .target Alaana Stormwalker
     .isOnQuest 95349
-step << Skyborne Druid
-    .goto 1412/1,422.44,-657.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muln Earthfury|r
-    .accept 94911 >>Accept Child of Nature
-    .target Muln Earthfury
-    .xp <10,1
 step
     .goto 1412/1,-674.84,-751.47
     >>Kill |cRXP_ENEMY_Arra'chea|r and loot |cRXP_LOOT_Horn of Arra'chea|r
@@ -1763,94 +1933,6 @@ step
     #completewith next
     .zone 1456 >>Travel to Thunder Bluff
     .zoneskip 1456
-step
-    .goto 1456/1,-125.66,-1413.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor Stonehoof|r
-    .turnin 1130 >>Turn in Melor Sends Word
-    .target Melor Stonehoof
-    .isOnQuest 1130
-step
-    .goto 1456/1,-125.66,-1413.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor Stonehoof|r
-    .turnin 861 >>Turn in The Hunter's Way
-    .target Melor Stonehoof
-    .isOnQuest 861
-step
-    .goto 1456/1,-125.66,-1413.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor Stonehoof|r
-    .accept 860 >>Accept Sergra Darkthorn
-    .target Melor Stonehoof
-    .isQuestTurnedIn 861 --any of: The Hunter's Way
-step << Orc Hunter/Troll Hunter
-    .goto 1456/1,-93.82,-1464.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kary Thunderhorn|r
-    .accept 6070 >>Accept The Hunter's Path
-    .target Kary Thunderhorn
-    .xp <10,1
-step
-    .goto 1456/1,-112.71,-1209.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cairne Bloodhoof|r
-    .turnin 776 >>Turn in Rites of the Earthmother
-    .target Cairne Bloodhoof
-    .isOnQuest 776
-step
-    .goto 1456/1,122.65,-1264.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eyahn Eagletalon|r
-    .turnin 744 >>Turn in Preparation for Ceremony
-    .target Eyahn Eagletalon
-step
-    .goto 1456/1,120.04,-1238.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eylah Sunhorn|r
-    .turnin 97485 >>Turn in Traditions of the Bluff
-    .target Eylah Sunhorn
-    .isQuestComplete 97485
-step << Orc/Tauren/Troll
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    >>|cRXP_WARN_The database has no objectives for Stalk With The Earthmother. Skip this step if the quest is not finished|r
-    .turnin 76160 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76160
-step << Orc Warrior/Orc Shaman/Orc Druid/Tauren Warrior/Tauren Shaman/Tauren Druid/Troll Warrior/Troll Shaman/Troll Druid
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    >>|cRXP_WARN_The database has no objectives for Stalk With The Earthmother. Skip this step if the quest is not finished|r
-    .turnin 76156 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76156
-step << Mage
-    .xp 10 >>Grind to level 10 (Speak with Un'thuwa needs it)
-step << Mage
-    .goto 1456/1,253.85,-995.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurston Xane|r
-    .accept 1883 >>Accept Speak with Un'thuwa
-    .target Thurston Xane
-step
-    .goto 1456/1,-36.73,-1461.22
-    >>Click the |cRXP_PICK_Incense Burner|r
-    .complete 97485,1 --Incense Burner
-step << Orc Hunter/Troll Hunter
-    .xp 10 >>Grind to level 10 (The Hunter's Path needs it)
-step << Orc Hunter/Troll Hunter
-    .goto 1456/1,-93.82,-1464.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kary Thunderhorn|r
-    .accept 6070 >>Accept The Hunter's Path
-    .target Kary Thunderhorn
-step
-    #completewith next
-    .zone 1412 >>Leave Thunder Bluff for Mulgore
-    .zoneskip 1412
-step << Skyborne Druid
-    .xp 10 >>Grind to level 10 (Child of Nature needs it)
-step << Skyborne Druid
-    .goto 1412/1,422.44,-657.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muln Earthfury|r
-    .accept 94911 >>Accept Child of Nature
-    .target Muln Earthfury
-step << Skyborne Druid
-    #completewith next
-    .zone 1456 >>Travel to Thunder Bluff
-    .zoneskip 1456
 step << Skyborne Druid
     .goto 1456/1,-281.59,-1039.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem|r
@@ -1870,21 +1952,78 @@ step << Horde Druid Skyborne
     .train 5178 >>Train your class spells
     .target Turak Runetotem::3033
     .xp <14,1
-step << Skyborne Druid
+step
+    .goto 1456/1,-125.66,-1413.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor Stonehoof|r
+    .turnin 861 >>Turn in The Hunter's Way
+    .target Melor Stonehoof
+    .isOnQuest 861
+step
+    .goto 1456/1,-125.66,-1413.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor Stonehoof|r
+    .accept 860 >>Accept Sergra Darkthorn
+    .target Melor Stonehoof
+    .isQuestTurnedIn 861 --any of: The Hunter's Way
+step << Orc Hunter/Troll Hunter
+    .xp 10 >>Grind to level 10 (The Hunter's Path needs it)
+step << Orc Hunter/Troll Hunter
+    .goto 1456/1,-93.82,-1464.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kary Thunderhorn|r
+    .accept 6070 >>Accept The Hunter's Path
+    .target Kary Thunderhorn
+step
+    .goto 1456/1,-112.71,-1209.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cairne Bloodhoof|r
+    .turnin 776 >>Turn in Rites of the Earthmother
+    .target Cairne Bloodhoof
+    .isOnQuest 776
+step << Mage
+    .xp 10 >>Grind to level 10 (Speak with Un'thuwa needs it)
+step << Mage
+    .goto 1456/1,253.85,-995.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurston Xane|r
+    .accept 1883 >>Accept Speak with Un'thuwa
+    .target Thurston Xane
+step
+    .goto 1456/1,122.65,-1264.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eyahn Eagletalon|r
+    .turnin 744 >>Turn in Preparation for Ceremony
+    .target Eyahn Eagletalon
+step
+    .goto 1456/1,105.01,-1308.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    .turnin 76160 >>Turn in Stalk With The Earthmother
+    .target Boarton Shadetotem
+    .isOnQuest 76160
+step
+    .goto 1456/1,105.01,-1308.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    .accept 76240 >>Accept Stalk With The Earthmother
+    .target Boarton Shadetotem
+    .isQuestTurnedIn 76160 --any of: Stalk With The Earthmother
+step
+    .goto 1456/1,-69.19,-1172.80,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kah Mistrunner|r
+    .train 7734 >>Train |T136245:0|t[Fishing]
+    .target Kah Mistrunner
+step
+    .goto 1456/1,105.01,-1308.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    .turnin 76240 >>Turn in Stalk With The Earthmother
+    .target Boarton Shadetotem
+    .isOnQuest 76240
+step
+    .goto 1456/1,120.04,-1238.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eylah Sunhorn|r
+    .turnin 97485 >>Turn in Traditions of the Bluff
+    .target Eylah Sunhorn
+    .isQuestComplete 97485
+step
     #completewith next
     .zone 1412 >>Leave Thunder Bluff for Mulgore
     .zoneskip 1412
 step
-    #loop
-    .goto 1412/1,-1001.01,-1418.88,0
-    .goto 1412/1,-1001.01,-1418.88,40,0
-    .goto 1412/1,-1042.86,-1474.67,40,0
-    .goto 1412/1,-1032.40,-1484.92,40,0
-    .goto 1412/1,-1026.86,-1497.23,40,0
-    .goto 1412/1,-1045.32,-1509.95,40,0
-    .goto 1412/1,-1066.86,-1522.66,40,0
-    .goto 1412/1,-998.55,-1532.51,40,0
-    .goto 1412/1,-993.63,-1498.05,40,0
+    .goto 1412/1,-1013.94,-1486.97
     >>Kill |cRXP_ENEMY_Venture Co. Clearclutter|r and loot |cRXP_LOOT_Clearcutter Key|r
     .complete 98427,1 --Clearcutter Key (1)
     .mob Venture Co. Clearclutter
@@ -1893,10 +2032,6 @@ step << Undead Priest
     #completewith next
     .hs >>Hearth to Innkeeper Kauth's inn. |cRXP_WARN_Walk instead if you are already nearby|r
     .cooldown item,6948,>0,1
-step << Undead Priest
-    .xp 10 >>Grind to level 10 (Touch of Weakness needs it)
-step << Troll Priest
-    .xp 10 >>Grind to level 10 (Hex of Weakness needs it)
 step
     .goto 1412/1,-364.06,-2287.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Var'jun|r
@@ -1919,22 +2054,6 @@ step
     .turnin 98427 >>Turn in Ceasing Operations
     .unitscan Morin Cloudstalker
     .isOnQuest 98427
-step
-    #loop
-    .goto 1412/1,-997.32,-2404.61,0
-    .goto 1412/1,-997.32,-2404.61,40,0
-    .goto 1412/1,-931.47,-2380.82,40,0
-    .goto 1412/1,-908.70,-2373.02,40,0
-    .goto 1412/1,-890.85,-2369.74,40,0
-    .goto 1412/1,-796.70,-2351.69,40,0
-    .goto 1412/1,-724.69,-2343.49,40,0
-    .goto 1412/1,-679.77,-2337.34,40,0
-    .goto 1412/1,-624.99,-2318.47,40,0
-    .goto 1412/1,-598.53,-2302.06,40,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r. |cRXP_WARN_This NPC walks a patrol route|r
-    .turnin 98424 >>Turn in Fizsprocket's Notes
-    .unitscan Morin Cloudstalker
-    .isQuestComplete 98424
 step << Tauren
     .goto 1412/1,-445.29,-2341.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull Thunderhorn|r
@@ -1965,34 +2084,6 @@ step << Hunter
     .train 14281 >> Train your class spells
     .target Yaw Sharpmane
     .xp <12,1
-step << Shaman
-    #completewith next
-    .zone 1456 >>Travel to Thunder Bluff
-    .zoneskip 1456
-step << Shaman
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .accept 76240 >>Accept Stalk With The Earthmother
-    .target Boarton Shadetotem
-step
-    .goto 1456/1,-69.19,-1172.80,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kah Mistrunner|r
-    .train 7734 >>Train |T136245:0|t[Fishing]
-    .target Kah Mistrunner
-step << Shaman
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    >>|cRXP_WARN_The database has no objectives for Stalk With The Earthmother. Skip this step if the quest is not finished|r
-    .turnin 76240 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76240
-step << Shaman
-    .xp 10 >>Grind to level 10 (Call of Fire needs it)
-step << Shaman
-    .goto 1456/1,254.06,-992.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xanis Flameweaver|r
-    .accept 1523 >>Accept Call of Fire
-    .target Xanis Flameweaver
 step
     +|cRXP_WARN_That is all of Mulgore for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Durotar|r: Call of Earth << Shaman
@@ -2007,98 +2098,60 @@ step
     >>|cRXP_FRIENDLY_The Barrens|r: Call of Fire << Shaman
     >>|cRXP_FRIENDLY_The Barrens|r: Return to Jahan << Tauren
     >>|cRXP_FRIENDLY_Undercity|r: Touch of Weakness << Undead Priest
-    >>|cRXP_FRIENDLY_Elsewhere and back here|r: Traditions of the Bluff, Fizsprocket's Notes
+    >>|cRXP_FRIENDLY_Elsewhere and back here|r: Traditions of the Bluff
 step
-    +|cRXP_WARN_Until level 13, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 3.2 levels of quests, starting around Sergra Darkthorn; 2 quests from here hand in there), |cRXP_FRIENDLY_Zephras Isle|r (about 2.9 levels of quests, starting around Valennia Stormfist), |cRXP_FRIENDLY_Durotar|r (about 1.7 levels of quests, starting around Orgnil Soulscar). Then come back to this Mulgore guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 10|r: |cRXP_FRIENDLY_The Barrens|r (about 3.2 levels of quests, starting around Sergra Darkthorn; 2 quests from here hand in there), |cRXP_FRIENDLY_Zephras Isle|r (about 2.9 levels of quests, starting around Quel'ana Quickgale), |cRXP_FRIENDLY_Durotar|r (about 1.7 levels of quests, starting around Orgnil Soulscar). Completing this step loads the guide for The Barrens --RouteBuilder:next
 step
-    .xp 13 >>|cRXP_WARN_The rest of Mulgore is planned from level 13.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Mulgore: part 2|r (planned from level 13)
-step
-    #completewith next
-    .zone 1456 >>Travel to Thunder Bluff
-    .zoneskip 1456
-step
-    .goto 1456/1,232.77,-1019.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice Foster|r
-    .accept 264 >>Accept Until Death Do Us Part
-    .target Clarice Foster
-step
-    #completewith next
-    .zone 1412 >>Leave Thunder Bluff for Mulgore
-    .zoneskip 1412
-step
-    .goto 1412/1,-496.37,-2348.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang Stonehoof|r
-    .turnin 99108 >>Turn in Sparring Match
-    .target Krang Stonehoof
-    .isOnQuest 99108
-step
-    #loop
-    .goto 1412/1,-598.53,-2302.06,0
-    .goto 1412/1,-598.53,-2302.06,40,0
-    .goto 1412/1,-624.99,-2318.47,40,0
-    .goto 1412/1,-679.77,-2337.34,40,0
-    .goto 1412/1,-724.69,-2343.49,40,0
-    .goto 1412/1,-796.70,-2351.69,40,0
-    .goto 1412/1,-890.85,-2369.74,40,0
-    .goto 1412/1,-908.70,-2373.02,40,0
-    .goto 1412/1,-931.47,-2380.82,40,0
-    .goto 1412/1,-997.32,-2404.61,40,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r. |cRXP_WARN_This NPC walks a patrol route|r
-    .turnin 98424 >>Turn in Fizsprocket's Notes
-    .unitscan Morin Cloudstalker
-    .isQuestComplete 98424
-step
-    #completewith next
-    .zone 1456 >>Travel to Thunder Bluff
-    .zoneskip 1456
+    +|cRXP_WARN_The rest of Mulgore is planned from level 13.|r Load its guide for level 13 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 1 - 23 Mulgore
+#subweight -1
+#name 13-14 Mulgore
+--RouteBuilder:next
+#next Zone Routes (Horde)\12-15 The Barrens: around Gazlowe;Zone Routes (Horde)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Horde)\9-12 Durotar: around Orgnil Soulscar
+
 step
     .goto 1456/1,-36.73,-1461.22
     >>Click the |cRXP_PICK_Incense Burner|r
     .complete 97485,1 --Incense Burner
     .isOnQuest 97485
-step << Orc Warrior/Orc Shaman/Orc Druid/Tauren Warrior/Tauren Shaman/Tauren Druid/Troll Warrior/Troll Shaman/Troll Druid
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .turnin 76156 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76156
-step << Orc/Tauren/Troll
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .turnin 76160 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76160
 step
     .goto 1456/1,120.04,-1238.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eylah Sunhorn|r
     .turnin 97485 >>Turn in Traditions of the Bluff
     .target Eylah Sunhorn
     .isQuestComplete 97485
-step << Shaman
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .turnin 76240 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76240
+step
+    .goto 1456/1,232.77,-1019.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice Foster|r
+    .accept 264 >>Accept Until Death Do Us Part
+    .target Clarice Foster
 step
     +|cRXP_WARN_That is all of Mulgore for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Silverpine Forest|r: Until Death Do Us Part
-step << Undead Mage/Troll Mage/Tauren Druid
-    +|cRXP_WARN_Until level 16, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 1.8 levels of quests, starting around Gazlowe), |cRXP_FRIENDLY_Silverpine Forest|r (about 1.0 levels of quests, starting around High Executor Hadrec; 1 quest from here hands in there). Then come back to this Mulgore guide --RouteBuilder:next
-step << Undead Mage/Troll Mage/Tauren Druid
-    .xp 16 >>|cRXP_WARN_The rest of Mulgore is planned from level 16.|r Come back to this guide then
 step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Mulgore: part 3|r (planned from level 16)
-step
-    #completewith next
-    .zone 1456 >>Travel to Thunder Bluff
-    .zoneskip 1456
+    +|cRXP_WARN_Suggested next zones at level 13|r: |cRXP_FRIENDLY_The Barrens|r (about 1.8 levels of quests, starting around Gazlowe), |cRXP_FRIENDLY_Zephras Isle|r (about 1.7 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Durotar|r (about 1.1 levels of quests, starting around Orgnil Soulscar). Completing this step loads the guide for The Barrens --RouteBuilder:next
+step << Undead Mage/Troll Mage/Tauren Druid
+    +|cRXP_WARN_The rest of Mulgore is planned from level 16.|r Load its guide for level 16 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Undead Mage/Troll Mage/Tauren Druid
+#version 1
+#group Zone Routes (Horde)
+#subgroup 1 - 23 Mulgore
+#subweight -1
+#name 16-17 Mulgore
+--RouteBuilder:next
+#next Zone Routes (Horde)\12-15 The Barrens: around Gazlowe;Zone Routes (Horde)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Horde)\9-12 Durotar: around Orgnil Soulscar
+
 step << Undead Mage/Troll Mage
     .goto 1456/1,253.85,-995.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurston Xane|r
@@ -2110,58 +2163,10 @@ step << Tauren Druid
     .accept 6126 >>Accept Lessons Anew
     .target Turak Runetotem
 step
-    #completewith next
-    .zone 1412 >>Leave Thunder Bluff for Mulgore
-    .zoneskip 1412
-step
-    .goto 1412/1,-496.37,-2348.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang Stonehoof|r
-    .turnin 99108 >>Turn in Sparring Match
-    .target Krang Stonehoof
-    .isOnQuest 99108
-step
-    #loop
-    .goto 1412/1,-598.53,-2302.06,0
-    .goto 1412/1,-598.53,-2302.06,40,0
-    .goto 1412/1,-624.99,-2318.47,40,0
-    .goto 1412/1,-679.77,-2337.34,40,0
-    .goto 1412/1,-724.69,-2343.49,40,0
-    .goto 1412/1,-796.70,-2351.69,40,0
-    .goto 1412/1,-890.85,-2369.74,40,0
-    .goto 1412/1,-908.70,-2373.02,40,0
-    .goto 1412/1,-931.47,-2380.82,40,0
-    .goto 1412/1,-997.32,-2404.61,40,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r. |cRXP_WARN_This NPC walks a patrol route|r
-    .turnin 98424 >>Turn in Fizsprocket's Notes
-    .unitscan Morin Cloudstalker
-    .isQuestComplete 98424
-step
-    #completewith next
-    .zone 1456 >>Travel to Thunder Bluff
-    .zoneskip 1456
-step
     .goto 1456/1,-36.73,-1461.22
     >>Click the |cRXP_PICK_Incense Burner|r
     .complete 97485,1 --Incense Burner
     .isOnQuest 97485
-step << Orc Warrior/Orc Shaman/Orc Druid/Tauren Warrior/Tauren Shaman/Tauren Druid/Troll Warrior/Troll Shaman/Troll Druid
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .turnin 76156 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76156
-step << Orc/Tauren/Troll
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .turnin 76160 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76160
-step
-    .goto 1456/1,120.04,-1238.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eylah Sunhorn|r
-    .turnin 97485 >>Turn in Traditions of the Bluff
-    .target Eylah Sunhorn
-    .isQuestComplete 97485
 step
     .goto 1456/1,-212.39,-1065.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magatha Grimtotem|r
@@ -2170,12 +2175,11 @@ step
     .isQuestTurnedIn 1063 --any of: The Elder Crone
     .xp <13,1
 step
-    .goto 1456/1,278.59,-995.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Zamah|r
-    .accept 1086 >>Accept The Flying Machine Airport
-    .target Apothecary Zamah
-    .isQuestTurnedIn 1067 --any of: Return to Thunder Bluff
-    .xp <13,1
+    .goto 1456/1,120.04,-1238.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eylah Sunhorn|r
+    .turnin 97485 >>Turn in Traditions of the Bluff
+    .target Eylah Sunhorn
+    .isQuestComplete 97485
 step
     .goto 1456/1,278.59,-995.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Zamah|r
@@ -2209,32 +2213,38 @@ step
 step
     .goto 1456/1,278.59,-995.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Zamah|r
+    .accept 1086 >>Accept The Flying Machine Airport
+    .target Apothecary Zamah
+    .isQuestTurnedIn 1067 --any of: Return to Thunder Bluff
+    .xp <13,1
+step
+    .goto 1456/1,278.59,-995.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Zamah|r
     .turnin 1086 >>Turn in The Flying Machine Airport
     .target Apothecary Zamah
     .isQuestComplete 1086
-step << Shaman
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .turnin 76240 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76240
 step
     +|cRXP_WARN_That is all of Mulgore for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: Journey to Tarren Mill
     >>|cRXP_FRIENDLY_Moonglade|r: Lessons Anew << Tauren Druid
     >>|cRXP_FRIENDLY_Undercity|r: Report to Anastasia << Undead Mage/Troll Mage
-step << Tauren Druid
-    +|cRXP_WARN_Until level 19, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 0.6 levels of quests, starting around Sergra Darkthorn). Then come back to this Mulgore guide --RouteBuilder:next
-step << Tauren Druid
-    .xp 19 >>|cRXP_WARN_The rest of Mulgore is planned from level 19.|r Come back to this guide then
 step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Mulgore: part 4|r (planned from level 19)
+    +|cRXP_WARN_Suggested next zones at level 16|r: |cRXP_FRIENDLY_The Barrens|r (about 1.4 levels of quests, starting around Gazlowe), |cRXP_FRIENDLY_Zephras Isle|r (about 1.2 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Durotar|r (about 0.7 levels of quests, starting around Orgnil Soulscar). Completing this step loads the guide for The Barrens --RouteBuilder:next
 step << Tauren Druid
-    #completewith next
-    .zone 1456 >>Travel to Thunder Bluff
-    .zoneskip 1456
+    +|cRXP_WARN_The rest of Mulgore is planned from level 19.|r Load its guide for level 19 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Tauren Druid
+#version 1
+#group Zone Routes (Horde)
+#subgroup 1 - 23 Mulgore
+#subweight -1
+#name 19-20 Mulgore
+--RouteBuilder:next
+#next Zone Routes (Horde)\18-20 The Barrens: around Tonga Runetotem
+
 step << Priest
     .goto 1456/1,252.49,-956.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miles|r
@@ -2306,85 +2316,47 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torm|r
     .train 845 >>Train your class spells
     .target Torm Ragetotem
-step << Tauren Druid
-    #completewith next
-    .zone 1412 >>Leave Thunder Bluff for Mulgore
-    .zoneskip 1412
-step
-    .goto 1412/1,-496.37,-2348.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang Stonehoof|r
-    .turnin 99108 >>Turn in Sparring Match
-    .target Krang Stonehoof
-    .isOnQuest 99108
-step
-    #loop
-    .goto 1412/1,-598.53,-2302.06,0
-    .goto 1412/1,-598.53,-2302.06,40,0
-    .goto 1412/1,-624.99,-2318.47,40,0
-    .goto 1412/1,-679.77,-2337.34,40,0
-    .goto 1412/1,-724.69,-2343.49,40,0
-    .goto 1412/1,-796.70,-2351.69,40,0
-    .goto 1412/1,-890.85,-2369.74,40,0
-    .goto 1412/1,-908.70,-2373.02,40,0
-    .goto 1412/1,-931.47,-2380.82,40,0
-    .goto 1412/1,-997.32,-2404.61,40,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r. |cRXP_WARN_This NPC walks a patrol route|r
-    .turnin 98424 >>Turn in Fizsprocket's Notes
-    .unitscan Morin Cloudstalker
-    .isQuestComplete 98424
-step
-    #completewith next
-    .zone 1456 >>Travel to Thunder Bluff
-    .zoneskip 1456
 step
     .goto 1456/1,-36.73,-1461.22
     >>Click the |cRXP_PICK_Incense Burner|r
     .complete 97485,1 --Incense Burner
     .isOnQuest 97485
-step << Orc Warrior/Orc Shaman/Orc Druid/Tauren Warrior/Tauren Shaman/Tauren Druid/Troll Warrior/Troll Shaman/Troll Druid
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .turnin 76156 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76156
-step << Orc/Tauren/Troll
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .turnin 76160 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76160
 step
     .goto 1456/1,120.04,-1238.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eylah Sunhorn|r
     .turnin 97485 >>Turn in Traditions of the Bluff
     .target Eylah Sunhorn
     .isQuestComplete 97485
-step << Shaman
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .turnin 76240 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76240
 step
     +|cRXP_WARN_That is all of Mulgore for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Moonglade|r: A Lesson to Learn << Tauren Druid
 step
-    +|cRXP_WARN_Until level 22, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 1.3 levels of quests, starting around Tonga Runetotem). Then come back to this Mulgore guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 19|r: |cRXP_FRIENDLY_The Barrens|r (about 1.3 levels of quests, starting around Tonga Runetotem). Completing this step loads the guide for The Barrens --RouteBuilder:next
 step
-    .xp 22 >>|cRXP_WARN_The rest of Mulgore is planned from level 22.|r Come back to this guide then
-step
-    #label RBSection5_1
-    #completewith next
-    +|cRXP_WARN_Mulgore: part 5|r (planned from level 22)
-step
-    #completewith next
-    .zone 1456 >>Travel to Thunder Bluff
-    .zoneskip 1456
+    +|cRXP_WARN_The rest of Mulgore is planned from level 22.|r Load its guide for level 22 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 1 - 23 Mulgore
+#subweight -1
+#name 22-23 Mulgore
+--RouteBuilder:next
+#next Zone Routes (Horde)\22-23 Ashenvale: around Karang Amakkar
+
 step << Warrior
     .goto 1456/1,-80.78,-1457.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torm Ragetotem|r
     .accept 1823 >>Accept Speak with Ruga
     .target Torm Ragetotem
+step
+    .goto 1456/1,-36.73,-1461.22
+    >>Click the |cRXP_PICK_Incense Burner|r
+    .complete 97485,1 --Incense Burner
+    .isOnQuest 97485
 step
     .goto 1456/1,-125.66,-1413.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor Stonehoof|r
@@ -2481,53 +2453,6 @@ step
     .accept 5644 >>Accept Devouring Plague << Undead Priest
     .accept 5642 >>Accept Shadowguard << Troll Priest
     .target Miles Welsh
-step
-    #completewith next
-    .zone 1412 >>Leave Thunder Bluff for Mulgore
-    .zoneskip 1412
-step
-    .goto 1412/1,-496.37,-2348.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang Stonehoof|r
-    .turnin 99108 >>Turn in Sparring Match
-    .target Krang Stonehoof
-    .isOnQuest 99108
-step
-    #loop
-    .goto 1412/1,-598.53,-2302.06,0
-    .goto 1412/1,-598.53,-2302.06,40,0
-    .goto 1412/1,-624.99,-2318.47,40,0
-    .goto 1412/1,-679.77,-2337.34,40,0
-    .goto 1412/1,-724.69,-2343.49,40,0
-    .goto 1412/1,-796.70,-2351.69,40,0
-    .goto 1412/1,-890.85,-2369.74,40,0
-    .goto 1412/1,-908.70,-2373.02,40,0
-    .goto 1412/1,-931.47,-2380.82,40,0
-    .goto 1412/1,-997.32,-2404.61,40,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin Cloudstalker|r. |cRXP_WARN_This NPC walks a patrol route|r
-    .turnin 98424 >>Turn in Fizsprocket's Notes
-    .unitscan Morin Cloudstalker
-    .isQuestComplete 98424
-step
-    #completewith next
-    .zone 1456 >>Travel to Thunder Bluff
-    .zoneskip 1456
-step
-    .goto 1456/1,-36.73,-1461.22
-    >>Click the |cRXP_PICK_Incense Burner|r
-    .complete 97485,1 --Incense Burner
-    .isOnQuest 97485
-step << Orc Warrior/Orc Shaman/Orc Druid/Tauren Warrior/Tauren Shaman/Tauren Druid/Troll Warrior/Troll Shaman/Troll Druid
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .turnin 76156 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76156
-step << Orc/Tauren/Troll
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .turnin 76160 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76160
 step << Warrior
     .goto 1456/1,109.71,-1239.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orm Stonehoof|r
@@ -2560,12 +2485,6 @@ step << Warrior
     .turnin 1844 >>Turn in Chimaeric Horn
     .target Orm Stonehoof
     .isQuestComplete 1844
-step << Shaman
-    .goto 1456/1,103.03,-1307.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
-    .turnin 76240 >>Turn in Stalk With The Earthmother
-    .target Boarton Shadetotem
-    .isOnQuest 76240
 step
     +|cRXP_WARN_That is all of Mulgore for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ashenvale|r: The Ashenvale Hunt

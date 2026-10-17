@@ -1,9 +1,9 @@
 -- 11-31 The Barrens: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 7 parts with a level check between them (from level 11, 14, 17, 20, 23, 31, 34).
--- Sections (the guide starts at the one for your level): start from 11; part 2 from 14; part 3 from 17; part 4 from 20; part 5 from 23; part 6 from 31; part 7 from 34.
+-- The zone covers more levels than one visit gives, so it is planned in 7 parts (from level 11, 14, 17, 20, 23, 31, 34).
+-- Split into 7 guides, listed under "11 - 35 The Barrens" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/The Barrens.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,39 +13,19 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 11-31 The Barrens
+#subgroup 11 - 35 The Barrens
+#subweight -11
+#name 11-12 The Barrens
+--RouteBuilder:next
+#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\9-12 Teldrassil: around Priestess A'moora;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw
 
 step
-    .xp <14,1,RBSection1_1
-    .xp 14 >>Finding the place in this guide for your level
-step
-    .xp <17,1,RBSection2_1
-    .xp 17 >>Finding the place in this guide for your level
-step
-    .xp <20,1,RBSection3_1
-    .xp 20 >>Finding the place in this guide for your level
-step
-    .xp <23,1,RBSection4_1
-    .xp 23 >>Finding the place in this guide for your level
-step
-    .xp <31,1,RBSection5_1
-    .xp 31 >>Finding the place in this guide for your level
-step
-    .xp <34,1,RBSection6_1
-    .xp 34 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection7_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_The Barrens: start|r (planned from level 11)
-step
-    .goto 1413/1,-2458.95,-370.46
+    .goto 1413/1,-2456.92,-371.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
     .accept 91901 >>Accept A Sealed Crate
     .target Dokimi
 step
-    .goto 1413/1,-2458.95,-370.46
+    .goto 1413/1,-2456.92,-371.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
     >>|cRXP_WARN_The database has no objectives for A Sealed Crate. Skip this step if the quest is not finished|r
     .turnin 91901 >>Turn in A Sealed Crate
@@ -201,18 +181,27 @@ step
     .target Wharfmaster Dizzywig
     .isOnQuest 1039
 step
-    .goto 1413/1,-2072.87,-3379.02
+    .goto 1413/1,-2073.88,-3379.02
     >>Click the |cRXP_PICK_Burned-Out Remains|r
     .turnin 79008 >>Turn in ... and that note you found
     .isOnQuest 79008
 step
-    +|cRXP_WARN_Until level 14, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 2.7 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.6 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Westfall|r (about 1.4 levels of quests, starting around Farmer Saldean). Then come back to this The Barrens guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 11|r: |cRXP_FRIENDLY_Darkshore|r (about 2.7 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Teldrassil|r (about 1.7 levels of quests, starting around Priestess A'moora), |cRXP_FRIENDLY_Zephras Isle|r (about 1.6 levels of quests, starting around Elegael Thornpaw). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 14 >>|cRXP_WARN_The rest of The Barrens is planned from level 14.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_The Barrens: part 2|r (planned from level 14)
+    +|cRXP_WARN_The rest of The Barrens is planned from level 14.|r Load its guide for level 14 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 11 - 35 The Barrens
+#subweight -11
+#name 14-15 The Barrens
+--RouteBuilder:next
+#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\9-12 Teldrassil: around Priestess A'moora;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw
+
 step
     .goto 1413/1,-3728.66,-835.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
@@ -293,7 +282,7 @@ step
     .accept 902 >>Accept Samophlange
     .isQuestTurnedIn 901 --any of: Samophlange
 step
-    .goto 1413/1,-2458.95,-370.46
+    .goto 1413/1,-2456.92,-371.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
     .turnin 91901 >>Turn in A Sealed Crate
     .target Dokimi
@@ -312,20 +301,43 @@ step
 step
     .xp 14 >>Grind to level 14 (Stepping Stones needs it)
 step
-    .goto 1413/1,-2072.87,-3379.02
+    .goto 1413/1,-2073.88,-3379.02
     >>Click the |cRXP_PICK_Burned-Out Remains|r
     .accept 79192 >>Accept Stepping Stones
 step
     +|cRXP_WARN_That is all of The Barrens for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Stonetalon Mountains|r: Stepping Stones
 step
-    +|cRXP_WARN_Until level 17, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 2.3 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.1 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling). Then come back to this The Barrens guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 14|r: |cRXP_FRIENDLY_Darkshore|r (about 2.3 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Teldrassil|r (about 1.2 levels of quests, starting around Priestess A'moora), |cRXP_FRIENDLY_Zephras Isle|r (about 1.1 levels of quests, starting around Elegael Thornpaw). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 17 >>|cRXP_WARN_The rest of The Barrens is planned from level 17.|r Come back to this guide then
+    +|cRXP_WARN_The rest of The Barrens is planned from level 17.|r Load its guide for level 17 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 11 - 35 The Barrens
+#subweight -11
+#name 17-18 The Barrens: around Mebok Mizzyrix
+--RouteBuilder:next
+#next Zone Routes (Alliance)\17-19 Darkshore: around Archaeologist Hollee;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Daryl the Youngling
+
 step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_The Barrens: part 3|r (planned from level 17)
+    .goto 1413/1,-2372.82,-608.96
+    >>Click the |cRXP_PICK_Scrolls|r
+    .accept 78143 >>Accept Secrets of the Dreamers
+step
+    .goto 1413/1,-2456.92,-371.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
+    .turnin 91901 >>Turn in A Sealed Crate
+    .target Dokimi
+    .isOnQuest 91901
+step
+    .goto 1413/1,-3082.15,1017.95
+    >>Click the |cRXP_PICK_Manual|r
+    .accept 78145 >>Accept Arcanic Systems Manual
 step
     .goto 1413/1,-3104.44,1109.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzlecrank's Shredder|r
@@ -347,36 +359,23 @@ step
     >>Escort Wizzlecrank out of the Venture Co. drill site
     .complete 863,1 --Escort Wizzlecrank out of the Venture Co. drill site
 step
-    .goto 1413/1,-2458.95,-370.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
-    .turnin 91901 >>Turn in A Sealed Crate
-    .target Dokimi
-    .isOnQuest 91901
+    .goto 1413/1,-3082.15,1017.95
+    >>Open the |cRXP_PICK_Manual|r. Loot it for |cRXP_LOOT_Arcanic Systems Manual|r
+    .complete 78145,1 --Arcanic Systems Manual (1)
 step
-    .goto 1413/1,-2259.32,-602.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falla Sagewind|r
-    .accept 3370 >>Accept In Nightmares
-    .target Falla Sagewind
-    .isQuestTurnedIn 6981 --any of: The Glowing Shard
-    .xp <15,1
-step
-    .goto 1413/1,-3759.06,-902.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
-    .accept 1095 >>Accept Further Instructions
-    .target Sputtervalve
-    .isQuestTurnedIn 1094 --any of: Further Instructions
-    .xp <16,1
+    .goto 1413/1,-3730.68,-840.02
+    >>Click the |cRXP_PICK_Goblin Tome|r
+    .accept 79097 >>Accept Baxtan: On Destructive Magics
 step
     .goto 1413/1,-3759.06,-902.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .turnin 863 >>Turn in The Escape
-    .accept 1483 >>Accept Ziz Fizziks
     .target Sputtervalve
 step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
-    .accept 1069 >>Accept Deepmoss Spider Eggs
     .accept 865 >>Accept Raptor Horns
+    .accept 1069 >>Accept Deepmoss Spider Eggs
     .target Mebok Mizzyrix
 step
     .goto 1413/1,-3555.38,-552.88
@@ -391,24 +390,61 @@ step
     .turnin 865 >>Turn in Raptor Horns
     .target Mebok Mizzyrix
 step
+    .goto 1413/1,-3759.06,-902.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
+    .accept 1095 >>Accept Further Instructions
+    .target Sputtervalve
+    .isQuestTurnedIn 1094 --any of: Further Instructions
+    .xp <16,1
+step
+    .goto 1413/1,-3759.06,-902.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
+    .accept 1483 >>Accept Ziz Fizziks
+    .target Sputtervalve
+step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
     .turnin 1069 >>Turn in Deepmoss Spider Eggs
     .target Mebok Mizzyrix
     .isQuestComplete 1069
 step
+    .goto 1413/1,-3730.68,-840.02
+    >>Open the |cRXP_PICK_Goblin Tome|r. Loot it for |cRXP_LOOT_Baxtan: On Destructive Magics|r
+    .complete 79097,1 --Baxtan: On Destructive Magics (1)
+step
+    .goto 1413/1,-2372.82,-608.96
+    >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_Secrets of the Dreamers|r
+    .complete 78143,1 --Secrets of the Dreamers (1)
+step
+    .goto 1413/1,-2259.32,-602.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falla Sagewind|r
+    .accept 3370 >>Accept In Nightmares
+    .target Falla Sagewind
+    .isQuestTurnedIn 6981 --any of: The Glowing Shard
+    .xp <15,1
+step
     +|cRXP_WARN_That is all of The Barrens for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Darnassus|r: In Nightmares
     >>|cRXP_FRIENDLY_Stonetalon Mountains|r: Ziz Fizziks, Further Instructions
+    >>|cRXP_FRIENDLY_Undercity|r: Secrets of the Dreamers, Arcanic Systems Manual, Baxtan: On Destructive Magics
     >>|cRXP_FRIENDLY_Stonetalon Mountains and back here|r: Deepmoss Spider Eggs
 step
-    +|cRXP_WARN_Until level 20, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 1.1 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.5 levels of quests, starting around Daryl the Youngling). Then come back to this The Barrens guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 17|r: |cRXP_FRIENDLY_Darkshore|r (about 1.1 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.5 levels of quests, starting around Daryl the Youngling). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 20 >>|cRXP_WARN_The rest of The Barrens is planned from level 20.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_The Barrens: part 4|r (planned from level 20)
+    +|cRXP_WARN_The rest of The Barrens is planned from level 20.|r Load its guide for level 20 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 11 - 35 The Barrens
+#subweight -11
+#name 20-21 The Barrens
+--RouteBuilder:next
+#next Zone Routes (Alliance)\17-19 Darkshore: around Archaeologist Hollee;Zone Routes (Alliance)\20-21 Wetlands: around Karl Boran;Zone Routes (Alliance)\20-21 Stonetalon Mountains: around Gaxim Rustfizzle
+
 step
     .goto 1413/1,-3650.63,-1050.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bainham|r
@@ -433,7 +469,7 @@ step
     .complete 97005,1 --Chol'aruk's Head (1)
     .mob Chol'aruk
 step
-    .goto 1413/1,-2458.95,-370.46
+    .goto 1413/1,-2456.92,-371.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
     .turnin 91901 >>Turn in A Sealed Crate
     .target Dokimi
@@ -444,13 +480,22 @@ step
     .turnin 97005 >>Turn in Chol'aruk the Ravener
     .target Bainham
 step
-    +|cRXP_WARN_Until level 23, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 0.9 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Wetlands|r (about 0.8 levels of quests, starting around Karl Boran). Then come back to this The Barrens guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 20|r: |cRXP_FRIENDLY_Darkshore|r (about 0.9 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Wetlands|r (about 0.5 levels of quests, starting around Karl Boran), |cRXP_FRIENDLY_Stonetalon Mountains|r (about 0.5 levels of quests, starting around Gaxim Rustfizzle; 3 quests from here hand in there). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 23 >>|cRXP_WARN_The rest of The Barrens is planned from level 23.|r Come back to this guide then
-step
-    #label RBSection5_1
-    #completewith next
-    +|cRXP_WARN_The Barrens: part 5|r (planned from level 23)
+    +|cRXP_WARN_The rest of The Barrens is planned from level 23.|r Load its guide for level 23 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 11 - 35 The Barrens
+#subweight -11
+#name 23-24 The Barrens
+--RouteBuilder:next
+#next Zone Routes (Alliance)\23-24 Wetlands: around Captain Stoutfist
+
 step << Warlock
     .goto 1413/1,-2373.83,-2252.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r
@@ -488,7 +533,7 @@ step
     .target Mebok Mizzyrix
     .isQuestComplete 1221
 step
-    .goto 1413/1,-2458.95,-370.46
+    .goto 1413/1,-2456.92,-371.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
     .turnin 91901 >>Turn in A Sealed Crate
     .target Dokimi
@@ -506,14 +551,21 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: Heartswood, What Is Love? << Warlock
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: The Orb of Soran'ruk << Warlock
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Blueleaf Tubers
-step << Warlock
-    +|cRXP_WARN_Until level 31, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.7 levels of quests, starting around Karl Boran). Then come back to this The Barrens guide --RouteBuilder:next
-step << Warlock
-    .xp 31 >>|cRXP_WARN_The rest of The Barrens is planned from level 31.|r Come back to this guide then
 step
-    #label RBSection6_1
-    #completewith next
-    +|cRXP_WARN_The Barrens: part 6|r (planned from level 31)
+    +|cRXP_WARN_Suggested next zones at level 23|r: |cRXP_FRIENDLY_Wetlands|r (about 0.6 levels of quests, starting around Captain Stoutfist). Completing this step loads the guide for Wetlands --RouteBuilder:next
+step << Warlock
+    +|cRXP_WARN_The rest of The Barrens is planned from level 31.|r Load its guide for level 31 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 11 - 35 The Barrens
+#subweight -11
+#name 31-32 The Barrens
+
 step << Warlock
     .goto 1413/1,-3723.59,-785.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strahad Farsan|r
@@ -611,7 +663,7 @@ step
     .target Mebok Mizzyrix
     .isQuestComplete 1221
 step
-    .goto 1413/1,-2458.95,-370.46
+    .goto 1413/1,-2456.92,-371.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
     .turnin 91901 >>Turn in A Sealed Crate
     .target Dokimi
@@ -629,11 +681,18 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Passage to Booty Bay
     >>|cRXP_FRIENDLY_Thousand Needles|r: Parts for Kravel
 step << Warlock
-    .xp 34 >>|cRXP_WARN_The rest of The Barrens is planned from level 34.|r Come back to this guide then
-step
-    #label RBSection7_1
-    #completewith next
-    +|cRXP_WARN_The Barrens: part 7|r (planned from level 34)
+    +|cRXP_WARN_The rest of The Barrens is planned from level 34.|r Load its guide for level 34 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 11 - 35 The Barrens
+#subweight -11
+#name 34-35 The Barrens
+
 step << Warlock
     .goto 1413/1,-3711.43,-782.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Menara Voidrender|r
@@ -680,7 +739,7 @@ step
     .target Mebok Mizzyrix
     .isQuestComplete 1069
 step
-    .goto 1413/1,-2458.95,-370.46
+    .goto 1413/1,-2456.92,-371.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dokimi|r
     .turnin 91901 >>Turn in A Sealed Crate
     .target Dokimi

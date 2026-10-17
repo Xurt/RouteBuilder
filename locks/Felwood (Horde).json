@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
-  "guide": "48-56 Felwood",
-  "saved": "2026-10-15 16:52",
+  "guide": "48-60 Felwood",
+  "saved": "2026-10-17 13:21",
   "levels": "RestedXP",
   "parts": [
     {
@@ -122,6 +122,22 @@
         "accept:5385 @1448:-572.08,5200.95  Accept The Remains of Trey Lightforge",
         "turnin:5385 @1448:-1310.96,3989.62  TurnIn The Remains of Trey Lightforge",
         "accept:4883 @1448:-355.31,5109.72  Accept Guarding Secrets"
+      ]
+    },
+    {
+      "part": 4,
+      "steps": [
+        "accept:84397 @1448:-2107.33,7006.83  Accept Northern Kalimdor - A Comprehensive Guide",
+        "obj:84397:1 @1448:-2107.33,7006.83  Objective Northern Kalimdor - A Comprehensive Guide / Northern Kalimdor - A Comprehensive Guide (1)",
+        "turnin:8422 @1448:-736.53,5407.57  TurnIn Trolls of a Feather",
+        "turnin:4521 @1448:-355.31,5109.72  TurnIn Wild Guardians",
+        "accept:5242 @1448:-1302.91,3985.78  Accept A Final Blow",
+        "obj:7602:2 @1448:-658.91,5249.25  Objective Flawless Fel Essence / Flawless Fel Essence (Jaedenar) (1)",
+        "obj:5242:1 @1448:-589.91,5336.65  Objective A Final Blow / Moora slain (1)",
+        "obj:5242:2 @1448:-588.76,5343.17  Objective A Final Blow / Salia slain (1)",
+        "obj:5242:3 @1448:-590.48,5340.1  Objective A Final Blow / Shadow Lord Fel'dan's Head (1)",
+        "turnin:7602 @1448:-736.53,5407.57  TurnIn Flawless Fel Essence",
+        "turnin:5242 @1448:-1302.91,3985.78  TurnIn A Final Blow"
       ]
     }
   ]

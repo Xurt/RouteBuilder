@@ -1,9 +1,9 @@
 -- 31-45 Desolace: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 31, 34, 37, 40).
--- Sections (the guide starts at the one for your level): around Gurda Wildmane from 31; part 2 from 34; part 3 from 37; part 4 from 40.
+-- The zone covers more levels than one visit gives, so it is planned in 4 parts (from level 31, 34, 37, 40).
+-- Split into 4 guides, listed under "31 - 41 Desolace" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Desolace.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,23 +13,10 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 31-45 Desolace
+#subgroup 31 - 41 Desolace
+#subweight -31
+#name 31-32 Desolace: around Gurda Wildmane
 
-step
-    .xp <34,1,RBSection1_1
-    .xp 34 >>Finding the place in this guide for your level
-step
-    .xp <37,1,RBSection2_1
-    .xp 37 >>Finding the place in this guide for your level
-step
-    .xp <40,1,RBSection3_1
-    .xp 40 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection4_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Desolace: around Gurda Wildmane|r (planned from level 31)
 step << Warrior/Hunter/Rogue/Druid/Shaman
     .goto 1443/1,1718.36,-423.01
     .xp 35 >> Grind Burning Blade mobs at Thunder Axe Fortress to level 35
@@ -493,11 +480,26 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Hunting in Stranglethorn
     >>|cRXP_FRIENDLY_another zone|r: Hate the Hatefury, Buying Friendship: Gelkis, Buying Friendship: Gelkis
 step
-    .xp 34 >>|cRXP_WARN_The rest of Desolace is planned from level 34.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Desolace is planned from level 34.|r Load its guide for level 34 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 31 - 41 Desolace
+#subweight -31
+#name 34-35 Desolace
+
 step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Desolace: part 2|r (planned from level 34)
+    .goto 1443/1,1760.62,-333.37
+    >>Click the |cRXP_PICK_Mysterious Book|r
+    .accept 79950 >>Accept Demons and You
+step
+    .goto 1443/1,1760.62,-333.37
+    >>Open the |cRXP_PICK_Mysterious Book|r. Loot it for |cRXP_LOOT_Demons and You|r
+    .complete 79950,1 --Demons and You (1)
 step
     .goto 1443/1,1707.12,-1333.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felgur Twocuts|r
@@ -612,7 +614,7 @@ step
     .accept 6143 >>Accept Other Fish to Fry
     .target Drulzegar Skraghook
 step
-    #completewith Along15
+    #completewith Along17
     >>As you go: Kill |cRXP_ENEMY_Slitherblade Sorceress|r. |cRXP_WARN_Anything left is finished later|r
     .complete 6143,3 --Slitherblade Sorceress slain (5)
     .mob Slitherblade Sorceress
@@ -623,7 +625,7 @@ step
     .mob Slitherblade Oracle
     .isOnQuest 1482
 step
-    #label Along15
+    #label Along17
     #loop
     .goto 1443/1,2821.19,-77.65,0
     .goto 1443/1,2821.19,-77.65,40,0
@@ -678,11 +680,21 @@ step
     .turnin 6143 >>Turn in Other Fish to Fry
     .target Drulzegar Skraghook
 step
-    .xp 37 >>|cRXP_WARN_The rest of Desolace is planned from level 37.|r Come back to this guide then
+    +|cRXP_WARN_That is all of Desolace for now.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Undercity|r: Demons and You
 step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Desolace: part 3|r (planned from level 37)
+    +|cRXP_WARN_The rest of Desolace is planned from level 37.|r Load its guide for level 37 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 31 - 41 Desolace
+#subweight -31
+#name 37-38 Desolace
+
 step
     .goto 1443/1,1431.08,-716.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
@@ -874,11 +886,18 @@ step
     .turnin 5581 >>Turn in Portals of the Legion
     .target Taiga Wisemane
 step
-    .xp 40 >>|cRXP_WARN_The rest of Desolace is planned from level 40.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Desolace: part 4|r (planned from level 40)
+    +|cRXP_WARN_The rest of Desolace is planned from level 40.|r Load its guide for level 40 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 31 - 41 Desolace
+#subweight -31
+#name 40-41 Desolace
+
 step
     .goto 1443/1,2277.20,-1914.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Umarak|r

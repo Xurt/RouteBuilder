@@ -1,8 +1,8 @@
 -- 1-13 Durotar: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- Sections (the guide starts at the one for your level): around Gornek from 1; around Orgnil Soulscar from 4; around Orgnil Soulscar from 6; around Orgnil Soulscar from 9; around Orgnil Soulscar from 11.
+-- Split into 4 guides, listed under "1 - 12 Durotar" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Durotar.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -12,27 +12,11 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 1-13 Durotar
-#next Zone Routes (Horde)\8-29 The Barrens;Zone Routes (Horde)\1-13 Zephras Isle;Zone Routes (Horde)\10-24 Silverpine Forest
+#subgroup 1 - 12 Durotar
+#subweight -1
+#name 1-4 Durotar: around Gornek
+#next Zone Routes (Horde)\4-6 Durotar: around Orgnil Soulscar
 
-step
-    .xp <4,1,RBSection1_1
-    .xp 4 >>Finding the place in this guide for your level
-step
-    .xp <6,1,RBSection1_2
-    .xp 6 >>Finding the place in this guide for your level
-step
-    .xp <9,1,RBSection1_3
-    .xp 9 >>Finding the place in this guide for your level
-step
-    .xp <11,1,RBSection1_4
-    .xp 11 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection1_5
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Durotar: around Gornek|r (planned from level 1)
 step << Warrior/Shaman/Warlock/Mage/Priest
     #completewith next
     +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock
@@ -610,10 +594,18 @@ step
     .goto 1411/1,-4250.40,-88.82,25,0
     .xp 5+1300 >> Grind to 1300+/2800xp << !Shaman
     .xp 5+310 >> Grind to 310+/2800xp << Shaman
-step
-    #label RBSection1_2
-    #completewith next
-    +|cRXP_WARN_Durotar: around Orgnil Soulscar|r (planned from level 4)
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 1 - 12 Durotar
+#subweight -1
+#name 4-6 Durotar: around Orgnil Soulscar
+#next Zone Routes (Horde)\6-9 Durotar: around Orgnil Soulscar
+
 step
     .goto 1411/1,-4664.94,311.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
@@ -931,30 +923,30 @@ step << Orc Warrior
     .target Trayexir
 step
     #loop
-    .goto 1411/1,-4737.91,-318.30,0
-    .goto 1411/1,-4737.91,-318.30,40,0
-    .goto 1411/1,-4695.08,-287.63,40,0
-    .goto 1411/1,-4707.24,-231.58,40,0
-    .goto 1411/1,-4671.81,-199.51,40,0
-    .goto 1411/1,-4634.27,-186.11,40,0
+    .goto 1411/1,-4738.44,-321.12,0
+    .goto 1411/1,-4738.44,-321.12,40,0
+    .goto 1411/1,-4706.71,-281.29,40,0
     .goto 1411/1,-4585.63,-194.22,40,0
-    .goto 1411/1,-4665.47,-145.93,40,0
-    .goto 1411/1,-4728.92,-169.54,40,0
-    .goto 1411/1,-4762.76,-260.84,40,0
-    >>Kill |cRXP_ENEMY_Ridgeshade Creepers|r
+    .goto 1411/1,-4637.45,-183.29,40,0
+    .goto 1411/1,-4680.27,-148.39,40,0
+    .goto 1411/1,-4770.16,-115.61,40,0
+    .goto 1411/1,-4725.75,-173.07,40,0
+    .goto 1411/1,-4706.71,-225.24,40,0
+    .goto 1411/1,-4769.10,-265.78,40,0
     >>Kill |cRXP_ENEMY_Ridgeshade Lurkers|r
-    .complete 96821,2 --Ridgeshade Creeper slain (6)
-    .complete 96821,1 --Ridgeshade Lurker slain (6)
-    .mob Ridgeshade Creeper
+    >>Kill |cRXP_ENEMY_Ridgeshade Creepers|r
+    .complete 96821,2 --Ridgeshade Lurker slain (6)
+    .complete 96821,1 --Ridgeshade Creeper slain (6)
     .mob Ridgeshade Lurker
+    .mob Ridgeshade Creeper
 step
-    .goto 1411/1,-4714.64,140.30
+    .goto 1411/1,-4708.83,143.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
     .turnin 96652 >>Turn in The Adventurer
     .target Brakk
     .isOnQuest 96652
 step
-    .goto 1411/1,-4714.64,140.30
+    .goto 1411/1,-4708.83,143.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
     .accept 96604 >>Accept The Great Outdoors
     .target Brakk
@@ -964,15 +956,23 @@ step
     .complete 96604,1 --Basic Campfire
     .complete 96604,2 --Basic Campfire
 step
-    .goto 1411/1,-4714.64,140.30
+    .goto 1411/1,-4708.83,143.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
     .turnin 96604 >>Turn in The Great Outdoors
     .accept 96655 >>Accept Camping 101: Cooking
     .target Brakk
-step
-    #label RBSection1_3
-    #completewith next
-    +|cRXP_WARN_Durotar: around Orgnil Soulscar|r (planned from level 6)
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 1 - 12 Durotar
+#subweight -1
+#name 6-9 Durotar: around Orgnil Soulscar
+#next Zone Routes (Horde)\9-12 Durotar: around Orgnil Soulscar
+
 step
     .goto 1411/1,-4709.36,274.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
@@ -1318,8 +1318,8 @@ step
 step
     #label Along89
     .goto 1411/1,-5600.83,-721.91
-    >>Kill |cRXP_ENEMY_Bloodtalon Matriarch|r and loot |cRXP_LOOT_Bloodtalon Martriarch Eggs|r
-    .complete 97223,1 --Bloodtalon Martriarch Eggs (1)
+    >>Kill |cRXP_ENEMY_Bloodtalon Matriarch|r and loot |cRXP_LOOT_Bloodtalon Matriarch Eggs|r
+    .complete 97223,1 --Bloodtalon Matriarch Eggs (1)
     .mob Bloodtalon Matriarch
     .isOnQuest 97223
 step
@@ -1377,19 +1377,14 @@ step
     .complete 97225,1 --Forgotten Loa Idol (8)
     .isOnQuest 97225
 step
-    #completewith Along95
-    >>As you go: Loot the |cRXP_PICK_Taillasher Eggs|r for |cRXP_LOOT_Taillasher Egg|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 815,1 --Taillasher Egg (3)
-step
-    #label Along95
     #loop
-    .goto 1411/1,-5383.51,-1046.92,0
-    .goto 1411/1,-5383.51,-1046.92,40,0
+    .goto 1411/1,-5170.95,-1092.74,0
     .goto 1411/1,-5170.95,-1092.74,40,0
     .goto 1411/1,-5126.01,-1127.64,40,0
     .goto 1411/1,-5114.91,-1178.05,40,0
     .goto 1411/1,-5118.61,-1323.63,40,0
     .goto 1411/1,-5082.12,-1383.55,40,0
+    .goto 1411/1,-5138.17,-1354.30,40,0
     .goto 1411/1,-5170.95,-1359.94,40,0
     .goto 1411/1,-5215.37,-1350.42,40,0
     .goto 1411/1,-5179.94,-1320.10,40,0
@@ -1595,10 +1590,19 @@ step << Hunter
     .goto 1411/1,-4300.1,57.11,50,0
     .goto 1411/1,-4456.61,65.57,50,0
     .xp 9+4470 >> Grind to 4470+/6500xp
-step
-    #label RBSection1_4
-    #completewith next
-    +|cRXP_WARN_Durotar: around Orgnil Soulscar|r (planned from level 9)
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 1 - 12 Durotar
+#subweight -1
+#name 9-12 Durotar: around Orgnil Soulscar
+--RouteBuilder:next
+#next Zone Routes (Horde)\8-12 The Barrens: around Sergra Darkthorn;Zone Routes (Horde)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Horde)\10-13 Silverpine Forest: around High Executor Hadrec
+
 step
     .goto 1411/1,-4664.94,311.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r
@@ -2035,12 +2039,12 @@ step
     .goto 1411/1,-4977.96,745.90,0
     .goto 1411/1,-4977.96,745.90,40,0
     .goto 1411/1,-4984.83,830.85,40,0
-    .goto 1411/1,-5029.78,893.24,40,0
-    .goto 1411/1,-5117.55,861.52,40,0
+    .goto 1411/1,-5012.86,908.40,40,0
+    .goto 1411/1,-5062.56,894.65,40,0
+    .goto 1411/1,-5136.06,855.88,40,0
     .goto 1411/1,-5109.09,821.69,40,0
     .goto 1411/1,-5056.74,823.10,40,0
-    .goto 1411/1,-5099.04,752.60,40,0
-    .goto 1411/1,-5056.74,776.21,40,0
+    .goto 1411/1,-5076.31,741.32,40,0
     .goto 1411/1,-5018.67,775.86,40,0
     >>Kill |cRXP_ENEMY_Spitelash Scouts|r and |cRXP_ENEMY_Spitelash Attendants|r. Loot them for |cRXP_LOOT_Naga Spinefin|r
     .complete 99051,1 --Naga Spinefin (9)
@@ -2151,6 +2155,7 @@ step
     .accept 97282 >>Accept Stormy Potential
     .target Rezlak
     .isQuestTurnedIn 97281 --A Simmering Storm
+    .isQuestTurnedIn 97281 --any of: A Simmering Storm
     .xp <7,1
 step
     #loop
@@ -2379,21 +2384,11 @@ step << Orc Rogue
     .accept 1859 >>Accept Therzok
     .target Kaplak
 step
-    #label RBSection1_5
-    #completewith next
-    +|cRXP_WARN_Durotar: around Orgnil Soulscar|r (planned from level 11)
-step
     .goto 1411/1,-4724.69,287.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .turnin 99051 >>Turn in Threat from Below
-    .target Orgnil Soulscar
-    .isOnQuest 99051
-step
-    .goto 1411/1,-4724.69,287.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .accept 99052 >>Accept Threat from Below
     .target Orgnil Soulscar
-    .isQuestTurnedIn 99051 --any of: Threat from Below
 step << Warrior
     .goto 1411/1,-4827.80,311.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw Jaggedscar|r
@@ -2404,7 +2399,6 @@ step
     >>Kill |cRXP_ENEMY_Aggor the Young|r and loot |cRXP_LOOT_Aggor's Belt|r
     .complete 99052,1 --Aggor's Belt (1)
     .mob Aggor the Young
-    .isOnQuest 99052
 step << Shaman
     .goto 1411/1,-4000.83,-270.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Telf Joolam|r
@@ -2450,13 +2444,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .complete 5727,1 --Neeru Fireblade
     .target Neeru Fireblade
-    .isOnQuest 5727
 step << Orc Rogue
     .goto 1454/1,-4279.93,1772.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
     .turnin 1859 >>Turn in Therzok
     .target Therzok
-    .isOnQuest 1859
 step << Skyborne
     .goto 1454/1,-4162.26,1934.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'jin|r
@@ -2519,7 +2511,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5727 >>Turn in Hidden Enemies
     .target Thrall
-    .isOnQuest 5727
 step
     .goto 1454/1,-4160.01,1483.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Arnok|r
@@ -2586,23 +2577,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .turnin 99052 >>Turn in Threat from Below
     .target Orgnil Soulscar
-    .isOnQuest 99052
 step
     .goto 1411/1,-4186.42,-600.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
     .turnin 787 >>Turn in The New Horde
     .target Gornek
-    .isOnQuest 787
-step << Mage
+step
     .goto 1411/1,-4939.89,-839.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
-    .turnin 1883 >>Turn in Speak with Un'thuwa
-    .target Un'Thuwa
-    .isOnQuest 1883
-step << Orc Mage/Undead Mage/Troll Mage
-    .goto 1411/1,-4939.89,-839.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
-    .accept 1884 >>Accept Ju-Ju Heaps
+    .turnin 1883 >>Turn in Speak with Un'thuwa << Mage
+    .accept 1884 >>Accept Ju-Ju Heaps << Orc Mage/Undead Mage/Troll Mage
     .target Un'Thuwa
 step << Orc Mage/Undead Mage/Troll Mage
     .goto 1411/1,-5510.41,-1237.97

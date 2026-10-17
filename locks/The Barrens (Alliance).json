@@ -1,13 +1,13 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "11-31 The Barrens",
-  "saved": "2026-10-15 16:55",
+  "saved": "2026-10-17 13:24",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
-        "accept:91901 @1413:-2458.95,-370.46  Accept A Sealed Crate",
+        "accept:91901 @1413:-2456.92,-371.81  Accept A Sealed Crate",
         "turnin:4968 @1413:-3711.43,-782.59  TurnIn Knowledge of the Orb of Orahil",
         "turnin:4782 @1413:-3711.43,-782.59  TurnIn Components for the Enchanted Gold Bloodrobe",
         "turnin:4965 @1413:-3711.43,-782.59  TurnIn Knowledge of the Orb of Orahil",
@@ -38,7 +38,7 @@
         "turnin:1798 @1413:-3723.59,-785.97  TurnIn Seeking Strahad",
         "turnin:1111 @1413:-3796.55,-985.28  TurnIn Wharfmaster Dizzywig",
         "turnin:1039 @1413:-3796.55,-985.28  TurnIn The Barrens Port",
-        "turnin:79008 @1413:-2072.87,-3379.02  TurnIn ... and that note you found"
+        "turnin:79008 @1413:-2073.88,-3379.02  TurnIn ... and that note you found"
       ]
     },
     {
@@ -57,29 +57,35 @@
         "obj:901:1 @1413:-2731.54,910.53  Objective Samophlange / Console Key (1)",
         "turnin:901 @1413:-2686.95,825.4  TurnIn Samophlange",
         "accept:902 @1413:-2686.95,825.4  Accept Samophlange",
-        "turnin:91901 @1413:-2458.95,-370.46  TurnIn A Sealed Crate",
+        "turnin:91901 @1413:-2456.92,-371.81  TurnIn A Sealed Crate",
         "turnin:902 @1413:-3759.06,-902.18  TurnIn Samophlange",
         "turnin:896 @1413:-3796.55,-985.28  TurnIn Miner's Fortune",
-        "accept:79192 @1413:-2072.87,-3379.02  Accept Stepping Stones"
+        "accept:79192 @1413:-2073.88,-3379.02  Accept Stepping Stones"
       ]
     },
     {
       "part": 3,
       "steps": [
+        "accept:78143 @1413:-2372.82,-608.96  Accept Secrets of the Dreamers",
+        "turnin:91901 @1413:-2456.92,-371.81  TurnIn A Sealed Crate",
+        "accept:78145 @1413:-3082.15,1017.95  Accept Arcanic Systems Manual",
         "accept:858 @1413:-3104.44,1109.16  Accept Ignition",
         "obj:858:1 @1413:-3079.11,1032.81  Objective Ignition / Ignition Key (1)",
         "turnin:858 @1413:-3104.44,1109.16  TurnIn Ignition",
         "accept:863 @1413:-3104.44,1109.16  Accept The Escape",
         "obj:863:1 @1413:-2986.9,1093.62  Objective The Escape / Escort Wizzlecrank out of the Venture Co. drill site",
-        "turnin:91901 @1413:-2458.95,-370.46  TurnIn A Sealed Crate",
-        "accept:3370 @1413:-2259.32,-602.2  Accept In Nightmares",
+        "obj:78145:1 @1413:-3082.15,1017.95  Objective Arcanic Systems Manual / Arcanic Systems Manual (1)",
+        "accept:79097 @1413:-3730.68,-840.02  Accept Baxtan: On Destructive Magics",
         "turnin:863 @1413:-3759.06,-902.18  TurnIn The Escape",
+        "accept:865 @1413:-3697.24,-929.2  Accept Raptor Horns",
+        "accept:1069 @1413:-3697.24,-929.2  Accept Deepmoss Spider Eggs",
+        "obj:865:1 @1413:-3482.42,-563.69  Objective Raptor Horns / Intact Raptor Horn (5)",
+        "turnin:865 @1413:-3697.24,-929.2  TurnIn Raptor Horns",
         "accept:1095 @1413:-3759.06,-902.18  Accept Further Instructions",
         "accept:1483 @1413:-3759.06,-902.18  Accept Ziz Fizziks",
-        "accept:1069 @1413:-3697.24,-929.2  Accept Deepmoss Spider Eggs",
-        "accept:865 @1413:-3697.24,-929.2  Accept Raptor Horns",
-        "obj:865:1 @1413:-3482.42,-563.69  Objective Raptor Horns / Intact Raptor Horn (5)",
-        "turnin:865 @1413:-3697.24,-929.2  TurnIn Raptor Horns"
+        "obj:79097:1 @1413:-3730.68,-840.02  Objective Baxtan: On Destructive Magics / Baxtan: On Destructive Magics (1)",
+        "obj:78143:1 @1413:-2372.82,-608.96  Objective Secrets of the Dreamers / Secrets of the Dreamers (1)",
+        "accept:3370 @1413:-2259.32,-602.2  Accept In Nightmares"
       ]
     },
     {
@@ -87,8 +93,8 @@
       "steps": [
         "accept:97005 @1413:-3650.63,-1050.81  Accept Chol'aruk the Ravener",
         "turnin:1069 @1413:-3697.24,-929.2  TurnIn Deepmoss Spider Eggs",
-        "obj:97005:1 @1413:-3217.94,-236.69  Objective Chol'aruk the Ravener / Chol'aruk's Head (1)",
-        "turnin:91901 @1413:-2458.95,-370.46  TurnIn A Sealed Crate",
+        "obj:97005:1 @1413:-3215.91,-227.9  Objective Chol'aruk the Ravener / Chol'aruk's Head (1)",
+        "turnin:91901 @1413:-2456.92,-371.81  TurnIn A Sealed Crate",
         "turnin:97005 @1413:-3650.63,-1050.81  TurnIn Chol'aruk the Ravener"
       ]
     },
@@ -101,7 +107,7 @@
         "obj:1221:4 @1413:-3694.2,-927.85  Objective Blueleaf Tubers / Snufflenose Command Stick (1)",
         "obj:1221:3 @1413:-3693.19,-929.2  Objective Blueleaf Tubers / Snufflenose Owner's Manual (1)",
         "obj:1221:2 @1413:-3692.18,-929.2  Objective Blueleaf Tubers / Crate With Holes (1)",
-        "turnin:91901 @1413:-2458.95,-370.46  TurnIn A Sealed Crate",
+        "turnin:91901 @1413:-2456.92,-371.81  TurnIn A Sealed Crate",
         "accept:1738 @1413:-2373.83,-2245.32  Accept Heartswood",
         "accept:65602 @1413:-2373.83,-2245.32  Accept What Is Love?"
       ]
@@ -125,7 +131,7 @@
         "obj:1221:4 @1413:-3694.2,-927.85  Objective Blueleaf Tubers / Snufflenose Command Stick (1)",
         "turnin:1069 @1413:-3697.24,-929.2  TurnIn Deepmoss Spider Eggs",
         "turnin:1221 @1413:-3697.24,-929.2  TurnIn Blueleaf Tubers",
-        "turnin:91901 @1413:-2458.95,-370.46  TurnIn A Sealed Crate",
+        "turnin:91901 @1413:-2456.92,-371.81  TurnIn A Sealed Crate",
         "turnin:1740 @1413:-2373.83,-2252.75  TurnIn The Orb of Soran'ruk"
       ]
     },
@@ -139,7 +145,7 @@
         "obj:1221:3 @1413:-3693.19,-929.2  Objective Blueleaf Tubers / Snufflenose Owner's Manual (1)",
         "turnin:1221 @1413:-3697.24,-929.2  TurnIn Blueleaf Tubers",
         "turnin:1069 @1413:-3697.24,-929.2  TurnIn Deepmoss Spider Eggs",
-        "turnin:91901 @1413:-2458.95,-370.46  TurnIn A Sealed Crate",
+        "turnin:91901 @1413:-2456.92,-371.81  TurnIn A Sealed Crate",
         "obj:4781:1 @1413:-1965.46,-2058.85  Objective Components for the Enchanted Gold Bloodrobe / Gold Bar (1)",
         "turnin:1740 @1413:-2373.83,-2252.75  TurnIn The Orb of Soran'ruk"
       ]

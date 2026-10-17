@@ -1,9 +1,9 @@
 -- 30-37 Thousand Needles: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 30, 33).
--- Sections (the guide starts at the one for your level): around Kravel Koalbeard from 30; part 2 from 33.
+-- The zone covers more levels than one visit gives, so it is planned in 2 parts (from level 30, 33).
+-- Split into 2 guides, listed under "30 - 34 Thousand Needles" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Thousand Needles.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,17 +13,10 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 30-37 Thousand Needles
+#subgroup 30 - 34 Thousand Needles
+#subweight -30
+#name 30-31 Thousand Needles: around Kravel Koalbeard
 
-step
-    .xp <33,1,RBSection1_1
-    .xp 33 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection2_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Thousand Needles: around Kravel Koalbeard|r (planned from level 30)
 step
     .goto 1441/1,-3856.09,-6233.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kravel Koalbeard|r
@@ -321,11 +314,26 @@ step
     >>|cRXP_FRIENDLY_The Barrens|r: Wharfmaster Dizzywig, Goblin Sponsorship
     >>|cRXP_FRIENDLY_Stranglethorn Vale and back here|r: Encrusted Tail Fins
 step
-    .xp 33 >>|cRXP_WARN_The rest of Thousand Needles is planned from level 33.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Thousand Needles is planned from level 33.|r Load its guide for level 33 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 30 - 34 Thousand Needles
+#subweight -30
+#name 33-34 Thousand Needles
+
 step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Thousand Needles: part 2|r (planned from level 33)
+    .goto 1441/1,-1946.93,-5142.93
+    >>Click the |cRXP_PICK_Scrolls|r
+    .accept 79947 >>Accept Geomancy: The Stone-Cold Truth
+step
+    .goto 1441/1,-1951.33,-5142.93
+    >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_Geomancy: The Stone-Cold Truth|r
+    .complete 79947,1 --Geomancy: The Stone-Cold Truth (1)
 step
     .goto 1441/1,-4025.05,-6253.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trackmaster Zherin|r
@@ -376,5 +384,6 @@ step
     .target Wizzle Brassbolts
     .isQuestComplete 1107
 step
-    +|cRXP_WARN_End of the Thousand Needles route.|r
+    +|cRXP_WARN_End of the Thousand Needles route.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Undercity|r: Geomancy: The Stone-Cold Truth
 ]])

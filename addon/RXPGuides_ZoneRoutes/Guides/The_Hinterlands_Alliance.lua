@@ -1,5 +1,5 @@
 -- 45-48 The Hinterlands: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- Edit zones/The Hinterlands.json and re-run rather than editing this file, or your changes are lost on the next build.
@@ -14,9 +14,13 @@ RXPGuides.RegisterGuide([[
 #name 45-48 The Hinterlands
 
 step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_The Hinterlands: start|r (planned from level 45)
+    .goto 1425/0,-2961.00,-401.87
+    >>Click the |cRXP_PICK_Book|r
+    .accept 81954 >>Accept Venomous Journeys
+step
+    .goto 1425/0,-2961.00,-401.87
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Venomous Journeys|r
+    .complete 81954,1 --Venomous Journeys (1)
 step
     .goto 1425/0,-2029.69,266.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falstad Wildhammer|r
@@ -251,4 +255,5 @@ step
     >>|cRXP_FRIENDLY_Blasted Lands|r: Thadius Grimshade
     >>|cRXP_FRIENDLY_Stormwind City|r: Rhapsody's Tale
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Rescue OOX-09/HL!
+    >>|cRXP_FRIENDLY_Undercity|r: Venomous Journeys
 ]])

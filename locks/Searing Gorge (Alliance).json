@@ -1,12 +1,14 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "45-52 Searing Gorge",
-  "saved": "2026-10-15 16:57",
+  "saved": "2026-10-17 13:26",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        "accept:81955 @1427:-1166.33,-6833.34  Accept A Mind of Metal",
+        "obj:81955:1 @1427:-1168.56,-6837.8  Objective A Mind of Metal / A Mind of Metal (1)",
         "accept:7728 @1427:-1162.98,-6493.74  Accept STOLEN: Smithing Tuyere and Lookout's Spyglass",
         "accept:7729 @1427:-1162.98,-6493.74  Accept JOB OPPORTUNITY: Culling the Competition",
         {"lines":[">>Talk to |cRXP_FRIENDLY_Hansel|r and |cRXP_FRIENDLY_Burninate|r",".target +Hansel Heavyhands",".goto 1427/0,-1183.73,-6513.67",".vendor 14624 >> Vendor Trash. Repair",">>|cRXP_BUY_Buy some|r |T134712:0|t[Morning Glory Dew] |cRXP_BUY_and|r |T133971:0|t[Roasted Quail] |cRXP_BUY_from him|r",".collect 8766,160,82,1",".collect 8952,160,82,1",".goto 1427/0,-1188.64,-6523.94",".target +Master Smith Burninate"],"from":"RestedXP: 50-51 ADV Searing Gorge Mage AoE"},

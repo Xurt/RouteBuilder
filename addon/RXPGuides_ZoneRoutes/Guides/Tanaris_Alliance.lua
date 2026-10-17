@@ -1,9 +1,9 @@
 -- 43-60 Tanaris: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 43, 46, 49).
--- Sections (the guide starts at the one for your level): around Yeh'kinya from 43; around Senior Surveyor Fizzledowser from 46; part 3 from 49.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 43, 46, 49).
+-- Split into 3 guides, listed under "43 - 50 Tanaris" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Tanaris.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,27 +13,18 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 43-60 Tanaris
-#next Zone Routes (Alliance)\50-56 Un'Goro Crater
+#subgroup 43 - 50 Tanaris
+#subweight -43
+#name 43-44 Tanaris: around Yeh'kinya
 
 step
-    .xp <46,1,RBSection1_1
-    .xp 46 >>Finding the place in this guide for your level
+    .goto 1446/1,-5228.15,-8073.80
+    >>Click the |cRXP_PICK_Book|r
+    .accept 81949 >>Accept Legends of the Tidesages
 step
-    .xp <49,1,RBSection2_1
-    .xp 49 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Tanaris: around Yeh'kinya|r (planned from level 43)
-step
-    .goto 1446/1,-3939.23,-6948.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaeriyan|r
-    .turnin 3912 >>Turn in Meet at the Grave
-    .target Gaeriyan
-    .isOnQuest 3912
+    .goto 1446/1,-5228.15,-8073.80
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Legends of the Tidesages|r
+    .complete 81949,1 --Legends of the Tidesages (1)
 step
     .hs >> Hearth to Theramore
 step
@@ -55,6 +46,12 @@ step
     .goto 1446/1,-4829.33,-6900.34
     >>Click the |cRXP_PICK_Wanted Poster|r
     .accept 2875 >>Accept WANTED: Andre Firebeard
+step
+    .goto 1446/1,-3939.23,-6948.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaeriyan|r
+    .turnin 3912 >>Turn in Meet at the Grave
+    .target Gaeriyan
+    .isOnQuest 3912
 step
     .goto 1446/1,-3839.18,-7127.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mux Manascrambler|r
@@ -341,16 +338,16 @@ step
 step
     .goto 1446/1,-4834.16,-6980.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironboot|r
-    .accept 5065 >>Accept The Lost Tablets of Mosh'aru
+    .accept 8182 >>Accept The Hand of Rastakhan
     .target Prospector Ironboot
-    .isQuestTurnedIn 3528 --any of: The God Hakkar
+    .isQuestTurnedIn 8181 --any of: Confront Yeh'kinya
     .xp <40,1
 step
     .goto 1446/1,-4834.16,-6980.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironboot|r
-    .accept 8182 >>Accept The Hand of Rastakhan
+    .accept 5065 >>Accept The Lost Tablets of Mosh'aru
     .target Prospector Ironboot
-    .isQuestTurnedIn 8181 --any of: Confront Yeh'kinya
+    .isQuestTurnedIn 3528 --any of: The God Hakkar
     .xp <40,1
 step
     .goto 1446/1,-3766.04,-7197.50
@@ -527,14 +524,22 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Deliver to MacKinley, The Hand of Rastakhan
     >>|cRXP_FRIENDLY_Teldrassil|r: Handle With Care, The Super Snapper FX
     >>|cRXP_FRIENDLY_Thousand Needles|r: Safety First
+    >>|cRXP_FRIENDLY_Undercity|r: Legends of the Tidesages
     >>|cRXP_FRIENDLY_Feralas and back here|r: Screecher Spirits, The Super Egg-O-Matic
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Scarab Shells, Troll Temper, Divino-matic Rod
 step
-    .xp 46 >>|cRXP_WARN_The rest of Tanaris is planned from level 46.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Tanaris: around Senior Surveyor Fizzledowser|r (planned from level 46)
+    +|cRXP_WARN_The rest of Tanaris is planned from level 46.|r Load its guide for level 46 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 43 - 50 Tanaris
+#subweight -43
+#name 46-47 Tanaris: around Senior Surveyor Fizzledowser
+
 step
     .goto 1446/1,-4829.33,-6900.34
     >>Click the |cRXP_PICK_Wanted Poster|r
@@ -767,11 +772,20 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Rescue OOX-17/TN!
     >>|cRXP_FRIENDLY_The Hinterlands and back here|r: Sprinkle's Secret Ingredient
 step
-    .xp 49 >>|cRXP_WARN_The rest of Tanaris is planned from level 49.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Tanaris: part 3|r (planned from level 49)
+    +|cRXP_WARN_The rest of Tanaris is planned from level 49.|r Load its guide for level 49 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 43 - 50 Tanaris
+#subweight -43
+#name 49-50 Tanaris
+--RouteBuilder:next
+#next Zone Routes (Alliance)\50-51 Un'Goro Crater: around Muigin
+
 step
     #loop
     .goto 1446/1,-2252.87,-8658.46,0

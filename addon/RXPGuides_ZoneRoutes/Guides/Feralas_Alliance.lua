@@ -1,9 +1,9 @@
 -- 41-51 Feralas: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 41, 44, 47).
--- Sections (the guide starts at the one for your level): around Latronicus Moonspear from 41; part 2 from 44; part 3 from 47.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 41, 44, 47).
+-- Split into 3 guides, listed under "41 - 48 Feralas" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Feralas.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,20 +13,10 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 41-51 Feralas
+#subgroup 41 - 48 Feralas
+#subweight -41
+#name 41-42 Feralas: around Latronicus Moonspear
 
-step
-    .xp <44,1,RBSection1_1
-    .xp 44 >>Finding the place in this guide for your level
-step
-    .xp <47,1,RBSection2_1
-    .xp 47 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Feralas: around Latronicus Moonspear|r (planned from level 41)
 step
     .goto 1444/1,-773.02,-4497.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kristy Grant|r
@@ -271,11 +261,31 @@ step
     +|cRXP_WARN_That is all of Feralas for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Thousand Needles and back here|r: Pristine Pesterhide Pelts
 step
-    .xp 44 >>|cRXP_WARN_The rest of Feralas is planned from level 44.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Feralas is planned from level 44.|r Load its guide for level 44 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 41 - 48 Feralas
+#subweight -41
+#name 44-45 Feralas
+
 step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Feralas: part 2|r (planned from level 44)
+    .goto 1444/1,1924.97,-3094.10
+    >>Click the |cRXP_PICK_Book|r
+    .accept 81951 >>Accept The Liminal and the Arcane
+step
+    .goto 1444/1,1924.97,-3094.10
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_The Liminal and the Arcane|r
+    .complete 81951,1 --The Liminal and the Arcane (1)
+step
+    .goto 1444/1,3232.96,-4474.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Troyas Moonbreeze|r
+    .accept 2939 >>Accept In Search of Knowledge
+    .target Troyas Moonbreeze
 step
     .goto 1444/1,858.84,-4481.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kindal Moonweaver|r
@@ -283,11 +293,6 @@ step
     .target Kindal Moonweaver
     .isQuestTurnedIn 2972 --any of: Doling Justice
     .xp <38,1
-step
-    .goto 1444/1,3232.96,-4474.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Troyas Moonbreeze|r
-    .accept 2939 >>Accept In Search of Knowledge
-    .target Troyas Moonbreeze
 step
     .goto 1444/1,858.84,-4481.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kindal Moonweaver|r
@@ -334,6 +339,11 @@ step
     .turnin 2970 >>Turn in Doling Justice
     .accept 2972 >>Accept Doling Justice
     .target Jer'kai Moonweaver
+step
+    .goto 1444/1,243.07,-4460.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Greul|r
+    .target Innkeeper Greul
+    .home >>Set your Hearthstone to Innkeeper Greul's inn
 step
     .goto 1444/1,-773.02,-4497.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kristy Grant|r
@@ -441,12 +451,20 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Rescue OOX-22/FE!
     >>|cRXP_FRIENDLY_Teldrassil|r: In Search of Knowledge
     >>|cRXP_FRIENDLY_Thousand Needles|r: An Orphan Looking For a Home
+    >>|cRXP_FRIENDLY_another zone|r: The Liminal and the Arcane
 step
-    .xp 47 >>|cRXP_WARN_The rest of Feralas is planned from level 47.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Feralas: part 3|r (planned from level 47)
+    +|cRXP_WARN_The rest of Feralas is planned from level 47.|r Load its guide for level 47 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 41 - 48 Feralas
+#subweight -41
+#name 47-48 Feralas
+
 step
     .goto 1444/1,3330.26,-4505.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Latronicus Moonspear|r

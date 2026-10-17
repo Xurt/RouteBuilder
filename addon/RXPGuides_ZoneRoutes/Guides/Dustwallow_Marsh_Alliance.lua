@@ -1,9 +1,9 @@
 -- 26-40 Dustwallow Marsh: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 26, 31, 34, 37).
--- Sections (the guide starts at the one for your level): start from 26; around Captain Garran Vimes from 31; part 3 from 34; part 4 from 37.
+-- The zone covers more levels than one visit gives, so it is planned in 4 parts (from level 26, 31, 34, 37).
+-- Split into 4 guides, listed under "26 - 38 Dustwallow Marsh" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Dustwallow Marsh.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,23 +13,10 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 26-40 Dustwallow Marsh
+#subgroup 26 - 38 Dustwallow Marsh
+#subweight -26
+#name 26-27 Dustwallow Marsh
 
-step
-    .xp <31,1,RBSection1_1
-    .xp 31 >>Finding the place in this guide for your level
-step
-    .xp <34,1,RBSection2_1
-    .xp 34 >>Finding the place in this guide for your level
-step
-    .xp <37,1,RBSection3_1
-    .xp 37 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection4_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Dustwallow Marsh: start|r (planned from level 26)
 step
     .goto 1445/1,-4464.15,-3613.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
@@ -128,11 +115,18 @@ step
     >>|cRXP_FRIENDLY_Ashenvale|r: Journey to Astranaar
     >>|cRXP_FRIENDLY_Thousand Needles and back here|r: Highperch Venom
 step
-    .xp 31 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 31.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Dustwallow Marsh: around Captain Garran Vimes|r (planned from level 31)
+    +|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 31.|r Load its guide for level 31 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 26 - 38 Dustwallow Marsh
+#subweight -26
+#name 31-32 Dustwallow Marsh: around Captain Garran Vimes
+
 step
     .goto 1445/1,-4464.15,-3613.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
@@ -304,11 +298,26 @@ step
     +|cRXP_WARN_That is all of Dustwallow Marsh for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Thousand Needles|r: Hidden Secrets << Mage
 step
-    .xp 34 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 34.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 34.|r Load its guide for level 34 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 26 - 38 Dustwallow Marsh
+#subweight -26
+#name 34-35 Dustwallow Marsh
+
 step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Dustwallow Marsh: part 3|r (planned from level 34)
+    .goto 1445/1,-3978.00,-2761.33
+    >>Click the |cRXP_PICK_Waterlogged Book|r
+    .accept 79952 >>Accept RwlRwlRwlRwl!
+step
+    .goto 1445/1,-3978.00,-2761.33
+    >>Open the |cRXP_PICK_Waterlogged Book|r. Loot it for |cRXP_LOOT_RwlRwlRwlRwl!|r
+    .complete 79952,1 --RwlRwlRwlRwl! (1)
 step
     .goto 1445/1,-4464.15,-3613.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
@@ -496,13 +505,21 @@ step
 step
     +|cRXP_WARN_That is all of Dustwallow Marsh for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Crystal in the Mountains
+    >>|cRXP_FRIENDLY_Undercity|r: RwlRwlRwlRwl!
     >>|cRXP_FRIENDLY_Swamp of Sorrows and back here|r: ... and Bugs
 step
-    .xp 37 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 37.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Dustwallow Marsh: part 4|r (planned from level 37)
+    +|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 37.|r Load its guide for level 37 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 26 - 38 Dustwallow Marsh
+#subweight -26
+#name 37-38 Dustwallow Marsh
+
 step
     .goto 1445/1,-4464.15,-3613.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r

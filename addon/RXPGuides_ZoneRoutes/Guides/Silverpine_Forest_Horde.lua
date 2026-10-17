@@ -1,9 +1,9 @@
 -- 10-24 Silverpine Forest: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 10, 15, 18, 21).
--- Sections (the guide starts at the one for your level): around High Executor Hadrec from 10; around Dalar Dawnweaver from 15; around Shadow Priest Allister from 18; part 4 from 21.
+-- The zone covers more levels than one visit gives, so it is planned in 4 parts (from level 10, 15, 18, 21).
+-- Split into 4 guides, listed under "10 - 22 Silverpine Forest" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Silverpine Forest.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,24 +13,12 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 10-24 Silverpine Forest
-#next Zone Routes (Horde)\8-29 The Barrens
+#subgroup 10 - 22 Silverpine Forest
+#subweight -10
+#name 10-13 Silverpine Forest: around High Executor Hadrec
+--RouteBuilder:next
+#next Zone Routes (Horde)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Horde)\12-15 The Barrens: around Gazlowe;Zone Routes (Horde)\10-13 Tirisfal Glades: around Bethor Iceshard
 
-step
-    .xp <15,1,RBSection1_1
-    .xp 15 >>Finding the place in this guide for your level
-step
-    .xp <18,1,RBSection2_1
-    .xp 18 >>Finding the place in this guide for your level
-step
-    .xp <21,1,RBSection3_1
-    .xp 21 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection4_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Silverpine Forest: around High Executor Hadrec|r (planned from level 10)
 step
     .xp 10 >>Grind to level 10 (Lost Deathstalkers needs it)
 step
@@ -527,13 +515,22 @@ step
     >>|cRXP_FRIENDLY_Undercity|r: Ride to the Undercity << Undead
     >>|cRXP_FRIENDLY_Undercity|r: A Recipe For Death, Zinge's Delivery
 step
-    +|cRXP_WARN_Until level 15, suggested zones|r: |cRXP_FRIENDLY_Zephras Isle|r (about 1.9 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_The Barrens|r (about 1.4 levels of quests, starting around Gazlowe), |cRXP_FRIENDLY_Tirisfal Glades|r (about 0.6 levels of quests, starting around Danitha Morr; 2 quests from here hand in there). Then come back to this Silverpine Forest guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 12|r: |cRXP_FRIENDLY_Zephras Isle|r (about 1.9 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_The Barrens|r (about 1.4 levels of quests, starting around Gazlowe), |cRXP_FRIENDLY_Tirisfal Glades|r (about 1.1 levels of quests, starting around Bethor Iceshard; 2 quests from here hand in there). Completing this step loads the guide for Zephras Isle --RouteBuilder:next
 step
-    .xp 15 >>|cRXP_WARN_The rest of Silverpine Forest is planned from level 15.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Silverpine Forest: around Dalar Dawnweaver|r (planned from level 15)
+    +|cRXP_WARN_The rest of Silverpine Forest is planned from level 15.|r Load its guide for level 15 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 10 - 22 Silverpine Forest
+#subweight -10
+#name 15-16 Silverpine Forest: around Dalar Dawnweaver
+--RouteBuilder:next
+#next Zone Routes (Horde)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Horde)\12-15 The Barrens: around Gazlowe;Zone Routes (Horde)\10-13 Tirisfal Glades: around Bethor Iceshard
+
 step
     .goto 1421/0,1593.60,551.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
@@ -678,18 +675,35 @@ step
     +|cRXP_WARN_That is all of Silverpine Forest for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Undercity|r: Rot Hide Origins, Wand to Bethor
 step
-    +|cRXP_WARN_Until level 18, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 0.5 levels of quests, starting around Sergra Darkthorn). Then come back to this Silverpine Forest guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 15|r: |cRXP_FRIENDLY_Zephras Isle|r (about 1.3 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_The Barrens|r (about 1.2 levels of quests, starting around Gazlowe), |cRXP_FRIENDLY_Tirisfal Glades|r (about 0.8 levels of quests, starting around Bethor Iceshard; 2 quests from here hand in there). Completing this step loads the guide for Zephras Isle --RouteBuilder:next
 step
-    .xp 18 >>|cRXP_WARN_The rest of Silverpine Forest is planned from level 18.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Silverpine Forest is planned from level 18.|r Load its guide for level 18 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 10 - 22 Silverpine Forest
+#subweight -10
+#name 18-19 Silverpine Forest: around Shadow Priest Allister
+--RouteBuilder:next
+#next Zone Routes (Horde)\18-20 The Barrens: around Tonga Runetotem;Zone Routes (Horde)\11-15 Zephras Isle: around Elegael Thornpaw
+
 step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Silverpine Forest: around Shadow Priest Allister|r (planned from level 18)
+    .goto 1421/0,783.00,-102.93
+    >>Click the |cRXP_PICK_Dalaran Digest|r
+    .accept 78127 >>Accept The Dalaran Digest
 step
-    .goto 1421/0,1593.60,551.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
-    .accept 98299 >>Accept Stop the Spread
-    .target Dalar Dawnweaver
+    .goto 1421/0,783.00,-102.93
+    >>Open the |cRXP_PICK_Dalaran Digest|r. Loot it for |cRXP_LOOT_The Dalaran Digest, Vol. 23|r
+    .complete 78127,1 --The Dalaran Digest, Vol. 23 (1)
+step
+    .goto 1421/0,1636.44,510.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Bates|r
+    .target Innkeeper Bates
+    .home >>Set your Hearthstone to Innkeeper Bates's inn
 step
     .goto 1421/0,1652.40,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
@@ -698,16 +712,24 @@ step
     .isQuestTurnedIn 450 --any of: A Recipe For Death
     .xp <9,1
 step
-    .goto 1421/0,1636.44,510.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Bates|r
-    .target Innkeeper Bates
-    .home >>Set your Hearthstone to Innkeeper Bates's inn
+    .goto 1421/0,1627.20,513.07
+    >>Click the |cRXP_PICK_Arcane Secrets|r
+    .accept 79096 >>Accept Ataeric: On Arcane Curiosities
+step
+    .goto 1421/0,1627.20,513.07
+    >>Open the |cRXP_PICK_Arcane Secrets|r. Loot it for |cRXP_LOOT_Ataeric: On Arcane Curiosities|r
+    .complete 79096,1 --Ataeric: On Arcane Curiosities (1)
 step
     .goto 1421/0,1602.84,520.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Allister|r
     .accept 95981 >>Accept Watching the Roads
     .accept 516 >>Accept Beren's Peril
     .target Shadow Priest Allister
+step
+    .goto 1421/0,1593.60,551.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar Dawnweaver|r
+    .accept 98299 >>Accept Stop the Spread
+    .target Dalar Dawnweaver
 step
     #loop
     .goto 1421/0,760.74,75.71,0
@@ -887,15 +909,24 @@ step
     .isOnQuest 451
 step
     +|cRXP_WARN_That is all of Silverpine Forest for now.|r Quests still in your log lead on from here; pick your next zone by them
-    >>|cRXP_FRIENDLY_Undercity|r: A Recipe For Death
+    >>|cRXP_FRIENDLY_Undercity|r: A Recipe For Death, The Dalaran Digest, Ataeric: On Arcane Curiosities
 step
-    +|cRXP_WARN_Until level 21, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 1.1 levels of quests, starting around Tonga Runetotem). Then come back to this Silverpine Forest guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 18|r: |cRXP_FRIENDLY_The Barrens|r (about 1.1 levels of quests, starting around Tonga Runetotem), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw). Completing this step loads the guide for The Barrens --RouteBuilder:next
 step
-    .xp 21 >>|cRXP_WARN_The rest of Silverpine Forest is planned from level 21.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Silverpine Forest: part 4|r (planned from level 21)
+    +|cRXP_WARN_The rest of Silverpine Forest is planned from level 21.|r Load its guide for level 21 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 10 - 22 Silverpine Forest
+#subweight -10
+#name 21-22 Silverpine Forest
+--RouteBuilder:next
+#next Zone Routes (Horde)\18-20 The Barrens: around Tonga Runetotem
+
 step << Undead Paladin
     .goto 1421/0,1630.14,519.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lumina Windsinger|r
@@ -925,7 +956,7 @@ step
     .mob Archmage Ataeric
     .isOnQuest 480
 step
-    .goto 1421/0,1010.22,-288.85
+    .goto 1421/0,1008.96,-286.89
     >>Click the |cRXP_PICK_Offering Stone|r
     .accept 95885 >>Accept The Offering of Blood
     .accept 95883 >>Accept The Tortured Soul
@@ -958,17 +989,17 @@ step
     .mob Ravenclaw Guardian
     .mob Ravenclaw Drudger
 step
-    .goto 1421/0,1010.22,-288.85
+    .goto 1421/0,1008.96,-286.89
     >>Click the |cRXP_PICK_Offering Stone|r
     .turnin 95884 >>Turn in The Offering Stone while you are here
     .isQuestComplete 95884
 step
-    .goto 1421/0,1010.22,-288.85
+    .goto 1421/0,1008.96,-286.89
     >>Click the |cRXP_PICK_Offering Stone|r
     .turnin 95883 >>Turn in The Tortured Soul
     .turnin 95885 >>Turn in The Offering of Blood
 step
-    .goto 1421/0,1010.22,-288.85
+    .goto 1421/0,1008.96,-286.89
     >>Click the |cRXP_PICK_Offering Stone|r
     .turnin 95884 >>Turn in The Offering Stone
     .isOnQuest 95884

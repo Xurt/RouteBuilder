@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "16-20 Westfall",
-  "saved": "2026-10-15 16:49",
+  "saved": "2026-10-17 13:18",
   "levels": "RestedXP",
   "parts": [
     {
@@ -29,6 +29,10 @@
     {
       "part": 2,
       "steps": [
+        "accept:78142 @1436:1427.67,-11042.67  Accept Bewitchments and Glamours",
+        "obj:78142:1 @1436:1427.67,-11042.67  Objective Bewitchments and Glamours / Bewitchments and Glamours (1)",
+        "accept:79093 @1436:1172.17,-10655.33  Accept Rumi of Gnomeregan: The Collected Works",
+        "obj:79093:1 @1436:1172.17,-10655.33  Objective Rumi of Gnomeregan: The Collected Works / Rumi of Gnomeregan: The Collected Works (1)",
         "accept:104 @1436:1966.32,-11407.13  Accept The Coastal Menace",
         "obj:104:1 @1436:1992.22,-11172.17  Objective The Coastal Menace / Scale of Old Murk-Eye (1)",
         "turnin:104 @1436:1966.32,-11407.13  TurnIn The Coastal Menace"

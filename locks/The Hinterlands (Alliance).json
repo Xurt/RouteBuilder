@@ -1,12 +1,14 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "45-48 The Hinterlands",
-  "saved": "2026-10-15 16:57",
+  "saved": "2026-10-17 13:26",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        "accept:81954 @1425:-2961,-401.87  Accept Venomous Journeys",
+        "obj:81954:1 @1425:-2961,-401.87  Objective Venomous Journeys / Venomous Journeys (1)",
         "turnin:1449 @1425:-2029.69,266.49  TurnIn To The Hinterlands",
         "accept:1450 @1425:-2029.69,266.49  Accept Gryphon Master Talonaxe",
         {"lines":[".goto 1425/0,-2001.23,282.07",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guthrum Thunderfist|r",".fp Hinterlands >> Get The Hinterlands Flight Path",".target Guthrum Thunderfist"],"from":"RestedXP: 39-40 Alterac/Arathi"},

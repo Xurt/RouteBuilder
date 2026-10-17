@@ -1,9 +1,9 @@
 -- 35-43 Badlands: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 35, 38, 41).
--- Sections (the guide starts at the one for your level): start from 35; part 2 from 38; part 3 from 41.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 35, 38, 41).
+-- Split into 3 guides, listed under "35 - 42 Badlands" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Badlands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,20 +13,18 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 35-43 Badlands
+#subgroup 35 - 42 Badlands
+#subweight -35
+#name 35-36 Badlands
 
 step
-    .xp <38,1,RBSection1_1
-    .xp 38 >>Finding the place in this guide for your level
+    .goto 1418/0,-3489.58,-6551.26
+    >>Click the |cRXP_PICK_Scrolls|r
+    .accept 79951 >>Accept Mummies: A Guide to the Unsavory Undead
 step
-    .xp <41,1,RBSection2_1
-    .xp 41 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Badlands: start|r (planned from level 35)
+    .goto 1418/0,-3489.58,-6551.26
+    >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_Mummies: A Guide to the Unsavory Undead|r
+    .complete 79951,1 --Mummies: A Guide to the Unsavory Undead (1)
 step
     .goto 1418/0,-2240.61,-6672.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeka Bloodscar|r
@@ -89,8 +87,8 @@ step
     .goto 1418/0,-3133.62,-6767.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rigglefuzz|r
     .accept 705 >>Accept Pearl Diving
-    .accept 703 >>Accept Barbecued Buzzard Wings
     .accept 2418 >>Accept Power Stones
+    .accept 703 >>Accept Barbecued Buzzard Wings
     .target Rigglefuzz
 step
     #completewith Drop635x1
@@ -141,10 +139,10 @@ step
     .goto 1418/0,-3372.67,-6154.92,40,0
     .goto 1418/0,-3402.52,-6191.40,40,0
     .goto 1418/0,-3447.29,-6171.50,40,0
-    >>Kill |cRXP_ENEMY_Shadowforge Surveyors|r, |cRXP_ENEMY_Shadowforge Ruffians|r and |cRXP_ENEMY_Shadowforge Diggers|r. Loot them for |cRXP_LOOT_An'Alleum Power Stone|r
     >>Kill |cRXP_ENEMY_Shadowforge Surveyors|r, |cRXP_ENEMY_Shadowforge Ruffians|r and |cRXP_ENEMY_Shadowforge Diggers|r. Loot them for |cRXP_LOOT_Dentrium Power Stone|r
-    .complete 2418,2 --An'Alleum Power Stone (8)
+    >>Kill |cRXP_ENEMY_Shadowforge Surveyors|r, |cRXP_ENEMY_Shadowforge Ruffians|r and |cRXP_ENEMY_Shadowforge Diggers|r. Loot them for |cRXP_LOOT_An'Alleum Power Stone|r
     .complete 2418,1 --Dentrium Power Stone (8)
+    .complete 2418,2 --An'Alleum Power Stone (8)
     .mob Shadowforge Surveyor
     .mob Shadowforge Ruffian
     .mob Shadowforge Digger
@@ -215,14 +213,22 @@ step
     +|cRXP_WARN_That is all of Badlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Crystal in the Mountains
     >>|cRXP_FRIENDLY_Swamp of Sorrows|r: Report to Helgrum
+    >>|cRXP_FRIENDLY_Undercity|r: Mummies: A Guide to the Unsavory Undead
     >>|cRXP_FRIENDLY_Stranglethorn Vale and back here|r: Pearl Diving
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Coolant Heads Prevail
 step
-    .xp 38 >>|cRXP_WARN_The rest of Badlands is planned from level 38.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Badlands: part 2|r (planned from level 38)
+    +|cRXP_WARN_The rest of Badlands is planned from level 38.|r Load its guide for level 38 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 35 - 42 Badlands
+#subweight -35
+#name 38-39 Badlands
+
 step
     .goto 1418/0,-3357.49,-7164.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theldurin the Lost|r
@@ -431,13 +437,18 @@ step
     >>|cRXP_FRIENDLY_Thousand Needles|r: News for Fizzle
     >>|cRXP_FRIENDLY_Undercity|r: To the Undercity for Yagyin's Digest
 step
-    +|cRXP_WARN_Until level 41, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Far Seer Mok'thardin). Then come back to this Badlands guide --RouteBuilder:next
-step
-    .xp 41 >>|cRXP_WARN_The rest of Badlands is planned from level 41.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Badlands: part 3|r (planned from level 41)
+    +|cRXP_WARN_The rest of Badlands is planned from level 41.|r Load its guide for level 41 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 35 - 42 Badlands
+#subweight -35
+#name 41-42 Badlands
+
 step
     .goto 1418/0,-2724.67,-6633.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotwil Veriatus|r

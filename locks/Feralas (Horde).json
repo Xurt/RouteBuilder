@@ -1,12 +1,13 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "42-52 Feralas",
-  "saved": "2026-10-15 16:51",
+  "saved": "2026-10-17 13:20",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        "accept:81951 @1444:1924.97,-3094.1  Accept The Liminal and the Arcane",
         "turnin:2981 @1444:173.57,-4385.87  TurnIn A Threat in Feralas",
         "accept:2975 @1444:173.57,-4385.87  Accept The Ogres of Feralas",
         "accept:2987 @1444:180.52,-4419.7  Accept Gordunni Cobalt",
@@ -57,11 +58,12 @@
         {"lines":[".goto 1444/1,242.37,-4460.01",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Greul|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",">>|cRXP_WARN_Make sure you DO NOT sell any|r |T135992:0|t[Long Elegant Feather]",".target Innkeeper Greul",".subzoneskip 1099,1"],"from":"RestedXP: 43-44 Feralas"},
         "turnin:2980 @1444:173.57,-4385.87  TurnIn The Ogres of Feralas",
         "turnin:7730 @1444:235.42,-4333.98  TurnIn Zukk'ash Infestation",
+        "accept:3123 @1444:269.48,-4375.68  Accept Testing the Vessel",
         "accept:3121 @1444:269.48,-4375.68  Accept A Strange Request",
         "turnin:2822 @1444:268.78,-4354.83  TurnIn The Mark of Quality",
         {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 1824 >>Train your class spells",".target Jannos Lighthoof",".xp <44,1",".xp >46,1"],"tag":"Druid","from":"RestedXP: 43-44 Feralas"},
         {"lines":[".goto 1444/1,159.67,-4326.57",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannos|r",".train 9821 >>Train your class spells",".target Jannos Lighthoof",".xp <46,1"],"tag":"Druid","from":"RestedXP: 43-44 Feralas"},
-        "accept:3123 @1444:269.48,-4375.68  Accept Testing the Vessel",
+        "obj:81951:1 @1444:1924.97,-3094.1  Objective The Liminal and the Arcane / The Liminal and the Arcane (1)",
         "accept:3124 @1444:269.48,-4375.68  Accept Hippogryph Muisek",
         "obj:3124:1 @1444:1681.02,-5619.27  Objective Hippogryph Muisek / Hippogryph Muisek (1)",
         "turnin:3124 @1444:269.48,-4375.68  TurnIn Hippogryph Muisek",

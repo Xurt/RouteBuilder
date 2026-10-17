@@ -1,5 +1,5 @@
 -- 15-60 Redridge Mountains: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
 -- Edit zones/Redridge Mountains.json and re-run rather than editing this file, or your changes are lost on the next build.
@@ -12,14 +12,11 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group Zone Routes (Horde)
 #name 15-60 Redridge Mountains
-#next Zone Routes (Horde)\8-29 The Barrens
+--RouteBuilder:next
+#next Zone Routes (Horde)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Horde)\12-15 The Barrens: around Gazlowe;Zone Routes (Horde)\10-13 Tirisfal Glades: around Bethor Iceshard
 
 step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Redridge Mountains: around Marcy Baker|r (planned from level 15)
-step
-    .goto 1433/0,-1892.26,-9603.02
+    .goto 1433/0,-1892.04,-9600.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marcy Baker|r
     .accept 91900 >>Accept A Sealed Crate
     .accept 91904 >>Accept A Sealed Crate
@@ -27,25 +24,25 @@ step
     .accept 91905 >>Accept A Sealed Crate
     .target Marcy Baker
 step
-    .goto 1433/0,-1892.26,-9603.02
+    .goto 1433/0,-1892.04,-9600.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marcy Baker|r
     .turnin 91899 >>Turn in A Sealed Crate
     .target Marcy Baker
     .isQuestComplete 91899
 step
-    .goto 1433/0,-1892.26,-9603.02
+    .goto 1433/0,-1892.04,-9600.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marcy Baker|r
     .turnin 91900 >>Turn in A Sealed Crate
     .target Marcy Baker
     .isQuestComplete 91900
 step
-    .goto 1433/0,-1892.26,-9603.02
+    .goto 1433/0,-1892.04,-9600.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marcy Baker|r
     .turnin 91904 >>Turn in A Sealed Crate
     .target Marcy Baker
     .isQuestComplete 91904
 step
-    .goto 1433/0,-1892.26,-9603.02
+    .goto 1433/0,-1892.04,-9600.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marcy Baker|r
     .turnin 91905 >>Turn in A Sealed Crate
     .target Marcy Baker
@@ -75,5 +72,5 @@ step
     +|cRXP_WARN_End of the Redridge Mountains route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: A Sealed Crate, A Sealed Crate, A Sealed Crate, A Sealed Crate
 step
-    +|cRXP_WARN_Suggested next zones at level 15|r: |cRXP_FRIENDLY_The Barrens|r (about 0.5 levels of quests, starting around Sergra Darkthorn). Completing this step loads the guide for The Barrens --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 15|r: |cRXP_FRIENDLY_Zephras Isle|r (about 1.3 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_The Barrens|r (about 1.2 levels of quests, starting around Gazlowe), |cRXP_FRIENDLY_Tirisfal Glades|r (about 0.7 levels of quests, starting around Bethor Iceshard). Completing this step loads the guide for Zephras Isle --RouteBuilder:next
 ]])

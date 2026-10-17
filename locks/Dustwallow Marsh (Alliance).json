@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "26-40 Dustwallow Marsh",
-  "saved": "2026-10-15 16:55",
+  "saved": "2026-10-17 13:25",
   "levels": "RestedXP",
   "parts": [
     {
@@ -68,6 +68,8 @@
     {
       "part": 3,
       "steps": [
+        "accept:79952 @1445:-3978,-2761.33  Accept RwlRwlRwlRwl!",
+        "obj:79952:1 @1445:-3978,-2761.33  Objective RwlRwlRwlRwl! / RwlRwlRwlRwl! (1)",
         "turnin:1135 @1445:-4464.15,-3613.58  TurnIn Highperch Venom",
         {"lines":[".goto 1445/1,-4517.17,-3828.83",".fp Theramore >> Get the Theramore Flight Path"],"from":"RestedXP: 33-60 Mage AoE"},
         "accept:1204 @1445:-4457.85,-3624.78  Accept Mudrock Soup and Bugs",

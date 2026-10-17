@@ -1,9 +1,9 @@
 -- 35-45 Badlands: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 35, 38, 41).
--- Sections (the guide starts at the one for your level): around Prospector Ryedol from 35; part 2 from 38; part 3 from 41.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 35, 38, 41).
+-- Split into 3 guides, listed under "35 - 42 Badlands" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Badlands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,20 +13,18 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 35-45 Badlands
+#subgroup 35 - 42 Badlands
+#subweight -35
+#name 35-36 Badlands: around Prospector Ryedol
 
 step
-    .xp <38,1,RBSection1_1
-    .xp 38 >>Finding the place in this guide for your level
+    .goto 1418/0,-3489.58,-6551.26
+    >>Click the |cRXP_PICK_Scrolls|r
+    .accept 79951 >>Accept Mummies: A Guide to the Unsavory Undead
 step
-    .xp <41,1,RBSection2_1
-    .xp 41 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Badlands: around Prospector Ryedol|r (planned from level 35)
+    .goto 1418/0,-3489.58,-6551.26
+    >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_Mummies: A Guide to the Unsavory Undead|r
+    .complete 79951,1 --Mummies: A Guide to the Unsavory Undead (1)
 step
     .goto 1418/0,-3407.99,-6609.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ryedol|r
@@ -122,6 +120,11 @@ step
     .vendor 9179 >> Vendor Trash. Repair
     .target Jazzrik
 step
+    .goto 1418/0,-2149.31,-6650.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shul'kar|r
+    .target Innkeeper Shul'kar
+    .home >>Set your Hearthstone to Innkeeper Shul'kar's inn
+step
     .goto 1418/0,-3133.62,-6767.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rigglefuzz|r
     .accept 2418 >>Accept Power Stones
@@ -139,43 +142,16 @@ step
     .target Prospector Ryedol
     .xp <35,1
 step
-    #completewith Drop635x3
-    >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Dustbelcher Ogre|r, |cRXP_ENEMY_Dustbelcher Brute|r, |cRXP_ENEMY_Dustbelcher Wyrmhunter|r. Use it to start the quest if you get one
-    .collect 4614,1,635 --Pendant of Myzrael (1)
-    .accept 635 >>Accept Crystal in the Mountains
-    .use 4614
-step
-    #label Drop635x3
-    #loop
-    .goto 1418/0,-3382.62,-6247.78,0
-    .goto 1418/0,-3382.62,-6247.78,40,0
-    .goto 1418/0,-3367.69,-6201.35,40,0
-    .goto 1418/0,-3337.84,-6135.02,40,0
-    .goto 1418/0,-3337.84,-6065.37,40,0
-    .goto 1418/0,-3352.77,-6095.22,40,0
-    .goto 1418/0,-3372.67,-6154.92,40,0
-    .goto 1418/0,-3402.52,-6191.40,40,0
-    .goto 1418/0,-3447.29,-6171.50,40,0
-    .goto 1418/0,-3432.37,-6241.15,40,0
-    >>Kill |cRXP_ENEMY_Shadowforge Surveyors|r, |cRXP_ENEMY_Shadowforge Ruffians|r and |cRXP_ENEMY_Shadowforge Diggers|r. Loot them for |cRXP_LOOT_Dentrium Power Stone|r
-    >>Kill |cRXP_ENEMY_Shadowforge Surveyors|r, |cRXP_ENEMY_Shadowforge Ruffians|r and |cRXP_ENEMY_Shadowforge Diggers|r. Loot them for |cRXP_LOOT_An'Alleum Power Stone|r
-    .complete 2418,1 --Dentrium Power Stone (8)
-    .complete 2418,2 --An'Alleum Power Stone (8)
-    .mob Shadowforge Surveyor
-    .mob Shadowforge Ruffian
-    .mob Shadowforge Digger
-step
-    .goto 1418/0,-3133.62,-6767.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rigglefuzz|r
-    .turnin 2418 >>Turn in Power Stones
-    .accept 705 >>Accept Pearl Diving
-    .target Rigglefuzz
-step
     .goto 1418/0,-3129.39,-6763.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martek the Exiled|r
     .turnin 1106 >>Turn in Martek the Exiled
     .target Martek the Exiled
     .isOnQuest 1106
+step
+    .goto 1418/0,-3133.62,-6767.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rigglefuzz|r
+    .accept 705 >>Accept Pearl Diving
+    .target Rigglefuzz
 step
     .goto 1418/0,-3357.49,-7164.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theldurin the Lost|r
@@ -220,12 +196,6 @@ step
     .turnin 703 >>Turn in Barbecued Buzzard Wings
     .target Rigglefuzz
 step
-    .goto 1418/0,-3133.62,-6767.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rigglefuzz|r
-    .turnin 705 >>Turn in Pearl Diving
-    .target Rigglefuzz
-    .isQuestComplete 705
-step
     .goto 1418/0,-2721.44,-6623.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucien Tosselwrench|r
     .accept 715 >>Accept Liquid Stone
@@ -250,13 +220,12 @@ step
     .accept 721 >>Accept A Sign of Hope
     .target Prospector Ryedol
 step
-    #completewith Drop635x4
+    #completewith Drop635x3
     >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Dustbelcher Ogre|r, |cRXP_ENEMY_Dustbelcher Brute|r, |cRXP_ENEMY_Dustbelcher Wyrmhunter|r. Use it to start the quest if you get one
     .collect 4614,1,635 --Pendant of Myzrael (1)
     .accept 635 >>Accept Crystal in the Mountains
     .use 4614
 step
-    #label Drop635x4
     #loop
     .goto 1418/0,-3404.76,-6458.56,0
     .goto 1418/0,-3404.76,-6458.56,40,0
@@ -272,21 +241,60 @@ step
     .mob Dustbelcher Shaman
     .isOnQuest 715
 step
+    #label Drop635x3
+    #loop
+    .goto 1418/0,-3293.07,-6121.75,0
+    .goto 1418/0,-3293.07,-6121.75,40,0
+    .goto 1418/0,-3312.97,-6085.27,40,0
+    .goto 1418/0,-3337.84,-6022.25,40,0
+    .goto 1418/0,-3303.02,-6008.98,40,0
+    .goto 1418/0,-3268.19,-6055.42,40,0
+    .goto 1418/0,-3233.37,-6025.57,40,0
+    .goto 1418/0,-3223.42,-6065.37,40,0
+    .goto 1418/0,-3198.54,-6098.53,40,0
+    .goto 1418/0,-3233.37,-6115.12,40,0
+    >>Kill |cRXP_ENEMY_Shadowforge Surveyors|r, |cRXP_ENEMY_Shadowforge Ruffians|r and |cRXP_ENEMY_Shadowforge Diggers|r. Loot them for |cRXP_LOOT_An'Alleum Power Stone|r
+    >>Kill |cRXP_ENEMY_Shadowforge Surveyors|r, |cRXP_ENEMY_Shadowforge Ruffians|r and |cRXP_ENEMY_Shadowforge Diggers|r. Loot them for |cRXP_LOOT_Dentrium Power Stone|r
+    .complete 2418,2 --An'Alleum Power Stone (8)
+    .complete 2418,1 --Dentrium Power Stone (8)
+    .mob Shadowforge Surveyor
+    .mob Shadowforge Ruffian
+    .mob Shadowforge Digger
+step
     .goto 1418/0,-3021.93,-6065.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hammertoe Grez|r
     .turnin 721 >>Turn in A Sign of Hope
     .target Hammertoe Grez
 step
+    .goto 1418/0,-3133.62,-6767.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rigglefuzz|r
+    .turnin 2418 >>Turn in Power Stones
+    .target Rigglefuzz
+step
+    .goto 1418/0,-3133.62,-6767.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rigglefuzz|r
+    .turnin 705 >>Turn in Pearl Diving
+    .target Rigglefuzz
+    .isQuestComplete 705
+step
     +|cRXP_WARN_That is all of Badlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Crystal in the Mountains
+    >>|cRXP_FRIENDLY_Undercity|r: Mummies: A Guide to the Unsavory Undead
     >>|cRXP_FRIENDLY_Stranglethorn Vale and back here|r: Pearl Diving
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Coolant Heads Prevail
 step
-    .xp 38 >>|cRXP_WARN_The rest of Badlands is planned from level 38.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Badlands: part 2|r (planned from level 38)
+    +|cRXP_WARN_The rest of Badlands is planned from level 38.|r Load its guide for level 38 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 35 - 42 Badlands
+#subweight -35
+#name 38-39 Badlands
+
 step
     .goto 1418/0,-2724.67,-6633.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotwil Veriatus|r
@@ -442,13 +450,18 @@ step
     >>|cRXP_FRIENDLY_Ironforge|r: Prospect of Faith, To Ironforge for Yagyin's Digest
     >>|cRXP_FRIENDLY_Thousand Needles|r: News for Fizzle
 step
-    +|cRXP_WARN_Until level 41, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Sir S. J. Erlgadin). Then come back to this Badlands guide --RouteBuilder:next
-step
-    .xp 41 >>|cRXP_WARN_The rest of Badlands is planned from level 41.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Badlands: part 3|r (planned from level 41)
+    +|cRXP_WARN_The rest of Badlands is planned from level 41.|r Load its guide for level 41 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 35 - 42 Badlands
+#subweight -35
+#name 41-42 Badlands
+
 step
     .goto 1418/0,-3619.92,-6789.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garek|r

@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "31-40 Desolace",
-  "saved": "2026-10-15 16:56",
+  "saved": "2026-10-17 13:25",
   "levels": "RestedXP",
   "parts": [
     {
@@ -50,6 +50,8 @@
     {
       "part": 2,
       "steps": [
+        "accept:79950 @1443:1760.62,-333.37  Accept Demons and You",
+        "obj:79950:1 @1443:1760.62,-333.37  Objective Demons and You / Demons and You (1)",
         "accept:1459 @1443:1257.09,163.38  Accept Reagents for Reclaimers Inc.",
         "accept:1456 @1443:1257.09,163.38  Accept The Karnitol Shipwreck",
         "accept:1439 @1443:1766.92,-331.27  Accept Search for Tyranis",
@@ -60,8 +62,8 @@
         "accept:5821 @1443:1207.64,-1188.08  Accept Bodyguard for Hire",
         "obj:5821:1 @1443:1213.48,-1245.34  Objective Bodyguard for Hire / Escort Gizelton Caravan past Kolkar Centaur Village",
         "turnin:92743 @1443:862.81,-1591.3  TurnIn A Conqueror's Crown",
-        "turnin:5821 @1443:1497.17,-1402.43  TurnIn Bodyguard for Hire",
         "accept:5561 @1443:1497.17,-1402.43  Accept Kodo Roundup",
+        "turnin:5821 @1443:1497.17,-1402.43  TurnIn Bodyguard for Hire",
         "obj:5561:1 @1443:1793.44,-1443.8  Objective Kodo Roundup / Aged Kodo (5)",
         "turnin:5561 @1443:1497.17,-1402.43  TurnIn Kodo Roundup",
         "obj:1459:1 @1443:1388.37,-542.63  Objective Reagents for Reclaimers Inc. / Scorpashi Venom (1)",

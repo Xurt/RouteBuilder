@@ -1,12 +1,13 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "45-52 Searing Gorge",
-  "saved": "2026-10-15 16:52",
+  "saved": "2026-10-17 13:21",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        "accept:81955 @1427:-1166.33,-6833.34  Accept A Mind of Metal",
         "accept:4449 @1427:-1786.39,-7024.78  Accept Caught!",
         "obj:4449:1 @1427:-1731.73,-7012.43  Objective Caught! / Dark Iron Geologist slain (8)",
         "obj:4449:2 @1427:-1712.32,-7031.17  Objective Caught! / Silk Cloth (1)",
@@ -18,6 +19,7 @@
         "accept:7729 @1427:-1162.98,-6493.74  Accept JOB OPPORTUNITY: Culling the Competition",
         {"lines":[".goto 1427/0,-1100.28,-6559.49",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grisha|r",".fp Thorium >>Get the Searing Gorge Flight Path",".target Grisha",".subzoneskip 1446,1"],"from":"RestedXP: 51-52 Searing Gorge/Burning Steppes"},
         "obj:3442:1 @1427:-1208.5,-6971.38  Objective The Flawless Flame / Heart of Flame (4)",
+        "obj:81955:1 @1427:-1168.56,-6837.8  Objective A Mind of Metal / A Mind of Metal (1)",
         "obj:3442:2 @1427:-1153.61,-6771.61  Objective The Flawless Flame / Golem Oil (1)",
         "turnin:3442 @1427:-1194.44,-6679.98  TurnIn The Flawless Flame",
         "accept:3443 @1427:-1194.44,-6679.98  Accept Forging the Shaft",

@@ -1,9 +1,9 @@
 -- 30-42 Arathi Highlands: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 30, 33, 36, 39, 42).
--- Sections (the guide starts at the one for your level): start from 30; around Alliance Brigadier General from 33; part 3 from 36; around Skuerto from 39; part 5 from 42.
+-- The zone covers more levels than one visit gives, so it is planned in 5 parts (from level 30, 33, 36, 39, 42).
+-- Split into 5 guides, listed under "30 - 43 Arathi Highlands" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Arathi Highlands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,26 +13,12 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 30-42 Arathi Highlands
+#subgroup 30 - 43 Arathi Highlands
+#subweight -30
+#name 30-31 Arathi Highlands
+--RouteBuilder:next
+#next Zone Routes (Alliance)\30-31 Wetlands
 
-step
-    .xp <33,1,RBSection1_1
-    .xp 33 >>Finding the place in this guide for your level
-step
-    .xp <36,1,RBSection2_1
-    .xp 36 >>Finding the place in this guide for your level
-step
-    .xp <39,1,RBSection3_1
-    .xp 39 >>Finding the place in this guide for your level
-step
-    .xp <42,1,RBSection4_1
-    .xp 42 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection5_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Arathi Highlands: start|r (planned from level 30)
 step
     .goto 1417/0,-1675.23,-714.37
     >>Click the |cRXP_PICK_Messenger Bag|r
@@ -134,7 +120,7 @@ step
     >>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r
     .xp 37 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 37
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 94789 >>Turn in Call of Air
     .target Veyric Thunderhame
@@ -143,11 +129,28 @@ step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: MacKreel's Moonshine
 step
-    .xp 33 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 33.|r Come back to this guide then
+    +|cRXP_WARN_Suggested next zones at level 30|r: |cRXP_FRIENDLY_Wetlands|r (about 0.5 levels of quests). Completing this step loads the guide for Wetlands --RouteBuilder:next
 step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Arathi Highlands: around Alliance Brigadier General|r (planned from level 33)
+    +|cRXP_WARN_The rest of Arathi Highlands is planned from level 33.|r Load its guide for level 33 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 30 - 43 Arathi Highlands
+#subweight -30
+#name 33-34 Arathi Highlands: around Alliance Brigadier General
+
+step
+    .goto 1417/0,-3516.27,-1698.13
+    >>Click the |cRXP_PICK_Scrolls|r
+    .accept 79949 >>Accept A Web of Lies: Debunking Myths and Legends
+step
+    .goto 1417/0,-3516.27,-1698.13
+    >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_A Web of Lies: Debunking Myths and Legends|r
+    .complete 79949,1 --A Web of Lies: Debunking Myths and Legends (1)
 step
     .goto 1417/0,-2516.55,-1274.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
@@ -234,6 +237,11 @@ step
     >>Click the |cRXP_PICK_Shards of Myzrael|r
     .accept 642 >>Accept The Princess Trapped
 step
+    .goto 1417/0,-3524.91,-912.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Adegwa|r
+    .target Innkeeper Adegwa
+    .home >>Set your Hearthstone to Innkeeper Adegwa's inn
+step
     #completewith Drop635x2
     >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Witherbark Troll|r, |cRXP_ENEMY_Witherbark Shadowcaster|r, |cRXP_ENEMY_Witherbark Axe Thrower|r. Use it to start the quest if you get one
     .collect 4614,1,635 --Pendant of Myzrael (1)
@@ -297,27 +305,27 @@ step
     .turnin 635 >>Turn in Crystal in the Mountains
     .isOnQuest 635
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
+    .accept 79358 >>Accept Storm, Earth, and Fire
+    .accept 96135 >>Accept Heed My Call
     .accept 96264 >>Accept Elemental Aid
     .accept 96016 >>Accept The Tempest's Weapons
-    .accept 96135 >>Accept Heed My Call
-    .accept 79358 >>Accept Storm, Earth, and Fire
     .target Veyric Thunderhame
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 96264 >>Turn in Elemental Aid
     .target Veyric Thunderhame
     .isQuestComplete 96264
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 79358 >>Turn in Storm, Earth, and Fire
     .target Veyric Thunderhame
     .isQuestComplete 79358
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 96135 >>Turn in Heed My Call
     .target Veyric Thunderhame
@@ -348,16 +356,24 @@ step
 step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Alterac Mountains|r: The Tempest's Weapons << Shaman
+    >>|cRXP_FRIENDLY_Undercity|r: A Web of Lies: Debunking Myths and Legends
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Elemental Aid << Shaman
     >>|cRXP_FRIENDLY_Dustwallow Marsh, Swamp of Sorrows, Badlands, Desolace and back here|r: Storm, Earth, and Fire << Shaman
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Darkspear Islands Clash, Darkspear Islands Clash
     >>|cRXP_FRIENDLY_Thousand Needles and back here|r: Heed My Call << Shaman
 step
-    .xp 36 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 36.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Arathi Highlands: part 3|r (planned from level 36)
+    +|cRXP_WARN_The rest of Arathi Highlands is planned from level 36.|r Load its guide for level 36 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 30 - 43 Arathi Highlands
+#subweight -30
+#name 36-37 Arathi Highlands
+
 step
     .goto 1417/0,-2510.07,-1231.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alliance Brigadier General|r
@@ -406,19 +422,19 @@ step
     .complete 651,2 --Cresting Key (1)
     .isOnQuest 651
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 96135 >>Turn in Heed My Call
     .target Veyric Thunderhame
     .isQuestComplete 96135
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 79358 >>Turn in Storm, Earth, and Fire
     .target Veyric Thunderhame
     .isQuestComplete 79358
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 96264 >>Turn in Elemental Aid
     .target Veyric Thunderhame
@@ -482,11 +498,18 @@ step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: Hints of a New Plague?
 step
-    .xp 39 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 39.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Arathi Highlands: around Skuerto|r (planned from level 39)
+    +|cRXP_WARN_The rest of Arathi Highlands is planned from level 39.|r Load its guide for level 39 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 30 - 43 Arathi Highlands
+#subweight -30
+#name 39-40 Arathi Highlands: around Skuerto
+
 step
     .goto 1417/0,-2510.07,-1231.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alliance Brigadier General|r
@@ -849,19 +872,19 @@ step
     .target Skuerto
     .isQuestTurnedIn 696 --any of: Attack on the Tower
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 96264 >>Turn in Elemental Aid
     .target Veyric Thunderhame
     .isQuestComplete 96264
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 79358 >>Turn in Storm, Earth, and Fire
     .target Veyric Thunderhame
     .isQuestComplete 79358
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 96135 >>Turn in Heed My Call
     .target Veyric Thunderhame
@@ -876,13 +899,18 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: Malin's Request
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Sunken Treasure
 step
-    +|cRXP_WARN_Until level 42, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Sir S. J. Erlgadin). Then come back to this Arathi Highlands guide --RouteBuilder:next
-step
-    .xp 42 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 42.|r Come back to this guide then
-step
-    #label RBSection5_1
-    #completewith next
-    +|cRXP_WARN_Arathi Highlands: part 5|r (planned from level 42)
+    +|cRXP_WARN_The rest of Arathi Highlands is planned from level 42.|r Load its guide for level 42 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 30 - 43 Arathi Highlands
+#subweight -30
+#name 42-43 Arathi Highlands
+
 step
     .goto 1417/0,-2170.95,-1510.45
     >>Click the |cRXP_PICK_Stone of Inner Binding|r
@@ -901,19 +929,19 @@ step
     .target Alliance Brigadier General
     .isQuestComplete 98896
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 96264 >>Turn in Elemental Aid
     .target Veyric Thunderhame
     .isQuestComplete 96264
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 96135 >>Turn in Heed My Call
     .target Veyric Thunderhame
     .isQuestComplete 96135
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 79358 >>Turn in Storm, Earth, and Fire
     .target Veyric Thunderhame

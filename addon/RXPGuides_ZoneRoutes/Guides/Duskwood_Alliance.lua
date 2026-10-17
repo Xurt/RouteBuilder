@@ -1,9 +1,9 @@
 -- 17-31 Duskwood: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 17, 20, 23, 26, 29).
--- Sections (the guide starts at the one for your level): around Elaine Carevin from 17; around Madame Eva from 20; around Clerk Daltry from 23; around Calor from 26; around Calor from 29.
+-- The zone covers more levels than one visit gives, so it is planned in 5 parts (from level 17, 20, 23, 26, 29).
+-- Split into 5 guides, listed under "17 - 30 Duskwood" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Duskwood.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,27 +13,16 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 17-31 Duskwood
-#next Zone Routes (Alliance)\21-34 Wetlands
+#subgroup 17 - 30 Duskwood
+#subweight -17
+#name 17-18 Duskwood: around Elaine Carevin
+--RouteBuilder:next
+#next Zone Routes (Alliance)\17-19 Darkshore: around Archaeologist Hollee;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Daryl the Youngling
 
 step
-    .xp <20,1,RBSection1_1
-    .xp 20 >>Finding the place in this guide for your level
-step
-    .xp <23,1,RBSection2_1
-    .xp 23 >>Finding the place in this guide for your level
-step
-    .xp <26,1,RBSection3_1
-    .xp 26 >>Finding the place in this guide for your level
-step
-    .xp <29,1,RBSection4_1
-    .xp 29 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection5_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Duskwood: around Elaine Carevin|r (planned from level 17)
+    .goto 1431/0,382.43,-10227.87
+    >>Click the |cRXP_PICK_Spellbook|r
+    .accept 78147 >>Accept Crimes Against Anatomy
 step
     .goto 1431/0,-1250.26,-10020.33
     >>Kill |cRXP_ENEMY_Elmpaw|r and loot |cRXP_LOOT_Elmpaw's Head|r. Use it to start the quest
@@ -175,6 +164,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jitters|r
     .turnin 240 >>Turn in Return to Jitters
     .target Jitters
+step
+    .goto 1431/0,382.43,-10227.87
+    >>Open the |cRXP_PICK_Spellbook|r. Loot it for |cRXP_LOOT_Crimes Against Anatomy|r
+    .complete 78147,1 --Crimes Against Anatomy (1)
 step
     .goto 1431/0,395.39,-10312.47,40,0
     .goto 1431/0,345.17,-10307.07,40,0
@@ -321,14 +314,24 @@ step
 step
     +|cRXP_WARN_That is all of Duskwood for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elwynn Forest|r: Elmpaw's Head
+    >>|cRXP_FRIENDLY_Undercity|r: Crimes Against Anatomy
 step
-    +|cRXP_WARN_Until level 20, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 0.9 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.6 levels of quests, starting around Daryl the Youngling). Then come back to this Duskwood guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 17|r: |cRXP_FRIENDLY_Darkshore|r (about 0.9 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.6 levels of quests, starting around Daryl the Youngling). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 20 >>|cRXP_WARN_The rest of Duskwood is planned from level 20.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Duskwood: around Madame Eva|r (planned from level 20)
+    +|cRXP_WARN_The rest of Duskwood is planned from level 20.|r Load its guide for level 20 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 17 - 30 Duskwood
+#subweight -17
+#name 20-21 Duskwood: around Madame Eva
+--RouteBuilder:next
+#next Zone Routes (Alliance)\17-19 Darkshore: around Archaeologist Hollee;Zone Routes (Alliance)\20-21 Wetlands: around Karl Boran
+
 step
     .goto 1431/0,-1127.41,-10573.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r
@@ -508,13 +511,22 @@ step
     >>|cRXP_FRIENDLY_Redridge Mountains|r: Messenger to Darkshire
     >>|cRXP_FRIENDLY_Stormwind City|r: An Old History Book
 step
-    +|cRXP_WARN_Until level 23, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 1.0 levels of quests, starting around Karl Boran), |cRXP_FRIENDLY_Darkshore|r (about 0.7 levels of quests, starting around Archaeologist Hollee). Then come back to this Duskwood guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 20|r: |cRXP_FRIENDLY_Darkshore|r (about 0.7 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Wetlands|r (about 0.6 levels of quests, starting around Karl Boran). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 23 >>|cRXP_WARN_The rest of Duskwood is planned from level 23.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Duskwood: around Clerk Daltry|r (planned from level 23)
+    +|cRXP_WARN_The rest of Duskwood is planned from level 23.|r Load its guide for level 23 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 17 - 30 Duskwood
+#subweight -17
+#name 23-24 Duskwood: around Clerk Daltry
+--RouteBuilder:next
+#next Zone Routes (Alliance)\23-24 Wetlands: around Captain Stoutfist
+
 step
     .goto 1431/0,-1213.00,-10532.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
@@ -736,13 +748,22 @@ step
     >>|cRXP_FRIENDLY_Elwynn Forest|r: The Legend of Stalvan
     >>|cRXP_FRIENDLY_Westfall|r: The Legend of Stalvan
 step
-    +|cRXP_WARN_Until level 26, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.9 levels of quests, starting around Karl Boran). Then come back to this Duskwood guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 23|r: |cRXP_FRIENDLY_Wetlands|r (about 0.7 levels of quests, starting around Captain Stoutfist). Completing this step loads the guide for Wetlands --RouteBuilder:next
 step
-    .xp 26 >>|cRXP_WARN_The rest of Duskwood is planned from level 26.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Duskwood: around Calor|r (planned from level 26)
+    +|cRXP_WARN_The rest of Duskwood is planned from level 26.|r Load its guide for level 26 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 17 - 30 Duskwood
+#subweight -17
+#name 26-27 Duskwood: around Calor
+--RouteBuilder:next
+#next Zone Routes (Alliance)\23-24 Wetlands: around Captain Stoutfist
+
 step
     .goto 1431/0,-1161.16,-10516.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Trelayne|r
@@ -1048,11 +1069,20 @@ step
     +|cRXP_WARN_That is all of Duskwood for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Stormwind City|r: Seeking Wisdom
 step
-    .xp 29 >>|cRXP_WARN_The rest of Duskwood is planned from level 29.|r Come back to this guide then
+    +|cRXP_WARN_Suggested next zones at level 26|r: |cRXP_FRIENDLY_Wetlands|r (about 0.6 levels of quests, starting around Captain Stoutfist). Completing this step loads the guide for Wetlands --RouteBuilder:next
 step
-    #label RBSection5_1
-    #completewith next
-    +|cRXP_WARN_Duskwood: around Calor|r (planned from level 29)
+    +|cRXP_WARN_The rest of Duskwood is planned from level 29.|r Load its guide for level 29 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 17 - 30 Duskwood
+#subweight -17
+#name 29-30 Duskwood: around Calor
+
 step
     .goto 1431/0,-1321.27,-10581.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viktori Prism'Antras|r
@@ -1277,6 +1307,4 @@ step
     +|cRXP_WARN_End of the Duskwood route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Darnassus|r: Answered Questions
     >>|cRXP_FRIENDLY_Stormwind City|r: The Missing Diplomat
-step
-    +|cRXP_WARN_Suggested next zones at level 29|r: |cRXP_FRIENDLY_Wetlands|r (about 0.5 levels of quests, starting around Glorin Steelbrow). Completing this step loads the guide for Wetlands --RouteBuilder:next
 ]])

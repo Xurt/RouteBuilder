@@ -1,9 +1,9 @@
 -- 52-60 Western Plaguelands: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 52, 55, 58).
--- Sections (the guide starts at the one for your level): around Commander Ashlam Valorfist from 52; around Commander Ashlam Valorfist from 55; part 3 from 58.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 52, 55, 58).
+-- Split into 3 guides, listed under "52 - 59 Western Plaguelands" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Western Plaguelands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,20 +13,10 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 52-60 Western Plaguelands
+#subgroup 52 - 59 Western Plaguelands
+#subweight -52
+#name 52-53 Western Plaguelands: around Commander Ashlam Valorfist
 
-step
-    .xp <55,1,RBSection1_1
-    .xp 55 >>Finding the place in this guide for your level
-step
-    .xp <58,1,RBSection2_1
-    .xp 58 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Western Plaguelands: around Commander Ashlam Valorfist|r (planned from level 52)
 step << Human Paladin/Dwarf Paladin
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
@@ -496,11 +486,18 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Forging the Mightstone << Human Paladin/Dwarf Paladin
     >>|cRXP_FRIENDLY_Eastern Plaguelands and back here|r: A Plague Upon Thee
 step
-    .xp 55 >>|cRXP_WARN_The rest of Western Plaguelands is planned from level 55.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Western Plaguelands: around Commander Ashlam Valorfist|r (planned from level 55)
+    +|cRXP_WARN_The rest of Western Plaguelands is planned from level 55.|r Load its guide for level 55 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 52 - 59 Western Plaguelands
+#subweight -52
+#name 55-56 Western Plaguelands: around Commander Ashlam Valorfist
+
 step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
@@ -914,11 +911,26 @@ step
     >>|cRXP_FRIENDLY_Eastern Plaguelands|r: Brother Carlin, Demon Dogs, Blood Tinged Skies, Carrion Grubbage, The Battle of Darrowshire
     >>|cRXP_FRIENDLY_Tanaris|r: Mold Rhymes With...
 step
-    .xp 58 >>|cRXP_WARN_The rest of Western Plaguelands is planned from level 58.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Western Plaguelands is planned from level 58.|r Load its guide for level 58 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 52 - 59 Western Plaguelands
+#subweight -52
+#name 58-59 Western Plaguelands
+
 step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Western Plaguelands: part 3|r (planned from level 58)
+    .goto 1422/0,-1225.93,1801.47
+    >>Click the |cRXP_PICK_Book|r
+    .accept 84395 >>Accept Undead Potatoes
+step
+    .goto 1422/0,-1225.93,1801.47
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Undead Potatoes|r
+    .complete 84395,1 --Undead Potatoes (1)
 step
     .goto 1422/0,-1276.24,1452.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeziba|r
@@ -951,6 +963,19 @@ step
     .target Jeziba
     .isQuestComplete 5167
 step
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .accept 211 >>Accept Alas, Andorhal
+    .target Commander Ashlam Valorfist
+    .isQuestTurnedIn 5097 --any of: All Along the Watchtowers
+step
+    .goto 1422/0,-1417.71,965.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
+    .accept 5803 >>Accept Araj's Scarab
+    .target Alchemist Arbington
+    .isQuestTurnedIn 5801 --any of: Fire Plume Forged
+    .xp <55,1
+step
     .goto 1422/0,-1638.73,1914.13
     >>Click the |cRXP_PICK_Mrs. Dalson's Diary|r
     .turnin 5058 >>Turn in Mrs. Dalson's Diary
@@ -969,19 +994,6 @@ step
     .target High Priestess MacDonnell
     .isQuestTurnedIn 5223 --any of: Return to Chillwind Camp
 step
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .accept 211 >>Accept Alas, Andorhal
-    .target Commander Ashlam Valorfist
-    .isQuestTurnedIn 5097 --any of: All Along the Watchtowers
-step
-    .goto 1422/0,-1417.71,965.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
-    .accept 5803 >>Accept Araj's Scarab
-    .target Alchemist Arbington
-    .isQuestTurnedIn 5801 --any of: Fire Plume Forged
-    .xp <55,1
-step
     .goto 1422/0,-1529.94,1382.65
     >>Open the |cRXP_PICK_Araj's Phylactery|r. Loot it for |cRXP_LOOT_Araj's Scarab|r
     .complete 5803,1 --Araj's Scarab (1)
@@ -991,6 +1003,36 @@ step
     >>Open the |cRXP_PICK_Araj's Phylactery|r. Loot it for |cRXP_LOOT_Araj's Phylactery Shard|r
     .complete 211,1 --Araj's Phylactery Shard (1)
     .isOnQuest 211
+step
+    #loop
+    .goto 1422/0,-1557.03,1319.87,0
+    .goto 1422/0,-1557.03,1319.87,40,0
+    .goto 1422/0,-1496.83,1311.27,40,0
+    .goto 1422/0,-1462.43,1345.67,40,0
+    .goto 1422/0,-1445.23,1408.73,40,0
+    .goto 1422/0,-1862.33,1526.27,40,0
+    .goto 1422/0,-1883.83,1546.33,40,0
+    .goto 1422/0,-1875.23,1500.47,40,0
+    .goto 1422/0,-1870.93,1460.33,40,0
+    .goto 1422/0,-1832.23,1466.07,40,0
+    >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
+    .complete 5166,3 --Blood of Heroes (10)
+    .isOnQuest 5166
+step
+    #loop
+    .goto 1422/0,-1875.23,1500.47,0
+    .goto 1422/0,-1875.23,1500.47,40,0
+    .goto 1422/0,-1883.83,1546.33,40,0
+    .goto 1422/0,-1862.33,1526.27,40,0
+    .goto 1422/0,-1445.23,1408.73,40,0
+    .goto 1422/0,-1462.43,1345.67,40,0
+    .goto 1422/0,-1496.83,1311.27,40,0
+    .goto 1422/0,-1557.03,1319.87,40,0
+    .goto 1422/0,-1832.23,1466.07,40,0
+    .goto 1422/0,-1870.93,1460.33,40,0
+    >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
+    .complete 5167,3 --Blood of Heroes (10)
+    .isOnQuest 5167
 step
     .goto 1422/0,-2257.07,1673.61
     >>Kill |cRXP_ENEMY_Cauldron Lord Soulwrath|r and loot |cRXP_LOOT_Gahrron's Withering Cauldron Key|r
@@ -1008,35 +1050,13 @@ step
     .accept 5226 >>Accept Return to Chillwind Camp
     .isQuestTurnedIn 5225 --any of: Target: Gahrron's Withering
 step
-    #loop
-    .goto 1422/0,-2288.03,1706.87,0
-    .goto 1422/0,-2288.03,1706.87,40,0
-    .goto 1422/0,-2339.63,1706.87,40,0
-    .goto 1422/0,-2300.93,1669.60,40,0
-    .goto 1422/0,-1870.93,1460.33,40,0
-    .goto 1422/0,-1832.23,1466.07,40,0
-    .goto 1422/0,-1875.23,1500.47,40,0
-    .goto 1422/0,-1862.33,1526.27,40,0
-    .goto 1422/0,-1883.83,1552.07,40,0
-    .goto 1422/0,-2249.33,1689.67,40,0
-    >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
-    .complete 5167,3 --Blood of Heroes (10)
-    .isOnQuest 5167
+    .goto 1422/0,-2567.96,1278.59
+    >>Click the |cRXP_PICK_Book|r
+    .accept 84402 >>Accept Necromancy 101
 step
-    #loop
-    .goto 1422/0,-2288.03,1706.87,0
-    .goto 1422/0,-2288.03,1706.87,40,0
-    .goto 1422/0,-2339.63,1706.87,40,0
-    .goto 1422/0,-2300.93,1669.60,40,0
-    .goto 1422/0,-1870.93,1460.33,40,0
-    .goto 1422/0,-1832.23,1466.07,40,0
-    .goto 1422/0,-1875.23,1500.47,40,0
-    .goto 1422/0,-1862.33,1526.27,40,0
-    .goto 1422/0,-1883.83,1552.07,40,0
-    .goto 1422/0,-2249.33,1689.67,40,0
-    >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
-    .complete 5166,3 --Blood of Heroes (10)
-    .isOnQuest 5166
+    .goto 1422/0,-2567.96,1278.59
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Necromancy 101|r
+    .complete 84402,1 --Necromancy 101 (1)
 step
     .goto 1422/0,-2617.84,1242.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Marduke|r
@@ -1081,12 +1101,6 @@ step
     .turnin 5226 >>Turn in Return to Chillwind Camp
     .target High Priestess MacDonnell
     .isOnQuest 5226
-step
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .turnin 211 >>Turn in Alas, Andorhal
-    .target Commander Ashlam Valorfist
-    .isOnQuest 211
 step << Human Paladin/Dwarf Paladin
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
@@ -1099,6 +1113,12 @@ step
     .accept 5237 >>Accept Mission Accomplished!
     .target Commander Ashlam Valorfist
     .isQuestTurnedIn 5226 --any of: Return to Chillwind Camp
+step
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 211 >>Turn in Alas, Andorhal
+    .target Commander Ashlam Valorfist
+    .isOnQuest 211
 step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
@@ -1151,5 +1171,5 @@ step
 step
     +|cRXP_WARN_End of the Western Plaguelands route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Eastern Plaguelands|r: The Dying, Ras Frostwhisper
-    >>|cRXP_FRIENDLY_Stormwind City|r: The Blightcaller Cometh
+    >>|cRXP_FRIENDLY_Stormwind City|r: The Blightcaller Cometh, Undead Potatoes, Necromancy 101
 ]])

@@ -1,9 +1,9 @@
 -- 43-60 Tanaris: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 43, 46, 49).
--- Sections (the guide starts at the one for your level): around Chief Engineer Bilgewhizzle from 43; around Senior Surveyor Fizzledowser from 46; part 3 from 49.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 43, 46, 49).
+-- Split into 3 guides, listed under "43 - 50 Tanaris" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Tanaris.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,33 +13,18 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 43-60 Tanaris
-#next Zone Routes (Horde)\50-56 Un'Goro Crater
+#subgroup 43 - 50 Tanaris
+#subweight -43
+#name 43-44 Tanaris: around Chief Engineer Bilgewhizzle
 
 step
-    .xp <46,1,RBSection1_1
-    .xp 46 >>Finding the place in this guide for your level
+    .goto 1446/1,-5228.15,-8073.80
+    >>Click the |cRXP_PICK_Book|r
+    .accept 81949 >>Accept Legends of the Tidesages
 step
-    .xp <49,1,RBSection2_1
-    .xp 49 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Tanaris: around Chief Engineer Bilgewhizzle|r (planned from level 43)
-step
-    .goto 1446/1,-3730.16,-7115.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Pestlezugg|r
-    .turnin 4494 >>Turn in March of the Silithid
-    .target Alchemist Pestlezugg
-    .isOnQuest 4494
-step
-    .goto 1446/1,-3777.08,-7105.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
-    .turnin 2864 >>Turn in Tran'rek
-    .target Tran'rek
-    .isOnQuest 2864
+    .goto 1446/1,-5228.15,-8073.80
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Legends of the Tidesages|r
+    .complete 81949,1 --Legends of the Tidesages (1)
 step
     .goto 1446/1,-3839.18,-7127.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mux Manascrambler|r
@@ -47,10 +32,17 @@ step
     .target Mux Manascrambler
     .isOnQuest 8923
 step
-    .goto 1446/1,-3841.94,-7158.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Fizzgrimble|r
-    .target Innkeeper Fizzgrimble
-    .home >>Set your Hearthstone to Innkeeper Fizzgrimble's inn
+    .goto 1446/1,-3777.08,-7105.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tran'rek|r
+    .turnin 2864 >>Turn in Tran'rek
+    .target Tran'rek
+    .isOnQuest 2864
+step
+    .goto 1446/1,-3730.16,-7115.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Pestlezugg|r
+    .turnin 4494 >>Turn in March of the Silithid
+    .target Alchemist Pestlezugg
+    .isOnQuest 4494
 step
     .goto 1446/1,-3769.49,-7200.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krinkle Goodsteel|r
@@ -63,6 +55,11 @@ step
     .turnin 5514 >>Turn in Mold Rhymes With...
     .target Krinkle Goodsteel
     .isOnQuest 5514
+step
+    .goto 1446/1,-3841.94,-7158.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Fizzgrimble|r
+    .target Innkeeper Fizzgrimble
+    .home >>Set your Hearthstone to Innkeeper Fizzgrimble's inn
 step
     .goto 1446/1,-3838.49,-7186.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Bilgewhizzle|r
@@ -168,6 +165,11 @@ step
 step
     .goto 1446/1,-4841.06,-6903.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
+    .accept 3520 >>Accept Screecher Spirits
+    .target Yeh'kinya
+step
+    .goto 1446/1,-4841.06,-6903.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
     .accept 3528 >>Accept The God Hakkar
     .target Yeh'kinya
     .isQuestTurnedIn 4787 --any of: The Ancient Egg
@@ -178,11 +180,6 @@ step
     .turnin 3528 >>Turn in The God Hakkar
     .target Yeh'kinya
     .isOnQuest 3528
-step
-    .goto 1446/1,-4841.06,-6903.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeh'kinya|r
-    .accept 3520 >>Accept Screecher Spirits
-    .target Yeh'kinya
 step
     .goto 1446/1,-4849.34,-6978.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stoley|r
@@ -571,15 +568,22 @@ step
     +|cRXP_WARN_That is all of Tanaris for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Deliver to MacKinley, The Hand of Rastakhan
     >>|cRXP_FRIENDLY_Thousand Needles|r: Safety First
-    >>|cRXP_FRIENDLY_Undercity|r: Return to Apothecary Zinge
+    >>|cRXP_FRIENDLY_Undercity|r: Legends of the Tidesages, Return to Apothecary Zinge
     >>|cRXP_FRIENDLY_Feralas and back here|r: Screecher Spirits, The Super Egg-O-Matic
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Scarab Shells, Troll Temper, Divino-matic Rod
 step
-    .xp 46 >>|cRXP_WARN_The rest of Tanaris is planned from level 46.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Tanaris: around Senior Surveyor Fizzledowser|r (planned from level 46)
+    +|cRXP_WARN_The rest of Tanaris is planned from level 46.|r Load its guide for level 46 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 43 - 50 Tanaris
+#subweight -43
+#name 46-47 Tanaris: around Senior Surveyor Fizzledowser
+
 step
     .goto 1446/1,-4829.33,-6900.34
     >>Click the |cRXP_PICK_Wanted Poster|r
@@ -803,11 +807,20 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Rescue OOX-17/TN!
     >>|cRXP_FRIENDLY_The Hinterlands and back here|r: Sprinkle's Secret Ingredient
 step
-    .xp 49 >>|cRXP_WARN_The rest of Tanaris is planned from level 49.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Tanaris: part 3|r (planned from level 49)
+    +|cRXP_WARN_The rest of Tanaris is planned from level 49.|r Load its guide for level 49 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 43 - 50 Tanaris
+#subweight -43
+#name 49-50 Tanaris
+--RouteBuilder:next
+#next Zone Routes (Horde)\50-51 Un'Goro Crater: around Torwa Pathfinder
+
 step
     .goto 1446/1,-3741.89,-7111.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sprinkle|r

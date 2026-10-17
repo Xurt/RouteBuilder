@@ -1,9 +1,9 @@
 -- 42-52 Feralas: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 42, 45, 48).
--- Sections (the guide starts at the one for your level): around Hadoken Swiftstrider from 42; part 2 from 45; part 3 from 48.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 42, 45, 48).
+-- Split into 3 guides, listed under "42 - 49 Feralas" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Feralas.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,20 +13,14 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 42-52 Feralas
+#subgroup 42 - 49 Feralas
+#subweight -42
+#name 42-43 Feralas: around Hadoken Swiftstrider
 
 step
-    .xp <45,1,RBSection1_1
-    .xp 45 >>Finding the place in this guide for your level
-step
-    .xp <48,1,RBSection2_1
-    .xp 48 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Feralas: around Hadoken Swiftstrider|r (planned from level 42)
+    .goto 1444/1,1924.97,-3094.10
+    >>Click the |cRXP_PICK_Book|r
+    .accept 81951 >>Accept The Liminal and the Arcane
 step
     .goto 1444/1,173.57,-4385.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rok Orhan|r
@@ -129,14 +123,14 @@ step
     .mob Woodpaw Brute
     .mob Woodpaw Mystic
 step
-    #completewith Along9
+    #completewith Along10
     >>As you go: Kill |cRXP_ENEMY_Gordunni Ogres|r. Kill |cRXP_ENEMY_Gordunni Brutes|r. |cRXP_WARN_Anything left is finished later|r
     .complete 2975,1 --Gordunni Ogre slain (10)
     .complete 2975,3 --Gordunni Brute slain (5)
     .mob Gordunni Ogre
     .mob Gordunni Brute
 step
-    #label Along9
+    #label Along10
     #loop
     .goto 1444/1,256.97,-3765.93,0
     .goto 1444/1,256.97,-3765.93,40,0
@@ -412,6 +406,13 @@ step
 step
     .goto 1444/1,269.48,-4375.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
+    .accept 3123 >>Accept Testing the Vessel
+    .target Witch Doctor Uzer'i
+    .isQuestTurnedIn 3122 --any of: Return to Witch Doctor Uzer'i
+    .xp <40,1
+step
+    .goto 1444/1,269.48,-4375.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
     .accept 3121 >>Accept A Strange Request
     .target Witch Doctor Uzer'i
 step
@@ -433,12 +434,9 @@ step << Druid
     .target Jannos Lighthoof
     .xp <46,1
 step
-    .goto 1444/1,269.48,-4375.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
-    .accept 3123 >>Accept Testing the Vessel
-    .target Witch Doctor Uzer'i
-    .isQuestTurnedIn 3122 --any of: Return to Witch Doctor Uzer'i
-    .xp <40,1
+    .goto 1444/1,1924.97,-3094.10
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_The Liminal and the Arcane|r
+    .complete 81951,1 --The Liminal and the Arcane (1)
 step
     .goto 1444/1,269.48,-4375.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Uzer'i|r
@@ -525,12 +523,20 @@ step
     +|cRXP_WARN_That is all of Feralas for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Orgrimmar|r: A Grim Discovery, A Strange Request
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Rescue OOX-22/FE!
+    >>|cRXP_FRIENDLY_another zone|r: The Liminal and the Arcane
 step
-    .xp 45 >>|cRXP_WARN_The rest of Feralas is planned from level 45.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Feralas: part 2|r (planned from level 45)
+    +|cRXP_WARN_The rest of Feralas is planned from level 45.|r Load its guide for level 45 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 42 - 49 Feralas
+#subweight -42
+#name 45-46 Feralas
+
 step
     .goto 1444/1,173.57,-4385.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rok Orhan|r
@@ -727,11 +733,18 @@ step
     +|cRXP_WARN_That is all of Feralas for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Orgrimmar|r: The Gordunni Orb, Zukk'ash Report
 step
-    .xp 48 >>|cRXP_WARN_The rest of Feralas is planned from level 48.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Feralas: part 3|r (planned from level 48)
+    +|cRXP_WARN_The rest of Feralas is planned from level 48.|r Load its guide for level 48 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 42 - 49 Feralas
+#subweight -42
+#name 48-49 Feralas
+
 step
     .goto 1444/1,147.16,-4397.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talo Thornhoof|r

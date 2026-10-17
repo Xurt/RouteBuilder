@@ -1,9 +1,9 @@
 -- 20-40 Hillsbrad Foothills: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 7 parts with a level check between them (from level 20, 23, 26, 29, 32, 35, 38).
--- Sections (the guide starts at the one for your level): around Apothecary Lydon from 20; around Apothecary Lydon from 23; around Apothecary Lydon from 26; around Krusk from 29; around Magus Wordeen Voidglare from 32; part 6 from 35; part 7 from 38.
+-- The zone covers more levels than one visit gives, so it is planned in 7 parts (from level 20, 23, 26, 29, 32, 35, 38).
+-- Split into 7 guides, listed under "20 - 39 Hillsbrad Foothills" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Hillsbrad Foothills.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,33 +13,12 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 20-40 Hillsbrad Foothills
-#next Zone Routes (Horde)\1-50 Stranglethorn Vale
+#subgroup 20 - 39 Hillsbrad Foothills
+#subweight -20
+#name 20-21 Hillsbrad Foothills: around Apothecary Lydon
+--RouteBuilder:next
+#next Zone Routes (Horde)\18-20 The Barrens: around Tonga Runetotem
 
-step
-    .xp <23,1,RBSection1_1
-    .xp 23 >>Finding the place in this guide for your level
-step
-    .xp <26,1,RBSection2_1
-    .xp 26 >>Finding the place in this guide for your level
-step
-    .xp <29,1,RBSection3_1
-    .xp 29 >>Finding the place in this guide for your level
-step
-    .xp <32,1,RBSection4_1
-    .xp 32 >>Finding the place in this guide for your level
-step
-    .xp <35,1,RBSection5_1
-    .xp 35 >>Finding the place in this guide for your level
-step
-    .xp <38,1,RBSection6_1
-    .xp 38 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection7_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Hillsbrad Foothills: around Apothecary Lydon|r (planned from level 20)
 step << Undead Paladin
     .goto 1424/0,-867.09,-158.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r
@@ -201,61 +180,53 @@ step
     .target Krusk
     .isOnQuest 508
 step
-    #completewith Along16
-    >>As you go: Kill |cRXP_ENEMY_Syndicate Watchmans|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 549,2 --Syndicate Watchman slain (8)
-    .mob Syndicate Watchman
-step
-    #completewith Along15
-    >>As you go: Kill |cRXP_ENEMY_Syndicate Rogues|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 549,1 --Syndicate Rogue slain (10)
-    .mob Syndicate Rogue
-step
-    #label Along15
-    #loop
-    .goto 1424/0,-1066.13,-581.33,0
-    .goto 1424/0,-1066.13,-581.33,40,0
-    .goto 1424/0,-1106.77,-607.57,40,0
-    .goto 1424/0,-1068.69,-667.73,40,0
-    .goto 1424/0,-1025.17,-638.51,40,0
-    .goto 1424/0,-1008.53,-604.37,40,0
-    >>Kill |cRXP_ENEMY_Syndicate Shadow Mage|r and loot |cRXP_LOOT_Vial of Innocent Blood|r
-    .complete 1066,1 --Vial of Innocent Blood (1)
-    .mob Syndicate Shadow Mage
-    .isOnQuest 1066
-step
-    #label Along16
-    #loop
-    .goto 1424/0,-1047.89,-639.57,0
-    .goto 1424/0,-1047.89,-639.57,40,0
-    .goto 1424/0,-1024.85,-593.49,40,0
-    .goto 1424/0,-1047.89,-572.80,40,0
-    .goto 1424/0,-1080.53,-686.08,40,0
-    >>Kill |cRXP_ENEMY_Syndicate Rogues|r
-    .complete 549,1 --Syndicate Rogue slain (10)
-    .mob Syndicate Rogue
-step
-    .goto 1424/0,-982.93,-748.59
+    .goto 1424/0,-967.89,-733.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
     .turnin 98094 >>Turn in Scout Support
     .accept 98095 >>Accept Valuable Vantages
     .target Deathstalker Masoj
 step
-    .goto 1424/0,-982.93,-748.59
+    .goto 1424/0,-967.89,-733.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
     >>|cRXP_WARN_The database has no objectives for Valuable Vantages. Skip this step if the quest is not finished|r
     .turnin 98095 >>Turn in Valuable Vantages
     .target Deathstalker Masoj
     .isOnQuest 98095
 step
+    #completewith Along17
+    >>As you go: Kill |cRXP_ENEMY_Syndicate Rogues|r. Kill |cRXP_ENEMY_Syndicate Watchmans|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 549,1 --Syndicate Rogue slain (10)
+    .complete 549,2 --Syndicate Watchman slain (8)
+    .mob Syndicate Rogue
+    .mob Syndicate Watchman
+step
+    #label Along17
     #loop
-    .goto 1424/0,-1038.29,-634.45,0
-    .goto 1424/0,-1038.29,-634.45,40,0
+    .goto 1424/0,-1025.17,-638.51,0
+    .goto 1424/0,-1025.17,-638.51,40,0
+    .goto 1424/0,-1008.53,-604.37,40,0
+    .goto 1424/0,-1066.13,-581.33,40,0
+    .goto 1424/0,-1106.77,-607.57,40,0
+    .goto 1424/0,-1068.69,-667.73,40,0
+    >>Kill |cRXP_ENEMY_Syndicate Shadow Mage|r and loot |cRXP_LOOT_Vial of Innocent Blood|r
+    .complete 1066,1 --Vial of Innocent Blood (1)
+    .mob Syndicate Shadow Mage
+    .isOnQuest 1066
+step
+    #loop
+    .goto 1424/0,-1047.89,-639.57,0
+    .goto 1424/0,-1047.89,-639.57,40,0
+    .goto 1424/0,-1080.53,-686.08,40,0
     .goto 1424/0,-1083.73,-671.15,40,0
     .goto 1424/0,-1096.53,-615.25,40,0
     .goto 1424/0,-1078.93,-586.45,40,0
+    .goto 1424/0,-1047.89,-572.80,40,0
+    .goto 1424/0,-1024.85,-593.49,40,0
+    >>Kill |cRXP_ENEMY_Syndicate Rogues|r
     >>Kill |cRXP_ENEMY_Syndicate Watchmans|r
+    .complete 549,1 --Syndicate Rogue slain (10)
     .complete 549,2 --Syndicate Watchman slain (8)
+    .mob Syndicate Rogue
     .mob Syndicate Watchman
 step
     .goto 1424/0,-927.89,-36.27
@@ -428,13 +399,20 @@ step
     >>|cRXP_FRIENDLY_Silverpine Forest|r: The Moonsilver Blade << Undead Paladin
     >>|cRXP_FRIENDLY_Thunder Bluff|r: Return to Thunder Bluff
 step
-    +|cRXP_WARN_Until level 23, suggested zones|r: |cRXP_FRIENDLY_The Barrens|r (about 1.0 levels of quests, starting around Tonga Runetotem). Then come back to this Hillsbrad Foothills guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 20|r: |cRXP_FRIENDLY_The Barrens|r (about 1.0 levels of quests, starting around Tonga Runetotem). Completing this step loads the guide for The Barrens --RouteBuilder:next
 step
-    .xp 23 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 23.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Hillsbrad Foothills: around Apothecary Lydon|r (planned from level 23)
+    +|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 23.|r Load its guide for level 23 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 20 - 39 Hillsbrad Foothills
+#subweight -20
+#name 23-24 Hillsbrad Foothills: around Apothecary Lydon
+
 step
     .goto 1424/0,-899.41,-6.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Lydon|r
@@ -636,7 +614,7 @@ step
     .goto 1424/0,69.87,-767.57,15,0
     .xp 31 >> Grind to 31 in Azurelode Mine. Return to Tarren Mill if you need to restock
 step
-    .goto 1424/0,-982.93,-748.59
+    .goto 1424/0,-967.89,-733.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
     .turnin 98095 >>Turn in Valuable Vantages
     .target Deathstalker Masoj
@@ -647,11 +625,18 @@ step
     .turnin 546 >>Turn in Souvenirs of Death
     .target Deathguard Samsa
 step
-    .xp 26 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 26.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Hillsbrad Foothills: around Apothecary Lydon|r (planned from level 26)
+    +|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 26.|r Load its guide for level 26 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 20 - 39 Hillsbrad Foothills
+#subweight -20
+#name 26-27 Hillsbrad Foothills: around Apothecary Lydon
+
 step
     .goto 1424/0,-927.89,-36.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Darthalia|r
@@ -710,7 +695,7 @@ step
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Shay
 step
-    .goto 1424/0,-982.93,-748.59
+    .goto 1424/0,-967.89,-733.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
     .turnin 98095 >>Turn in Valuable Vantages
     .target Deathstalker Masoj
@@ -739,11 +724,18 @@ step
     >>|cRXP_FRIENDLY_Alterac Mountains|r: Shrewd Negotiations
     >>|cRXP_FRIENDLY_Undercity|r: Elixir of Agony
 step
-    .xp 29 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 29.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Hillsbrad Foothills: around Krusk|r (planned from level 29)
+    +|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 29.|r Load its guide for level 29 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 20 - 39 Hillsbrad Foothills
+#subweight -20
+#name 29-30 Hillsbrad Foothills: around Krusk
+
 step
     .goto 1424/0,-935.25,-19.41
     >>Click the |cRXP_PICK_Dangerous!|r
@@ -905,7 +897,7 @@ step
     .accept 547 >>Accept Humbert's Sword
     .target Deathguard Humbert
 step
-    .goto 1424/0,-982.93,-748.59
+    .goto 1424/0,-967.89,-733.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
     .turnin 98095 >>Turn in Valuable Vantages
     .target Deathstalker Masoj
@@ -981,11 +973,18 @@ step
     >>|cRXP_FRIENDLY_Alterac Mountains|r: Gol'dir, Lord Aliden Perenolde
     >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: Infiltration
 step
-    .xp 32 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 32.|r Come back to this guide then
-step
-    #label RBSection5_1
-    #completewith next
-    +|cRXP_WARN_Hillsbrad Foothills: around Magus Wordeen Voidglare|r (planned from level 32)
+    +|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 32.|r Load its guide for level 32 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 20 - 39 Hillsbrad Foothills
+#subweight -20
+#name 32-33 Hillsbrad Foothills: around Magus Wordeen Voidglare
+
 step
     .goto 1424/0,-904.53,-44.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
@@ -1033,7 +1032,7 @@ step << Undead Paladin
     .target Ott
     .isOnQuest 95125
 step
-    .goto 1424/0,-982.93,-748.59
+    .goto 1424/0,-967.89,-733.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
     .turnin 98095 >>Turn in Valuable Vantages
     .target Deathstalker Masoj
@@ -1173,11 +1172,18 @@ step
     >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: Stone Tokens, Helcular's Revenge, Prison Break In
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Key to the City
 step
-    .xp 35 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 35.|r Come back to this guide then
-step
-    #label RBSection6_1
-    #completewith next
-    +|cRXP_WARN_Hillsbrad Foothills: part 6|r (planned from level 35)
+    +|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 35.|r Load its guide for level 35 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 20 - 39 Hillsbrad Foothills
+#subweight -20
+#name 35-36 Hillsbrad Foothills
+
 step
     .goto 1424/0,-937.49,-40.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melisara|r
@@ -1219,15 +1225,15 @@ step
 step
     .goto 1424/0,-904.53,-44.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
-    .turnin 544 >>Turn in Prison Break In
-    .target Magus Wordeen Voidglare
-    .isQuestComplete 544
-step
-    .goto 1424/0,-904.53,-44.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
     .turnin 93680 >>Turn in Key to the City
     .target Magus Wordeen Voidglare
     .isQuestComplete 93680
+step
+    .goto 1424/0,-904.53,-44.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
+    .turnin 544 >>Turn in Prison Break In
+    .target Magus Wordeen Voidglare
+    .isQuestComplete 544
 step
     .goto 1424/0,-957.01,-40.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
@@ -1268,7 +1274,7 @@ step
     .turnin 553 >>Turn in Helcular's Revenge
     .isQuestComplete 553
 step
-    .goto 1424/0,-982.93,-748.59
+    .goto 1424/0,-967.89,-733.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
     .turnin 98095 >>Turn in Valuable Vantages
     .target Deathstalker Masoj
@@ -1278,11 +1284,18 @@ step
     >>|cRXP_FRIENDLY_Undercity|r: The Crown of Will
     >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: The Crown of Will
 step
-    .xp 38 >>|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 38.|r Come back to this guide then
-step
-    #label RBSection7_1
-    #completewith next
-    +|cRXP_WARN_Hillsbrad Foothills: part 7|r (planned from level 38)
+    +|cRXP_WARN_The rest of Hillsbrad Foothills is planned from level 38.|r Load its guide for level 38 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 20 - 39 Hillsbrad Foothills
+#subweight -20
+#name 38-39 Hillsbrad Foothills
+
 step
     .goto 1424/0,-937.49,-42.67
     >>Click the |cRXP_PICK_WANTED|r
@@ -1346,7 +1359,7 @@ step
     .turnin 553 >>Turn in Helcular's Revenge
     .isQuestComplete 553
 step
-    .goto 1424/0,-982.93,-748.59
+    .goto 1424/0,-967.89,-733.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Masoj|r
     .turnin 98095 >>Turn in Valuable Vantages
     .target Deathstalker Masoj
@@ -1354,6 +1367,4 @@ step
 step
     +|cRXP_WARN_End of the Hillsbrad Foothills route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Alterac Mountains and back here|r: WANTED: Baron Vardus
-step
-    +|cRXP_WARN_Suggested next zones at level 38|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Far Seer Mok'thardin). Completing this step loads the guide for Stranglethorn Vale --RouteBuilder:next
 ]])

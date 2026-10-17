@@ -1,9 +1,9 @@
 -- 1-30 Dun Morogh: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 8 parts with a level check between them (from level 1, 13, 16, 19, 22, 25, 28, 31).
--- Sections (the guide starts at the one for your level): around Sten Stoutarm from 1; around Teo Hammerstorm from 4; around Eldrun Stormbreaker from 6; around Maxan Anvol from 8; part 2 from 13; part 3 from 16; part 4 from 19; part 5 from 22; part 6 from 25; part 7 from 28; part 8 from 31.
+-- The zone covers more levels than one visit gives, so it is planned in 8 parts (from level 1, 13, 16, 19, 22, 25, 28, 31).
+-- Split into 11 guides, listed under "1 - 32 Dun Morogh" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Dun Morogh.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,44 +13,11 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 1-30 Dun Morogh
+#subgroup 1 - 32 Dun Morogh
+#subweight -1
+#name 1-4 Dun Morogh: around Sten Stoutarm
+#next Zone Routes (Alliance)\4-6 Dun Morogh: around Teo Hammerstorm
 
-step
-    .xp <4,1,RBSection1_1
-    .xp 4 >>Finding the place in this guide for your level
-step
-    .xp <6,1,RBSection1_2
-    .xp 6 >>Finding the place in this guide for your level
-step
-    .xp <8,1,RBSection1_3
-    .xp 8 >>Finding the place in this guide for your level
-step
-    .xp <13,1,RBSection1_4
-    .xp 13 >>Finding the place in this guide for your level
-step
-    .xp <16,1,RBSection2_1
-    .xp 16 >>Finding the place in this guide for your level
-step
-    .xp <19,1,RBSection3_1
-    .xp 19 >>Finding the place in this guide for your level
-step
-    .xp <22,1,RBSection4_1
-    .xp 22 >>Finding the place in this guide for your level
-step
-    .xp <25,1,RBSection5_1
-    .xp 25 >>Finding the place in this guide for your level
-step
-    .xp <28,1,RBSection6_1
-    .xp 28 >>Finding the place in this guide for your level
-step
-    .xp <31,1,RBSection7_1
-    .xp 31 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection8_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Dun Morogh: around Sten Stoutarm|r (planned from level 1)
 step
     .goto 1426/0,328.03,-6214.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
@@ -432,10 +399,18 @@ step
     .target Marryk Nurribit
     >>Talk to |cRXP_FRIENDLY_Marryk Nurribit|r
     .trainer >> Train your class spells
-step
-    #label RBSection1_2
-    #completewith next
-    +|cRXP_WARN_Dun Morogh: around Teo Hammerstorm|r (planned from level 4)
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 1 - 32 Dun Morogh
+#subweight -1
+#name 4-6 Dun Morogh: around Teo Hammerstorm
+#next Zone Routes (Alliance)\6-8 Dun Morogh: around Eldrun Stormbreaker
+
 step
     .goto 1426/0,390.09,-6093.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda|r
@@ -633,7 +608,7 @@ step
     .xp 5+1325 >> Travel to Kharanos. Grind to 1325+/2800xp killing |cRXP_ENEMY_Crag Boars|r en-route << Priest
     .xp 5+1595 >> Travel to Kharanos. Grind to 1595+/2800xp killing |cRXP_ENEMY_Crag Boars|r en-route << !Priest
 step
-    .goto 1426/0,-497.40,-5647.46
+    .goto 1426/0,-497.89,-5648.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eric Brighthammer|r
     .turnin 96628 >>Turn in The Adventurer while you are here
     .isQuestComplete 96628
@@ -685,13 +660,13 @@ step
     .target Maxan Anvol
     .xp <5,1
 step
-    .goto 1426/0,-497.40,-5647.46
+    .goto 1426/0,-497.89,-5648.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eric Brighthammer|r
     .turnin 96628 >>Turn in The Adventurer
     .target Eric Brighthammer
     .isOnQuest 96628
 step
-    .goto 1426/0,-497.40,-5647.46
+    .goto 1426/0,-497.89,-5648.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eric Brighthammer|r
     .accept 96608 >>Accept The Great Outdoors
     .target Eric Brighthammer
@@ -701,7 +676,7 @@ step
     .complete 96608,1 --Basic Campfire
     .complete 96608,2 --Basic Campfire
 step
-    .goto 1426/0,-497.40,-5647.46
+    .goto 1426/0,-497.89,-5648.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eric Brighthammer|r
     .turnin 96608 >>Turn in The Great Outdoors
     .accept 96629 >>Accept Camping 101: Cooking
@@ -834,21 +809,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tognus Flintfire|r
     .accept 98321 >>Accept Flintfire's Shipment
     .target Tognus Flintfire
-step << Dwarf Hunter
-    #completewith next
-    .zone 1455 >>Travel to Ironforge
-    .zoneskip 1455
-step << Dwarf Hunter
-    .xp 10 >>Grind to level 10 (The Hunter's Path needs it)
-step << Dwarf Hunter
-    .goto 1455/0,-1274.07,-5010.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olmin Burningbeard|r
-    .accept 6074 >>Accept The Hunter's Path
-    .target Olmin Burningbeard
-step << Dwarf Hunter
-    #completewith next
-    .zone 1426 >>Leave Ironforge for Dun Morogh
-    .zoneskip 1426
 step
     .goto 1426/0,-632.34,-5466.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
@@ -883,17 +843,12 @@ step << Warrior/Paladin/Rogue
     .train 2575 >>Train |T134708:0|t[Mining]
     .target Yarr Hammerstone
     .train 2018,3
-step << Dwarf Hunter
-    .goto 1426/0,-454.06,-5618.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
-    .turnin 6074 >>Turn in The Hunter's Path
-    .target Grif Wildheart
 step
-    #completewith Along63
+    #completewith Along61
     >>As you go: Open the |cRXP_PICK_Ammo Crate|r. Loot it for |cRXP_LOOT_Rumbleshot's Ammo|r. |cRXP_WARN_Anything left is finished later|r
     .complete 5541,1 --Rumbleshot's Ammo (1)
 step
-    #label Along63
+    #label Along61
     .goto 1426/0,-369.84,-5750.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Gretchen|r
     .turnin 98322 >>Turn in Secure the Mountain
@@ -1004,16 +959,24 @@ step
     .mob Young Black Bear
     .mob Ice Claw Bear
     .mob Black Bear
-step
-    #label RBSection1_3
-    #completewith next
-    +|cRXP_WARN_Dun Morogh: around Eldrun Stormbreaker|r (planned from level 6)
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 1 - 32 Dun Morogh
+#subweight -1
+#name 6-8 Dun Morogh: around Eldrun Stormbreaker
+#next Zone Routes (Alliance)\8-11 Dun Morogh: around Rejold Barleybrew
+
 step
     #completewith next
     .zone 1455 >>Travel to Ironforge
     .zoneskip 1455
 step
-    .goto 1455/0,-1088.19,-4640.36
+    .goto 1455/0,-1085.98,-4642.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker|r
     .turnin 97263 >>Turn in Your Package Has Arrived
     .target Eldrun Stormbreaker
@@ -1027,15 +990,15 @@ step << Dwarf Paladin
 step << Dwarf Priest
     .goto 1455/0,-909.11,-4612.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Rohan|r
-    .turnin 5647 >>Turn in A Lack of Fear
-    .target High Priest Rohan
-    .isOnQuest 5647
-step << Dwarf Priest
-    .goto 1455/0,-909.11,-4612.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Rohan|r
     .turnin 5645 >>Turn in A Lack of Fear
     .target High Priest Rohan
     .isOnQuest 5645
+step << Dwarf Priest
+    .goto 1455/0,-909.11,-4612.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Rohan|r
+    .turnin 5647 >>Turn in A Lack of Fear
+    .target High Priest Rohan
+    .isOnQuest 5647
 step << Gnome Priest
     .goto 1455/0,-911.01,-4622.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Mims|r
@@ -1138,12 +1101,6 @@ step
 step
     .goto 1426/0,315.23,-5378.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r
-    .turnin 415 >>Turn in Rejold's New Brew
-    .accept 315 >>Accept The Perfect Stout
-    .target Rejold Barleybrew
-step
-    .goto 1426/0,315.23,-5378.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r
     .turnin 318 >>Turn in Evershine
     .target Rejold Barleybrew
     .isOnQuest 318
@@ -1153,6 +1110,11 @@ step
     .accept 319 >>Accept A Favor for Evershine
     .target Rejold Barleybrew
     .isQuestTurnedIn 318 --any of: Evershine
+step
+    .goto 1426/0,315.23,-5378.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r
+    .accept 315 >>Accept The Perfect Stout
+    .target Rejold Barleybrew
 step
     .goto 1426/0,315.23,-5371.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marleth Barleybrew|r
@@ -1235,6 +1197,69 @@ step
     .accept 99159 >>Accept Finding Warmth
     .target Father Gavin
 step
+    #loop
+    .goto 1426/0,-985.47,-5548.30,0
+    .goto 1426/0,-985.47,-5548.30,40,0
+    .goto 1426/0,-1064.27,-5584.42,40,0
+    .goto 1426/0,-1069.19,-5666.50,40,0
+    .goto 1426/0,-1143.07,-5801.12,40,0
+    .goto 1426/0,-1079.04,-5801.12,40,0
+    .goto 1426/0,-1083.97,-5751.87,40,0
+    .goto 1426/0,-1015.02,-5679.63,40,0
+    .goto 1426/0,-1005.17,-5633.67,40,0
+    .goto 1426/0,-955.92,-5633.67,40,0
+    >>Loot the |cRXP_PICK_Fallen Logs|r for |cRXP_LOOT_Mostly Dry Firewood|r
+    .complete 99159,1 --Mostly Dry Firewood (14)
+step
+    .xp 7 >>Grind to level 7 (Never Saddle on Quality needs it)
+step
+    .goto 1426/0,-1304.61,-5513.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .accept 95212 >>Accept Never Saddle on Quality
+    .target Rudra Amberstill
+step
+    .goto 1426/0,-1041.12,-5350.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Gavin|r
+    .turnin 99159 >>Turn in Finding Warmth
+    .accept 99160 >>Accept Rime's Wrath
+    .target Father Gavin
+step
+    #loop
+    .goto 1426/0,-996.79,-5370.34,0
+    .goto 1426/0,-996.79,-5370.34,40,0
+    .goto 1426/0,-1051.95,-5257.72,40,0
+    .goto 1426/0,-948.53,-5266.59,40,0
+    .goto 1426/0,-926.37,-5327.33,40,0
+    .goto 1426/0,-913.56,-5387.42,40,0
+    .goto 1426/0,-951.48,-5455.38,40,0
+    .goto 1426/0,-1015.02,-5507.91,40,0
+    .goto 1426/0,-1085.94,-5578.83,40,0
+    .goto 1426/0,-1045.55,-5415.00,40,0
+    >>Kill |cRXP_ENEMY_Minor Ice Elementals|r
+    .complete 99160,1 --Minor Ice Elemental slain (10)
+    .mob Minor Ice Elemental
+step
+    .goto 1426/0,-1041.12,-5350.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Gavin|r
+    .turnin 99160 >>Turn in Rime's Wrath
+    .accept 99162 >>Accept Treacherous Cold
+    .accept 99161 >>Accept Rime's Wrath
+    .target Father Gavin
+step
+    .goto 1426/0,-1071.16,-5258.05
+    >>Kill |cRXP_ENEMY_Avala|r and loot |cRXP_LOOT_Avala's Core|r
+    .complete 99161,1 --Avala's Core (1)
+    .mob Avala
+step
+    .goto 1426/0,-1041.12,-5350.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Gavin|r
+    .turnin 99161 >>Turn in Rime's Wrath
+    .target Father Gavin
+step
+    .goto 1426/0,-763.84,-5323.06
+    >>Pick up |cRXP_PICK_Coalbeard's Rifle|r from the ground
+    .complete 99162,3 --Coalbeard's Rifle (1)
+step
     .goto 1426/0,-456.03,-5498.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
     .accept 412 >>Accept Operation Recombobulation
@@ -1272,17 +1297,37 @@ step
     .turnin 311 >>Turn in Return to Marleth while you are here
     .isQuestComplete 311
     .target Marleth Barleybrew
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 1 - 32 Dun Morogh
+#subweight -1
+#name 8-11 Dun Morogh: around Rejold Barleybrew
+--RouteBuilder:next
+#next Zone Routes (Alliance)\9-11 Zephras Isle: around Quel'ana Quickgale;Zone Routes (Alliance)\10-12 Westfall: around Farmer Saldean;Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver
+
 step
     .goto 1426/0,315.23,-5378.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r
     .turnin 315 >>Turn in The Perfect Stout
+    .target Rejold Barleybrew
+    .isOnQuest 315
+step
+    .goto 1426/0,315.23,-5378.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r
     .accept 413 >>Accept Shimmer Stout
     .target Rejold Barleybrew
+    .isQuestTurnedIn 315 --any of: The Perfect Stout
 step
     .goto 1426/0,315.23,-5371.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marleth Barleybrew|r
     .turnin 311 >>Turn in Return to Marleth
     .target Marleth Barleybrew
+    .isOnQuest 311
 step
     #loop
     .goto 1426/0,460.02,-5288.59,0
@@ -1296,11 +1341,27 @@ step
     .goto 1426/0,585.12,-5170.06,40,0
     .goto 1426/0,519.61,-5215.37,40,0
     >>Kill |cRXP_ENEMY_Leper Gnomes|r and |cRXP_ENEMY_Gibblewilts|r. Loot them for |cRXP_LOOT_Gyromechanic Gear|r
-    >>Kill |cRXP_ENEMY_Leper Gnomes|r and |cRXP_ENEMY_Gibblewilts|r. Loot them for |cRXP_LOOT_Restabilization Cog|r
     .complete 412,2 --Gyromechanic Gear (8)
+    .mob Leper Gnome
+    .mob Gibblewilt
+    .isOnQuest 412
+step
+    #loop
+    .goto 1426/0,515.18,-5279.39,0
+    .goto 1426/0,515.18,-5279.39,40,0
+    .goto 1426/0,546.21,-5312.23,40,0
+    .goto 1426/0,543.25,-5364.10,40,0
+    .goto 1426/0,585.12,-5343.09,40,0
+    .goto 1426/0,621.07,-5302.38,40,0
+    .goto 1426/0,585.61,-5245.90,40,0
+    .goto 1426/0,585.12,-5170.06,40,0
+    .goto 1426/0,519.61,-5215.37,40,0
+    .goto 1426/0,460.02,-5288.59,40,0
+    >>Kill |cRXP_ENEMY_Leper Gnomes|r and |cRXP_ENEMY_Gibblewilts|r. Loot them for |cRXP_LOOT_Restabilization Cog|r
     .complete 412,1 --Restabilization Cog (8)
     .mob Leper Gnome
     .mob Gibblewilt
+    .isOnQuest 412
 step << Hunter
     .xp 10-1720 >> Grind until you are 1720xp away from level 10
 step << Hunter
@@ -1322,13 +1383,13 @@ step
     >>Kill |cRXP_ENEMY_Frosthowl|r and loot |cRXP_LOOT_Sack of Fish|r
     .complete 98326,1 --Sack of Fish (1)
     .mob Frosthowl
-step
-    .xp 8 >>Grind to level 8 (Rejold's New Brew needs it)
+    .isOnQuest 98326
 step
     .goto 1426/0,-632.34,-5466.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
     .accept 415 >>Accept Rejold's New Brew
     .target Pilot Bellowfiz
+    .isQuestTurnedIn 315 --any of: The Perfect Stout
 step
     .goto 1426/0,-499.37,-5644.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senir Whitebeard|r
@@ -1342,10 +1403,6 @@ step
     .target Pilot Bellowfiz
     .isOnQuest 320
 step
-    #label RBSection1_4
-    #completewith next
-    +|cRXP_WARN_Dun Morogh: around Maxan Anvol|r (planned from level 8)
-step
     .goto 1426/0,-456.03,-5498.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
     .turnin 412 >>Turn in Operation Recombobulation
@@ -1354,31 +1411,21 @@ step
 step << Hunter
     .xp 10 >> Grind to level 10
 step
-    #loop
-    .goto 1426/0,-955.92,-5633.67,0
-    .goto 1426/0,-955.92,-5633.67,40,0
-    .goto 1426/0,-985.47,-5548.30,40,0
-    .goto 1426/0,-1064.27,-5584.42,40,0
-    .goto 1426/0,-1069.19,-5666.50,40,0
-    .goto 1426/0,-1143.07,-5801.12,40,0
-    .goto 1426/0,-1079.04,-5801.12,40,0
-    .goto 1426/0,-1083.97,-5751.87,40,0
-    .goto 1426/0,-1015.02,-5679.63,40,0
-    .goto 1426/0,-1005.17,-5633.67,40,0
-    >>Loot the |cRXP_PICK_Fallen Logs|r for |cRXP_LOOT_Mostly Dry Firewood|r
-    .complete 99159,1 --Mostly Dry Firewood (14)
-    .isOnQuest 99159
+    .goto 1426/0,-816.05,-5807.03
+    >>Pick up |cRXP_PICK_Stoneanvil's Rifle|r from the ground
+    .complete 99162,1 --Stoneanvil's Rifle (1)
+    .isOnQuest 99162
 step
-    .goto 1426/0,-1304.61,-5513.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .accept 95212 >>Accept Never Saddle on Quality
-    .target Rudra Amberstill
+    .goto 1426/0,-1147.99,-5522.03
+    >>Pick up |cRXP_PICK_Sunhammer's Rifle|r from the ground
+    .complete 99162,2 --Sunhammer's Rifle (1)
+    .isOnQuest 99162
 step
     #loop
     .goto 1426/0,-1644.43,-5613.31,0
     .goto 1426/0,-1644.43,-5613.31,40,0
     .goto 1426/0,-1735.54,-5617.25,40,0
-    .goto 1426/0,-1824.69,-5596.24,40,0
+    .goto 1426/0,-1831.58,-5579.16,40,0
     .goto 1426/0,-1894.13,-5597.55,40,0
     .goto 1426/0,-1919.74,-5683.57,40,0
     .goto 1426/0,-1897.58,-5762.37,40,0
@@ -1388,9 +1435,26 @@ step
     >>Kill |cRXP_ENEMY_Elder Snow Leopards|r. Loot them for |cRXP_LOOT_Pristine Leopard Pelt|r
     .complete 95212,1 --Pristine Leopard Pelt (6)
     .mob Elder Snow Leopard
+    .isOnQuest 95212
+step << Dwarf Hunter
+    #completewith next
+    .zone 1455 >>Travel to Ironforge
+    .zoneskip 1455
+step << Dwarf Hunter
+    .xp 10 >>Grind to level 10 (The Hunter's Path needs it)
+step << Dwarf Hunter
+    .goto 1455/0,-1274.07,-5010.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olmin Burningbeard|r
+    .accept 6074 >>Accept The Hunter's Path
+    .target Olmin Burningbeard
+step << Dwarf Hunter
+    #completewith next
+    .zone 1426 >>Leave Ironforge for Dun Morogh
+    .zoneskip 1426
 step << Dwarf Hunter
     .goto 1426/0,-454.06,-5618.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
+    .turnin 6074 >>Turn in The Hunter's Path
     .accept 6064 >>Accept Taming the Beast
     .target Grif Wildheart
 step << Dwarf Hunter
@@ -1493,85 +1557,37 @@ step
     .zone 1426 >>Leave Ironforge for Dun Morogh
     .zoneskip 1426
 step
-    .goto 1426/0,-1041.12,-5350.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Gavin|r
-    .turnin 99159 >>Turn in Finding Warmth
-    .target Father Gavin
-    .isOnQuest 99159
-step
-    .goto 1426/0,-1041.12,-5350.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Gavin|r
-    .accept 99160 >>Accept Rime's Wrath
-    .target Father Gavin
-    .isQuestTurnedIn 99159 --any of: Finding Warmth
-step
     #loop
-    .goto 1426/0,-997.29,-5359.51,0
-    .goto 1426/0,-997.29,-5359.51,40,0
-    .goto 1426/0,-1051.95,-5257.72,40,0
-    .goto 1426/0,-948.53,-5266.59,40,0
-    .goto 1426/0,-926.37,-5327.33,40,0
-    .goto 1426/0,-913.56,-5387.42,40,0
-    .goto 1426/0,-951.48,-5455.38,40,0
-    .goto 1426/0,-1018.96,-5522.03,40,0
-    .goto 1426/0,-1085.94,-5578.83,40,0
-    .goto 1426/0,-1023.39,-5432.73,40,0
-    >>Kill |cRXP_ENEMY_Minor Ice Elementals|r
-    .complete 99160,1 --Minor Ice Elemental slain (10)
-    .mob Minor Ice Elemental
-    .isOnQuest 99160
+    .goto 1426/0,442.78,-5193.70,0
+    .goto 1426/0,442.78,-5193.70,40,0
+    .goto 1426/0,467.41,-5226.53,40,0
+    .goto 1426/0,442.78,-5282.35,40,0
+    .goto 1426/0,511.73,-5315.18,40,0
+    .goto 1426/0,595.46,-5328.32,40,0
+    .goto 1426/0,556.06,-5279.07,40,0
+    .goto 1426/0,516.66,-5256.08,40,0
+    .goto 1426/0,570.83,-5177.28,40,0
+    .goto 1426/0,506.81,-5206.83,40,0
+    >>Loot the |cRXP_PICK_Snowdrifts|r for |cRXP_LOOT_Gnomeregan Archival Data|r
+    .complete 95041,1 --Gnomeregan Archival Data (7)
 step
-    .goto 1426/0,-1041.12,-5350.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Gavin|r
-    .turnin 99160 >>Turn in Rime's Wrath while you are here
-    .isQuestComplete 99160
-    .target Father Gavin
+    .goto 1426/0,315.23,-5378.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r
+    .turnin 415 >>Turn in Rejold's New Brew
+    .target Rejold Barleybrew
+    .isOnQuest 415
 step
-    .goto 1426/0,-1041.12,-5350.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Gavin|r
-    .accept 99162 >>Accept Treacherous Cold
-    .target Father Gavin
-    .isQuestTurnedIn 99159 --any of: Finding Warmth
-step
-    .goto 1426/0,-1041.12,-5350.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Gavin|r
-    .turnin 99160 >>Turn in Rime's Wrath
-    .target Father Gavin
-    .isOnQuest 99160
-step
-    .goto 1426/0,-1041.12,-5350.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Gavin|r
-    .accept 99161 >>Accept Rime's Wrath
-    .target Father Gavin
-    .isQuestTurnedIn 99160 --any of: Rime's Wrath
-step
-    .goto 1426/0,-1071.16,-5258.05
-    >>Kill |cRXP_ENEMY_Avala|r and loot |cRXP_LOOT_Avala's Core|r
-    .complete 99161,1 --Avala's Core (1)
-    .mob Avala
-    .isOnQuest 99161
-step
-    .goto 1426/0,-1041.12,-5350.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Gavin|r
-    .turnin 99161 >>Turn in Rime's Wrath
-    .target Father Gavin
-    .isOnQuest 99161
-step
-    .goto 1426/0,-1147.99,-5522.03
-    >>Pick up |cRXP_PICK_Sunhammer's Rifle|r from the ground
-    .complete 99162,2 --Sunhammer's Rifle (1)
-    .isOnQuest 99162
-step
-    .goto 1426/0,-816.05,-5807.03
-    >>Pick up |cRXP_PICK_Stoneanvil's Rifle|r from the ground
-    .complete 99162,1 --Stoneanvil's Rifle (1)
-    .isOnQuest 99162
+    .goto 1426/0,249.23,-5343.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretta Ganter|r
+    .turnin 98326 >>Turn in Frosthowl
+    .target Gretta Ganter
+    .isOnQuest 98326
 step
     #completewith next
     .zone 1455 >>Travel to Ironforge
     .zoneskip 1455
 step << Shaman
-    .goto 1455/0,-1088.19,-4640.36
+    .goto 1455/0,-1085.98,-4642.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker|r
     .accept 94449 >>Accept Call of Fire
     .target Eldrun Stormbreaker
@@ -1692,35 +1708,10 @@ step
     .target Innkeeper Belm
     .home >>Set your Hearthstone to Innkeeper Belm's inn
 step
-    .goto 1426/0,249.23,-5343.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretta Ganter|r
-    .turnin 98326 >>Turn in Frosthowl
-    .target Gretta Ganter
-    .isOnQuest 98326
-step
-    #loop
-    .goto 1426/0,442.78,-5282.35,0
-    .goto 1426/0,442.78,-5282.35,40,0
-    .goto 1426/0,467.41,-5226.53,40,0
-    .goto 1426/0,442.78,-5193.70,40,0
-    .goto 1426/0,506.81,-5206.83,40,0
-    .goto 1426/0,570.83,-5177.28,40,0
-    .goto 1426/0,556.06,-5279.07,40,0
-    .goto 1426/0,595.46,-5328.32,40,0
-    .goto 1426/0,511.73,-5315.18,40,0
-    .goto 1426/0,516.66,-5256.08,40,0
-    >>Loot the |cRXP_PICK_Snowdrifts|r for |cRXP_LOOT_Gnomeregan Archival Data|r
-    .complete 95041,1 --Gnomeregan Archival Data (7)
-step
     .goto 1426/0,-682.09,-5488.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill|r
     .accept 96408 >>Accept A Visitor to Dun Morogh
     .target Beldin Steelgrill
-step
-    .goto 1426/0,-763.84,-5323.06
-    >>Pick up |cRXP_PICK_Coalbeard's Rifle|r from the ground
-    .complete 99162,3 --Coalbeard's Rifle (1)
-    .isOnQuest 99162
 step
     .goto 1426/0,-1041.12,-5350.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Gavin|r
@@ -1746,6 +1737,12 @@ step
     .turnin 96408 >>Turn in A Visitor to Dun Morogh
     .target Earthseer Farsen
 step
+    .goto 1426/0,-1304.61,-5513.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .turnin 95212 >>Turn in Never Saddle on Quality
+    .target Rudra Amberstill
+    .isOnQuest 95212
+step
     .goto 1455/0,-1152.40,-4821.13
     .fp Ironforge >> Get the Ironforge flight path
 step
@@ -1754,7 +1751,6 @@ step
 step
     .goto 1426/0,-1304.61,-5513.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .turnin 95212 >>Turn in Never Saddle on Quality
     .accept 314 >>Accept Protecting the Herd
     .target Rudra Amberstill
 step
@@ -1837,13 +1833,6 @@ step
     .complete 432,1 --Rockjaw Skullthumper slain (6)
     .mob Rockjaw Skullthumper
 step
-    #completewith Drop96391x1
-    >>|cRXP_LOOT_Dark Iron Map|r can drop from |cRXP_ENEMY_Dark Iron Spy|r, |cRXP_ENEMY_Captain Beld|r. Use it to start the quest if you get one
-    .collect 274268,1,96391 --Dark Iron Map (1)
-    .accept 96391 >>Accept Underground Map
-    .use 274268
-step
-    #label Drop96391x1
     #loop
     .goto 1426/0,-1678.41,-5736.76,0
     .goto 1426/0,-1678.41,-5736.76,40,0
@@ -1857,7 +1846,6 @@ step
     .goto 1426/0,-1693.19,-5670.11,40,0
     >>Kill |cRXP_ENEMY_Rockjaw Bonesnappers|r
     .complete 433,1 --Rockjaw Bonesnapper slain (10)
-    .complete 96390,2 --Rockjaw Bonesnapper slain (8)
     .mob Rockjaw Bonesnapper
 step
     .goto 1426/0,-1600.11,-5726.58
@@ -1884,13 +1872,13 @@ step
     .vendor >>vendor trash, buy up to 30 level 5 drink from Kazan
     .trainer >> Train Cooking from Ghilm. You'll need this to pick up 2 extra quests later
 step
-    #completewith Drop96391x2
+    #completewith Drop96391x1
     >>|cRXP_LOOT_Dark Iron Map|r can drop from |cRXP_ENEMY_Dark Iron Spy|r, |cRXP_ENEMY_Captain Beld|r. Use it to start the quest if you get one
     .collect 274268,1,96391 --Dark Iron Map (1)
     .accept 96391 >>Accept Underground Map
     .use 274268
 step
-    #label Drop96391x2
+    #label Drop96391x1
     #loop
     .goto 1426/0,-1985.73,-5845.44,0
     .goto 1426/0,-1985.73,-5845.44,40,0
@@ -1915,56 +1903,6 @@ step
     .turnin 96391 >>Turn in Underground Map
     .target Earthseer Farsen
     .isOnQuest 96391
-step << Warrior
-    #completewith next
-    .hs >>Hearth to Innkeeper Belm's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step << Warrior
-    .xp 10 >>Grind to level 10 (Muren Stormpike needs it)
-step << Warrior
-    .goto 1426/0,-530.40,-5605.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r
-    .accept 1679 >>Accept Muren Stormpike
-    .target Granis Swiftaxe
-step << Warrior
-    #completewith next
-    .zone 1455 >>Travel to Ironforge
-    .zoneskip 1455
-step << Warrior
-    .goto 1455/0,-1273.12,-5045.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muren Stormpike|r
-    .turnin 1679 >>Turn in Muren Stormpike
-    .accept 1678 >>Accept Vejrek
-    .target Muren Stormpike
-step << Warrior
-    #completewith next
-    .zone 1426 >>Leave Ironforge for Dun Morogh
-    .zoneskip 1426
-step << Warrior
-    .goto 1426/0,431.46,-5780.10
-    >>Kill |cRXP_ENEMY_Vejrek|r and loot |cRXP_LOOT_Vejrek's Head|r
-    .complete 1678,1 --Vejrek's Head (1)
-    .mob Vejrek
-step << Warrior
-    #completewith next
-    .zone 1455 >>Travel to Ironforge
-    .zoneskip 1455
-step << Warrior
-    .goto 1455/0,-1273.12,-5045.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muren Stormpike|r
-    .turnin 1678 >>Turn in Vejrek
-    .accept 1680 >>Accept Tormus Deepforge
-    .target Muren Stormpike
-step << Warrior
-    .goto 1455/0,-1098.15,-4793.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tormus Deepforge|r
-    .turnin 1680 >>Turn in Tormus Deepforge
-    .accept 1681 >>Accept Ironband's Compound
-    .target Tormus Deepforge
-step << Warrior
-    #completewith next
-    .zone 1426 >>Leave Ironforge for Dun Morogh
-    .zoneskip 1426
 step
     #loop
     .goto 1426/0,-1662.65,-5594.59,0
@@ -1987,10 +1925,6 @@ step
     .turnin 95213 >>Turn in Stolen Blasting Powder
     .target Quarrymaster Thesten
     .isOnQuest 95213
-step << Warrior
-    .goto 1426/0,-2037.45,-5918.00
-    >>Open the |cRXP_PICK_Ironband's Strongbox|r. Loot it for |cRXP_LOOT_Umbral Ore|r
-    .complete 1681,1 --Umbral Ore (1)
 step << Shaman
     .goto 1426/0,-2528.96,-5348.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bruegs Kindleborn|r
@@ -2054,6 +1988,58 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .turnin 417 >>Turn in A Pilot's Revenge
     .target Pilot Hammerfoot
+step << Warrior
+    #completewith next
+    .hs >>Hearth to Innkeeper Belm's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step << Warrior
+    .goto 1426/0,-530.40,-5605.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r
+    .accept 1679 >>Accept Muren Stormpike
+    .target Granis Swiftaxe
+step << Warrior
+    #completewith next
+    .zone 1455 >>Travel to Ironforge
+    .zoneskip 1455
+step << Warrior
+    .goto 1455/0,-1273.12,-5045.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muren Stormpike|r
+    .turnin 1679 >>Turn in Muren Stormpike
+    .accept 1678 >>Accept Vejrek
+    .target Muren Stormpike
+step << Warrior
+    #completewith next
+    .zone 1426 >>Leave Ironforge for Dun Morogh
+    .zoneskip 1426
+step << Warrior
+    .goto 1426/0,431.46,-5780.10
+    >>Kill |cRXP_ENEMY_Vejrek|r and loot |cRXP_LOOT_Vejrek's Head|r
+    .complete 1678,1 --Vejrek's Head (1)
+    .mob Vejrek
+step << Warrior
+    #completewith next
+    .zone 1455 >>Travel to Ironforge
+    .zoneskip 1455
+step << Warrior
+    .goto 1455/0,-1273.12,-5045.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muren Stormpike|r
+    .turnin 1678 >>Turn in Vejrek
+    .accept 1680 >>Accept Tormus Deepforge
+    .target Muren Stormpike
+step << Warrior
+    .goto 1455/0,-1098.15,-4793.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tormus Deepforge|r
+    .turnin 1680 >>Turn in Tormus Deepforge
+    .accept 1681 >>Accept Ironband's Compound
+    .target Tormus Deepforge
+step << Warrior
+    #completewith next
+    .zone 1426 >>Leave Ironforge for Dun Morogh
+    .zoneskip 1426
+step << Warrior
+    .goto 1426/0,-2037.45,-5918.00
+    >>Open the |cRXP_PICK_Ironband's Strongbox|r. Loot it for |cRXP_LOOT_Umbral Ore|r
+    .complete 1681,1 --Umbral Ore (1)
 step << Warrior
     #completewith next
     .zone 1455 >>Travel to Ironforge
@@ -2162,16 +2148,29 @@ step << Warlock
     .accept 1715 >>Accept The Slaughtered Lamb
     .target Lago Blackwrench
 step << Shaman
-    .goto 1455/0,-1088.19,-4640.36
+    .goto 1455/0,-1085.98,-4642.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker|r
     .accept 96243 >>Accept Call of Earth
     .target Eldrun Stormbreaker
+step
+    #completewith next
+    .zone 1426 >>Leave Ironforge for Dun Morogh
+    .zoneskip 1426
+step << Shaman
+    .goto 1426/0,384.18,-6049.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm|r
+    .turnin 96243 >>Turn in Call of Earth
+    .target Teo Hammerstorm
+step << NightElf Hunter
+    #completewith next
+    .zone 1455 >>Travel to Ironforge
+    .zoneskip 1455
 step << NightElf Hunter
     .goto 1455/0,-1274.07,-5010.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olmin Burningbeard|r
     .accept 6721 >>Accept The Hunter's Path
     .target Olmin Burningbeard
-step
+step << NightElf Hunter
     #completewith next
     .zone 1426 >>Leave Ironforge for Dun Morogh
     .zoneskip 1426
@@ -2218,16 +2217,24 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: The Slaughtered Lamb << Warlock
     >>|cRXP_FRIENDLY_Stormwind City|r: Desperate Prayer << Human Priest/Dwarf Priest
     >>|cRXP_FRIENDLY_Teldrassil|r: The Hunter's Path << NightElf Hunter
-    >>|cRXP_FRIENDLY_another zone|r: Call of Earth << Shaman
     >>|cRXP_FRIENDLY_another zone and back here|r: Secure the Mountain
 step
-    +|cRXP_WARN_Until level 13, suggested zones|r: |cRXP_FRIENDLY_Zephras Isle|r (about 3.1 levels of quests, starting around Valennia Stormfist), |cRXP_FRIENDLY_Westfall|r (about 2.0 levels of quests, starting around Farmer Saldean), |cRXP_FRIENDLY_Darkshore|r (about 1.8 levels of quests, starting around Thundris Windweaver). Then come back to this Dun Morogh guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 10|r: |cRXP_FRIENDLY_Zephras Isle|r (about 3.1 levels of quests, starting around Quel'ana Quickgale), |cRXP_FRIENDLY_Westfall|r (about 2.2 levels of quests, starting around Farmer Saldean), |cRXP_FRIENDLY_Darkshore|r (about 1.8 levels of quests, starting around Thundris Windweaver). Completing this step loads the guide for Zephras Isle --RouteBuilder:next
 step
-    .xp 13 >>|cRXP_WARN_The rest of Dun Morogh is planned from level 13.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Dun Morogh: part 2|r (planned from level 13)
+    +|cRXP_WARN_The rest of Dun Morogh is planned from level 13.|r Load its guide for level 13 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 1 - 32 Dun Morogh
+#subweight -1
+#name 13-14 Dun Morogh
+--RouteBuilder:next
+#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\9-12 Teldrassil: around Priestess A'moora
+
 step << Dwarf Paladin
     .goto 1426/0,-542.22,-5586.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r
@@ -2481,13 +2488,22 @@ step
     >>|cRXP_FRIENDLY_Loch Modan|r: Find Bingles
     >>|cRXP_FRIENDLY_Stormwind City|r: Tome of Divinity << Human Paladin
 step
-    +|cRXP_WARN_Until level 16, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 2.1 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.3 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Elwynn Forest|r (about 0.9 levels of quests, starting around Marshal Dughan). Then come back to this Dun Morogh guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 13|r: |cRXP_FRIENDLY_Darkshore|r (about 2.1 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.3 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Teldrassil|r (about 1.1 levels of quests, starting around Priestess A'moora). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 16 >>|cRXP_WARN_The rest of Dun Morogh is planned from level 16.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Dun Morogh: part 3|r (planned from level 16)
+    +|cRXP_WARN_The rest of Dun Morogh is planned from level 16.|r Load its guide for level 16 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 1 - 32 Dun Morogh
+#subweight -1
+#name 16-17 Dun Morogh
+--RouteBuilder:next
+#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Daryl the Youngling
+
 step << Human Mage/Gnome Mage
     .goto 1426/0,-537.29,-5587.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r
@@ -2527,20 +2543,29 @@ step
     +|cRXP_WARN_That is all of Dun Morogh for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Stormwind City|r: Report to Jennea << Human Mage/Gnome Mage
     >>|cRXP_FRIENDLY_Stormwind City|r: Speak with Shoni
-step << Rogue
-    +|cRXP_WARN_Until level 19, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 1.6 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 0.9 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling). Then come back to this Dun Morogh guide --RouteBuilder:next
-step << Rogue
-    .xp 19 >>|cRXP_WARN_The rest of Dun Morogh is planned from level 19.|r Come back to this guide then
 step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Dun Morogh: part 4|r (planned from level 19)
+    +|cRXP_WARN_Suggested next zones at level 16|r: |cRXP_FRIENDLY_Darkshore|r (about 1.6 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 0.9 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling). Completing this step loads the guide for Darkshore --RouteBuilder:next
+step
+    +|cRXP_WARN_The rest of Dun Morogh is planned from level 19.|r Load its guide for level 19 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 1 - 32 Dun Morogh
+#subweight -1
+#name 19-20 Dun Morogh
+--RouteBuilder:next
+#next Zone Routes (Alliance)\17-19 Darkshore: around Archaeologist Hollee;Zone Routes (Alliance)\20-21 Wetlands: around Karl Boran
+
 step << Rogue
     .goto 1426/0,-540.25,-5604.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r
     .accept 2299 >>Accept To Hulfdan!
     .target Hogral Bakkan
-step << Rogue
+step
     #completewith next
     .zone 1455 >>Travel to Ironforge
     .zoneskip 1455
@@ -2550,31 +2575,6 @@ step << Rogue
     .turnin 2299 >>Turn in To Hulfdan!
     .accept 2298 >>Accept Kingly Shakedown
     .target Hulfdan Blackbeard
-step << Rogue
-    #completewith next
-    .zone 1426 >>Leave Ironforge for Dun Morogh
-    .zoneskip 1426
-step
-    .goto 1426/0,-317.14,-5506.27
-    >>Click the |cRXP_PICK_Mountaineer Cornelius|r
-    .complete 98319,1 --Mountaineer Cornelius
-    .isOnQuest 98319
-step
-    .goto 1426/0,-369.84,-5750.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Gretchen|r
-    .turnin 98319 >>Turn in Secure the Mountain
-    .target Mountaineer Gretchen
-    .isQuestComplete 98319
-step
-    #completewith next
-    .zone 1455 >>Travel to Ironforge
-    .zoneskip 1455
-step << Gnome Priest
-    .goto 1455/0,-911.01,-4622.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Mims|r
-    .turnin 94817 >>Turn in Confounding Flash
-    .target High Priestess Mims
-    .isOnQuest 94817
 step
     .goto 1455/0,-1283.47,-4842.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lomac Gearstrip|r
@@ -2596,17 +2596,56 @@ step
     .target Lomac Gearstrip
     .isQuestComplete 1073
 step
+    .goto 1455/0,-1314.47,-4624.11
+    >>Click the |cRXP_PICK_Library Book|r
+    .accept 79091 >>Accept Archmage Antonidas: The Unabridged Autobiography
+step
+    .goto 1455/0,-1314.47,-4624.11
+    >>Open the |cRXP_PICK_Library Book|r. Loot it for |cRXP_LOOT_Archmage Antonidas: The Unabridged Autobiography|r
+    .complete 79091,1 --Archmage Antonidas: The Unabridged Autobiography (1)
+step << Gnome Priest
+    .goto 1455/0,-911.01,-4622.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Mims|r
+    .turnin 94817 >>Turn in Confounding Flash
+    .target High Priestess Mims
+    .isOnQuest 94817
+step
+    #completewith next
+    .zone 1426 >>Leave Ironforge for Dun Morogh
+    .zoneskip 1426
+step
+    .goto 1426/0,-317.14,-5506.27
+    >>Click the |cRXP_PICK_Mountaineer Cornelius|r
+    .complete 98319,1 --Mountaineer Cornelius
+    .isOnQuest 98319
+step
+    .goto 1426/0,-369.84,-5750.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Gretchen|r
+    .turnin 98319 >>Turn in Secure the Mountain
+    .target Mountaineer Gretchen
+    .isQuestComplete 98319
+step
     +|cRXP_WARN_That is all of Dun Morogh for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Stonetalon Mountains|r: Ineptitude + Chemicals = Fun
     >>|cRXP_FRIENDLY_Stormwind City|r: Kingly Shakedown << Rogue
+    >>|cRXP_FRIENDLY_Undercity|r: Archmage Antonidas: The Unabridged Autobiography
 step
-    +|cRXP_WARN_Until level 22, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 0.8 levels of quests, starting around Archaeologist Hollee). Then come back to this Dun Morogh guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 19|r: |cRXP_FRIENDLY_Darkshore|r (about 0.8 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Wetlands|r (about 0.7 levels of quests, starting around Karl Boran). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 22 >>|cRXP_WARN_The rest of Dun Morogh is planned from level 22.|r Come back to this guide then
-step
-    #label RBSection5_1
-    #completewith next
-    +|cRXP_WARN_Dun Morogh: part 5|r (planned from level 22)
+    +|cRXP_WARN_The rest of Dun Morogh is planned from level 22.|r Load its guide for level 22 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 1 - 32 Dun Morogh
+#subweight -1
+#name 22-23 Dun Morogh
+--RouteBuilder:next
+#next Zone Routes (Alliance)\20-21 Wetlands: around Karl Boran
+
 step
     #completewith next
     .zone 1455 >>Travel to Ironforge
@@ -2617,7 +2656,7 @@ step << Warlock
     .accept 1717 >>Accept Gakin's Summons
     .target Lago Blackwrench
 step << Shaman
-    .goto 1455/0,-1088.19,-4640.36
+    .goto 1455/0,-1085.98,-4642.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker|r
     .accept 94494 >>Accept Call of Water
     .target Eldrun Stormbreaker
@@ -2757,13 +2796,22 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: Arcane Feedback << Human Priest
     >>|cRXP_FRIENDLY_Wetlands and back here|r: Search for Incendicite
 step
-    +|cRXP_WARN_Until level 25, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 1.0 levels of quests, starting around Karl Boran). Then come back to this Dun Morogh guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 22|r: |cRXP_FRIENDLY_Wetlands|r (about 0.5 levels of quests, starting around Karl Boran). Completing this step loads the guide for Wetlands --RouteBuilder:next
 step
-    .xp 25 >>|cRXP_WARN_The rest of Dun Morogh is planned from level 25.|r Come back to this guide then
-step
-    #label RBSection6_1
-    #completewith next
-    +|cRXP_WARN_Dun Morogh: part 6|r (planned from level 25)
+    +|cRXP_WARN_The rest of Dun Morogh is planned from level 25.|r Load its guide for level 25 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 1 - 32 Dun Morogh
+#subweight -1
+#name 25-26 Dun Morogh
+--RouteBuilder:next
+#next Zone Routes (Alliance)\23-24 Wetlands: around Captain Stoutfist
+
 step
     .goto 1426/0,-458.00,-5498.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozzie Togglevolt|r
@@ -2871,11 +2919,20 @@ step
     >>|cRXP_FRIENDLY_Alterac Mountains|r: The Manor, Ravenholdt << Rogue
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Essential Artificials, The Only Cure is More Green Glow
 step
-    .xp 28 >>|cRXP_WARN_The rest of Dun Morogh is planned from level 28.|r Come back to this guide then
+    +|cRXP_WARN_Suggested next zones at level 25|r: |cRXP_FRIENDLY_Wetlands|r (about 0.6 levels of quests, starting around Captain Stoutfist). Completing this step loads the guide for Wetlands --RouteBuilder:next
 step
-    #label RBSection7_1
-    #completewith next
-    +|cRXP_WARN_Dun Morogh: part 7|r (planned from level 28)
+    +|cRXP_WARN_The rest of Dun Morogh is planned from level 28.|r Load its guide for level 28 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 1 - 32 Dun Morogh
+#subweight -1
+#name 28-29 Dun Morogh
+
 step
     .goto 1426/0,-458.00,-5498.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozzie Togglevolt|r
@@ -3035,13 +3092,18 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: High Sorcerer Andromath << Human Mage/Gnome Mage
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Data Rescue
 step
-    +|cRXP_WARN_Until level 31, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.6 levels of quests, starting around Glorin Steelbrow). Then come back to this Dun Morogh guide --RouteBuilder:next
-step
-    .xp 31 >>|cRXP_WARN_The rest of Dun Morogh is planned from level 31.|r Come back to this guide then
-step
-    #label RBSection8_1
-    #completewith next
-    +|cRXP_WARN_Dun Morogh: part 8|r (planned from level 31)
+    +|cRXP_WARN_The rest of Dun Morogh is planned from level 31.|r Load its guide for level 31 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 1 - 32 Dun Morogh
+#subweight -1
+#name 31-32 Dun Morogh
+
 step << Warrior
     #completewith next
     .zone 1455 >>Travel to Ironforge
@@ -3131,7 +3193,7 @@ step << Warlock
     .accept 1798 >>Accept Seeking Strahad
     .target Lago Blackwrench
 step << Shaman
-    .goto 1455/0,-1088.19,-4640.36
+    .goto 1455/0,-1085.98,-4642.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker|r
     .accept 94789 >>Accept Call of Air
     .target Eldrun Stormbreaker

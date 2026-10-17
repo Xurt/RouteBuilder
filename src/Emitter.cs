@@ -921,6 +921,7 @@ public sealed class Emitter
                 g.Sections.Insert(0, new SectionInfo { Label = "", Level = (int)Math.Floor(vm.StartLevel), Name = vm.Visit.Number > 1 ? $"part {vm.Visit.Number}" : "start", Index = 0, Line = 0 });
         bool split = (m.Cfg.Split ?? true) && visits.Sum(v => v.g.Sections.Count) > 1;
         var chunks = new List<(GuideOutput g, SectionInfo s, int from, int to, string only)>();
+        int subLo = int.MaxValue, subHi = 0;     // the levels the zone's guides cover, for its heading in the list
         if (split)
         {
             var used = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
@@ -937,6 +938,7 @@ public sealed class Emitter
                     for (int n = 2; !used.Add(gn); n++) gn = $"{slo}-{shi} {zone}{range}{place} ({n})";
                     sec.Guide = gn;
                     chunks.Add((g, sec, a, b, g.OnlyFor));
+                    subLo = Math.Min(subLo, slo); subHi = Math.Max(subHi, shi);
                 }
         }
         else foreach (var (_, g) in visits) foreach (var sec in g.Sections) sec.Guide = name;
@@ -950,8 +952,11 @@ public sealed class Emitter
         sb.AppendLine("-- Steps that depend on quests from other zones hide themselves unless you have those quests.");
         if (visits.Count > 1)
             sb.AppendLine($"-- The zone covers more levels than one visit gives, so it is planned in {visits.Count} parts (from level {string.Join(", ", visits.Select(v => v.m.StartLevel.ToString("0", Inv)))}).");
+        // the heading the guides are listed under: "1 - 16 Mulgore". Spaced, because RestedXP pads a name starting "1-16"
+        // to "01-16" when it files the heading but not when it looks it up, so every guide would get a heading of its own
+        string subgroup = $"{subLo} - {subHi} {zone}";
         if (split)
-            sb.AppendLine($"-- Split into {chunks.Count} guides, listed under \"{zone}\" in RestedXP. Each leads on to the next; start at any of them: " +
+            sb.AppendLine($"-- Split into {chunks.Count} guides, listed under \"{subgroup}\" in RestedXP. Each leads on to the next; start at any of them: " +
                           "a step that needs a quest from an earlier one hides itself unless you did that quest.");
         else if (visits.Sum(v => v.g.Sections.Count) > 1)
             sb.AppendLine($"-- Sections (the guide starts at the one for your level): {string.Join("; ", visits.SelectMany(v => v.g.Sections).Select(x => $"{x.Name} from {x.Level}"))}.");
@@ -978,7 +983,8 @@ public sealed class Emitter
             sb.AppendLine("<< " + (only.Length > 0 ? only : m.Opt.Faction));
             sb.AppendLine("#version 1");
             sb.AppendLine("#group " + group);
-            sb.AppendLine("#subgroup " + zone + range);
+            sb.AppendLine("#subgroup " + subgroup);
+            sb.AppendLine("#subweight " + (-subLo).ToString(Inv));    // headings are listed by weight, highest first: lowest level first
             sb.AppendLine("#name " + sec.Guide);
             // on to the next section of the same part (the next part is for a higher level: link suggests where to go meanwhile)
             if (c + 1 < chunks.Count && chunks[c + 1].g == g) sb.AppendLine($"#next {group}\\{chunks[c + 1].s.Guide}");

@@ -1,9 +1,9 @@
--- 52-56 Burning Steppes: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- 49-56 Burning Steppes: Zone Routes (Alliance).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 52, 55).
--- Sections (the guide starts at the one for your level): start from 52; around Oralius from 55.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 49, 52, 55).
+-- Split into 3 guides, listed under "49 - 56 Burning Steppes" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Burning Steppes.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,22 +13,64 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 52-56 Burning Steppes
+#subgroup 49 - 56 Burning Steppes
+#subweight -49
+#name 49-50 Burning Steppes
 
 step
-    .xp <55,1,RBSection1_1
-    .xp 55 >>Finding the place in this guide for your level
+    .goto 1428/0,-1114.95,-7595.99
+    >>Click the |cRXP_PICK_Book|r
+    .accept 81953 >>Accept Stonewrought Design
 step
-    .xp <61,1,RBSection2_1
+    .goto 1428/0,-1114.95,-7595.99
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Stonewrought Design|r
+    .complete 81953,1 --Stonewrought Design (1)
 step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Burning Steppes: start|r (planned from level 52)
+    .goto 1428/0,-2177.65,-7499.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tinkee Steamboil|r
+    .turnin 4810 >>Turn in Return to Tinkee
+    .target Tinkee Steamboil
+    .isOnQuest 4810
 step
     .goto 1428/0,-2768.47,-8398.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jalinda Sprig|r
     .accept 4262 >>Accept Overmaster Pyron
     .target Jalinda Sprig
+step
+    .goto 1428/0,-2768.47,-8398.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jalinda Sprig|r
+    .turnin 4262 >>Turn in Overmaster Pyron
+    .target Jalinda Sprig
+    .isQuestComplete 4262
+step
+    .goto 1428/0,-2748.84,-8378.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
+    .turnin 4223 >>Turn in The True Masters
+    .target Marshal Maxwell
+    .isOnQuest 4223
+step
+    +|cRXP_WARN_That is all of Burning Steppes for now.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Undercity|r: Stonewrought Design
+    >>|cRXP_FRIENDLY_Synthetic AreaID: Eastern Kingdoms continent map and back here|r: Overmaster Pyron
+step
+    +|cRXP_WARN_The rest of Burning Steppes is planned from level 52.|r Load its guide for level 52 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 49 - 56 Burning Steppes
+#subweight -49
+#name 52-53 Burning Steppes: around Oralius
+
+step
+    .goto 1428/0,-2768.47,-8398.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jalinda Sprig|r
+    .turnin 4262 >>Turn in Overmaster Pyron
+    .target Jalinda Sprig
+    .isQuestComplete 4262
 step
     .goto 1428/0,-2743.57,-8371.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
@@ -59,51 +101,8 @@ step
     .goto 1428/0,-2743.57,-8371.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
     .turnin 3823 >>Turn in Extinguish the Firegut
-    .target Oralius
-step
-    .goto 1428/0,-2768.47,-8398.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jalinda Sprig|r
-    .turnin 4262 >>Turn in Overmaster Pyron
-    .target Jalinda Sprig
-    .isQuestComplete 4262
-step
-    .goto 1428/0,-2748.84,-8378.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
-    .turnin 4223 >>Turn in The True Masters
-    .target Marshal Maxwell
-    .isOnQuest 4223
-step
-    .goto 1428/0,-2177.65,-7499.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tinkee Steamboil|r
-    .turnin 4810 >>Turn in Return to Tinkee
-    .target Tinkee Steamboil
-    .isOnQuest 4810
-step
-    +|cRXP_WARN_That is all of Burning Steppes for now.|r Quests still in your log lead on from here; pick your next zone by them
-    >>|cRXP_FRIENDLY_Synthetic AreaID: Eastern Kingdoms continent map and back here|r: Overmaster Pyron
-step
-    .xp 55 >>|cRXP_WARN_The rest of Burning Steppes is planned from level 55.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Burning Steppes: around Oralius|r (planned from level 55)
-step
-    .goto 1428/0,-2743.57,-8371.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
     .accept 3824 >>Accept Gor'tesh the Brute Lord
     .target Oralius
-    .isQuestTurnedIn 3823 --any of: Extinguish the Firegut
-step
-    .goto 1428/0,-2743.57,-8371.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
-    .accept 4283 >>Accept FIFTY! YEP!
-    .target Oralius
-step
-    .goto 1428/0,-2768.47,-8398.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jalinda Sprig|r
-    .turnin 4262 >>Turn in Overmaster Pyron
-    .target Jalinda Sprig
-    .isQuestComplete 4262
 step
     .goto 1428/0,-2780.48,-8377.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helendis Riverhorn|r
@@ -120,59 +119,34 @@ step
     .accept 4296 >>Accept Tablet of the Seven
     .target Maxwort Uberglint
 step
-    .goto 1428/0,-3052.01,-7647.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cyrus Therepentous|r
-    .accept 4022 >>Accept A Taste of Flame
-    .target Cyrus Therepentous
-    .isQuestTurnedIn 3481 --any of: Trinkets...
-    .xp <52,1
-step
-    .goto 1428/0,-3052.01,-7647.33
-    >>Kill |cRXP_ENEMY_Cyrus Therepentous|r
-    .complete 4022,2 --Cyrus Therepentous (1)
-    .mob Cyrus Therepentous
-    .isOnQuest 4022
-step
-    .goto 1428/0,-3031.80,-7652.01
-    >>Kill |cRXP_ENEMY_Frenzied Black Drake|r and loot |cRXP_LOOT_Black Dragonflight Molt|r
-    .complete 4022,1 --Black Dragonflight Molt (1)
-    .mob Frenzied Black Drake
-    .isOnQuest 4022
-step
-    .goto 1428/0,-3052.01,-7647.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cyrus Therepentous|r
-    .turnin 4022 >>Turn in A Taste of Flame
-    .target Cyrus Therepentous
-    .isOnQuest 4022
-step
-    #completewith Along10
+    #completewith Along7
     >>As you go: Kill |cRXP_ENEMY_Black Dragonspawns|r. |cRXP_WARN_Anything left is finished later|r
     .complete 4182,2 --Black Dragonspawn slain (10)
     .mob Black Dragonspawn
 step
-    #label Along10
+    #label Along7
     #loop
-    .goto 1428/0,-2853.71,-7612.58,0
-    .goto 1428/0,-2853.71,-7612.58,40,0
-    .goto 1428/0,-2812.70,-7627.61,40,0
+    .goto 1428/0,-2752.65,-7653.18,0
     .goto 1428/0,-2752.65,-7653.18,40,0
-    .goto 1428/0,-2916.98,-8025.25,40,0
-    .goto 1428/0,-2919.61,-7956.34,40,0
-    .goto 1428/0,-2918.44,-7913.98,40,0
-    .goto 1428/0,-2887.39,-7888.02,40,0
+    .goto 1428/0,-2812.70,-7627.61,40,0
+    .goto 1428/0,-2853.71,-7612.58,40,0
     .goto 1428/0,-2838.47,-7684.22,40,0
+    .goto 1428/0,-2887.39,-7888.02,40,0
+    .goto 1428/0,-2918.44,-7913.98,40,0
+    .goto 1428/0,-2919.61,-7956.34,40,0
+    .goto 1428/0,-2916.98,-8025.25,40,0
     >>Pick up |cRXP_PICK_Broodling Essence|r from the ground
     >>Kill |cRXP_ENEMY_Black Broodlings|r
     .complete 4726,1 --Broodling Essence (8)
     .complete 4182,1 --Black Broodling slain (15)
     .mob Black Broodling
 step
-    #completewith Along11
+    #completewith Along8
     >>As you go: Kill |cRXP_ENEMY_Black Wyrmkins|r. |cRXP_WARN_Anything left is finished later|r
     .complete 4182,4 --Black Wyrmkin slain (4)
     .mob Black Wyrmkin
 step
-    #label Along11
+    #label Along8
     #loop
     .goto 1428/0,-2916.68,-8051.80,0
     .goto 1428/0,-2916.68,-8051.80,40,0
@@ -206,42 +180,12 @@ step
     .complete 3824,1 --Gor'tesh's Lopped Off Head (1)
     .mob Gor'tesh
     .mob Grubbub
-    .isOnQuest 3824
-step
-    #loop
-    .goto 1428/0,-1701.96,-8144.52,0
-    .goto 1428/0,-1701.96,-8144.52,40,0
-    .goto 1428/0,-1706.64,-8172.83,40,0
-    .goto 1428/0,-1751.75,-8219.48,40,0
-    .goto 1428/0,-1901.73,-8092.21,40,0
-    .goto 1428/0,-1913.15,-8072.49,40,0
-    .goto 1428/0,-1835.24,-8061.56,40,0
-    .goto 1428/0,-1780.17,-8091.43,40,0
-    .goto 1428/0,-1761.42,-8076.20,40,0
-    .goto 1428/0,-1725.39,-8086.35,40,0
-    >>Kill |cRXP_ENEMY_Blackrock Soldiers|r, |cRXP_ENEMY_Blackrock Sorcerers|r, |cRXP_ENEMY_Blackrock Slayers|r and |cRXP_ENEMY_Blackrock Warlocks|r. Loot them for |cRXP_LOOT_Blackrock Medallion|r
-    .complete 4283,1 --Blackrock Medallion (50)
-    .mob Blackrock Soldier
-    .mob Blackrock Sorcerer
-    .mob Blackrock Slayer
-    .mob Blackrock Warlock
-step
-    .goto 1428/0,-2743.57,-8371.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
-    .turnin 4283 >>Turn in FIFTY! YEP!
-    .target Oralius
 step
     .goto 1428/0,-2743.57,-8371.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
     .turnin 3824 >>Turn in Gor'tesh the Brute Lord
-    .target Oralius
-    .isOnQuest 3824
-step
-    .goto 1428/0,-2743.57,-8371.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
     .accept 3825 >>Accept Ogre Head On A Stick = Party
     .target Oralius
-    .isQuestTurnedIn 3824 --any of: Gor'tesh the Brute Lord
 step
     .goto 1428/0,-2780.48,-8377.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helendis Riverhorn|r
@@ -282,13 +226,11 @@ step
     .goto 1428/0,-2639.29,-7944.63
     >>Click the |cRXP_PICK_Soft Dirt Mound|r
     .complete 3825,1 --Gor'tesh Head Planted
-    .isOnQuest 3825
 step
     .goto 1428/0,-2743.57,-8371.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
     .turnin 3825 >>Turn in Ogre Head On A Stick = Party
     .target Oralius
-    .isOnQuest 3825
 step
     .goto 1428/0,-2748.84,-8378.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
@@ -296,7 +238,81 @@ step
     .target Marshal Maxwell
     .isOnQuest 4224
 step
-    +|cRXP_WARN_End of the Burning Steppes route.|r Quests still in your log lead on from here; pick your next zone by them
+    +|cRXP_WARN_That is all of Burning Steppes for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Redridge Mountains|r: The True Masters
     >>|cRXP_FRIENDLY_Winterspring|r: Felnok Steelspring
+step
+    +|cRXP_WARN_The rest of Burning Steppes is planned from level 55.|r Load its guide for level 55 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 49 - 56 Burning Steppes
+#subweight -49
+#name 55-56 Burning Steppes
+
+step
+    .goto 1428/0,-2743.57,-8371.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
+    .accept 4283 >>Accept FIFTY! YEP!
+    .target Oralius
+step
+    .goto 1428/0,-2768.47,-8398.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jalinda Sprig|r
+    .turnin 4262 >>Turn in Overmaster Pyron
+    .target Jalinda Sprig
+    .isQuestComplete 4262
+step
+    .goto 1428/0,-3052.01,-7647.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cyrus Therepentous|r
+    .accept 4022 >>Accept A Taste of Flame
+    .target Cyrus Therepentous
+    .isQuestTurnedIn 3481 --any of: Trinkets...
+    .xp <52,1
+step
+    .goto 1428/0,-3052.01,-7647.33
+    >>Kill |cRXP_ENEMY_Cyrus Therepentous|r
+    .complete 4022,2 --Cyrus Therepentous (1)
+    .mob Cyrus Therepentous
+    .isOnQuest 4022
+step
+    .goto 1428/0,-3031.80,-7652.01
+    >>Kill |cRXP_ENEMY_Frenzied Black Drake|r and loot |cRXP_LOOT_Black Dragonflight Molt|r
+    .complete 4022,1 --Black Dragonflight Molt (1)
+    .mob Frenzied Black Drake
+    .isOnQuest 4022
+step
+    .goto 1428/0,-3052.01,-7647.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cyrus Therepentous|r
+    .turnin 4022 >>Turn in A Taste of Flame
+    .target Cyrus Therepentous
+    .isOnQuest 4022
+step
+    #loop
+    .goto 1428/0,-1913.15,-8072.49,0
+    .goto 1428/0,-1913.15,-8072.49,40,0
+    .goto 1428/0,-1901.73,-8092.21,40,0
+    .goto 1428/0,-1751.75,-8219.48,40,0
+    .goto 1428/0,-1706.64,-8172.83,40,0
+    .goto 1428/0,-1701.96,-8144.52,40,0
+    .goto 1428/0,-1725.39,-8086.35,40,0
+    .goto 1428/0,-1761.42,-8076.20,40,0
+    .goto 1428/0,-1780.17,-8091.43,40,0
+    .goto 1428/0,-1835.24,-8061.56,40,0
+    >>Kill |cRXP_ENEMY_Blackrock Soldiers|r, |cRXP_ENEMY_Blackrock Sorcerers|r, |cRXP_ENEMY_Blackrock Slayers|r and |cRXP_ENEMY_Blackrock Warlocks|r. Loot them for |cRXP_LOOT_Blackrock Medallion|r
+    .complete 4283,1 --Blackrock Medallion (50)
+    .mob Blackrock Soldier
+    .mob Blackrock Sorcerer
+    .mob Blackrock Slayer
+    .mob Blackrock Warlock
+step
+    .goto 1428/0,-2743.57,-8371.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oralius|r
+    .turnin 4283 >>Turn in FIFTY! YEP!
+    .target Oralius
+step
+    +|cRXP_WARN_End of the Burning Steppes route.|r
 ]])

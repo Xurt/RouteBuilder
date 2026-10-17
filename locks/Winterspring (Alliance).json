@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "52-60 Winterspring",
-  "saved": "2026-10-15 16:58",
+  "saved": "2026-10-17 13:27",
   "levels": "RestedXP",
   "parts": [
     {
@@ -90,6 +90,8 @@
     {
       "part": 3,
       "steps": [
+        "accept:84399 @1452:-4626.37,6748.87  Accept Ka-Boom!",
+        "obj:84399:1 @1452:-4626.37,6748.87  Objective Ka-Boom! / Ka-Boom! (1)",
         "accept:969 @1452:-4712.99,6720.47  Accept Luck Be With You",
         "accept:4864 @1452:-4678.91,5661.15  Accept Enraged Wildkin",
         "obj:4864:1 @1452:-4676.78,5658.78  Objective Enraged Wildkin / Jaron's Supplies (1)",

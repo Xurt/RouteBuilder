@@ -1,9 +1,9 @@
 -- 25-38 Alterac Mountains: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 25, 28, 31).
--- Sections (the guide starts at the one for your level): start from 25; part 2 from 28; part 3 from 31.
+-- The zone covers more levels than one visit gives, so it is planned in 4 parts (from level 25, 28, 31, 34).
+-- Split into 4 guides, listed under "25 - 35 Alterac Mountains" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Alterac Mountains.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,20 +13,10 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 25-38 Alterac Mountains
+#subgroup 25 - 35 Alterac Mountains
+#subweight -25
+#name 25-26 Alterac Mountains
 
-step
-    .xp <28,1,RBSection1_1
-    .xp 28 >>Finding the place in this guide for your level
-step
-    .xp <31,1,RBSection2_1
-    .xp 31 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Alterac Mountains: start|r (planned from level 25)
 step << Orc Shaman/Tauren Shaman/Troll Shaman
     .goto 1416/0,-1470.67,250.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
@@ -123,7 +113,7 @@ step
     .target Gol'dir
     .isOnQuest 503
 step
-    .goto 1416/0,383.77,378.69
+    .goto 1416/0,387.13,379.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Celindra|r
     .turnin 97287 >>Turn in Shrewd Negotiations
     .target Archmage Celindra
@@ -132,11 +122,18 @@ step
     +|cRXP_WARN_That is all of Alterac Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Duskwood and back here|r: Grant's Shield, Silvia's Sword << Orc Shaman/Tauren Shaman/Troll Shaman
 step << Rogue
-    .xp 28 >>|cRXP_WARN_The rest of Alterac Mountains is planned from level 28.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Alterac Mountains: part 2|r (planned from level 28)
+    +|cRXP_WARN_The rest of Alterac Mountains is planned from level 28.|r Load its guide for level 28 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue
+#version 1
+#group Zone Routes (Horde)
+#subgroup 25 - 35 Alterac Mountains
+#subweight -25
+#name 28-29 Alterac Mountains
+
 step << Rogue
     .goto 1416/0,-1594.71,-0.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myrokos Silentform|r
@@ -174,11 +171,18 @@ step
     >>|cRXP_FRIENDLY_Hillsbrad Foothills and back here|r: Syndicate Sabotage << Rogue
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: What's the Big Idea? << Rogue
 step << Orc Shaman/Tauren Shaman/Troll Shaman/Shaman
-    .xp 31 >>|cRXP_WARN_The rest of Alterac Mountains is planned from level 31.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Alterac Mountains: part 3|r (planned from level 31)
+    +|cRXP_WARN_The rest of Alterac Mountains is planned from level 31.|r Load its guide for level 31 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Orc Shaman/Tauren Shaman/Troll Shaman/Shaman
+#version 1
+#group Zone Routes (Horde)
+#subgroup 25 - 35 Alterac Mountains
+#subweight -25
+#name 31-32 Alterac Mountains
+
 step << Orc Shaman/Tauren Shaman/Troll Shaman
     .goto 1416/0,-1470.67,250.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
@@ -230,7 +234,67 @@ step
     .isQuestTurnedIn 503 --any of: Gol'dir
     .xp <29,1
 step
-    +|cRXP_WARN_End of the Alterac Mountains route.|r Quests still in your log lead on from here; pick your next zone by them
+    +|cRXP_WARN_That is all of Alterac Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: Blackmoore's Legacy
     >>|cRXP_FRIENDLY_Dustwallow Marsh, Swamp of Sorrows, Badlands, Desolace and back here|r: Storm, Earth, and Fire << Orc Shaman/Tauren Shaman/Troll Shaman
+step
+    +|cRXP_WARN_The rest of Alterac Mountains is planned from level 34.|r Load its guide for level 34 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 25 - 35 Alterac Mountains
+#subweight -25
+#name 34-35 Alterac Mountains
+
+step
+    .goto 1416/0,-571.87,424.80
+    >>Click the |cRXP_PICK_Manual|r
+    .accept 79948 >>Accept Defensive Magics 101
+step
+    .goto 1416/0,-574.67,422.93
+    >>Open the |cRXP_PICK_Manual|r. Loot it for |cRXP_LOOT_Defensive Magics 101|r
+    .complete 79948,1 --Defensive Magics 101 (1)
+step << Orc Shaman/Tauren Shaman/Troll Shaman
+    .goto 1416/0,-1470.67,250.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
+    .turnin 79361 >>Turn in Storm, Earth, and Fire
+    .target Bath'rah the Windwatcher
+    .isQuestComplete 79361
+step << Orc Shaman/Tauren Shaman/Troll Shaman
+    .goto 1416/0,-1470.67,250.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
+    .turnin 79363 >>Turn in Silvia's Sword
+    .target Bath'rah the Windwatcher
+    .isQuestComplete 79363
+step << Orc Shaman/Tauren Shaman/Troll Shaman
+    .goto 1416/0,-1470.67,250.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
+    .turnin 79362 >>Turn in Grant's Shield
+    .target Bath'rah the Windwatcher
+    .isQuestComplete 79362
+step << Shaman
+    .goto 1416/0,-1470.67,250.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
+    .turnin 79364 >>Turn in Eyes on the Sky
+    .target Bath'rah the Windwatcher
+    .isOnQuest 79364
+step << Rogue
+    .goto 1416/0,-1594.71,-0.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myrokos Silentform|r
+    .turnin 96781 >>Turn in What's the Big Idea?
+    .target Myrokos Silentform
+    .isQuestComplete 96781
+step << Rogue
+    .goto 1416/0,-1594.71,-0.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myrokos Silentform|r
+    .turnin 96779 >>Turn in Syndicate Sabotage
+    .target Myrokos Silentform
+    .isQuestComplete 96779
+step
+    +|cRXP_WARN_End of the Alterac Mountains route.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Undercity|r: Defensive Magics 101
 ]])

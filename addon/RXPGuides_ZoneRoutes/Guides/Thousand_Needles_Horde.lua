@@ -1,9 +1,9 @@
 -- 25-40 Thousand Needles: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 25, 28, 31, 34).
--- Sections (the guide starts at the one for your level): around Cliffwatcher Longhorn from 25; around Jandia from 28; around Pozzik from 31; part 4 from 34.
+-- The zone covers more levels than one visit gives, so it is planned in 4 parts (from level 25, 28, 31, 34).
+-- Split into 4 guides, listed under "25 - 35 Thousand Needles" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Thousand Needles.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,23 +13,10 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 25-40 Thousand Needles
+#subgroup 25 - 35 Thousand Needles
+#subweight -25
+#name 25-26 Thousand Needles: around Cliffwatcher Longhorn
 
-step
-    .xp <28,1,RBSection1_1
-    .xp 28 >>Finding the place in this guide for your level
-step
-    .xp <31,1,RBSection2_1
-    .xp 31 >>Finding the place in this guide for your level
-step
-    .xp <34,1,RBSection3_1
-    .xp 34 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection4_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Thousand Needles: around Cliffwatcher Longhorn|r (planned from level 25)
 step
     .goto 1441/1,-1835.17,-4602.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grish Longrunner|r
@@ -334,11 +321,18 @@ step
     +|cRXP_WARN_That is all of Thousand Needles for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Thunder Bluff|r: Sacred Fire
 step
-    .xp 28 >>|cRXP_WARN_The rest of Thousand Needles is planned from level 28.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Thousand Needles: around Jandia|r (planned from level 28)
+    +|cRXP_WARN_The rest of Thousand Needles is planned from level 28.|r Load its guide for level 28 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 25 - 35 Thousand Needles
+#subweight -25
+#name 28-29 Thousand Needles: around Jandia
+
 step
     .goto 1441/1,-2457.33,-5458.56
     >>Click the |cRXP_PICK_Wanted Poster - Arnak Grimtotem|r
@@ -524,11 +518,18 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Hemet Nesingwary
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Stolen Freewind Supplies
 step
-    .xp 31 >>|cRXP_WARN_The rest of Thousand Needles is planned from level 31.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Thousand Needles: around Pozzik|r (planned from level 31)
+    +|cRXP_WARN_The rest of Thousand Needles is planned from level 31.|r Load its guide for level 31 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 25 - 35 Thousand Needles
+#subweight -25
+#name 31-32 Thousand Needles: around Pozzik
+
 step
     .goto 1441/1,-2807.13,-5183.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn Plainstalker|r
@@ -830,22 +831,55 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Elemental Aid << Shaman
     >>|cRXP_FRIENDLY_Stranglethorn Vale and back here|r: Encrusted Tail Fins
 step
-    .xp 34 >>|cRXP_WARN_The rest of Thousand Needles is planned from level 34.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Thousand Needles is planned from level 34.|r Load its guide for level 34 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 25 - 35 Thousand Needles
+#subweight -25
+#name 34-35 Thousand Needles
+
 step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Thousand Needles: part 4|r (planned from level 34)
+    .goto 1441/1,-1946.93,-5142.93
+    >>Click the |cRXP_PICK_Scrolls|r
+    .accept 79947 >>Accept Geomancy: The Stone-Cold Truth
 step
-    .goto 1441/1,-4025.05,-6253.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trackmaster Zherin|r
-    .accept 1175 >>Accept A Bump in the Road
-    .target Trackmaster Zherin
+    .goto 1441/1,-1951.33,-5142.93
+    >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_Geomancy: The Stone-Cold Truth|r
+    .complete 79947,1 --Geomancy: The Stone-Cold Truth (1)
+step
+    .goto 1441/1,-2466.57,-5477.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
+    .turnin 98069 >>Turn in Stolen Freewind Supplies
+    .target Jandia
+    .isQuestComplete 98069
+step << Shaman
+    .goto 1441/1,-2463.49,-5483.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
+    .turnin 79366 >>Turn in Heed My Call
+    .target Rau Cliffrunner
+    .isOnQuest 79366
+step << Shaman
+    .goto 1441/1,-2463.49,-5483.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
+    .turnin 79360 >>Turn in Elemental Aid
+    .target Rau Cliffrunner
+    .isQuestComplete 79360
 step
     .goto 1441/1,-3871.49,-6228.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzle Brassbolts|r
     .turnin 1107 >>Turn in Encrusted Tail Fins
     .target Wizzle Brassbolts
     .isQuestComplete 1107
+step
+    .goto 1441/1,-4025.05,-6253.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trackmaster Zherin|r
+    .accept 1175 >>Accept A Bump in the Road
+    .target Trackmaster Zherin
 step
     .goto 1441/1,-3406.85,-5842.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moktar Krin|r
@@ -869,12 +903,12 @@ step
     .complete 1175,1 --Saltstone Basilisk slain (10)
     .mob Saltstone Basilisk
 step
-    #completewith Along4
+    #completewith Along9
     >>As you go: Kill |cRXP_ENEMY_Saltstone Gazers|r. |cRXP_WARN_Anything left is finished later|r
     .complete 1175,3 --Saltstone Gazer slain (6)
     .mob Saltstone Gazer
 step
-    #label Along4
+    #label Along9
     #loop
     .goto 1441/1,-3818.69,-6450.61,0
     .goto 1441/1,-3818.69,-6450.61,40,0
@@ -1015,24 +1049,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trackmaster Zherin|r
     .turnin 1175 >>Turn in A Bump in the Road
     .target Trackmaster Zherin
-step << Shaman
-    .goto 1441/1,-2463.49,-5483.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
-    .turnin 79366 >>Turn in Heed My Call
-    .target Rau Cliffrunner
-    .isOnQuest 79366
-step << Shaman
-    .goto 1441/1,-2463.49,-5483.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
-    .turnin 79360 >>Turn in Elemental Aid
-    .target Rau Cliffrunner
-    .isQuestComplete 79360
-step
-    .goto 1441/1,-2466.57,-5477.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
-    .turnin 98069 >>Turn in Stolen Freewind Supplies
-    .target Jandia
-    .isQuestComplete 98069
 step
     .goto 1441/1,-2442.81,-5455.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cliffwatcher Longhorn|r
@@ -1042,4 +1058,5 @@ step
     +|cRXP_WARN_End of the Thousand Needles route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Desolace|r: Family Tree
     >>|cRXP_FRIENDLY_The Barrens|r: Parts of the Swarm
+    >>|cRXP_FRIENDLY_Undercity|r: Geomancy: The Stone-Cold Truth
 ]])

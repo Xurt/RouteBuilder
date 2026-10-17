@@ -1,17 +1,14 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-57 Swamp of Sorrows",
-  "saved": "2026-10-15 16:51",
+  "saved": "2026-10-17 13:20",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
-        "accept:93176 @1435:-2800.25,-10449.18  Accept My Little Friends",
-        "turnin:8417 @1435:-3009.44,-10632.22  TurnIn A Troubled Spirit",
-        "turnin:1391 @1435:-3238.82,-10422.58  TurnIn Nothing But The Truth",
-        "accept:93663 @1435:-3248.22,-10495.67  Accept Lost in Transit",
-        "accept:1418 @1435:-3317.95,-10464.93  Accept Neeka Bloodscar",
+        "accept:79953 @1435:-3633.57,-9964.9  Accept A Ludite's Guide to Caring for Your Demonic Pet",
+        "obj:79953:1 @1435:-3633.57,-9964.9  Objective A Ludite's Guide to Caring for Your Demonic Pet / A Luddite's Guide to Caring for Your Demonic Pet (1)",
         {"lines":[".goto 1435/0,-3263.82,-10490.32",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rartar|r inside the inn",".vendor >> |cRXP_BUY_Buy|r |T134833:0|t[Superior Healing Potions] |cRXP_BUY_from him if they're up|r",".target Rartar",".subzoneskip 75,1"],"from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
         {"lines":[".goto 1435/0,-3273.00,-10429.00",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thultazor|r",".vendor >> |cRXP_BUY_Buy|r |T134833:0|t[Superior Healing Potions] |cRXP_BUY_from him if they're up|r",".target Thultazor",".subzoneskip 75,1"],"from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
         {"lines":[".goto 1435/0,-3280.34,-10457.29",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breyk|r",".fp Stonard >> Get the Stonard Flight Path",".target Breyk"],"from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
@@ -26,7 +23,12 @@
         {"lines":[".goto 1435/0,-3328.27,-10506.83",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greshka|r",".train 16315 >>Train your class spells",".target Haromm",".xp <44,1"],"tag":"Shaman","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
         {"lines":[".goto 1435/0,-3252.58,-10501.94",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malosh|r",".train 11550 >> Train your class spells",".target Malosh",".xp <42,1",".xp >44,1"],"tag":"Warrior","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
         {"lines":[".goto 1435/0,-3252.58,-10501.94",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malosh|r",".train 11584 >> Train your class spells",".target Malosh",".xp <44,1"],"tag":"Warrior","from":"RestedXP: 41-400_41-41 Swamp of Sorrows"},
+        "turnin:1391 @1435:-3238.82,-10422.58  TurnIn Nothing But The Truth",
         "item:1392 @1435:-3482.19,-10142.28  ItemAccept Noboru the Cudgel",
+        "accept:1418 @1435:-3317.95,-10464.93  Accept Neeka Bloodscar",
+        "accept:93663 @1435:-3248.22,-10495.67  Accept Lost in Transit",
+        "turnin:8417 @1435:-3009.44,-10632.22  TurnIn A Troubled Spirit",
+        "accept:93176 @1435:-2800.25,-10449.18  Accept My Little Friends",
         "accept:1389 @1435:-2818.83,-10100.99  Accept Draenethyst Crystals",
         "turnin:1392 @1435:-2818.83,-10100.99  TurnIn Noboru the Cudgel",
         "accept:1393 @1435:-3724.63,-9898.53  Accept Galen's Escape",
@@ -97,6 +99,8 @@
     {
       "part": 4,
       "steps": [
+        "accept:81947 @1435:-3828.54,-10400.71  Accept Sanguine Sorcery",
+        "obj:81947:1 @1435:-3828.54,-10400.71  Objective Sanguine Sorcery / Sanguine Sorcery (1)",
         "accept:1428 @1435:-4144.16,-10850.44  Accept Continued Threat",
         "obj:1428:1 @1435:-3697.8,-10853.65  Objective Continued Threat / Marsh Inkspewer slain (10)",
         "obj:1428:2 @1435:-3673.03,-10919.25  Objective Continued Threat / Marsh Flesheater slain (10)",

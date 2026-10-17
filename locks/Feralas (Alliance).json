@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "41-51 Feralas",
-  "saved": "2026-10-15 16:57",
+  "saved": "2026-10-17 13:26",
   "levels": "RestedXP",
   "parts": [
     {
@@ -56,8 +56,10 @@
     {
       "part": 2,
       "steps": [
-        "accept:3841 @1444:858.84,-4481.78  Accept An Orphan Looking For a Home",
+        "accept:81951 @1444:1924.97,-3094.1  Accept The Liminal and the Arcane",
+        "obj:81951:1 @1444:1924.97,-3094.1  Objective The Liminal and the Arcane / The Liminal and the Arcane (1)",
         "accept:2939 @1444:3232.96,-4474.83  Accept In Search of Knowledge",
+        "accept:3841 @1444:858.84,-4481.78  Accept An Orphan Looking For a Home",
         "accept:2969 @1444:858.84,-4481.78  Accept Freedom for All Creatures",
         "obj:2969:1 @1444:766.4,-4529.04  Objective Freedom for All Creatures / Save at least 6 Sprite Darters from capture",
         "turnin:2969 @1444:858.84,-4481.78  TurnIn Freedom for All Creatures",
@@ -67,6 +69,7 @@
         "obj:2970:3 @1444:643.39,-4196.37  Objective Doling Justice / Grimtotem Shaman slain (6)",
         "turnin:2970 @1444:858.14,-4479.93  TurnIn Doling Justice",
         "accept:2972 @1444:858.14,-4479.93  Accept Doling Justice",
+        "home @1444:243.07,-4460.01  Home inn",
         "turnin:98155 @1444:-773.02,-4497.54  TurnIn Pristine Pesterhide Pelts",
         "accept:4265 @1444:432.8,-5319.03  Accept Freed from the Hive",
         "obj:4265:1 @1444:428.63,-5324.59  Objective Freed from the Hive / Free Raschal.",

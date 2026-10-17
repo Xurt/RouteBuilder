@@ -1,9 +1,9 @@
 -- 52-60 Winterspring: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 52, 55, 58).
--- Sections (the guide starts at the one for your level): start from 52; around Umi Rumplesnicker from 55; part 3 from 58.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 52, 55, 58).
+-- Split into 3 guides, listed under "52 - 59 Winterspring" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Winterspring.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,20 +13,10 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 52-60 Winterspring
+#subgroup 52 - 59 Winterspring
+#subweight -52
+#name 52-53 Winterspring
 
-step
-    .xp <55,1,RBSection1_1
-    .xp 55 >>Finding the place in this guide for your level
-step
-    .xp <58,1,RBSection2_1
-    .xp 58 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Winterspring: start|r (planned from level 52)
 step
     .goto 1452/1,-4302.61,6433.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remorseful Highborne|r
@@ -142,11 +132,18 @@ step
     >>|cRXP_FRIENDLY_Tanaris|r: Meet at the Grave
     >>|cRXP_FRIENDLY_Western Plaguelands|r: The Everlook Report
 step
-    .xp 55 >>|cRXP_WARN_The rest of Winterspring is planned from level 55.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Winterspring: around Umi Rumplesnicker|r (planned from level 55)
+    +|cRXP_WARN_The rest of Winterspring is planned from level 55.|r Load its guide for level 55 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 52 - 59 Winterspring
+#subweight -52
+#name 55-56 Winterspring: around Umi Rumplesnicker
+
 step
     .goto 1452/1,-4302.61,6433.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remorseful Highborne|r
@@ -561,11 +558,26 @@ step
     >>|cRXP_FRIENDLY_Felwood|r: Falling to Corruption, Winterfall Ritual Totem, Words of the High Chief
     >>|cRXP_FRIENDLY_Tanaris, Un'Goro Crater and back here|r: Are We There, Yeti?
 step
-    .xp 58 >>|cRXP_WARN_The rest of Winterspring is planned from level 58.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Winterspring is planned from level 58.|r Load its guide for level 58 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 52 - 59 Winterspring
+#subweight -52
+#name 58-59 Winterspring
+
 step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Winterspring: part 3|r (planned from level 58)
+    .goto 1452/1,-4626.37,6748.87
+    >>Click the |cRXP_PICK_Book|r
+    .accept 84399 >>Accept Ka-Boom!
+step
+    .goto 1452/1,-4626.37,6748.87
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Ka-Boom!|r
+    .complete 84399,1 --Ka-Boom! (1)
 step
     .goto 1452/1,-4712.99,6720.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Witch Doctor Mau'ari|r
@@ -700,6 +712,7 @@ step
     .isQuestComplete 5163
 step
     +|cRXP_WARN_End of the Winterspring route.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Stormwind City|r: Ka-Boom!
     >>|cRXP_FRIENDLY_Teldrassil|r: Guardians of the Altar
     >>|cRXP_FRIENDLY_Western Plaguelands|r: Wrath of the Blue Flight
 ]])

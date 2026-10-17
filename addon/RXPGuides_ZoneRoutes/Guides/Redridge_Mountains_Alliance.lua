@@ -1,9 +1,9 @@
 -- 14-26 Redridge Mountains: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 14, 17, 20, 23, 26).
--- Sections (the guide starts at the one for your level): around Verner Osgood from 14; around Foreman Oslow from 17; around Marshal Marris from 20; part 4 from 23; part 5 from 26.
+-- The zone covers more levels than one visit gives, so it is planned in 5 parts (from level 14, 17, 20, 23, 26).
+-- Split into 5 guides, listed under "14 - 27 Redridge Mountains" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Redridge Mountains.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,26 +13,12 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 14-26 Redridge Mountains
+#subgroup 14 - 27 Redridge Mountains
+#subweight -14
+#name 14-15 Redridge Mountains: around Verner Osgood
+--RouteBuilder:next
+#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\9-12 Teldrassil: around Priestess A'moora
 
-step
-    .xp <17,1,RBSection1_1
-    .xp 17 >>Finding the place in this guide for your level
-step
-    .xp <20,1,RBSection2_1
-    .xp 20 >>Finding the place in this guide for your level
-step
-    .xp <23,1,RBSection3_1
-    .xp 23 >>Finding the place in this guide for your level
-step
-    .xp <26,1,RBSection4_1
-    .xp 26 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection5_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Redridge Mountains: around Verner Osgood|r (planned from level 14)
 step
     .goto 1433/0,-1902.24,-9609.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
@@ -286,13 +272,22 @@ step
     >>|cRXP_FRIENDLY_Westfall|r: Messenger to Westfall, The Defias Brotherhood
     >>|cRXP_FRIENDLY_Westfall, Stormwind City, Duskwood, Elwynn Forest and back here|r: Dry Times
 step
-    +|cRXP_WARN_Until level 17, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 1.9 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.1 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.9 levels of quests, starting around Daryl the Youngling). Then come back to this Redridge Mountains guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 14|r: |cRXP_FRIENDLY_Darkshore|r (about 1.9 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.1 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Teldrassil|r (about 1.0 levels of quests, starting around Priestess A'moora). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 17 >>|cRXP_WARN_The rest of Redridge Mountains is planned from level 17.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Redridge Mountains: around Foreman Oslow|r (planned from level 17)
+    +|cRXP_WARN_The rest of Redridge Mountains is planned from level 17.|r Load its guide for level 17 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 14 - 27 Redridge Mountains
+#subweight -14
+#name 17-18 Redridge Mountains: around Foreman Oslow
+--RouteBuilder:next
+#next Zone Routes (Alliance)\17-19 Darkshore: around Archaeologist Hollee;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Daryl the Youngling
+
 step
     .goto 1433/0,-2268.46,-9279.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
@@ -541,13 +536,22 @@ step
     .target Barkeep Daniels
     .isQuestComplete 116
 step
-    +|cRXP_WARN_Until level 20, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 0.9 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.6 levels of quests, starting around Daryl the Youngling). Then come back to this Redridge Mountains guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 17|r: |cRXP_FRIENDLY_Darkshore|r (about 0.9 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.6 levels of quests, starting around Daryl the Youngling). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 20 >>|cRXP_WARN_The rest of Redridge Mountains is planned from level 20.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Redridge Mountains: around Marshal Marris|r (planned from level 20)
+    +|cRXP_WARN_The rest of Redridge Mountains is planned from level 20.|r Load its guide for level 20 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 14 - 27 Redridge Mountains
+#subweight -14
+#name 20-21 Redridge Mountains: around Marshal Marris
+--RouteBuilder:next
+#next Zone Routes (Alliance)\17-19 Darkshore: around Archaeologist Hollee;Zone Routes (Alliance)\20-21 Wetlands: around Karl Boran;Zone Routes (Alliance)\20-21 Duskwood: around Madame Eva
+
 step
     .goto 1433/0,-2221.79,-9218.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
@@ -732,13 +736,22 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: The Shieldsmith << Warrior
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Blackrock Blockade
 step
-    +|cRXP_WARN_Until level 23, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 1.0 levels of quests, starting around Karl Boran), |cRXP_FRIENDLY_Darkshore|r (about 0.7 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Duskwood|r (about 0.5 levels of quests, starting around Madame Eva). Then come back to this Redridge Mountains guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 20|r: |cRXP_FRIENDLY_Darkshore|r (about 0.7 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Wetlands|r (about 0.6 levels of quests, starting around Karl Boran), |cRXP_FRIENDLY_Duskwood|r (about 0.5 levels of quests, starting around Madame Eva). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 23 >>|cRXP_WARN_The rest of Redridge Mountains is planned from level 23.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Redridge Mountains: part 4|r (planned from level 23)
+    +|cRXP_WARN_The rest of Redridge Mountains is planned from level 23.|r Load its guide for level 23 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 14 - 27 Redridge Mountains
+#subweight -14
+#name 23-24 Redridge Mountains
+--RouteBuilder:next
+#next Zone Routes (Alliance)\23-24 Wetlands: around Captain Stoutfist
+
 step
     .goto 1433/0,-2243.06,-9259.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
@@ -920,13 +933,22 @@ step
     +|cRXP_WARN_That is all of Redridge Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elwynn Forest|r: Theocritus' Retrieval
 step
-    +|cRXP_WARN_Until level 26, suggested zones|r: |cRXP_FRIENDLY_Wetlands|r (about 0.9 levels of quests, starting around Karl Boran). Then come back to this Redridge Mountains guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 23|r: |cRXP_FRIENDLY_Wetlands|r (about 0.7 levels of quests, starting around Captain Stoutfist). Completing this step loads the guide for Wetlands --RouteBuilder:next
 step
-    .xp 26 >>|cRXP_WARN_The rest of Redridge Mountains is planned from level 26.|r Come back to this guide then
-step
-    #label RBSection5_1
-    #completewith next
-    +|cRXP_WARN_Redridge Mountains: part 5|r (planned from level 26)
+    +|cRXP_WARN_The rest of Redridge Mountains is planned from level 26.|r Load its guide for level 26 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 14 - 27 Redridge Mountains
+#subweight -14
+#name 26-27 Redridge Mountains
+--RouteBuilder:next
+#next Zone Routes (Alliance)\23-24 Wetlands: around Captain Stoutfist
+
 step
     .goto 1433/0,-2297.98,-9284.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
@@ -982,4 +1004,6 @@ step
 step
     +|cRXP_WARN_End of the Redridge Mountains route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elwynn Forest|r: Morganth
+step
+    +|cRXP_WARN_Suggested next zones at level 26|r: |cRXP_FRIENDLY_Wetlands|r (about 0.6 levels of quests, starting around Captain Stoutfist). Completing this step loads the guide for Wetlands --RouteBuilder:next
 ]])

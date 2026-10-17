@@ -1,9 +1,9 @@
 -- 10-24 Westfall: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 10, 16, 19, 22).
--- Sections (the guide starts at the one for your level): around Farmer Saldean from 10; around Gryan Stoutmantle from 12; part 2 from 16; part 3 from 19; part 4 from 22.
+-- The zone covers more levels than one visit gives, so it is planned in 4 parts (from level 10, 16, 19, 22).
+-- Split into 5 guides, listed under "10 - 23 Westfall" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Westfall.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,27 +13,11 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 10-24 Westfall
-#next Zone Routes (Alliance)\21-34 Wetlands
+#subgroup 10 - 23 Westfall
+#subweight -10
+#name 10-12 Westfall: around Farmer Saldean
+#next Zone Routes (Alliance)\12-14 Westfall: around Gryan Stoutmantle
 
-step
-    .xp <12,1,RBSection1_1
-    .xp 12 >>Finding the place in this guide for your level
-step
-    .xp <16,1,RBSection1_2
-    .xp 16 >>Finding the place in this guide for your level
-step
-    .xp <19,1,RBSection2_1
-    .xp 19 >>Finding the place in this guide for your level
-step
-    .xp <22,1,RBSection3_1
-    .xp 22 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection4_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Westfall: around Farmer Saldean|r (planned from level 10)
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
@@ -43,15 +27,15 @@ step
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 141 >>Turn in The Defias Brotherhood
-    .target Gryan Stoutmantle
-    .isOnQuest 141
-step
-    .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 132 >>Turn in The Defias Brotherhood
     .target Gryan Stoutmantle
     .isOnQuest 132
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 141 >>Turn in The Defias Brotherhood
+    .target Gryan Stoutmantle
+    .isOnQuest 141
 step << Human
     .goto 1436/0,1021.67,-10500.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Lewis|r
@@ -189,7 +173,7 @@ step
     .mob Young Goretusk
     .mob Great Goretusk
 step
-    .goto 1436/0,1211.37,-10152.03
+    .goto 1436/0,1213.12,-10153.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket|r
     .accept 92911 >>Accept Harvesting the Harvesters
     .target Ozwin Ironsprocket
@@ -296,25 +280,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Heather|r
     .target Innkeeper Heather
     .home >>Set your Hearthstone to Innkeeper Heather's inn
-step
-    .goto 1436/0,1179.87,-10637.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
-    .turnin 92752 >>Turn in Explosive Consultation
-    .target Alba Fairmoon
-    .isOnQuest 92752
-step
-    .goto 1436/0,1179.87,-10637.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
-    .accept 92745 >>Accept The State of the Mines
-    .accept 92742 >>Accept Testing the Wells
-    .accept 92744 >>Accept Murloc Gills
-    .target Alba Fairmoon
-step
-    .goto 1436/0,1179.87,-10637.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
-    .turnin 92742 >>Turn in Testing the Wells while you are here
-    .isQuestComplete 92742
-    .target Alba Fairmoon
 step << Human
     .goto 1436/0,1021.67,-10500.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Lewis|r
@@ -333,7 +298,26 @@ step
     .vendor >>|cRXP_BUY_Buy food/water if needed|r
     .target Innkeeper Heather
 step
-    .goto 1436/0,1211.37,-10152.03
+    .goto 1436/0,1179.87,-10635.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
+    .accept 92742 >>Accept Testing the Wells
+    .accept 92745 >>Accept The State of the Mines
+    .accept 92744 >>Accept Murloc Gills
+    .target Alba Fairmoon
+step
+    .goto 1436/0,1179.87,-10635.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
+    .turnin 92742 >>Turn in Testing the Wells while you are here
+    .isQuestComplete 92742
+    .target Alba Fairmoon
+step
+    .goto 1436/0,1179.87,-10635.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
+    .turnin 92752 >>Turn in Explosive Consultation
+    .target Alba Fairmoon
+    .isOnQuest 92752
+step
+    .goto 1436/0,1213.12,-10153.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket|r
     .accept 92909 >>Accept Harvesting the Harvesters
     .target Ozwin Ironsprocket
@@ -422,7 +406,7 @@ step
     .turnin 151 >>Turn in Poor Old Blanchy
     .target Verna Furlbrow
 step
-    .goto 1436/0,1211.37,-10152.03
+    .goto 1436/0,1213.12,-10153.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket|r
     .turnin 92909 >>Turn in Harvesting the Harvesters
     .target Ozwin Ironsprocket
@@ -524,10 +508,19 @@ step
     >>Kill |cRXP_ENEMY_Kobold Diggers|r
     .complete 92745,1 --Kobold Digger slain (4)
     .mob Kobold Digger
-step
-    #label RBSection1_2
-    #completewith next
-    +|cRXP_WARN_Westfall: around Gryan Stoutmantle|r (planned from level 12)
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 10 - 23 Westfall
+#subweight -10
+#name 12-14 Westfall: around Gryan Stoutmantle
+--RouteBuilder:next
+#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\9-12 Teldrassil: around Priestess A'moora
+
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
@@ -553,22 +546,27 @@ step
     .target Scout Galiaan
     .isOnQuest 153
 step
-    .goto 1436/0,1179.87,-10637.83
+    .goto 1436/0,1179.87,-10635.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .accept 92747 >>Accept Moonbrook Espionage
     .target Alba Fairmoon
 step
-    .goto 1436/0,1179.87,-10637.83
+    .goto 1436/0,1179.87,-10635.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .turnin 92742 >>Turn in Testing the Wells
     .target Alba Fairmoon
     .isOnQuest 92742
 step
-    .goto 1436/0,1179.87,-10637.83
+    .goto 1436/0,1179.87,-10635.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .turnin 92744 >>Turn in Murloc Gills
     .target Alba Fairmoon
     .isOnQuest 92744
+step << Shaman
+    .goto 1436/0,1421.72,-10797.20
+    >>Click the |cRXP_PICK_Forgotten Shrine|r
+    .turnin 94502 >>Turn in Call of Water
+    .isQuestComplete 94502
 step
     #loop
     .goto 1436/0,1460.57,-10933.70,0
@@ -591,44 +589,11 @@ step
     .accept 103 >>Accept Keeper of the Flame
     .target Captain Grayson
 step
-    #completewith next
-    .hs >>Hearth to Innkeeper Heather's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .goto 1436/0,1179.87,-10637.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
-    .accept 92748 >>Accept Explosive Consultation
-    .target Alba Fairmoon
-step
-    #completewith Drop92910x6
-    >>|cRXP_LOOT_Precessive Autocognition Assembly|r can drop from |cRXP_ENEMY_Harvest Golem|r, |cRXP_ENEMY_Harvest Watcher|r, |cRXP_ENEMY_Harvest Reaper|r. Use it to start the quest if you get one
-    .collect 255155,1,92910 --Precessive Autocognition Assembly (1)
-    .accept 92910 >>Accept Harvesting the Harvesters
-    .use 255155
-step
-    #label Drop92910x6
-    #loop
-    .goto 1436/0,1130.17,-10220.40,0
-    .goto 1436/0,1130.17,-10220.40,40,0
-    .goto 1436/0,1151.52,-10184.70,40,0
-    .goto 1436/0,1188.62,-10155.77,40,0
-    .goto 1436/0,1156.42,-10114.70,40,0
-    .goto 1436/0,1126.32,-10122.87,40,0
-    .goto 1436/0,1016.07,-10192.63,40,0
-    .goto 1436/0,1022.72,-10246.30,40,0
-    .goto 1436/0,1038.47,-10219.00,40,0
-    .goto 1436/0,1081.52,-10186.33,40,0
-    >>Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Harvest Watchers|r, |cRXP_ENEMY_Harvest Reapers|r and |cRXP_ENEMY_Rusty Harvest Golems|r. Loot them for |cRXP_LOOT_Flask of Oil|r
-    .complete 103,1 --Flask of Oil (5)
-    .mob Harvest Golem
-    .mob Harvest Watcher
-    .mob Harvest Reaper
-    .mob Rusty Harvest Golem
-step << Shaman
-    .goto 1436/0,1421.72,-10797.20
-    >>Click the |cRXP_PICK_Forgotten Shrine|r
-    .turnin 94502 >>Turn in Call of Water
-    .isQuestComplete 94502
+    .goto 1436/0,1509.92,-11100.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odd Child|r
+    .accept 92110 >>Accept My First Real Potion
+    .accept 92109 >>Accept My First Alchemy Set
+    .target Odd Child
 step
     #completewith Drop136x5
     >>|cRXP_LOOT_Captain Sander's Treasure Map|r can drop from |cRXP_ENEMY_Murloc Coastrunner|r, |cRXP_ENEMY_Murloc Tidehunter|r, |cRXP_ENEMY_Murloc Warrior|r. Use it to start the quest if you get one
@@ -636,24 +601,154 @@ step
     .accept 136 >>Accept Captain Sander's Hidden Treasure
     .use 1357
 step
-    #completewith Drop136x5
+    #completewith Drop92910x6
     >>|cRXP_LOOT_Precessive Autocognition Assembly|r can drop from |cRXP_ENEMY_Harvest Golem|r, |cRXP_ENEMY_Harvest Watcher|r, |cRXP_ENEMY_Harvest Reaper|r. Use it to start the quest if you get one
     .collect 255155,1,92910 --Precessive Autocognition Assembly (1)
     .accept 92910 >>Accept Harvesting the Harvesters
     .use 255155
 step
+    #completewith Along49
+    >>As you go: Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Defias Smugglers|r, |cRXP_ENEMY_Riverpaw Taskmasters|r and |cRXP_ENEMY_Harvest Watchers|r. Loot them for |cRXP_LOOT_Silverleaf|r. It can also be picked up from |cRXP_PICK_Silverleaf|r on the ground. |cRXP_WARN_Anything left is finished later|r
+    .complete 92109,3 --Silverleaf (5)
+    .mob Harvest Golem
+    .mob Defias Smuggler
+    .mob Riverpaw Taskmaster
+    .mob Harvest Watcher
+step
+    #label Along49
+    #loop
+    .goto 1436/0,1072.77,-10814.00,0
+    .goto 1436/0,1072.77,-10814.00,40,0
+    .goto 1436/0,945.37,-10202.20,40,0
+    .goto 1436/0,930.67,-10363.90,40,0
+    .goto 1436/0,834.07,-10568.07,40,0
+    .goto 1436/0,627.57,-11086.53,40,0
+    .goto 1436/0,761.62,-11136.23,40,0
+    .goto 1436/0,760.22,-10999.27,40,0
+    >>Pick up |cRXP_PICK_Peacebloom|r from the ground
+    .complete 92109,2 --Peacebloom (5)
+step
+    .goto 1436/0,999.27,-10661.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy |cRXP_LOOT_Empty Vial|r from |cRXP_FRIENDLY_Gina MacGregor|r
+    .complete 92109,1 --Empty Vial (5)
+    .target Gina MacGregor
+step
+    #label Drop92910x6
+    #loop
+    .goto 1436/0,907.92,-10578.10,0
+    .goto 1436/0,907.92,-10578.10,40,0
+    .goto 1436/0,1136.82,-10451.17,40,0
+    .goto 1436/0,1171.12,-10233.00,40,0
+    .goto 1436/0,1240.77,-10080.63,40,0
+    .goto 1436/0,1088.52,-10088.10,40,0
+    .goto 1436/0,1022.72,-10246.30,40,0
+    .goto 1436/0,817.62,-10049.60,40,0
+    .goto 1436/0,805.72,-10291.80,40,0
+    .goto 1436/0,948.87,-10418.50,40,0
+    >>Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Defias Smugglers|r, |cRXP_ENEMY_Riverpaw Taskmasters|r and |cRXP_ENEMY_Harvest Watchers|r. Loot them for |cRXP_LOOT_Silverleaf|r. It can also be picked up from |cRXP_PICK_Silverleaf|r on the ground
+    >>Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Harvest Watchers|r, |cRXP_ENEMY_Harvest Reapers|r and |cRXP_ENEMY_Rusty Harvest Golems|r. Loot them for |cRXP_LOOT_Flask of Oil|r
+    .complete 92109,3 --Silverleaf (5)
+    .complete 103,1 --Flask of Oil (5)
+    .mob Harvest Golem
+    .mob Defias Smuggler
+    .mob Riverpaw Taskmaster
+    .mob Harvest Watcher
+    .mob Harvest Reaper
+    .mob Rusty Harvest Golem
+step
     #label Drop136x5
     #loop
-    .goto 1436/0,1399.32,-10875.60,0
-    .goto 1436/0,1399.32,-10875.60,40,0
-    .goto 1436/0,1392.67,-10940.93,40,0
-    .goto 1436/0,1348.22,-11008.37,40,0
-    .goto 1436/0,1406.32,-11059.47,40,0
+    .goto 1436/0,1146.97,-9661.33,0
+    .goto 1436/0,1146.97,-9661.33,40,0
+    .goto 1436/0,1172.52,-9623.77,40,0
+    .goto 1436/0,1157.12,-9606.73,40,0
+    .goto 1436/0,1070.67,-9587.13,40,0
+    .goto 1436/0,1066.82,-9570.57,40,0
+    .goto 1436/0,1040.22,-9605.57,40,0
+    .goto 1436/0,1046.87,-9623.77,40,0
+    .goto 1436/0,1081.17,-9622.37,40,0
+    .goto 1436/0,1122.82,-9623.53,40,0
+    >>Kill |cRXP_ENEMY_Murloc Tidehunters|r, |cRXP_ENEMY_Murloc Oracles|r, |cRXP_ENEMY_Murloc Minor Oracles|r and |cRXP_ENEMY_Murloc Netters|r. Loot them for |cRXP_LOOT_Murloc Eye|r
+    .complete 92110,1 --Murloc Eye (3)
+    .mob Murloc Tidehunter
+    .mob Murloc Oracle
+    .mob Murloc Minor Oracle
+    .mob Murloc Netter
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Heather's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
+    .goto 1436/0,1179.87,-10635.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
+    .accept 92748 >>Accept Explosive Consultation
+    .target Alba Fairmoon
+step
+    .goto 1436/0,1509.92,-11100.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odd Child|r
+    .turnin 92110 >>Turn in My First Real Potion
+    .turnin 92109 >>Turn in My First Alchemy Set
+    .target Odd Child
+step
+    #completewith Along55
+    >>As you go: Loot the |cRXP_PICK_Suspicious Crates|r for |cRXP_LOOT_Suspicious Industrial Supplies|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 92747,1 --Suspicious Industrial Supplies (8)
+step
+    #label Along55
+    #loop
+    .goto 1436/0,1495.57,-11052.00,0
     .goto 1436/0,1495.57,-11052.00,40,0
-    .goto 1436/0,1563.82,-11062.27,40,0
+    .goto 1436/0,1419.97,-11019.10,40,0
+    .goto 1436/0,1397.57,-10971.50,40,0
+    .goto 1436/0,1461.62,-10971.50,40,0
+    .goto 1436/0,1466.17,-11001.13,40,0
+    .goto 1436/0,1490.67,-10989.00,40,0
+    .goto 1436/0,1500.82,-11023.53,40,0
     .goto 1436/0,1526.37,-11013.97,40,0
-    .goto 1436/0,1572.22,-10949.57,40,0
-    .goto 1436/0,1463.72,-10979.90,40,0
+    .goto 1436/0,1563.82,-11062.27,40,0
+    >>Kill |cRXP_ENEMY_Defias Pillagers|r
+    .complete 13,1 --Defias Pillager slain (15)
+    .mob Defias Pillager
+    .isOnQuest 13
+step
+    #loop
+    .goto 1436/0,1497.67,-10991.33,0
+    .goto 1436/0,1497.67,-10991.33,40,0
+    .goto 1436/0,1494.17,-10963.33,40,0
+    .goto 1436/0,1553.67,-10970.33,40,0
+    .goto 1436/0,1529.17,-11003.00,40,0
+    .goto 1436/0,1536.17,-11024.00,40,0
+    .goto 1436/0,1546.67,-11056.67,40,0
+    .goto 1436/0,1455.67,-11052.00,40,0
+    .goto 1436/0,1427.67,-11038.00,40,0
+    .goto 1436/0,1462.67,-10989.00,40,0
+    >>Loot the |cRXP_PICK_Suspicious Crates|r for |cRXP_LOOT_Suspicious Industrial Supplies|r
+    .complete 92747,1 --Suspicious Industrial Supplies (8)
+step
+    #completewith Drop136x6
+    >>|cRXP_LOOT_Captain Sander's Treasure Map|r can drop from |cRXP_ENEMY_Murloc Coastrunner|r, |cRXP_ENEMY_Murloc Tidehunter|r, |cRXP_ENEMY_Murloc Warrior|r. Use it to start the quest if you get one
+    .collect 1357,1,136 --Captain Sander's Treasure Map (1)
+    .accept 136 >>Accept Captain Sander's Hidden Treasure
+    .use 1357
+step
+    #completewith Drop136x6
+    >>|cRXP_LOOT_Precessive Autocognition Assembly|r can drop from |cRXP_ENEMY_Harvest Golem|r, |cRXP_ENEMY_Harvest Watcher|r, |cRXP_ENEMY_Harvest Reaper|r. Use it to start the quest if you get one
+    .collect 255155,1,92910 --Precessive Autocognition Assembly (1)
+    .accept 92910 >>Accept Harvesting the Harvesters
+    .use 255155
+step
+    #label Drop136x6
+    #loop
+    .goto 1436/0,1659.02,-10726.50,0
+    .goto 1436/0,1659.02,-10726.50,40,0
+    .goto 1436/0,1718.52,-10753.80,40,0
+    .goto 1436/0,1744.77,-10694.07,40,0
+    .goto 1436/0,1787.82,-10654.87,40,0
+    .goto 1436/0,1716.42,-10619.40,40,0
+    .goto 1436/0,1681.77,-10585.10,40,0
+    .goto 1436/0,1595.32,-10556.40,40,0
+    .goto 1436/0,1590.07,-10617.77,40,0
+    .goto 1436/0,1673.02,-10666.77,40,0
     >>Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Harvest Watchers|r, |cRXP_ENEMY_Harvest Reapers|r and |cRXP_ENEMY_Murloc Hunters|r. Loot them for |cRXP_LOOT_Copper Modulator|r. It can also be picked up from |cRXP_PICK_Box of Assorted Parts|r on the ground
     .complete 92911,2 --Copper Modulator (4)
     .mob Harvest Golem
@@ -663,46 +758,29 @@ step
     .isOnQuest 92911
 step
     #loop
-    .goto 1436/0,1462.67,-10989.00,0
-    .goto 1436/0,1462.67,-10989.00,40,0
-    .goto 1436/0,1497.67,-10991.33,40,0
-    .goto 1436/0,1494.17,-10963.33,40,0
-    .goto 1436/0,1553.67,-10970.33,40,0
-    .goto 1436/0,1529.17,-11003.00,40,0
-    .goto 1436/0,1536.17,-11024.00,40,0
-    .goto 1436/0,1546.67,-11056.67,40,0
-    .goto 1436/0,1455.67,-11052.00,40,0
-    .goto 1436/0,1427.67,-11038.00,40,0
-    >>Loot the |cRXP_PICK_Suspicious Crates|r for |cRXP_LOOT_Suspicious Industrial Supplies|r
-    .complete 92747,1 --Suspicious Industrial Supplies (8)
+    .goto 1436/0,1957.22,-10558.50,0
+    .goto 1436/0,1957.22,-10558.50,40,0
+    .goto 1436/0,1978.92,-10580.20,40,0
+    .goto 1436/0,2003.77,-10536.57,40,0
+    .goto 1436/0,1990.82,-10474.97,40,0
+    .goto 1436/0,1954.42,-10458.87,40,0
+    .goto 1436/0,1939.72,-10477.77,40,0
+    .goto 1436/0,1957.57,-10509.50,40,0
+    >>Kill |cRXP_ENEMY_Riverpaw Miners|r
+    .complete 92745,2 --Riverpaw Miner slain (6)
+    .mob Riverpaw Miner
+    .isOnQuest 92745
 step
-    #loop
-    .goto 1436/0,1490.67,-10989.00,0
-    .goto 1436/0,1490.67,-10989.00,40,0
-    .goto 1436/0,1461.62,-10971.50,40,0
-    .goto 1436/0,1397.57,-10971.50,40,0
-    .goto 1436/0,1419.97,-11019.10,40,0
-    .goto 1436/0,1466.17,-11001.13,40,0
-    .goto 1436/0,1500.82,-11023.53,40,0
-    .goto 1436/0,1495.57,-11052.00,40,0
-    .goto 1436/0,1563.82,-11062.27,40,0
-    .goto 1436/0,1526.37,-11013.97,40,0
-    >>Kill |cRXP_ENEMY_Defias Pillagers|r
-    .complete 13,1 --Defias Pillager slain (15)
-    .mob Defias Pillager
-    .isOnQuest 13
+    .goto 1436/0,2109.82,-10514.17
+    >>Click the |cRXP_PICK_Captain's Footlocker|r
+    .turnin 136 >>Turn in Captain Sander's Hidden Treasure
+    .isOnQuest 136
 step
-    .goto 1436/0,1665.32,-11353.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
-    .accept 92819 >>Accept Destruction in Deadmines
-    .target Alba Fairmoon
-step
-    .goto 1436/0,1665.32,-11353.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
-    >>|cRXP_WARN_The database has no objectives for Destruction in Deadmines. Skip this step if the quest is not finished|r
-    .turnin 92819 >>Turn in Destruction in Deadmines
-    .target Alba Fairmoon
-    .isOnQuest 92819
+    .goto 1436/0,2109.82,-10514.17
+    >>Click the |cRXP_PICK_Captain's Footlocker|r
+    .accept 138 >>Accept Captain Sander's Hidden Treasure
+    .isQuestTurnedIn 136 --any of: Captain Sander's Hidden Treasure
+    .xp <10,1
 step
     .goto 1436/0,1966.32,-11407.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
@@ -728,30 +806,17 @@ step
     .fp Westfall >> Get the Westfall flight path
     .target Thor
 step
-    .goto 1436/0,2109.82,-10514.17
-    >>Click the |cRXP_PICK_Captain's Footlocker|r
-    .turnin 136 >>Turn in Captain Sander's Hidden Treasure
-    .isOnQuest 136
+    .goto 1436/0,1662.87,-11353.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
+    .accept 92819 >>Accept Destruction in Deadmines
+    .target Alba Fairmoon
 step
-    .goto 1436/0,2109.82,-10514.17
-    >>Click the |cRXP_PICK_Captain's Footlocker|r
-    .accept 138 >>Accept Captain Sander's Hidden Treasure
-    .isQuestTurnedIn 136 --any of: Captain Sander's Hidden Treasure
-    .xp <10,1
-step
-    #loop
-    .goto 1436/0,2003.77,-10536.57,0
-    .goto 1436/0,2003.77,-10536.57,40,0
-    .goto 1436/0,1978.92,-10580.20,40,0
-    .goto 1436/0,1957.22,-10558.50,40,0
-    .goto 1436/0,1957.57,-10509.50,40,0
-    .goto 1436/0,1939.72,-10477.77,40,0
-    .goto 1436/0,1954.42,-10458.87,40,0
-    .goto 1436/0,1990.82,-10474.97,40,0
-    >>Kill |cRXP_ENEMY_Riverpaw Miners|r
-    .complete 92745,2 --Riverpaw Miner slain (6)
-    .mob Riverpaw Miner
-    .isOnQuest 92745
+    .goto 1436/0,1662.87,-11353.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
+    >>|cRXP_WARN_The database has no objectives for Destruction in Deadmines. Skip this step if the quest is not finished|r
+    .turnin 92819 >>Turn in Destruction in Deadmines
+    .target Alba Fairmoon
+    .isOnQuest 92819
 step
     .goto 1436/0,1598.47,-10515.10
     >>Click the |cRXP_PICK_Broken Barrel|r
@@ -764,13 +829,13 @@ step
     .isQuestTurnedIn 138 --any of: Captain Sander's Hidden Treasure
     .xp <10,1
 step
-    .goto 1436/0,1179.87,-10637.83
+    .goto 1436/0,1179.87,-10635.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .turnin 92745 >>Turn in The State of the Mines
     .target Alba Fairmoon
     .isOnQuest 92745
 step
-    .goto 1436/0,1179.87,-10637.83
+    .goto 1436/0,1179.87,-10635.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .turnin 92747 >>Turn in Moonbrook Espionage
     .target Alba Fairmoon
@@ -781,13 +846,13 @@ step
     .target Gryan Stoutmantle
     .isOnQuest 13
 step
-    .goto 1436/0,1211.37,-10152.03
+    .goto 1436/0,1213.12,-10153.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket|r
     .turnin 92910 >>Turn in Harvesting the Harvesters
     .target Ozwin Ironsprocket
     .isOnQuest 92910
 step
-    .goto 1436/0,1211.37,-10152.03
+    .goto 1436/0,1213.12,-10153.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket|r
     .turnin 92911 >>Turn in Harvesting the Harvesters
     .target Ozwin Ironsprocket
@@ -828,13 +893,22 @@ step
     >>|cRXP_FRIENDLY_Stormwind City|r: Continue to Stormwind << Human
     >>|cRXP_FRIENDLY_Stormwind City|r: Explosive Consultation
 step
-    +|cRXP_WARN_Until level 16, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 2.1 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.3 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Elwynn Forest|r (about 0.9 levels of quests, starting around Marshal Dughan). Then come back to this Westfall guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 13|r: |cRXP_FRIENDLY_Darkshore|r (about 2.1 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 1.3 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Teldrassil|r (about 1.1 levels of quests, starting around Priestess A'moora). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 16 >>|cRXP_WARN_The rest of Westfall is planned from level 16.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Westfall: part 2|r (planned from level 16)
+    +|cRXP_WARN_The rest of Westfall is planned from level 16.|r Load its guide for level 16 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 10 - 23 Westfall
+#subweight -10
+#name 16-17 Westfall
+--RouteBuilder:next
+#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Daryl the Youngling
+
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
@@ -913,23 +987,23 @@ step
     .accept 152 >>Accept The Coast Isn't Clear
     .target Captain Grayson
 step
-    .goto 1436/0,1665.32,-11353.00
+    .goto 1436/0,1662.87,-11353.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .turnin 92819 >>Turn in Destruction in Deadmines
     .target Alba Fairmoon
     .isOnQuest 92819
 step
     #loop
-    .goto 1436/0,1718.17,-11325.47,0
+    .goto 1436/0,1685.97,-11296.30,0
+    .goto 1436/0,1685.97,-11296.30,40,0
     .goto 1436/0,1718.17,-11325.47,40,0
     .goto 1436/0,1719.57,-11313.80,40,0
     .goto 1436/0,1708.72,-11276.23,40,0
+    .goto 1436/0,1683.52,-11281.60,40,0
     .goto 1436/0,1650.97,-11250.57,40,0
     .goto 1436/0,1581.32,-11254.30,40,0
     .goto 1436/0,1501.17,-11260.60,40,0
     .goto 1436/0,1544.92,-11279.03,40,0
-    .goto 1436/0,1683.52,-11281.60,40,0
-    .goto 1436/0,1685.97,-11296.30,40,0
     >>Kill |cRXP_ENEMY_Defias Highwaymans|r
     .complete 14,1 --Defias Highwayman slain (8)
     .mob Defias Highwayman
@@ -1026,13 +1100,44 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Of Mice and Milk
     >>|cRXP_FRIENDLY_The Barrens|r: ... and that note you found
 step
-    +|cRXP_WARN_Until level 19, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 1.6 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 0.9 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling). Then come back to this Westfall guide --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 16|r: |cRXP_FRIENDLY_Darkshore|r (about 1.6 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 0.9 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
-    .xp 19 >>|cRXP_WARN_The rest of Westfall is planned from level 19.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Westfall is planned from level 19.|r Load its guide for level 19 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 10 - 23 Westfall
+#subweight -10
+#name 19-20 Westfall
+--RouteBuilder:next
+#next Zone Routes (Alliance)\17-19 Darkshore: around Archaeologist Hollee;Zone Routes (Alliance)\20-21 Wetlands: around Karl Boran
+
 step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Westfall: part 3|r (planned from level 19)
+    .goto 1436/0,1427.67,-11042.67
+    >>Click the |cRXP_PICK_Spellbook|r
+    .accept 78142 >>Accept Bewitchments and Glamours
+step
+    .goto 1436/0,1427.67,-11042.67
+    >>Open the |cRXP_PICK_Spellbook|r. Loot it for |cRXP_LOOT_Bewitchments and Glamours|r
+    .complete 78142,1 --Bewitchments and Glamours (1)
+step
+    .goto 1436/0,1172.17,-10655.33
+    >>Click the |cRXP_PICK_Gnomish Tome|r
+    .accept 79093 >>Accept Rumi of Gnomeregan: The Collected Works
+step
+    .goto 1436/0,1172.17,-10655.33
+    >>Open the |cRXP_PICK_Gnomish Tome|r. Loot it for |cRXP_LOOT_Rumi of Gnomeregan: The Collected Works|r
+    .complete 79093,1 --Rumi of Gnomeregan: The Collected Works (1)
+step
+    .goto 1436/0,1662.87,-11353.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
+    .turnin 92819 >>Turn in Destruction in Deadmines
+    .target Alba Fairmoon
+    .isOnQuest 92819
 step
     .goto 1436/0,1966.32,-11407.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
@@ -1049,25 +1154,31 @@ step
     .turnin 104 >>Turn in The Coastal Menace
     .target Captain Grayson
 step
-    .goto 1436/0,1665.32,-11353.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
-    .turnin 92819 >>Turn in Destruction in Deadmines
-    .target Alba Fairmoon
-    .isOnQuest 92819
-step << Shaman
-    +|cRXP_WARN_Until level 22, suggested zones|r: |cRXP_FRIENDLY_Darkshore|r (about 0.8 levels of quests, starting around Archaeologist Hollee). Then come back to this Westfall guide --RouteBuilder:next
-step << Shaman
-    .xp 22 >>|cRXP_WARN_The rest of Westfall is planned from level 22.|r Come back to this guide then
+    +|cRXP_WARN_That is all of Westfall for now.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Undercity|r: Bewitchments and Glamours, Rumi of Gnomeregan: The Collected Works
 step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Westfall: part 4|r (planned from level 22)
+    +|cRXP_WARN_Suggested next zones at level 19|r: |cRXP_FRIENDLY_Darkshore|r (about 0.8 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Wetlands|r (about 0.7 levels of quests, starting around Karl Boran). Completing this step loads the guide for Darkshore --RouteBuilder:next
+step << Shaman
+    +|cRXP_WARN_The rest of Westfall is planned from level 22.|r Load its guide for level 22 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 10 - 23 Westfall
+#subweight -10
+#name 22-23 Westfall
+--RouteBuilder:next
+#next Zone Routes (Alliance)\20-21 Wetlands: around Karl Boran
+
 step << Shaman
     .goto 1436/0,1421.72,-10797.20
     >>Click the |cRXP_PICK_Forgotten Shrine|r
     .accept 94503 >>Accept Call of Water
 step
-    .goto 1436/0,1665.32,-11353.00
+    .goto 1436/0,1662.87,-11353.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .turnin 92819 >>Turn in Destruction in Deadmines
     .target Alba Fairmoon
@@ -1095,5 +1206,5 @@ step
     >>|cRXP_FRIENDLY_Silverpine Forest|r: Call of Water << Shaman
     >>|cRXP_FRIENDLY_Stormwind City|r: Klaven's Tower << Rogue
 step
-    +|cRXP_WARN_Suggested next zones at level 22|r: |cRXP_FRIENDLY_Wetlands|r (about 1.0 levels of quests, starting around Karl Boran). Completing this step loads the guide for Wetlands --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 22|r: |cRXP_FRIENDLY_Wetlands|r (about 0.5 levels of quests, starting around Karl Boran). Completing this step loads the guide for Wetlands --RouteBuilder:next
 ]])

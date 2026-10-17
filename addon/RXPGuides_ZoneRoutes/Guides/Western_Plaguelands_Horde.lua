@@ -1,9 +1,9 @@
--- 52-58 Western Plaguelands: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- 52-60 Western Plaguelands: Zone Routes (Horde).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 52, 55).
--- Sections (the guide starts at the one for your level): start from 52; part 2 from 55.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 52, 55, 58).
+-- Split into 3 guides, listed under "52 - 59 Western Plaguelands" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Western Plaguelands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,17 +13,10 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 52-58 Western Plaguelands
+#subgroup 52 - 59 Western Plaguelands
+#subweight -52
+#name 52-53 Western Plaguelands
 
-step
-    .xp <55,1,RBSection1_1
-    .xp 55 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection2_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Western Plaguelands: start|r (planned from level 52)
 step
     .goto 1422/0,-1582.40,1871.70
     .xp 53+100000 >>AoE Undead in the area to 53 & 100000+/167100xp
@@ -233,11 +226,18 @@ step
     >>|cRXP_FRIENDLY_Tirisfal Glades|r: Return to the Bulwark, Return to the Bulwark, Return to the Bulwark, A Plague Upon Thee, Return to the Bulwark
     >>|cRXP_FRIENDLY_Undercity|r: Better Late Than Never
 step
-    .xp 55 >>|cRXP_WARN_The rest of Western Plaguelands is planned from level 55.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Western Plaguelands: part 2|r (planned from level 55)
+    +|cRXP_WARN_The rest of Western Plaguelands is planned from level 55.|r Load its guide for level 55 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 52 - 59 Western Plaguelands
+#subweight -52
+#name 55-56 Western Plaguelands
+
 step
     .goto 1422/0,-1619.38,1943.94
     >>Click the |cRXP_PICK_Locked Cabinet|r
@@ -486,8 +486,145 @@ step
     .turnin 6025 >>Turn in Unfinished Business
     .target Kirsta Deepshadow
 step
-    +|cRXP_WARN_End of the Western Plaguelands route.|r Quests still in your log lead on from here; pick your next zone by them
+    +|cRXP_WARN_That is all of Western Plaguelands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Dustwallow Marsh|r: Emberstrife
     >>|cRXP_FRIENDLY_Eastern Plaguelands|r: Brother Carlin, Demon Dogs, Blood Tinged Skies, Carrion Grubbage, The Battle of Darrowshire
     >>|cRXP_FRIENDLY_Thunder Bluff|r: Glyphed Oaken Branch
+step
+    +|cRXP_WARN_The rest of Western Plaguelands is planned from level 58.|r Load its guide for level 58 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 52 - 59 Western Plaguelands
+#subweight -52
+#name 58-59 Western Plaguelands
+
+step
+    .goto 1422/0,-1225.93,1801.47
+    >>Click the |cRXP_PICK_Book|r
+    .accept 84395 >>Accept Undead Potatoes
+step
+    .goto 1422/0,-1225.93,1801.47
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Undead Potatoes|r
+    .complete 84395,1 --Undead Potatoes (1)
+step
+    .goto 1422/0,-1276.24,1452.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeziba|r
+    .accept 5164 >>Accept Catalogue of the Wayward
+    .target Jeziba
+    .isQuestTurnedIn 5162 --any of: Wrath of the Blue Flight
+    .xp <57,1
+step
+    .goto 1422/0,-1275.38,1457.47
+    >>Click the |cRXP_PICK_Catalogue of the Wayward|r
+    .turnin 5164 >>Turn in Catalogue of the Wayward
+    .isOnQuest 5164
+step
+    .goto 1422/0,-1275.38,1457.47
+    >>Click the |cRXP_PICK_Catalogue of the Wayward|r
+    .accept 5166 >>Accept Breastplate of the Chromatic Flight
+    .accept 5167 >>Accept Legplates of the Chromatic Defier
+    .isQuestTurnedIn 5164 --any of: Catalogue of the Wayward
+    .xp <57,1
+step
+    .goto 1422/0,-1276.24,1452.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeziba|r
+    .turnin 5166 >>Turn in Breastplate of the Chromatic Flight
+    .target Jeziba
+    .isQuestComplete 5166
+step
+    .goto 1422/0,-1276.24,1452.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeziba|r
+    .turnin 5167 >>Turn in Legplates of the Chromatic Defier
+    .target Jeziba
+    .isQuestComplete 5167
+step
+    #loop
+    .goto 1422/0,-1385.03,1345.67,0
+    .goto 1422/0,-1385.03,1345.67,40,0
+    .goto 1422/0,-1445.23,1408.73,40,0
+    .goto 1422/0,-1879.53,1549.20,40,0
+    .goto 1422/0,-1875.23,1500.47,40,0
+    .goto 1422/0,-1870.93,1460.33,40,0
+    .goto 1422/0,-1827.93,1460.33,40,0
+    .goto 1422/0,-1557.03,1319.87,40,0
+    .goto 1422/0,-1496.83,1311.27,40,0
+    .goto 1422/0,-1462.43,1345.67,40,0
+    >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
+    .complete 5166,3 --Blood of Heroes (10)
+    .isOnQuest 5166
+step
+    #loop
+    .goto 1422/0,-1462.43,1345.67,0
+    .goto 1422/0,-1462.43,1345.67,40,0
+    .goto 1422/0,-1385.03,1345.67,40,0
+    .goto 1422/0,-1445.23,1408.73,40,0
+    .goto 1422/0,-1879.53,1549.20,40,0
+    .goto 1422/0,-1875.23,1500.47,40,0
+    .goto 1422/0,-1870.93,1460.33,40,0
+    .goto 1422/0,-1827.93,1460.33,40,0
+    .goto 1422/0,-1557.03,1319.87,40,0
+    .goto 1422/0,-1496.83,1311.27,40,0
+    >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
+    .complete 5167,3 --Blood of Heroes (10)
+    .isOnQuest 5167
+step
+    .goto 1422/0,-2617.84,1242.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Marduke|r
+    .accept 5461 >>Accept The Human, Ras Frostwhisper
+    .target Magistrate Marduke
+    .isQuestTurnedIn 5384 --any of: Kirtonos the Herald
+    .xp <57,1
+step
+    .goto 1422/0,-2617.84,1242.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Marduke|r
+    .accept 5462 >>Accept The Dying, Ras Frostwhisper
+    .target Magistrate Marduke
+    .isQuestTurnedIn 5461 --any of: The Human, Ras Frostwhisper
+    .xp <57,1
+step
+    .goto 1422/0,-2567.96,1278.59
+    >>Click the |cRXP_PICK_Book|r
+    .accept 84402 >>Accept Necromancy 101
+step
+    .goto 1422/0,-2567.96,1278.59
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Necromancy 101|r
+    .complete 84402,1 --Necromancy 101 (1)
+step
+    .goto 1422/0,-2617.84,1242.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Marduke|r
+    .turnin 5461 >>Turn in The Human, Ras Frostwhisper
+    .target Magistrate Marduke
+    .isQuestComplete 5461
+step
+    .goto 1422/0,-1638.73,1914.13
+    >>Click the |cRXP_PICK_Mrs. Dalson's Diary|r
+    .turnin 5058 >>Turn in Mrs. Dalson's Diary
+    .isOnQuest 5058
+step
+    .goto 1422/0,-1390.19,2942.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Taelan Fordring|r
+    .accept 5944 >>Accept In Dreams
+    .target Highlord Taelan Fordring
+    .isQuestTurnedIn 5862 --any of: Scarlet Subterfuge
+    .xp <52,1
+step
+    .goto 1422/0,-1899.31,2669.49
+    >>Redemption?
+    .complete 5944,1 --Redemption?
+    .isOnQuest 5944
+step
+    .goto 1422/0,-1903.18,2665.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Tirion Fordring|r
+    .turnin 5944 >>Turn in In Dreams
+    .target Lord Tirion Fordring
+    .isOnQuest 5944
+step
+    +|cRXP_WARN_End of the Western Plaguelands route.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Eastern Plaguelands|r: The Dying, Ras Frostwhisper
+    >>|cRXP_FRIENDLY_Stormwind City|r: Undead Potatoes, Necromancy 101
 ]])

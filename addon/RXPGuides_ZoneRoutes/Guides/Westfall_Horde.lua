@@ -1,9 +1,9 @@
 -- 16-20 Westfall: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 16, 19).
--- Sections (the guide starts at the one for your level): start from 16; part 2 from 19.
+-- The zone covers more levels than one visit gives, so it is planned in 2 parts (from level 16, 19).
+-- Split into 2 guides, listed under "16 - 20 Westfall" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Westfall.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,18 +13,12 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 16-20 Westfall
-#next Zone Routes (Horde)\8-29 The Barrens
+#subgroup 16 - 20 Westfall
+#subweight -16
+#name 16-17 Westfall
+--RouteBuilder:next
+#next Zone Routes (Horde)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Horde)\12-15 The Barrens: around Gazlowe;Zone Routes (Horde)\9-12 Durotar: around Orgnil Soulscar
 
-step
-    .xp <19,1,RBSection1_1
-    .xp 19 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection2_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Westfall: start|r (planned from level 16)
 step
     .goto 1436/0,1966.32,-11407.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
@@ -172,11 +166,38 @@ step
     .turnin 140 >>Turn in Captain Sander's Hidden Treasure
     .isOnQuest 140
 step
-    .xp 19 >>|cRXP_WARN_The rest of Westfall is planned from level 19.|r Come back to this guide then
+    +|cRXP_WARN_Suggested next zones at level 16|r: |cRXP_FRIENDLY_Zephras Isle|r (about 1.2 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_The Barrens|r (about 1.1 levels of quests, starting around Gazlowe), |cRXP_FRIENDLY_Durotar|r (about 0.6 levels of quests, starting around Orgnil Soulscar). Completing this step loads the guide for Zephras Isle --RouteBuilder:next
 step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Westfall: part 2|r (planned from level 19)
+    +|cRXP_WARN_The rest of Westfall is planned from level 19.|r Load its guide for level 19 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 16 - 20 Westfall
+#subweight -16
+#name 19-20 Westfall
+--RouteBuilder:next
+#next Zone Routes (Horde)\18-20 The Barrens: around Tonga Runetotem
+
+step
+    .goto 1436/0,1427.67,-11042.67
+    >>Click the |cRXP_PICK_Spellbook|r
+    .accept 78142 >>Accept Bewitchments and Glamours
+step
+    .goto 1436/0,1427.67,-11042.67
+    >>Open the |cRXP_PICK_Spellbook|r. Loot it for |cRXP_LOOT_Bewitchments and Glamours|r
+    .complete 78142,1 --Bewitchments and Glamours (1)
+step
+    .goto 1436/0,1172.17,-10655.33
+    >>Click the |cRXP_PICK_Gnomish Tome|r
+    .accept 79093 >>Accept Rumi of Gnomeregan: The Collected Works
+step
+    .goto 1436/0,1172.17,-10655.33
+    >>Open the |cRXP_PICK_Gnomish Tome|r. Loot it for |cRXP_LOOT_Rumi of Gnomeregan: The Collected Works|r
+    .complete 79093,1 --Rumi of Gnomeregan: The Collected Works (1)
 step
     .goto 1436/0,1966.32,-11407.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
@@ -193,7 +214,8 @@ step
     .turnin 104 >>Turn in The Coastal Menace
     .target Captain Grayson
 step
-    +|cRXP_WARN_End of the Westfall route.|r
+    +|cRXP_WARN_End of the Westfall route.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Undercity|r: Bewitchments and Glamours, Rumi of Gnomeregan: The Collected Works
 step
     +|cRXP_WARN_Suggested next zones at level 19|r: |cRXP_FRIENDLY_The Barrens|r (about 1.1 levels of quests, starting around Tonga Runetotem). Completing this step loads the guide for The Barrens --RouteBuilder:next
 ]])

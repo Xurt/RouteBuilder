@@ -163,9 +163,10 @@ the options of the build you will run next:
 
 A zone's route is split into sections where it arrives at a new main quest hub (a place with four or more
 pickups) a couple of levels further on, and each section is a guide of its own. In RestedXP's guide list
-they sit under the zone's name inside "Zone Routes (Horde)", so Durotar shows as one entry that opens to
-"1-4 Durotar: around Gornek", "4-7 Durotar: around Orgnil Soulscar" and so on. Pick the one for your level,
-or start at the first and do everything.
+they sit under a heading inside "Zone Routes (Horde)" that gives the levels they cover and the zone's
+name, so Durotar shows as one entry, "1 - 12 Durotar", that opens to "1-4 Durotar: around Gornek",
+"4-7 Durotar: around Orgnil Soulscar" and so on. The headings are listed lowest level first. Pick the
+guide for your level, or start at the first and do everything.
 
 * Each guide leads on to the next with `#next`, so playing from the first is the same as one long guide.
 * Start at any of them: a step that needs a quest from an earlier one hides itself unless you did that

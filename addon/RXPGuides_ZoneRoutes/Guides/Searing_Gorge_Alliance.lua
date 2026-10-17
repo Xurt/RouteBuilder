@@ -1,9 +1,9 @@
 -- 45-52 Searing Gorge: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 45, 48, 51).
--- Sections (the guide starts at the one for your level): start from 45; around Hansel Heavyhands from 48; part 3 from 51.
+-- The zone covers more levels than one visit gives, so it is planned in 3 parts (from level 45, 48, 51).
+-- Split into 3 guides, listed under "45 - 52 Searing Gorge" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Searing Gorge.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,20 +13,18 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 45-52 Searing Gorge
+#subgroup 45 - 52 Searing Gorge
+#subweight -45
+#name 45-46 Searing Gorge
 
 step
-    .xp <48,1,RBSection1_1
-    .xp 48 >>Finding the place in this guide for your level
+    .goto 1427/0,-1166.33,-6833.34
+    >>Click the |cRXP_PICK_Book|r
+    .accept 81955 >>Accept A Mind of Metal
 step
-    .xp <51,1,RBSection2_1
-    .xp 51 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Searing Gorge: start|r (planned from level 45)
+    .goto 1427/0,-1168.56,-6837.80
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_A Mind of Metal|r
+    .complete 81955,1 --A Mind of Metal (1)
 step
     .goto 1427/0,-1162.98,-6493.74
     >>Click the |cRXP_PICK_Wanted/Missing/Lost & Found|r
@@ -97,7 +95,7 @@ step
     .accept 4451 >>Accept The Key to Freedom
     .use 11818
 step
-    #completewith Along11
+    #completewith Along13
     >>As you go: Kill |cRXP_ENEMY_Dark Iron Geologists|r, |cRXP_ENEMY_Dark Iron Steamsmiths|r, |cRXP_ENEMY_Slave Workers|r and |cRXP_ENEMY_Dark Iron Slavers|r. Loot them for |cRXP_LOOT_Thorium Plated Dagger|r. |cRXP_WARN_Anything left is finished later|r
     .complete 3443,1 --Thorium Plated Dagger (8)
     .mob Dark Iron Geologist
@@ -153,17 +151,17 @@ step
     .turnin 4449 >>Turn in Caught!
     .accept 4450 >>Accept Ledger from Tanaris
 step
-    #completewith Along11
+    #completewith Along13
     >>As you go: Pick up |cRXP_PICK_Goodsteel Ledger|r from the ground. |cRXP_WARN_Anything left is finished later|r
     .complete 4450,1 --Goodsteel Ledger (1)
 step
-    #label Along11
+    #label Along13
     .goto 1427/0,-1749.13,-7007.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorius Stonetender|r
     .accept 3367 >>Accept Suntara Stones
     .target Dorius Stonetender
 step
-    #completewith Along13
+    #completewith Along15
     >>As you go: Kill |cRXP_ENEMY_Glassweb Spider|r and loot |cRXP_LOOT_Solid Crystal Leg Shaft|r. |cRXP_WARN_Anything left is finished later|r
     .complete 4450,2 --Solid Crystal Leg Shaft (1)
     .mob Glassweb Spider
@@ -172,7 +170,7 @@ step
     >>Dorius Escort
     .complete 3367,1 --Dorius Escort
 step
-    #label Along13
+    #label Along15
     .goto 1427/0,-1984.08,-6386.94
     >>Click the |cRXP_PICK_Singed Letter|r
     .turnin 3367 >>Turn in Suntara Stones
@@ -193,7 +191,7 @@ step
     .accept 4451 >>Accept The Key to Freedom
     .use 11818
 step
-    #completewith Along17
+    #completewith Along19
     >>As you go: Kill |cRXP_ENEMY_Dark Iron Geologists|r, |cRXP_ENEMY_Dark Iron Steamsmiths|r, |cRXP_ENEMY_Slave Workers|r and |cRXP_ENEMY_Dark Iron Slavers|r. Loot them for |cRXP_LOOT_Thorium Plated Dagger|r. |cRXP_WARN_Anything left is finished later|r
     .complete 3443,1 --Thorium Plated Dagger (8)
     .mob Dark Iron Geologist
@@ -221,7 +219,7 @@ step
     .complete 7728,1 --Smithing Tuyere (1)
     .mob Dark Iron Steamsmith
 step
-    #label Along17
+    #label Along19
     .goto 1427/0,-1192.43,-6509.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taskmaster Scrange|r
     .turnin 7728 >>Turn in STOLEN: Smithing Tuyere and Lookout's Spyglass
@@ -295,12 +293,20 @@ step
     >>|cRXP_FRIENDLY_Ironforge|r: Suntara Stones
     >>|cRXP_FRIENDLY_Loch Modan|r: The Horn of the Beast
     >>|cRXP_FRIENDLY_Tanaris|r: Ledger from Tanaris
+    >>|cRXP_FRIENDLY_Undercity|r: A Mind of Metal
 step
-    .xp 48 >>|cRXP_WARN_The rest of Searing Gorge is planned from level 48.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Searing Gorge: around Hansel Heavyhands|r (planned from level 48)
+    +|cRXP_WARN_The rest of Searing Gorge is planned from level 48.|r Load its guide for level 48 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 45 - 52 Searing Gorge
+#subweight -45
+#name 48-49 Searing Gorge: around Hansel Heavyhands
+
 step
     .goto 1427/0,-982.70,-6491.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamael Lunthistle|r
@@ -507,11 +513,18 @@ step
     +|cRXP_WARN_That is all of Searing Gorge for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Darnassus|r: Prayer to Elune
 step
-    .xp 51 >>|cRXP_WARN_The rest of Searing Gorge is planned from level 51.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Searing Gorge: part 3|r (planned from level 51)
+    +|cRXP_WARN_The rest of Searing Gorge is planned from level 51.|r Load its guide for level 51 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 45 - 52 Searing Gorge
+#subweight -45
+#name 51-52 Searing Gorge
+
 step
     .goto 1427/0,-1196.90,-6680.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Maltrake|r

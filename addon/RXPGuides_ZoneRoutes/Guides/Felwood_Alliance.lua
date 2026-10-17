@@ -1,9 +1,9 @@
--- 48-56 Felwood: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- 48-60 Felwood: Zone Routes (Alliance).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 3 parts with a level check between them (from level 48, 51, 54).
--- Sections (the guide starts at the one for your level): start from 48; around Eridan Bluewind from 51; part 3 from 54.
+-- The zone covers more levels than one visit gives, so it is planned in 4 parts (from level 48, 51, 54, 57).
+-- Split into 4 guides, listed under "48 - 58 Felwood" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Felwood.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,20 +13,10 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 48-56 Felwood
+#subgroup 48 - 58 Felwood
+#subweight -48
+#name 48-49 Felwood
 
-step
-    .xp <51,1,RBSection1_1
-    .xp 51 >>Finding the place in this guide for your level
-step
-    .xp <54,1,RBSection2_1
-    .xp 54 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection3_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Felwood: start|r (planned from level 48)
 step
     .goto 1448/1,-1286.81,3874.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grazle|r
@@ -161,11 +151,18 @@ step
     .target Eridan Bluewind
     .isOnQuest 3942
 step
-    .xp 51 >>|cRXP_WARN_The rest of Felwood is planned from level 51.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Felwood: around Eridan Bluewind|r (planned from level 51)
+    +|cRXP_WARN_The rest of Felwood is planned from level 51.|r Load its guide for level 51 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 48 - 58 Felwood
+#subweight -48
+#name 51-52 Felwood: around Eridan Bluewind
+
 step
     .goto 1448/1,-1471.96,3804.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arathandris Silversky|r
@@ -558,11 +555,18 @@ step
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Trolls of a Feather << Warlock
     >>|cRXP_FRIENDLY_Darnassus and back here|r: Felbound Ancients
 step
-    .xp 54 >>|cRXP_WARN_The rest of Felwood is planned from level 54.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Felwood: part 3|r (planned from level 54)
+    +|cRXP_WARN_The rest of Felwood is planned from level 54.|r Load its guide for level 54 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 48 - 58 Felwood
+#subweight -48
+#name 54-55 Felwood
+
 step
     .goto 1448/1,-1821.56,6912.92
     >>Kill |cRXP_ENEMY_Winterfall Runner|r and loot |cRXP_LOOT_Empty Firewater Flask|r. Use it to start the quest
@@ -854,8 +858,87 @@ step
     .target Jessir Moonbow
     .isOnQuest 5385
 step
-    +|cRXP_WARN_End of the Felwood route.|r Quests still in your log lead on from here; pick your next zone by them
+    +|cRXP_WARN_That is all of Felwood for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ashenvale|r: Ancient Spirit
     >>|cRXP_FRIENDLY_Winterspring|r: Speak to Salfa, Winterfall Firewater, Mystery Goo, To Winterspring!
     >>|cRXP_FRIENDLY_Azshara, Blasted Lands and back here|r: Flawless Fel Essence << Warlock
+step
+    +|cRXP_WARN_The rest of Felwood is planned from level 57.|r Load its guide for level 57 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 48 - 58 Felwood
+#subweight -48
+#name 57-58 Felwood
+
+step
+    .goto 1448/1,-2107.33,7006.83
+    >>Click the |cRXP_PICK_Book|r
+    .accept 84397 >>Accept Northern Kalimdor - A Comprehensive Guide
+step
+    .goto 1448/1,-2107.33,7006.83
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Northern Kalimdor - A Comprehensive Guide|r
+    .complete 84397,1 --Northern Kalimdor - A Comprehensive Guide (1)
+step
+    .goto 1448/1,-1310.96,4008.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eridan Bluewind|r
+    .turnin 4441 >>Turn in Felbound Ancients
+    .target Eridan Bluewind
+    .isQuestComplete 4441
+step
+    .goto 1448/1,-1302.91,3985.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greta Mosshoof|r
+    .accept 5242 >>Accept A Final Blow
+    .target Greta Mosshoof
+    .isQuestTurnedIn 5165 --any of: Dousing the Flames of Protection
+    .xp <48,1
+step << Warlock
+    .goto 1448/1,-577.83,5182.93
+    >>Kill |cRXP_ENEMY_Jaedenar Legionnaire|r and loot |cRXP_LOOT_Flawless Fel Essence (Jaedenar)|r
+    .complete 7602,2 --Flawless Fel Essence (Jaedenar) (1)
+    .mob Jaedenar Legionnaire
+    .isOnQuest 7602
+step
+    .goto 1448/1,-589.91,5336.65
+    >>Kill |cRXP_ENEMY_Moora|r
+    .complete 5242,1 --Moora slain (1)
+    .mob Moora
+    .isOnQuest 5242
+step
+    .goto 1448/1,-588.76,5343.17
+    >>Kill |cRXP_ENEMY_Salia|r
+    .complete 5242,2 --Salia slain (1)
+    .mob Salia
+    .isOnQuest 5242
+step
+    .goto 1448/1,-590.48,5340.10
+    >>Kill |cRXP_ENEMY_Shadow Lord Fel'dan|r and loot |cRXP_LOOT_Shadow Lord Fel'dan's Head|r
+    .complete 5242,3 --Shadow Lord Fel'dan's Head (1)
+    .mob Shadow Lord Fel'dan
+    .isOnQuest 5242
+step << Warlock
+    .goto 1448/1,-736.53,5407.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Impsy|r
+    .turnin 8422 >>Turn in Trolls of a Feather
+    .target Impsy
+    .isQuestComplete 8422
+step << Warlock
+    .goto 1448/1,-736.53,5407.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Impsy|r
+    .turnin 7602 >>Turn in Flawless Fel Essence
+    .target Impsy
+    .isQuestComplete 7602
+step
+    .goto 1448/1,-1302.91,3985.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greta Mosshoof|r
+    .turnin 5242 >>Turn in A Final Blow
+    .target Greta Mosshoof
+    .isOnQuest 5242
+step
+    +|cRXP_WARN_End of the Felwood route.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Stormwind City|r: Northern Kalimdor - A Comprehensive Guide
 ]])

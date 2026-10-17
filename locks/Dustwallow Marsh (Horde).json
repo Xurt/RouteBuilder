@@ -1,12 +1,14 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "35-46 Dustwallow Marsh",
-  "saved": "2026-10-15 16:51",
+  "saved": "2026-10-17 13:20",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
+        "accept:79952 @1445:-3978,-2761.33  Accept RwlRwlRwlRwl!",
+        "obj:79952:1 @1445:-3978,-2761.33  Objective RwlRwlRwlRwl! / RwlRwlRwlRwl! (1)",
         "accept:1268 @1445:-2534.25,-3700.73  Accept Suspicious Hoofprints",
         "accept:1269 @1445:-2541.07,-3721.73  Accept Lieutenant Paval Reethe",
         "accept:1251 @1445:-2530.57,-3735.03  Accept The Black Shield",

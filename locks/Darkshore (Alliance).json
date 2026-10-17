@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-22 Darkshore",
-  "saved": "2026-10-15 16:54",
+  "saved": "2026-10-17 13:23",
   "levels": "RestedXP",
   "parts": [
     {
@@ -163,6 +163,7 @@
     {
       "part": 2,
       "steps": [
+        "accept:78124 @1439:-962.13,7363.93  Accept Nar'thalas Almanac",
         "home @1439:515.55,6406.32  Home inn",
         "turnin:1141 @1439:577.12,6371.39  TurnIn The Family and the Fishing Pole",
         "accept:2139 @1439:397.65,6437.33  Accept Tharnariun's Hope",
@@ -178,7 +179,7 @@
         "accept:945 @1439:410.75,4519.92  Accept Therylune's Escape",
         "obj:945:1 @1439:288.26,4530.84  Objective Therylune's Escape / Escort Therylune away from the Master's Glaive",
         "obj:98042:1 @1439:416.64,4565.77  Objective It's All Fun and Games Until... / Peerless Eye (1)",
-        "accept:98013 @1439:74.08,4993.71  Accept Swelling Forces",
+        "accept:98013 @1439:76.04,4992.83  Accept Swelling Forces",
         "accept:951 @1439:89.14,5002  Accept Mathystra Relics",
         "turnin:729 @1439:601.35,4678.43  TurnIn The Absent Minded Prospector",
         "accept:731 @1439:601.35,4678.43  Accept The Absent Minded Prospector",
@@ -205,22 +206,23 @@
         "accept:2078 @1439:-769.56,7744.71  Accept Gyromast's Revenge",
         "obj:2078:1 @1439:-713.89,7534.67  Objective Gyromast's Revenge / Gelkak's First Mate (1)",
         "turnin:2078 @1439:-769.56,7744.71  TurnIn Gyromast's Revenge",
+        "obj:87760:1 @1439:-281.59,7775.71  Objective Holy Diver / Rod of Deep Dominion (1)",
         "turnin:4763 @1439:491.97,6580.99  TurnIn The Blackwood Corrupted",
         "turnin:2139 @1439:397.65,6437.33  TurnIn Tharnariun's Hope",
         "turnin:986 @1439:362.93,6434.71  TurnIn A Lost Master",
         "accept:993 @1439:362.93,6434.71  Accept A Lost Master",
-        "obj:87760:1 @1439:-281.59,7775.71  Objective Holy Diver / Rod of Deep Dominion (1)",
-        "obj:98013:2 @1439:-841.61,7377.03  Objective Swelling Forces / Stormscale Sorceress slain (8)",
-        "obj:98013:3 @1439:-1072.17,7424.63  Objective Swelling Forces / Stormscale Warrior slain (6)",
         "turnin:87760 @1439:543.06,6342.57  TurnIn Holy Diver",
         "turnin:951 @1439:89.14,5002  TurnIn Mathystra Relics",
-        "turnin:98013 @1439:74.08,4993.71  TurnIn Swelling Forces",
         "accept:5321 @1439:33.47,4995.89  Accept The Sleeper Has Awakened",
         "obj:5321:1 @1439:34.12,5001.13  Objective The Sleeper Has Awakened / Horn of Awakening (1)",
         "turnin:993 @1439:-6.49,4608.57  TurnIn A Lost Master",
         "obj:1138:1 @1439:799.82,4778.43  Objective Fruit of the Sea / Fine Crab Chunks (6)",
         "turnin:1138 @1439:577.12,6371.39  TurnIn Fruit of the Sea",
-        "accept:98461 @1439:489.35,6506.32  Accept Unrequited Love"
+        "accept:98461 @1439:489.35,6506.32  Accept Unrequited Love",
+        "obj:98013:2 @1439:-841.61,7377.03  Objective Swelling Forces / Stormscale Sorceress slain (8)",
+        "obj:78124:1 @1439:-962.13,7363.93  Objective Nar'thalas Almanac / Nar'thalas Almanac, Vol. 74 (1)",
+        "obj:98013:3 @1439:-1072.17,7424.63  Objective Swelling Forces / Stormscale Warrior slain (6)",
+        "turnin:98013 @1439:76.04,4992.83  TurnIn Swelling Forces"
       ]
     },
     {

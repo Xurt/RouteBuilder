@@ -1,9 +1,9 @@
 -- 35-57 Swamp of Sorrows: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 8 parts with a level check between them (from level 35, 38, 41, 44, 47, 50, 53, 56).
--- Sections (the guide starts at the one for your level): start from 35; part 2 from 38; around Tok'Kar from 41; part 4 from 44; part 5 from 47; part 6 from 50; part 7 from 53; part 8 from 56.
+-- The zone covers more levels than one visit gives, so it is planned in 8 parts (from level 35, 38, 41, 44, 47, 50, 53, 56).
+-- Split into 8 guides, listed under "35 - 57 Swamp of Sorrows" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Swamp of Sorrows.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,69 +13,18 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 35-57 Swamp of Sorrows
+#subgroup 35 - 57 Swamp of Sorrows
+#subweight -35
+#name 35-36 Swamp of Sorrows
 
 step
-    .xp <38,1,RBSection1_1
-    .xp 38 >>Finding the place in this guide for your level
+    .goto 1435/0,-3633.57,-9964.90
+    >>Click the |cRXP_PICK_Book|r
+    .accept 79953 >>Accept A Ludite's Guide to Caring for Your Demonic Pet
 step
-    .xp <41,1,RBSection2_1
-    .xp 41 >>Finding the place in this guide for your level
-step
-    .xp <44,1,RBSection3_1
-    .xp 44 >>Finding the place in this guide for your level
-step
-    .xp <47,1,RBSection4_1
-    .xp 47 >>Finding the place in this guide for your level
-step
-    .xp <50,1,RBSection5_1
-    .xp 50 >>Finding the place in this guide for your level
-step
-    .xp <53,1,RBSection6_1
-    .xp 53 >>Finding the place in this guide for your level
-step
-    .xp <56,1,RBSection7_1
-    .xp 56 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection8_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Swamp of Sorrows: start|r (planned from level 35)
-step
-    .goto 1435/0,-2800.25,-10449.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r
-    .accept 93176 >>Accept My Little Friends
-    .target Amaryllis Webb
-step
-    .goto 1435/0,-2800.25,-10449.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r
-    >>|cRXP_WARN_The database has no objectives for My Little Friends. Skip this step if the quest is not finished|r
-    .turnin 93176 >>Turn in My Little Friends
-    .target Amaryllis Webb
-    .isOnQuest 93176
-step << Warrior
-    .goto 1435/0,-3009.44,-10632.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
-    .turnin 8417 >>Turn in A Troubled Spirit
-    .target Fallen Hero of the Horde
-    .isOnQuest 8417
-step
-    .goto 1435/0,-3238.82,-10422.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Infiltrator Marksen|r
-    .turnin 1391 >>Turn in Nothing But The Truth
-    .target Infiltrator Marksen
-    .isOnQuest 1391
-step
-    .goto 1435/0,-3248.22,-10495.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dar|r
-    .accept 93663 >>Accept Lost in Transit
-    .target Dar
-step
-    .goto 1435/0,-3317.95,-10464.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helgrum the Swift|r
-    .accept 1418 >>Accept Neeka Bloodscar
-    .target Helgrum the Swift
+    .goto 1435/0,-3633.57,-9964.90
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_A Luddite's Guide to Caring for Your Demonic Pet|r
+    .complete 79953,1 --A Luddite's Guide to Caring for Your Demonic Pet (1)
 step
     .goto 1435/0,-3263.82,-10490.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rartar|r inside the inn
@@ -164,6 +113,12 @@ step << Warrior
     .target Malosh
     .xp <44,1
 step
+    .goto 1435/0,-3238.82,-10422.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Infiltrator Marksen|r
+    .turnin 1391 >>Turn in Nothing But The Truth
+    .target Infiltrator Marksen
+    .isOnQuest 1391
+step
     .goto 1435/0,-3482.19,-10142.28
     >>Kill |cRXP_ENEMY_Noboru the Cudgel|r and loot |cRXP_LOOT_Noboru's Cudgel|r. Use it to start the quest
     .collect 6196,1,1392 --Noboru's Cudgel (1)
@@ -171,13 +126,41 @@ step
     .use 6196
     .mob Noboru the Cudgel
 step
+    .goto 1435/0,-3317.95,-10464.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helgrum the Swift|r
+    .accept 1418 >>Accept Neeka Bloodscar
+    .target Helgrum the Swift
+step
+    .goto 1435/0,-3248.22,-10495.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dar|r
+    .accept 93663 >>Accept Lost in Transit
+    .target Dar
+step << Warrior
+    .goto 1435/0,-3009.44,-10632.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
+    .turnin 8417 >>Turn in A Troubled Spirit
+    .target Fallen Hero of the Horde
+    .isOnQuest 8417
+step
+    .goto 1435/0,-2800.25,-10449.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r
+    .accept 93176 >>Accept My Little Friends
+    .target Amaryllis Webb
+step
+    .goto 1435/0,-2800.25,-10449.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r
+    >>|cRXP_WARN_The database has no objectives for My Little Friends. Skip this step if the quest is not finished|r
+    .turnin 93176 >>Turn in My Little Friends
+    .target Amaryllis Webb
+    .isOnQuest 93176
+step
     .goto 1435/0,-2818.83,-10100.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magtoor|r
     .turnin 1392 >>Turn in Noboru the Cudgel
     .accept 1389 >>Accept Draenethyst Crystals
     .target Magtoor
 step
-    #completewith Along10
+    #completewith Along12
     >>As you go: Loot the |cRXP_PICK_Draenethyst Crystals|r for |cRXP_LOOT_Draenethyst Crystal|r. |cRXP_WARN_Anything left is finished later|r
     .complete 1389,1 --Draenethyst Crystal (6)
 step
@@ -186,7 +169,7 @@ step
     .accept 1393 >>Accept Galen's Escape
     .target Galen Goodward
 step
-    #label Along10
+    #label Along12
     .goto 1435/0,-3440.44,-10072.70
     >>Escort Galen out of the Fallow Sanctuary.
     .complete 1393,1 --Escort Galen out of the Fallow Sanctuary.
@@ -348,13 +331,21 @@ step
 step
     +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Badlands|r: Neeka Bloodscar
+    >>|cRXP_FRIENDLY_Undercity|r: A Ludite's Guide to Caring for Your Demonic Pet
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Lost in Transit
 step
-    .xp 38 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 38.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Swamp of Sorrows: part 2|r (planned from level 38)
+    +|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 38.|r Load its guide for level 38 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 35 - 57 Swamp of Sorrows
+#subweight -35
+#name 38-39 Swamp of Sorrows
+
 step
     .goto 1435/0,-3248.22,-10495.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dar|r
@@ -403,13 +394,18 @@ step
     +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Dustwallow Marsh|r: Cortello's Riddle
 step
-    +|cRXP_WARN_Until level 41, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Far Seer Mok'thardin). Then come back to this Swamp of Sorrows guide --RouteBuilder:next
-step
-    .xp 41 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 41.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Swamp of Sorrows: around Tok'Kar|r (planned from level 41)
+    +|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 41.|r Load its guide for level 41 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 35 - 57 Swamp of Sorrows
+#subweight -35
+#name 41-42 Swamp of Sorrows: around Tok'Kar
+
 step
     .goto 1435/0,-3248.22,-10495.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dar|r
@@ -581,11 +577,26 @@ step
     +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_The Hinterlands|r: The Atal'ai Exile
 step
-    .xp 44 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 44.|r Come back to this guide then
+    +|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 44.|r Load its guide for level 44 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 35 - 57 Swamp of Sorrows
+#subweight -35
+#name 44-45 Swamp of Sorrows
+
 step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Swamp of Sorrows: part 4|r (planned from level 44)
+    .goto 1435/0,-3828.54,-10400.71
+    >>Click the |cRXP_PICK_Book|r
+    .accept 81947 >>Accept Sanguine Sorcery
+step
+    .goto 1435/0,-3828.54,-10400.71
+    >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Sanguine Sorcery|r
+    .complete 81947,1 --Sanguine Sorcery (1)
 step
     .goto 1435/0,-4144.16,-10850.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katar|r
@@ -675,11 +686,21 @@ step
     .target Magtoor
     .isQuestComplete 93663
 step
-    .xp 47 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 47.|r Come back to this guide then
+    +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Undercity|r: Sanguine Sorcery
 step
-    #label RBSection5_1
-    #completewith next
-    +|cRXP_WARN_Swamp of Sorrows: part 5|r (planned from level 47)
+    +|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 47.|r Load its guide for level 47 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 35 - 57 Swamp of Sorrows
+#subweight -35
+#name 47-48 Swamp of Sorrows
+
 step
     .goto 1435/0,-3009.44,-10632.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
@@ -720,11 +741,18 @@ step
     .target Magtoor
     .isQuestComplete 93663
 step
-    .xp 50 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 50.|r Come back to this guide then
-step
-    #label RBSection6_1
-    #completewith next
-    +|cRXP_WARN_Swamp of Sorrows: part 6|r (planned from level 50)
+    +|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 50.|r Load its guide for level 50 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 35 - 57 Swamp of Sorrows
+#subweight -35
+#name 50-51 Swamp of Sorrows
+
 step
     .goto 1435/0,-3254.42,-10498.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bengor|r
@@ -791,11 +819,18 @@ step
     +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Winterspring|r: In Eranikus' Own Words
 step << Warrior
-    .xp 53 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 53.|r Come back to this guide then
-step
-    #label RBSection7_1
-    #completewith next
-    +|cRXP_WARN_Swamp of Sorrows: part 7|r (planned from level 53)
+    +|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 53.|r Load its guide for level 53 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior
+#version 1
+#group Zone Routes (Horde)
+#subgroup 35 - 57 Swamp of Sorrows
+#subweight -35
+#name 53-54 Swamp of Sorrows
+
 step << Warrior
     .goto 1435/0,-3009.44,-10632.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r
@@ -849,11 +884,18 @@ step
     +|cRXP_WARN_That is all of Swamp of Sorrows for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Blasted Lands and back here|r: Warrior Kinship << Warrior
 step
-    .xp 56 >>|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 56.|r Come back to this guide then
-step
-    #label RBSection8_1
-    #completewith next
-    +|cRXP_WARN_Swamp of Sorrows: part 8|r (planned from level 56)
+    +|cRXP_WARN_The rest of Swamp of Sorrows is planned from level 56.|r Load its guide for level 56 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 35 - 57 Swamp of Sorrows
+#subweight -35
+#name 56-57 Swamp of Sorrows
+
 step
     .goto 1435/0,-3009.44,-10632.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fallen Hero of the Horde|r

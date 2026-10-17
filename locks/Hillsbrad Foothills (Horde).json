@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "20-40 Hillsbrad Foothills",
-  "saved": "2026-10-15 16:50",
+  "saved": "2026-10-17 13:19",
   "levels": "RestedXP",
   "parts": [
     {
@@ -33,10 +33,10 @@
         {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",">>|cRXP_BUY_Buy|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] |cRXP_BUY_from her if they're up|r",".vendor >> Vendor and Repair",".target Kris Legace",".money <0.3515",".isOnQuest 498"],"tag":"Rogue/Hunter/Shaman/Druid","from":"RestedXP: 22-24 Hillsbrad"},
         {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",".vendor >> Vendor and Repair",".target Kris Legace",".isOnQuest 498",".subzoneskip 275,1"],"tag":"!Rogue !Hunter !Shaman !Druid","from":"RestedXP: 22-24 Hillsbrad"},
         "turnin:508 @1424:-957.01,-40.75  TurnIn Taretha's Gift",
+        "turnin:98094 @1424:-967.89,-733.01  TurnIn Scout Support",
+        "accept:98095 @1424:-967.89,-733.01  Accept Valuable Vantages",
         "obj:1066:1 @1424:-1025.17,-638.51  Objective Blood of Innocents / Vial of Innocent Blood (1)",
         "obj:549:1 @1424:-1046.61,-626.77  Objective WANTED: Syndicate Personnel / Syndicate Rogue slain (10)",
-        "turnin:98094 @1424:-982.93,-748.59  TurnIn Scout Support",
-        "accept:98095 @1424:-982.93,-748.59  Accept Valuable Vantages",
         "obj:549:2 @1424:-1079.57,-617.6  Objective WANTED: Syndicate Personnel / Syndicate Watchman slain (8)",
         "turnin:549 @1424:-927.89,-36.27  TurnIn WANTED: Syndicate Personnel",
         {"lines":[".goto 1424/0,-941.65,-6.40",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shay|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Shay",".isOnQuest 527",".subzoneskip 272,1"],"from":"RestedXP: 22-24 Hillsbrad"},
@@ -91,7 +91,7 @@
         "turnin:528 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad",
         "obj:546:1 @1424:116.27,-806.19  Objective Souvenirs of Death / Hillsbrad Human Skull (30)",
         {"lines":[".goto 1424/0,69.87,-767.57,0",".goto 1424/0,116.59,-837.97,15,0",".goto 1424/0,165.23,-821.76,15,0",".goto 1424/0,219.31,-853.12,15,0",".goto 1424/0,190.19,-866.77,15,0",".goto 1424/0,187.31,-828.80,15,0",".goto 1424/0,168.75,-775.89,15,0",".goto 1424/0,160.11,-732.80,15,0",".goto 1424/0,69.87,-767.57,15,0",".xp 31 >> Grind to 31 in Azurelode Mine. Return to Tarren Mill if you need to restock"],"from":"RestedXP: 30-33 Hillsbrad/Arathi"},
-        "turnin:98095 @1424:-982.93,-748.59  TurnIn Valuable Vantages",
+        "turnin:98095 @1424:-967.89,-733.01  TurnIn Valuable Vantages",
         "turnin:546 @1424:-920.85,-20.27  TurnIn Souvenirs of Death"
       ]
     },
@@ -107,7 +107,7 @@
         "turnin:529 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad",
         "accept:509 @1424:-899.41,-6.61  Accept Elixir of Agony",
         {"lines":[".goto 1424/0,-941.65,-6.40",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shay|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Shay"],"from":"RestedXP: 30-33 Hillsbrad/Arathi"},
-        "turnin:98095 @1424:-982.93,-748.59  TurnIn Valuable Vantages",
+        "turnin:98095 @1424:-967.89,-733.01  TurnIn Valuable Vantages",
         "obj:509:1 @1424:-999.25,-906.67  Objective Elixir of Agony / Mudsnout Blossoms (6)",
         "turnin:509 @1424:-899.41,-6.61  TurnIn Elixir of Agony",
         "accept:513 @1424:-899.41,-6.61  Accept Elixir of Agony"
@@ -139,7 +139,7 @@
         "turnin:567 @1424:-927.89,-36.27  TurnIn Dangerous!",
         "turnin:539 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad",
         "accept:547 @1424:-941.65,-31.15  Accept Humbert's Sword",
-        "turnin:98095 @1424:-982.93,-748.59  TurnIn Valuable Vantages",
+        "turnin:98095 @1424:-967.89,-733.01  TurnIn Valuable Vantages",
         "obj:547:1 @1424:-1208.21,-1284.69  Objective Humbert's Sword / Humbert's Sword (1)",
         "obj:517:1 @1424:-1225.17,-1309.87  Objective Elixir of Agony / Keg of Shindigger Stout (1)",
         "turnin:547 @1424:-941.65,-31.15  TurnIn Humbert's Sword",
@@ -163,7 +163,7 @@
         "accept:553 @1424:-977.49,-19.41  Accept Helcular's Revenge",
         "accept:1361 @1424:-957.01,-40.75  Accept Regthar Deathgate",
         "turnin:95125 @1424:-867.09,-158.51  TurnIn Ott's Masterwork",
-        "turnin:98095 @1424:-982.93,-748.59  TurnIn Valuable Vantages",
+        "turnin:98095 @1424:-967.89,-733.01  TurnIn Valuable Vantages",
         "obj:541:1 @1424:-1223.89,-1297.49  Objective Battle of Hillsbrad / Dun Garok Mountaineer slain (8)",
         "obj:541:2 @1424:-1195.09,-1276.8  Objective Battle of Hillsbrad / Dun Garok Rifleman slain (8)",
         "obj:541:3 @1424:-1240.21,-1307.73  Objective Battle of Hillsbrad / Dun Garok Priest slain (2)",
@@ -184,14 +184,14 @@
         "accept:519 @1424:-937.49,-40.53  Accept The Crown of Will",
         "accept:521 @1424:-937.49,-40.53  Accept The Crown of Will",
         "turnin:556 @1424:-901.33,-46.51  TurnIn Stone Tokens",
-        "turnin:544 @1424:-904.53,-44.8  TurnIn Prison Break In",
         "turnin:93680 @1424:-904.53,-44.8  TurnIn Key to the City",
+        "turnin:544 @1424:-904.53,-44.8  TurnIn Prison Break In",
         "turnin:533 @1424:-957.01,-40.75  TurnIn Infiltration",
         "turnin:95125 @1424:-867.09,-158.51  TurnIn Ott's Masterwork",
         "obj:553:2 @1424:-342.93,-166.4  Objective Helcular's Revenge / Flame of Veraz charged",
         "obj:553:1 @1424:-337.81,-198.61  Objective Helcular's Revenge / Flame of Azel charged",
         "turnin:553 @1424:-621.33,-738.56  TurnIn Helcular's Revenge",
-        "turnin:98095 @1424:-982.93,-748.59  TurnIn Valuable Vantages"
+        "turnin:98095 @1424:-967.89,-733.01  TurnIn Valuable Vantages"
       ]
     },
     {
@@ -207,7 +207,7 @@
         "obj:553:2 @1424:-342.93,-166.4  Objective Helcular's Revenge / Flame of Veraz charged",
         "obj:553:1 @1424:-337.81,-198.61  Objective Helcular's Revenge / Flame of Azel charged",
         "turnin:553 @1424:-621.33,-738.56  TurnIn Helcular's Revenge",
-        "turnin:98095 @1424:-982.93,-748.59  TurnIn Valuable Vantages"
+        "turnin:98095 @1424:-967.89,-733.01  TurnIn Valuable Vantages"
       ]
     }
   ]

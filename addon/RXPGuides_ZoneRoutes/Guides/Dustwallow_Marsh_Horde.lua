@@ -1,9 +1,9 @@
 -- 35-46 Dustwallow Marsh: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 4 parts with a level check between them (from level 35, 38, 41, 44).
--- Sections (the guide starts at the one for your level): around Nazeer Bloodpike from 35; part 2 from 38; around Overlord Mok'Morokk from 41; part 4 from 44.
+-- The zone covers more levels than one visit gives, so it is planned in 4 parts (from level 35, 38, 41, 44).
+-- Split into 4 guides, listed under "35 - 45 Dustwallow Marsh" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Dustwallow Marsh.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,23 +13,18 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 35-46 Dustwallow Marsh
+#subgroup 35 - 45 Dustwallow Marsh
+#subweight -35
+#name 35-36 Dustwallow Marsh: around Nazeer Bloodpike
 
 step
-    .xp <38,1,RBSection1_1
-    .xp 38 >>Finding the place in this guide for your level
+    .goto 1445/1,-3978.00,-2761.33
+    >>Click the |cRXP_PICK_Waterlogged Book|r
+    .accept 79952 >>Accept RwlRwlRwlRwl!
 step
-    .xp <41,1,RBSection2_1
-    .xp 41 >>Finding the place in this guide for your level
-step
-    .xp <44,1,RBSection3_1
-    .xp 44 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection4_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Dustwallow Marsh: around Nazeer Bloodpike|r (planned from level 35)
+    .goto 1445/1,-3978.00,-2761.33
+    >>Open the |cRXP_PICK_Waterlogged Book|r. Loot it for |cRXP_LOOT_RwlRwlRwlRwl!|r
+    .complete 79952,1 --RwlRwlRwlRwl! (1)
 step
     .goto 1445/1,-2534.25,-3700.73
     >>Click the |cRXP_PICK_Hoofprints|r
@@ -385,14 +380,22 @@ step
     >>|cRXP_FRIENDLY_The Hinterlands|r: Cortello's Riddle
     >>|cRXP_FRIENDLY_Thousand Needles|r: Hidden Secrets << Mage
     >>|cRXP_FRIENDLY_Thunder Bluff|r: The Black Shield
+    >>|cRXP_FRIENDLY_Undercity|r: RwlRwlRwlRwl!
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Jarl Needs a Blade
     >>|cRXP_FRIENDLY_Desolace and back here|r: The Infernal Orb << Mage
 step
-    .xp 38 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 38.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Dustwallow Marsh: part 2|r (planned from level 38)
+    +|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 38.|r Load its guide for level 38 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 35 - 45 Dustwallow Marsh
+#subweight -35
+#name 38-39 Dustwallow Marsh
+
 step
     .goto 1445/1,-2892.82,-3110.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Do'gol|r
@@ -585,11 +588,18 @@ step
     +|cRXP_WARN_That is all of Dustwallow Marsh for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_The Barrens|r: Returning the Cleansed Orb << Warlock
 step
-    .xp 41 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 41.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Dustwallow Marsh: around Overlord Mok'Morokk|r (planned from level 41)
+    +|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 41.|r Load its guide for level 41 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 35 - 45 Dustwallow Marsh
+#subweight -35
+#name 41-42 Dustwallow Marsh: around Overlord Mok'Morokk
+
 step
     .goto 1445/1,-3885.60,-2952.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
@@ -736,11 +746,18 @@ step
     +|cRXP_WARN_That is all of Dustwallow Marsh for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Tiara of the Deep
 step
-    .xp 44 >>|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 44.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Dustwallow Marsh: part 4|r (planned from level 44)
+    +|cRXP_WARN_The rest of Dustwallow Marsh is planned from level 44.|r Load its guide for level 44 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 35 - 45 Dustwallow Marsh
+#subweight -35
+#name 44-45 Dustwallow Marsh
+
 step
     .goto 1445/1,-3885.60,-2952.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r

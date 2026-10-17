@@ -1,9 +1,9 @@
 -- 55-60 Silithus: Zone Routes (Alliance).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 2 parts with a level check between them (from level 55, 58).
--- Sections (the guide starts at the one for your level): around Windcaller Proudhorn from 55; around Commander Mar'alith from 58.
+-- The zone covers more levels than one visit gives, so it is planned in 2 parts (from level 55, 58).
+-- Split into 2 guides, listed under "55 - 59 Silithus" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Silithus.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Horde" then return end
@@ -13,17 +13,10 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group Zone Routes (Alliance)
-#name 55-60 Silithus
+#subgroup 55 - 59 Silithus
+#subweight -55
+#name 55-56 Silithus: around Windcaller Proudhorn
 
-step
-    .xp <58,1,RBSection1_1
-    .xp 58 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection2_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Silithus: around Windcaller Proudhorn|r (planned from level 55)
 step
     .goto 1451/1,772.15,-6764.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rifleman Torrig|r
@@ -254,11 +247,18 @@ step
     >>|cRXP_FRIENDLY_Searing Gorge|r: Secrets of the Colossus - Regal
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Secrets of the Colossus - Ashi
 step
-    .xp 58 >>|cRXP_WARN_The rest of Silithus is planned from level 58.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Silithus: around Commander Mar'alith|r (planned from level 58)
+    +|cRXP_WARN_The rest of Silithus is planned from level 58.|r Load its guide for level 58 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance
+#version 1
+#group Zone Routes (Alliance)
+#subgroup 55 - 59 Silithus
+#subweight -55
+#name 58-59 Silithus: around Commander Mar'alith
+
 step
     .goto 1451/1,1377.90,-7144.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Bluewall|r

@@ -1,18 +1,20 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "43-60 Tanaris",
-  "saved": "2026-10-15 16:57",
+  "saved": "2026-10-17 13:26",
   "levels": "RestedXP",
   "parts": [
     {
       "part": 1,
       "steps": [
-        "turnin:3912 @1446:-3939.23,-6948.18  TurnIn Meet at the Grave",
+        "accept:81949 @1446:-5228.15,-8073.8  Accept Legends of the Tidesages",
+        "obj:81949:1 @1446:-5228.15,-8073.8  Objective Legends of the Tidesages / Legends of the Tidesages (1)",
         {"lines":[".hs >> Hearth to Theramore"],"from":"RestedXP: 42-50 ADV Tanaris Mage AoE"},
         "accept:8365 @1446:-4811.39,-6899.42  Accept Pirate Hats Ahoy!",
         "accept:8366 @1446:-4845.89,-6973.94  Accept Southsea Shakedown",
         "accept:2873 @1446:-4849.34,-6978.08  Accept Stoley's Shipment",
         "accept:2875 @1446:-4829.33,-6900.34  Accept WANTED: Andre Firebeard",
+        "turnin:3912 @1446:-3939.23,-6948.18  TurnIn Meet at the Grave",
         "turnin:8922 @1446:-3839.18,-7127.58  TurnIn A Supernatural Device",
         "turnin:4493 @1446:-3730.16,-7115.16  TurnIn March of the Silithid",
         "turnin:4450 @1446:-3769.49,-7200.26  TurnIn Ledger from Tanaris",
@@ -55,8 +57,8 @@
         "accept:1189 @1446:-3734.99,-7128.04  Accept Safety First",
         "accept:3520 @1446:-4841.06,-6903.56  Accept Screecher Spirits",
         "turnin:2872 @1446:-4849.34,-6978.08  TurnIn Stoley's Debt",
-        "accept:5065 @1446:-4834.16,-6980.38  Accept The Lost Tablets of Mosh'aru",
         "accept:8182 @1446:-4834.16,-6980.38  Accept The Hand of Rastakhan",
+        "accept:5065 @1446:-4834.16,-6980.38  Accept The Lost Tablets of Mosh'aru",
         "accept:3042 @1446:-3766.04,-7197.5  Accept Troll Temper",
         "accept:2768 @1446:-3838.49,-7186.46  Accept Divino-matic Rod",
         "accept:2865 @1446:-3777.08,-7105.96  Accept Scarab Shells",

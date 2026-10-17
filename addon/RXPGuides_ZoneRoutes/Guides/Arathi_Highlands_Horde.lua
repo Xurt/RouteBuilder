@@ -1,9 +1,9 @@
 -- 32-42 Arathi Highlands: Zone Routes (Horde).
--- Made by RouteBuilder from QuestieDB's Forever data (commit 79451da, 2026-10-13; QuestieDB is GPL-3.0).
+-- Made by RouteBuilder from QuestieDB's Forever data (commit e9a67d1, 2026-10-17; QuestieDB is GPL-3.0).
 -- One route for the whole faction. Steps marked << Class or << Race only show for those characters.
 -- Steps that depend on quests from other zones hide themselves unless you have those quests.
--- The zone covers more levels than one visit gives, so the guide has 5 parts with a level check between them (from level 32, 35, 38, 41, 44).
--- Sections (the guide starts at the one for your level): around Tor'gan from 32; around Tor'gan from 35; around Zengu from 38; part 4 from 41; part 5 from 44.
+-- The zone covers more levels than one visit gives, so it is planned in 5 parts (from level 32, 35, 38, 41, 44).
+-- Split into 5 guides, listed under "32 - 45 Arathi Highlands" in RestedXP. Each leads on to the next; start at any of them: a step that needs a quest from an earlier one hides itself unless you did that quest.
 -- Edit zones/Arathi Highlands.json and re-run rather than editing this file, or your changes are lost on the next build.
 
 if UnitFactionGroup("player") == "Alliance" then return end
@@ -13,50 +13,19 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group Zone Routes (Horde)
-#name 32-42 Arathi Highlands
+#subgroup 32 - 45 Arathi Highlands
+#subweight -32
+#name 32-33 Arathi Highlands: around Tor'gan
 
 step
-    .xp <35,1,RBSection1_1
-    .xp 35 >>Finding the place in this guide for your level
+    .goto 1417/0,-3516.27,-1698.13
+    >>Click the |cRXP_PICK_Scrolls|r
+    .accept 79949 >>Accept A Web of Lies: Debunking Myths and Legends
 step
-    .xp <38,1,RBSection2_1
-    .xp 38 >>Finding the place in this guide for your level
-step
-    .xp <41,1,RBSection3_1
-    .xp 41 >>Finding the place in this guide for your level
-step
-    .xp <44,1,RBSection4_1
-    .xp 44 >>Finding the place in this guide for your level
-step
-    .xp <61,1,RBSection5_1
-step
-    #label RBSection1_1
-    #completewith next
-    +|cRXP_WARN_Arathi Highlands: around Tor'gan|r (planned from level 32)
-step
-    .goto 1417/0,-1675.23,-714.37
-    >>Click the |cRXP_PICK_Messenger Bag|r
-    .turnin 79975 >>Turn in Eagle's Fist
-    .isOnQuest 79975
-step
-    .goto 1417/0,-1675.23,-714.37
-    >>Click the |cRXP_PICK_Messenger Bag|r
-    .accept 79976 >>Accept This Must Be The Place
-step
-    .goto 1417/0,-1674.87,-714.37
-    >>Click the |cRXP_PICK_Hastily Rolled-Up Satchel|r
-    .turnin 79976 >>Turn in This Must Be The Place
-step << Shaman
-    .goto 1417/0,-3018.39,-795.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
-    .accept 79358 >>Accept Storm, Earth, and Fire
-    .target Veyric Thunderhame
-step << Shaman
-    .goto 1417/0,-3018.39,-795.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
-    .turnin 79358 >>Turn in Storm, Earth, and Fire
-    .target Veyric Thunderhame
-    .isQuestComplete 79358
+    .goto 1417/0,-3509.43,-1018.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Gregory Victor|r
+    .accept 97539 >>Accept Silky Sutures
+    .target Doctor Gregory Victor
 step
     #completewith Drop635x1
     >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Witherbark Troll|r, |cRXP_ENEMY_Witherbark Shadowcaster|r, |cRXP_ENEMY_Witherbark Axe Thrower|r. Use it to start the quest if you get one
@@ -65,16 +34,16 @@ step
     .use 4614
 step
     #loop
-    .goto 1417/0,-2205.15,-1179.73,0
-    .goto 1417/0,-2205.15,-1179.73,40,0
+    .goto 1417/0,-2221.71,-1241.89,0
     .goto 1417/0,-2221.71,-1241.89,40,0
-    .goto 1417/0,-2091.03,-1321.09,40,0
-    .goto 1417/0,-2050.35,-1281.25,40,0
-    .goto 1417/0,-1988.43,-1286.53,40,0
-    .goto 1417/0,-1982.31,-1220.29,40,0
-    .goto 1417/0,-2151.87,-1219.81,40,0
-    .goto 1417/0,-2115.51,-1164.61,40,0
+    .goto 1417/0,-2205.15,-1179.73,40,0
     .goto 1417/0,-2148.63,-1124.29,40,0
+    .goto 1417/0,-2115.51,-1164.61,40,0
+    .goto 1417/0,-1982.31,-1220.29,40,0
+    .goto 1417/0,-1988.43,-1286.53,40,0
+    .goto 1417/0,-2050.35,-1281.25,40,0
+    .goto 1417/0,-2091.03,-1321.09,40,0
+    .goto 1417/0,-2151.87,-1219.81,40,0
     >>Kill |cRXP_ENEMY_Boulderfist Ogres|r
     .complete 676,1 --Boulderfist Ogre slain (8)
     .mob Boulderfist Ogre
@@ -101,6 +70,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urda|r
     .fp Hammerfall >> Get the Hammerfall flight path
     .target Urda
+step
+    .goto 1417/0,-2028.75,-2086.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
+    .turnin 670 >>Turn in Sunken Treasure
+    .target Shakes O'Breen
+    .isOnQuest 670
 step
     .goto 1417/0,-3539.31,-947.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drum Fel|r
@@ -147,11 +122,17 @@ step << Hunter
     .target Tharlidun
     .train 17265,3
     .zoneskip Arathi Highlands,1
-step
-    .goto 1417/0,-3509.43,-1018.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Gregory Victor|r
-    .accept 97539 >>Accept Silky Sutures
-    .target Doctor Gregory Victor
+step << Shaman
+    .goto 1417/0,-3020.91,-795.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
+    .accept 79358 >>Accept Storm, Earth, and Fire
+    .target Veyric Thunderhame
+step << Shaman
+    .goto 1417/0,-3020.91,-795.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
+    .turnin 79358 >>Turn in Storm, Earth, and Fire
+    .target Veyric Thunderhame
+    .isQuestComplete 79358
 step
     #completewith Drop635x2
     >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Witherbark Troll|r, |cRXP_ENEMY_Witherbark Shadowcaster|r, |cRXP_ENEMY_Witherbark Axe Thrower|r. Use it to start the quest if you get one
@@ -161,16 +142,16 @@ step
 step
     #label Drop635x2
     #loop
-    .goto 1417/0,-2114.43,-893.89,0
-    .goto 1417/0,-2114.43,-893.89,40,0
+    .goto 1417/0,-2115.87,-781.33,0
     .goto 1417/0,-2115.87,-781.33,40,0
-    .goto 1417/0,-2022.63,-741.73,40,0
-    .goto 1417/0,-1957.47,-717.25,40,0
-    .goto 1417/0,-1912.47,-814.45,40,0
-    .goto 1417/0,-1970.79,-813.97,40,0
-    .goto 1417/0,-2028.39,-812.53,40,0
     .goto 1417/0,-2078.43,-848.53,40,0
+    .goto 1417/0,-2114.43,-893.89,40,0
     .goto 1417/0,-2010.75,-924.85,40,0
+    .goto 1417/0,-2028.39,-812.53,40,0
+    .goto 1417/0,-1970.79,-813.97,40,0
+    .goto 1417/0,-1912.47,-814.45,40,0
+    .goto 1417/0,-1957.47,-717.25,40,0
+    .goto 1417/0,-2022.63,-741.73,40,0
     >>Kill |cRXP_ENEMY_Syndicate Highwaymans|r, |cRXP_ENEMY_Syndicate Pathstalkers|r and |cRXP_ENEMY_Syndicate Mercenaries|r. Loot them for |cRXP_LOOT_Bloodstone Amulet|r
     .complete 671,1 --Bloodstone Amulet (10)
     .mob Syndicate Highwayman
@@ -185,6 +166,19 @@ step
     .goto 1417/0,-2030.19,-874.21,50,0
     .goto 1417/0,-2067.63,-870.61,50,0
     .xp 32>> Grind to level 32
+step
+    .goto 1417/0,-1675.23,-714.37
+    >>Click the |cRXP_PICK_Messenger Bag|r
+    .turnin 79975 >>Turn in Eagle's Fist
+    .isOnQuest 79975
+step
+    .goto 1417/0,-1675.23,-714.37
+    >>Click the |cRXP_PICK_Messenger Bag|r
+    .accept 79976 >>Accept This Must Be The Place
+step
+    .goto 1417/0,-1674.87,-714.37
+    >>Click the |cRXP_PICK_Hastily Rolled-Up Satchel|r
+    .turnin 79976 >>Turn in This Must Be The Place
 step
     #loop
     .goto 1417/0,-2403.15,-841.09,0
@@ -224,12 +218,12 @@ step
     .accept 635 >>Accept Crystal in the Mountains
     .use 4614
 step
-    #completewith Along15
+    #completewith Along17
     >>As you go: Kill |cRXP_ENEMY_Witherbark Axe Throwers|r. |cRXP_WARN_Anything left is finished later|r
     .complete 677,1 --Witherbark Axe Thrower slain (10)
     .mob Witherbark Axe Thrower
 step
-    #label Along15
+    #label Along17
     #loop
     .goto 1417/0,-3215.67,-1787.65,0
     .goto 1417/0,-3215.67,-1787.65,40,0
@@ -333,11 +327,9 @@ step
     .turnin 635 >>Turn in Crystal in the Mountains
     .isOnQuest 635
 step
-    .goto 1417/0,-2028.75,-2086.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shakes O'Breen|r
-    .turnin 670 >>Turn in Sunken Treasure
-    .target Shakes O'Breen
-    .isOnQuest 670
+    .goto 1417/0,-3516.27,-1698.13
+    >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_A Web of Lies: Debunking Myths and Legends|r
+    .complete 79949,1 --A Web of Lies: Debunking Myths and Legends (1)
 step
     #completewith next
     .hs >>Hearth to Innkeeper Adegwa's inn. |cRXP_WARN_Walk instead if you are already nearby|r
@@ -350,15 +342,23 @@ step
     .isOnQuest 638
 step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
+    >>|cRXP_FRIENDLY_Undercity|r: A Web of Lies: Debunking Myths and Legends
     >>|cRXP_FRIENDLY_another zone|r: Silky Sutures
     >>|cRXP_FRIENDLY_Dustwallow Marsh, Swamp of Sorrows, Badlands, Desolace and back here|r: Storm, Earth, and Fire << Shaman
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Conflict at Darkspear Islands, Conflict at Darkspear Islands
 step
-    .xp 35 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 35.|r Come back to this guide then
-step
-    #label RBSection2_1
-    #completewith next
-    +|cRXP_WARN_Arathi Highlands: around Tor'gan|r (planned from level 35)
+    +|cRXP_WARN_The rest of Arathi Highlands is planned from level 35.|r Load its guide for level 35 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 32 - 45 Arathi Highlands
+#subweight -32
+#name 35-36 Arathi Highlands: around Tor'gan
+
 step
     .goto 1417/0,-3116.67,-942.85
     >>Click the |cRXP_PICK_Shards of Myzrael|r
@@ -414,7 +414,7 @@ step
     >>Open the |cRXP_PICK_Stone of East Binding|r. Loot it for |cRXP_LOOT_Cresting Key|r
     .complete 651,2 --Cresting Key (1)
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 79358 >>Turn in Storm, Earth, and Fire
     .target Veyric Thunderhame
@@ -559,11 +559,18 @@ step
     .turnin 663 >>Turn in Land Ho!
     .target Shakes O'Breen
 step
-    .xp 38 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 38.|r Come back to this guide then
-step
-    #label RBSection3_1
-    #completewith next
-    +|cRXP_WARN_Arathi Highlands: around Zengu|r (planned from level 38)
+    +|cRXP_WARN_The rest of Arathi Highlands is planned from level 38.|r Load its guide for level 38 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 32 - 45 Arathi Highlands
+#subweight -32
+#name 38-39 Arathi Highlands: around Zengu
+
 step
     .goto 1417/0,-3512.67,-832.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
@@ -622,7 +629,7 @@ step
     .target Korin Fel
     .isQuestTurnedIn 678 --any of: Call to Arms
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 79358 >>Turn in Storm, Earth, and Fire
     .target Veyric Thunderhame
@@ -872,13 +879,18 @@ step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Sunken Treasure
 step
-    +|cRXP_WARN_Until level 41, suggested zones|r: |cRXP_FRIENDLY_Stranglethorn Vale|r (about 0.5 levels of quests, starting around Far Seer Mok'thardin). Then come back to this Arathi Highlands guide --RouteBuilder:next
-step
-    .xp 41 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 41.|r Come back to this guide then
-step
-    #label RBSection4_1
-    #completewith next
-    +|cRXP_WARN_Arathi Highlands: part 4|r (planned from level 41)
+    +|cRXP_WARN_The rest of Arathi Highlands is planned from level 41.|r Load its guide for level 41 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 32 - 45 Arathi Highlands
+#subweight -32
+#name 41-42 Arathi Highlands
+
 step
     .goto 1417/0,-3512.67,-832.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
@@ -892,7 +904,7 @@ step
     .target Horde Warbringer
     .isQuestComplete 98888
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 79358 >>Turn in Storm, Earth, and Fire
     .target Veyric Thunderhame
@@ -952,11 +964,18 @@ step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Badlands|r: Theldurin the Lost
 step
-    .xp 44 >>|cRXP_WARN_The rest of Arathi Highlands is planned from level 44.|r Come back to this guide then
-step
-    #label RBSection5_1
-    #completewith next
-    +|cRXP_WARN_Arathi Highlands: part 5|r (planned from level 44)
+    +|cRXP_WARN_The rest of Arathi Highlands is planned from level 44.|r Load its guide for level 44 then
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde
+#version 1
+#group Zone Routes (Horde)
+#subgroup 32 - 45 Arathi Highlands
+#subweight -32
+#name 44-45 Arathi Highlands
+
 step
     .goto 1417/0,-3523.47,-948.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r
@@ -976,7 +995,7 @@ step
     .target Horde Warbringer
     .isQuestComplete 98887
 step << Shaman
-    .goto 1417/0,-3018.39,-795.73
+    .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
     .turnin 79358 >>Turn in Storm, Earth, and Fire
     .target Veyric Thunderhame
