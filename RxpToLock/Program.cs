@@ -82,12 +82,15 @@ public static class Program
         var keys = RouteLock.Keys(model).ToHashSet();
 
         // every .accept / .complete / .turnin / .home in the guides, in order
-        var hits = new List<Hit>(); var guides = new List<string>(); int order = 0; var services = new List<Svc>();
+        var hits = new List<Hit>(); var guides = new List<string>(); int order = 0; var services = new List<Svc>(); var notOurs = new List<string>();
         var only = opt.TryGetValue("guides", out var gl) ? gl.Split(',').Select(s => s.Trim()).Where(s => s.Length > 0).ToHashSet(StringComparer.OrdinalIgnoreCase) : null;
         foreach (var file in files)
-            foreach (var (name, steps) in ReadGuides(file, faction, data))
+            foreach (var (name, guideTag, steps) in ReadGuides(file, faction, data))
             {
                 if (only != null && !only.Contains(name)) continue;
+                // a guide RestedXP only offers some characters ("<< Human Mage": its AoE mage route) is that character's
+                // order, not the faction's: a faction build leaves it out, a one-character build takes it if it is theirs
+                if (RxpServices.ForSome(guideTag) && (bo.Race == null && bo.Class == null || !Applies(guideTag, bo))) { if (steps.Any(st => st.Lines.Any(l => CmdRx.Match(l.Text) is { Success: true } c && c.Groups[2].Success && inZone.Contains(int.Parse(c.Groups[2].Value))))) notOurs.Add($"{name} (<< {guideTag})"); continue; }
                 guides.Add(name);
                 int lastMap = -1; bool homeSet = false;
                 foreach (var st in steps)
@@ -142,6 +145,7 @@ public static class Program
             }
         if (guides.Count == 0) throw new InvalidOperationException(only != null ? "none of the --guides names were found in the files" : "no RestedXP guides found in the files");
         Console.WriteLine($"Read {hits.Count} pickups, objectives and hand-ins from: {string.Join(", ", guides)}");
+        if (notOurs.Count > 0) Console.WriteLine($"Not followed (RestedXP offers them to some characters only): {string.Join(", ", notOurs)}");
 
         // setting the hearthstone counts only where it is done on this zone's maps, in a guide that does its quests
         // (any other guide in the files sets it somewhere else entirely)
@@ -245,12 +249,12 @@ public static class Program
     sealed record Step(string Tag, bool Along, List<(string Text, string Tag)> Lines);
 
     /// <summary>The guides in a RestedXP file: each RegisterGuide block's #name and its steps, comments removed.</summary>
-    static IEnumerable<(string Name, List<Step> Steps)> ReadGuides(string file, string faction, GameData data)
+    static IEnumerable<(string Name, string Tag, List<Step> Steps)> ReadGuides(string file, string faction, GameData data)
     {
         string text = File.ReadAllText(file);
         foreach (Match block in Regex.Matches(text, @"RegisterGuide\(\s*\[\[(.*?)\]\]", RegexOptions.Singleline))
         {
-            string name = "?", side = ""; var steps = new List<Step>(); Step? cur = null;
+            string name = "?", side = "", guideTag = ""; var steps = new List<Step>(); Step? cur = null;
             foreach (var raw in block.Groups[1].Value.Split('\n'))
             {
                 string l = Regex.Replace(raw, "--.*$", "").Trim();
@@ -258,7 +262,7 @@ public static class Program
                 string tag = ""; int ti = l.LastIndexOf("<<", StringComparison.Ordinal);
                 if (ti >= 0) { tag = l[(ti + 2)..].Trim(); l = l[..ti].TrimEnd(); }
                 if (l.StartsWith("#name ")) { name = l[6..].Trim(); continue; }
-                if (cur == null && l.Length == 0) { side = tag.StartsWith("Horde") ? "Horde" : tag.StartsWith("Alliance") ? "Alliance" : side; continue; }
+                if (cur == null && l.Length == 0) { guideTag = tag; side = RxpServices.SideOf(tag) ?? side; continue; }
                 if (l == "step") { steps.Add(cur = new Step(tag, false, new())); continue; }
                 if (cur == null) continue;
                 l = RxpServices.NormalizeGoto(l, data);              // ".goto Ashenvale,37.36,51.79" -> map ID and world coordinates
@@ -266,7 +270,7 @@ public static class Program
                 cur.Lines.Add((l, tag));
             }
             if (side.Length > 0 && side != faction) continue;          // a guide for the other faction
-            yield return (name, steps);
+            yield return (name, guideTag, steps);
         }
     }
 

@@ -18,7 +18,8 @@
     }
   },
     "steps": [
-    { "before": "accept:4641", "tag": "Warrior/Shaman/Warlock/Mage/Priest",
+    // after the pickup, not before it: "#completewith next" clears it when the next step is done
+    { "after": "accept:4641", "tag": "Warrior/Shaman/Warlock/Mage/Priest",
       "lines": [
         "#completewith next",
         "+|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock",

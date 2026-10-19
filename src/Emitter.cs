@@ -815,6 +815,9 @@ public sealed class Emitter
         }
 
         Pt prev = m.Start; int prevArea = m.StartArea;
+        // where each kind of character last stood: a loop of waypoints starts at the end nearest to where the characters
+        // who see it come from, not from a stop only another class makes (a Warlock's trainer, say)
+        var lastFor = new Dictionary<string, (int at, int area, Pt pos)> { [""] = (-1, m.StartArea, m.Start) };
         for (int i = 0; i < units.Count; i++)
         {
             var u = units[i];
@@ -840,7 +843,12 @@ public sealed class Emitter
                 g.HearthSteps++;
             }
             foreach (var sf in before.GetValueOrDefault(i) ?? new()) Custom(sf);
-            L.AddRange(Render(u, prev));
+            string ut = UnitTag(u);
+            var seen = lastFor[""];
+            if (ut.Length > 0 && lastFor.TryGetValue(ut, out var own) && own.at > seen.at) seen = own;
+            // after a hearth you stand at the inn
+            if (u.Hearth && m.Home is { } home && home.Cands.Count > 0) seen = (i, home.Cands[r.Choice[home.Id]].Area, home.Cands[r.Choice[home.Id]].Pos);
+            L.AddRange(Render(u, seen.area == u.Area ? seen.pos : prev));
             foreach (var sf in after.GetValueOrDefault(i) ?? new()) Custom(sf);
             foreach (var (t, c) in u.HandIns.OrderBy(e => e.t.Ent == u.Ent ? 0 : 1).ThenBy(e => e.c.Pos.To(u.Pos)))
             {
@@ -858,7 +866,7 @@ public sealed class Emitter
                 if (t.Ent.Kind == EntKind.Npc) L.Add("    .target " + t.Ent.Name);
                 L.Add($"    .xp <{t.MinLevel},1");
             }
-            prev = u.Pos; prevArea = u.Area;
+            prev = u.Pos; prevArea = u.Area; lastFor[ut] = (i, u.Area, u.Pos);
         }
         Reminders(99);
 

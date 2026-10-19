@@ -580,11 +580,20 @@ public sealed class Router
             int pick = todo.FirstOrDefault(t => ev.Pre[t].All(p => placed[p]) && (ev.Any[t].Length == 0 || ev.Any[t].Any(p => placed[p])), -1);
             if (pick < 0) pick = todo[0];
             todo.Remove(pick);
+            // no later than a placed step that needs it, directly or through steps not placed yet (a pickup placed ahead
+            // of the chain it is the end of: "Shimmer Stout" needs "Rejold's New Brew" handed in, which needs it picked up)
+            int upper = seq.Count; var seen = new HashSet<int> { pick }; var stack = new Stack<int>(); stack.Push(pick);
+            while (stack.Count > 0)
+                foreach (int sx in ev.Succ[stack.Pop()])
+                {
+                    if (!seen.Add(sx)) continue;
+                    if (placed[sx]) upper = Math.Min(upper, seq.IndexOf(sx)); else stack.Push(sx);
+                }
             double best = double.MaxValue; int bi = 0, bc = 0; int len = seq.Count + 1;
             for (int c = 0; c < m.Tasks[pick].Cands.Count; c++)
             {
                 choice[pick] = c;
-                for (int i = 0; i <= seq.Count; i++)
+                for (int i = 0; i <= upper; i++)
                 {
                     seq.CopyTo(0, buf, 0, i); buf[i] = pick; seq.CopyTo(i, buf, i + 1, seq.Count - i);
                     double v = ev.Cost(buf, len, choice);

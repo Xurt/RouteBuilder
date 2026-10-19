@@ -19,6 +19,36 @@ public sealed class RxpService
 public static class RxpServices
 {
     static readonly HashSet<string> Service = new() { "train", "trainer", "vendor", "fp" };
+    static readonly string[] HordeRaces = { "Orc", "Undead", "Scourge", "Tauren", "Troll" }, AllianceRaces = { "Human", "Dwarf", "NightElf", "Gnome" };
+    static readonly HashSet<string> Classes = Game.Classes.Select(c => c.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+    static readonly HashSet<string> RaceNames = HordeRaces.Concat(AllianceRaces).Append("Skyborne").ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>The faction a guide's "&lt;&lt; ..." line is for: named, or known from the races it names (null: either).</summary>
+    public static string? SideOf(string tag)
+    {
+        if (Regex.IsMatch(tag, @"\bHorde\b")) return "Horde";
+        if (Regex.IsMatch(tag, @"\bAlliance\b")) return "Alliance";
+        var words = Regex.Matches(tag, @"(?<![!\w])[A-Za-z]+").Select(x => x.Value).ToList();
+        bool h = words.Any(w => HordeRaces.Contains(w, StringComparer.OrdinalIgnoreCase)), a = words.Any(w => AllianceRaces.Contains(w, StringComparer.OrdinalIgnoreCase));
+        return h && !a ? "Horde" : a && !h ? "Alliance" : null;
+    }
+
+    /// <summary>A guide's "&lt;&lt; ..." line names a race or class it is only for ("Human Mage"), not just a faction or an exception ("!Hunter").</summary>
+    public static bool ForSome(string tag) =>
+        Regex.Matches(tag, @"(?<![!\w])[A-Za-z]+").Any(x => Classes.Contains(x.Value) || RaceNames.Contains(x.Value));
+
+    /// <summary>
+    /// Both of two RestedXP tags ("/" = or, space = and): a step tagged "Warrior/Rogue" in a guide for "Human" is for
+    /// "Human Warrior/Human Rogue". Faction words are dropped (the faction is a guide's own).
+    /// </summary>
+    public static string BothTags(string a, string b)
+    {
+        static List<string> Alts(string t) => t.Split('/').Select(x => string.Join(" ", x.Split(' ', StringSplitOptions.RemoveEmptyEntries).Where(w => w is not ("Horde" or "Alliance")))).Where(x => x.Length > 0).ToList();
+        var A = Alts(a); var B = Alts(b);
+        if (A.Count == 0) return string.Join("/", B);
+        if (B.Count == 0) return string.Join("/", A);
+        return string.Join("/", A.SelectMany(x => B.Select(y => x + " " + y)));
+    }
     // the lines worth carrying over with it: where, who, what, and the conditions RestedXP puts on it
     static readonly HashSet<string> Keep = new()
     {
@@ -102,7 +132,7 @@ public static class RxpServices
         var all = new List<RxpService>();
         foreach (Match block in Regex.Matches(text, @"RegisterGuide\(\s*\[\[(.*?)\]\]", RegexOptions.Singleline))
         {
-            string name = Path.GetFileNameWithoutExtension(file), faction = "";
+            string name = Path.GetFileNameWithoutExtension(file), faction = "", guideTag = "";
             var steps = new List<(string Tag, bool Along, List<(string Text, string Tag)> Lines)>();
             foreach (var raw in block.Groups[1].Value.Split('\n'))
             {
@@ -110,7 +140,7 @@ public static class RxpServices
                 if (l.Length == 0) continue;
                 string tag = ""; int ti = l.LastIndexOf("<<", StringComparison.Ordinal);
                 if (ti >= 0) { tag = l[(ti + 2)..].Trim(); l = l[..ti].TrimEnd(); }
-                if (steps.Count == 0 && l.Length == 0) { if (tag.StartsWith("Horde")) faction = "Horde"; else if (tag.StartsWith("Alliance")) faction = "Alliance"; continue; }
+                if (steps.Count == 0 && l.Length == 0) { faction = SideOf(tag) ?? faction; guideTag = tag; continue; }
                 if (data != null) l = NormalizeGoto(l, data);
                 if (l.StartsWith("#name ")) { name = l[6..].Trim(); continue; }
                 if (l == "step") { steps.Add((tag, false, new())); continue; }
@@ -146,6 +176,8 @@ public static class RxpServices
                 if (here >= 0) lastMap = here;
                 if (along || OtherSeason(lines.Select(x => x.Text)) || ServiceLines(lines, out int map) is not { } kept) continue;
                 // a step with no .goto of its own is done where the guide last sent you
+                // a guide only for some characters ("<< Human Mage") makes its steps theirs
+                if (ForSome(guideTag)) tag = BothTags(guideTag, tag);
                 var svc = new RxpService { Guide = name, Faction = faction, Tag = tag, Map = map >= 0 ? map : lastMap, Lines = kept };
                 if (Regex.Match(name, @"^(\d+)\s*-\s*(\d+)") is { Success: true } rg) { svc.MinLevel = int.Parse(rg.Groups[1].Value); svc.MaxLevel = int.Parse(rg.Groups[2].Value); }
                 // quest steps in the same step first (a class quest handed in at the trainer), then before it, then after it

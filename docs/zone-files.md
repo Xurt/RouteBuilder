@@ -472,6 +472,33 @@ under `steps`, each one placed right before or right after a planned step.
 - If a named step is not in the guide (a typo, or the quest was left out or is handed in elsewhere), the
   build says so on the console and in the report's Checks section, and places nothing there.
 - The step's lines are not checked against the game: a wrong NPC name or spell ID shows up only when you play it.
+- At the same stop, zone-file steps come before the training, vendor and flight-path steps from the lock or
+  RestedXP, so an "after" step can lead into one of those.
+
+### No money yet: loot first, then vendor and train
+
+A new character has no money, so a vendor or trainer step right after the first pickup cannot be done yet.
+RestedXP puts a "loot until you have N copper of vendor items" step in front of it; RouteBuilder does not
+bring those across (they are "as you go" steps), so they go in the zone file. Put it right before the
+vendor step, for the same characters, with `#completewith next`:
+
+```json
+{ "after": "accept:179", "tag": "Warrior/Warlock/Shaman",
+  "lines": [
+    "#completewith next",
+    ".goto 1426,28.533,72.587,50,0",
+    "+|cRXP_WARN_Kill and loot |cRXP_ENEMY_Ragged Young Wolves|r until you have 10 copper or more of vendor trash|r",
+    ".mob Ragged Young Wolf",
+    ".money >0.001"
+  ] }
+```
+
+- `#completewith next` shows it next to the vendor step and clears it when that is done. Leave it out and the
+  step waits for the money itself, which you only get by selling, so it never finishes on its own.
+- Name the step the vendor step follows (`after`), not the one before it: `#completewith next` means the next
+  step the character sees, so in front of the pickup it would clear as soon as the quest is picked up.
+- `.money` is in gold: `0.001` is 10 copper, `0.01` is 1 silver. Lines can carry their own tag
+  (`".money >0.006 << Mage"`) when classes need different amounts.
 
 ## Finding IDs and coordinates
 

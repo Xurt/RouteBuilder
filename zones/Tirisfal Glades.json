@@ -528,6 +528,44 @@
       "pre": [94440]
     }
   },
+  "steps": [
+    // You start with no money: loot for vendor trash before the first vendor and trainer (as RestedXP does).
+    // "#completewith next" shows it alongside the vendor (or trainer) step and clears it once that is done.
+    { "after": "accept:363", "tag": "Priest/Mage",
+      "lines": [
+        "#completewith next",
+        ".goto 1420/0,1714.76,1760.68,40,0",
+        ".goto 1420/0,1718.38,1799.24,40,0",
+        ".goto 1420/0,1669.12,1869.73,40,0",
+        "+|cRXP_WARN_Kill |cRXP_ENEMY_Young Scavengers|r and |cRXP_ENEMY_Duskbats|r. Loot them until you have 60 copper worth of vendor items (including your armor)|r << Mage",
+        "+|cRXP_WARN_Kill |cRXP_ENEMY_Young Scavengers|r and |cRXP_ENEMY_Duskbats|r. Loot them until you have 50 copper worth of vendor items (including your armor)|r << Priest",
+        ".mob Young Scavenger",
+        ".mob Duskbat",
+        ".money >0.006 << Mage",
+        ".money >0.005 << Priest"
+      ]
+    },
+    { "after": "turnin:363", "tag": "Warrior/Warlock",
+      "lines": [
+        "#completewith next",
+        ".goto 1420/0,1681.32,1719.71,40,0",
+        ".goto 1420/0,1646.08,1750.44,40,0",
+        "+|cRXP_WARN_Kill |cRXP_ENEMY_Young Scavengers|r and |cRXP_ENEMY_Duskbats|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r",
+        ".mob Young Scavenger",
+        ".mob Duskbat",
+        ".money >0.001"
+      ]
+    },
+    // RestedXP has the Warrior sell to Archibald before training; that step did not come across (it is a "do it as you go" one)
+    { "after": "turnin:363", "tag": "Warrior",
+      "lines": [
+        ".goto 1420/0,1568.35,1859.49",
+        ">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archibald|r inside",
+        ".vendor >> Vendor Trash",
+        ".target Archibald Kava"
+      ]
+    }
+  ],
   "reminders": [
     {
       "tag": "Paladin",

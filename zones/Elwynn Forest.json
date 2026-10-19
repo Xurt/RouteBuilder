@@ -1,0 +1,16 @@
+// Elwynn Forest: hand-made corrections for RouteBuilder.
+{
+  "steps": [
+    // You start with no money: loot wolves for vendor trash before the first vendor and trainer (as RestedXP's mage guide
+    // does). The Warrior's vendor and training step already says to. "#completewith next" shows it alongside the vendor step.
+    { "after": "accept:783", "tag": "Human Mage",
+      "lines": [
+        "#completewith next",
+        ".goto 1429/0,-146.20,-8999.660,50,0",
+        "+|cRXP_WARN_Kill |cRXP_ENEMY_Young Wolves|r. Loot them until you have 10 copper worth of vendor items, then sell them|r",
+        ".mob Young Wolf",
+        ".money >0.001"
+      ]
+    }
+  ]
+}

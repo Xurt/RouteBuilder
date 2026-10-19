@@ -1,0 +1,19 @@
+// Dun Morogh: hand-made corrections for RouteBuilder.
+{
+  "steps": [
+    // You start with no money: loot wolves for vendor trash before the first vendor and trainer (as RestedXP does).
+    // "#completewith next" shows it alongside the vendor step and clears it once that is done.
+    { "after": "accept:179", "tag": "Warrior/Warlock/Shaman",
+      "lines": [
+        "#completewith next",
+        ".goto 1426,28.533,72.587,50,0",
+        ".goto 1426,28.239,71.707,50,0",
+        "+|cRXP_WARN_Kill and loot |cRXP_ENEMY_Ragged Young Wolves|r until you have 10 copper or more of vendor trash, then sell it to train|r",
+        ">>|cRXP_WARN_Unequip your|r |T132665:0|t[Acolyte's Robe]|cRXP_WARN_,|r |T135005:0|t[Acolyte's Shirt]|cRXP_WARN_,|r |T134581:0|t[Acolyte's Pants]|cRXP_WARN_, and|r |T132535:0|t[Acolyte's Shoes] |cRXP_WARN_so you can vendor them for 4 copper|r << Warlock",
+        ">>|cRXP_WARN_Unequip your|r |T135009:0|t[Recruit's Shirt]|cRXP_WARN_,|r |T134582:0|t[Recruit's Pants]|cRXP_WARN_, and|r |T132540:0|t[Recruit's Boots] |cRXP_WARN_so you can vendor them for 3 copper|r << Warrior",
+        ".mob Ragged Young Wolf",
+        ".money >0.001"
+      ]
+    }
+  ]
+}

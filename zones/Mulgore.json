@@ -4,8 +4,11 @@
     "95805": { "tight": true }
   },
   "steps": [
-    { "before": "accept:752", "tag": "Warrior/Shaman",
+    // shown alongside the vendor step after the pickup ("#completewith next"), as RestedXP does. Without it the step waits
+    // for the money itself, which you only get by selling, so it would never finish on its own
+    { "after": "accept:752", "tag": "Warrior/Shaman",
       "lines": [
+        "#completewith next",
         ".goto 1412/1,-317.90,-2852.63,30,0--c:Mulgore,46.05,75.32",
         "+|cRXP_WARN_Kill |cRXP_ENEMY_Plainstriders|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r",
         ".mob Plainstrider",

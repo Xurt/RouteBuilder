@@ -144,6 +144,10 @@ the options of the build you will run next:
   and any doing at least a fifth as many of its steps as the busiest one, in order of their starting levels. Guides
   that only pass through (a class quest in the capital, a hand-in on the way to the next zone) are listed and left
   out; the build slots in what they had.
+* A guide RestedXP only offers some characters (its header says `<< Human Mage`, as the AoE mage guides do) is
+  that character's route, so a faction lock does not follow it; it is listed as "Not followed". A lock for one
+  race and class (`--race`, `--class`) follows it when it is theirs. With `--rxp`, the build still takes its
+  training and vendor steps, shown only to those characters.
 * Where RestedXP offers a pickup early "if you are already level N" (`.xp <N`) and plans it again later, the
   later one is used.
 * RestedXP's own grind steps (`.xp 5+1740 >>Grind to ...`) go in too, and the lock is marked `"levels": "RestedXP"`.
