@@ -1,7 +1,7 @@
 ## Interface: 11509, 38002, 50504, 120100, 120005, 120007, 16001
 ## Title: RestedXP Zone Routes
-## Notes: 70 zone guide file(s) made by RouteBuilder, packed 2026-10-17 13:28
-## Version: 2026.10.17
+## Notes: 70 zone guide file(s) made by RouteBuilder, packed 2026-10-18 23:56
+## Version: 2026.10.18
 ## Dependencies: RXPGuides
 
 Guides\Alterac_Mountains_Alliance.lua

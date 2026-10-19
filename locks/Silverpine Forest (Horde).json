@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "10-24 Silverpine Forest",
-  "saved": "2026-10-17 13:18",
+  "saved": "2026-10-18 23:45",
   "levels": "RestedXP",
   "parts": [
     {
@@ -10,6 +10,8 @@
         "accept:428 @1421:1626.36,522.59  Accept Lost Deathstalkers",
         "turnin:91858 @1421:1629.72,518.11  TurnIn Diplomatic Incident",
         "turnin:6324 @1421:1626.36,499.63  TurnIn Return to Podrig",
+        "turnin:264 @1421:1594.02,471.91  TurnIn Until Death Do Us Part",
+        "turnin:3301 @1421:1647.78,490.95  TurnIn Mura Runetotem",
         "home @1421:1636.44,510.83  Home inn",
         "turnin:446 @1421:1652.4,522.59  TurnIn Thule Ravenclaw",
         "turnin:428 @1421:1204.68,1290.63  TurnIn Lost Deathstalkers",
@@ -86,12 +88,9 @@
         "obj:450:1 @1421:1644.84,-382.37  Objective A Recipe For Death / Berard's Journal (1)",
         "obj:63:1 @1421:1821.24,427.39  Objective Call of Water / Corrupt Manifestation's Bracers (1)",
         "turnin:63 @1421:1843.08,418.99  TurnIn Call of Water",
-        "turnin:3301 @1421:1647.78,490.95  TurnIn Mura Runetotem",
-        "turnin:450 @1421:1652.4,522.59  TurnIn A Recipe For Death",
         "accept:448 @1421:1652.4,522.59  Accept Report to Hadrec",
-        "turnin:448 @1421:1626.36,522.59  TurnIn Report to Hadrec",
-        "turnin:264 @1421:1594.02,471.91  TurnIn Until Death Do Us Part",
-        {"lines":[".goto 1421/0,1513.80,-734.33",".xp 22 >> Run south to The Greymane Wall. AoE here until 22"],"from":"RestedXP: 21-30 Silverpine/Hillsbrad AoE"}
+        "turnin:450 @1421:1652.4,522.59  TurnIn A Recipe For Death",
+        "turnin:448 @1421:1626.36,522.59  TurnIn Report to Hadrec"
       ]
     },
     {
@@ -162,14 +161,14 @@
         "accept:493 @1421:1652.4,522.59  Accept Journey to Hillsbrad Foothills",
         "accept:480 @1421:1602.84,520.63  Accept The Weaver",
         "obj:480:1 @1421:787.2,-132.89  Objective The Weaver / Ataeric's Staff (1)",
-        "accept:95885 @1421:1008.96,-286.89  Accept The Offering of Blood",
         "accept:95883 @1421:1008.96,-286.89  Accept The Tortured Soul",
+        "accept:95885 @1421:1008.96,-286.89  Accept The Offering of Blood",
         "obj:95885:1 @1421:1014.84,-295.57  Objective The Offering of Blood / Tortured Soul slain (8)",
-        "obj:95883:1 @1421:986.28,-329.45  Objective The Tortured Soul / Tortured Soul (1)",
         "obj:95884:1 @1421:986.28,-329.45  Objective The Offering Stone / Note Scrap (1)",
-        "turnin:95883 @1421:1008.96,-286.89  TurnIn The Tortured Soul",
-        "turnin:95885 @1421:1008.96,-286.89  TurnIn The Offering of Blood",
+        "obj:95883:1 @1421:986.28,-329.45  Objective The Tortured Soul / Tortured Soul (1)",
         "turnin:95884 @1421:1008.96,-286.89  TurnIn The Offering Stone",
+        "turnin:95885 @1421:1008.96,-286.89  TurnIn The Offering of Blood",
+        "turnin:95883 @1421:1008.96,-286.89  TurnIn The Tortured Soul",
         "turnin:480 @1421:1602.84,520.63  TurnIn The Weaver",
         "accept:100 @1421:1843.08,418.99  Accept Call of Water",
         "turnin:100 @1421:1826.7,418.43  TurnIn Call of Water",

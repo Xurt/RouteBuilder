@@ -28,40 +28,6 @@ step
     >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_Fury of the Land|r
     .complete 78149,1 --Fury of the Land (1)
 step
-    .goto 1442/1,-263.82,962.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
-    .accept 1090 >>Accept Gerenzo's Orders
-    .target Piznik
-step
-    .goto 1442/1,-263.82,962.92
-    >>Get the mysterious ore from Piznik after he finishes mining it.
-    .complete 1090,1 --Piznik
-    .target Piznik
-step
-    .goto 1442/1,-263.82,962.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
-    .turnin 1090 >>Turn in Gerenzo's Orders
-    .accept 1092 >>Accept Gerenzo's Orders
-    .target Piznik
-step
-    .goto 1442/1,365.16,878.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
-    .turnin 1095 >>Turn in Further Instructions
-    .target Ziz Fizziks
-    .isOnQuest 1095
-step
-    .goto 1442/1,365.16,878.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
-    .turnin 1483 >>Turn in Ziz Fizziks
-    .target Ziz Fizziks
-    .isOnQuest 1483
-step
-    .goto 1442/1,365.16,878.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
-    .turnin 1092 >>Turn in Gerenzo's Orders
-    .accept 1093 >>Accept Super Reaper 6000
-    .target Ziz Fizziks
-step
     .goto 1442/1,320.72,739.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaela Shadowspear|r
     .turnin 1070 >>Turn in On Guard in Stonetalon
@@ -72,12 +38,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaela Shadowspear|r
     .accept 1085 >>Accept On Guard in Stonetalon
     .target Kaela Shadowspear
-step
-    .goto 1442/1,339.27,730.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaxim Rustfizzle|r
-    .turnin 1085 >>Turn in On Guard in Stonetalon
-    .accept 1071 >>Accept A Gnome's Respite
-    .target Gaxim Rustfizzle
 step
     .goto 1442/1,339.27,730.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaxim Rustfizzle|r
@@ -93,6 +53,12 @@ step
 step
     .goto 1442/1,339.27,730.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaxim Rustfizzle|r
+    .turnin 1085 >>Turn in On Guard in Stonetalon
+    .accept 1071 >>Accept A Gnome's Respite
+    .target Gaxim Rustfizzle
+step
+    .goto 1442/1,339.27,730.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaxim Rustfizzle|r
     .accept 1080 >>Accept Covert Ops - Beta
     .accept 1079 >>Accept Covert Ops - Alpha
     .target Gaxim Rustfizzle
@@ -100,31 +66,52 @@ step
     .isQuestTurnedIn 1077 --Special Delivery for Gaxim
     .xp <17,1
 step
-    #completewith Along16
-    >>As you go: Kill |cRXP_ENEMY_Venture Co. Deforesters|r. |cRXP_WARN_Anything left is finished later|r
+    .goto 1442/1,365.16,878.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
+    .turnin 1483 >>Turn in Ziz Fizziks
+    .target Ziz Fizziks
+    .isOnQuest 1483
+step
+    .goto 1442/1,365.16,878.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
+    .turnin 1095 >>Turn in Further Instructions
+    .target Ziz Fizziks
+    .isOnQuest 1095
+step
+    .goto 1442/1,365.16,878.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
+    .accept 1093 >>Accept Super Reaper 6000
+    .target Ziz Fizziks
+step
+    .goto 1442/1,402.76,1231.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
+    .accept 78270 >>Accept Goblin Lockpicks
+    .target Veenix
+step
+    .goto 1442/1,402.76,1231.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
+    >>|cRXP_WARN_The database has no objectives for Goblin Lockpicks. Skip this step if the quest is not finished|r
+    .turnin 78270 >>Turn in Goblin Lockpicks
+    .target Veenix
+    .isOnQuest 78270
+step
+    #completewith Along14
+    >>As you go: Kill |cRXP_ENEMY_Venture Co. Loggers|r. Kill |cRXP_ENEMY_Venture Co. Deforesters|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 1071,1 --Venture Co. Logger slain (10)
     .complete 1071,2 --Venture Co. Deforester slain (10)
+    .mob Venture Co. Logger
     .mob Venture Co. Deforester
 step
-    .goto 1442/1,-390.30,985.71
-    >>Open the |cRXP_PICK_Venture Co. Documents|r. Loot it for |cRXP_LOOT_Venture Co. Letters|r
-    .complete 1080,1 --Venture Co. Letters (1)
-    .isOnQuest 1080
-step
-    #completewith Along16
-    >>As you go: Kill |cRXP_ENEMY_Venture Co. Loggers|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 1071,1 --Venture Co. Logger slain (10)
-    .mob Venture Co. Logger
-step
     #loop
-    .goto 1442/1,-30.39,1210.07,0
-    .goto 1442/1,-30.39,1210.07,40,0
-    .goto 1442/1,10.63,1234.49,40,0
+    .goto 1442/1,43.34,1234.81,0
     .goto 1442/1,43.34,1234.81,40,0
+    .goto 1442/1,10.63,1234.49,40,0
+    .goto 1442/1,-30.39,1210.07,40,0
     >>Kill |cRXP_ENEMY_Venture Co. Operator|r and loot |cRXP_LOOT_Super Reaper 6000 Blueprints|r
     .complete 1093,1 --Super Reaper 6000 Blueprints (1)
     .mob Venture Co. Operator
 step
-    #label Along16
+    #label Along14
     .goto 1442/1,18.44,1245.23
     >>Pick up |cRXP_PICK_Venture Co. Engineering Plans|r from the ground
     .complete 1079,1 --Venture Co. Engineering Plans (1)
@@ -148,22 +135,30 @@ step
     .mob Venture Co. Logger
     .mob Venture Co. Deforester
 step
-    .xp 22+6700 >> Grind |cRXP_ENEMY_Goblins|r to level 22 and 6700+xp
+    .goto 1442/1,-390.30,985.71
+    >>Open the |cRXP_PICK_Venture Co. Documents|r. Loot it for |cRXP_LOOT_Venture Co. Letters|r
+    .complete 1080,1 --Venture Co. Letters (1)
+    .isOnQuest 1080
 step
-    .goto 1442/1,402.76,1231.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
-    .accept 78270 >>Accept Goblin Lockpicks
-    .target Veenix
+    .goto 1442/1,-263.82,962.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
+    .accept 1090 >>Accept Gerenzo's Orders
+    .target Piznik
 step
-    .goto 1442/1,402.76,1231.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
-    >>|cRXP_WARN_The database has no objectives for Goblin Lockpicks. Skip this step if the quest is not finished|r
-    .turnin 78270 >>Turn in Goblin Lockpicks
-    .target Veenix
-    .isOnQuest 78270
+    .goto 1442/1,-263.82,962.92
+    >>Get the mysterious ore from Piznik after he finishes mining it.
+    .complete 1090,1 --Piznik
+    .target Piznik
+step
+    .goto 1442/1,-263.82,962.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
+    .turnin 1090 >>Turn in Gerenzo's Orders
+    .accept 1092 >>Accept Gerenzo's Orders
+    .target Piznik
 step
     .goto 1442/1,365.16,878.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz Fizziks|r
+    .turnin 1092 >>Turn in Gerenzo's Orders
     .turnin 1093 >>Turn in Super Reaper 6000
     .accept 1094 >>Accept Further Instructions
     .target Ziz Fizziks
@@ -208,12 +203,12 @@ step
 step
     .goto 1442/1,1255.39,1204.86
     >>Click the |cRXP_PICK_Pocket Litter|r
-    .accept 79980 >>Accept Scramble
+    .turnin 79192 >>Turn in Stepping Stones
+    .isOnQuest 79192
 step
     .goto 1442/1,1255.39,1204.86
     >>Click the |cRXP_PICK_Pocket Litter|r
-    .turnin 79192 >>Turn in Stepping Stones
-    .isOnQuest 79192
+    .accept 79980 >>Accept Scramble
 step
     .goto 1442/1,1311.06,1293.10
     >>Click the |cRXP_PICK_Mound of Dirt|r
@@ -252,12 +247,6 @@ step
     .turnin 1056 >>Turn in Journey to Stonetalon Peak
     .target Keeper Albagorm
     .isOnQuest 1056
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teloren|r
-    .target Teloren
-    .goto 1442/1,1466.44,2682.84
-    .fp Stonetalon >> Get the Stonetalon Flight Path
-    .fly Ashenvale >> Fly to Ashenvale
 step << !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teloren|r
     .target Teloren
@@ -280,6 +269,12 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illyanie|r
     .vendor >> |cRXP_WARN_Vendor trash|r
     .target Illyanie
+step << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teloren|r
+    .target Teloren
+    .goto 1442/1,1466.44,2682.84
+    .fp Stonetalon >> Get the Stonetalon Flight Path
+    .fly Ashenvale >> Fly to Ashenvale
 step
     +|cRXP_WARN_That is all of Stonetalon Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ironforge|r: An Old Colleague

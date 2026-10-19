@@ -2012,16 +2012,16 @@ step << Skyborne Druid
     .target Urs'endris
 step
     #loop
-    .goto 2521,57.06,56.59,0
-    .goto 2521,57.06,56.59,40,0
-    .goto 2521,56.51,55.08,40,0
-    .goto 2521,55.54,56.11,40,0
-    .goto 2521,53.68,57.21,40,0
-    .goto 2521,52.88,58.53,40,0
-    .goto 2521,51.71,56.93,40,0
-    .goto 2521,51.17,58.83,40,0
-    .goto 2521,51.89,60.75,40,0
+    .goto 2521,54.45,59.99,0
     .goto 2521,54.45,59.99,40,0
+    .goto 2521,51.89,60.75,40,0
+    .goto 2521,51.17,58.83,40,0
+    .goto 2521,51.71,56.93,40,0
+    .goto 2521,52.88,58.53,40,0
+    .goto 2521,53.68,57.21,40,0
+    .goto 2521,55.54,56.11,40,0
+    .goto 2521,56.51,55.08,40,0
+    .goto 2521,57.06,56.59,40,0
     >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |cRXP_LOOT_Windsong Crawler Meat|r
     .complete 93317,1 --Windsong Crawler Meat (6)
     .mob Windsong Crawler
@@ -2105,7 +2105,7 @@ RXPGuides.RegisterGuide([[
 #subweight -1
 #name 11-15 Zephras Isle: around Elegael Thornpaw
 --RouteBuilder:next
-#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\9-12 Teldrassil: around Priestess A'moora;Zone Routes (Alliance)\14-16 Loch Modan: around Daryl the Youngling
+#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\9-12 Teldrassil: around Priestess A'moora;Zone Routes (Alliance)\14-16 Loch Modan: around Marek Ironheart
 
 step
     .goto 2521,61.72,39.22
@@ -2726,5 +2726,5 @@ step
     +|cRXP_WARN_End of the Zephras Isle route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Alterac Mountains|r: The Magical City of Dalaran
 step
-    +|cRXP_WARN_Suggested next zones at level 14|r: |cRXP_FRIENDLY_Darkshore|r (about 1.9 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Teldrassil|r (about 1.0 levels of quests, starting around Priestess A'moora), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling). Completing this step loads the guide for Darkshore --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 14|r: |cRXP_FRIENDLY_Darkshore|r (about 1.9 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Teldrassil|r (about 1.0 levels of quests, starting around Priestess A'moora), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Marek Ironheart). Completing this step loads the guide for Darkshore --RouteBuilder:next
 ]])

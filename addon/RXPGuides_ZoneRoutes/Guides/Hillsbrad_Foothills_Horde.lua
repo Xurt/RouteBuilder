@@ -77,7 +77,7 @@ step
     .turnin 1065 >>Turn in Journey to Tarren Mill
     .target Apothecary Lydon
     .isOnQuest 1065
-step
+step << Mage
     .goto 1424/0,-857.81,2.77
     .fp Hillsbrad >> Get the Tarren Mill Flight Path
 step
@@ -176,6 +176,12 @@ step << !Rogue !Hunter !Shaman !Druid
 step
     .goto 1424/0,-957.01,-40.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
+    .turnin 506 >>Turn in Blackmoore's Legacy
+    .target Krusk
+    .isOnQuest 506
+step
+    .goto 1424/0,-957.01,-40.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
     .turnin 508 >>Turn in Taretha's Gift
     .target Krusk
     .isOnQuest 508
@@ -193,14 +199,14 @@ step
     .target Deathstalker Masoj
     .isOnQuest 98095
 step
-    #completewith Along17
+    #completewith Along18
     >>As you go: Kill |cRXP_ENEMY_Syndicate Rogues|r. Kill |cRXP_ENEMY_Syndicate Watchmans|r. |cRXP_WARN_Anything left is finished later|r
     .complete 549,1 --Syndicate Rogue slain (10)
     .complete 549,2 --Syndicate Watchman slain (8)
     .mob Syndicate Rogue
     .mob Syndicate Watchman
 step
-    #label Along17
+    #label Along18
     #loop
     .goto 1424/0,-1025.17,-638.51,0
     .goto 1424/0,-1025.17,-638.51,40,0
@@ -290,44 +296,6 @@ step << Undead Paladin
     .isOnQuest 95125
 step
     #loop
-    .goto 1424/0,-129.81,-1011.84,0
-    .goto 1424/0,-129.81,-1011.84,40,0
-    .goto 1424/0,-75.09,-1016.53,40,0
-    .goto 1424/0,-39.25,-1108.69,40,0
-    .goto 1424/0,21.23,-1142.19,40,0
-    .goto 1424/0,44.91,-1227.31,40,0
-    .goto 1424/0,-54.93,-1178.24,40,0
-    .goto 1424/0,-149.97,-1153.71,40,0
-    .goto 1424/0,-211.73,-1153.49,40,0
-    .goto 1424/0,-127.89,-1099.09,40,0
-    >>Kill |cRXP_ENEMY_Torn Fin Muckdwellers|r, |cRXP_ENEMY_Torn Fin Coastrunners|r, |cRXP_ENEMY_Torn Fin Oracles|r and |cRXP_ENEMY_Torn Fin Tidehunters|r. Loot them for |cRXP_LOOT_Torn Fin Eye|r
-    .complete 515,3 --Torn Fin Eye (5)
-    .mob Torn Fin Muckdweller
-    .mob Torn Fin Coastrunner
-    .mob Torn Fin Oracle
-    .mob Torn Fin Tidehunter
-    .isOnQuest 515
-step
-    #loop
-    .goto 1424/0,-906.45,-1345.49,0
-    .goto 1424/0,-906.45,-1345.49,40,0
-    .goto 1424/0,-981.01,-1351.89,40,0
-    .goto 1424/0,-976.53,-1418.03,40,0
-    .goto 1424/0,-1027.09,-1440.64,40,0
-    .goto 1424/0,-1084.37,-1457.71,40,0
-    .goto 1424/0,-1040.53,-1382.61,40,0
-    .goto 1424/0,-1014.29,-1313.92,40,0
-    .goto 1424/0,-1054.61,-1297.28,40,0
-    .goto 1424/0,-985.17,-1236.48,40,0
-    >>Kill |cRXP_ENEMY_Daggerspine Shorestalkers|r, |cRXP_ENEMY_Daggerspine Shorehunters|r, |cRXP_ENEMY_Daggerspine Screamers|r and |cRXP_ENEMY_Daggerspine Sirens|r. Loot them for |cRXP_LOOT_Daggerspine Scale|r
-    .complete 515,2 --Daggerspine Scale (5)
-    .mob Daggerspine Shorestalker
-    .mob Daggerspine Shorehunter
-    .mob Daggerspine Screamer
-    .mob Daggerspine Siren
-    .isOnQuest 515
-step
-    #loop
     .goto 1424/0,-746.13,40.32,0
     .goto 1424/0,-746.13,40.32,40,0
     .goto 1424/0,-760.85,111.36,40,0
@@ -341,12 +309,6 @@ step
     .mob Giant Moss Creeper
     .mob Forest Moss Creeper
     .mob Creepthess
-step
-    .goto 1424/0,-899.41,-6.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Lydon|r
-    .turnin 515 >>Turn in Elixir of Agony
-    .target Apothecary Lydon
-    .isOnQuest 515
 step
     .goto 1424/0,-899.41,-6.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Lydon|r
@@ -385,15 +347,49 @@ step
     .goto 1424/0,-105.81,-564.48,60,0
     .xp 24 >>Grind to level 24
 step
-    .goto 1424/0,-926.61,-6.19
-    .vendor >> Buy 3 Soothing Spices from Christoph on the first floor of the Inn
-    .collect 3713,3
+    #loop
+    .goto 1424/0,-129.81,-1011.84,0
+    .goto 1424/0,-129.81,-1011.84,40,0
+    .goto 1424/0,-75.09,-1016.53,40,0
+    .goto 1424/0,-39.25,-1108.69,40,0
+    .goto 1424/0,21.23,-1142.19,40,0
+    .goto 1424/0,44.91,-1227.31,40,0
+    .goto 1424/0,-54.93,-1178.24,40,0
+    .goto 1424/0,-149.97,-1153.71,40,0
+    .goto 1424/0,-211.73,-1153.49,40,0
+    .goto 1424/0,-127.89,-1099.09,40,0
+    >>Kill |cRXP_ENEMY_Torn Fin Muckdwellers|r, |cRXP_ENEMY_Torn Fin Coastrunners|r, |cRXP_ENEMY_Torn Fin Oracles|r and |cRXP_ENEMY_Torn Fin Tidehunters|r. Loot them for |cRXP_LOOT_Torn Fin Eye|r
+    .complete 515,3 --Torn Fin Eye (5)
+    .mob Torn Fin Muckdweller
+    .mob Torn Fin Coastrunner
+    .mob Torn Fin Oracle
+    .mob Torn Fin Tidehunter
+    .isOnQuest 515
 step
-    .goto 1424/0,-957.01,-40.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
-    .turnin 506 >>Turn in Blackmoore's Legacy
-    .target Krusk
-    .isOnQuest 506
+    #loop
+    .goto 1424/0,-906.45,-1345.49,0
+    .goto 1424/0,-906.45,-1345.49,40,0
+    .goto 1424/0,-981.01,-1351.89,40,0
+    .goto 1424/0,-976.53,-1418.03,40,0
+    .goto 1424/0,-1027.09,-1440.64,40,0
+    .goto 1424/0,-1084.37,-1457.71,40,0
+    .goto 1424/0,-1040.53,-1382.61,40,0
+    .goto 1424/0,-1014.29,-1313.92,40,0
+    .goto 1424/0,-1054.61,-1297.28,40,0
+    .goto 1424/0,-985.17,-1236.48,40,0
+    >>Kill |cRXP_ENEMY_Daggerspine Shorestalkers|r, |cRXP_ENEMY_Daggerspine Shorehunters|r, |cRXP_ENEMY_Daggerspine Screamers|r and |cRXP_ENEMY_Daggerspine Sirens|r. Loot them for |cRXP_LOOT_Daggerspine Scale|r
+    .complete 515,2 --Daggerspine Scale (5)
+    .mob Daggerspine Shorestalker
+    .mob Daggerspine Shorehunter
+    .mob Daggerspine Screamer
+    .mob Daggerspine Siren
+    .isOnQuest 515
+step
+    .goto 1424/0,-899.41,-6.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Lydon|r
+    .turnin 515 >>Turn in Elixir of Agony
+    .target Apothecary Lydon
+    .isOnQuest 515
 step
     +|cRXP_WARN_That is all of Hillsbrad Foothills for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Silverpine Forest|r: The Moonsilver Blade << Undead Paladin
@@ -428,11 +424,25 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krusk|r
     .accept 498 >>Accept The Rescue
     .target Krusk
-step << Shaman
+step << Shaman/Rogue
+    .goto 1424/0,-941.65,-6.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shay|r
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
+    .target Innkeeper Shay
+    .subzoneskip 272,1
+step << Shaman Shaman/Rogue Shaman
     .goto 1424/0,-867.09,-158.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r
     .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r
     .money <3.0195
+    .target Ott
+    .subzoneskip 272,1
+step << Shaman Rogue/Rogue Rogue
+    .goto 1424/0,-867.09,-158.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r
+    .vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r
+    .money <2.8372
     .target Ott
     .subzoneskip 272,1
 step
@@ -445,21 +455,21 @@ step
     .collect 3467,1,498,1 --Dull Iron Key (1)
     .mob Jailor Marlgen
     .mob Jailor Eston
-step << Rogue
+step << Shaman Rogue/Rogue Rogue
     .goto 1424/0,-1497.81,-429.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r
     >>|cRXP_BUY_Buy|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_BUY_and |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] |cRXP_BUY_from her if they're up|r
     .vendor >> Vendor and Repair
     .target Kris Legace
     .money <1.1374
-step << Rogue
+step << Shaman Rogue/Rogue Rogue
     .goto 1424/0,-1497.81,-429.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r
     >>|cRXP_BUY_Buy|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_BUY_from her if they're up|r
     .vendor >> Vendor and Repair
     .target Kris Legace
     .money <0.7859
-step << Rogue
+step << Shaman Rogue/Rogue Rogue
     .goto 1424/0,-1497.81,-429.65
     >>|cRXP_BUY_Buy|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] |cRXP_BUY_from her if they're up|r
     .vendor >> Vendor and Repair
@@ -542,7 +552,7 @@ step
     >>Kill |cRXP_ENEMY_Hillsbrad Peasants|r
     .complete 528,1 --Hillsbrad Peasant slain (15)
     .mob Hillsbrad Peasant
-step
+step << Mage
     >> If your hearth is down, keep AoE farming until it's back up
     .vendor >> Buy level 25 drink from the Innkeeper once you hearthed
 step
@@ -853,6 +863,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Novice Thaivand|r
     .turnin 552 >>Turn in Helcular's Revenge
     .target Novice Thaivand
+step << Mage
+    .goto 1424/0,-926.61,-6.19
+    .vendor >> Buy 3 Soothing Spices from Christoph on the first floor of the Inn
+    .collect 3713,3
 step
     .goto 1424/0,67.95,-794.88
     >>Kill |cRXP_ENEMY_Foreman Bonds|r
@@ -1111,6 +1125,13 @@ step
     .target Keeper Bel'varil
     .isQuestComplete 556
 step
+    .goto 1424/0,-901.33,-46.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Bel'varil|r
+    .accept 557 >>Accept Bracers of Binding
+    .target Keeper Bel'varil
+    .isQuestTurnedIn 556 --any of: Stone Tokens
+    .xp <30,1
+step
     .goto 1424/0,-904.53,-44.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
     .turnin 93680 >>Turn in Key to the City
@@ -1122,28 +1143,6 @@ step
     .turnin 544 >>Turn in Prison Break In
     .target Magus Wordeen Voidglare
     .isQuestComplete 544
-step
-    .goto 1424/0,-342.93,-166.40
-    >>Click the |cRXP_PICK_Flame of Veraz|r
-    .complete 553,2 --Flame of Veraz charged
-    .isOnQuest 553
-step
-    .goto 1424/0,-337.81,-198.61
-    >>Click the |cRXP_PICK_Flame of Azel|r
-    .complete 553,1 --Flame of Azel charged
-    .isOnQuest 553
-step
-    .goto 1424/0,-621.33,-738.56
-    >>Click the |cRXP_PICK_Helcular's Grave|r
-    .turnin 553 >>Turn in Helcular's Revenge
-    .isQuestComplete 553
-step
-    .goto 1424/0,-901.33,-46.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Bel'varil|r
-    .accept 557 >>Accept Bracers of Binding
-    .target Keeper Bel'varil
-    .isQuestTurnedIn 556 --any of: Stone Tokens
-    .xp <30,1
 step
     .goto 1424/0,-904.53,-44.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Wordeen Voidglare|r
@@ -1163,6 +1162,21 @@ step
     .turnin 545 >>Turn in Dalaran Patrols
     .target Magus Wordeen Voidglare
     .isQuestComplete 545
+step
+    .goto 1424/0,-342.93,-166.40
+    >>Click the |cRXP_PICK_Flame of Veraz|r
+    .complete 553,2 --Flame of Veraz charged
+    .isOnQuest 553
+step
+    .goto 1424/0,-337.81,-198.61
+    >>Click the |cRXP_PICK_Flame of Azel|r
+    .complete 553,1 --Flame of Azel charged
+    .isOnQuest 553
+step
+    .goto 1424/0,-621.33,-738.56
+    >>Click the |cRXP_PICK_Helcular's Grave|r
+    .turnin 553 >>Turn in Helcular's Revenge
+    .isQuestComplete 553
 step
     +|cRXP_WARN_That is all of Hillsbrad Foothills for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Arathi Highlands|r: The Hammer May Fall, Crystal in the Mountains

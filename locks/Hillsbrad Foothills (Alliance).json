@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "24-38 Hillsbrad Foothills",
-  "saved": "2026-10-17 13:25",
+  "saved": "2026-10-18 23:52",
   "levels": "RestedXP",
   "parts": [
     {
@@ -12,14 +12,14 @@
         "turnin:98219 @1424:-580.05,-845.65  TurnIn The Shamed Lieutenant",
         "accept:98059 @1424:-419.09,-670.93  Accept Hillsbrad's Hoard",
         "turnin:647 @1424:-601.49,-853.12  TurnIn MacKreel's Moonshine",
+        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r",".goto 1424/0,-512.15,-715.14",".fp Southshore >>Get the Southshore Flight Path",".target Darla Harris"],"from":"RestedXP: 27-29 Wetlands/Hillsbrad"},
+        {"lines":[".goto 1424/0,-744.53,-747.73",">>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Moss Creeper|r to tame it|r",".train 17264 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 4)]"],"tag":"Hunter","from":"RestedXP: 27-29 Wetlands/Hillsbrad"},
         "turnin:538 @1424:-551.57,-817.92  TurnIn Southshore",
-        "accept:540 @1424:-551.57,-817.92  Accept Preserving Knowledge",
-        {"lines":[".goto 1424/0,-512.21,-715.09",">>Talk to |cRXP_FRIENDLY_Darla|r",".fp Southshore >> Get the Southshore flight path",".fly Menethil >> Fly to Menethil",".target Darla Harris",".zoneskip Wetlands"],"from":"RestedXP: 32-33 ADV Hillsbrad Mage AoE"},
-        {"lines":[".goto 1424/0,-610.77,-793.81",">>Talk to |cRXP_FRIENDLY_Robert|r",".vendor 3543 >> Vendor Trash. Repair",".target Robert Aebischer",".isOnQuest 511"],"from":"RestedXP: 32-33 ADV Hillsbrad Mage AoE"},
         "turnin:511 @1424:-551.57,-817.92  TurnIn Encrypted Letter",
         "turnin:510 @1424:-473.81,-861.01  TurnIn Foreboding Plans",
         "turnin:661 @1424:-544.53,-859.73  TurnIn Hints of a New Plague?",
         "turnin:525 @1424:-473.81,-861.01  TurnIn Further Mysteries",
+        "accept:540 @1424:-551.57,-817.92  Accept Preserving Knowledge",
         "accept:542 @1424:-551.57,-817.92  Accept Return to Milton"
       ]
     },
@@ -27,6 +27,7 @@
       "part": 2,
       "steps": [
         "accept:505 @1424:-473.81,-861.01  Accept Syndicate Assassins",
+        {"lines":[".goto 1424/0,-501.33,-777.60",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarah Raycroft|r upstairs",".vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if necessary|",".target Sarah Raycroft"],"tag":"Hunter","from":"RestedXP: 32-33 Hillsbrad/Arathi"},
         "accept:512 @1424:-473.81,-861.01  Accept Noble Deaths",
         "turnin:98071 @1424:-601.49,-853.12  TurnIn Brewer's Trade",
         "turnin:98059 @1424:-419.09,-670.93  TurnIn Hillsbrad's Hoard"
@@ -35,20 +36,12 @@
     {
       "part": 3,
       "steps": [
-        "accept:98463 @1424:-583.57,-849.49  Accept Talk of the Town",
+        "accept:536 @1424:-580.05,-845.65  Accept Down the Coast",
+        "accept:564 @1424:-610.77,-793.81  Accept Costly Menace",
         "turnin:98071 @1424:-601.49,-853.12  TurnIn Brewer's Trade",
+        "accept:98463 @1424:-583.57,-849.49  Accept Talk of the Town",
         "home @1424:-570.77,-857.17  Home inn",
         "accept:659 @1424:-544.53,-859.73  Accept Hints of a New Plague?",
-        "item:522 @1424:-535.25,-835.41  ItemAccept Assassin's Contract",
-        "accept:500 @1424:-516.37,-852.91  Accept Crushridge Bounty",
-        {"lines":[".goto 1424/0,-512.21,-715.09",".fp Southshore >> Get the Southshore flight path",".fly Menethil >> Fly to Menethil"],"from":"RestedXP: 31-33 Hillsbrad Mage AoE"},
-        "turnin:522 @1424:-473.81,-861.01  TurnIn Assassin's Contract",
-        "accept:564 @1424:-610.77,-793.81  Accept Costly Menace",
-        "turnin:98059 @1424:-419.09,-670.93  TurnIn Hillsbrad's Hoard",
-        "obj:564:1 @1424:-174.93,-125.23  Objective Costly Menace / Mountain Lion slain (8)",
-        "accept:514 @1424:-551.57,-817.92  Accept Letter to Stormpike",
-        "turnin:505 @1424:-473.81,-861.01  TurnIn Syndicate Assassins",
-        "accept:536 @1424:-580.05,-845.65  Accept Down the Coast",
         "obj:536:1 @1424:-418.77,-1018.03  Objective Down the Coast / Torn Fin Tidehunter slain (10)",
         "obj:536:2 @1424:-339.73,-1064.53  Objective Down the Coast / Torn Fin Oracle slain (10)",
         "turnin:536 @1424:-580.05,-845.65  TurnIn Down the Coast",
@@ -56,8 +49,10 @@
         "obj:559:1 @1424:-39.25,-1108.69  Objective Farren's Proof / Murloc Head (10)",
         "turnin:559 @1424:-580.05,-845.65  TurnIn Farren's Proof",
         "accept:560 @1424:-580.05,-845.65  Accept Farren's Proof",
+        "item:522 @1424:-535.25,-835.41  ItemAccept Assassin's Contract",
         "turnin:560 @1424:-516.37,-852.91  TurnIn Farren's Proof",
         "accept:561 @1424:-516.37,-852.91  Accept Farren's Proof",
+        "turnin:522 @1424:-473.81,-861.01  TurnIn Assassin's Contract",
         "accept:92432 @1424:-479.57,-880  Accept An Alarming Request",
         "turnin:561 @1424:-580.05,-845.65  TurnIn Farren's Proof",
         "accept:562 @1424:-580.05,-845.65  Accept Stormwind Ho!",
@@ -65,27 +60,32 @@
         "obj:562:2 @1424:-801.17,-1063.68  Objective Stormwind Ho! / Daggerspine Siren slain (10)",
         "turnin:562 @1424:-580.05,-845.65  TurnIn Stormwind Ho!",
         "accept:563 @1424:-580.05,-845.65  Accept Reassignment",
-        {"lines":[".goto 1424/0,-501.33,-777.60",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarah Raycroft|r upstairs",".vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if necessary|",".target Sarah Raycroft"],"tag":"Hunter","from":"RestedXP: 32-33 Hillsbrad/Arathi"},
-        {"lines":[">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r",".goto 1424/0,-512.15,-715.14",".fp Southshore >>Get the Southshore Flight Path",".target Darla Harris"],"from":"RestedXP: 32-33 Hillsbrad/Arathi"},
+        "turnin:98059 @1424:-419.09,-670.93  TurnIn Hillsbrad's Hoard",
+        "obj:564:1 @1424:-174.93,-125.23  Objective Costly Menace / Mountain Lion slain (8)",
+        "accept:514 @1424:-551.57,-817.92  Accept Letter to Stormpike",
         "accept:555 @1424:-593.81,-851.84  Accept Soothing Turtle Bisque",
         "obj:555:2 @1424:-499.41,-773.97  Objective Soothing Turtle Bisque / Soothing Spices (1)",
         "obj:555:1 @1424:-737.81,-679.25  Objective Soothing Turtle Bisque / Turtle Meat (1)",
-        "turnin:555 @1424:-593.81,-851.84  TurnIn Soothing Turtle Bisque"
+        "turnin:555 @1424:-593.81,-851.84  TurnIn Soothing Turtle Bisque",
+        "turnin:505 @1424:-473.81,-861.01  TurnIn Syndicate Assassins",
+        "accept:500 @1424:-516.37,-852.91  Accept Crushridge Bounty",
+        {"lines":[".goto 1424/0,-512.21,-715.09",".fp Southshore >> Get the Southshore flight path",".fly Menethil >> Fly to Menethil"],"tag":"Mage","from":"RestedXP: 31-33 Hillsbrad Mage AoE"}
       ]
     },
     {
       "part": 4,
       "steps": [
-        "turnin:98059 @1424:-419.09,-670.93  TurnIn Hillsbrad's Hoard",
-        "obj:564:1 @1424:-174.93,-125.23  Objective Costly Menace / Mountain Lion slain (8)",
-        "turnin:564 @1424:-610.77,-793.81  TurnIn Costly Menace",
         "turnin:98071 @1424:-601.49,-853.12  TurnIn Brewer's Trade",
-        "turnin:500 @1424:-516.37,-852.91  TurnIn Crushridge Bounty",
-        "turnin:505 @1424:-473.81,-861.01  TurnIn Syndicate Assassins",
         "accept:565 @1424:-515.09,-784.64  Accept Bartolo's Yeti Fur Cloak",
         "obj:565:2 @1424:-499.41,-773.97  Objective Bartolo's Yeti Fur Cloak / Fine Thread (1)",
+        "turnin:98059 @1424:-419.09,-670.93  TurnIn Hillsbrad's Hoard",
+        "obj:564:1 @1424:-174.93,-125.23  Objective Costly Menace / Mountain Lion slain (8)",
         "obj:565:4 @1424:-358.93,-226.35  Objective Bartolo's Yeti Fur Cloak / Yeti Fur (1)",
-        "obj:565:1 @1424:-339.09,-202.03  Objective Bartolo's Yeti Fur Cloak / Bolt of Woolen Cloth (1)"
+        "obj:565:1 @1424:-339.09,-202.03  Objective Bartolo's Yeti Fur Cloak / Bolt of Woolen Cloth (1)",
+        "turnin:505 @1424:-473.81,-861.01  TurnIn Syndicate Assassins",
+        "turnin:564 @1424:-610.77,-793.81  TurnIn Costly Menace",
+        {"lines":[".goto 1424/0,-610.77,-793.81",">>Talk to |cRXP_FRIENDLY_Robert|r",".vendor 3543 >> Vendor Trash. Repair",".target Robert Aebischer",".isOnQuest 511"],"tag":"Mage","from":"RestedXP: 32-33 ADV Hillsbrad Mage AoE"},
+        "turnin:500 @1424:-516.37,-852.91  TurnIn Crushridge Bounty"
       ]
     }
   ]

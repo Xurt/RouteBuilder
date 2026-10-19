@@ -17,14 +17,14 @@ RXPGuides.RegisterGuide([[
 #subweight -10
 #name 10-15 Darkshore: around Thundris Windweaver
 --RouteBuilder:next
-#next Zone Routes (Alliance)\9-12 Teldrassil: around Priestess A'moora;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Daryl the Youngling
+#next Zone Routes (Alliance)\9-12 Teldrassil: around Priestess A'moora;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Marek Ironheart
 
 step
     .goto 1439/1,543.06,6342.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .accept 3524 >>Accept Washed Ashore
     .target Gwennyth Bly'Leggonde
-step
+step << Mage
     .goto 1439/1,561.40,6343.01
     >>Talk to |cRXP_FRIENDLY_Caylais|r
     .fp Auberdine >> Get the Auberdine flight path
@@ -47,7 +47,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r
     .accept 983 >>Accept Buzzbox 827
     .target Wizbang Cranktoggle
-step
+step << Mage
     .goto 1439/1,488.69,6564.830
     >>Talk to |cRXP_FRIENDLY_Dalmond|r
     .vendor 4182 >> |cRXP_BUY_Buy as many|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_as you need/can|r
@@ -63,7 +63,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2118 >>Accept Plagued Lands
     .target Tharnariun Treetender
-step
+step << Mage
     .goto 1439/1,533.23,6399.77
     >>Talk to |cRXP_FRIENDLY_Laird|r
     >>|cRXP_BUY_Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r
@@ -371,7 +371,7 @@ step << NightElf/Dwarf/Human Hunter
     .goto 1439,47.166,37.580,50,0
     .goto 1439,45.827,36.812,50,0
     .xp 13 >> Grind to level 13
-step
+step << Mage
     .goto 1439/1,488.69,6564.830,0,0
     >>Talk to |cRXP_FRIENDLY_Dalmond|r
     .vendor >> Vendor Trash
@@ -506,7 +506,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .turnin 982 >>Turn in Deep Ocean, Vast Sea
     .target Gorbold Steelhand
-step
+step << Mage
     .goto 1439/1,445.46,6535.58
     .target Gorbold Steelhand
     >>Talk to |cRXP_FRIENDLY_Gorbold Steelhand|r
@@ -620,7 +620,7 @@ step << Druid
     .goto 1439,39.957,55.300,50,0
     .goto 1439,39.332,54.079,50,0
     .xp 16 >> Grind to level 16
-step
+step << Mage
     .goto 1439/1,533.23,6399.77
     >>Talk to |cRXP_FRIENDLY_Laird|r
     >>|cRXP_BUY_Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r
@@ -869,7 +869,7 @@ step
     >>|cRXP_FRIENDLY_Teldrassil|r: Return to Nessa << NightElf
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: The Family and the Fishing Pole
 step
-    +|cRXP_WARN_Suggested next zones at level 14|r: |cRXP_FRIENDLY_Teldrassil|r (about 1.2 levels of quests, starting around Priestess A'moora), |cRXP_FRIENDLY_Zephras Isle|r (about 1.1 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling). Completing this step loads the guide for Teldrassil --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 14|r: |cRXP_FRIENDLY_Teldrassil|r (about 1.2 levels of quests, starting around Priestess A'moora), |cRXP_FRIENDLY_Zephras Isle|r (about 1.1 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Marek Ironheart). Completing this step loads the guide for Teldrassil --RouteBuilder:next
 step
     +|cRXP_WARN_The rest of Darkshore is planned from level 17.|r Load its guide for level 17 then
 ]])
@@ -928,14 +928,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .accept 729 >>Accept The Absent Minded Prospector
     .target Archaeologist Hollee
-step
+step << Mage
     .goto 1439/1,488.69,6564.830
     >>Talk to |cRXP_FRIENDLY_Dalmond|r
     .vendor 4182 >> |cRXP_BUY_Buy as many|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_as you need/can|r
     .target Dalmond
     .money <0.0500
     .money >0.2500
-step
+step << Mage
     .goto 1439/1,488.69,6564.830
     >>Talk to |cRXP_FRIENDLY_Dalmond|r
     .vendor 4182 >> |cRXP_BUY_Buy a|r |T133634:0|t[Brown Leather Satchel] |cRXP_BUY_from him|r
@@ -1165,21 +1165,6 @@ step
     .turnin 2078 >>Turn in Gyromast's Revenge
     .target Gelkak Gyromast
 step
-    #loop
-    .goto 1439/1,-351.02,7834.22,0
-    .goto 1439/1,-351.02,7834.22,40,0
-    .goto 1439/1,-286.83,7861.30,40,0
-    .goto 1439/1,-224.60,7839.46,40,0
-    .goto 1439/1,-226.57,7763.92,40,0
-    .goto 1439/1,-189.23,7707.15,40,0
-    .goto 1439/1,-280.28,7667.85,40,0
-    .goto 1439/1,-345.12,7674.40,40,0
-    .goto 1439/1,-309.10,7724.18,40,0
-    .goto 1439/1,-281.59,7775.71,40,0
-    >>Kill |cRXP_ENEMY_Stormscale Beastmistress|r and loot |cRXP_LOOT_Rod of Deep Dominion|r
-    .complete 87760,1 --Rod of Deep Dominion (1)
-    .mob Stormscale Beastmistress
-step
     .goto 1439/1,491.97,6580.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 4763 >>Turn in The Blackwood Corrupted
@@ -1204,10 +1189,26 @@ step
     .target Terenthis
     .isQuestTurnedIn 986 --any of: A Lost Master
 step
-    .goto 1439/1,543.06,6342.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 87760 >>Turn in Holy Diver
-    .target Gwennyth Bly'Leggonde
+    #loop
+    .goto 1439/1,843.05,4809.00,0
+    .goto 1439/1,843.05,4809.00,40,0
+    .goto 1439/1,799.82,4778.43,40,0
+    .goto 1439/1,783.44,4714.24,40,0
+    .goto 1439/1,824.05,4678.00,40,0
+    .goto 1439/1,863.35,4756.60,40,0
+    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for |cRXP_LOOT_Fine Crab Chunks|r
+    .complete 1138,1 --Fine Crab Chunks (6)
+    .mob Encrusted Tide Crawler
+    .mob Reef Crawler
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Shaussiy's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
+    .goto 1439/1,577.12,6371.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .turnin 1138 >>Turn in Fruit of the Sea
+    .target Gubber Blump
 step
     .goto 1439/1,89.14,5002.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
@@ -1231,25 +1232,39 @@ step
     .isOnQuest 993
 step
     #loop
-    .goto 1439/1,783.44,4714.24,0
-    .goto 1439/1,783.44,4714.24,40,0
-    .goto 1439/1,824.05,4678.00,40,0
-    .goto 1439/1,863.35,4756.60,40,0
-    .goto 1439/1,843.05,4809.00,40,0
-    .goto 1439/1,799.82,4778.43,40,0
-    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for |cRXP_LOOT_Fine Crab Chunks|r
-    .complete 1138,1 --Fine Crab Chunks (6)
-    .mob Encrusted Tide Crawler
-    .mob Reef Crawler
+    .goto 1439/1,-950.34,7278.35,0
+    .goto 1439/1,-950.34,7278.35,40,0
+    .goto 1439/1,-962.13,7363.93,40,0
+    .goto 1439/1,-1019.12,7477.90,40,0
+    .goto 1439/1,-1055.14,7559.12,40,0
+    .goto 1439/1,-1109.51,7482.27,40,0
+    .goto 1439/1,-1131.12,7439.91,40,0
+    .goto 1439/1,-1120.64,7370.92,40,0
+    .goto 1439/1,-1055.14,7394.50,40,0
+    .goto 1439/1,-1059.73,7323.76,40,0
+    >>Kill |cRXP_ENEMY_Stormscale Sorceress|r
+    >>Kill |cRXP_ENEMY_Stormscale Warriors|r
+    >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_Nar'thalas Almanac, Vol. 74|r
+    .complete 98013,2 --Stormscale Sorceress slain (8)
+    .complete 98013,3 --Stormscale Warrior slain (6)
+    .complete 78124,1 --Nar'thalas Almanac, Vol. 74 (1)
+    .mob Stormscale Sorceress
+    .mob Stormscale Warrior
 step
-    #completewith next
-    .hs >>Hearth to Innkeeper Shaussiy's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .goto 1439/1,577.12,6371.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
-    .turnin 1138 >>Turn in Fruit of the Sea
-    .target Gubber Blump
+    #loop
+    .goto 1439/1,-345.12,7674.40,0
+    .goto 1439/1,-345.12,7674.40,40,0
+    .goto 1439/1,-280.28,7667.85,40,0
+    .goto 1439/1,-189.23,7707.15,40,0
+    .goto 1439/1,-226.57,7763.92,40,0
+    .goto 1439/1,-224.60,7839.46,40,0
+    .goto 1439/1,-286.83,7861.30,40,0
+    .goto 1439/1,-351.02,7834.22,40,0
+    .goto 1439/1,-281.59,7775.71,40,0
+    .goto 1439/1,-309.10,7724.18,40,0
+    >>Kill |cRXP_ENEMY_Stormscale Beastmistress|r and loot |cRXP_LOOT_Rod of Deep Dominion|r
+    .complete 87760,1 --Rod of Deep Dominion (1)
+    .mob Stormscale Beastmistress
 step
     .xp 18 >>Grind to level 18 (Unrequited Love needs it)
 step
@@ -1258,37 +1273,10 @@ step
     .accept 98461 >>Accept Unrequited Love
     .target Archaeologist Hollee
 step
-    #loop
-    .goto 1439/1,-793.14,7387.08,0
-    .goto 1439/1,-793.14,7387.08,40,0
-    .goto 1439/1,-841.61,7377.03,40,0
-    .goto 1439/1,-887.46,7254.77,40,0
-    .goto 1439/1,-890.08,7329.87,40,0
-    .goto 1439/1,-901.87,7368.30,40,0
-    .goto 1439/1,-962.13,7363.93,40,0
-    .goto 1439/1,-905.15,7442.97,40,0
-    .goto 1439/1,-858.64,7457.82,40,0
-    .goto 1439/1,-821.31,7486.20,40,0
-    >>Kill |cRXP_ENEMY_Stormscale Sorceress|r
-    >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_Nar'thalas Almanac, Vol. 74|r
-    .complete 98013,2 --Stormscale Sorceress slain (8)
-    .complete 78124,1 --Nar'thalas Almanac, Vol. 74 (1)
-    .mob Stormscale Sorceress
-step
-    #loop
-    .goto 1439/1,-1007.33,7357.82,0
-    .goto 1439/1,-1007.33,7357.82,40,0
-    .goto 1439/1,-1059.73,7323.76,40,0
-    .goto 1439/1,-1120.64,7370.92,40,0
-    .goto 1439/1,-1131.12,7439.91,40,0
-    .goto 1439/1,-1080.69,7494.93,40,0
-    .goto 1439/1,-1055.14,7559.12,40,0
-    .goto 1439/1,-994.88,7513.27,40,0
-    .goto 1439/1,-1006.67,7450.83,40,0
-    .goto 1439/1,-1072.17,7424.63,40,0
-    >>Kill |cRXP_ENEMY_Stormscale Warriors|r
-    .complete 98013,3 --Stormscale Warrior slain (6)
-    .mob Stormscale Warrior
+    .goto 1439/1,543.06,6342.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 87760 >>Turn in Holy Diver
+    .target Gwennyth Bly'Leggonde
 step
     .goto 1439/1,76.04,4992.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arbal|r
@@ -1317,12 +1305,6 @@ RXPGuides.RegisterGuide([[
 #name 21-22 Darkshore
 
 step
-    .goto 1439/1,577.12,6371.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
-    .turnin 1141 >>Turn in The Family and the Fishing Pole
-    .target Gubber Blump
-    .isQuestComplete 1141
-step
     .goto 1439/1,-6.49,4608.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
     .accept 994 >>Accept Escape Through Force
@@ -1345,6 +1327,12 @@ step
     .accept 990 >>Accept Trek to Ashenvale
     .target Sentinel Selarin
     .isQuestTurnedIn 994,995 --any of: Escape Through Force, Escape Through Stealth
+step
+    .goto 1439/1,577.12,6371.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .turnin 1141 >>Turn in The Family and the Fishing Pole
+    .target Gubber Blump
+    .isQuestComplete 1141
 step
     +|cRXP_WARN_End of the Darkshore route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ashenvale|r: Trek to Ashenvale

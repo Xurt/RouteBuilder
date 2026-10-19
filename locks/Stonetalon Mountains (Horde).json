@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "18-29 Stonetalon Mountains",
-  "saved": "2026-10-17 13:18",
+  "saved": "2026-10-18 23:45",
   "levels": "RestedXP",
   "parts": [
     {
@@ -43,7 +43,7 @@
         "turnin:6401 @1442:928.2,1015.67  TurnIn Kaya's Alive",
         {"lines":[".goto 1442/1,927.72,893.56",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Jayka",".subzoneskip 460,1"],"from":"RestedXP: 24-26 Southern Barrens/Stonetalon"},
         {"lines":[".goto 1442/1,920.88,911.47",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeeda|r on the second floor of the inn",".vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r",".target Jeeda",".subzoneskip 460,1"],"from":"RestedXP: 24-26 Southern Barrens/Stonetalon"},
-        {"lines":[".goto 1442/1,1042.47,968.13",".fp Sun Rock>> Get the Sun Rock Retreat flight path"],"from":"RestedXP: 17-21 Stonetalon/Barrens AoE"},
+        {"lines":[".goto 1442/1,1042.47,968.13",".fp Sun Rock>> Get the Sun Rock Retreat flight path"],"tag":"Mage","from":"RestedXP: 17-21 Stonetalon/Barrens AoE"},
         "turnin:1095 @1442:365.16,878.25  TurnIn Further Instructions",
         {"lines":[".goto 1442/1,183.98,1608.63",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nizzik|r",".vendor >>|cRXP_BUY_Buy gear upgrades if any are available|r",".target Nizzik",".isOnQuest 1096"],"from":"RestedXP: 24-26 Southern Barrens/Stonetalon"},
         "turnin:1060 @1442:-394.2,-272.5  TurnIn Letter to Jin'Zil"

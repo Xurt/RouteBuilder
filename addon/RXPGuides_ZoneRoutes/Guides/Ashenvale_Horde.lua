@@ -310,12 +310,12 @@ step
     .complete 6503,1 --Ashenvale Outrunner slain (9)
     .mob Ashenvale Outrunner
 step
-    .goto 1440/1,-592.83,2166.41
-    >>Kill |cRXP_ENEMY_Ursangous|r and loot |cRXP_LOOT_Ursangous's Paw|r. Use it to start the quest
-    .collect 16303,1,23 --Ursangous's Paw (1)
-    .accept 23 >>Accept Ursangous's Paw
-    .use 16303
-    .mob Ursangous
+    .goto 1440/1,-1615.83,2518.49
+    >>Kill |cRXP_ENEMY_Shadumbra|r and loot |cRXP_LOOT_Shadumbra's Head|r. Use it to start the quest
+    .collect 16304,1,24 --Shadumbra's Head (1)
+    .accept 24 >>Accept Shadumbra's Head
+    .use 16304
+    .mob Shadumbra
     .isQuestTurnedIn 6383 --any of: The Ashenvale Hunt
     .xp <20,1
 step
@@ -359,16 +359,16 @@ step << Paladin
     .mob Blackfathom Tide Priestess
 step
     #loop
-    .goto 1440/1,-617.62,3481.74,0
-    .goto 1440/1,-617.62,3481.74,40,0
-    .goto 1440/1,-661.45,3458.29,40,0
-    .goto 1440/1,-656.26,3379.88,40,0
-    .goto 1440/1,-705.85,3347.59,40,0
-    .goto 1440/1,-702.97,3300.70,40,0
-    .goto 1440/1,-633.19,3349.13,40,0
+    .goto 1440/1,-599.75,3359.51,0
     .goto 1440/1,-599.75,3359.51,40,0
-    .goto 1440/1,-604.36,3401.40,40,0
+    .goto 1440/1,-633.19,3349.13,40,0
+    .goto 1440/1,-702.97,3300.70,40,0
+    .goto 1440/1,-705.85,3347.59,40,0
+    .goto 1440/1,-656.26,3379.88,40,0
+    .goto 1440/1,-661.45,3458.29,40,0
+    .goto 1440/1,-617.62,3481.74,40,0
     .goto 1440/1,-636.08,3432.54,40,0
+    .goto 1440/1,-604.36,3401.40,40,0
     >>Loot the |cRXP_PICK_Troll Chests|r for |cRXP_LOOT_Troll Charm|r
     .complete 6462,1 --Troll Charm (8)
 step
@@ -413,12 +413,12 @@ step
     .complete 216,1 --Thistlefur Avenger slain (8)
     .mob Thistlefur Avenger
 step
-    .goto 1440/1,-1615.83,2518.49
-    >>Kill |cRXP_ENEMY_Shadumbra|r and loot |cRXP_LOOT_Shadumbra's Head|r. Use it to start the quest
-    .collect 16304,1,24 --Shadumbra's Head (1)
-    .accept 24 >>Accept Shadumbra's Head
-    .use 16304
-    .mob Shadumbra
+    .goto 1440/1,-592.83,2166.41
+    >>Kill |cRXP_ENEMY_Ursangous|r and loot |cRXP_LOOT_Ursangous's Paw|r. Use it to start the quest
+    .collect 16303,1,23 --Ursangous's Paw (1)
+    .accept 23 >>Accept Ursangous's Paw
+    .use 16303
+    .mob Ursangous
     .isQuestTurnedIn 6383 --any of: The Ashenvale Hunt
     .xp <20,1
 step

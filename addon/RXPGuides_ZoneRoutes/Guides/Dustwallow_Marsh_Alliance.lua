@@ -33,6 +33,18 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
     .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed|r
     .target Jensen Farran
+step
+    .goto 1445/1,-4538.70,-3721.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Lendry|r
+    .turnin 1302 >>Turn in James Hyal
+    .target Clerk Lendry
+    .isOnQuest 1302
+step
+    .goto 1445/1,-4546.05,-3738.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Samaul|r
+    .turnin 1264 >>Turn in The Missing Diplomat
+    .target Commander Samaul
+    .isOnQuest 1264
 step << Paladin sod
     .trainer >>Train your spells
     .train 19752 >>Train |T136106:0|t[|cRXP_FRIENDLY_Divine Intervention|r]. You will need it for a rune later << sod
@@ -48,34 +60,24 @@ step
     .turnin 1135 >>Turn in Highperch Venom
     .target Fiora Longears
     .isQuestComplete 1135
+step << Hunter
+    .goto 1445/1,-4534.50,-3776.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
+    .vendor >> |cRXP_BUY_Delete all|r |T132382:0|t[Razor Arrows] |cRXP_BUY_you have and fill your quiver with|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_instead|r
+    .target Jensen Farran
+    .xp <40,1
+step << Hunter
+    .goto 1445/1,-4534.50,-3776.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
+    .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed. Buy a couple stacks of|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_if you're close to level 40|r
+    .target Jensen Farran
+    .xp >40,1
 step
     .goto 1445/1,-4457.85,-3624.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Stern|r
     .turnin 1260 >>Turn in Morgan Stern
     .target Morgan Stern
     .isOnQuest 1260
-step
-    .goto 1445/1,-4538.70,-3721.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Lendry|r
-    .turnin 1302 >>Turn in James Hyal
-    .target Clerk Lendry
-    .isOnQuest 1302
-step
-    .goto 1445/1,-4546.05,-3738.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Samaul|r
-    .turnin 1264 >>Turn in The Missing Diplomat
-    .target Commander Samaul
-    .isOnQuest 1264
-step
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .goto 1445/1,-3979.57,-2822.23,30,0
-    .goto 1445/1,-3984.82,-2566.38,30,0
-    .goto 1445/1,-4044.15,-2587.38,30,0
-    .goto 1445/1,-3818.40,-2561.83,30,0
-    .goto 1445/1,-3815.25,-2721.78,30,0
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .xp 38 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, and |cRXP_ENEMY_Mirefin Murlocs|r to Level 38
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
 step << Mage
     .goto 1445/1,-3393.15,-4031.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
@@ -94,16 +96,6 @@ step << Mage
     .turnin 1947 >>Turn in Journey to the Marsh
     .target Tabetha
     .isOnQuest 1947
-step << Warrior
-    .goto 1445/1,-4538.44,-3727.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Evencane|r up stairs in the Keep
-    .trainer >> Train your class spells
-    .target Captain Evencane
-step << Paladin
-    .goto 1445/1,-4513.29,-3692.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Karman|r
-    .trainer >> Train your class spells
-    .target Brother Karman
 step << Warlock
     .goto 1445/1,-3393.15,-4031.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabetha|r
@@ -128,25 +120,20 @@ RXPGuides.RegisterGuide([[
 #name 31-32 Dustwallow Marsh: around Captain Garran Vimes
 
 step
-    .goto 1445/1,-4464.15,-3613.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
-    .turnin 1135 >>Turn in Highperch Venom
-    .target Fiora Longears
-    .isQuestComplete 1135
-step
     .goto 1445/1,-4447.87,-3645.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Byron|r
     .accept 1282 >>Accept They Call Him Smiling Jim
     .target Guard Byron
 step
-    .goto 1445/1,-4556.02,-3735.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garran Vimes|r
-    .turnin 1282 >>Turn in They Call Him Smiling Jim
-    .target Captain Garran Vimes
-step
     .goto 1445/1,-3885.60,-2940.53
     >>Click the |cRXP_PICK_Loose Dirt|r
     .accept 1219 >>Accept The Orc Report
+step
+    .goto 1445/1,-4464.15,-3613.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
+    .turnin 1135 >>Turn in Highperch Venom
+    .target Fiora Longears
+    .isQuestComplete 1135
 step
     #loop
     .goto 1445/1,-4387.50,-3678.33,0
@@ -158,21 +145,11 @@ step
     .accept 1220 >>Accept Captain Vimes
     .unitscan Theramore Lieutenant
 step
-    .goto 1445/1,-4366.50,-3785.78
-    >>Talk to |cRXP_FRIENDLY_Marie|r
-    .vendor 4888 >> Vendor Trash. Repair
-    .target Marie Holdston
-step
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .goto 1445/1,-3979.57,-2822.23,30,0
-    .goto 1445/1,-3984.82,-2566.38,30,0
-    .goto 1445/1,-4044.15,-2587.38,30,0
-    .goto 1445/1,-3818.40,-2561.83,30,0
-    .goto 1445/1,-3815.25,-2448.78,30,0
-    .goto 1445/1,-3809.47,-2725.63,30,0
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .xp 39 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to Level 39
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
+    .goto 1445/1,-4556.02,-3735.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garran Vimes|r
+    .turnin 1220 >>Turn in Captain Vimes
+    .turnin 1282 >>Turn in They Call Him Smiling Jim
+    .target Captain Garran Vimes
 step
     .goto 1445/1,-2534.25,-3700.73
     >>Click the |cRXP_PICK_Hoofprints|r
@@ -188,7 +165,6 @@ step
 step
     .goto 1445/1,-4556.02,-3735.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garran Vimes|r
-    .turnin 1220 >>Turn in Captain Vimes
     .turnin 1252 >>Turn in Lieutenant Paval Reethe
     .turnin 1253 >>Turn in The Black Shield
     .turnin 1284 >>Turn in Suspicious Hoofprints
@@ -202,45 +178,18 @@ step
     .accept 1285 >>Accept Daelin's Men
     .target Adjutant Tesoran
 step
-    .goto 1445/1,-4556.02,-3735.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garran Vimes|r
-    .turnin 1285 >>Turn in Daelin's Men
-    .accept 1286 >>Accept The Deserters
-    .target Captain Garran Vimes
-step
     .goto 1445/1,-4374.37,-3798.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caz Twosprocket|r
     .turnin 1319 >>Turn in The Black Shield
     .accept 1320 >>Accept The Black Shield
     .target Caz Twosprocket
 step
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .goto 1445/1,-3979.57,-2822.23,30,0
-    .goto 1445/1,-3984.82,-2566.38,30,0
-    .goto 1445/1,-4044.15,-2587.38,30,0
-    .goto 1445/1,-3818.40,-2561.83,30,0
-    .goto 1445/1,-3815.25,-2448.78,30,0
-    .goto 1445/1,-3809.47,-2725.63,30,0
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .xp 40 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
-step
-    .goto 1445/1,-4366.50,-3785.78
-    >>Talk to |cRXP_FRIENDLY_Marie|r
-    .vendor 4888 >> Vendor Trash. Repair
-    .target Marie Holdston
-    .zoneskip Dustwallow Marsh,1
-step
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .goto 1445/1,-3979.57,-2822.23,30,0
-    .goto 1445/1,-3984.82,-2566.38,30,0
-    .goto 1445/1,-4044.15,-2587.38,30,0
-    .goto 1445/1,-3818.40,-2561.83,30,0
-    .goto 1445/1,-3815.25,-2448.78,30,0
-    .goto 1445/1,-3809.47,-2725.63,30,0
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .xp 41 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to Level 41
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
+    .goto 1445/1,-4556.02,-3735.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garran Vimes|r
+    .turnin 1285 >>Turn in Daelin's Men
+    .turnin 1320 >>Turn in The Black Shield
+    .accept 1286 >>Accept The Deserters
+    .target Captain Garran Vimes
 step
     .goto 1445/1,-2869.72,-3934.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balos Jacken|r
@@ -258,42 +207,7 @@ step
     .goto 1445/1,-4556.02,-3735.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garran Vimes|r
     .turnin 1287 >>Turn in The Deserters
-    .turnin 1320 >>Turn in The Black Shield
     .target Captain Garran Vimes
-step
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .goto 1445/1,-3979.57,-2822.23,30,0
-    .goto 1445/1,-3984.82,-2566.38,30,0
-    .goto 1445/1,-4044.15,-2587.38,30,0
-    .goto 1445/1,-3818.40,-2561.83,30,0
-    .goto 1445/1,-3815.25,-2448.78,30,0
-    .goto 1445/1,-3809.47,-2725.63,30,0
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .xp 41+33530 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 33530+/95800xp
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
-step
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .goto 1445/1,-3979.57,-2822.23,30,0
-    .goto 1445/1,-3984.82,-2566.38,30,0
-    .goto 1445/1,-4044.15,-2587.38,30,0
-    .goto 1445/1,-3818.40,-2561.83,30,0
-    .goto 1445/1,-3815.25,-2448.78,30,0
-    .goto 1445/1,-3809.47,-2725.63,30,0
-    .goto 1445/1,-3971.70,-2767.63,30,0
-    .xp 41+43110 >> AoE |cRXP_ENEMY_Mirefin Muckdwellers|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Puddlejumpers|r, |cRXP_ENEMY_Mirefin Murlocs|r, and |cRXP_ENEMY_Mudrock Spikeshells|r to 43110+/95800xp
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mirefin Muckdwellers|r cast|r |T136134:0|t[Creeping Mold] |cRXP_WARN_(20 damage every 10 seconds for 1 min), and |cRXP_ENEMY_Mirefin Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
-step << Hunter
-    .goto 1445/1,-4534.50,-3776.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
-    .vendor >> |cRXP_BUY_Delete all|r |T132382:0|t[Razor Arrows] |cRXP_BUY_you have and fill your quiver with|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_instead|r
-    .target Jensen Farran
-    .xp <40,1
-step << Hunter
-    .goto 1445/1,-4534.50,-3776.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jensen Farran|r
-    .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed. Buy a couple stacks of|r |T135661:0|t[Jagged Arrows] |cRXP_BUY_if you're close to level 40|r
-    .target Jensen Farran
-    .xp >40,1
 step
     +|cRXP_WARN_That is all of Dustwallow Marsh for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Thousand Needles|r: Hidden Secrets << Mage
@@ -318,23 +232,6 @@ step
     .goto 1445/1,-3978.00,-2761.33
     >>Open the |cRXP_PICK_Waterlogged Book|r. Loot it for |cRXP_LOOT_RwlRwlRwlRwl!|r
     .complete 79952,1 --RwlRwlRwlRwl! (1)
-step
-    .goto 1445/1,-4464.15,-3613.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
-    .turnin 1135 >>Turn in Highperch Venom
-    .target Fiora Longears
-    .isQuestComplete 1135
-step
-    .goto 1445/1,-4517.17,-3828.83
-    .fp Theramore >> Get the Theramore Flight Path
-step
-    .goto 1445/1,-4457.85,-3624.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Stern|r
-    .accept 1204 >>Accept Mudrock Soup and Bugs
-    .target Morgan Stern
-step
-    .goto 1445/1,-4470.97,-3616.03
-    .vendor >> Buy up to 180 level 35 drink
 step
     .goto 1445/1,-4546.05,-3738.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Samaul|r
@@ -378,7 +275,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
     .turnin 1218 >>Turn in Soothing Spices
     .target "Swamp Eye" Jarl
-step
+step << Mage
     .trainer >> Teleport to Stormwind or Ironforge. Train your level 38 spells
     >>Start being very careful with your money too, as it's very nice to have your mount at level 40
 step
@@ -425,6 +322,23 @@ step
     .accept 1177 >>Accept Hungry!
     .target Mudcrush Durtfeet
 step
+    .goto 1445/1,-4464.15,-3613.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Longears|r
+    .turnin 1135 >>Turn in Highperch Venom
+    .target Fiora Longears
+    .isQuestComplete 1135
+step << Mage
+    .goto 1445/1,-4517.17,-3828.83
+    .fp Theramore >> Get the Theramore Flight Path
+step
+    .goto 1445/1,-4457.85,-3624.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Stern|r
+    .accept 1204 >>Accept Mudrock Soup and Bugs
+    .target Morgan Stern
+step << Mage
+    .goto 1445/1,-4470.97,-3616.03
+    .vendor >> Buy up to 180 level 35 drink
+step
     #completewith Drop635x1
     >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Mirefin Puddlejumper|r, |cRXP_ENEMY_Mirefin Murloc|r, |cRXP_ENEMY_Mirefin Warrior|r. Use it to start the quest if you get one
     .collect 4614,1,635 --Pendant of Myzrael (1)
@@ -433,16 +347,16 @@ step
 step
     #label Drop635x1
     #loop
-    .goto 1445/1,-3819.97,-2581.43,0
-    .goto 1445/1,-3819.97,-2581.43,40,0
-    .goto 1445/1,-3848.85,-2610.13,40,0
+    .goto 1445/1,-3936.00,-2838.33,0
+    .goto 1445/1,-3936.00,-2838.33,40,0
+    .goto 1445/1,-3967.50,-2817.33,40,0
+    .goto 1445/1,-3999.00,-2789.33,40,0
+    .goto 1445/1,-4020.00,-2754.33,40,0
+    .goto 1445/1,-4009.50,-2712.33,40,0
+    .goto 1445/1,-4045.20,-2601.03,40,0
+    .goto 1445/1,-3991.12,-2593.33,40,0
     .goto 1445/1,-3924.45,-2616.08,40,0
-    .goto 1445/1,-3961.20,-2610.13,40,0
-    .goto 1445/1,-4043.10,-2622.03,40,0
-    .goto 1445/1,-4079.85,-2576.18,40,0
-    .goto 1445/1,-4038.90,-2569.88,40,0
-    .goto 1445/1,-3999.00,-2553.43,40,0
-    .goto 1445/1,-3828.90,-2521.58,40,0
+    .goto 1445/1,-3936.00,-2768.33,40,0
     >>Kill |cRXP_ENEMY_Mirefin Oracles|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Warriors|r and |cRXP_ENEMY_Mirefin Puddlejumpers|r. Loot them for |cRXP_LOOT_Mirefin Head|r
     .complete 1177,1 --Mirefin Head (12)
     .mob Mirefin Oracle
@@ -451,8 +365,7 @@ step
     .mob Mirefin Puddlejumper
 step
     #loop
-    .goto 1445/1,-4261.50,-2922.33,0
-    .goto 1445/1,-4261.50,-2922.33,40,0
+    .goto 1445/1,-4209.00,-2985.33,0
     .goto 1445/1,-4209.00,-2985.33,40,0
     .goto 1445/1,-4209.00,-3062.33,40,0
     .goto 1445/1,-4198.50,-3104.33,40,0
@@ -461,26 +374,15 @@ step
     .goto 1445/1,-4346.02,-3088.93,40,0
     .goto 1445/1,-4289.32,-3082.28,40,0
     .goto 1445/1,-4261.50,-3034.33,40,0
+    .goto 1445/1,-4261.50,-2922.33,40,0
     >>Kill |cRXP_ENEMY_Mudrock Tortoises|r, |cRXP_ENEMY_Mudrock Spikeshells|r, |cRXP_ENEMY_Mudrock Burrowers|r and |cRXP_ENEMY_Mudrock Borers|r. Loot them for |cRXP_LOOT_Forked Mudrock Tongue|r
     .complete 1204,1 --Forked Mudrock Tongue (8)
     .mob Mudrock Tortoise
     .mob Mudrock Spikeshell
     .mob Mudrock Burrower
     .mob Mudrock Borer
-step << Gnome
+step << Mage Gnome
     .trainer >> Train your class spells
-step
-    .goto 1445/1,-4457.85,-3624.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Stern|r
-    .turnin 1204 >>Turn in Mudrock Soup and Bugs
-    .target Morgan Stern
-step
-    .trainer >> Train your class spells
-step
-    .goto 1445/1,-2820.37,-3372.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mudcrush Durtfeet|r
-    .turnin 1177 >>Turn in Hungry!
-    .target Mudcrush Durtfeet
 step
     .goto 1445/1,-3436.20,-2646.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Stinky" Ignatz|r
@@ -491,11 +393,19 @@ step
     >>Help Stinky find Bogbean Leaves
     .complete 1222,1 --Help Stinky find Bogbean Leaves
 step
+    .goto 1445/1,-2820.37,-3372.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mudcrush Durtfeet|r
+    .turnin 1177 >>Turn in Hungry!
+    .target Mudcrush Durtfeet
+step
     .goto 1445/1,-4457.85,-3624.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Stern|r
     .turnin 1222 >>Turn in Stinky's Escape
+    .turnin 1204 >>Turn in Mudrock Soup and Bugs
     .accept 1258 >>Accept ... and Bugs
     .target Morgan Stern
+step << Mage
+    .trainer >> Train your class spells
 step
     .goto 1445/1,-4457.85,-3624.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Stern|r
@@ -526,6 +436,12 @@ step
     .turnin 1135 >>Turn in Highperch Venom
     .target Fiora Longears
     .isQuestComplete 1135
+step
+    .goto 1445/1,-4457.85,-3624.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Stern|r
+    .turnin 1258 >>Turn in ... and Bugs
+    .target Morgan Stern
+    .isQuestComplete 1258
 step
     .goto 1445/1,-3885.60,-2952.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Swamp Eye" Jarl|r
@@ -609,19 +525,14 @@ step << Mage
     .isQuestComplete 1948
 step << Mage
     #loop
-    .goto 1445/1,-3890.85,-4223.63,0
-    .goto 1445/1,-3890.85,-4223.63,40,0
-    .goto 1445/1,-3921.30,-4233.08,40,0
-    .goto 1445/1,-3891.90,-4269.48,40,0
+    .goto 1445/1,-3289.72,-4306.23,0
+    .goto 1445/1,-3289.72,-4306.23,40,0
+    .goto 1445/1,-3336.97,-4323.03,40,0
+    .goto 1445/1,-3330.15,-4374.48,40,0
+    .goto 1445/1,-3228.82,-4333.18,40,0
     >>Open the |cRXP_PICK_Gold Vein|r. Loot it for |cRXP_LOOT_Jade|r
     .complete 1948,1 --Jade (1)
     .isOnQuest 1948
-step
-    .goto 1445/1,-4457.85,-3624.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Stern|r
-    .turnin 1258 >>Turn in ... and Bugs
-    .target Morgan Stern
-    .isQuestComplete 1258
 step
     +|cRXP_WARN_End of the Dustwallow Marsh route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elsewhere and back here|r: Jarl Needs a Blade

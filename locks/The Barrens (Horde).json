@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "8-29 The Barrens",
-  "saved": "2026-10-17 13:18",
+  "saved": "2026-10-18 23:45",
   "levels": "RestedXP",
   "parts": [
     {
@@ -187,7 +187,7 @@
         "obj:899:1 @1413:-2490.36,-2068.98  Objective Consumed by Hatred / Bristleback Quilboar Tusk (60)",
         {"lines":[".goto 1413/1,-2515.7,-2076.41,60,0",".goto 1413/1,-2518.74,-2125.73,60,0",".goto 1413/1,-2517.72,-2223.7,60,0",".goto 1413/1,-2486.31,-2254.1,60,0",".goto 1413/1,-2494.42,-2282.48,60,0",".goto 1413/1,-2531.91,-2272.34,60,0",".goto 1413/1,-2571.43,-2295.31,60,0",".goto 1413/1,-2620.07,-2285.18,60,0",".goto 1413/1,-2625.14,-2245.32,60,0",".goto 1413/1,-2755.86,-2082.49,60,0",".goto 1413/1,-2813.62,-2054.12,60,0",".goto 1413/1,-2811.59,-2004.12,60,0",".goto 1413/1,-2783.22,-1949.39,60,0",".goto 1413/1,-2747.75,-1889.26,60,0",".goto 1413/1,-2709.24,-1913.59,60,0",".goto 1413/1,-2706.2,-1948.72,60,0",".goto 1413/1,-2687.96,-1973.04,60,0",".goto 1413/1,-2678.84,-2016.28,60,0",".goto 1413/1,-2584.6,-2050.74,60,0",".xp 19+9500 >> Grind to 9500+/21300 xp"],"tag":"Warlock/Shaman","from":"RestedXP: 17-22 Stonetalon/Barrens/Ashenvale"},
         "obj:865:1 @1413:-2709.24,-1513.62  Objective Raptor Horns / Intact Raptor Horn (5)",
-        {"lines":[".goto 1413/1,-1886.42,-2387.20",".fp Camp Taurajo >> Get the Camp Taurajo flight path",".fly Crossroads >>Fly to Crossroads"],"from":"RestedXP: 12-17 The Barrens AoE"},
+        {"lines":[".goto 1413/1,-1886.42,-2387.20",".fp Camp Taurajo >> Get the Camp Taurajo flight path",".fly Crossroads >>Fly to Crossroads"],"tag":"Mage","from":"RestedXP: 12-17 The Barrens AoE"},
         "obj:880:1 @1413:-3011.22,-1254.18  Objective Altered Beings / Altered Snapjaw Shell (8)",
         "turnin:97253 @1413:-3768.18,-841.37  TurnIn Parts and Pieces",
         "turnin:888 @1413:-3728.66,-835.29  TurnIn Stolen Booty",
@@ -230,7 +230,7 @@
       "steps": [
         "accept:78143 @1413:-2372.82,-608.96  Accept Secrets of the Dreamers",
         "obj:78143:1 @1413:-2372.82,-608.96  Objective Secrets of the Dreamers / Secrets of the Dreamers (1)",
-        {"lines":[".goto 1413/1,-3771.22,-894.07",".fp Ratchet >> Get the Ratchet flight path"],"from":"RestedXP: 12-17 The Barrens AoE"},
+        {"lines":[".goto 1413/1,-3771.22,-894.07",".fp Ratchet >> Get the Ratchet flight path"],"tag":"Mage","from":"RestedXP: 12-17 The Barrens AoE"},
         "accept:821 @1413:-3686.1,-981.22  Accept Chen's Empty Keg",
         "turnin:91901 @1413:-2456.92,-371.81  TurnIn A Sealed Crate",
         "accept:851 @1413:-1971.54,-306.95  Accept Verog the Dervish",

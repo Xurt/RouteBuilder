@@ -35,40 +35,12 @@ step << Orc Shaman/Tauren Shaman/Troll Shaman
     .turnin 79363 >>Turn in Silvia's Sword
     .target Bath'rah the Windwatcher
     .isQuestComplete 79363
-step << Warrior
-    .goto 1416/0,-1470.67,250.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
-    .turnin 1791 >>Turn in The Windwatcher
-    .target Bath'rah the Windwatcher
-    .isOnQuest 1791
 step << Shaman
     .goto 1416/0,-1470.67,250.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
     .turnin 79360 >>Turn in Elemental Aid
     .target Bath'rah the Windwatcher
     .isQuestComplete 79360
-step
-    .goto 1416/0,-710.75,501.89,120,0
-    .goto 1416/0,-602.39,452.80,120,0
-    .goto 1416/0,-536.03,363.01,120,0
-    .goto 1416/0,-851.59,232.35,120,0
-    .goto 1416/0,-710.75,501.89,120,0
-    .goto 1416/0,-602.39,452.80,120,0
-    .goto 1416/0,-536.03,363.01,120,0
-    .goto 1416/0,-851.59,232.35,120,0
-    .xp 34+56000 >> AoE Ogres and Syndicate to 34 & 56000+/62800xp
-    >>Keep grinding until your hearth cooldown is <8 minutes
-step
-    .goto 1416/0,-710.75,501.89,120,0
-    .goto 1416/0,-602.39,452.80,120,0
-    .goto 1416/0,-536.03,363.01,120,0
-    .goto 1416/0,-851.59,232.35,120,0
-    .goto 1416/0,-710.75,501.89,120,0
-    .goto 1416/0,-602.39,452.80,120,0
-    .goto 1416/0,-536.03,363.01,120,0
-    .goto 1416/0,-851.59,232.35,120,0
-    .xp 36 >> AoE Cats/Syndicates/Ogre mobs to level 36
-    >>Start saving the Silk Cloth you get. You need 12 stacks for later
 step
     #loop
     .goto 1416/0,-986.27,682.40,0
@@ -83,23 +55,16 @@ step
     .mob Jailor Borhuin
     .isOnQuest 503
 step
-    .goto 1416/0,-710.75,501.89,120,0
-    .goto 1416/0,-602.39,452.80,120,0
-    .goto 1416/0,-536.03,363.01,120,0
-    .goto 1416/0,-851.59,232.35,120,0
-    .goto 1416/0,-710.75,501.89,120,0
-    .goto 1416/0,-602.39,452.80,120,0
-    .goto 1416/0,-536.03,363.01,120,0
-    .goto 1416/0,-851.59,232.35,120,0
-    .xp 36+60000 >> Grind the Ogres and Syndicate to 36 & 60000+/71600xp
-    >>Keep grinding until your hearth cooldown is <8 minutes
-step
-    .vendor >> Buy level 35 drink if needed
-step
     .goto 1416/0,-912.07,683.71
     >>Find where Gol'dir is being held
     .complete 503,3 --Find where Gol'dir is being held
     .isOnQuest 503
+step << Warrior
+    .goto 1416/0,-1470.67,250.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
+    .turnin 1791 >>Turn in The Windwatcher
+    .target Bath'rah the Windwatcher
+    .isOnQuest 1791
 step
     .goto 1416/0,-895.55,683.52
     >>Free Gol'dir then return to Krusk in Tarren Mill.
@@ -233,6 +198,8 @@ step
     .target Gol'dir
     .isQuestTurnedIn 503 --any of: Gol'dir
     .xp <29,1
+step << Mage
+    .vendor >> Buy level 35 drink if needed
 step
     +|cRXP_WARN_That is all of Alterac Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: Blackmoore's Legacy

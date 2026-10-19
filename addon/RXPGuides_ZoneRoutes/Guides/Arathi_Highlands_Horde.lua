@@ -94,6 +94,14 @@ step
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Adegwa
 step
+    .goto 1417/0,-3524.91,-912.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Adegwa|r
+    .target Innkeeper Adegwa
+    .home >>Set your Hearthstone to Innkeeper Adegwa's inn
+step << Mage
+    .goto 1417/0,-3495.39,-918.13
+    .fp Hammerfall >> Get the Hammerfall Flight Path
+step
     .goto 1417/0,-3481.71,-947.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gor'mul|r
     .accept 655 >>Accept Hammerfall
@@ -142,16 +150,16 @@ step
 step
     #label Drop635x2
     #loop
-    .goto 1417/0,-2115.87,-781.33,0
-    .goto 1417/0,-2115.87,-781.33,40,0
-    .goto 1417/0,-2078.43,-848.53,40,0
+    .goto 1417/0,-2114.43,-893.89,0
     .goto 1417/0,-2114.43,-893.89,40,0
-    .goto 1417/0,-2010.75,-924.85,40,0
-    .goto 1417/0,-2028.39,-812.53,40,0
-    .goto 1417/0,-1970.79,-813.97,40,0
-    .goto 1417/0,-1912.47,-814.45,40,0
-    .goto 1417/0,-1957.47,-717.25,40,0
+    .goto 1417/0,-2115.87,-781.33,40,0
     .goto 1417/0,-2022.63,-741.73,40,0
+    .goto 1417/0,-1957.47,-717.25,40,0
+    .goto 1417/0,-1912.47,-814.45,40,0
+    .goto 1417/0,-1970.79,-813.97,40,0
+    .goto 1417/0,-2028.39,-812.53,40,0
+    .goto 1417/0,-2078.43,-848.53,40,0
+    .goto 1417/0,-2010.75,-924.85,40,0
     >>Kill |cRXP_ENEMY_Syndicate Highwaymans|r, |cRXP_ENEMY_Syndicate Pathstalkers|r and |cRXP_ENEMY_Syndicate Mercenaries|r. Loot them for |cRXP_LOOT_Bloodstone Amulet|r
     .complete 671,1 --Bloodstone Amulet (10)
     .mob Syndicate Highwayman
@@ -181,22 +189,6 @@ step
     .turnin 79976 >>Turn in This Must Be The Place
 step
     #loop
-    .goto 1417/0,-2403.15,-841.09,0
-    .goto 1417/0,-2403.15,-841.09,40,0
-    .goto 1417/0,-2470.83,-892.69,40,0
-    .goto 1417/0,-2592.15,-974.05,40,0
-    .goto 1417/0,-2664.51,-987.25,40,0
-    .goto 1417/0,-2748.39,-985.09,40,0
-    .goto 1417/0,-2686.47,-1044.85,40,0
-    .goto 1417/0,-2604.39,-1045.09,40,0
-    .goto 1417/0,-2382.99,-1025.65,40,0
-    .goto 1417/0,-2377.59,-952.45,40,0
-    >>Kill |cRXP_ENEMY_Plains Creepers|r and |cRXP_ENEMY_Giant Plains Creepers|r. Loot them for |cRXP_LOOT_Surgical Spidersilk|r
-    .complete 97539,1 --Surgical Spidersilk (12)
-    .mob Plains Creeper
-    .mob Giant Plains Creeper
-step
-    #loop
     .goto 1417/0,-2980.95,-1181.41,0
     .goto 1417/0,-2980.95,-1181.41,40,0
     .goto 1417/0,-3083.91,-1147.33,40,0
@@ -212,18 +204,34 @@ step
     .mob Highland Strider
     .mob Highland Thrasher
 step
+    #loop
+    .goto 1417/0,-3228.63,-1349.89,0
+    .goto 1417/0,-3228.63,-1349.89,40,0
+    .goto 1417/0,-3316.11,-1408.93,40,0
+    .goto 1417/0,-3317.55,-1476.61,40,0
+    .goto 1417/0,-3425.91,-1435.33,40,0
+    .goto 1417/0,-3451.11,-1345.57,40,0
+    .goto 1417/0,-3520.59,-1258.69,40,0
+    .goto 1417/0,-3425.55,-1260.61,40,0
+    .goto 1417/0,-3384.51,-1338.85,40,0
+    .goto 1417/0,-3327.99,-1249.09,40,0
+    >>Kill |cRXP_ENEMY_Plains Creepers|r and |cRXP_ENEMY_Giant Plains Creepers|r. Loot them for |cRXP_LOOT_Surgical Spidersilk|r
+    .complete 97539,1 --Surgical Spidersilk (12)
+    .mob Plains Creeper
+    .mob Giant Plains Creeper
+step
     #completewith Drop635x3
     >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Witherbark Troll|r, |cRXP_ENEMY_Witherbark Shadowcaster|r, |cRXP_ENEMY_Witherbark Axe Thrower|r. Use it to start the quest if you get one
     .collect 4614,1,635 --Pendant of Myzrael (1)
     .accept 635 >>Accept Crystal in the Mountains
     .use 4614
 step
-    #completewith Along17
+    #completewith Along18
     >>As you go: Kill |cRXP_ENEMY_Witherbark Axe Throwers|r. |cRXP_WARN_Anything left is finished later|r
     .complete 677,1 --Witherbark Axe Thrower slain (10)
     .mob Witherbark Axe Thrower
 step
-    #label Along17
+    #label Along18
     #loop
     .goto 1417/0,-3215.67,-1787.65,0
     .goto 1417/0,-3215.67,-1787.65,40,0
@@ -267,6 +275,10 @@ step
     .complete 677,1 --Witherbark Axe Thrower slain (10)
     .mob Witherbark Axe Thrower
 step
+    #completewith next
+    .hs >>Hearth to Innkeeper Adegwa's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
     .goto 1417/0,-3556.59,-1004.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tor'gan|r
     .turnin 671 >>Turn in Foul Magics
@@ -289,20 +301,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drum Fel|r
     .turnin 677 >>Turn in Call to Arms
     .target Drum Fel
-step
-    .goto 1417/0,-3524.91,-912.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Adegwa|r
-    .target Innkeeper Adegwa
-    .home >>Set your Hearthstone to Innkeeper Adegwa's inn
-step
-    .goto 1417/0,-3495.39,-918.13
-    .fp Hammerfall >> Get the Hammerfall Flight Path
-step
-    .xp 32 >> AoE the Dabyrie Farmstead to 32
-    >>Start saving the Wool Cloth and Silk Cloth you get. You need 12 stacks for later
-step
-    .xp 34 >> AoE the Dabyrie Farmstead to 34
-    >>Start saving the Wool Cloth and Silk Cloth you get. You need 12 stacks for later
 step
     .goto 1417/0,-3512.67,-832.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horde Warbringer|r
@@ -330,10 +328,6 @@ step
     .goto 1417/0,-3516.27,-1698.13
     >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_A Web of Lies: Debunking Myths and Legends|r
     .complete 79949,1 --A Web of Lies: Debunking Myths and Legends (1)
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Adegwa's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
 step
     .goto 1417/0,-3523.47,-948.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zengu|r

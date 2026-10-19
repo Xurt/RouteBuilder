@@ -18,23 +18,6 @@ RXPGuides.RegisterGuide([[
 #name 52-53 Western Plaguelands
 
 step
-    .goto 1422/0,-1582.40,1871.70
-    .xp 53+100000 >>AoE Undead in the area to 53 & 100000+/167100xp
-    >>Remember to try and save 12 stacks of Runecloth. You'll need it for cloth turnins later
-step
-    .goto 1422/0,-729.28,1784.84
-    .vendor >> You should be Friendly with the Argent Dawn now, so buy as many Manna Biscuits as possible to last you to level 60
-    >>If you're not, turn in scourgestones you looted until you are
-step
-    .goto 1422/0,-1582.40,1871.70
-    .xp 58 >> AoE Undead in the area to 58
-step
-    .goto 1422/0,-1574.23,2883.35,120,0
-    .goto 1422/0,-1511.45,3010.34,120,0
-    .goto 1422/0,-1541.12,3094.05,120,0
-    .goto 1422/0,-1474.04,2873.31,120,0
-    .xp 59+130000 >> Grind to 59 & 130000+/209800
-step
     .goto 1422/0,-1171.32,1720.91
     >>Kill |cRXP_ENEMY_Cauldron Lord Bilemaw|r and loot |cRXP_LOOT_Felstone Field Cauldron Key|r
     .complete 5229,1 --Felstone Field Cauldron Key (1)
@@ -78,6 +61,10 @@ step
     .accept 5232 >>Accept Return to the Bulwark
     .isQuestTurnedIn 5231 --any of: Target: Dalson's Tears
     .xp <50,1
+step << Mage
+    .goto 1422/0,-729.28,1784.84
+    .vendor >> You should be Friendly with the Argent Dawn now, so buy as many Manna Biscuits as possible to last you to level 60
+    >>If you're not, turn in scourgestones you looted until you are
 step
     .goto 1422/0,-1857.17,1472.37
     >>Kill |cRXP_ENEMY_Cauldron Lord Razarch|r and loot |cRXP_LOOT_Writhing Haunt Cauldron Key|r

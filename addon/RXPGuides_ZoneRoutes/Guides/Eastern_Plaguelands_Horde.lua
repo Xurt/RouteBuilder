@@ -18,38 +18,6 @@ RXPGuides.RegisterGuide([[
 #name 55-56 Eastern Plaguelands: around Tirion Fordring
 
 step
-    .goto 1423/0,-5337.83,2255.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Nicholas Zverenhoff|r
-    .accept 5503 >>Accept Argent Dawn Commission
-    .turnin 5503 >>Turn in Argent Dawn Commission
-    .target Duke Nicholas Zverenhoff
-step
-    .goto 1423/0,-5345.15,2300.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jessica Chambers|r
-    .target Jessica Chambers
-    .home >>Set your Hearthstone to Jessica Chambers's inn
-step
-    .goto 1423/0,-5766.75,1991.73
-    .fp Light's Hope Chapel >> Get the Light's Hope Chapel flight path
-step
-    .goto 1423/0,-5349.45,2303.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
-    .turnin 8859 >>Turn in Secrets of the Colossus - Zora
-    .target Lord Maxwell Tyrosus
-    .isOnQuest 8859
-step
-    .goto 1423/0,-5349.02,2307.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r
-    .turnin 5462 >>Turn in The Dying, Ras Frostwhisper
-    .target Leonid Barthalomew the Revered
-    .isOnQuest 5462
-step
-    .goto 1423/0,-5349.02,2307.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r
-    .turnin 5522 >>Turn in Leonid Barthalomew
-    .target Leonid Barthalomew the Revered
-    .isOnQuest 5522
-step
     .goto 1423/0,-2478.24,2671.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r
     .accept 5542 >>Accept Demon Dogs
@@ -149,6 +117,9 @@ step
     >>Kill |cRXP_ENEMY_Plaguehounds|r
     .complete 5542,2 --Plaguehound slain (20)
     .mob Plaguehound
+step << Mage
+    .goto 1423/0,-5766.75,1991.73
+    .fp Light's Hope Chapel >> Get the Light's Hope Chapel flight path
 step
     #loop
     .goto 1423/0,-4764.80,2252.60,0
@@ -168,6 +139,29 @@ step
     .accept 6026 >>Accept That's Asking A Lot
     .target Smokey LaRue
 step
+    .goto 1423/0,-5349.02,2307.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r
+    .turnin 5462 >>Turn in The Dying, Ras Frostwhisper
+    .target Leonid Barthalomew the Revered
+    .isOnQuest 5462
+step
+    .goto 1423/0,-5349.02,2307.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r
+    .turnin 5522 >>Turn in Leonid Barthalomew
+    .target Leonid Barthalomew the Revered
+    .isOnQuest 5522
+step
+    .goto 1423/0,-5349.45,2303.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
+    .turnin 8859 >>Turn in Secrets of the Colossus - Zora
+    .target Lord Maxwell Tyrosus
+    .isOnQuest 8859
+step
+    .goto 1423/0,-5345.15,2300.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jessica Chambers|r
+    .target Jessica Chambers
+    .home >>Set your Hearthstone to Jessica Chambers's inn
+step
     .goto 1423/0,-5337.83,2255.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Nicholas Zverenhoff|r
     .turnin 6030 >>Turn in Duke Nicholas Zverenhoff
@@ -184,6 +178,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
     .accept 5211 >>Accept Defenders of Darrowshire
     .target Carlin Redpath
+step
+    .goto 1423/0,-5337.83,2255.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Nicholas Zverenhoff|r
+    .accept 5503 >>Accept Argent Dawn Commission
+    .turnin 5503 >>Turn in Argent Dawn Commission
+    .target Duke Nicholas Zverenhoff
 step
     .goto 1423/0,-5264.70,2151.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Alen|r
@@ -316,8 +316,8 @@ step
 step
     .goto 1423/0,-5340.84,2257.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
-    .accept 5181 >>Accept Villains of Darrowshire
     .accept 5168 >>Accept Heroes of Darrowshire
+    .accept 5181 >>Accept Villains of Darrowshire
     .target Carlin Redpath
     .isQuestTurnedIn 5210 --any of: Brother Carlin
     .xp <50,1
@@ -339,43 +339,6 @@ step
     >>Click the |cRXP_PICK_The Argent Hold|r
     .turnin 5265 >>Turn in The Argent Hold
     .isOnQuest 5265
-step
-    .goto 1423/0,-4163.79,2511.17
-    >>Open the |cRXP_PICK_Horgus' Skull|r. Loot it for |cRXP_LOOT_Skull of Horgus|r
-    .complete 5181,1 --Skull of Horgus (1)
-    .isOnQuest 5181
-step
-    .goto 1423/0,-4272.21,2102.67
-    >>Pick up |cRXP_PICK_Shattered Sword of Marduk|r from the ground
-    .complete 5181,2 --Shattered Sword of Marduk (1)
-    .isOnQuest 5181
-step
-    .goto 1423/0,-5340.84,2257.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
-    .turnin 5181 >>Turn in Villains of Darrowshire
-    .target Carlin Redpath
-    .isOnQuest 5181
-step
-    .goto 1423/0,-5340.84,2257.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
-    .accept 5206 >>Accept Marauders of Darrowshire
-    .target Carlin Redpath
-    .isQuestTurnedIn 5168 --Heroes of Darrowshire
-    .isQuestTurnedIn 5181 --Villains of Darrowshire
-    .xp <50,1
-step
-    .goto 1423/0,-5340.84,2257.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
-    .turnin 5206 >>Turn in Marauders of Darrowshire
-    .target Carlin Redpath
-    .isOnQuest 5206
-step
-    .goto 1423/0,-5340.84,2257.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
-    .accept 5941 >>Accept Return to Chromie
-    .target Carlin Redpath
-    .isQuestTurnedIn 5206 --any of: Marauders of Darrowshire
-    .xp <50,1
 step
     .goto 1423/0,-4946.34,2923.11
     >>Pick up |cRXP_PICK_Symbol of Lost Honor|r from the ground
@@ -411,6 +374,16 @@ step
     .isQuestTurnedIn 6026 --any of: That's Asking A Lot
     .xp <54,1
 step
+    .goto 1423/0,-4272.21,2102.67
+    >>Pick up |cRXP_PICK_Shattered Sword of Marduk|r from the ground
+    .complete 5181,2 --Shattered Sword of Marduk (1)
+    .isOnQuest 5181
+step
+    .goto 1423/0,-4163.79,2511.17
+    >>Open the |cRXP_PICK_Horgus' Skull|r. Loot it for |cRXP_LOOT_Skull of Horgus|r
+    .complete 5181,1 --Skull of Horgus (1)
+    .isOnQuest 5181
+step
     .goto 1423/0,-3759.83,2803.00
     >>Kill |cRXP_ENEMY_Scourge Structures|r
     .complete 6041,1 --Scourge Structures Destroyed (8)
@@ -428,6 +401,33 @@ step
     .turnin 6041 >>Turn in When Smokey Sings, I Get Violent
     .target Smokey LaRue
     .isOnQuest 6041
+step
+    .goto 1423/0,-5340.84,2257.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
+    .turnin 5181 >>Turn in Villains of Darrowshire
+    .target Carlin Redpath
+    .isOnQuest 5181
+step
+    .goto 1423/0,-5340.84,2257.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
+    .accept 5206 >>Accept Marauders of Darrowshire
+    .target Carlin Redpath
+    .isQuestTurnedIn 5168 --Heroes of Darrowshire
+    .isQuestTurnedIn 5181 --Villains of Darrowshire
+    .xp <50,1
+step
+    .goto 1423/0,-5340.84,2257.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
+    .turnin 5206 >>Turn in Marauders of Darrowshire
+    .target Carlin Redpath
+    .isOnQuest 5206
+step
+    .goto 1423/0,-5340.84,2257.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
+    .accept 5941 >>Accept Return to Chromie
+    .target Carlin Redpath
+    .isQuestTurnedIn 5206 --any of: Marauders of Darrowshire
+    .xp <50,1
 step
     .goto 1423/0,-5340.84,2257.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carlin Redpath|r
@@ -461,15 +461,15 @@ step
 step
     .goto 1423/0,-3212.60,1871.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
-    .turnin 6145 >>Turn in The Crimson Courier
-    .target Nathanos Blightcaller
-    .isOnQuest 6145
-step
-    .goto 1423/0,-3212.60,1871.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
     .turnin 5961 >>Turn in The Champion of the Banshee Queen
     .target Nathanos Blightcaller
     .isOnQuest 5961
+step
+    .goto 1423/0,-3212.60,1871.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos Blightcaller|r
+    .turnin 6145 >>Turn in The Crimson Courier
+    .target Nathanos Blightcaller
+    .isOnQuest 6145
 step
     .goto 1423/0,-2478.24,2671.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tirion Fordring|r

@@ -139,16 +139,16 @@ step << NightElf Hunter
     .target Ayanna Everstride
 step
     #loop
-    .goto 1438/1,1009.08,10483.93,0
+    .goto 1438/1,942.88,10265.71,0
+    .goto 1438/1,942.88,10265.71,40,0
+    .goto 1438/1,955.10,10276.57,40,0
+    .goto 1438/1,967.32,10298.97,40,0
+    .goto 1438/1,973.43,10327.82,40,0
     .goto 1438/1,1009.08,10483.93,40,0
     .goto 1438/1,1020.79,10354.63,40,0
     .goto 1438/1,1036.57,10343.77,40,0
     .goto 1438/1,1018.75,10333.59,40,0
     .goto 1438/1,964.78,10271.14,40,0
-    .goto 1438/1,942.88,10265.71,40,0
-    .goto 1438/1,955.10,10276.57,40,0
-    .goto 1438/1,967.32,10298.97,40,0
-    .goto 1438/1,973.43,10327.82,40,0
     >>Kill |cRXP_ENEMY_Grells|r and |cRXP_ENEMY_Grellkins|r. Loot them for |cRXP_LOOT_Fel Moss|r
     >>Pick up |cRXP_PICK_Gnarlpine Totem|r from the ground
     .complete 459,1 --Fel Moss (8)
@@ -417,8 +417,8 @@ step
 step
     .goto 1438/1,878.73,9905.64
     >>Click the |cRXP_PICK_Basic Campfire|r
-    .complete 96606,1 --Basic Campfire
     .complete 96606,2 --Basic Campfire
+    .complete 96606,1 --Basic Campfire
 step
     .goto 1438/1,882.80,9909.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyreena Duskblade|r
@@ -941,12 +941,26 @@ step
     .complete 487,1 --Gnarlpine Ambusher slain (6)
     .mob Gnarlpine Ambusher
 step
+    #loop
+    .goto 1438/1,1258.57,10003.72,0
+    .goto 1438/1,1258.57,10003.72,40,0
+    .goto 1438/1,1244.82,9988.10,40,0
+    .goto 1438/1,1240.24,9926.68,40,0
+    .goto 1438/1,1224.45,9915.14,40,0
+    .goto 1438/1,1169.46,9918.53,40,0
+    .goto 1438/1,1096.14,9879.84,40,0
+    .goto 1438/1,1039.63,9846.25,40,0
+    .goto 1438/1,988.71,9847.94,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r. |cRXP_WARN_This NPC walks a patrol route|r
+    .turnin 487 >>Turn in The Road to Darnassus
+    .unitscan Moon Priestess Amara
+step
     .goto 1438/1,1754.49,10109.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Shayla Nightbreeze|r
     .accept 490 >>Accept Bounty: Gnarlpine Furbolg
     .target Sentinel Shayla Nightbreeze
 step
-    #completewith Along90
+    #completewith Along91
     >>As you go: Kill |cRXP_ENEMY_Gnarlpine Ursas|r, |cRXP_ENEMY_Gnarlpine Gardeners|r, |cRXP_ENEMY_Gnarlpine Warriors|r and |cRXP_ENEMY_Gnarlpine Shamans|r. Loot them for |cRXP_LOOT_Gnarlpine Fang|r. |cRXP_WARN_Anything left is finished later|r
     .complete 490,1 --Gnarlpine Fang (15)
     .mob Gnarlpine Ursa
@@ -954,7 +968,7 @@ step
     .mob Gnarlpine Warrior
     .mob Gnarlpine Shaman
 step
-    #label Along90
+    #label Along91
     .goto 1438/1,1539.63,9831.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Lynessa Duskblossom|r
     .accept 99053 >>Accept Escaping Ban'ethil
@@ -994,23 +1008,10 @@ step
     .turnin 2561 >>Turn in Druid of the Claw
     .target Oben Rageclaw
 step
-    #loop
-    .goto 1438/1,1258.57,10003.72,0
-    .goto 1438/1,1258.57,10003.72,40,0
-    .goto 1438/1,1244.82,9988.10,40,0
-    .goto 1438/1,1240.24,9926.68,40,0
-    .goto 1438/1,1224.45,9915.14,40,0
-    .goto 1438/1,1169.46,9918.53,40,0
-    .goto 1438/1,1096.14,9879.84,40,0
-    .goto 1438/1,1039.63,9846.25,40,0
-    .goto 1438/1,988.71,9847.94,40,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r. |cRXP_WARN_This NPC walks a patrol route|r
-    .turnin 487 >>Turn in The Road to Darnassus
-    .unitscan Moon Priestess Amara
-step
-    .goto 1438/1,1621.09,10078.38
-    >>Escort Lynessa Duskblossom out of Ban'ethil
-    .complete 99053,1 --Escort Lynessa Duskblossom out of Ban'ethil
+    .goto 1438/1,1553.88,9772.60
+    >>Open the |cRXP_PICK_Chest of Nesting|r. Loot it for |cRXP_LOOT_Rune of Nesting|r
+    .complete 483,4 --Rune of Nesting (1)
+    .isOnQuest 483
 step
     .goto 1438/1,1754.49,10109.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Shayla Nightbreeze|r
@@ -1060,6 +1061,13 @@ step
     #completewith next
     .zone 1457 >>Travel to Darnassus
     .zoneskip 1457
+step << NightElf Hunter
+    .xp 10 >>Grind to level 10 (The Hunter's Path needs it)
+step << NightElf Hunter
+    .goto 1457/1,2511.01,10177.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
+    .accept 6071 >>Accept The Hunter's Path
+    .target Jocaste
 step
     .goto 1457/1,2534.29,10085.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
@@ -1072,6 +1080,12 @@ step
     .accept 923 >>Accept Tumors
     .target Rellian Greenspyre
     .isQuestTurnedIn 922 --any of: Rellian Greenspyre
+step
+    .goto 1457/1,2632.08,9915.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Aquinne|r
+    .turnin 98391 >>Turn in The Sisterhood of Elune
+    .accept 2519 >>Accept The Temple of the Moon
+    .target Sister Aquinne
 step << NightElf Druid
     .goto 1457/1,2570.38,10186.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denatharion|r
@@ -1107,12 +1121,6 @@ step << Druid NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
     .trainer >> Train your class spells
     .target Mathrengyl Bearwalker
-step << NightElf Hunter
-    .goto 1457/1,2511.01,10177.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
-    .accept 6071 >>Accept The Hunter's Path
-    .target Jocaste
-    .xp <10,1
 step << NightElf Priest
     .goto 1457/1,2520.11,9665.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Alathea|r
@@ -1164,6 +1172,12 @@ step
 step
     .goto 1457/1,2550.48,9631.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
+    .turnin 2519 >>Turn in The Temple of the Moon
+    .target Priestess A'moora
+    .isOnQuest 2519
+step
+    .goto 1457/1,2550.48,9631.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .accept 2518 >>Accept Tears of the Moon
     .target Priestess A'moora
 step << NightElf Priest
@@ -1180,11 +1194,6 @@ step
     .goto 1438/1,1589.52,9753.60
     >>Open the |cRXP_PICK_Chest of the Black Feather|r. Loot it for |cRXP_LOOT_Black Feather Quill|r
     .complete 483,2 --Black Feather Quill (1)
-    .isOnQuest 483
-step
-    .goto 1438/1,1553.88,9772.60
-    >>Open the |cRXP_PICK_Chest of Nesting|r. Loot it for |cRXP_LOOT_Rune of Nesting|r
-    .complete 483,4 --Rune of Nesting (1)
     .isOnQuest 483
 step << NightElf Priest
     #completewith next
@@ -1228,12 +1237,12 @@ step << Dwarf Priest
     .accept 5636 >>Accept Desperate Prayer
     .target Laurna Morninglight
     .xp <10,1
-step
-    .goto 1438/1,963.25,9811.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Kyra Starsong|r
-    .turnin 99053 >>Turn in Escaping Ban'ethil
-    .target Sentinel Kyra Starsong
-    .isOnQuest 99053
+step << NightElf Hunter
+    .goto 1438/1,928.63,9812.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
+    .turnin 6071 >>Turn in The Hunter's Path
+    .target Dazalar
+    .isOnQuest 6071
 step << NightElf Hunter
     .goto 1438/1,928.63,9812.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
@@ -1329,40 +1338,25 @@ step
     .isOnQuest 99050
 step
     #loop
-    .goto 1438/1,1295.23,10230.08,0
-    .goto 1438/1,1295.23,10230.08,40,0
-    .goto 1438/1,1319.16,10264.36,40,0
-    .goto 1438/1,1441.87,10136.75,40,0
-    .goto 1438/1,1348.18,10086.18,40,0
-    .goto 1438/1,1318.14,10053.60,40,0
-    .goto 1438/1,1283.01,10033.58,40,0
-    .goto 1438/1,1309.48,10105.53,40,0
-    .goto 1438/1,1328.83,10146.59,40,0
-    .goto 1438/1,1313.56,10192.41,40,0
+    .goto 1438/1,1184.23,10319.00,0
+    .goto 1438/1,1184.23,10319.00,40,0
+    .goto 1438/1,1197.98,10293.54,40,0
+    .goto 1438/1,1296.75,10270.80,40,0
+    .goto 1438/1,1323.74,10273.86,40,0
+    .goto 1438/1,1288.61,10301.69,40,0
+    .goto 1438/1,1277.91,10338.34,40,0
+    .goto 1438/1,1279.44,10373.30,40,0
+    .goto 1438/1,1245.84,10347.50,40,0
+    .goto 1438/1,1196.96,10364.47,40,0
     >>Kill |cRXP_ENEMY_Befouled Webwoods|r
     .complete 98403,1 --Befouled Webwood slain (8)
     .mob Befouled Webwood
     .isOnQuest 98403
 step
-    .goto 1438/1,1490.24,9881.88
-    >>Open the |cRXP_PICK_Chest of the Raven Claw|r. Loot it for |cRXP_LOOT_Raven Claw Talisman|r
-    .complete 483,1 --Raven Claw Talisman (1)
-    .isOnQuest 483
-step
     #completewith next
     .zone 1457 >>Travel to Darnassus
     .zoneskip 1457
-step
-    .goto 1457/1,2632.08,9915.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Aquinne|r
-    .turnin 98391 >>Turn in The Sisterhood of Elune
-    .target Sister Aquinne
-    .isOnQuest 98391
-step
-    .goto 1457/1,2632.08,9915.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Aquinne|r
-    .accept 2519 >>Accept The Temple of the Moon
-    .target Sister Aquinne
+    .isOnQuest 99050
 step
     .goto 1457/1,2593.98,10099.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy |cRXP_LOOT_Empty Vial|r from |cRXP_FRIENDLY_Kyrai|r
@@ -1384,25 +1378,6 @@ step
     .hs >>Hearth to Innkeeper Keldamyr's inn. |cRXP_WARN_Walk instead if you are already nearby|r
     .cooldown item,6948,>0,1
 step
-    .goto 1438/1,965.29,9887.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
-    .turnin 483 >>Turn in The Relics of Wakening
-    .target Athridas Bearmantle
-    .isOnQuest 483
-step
-    .goto 1438/1,965.29,9887.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
-    .accept 486 >>Accept Ursal the Mauler
-    .target Athridas Bearmantle
-    .isQuestTurnedIn 483 --any of: The Relics of Wakening
-step << Dwarf Priest
-    .xp 10 >>Grind to level 10 (Desperate Prayer needs it)
-step << Dwarf Priest
-    .goto 1438/1,985.65,9905.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
-    .accept 5636 >>Accept Desperate Prayer
-    .target Laurna Morninglight
-step
     .goto 1438/1,999.40,9902.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Byancie|r
     .turnin 99050 >>Turn in The Great Tree Provides
@@ -1414,17 +1389,34 @@ step
     .accept 99073 >>Accept Easing Suffering
     .target Byancie
     .isQuestTurnedIn 99050 --any of: The Great Tree Provides
+step << Dwarf Priest
+    .xp 10 >>Grind to level 10 (Desperate Prayer needs it)
+step << Dwarf Priest
+    .goto 1438/1,985.65,9905.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
+    .accept 5636 >>Accept Desperate Prayer
+    .target Laurna Morninglight
+step
+    .goto 1438/1,1490.24,9881.88
+    >>Open the |cRXP_PICK_Chest of the Raven Claw|r. Loot it for |cRXP_LOOT_Raven Claw Talisman|r
+    .complete 483,1 --Raven Claw Talisman (1)
+    .isOnQuest 483
+step
+    .goto 1438/1,1621.09,10078.38
+    >>Escort Lynessa Duskblossom out of Ban'ethil
+    .complete 99053,1 --Escort Lynessa Duskblossom out of Ban'ethil
+    .isOnQuest 99053
 step << Warrior
     #loop
-    .goto 1438/1,988.71,9847.94,0
-    .goto 1438/1,988.71,9847.94,40,0
-    .goto 1438/1,1039.63,9846.25,40,0
-    .goto 1438/1,1096.14,9879.84,40,0
-    .goto 1438/1,1169.46,9918.53,40,0
-    .goto 1438/1,1224.45,9915.14,40,0
-    .goto 1438/1,1240.24,9926.68,40,0
-    .goto 1438/1,1244.82,9988.10,40,0
+    .goto 1438/1,1258.57,10003.72,0
     .goto 1438/1,1258.57,10003.72,40,0
+    .goto 1438/1,1244.82,9988.10,40,0
+    .goto 1438/1,1240.24,9926.68,40,0
+    .goto 1438/1,1224.45,9915.14,40,0
+    .goto 1438/1,1169.46,9918.53,40,0
+    .goto 1438/1,1096.14,9879.84,40,0
+    .goto 1438/1,1039.63,9846.25,40,0
+    .goto 1438/1,988.71,9847.94,40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r. |cRXP_WARN_This NPC walks a patrol route|r
     .accept 1684 >>Accept Elanaria
     .unitscan Moon Priestess Amara
@@ -1440,6 +1432,18 @@ step << Hunter
     .target Dazalar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
     .trainer >> Train your class spells
+step
+    .goto 1438/1,963.25,9811.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Kyra Starsong|r
+    .turnin 99053 >>Turn in Escaping Ban'ethil while you are here
+    .isQuestComplete 99053
+    .target Sentinel Kyra Starsong
+step
+    .goto 1438/1,965.29,9887.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
+    .turnin 483 >>Turn in The Relics of Wakening while you are here
+    .isQuestComplete 483
+    .target Athridas Bearmantle
 step << Rogue
     .goto 1438/1,943.90,9790.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
@@ -1674,6 +1678,7 @@ step
     #completewith next
     .zone 1457 >>Travel to Darnassus
     .zoneskip 1457
+    .isOnQuest 940
 step
     .goto 1457/1,2569.96,10172.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
@@ -1685,11 +1690,6 @@ step << NightElf Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
     .turnin 6103 >>Turn in Training the Beast while you are here
     .isQuestComplete 6103
-    .target Jocaste
-step << NightElf Hunter
-    .goto 1457/1,2511.01,10177.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
-    .accept 6071 >>Accept The Hunter's Path
     .target Jocaste
 step
     #completewith next
@@ -1879,7 +1879,6 @@ step
 step
     .goto 1457/1,2550.48,9631.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
-    .turnin 2519 >>Turn in The Temple of the Moon
     .turnin 2518 >>Turn in Tears of the Moon
     .accept 2520 >>Accept Sathrah's Sacrifice
     .target Priestess A'moora
@@ -1923,27 +1922,6 @@ step
     .zone 1438 >>Leave Darnassus for Teldrassil
     .zoneskip 1438
 step
-    .goto 1438/1,1837.49,9122.70
-    >>Kill |cRXP_ENEMY_Ursal the Mauler|r
-    .complete 486,1 --Ursal the Mauler slain (1)
-    .mob Ursal the Mauler
-    .isOnQuest 486
-step << NightElf Hunter
-    #completewith next
-    .hs >>Hearth to Innkeeper Keldamyr's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step << NightElf Hunter
-    .goto 1438/1,928.63,9812.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6071 >>Turn in The Hunter's Path
-    .target Dazalar
-step
-    .goto 1438/1,965.29,9887.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
-    .turnin 486 >>Turn in Ursal the Mauler while you are here
-    .isQuestComplete 486
-    .target Athridas Bearmantle
-step
     .goto 1438/1,1196.96,10302.71
     >>Kill |cRXP_ENEMY_Xethorr the Wicked|r and loot |cRXP_LOOT_Mature Fel Moss|r
     .complete 98403,2 --Mature Fel Moss (1)
@@ -1958,15 +1936,21 @@ step
 step
     .goto 1438/1,965.29,9887.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
-    .turnin 486 >>Turn in Ursal the Mauler
+    .turnin 483 >>Turn in The Relics of Wakening
     .target Athridas Bearmantle
-    .isOnQuest 486
+    .isOnQuest 483
 step
-    .goto 1438/1,985.14,9898.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r
-    .turnin 2459 >>Turn in Ferocitas the Dream Eater
-    .target Tallonkai Swiftroot
-    .isQuestComplete 2459
+    .goto 1438/1,965.29,9887.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
+    .accept 486 >>Accept Ursal the Mauler
+    .target Athridas Bearmantle
+    .isQuestTurnedIn 483 --any of: The Relics of Wakening
+step
+    .goto 1438/1,963.25,9811.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Kyra Starsong|r
+    .turnin 99053 >>Turn in Escaping Ban'ethil
+    .target Sentinel Kyra Starsong
+    .isOnQuest 99053
 step
     .goto 1438/1,713.76,9506.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
@@ -1985,6 +1969,28 @@ step
     .complete 2499,1 --Gargantuan Tumor (1)
     .mob Oakenscowl
     .isOnQuest 2499
+step
+    .goto 1438/1,1837.49,9122.70
+    >>Kill |cRXP_ENEMY_Ursal the Mauler|r
+    .complete 486,1 --Ursal the Mauler slain (1)
+    .mob Ursal the Mauler
+    .isOnQuest 486
+step
+    #completewith next
+    .hs >>Hearth to Innkeeper Keldamyr's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
+    .goto 1438/1,965.29,9887.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r
+    .turnin 486 >>Turn in Ursal the Mauler
+    .target Athridas Bearmantle
+    .isOnQuest 486
+step
+    .goto 1438/1,985.14,9898.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r
+    .turnin 2459 >>Turn in Ferocitas the Dream Eater
+    .target Tallonkai Swiftroot
+    .isQuestComplete 2459
 step
     .goto 1438/1,713.76,9506.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
@@ -2031,7 +2037,7 @@ RXPGuides.RegisterGuide([[
 #subweight -1
 #name 15-16 Teldrassil
 --RouteBuilder:next
-#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Daryl the Youngling
+#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Marek Ironheart
 
 step << NightElf Druid/Skyborne Druid
     #completewith next
@@ -2111,5 +2117,5 @@ step
     >>|cRXP_FRIENDLY_Darkshore|r: Trouble In Darkshore?
     >>|cRXP_FRIENDLY_Moonglade|r: Lessons Anew << NightElf Druid/Skyborne Druid
 step
-    +|cRXP_WARN_Suggested next zones at level 15|r: |cRXP_FRIENDLY_Darkshore|r (about 2.2 levels of quests, starting around Thundris Windweaver; 2 quests from here hand in there), |cRXP_FRIENDLY_Zephras Isle|r (about 1.0 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.6 levels of quests, starting around Daryl the Youngling). Completing this step loads the guide for Darkshore --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 15|r: |cRXP_FRIENDLY_Darkshore|r (about 2.2 levels of quests, starting around Thundris Windweaver; 2 quests from here hand in there), |cRXP_FRIENDLY_Zephras Isle|r (about 1.0 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.6 levels of quests, starting around Marek Ironheart). Completing this step loads the guide for Darkshore --RouteBuilder:next
 ]])

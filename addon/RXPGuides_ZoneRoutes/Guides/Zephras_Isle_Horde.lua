@@ -270,16 +270,16 @@ step << Shaman
     .target Minor Manifestation of Earth
 step
     #loop
-    .goto 2521,48.29,25.67,0
-    .goto 2521,48.29,25.67,40,0
-    .goto 2521,46.61,24.60,40,0
-    .goto 2521,44.23,24.95,40,0
-    .goto 2521,42.82,22.27,40,0
-    .goto 2521,41.51,26.94,40,0
-    .goto 2521,42.87,28.75,40,0
-    .goto 2521,45.33,29.14,40,0
-    .goto 2521,46.76,27.94,40,0
+    .goto 2521,48.13,29.30,0
     .goto 2521,48.13,29.30,40,0
+    .goto 2521,46.76,27.94,40,0
+    .goto 2521,45.33,29.14,40,0
+    .goto 2521,42.87,28.75,40,0
+    .goto 2521,41.51,26.94,40,0
+    .goto 2521,42.82,22.27,40,0
+    .goto 2521,44.23,24.95,40,0
+    .goto 2521,46.61,24.60,40,0
+    .goto 2521,48.29,25.67,40,0
     >>Loot the |cRXP_PICK_Raw Windstones|r for |cRXP_LOOT_Windstone Cluster|r
     .complete 93552,1 --Windstone Cluster (15)
 step << Alliance/!Shaman
@@ -1243,7 +1243,8 @@ step
 step
     #label Along81
     #loop
-    .goto 2521,46.97,45.34,0
+    .goto 2521,42.58,44.42,0
+    .goto 2521,42.58,44.42,40,0
     .goto 2521,46.97,45.34,40,0
     .goto 2521,47.25,40.56,40,0
     .goto 2521,48.79,37.31,40,0
@@ -1252,7 +1253,6 @@ step
     .goto 2521,41.51,36.96,40,0
     .goto 2521,42.20,40.43,40,0
     .goto 2521,39.75,41.57,40,0
-    .goto 2521,42.58,44.42,40,0
     >>Kill |cRXP_ENEMY_Galestriders|r. Loot them for |cRXP_LOOT_Strider Meat|r
     .complete 92553,2 --Strider Meat (8)
     .mob Galestrider
@@ -1539,16 +1539,16 @@ step << Skyborne Shaman
     .target Olariaan Swiftburn
 step
     #loop
-    .goto 2521,51.81,83.51,0
+    .goto 2521,48.00,79.50,0
+    .goto 2521,48.00,79.50,40,0
+    .goto 2521,45.72,80.62,40,0
+    .goto 2521,48.44,85.67,40,0
     .goto 2521,51.81,83.51,40,0
     .goto 2521,52.38,80.40,40,0
     .goto 2521,52.91,77.18,40,0
     .goto 2521,50.30,72.50,40,0
     .goto 2521,47.58,75.01,40,0
     .goto 2521,50.25,78.89,40,0
-    .goto 2521,48.00,79.50,40,0
-    .goto 2521,45.72,80.62,40,0
-    .goto 2521,48.44,85.67,40,0
     >>Pick up |cRXP_PICK_Flutterfly Dust|r from the ground
     >>Kill |cRXP_ENEMY_Ornery Galestriders|r. Loot them for |cRXP_LOOT_Lowlands Galestrider Tenderloin|r
     .complete 92683,1 --Flutterfly Dust (5)
@@ -1831,16 +1831,16 @@ step << Hunter
     .xp <10,1
 step
     #loop
-    .goto 2521,62.91,73.99,0
-    .goto 2521,62.91,73.99,40,0
-    .goto 2521,61.65,74.66,40,0
-    .goto 2521,60.99,76.14,40,0
-    .goto 2521,58.89,77.37,40,0
-    .goto 2521,58.18,75.78,40,0
-    .goto 2521,57.26,74.75,40,0
-    .goto 2521,59.83,75.24,40,0
-    .goto 2521,59.67,72.83,40,0
+    .goto 2521,61.32,72.83,0
     .goto 2521,61.32,72.83,40,0
+    .goto 2521,59.67,72.83,40,0
+    .goto 2521,57.26,74.75,40,0
+    .goto 2521,58.18,75.78,40,0
+    .goto 2521,58.89,77.37,40,0
+    .goto 2521,59.83,75.24,40,0
+    .goto 2521,60.99,76.14,40,0
+    .goto 2521,61.65,74.66,40,0
+    .goto 2521,62.91,73.99,40,0
     >>Kill |cRXP_ENEMY_Skyhoppers|r
     .complete 93949,1 --Skyhopper slain (8)
     .mob Skyhopper

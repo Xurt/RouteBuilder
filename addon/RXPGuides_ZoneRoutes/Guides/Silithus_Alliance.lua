@@ -394,12 +394,12 @@ step
 step
     .goto 1451/1,1115.95,-8022.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frankal Stonebridge|r
-    .turnin 8310 >>Turn in Breaking the Code
+    .complete 8304,1 --Frankal Stonebridge
     .target Frankal Stonebridge
 step
     .goto 1451/1,1115.95,-8022.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frankal Stonebridge|r
-    .complete 8304,1 --Frankal Stonebridge
+    .turnin 8310 >>Turn in Breaking the Code
     .target Frankal Stonebridge
 step
     .goto 1451/1,967.56,-8102.62

@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "32-42 Arathi Highlands",
-  "saved": "2026-10-17 13:20",
+  "saved": "2026-10-18 23:47",
   "levels": "RestedXP",
   "parts": [
     {
@@ -16,6 +16,8 @@
         "turnin:676 @1417:-3539.31,-947.41  TurnIn The Hammer May Fall",
         "accept:677 @1417:-3539.31,-947.41  Accept Call to Arms",
         {"lines":[".goto 1417/0,-3524.91,-912.37",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Adegwa|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Adegwa"],"from":"RestedXP: 30-33 Hillsbrad/Arathi"},
+        "home @1417:-3524.91,-912.37  Home inn",
+        {"lines":[".goto 1417/0,-3495.39,-918.13",".fp Hammerfall >> Get the Hammerfall Flight Path"],"tag":"Mage","from":"RestedXP: 30-36 Arathi/Alterac AoE"},
         "accept:655 @1417:-3481.71,-947.65  Accept Hammerfall",
         "turnin:655 @1417:-3556.59,-1004.29  TurnIn Hammerfall",
         "accept:672 @1417:-3556.59,-1004.29  Accept Raising Spirits",
@@ -28,8 +30,8 @@
         "turnin:79975 @1417:-1675.23,-714.37  TurnIn Eagle's Fist",
         "accept:79976 @1417:-1675.23,-714.37  Accept This Must Be The Place",
         "turnin:79976 @1417:-1674.87,-714.37  TurnIn This Must Be The Place",
-        "obj:97539:1 @1417:-2647.95,-1014.13  Objective Silky Sutures / Surgical Spidersilk (12)",
         "obj:672:1 @1417:-3083.91,-1147.33  Objective Raising Spirits / Highland Raptor Eye (10)",
+        "obj:97539:1 @1417:-3316.11,-1408.93  Objective Silky Sutures / Surgical Spidersilk (12)",
         "obj:677:3 @1417:-3196.95,-1852.69  Objective Call to Arms / Witherbark Witch Doctor slain (8)",
         "obj:677:2 @1417:-3387.39,-1855.33  Objective Call to Arms / Witherbark Headhunter slain (10)",
         "obj:677:1 @1417:-3270.75,-1661.89  Objective Call to Arms / Witherbark Axe Thrower slain (10)",
@@ -40,10 +42,6 @@
         "accept:675 @1417:-3481.71,-947.65  Accept Raising Spirits",
         "turnin:675 @1417:-3556.59,-1004.29  TurnIn Raising Spirits",
         "turnin:677 @1417:-3539.31,-947.41  TurnIn Call to Arms",
-        "home @1417:-3524.91,-912.37  Home inn",
-        {"lines":[".goto 1417/0,-3495.39,-918.13",".fp Hammerfall >> Get the Hammerfall Flight Path"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
-        {"lines":[".xp 32 >> AoE the Dabyrie Farmstead to 32",">>Start saving the Wool Cloth and Silk Cloth you get. You need 12 stacks for later"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
-        {"lines":[".xp 34 >> AoE the Dabyrie Farmstead to 34",">>Start saving the Wool Cloth and Silk Cloth you get. You need 12 stacks for later"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
         "accept:98887 @1417:-3512.67,-832.45  Accept Conflict at Darkspear Islands",
         "accept:98888 @1417:-3512.67,-832.45  Accept Conflict at Darkspear Islands",
         "turnin:635 @1417:-3116.67,-942.85  TurnIn Crystal in the Mountains",

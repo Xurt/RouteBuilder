@@ -274,38 +274,42 @@ step
     .accept 8308 >>Accept Brann Bronzebeard's Lost Letter
     .use 20461
 step
+    #loop
+    .goto 1451/1,1369.19,-7553.02,0
+    .goto 1451/1,1369.19,-7553.02,40,0
+    .goto 1451/1,1472.30,-7545.58,40,0
+    .goto 1451/1,1428.75,-7498.43,40,0
+    .goto 1451/1,1466.03,-7411.55,40,0
+    .goto 1451/1,1417.96,-7289.60,40,0
+    .goto 1451/1,1281.06,-7390.41,40,0
+    .goto 1451/1,1213.83,-7397.38,40,0
+    .goto 1451/1,1279.67,-7450.11,40,0
+    .goto 1451/1,1348.64,-7429.44,40,0
+    >>Kill |cRXP_ENEMY_Hive'Zora Waywatchers|r, |cRXP_ENEMY_Hive'Zora Tunnelers|r, |cRXP_ENEMY_Hive'Zora Wasps|r and |cRXP_ENEMY_Hive'Zora Reavers|r. Loot them for |cRXP_LOOT_Hive'Zora Silithid Brain|r
+    .complete 8310,2 --Hive'Zora Silithid Brain (1)
+    .mob Hive'Zora Waywatcher
+    .mob Hive'Zora Tunneler
+    .mob Hive'Zora Wasp
+    .mob Hive'Zora Reaver
+step
     #label Drop8308x1
     #loop
-    .goto 1451/1,819.87,-7880.31,0
-    .goto 1451/1,819.87,-7880.31,40,0
-    .goto 1451/1,759.95,-7749.77,40,0
-    .goto 1451/1,628.98,-7606.68,40,0
-    .goto 1451/1,604.25,-7703.77,40,0
-    .goto 1451/1,497.66,-7755.11,40,0
-    .goto 1451/1,522.74,-7859.18,40,0
-    .goto 1451/1,583.35,-7976.72,40,0
-    .goto 1451/1,620.97,-7813.41,40,0
-    .goto 1451/1,723.03,-7843.15,40,0
-    >>Kill |cRXP_ENEMY_Hive'Regal Ambushers|r, |cRXP_ENEMY_Hive'Regal Burrowers|r, |cRXP_ENEMY_Hive'Regal Spitfires|r and |cRXP_ENEMY_Hive'Regal Slavemakers|r. Loot them for |cRXP_LOOT_Hive'Regal Silithid Brain|r
-    .complete 8310,3 --Hive'Regal Silithid Brain (1)
-    .mob Hive'Regal Ambusher
-    .mob Hive'Regal Burrower
-    .mob Hive'Regal Spitfire
-    .mob Hive'Regal Slavemaker
-step
-    #completewith Along5
-    >>As you go: Kill |cRXP_ENEMY_Hive'Ashi Stingers|r, |cRXP_ENEMY_Hive'Ashi Workers|r, |cRXP_ENEMY_Hive'Ashi Defenders|r and |cRXP_ENEMY_Hive'Ashi Sandstalkers|r. Loot them for |cRXP_LOOT_Hive'Ashi Silithid Brain|r. |cRXP_WARN_Anything left is finished later|r
+    .goto 1451/1,889.88,-7083.55,0
+    .goto 1451/1,889.88,-7083.55,40,0
+    .goto 1451/1,849.13,-7051.73,40,0
+    .goto 1451/1,892.67,-7023.62,40,0
+    .goto 1451/1,875.25,-6952.31,40,0
+    .goto 1451/1,814.64,-6951.61,40,0
+    .goto 1451/1,731.04,-6913.98,40,0
+    .goto 1451/1,761.70,-6956.72,40,0
+    .goto 1451/1,789.21,-7110.96,40,0
+    .goto 1451/1,823.70,-7153.24,40,0
+    >>Kill |cRXP_ENEMY_Hive'Ashi Stingers|r, |cRXP_ENEMY_Hive'Ashi Workers|r, |cRXP_ENEMY_Hive'Ashi Defenders|r and |cRXP_ENEMY_Hive'Ashi Sandstalkers|r. Loot them for |cRXP_LOOT_Hive'Ashi Silithid Brain|r
     .complete 8310,1 --Hive'Ashi Silithid Brain (1)
     .mob Hive'Ashi Stinger
     .mob Hive'Ashi Worker
     .mob Hive'Ashi Defender
     .mob Hive'Ashi Sandstalker
-step
-    #label Along5
-    .goto 1451/1,730.00,-6867.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calandrath|r
-    .target Calandrath
-    .home >>Set your Hearthstone to Calandrath's inn
 step
     .goto 1451/1,748.81,-6847.31
     >>Click the |cRXP_PICK_Wanted Poster: Deathclasp|r
@@ -321,20 +325,16 @@ step
     .accept 8318 >>Accept Secret Communication
     .target Bor Wildmane
 step
-    #completewith Along9
-    >>As you go: Kill |cRXP_ENEMY_Hive'Ashi Stingers|r, |cRXP_ENEMY_Hive'Ashi Workers|r, |cRXP_ENEMY_Hive'Ashi Defenders|r and |cRXP_ENEMY_Hive'Ashi Sandstalkers|r. Loot them for |cRXP_LOOT_Hive'Ashi Silithid Brain|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 8310,1 --Hive'Ashi Silithid Brain (1)
-    .mob Hive'Ashi Stinger
-    .mob Hive'Ashi Worker
-    .mob Hive'Ashi Defender
-    .mob Hive'Ashi Sandstalker
-step
-    #label Along9
     .goto 1451/1,739.75,-6855.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beetix Ficklespragg|r
     .accept 8278 >>Accept Noggle's Last Hope
     .target Beetix Ficklespragg
     .isQuestTurnedIn 8277 --any of: Deadly Desert Venom
+step
+    .goto 1451/1,730.00,-6867.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calandrath|r
+    .target Calandrath
+    .home >>Set your Hearthstone to Calandrath's inn
 step
     #completewith Drop8308x2
     >>|cRXP_LOOT_Brann Bronzebeard's Lost Letter|r can drop from |cRXP_ENEMY_Hive'Ashi Stinger|r, |cRXP_ENEMY_Hive'Ashi Worker|r, |cRXP_ENEMY_Hive'Ashi Defender|r. Use it to start the quest if you get one
@@ -342,42 +342,24 @@ step
     .accept 8308 >>Accept Brann Bronzebeard's Lost Letter
     .use 20461
 step
-    #loop
-    .goto 1451/1,731.04,-6913.98,0
-    .goto 1451/1,731.04,-6913.98,40,0
-    .goto 1451/1,761.70,-6956.72,40,0
-    .goto 1451/1,789.21,-7110.96,40,0
-    .goto 1451/1,823.70,-7153.24,40,0
-    .goto 1451/1,889.88,-7083.55,40,0
-    .goto 1451/1,849.13,-7051.73,40,0
-    .goto 1451/1,892.67,-7023.62,40,0
-    .goto 1451/1,875.25,-6952.31,40,0
-    .goto 1451/1,814.64,-6951.61,40,0
-    >>Kill |cRXP_ENEMY_Hive'Ashi Stingers|r, |cRXP_ENEMY_Hive'Ashi Workers|r, |cRXP_ENEMY_Hive'Ashi Defenders|r and |cRXP_ENEMY_Hive'Ashi Sandstalkers|r. Loot them for |cRXP_LOOT_Hive'Ashi Silithid Brain|r
-    .complete 8310,1 --Hive'Ashi Silithid Brain (1)
-    .mob Hive'Ashi Stinger
-    .mob Hive'Ashi Worker
-    .mob Hive'Ashi Defender
-    .mob Hive'Ashi Sandstalker
-step
     #label Drop8308x2
     #loop
-    .goto 1451/1,1213.83,-7397.38,0
-    .goto 1451/1,1213.83,-7397.38,40,0
-    .goto 1451/1,1281.06,-7390.41,40,0
-    .goto 1451/1,1417.96,-7289.60,40,0
-    .goto 1451/1,1466.03,-7411.55,40,0
-    .goto 1451/1,1428.75,-7498.43,40,0
-    .goto 1451/1,1472.30,-7545.58,40,0
-    .goto 1451/1,1369.19,-7553.02,40,0
-    .goto 1451/1,1348.64,-7429.44,40,0
-    .goto 1451/1,1279.67,-7450.11,40,0
-    >>Kill |cRXP_ENEMY_Hive'Zora Waywatchers|r, |cRXP_ENEMY_Hive'Zora Tunnelers|r, |cRXP_ENEMY_Hive'Zora Wasps|r and |cRXP_ENEMY_Hive'Zora Reavers|r. Loot them for |cRXP_LOOT_Hive'Zora Silithid Brain|r
-    .complete 8310,2 --Hive'Zora Silithid Brain (1)
-    .mob Hive'Zora Waywatcher
-    .mob Hive'Zora Tunneler
-    .mob Hive'Zora Wasp
-    .mob Hive'Zora Reaver
+    .goto 1451/1,628.98,-7606.68,0
+    .goto 1451/1,628.98,-7606.68,40,0
+    .goto 1451/1,604.25,-7703.77,40,0
+    .goto 1451/1,620.97,-7813.41,40,0
+    .goto 1451/1,723.03,-7843.15,40,0
+    .goto 1451/1,759.95,-7749.77,40,0
+    .goto 1451/1,819.87,-7880.31,40,0
+    .goto 1451/1,583.35,-7976.72,40,0
+    .goto 1451/1,522.74,-7859.18,40,0
+    .goto 1451/1,497.66,-7755.11,40,0
+    >>Kill |cRXP_ENEMY_Hive'Regal Ambushers|r, |cRXP_ENEMY_Hive'Regal Burrowers|r, |cRXP_ENEMY_Hive'Regal Spitfires|r and |cRXP_ENEMY_Hive'Regal Slavemakers|r. Loot them for |cRXP_LOOT_Hive'Regal Silithid Brain|r
+    .complete 8310,3 --Hive'Regal Silithid Brain (1)
+    .mob Hive'Regal Ambusher
+    .mob Hive'Regal Burrower
+    .mob Hive'Regal Spitfire
+    .mob Hive'Regal Slavemaker
 step
     .goto 1451/1,1099.58,-8012.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rutgar Glyphshaper|r
@@ -589,14 +571,14 @@ step
 step
     .goto 1451/1,823.70,-6752.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Mar'alith|r
-    .turnin 8287 >>Turn in A Terrible Purpose
+    .accept 8306 >>Accept Into The Maw of Madness
     .target Commander Mar'alith
-    .isOnQuest 8287
 step
     .goto 1451/1,823.70,-6752.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Mar'alith|r
-    .accept 8306 >>Accept Into The Maw of Madness
+    .turnin 8287 >>Turn in A Terrible Purpose
     .target Commander Mar'alith
+    .isOnQuest 8287
 step
     #loop
     .goto 1451/1,1073.45,-6972.05,0

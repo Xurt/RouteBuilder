@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "19-30 Ashenvale",
-  "saved": "2026-10-17 13:19",
+  "saved": "2026-10-18 23:45",
   "levels": "RestedXP",
   "parts": [
     {
@@ -44,7 +44,7 @@
         "turnin:6544 @1440:-2511.4,2271.73  TurnIn Torek's Assault",
         "accept:6383 @1440:-2554.65,2310.55  Accept The Ashenvale Hunt",
         "obj:6503:1 @1440:-2635.96,1960.77  Objective Ashenvale Outrunners / Ashenvale Outrunner slain (9)",
-        "item:23 @1440:-592.83,2166.41  ItemAccept Ursangous's Paw",
+        "item:24 @1440:-1615.83,2518.49  ItemAccept Shadumbra's Head",
         "home @1440:-433.09,2781.02  Home inn",
         "accept:216 @1440:1013.77,3345.29  Accept Between a Rock and a Thistlefur",
         "accept:6462 @1440:1028.18,3333.37  Accept Troll Charm",
@@ -58,7 +58,7 @@
         "obj:6482:1 @1440:-521.9,3238.43  Objective Freedom to Ruul / Escort Ruul from the Thistlefurs.",
         "obj:216:2 @1440:-254.32,3179.62  Objective Between a Rock and a Thistlefur / Thistlefur Shaman slain (8)",
         "obj:216:1 @1440:-457.89,3355.66  Objective Between a Rock and a Thistlefur / Thistlefur Avenger slain (8)",
-        "item:24 @1440:-1615.83,2518.49  ItemAccept Shadumbra's Head",
+        "item:23 @1440:-592.83,2166.41  ItemAccept Ursangous's Paw",
         "turnin:6503 @1440:-2400.68,2054.55  TurnIn Ashenvale Outrunners",
         "item:2 @1440:-2623.85,1979.99  ItemAccept Sharptalon's Claw",
         "turnin:2 @1440:-2554.65,2310.55  TurnIn Sharptalon's Claw",

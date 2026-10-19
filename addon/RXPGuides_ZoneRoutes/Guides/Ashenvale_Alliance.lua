@@ -39,6 +39,12 @@ step
 step
     .goto 1440/1,189.13,3185.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+    .turnin 981 >>Turn in The Tower of Althalaxx
+    .target Delgren the Purifier
+    .isOnQuest 981
+step
+    .goto 1440/1,189.13,3185.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 967 >>Turn in The Tower of Althalaxx
     .target Delgren the Purifier
     .isOnQuest 967
@@ -49,12 +55,6 @@ step
     .target Delgren the Purifier
     .isQuestTurnedIn 967 --any of: The Tower of Althalaxx
     .xp <13,1
-step
-    .goto 1440/1,189.13,3185.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
-    .turnin 981 >>Turn in The Tower of Althalaxx
-    .target Delgren the Purifier
-    .isOnQuest 981
 step
     #loop
     .goto 1440/1,-76.13,3457.91,0
@@ -87,26 +87,9 @@ step
     .goto 1440/1,-138.99,3806.92
     .xp 20 >> Grind to level 20
 step
-    .goto 1440/1,394.43,2677.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therysil|r
-    .turnin 945 >>Turn in Therylune's Escape
-    .target Therysil
-    .isQuestComplete 945
-step << Hunter
-    .goto 1440/1,663.38,2365.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bolyun|r
-    .trainer >> Train your pet skills
-    .target Bolyun
-step << Hunter
-    .goto 1440/1,661.42,2373.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alenndaar Lapidaar|r
-    .trainer >> Train your class skills
-    .train 5118 >> Train |T132242:0|t[Aspect of the Cheetah]
-    .target Alenndaar Lapidaar
-step
     .goto 1440/1,-283.73,2827.920
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
-    .fp Astranaar>> Get the Astranaar Flight Path
+    .fp Astranaar >> Get the Astranaar Flight Path
     .target Daelyshia
 step
     .goto 1440/1,-299.30,2795.63
@@ -140,34 +123,26 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .accept 991 >>Accept Raene's Cleansing
     .target Raene Wolfrunner
-step
+step << Hunter
+    .goto 1440/1,-399.07,2374.35
+    .train 2982 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 3)]
+    .train 17263 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ghostpaw Runner|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 3)]
+step << Hunter
     .goto 1440/1,-410.60,2758.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maliynn|r
     .vendor >> |cRXP_BUY_Buy food and water if necessary|r
     .target Maliynn
-step << Hunter
+step << Hunter Hunter
     .goto 1440/1,-306.80,2720.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haljan Oakheart|r
     .vendor >> |cRXP_BUY_Restock on Ammo if necessary|r
     .target Haljan Oakheart
 step
-    #loop
-    .goto 1440/1,912.27,3485.20,0
-    .goto 1440/1,912.27,3485.20,40,0
-    .goto 1440/1,960.71,3520.94,40,0
-    .goto 1440/1,954.37,3587.44,40,0
-    .goto 1440/1,1046.06,3597.05,40,0
-    .goto 1440/1,1215.60,3586.29,40,0
-    .goto 1440/1,1212.72,3519.79,40,0
-    .goto 1440/1,1153.32,3517.49,40,0
-    .goto 1440/1,1055.29,3548.62,40,0
-    .goto 1440/1,1017.23,3448.30,40,0
-    >>Kill |cRXP_ENEMY_Wrathtail Myrmidons|r, |cRXP_ENEMY_Wrathtail Razortails|r, |cRXP_ENEMY_Wrathtail Wave Riders|r and |cRXP_ENEMY_Wrathtail Sea Witches|r. Loot them for |cRXP_LOOT_Wrathtail Head|r
-    .complete 1008,1 --Wrathtail Head (20)
-    .mob Wrathtail Myrmidon
-    .mob Wrathtail Razortail
-    .mob Wrathtail Wave Rider
-    .mob Wrathtail Sea Witch
+    .goto 1440/1,-411.75,2767.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
+    .turnin 990 >>Turn in Trek to Ashenvale
+    .target Raene Wolfrunner
+    .isOnQuest 990
 step
     .goto 1440/1,528.79,3045.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teronis' Corpse|r
@@ -192,16 +167,24 @@ step
     .mob Saltspittle Warrior
     .mob Saltspittle Muckdweller
     .mob Saltspittle Oracle
-step << Hunter
-    .goto 1440/1,-399.07,2374.35
-    .train 2982 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 3)]
-    .train 17263 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ghostpaw Runner|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 3)]
 step
-    .goto 1440/1,-411.75,2767.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
-    .turnin 990 >>Turn in Trek to Ashenvale
-    .target Raene Wolfrunner
-    .isOnQuest 990
+    #loop
+    .goto 1440/1,912.27,3485.20,0
+    .goto 1440/1,912.27,3485.20,40,0
+    .goto 1440/1,960.71,3520.94,40,0
+    .goto 1440/1,954.37,3587.44,40,0
+    .goto 1440/1,1046.06,3597.05,40,0
+    .goto 1440/1,1215.60,3586.29,40,0
+    .goto 1440/1,1212.72,3519.79,40,0
+    .goto 1440/1,1153.32,3517.49,40,0
+    .goto 1440/1,1055.29,3548.62,40,0
+    .goto 1440/1,1017.23,3448.30,40,0
+    >>Kill |cRXP_ENEMY_Wrathtail Myrmidons|r, |cRXP_ENEMY_Wrathtail Razortails|r, |cRXP_ENEMY_Wrathtail Wave Riders|r and |cRXP_ENEMY_Wrathtail Sea Witches|r. Loot them for |cRXP_LOOT_Wrathtail Head|r
+    .complete 1008,1 --Wrathtail Head (20)
+    .mob Wrathtail Myrmidon
+    .mob Wrathtail Razortail
+    .mob Wrathtail Wave Rider
+    .mob Wrathtail Sea Witch
 step << Mage/Warlock
     .goto 1440/1,1323.55,4159.35
     >>Kill |cRXP_ENEMY_Ruuzel|r. Loot her for the |cRXP_LOOT_Ring of Zoram|r
@@ -214,30 +197,12 @@ step
     .goto 1440/1,-411.75,2767.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .turnin 1023 >>Turn in Raene's Cleansing
-    .accept 1024 >>Accept Raene's Cleansing
     .target Raene Wolfrunner
 step
     .goto 1440/1,-299.30,2795.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
     .turnin 1008 >>Turn in The Zoram Strand
-    .accept 1134 >>Accept Pridewings of Stonetalon
     .target Shindrell Swiftfire
-step << Hunter
-    .goto 1440/1,-306.80,2720.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haljan Oakheart|r
-    .vendor >> |cRXP_BUY_Restock on Ammo, |cRXP_WARN_make sure you have at least 10-15 stacks as the next section is a grindy and there won't be any ammo vendor to restock|r|r
-    .target Haljan Oakheart
-step
-    .goto 1440/1,-299.30,2795.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
-    .turnin 1134 >>Turn in Pridewings of Stonetalon
-    .target Shindrell Swiftfire
-    .isQuestComplete 1134
-step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danlaar Nightstride|r
-    .goto 1440/1,-1191.23,2061.13
-    .trainer >> Train your class skills
-    .target Danlaar Nightstride
 step
     .goto 1440/1,-311.99,2759.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Thenysil|r
@@ -245,6 +210,44 @@ step
     .target Sentinel Thenysil
     .isQuestTurnedIn 1082 --any of: Update for Sentinel Thenysil
     .xp <17,1
+step
+    .goto 1440/1,394.43,2677.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therysil|r
+    .turnin 945 >>Turn in Therylune's Escape
+    .target Therysil
+    .isQuestComplete 945
+step << Hunter Hunter
+    .goto 1440/1,663.38,2365.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bolyun|r
+    .trainer >> Train your pet skills
+    .target Bolyun
+step << Hunter Hunter
+    .goto 1440/1,661.42,2373.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alenndaar Lapidaar|r
+    .trainer >> Train your class skills
+    .train 5118 >> Train |T132242:0|t[Aspect of the Cheetah]
+    .target Alenndaar Lapidaar
+step << Hunter
+    .goto 1440/1,-283.73,2827.920
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
+    .fp Astranaar>> Get the Astranaar Flight Path
+    .target Daelyshia
+step
+    .goto 1440/1,-299.30,2795.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
+    .accept 1134 >>Accept Pridewings of Stonetalon
+    .target Shindrell Swiftfire
+step
+    .goto 1440/1,-299.30,2795.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
+    .turnin 1134 >>Turn in Pridewings of Stonetalon
+    .target Shindrell Swiftfire
+    .isQuestComplete 1134
+step
+    .goto 1440/1,-411.75,2767.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
+    .accept 1024 >>Accept Raene's Cleansing
+    .target Raene Wolfrunner
 step
     .goto 1440/1,-802.73,1966.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
@@ -348,11 +351,6 @@ step
     .accept 1020 >>Accept Orendil's Cure
     .target Orendil Broadleaf
 step
-    .goto 1440/1,-283.73,2827.920
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
-    .fp Astranaar >> Get the Astranaar Flight Path
-    .target Daelyshia
-step
     .goto 1440/1,-455.00,2682.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .turnin 1020 >>Turn in Orendil's Cure
@@ -381,6 +379,29 @@ step
     .goto 1440/1,-218.57,2089.92,40,0
     >>Loot the |cRXP_PICK_Stardust Covered Bushes|r for |cRXP_LOOT_Handful of Stardust|r
     .complete 1034,1 --Handful of Stardust (5)
+step << Hunter Hunter
+    .goto 1440/1,-306.80,2720.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haljan Oakheart|r
+    .vendor >> |cRXP_BUY_Restock on Ammo, |cRXP_WARN_make sure you have at least 10-15 stacks as the next section is a grindy and there won't be any ammo vendor to restock|r|r
+    .target Haljan Oakheart
+step << Hunter Hunter
+    .goto 1440/1,-591.67,2007.28
+    .goto 1440/1,-264.70,2558.85,0
+    .goto 1440/1,-390.99,2384.73,0
+    .goto 1440/1,-464.23,2206.38,0
+    .goto 1440/1,-720.85,2082.61,0
+    .goto 1440/1,-145.91,2586.14,0
+    .goto 1440/1,-39.23,2676.86,0
+    >>|cRXP_WARN_TIP:|r You can pre place a |T135834:0|t[Freezing Trap] in front of you before you pull the mob to tame to take less damage
+    >>|cRXP_ENEMY_Ashenvale Bears|r |cRXP_WARN_spawn closer to the Talondeep Path,|r |cRXP_ENEMY_Ghostpaw Runners|r |cRXP_WARN_share spawns with|r |cRXP_ENEMY_Wildthorn Stalkers|r |cRXP_WARN_which spawn south and west of Astranaar|r
+    >>If you can't find any wolves try to use |T132172:0|t[Eagle Eye] to look for one
+    .train 2982 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 3)]
+    .train 17263 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Ghostpaw Runner|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 3)]
+step
+    .goto 1440/1,-455.00,2682.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
+    .turnin 1034 >>Turn in The Ruins of Stardust
+    .target Pelturas Whitemoon
 step
     .goto 1440/1,847.11,3470.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talen|r
@@ -406,11 +427,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talen|r
     .turnin 1009 >>Turn in Ruuzel
     .target Talen
-step
-    .goto 1440/1,-455.00,2682.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
-    .turnin 1034 >>Turn in The Ruins of Stardust
-    .target Pelturas Whitemoon
 step
     .goto 1440/1,-299.30,2795.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
@@ -442,6 +458,11 @@ step
     .turnin 1016 >>Turn in Elemental Bracers
     .accept 1017 >>Accept Mage Summoner
     .target Sentinel Velene Starstrike
+step << Hunter Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danlaar Nightstride|r
+    .goto 1440/1,-1191.23,2061.13
+    .trainer >> Train your class skills
+    .target Danlaar Nightstride
 step
     .goto 1440/1,-1171.80,2089.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
@@ -479,30 +500,21 @@ step
     .accept 1054 >>Accept Culling the Threat
     .target Raene Wolfrunner
 step
-    .goto 1440/1,242.19,2340.14
-    >>Kill |cRXP_ENEMY_Ilkrud Magthrull|r and loot |cRXP_LOOT_Ilkrud Magthrull's Tome|r
-    .complete 973,1 --Ilkrud Magthrull's Tome (1)
-    .mob Ilkrud Magthrull
-    .isOnQuest 973
+    .goto 1440/1,-584.18,3277.25
+    >>Kill |cRXP_ENEMY_Dal Bloodclaw|r and loot |cRXP_LOOT_Dal Bloodclaw's Skull|r
+    .complete 1054,1 --Dal Bloodclaw's Skull (1)
+    .mob Dal Bloodclaw
 step
-    .goto 1440/1,189.13,3185.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
-    .turnin 973 >>Turn in The Tower of Althalaxx
-    .target Delgren the Purifier
-    .isOnQuest 973
+    .goto 1440/1,-411.75,2767.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
+    .turnin 1054 >>Turn in Culling the Threat
+    .target Raene Wolfrunner
 step
-    .goto 1440/1,188.56,3178.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Feero Ironhand|r
-    .accept 976 >>Accept Supplies to Auberdine
-    .target Feero Ironhand
-    .isQuestTurnedIn 973 --any of: The Tower of Althalaxx
-    .xp <19,1
-step
-    .goto 1440/1,189.13,3185.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
-    .turnin 976 >>Turn in Supplies to Auberdine
-    .target Delgren the Purifier
-    .isQuestComplete 976
+    .goto 1440/1,-411.75,2767.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
+    .accept 1025 >>Accept An Aggressive Defense
+    .target Raene Wolfrunner
+    .isQuestTurnedIn 1023 --any of: Raene's Cleansing
 step
     .goto 1440/1,-299.30,2795.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
@@ -510,11 +522,29 @@ step
     .target Shindrell Swiftfire
     .isQuestComplete 1134
 step
-    .goto 1440/1,-411.75,2767.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
-    .accept 1025 >>Accept An Aggressive Defense
-    .target Raene Wolfrunner
-    .isQuestTurnedIn 1023 --any of: Raene's Cleansing
+    .goto 1440/1,-802.73,1966.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .turnin 78134 >>Turn in Dragonslayer's Lance
+    .target Alonso
+    .isOnQuest 78134
+step
+    .goto 1440/1,-802.73,1966.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .turnin 78133 >>Turn in Dragonslayer's Shield
+    .target Alonso
+    .isOnQuest 78133
+step
+    .goto 1440/1,-802.73,1966.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .turnin 78132 >>Turn in Dragonslayer's Helm
+    .target Alonso
+    .isOnQuest 78132
+step
+    .goto 1440/1,-1171.80,2089.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
+    .turnin 1017 >>Turn in Mage Summoner
+    .target Sentinel Velene Starstrike
+    .isQuestComplete 1017
 step
     #loop
     .goto 1440/1,-1351.72,2222.14,0
@@ -552,50 +582,41 @@ step
     .mob Foulweald Den Watcher
     .isOnQuest 1025
 step
-    .goto 1440/1,-1171.80,2089.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
-    .turnin 1017 >>Turn in Mage Summoner
-    .target Sentinel Velene Starstrike
-    .isQuestComplete 1017
-step
-    .goto 1440/1,-802.73,1966.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
-    .turnin 78132 >>Turn in Dragonslayer's Helm
-    .target Alonso
-    .isOnQuest 78132
-step
-    .goto 1440/1,-802.73,1966.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
-    .turnin 78133 >>Turn in Dragonslayer's Shield
-    .target Alonso
-    .isOnQuest 78133
-step
-    .goto 1440/1,-802.73,1966.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
-    .turnin 78134 >>Turn in Dragonslayer's Lance
-    .target Alonso
-    .isOnQuest 78134
-step
     .goto 1440/1,-411.75,2767.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .turnin 1025 >>Turn in An Aggressive Defense
     .target Raene Wolfrunner
     .isOnQuest 1025
 step
-    .goto 1440/1,-584.18,3277.25
-    >>Kill |cRXP_ENEMY_Dal Bloodclaw|r and loot |cRXP_LOOT_Dal Bloodclaw's Skull|r
-    .complete 1054,1 --Dal Bloodclaw's Skull (1)
-    .mob Dal Bloodclaw
-step
-    .goto 1440/1,-411.75,2767.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
-    .turnin 1054 >>Turn in Culling the Threat
-    .target Raene Wolfrunner
-step
     .goto 1440/1,-299.30,2795.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
     .accept 4581 >>Accept Kayneth Stillwind
     .target Shindrell Swiftfire
+step
+    .goto 1440/1,242.19,2340.14
+    >>Kill |cRXP_ENEMY_Ilkrud Magthrull|r and loot |cRXP_LOOT_Ilkrud Magthrull's Tome|r
+    .complete 973,1 --Ilkrud Magthrull's Tome (1)
+    .mob Ilkrud Magthrull
+    .isOnQuest 973
+step
+    .goto 1440/1,189.13,3185.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+    .turnin 973 >>Turn in The Tower of Althalaxx
+    .target Delgren the Purifier
+    .isOnQuest 973
+step
+    .goto 1440/1,188.56,3178.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Feero Ironhand|r
+    .accept 976 >>Accept Supplies to Auberdine
+    .target Feero Ironhand
+    .isQuestTurnedIn 973 --any of: The Tower of Althalaxx
+    .xp <19,1
+step
+    .goto 1440/1,189.13,3185.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+    .turnin 976 >>Turn in Supplies to Auberdine
+    .target Delgren the Purifier
+    .isQuestComplete 976
 step
     .goto 1440/1,-1387.47,2896.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shael'dryn|r
@@ -953,15 +974,15 @@ step
 step
     .goto 1440/1,-802.73,1966.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
-    .turnin 78133 >>Turn in Dragonslayer's Shield
-    .target Alonso
-    .isOnQuest 78133
-step
-    .goto 1440/1,-802.73,1966.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
     .turnin 78132 >>Turn in Dragonslayer's Helm
     .target Alonso
     .isOnQuest 78132
+step
+    .goto 1440/1,-802.73,1966.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .turnin 78133 >>Turn in Dragonslayer's Shield
+    .target Alonso
+    .isOnQuest 78133
 step
     .goto 1440/1,-299.30,2795.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
@@ -974,24 +995,6 @@ step
     .accept 1035 >>Accept Fallen Sky Lake
     .target Pelturas Whitemoon
     .isQuestTurnedIn 1034 --any of: The Ruins of Stardust
-step
-    .goto 1440/1,-1171.80,2089.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
-    .turnin 1017 >>Turn in Mage Summoner
-    .target Sentinel Velene Starstrike
-    .isQuestComplete 1017
-step
-    .goto 1440/1,-2144.06,1514.51
-    >>Kill |cRXP_ENEMY_Shadethicket Oracle|r and loot |cRXP_LOOT_Fallen Moonstone|r
-    .complete 1035,1 --Fallen Moonstone (1)
-    .mob Shadethicket Oracle
-    .isOnQuest 1035
-step
-    .goto 1440/1,-455.00,2682.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
-    .turnin 1035 >>Turn in Fallen Sky Lake
-    .target Pelturas Whitemoon
-    .isOnQuest 1035
 step
     .goto 1440/1,-2817.03,2950.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anilia|r
@@ -1017,17 +1020,29 @@ step
     .target Illiyana
     .isQuestTurnedIn 1031 --any of: The Branch of Cenarius
 step
+    .goto 1440/1,-1171.80,2089.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
+    .turnin 1017 >>Turn in Mage Summoner
+    .target Sentinel Velene Starstrike
+    .isQuestComplete 1017
+step
+    .goto 1440/1,-2144.06,1514.51
+    >>Kill |cRXP_ENEMY_Shadethicket Oracle|r and loot |cRXP_LOOT_Fallen Moonstone|r
+    .complete 1035,1 --Fallen Moonstone (1)
+    .mob Shadethicket Oracle
+    .isOnQuest 1035
+step
     #loop
-    .goto 1440/1,-2822.22,2847.90,0
-    .goto 1440/1,-2822.22,2847.90,40,0
-    .goto 1440/1,-2890.84,2871.74,40,0
-    .goto 1440/1,-3013.67,2820.61,40,0
-    .goto 1440/1,-3084.60,2755.27,40,0
-    .goto 1440/1,-3021.17,2668.79,40,0
-    .goto 1440/1,-2949.66,2717.22,40,0
-    .goto 1440/1,-2953.12,2762.96,40,0
-    .goto 1440/1,-2911.60,2789.09,40,0
+    .goto 1440/1,-2886.81,2746.43,0
     .goto 1440/1,-2886.81,2746.43,40,0
+    .goto 1440/1,-2911.60,2789.09,40,0
+    .goto 1440/1,-2953.12,2762.96,40,0
+    .goto 1440/1,-2949.66,2717.22,40,0
+    .goto 1440/1,-3021.17,2668.79,40,0
+    .goto 1440/1,-3084.60,2755.27,40,0
+    .goto 1440/1,-3013.67,2820.61,40,0
+    .goto 1440/1,-2890.84,2871.74,40,0
+    .goto 1440/1,-2822.22,2847.90,40,0
     >>Kill |cRXP_ENEMY_Xavian Rogues|r, |cRXP_ENEMY_Xavian Betrayers|r, |cRXP_ENEMY_Xavian Felsworns|r and |cRXP_ENEMY_Xavian Hellcallers|r. Loot them for |cRXP_LOOT_Satyr Horns|r
     .complete 1032,1 --Satyr Horns (16)
     .mob Xavian Rogue
@@ -1036,41 +1051,23 @@ step
     .mob Xavian Hellcaller
     .isOnQuest 1032
 step
-    .goto 1440/1,-3215.51,2954.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayneth Stillwind|r
-    .accept 1012 >>Accept Insane Druids
-    .target Kayneth Stillwind
-    .isQuestTurnedIn 1011 --any of: Forsaken Diseases
-step
     .goto 1440/1,-3276.63,2914.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maseara Autumnmoon|r
     .turnin 98417 >>Turn in Vengeful Trail
     .target Maseara Autumnmoon
     .isQuestComplete 98417
 step
-    .goto 1440/1,-2795.69,1876.97
-    >>Kill |cRXP_ENEMY_Uthil Mooncall|r
-    .complete 1012,2 --Uthil Mooncall slain (1)
-    .mob Uthil Mooncall
-    .isOnQuest 1012
-step
-    .goto 1440/1,-2750.71,1828.93
-    >>Kill |cRXP_ENEMY_Taneel Darkwood|r
-    .complete 1012,1 --Taneel Darkwood slain (1)
-    .mob Taneel Darkwood
-    .isOnQuest 1012
-step
-    .goto 1440/1,-2627.88,1820.85
-    >>Kill |cRXP_ENEMY_Mavoris Cloudsbreak|r
-    .complete 1012,3 --Mavoris Cloudsbreak slain (1)
-    .mob Mavoris Cloudsbreak
-    .isOnQuest 1012
-step
     .goto 1440/1,-3215.51,2954.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayneth Stillwind|r
-    .turnin 1012 >>Turn in Insane Druids
+    .accept 1012 >>Accept Insane Druids
     .target Kayneth Stillwind
-    .isOnQuest 1012
+    .isQuestTurnedIn 1011 --any of: Forsaken Diseases
+step
+    .goto 1440/1,-455.00,2682.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
+    .turnin 1035 >>Turn in Fallen Sky Lake
+    .target Pelturas Whitemoon
+    .isOnQuest 1035
 step
     .goto 1440/1,-1231.77,1787.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krolg|r
@@ -1111,17 +1108,41 @@ step
     .target Krolg
     .isQuestTurnedIn 1045 --any of: Raene's Cleansing
 step
+    .goto 1440/1,446.90,2622.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illiyana|r
+    .turnin 1032 >>Turn in Satyr Slaying!
+    .target Illiyana
+    .isOnQuest 1032
+step
     .goto 1440/1,-1457.25,1612.52
     >>Kill |cRXP_ENEMY_Ran Bloodtooth|r and loot |cRXP_LOOT_Ran Bloodtooth's Skull|r
     .complete 1046,1 --Ran Bloodtooth's Skull (1)
     .mob Ran Bloodtooth
     .isOnQuest 1046
 step
-    .goto 1440/1,446.90,2622.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illiyana|r
-    .turnin 1032 >>Turn in Satyr Slaying!
-    .target Illiyana
-    .isOnQuest 1032
+    .goto 1440/1,-2627.88,1820.85
+    >>Kill |cRXP_ENEMY_Mavoris Cloudsbreak|r
+    .complete 1012,3 --Mavoris Cloudsbreak slain (1)
+    .mob Mavoris Cloudsbreak
+    .isOnQuest 1012
+step
+    .goto 1440/1,-2750.71,1828.93
+    >>Kill |cRXP_ENEMY_Taneel Darkwood|r
+    .complete 1012,1 --Taneel Darkwood slain (1)
+    .mob Taneel Darkwood
+    .isOnQuest 1012
+step
+    .goto 1440/1,-2795.69,1876.97
+    >>Kill |cRXP_ENEMY_Uthil Mooncall|r
+    .complete 1012,2 --Uthil Mooncall slain (1)
+    .mob Uthil Mooncall
+    .isOnQuest 1012
+step
+    .goto 1440/1,-3215.51,2954.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayneth Stillwind|r
+    .turnin 1012 >>Turn in Insane Druids
+    .target Kayneth Stillwind
+    .isOnQuest 1012
 step
     .goto 1440/1,-411.75,2767.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r

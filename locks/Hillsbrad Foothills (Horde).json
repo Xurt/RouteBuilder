@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "20-40 Hillsbrad Foothills",
-  "saved": "2026-10-17 13:19",
+  "saved": "2026-10-18 23:46",
   "levels": "RestedXP",
   "parts": [
     {
@@ -16,7 +16,7 @@
         "obj:2480:1 @1424:-903.57,-9.81  Objective Hinott's Assistance / Cure Completed",
         "turnin:2480 @1424:-905.49,-9.39  TurnIn Hinott's Assistance",
         "turnin:1065 @1424:-899.41,-6.61  TurnIn Journey to Tarren Mill",
-        {"lines":[".goto 1424/0,-857.81,2.77",".fp Hillsbrad >> Get the Tarren Mill Flight Path"],"from":"RestedXP: 21-30 Silverpine/Hillsbrad AoE"},
+        {"lines":[".goto 1424/0,-857.81,2.77",".fp Hillsbrad >> Get the Tarren Mill Flight Path"],"tag":"Mage","from":"RestedXP: 21-30 Silverpine/Hillsbrad AoE"},
         "accept:1066 @1424:-899.41,-6.61  Accept Blood of Innocents",
         "turnin:493 @1424:-899.41,-6.61  TurnIn Journey to Hillsbrad Foothills",
         "accept:496 @1424:-899.41,-6.61  Accept Elixir of Suffering",
@@ -32,6 +32,7 @@
         {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",">>|cRXP_BUY_Buy|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_BUY_from her if they're up|r",".vendor >> Vendor and Repair",".target Kris Legace",".money <0.7859",".isOnQuest 498"],"tag":"Rogue/Hunter/Shaman/Druid","from":"RestedXP: 22-24 Hillsbrad"},
         {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",">>|cRXP_BUY_Buy|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] |cRXP_BUY_from her if they're up|r",".vendor >> Vendor and Repair",".target Kris Legace",".money <0.3515",".isOnQuest 498"],"tag":"Rogue/Hunter/Shaman/Druid","from":"RestedXP: 22-24 Hillsbrad"},
         {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",".vendor >> Vendor and Repair",".target Kris Legace",".isOnQuest 498",".subzoneskip 275,1"],"tag":"!Rogue !Hunter !Shaman !Druid","from":"RestedXP: 22-24 Hillsbrad"},
+        "turnin:506 @1424:-957.01,-40.75  TurnIn Blackmoore's Legacy",
         "turnin:508 @1424:-957.01,-40.75  TurnIn Taretha's Gift",
         "turnin:98094 @1424:-967.89,-733.01  TurnIn Scout Support",
         "accept:98095 @1424:-967.89,-733.01  Accept Valuable Vantages",
@@ -45,18 +46,16 @@
         "obj:496:1 @1424:-675.09,-499.2  Objective Elixir of Suffering / Gray Bear Tongue (10)",
         "accept:95126 @1424:-867.09,-158.51  Accept The Moonsilver Blade",
         "accept:95125 @1424:-867.09,-158.51  Accept Ott's Masterwork",
-        "obj:515:3 @1424:-39.25,-1108.69  Objective Elixir of Agony / Torn Fin Eye (5)",
-        "obj:515:2 @1424:-1045.33,-1354.24  Objective Elixir of Agony / Daggerspine Scale (5)",
         "obj:496:2 @1424:-880.53,83.41  Objective Elixir of Suffering / Creeper Ichor (1)",
-        "turnin:515 @1424:-899.41,-6.61  TurnIn Elixir of Agony",
         "turnin:496 @1424:-899.41,-6.61  TurnIn Elixir of Suffering",
         "accept:499 @1424:-899.41,-6.61  Accept Elixir of Suffering",
         "turnin:499 @1424:-902.93,-8.32  TurnIn Elixir of Suffering",
         "accept:1067 @1424:-899.41,-6.61  Accept Return to Thunder Bluff",
         {"lines":[".goto 1424/0,-941.65,-6.40",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shay|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Shay",".isOnQuest 529",".subzoneskip 272,1"],"from":"RestedXP: 22-24 Hillsbrad"},
         {"lines":[".goto 1424/0,-105.81,-564.48,60,0",".goto 1424/0,-86.29,-547.20,60,0",".goto 1424/0,-32.85,-551.89,60,0",".goto 1424/0,-15.57,-576.00,60,0",".goto 1424/0,2.67,-635.52,60,0",".goto 1424/0,-40.21,-626.77,60,0",".goto 1424/0,-62.61,-608.64,60,0",".goto 1424/0,-101.01,-613.12,60,0",".goto 1424/0,-105.81,-564.48,60,0",".xp 24 >>Grind to level 24"],"from":"RestedXP: 22-24 Hillsbrad"},
-        {"lines":[".goto 1424/0,-926.61,-6.19",".vendor >> Buy 3 Soothing Spices from Christoph on the first floor of the Inn",".collect 3713,3"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
-        "turnin:506 @1424:-957.01,-40.75  TurnIn Blackmoore's Legacy"
+        "obj:515:3 @1424:-39.25,-1108.69  Objective Elixir of Agony / Torn Fin Eye (5)",
+        "obj:515:2 @1424:-1045.33,-1354.24  Objective Elixir of Agony / Daggerspine Scale (5)",
+        "turnin:515 @1424:-899.41,-6.61  TurnIn Elixir of Agony"
       ]
     },
     {
@@ -65,11 +64,13 @@
         "accept:501 @1424:-899.41,-6.61  Accept Elixir of Pain",
         "accept:527 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
         "accept:498 @1424:-957.01,-40.75  Accept The Rescue",
-        {"lines":[".goto 1424/0,-867.09,-158.51",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r",".vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r",".money <3.0195",".target Ott",".subzoneskip 272,1"],"tag":"Shaman","from":"RestedXP: 23-24 Hillsbrad Class Quests"},
+        {"lines":[".goto 1424/0,-941.65,-6.40",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shay|r",".vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior",".vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior",".target Innkeeper Shay",".subzoneskip 272,1"],"tag":"Shaman/Rogue","from":"RestedXP: 23-24 Hillsbrad Class Quests"},
+        {"lines":[".goto 1424/0,-867.09,-158.51",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r",".vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r",".money <3.0195",".target Ott",".subzoneskip 272,1"],"tag":"Shaman Shaman/Rogue Shaman","from":"RestedXP: 23-24 Hillsbrad Class Quests"},
+        {"lines":[".goto 1424/0,-867.09,-158.51",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r",".vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r",".money <2.8372",".target Ott",".subzoneskip 272,1"],"tag":"Shaman Rogue/Rogue Rogue","from":"RestedXP: 23-24 Hillsbrad Class Quests"},
         "obj:498:2 @1424:-1486.61,-445.87  Objective The Rescue / Rescue Tog'thar",
-        {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",">>|cRXP_BUY_Buy|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_BUY_and |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] |cRXP_BUY_from her if they're up|r",".vendor >> Vendor and Repair",".target Kris Legace",".money <1.1374"],"tag":"Rogue","from":"RestedXP: 23-24 Hillsbrad Class Quests"},
-        {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",">>|cRXP_BUY_Buy|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_BUY_from her if they're up|r",".vendor >> Vendor and Repair",".target Kris Legace",".money <0.7859"],"tag":"Rogue","from":"RestedXP: 23-24 Hillsbrad Class Quests"},
-        {"lines":[".goto 1424/0,-1497.81,-429.65",">>|cRXP_BUY_Buy|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] |cRXP_BUY_from her if they're up|r",".vendor >> Vendor and Repair",".target Kris Legace",".money <0.3515"],"tag":"Rogue","from":"RestedXP: 23-24 Hillsbrad Class Quests"},
+        {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",">>|cRXP_BUY_Buy|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_BUY_and |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] |cRXP_BUY_from her if they're up|r",".vendor >> Vendor and Repair",".target Kris Legace",".money <1.1374"],"tag":"Shaman Rogue/Rogue Rogue","from":"RestedXP: 23-24 Hillsbrad Class Quests"},
+        {"lines":[".goto 1424/0,-1497.81,-429.65",">>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kris|r",">>|cRXP_BUY_Buy|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_BUY_from her if they're up|r",".vendor >> Vendor and Repair",".target Kris Legace",".money <0.7859"],"tag":"Shaman Rogue/Rogue Rogue","from":"RestedXP: 23-24 Hillsbrad Class Quests"},
+        {"lines":[".goto 1424/0,-1497.81,-429.65",">>|cRXP_BUY_Buy|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] |cRXP_BUY_from her if they're up|r",".vendor >> Vendor and Repair",".target Kris Legace",".money <0.3515"],"tag":"Shaman Rogue/Rogue Rogue","from":"RestedXP: 23-24 Hillsbrad Class Quests"},
         "obj:498:collect3499 @1424:-1477.01,-465.49  Objective The Rescue / Burnished Gold Key",
         "obj:498:collect3467 @1424:-1480.53,-492.37  Objective The Rescue / Dull Iron Key",
         "obj:498:1 @1424:-1343.89,-485.33  Objective The Rescue / Rescue Drull",
@@ -83,7 +84,7 @@
         "accept:528 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
         "accept:546 @1424:-920.85,-20.27  Accept Souvenirs of Death",
         "obj:528:1 @1424:-45.65,-583.68  Objective Battle of Hillsbrad / Hillsbrad Peasant slain (15)",
-        {"lines":[">> If your hearth is down, keep AoE farming until it's back up",".vendor >> Buy level 25 drink from the Innkeeper once you hearthed"],"from":"RestedXP: 21-30 Silverpine/Hillsbrad AoE"},
+        {"lines":[">> If your hearth is down, keep AoE farming until it's back up",".vendor >> Buy level 25 drink from the Innkeeper once you hearthed"],"tag":"Mage","from":"RestedXP: 21-30 Silverpine/Hillsbrad AoE"},
         "obj:501:1 @1424:-646.93,-450.56  Objective Elixir of Pain / Mountain Lion Blood (1)",
         "turnin:501 @1424:-899.41,-6.61  TurnIn Elixir of Pain",
         "accept:502 @1424:-899.41,-6.61  Accept Elixir of Pain",
@@ -133,6 +134,7 @@
         "turnin:532 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad",
         "accept:539 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
         "turnin:552 @1424:-977.49,-19.41  TurnIn Helcular's Revenge",
+        {"lines":[".goto 1424/0,-926.61,-6.19",".vendor >> Buy 3 Soothing Spices from Christoph on the first floor of the Inn",".collect 3713,3"],"tag":"Mage","from":"RestedXP: 30-36 Arathi/Alterac AoE"},
         "obj:539:1 @1424:67.95,-794.88  Objective Battle of Hillsbrad / Foreman Bonds slain (1)",
         "obj:539:2 @1424:117.23,-773.12  Objective Battle of Hillsbrad / Hillsbrad Miner slain (10)",
         "obj:567:3 @1424:49.07,-724.27  Objective Dangerous! / Miner Hackett slain (1)",
@@ -170,10 +172,10 @@
         "obj:541:4 @1424:-1254.29,-1299.2  Objective Battle of Hillsbrad / Captain Ironhill slain (8)",
         "turnin:541 @1424:-927.89,-36.27  TurnIn Battle of Hillsbrad",
         "accept:550 @1424:-927.89,-36.27  Accept Battle of Hillsbrad",
-        "obj:553:2 @1424:-342.93,-166.4  Objective Helcular's Revenge / Flame of Veraz charged",
-        "obj:553:1 @1424:-337.81,-198.61  Objective Helcular's Revenge / Flame of Azel charged",
         "accept:557 @1424:-901.33,-46.51  Accept Bracers of Binding",
-        "accept:545 @1424:-904.53,-44.8  Accept Dalaran Patrols"
+        "accept:545 @1424:-904.53,-44.8  Accept Dalaran Patrols",
+        "obj:553:2 @1424:-342.93,-166.4  Objective Helcular's Revenge / Flame of Veraz charged",
+        "obj:553:1 @1424:-337.81,-198.61  Objective Helcular's Revenge / Flame of Azel charged"
       ]
     },
     {

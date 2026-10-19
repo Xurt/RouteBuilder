@@ -24,6 +24,17 @@ step << Undead
     .accept 363 >>Accept Rude Awakening
     .target Undertaker Mordo
 step << Priest/Mage
+    #completewith next
+    .goto 1420/0,1714.76,1760.68,40,0
+    .goto 1420/0,1718.38,1799.24,40,0
+    .goto 1420/0,1669.12,1869.73,40,0
+    +|cRXP_WARN_Kill |cRXP_ENEMY_Young Scavengers|r and |cRXP_ENEMY_Duskbats|r. Loot them until you have 60 copper worth of vendor items (including your armor)|r << Mage
+    +|cRXP_WARN_Kill |cRXP_ENEMY_Young Scavengers|r and |cRXP_ENEMY_Duskbats|r. Loot them until you have 50 copper worth of vendor items (including your armor)|r << Priest
+    .mob Young Scavenger
+    .mob Duskbat
+    .money >0.006 << Mage
+    .money >0.005 << Priest
+step << Priest/Mage
     .goto 1420/0,1574.23,1866.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Joshua|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
@@ -36,6 +47,19 @@ step
     .turnin 363 >>Turn in Rude Awakening << Undead
     .accept 364 >>Accept The Mindless Ones
     .target Shadow Priest Sarvis
+step << Warrior/Warlock
+    #completewith next
+    .goto 1420/0,1681.32,1719.71,40,0
+    .goto 1420/0,1646.08,1750.44,40,0
+    +|cRXP_WARN_Kill |cRXP_ENEMY_Young Scavengers|r and |cRXP_ENEMY_Duskbats|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r
+    .mob Young Scavenger
+    .mob Duskbat
+    .money >0.001
+step << Warrior
+    .goto 1420/0,1568.35,1859.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archibald|r inside
+    .vendor >> Vendor Trash
+    .target Archibald Kava
 step << Mage
     .goto 1420/0,1635.23,1847.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Isabella|r
@@ -429,16 +453,16 @@ step
 step
     #label Along24
     #loop
-    .goto 1420/0,1770.79,2016.14,0
-    .goto 1420/0,1770.79,2016.14,40,0
+    .goto 1420/0,1704.82,2047.47,0
     .goto 1420/0,1704.82,2047.47,40,0
-    .goto 1420/0,1651.95,2136.34,40,0
-    .goto 1420/0,1707.08,2162.55,40,0
-    .goto 1420/0,1773.05,2175.50,40,0
-    .goto 1420/0,1811.01,2131.52,40,0
-    .goto 1420/0,1753.62,2107.42,40,0
     .goto 1420/0,1745.49,2057.71,40,0
+    .goto 1420/0,1770.79,2016.14,40,0
     .goto 1420/0,1808.75,2054.70,40,0
+    .goto 1420/0,1753.62,2107.42,40,0
+    .goto 1420/0,1811.01,2131.52,40,0
+    .goto 1420/0,1773.05,2175.50,40,0
+    .goto 1420/0,1707.08,2162.55,40,0
+    .goto 1420/0,1651.95,2136.34,40,0
     >>Kill |cRXP_ENEMY_Young Night Web Spiders|r
     .complete 380,1 --Young Night Web Spider slain (10)
     .mob Young Night Web Spider
@@ -877,16 +901,16 @@ step << Undead Priest
     .target Deathguard Kel
 step
     #loop
-    .goto 1420/0,561.58,2206.23,0
-    .goto 1420/0,561.58,2206.23,40,0
+    .goto 1420/0,510.97,2116.76,0
     .goto 1420/0,510.97,2116.76,40,0
     .goto 1420/0,556.15,2054.70,40,0
     .goto 1420/0,610.38,2011.92,40,0
     .goto 1420/0,685.39,2043.86,40,0
-    .goto 1420/0,651.05,2117.36,40,0
     .goto 1420/0,805.59,2176.11,40,0
     .goto 1420/0,745.04,2205.93,40,0
     .goto 1420/0,672.29,2261.66,40,0
+    .goto 1420/0,651.05,2117.36,40,0
+    .goto 1420/0,561.58,2206.23,40,0
     >>Kill |cRXP_ENEMY_Rotting Dead|r and |cRXP_ENEMY_Ravaged Corpses|r. Loot them for |cRXP_LOOT_Putrid Claw|r
     .complete 404,1 --Putrid Claw (7)
     .mob Rotting Dead
@@ -1842,16 +1866,16 @@ step << Undead Mage/Troll Mage
     .complete 1882,1 --Balnir Snapdragons (1)
 step
     #loop
-    .goto 1420/0,-477.74,1984.81,0
+    .goto 1420/0,-319.58,2023.97,0
+    .goto 1420/0,-319.58,2023.97,40,0
+    .goto 1420/0,-355.73,1966.74,40,0
+    .goto 1420/0,-400.92,1960.71,40,0
+    .goto 1420/0,-446.10,1948.66,40,0
     .goto 1420/0,-477.74,1984.81,40,0
     .goto 1420/0,-486.77,2036.02,40,0
     .goto 1420/0,-455.14,2066.15,40,0
     .goto 1420/0,-396.40,2063.14,40,0
-    .goto 1420/0,-319.58,2023.97,40,0
-    .goto 1420/0,-355.73,1966.74,40,0
-    .goto 1420/0,-400.92,1960.71,40,0
     .goto 1420/0,-414.47,2005.90,40,0
-    .goto 1420/0,-446.10,1948.66,40,0
     >>Pick up |cRXP_PICK_Tomb Weed|r from the ground
     .complete 99142,1 --Tomb Weed (5)
     .isOnQuest 99142
@@ -2149,16 +2173,16 @@ step << Undead Paladin
     .isOnQuest 91317
 step
     #loop
-    .goto 1420/0,2601.79,1964.33,0
-    .goto 1420/0,2601.79,1964.33,40,0
-    .goto 1420/0,2611.28,1969.45,40,0
-    .goto 1420/0,2608.57,1989.33,40,0
-    .goto 1420/0,2600.89,2011.32,40,0
-    .goto 1420/0,2609.93,2031.81,40,0
+    .goto 1420/0,2593.21,2037.83,0
     .goto 1420/0,2593.21,2037.83,40,0
-    .goto 1420/0,2612.19,2059.82,40,0
-    .goto 1420/0,2646.08,2042.65,40,0
+    .goto 1420/0,2609.93,2031.81,40,0
+    .goto 1420/0,2600.89,2011.32,40,0
+    .goto 1420/0,2608.57,1989.33,40,0
+    .goto 1420/0,2611.28,1969.45,40,0
+    .goto 1420/0,2601.79,1964.33,40,0
     .goto 1420/0,2610.38,1914.62,40,0
+    .goto 1420/0,2646.08,2042.65,40,0
+    .goto 1420/0,2612.19,2059.82,40,0
     >>Kill the |cRXP_ENEMY_Whispering Horror|r (elite) and loot |T134438:0|t[|cRXP_LOOT_Whispering Horror Residue|r]. Use it to start the quest. |cRXP_WARN_Bring a partner if you can; skip this step if you cannot kill it|r
     .collect 268812,1,95328 --Whispering Horror Residue (1)
     .accept 95328 >>Accept Whispering Horror Residue
@@ -2181,16 +2205,16 @@ step << Undead Paladin
     .isOnQuest 91316
 step
     #loop
-    .goto 1420/0,2581.46,1813.10,0
-    .goto 1420/0,2581.46,1813.10,40,0
-    .goto 1420/0,2500.12,1834.19,40,0
-    .goto 1420/0,2531.75,1858.29,40,0
-    .goto 1420/0,2558.86,1873.35,40,0
+    .goto 1420/0,2631.16,1885.40,0
     .goto 1420/0,2631.16,1885.40,40,0
     .goto 1420/0,2644.72,1861.30,40,0
     .goto 1420/0,2640.20,1819.12,40,0
     .goto 1420/0,2604.05,1785.99,40,0
     .goto 1420/0,2576.94,1725.74,40,0
+    .goto 1420/0,2581.46,1813.10,40,0
+    .goto 1420/0,2500.12,1834.19,40,0
+    .goto 1420/0,2531.75,1858.29,40,0
+    .goto 1420/0,2558.86,1873.35,40,0
     >>Open the |cRXP_PICK_Bottle|r. Loot it for |cRXP_LOOT_Bottle of Whispering Elixir|r
     .complete 95314,1 --Bottle of Whispering Elixir (1)
     .isOnQuest 95314

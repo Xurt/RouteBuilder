@@ -23,11 +23,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull Hawkwind|r
     .accept 747 >>Accept The Hunt Begins
     .target Grull Hawkwind
-step << Warrior/Shaman
-    .goto 1412/1,-317.90,-2852.63,30,0--c:Mulgore,46.05,75.32
-    +|cRXP_WARN_Kill |cRXP_ENEMY_Plainstriders|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r
-    .mob Plainstrider
-    .money >0.01
 step
     #completewith Along3
     >>As you go: Kill |cRXP_ENEMY_Plainstriders|r. Loot them for |cRXP_LOOT_Plainstrider Meat|r. Kill |cRXP_ENEMY_Plainstriders|r. Loot them for |cRXP_LOOT_Plainstrider Feather|r. |cRXP_WARN_Anything left is finished later|r
@@ -39,6 +34,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Hawkwind|r
     .accept 752 >>Accept A Humble Task
     .target Chief Hawkwind
+step << Warrior/Shaman
+    #completewith next
+    .goto 1412/1,-317.90,-2852.63,30,0--c:Mulgore,46.05,75.32
+    +|cRXP_WARN_Kill |cRXP_ENEMY_Plainstriders|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r
+    .mob Plainstrider
+    .money >0.01
 step << Warrior/Shaman
     .goto 1412/1,-279.37,-2893.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kawnie Softbreeze|r
@@ -463,33 +464,6 @@ step
     .turnin 763 >>Turn in Rites of the Earthmother
     .target Baine Bloodhoof
     .isOnQuest 763
-step << Tauren Hunter
-    .goto 1412/1,-408.98,-2180.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
-    .turnin 6067 >>Turn in The Hunter's Path
-    .target Yaw Sharpmane
-    .isOnQuest 6067
-step << Tauren Hunter
-    .goto 1412/1,-408.98,-2180.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
-    .turnin 6066 >>Turn in The Hunter's Path
-    .target Yaw Sharpmane
-    .isOnQuest 6066
-step << Tauren Hunter
-    #completewith next
-    .zone 1456 >>Travel to Thunder Bluff
-    .zoneskip 1456
-step << Tauren Hunter
-    .xp 10 >>Grind to level 10 (The Hunter's Path needs it)
-step << Tauren Hunter
-    .goto 1456/1,-93.82,-1464.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kary Thunderhorn|r
-    .accept 6065 >>Accept The Hunter's Path
-    .target Kary Thunderhorn
-step << Tauren Hunter
-    #completewith next
-    .zone 1412 >>Leave Thunder Bluff for Mulgore
-    .zoneskip 1412
 step
     .goto 1412/1,-392.98,-2333.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r
@@ -508,10 +482,21 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r
     .accept 766 >>Accept Mazzranache
     .target Maur Raincaller
+step << Tauren Hunter
+    .goto 1412/1,-408.98,-2180.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
+    .turnin 6067 >>Turn in The Hunter's Path
+    .target Yaw Sharpmane
+    .isOnQuest 6067
+step << Tauren Hunter
+    .goto 1412/1,-408.98,-2180.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
+    .turnin 6066 >>Turn in The Hunter's Path
+    .target Yaw Sharpmane
+    .isOnQuest 6066
 step
     .goto 1412/1,-408.98,-2180.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
-    .turnin 6065 >>Turn in The Hunter's Path << Tauren Hunter
     .accept 96130 >>Accept Chakuyak
     .target Yaw Sharpmane
 step
@@ -616,11 +601,11 @@ step << Tauren
     .complete 754,1 --Cleanse the Winterhoof Water Well
 step
     #loop
-    .goto 1412/1,-711.15,-2519.88,0
-    .goto 1412/1,-711.15,-2519.88,40,0
-    .goto 1412/1,-725.92,-2531.36,40,0
-    .goto 1412/1,-729.62,-2548.18,40,0
+    .goto 1412/1,-711.15,-2572.38,0
     .goto 1412/1,-711.15,-2572.38,40,0
+    .goto 1412/1,-729.62,-2548.18,40,0
+    .goto 1412/1,-725.92,-2531.36,40,0
+    .goto 1412/1,-711.15,-2519.88,40,0
     >>Pick up |cRXP_PICK_Well Stone|r from the ground
     .complete 771,1 --Well Stone (2)
 step
@@ -681,12 +666,12 @@ step
     .accept 772 >>Accept Rite of Vision
     .target Zarlman Two-Moons
 step << Tauren
-    #completewith Along59
+    #completewith Along58
     >>As you go: Kill |cRXP_ENEMY_Prairie Stalkers|r. Loot them for |cRXP_LOOT_Stalker Claws|r. |cRXP_WARN_Anything left is finished later|r
     .complete 756,1 --Stalker Claws (6)
     .mob Prairie Stalker
 step
-    #label Along59
+    #label Along58
     #loop
     .goto 1412/1,-598.53,-2302.06,0
     .goto 1412/1,-598.53,-2302.06,40,0
@@ -713,12 +698,12 @@ step
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step << Tauren
-    #completewith Along62
+    #completewith Along61
     >>As you go: Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for |cRXP_LOOT_Cougar Claws|r. |cRXP_WARN_Anything left is finished later|r
     .complete 756,2 --Cougar Claws (6)
     .mob Flatland Cougar
 step << Tauren
-    #label Along62
+    #label Along61
     #loop
     .goto 1412/1,-716.69,-1816.78,0
     .goto 1412/1,-716.69,-1816.78,40,0
@@ -750,23 +735,23 @@ step
     .complete 96130,1 --Chakuyak's Pelt (1)
     .mob Chakuyak
 step
-    #completewith Along65
+    #completewith Along64
     >>As you go: Kill |cRXP_ENEMY_Palemane Poachers|r. |cRXP_WARN_Anything left is finished later|r
     .complete 745,3 --Palemane Poacher slain (5)
     .mob Palemane Poacher
 step
-    #label Along65
+    #label Along64
     .goto 1412/1,441.52,-2432.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Perith Stormhoof|r
     .accept 98430 >>Accept The Longwalkers
     .target Perith Stormhoof
 step
-    #completewith Along66
+    #completewith Along65
     >>As you go: Kill |cRXP_ENEMY_Palemane Tanners|r. |cRXP_WARN_Anything left is finished later|r
     .complete 745,1 --Palemane Tanner slain (10)
     .mob Palemane Tanner
 step
-    #label Along66
+    #label Along65
     .goto 1412/1,190.43,-2384.10
     >>Escort Perith Stormhoof out of Palemane Rock
     .complete 98430,1 --Escort Perith Stormhoof out of Palemane Rock
@@ -1260,8 +1245,24 @@ step << Tauren
     .target Mull Thunderhorn
     .isQuestTurnedIn 758 --any of: Thunderhorn Cleansing
 step << Tauren Hunter
+    #completewith next
+    .zone 1456 >>Travel to Thunder Bluff
+    .zoneskip 1456
+step << Tauren Hunter
+    .xp 10 >>Grind to level 10 (The Hunter's Path needs it)
+step << Tauren Hunter
+    .goto 1456/1,-93.82,-1464.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kary Thunderhorn|r
+    .accept 6065 >>Accept The Hunter's Path
+    .target Kary Thunderhorn
+step << Tauren Hunter
+    #completewith next
+    .zone 1412 >>Leave Thunder Bluff for Mulgore
+    .zoneskip 1412
+step << Tauren Hunter
     .goto 1412/1,-408.98,-2180.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
+    .turnin 6065 >>Turn in The Hunter's Path
     .accept 6061 >>Accept Taming the Beast
     .target Yaw Sharpmane
 step << Hunter
@@ -2206,7 +2207,7 @@ step << Paladin
     .train 1026 >>Train your class spells
     .target Alodan the Hopeful
     .xp <22,1
-step
+step << Mage
     .goto 1456/1,254.06,-995.78
     .trainer >> Train your class spells if needed
     >>Respec to Frost AoE if you haven't already
@@ -2362,11 +2363,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor Stonehoof|r
     .accept 1131 >>Accept Steelsnap
     .target Melor Stonehoof
-step
+step << Mage
     .goto 1456/1,254.06,-995.78
     .trainer >> Train your class spells
     >>Don't respec to AoE yet (if you've gone fire spec)
-step
+step << Mage
     .goto 1456/1,26.07,-1196.75
     .fp Thunder Bluff >> Get the Thunder Bluff flight path
     .fly Crossroads >>Fly to Crossroads

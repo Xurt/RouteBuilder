@@ -129,6 +129,11 @@ step
     .turnin 1104 >>Turn in Salt Flat Venom
     .target Fizzle Brassbolts
 step
+    .goto 1441/1,-3871.49,-6228.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzle Brassbolts|r
+    .turnin 1105 >>Turn in Hardened Shells
+    .target Wizzle Brassbolts
+step
     .goto 1441/1,-3856.09,-6233.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kravel Koalbeard|r
     .turnin 1110 >>Turn in Rocket Car Parts
@@ -141,12 +146,6 @@ step
     .turnin 1112 >>Turn in Parts for Kravel
     .target Kravel Koalbeard
     .isOnQuest 1112
-step
-    .goto 1441/1,-3871.49,-6228.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzle Brassbolts|r
-    .turnin 1105 >>Turn in Hardened Shells
-    .accept 1107 >>Accept Encrusted Tail Fins
-    .target Wizzle Brassbolts
 step << Mage
     .goto 1441/1,-3878.09,-6187.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magus Tirth|r
@@ -211,6 +210,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fizzle Brassbolts|r
     .accept 1106 >>Accept Martek the Exiled
     .target Fizzle Brassbolts
+step
+    .goto 1441/1,-3871.49,-6228.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzle Brassbolts|r
+    .accept 1107 >>Accept Encrusted Tail Fins
+    .target Wizzle Brassbolts
 step
     .goto 1441/1,-3871.49,-6228.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizzle Brassbolts|r

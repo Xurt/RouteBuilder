@@ -47,29 +47,12 @@ step << Dwarf/Gnome
     .turnin 6387 >>Turn in Honor Students
     .accept 6391 >>Accept Ride to Ironforge
     .target Thorgrum Borrelson
-step << Human
-    .goto 1432/0,-2658.51,-4822.30
-    .vendor >>Vendor and repair
-step
-    .goto 1432/0,-2953.65,-5381.54
-    .vendor >>Buy 1-2 6 slot bags to fill your bag slots
-step
-    .goto 1432/0,-2972.96,-5377.86
-    .vendor >> Buy food/water (try to have 40 level 5 drink, 20 level 5 food)
-step << Gnome
-    .goto 1432/0,-2658.51,-4822.30
-    .vendor >>Vendor and repair
-step
-    .goto 1432/0,-2658.51,-4822.30
-    .vendor >>vendor and repair
-step
-    .goto 1432/0,-2952.55,-5381.91
-    .vendor >> Buy 6 slots until your bag containers are full. Also buy 1 Flint and Tinder, and 2 Simple Wood
-    .collect 4470,2
-    .collect 4471,1
-step
-    .xp 12 >> Grind to 12
-step
+step << Gnome Mage
+    .goto 1432/0,-2929.93,-5424.95
+    >>Talk to |cRXP_FRIENDLY_Thorgrum|r
+    .fp Thelsamar >> Get the Thelsamar flight path
+    .target Thorgrum Borrelson
+step << Mage
     .goto 1432/0,-2929.93,-5424.95
     .fp Thelsamar >> Get the Thelsamar flight path
     >>Talk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
@@ -81,8 +64,6 @@ step
     .turnin 302 >>Turn in Powder to Ironband
     .target Jern Hornhelm
     .isOnQuest 302
-step << Gnome
-    .hs >> Hearth to Kharanos
 step
     .goto 1432/0,-3000.54,-5375.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
@@ -107,6 +88,15 @@ step
     .accept 416 >>Accept Rat Catching
     .accept 1339 >>Accept Mountaineer Stormpike's Task
     .unitscan Mountaineer Kadrell
+step << Mage Gnome
+    .goto 1432/0,-2658.51,-4822.30
+    .vendor >>Vendor and repair
+step
+    .goto 1432/0,-2676.71,-4825.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    .turnin 1339 >>Turn in Mountaineer Stormpike's Task while you are here
+    .isQuestComplete 1339
+    .target Mountaineer Stormpike
 step
     .goto 1432/0,-3000.54,-5375.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
@@ -117,6 +107,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
     .accept 418 >>Accept Thelsamar Blood Sausages
     .target Vidra Hearthstove
+step << Mage
+    .goto 1432/0,-2953.65,-5381.54
+    .vendor >>Buy 1-2 6 slot bags to fill your bag slots
+step << Mage
+    .goto 1432/0,-2972.96,-5377.86
+    .vendor >> Buy food/water (try to have 40 level 5 drink, 20 level 5 food)
 step
     #completewith Along9
     >>As you go: Kill |cRXP_ENEMY_Cliff Lurkers|r, |cRXP_ENEMY_Wood Lurkers|r, |cRXP_ENEMY_Forest Lurkers|r and |cRXP_ENEMY_Shanda the Spinners|r. Loot them for |cRXP_LOOT_Spider Ichor|r. |cRXP_WARN_Anything left is finished later|r
@@ -186,6 +182,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fp Thelsamar >> Get the Thelsamar flight path
     .target Thorgrum Borrelson
+step << Mage
+    .goto 1432/0,-2952.55,-5381.91
+    .vendor >> Buy 6 slots until your bag containers are full. Also buy 1 Flint and Tinder, and 2 Simple Wood
+    .collect 4470,2
+    .collect 4471,1
 step
     .goto 1432/0,-2634.51,-5842.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r
@@ -257,6 +258,9 @@ step
     .mob Tunnel Rat Scout
     .mob Tunnel Rat Geomancer
     .mob Tunnel Rat Digger
+step << Mage
+    .goto 1432/0,-2658.51,-4822.30
+    .vendor >>vendor and repair
 step
     .goto 1432/0,-2676.71,-4825.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
@@ -301,6 +305,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r
     .turnin 267 >>Turn in The Trogg Threat
     .target Captain Rugelfuss
+step << Mage
+    .goto 1432/0,-2659.34,-4822.300
+    >>Talk to |cRXP_FRIENDLY_Gothor|r
+    .vendor >>Vendor Trash
+    .target Gothor Brumn
+    .isOnQuest 1339
+step << Mage Human
+    .goto 1432/0,-2658.51,-4822.30
+    .vendor >>Vendor and repair
 step
     .goto 1432/0,-2602.51,-5832.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
@@ -310,6 +323,17 @@ step << Warlock
     .goto 1432/0,-2747.60,-5530.540
     .xp 14 >>Grind to 14
     >>|cRXP_WARN_Fly to Ironforge and skip this step if you're planning on running the Hall of Thanes dungeon in Ironforge|r
+step
+    .goto 1432/0,-2952.46,-5381.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
+    .vendor 1682 >> |cRXP_BUY_Buy|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_from her if needed|r
+    .target Yanni Stoutheart
+step << !Hunter
+    .goto 1432/0,-2973.90,-5377.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
+    .vendor 6734 >> |cRXP_BUY_Buy some|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_if needed|r << Warrior/Rogue
+    .vendor 6734 >> |cRXP_BUY_Buy some|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her if needed|r << !Warrior !Rogue
+    .target Innkeeper Hearthstove
 step
     .goto 1432/0,-2643.06,-5892.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Gravelgaw|r
@@ -359,17 +383,6 @@ step
     .turnin 298 >>Turn in Excavation Progress Report
     .accept 301 >>Accept Report to Ironforge
     .target Jern Hornhelm
-step
-    .goto 1432/0,-2952.46,-5381.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
-    .vendor 1682 >> |cRXP_BUY_Buy|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_from her if needed|r
-    .target Yanni Stoutheart
-step << !Hunter
-    .goto 1432/0,-2973.90,-5377.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
-    .vendor 6734 >> |cRXP_BUY_Buy some|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_if needed|r << Warrior/Rogue
-    .vendor 6734 >> |cRXP_BUY_Buy some|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her if needed|r << !Warrior !Rogue
-    .target Innkeeper Hearthstove
 step << Dwarf/Gnome
     .goto 1432/0,-3014.88,-5367.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
@@ -453,61 +466,6 @@ step << Shaman
     .isQuestTurnedIn 94467 --any of: Call of Fire
     .xp <10,1
 step
-    .goto 1432/0,-2659.34,-4822.300
-    >>Talk to |cRXP_FRIENDLY_Gothor|r
-    .vendor >>Vendor Trash
-    .target Gothor Brumn
-    .isOnQuest 1339
-step
-    .goto 1432/0,-2659.34,-4822.300
-    >>Talk to |cRXP_FRIENDLY_Gothor|r
-    .vendor >>Vendor Trash
-    .target Gothor Brumn
-    .isOnQuest 307
-step << Human
-    .goto 1432/0,-2849.11,-4944.45,50,0
-    .goto 1432/0,-2895.45,-5014.91,50,0
-    .goto 1432/0,-2957.24,-5067.89,50,0
-    .goto 1432/0,-3008.26,-5098.06,50,0
-    .goto 1432/0,-3087.43,-5091.25,50,0
-    .goto 1432/0,-3046.05,-5189.48,50,0
-    .goto 1432/0,-2918.62,-5233.08,50,0
-    .goto 1432/0,-2817.66,-5471.86,50,0
-    .goto 1432/0,-2809.66,-5343.64,50,0
-    .goto 1432/0,-2819.87,-5220.39,50,0
-    .goto 1432/0,-2740.98,-5225.170,50,0
-    .goto 1432/0,-2794.49,-5102.66,50,0
-    .goto 1432/0,-2743.74,-5021.16,50,0
-    .goto 1432/0,-2704.57,-4958.430,50,0
-    .goto 1432/0,-2645.82,-4895.890,50,0
-    .goto 1432/0,-2849.11,-4944.45,50,0
-    .xp 13+8675 >> Grind to 8675+/11400xp
-step << Gnome
-    .goto 1432/0,-2849.11,-4944.45,50,0
-    .goto 1432/0,-2895.45,-5014.91,50,0
-    .goto 1432/0,-2957.24,-5067.89,50,0
-    .goto 1432/0,-3008.26,-5098.06,50,0
-    .goto 1432/0,-3087.43,-5091.25,50,0
-    .goto 1432/0,-3046.05,-5189.48,50,0
-    .goto 1432/0,-2918.62,-5233.08,50,0
-    .goto 1432/0,-2817.66,-5471.86,50,0
-    .goto 1432/0,-2809.66,-5343.64,50,0
-    .goto 1432/0,-2819.87,-5220.39,50,0
-    .goto 1432/0,-2740.98,-5225.170,50,0
-    .goto 1432/0,-2794.49,-5102.66,50,0
-    .goto 1432/0,-2743.74,-5021.16,50,0
-    .goto 1432/0,-2704.57,-4958.430,50,0
-    .goto 1432/0,-2645.82,-4895.890,50,0
-    .goto 1432/0,-2849.11,-4944.45,50,0
-    .xp 13+6780 >> Grind to 6780+/11400xp
-step
-    .goto 1432/0,-2952.55,-5381.91
-    >>Talk to |cRXP_FRIENDLY_Yanni|r
-    >>|cRXP_BUY_Buy as many|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_as you need/can|r
-    >>|cRXP_WARN_Do NOT go below 45 Silver|r
-    .vendor >> Vendor Trash
-    .isOnQuest 1338
-step
     +|cRXP_WARN_That is all of Loch Modan for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Dun Morogh|r: Call of Fire << Shaman
     >>|cRXP_FRIENDLY_Ironforge|r: Ride to Ironforge << Dwarf/Gnome
@@ -526,7 +484,7 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #subgroup 10 - 22 Loch Modan
 #subweight -10
-#name 14-16 Loch Modan: around Daryl the Youngling
+#name 14-16 Loch Modan: around Marek Ironheart
 --RouteBuilder:next
 #next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\12-14 Westfall: around Gryan Stoutmantle
 
@@ -566,6 +524,12 @@ step
     .goto 1432/0,-2971.85,-4853.21,40,0
     >>Loot the |cRXP_PICK_Miners' League Crates|r for |cRXP_LOOT_Miners' Gear|r
     .complete 307,1 --Miners' Gear (4)
+step << Mage
+    .goto 1432/0,-2659.34,-4822.300
+    >>Talk to |cRXP_FRIENDLY_Gothor|r
+    .vendor >>Vendor Trash
+    .target Gothor Brumn
+    .isOnQuest 307
 step
     .goto 1432/0,-2676.71,-4825.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
@@ -648,6 +612,12 @@ step
     .target Prospector Ironband
     .isOnQuest 309
 step
+    .goto 1432/0,-4248.96,-5621.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
+    .accept 385 >>Accept Crocolisk Hunting
+    .accept 86758 >>Accept Twisting the Knife
+    .target Marek Ironheart
+step
     .goto 1432/0,-4296.13,-5691.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
     .accept 257 >>Accept A Hunter's Boast
@@ -664,43 +634,16 @@ step
     .complete 257,1 --Mountain Buzzard slain (6)
     .mob Mountain Buzzard
 step
-    .goto 1432/0,-4248.96,-5621.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
-    .accept 86758 >>Accept Twisting the Knife
-    .accept 385 >>Accept Crocolisk Hunting
-    .target Marek Ironheart
-step
-    .goto 1432/0,-4296.13,-5691.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
-    .turnin 257 >>Turn in A Hunter's Boast
-    .accept 258 >>Accept A Hunter's Challenge
-    .target Daryl the Youngling
-step
-    #completewith Along20
-    >>As you go: Kill |cRXP_ENEMY_Daggerfang|r and loot |cRXP_LOOT_Marek's Croc-Hunting Knife|r. Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Meat|r. Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Skin|r. |cRXP_WARN_Anything left is finished later|r
+    #completewith Along18
+    >>As you go: Kill |cRXP_ENEMY_Daggerfang|r and loot |cRXP_LOOT_Marek's Croc-Hunting Knife|r. Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Skin|r. Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Meat|r. |cRXP_WARN_Anything left is finished later|r
     .complete 86758,1 --Marek's Croc-Hunting Knife (1)
-    .complete 385,1 --Crocolisk Meat (1)
     .complete 385,2 --Crocolisk Skin (6)
+    .complete 385,1 --Crocolisk Meat (1)
     .mob Daggerfang
     .mob Loch Crocolisk
     .mob Large Loch Crocolisk
 step
-    #loop
-    .goto 1432/0,-3852.04,-5247.25,0
-    .goto 1432/0,-3852.04,-5247.25,40,0
-    .goto 1432/0,-3818.11,-5192.24,40,0
-    .goto 1432/0,-3737.02,-5133.19,40,0
-    .goto 1432/0,-3654.54,-5111.30,40,0
-    .goto 1432/0,-3648.75,-5184.52,40,0
-    .goto 1432/0,-3685.44,-5249.09,40,0
-    .goto 1432/0,-3730.95,-5222.41,40,0
-    .goto 1432/0,-3785.01,-5201.81,40,0
-    .goto 1432/0,-3796.87,-5259.02,40,0
-    >>Kill |cRXP_ENEMY_Elder Mountain Boars|r
-    .complete 258,1 --Elder Mountain Boar slain (5)
-    .mob Elder Mountain Boar
-step
-    #label Along20
+    #label Along18
     .goto 1432/0,-3746.95,-5369.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r
     .accept 2038 >>Accept Bingles' Missing Supplies
@@ -718,34 +661,23 @@ step
     .goto 1432/0,-3724.05,-5459.90,40,0
     .goto 1432/0,-3710.54,-5486.76,40,0
     >>Kill |cRXP_ENEMY_Daggerfang|r and loot |cRXP_LOOT_Marek's Croc-Hunting Knife|r
-    >>Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Meat|r
     >>Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Skin|r
+    >>Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Meat|r
     .complete 86758,1 --Marek's Croc-Hunting Knife (1)
-    .complete 385,1 --Crocolisk Meat (1)
     .complete 385,2 --Crocolisk Skin (6)
+    .complete 385,1 --Crocolisk Meat (1)
     .mob Daggerfang
     .mob Loch Crocolisk
     .mob Large Loch Crocolisk
 step
-    .goto 1432/0,-3489.04,-4976.83
-    >>Open the |cRXP_PICK_Bingles's Blastencapper|r. Loot it for |cRXP_LOOT_Bingles' Blastencapper|r
-    >>Open the |cRXP_PICK_Bingles's Toolbucket|r. Loot it for |cRXP_LOOT_Bingles' Hammer|r
-    .complete 2038,4 --Bingles' Blastencapper (1)
-    .complete 2038,3 --Bingles' Hammer (1)
+    #completewith next
+    .hs >>Hearth to Innkeeper Hearthstove's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
 step
-    .xp 14 >>Grind to level 14 (Eagle's Fist needs it)
-step
-    .goto 1432/0,-3355.81,-4726.09
-    >>Click the |cRXP_PICK_Carved Figurine|r
-    .accept 79975 >>Accept Eagle's Fist
-step
-    .goto 1432/0,-3328.23,-4864.80
-    >>Open the |cRXP_PICK_Bingles's Toolbucket|r. Loot it for |cRXP_LOOT_Bingles' Screwdriver|r
-    .complete 2038,2 --Bingles' Screwdriver (1)
-step
-    .goto 1432/0,-3337.89,-5041.03
-    >>Open the |cRXP_PICK_Bingles's Toolbucket|r. Loot it for |cRXP_LOOT_Bingles' Wrench|r
-    .complete 2038,1 --Bingles' Wrench (1)
+    .goto 1432/0,-3020.95,-5359.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r
+    .accept 436 >>Accept Ironband's Excavation
+    .target Jern Hornhelm
 step
     #loop
     .goto 1432/0,-3316.37,-5220.21,0
@@ -761,10 +693,25 @@ step
     .turnin 86614 >>Turn in Silver of the Waves
     .target Khara Deepwater
 step
-    .goto 1432/0,-3020.95,-5359.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r
-    .accept 436 >>Accept Ironband's Excavation
-    .target Jern Hornhelm
+    .goto 1432/0,-3337.89,-5041.03
+    >>Open the |cRXP_PICK_Bingles's Toolbucket|r. Loot it for |cRXP_LOOT_Bingles' Wrench|r
+    .complete 2038,1 --Bingles' Wrench (1)
+step
+    .goto 1432/0,-3328.23,-4864.80
+    >>Open the |cRXP_PICK_Bingles's Toolbucket|r. Loot it for |cRXP_LOOT_Bingles' Screwdriver|r
+    .complete 2038,2 --Bingles' Screwdriver (1)
+step
+    .xp 14 >>Grind to level 14 (Eagle's Fist needs it)
+step
+    .goto 1432/0,-3355.81,-4726.09
+    >>Click the |cRXP_PICK_Carved Figurine|r
+    .accept 79975 >>Accept Eagle's Fist
+step
+    .goto 1432/0,-3489.04,-4976.83
+    >>Open the |cRXP_PICK_Bingles's Toolbucket|r. Loot it for |cRXP_LOOT_Bingles' Hammer|r
+    >>Open the |cRXP_PICK_Bingles's Blastencapper|r. Loot it for |cRXP_LOOT_Bingles' Blastencapper|r
+    .complete 2038,3 --Bingles' Hammer (1)
+    .complete 2038,4 --Bingles' Blastencapper (1)
 step
     .goto 1432/0,-3746.95,-5369.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r
@@ -773,9 +720,30 @@ step
 step
     .goto 1432/0,-4248.96,-5621.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
-    .turnin 86758 >>Turn in Twisting the Knife
     .turnin 385 >>Turn in Crocolisk Hunting
+    .turnin 86758 >>Turn in Twisting the Knife
     .target Marek Ironheart
+step
+    .goto 1432/0,-4296.13,-5691.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
+    .turnin 257 >>Turn in A Hunter's Boast
+    .accept 258 >>Accept A Hunter's Challenge
+    .target Daryl the Youngling
+step
+    #loop
+    .goto 1432/0,-3852.04,-5247.25,0
+    .goto 1432/0,-3852.04,-5247.25,40,0
+    .goto 1432/0,-3818.11,-5192.24,40,0
+    .goto 1432/0,-3737.02,-5133.19,40,0
+    .goto 1432/0,-3654.54,-5111.30,40,0
+    .goto 1432/0,-3648.75,-5184.52,40,0
+    .goto 1432/0,-3685.44,-5249.09,40,0
+    .goto 1432/0,-3730.95,-5222.41,40,0
+    .goto 1432/0,-3785.01,-5201.81,40,0
+    .goto 1432/0,-3796.87,-5259.02,40,0
+    >>Kill |cRXP_ENEMY_Elder Mountain Boars|r
+    .complete 258,1 --Elder Mountain Boar slain (5)
+    .mob Elder Mountain Boar
 step
     .goto 1432/0,-4296.13,-5691.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r

@@ -255,7 +255,7 @@ step
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r
     .target Jeeda
     .subzoneskip 460,1
-step
+step << Mage
     .goto 1442/1,1042.47,968.13
     .fp Sun Rock>> Get the Sun Rock Retreat flight path
 step

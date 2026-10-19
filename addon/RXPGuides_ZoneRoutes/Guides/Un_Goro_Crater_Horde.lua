@@ -284,16 +284,16 @@ step
     .use 11116
 step
     #loop
-    .goto 1449/1,-1456.53,-7810.01,0
+    .goto 1449/1,-2008.57,-7814.94,0
+    .goto 1449/1,-2008.57,-7814.94,40,0
+    .goto 1449/1,-1808.77,-7822.09,40,0
+    .goto 1449/1,-1597.13,-7785.34,40,0
     .goto 1449/1,-1456.53,-7810.01,40,0
     .goto 1449/1,-1421.01,-8058.15,40,0
     .goto 1449/1,-1575.67,-8250.80,40,0
     .goto 1449/1,-1612.67,-8097.87,40,0
-    .goto 1449/1,-1756.23,-8019.18,40,0
-    .goto 1449/1,-2008.57,-7814.94,40,0
-    .goto 1449/1,-1808.77,-7822.09,40,0
     .goto 1449/1,-1625.62,-7939.75,40,0
-    .goto 1449/1,-1597.13,-7785.34,40,0
+    .goto 1449/1,-1756.23,-8019.18,40,0
     >>Kill |cRXP_ENEMY_Devilsaurs|r, |cRXP_ENEMY_Ironhide Devilsaurs|r, |cRXP_ENEMY_Tyrant Devilsaurs|r and |cRXP_ENEMY_Stegodons|r. Loot them for |cRXP_LOOT_Bloodpetal Sprout|r. It can also be picked up from |cRXP_PICK_Bloodpetal Sprout|r on the ground
     .complete 4148,1 --Bloodpetal Sprout (1)
     .mob Devilsaur

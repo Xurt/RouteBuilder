@@ -17,6 +17,11 @@ RXPGuides.RegisterGuide([[
 #name 1-4 Durotar: around Gornek
 #next Zone Routes (Horde)\4-6 Durotar: around Orgnil Soulscar
 
+step
+    .goto 1411/1,-4251.46,-607.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaltunk|r
+    .accept 4641 >>Accept Your Place In The World
+    .target Kaltunk
 step << Warrior/Shaman/Warlock/Mage/Priest
     #completewith next
     +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock
@@ -27,11 +32,6 @@ step << Warrior/Shaman/Warlock/Mage/Priest
     .goto 1411/1,-4299.05,-494.9,30,0 << Warrior/Shaman
     .mob Mottled Boar
     .money >0.01
-step
-    .goto 1411/1,-4251.46,-607.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaltunk|r
-    .accept 4641 >>Accept Your Place In The World
-    .target Kaltunk
 step << Warlock
     .goto 1411/1,-4214.45,-623.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruzan|r
@@ -328,16 +328,16 @@ step
     .complete 4402,1 --Cactus Apple (10)
 step
     #loop
-    .goto 1411/1,-4243.53,-180.82,0
-    .goto 1411/1,-4243.53,-180.82,40,0
-    .goto 1411/1,-4252.52,-248.50,40,0
-    .goto 1411/1,-4286.88,-287.98,40,0
-    .goto 1411/1,-4214.45,-279.52,40,0
-    .goto 1411/1,-4153.64,-320.41,40,0
-    .goto 1411/1,-4125.62,-378.22,40,0
+    .goto 1411/1,-4149.94,-425.46,0
     .goto 1411/1,-4149.94,-425.46,40,0
-    .goto 1411/1,-4051.59,-386.68,40,0
+    .goto 1411/1,-4125.62,-378.22,40,0
+    .goto 1411/1,-4153.64,-320.41,40,0
+    .goto 1411/1,-4214.45,-279.52,40,0
+    .goto 1411/1,-4286.88,-287.98,40,0
+    .goto 1411/1,-4252.52,-248.50,40,0
+    .goto 1411/1,-4243.53,-180.82,40,0
     .goto 1411/1,-4171.09,-212.55,40,0
+    .goto 1411/1,-4051.59,-386.68,40,0
     >>Kill |cRXP_ENEMY_Scorpid Workers|r and |cRXP_ENEMY_Sarkoths|r. Loot them for |cRXP_LOOT_Scorpid Worker Tail|r
     .complete 789,1 --Scorpid Worker Tail (10)
     .mob Scorpid Worker
@@ -1995,6 +1995,13 @@ step << Warlock
     .target Kitha
     .money <0.01
     .train 7799,1
+step << Orc Rogue
+    .xp 10 >>Grind to level 10 (Therzok needs it)
+step << Orc Rogue
+    .goto 1411/1,-4710.94,268.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
+    .accept 1859 >>Accept Therzok
+    .target Kaplak
 step << Undead Priest
     .goto 1411/1,-4831.50,295.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
@@ -2028,12 +2035,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Takrin Pathseeker|r
     .accept 840 >>Accept Conscript of the Horde
     .target Takrin Pathseeker
-step << Orc Rogue
-    .goto 1411/1,-4710.94,268.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
-    .accept 1859 >>Accept Therzok
-    .target Kaplak
-    .xp <10,1
 step
     #loop
     .goto 1411/1,-4977.96,745.90,0
@@ -2089,12 +2090,12 @@ step
     .target Margoz
     .isQuestTurnedIn 828 --any of: Margoz
 step
-    #completewith Along149
+    #completewith Along150
     >>As you go: Kill |cRXP_ENEMY_Dustwind Savages|r. |cRXP_WARN_Anything left is finished later|r
     .complete 835,1 --Dustwind Savage slain (12)
     .mob Dustwind Savage
 step
-    #label Along149
+    #label Along150
     #loop
     .goto 1411/1,-4724.16,943.30,0
     .goto 1411/1,-4724.16,943.30,40,0
@@ -2181,13 +2182,13 @@ step
     .target Rezlak
     .isOnQuest 97282
 step
-    #completewith Along156
+    #completewith Along157
     >>As you go: Kill |cRXP_ENEMY_Burning Blade Fanatics|r and |cRXP_ENEMY_Burning Blade Apprentices|r. Loot them for |cRXP_LOOT_Lieutenant's Insignia|r. |cRXP_WARN_Anything left is finished later|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
 step
-    #label Along156
+    #label Along157
     .goto 1411/1,-4744.25,1497.43
     >>Kill |cRXP_ENEMY_Gazz'uz|r and loot |cRXP_LOOT_Eye of Burning Shadow|r. Use it to start the quest
     .collect 4903,1,832 --Eye of Burning Shadow (1)
@@ -2243,6 +2244,11 @@ step
     #completewith next
     .zone 1454 >>Travel to Orgrimmar
     .zoneskip 1454
+step << Orc Rogue
+    .goto 1454/1,-4279.93,1772.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
+    .turnin 1859 >>Turn in Therzok
+    .target Therzok
 step << Tauren Hunter
     .xp 10 >>Grind to level 10 (The Hunter's Path needs it)
 step << Tauren Hunter
@@ -2378,11 +2384,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Misha Tor'kren|r
     .turnin 816 >>Turn in Lost But Not Forgotten
     .target Misha Tor'kren
-step << Orc Rogue
-    .goto 1411/1,-4710.94,268.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
-    .accept 1859 >>Accept Therzok
-    .target Kaplak
 step
     .goto 1411/1,-4724.69,287.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
@@ -2444,11 +2445,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .complete 5727,1 --Neeru Fireblade
     .target Neeru Fireblade
-step << Orc Rogue
-    .goto 1454/1,-4279.93,1772.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
-    .turnin 1859 >>Turn in Therzok
-    .target Therzok
 step << Skyborne
     .goto 1454/1,-4162.26,1934.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'jin|r
@@ -2631,7 +2627,7 @@ step << Orc Warlock
     .turnin 1504 >>Turn in The Binding
     .target Gan'rul Bloodeye
     .isQuestComplete 1504
-step
+step << Mage
     .goto 1454/1,-4224.67,1472.41
     .trainer >> Train your class spells
 step << Orc/Troll
@@ -2653,7 +2649,7 @@ step << Orc/Troll
     .turnin 6385 >>Turn in Doras the Wind Rider Master
     .target Doras
     .isOnQuest 6385
-step
+step << Mage
     >>Run up to the Flight Master. Do NOT fly anywhere
     .goto 1454/1,-4313.46,1676.25
     .fp Orgrimmar >> Get the Orgrimmar flight path << Undead

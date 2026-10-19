@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "55-60 Eastern Plaguelands",
-  "saved": "2026-10-17 13:27",
+  "saved": "2026-10-18 23:55",
   "levels": "RestedXP",
   "parts": [
     {
@@ -28,7 +28,7 @@
         "turnin:5503 @1423:-5337.83,2255.75  TurnIn Argent Dawn Commission",
         "turnin:6030 @1423:-5337.83,2255.75  TurnIn Duke Nicholas Zverenhoff",
         "turnin:5241 @1423:-5340.84,2257.19  TurnIn Uncle Carlin",
-        {"lines":[".goto 1423/0,-5768.04,1992.31",">>Talk to |cRXP_FRIENDLY_Khaelyn|r",".fp Light's Hope Chapel >> Get the Light's Hope Chapel flight path",".target Khaelyn Steelwing"],"from":"RestedXP: 52-60 ADV Plaguelands Mage AoE"},
+        {"lines":[".goto 1423/0,-5768.04,1992.31",">>Talk to |cRXP_FRIENDLY_Khaelyn|r",".fp Light's Hope Chapel >> Get the Light's Hope Chapel flight path",".target Khaelyn Steelwing"],"tag":"Mage","from":"RestedXP: 52-60 ADV Plaguelands Mage AoE"},
         "accept:5211 @1423:-5340.84,2257.19  Accept Defenders of Darrowshire",
         "turnin:8859 @1423:-5349.45,2303.91  TurnIn Secrets of the Colossus - Zora",
         "turnin:5462 @1423:-5349.02,2307.35  TurnIn The Dying, Ras Frostwhisper",

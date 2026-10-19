@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "55-60 Silithus",
-  "saved": "2026-10-17 13:28",
+  "saved": "2026-10-18 23:56",
   "levels": "RestedXP",
   "parts": [
     {
@@ -57,8 +57,8 @@
         "obj:8310:3 @1451:646.4,-7791.11  Objective Breaking the Code / Hive'Regal Silithid Brain (1)",
         "turnin:8308 @1451:1099.58,-8012.95  TurnIn Brann Bronzebeard's Lost Letter",
         "obj:8304:2 @1451:1099.58,-8012.95  Objective Dearest Natalia / Rutgar Glyphshaper",
-        "turnin:8310 @1451:1115.95,-8022.48  TurnIn Breaking the Code",
         "obj:8304:1 @1451:1115.95,-8022.48  Objective Dearest Natalia / Frankal Stonebridge",
+        "turnin:8310 @1451:1115.95,-8022.48  TurnIn Breaking the Code",
         "obj:8283:1 @1451:967.56,-8102.62  Objective Wanted - Deathclasp, Terror of the Sands / Deathclasp's Pincer (1)",
         "accept:8279 @1451:197.05,-7578.8  Accept The Twilight Lexicon",
         "obj:8278:1 @1451:1054.3,-7844.77  Objective Noggle's Last Hope / Stonelash Flayer Stinger (3)",

@@ -231,7 +231,7 @@ step << Human
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Lewis|r
     .accept 6181 >>Accept A Swift Message
     .target Quartermaster Lewis
-step
+step << Human Mage
     .goto 1436/0,1021.60,-10500.61
     .vendor >>vendor trash
     .target Quartermaster Lewis
@@ -242,7 +242,7 @@ step << Human
     .turnin 6181 >>Turn in A Swift Message
     .accept 6281 >>Accept Continue to Stormwind
     .target Thor
-step
+step << Human Mage
     .goto 1436/0,1035.67,-10627.33
     .fp Sentinel Hill >> Get the Sentinel Hill flight path
     >>Talk to |cRXP_FRIENDLY_Thor|r
@@ -562,6 +562,11 @@ step
     .turnin 92744 >>Turn in Murloc Gills
     .target Alba Fairmoon
     .isOnQuest 92744
+step
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fp Westfall >> Get the Westfall flight path
+    .target Thor
 step << Shaman
     .goto 1436/0,1421.72,-10797.20
     >>Click the |cRXP_PICK_Forgotten Shrine|r
@@ -583,6 +588,15 @@ step
     .complete 13,2 --Defias Looter slain (15)
     .mob Defias Looter
     .isOnQuest 13
+step << Rogue
+    .goto 1436/0,619.52,-11035.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Kearnen|r
+    .turnin 2360 >>Turn in Mathias and the Defias
+    .target Agent Kearnen
+    .isOnQuest 2360
+step << !Dwarf Rogue
+    .collect 6452,1 >> Craft an |T134437:0|t[Anti-Venom]
+    .train 7934,3
 step
     .goto 1436/0,1966.32,-11407.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
@@ -607,7 +621,7 @@ step
     .accept 92910 >>Accept Harvesting the Harvesters
     .use 255155
 step
-    #completewith Along49
+    #completewith Along50
     >>As you go: Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Defias Smugglers|r, |cRXP_ENEMY_Riverpaw Taskmasters|r and |cRXP_ENEMY_Harvest Watchers|r. Loot them for |cRXP_LOOT_Silverleaf|r. It can also be picked up from |cRXP_PICK_Silverleaf|r on the ground. |cRXP_WARN_Anything left is finished later|r
     .complete 92109,3 --Silverleaf (5)
     .mob Harvest Golem
@@ -615,7 +629,7 @@ step
     .mob Riverpaw Taskmaster
     .mob Harvest Watcher
 step
-    #label Along49
+    #label Along50
     #loop
     .goto 1436/0,1072.77,-10814.00,0
     .goto 1436/0,1072.77,-10814.00,40,0
@@ -690,11 +704,11 @@ step
     .turnin 92109 >>Turn in My First Alchemy Set
     .target Odd Child
 step
-    #completewith Along55
+    #completewith Along56
     >>As you go: Loot the |cRXP_PICK_Suspicious Crates|r for |cRXP_LOOT_Suspicious Industrial Supplies|r. |cRXP_WARN_Anything left is finished later|r
     .complete 92747,1 --Suspicious Industrial Supplies (8)
 step
-    #label Along55
+    #label Along56
     #loop
     .goto 1436/0,1495.57,-11052.00,0
     .goto 1436/0,1495.57,-11052.00,40,0
@@ -787,25 +801,6 @@ step
     .turnin 103 >>Turn in Keeper of the Flame
     .target Captain Grayson
 step
-    .goto 1436/0,1207.17,-9940.40
-    .xp 17+11890 >> Grind to 11890+/17700xp
-step
-    .goto 1436/0,1207.17,-9940.40
-    >>|cRXP_WARN_Skip this step if you've finished the objective of The People's Militia|r
-    .xp 17+12800 >> Grind to 12800+/17700xp
-step
-    >>Talk to |cRXP_FRIENDLY_Farmer Saldean|r and then |cRXP_FRIENDLY_Salma|r inside
-    .vendor >> Vendor Trash
-    .target +Farmer Saldean
-    .goto 1436/0,1055.27,-10128.70
-    .goto 1436/0,1041.97,-10112.13
-    .target +Salma Saldean
-step
-    .goto 1436/0,1037.42,-10628.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
-    .fp Westfall >> Get the Westfall flight path
-    .target Thor
-step
     .goto 1436/0,1662.87,-11353.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r
     .accept 92819 >>Accept Destruction in Deadmines
@@ -873,15 +868,6 @@ step
     >>Click the |cRXP_PICK_Locked Chest|r
     .turnin 140 >>Turn in Captain Sander's Hidden Treasure
     .isOnQuest 140
-step << Rogue
-    .goto 1436/0,619.52,-11035.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Kearnen|r
-    .turnin 2360 >>Turn in Mathias and the Defias
-    .target Agent Kearnen
-    .isOnQuest 2360
-step << !Dwarf Rogue
-    .collect 6452,1 >> Craft an |T134437:0|t[Anti-Venom]
-    .train 7934,3
 step << Human Paladin/Dwarf Paladin
     .goto 1436/0,1557.52,-11482.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daphne Stilwell|r
@@ -907,7 +893,7 @@ RXPGuides.RegisterGuide([[
 #subweight -10
 #name 16-17 Westfall
 --RouteBuilder:next
-#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Daryl the Youngling
+#next Zone Routes (Alliance)\10-15 Darkshore: around Thundris Windweaver;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Marek Ironheart
 
 step
     .goto 1436/0,1045.12,-10508.80
@@ -1100,7 +1086,7 @@ step
     >>|cRXP_FRIENDLY_Stranglethorn Vale|r: Of Mice and Milk
     >>|cRXP_FRIENDLY_The Barrens|r: ... and that note you found
 step
-    +|cRXP_WARN_Suggested next zones at level 16|r: |cRXP_FRIENDLY_Darkshore|r (about 1.6 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 0.9 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Daryl the Youngling). Completing this step loads the guide for Darkshore --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 16|r: |cRXP_FRIENDLY_Darkshore|r (about 1.6 levels of quests, starting around Thundris Windweaver), |cRXP_FRIENDLY_Zephras Isle|r (about 0.9 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.7 levels of quests, starting around Marek Ironheart). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
     +|cRXP_WARN_The rest of Westfall is planned from level 19.|r Load its guide for level 19 then
 ]])

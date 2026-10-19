@@ -993,7 +993,8 @@ step << Tauren Druid
     .isOnQuest 6127
 step
     #loop
-    .goto 1413/1,-1447.64,533.53,0
+    .goto 1413/1,-1380.76,475.42,0
+    .goto 1413/1,-1380.76,475.42,40,0
     .goto 1413/1,-1447.64,533.53,40,0
     .goto 1413/1,-1405.08,558.52,40,0
     .goto 1413/1,-1347.32,553.12,40,0
@@ -1002,7 +1003,6 @@ step
     .goto 1413/1,-1151.75,550.42,40,0
     .goto 1413/1,-1220.66,503.80,40,0
     .goto 1413/1,-1310.84,420.70,40,0
-    .goto 1413/1,-1380.76,475.42,40,0
     >>Kill |cRXP_ENEMY_Witchwing Slayers|r. Loot them for |cRXP_LOOT_Harpy Lieutenant Ring|r
     .complete 875,1 --Harpy Lieutenant Ring (6)
     .mob Witchwing Slayer
@@ -1198,7 +1198,7 @@ step
     .mob Sunscale Scytheclaw
     .mob Ishamuhale
     .mob Takk the Leaper
-step
+step << Mage
     .goto 1413/1,-1886.42,-2387.20
     .fp Camp Taurajo >> Get the Camp Taurajo flight path
     .fly Crossroads >>Fly to Crossroads
@@ -1483,7 +1483,7 @@ step
     .goto 1413/1,-2372.82,-608.96
     >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_Secrets of the Dreamers|r
     .complete 78143,1 --Secrets of the Dreamers (1)
-step
+step << Mage
     .goto 1413/1,-3771.22,-894.07
     .fp Ratchet >> Get the Ratchet flight path
 step

@@ -139,7 +139,7 @@ step
     .turnin 5241 >>Turn in Uncle Carlin
     .target Carlin Redpath
     .isOnQuest 5241
-step
+step << Mage
     .goto 1423/0,-5768.04,1992.31
     >>Talk to |cRXP_FRIENDLY_Khaelyn|r
     .fp Light's Hope Chapel >> Get the Light's Hope Chapel flight path

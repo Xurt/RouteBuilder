@@ -60,31 +60,20 @@ step
     .target Brewmeister Bilger
     .isOnQuest 647
 step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r
+    .goto 1424/0,-512.15,-715.14
+    .fp Southshore >>Get the Southshore Flight Path
+    .target Darla Harris
+step << Hunter
+    .goto 1424/0,-744.53,-747.73
+    >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Moss Creeper|r to tame it|r
+    .train 17264 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 4)]
+step
     .goto 1424/0,-551.57,-817.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r
     .turnin 538 >>Turn in Southshore
     .target Loremaster Dibbs
     .isOnQuest 538
-step
-    .goto 1424/0,-551.57,-817.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r
-    .accept 540 >>Accept Preserving Knowledge
-    .target Loremaster Dibbs
-    .isQuestTurnedIn 538 --any of: Southshore
-    .xp <20,1
-step
-    .goto 1424/0,-512.21,-715.09
-    >>Talk to |cRXP_FRIENDLY_Darla|r
-    .fp Southshore >> Get the Southshore flight path
-    .fly Menethil >> Fly to Menethil
-    .target Darla Harris
-    .zoneskip Wetlands
-step
-    .goto 1424/0,-610.77,-793.81
-    >>Talk to |cRXP_FRIENDLY_Robert|r
-    .vendor 3543 >> Vendor Trash. Repair
-    .target Robert Aebischer
-    .isOnQuest 511
 step
     .goto 1424/0,-551.57,-817.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r
@@ -109,6 +98,13 @@ step
     .turnin 525 >>Turn in Further Mysteries
     .target Magistrate Henry Maleb
     .isOnQuest 525
+step
+    .goto 1424/0,-551.57,-817.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r
+    .accept 540 >>Accept Preserving Knowledge
+    .target Loremaster Dibbs
+    .isQuestTurnedIn 538 --any of: Southshore
+    .xp <20,1
 step
     .goto 1424/0,-551.57,-817.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r
@@ -147,6 +143,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
     .accept 505 >>Accept Syndicate Assassins
     .target Magistrate Henry Maleb
+step << Hunter
+    .goto 1424/0,-501.33,-777.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarah Raycroft|r upstairs
+    .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if necessary|
+    .target Sarah Raycroft
 step
     .goto 1424/0,-473.81,-861.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
@@ -197,16 +198,26 @@ RXPGuides.RegisterGuide([[
 #next Zone Routes (Alliance)\30-31 Wetlands
 
 step
-    .goto 1424/0,-583.57,-849.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Kelly|r
-    .accept 98463 >>Accept Talk of the Town
-    .target Barkeep Kelly
+    .goto 1424/0,-580.05,-845.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Farren Orinelle|r
+    .accept 536 >>Accept Down the Coast
+    .target Lieutenant Farren Orinelle
+step
+    .goto 1424/0,-610.77,-793.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darren Malvew|r
+    .accept 564 >>Accept Costly Menace
+    .target Darren Malvew
 step
     .goto 1424/0,-601.49,-853.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brewmeister Bilger|r
     .turnin 98071 >>Turn in Brewer's Trade
     .target Brewmeister Bilger
     .isQuestComplete 98071
+step
+    .goto 1424/0,-583.57,-849.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Kelly|r
+    .accept 98463 >>Accept Talk of the Town
+    .target Barkeep Kelly
 step
     .goto 1424/0,-570.77,-857.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Anderson|r
@@ -223,87 +234,6 @@ step
     .accept 92432 >>Accept An Alarming Request
     .target Emissary Jacques
     .xp <30,1
-step
-    .goto 1424/0,-535.25,-835.41
-    >>Kill |cRXP_ENEMY_Shadowy Assassin|r and loot |cRXP_LOOT_Assassin's Contract|r. Use it to start the quest
-    .collect 3668,1,522 --Assassin's Contract (1)
-    .accept 522 >>Accept Assassin's Contract
-    .use 3668
-    .mob Shadowy Assassin
-step
-    .goto 1424/0,-473.81,-861.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
-    .turnin 522 >>Turn in Assassin's Contract while you are here
-    .isQuestComplete 522
-    .target Magistrate Henry Maleb
-step
-    .goto 1424/0,-516.37,-852.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Redpath|r
-    .accept 500 >>Accept Crushridge Bounty
-    .target Marshal Redpath
-step
-    .goto 1424/0,-512.21,-715.09
-    .fp Southshore >> Get the Southshore flight path
-    .fly Menethil >> Fly to Menethil
-step
-    .goto 1424/0,-473.81,-861.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
-    .turnin 522 >>Turn in Assassin's Contract
-    .target Magistrate Henry Maleb
-step
-    .goto 1424/0,-479.57,-880.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emissary Jacques|r
-    .accept 92432 >>Accept An Alarming Request
-    .target Emissary Jacques
-    .xp <30,1
-step
-    .goto 1424/0,-610.77,-793.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darren Malvew|r
-    .accept 564 >>Accept Costly Menace
-    .target Darren Malvew
-step
-    .goto 1424/0,-419.09,-670.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain McManus|r
-    .turnin 98059 >>Turn in Hillsbrad's Hoard
-    .target Captain McManus
-    .isOnQuest 98059
-step
-    .goto 1424/0,-174.93,-125.23
-    >>Kill |cRXP_ENEMY_Mountain Lions|r
-    .complete 564,1 --Mountain Lion slain (8)
-    .mob Mountain Lion
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Anderson's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .goto 1424/0,-551.57,-817.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r
-    .accept 514 >>Accept Letter to Stormpike
-    .target Loremaster Dibbs
-    .isQuestTurnedIn 511 --any of: Encrypted Letter
-    .xp <30,1
-step
-    .goto 1424/0,-473.81,-861.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
-    .turnin 505 >>Turn in Syndicate Assassins
-    .target Magistrate Henry Maleb
-    .isQuestComplete 505
-step
-    .goto 1424/0,-479.57,-880.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emissary Jacques|r
-    .accept 92432 >>Accept An Alarming Request
-    .target Emissary Jacques
-    .xp <30,1
-step
-    #completewith next
-    .hs >>Hearth to Innkeeper Anderson's inn. |cRXP_WARN_Walk instead if you are already nearby|r
-    .cooldown item,6948,>0,1
-step
-    .goto 1424/0,-580.05,-845.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Farren Orinelle|r
-    .accept 536 >>Accept Down the Coast
-    .target Lieutenant Farren Orinelle
 step
     #loop
     .goto 1424/0,-489.17,-974.08,0
@@ -347,6 +277,10 @@ step
     .mob Torn Fin Oracle
     .mob Torn Fin Tidehunter
 step
+    #completewith next
+    .hs >>Hearth to Innkeeper Anderson's inn. |cRXP_WARN_Walk instead if you are already nearby|r
+    .cooldown item,6948,>0,1
+step
     .goto 1424/0,-580.05,-845.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Farren Orinelle|r
     .turnin 559 >>Turn in Farren's Proof
@@ -355,9 +289,33 @@ step
 step
     .goto 1424/0,-516.37,-852.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Redpath|r
+    .turnin 560 >>Turn in Farren's Proof while you are here
+    .isQuestComplete 560
+    .target Marshal Redpath
+step
+    .goto 1424/0,-535.25,-835.41
+    >>Kill |cRXP_ENEMY_Shadowy Assassin|r and loot |cRXP_LOOT_Assassin's Contract|r. Use it to start the quest
+    .collect 3668,1,522 --Assassin's Contract (1)
+    .accept 522 >>Accept Assassin's Contract
+    .use 3668
+    .mob Shadowy Assassin
+step
+    .goto 1424/0,-473.81,-861.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
+    .turnin 522 >>Turn in Assassin's Contract while you are here
+    .isQuestComplete 522
+    .target Magistrate Henry Maleb
+step
+    .goto 1424/0,-516.37,-852.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Redpath|r
     .turnin 560 >>Turn in Farren's Proof
     .accept 561 >>Accept Farren's Proof
     .target Marshal Redpath
+step
+    .goto 1424/0,-473.81,-861.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
+    .turnin 522 >>Turn in Assassin's Contract
+    .target Magistrate Henry Maleb
 step
     .xp 30 >>Grind to level 30 (An Alarming Request needs it)
 step
@@ -395,16 +353,24 @@ step
     .turnin 562 >>Turn in Stormwind Ho!
     .accept 563 >>Accept Reassignment
     .target Lieutenant Farren Orinelle
-step << Hunter
-    .goto 1424/0,-501.33,-777.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarah Raycroft|r upstairs
-    .vendor >> |cRXP_BUY_Restock on|r |T132382:0|t[Razor Arrows] |cRXP_BUY_if necessary|
-    .target Sarah Raycroft
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r
-    .goto 1424/0,-512.15,-715.14
-    .fp Southshore >>Get the Southshore Flight Path
-    .target Darla Harris
+    .goto 1424/0,-419.09,-670.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain McManus|r
+    .turnin 98059 >>Turn in Hillsbrad's Hoard
+    .target Captain McManus
+    .isOnQuest 98059
+step
+    .goto 1424/0,-174.93,-125.23
+    >>Kill |cRXP_ENEMY_Mountain Lions|r
+    .complete 564,1 --Mountain Lion slain (8)
+    .mob Mountain Lion
+step
+    .goto 1424/0,-551.57,-817.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r
+    .accept 514 >>Accept Letter to Stormpike
+    .target Loremaster Dibbs
+    .isQuestTurnedIn 511 --any of: Encrypted Letter
+    .xp <30,1
 step
     .goto 1424/0,-593.81,-851.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Jessen|r
@@ -431,17 +397,32 @@ step
     .turnin 555 >>Turn in Soothing Turtle Bisque
     .target Chef Jessen
 step
-    .goto 1424/0,-516.37,-852.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Redpath|r
-    .turnin 500 >>Turn in Crushridge Bounty
-    .target Marshal Redpath
-    .isQuestComplete 500
+    .goto 1424/0,-473.81,-861.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
+    .turnin 505 >>Turn in Syndicate Assassins
+    .target Magistrate Henry Maleb
+    .isQuestComplete 505
 step
     .goto 1424/0,-610.77,-793.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darren Malvew|r
     .turnin 564 >>Turn in Costly Menace
     .target Darren Malvew
     .isQuestComplete 564
+step
+    .goto 1424/0,-516.37,-852.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Redpath|r
+    .accept 500 >>Accept Crushridge Bounty
+    .target Marshal Redpath
+step << Mage
+    .goto 1424/0,-512.21,-715.09
+    .fp Southshore >> Get the Southshore flight path
+    .fly Menethil >> Fly to Menethil
+step
+    .goto 1424/0,-516.37,-852.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Redpath|r
+    .turnin 500 >>Turn in Crushridge Bounty
+    .target Marshal Redpath
+    .isQuestComplete 500
 step
     +|cRXP_WARN_That is all of Hillsbrad Foothills for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Hints of a New Plague?
@@ -466,41 +447,11 @@ RXPGuides.RegisterGuide([[
 #name 33-34 Hillsbrad Foothills
 
 step
-    .goto 1424/0,-419.09,-670.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain McManus|r
-    .turnin 98059 >>Turn in Hillsbrad's Hoard
-    .target Captain McManus
-    .isOnQuest 98059
-step
-    .goto 1424/0,-174.93,-125.23
-    >>Kill |cRXP_ENEMY_Mountain Lions|r
-    .complete 564,1 --Mountain Lion slain (8)
-    .mob Mountain Lion
-    .isOnQuest 564
-step
-    .goto 1424/0,-610.77,-793.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darren Malvew|r
-    .turnin 564 >>Turn in Costly Menace
-    .target Darren Malvew
-    .isQuestComplete 564
-step
     .goto 1424/0,-601.49,-853.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brewmeister Bilger|r
     .turnin 98071 >>Turn in Brewer's Trade
     .target Brewmeister Bilger
     .isQuestComplete 98071
-step
-    .goto 1424/0,-516.37,-852.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Redpath|r
-    .turnin 500 >>Turn in Crushridge Bounty
-    .target Marshal Redpath
-    .isQuestComplete 500
-step
-    .goto 1424/0,-473.81,-861.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
-    .turnin 505 >>Turn in Syndicate Assassins
-    .target Magistrate Henry Maleb
-    .isQuestComplete 505
 step
     .goto 1424/0,-515.09,-784.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartolo Ginsetti|r
@@ -518,6 +469,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy |cRXP_LOOT_Fine Thread|r from |cRXP_FRIENDLY_Micha Yance|r
     .complete 565,2 --Fine Thread (1)
     .target Micha Yance
+step
+    .goto 1424/0,-419.09,-670.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain McManus|r
+    .turnin 98059 >>Turn in Hillsbrad's Hoard
+    .target Captain McManus
+    .isOnQuest 98059
+step
+    .goto 1424/0,-174.93,-125.23
+    >>Kill |cRXP_ENEMY_Mountain Lions|r
+    .complete 564,1 --Mountain Lion slain (8)
+    .mob Mountain Lion
+    .isOnQuest 564
 step
     .goto 1424/0,-515.09,-784.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartolo Ginsetti|r
@@ -549,6 +512,30 @@ step
     .complete 565,1 --Bolt of Woolen Cloth (1)
     .mob Cave Yeti
     .mob Ferocious Yeti
+step
+    .goto 1424/0,-473.81,-861.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Henry Maleb|r
+    .turnin 505 >>Turn in Syndicate Assassins
+    .target Magistrate Henry Maleb
+    .isQuestComplete 505
+step
+    .goto 1424/0,-610.77,-793.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darren Malvew|r
+    .turnin 564 >>Turn in Costly Menace
+    .target Darren Malvew
+    .isQuestComplete 564
+step << Mage
+    .goto 1424/0,-610.77,-793.81
+    >>Talk to |cRXP_FRIENDLY_Robert|r
+    .vendor 3543 >> Vendor Trash. Repair
+    .target Robert Aebischer
+    .isOnQuest 511
+step
+    .goto 1424/0,-516.37,-852.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Redpath|r
+    .turnin 500 >>Turn in Crushridge Bounty
+    .target Marshal Redpath
+    .isQuestComplete 500
 step
     +|cRXP_WARN_End of the Hillsbrad Foothills route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Crystal in the Mountains

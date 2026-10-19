@@ -37,6 +37,12 @@ step << NightElf
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .target Ariena Stormfeather
 step
+    .goto 1433/0,-2268.46,-9279.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .turnin 345 >>Turn in Ink Supplies
+    .target Foreman Oslow
+    .isOnQuest 345
+step
     .goto 1433/0,-2243.06,-9259.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
     .accept 1097 >>Accept Elmore's Task
@@ -60,6 +66,11 @@ step
     .accept 120 >>Accept Messenger to Stormwind
     .target Magistrate Solomon
 step
+    .goto 1433/0,-2145.59,-9211.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Daniels|r
+    .accept 116 >>Accept Dry Times
+    .target Barkeep Daniels
+step
     .goto 1433/0,-2148.63,-9216.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darcy|r
     .accept 129 >>Accept A Free Lunch
@@ -76,16 +87,6 @@ step
     .turnin 65 >>Turn in The Defias Brotherhood
     .target Wiley the Black
     .isOnQuest 65
-step
-    .goto 1433/0,-2145.59,-9231.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wiley the Black|r
-    .accept 132 >>Accept The Defias Brotherhood
-    .target Wiley the Black
-    .isQuestTurnedIn 65 --any of: The Defias Brotherhood
-    .xp <14,1
-step
-    .goto 1433/0,-2157.18,-9223.81
-    .vendor >> Buy level 15 drink
 step << Rogue
     .goto 1433/0,-2179.89,-9328.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
@@ -167,6 +168,19 @@ step
     .turnin 131 >>Turn in Delivering Daffodils
     .target Darcy
 step
+    .goto 1433/0,-2145.59,-9211.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Daniels|r
+    .turnin 116 >>Turn in Dry Times
+    .target Barkeep Daniels
+    .isQuestComplete 116
+step
+    .goto 1433/0,-2145.59,-9231.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wiley the Black|r
+    .accept 132 >>Accept The Defias Brotherhood
+    .target Wiley the Black
+    .isQuestTurnedIn 65 --any of: The Defias Brotherhood
+    .xp <14,1
+step
     .goto 1433/0,-2237.85,-9443.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 246 >>Turn in Assessing the Threat
@@ -195,76 +209,17 @@ step
     .isQuestTurnedIn 121 --any of: Messenger to Stormwind
     .xp <14,1
 step
-    .hs >> Hearth to Stormwind City
-    .zoneskip Stormwind City
-step
-    .goto 1433/0,-2234.89,-9435.060
-    >>Talk to |cRXP_FRIENDLY_Ariena|r
-    .fp Redridge Mountains >> Get the Redridge Mountains flight path
-step
-    .goto 1433/0,-2268.46,-9279.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
-    .turnin 345 >>Turn in Ink Supplies
-    .target Foreman Oslow
-    .isOnQuest 345
-step
-    .goto 1433/0,-2145.59,-9211.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Daniels|r
-    .accept 116 >>Accept Dry Times
-    .target Barkeep Daniels
-step
-    .goto 1433/0,-2145.59,-9211.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Daniels|r
-    .turnin 116 >>Turn in Dry Times
-    .target Barkeep Daniels
-    .isQuestComplete 116
-step
-    .goto 1433/0,-2240.10,-9248.14
-    >>Talk to |cRXP_FRIENDLY_Dorin|r
-    .vendor >> Vendor Trash
-    .target Dorin Songblade
-    .isOnQuest 89
-step
-    .goto 1433/0,-1982.21,-8929.740,20,0
-    .goto 1433/0,-2040.17,-8918.45,20,0
-    .goto 1433/0,-2046.03,-8793.06,20,0
-    .goto 1433/0,-2009.56,-8766.85,20,0
-    .goto 1433/0,-1979.38,-8792.62,20,0
-    .goto 1433/0,-1919.47,-8822.30,20,0
-    .goto 1433/0,-1950.29,-8858.07,20,0
-    .goto 1433/0,-1919.25,-8879.64,20,0
-    .goto 1433/0,-1982.21,-8929.740,20,0
-    .xp 21+14365 >> Grind to 14365+/25200xp
-step
-    .goto 1433/0,-1982.21,-8929.740,20,0
-    .goto 1433/0,-2040.17,-8918.45,20,0
-    .goto 1433/0,-2046.03,-8793.06,20,0
-    .goto 1433/0,-2009.56,-8766.85,20,0
-    .goto 1433/0,-1979.38,-8792.62,20,0
-    .goto 1433/0,-1919.47,-8822.30,20,0
-    .goto 1433/0,-1950.29,-8858.07,20,0
-    .goto 1433/0,-1919.25,-8879.64,20,0
-    .goto 1433/0,-1982.21,-8929.740,20,0
-    .xp 21+15715 >> Grind to 15715+/25200xp
-step
-    .goto 1433/0,-2158.69,-9234.38,0,0
-    .vendor >> Vendor Trash. You can sell the |T134708:0|t[Mining Pick] now if you wish
-    .target Kimberly Hiett
-step << !Human !Warlock
-    .goto 1433/0,-2345.31,-9435.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
-    .fp Redridge Mountains >> Get the Redridge Mountains flight path
-    .target Ariena Stormfeather
-step << Hunter
-    .goto 1433/0,-2345.31,-9435.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
-    .fp Redridge Mountains >> Get the Redridge Mountains flight path
-    .target Ariena Stormfeather
-step
     .goto 1433/0,-3404.89,-9253.06
     >>Click the |cRXP_PICK_Old Lion Statue|r
     .turnin 94 >>Turn in A Watchful Eye
     .isOnQuest 94
+step
+    .goto 1433/0,-3320.01,-9176.90,60,0
+    .goto 1433/0,-3419.87,-9106.10,60,0
+    .goto 1433/0,-3432.90,-9245.10,60,0
+    .goto 1433/0,-3366.25,-9187.18,60,0
+    .goto 1433/0,-3364.08,-9100.74
+    .xp 28-8910
 step
     +|cRXP_WARN_That is all of Redridge Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elwynn Forest|r: The Price of Shoes
@@ -286,8 +241,11 @@ RXPGuides.RegisterGuide([[
 #subweight -14
 #name 17-18 Redridge Mountains: around Foreman Oslow
 --RouteBuilder:next
-#next Zone Routes (Alliance)\17-19 Darkshore: around Archaeologist Hollee;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Daryl the Youngling
+#next Zone Routes (Alliance)\17-19 Darkshore: around Archaeologist Hollee;Zone Routes (Alliance)\11-15 Zephras Isle: around Elegael Thornpaw;Zone Routes (Alliance)\14-16 Loch Modan: around Marek Ironheart
 
+step << Mage
+    .goto 1433/0,-2234.89,-9435.060
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
 step
     .goto 1433/0,-2268.46,-9279.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
@@ -298,6 +256,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
     .accept 127 >>Accept Selling Fish
     .target Dockmaster Baren
+step
+    .goto 1433/0,-2145.59,-9211.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Daniels|r
+    .turnin 116 >>Turn in Dry Times
+    .target Barkeep Daniels
+    .isQuestComplete 116
 step
     .goto 1433/0,-2063.10,-9209.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
@@ -518,6 +482,9 @@ step
     .turnin 124 >>Turn in A Baying of Gnolls
     .target Verner Osgood
     .isOnQuest 124
+step << Mage
+    .goto 1433/0,-2157.18,-9223.81
+    .vendor >> Buy level 15 drink
 step
     .goto 1433/0,-2243.06,-9259.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
@@ -529,14 +496,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
     .turnin 89 >>Turn in The Everstill Bridge
     .target Foreman Oslow
+step << !Human !Warlock
+    .goto 1433/0,-2345.31,-9435.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
+    .target Ariena Stormfeather
+step << Hunter
+    .goto 1433/0,-2345.31,-9435.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path
+    .target Ariena Stormfeather
 step
-    .goto 1433/0,-2145.59,-9211.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Daniels|r
-    .turnin 116 >>Turn in Dry Times
-    .target Barkeep Daniels
-    .isQuestComplete 116
-step
-    +|cRXP_WARN_Suggested next zones at level 17|r: |cRXP_FRIENDLY_Darkshore|r (about 0.9 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.6 levels of quests, starting around Daryl the Youngling). Completing this step loads the guide for Darkshore --RouteBuilder:next
+    +|cRXP_WARN_Suggested next zones at level 17|r: |cRXP_FRIENDLY_Darkshore|r (about 0.9 levels of quests, starting around Archaeologist Hollee), |cRXP_FRIENDLY_Zephras Isle|r (about 0.7 levels of quests, starting around Elegael Thornpaw), |cRXP_FRIENDLY_Loch Modan|r (about 0.6 levels of quests, starting around Marek Ironheart). Completing this step loads the guide for Darkshore --RouteBuilder:next
 step
     +|cRXP_WARN_The rest of Redridge Mountains is planned from level 20.|r Load its guide for level 20 then
 ]])
@@ -560,11 +531,11 @@ step
     .isQuestTurnedIn 144 --any of: Messenger to Westfall
     .xp <18,1
 step
-    .goto 1433/0,-2172.51,-9261.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
-    .accept 150 >>Accept Murloc Poachers
-    .target Dockmaster Baren
-    .xp <20,1
+    .goto 1433/0,-2145.59,-9211.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Daniels|r
+    .turnin 116 >>Turn in Dry Times
+    .target Barkeep Daniels
+    .isQuestComplete 116
 step << Warrior
     .goto 1433/0,-2147.76,-9222.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorus Barleybrew|r
@@ -572,11 +543,23 @@ step << Warrior
     .target Yorus Barleybrew
     .xp <20,1
 step
+    .goto 1433/0,-2172.51,-9261.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
+    .accept 150 >>Accept Murloc Poachers
+    .target Dockmaster Baren
+    .xp <20,1
+step
     .goto 1433/0,-2297.98,-9284.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
     .accept 20 >>Accept Blackrock Menace
     .accept 98387 >>Accept Blackrock Blockade
     .target Marshal Marris
+step << Mage
+    .goto 1433/0,-2240.10,-9248.14
+    >>Talk to |cRXP_FRIENDLY_Dorin|r
+    .vendor >> Vendor Trash
+    .target Dorin Songblade
+    .isOnQuest 89
 step
     #loop
     .goto 1433/0,-3067.33,-9709.59,0
@@ -634,6 +617,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
     .turnin 150 >>Turn in Murloc Poachers
     .target Dockmaster Baren
+step << Mage
+    .goto 1433/0,-2158.69,-9234.38,0,0
+    .vendor >> Vendor Trash. You can sell the |T134708:0|t[Mining Pick] now if you wish
+    .target Kimberly Hiett
 step << Warrior
     .xp 20 >>Grind to level 20 (The Rethban Gauntlet needs it)
 step << Warrior
@@ -652,35 +639,6 @@ step << Warrior
     .accept 1702 >>Accept The Shieldsmith
     .target Yorus Barleybrew
 step
-    .goto 1433/0,-2268.46,-9279.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
-    .accept 347 >>Accept Rethban Ore
-    .target Foreman Oslow
-    .isQuestTurnedIn 345 --any of: Ink Supplies
-    .xp <20,1
-step
-    .goto 1433/0,-2145.59,-9211.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Daniels|r
-    .turnin 116 >>Turn in Dry Times
-    .target Barkeep Daniels
-    .isQuestComplete 116
-step
-    #loop
-    .goto 1433/0,-2004.05,-8972.89,0
-    .goto 1433/0,-2004.05,-8972.89,40,0
-    .goto 1433/0,-2040.31,-8917.14,40,0
-    .goto 1433/0,-2012.30,-8871.53,40,0
-    .goto 1433/0,-2073.95,-8842.00,40,0
-    .goto 1433/0,-2032.71,-8826.50,40,0
-    .goto 1433/0,-2009.26,-8766.56,40,0
-    .goto 1433/0,-1975.62,-8822.74,40,0
-    .goto 1433/0,-1904.85,-8849.96,40,0
-    .goto 1433/0,-1945.87,-8904.98,40,0
-    >>Kill |cRXP_ENEMY_Redridge Drudgers|r. Loot them for |cRXP_LOOT_Rethban Ore|r. It can also be picked up from |cRXP_PICK_Tin Vein|r on the ground
-    .complete 347,1 --Rethban Ore (5)
-    .mob Redridge Drudger
-    .isOnQuest 347
-step
     .goto 1433/0,-2297.98,-9284.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
     .accept 115 >>Accept Shadow Magic
@@ -691,13 +649,6 @@ step
     .accept 248 >>Accept Looking Further
     .isQuestTurnedIn 94 --any of: A Watchful Eye
     .xp <20,1
-step
-    .goto 1433/0,-3320.01,-9176.90,60,0
-    .goto 1433/0,-3419.87,-9106.10,60,0
-    .goto 1433/0,-3432.90,-9245.10,60,0
-    .goto 1433/0,-3366.25,-9187.18,60,0
-    .goto 1433/0,-3364.08,-9100.74
-    .xp 28-8910
 step
     #loop
     .goto 1433/0,-3084.91,-9356.59,0
@@ -730,6 +681,29 @@ step
     .target Marshal Marris
     .isQuestComplete 98387
 step
+    .goto 1433/0,-2268.46,-9279.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .accept 347 >>Accept Rethban Ore
+    .target Foreman Oslow
+    .isQuestTurnedIn 345 --any of: Ink Supplies
+    .xp <20,1
+step
+    #loop
+    .goto 1433/0,-2004.05,-8972.89,0
+    .goto 1433/0,-2004.05,-8972.89,40,0
+    .goto 1433/0,-2040.31,-8917.14,40,0
+    .goto 1433/0,-2012.30,-8871.53,40,0
+    .goto 1433/0,-2073.95,-8842.00,40,0
+    .goto 1433/0,-2032.71,-8826.50,40,0
+    .goto 1433/0,-2009.26,-8766.56,40,0
+    .goto 1433/0,-1975.62,-8822.74,40,0
+    .goto 1433/0,-1904.85,-8849.96,40,0
+    .goto 1433/0,-1945.87,-8904.98,40,0
+    >>Kill |cRXP_ENEMY_Redridge Drudgers|r. Loot them for |cRXP_LOOT_Rethban Ore|r. It can also be picked up from |cRXP_PICK_Tin Vein|r on the ground
+    .complete 347,1 --Rethban Ore (5)
+    .mob Redridge Drudger
+    .isOnQuest 347
+step
     +|cRXP_WARN_That is all of Redridge Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Duskwood|r: Messenger to Darkshire
     >>|cRXP_FRIENDLY_Elwynn Forest|r: Rethban Ore
@@ -753,16 +727,15 @@ RXPGuides.RegisterGuide([[
 #next Zone Routes (Alliance)\23-24 Wetlands: around Captain Stoutfist
 
 step
-    .goto 1433/0,-2243.06,-9259.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
-    .accept 126 >>Accept Howling in the Hills
-    .target Verner Osgood
-    .isQuestTurnedIn 124 --any of: A Baying of Gnolls
-    .xp <15,1
-step
     .goto 1433/0,-2210.93,-9241.77
     >>Click the |cRXP_PICK_Wanted: Incinerator Gar'im|r
     .accept 95999 >>Accept WANTED: Incinerator Gar'im
+step
+    .goto 1433/0,-2145.59,-9211.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Daniels|r
+    .turnin 116 >>Turn in Dry Times
+    .target Barkeep Daniels
+    .isQuestComplete 116
 step
     .goto 1433/0,-2045.30,-9245.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
@@ -805,16 +778,15 @@ step
     .turnin 95999 >>Turn in WANTED: Incinerator Gar'im
     .target Magistrate Solomon
 step
+    .goto 1433/0,-2255.44,-9412.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Howe|r
+    .accept 128 >>Accept Blackrock Bounty
+    .target Guard Howe
+step
     .goto 1433/0,-2215.93,-9215.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r
     .accept 91 >>Accept Solomon's Law
     .target Bailiff Conacher
-step
-    .goto 1433/0,-2145.59,-9211.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barkeep Daniels|r
-    .turnin 116 >>Turn in Dry Times
-    .target Barkeep Daniels
-    .isQuestComplete 116
 step
     .goto 1433/0,-2297.98,-9284.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
@@ -822,10 +794,12 @@ step
     .target Marshal Marris
     .isQuestTurnedIn 20 --any of: Blackrock Menace
 step
-    .goto 1433/0,-2255.44,-9412.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Howe|r
-    .accept 128 >>Accept Blackrock Bounty
-    .target Guard Howe
+    .goto 1433/0,-2243.06,-9259.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+    .accept 126 >>Accept Howling in the Hills
+    .target Verner Osgood
+    .isQuestTurnedIn 124 --any of: A Baying of Gnolls
+    .xp <15,1
 step
     .goto 1433/0,-2170.99,-8884.56
     >>Kill |cRXP_ENEMY_Yowler|r and loot |cRXP_LOOT_Yowler's Paw|r
@@ -833,15 +807,31 @@ step
     .mob Yowler
     .isOnQuest 126
 step
-    #completewith Along13
-    >>As you go: Kill |cRXP_ENEMY_Shadowhide Darkweavers|r, |cRXP_ENEMY_Shadowhide Slayers|r, |cRXP_ENEMY_Shadowhide Brutes|r and |cRXP_ENEMY_Shadowhide Gnolls|r. Loot them for |cRXP_LOOT_Shadowhide Pendant|r. |cRXP_WARN_Anything left is finished later|r
+    #completewith Drop178x1
+    >>|cRXP_LOOT_Glowing Shadowhide Pendant|r can drop from |cRXP_ENEMY_Shadowhide Darkweaver|r, |cRXP_ENEMY_Shadowhide Slayer|r, |cRXP_ENEMY_Shadowhide Brute|r. Use it to start the quest if you get one
+    .collect 1962,1,178 --Glowing Shadowhide Pendant (1)
+    .accept 178 >>Accept Theocritus' Retrieval
+    .use 1962
+step
+    #label Drop178x1
+    #loop
+    .goto 1433/0,-3062.55,-9236.84,0
+    .goto 1433/0,-3062.55,-9236.84,40,0
+    .goto 1433/0,-3139.62,-9159.52,40,0
+    .goto 1433/0,-3183.03,-9098.57,40,0
+    .goto 1433/0,-3218.42,-9010.10,40,0
+    .goto 1433/0,-3333.91,-9100.59,40,0
+    .goto 1433/0,-3346.06,-9159.81,40,0
+    .goto 1433/0,-3290.27,-9167.34,40,0
+    .goto 1433/0,-3234.70,-9122.60,40,0
+    .goto 1433/0,-3192.15,-9213.97,40,0
+    >>Kill |cRXP_ENEMY_Shadowhide Darkweavers|r, |cRXP_ENEMY_Shadowhide Slayers|r, |cRXP_ENEMY_Shadowhide Brutes|r and |cRXP_ENEMY_Shadowhide Gnolls|r. Loot them for |cRXP_LOOT_Shadowhide Pendant|r
     .complete 91,1 --Shadowhide Pendant (10)
     .mob Shadowhide Darkweaver
     .mob Shadowhide Slayer
     .mob Shadowhide Brute
     .mob Shadowhide Gnoll
 step
-    #label Along13
     .goto 1433/0,-3078.40,-9435.21
     >>Kill |cRXP_ENEMY_Tharil'zun|r and loot |cRXP_LOOT_Tharil'zun's Head|r
     .complete 19,1 --Tharil'zun's Head (1)
@@ -874,14 +864,25 @@ step
 step
     .goto 1433/0,-2297.98,-9284.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
-    .turnin 19 >>Turn in Tharil'zun while you are here
-    .isQuestComplete 19
+    .turnin 219 >>Turn in Missing In Action while you are here
+    .isQuestComplete 219
     .target Marshal Marris
+step
+    .goto 1433/0,-2297.98,-9284.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    .turnin 19 >>Turn in Tharil'zun
+    .target Marshal Marris
+    .isOnQuest 19
 step
     .goto 1433/0,-2297.98,-9284.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
     .turnin 219 >>Turn in Missing In Action
     .target Marshal Marris
+step
+    .goto 1433/0,-2215.93,-9215.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r
+    .turnin 91 >>Turn in Solomon's Law
+    .target Bailiff Conacher
 step
     .goto 1433/0,-2243.06,-9259.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
@@ -893,42 +894,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Howe|r
     .turnin 128 >>Turn in Blackrock Bounty
     .target Guard Howe
-step
-    #completewith Drop178x1
-    >>|cRXP_LOOT_Glowing Shadowhide Pendant|r can drop from |cRXP_ENEMY_Shadowhide Darkweaver|r, |cRXP_ENEMY_Shadowhide Slayer|r, |cRXP_ENEMY_Shadowhide Brute|r. Use it to start the quest if you get one
-    .collect 1962,1,178 --Glowing Shadowhide Pendant (1)
-    .accept 178 >>Accept Theocritus' Retrieval
-    .use 1962
-step
-    #label Drop178x1
-    #loop
-    .goto 1433/0,-3062.55,-9236.84,0
-    .goto 1433/0,-3062.55,-9236.84,40,0
-    .goto 1433/0,-3139.62,-9159.52,40,0
-    .goto 1433/0,-3183.03,-9098.57,40,0
-    .goto 1433/0,-3218.42,-9010.10,40,0
-    .goto 1433/0,-3333.91,-9100.59,40,0
-    .goto 1433/0,-3346.06,-9159.81,40,0
-    .goto 1433/0,-3290.27,-9167.34,40,0
-    .goto 1433/0,-3234.70,-9122.60,40,0
-    .goto 1433/0,-3192.15,-9213.97,40,0
-    >>Kill |cRXP_ENEMY_Shadowhide Darkweavers|r, |cRXP_ENEMY_Shadowhide Slayers|r, |cRXP_ENEMY_Shadowhide Brutes|r and |cRXP_ENEMY_Shadowhide Gnolls|r. Loot them for |cRXP_LOOT_Shadowhide Pendant|r
-    .complete 91,1 --Shadowhide Pendant (10)
-    .mob Shadowhide Darkweaver
-    .mob Shadowhide Slayer
-    .mob Shadowhide Brute
-    .mob Shadowhide Gnoll
-step
-    .goto 1433/0,-2297.98,-9284.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
-    .turnin 19 >>Turn in Tharil'zun
-    .target Marshal Marris
-    .isOnQuest 19
-step
-    .goto 1433/0,-2215.93,-9215.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r
-    .turnin 91 >>Turn in Solomon's Law
-    .target Bailiff Conacher
 step
     +|cRXP_WARN_That is all of Redridge Mountains for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Elwynn Forest|r: Theocritus' Retrieval
@@ -956,6 +921,10 @@ step
     .target Marshal Marris
     .isQuestComplete 98387
 step
+    .goto 1433/0,-2213.76,-9243.36
+    >>Click the |cRXP_PICK_Wanted: Gath'Ilzogg|r
+    .accept 169 >>Accept Wanted: Gath'Ilzogg
+step
     .goto 1433/0,-2151.45,-9247.41
     >>Click the |cRXP_PICK_Wanted: Lieutenant Fangore|r
     .accept 180 >>Accept Wanted: Lieutenant Fangore
@@ -965,20 +934,6 @@ step
     .turnin 116 >>Turn in Dry Times
     .target Barkeep Daniels
     .isQuestComplete 116
-step
-    .goto 1433/0,-2213.76,-9243.36
-    >>Click the |cRXP_PICK_Wanted: Gath'Ilzogg|r
-    .accept 169 >>Accept Wanted: Gath'Ilzogg
-step
-    .goto 1433/0,-3081.87,-9382.79
-    >>Kill |cRXP_ENEMY_Gath'Ilzogg|r and loot |cRXP_LOOT_Head of Gath'Ilzogg|r
-    .complete 169,1 --Head of Gath'Ilzogg (1)
-    .mob Gath'Ilzogg
-step
-    .goto 1433/0,-2221.79,-9218.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
-    .turnin 169 >>Turn in Wanted: Gath'Ilzogg
-    .target Magistrate Solomon
 step
     .goto 1433/0,-3311.33,-9111.60
     >>Kill |cRXP_ENEMY_Lieutenant Fangore|r and loot |cRXP_LOOT_Fangore's Paw|r
@@ -997,8 +952,14 @@ step
     .mob Morganth
     .isOnQuest 249
 step
+    .goto 1433/0,-3081.87,-9382.79
+    >>Kill |cRXP_ENEMY_Gath'Ilzogg|r and loot |cRXP_LOOT_Head of Gath'Ilzogg|r
+    .complete 169,1 --Head of Gath'Ilzogg (1)
+    .mob Gath'Ilzogg
+step
     .goto 1433/0,-2221.79,-9218.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
+    .turnin 169 >>Turn in Wanted: Gath'Ilzogg
     .turnin 180 >>Turn in Wanted: Lieutenant Fangore
     .target Magistrate Solomon
 step

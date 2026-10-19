@@ -1,7 +1,7 @@
 {
   "about": "Step order RouteBuilder keeps between builds of this guide. New steps are slotted in; the rest stay where they are. Lines can be moved by hand, including the training, vendor and flight-path steps written as { \"lines\": [...] }. Delete the file, or build with --fresh, to plan the guide from scratch.",
   "guide": "25-38 Alterac Mountains",
-  "saved": "2026-10-17 13:20",
+  "saved": "2026-10-18 23:47",
   "levels": "RestedXP",
   "parts": [
     {
@@ -9,14 +9,10 @@
       "steps": [
         "accept:79363 @1416:-1470.67,250.83  Accept Silvia's Sword",
         "accept:79362 @1416:-1470.67,250.83  Accept Grant's Shield",
-        "turnin:1791 @1416:-1470.67,250.83  TurnIn The Windwatcher",
         "turnin:79360 @1416:-1470.67,250.83  TurnIn Elemental Aid",
-        {"lines":[".goto 1416/0,-710.75,501.89,120,0",".goto 1416/0,-602.39,452.80,120,0",".goto 1416/0,-536.03,363.01,120,0",".goto 1416/0,-851.59,232.35,120,0",".goto 1416/0,-710.75,501.89,120,0",".goto 1416/0,-602.39,452.80,120,0",".goto 1416/0,-536.03,363.01,120,0",".goto 1416/0,-851.59,232.35,120,0",".xp 34+56000 >> AoE Ogres and Syndicate to 34 & 56000+/62800xp",">>Keep grinding until your hearth cooldown is <8 minutes"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
-        {"lines":[".goto 1416/0,-710.75,501.89,120,0",".goto 1416/0,-602.39,452.80,120,0",".goto 1416/0,-536.03,363.01,120,0",".goto 1416/0,-851.59,232.35,120,0",".goto 1416/0,-710.75,501.89,120,0",".goto 1416/0,-602.39,452.80,120,0",".goto 1416/0,-536.03,363.01,120,0",".goto 1416/0,-851.59,232.35,120,0",".xp 36 >> AoE Cats/Syndicates/Ogre mobs to level 36",">>Start saving the Silk Cloth you get. You need 12 stacks for later"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
         "obj:503:2 @1416:-924.67,689.87  Objective Gol'dir / Rusted Iron Key (1)",
-        {"lines":[".goto 1416/0,-710.75,501.89,120,0",".goto 1416/0,-602.39,452.80,120,0",".goto 1416/0,-536.03,363.01,120,0",".goto 1416/0,-851.59,232.35,120,0",".goto 1416/0,-710.75,501.89,120,0",".goto 1416/0,-602.39,452.80,120,0",".goto 1416/0,-536.03,363.01,120,0",".goto 1416/0,-851.59,232.35,120,0",".xp 36+60000 >> Grind the Ogres and Syndicate to 36 & 60000+/71600xp",">>Keep grinding until your hearth cooldown is <8 minutes"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
-        {"lines":[".vendor >> Buy level 35 drink if needed"],"from":"RestedXP: 30-36 Arathi/Alterac AoE"},
         "obj:503:3 @1416:-912.07,683.71  Objective Gol'dir / Find where Gol'dir is being held",
+        "turnin:1791 @1416:-1470.67,250.83  TurnIn The Windwatcher",
         "obj:503:1 @1416:-895.55,683.52  Objective Gol'dir / Gol'dir",
         "turnin:503 @1416:-895.55,683.52  TurnIn Gol'dir",
         "turnin:97287 @1416:387.13,379.07  TurnIn Shrewd Negotiations"
@@ -41,7 +37,8 @@
         "accept:79364 @1416:-1470.67,250.83  Accept Eyes on the Sky",
         "turnin:96781 @1416:-1594.71,-0.43  TurnIn What's the Big Idea?",
         "turnin:96779 @1416:-1594.71,-0.43  TurnIn Syndicate Sabotage",
-        "accept:506 @1416:-895.55,683.52  Accept Blackmoore's Legacy"
+        "accept:506 @1416:-895.55,683.52  Accept Blackmoore's Legacy",
+        {"lines":[".vendor >> Buy level 35 drink if needed"],"tag":"Mage","from":"RestedXP: 30-36 Arathi/Alterac AoE"}
       ]
     },
     {

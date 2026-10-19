@@ -103,23 +103,21 @@ step
     .use 8623
 step
     #completewith Drop351x1
-    >>As you go: Kill |cRXP_ENEMY_Wastewander Bandits|r. Kill |cRXP_ENEMY_Wastewander Thiefs|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 1690,1 --Wastewander Bandit slain (10)
+    >>As you go: Kill |cRXP_ENEMY_Wastewander Thiefs|r. |cRXP_WARN_Anything left is finished later|r
     .complete 1690,2 --Wastewander Thief slain (8)
-    .mob Wastewander Bandit
     .mob Wastewander Thief
 step
     #loop
-    .goto 1446/1,-4544.36,-7257.76,0
-    .goto 1446/1,-4544.36,-7257.76,40,0
-    .goto 1446/1,-4554.71,-7291.34,40,0
-    .goto 1446/1,-4556.78,-7387.94,40,0
-    .goto 1446/1,-4606.46,-7444.06,40,0
-    .goto 1446/1,-4616.12,-7411.40,40,0
-    .goto 1446/1,-4608.53,-7381.96,40,0
-    .goto 1446/1,-4627.85,-7311.58,40,0
-    .goto 1446/1,-4629.92,-7213.14,40,0
-    .goto 1446/1,-4594.04,-7225.10,40,0
+    .goto 1446/1,-4290.44,-6952.32,0
+    .goto 1446/1,-4290.44,-6952.32,40,0
+    .goto 1446/1,-4344.26,-6984.06,40,0
+    .goto 1446/1,-4355.99,-6952.32,40,0
+    .goto 1446/1,-4380.14,-6919.66,40,0
+    .goto 1446/1,-4413.26,-6920.12,40,0
+    .goto 1446/1,-4417.40,-6955.08,40,0
+    .goto 1446/1,-4413.26,-6988.20,40,0
+    .goto 1446/1,-4387.04,-7013.96,40,0
+    .goto 1446/1,-4317.35,-7011.66,40,0
     >>Kill |cRXP_ENEMY_Wastewander Rogues|r, |cRXP_ENEMY_Wastewander Thiefs|r, |cRXP_ENEMY_Wastewander Shadow Mages|r and |cRXP_ENEMY_Wastewander Bandits|r. Loot them for |cRXP_LOOT_Wastewander Water Pouch|r
     .complete 1707,1 --Wastewander Water Pouch (5)
     .mob Wastewander Rogue
@@ -127,34 +125,18 @@ step
     .mob Wastewander Shadow Mage
     .mob Wastewander Bandit
 step
-    .goto 1446/1,-5305.43,-8030.56
-    .xp 44 >> AoE Grind to 44
-    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
-    >>Start saving the Silk Cloth and Mageweave Cloth you get. You need 12 stacks of each for later
-step
-    .goto 1446/1,-5305.43,-8030.56
-    .xp 48 >> AoE grind to 48
-    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
-step
-    .trainer >> Teleport to Orgrimmar or Undercity. Train your level 46-48 spells
-step
-    .goto 1446/1,-5305.43,-8030.56
-    .xp 52 >> AoE grind to 52
-    >>Use any Captain's Keys you get on the 2nd floor of the 2nd ship to the east
-    >>Remember to save 12 stacks of Mageweave. You'll need it for cloth turnins later
-step
     #label Drop351x1
     #loop
-    .goto 1446/1,-4627.85,-7311.58,0
-    .goto 1446/1,-4627.85,-7311.58,40,0
-    .goto 1446/1,-4608.53,-7381.96,40,0
-    .goto 1446/1,-4616.12,-7411.40,40,0
-    .goto 1446/1,-4606.46,-7444.06,40,0
-    .goto 1446/1,-4556.78,-7387.94,40,0
-    .goto 1446/1,-4554.71,-7291.34,40,0
-    .goto 1446/1,-4544.36,-7257.76,40,0
-    .goto 1446/1,-4594.04,-7225.10,40,0
-    .goto 1446/1,-4629.92,-7213.14,40,0
+    .goto 1446/1,-4355.99,-6952.32,0
+    .goto 1446/1,-4355.99,-6952.32,40,0
+    .goto 1446/1,-4290.44,-6952.32,40,0
+    .goto 1446/1,-4317.35,-7011.66,40,0
+    .goto 1446/1,-4344.26,-6984.06,40,0
+    .goto 1446/1,-4387.04,-7013.96,40,0
+    .goto 1446/1,-4413.26,-6988.20,40,0
+    .goto 1446/1,-4417.40,-6955.08,40,0
+    .goto 1446/1,-4413.26,-6920.12,40,0
+    .goto 1446/1,-4380.14,-6919.66,40,0
     >>Kill |cRXP_ENEMY_Wastewander Rogues|r, |cRXP_ENEMY_Wastewander Thiefs|r, |cRXP_ENEMY_Wastewander Shadow Mages|r and |cRXP_ENEMY_Wastewander Bandits|r. Loot them for |cRXP_LOOT_Wastewander Water Pouch|r
     .complete 379,1 --Wastewander Water Pouch (5)
     .mob Wastewander Rogue
@@ -432,6 +414,8 @@ step
     .turnin 2875 >>Turn in WANTED: Andre Firebeard
     .turnin 8366 >>Turn in Southsea Shakedown
     .target Security Chief Bilgewhizzle
+step << Mage
+    .trainer >> Teleport to Orgrimmar or Undercity. Train your level 46-48 spells
 step
     .goto 1446/1,-4849.34,-6978.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stoley|r
@@ -466,16 +450,16 @@ step
 step
     .goto 1446/1,-4834.16,-6980.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironboot|r
-    .accept 8182 >>Accept The Hand of Rastakhan
+    .accept 5065 >>Accept The Lost Tablets of Mosh'aru
     .target Prospector Ironboot
-    .isQuestTurnedIn 8181 --any of: Confront Yeh'kinya
+    .isQuestTurnedIn 3528 --any of: The God Hakkar
     .xp <40,1
 step
     .goto 1446/1,-4834.16,-6980.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironboot|r
-    .accept 5065 >>Accept The Lost Tablets of Mosh'aru
+    .accept 8182 >>Accept The Hand of Rastakhan
     .target Prospector Ironboot
-    .isQuestTurnedIn 3528 --any of: The God Hakkar
+    .isQuestTurnedIn 8181 --any of: Confront Yeh'kinya
     .xp <40,1
 step
     .goto 1446/1,-4374.62,-8852.12

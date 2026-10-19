@@ -66,12 +66,7 @@ step << Hunter
     >>|cRXP_WARN_Cast|r |T132172:0|t[Eagle Eye] |cRXP_WARN_to try and find a |cRXP_ENEMY_Plains Creeper|r. Some of their locations are marked on your map|r
     >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Plains Creeper|r to tame it|r
     .train 17265 >>|cRXP_WARN_Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 5)]
-step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Targot Jinglepocket|r
-    .goto 1417/0,-2537.07,-1227.73
-    .vendor >> |cRXP_BUY_Buy up to a stack of|r |T133969:0|t[Wild Hog Shank] |cRXP_BUY_to serve as pet food|r
-    .target Targot Jinglepocket
-step
+step << Mage
     .goto 1417/0,-2512.95,-1239.73
     .fp Refuge Pointe >> Get the Refuge Pointe flight path
 step
@@ -80,45 +75,11 @@ step
     .turnin 659 >>Turn in Hints of a New Plague?
     .target Quae
     .isOnQuest 659
-step
-    .goto 1417/0,-3138.27,-1531.81,30,0
-    .goto 1417/0,-3074.91,-1571.41,30,0
-    .goto 1417/0,-3073.47,-1518.61,30,0
-    .goto 1417/0,-3027.39,-1505.89,30,0
-    .goto 1417/0,-3106.23,-1483.81,30,0
-    .goto 1417/0,-3138.27,-1531.81,30,0
-    >>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r
-    >>Cast |T132797:0|t[Conjure Water r4] if you run out of |T132799:0|t[Sweet Nectar]
-    .xp 34 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 34
-step
-    .goto 1417/0,-3138.27,-1531.81,30,0
-    .goto 1417/0,-3074.91,-1571.41,30,0
-    .goto 1417/0,-3073.47,-1518.61,30,0
-    .goto 1417/0,-3027.39,-1505.89,30,0
-    .goto 1417/0,-3106.23,-1483.81,30,0
-    .goto 1417/0,-3138.27,-1531.81,30,0
-    >>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r
-    >>Cast |T132797:0|t[Conjure Water r4] if you run out of |T132799:0|t[Sweet Nectar]
-    >>|cRXP_WARN_Whenever your bags get full, cast|r |T135757:0|t[Teleport: Ironforge] |cRXP_WARN_(you do NOT need to be 35 yet to do this)|r
-    .xp 35 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 35
-step
-    .goto 1417/0,-3138.27,-1531.81,30,0
-    .goto 1417/0,-3074.91,-1571.41,30,0
-    .goto 1417/0,-3073.47,-1518.61,30,0
-    .goto 1417/0,-3027.39,-1505.89,30,0
-    .goto 1417/0,-3106.23,-1483.81,30,0
-    .goto 1417/0,-3138.27,-1531.81,30,0
-    >>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r
-    .xp 36 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 36
-step
-    .goto 1417/0,-3138.27,-1531.81,30,0
-    .goto 1417/0,-3074.91,-1571.41,30,0
-    .goto 1417/0,-3073.47,-1518.61,30,0
-    .goto 1417/0,-3027.39,-1505.89,30,0
-    .goto 1417/0,-3106.23,-1483.81,30,0
-    .goto 1417/0,-3138.27,-1531.81,30,0
-    >>|cRXP_WARN_Make sure you AoE the |cRXP_ENEMY_Forsaken Courier|r pack as soon as they respawn so you can keep incorporating them into pulls|r
-    .xp 37 >> AoE |cRXP_ENEMY_Hammerfall Grunts|r and |cRXP_ENEMY_Hammerfall Peons|r to Level 37
+step << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Targot Jinglepocket|r
+    .goto 1417/0,-2537.07,-1227.73
+    .vendor >> |cRXP_BUY_Buy up to a stack of|r |T133969:0|t[Wild Hog Shank] |cRXP_BUY_to serve as pet food|r
+    .target Targot Jinglepocket
 step << Shaman
     .goto 1417/0,-3020.91,-795.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
@@ -157,6 +118,13 @@ step
     .accept 681 >>Accept Northfold Manor
     .target Captain Nials
 step
+    .goto 1417/0,-3033.15,-1425.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quae|r
+    .accept 658 >>Accept Hints of a New Plague?
+    .target Quae
+    .isQuestTurnedIn 659 --any of: Hints of a New Plague?
+    .xp <30,1
+step
     #completewith Drop635x1
     >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Witherbark Troll|r, |cRXP_ENEMY_Witherbark Shadowcaster|r, |cRXP_ENEMY_Witherbark Axe Thrower|r. Use it to start the quest if you get one
     .collect 4614,1,635 --Pendant of Myzrael (1)
@@ -186,47 +154,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Nials|r
     .turnin 681 >>Turn in Northfold Manor
     .target Captain Nials
-step
-    .goto 1417/0,-3033.15,-1425.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quae|r
-    .accept 658 >>Accept Hints of a New Plague?
-    .target Quae
-    .isQuestTurnedIn 659 --any of: Hints of a New Plague?
-    .xp <30,1
-step
-    .goto 1417/0,-2755.59,-1610.05
-    >>Kill |cRXP_ENEMY_Forsaken Courier|r and loot |cRXP_LOOT_Sealed Folder|r
-    .complete 658,1 --Sealed Folder (1)
-    .mob Forsaken Courier
-    .isOnQuest 658
-step
-    .goto 1417/0,-3033.15,-1425.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quae|r
-    .turnin 658 >>Turn in Hints of a New Plague?
-    .target Quae
-    .isOnQuest 658
-step
-    .goto 1417/0,-3033.15,-1425.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quae|r
-    .accept 657 >>Accept Hints of a New Plague?
-    .target Quae
-    .isQuestTurnedIn 658 --any of: Hints of a New Plague?
-    .xp <30,1
-step
-    .goto 1417/0,-3035.31,-1427.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kinelory|r
-    .turnin 657 >>Turn in Hints of a New Plague?
-    .target Kinelory
-    .isOnQuest 657
-step
-    .hs >> Hearth to Southshore
-step
-    .trainer >> Train your class spells
-    >>Bank your cloth too if needed
-step
-    .vendor >> Buy up to 140 level 35 water
-step
-    .vendor >> Buy level 35 drink if needed
 step
     .goto 1417/0,-2529.87,-1279.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Kryten|r
@@ -354,6 +281,38 @@ step
     .target Alliance Brigadier General
     .isQuestComplete 98896
 step
+    .goto 1417/0,-2755.59,-1610.05
+    >>Kill |cRXP_ENEMY_Forsaken Courier|r and loot |cRXP_LOOT_Sealed Folder|r
+    .complete 658,1 --Sealed Folder (1)
+    .mob Forsaken Courier
+    .isOnQuest 658
+step
+    .goto 1417/0,-3033.15,-1425.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quae|r
+    .turnin 658 >>Turn in Hints of a New Plague?
+    .target Quae
+    .isOnQuest 658
+step
+    .goto 1417/0,-3033.15,-1425.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quae|r
+    .accept 657 >>Accept Hints of a New Plague?
+    .target Quae
+    .isQuestTurnedIn 658 --any of: Hints of a New Plague?
+    .xp <30,1
+step
+    .goto 1417/0,-3035.31,-1427.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kinelory|r
+    .turnin 657 >>Turn in Hints of a New Plague?
+    .target Kinelory
+    .isOnQuest 657
+step << Mage
+    .trainer >> Train your class spells
+    >>Bank your cloth too if needed
+step << Mage
+    .vendor >> Buy up to 140 level 35 water
+step << Mage
+    .vendor >> Buy level 35 drink if needed
+step
     +|cRXP_WARN_That is all of Arathi Highlands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Alterac Mountains|r: The Tempest's Weapons << Shaman
     >>|cRXP_FRIENDLY_Undercity|r: A Web of Lies: Debunking Myths and Legends
@@ -386,6 +345,34 @@ step
     .turnin 98895 >>Turn in Darkspear Islands Clash
     .target Alliance Brigadier General
     .isQuestComplete 98895
+step << Shaman
+    .goto 1417/0,-3020.91,-795.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
+    .turnin 96135 >>Turn in Heed My Call
+    .target Veyric Thunderhame
+    .isQuestComplete 96135
+step << Shaman
+    .goto 1417/0,-3020.91,-795.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
+    .turnin 79358 >>Turn in Storm, Earth, and Fire
+    .target Veyric Thunderhame
+    .isQuestComplete 79358
+step << Shaman
+    .goto 1417/0,-3020.91,-795.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
+    .turnin 96264 >>Turn in Elemental Aid
+    .target Veyric Thunderhame
+    .isQuestComplete 96264
+step
+    .goto 1417/0,-3901.83,-876.13
+    >>Click the |cRXP_PICK_Iridescent Shards|r
+    .accept 651 >>Accept Stones of Binding
+    .isQuestTurnedIn 642 --any of: The Princess Trapped
+step
+    .goto 1417/0,-3267.87,-846.61
+    >>Open the |cRXP_PICK_Stone of East Binding|r. Loot it for |cRXP_LOOT_Cresting Key|r
+    .complete 651,2 --Cresting Key (1)
+    .isOnQuest 651
 step
     .goto 1417/0,-3035.31,-1427.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kinelory|r
@@ -411,34 +398,6 @@ step
     .target Quae
     .isQuestTurnedIn 660 --any of: Hints of a New Plague?
     .xp <30,1
-step
-    .goto 1417/0,-3901.83,-876.13
-    >>Click the |cRXP_PICK_Iridescent Shards|r
-    .accept 651 >>Accept Stones of Binding
-    .isQuestTurnedIn 642 --any of: The Princess Trapped
-step
-    .goto 1417/0,-3267.87,-846.61
-    >>Open the |cRXP_PICK_Stone of East Binding|r. Loot it for |cRXP_LOOT_Cresting Key|r
-    .complete 651,2 --Cresting Key (1)
-    .isOnQuest 651
-step << Shaman
-    .goto 1417/0,-3020.91,-795.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
-    .turnin 96135 >>Turn in Heed My Call
-    .target Veyric Thunderhame
-    .isQuestComplete 96135
-step << Shaman
-    .goto 1417/0,-3020.91,-795.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
-    .turnin 79358 >>Turn in Storm, Earth, and Fire
-    .target Veyric Thunderhame
-    .isQuestComplete 79358
-step << Shaman
-    .goto 1417/0,-3020.91,-795.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veyric Thunderhame|r
-    .turnin 96264 >>Turn in Elemental Aid
-    .target Veyric Thunderhame
-    .isQuestComplete 96264
 step
     .goto 1417/0,-2740.11,-1350.85
     >>Open the |cRXP_PICK_Stone of Outer Binding|r. Loot it for |cRXP_LOOT_Thundering Key|r

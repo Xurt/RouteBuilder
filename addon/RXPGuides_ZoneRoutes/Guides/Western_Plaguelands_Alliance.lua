@@ -17,29 +17,36 @@ RXPGuides.RegisterGuide([[
 #subweight -52
 #name 52-53 Western Plaguelands: around Commander Ashlam Valorfist
 
-step << Human Paladin/Dwarf Paladin
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .turnin 8415 >>Turn in Chillwind Point
-    .target Commander Ashlam Valorfist
-    .isOnQuest 8415
-step << Human Paladin/Dwarf Paladin
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .accept 8414 >>Accept Dispelling Evil
-    .target Commander Ashlam Valorfist
 step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .turnin 5066 >>Turn in A Call to Arms: The Plaguelands!
     .target Commander Ashlam Valorfist
     .isOnQuest 5066
+step << Human Paladin/Dwarf Paladin
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 8415 >>Turn in Chillwind Point
+    .target Commander Ashlam Valorfist
+    .isOnQuest 8415
+step
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .accept 5092 >>Accept Clear the Way
+    .accept 8414 >>Accept Dispelling Evil << Human Paladin/Dwarf Paladin
+    .target Commander Ashlam Valorfist
 step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .turnin 5091 >>Turn in A Call to Arms: The Plaguelands!
     .target Commander Ashlam Valorfist
     .isOnQuest 5091
+step
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 5090 >>Turn in A Call to Arms: The Plaguelands!
+    .target Commander Ashlam Valorfist
+    .isOnQuest 5090
 step
     .goto 1422/0,-1417.71,965.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
@@ -50,83 +57,28 @@ step
     .goto 1422/0,-1431.04,971.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Officer Pureheart|r
     .accept 5401 >>Accept Argent Dawn Commission
-    .target Argent Officer Pureheart
-step
-    .goto 1422/0,-1431.04,971.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Officer Pureheart|r
-    .turnin 5401 >>Turn in Argent Dawn Commission while you are here
-    .isQuestComplete 5401
+    .turnin 5401 >>Turn in Argent Dawn Commission
     .target Argent Officer Pureheart
 step << Human Paladin/Dwarf Paladin
-    #loop
-    .goto 1422/0,-1198.84,1659.28,0
-    .goto 1422/0,-1198.84,1659.28,40,0
-    .goto 1422/0,-1133.48,1689.95,40,0
-    .goto 1422/0,-1115.42,1732.38,40,0
-    .goto 1422/0,-1199.70,1734.96,40,0
-    .goto 1422/0,-1191.53,1772.80,40,0
-    .goto 1422/0,-1172.18,1819.53,40,0
-    .goto 1422/0,-1240.55,1819.81,40,0
-    .goto 1422/0,-1262.48,1764.20,40,0
-    .goto 1422/0,-1239.69,1719.19,40,0
-    >>Kill |cRXP_ENEMY_Skeletal Flayers|r, |cRXP_ENEMY_Skeletal Sorcerers|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Skeletal Executioners|r. Loot them for |cRXP_LOOT_Minion's Scourgestone|r
+    #completewith Along8
+    >>As you go: Kill |cRXP_ENEMY_Skeletal Flayers|r, |cRXP_ENEMY_Skeletal Sorcerers|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Skeletal Executioners|r. Loot them for |cRXP_LOOT_Minion's Scourgestone|r. |cRXP_WARN_Anything left is finished later|r
     .complete 8414,1 --Minion's Scourgestone (20)
     .mob Skeletal Flayer
     .mob Skeletal Sorcerer
     .mob Skeletal Terror
     .mob Skeletal Executioner
-step << Human Paladin/Dwarf Paladin
-    .goto 1422/0,-1821.48,979.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Thel'danis|r
-    .turnin 8414 >>Turn in Dispelling Evil
-    .accept 8416 >>Accept Inert Scourgestones
-    .target High Priest Thel'danis
-step
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .turnin 5090 >>Turn in A Call to Arms: The Plaguelands!
-    .target Commander Ashlam Valorfist
-    .isOnQuest 5090
-step
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .turnin 8416 >>Turn in Inert Scourgestones << Human Paladin/Dwarf Paladin
-    .accept 8418 >>Accept Forging the Mightstone << Human Paladin/Dwarf Paladin
-    .accept 5092 >>Accept Clear the Way
-    .target Commander Ashlam Valorfist
-step << Hunter
-    .xp 52-16950 >> Grind until you are 16950 XP away from 52
-    >>If you are not yet close, do one more Cauldron quest to get you where you need to be
-step
-    .goto 1422/0,-1431.04,971.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Officer Pureheart|r
-    .turnin 5401 >>Turn in Argent Dawn Commission
-    .target Argent Officer Pureheart
-step
-    #completewith Along11
-    >>As you go: Kill |cRXP_ENEMY_Skeletal Flayers|r. Kill |cRXP_ENEMY_Slavering Ghouls|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 5092,1 --Skeletal Flayer slain (10)
-    .complete 5092,2 --Slavering Ghoul slain (10)
-    .mob Skeletal Flayer
-    .mob Slavering Ghoul
-step
-    #label Along11
-    .goto 1422/0,-1697.64,1114.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marlene Redpath|r
-    .accept 5142 >>Accept Little Pamela
-    .target Marlene Redpath
 step
     #loop
-    .goto 1422/0,-1710.54,1136.69,0
-    .goto 1422/0,-1710.54,1136.69,40,0
-    .goto 1422/0,-1653.78,1113.47,40,0
-    .goto 1422/0,-1684.74,1068.75,40,0
-    .goto 1422/0,-1620.24,1022.02,40,0
+    .goto 1422/0,-1620.24,950.07,0
     .goto 1422/0,-1620.24,950.07,40,0
-    .goto 1422/0,-1716.56,993.93,40,0
-    .goto 1422/0,-1766.44,1057.57,40,0
-    .goto 1422/0,-1779.34,1168.22,40,0
+    .goto 1422/0,-1620.24,1022.02,40,0
+    .goto 1422/0,-1684.74,1068.75,40,0
+    .goto 1422/0,-1653.78,1113.47,40,0
+    .goto 1422/0,-1710.54,1136.69,40,0
     .goto 1422/0,-1744.94,1217.53,40,0
+    .goto 1422/0,-1779.34,1168.22,40,0
+    .goto 1422/0,-1766.44,1057.57,40,0
+    .goto 1422/0,-1716.56,993.93,40,0
     >>Kill |cRXP_ENEMY_Skeletal Flayers|r
     >>Kill |cRXP_ENEMY_Slavering Ghouls|r
     .complete 5092,1 --Skeletal Flayer slain (10)
@@ -134,6 +86,7 @@ step
     .mob Skeletal Flayer
     .mob Slavering Ghoul
 step
+    #label Along8
     .goto 1422/0,-1767.30,1134.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myranda the Hag|r
     .turnin 5861 >>Turn in Find Myranda
@@ -151,6 +104,14 @@ step
     .turnin 5215 >>Turn in The Scourge Cauldrons
     .accept 5216 >>Accept Target: Felstone Field
     .target High Priestess MacDonnell
+step << Human Paladin/Dwarf Paladin
+    #completewith Along16
+    >>As you go: Kill |cRXP_ENEMY_Skeletal Flayers|r, |cRXP_ENEMY_Skeletal Sorcerers|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Skeletal Executioners|r. Loot them for |cRXP_LOOT_Minion's Scourgestone|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 8414,1 --Minion's Scourgestone (20)
+    .mob Skeletal Flayer
+    .mob Skeletal Sorcerer
+    .mob Skeletal Terror
+    .mob Skeletal Executioner
 step
     .goto 1422/0,-1280.11,1452.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
@@ -179,47 +140,57 @@ step
     .accept 5021 >>Accept Better Late Than Never
     .target Janice Felstone
 step
+    #label Along16
     .goto 1422/0,-1248.72,1783.12
     >>Click the |cRXP_PICK_Janice's Parcel|r
     .turnin 5021 >>Turn in Better Late Than Never
     .accept 5022 >>Accept Better Late Than Never
+step << Hunter
+    .xp 52-16950 >> Grind until you are 16950 XP away from 52
+    >>If you are not yet close, do one more Cauldron quest to get you where you need to be
+step << Human Paladin/Dwarf Paladin
+    #loop
+    .goto 1422/0,-1262.48,1764.20,0
+    .goto 1422/0,-1262.48,1764.20,40,0
+    .goto 1422/0,-1240.55,1819.81,40,0
+    .goto 1422/0,-1172.18,1819.53,40,0
+    .goto 1422/0,-1191.53,1772.80,40,0
+    .goto 1422/0,-1115.42,1732.38,40,0
+    .goto 1422/0,-1133.48,1689.95,40,0
+    .goto 1422/0,-1198.84,1659.28,40,0
+    .goto 1422/0,-1199.70,1734.96,40,0
+    .goto 1422/0,-1239.69,1719.19,40,0
+    >>Kill |cRXP_ENEMY_Skeletal Flayers|r, |cRXP_ENEMY_Skeletal Sorcerers|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Skeletal Executioners|r. Loot them for |cRXP_LOOT_Minion's Scourgestone|r
+    .complete 8414,1 --Minion's Scourgestone (20)
+    .mob Skeletal Flayer
+    .mob Skeletal Sorcerer
+    .mob Skeletal Terror
+    .mob Skeletal Executioner
+step << Human Paladin/Dwarf Paladin
+    .goto 1422/0,-1821.48,979.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Thel'danis|r
+    .turnin 8414 >>Turn in Dispelling Evil
+    .accept 8416 >>Accept Inert Scourgestones
+    .target High Priest Thel'danis
+step << Human Paladin/Dwarf Paladin
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 8416 >>Turn in Inert Scourgestones
+    .accept 8418 >>Accept Forging the Mightstone
+    .target Commander Ashlam Valorfist
 step
     .goto 1422/0,-1431.04,944.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
     .turnin 5217 >>Turn in Return to Chillwind Camp
     .target High Priestess MacDonnell
-step
+step << Mage
     .goto 1422/0,-1425.45,966.98
     >>Talk to |cRXP_FRIENDLY_Lightspark|r
     .vendor 10857 >> Vendor Trash (and all your old food). Repair
     >>|cRXP_BUY_Buy some|r |T133989:0|t[Enriched Manna Biscuits] |cRXP_BUY_from him|r
     .collect 13724,260
     .target Argent Quartermaster Lightspark
-step
-    .goto 1422/0,-1654.21,1845.04,25,0
-    .goto 1422/0,-1580.68,1866.54,25,0
-    .goto 1422/0,-1600.03,1814.94,25,0
-    .goto 1422/0,-1563.91,1758.75,25,0
-    .goto 1422/0,-1511.88,1804.05,25,0
-    .goto 1422/0,-1548.00,1837.87,25,0
-    .goto 1422/0,-1566.92,1865.39,25,0
-    .goto 1422/0,-1569.07,1892.91,25,0
-    .goto 1422/0,-1520.05,1887.75,25,0
-    .goto 1422/0,-1514.89,1851.63,25,0
-    .goto 1422/0,-1544.99,1924.16,25,0
-    .goto 1422/0,-1576.81,1948.24,25,0
-    .goto 1422/0,-1597.02,1942.79,25,0
-    .goto 1422/0,-1603.04,1918.71,25,0
-    .goto 1422/0,-1597.02,1942.79,25,0
-    .goto 1422/0,-1623.25,1953.11,25,0
-    .goto 1422/0,-1637.01,1931.90,25,0
-    .goto 1422/0,-1660.66,1916.13,25,0
-    .goto 1422/0,-1649.48,1888.61,25,0
-    .goto 1422/0,-1654.21,1845.04,25,0
-    .xp 54 >>AoE |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Rotting Cadavers|r, |cRXP_ENEMY_Skeletal Terrors|r, and the |cRXP_ENEMY_Wandering Skeleton|r to Level 54. Loot them for |T132903:0|t[|cRXP_LOOT_Runecloth|r], |T133447:0|t[|cRXP_LOOT_Minion's Scourgestones|r], and |T133724:0|t[|cRXP_LOOT_Bone Fragments|r]
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blighted Zombies|r cast|r |T135914:0|t[Volatile Infection] |cRXP_WARN_(deals 156 nature damage every 15 seconds, causing pushback, dispellable with|r |T135841:0|t[Ice Block]|cRXP_WARN_), and |cRXP_ENEMY_Skeletal Terrors|r cast|r |T136183:0|t[Fear]|cRXP_WARN_, (Fearing you for 4 seconds IF they've been rooted by|r |T135848:0|t[Frost Nova]|cRXP_WARN_. Remember to|r |T135736:0|t[Blink] |cRXP_WARN_out of range of their cast if needed|r
-    >>|cRXP_WARN_Avoid aggroing the |cRXP_ENEMY_Scarlets|r. If you do, run away|r
-step
+step << Mage
     .goto 1422/0,-1425.45,966.98
     >>Talk to |cRXP_FRIENDLY_Lightspark|r
     .vendor 10857 >> Vendor Trash. Repair
@@ -227,31 +198,22 @@ step
     .collect 13724,260
     .target Argent Quartermaster Lightspark
 step
-    .goto 1422/0,-1654.21,1845.04,25,0
-    .goto 1422/0,-1580.68,1866.54,25,0
-    .goto 1422/0,-1600.03,1814.94,25,0
-    .goto 1422/0,-1563.91,1758.75,25,0
-    .goto 1422/0,-1511.88,1804.05,25,0
-    .goto 1422/0,-1548.00,1837.87,25,0
-    .goto 1422/0,-1566.92,1865.39,25,0
-    .goto 1422/0,-1569.07,1892.91,25,0
-    .goto 1422/0,-1520.05,1887.75,25,0
-    .goto 1422/0,-1514.89,1851.63,25,0
-    .goto 1422/0,-1544.99,1924.16,25,0
-    .goto 1422/0,-1576.81,1948.24,25,0
-    .goto 1422/0,-1597.02,1942.79,25,0
-    .goto 1422/0,-1603.04,1918.71,25,0
-    .goto 1422/0,-1614.65,1936.77,25,0
-    .goto 1422/0,-1603.04,1918.71,25,0
-    .goto 1422/0,-1597.02,1942.79,25,0
-    .goto 1422/0,-1623.25,1953.11,25,0
-    .goto 1422/0,-1637.01,1931.90,25,0
-    .goto 1422/0,-1660.66,1916.13,25,0
-    .goto 1422/0,-1649.48,1888.61,25,0
-    .goto 1422/0,-1654.21,1845.04,25,0
-    .xp 56 >>AoE |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Rotting Cadavers|r, |cRXP_ENEMY_Skeletal Terrors|r, and the |cRXP_ENEMY_Wandering Skeleton|r to Level 56. Loot them for |T132903:0|t[|cRXP_LOOT_Runecloth|r], |T133447:0|t[|cRXP_LOOT_Minion's Scourgestones|r], and |T133724:0|t[|cRXP_LOOT_Bone Fragments|r]
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blighted Zombies|r cast|r |T135914:0|t[Volatile Infection] |cRXP_WARN_(deals 156 nature damage every 15 seconds, causing pushback, dispellable with|r |T135841:0|t[Ice Block]|cRXP_WARN_), and |cRXP_ENEMY_Skeletal Terrors|r cast|r |T136183:0|t[Fear]|cRXP_WARN_, (Fearing you for 4 seconds IF they've been rooted by|r |T135848:0|t[Frost Nova]|cRXP_WARN_. Remember to|r |T135736:0|t[Blink] |cRXP_WARN_out of range of their cast if needed|r
-    >>|cRXP_WARN_Avoid aggroing the |cRXP_ENEMY_Scarlets|r. If you do, run away|r
+    .goto 1422/0,-1431.04,971.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Officer Pureheart|r
+    .turnin 6028 >>Turn in The Everlook Report
+    .target Argent Officer Pureheart
+    .isOnQuest 6028
+step
+    .goto 1422/0,-1450.39,934.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathaniel Dumah|r
+    .accept 5903 >>Accept A Plague Upon Thee
+    .target Nathaniel Dumah
+step
+    .goto 1422/0,-1458.56,944.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Flint Shadowmore|r
+    .turnin 6184 >>Turn in Flint Shadowmore
+    .target Flint Shadowmore
+    .isOnQuest 6184
 step
     .goto 1422/0,-1234.53,1817.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janice Felstone|r
@@ -272,77 +234,6 @@ step
     .target Janice Felstone
     .isOnQuest 5051
 step
-    .goto 1422/0,-1654.21,1845.04,25,0
-    .goto 1422/0,-1580.68,1866.54,25,0
-    .goto 1422/0,-1600.03,1814.94,25,0
-    .goto 1422/0,-1563.91,1758.75,25,0
-    .goto 1422/0,-1511.88,1804.05,25,0
-    .goto 1422/0,-1548.00,1837.87,25,0
-    .goto 1422/0,-1566.92,1865.39,25,0
-    .goto 1422/0,-1569.07,1892.91,25,0
-    .goto 1422/0,-1520.05,1887.75,25,0
-    .goto 1422/0,-1514.89,1851.63,25,0
-    .goto 1422/0,-1544.99,1924.16,25,0
-    .goto 1422/0,-1576.81,1948.24,25,0
-    .goto 1422/0,-1597.02,1942.79,25,0
-    .goto 1422/0,-1603.04,1918.71,25,0
-    .goto 1422/0,-1614.65,1936.77,25,0
-    .goto 1422/0,-1603.04,1918.71,25,0
-    .goto 1422/0,-1597.02,1942.79,25,0
-    .goto 1422/0,-1623.25,1953.11,25,0
-    .goto 1422/0,-1637.01,1931.90,25,0
-    .goto 1422/0,-1660.66,1916.13,25,0
-    .goto 1422/0,-1649.48,1888.61,25,0
-    .goto 1422/0,-1654.21,1845.04,25,0
-    .xp 57 >>AoE |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Rotting Cadavers|r, |cRXP_ENEMY_Skeletal Terrors|r, and the |cRXP_ENEMY_Wandering Skeleton|r to Level 57. Loot them for |T132903:0|t[|cRXP_LOOT_Runecloth|r], |T133447:0|t[|cRXP_LOOT_Minion's Scourgestones|r], and |T133724:0|t[|cRXP_LOOT_Bone Fragments|r]
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blighted Zombies|r cast|r |T135914:0|t[Volatile Infection] |cRXP_WARN_(deals 156 nature damage every 15 seconds, causing pushback, dispellable with|r |T135841:0|t[Ice Block]|cRXP_WARN_), and |cRXP_ENEMY_Skeletal Terrors|r cast|r |T136183:0|t[Fear]|cRXP_WARN_, (Fearing you for 4 seconds IF they've been rooted by|r |T135848:0|t[Frost Nova]|cRXP_WARN_. Remember to|r |T135736:0|t[Blink] |cRXP_WARN_out of range of their cast if needed|r
-    >>|cRXP_WARN_Avoid aggroing the |cRXP_ENEMY_Scarlets|r. If you do, run away|r
-step
-    .goto 1422/0,-1654.21,1845.04,25,0
-    .goto 1422/0,-1580.68,1866.54,25,0
-    .goto 1422/0,-1600.03,1814.94,25,0
-    .goto 1422/0,-1563.91,1758.75,25,0
-    .goto 1422/0,-1511.88,1804.05,25,0
-    .goto 1422/0,-1548.00,1837.87,25,0
-    .goto 1422/0,-1566.92,1865.39,25,0
-    .goto 1422/0,-1569.07,1892.91,25,0
-    .goto 1422/0,-1520.05,1887.75,25,0
-    .goto 1422/0,-1514.89,1851.63,25,0
-    .goto 1422/0,-1544.99,1924.16,25,0
-    .goto 1422/0,-1576.81,1948.24,25,0
-    .goto 1422/0,-1597.02,1942.79,25,0
-    .goto 1422/0,-1603.04,1918.71,25,0
-    .goto 1422/0,-1614.65,1936.77,25,0
-    .goto 1422/0,-1603.04,1918.71,25,0
-    .goto 1422/0,-1597.02,1942.79,25,0
-    .goto 1422/0,-1623.25,1953.11,25,0
-    .goto 1422/0,-1637.01,1931.90,25,0
-    .goto 1422/0,-1660.66,1916.13,25,0
-    .goto 1422/0,-1649.48,1888.61,25,0
-    .goto 1422/0,-1654.21,1845.04,25,0
-    .xp 57+188350 >>AoE |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Rotting Cadavers|r, |cRXP_ENEMY_Skeletal Terrors|r, and the |cRXP_ENEMY_Wandering Skeleton|r to 188350+/195000xp. Loot them for |T132903:0|t[|cRXP_LOOT_Runecloth|r], |T133447:0|t[|cRXP_LOOT_Minion's Scourgestones|r], and |T133724:0|t[|cRXP_LOOT_Bone Fragments|r]
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blighted Zombies|r cast|r |T135914:0|t[Volatile Infection] |cRXP_WARN_(deals 156 nature damage every 15 seconds, causing pushback, dispellable with|r |T135841:0|t[Ice Block]|cRXP_WARN_), and |cRXP_ENEMY_Skeletal Terrors|r cast|r |T136183:0|t[Fear]|cRXP_WARN_, (Fearing you for 4 seconds IF they've been rooted by|r |T135848:0|t[Frost Nova]|cRXP_WARN_. Remember to|r |T135736:0|t[Blink] |cRXP_WARN_out of range of their cast if needed|r
-    >>|cRXP_WARN_Avoid aggroing the |cRXP_ENEMY_Scarlets|r. If you do, run away|r
-step
-    .goto 1422/0,-1893.72,1513.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulgris Deepriver|r
-    .accept 4984 >>Accept The Wildlife Suffers Too
-    .target Mulgris Deepriver
-step
-    .goto 1422/0,-1863.19,1486.13
-    .xp 58 >> Grind to level 58
-step
-    .goto 1422/0,-1450.39,934.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathaniel Dumah|r
-    .accept 5903 >>Accept A Plague Upon Thee
-    .target Nathaniel Dumah
-step
-    .goto 1422/0,-1458.56,944.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Flint Shadowmore|r
-    .turnin 6184 >>Turn in Flint Shadowmore
-    .target Flint Shadowmore
-    .isOnQuest 6184
-step
     .goto 1422/0,-1450.39,934.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathaniel Dumah|r
     .turnin 5903 >>Turn in A Plague Upon Thee
@@ -355,17 +246,27 @@ step << Human Paladin/Dwarf Paladin
     .target Commander Ashlam Valorfist
     .isQuestComplete 8418
 step
+    .goto 1422/0,-1697.64,1114.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marlene Redpath|r
+    .accept 5142 >>Accept Little Pamela
+    .target Marlene Redpath
+step
+    .goto 1422/0,-1893.72,1513.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulgris Deepriver|r
+    .accept 4984 >>Accept The Wildlife Suffers Too
+    .target Mulgris Deepriver
+step
     #loop
-    .goto 1422/0,-1513.17,1947.38,0
-    .goto 1422/0,-1513.17,1947.38,40,0
-    .goto 1422/0,-1548.43,1982.35,40,0
-    .goto 1422/0,-1648.62,2011.59,40,0
-    .goto 1422/0,-1614.22,2047.71,40,0
-    .goto 1422/0,-1622.39,2113.07,40,0
-    .goto 1422/0,-1547.57,2109.06,40,0
-    .goto 1422/0,-1552.30,2048.00,40,0
-    .goto 1422/0,-1492.10,2051.73,40,0
-    .goto 1422/0,-1438.35,2025.93,40,0
+    .goto 1422/0,-1581.54,2144.03,0
+    .goto 1422/0,-1581.54,2144.03,40,0
+    .goto 1422/0,-1587.13,2213.69,40,0
+    .goto 1422/0,-1680.87,2248.67,40,0
+    .goto 1422/0,-1556.17,2314.31,40,0
+    .goto 1422/0,-1516.18,2287.94,40,0
+    .goto 1422/0,-1453.83,2214.84,40,0
+    .goto 1422/0,-1516.18,2211.97,40,0
+    .goto 1422/0,-1514.46,2148.33,40,0
+    .goto 1422/0,-1550.15,2179.29,40,0
     >>Kill |cRXP_ENEMY_Diseased Wolfs|r
     .complete 4984,1 --Diseased Wolf slain (8)
     .mob Diseased Wolf
@@ -398,33 +299,7 @@ step
     .accept 6389 >>Accept A Plague Upon Thee
     .isQuestTurnedIn 5904 --any of: A Plague Upon Thee
     .xp <48,1
-step
-    .goto 1422/0,-1654.21,1845.04,25,0
-    .goto 1422/0,-1580.68,1866.54,25,0
-    .goto 1422/0,-1600.03,1814.94,25,0
-    .goto 1422/0,-1563.91,1758.75,25,0
-    .goto 1422/0,-1511.88,1804.05,25,0
-    .goto 1422/0,-1548.00,1837.87,25,0
-    .goto 1422/0,-1566.92,1865.39,25,0
-    .goto 1422/0,-1569.07,1892.91,25,0
-    .goto 1422/0,-1520.05,1887.75,25,0
-    .goto 1422/0,-1514.89,1851.63,25,0
-    .goto 1422/0,-1544.99,1924.16,25,0
-    .goto 1422/0,-1576.81,1948.24,25,0
-    .goto 1422/0,-1597.02,1942.79,25,0
-    .goto 1422/0,-1603.04,1918.71,25,0
-    .goto 1422/0,-1614.65,1936.77,25,0
-    .goto 1422/0,-1603.04,1918.71,25,0
-    .goto 1422/0,-1597.02,1942.79,25,0
-    .goto 1422/0,-1623.25,1953.11,25,0
-    .goto 1422/0,-1637.01,1931.90,25,0
-    .goto 1422/0,-1660.66,1916.13,25,0
-    .goto 1422/0,-1649.48,1888.61,25,0
-    .goto 1422/0,-1654.21,1845.04,25,0
-    .xp 59+132800 >>AoE |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Rotting Cadavers|r, |cRXP_ENEMY_Skeletal Terrors|r, and the |cRXP_ENEMY_Wandering Skeleton|r to 132800+/209800xp. Loot them for |T132903:0|t[|cRXP_LOOT_Runecloth|r] and |T133447:0|t[|cRXP_LOOT_Minion's Scourgestones|r]
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blighted Zombies|r cast|r |T135914:0|t[Volatile Infection] |cRXP_WARN_(deals 156 nature damage every 15 seconds, causing pushback, dispellable with|r |T135841:0|t[Ice Block]|cRXP_WARN_), and |cRXP_ENEMY_Skeletal Terrors|r cast|r |T136183:0|t[Fear]|cRXP_WARN_, (Fearing you for 4 seconds IF they've been rooted by|r |T135848:0|t[Frost Nova]|cRXP_WARN_. Remember to|r |T135736:0|t[Blink] |cRXP_WARN_out of range of their cast if needed|r
-    >>|cRXP_WARN_Avoid aggroing the |cRXP_ENEMY_Scarlets|r. If you do, run away|r
-step
+step << Mage
     .goto 1422/0,-1425.45,966.98
     >>Talk to |cRXP_FRIENDLY_Lightspark|r
     .vendor 10857 >> Vendor Trash (and all your food if you aren't playing this character at 60). Repair
@@ -436,43 +311,22 @@ step
     .target Nathaniel Dumah
     .isOnQuest 6389
 step
-    .goto 1422/0,-1654.21,1845.04,25,0
-    .goto 1422/0,-1580.68,1866.54,25,0
-    .goto 1422/0,-1600.03,1814.94,25,0
-    .goto 1422/0,-1563.91,1758.75,25,0
-    .goto 1422/0,-1511.88,1804.05,25,0
-    .goto 1422/0,-1548.00,1837.87,25,0
-    .goto 1422/0,-1566.92,1865.39,25,0
-    .goto 1422/0,-1569.07,1892.91,25,0
-    .goto 1422/0,-1520.05,1887.75,25,0
-    .goto 1422/0,-1514.89,1851.63,25,0
-    .goto 1422/0,-1544.99,1924.16,25,0
-    .goto 1422/0,-1576.81,1948.24,25,0
-    .goto 1422/0,-1597.02,1942.79,25,0
-    .goto 1422/0,-1603.04,1918.71,25,0
-    .goto 1422/0,-1614.65,1936.77,25,0
-    .goto 1422/0,-1603.04,1918.71,25,0
-    .goto 1422/0,-1597.02,1942.79,25,0
-    .goto 1422/0,-1623.25,1953.11,25,0
-    .goto 1422/0,-1637.01,1931.90,25,0
-    .goto 1422/0,-1660.66,1916.13,25,0
-    .goto 1422/0,-1649.48,1888.61,25,0
-    .goto 1422/0,-1654.21,1845.04,25,0
-    .xp 60 >>AoE |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Rotting Cadavers|r, |cRXP_ENEMY_Skeletal Terrors|r, and the |cRXP_ENEMY_Wandering Skeleton|r to Level 60
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blighted Zombies|r cast|r |T135914:0|t[Volatile Infection] |cRXP_WARN_(deals 156 nature damage every 15 seconds, causing pushback, dispellable with|r |T135841:0|t[Ice Block]|cRXP_WARN_), and |cRXP_ENEMY_Skeletal Terrors|r cast|r |T136183:0|t[Fear]|cRXP_WARN_, (Fearing you for 4 seconds IF they've been rooted by|r |T135848:0|t[Frost Nova]|cRXP_WARN_. Remember to|r |T135736:0|t[Blink] |cRXP_WARN_out of range of their cast if needed|r
-    >>|cRXP_WARN_Avoid aggroing the |cRXP_ENEMY_Scarlets|r. If you do, run away|r
-step
-    .goto 1422/0,-1431.04,971.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Officer Pureheart|r
-    .turnin 6028 >>Turn in The Everlook Report
-    .target Argent Officer Pureheart
-    .isOnQuest 6028
-step
     .goto 1422/0,-2411.44,1206.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Artist Renfray|r
     .turnin 5846 >>Turn in Of Love and Family
     .target Artist Renfray
     .isOnQuest 5846
+step << Mage/Hunter/Druid
+    .goto 1422/0,-1617.23,2976.80
+    >>|cRXP_WARN_Head to the top of the tower marked on your map. Look for a red book laying in a corner next to a bookshelf, it's guarded by a|r |cRXP_ENEMY_Scarlet Priest|r. |cRXP_WARN_Loot it for the rune of |r |T132849:0|t[Arcane Specialization]. |cRXP_WARN_You can skip this step if you don't feel like getting this rune|r
+    .collect 226413,1
+    .train 453702,1
+step << !Mage
+    >>|cRXP_WARN_If you're not within 40.000 xp away from the threshold skip this step|r
+    .xp 60-23500 >> Grind mobs untill you're 23500 xp away from level 60
+step << Mage
+    >>|cRXP_WARN_If you're not within 40.000 xp away from the threshold skip this step|r
+    .xp 60-32000 >> Grind mobs untill you're 32000 xp away from level 60
 step
     .goto 1422/0,-2617.84,1242.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Marduke|r
@@ -498,6 +352,12 @@ RXPGuides.RegisterGuide([[
 #subweight -52
 #name 55-56 Western Plaguelands: around Commander Ashlam Valorfist
 
+step << Human Paladin/Dwarf Paladin
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 8418 >>Turn in Forging the Mightstone
+    .target Commander Ashlam Valorfist
+    .isQuestComplete 8418
 step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
@@ -505,30 +365,40 @@ step
     .target Commander Ashlam Valorfist
     .isQuestTurnedIn 5092 --any of: Clear the Way
 step
-    .goto 1422/0,-1305.48,1314.13
-    >>Using the Beacon Torch, mark each tower in Andorhal; you will need to stand in the doorway of the tower to successfully mark it.
-    .complete 5097,1 --Andorhal Tower One
-    .target Andorhal Tower One
-    .isOnQuest 5097
-step
-    .goto 1422/0,-1403.52,1467.79
-    >>Using the Beacon Torch, mark each tower in Andorhal; you will need to stand in the doorway of the tower to successfully mark it.
-    .complete 5097,2 --Andorhal Tower Two
-    .target Andorhal Tower Two
-    .isOnQuest 5097
-step
     .goto 1422/0,-1431.04,944.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
     .accept 5219 >>Accept Target: Dalson's Tears
     .target High Priestess MacDonnell
     .isQuestTurnedIn 5217 --any of: Return to Chillwind Camp
 step
-    .goto 1422/0,-1451.68,966.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Weldon Barov|r
-    .accept 5344 >>Accept The Last Barov
-    .target Weldon Barov
-    .isQuestTurnedIn 5343 --any of: Barov Family Fortune
-    .xp <52,1
+    .goto 1422/0,-1587.99,1329.90
+    >>Using the Beacon Torch, mark each tower in Andorhal; you will need to stand in the doorway of the tower to successfully mark it.
+    .complete 5097,4 --Andorhal Tower Four
+    .target Andorhal Tower Four
+    .isOnQuest 5097
+step
+    .goto 1422/0,-1488.23,1553.50
+    >>Using the Beacon Torch, mark each tower in Andorhal; you will need to stand in the doorway of the tower to successfully mark it.
+    .complete 5097,3 --Andorhal Tower Three
+    .target Andorhal Tower Three
+    .isOnQuest 5097
+step
+    .goto 1422/0,-1638.73,1914.13
+    >>Click the |cRXP_PICK_Mrs. Dalson's Diary|r
+    .accept 5058 >>Accept Mrs. Dalson's Diary
+step
+    .goto 1422/0,-1619.38,1943.94
+    >>Click the |cRXP_PICK_Locked Cabinet|r
+    .accept 5060 >>Accept Locked Away
+step
+    .goto 1422/0,-1657.22,1942.79
+    >>Kill |cRXP_ENEMY_Farmer Dalson|r and loot |cRXP_LOOT_Dalson Cabinet Key|r
+    .complete 5060,1 --Dalson Cabinet Key (1)
+    .mob Farmer Dalson
+step
+    .goto 1422/0,-1619.38,1943.94
+    >>Click the |cRXP_PICK_Locked Cabinet|r
+    .turnin 5060 >>Turn in Locked Away
 step
     .goto 1422/0,-1566.06,1858.51
     >>Kill |cRXP_ENEMY_Cauldron Lord Malvinious|r and loot |cRXP_LOOT_Dalson's Tears Cauldron Key|r
@@ -546,55 +416,23 @@ step
     .accept 5220 >>Accept Return to Chillwind Camp
     .isQuestTurnedIn 5219 --any of: Target: Dalson's Tears
 step
-    .goto 1422/0,-1619.38,1943.94
-    >>Click the |cRXP_PICK_Locked Cabinet|r
-    .accept 5060 >>Accept Locked Away
+    .goto 1422/0,-1638.73,1914.13
+    >>Click the |cRXP_PICK_Mrs. Dalson's Diary|r
+    >>|cRXP_WARN_The database has no objectives for Mrs. Dalson's Diary. Skip this step if the quest is not finished|r
+    .turnin 5058 >>Turn in Mrs. Dalson's Diary
+    .isOnQuest 5058
 step
-    .goto 1422/0,-1431.04,944.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
-    .turnin 5220 >>Turn in Return to Chillwind Camp
-    .target High Priestess MacDonnell
-    .isOnQuest 5220
-step
-    .goto 1422/0,-1431.04,944.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
-    .accept 5222 >>Accept Target: Writhing Haunt
-    .target High Priestess MacDonnell
-    .isQuestTurnedIn 5220 --any of: Return to Chillwind Camp
-step
-    .goto 1422/0,-1587.99,1329.90
+    .goto 1422/0,-1403.52,1467.79
     >>Using the Beacon Torch, mark each tower in Andorhal; you will need to stand in the doorway of the tower to successfully mark it.
-    .complete 5097,4 --Andorhal Tower Four
-    .target Andorhal Tower Four
+    .complete 5097,2 --Andorhal Tower Two
+    .target Andorhal Tower Two
     .isOnQuest 5097
 step
-    .goto 1422/0,-1488.23,1553.50
+    .goto 1422/0,-1305.48,1314.13
     >>Using the Beacon Torch, mark each tower in Andorhal; you will need to stand in the doorway of the tower to successfully mark it.
-    .complete 5097,3 --Andorhal Tower Three
-    .target Andorhal Tower Three
+    .complete 5097,1 --Andorhal Tower One
+    .target Andorhal Tower One
     .isOnQuest 5097
-step
-    .goto 1422/0,-1857.17,1472.37
-    >>Kill |cRXP_ENEMY_Cauldron Lord Razarch|r and loot |cRXP_LOOT_Writhing Haunt Cauldron Key|r
-    .complete 5222,1 --Writhing Haunt Cauldron Key (1)
-    .mob Cauldron Lord Razarch
-    .isOnQuest 5222
-step
-    .goto 1422/0,-1863.19,1485.85
-    >>Click the |cRXP_PICK_Scourge Cauldron|r
-    .turnin 5222 >>Turn in Target: Writhing Haunt
-    .isOnQuest 5222
-step
-    .goto 1422/0,-1863.19,1485.85
-    >>Click the |cRXP_PICK_Scourge Cauldron|r
-    .accept 5223 >>Accept Return to Chillwind Camp
-    .isQuestTurnedIn 5222 --any of: Target: Writhing Haunt
-step
-    .goto 1422/0,-1431.04,944.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
-    .turnin 5223 >>Turn in Return to Chillwind Camp
-    .target High Priestess MacDonnell
-    .isOnQuest 5223
 step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
@@ -614,39 +452,40 @@ step
     .target Alchemist Arbington
     .isOnQuest 5533
 step
-    .goto 1422/0,-1417.71,965.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
-    .accept 5537 >>Accept Skeletal Fragments
-    .target Alchemist Arbington
-    .isQuestTurnedIn 5533 --any of: Scholomance
+    .goto 1422/0,-1431.04,944.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
+    .turnin 5220 >>Turn in Return to Chillwind Camp
+    .target High Priestess MacDonnell
+    .isOnQuest 5220
 step
-    .goto 1422/0,-1657.22,1942.79
-    >>Kill |cRXP_ENEMY_Farmer Dalson|r and loot |cRXP_LOOT_Dalson Cabinet Key|r
-    .complete 5060,1 --Dalson Cabinet Key (1)
-    .mob Farmer Dalson
+    .goto 1422/0,-1431.04,944.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
+    .accept 5222 >>Accept Target: Writhing Haunt
+    .target High Priestess MacDonnell
+    .isQuestTurnedIn 5220 --any of: Return to Chillwind Camp
 step
-    .goto 1422/0,-1619.38,1943.94
-    >>Click the |cRXP_PICK_Locked Cabinet|r
-    .turnin 5060 >>Turn in Locked Away
+    .goto 1422/0,-1451.68,966.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Weldon Barov|r
+    .accept 5344 >>Accept The Last Barov
+    .target Weldon Barov
+    .isQuestTurnedIn 5343 --any of: Barov Family Fortune
+    .xp <52,1
 step
-    #loop
-    .goto 1422/0,-1620.24,1938.49,0
-    .goto 1422/0,-1620.24,1938.49,40,0
-    .goto 1422/0,-1615.08,1949.96,40,0
-    .goto 1422/0,-1566.06,1948.53,40,0
-    .goto 1422/0,-1556.60,1918.14,40,0
-    .goto 1422/0,-1520.05,1876.00,40,0
-    .goto 1422/0,-1553.59,1885.46,40,0
-    .goto 1422/0,-1585.41,1889.47,40,0
-    .goto 1422/0,-1651.63,1898.93,40,0
-    .goto 1422/0,-1643.46,1916.42,40,0
-    >>Kill |cRXP_ENEMY_Skeletal Flayers|r, |cRXP_ENEMY_Skeletal Sorcerers|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Skeletal Executioners|r. Loot them for |cRXP_LOOT_Skeletal Fragments|r
-    .complete 5537,1 --Skeletal Fragments (15)
-    .mob Skeletal Flayer
-    .mob Skeletal Sorcerer
-    .mob Skeletal Terror
-    .mob Skeletal Executioner
-    .isOnQuest 5537
+    .goto 1422/0,-1857.17,1472.37
+    >>Kill |cRXP_ENEMY_Cauldron Lord Razarch|r and loot |cRXP_LOOT_Writhing Haunt Cauldron Key|r
+    .complete 5222,1 --Writhing Haunt Cauldron Key (1)
+    .mob Cauldron Lord Razarch
+    .isOnQuest 5222
+step
+    .goto 1422/0,-1863.19,1485.85
+    >>Click the |cRXP_PICK_Scourge Cauldron|r
+    .turnin 5222 >>Turn in Target: Writhing Haunt
+    .isOnQuest 5222
+step
+    .goto 1422/0,-1863.19,1485.85
+    >>Click the |cRXP_PICK_Scourge Cauldron|r
+    .accept 5223 >>Accept Return to Chillwind Camp
+    .isQuestTurnedIn 5222 --any of: Target: Writhing Haunt
 step
     .goto 1422/0,-1893.72,1513.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulgris Deepriver|r
@@ -654,27 +493,149 @@ step
     .target Mulgris Deepriver
     .isQuestTurnedIn 4984 --any of: The Wildlife Suffers Too
 step
-    #loop
-    .goto 1422/0,-2323.72,1940.50,0
-    .goto 1422/0,-2323.72,1940.50,40,0
-    .goto 1422/0,-2354.68,1998.98,40,0
-    .goto 1422/0,-2315.98,2071.79,40,0
-    .goto 1422/0,-2415.74,2104.76,40,0
-    .goto 1422/0,-2509.48,2061.47,40,0
-    .goto 1422/0,-2512.06,1977.19,40,0
-    .goto 1422/0,-2432.08,1996.97,40,0
-    .goto 1422/0,-2455.73,1935.05,40,0
-    .goto 1422/0,-2391.23,1925.02,40,0
-    >>Kill |cRXP_ENEMY_Diseased Grizzlies|r
-    .complete 4985,1 --Diseased Grizzly slain (8)
-    .mob Diseased Grizzly
-    .isOnQuest 4985
+    .goto 1422/0,-1903.18,2665.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Tirion Fordring|r
+    .accept 5542 >>Accept Demon Dogs
+    .accept 5543 >>Accept Blood Tinged Skies
+    .accept 5544 >>Accept Carrion Grubbage
+    .target Lord Tirion Fordring
+step
+    .goto 1422/0,-1431.04,944.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
+    .turnin 5223 >>Turn in Return to Chillwind Camp
+    .target High Priestess MacDonnell
+    .isOnQuest 5223
+step
+    .goto 1422/0,-1417.71,965.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
+    .accept 5537 >>Accept Skeletal Fragments
+    .target Alchemist Arbington
+    .isQuestTurnedIn 5533 --any of: Scholomance
 step
     .goto 1422/0,-1450.39,934.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathaniel Dumah|r
     .turnin 5903 >>Turn in A Plague Upon Thee
     .target Nathaniel Dumah
     .isQuestComplete 5903
+step
+    .goto 1422/0,-1697.64,1114.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marlene Redpath|r
+    .accept 5153 >>Accept A Strange Historian
+    .target Marlene Redpath
+    .isQuestTurnedIn 5152 --any of: Auntie Marlene
+    .xp <50,1
+step
+    .goto 1422/0,-1720.43,1166.21
+    >>Open the |cRXP_PICK_Joseph Redpath's Monument|r. Loot it for |cRXP_LOOT_Joseph's Wedding Ring|r
+    .complete 5153,1 --Joseph's Wedding Ring (1)
+    .isOnQuest 5153
+step
+    .goto 1422/0,-1280.11,1452.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
+    .turnin 5153 >>Turn in A Strange Historian
+    .target Chromie
+    .isOnQuest 5153
+step
+    .goto 1422/0,-1280.11,1452.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
+    .accept 5154 >>Accept The Annals of Darrowshire
+    .target Chromie
+    .isQuestTurnedIn 5153 --any of: A Strange Historian
+    .xp <50,1
+step
+    .goto 1422/0,-1280.11,1452.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
+    .accept 4971 >>Accept A Matter of Time
+    .target Chromie
+step
+    .goto 1422/0,-1458.13,1360.86
+    >>Open the |cRXP_PICK_Musty Tome|r. Loot it for |cRXP_LOOT_Annals of Darrowshire|r
+    .complete 5154,1 --Annals of Darrowshire (1)
+    .isOnQuest 5154
+step
+    #loop
+    .goto 1422/0,-1613.36,1478.68,0
+    .goto 1422/0,-1613.36,1478.68,40,0
+    .goto 1422/0,-1527.36,1565.54,40,0
+    .goto 1422/0,-1591.00,1587.04,40,0
+    .goto 1422/0,-1640.02,1547.77,40,0
+    .goto 1422/0,-1666.68,1566.11,40,0
+    .goto 1422/0,-1657.22,1520.82,40,0
+    .goto 1422/0,-1658.51,1481.26,40,0
+    .goto 1422/0,-1741.93,1464.92,40,0
+    .goto 1422/0,-1691.19,1380.07,40,0
+    >>Kill |cRXP_ENEMY_Temporal Parasites|r
+    .complete 4971,1 --Temporal Parasite slain (10)
+    .mob Temporal Parasite
+step
+    .goto 1422/0,-1280.11,1452.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
+    .turnin 4971 >>Turn in A Matter of Time
+    .accept 4972 >>Accept Counting Out Time
+    .target Chromie
+step
+    #completewith Along38
+    >>As you go: Loot the |cRXP_PICK_Small Lockboxes|r for |cRXP_LOOT_Andorhal Watch|r. |cRXP_WARN_Anything left is finished later|r
+    .complete 4972,1 --Andorhal Watch (5)
+step
+    .goto 1422/0,-1280.11,1452.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
+    .turnin 5154 >>Turn in The Annals of Darrowshire
+    .target Chromie
+    .isOnQuest 5154
+step
+    #label Along38
+    .goto 1422/0,-1280.11,1452.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
+    .accept 5210 >>Accept Brother Carlin
+    .target Chromie
+    .isQuestTurnedIn 5154 --any of: The Annals of Darrowshire
+    .xp <50,1
+step
+    #loop
+    .goto 1422/0,-1429.32,1408.16,0
+    .goto 1422/0,-1429.32,1408.16,40,0
+    .goto 1422/0,-1419.00,1371.47,40,0
+    .goto 1422/0,-1384.60,1297.79,40,0
+    .goto 1422/0,-1379.87,1257.37,40,0
+    .goto 1422/0,-1425.45,1247.34,40,0
+    .goto 1422/0,-1457.70,1259.67,40,0
+    .goto 1422/0,-1511.45,1278.59,40,0
+    .goto 1422/0,-1578.53,1275.15,40,0
+    .goto 1422/0,-1510.59,1347.67,40,0
+    >>Loot the |cRXP_PICK_Small Lockboxes|r for |cRXP_LOOT_Andorhal Watch|r
+    .complete 4972,1 --Andorhal Watch (5)
+step
+    .goto 1422/0,-1280.11,1452.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
+    .turnin 4972 >>Turn in Counting Out Time
+    .target Chromie
+step
+    .goto 1422/0,-1280.11,1452.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
+    .accept 5721 >>Accept The Battle of Darrowshire
+    .target Chromie
+    .isQuestTurnedIn 5941 --any of: Return to Chromie
+    .xp <55,1
+step
+    #loop
+    .goto 1422/0,-1297.74,1419.34,0
+    .goto 1422/0,-1297.74,1419.34,40,0
+    .goto 1422/0,-1312.79,1484.99,40,0
+    .goto 1422/0,-1381.59,1515.66,40,0
+    .goto 1422/0,-1382.02,1378.63,40,0
+    .goto 1422/0,-1415.56,1321.59,40,0
+    .goto 1422/0,-1449.53,1220.39,40,0
+    .goto 1422/0,-1380.73,1219.53,40,0
+    .goto 1422/0,-1367.83,1277.73,40,0
+    .goto 1422/0,-1253.88,1327.03,40,0
+    >>Kill |cRXP_ENEMY_Skeletal Flayers|r, |cRXP_ENEMY_Skeletal Sorcerers|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Skeletal Executioners|r. Loot them for |cRXP_LOOT_Skeletal Fragments|r
+    .complete 5537,1 --Skeletal Fragments (15)
+    .mob Skeletal Flayer
+    .mob Skeletal Sorcerer
+    .mob Skeletal Terror
+    .mob Skeletal Executioner
+    .isOnQuest 5537
 step
     .goto 1422/0,-1417.71,965.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
@@ -694,24 +655,28 @@ step
     .target Weldon Barov
     .isQuestComplete 5344
 step
-    .goto 1422/0,-1697.64,1114.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marlene Redpath|r
-    .accept 5153 >>Accept A Strange Historian
-    .target Marlene Redpath
-    .isQuestTurnedIn 5152 --any of: Auntie Marlene
-    .xp <50,1
-step
-    .goto 1422/0,-1720.43,1166.21
-    >>Open the |cRXP_PICK_Joseph Redpath's Monument|r. Loot it for |cRXP_LOOT_Joseph's Wedding Ring|r
-    .complete 5153,1 --Joseph's Wedding Ring (1)
-    .isOnQuest 5153
-step
     .goto 1422/0,-1767.30,1134.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myranda the Hag|r
     .accept 5862 >>Accept Scarlet Subterfuge
     .target Myranda the Hag
     .isQuestTurnedIn 5861 --any of: Find Myranda
     .xp <52,1
+step
+    #loop
+    .goto 1422/0,-2115.17,1821.25,0
+    .goto 1422/0,-2115.17,1821.25,40,0
+    .goto 1422/0,-2070.88,1848.77,40,0
+    .goto 1422/0,-2112.59,1917.85,40,0
+    .goto 1422/0,-2186.12,1949.67,40,0
+    .goto 1422/0,-2244.17,2018.47,40,0
+    .goto 1422/0,-2286.31,1936.49,40,0
+    .goto 1422/0,-2244.60,1880.87,40,0
+    .goto 1422/0,-2199.88,1903.52,40,0
+    .goto 1422/0,-2182.25,1815.51,40,0
+    >>Kill |cRXP_ENEMY_Diseased Grizzlies|r
+    .complete 4985,1 --Diseased Grizzly slain (8)
+    .mob Diseased Grizzly
+    .isOnQuest 4985
 step
     .goto 1422/0,-1893.72,1513.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulgris Deepriver|r
@@ -730,7 +695,7 @@ step
     .accept 6004 >>Accept Unfinished Business
     .target Kirsta Deepshadow
 step
-    .goto 1422/0,-1337.73,1878.29
+    .goto 1422/0,-1814.60,2087.85
     >>Kill |cRXP_ENEMY_Scarlet Medics|r
     >>Kill |cRXP_ENEMY_Scarlet Hunters|r
     .complete 6004,1 --Scarlet Medic slain (2)
@@ -738,12 +703,12 @@ step
     .mob Scarlet Medic
     .mob Scarlet Hunter
 step
-    #completewith Along37
+    #completewith Along52
     >>As you go: Kill |cRXP_ENEMY_Scarlet Knights|r. |cRXP_WARN_Anything left is finished later|r
     .complete 6004,4 --Scarlet Knight slain (2)
     .mob Scarlet Knight
 step
-    #label Along37
+    #label Along52
     .goto 1422/0,-1852.44,2289.95
     >>Kill |cRXP_ENEMY_Scarlet Mages|r
     .complete 6004,3 --Scarlet Mage slain (8)
@@ -794,117 +759,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirsta Deepshadow|r
     .turnin 6025 >>Turn in Unfinished Business
     .target Kirsta Deepshadow
-step
-    .goto 1422/0,-1280.11,1452.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
-    .accept 5721 >>Accept The Battle of Darrowshire
-    .target Chromie
-    .isQuestTurnedIn 5941 --any of: Return to Chromie
-    .xp <55,1
-step
-    .goto 1422/0,-1280.11,1452.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
-    .turnin 5153 >>Turn in A Strange Historian
-    .target Chromie
-    .isOnQuest 5153
-step
-    .goto 1422/0,-1280.11,1452.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
-    .accept 5154 >>Accept The Annals of Darrowshire
-    .target Chromie
-    .isQuestTurnedIn 5153 --any of: A Strange Historian
-    .xp <50,1
-step
-    .goto 1422/0,-1458.13,1360.86
-    >>Open the |cRXP_PICK_Musty Tome|r. Loot it for |cRXP_LOOT_Annals of Darrowshire|r
-    .complete 5154,1 --Annals of Darrowshire (1)
-    .isOnQuest 5154
-step
-    .goto 1422/0,-1280.11,1452.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
-    .turnin 5154 >>Turn in The Annals of Darrowshire
-    .target Chromie
-    .isOnQuest 5154
-step << Human Paladin/Dwarf Paladin
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .turnin 8418 >>Turn in Forging the Mightstone
-    .target Commander Ashlam Valorfist
-    .isQuestComplete 8418
-step
-    .goto 1422/0,-1638.73,1914.13
-    >>Click the |cRXP_PICK_Mrs. Dalson's Diary|r
-    .accept 5058 >>Accept Mrs. Dalson's Diary
-step
-    .goto 1422/0,-1638.73,1914.13
-    >>Click the |cRXP_PICK_Mrs. Dalson's Diary|r
-    >>|cRXP_WARN_The database has no objectives for Mrs. Dalson's Diary. Skip this step if the quest is not finished|r
-    .turnin 5058 >>Turn in Mrs. Dalson's Diary
-    .isOnQuest 5058
-step
-    .goto 1422/0,-1903.18,2665.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Tirion Fordring|r
-    .accept 5542 >>Accept Demon Dogs
-    .accept 5543 >>Accept Blood Tinged Skies
-    .accept 5544 >>Accept Carrion Grubbage
-    .target Lord Tirion Fordring
-step
-    .goto 1422/0,-1280.11,1452.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
-    .accept 4971 >>Accept A Matter of Time
-    .target Chromie
-step
-    #loop
-    .goto 1422/0,-1527.36,1565.54,0
-    .goto 1422/0,-1527.36,1565.54,40,0
-    .goto 1422/0,-1591.00,1587.04,40,0
-    .goto 1422/0,-1640.02,1547.77,40,0
-    .goto 1422/0,-1666.68,1566.11,40,0
-    .goto 1422/0,-1657.22,1520.82,40,0
-    .goto 1422/0,-1741.93,1464.92,40,0
-    .goto 1422/0,-1691.19,1380.07,40,0
-    .goto 1422/0,-1658.51,1481.26,40,0
-    .goto 1422/0,-1613.36,1478.68,40,0
-    >>Kill |cRXP_ENEMY_Temporal Parasites|r
-    .complete 4971,1 --Temporal Parasite slain (10)
-    .mob Temporal Parasite
-step
-    .goto 1422/0,-1280.11,1452.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
-    .turnin 4971 >>Turn in A Matter of Time
-    .accept 4972 >>Accept Counting Out Time
-    .target Chromie
-step
-    #completewith Along58
-    >>As you go: Loot the |cRXP_PICK_Small Lockboxes|r for |cRXP_LOOT_Andorhal Watch|r. |cRXP_WARN_Anything left is finished later|r
-    .complete 4972,1 --Andorhal Watch (5)
-step
-    #label Along58
-    .goto 1422/0,-1280.11,1452.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
-    .accept 5210 >>Accept Brother Carlin
-    .target Chromie
-    .isQuestTurnedIn 5154 --any of: The Annals of Darrowshire
-    .xp <50,1
-step
-    #loop
-    .goto 1422/0,-1429.32,1408.16,0
-    .goto 1422/0,-1429.32,1408.16,40,0
-    .goto 1422/0,-1419.00,1371.47,40,0
-    .goto 1422/0,-1384.60,1297.79,40,0
-    .goto 1422/0,-1379.87,1257.37,40,0
-    .goto 1422/0,-1425.45,1247.34,40,0
-    .goto 1422/0,-1457.70,1259.67,40,0
-    .goto 1422/0,-1511.45,1278.59,40,0
-    .goto 1422/0,-1578.53,1275.15,40,0
-    .goto 1422/0,-1510.59,1347.67,40,0
-    >>Loot the |cRXP_PICK_Small Lockboxes|r for |cRXP_LOOT_Andorhal Watch|r
-    .complete 4972,1 --Andorhal Watch (5)
-step
-    .goto 1422/0,-1280.11,1452.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
-    .turnin 4972 >>Turn in Counting Out Time
-    .target Chromie
 step
     +|cRXP_WARN_That is all of Western Plaguelands for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Darnassus|r: Glyphed Oaken Branch
@@ -963,12 +817,6 @@ step
     .target Jeziba
     .isQuestComplete 5167
 step
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .accept 211 >>Accept Alas, Andorhal
-    .target Commander Ashlam Valorfist
-    .isQuestTurnedIn 5097 --any of: All Along the Watchtowers
-step
     .goto 1422/0,-1417.71,965.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .accept 5803 >>Accept Araj's Scarab
@@ -976,10 +824,17 @@ step
     .isQuestTurnedIn 5801 --any of: Fire Plume Forged
     .xp <55,1
 step
-    .goto 1422/0,-1638.73,1914.13
-    >>Click the |cRXP_PICK_Mrs. Dalson's Diary|r
-    .turnin 5058 >>Turn in Mrs. Dalson's Diary
-    .isOnQuest 5058
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .accept 211 >>Accept Alas, Andorhal
+    .target Commander Ashlam Valorfist
+    .isQuestTurnedIn 5097 --any of: All Along the Watchtowers
+step << Human Paladin/Dwarf Paladin
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 8418 >>Turn in Forging the Mightstone
+    .target Commander Ashlam Valorfist
+    .isQuestComplete 8418
 step
     .goto 1422/0,-1458.56,944.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Flint Shadowmore|r
@@ -988,6 +843,11 @@ step
     .isQuestTurnedIn 6184 --any of: Flint Shadowmore
     .xp <56,1
 step
+    .goto 1422/0,-1638.73,1914.13
+    >>Click the |cRXP_PICK_Mrs. Dalson's Diary|r
+    .turnin 5058 >>Turn in Mrs. Dalson's Diary
+    .isOnQuest 5058
+step
     .goto 1422/0,-1431.04,944.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
     .accept 5225 >>Accept Target: Gahrron's Withering
@@ -995,14 +855,33 @@ step
     .isQuestTurnedIn 5223 --any of: Return to Chillwind Camp
 step
     .goto 1422/0,-1529.94,1382.65
-    >>Open the |cRXP_PICK_Araj's Phylactery|r. Loot it for |cRXP_LOOT_Araj's Scarab|r
-    .complete 5803,1 --Araj's Scarab (1)
-    .isOnQuest 5803
-step
-    .goto 1422/0,-1529.94,1382.65
     >>Open the |cRXP_PICK_Araj's Phylactery|r. Loot it for |cRXP_LOOT_Araj's Phylactery Shard|r
     .complete 211,1 --Araj's Phylactery Shard (1)
     .isOnQuest 211
+step
+    .goto 1422/0,-1450.39,934.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathaniel Dumah|r
+    .turnin 5903 >>Turn in A Plague Upon Thee
+    .target Nathaniel Dumah
+    .isQuestComplete 5903
+step
+    .goto 1422/0,-1419.43,957.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
+    .turnin 211 >>Turn in Alas, Andorhal while you are here
+    .isQuestComplete 211
+    .target Commander Ashlam Valorfist
+step
+    .goto 1422/0,-1458.56,944.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Flint Shadowmore|r
+    .accept 6186 >>Accept The Blightcaller Cometh
+    .target Flint Shadowmore
+    .isQuestTurnedIn 6185 --any of: The Eastern Plagues
+    .xp <56,1
+step
+    .goto 1422/0,-1529.94,1382.65
+    >>Open the |cRXP_PICK_Araj's Phylactery|r. Loot it for |cRXP_LOOT_Araj's Scarab|r
+    .complete 5803,1 --Araj's Scarab (1)
+    .isOnQuest 5803
 step
     #loop
     .goto 1422/0,-1557.03,1319.87,0
@@ -1015,21 +894,6 @@ step
     .goto 1422/0,-1875.23,1500.47,40,0
     .goto 1422/0,-1870.93,1460.33,40,0
     .goto 1422/0,-1832.23,1466.07,40,0
-    >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
-    .complete 5166,3 --Blood of Heroes (10)
-    .isOnQuest 5166
-step
-    #loop
-    .goto 1422/0,-1875.23,1500.47,0
-    .goto 1422/0,-1875.23,1500.47,40,0
-    .goto 1422/0,-1883.83,1546.33,40,0
-    .goto 1422/0,-1862.33,1526.27,40,0
-    .goto 1422/0,-1445.23,1408.73,40,0
-    .goto 1422/0,-1462.43,1345.67,40,0
-    .goto 1422/0,-1496.83,1311.27,40,0
-    .goto 1422/0,-1557.03,1319.87,40,0
-    .goto 1422/0,-1832.23,1466.07,40,0
-    .goto 1422/0,-1870.93,1460.33,40,0
     >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
     .complete 5167,3 --Blood of Heroes (10)
     .isOnQuest 5167
@@ -1078,35 +942,11 @@ step
     .target Magistrate Marduke
     .isQuestComplete 5461
 step
-    .goto 1422/0,-1450.39,934.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathaniel Dumah|r
-    .turnin 5903 >>Turn in A Plague Upon Thee
-    .target Nathaniel Dumah
-    .isQuestComplete 5903
-step
-    .goto 1422/0,-1458.56,944.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Flint Shadowmore|r
-    .accept 6186 >>Accept The Blightcaller Cometh
-    .target Flint Shadowmore
-    .isQuestTurnedIn 6185 --any of: The Eastern Plagues
-    .xp <56,1
-step << Mage/Hunter/Druid
-    .goto 1422/0,-1617.23,2976.80
-    >>|cRXP_WARN_Head to the top of the tower marked on your map. Look for a red book laying in a corner next to a bookshelf, it's guarded by a|r |cRXP_ENEMY_Scarlet Priest|r. |cRXP_WARN_Loot it for the rune of |r |T132849:0|t[Arcane Specialization]. |cRXP_WARN_You can skip this step if you don't feel like getting this rune|r
-    .collect 226413,1
-    .train 453702,1
-step
     .goto 1422/0,-1431.04,944.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess MacDonnell|r
     .turnin 5226 >>Turn in Return to Chillwind Camp
     .target High Priestess MacDonnell
     .isOnQuest 5226
-step << Human Paladin/Dwarf Paladin
-    .goto 1422/0,-1419.43,957.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .turnin 8418 >>Turn in Forging the Mightstone
-    .target Commander Ashlam Valorfist
-    .isQuestComplete 8418
 step
     .goto 1422/0,-1419.43,957.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
@@ -1150,6 +990,21 @@ step
     .turnin 6185 >>Turn in The Eastern Plagues
     .target Flint Shadowmore
     .isQuestComplete 6185
+step
+    #loop
+    .goto 1422/0,-1496.83,1311.27,0
+    .goto 1422/0,-1496.83,1311.27,40,0
+    .goto 1422/0,-1557.03,1319.87,40,0
+    .goto 1422/0,-1827.93,1460.33,40,0
+    .goto 1422/0,-1870.93,1460.33,40,0
+    .goto 1422/0,-1875.23,1500.47,40,0
+    .goto 1422/0,-1879.53,1549.20,40,0
+    .goto 1422/0,-1445.23,1408.73,40,0
+    .goto 1422/0,-1385.03,1345.67,40,0
+    .goto 1422/0,-1462.43,1345.67,40,0
+    >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
+    .complete 5166,3 --Blood of Heroes (10)
+    .isOnQuest 5166
 step
     .goto 1422/0,-1390.19,2942.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Taelan Fordring|r

@@ -39,6 +39,17 @@ step << Undead
     .target Deathguard Podrig
     .isOnQuest 6324
 step
+    .goto 1421/0,1594.02,471.91
+    >>Click the |cRXP_PICK_Yuriv's Tombstone|r
+    .turnin 264 >>Turn in Until Death Do Us Part
+    .isOnQuest 264
+step
+    .goto 1421/0,1647.78,490.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mura Runetotem|r
+    .turnin 3301 >>Turn in Mura Runetotem
+    .target Mura Runetotem
+    .isOnQuest 3301
+step
     .goto 1421/0,1636.44,510.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Bates|r
     .target Innkeeper Bates
@@ -477,18 +488,6 @@ step << Shaman
     .turnin 63 >>Turn in Call of Water
     .isOnQuest 63
 step
-    .goto 1421/0,1647.78,490.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mura Runetotem|r
-    .turnin 3301 >>Turn in Mura Runetotem
-    .target Mura Runetotem
-    .isOnQuest 3301
-step
-    .goto 1421/0,1652.40,522.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
-    .turnin 450 >>Turn in A Recipe For Death
-    .target Apothecary Renferrel
-    .isOnQuest 450
-step
     .goto 1421/0,1652.40,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
     .accept 448 >>Accept Report to Hadrec
@@ -496,19 +495,17 @@ step
     .isQuestTurnedIn 446 --any of: Thule Ravenclaw
     .xp <10,1
 step
+    .goto 1421/0,1652.40,522.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Renferrel|r
+    .turnin 450 >>Turn in A Recipe For Death
+    .target Apothecary Renferrel
+    .isOnQuest 450
+step
     .goto 1421/0,1626.36,522.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Executor Hadrec|r
     .turnin 448 >>Turn in Report to Hadrec
     .target High Executor Hadrec
     .isOnQuest 448
-step
-    .goto 1421/0,1594.02,471.91
-    >>Click the |cRXP_PICK_Yuriv's Tombstone|r
-    .turnin 264 >>Turn in Until Death Do Us Part
-    .isOnQuest 264
-step
-    .goto 1421/0,1513.80,-734.33
-    .xp 22 >> Run south to The Greymane Wall. AoE here until 22
 step
     +|cRXP_WARN_That is all of Silverpine Forest for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Tirisfal Glades|r: The Engraved Ring
@@ -858,16 +855,16 @@ step << Undead Paladin
     .isOnQuest 95034
 step
     #loop
-    .goto 1421/0,741.42,456.23,0
-    .goto 1421/0,741.42,456.23,40,0
+    .goto 1421/0,738.48,511.11,0
     .goto 1421/0,738.48,511.11,40,0
-    .goto 1421/0,682.62,485.07,40,0
-    .goto 1421/0,649.44,450.63,40,0
-    .goto 1421/0,620.04,399.39,40,0
-    .goto 1421/0,610.38,283.75,40,0
-    .goto 1421/0,645.24,343.95,40,0
-    .goto 1421/0,688.92,349.27,40,0
+    .goto 1421/0,741.42,456.23,40,0
     .goto 1421/0,696.06,408.91,40,0
+    .goto 1421/0,688.92,349.27,40,0
+    .goto 1421/0,645.24,343.95,40,0
+    .goto 1421/0,610.38,283.75,40,0
+    .goto 1421/0,620.04,399.39,40,0
+    .goto 1421/0,649.44,450.63,40,0
+    .goto 1421/0,682.62,485.07,40,0
     >>Kill |cRXP_ENEMY_Vile Fin Shredders|r, |cRXP_ENEMY_Vile Fin Tidehunters|r, |cRXP_ENEMY_Vile Fin Oracles|r and |cRXP_ENEMY_Vile Fin Lakestalkers|r. Loot them for |cRXP_LOOT_Hardened Tumor|r
     .complete 451,3 --Hardened Tumor (1)
     .mob Vile Fin Shredder
@@ -958,8 +955,8 @@ step
 step
     .goto 1421/0,1008.96,-286.89
     >>Click the |cRXP_PICK_Offering Stone|r
-    .accept 95885 >>Accept The Offering of Blood
     .accept 95883 >>Accept The Tortured Soul
+    .accept 95885 >>Accept The Offering of Blood
 step
     #completewith Drop95884x1
     >>|cRXP_LOOT_Note Scrap|r can drop from |cRXP_ENEMY_Ravenclaw Guardian|r, |cRXP_ENEMY_Ravenclaw Drudger|r. Use it to start the quest if you get one
@@ -980,29 +977,34 @@ step
     .goto 1421/0,944.28,-289.97,40,0
     .goto 1421/0,966.12,-307.33,40,0
     >>Kill |cRXP_ENEMY_Tortured Souls|r
-    >>Kill |cRXP_ENEMY_Ravenclaw Guardians|r and |cRXP_ENEMY_Ravenclaw Drudgers|r. Loot them for |cRXP_LOOT_Tortured Soul|r
     >>Kill |cRXP_ENEMY_Ravenclaw Guardians|r and |cRXP_ENEMY_Ravenclaw Drudgers|r. Loot them for |cRXP_LOOT_Note Scrap|r
+    >>Kill |cRXP_ENEMY_Ravenclaw Guardians|r and |cRXP_ENEMY_Ravenclaw Drudgers|r. Loot them for |cRXP_LOOT_Tortured Soul|r
     .complete 95885,1 --Tortured Soul slain (8)
-    .complete 95883,1 --Tortured Soul (1)
     .complete 95884,1 --Note Scrap (1)
+    .complete 95883,1 --Tortured Soul (1)
     .mob Tortured Soul
     .mob Ravenclaw Guardian
     .mob Ravenclaw Drudger
 step
     .goto 1421/0,1008.96,-286.89
     >>Click the |cRXP_PICK_Offering Stone|r
-    .turnin 95884 >>Turn in The Offering Stone while you are here
-    .isQuestComplete 95884
+    .turnin 95883 >>Turn in The Tortured Soul while you are here
+    .isQuestComplete 95883
 step
     .goto 1421/0,1008.96,-286.89
     >>Click the |cRXP_PICK_Offering Stone|r
-    .turnin 95883 >>Turn in The Tortured Soul
-    .turnin 95885 >>Turn in The Offering of Blood
+    .turnin 95885 >>Turn in The Offering of Blood while you are here
+    .isQuestComplete 95885
 step
     .goto 1421/0,1008.96,-286.89
     >>Click the |cRXP_PICK_Offering Stone|r
     .turnin 95884 >>Turn in The Offering Stone
     .isOnQuest 95884
+step
+    .goto 1421/0,1008.96,-286.89
+    >>Click the |cRXP_PICK_Offering Stone|r
+    .turnin 95885 >>Turn in The Offering of Blood
+    .turnin 95883 >>Turn in The Tortured Soul
 step
     .goto 1421/0,1602.84,520.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Allister|r

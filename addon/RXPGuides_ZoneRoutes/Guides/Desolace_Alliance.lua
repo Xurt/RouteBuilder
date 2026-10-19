@@ -15,23 +15,8 @@ RXPGuides.RegisterGuide([[
 #group Zone Routes (Alliance)
 #subgroup 31 - 38 Desolace
 #subweight -31
-#name 31-32 Desolace: around Vahlarriel Demonslayer
+#name 31-32 Desolace: around Kreldig Ungor
 
-step
-    .goto 1443/1,1246.30,97.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahlarriel Demonslayer|r
-    .accept 1437 >>Accept Vahlarriel's Search
-    .target Vahlarriel Demonslayer
-step
-    .goto 1443/1,1326.33,136.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baritanas Skyriver|r
-    .fp Desolace >> Get the Desolace Flight Path
-    .target Baritanas Skyriver
-step << Hunter
-    .goto 1443/1,1239.11,248.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Christi Galvanis|r
-    .vendor >> |cRXP_BUY_Restock on |r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed|r
-    .target Christi Galvanis
 step
     .goto 1443/1,1242.70,214.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Anton|r
@@ -47,8 +32,8 @@ step
 step
     .goto 1443/1,1257.09,163.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
-    .accept 1458 >>Accept Reagents for Reclaimers Inc.
     .accept 1454 >>Accept The Karnitol Shipwreck
+    .accept 1458 >>Accept Reagents for Reclaimers Inc.
     .target Kreldig Ungor
     .isQuestTurnedIn 1453 --any of: Reclaimers' Business in Desolace
     .xp <30,1
@@ -61,8 +46,12 @@ step
     .goto 1443/1,1236.41,124.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Pentigast|r
     .accept 1382 >>Accept Strange Alliance
-    .accept 1385 >>Accept Brutal Politics
     .target Captain Pentigast
+step
+    .goto 1443/1,1246.30,97.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahlarriel Demonslayer|r
+    .accept 1437 >>Accept Vahlarriel's Search
+    .target Vahlarriel Demonslayer
 step
     #completewith Drop635x1
     >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Kolkar Centaur|r, |cRXP_ENEMY_Kolkar Scout|r, |cRXP_ENEMY_Kolkar Mauler|r. Use it to start the quest if you get one
@@ -146,7 +135,6 @@ step
     .accept 635 >>Accept Crystal in the Mountains
     .use 4614
 step
-    #label Drop635x2
     #loop
     .goto 1443/1,2665.19,-489.56,0
     .goto 1443/1,2665.19,-489.56,40,0
@@ -163,11 +151,54 @@ step
     .mob Drysnap Crawler
     .mob Drysnap Pincer
 step
+    #label Drop635x2
+    #loop
+    .goto 1443/1,1242.70,-1618.58,0
+    .goto 1443/1,1242.70,-1618.58,40,0
+    .goto 1443/1,1146.94,-1678.84,40,0
+    .goto 1443/1,1029.15,-1689.93,40,0
+    .goto 1443/1,958.57,-1879.40,40,0
+    .goto 1443/1,1147.84,-1846.12,40,0
+    .goto 1443/1,1084.00,-1981.93,40,0
+    .goto 1443/1,1213.93,-2049.08,40,0
+    .goto 1443/1,1314.19,-1884.79,40,0
+    .goto 1443/1,1242.26,-1757.98,40,0
+    >>Kill |cRXP_ENEMY_Kolkar Centaurs|r, |cRXP_ENEMY_Kolkar Scouts|r, |cRXP_ENEMY_Kolkar Maulers|r and |cRXP_ENEMY_Kolkar Windchasers|r. Loot them for |cRXP_LOOT_Centaur Ear|r
+    .complete 1387,1 --Centaur Ear (15)
+    .mob Kolkar Centaur
+    .mob Kolkar Scout
+    .mob Kolkar Mauler
+    .mob Kolkar Windchaser
+step
+    .goto 1443/1,2604.94,-1923.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthek the Wise|r
+    .turnin 93041 >>Turn in Facing the Truth
+    .target Uthek the Wise
+    .isOnQuest 93041
+step
+    .goto 1443/1,2604.94,-1923.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthek the Wise|r
+    .turnin 1382 >>Turn in Strange Alliance
+    .accept 93034 >>Accept Valley of Bones
+    .target Uthek the Wise
+step
+    .goto 1443/1,2604.94,-1923.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthek the Wise|r
+    .turnin 93128 >>Turn in Khan Jehn
+    .target Uthek the Wise
+    .isOnQuest 93128
+step
     .goto 1443/1,1257.09,163.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
     .turnin 1455 >>Turn in The Karnitol Shipwreck
     .target Kreldig Ungor
     .isOnQuest 1455
+step
+    .goto 1443/1,1232.81,126.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Melkins|r
+    .turnin 1387 >>Turn in Centaur Bounty while you are here
+    .isQuestComplete 1387
+    .target Corporal Melkins
 step
     .goto 1443/1,1246.30,97.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahlarriel Demonslayer|r
@@ -185,19 +216,10 @@ step
     .turnin 1438 >>Turn in Vahlarriel's Search
     .target Dalinda Malem
 step
-    .goto 1443/1,862.81,-1591.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
-    .turnin 1385 >>Turn in Brutal Politics
-    .accept 92743 >>Accept A Conqueror's Crown
-    .accept 92841 >>Accept Valley of Bones
-    .target Warug
-step
-    .goto 1443/1,862.81,-1591.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
-    >>|cRXP_WARN_The database has no objectives for A Conqueror's Crown. Skip this step if the quest is not finished|r
-    .turnin 92743 >>Turn in A Conqueror's Crown
-    .target Warug
-    .isOnQuest 92743
+    .goto 1443/1,2485.35,-362.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azore Aldamort|r
+    .turnin 5741 >>Turn in Sceptre of Light
+    .target Azore Aldamort
 step
     #completewith Drop635x3
     >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Kolkar Centaur|r, |cRXP_ENEMY_Kolkar Scout|r, |cRXP_ENEMY_Kolkar Mauler|r. Use it to start the quest if you get one
@@ -206,54 +228,6 @@ step
     .use 4614
 step
     #label Drop635x3
-    #loop
-    .goto 1443/1,1029.15,-1689.93,0
-    .goto 1443/1,1029.15,-1689.93,40,0
-    .goto 1443/1,1146.94,-1678.84,40,0
-    .goto 1443/1,1242.70,-1618.58,40,0
-    .goto 1443/1,1242.26,-1757.98,40,0
-    .goto 1443/1,1314.19,-1884.79,40,0
-    .goto 1443/1,1213.93,-2049.08,40,0
-    .goto 1443/1,1084.00,-1981.93,40,0
-    .goto 1443/1,1147.84,-1846.12,40,0
-    .goto 1443/1,958.57,-1879.40,40,0
-    >>Kill |cRXP_ENEMY_Kolkar Centaurs|r, |cRXP_ENEMY_Kolkar Scouts|r, |cRXP_ENEMY_Kolkar Maulers|r and |cRXP_ENEMY_Kolkar Windchasers|r. Loot them for |cRXP_LOOT_Centaur Ear|r
-    .complete 1387,1 --Centaur Ear (15)
-    .mob Kolkar Centaur
-    .mob Kolkar Scout
-    .mob Kolkar Mauler
-    .mob Kolkar Windchaser
-step
-    .goto 1443/1,2604.94,-1923.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthek the Wise|r
-    .turnin 93128 >>Turn in Khan Jehn
-    .target Uthek the Wise
-    .isOnQuest 93128
-step
-    .goto 1443/1,2604.94,-1923.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthek the Wise|r
-    .turnin 93041 >>Turn in Facing the Truth
-    .target Uthek the Wise
-    .isOnQuest 93041
-step
-    .goto 1443/1,2604.94,-1923.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthek the Wise|r
-    .turnin 1382 >>Turn in Strange Alliance
-    .accept 93034 >>Accept Valley of Bones
-    .target Uthek the Wise
-step
-    .goto 1443/1,2485.35,-362.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azore Aldamort|r
-    .turnin 5741 >>Turn in Sceptre of Light
-    .target Azore Aldamort
-step
-    #completewith Drop635x4
-    >>|cRXP_LOOT_Pendant of Myzrael|r can drop from |cRXP_ENEMY_Kolkar Centaur|r, |cRXP_ENEMY_Kolkar Scout|r, |cRXP_ENEMY_Kolkar Mauler|r. Use it to start the quest if you get one
-    .collect 4614,1,635 --Pendant of Myzrael (1)
-    .accept 635 >>Accept Crystal in the Mountains
-    .use 4614
-step
-    #label Drop635x4
     #loop
     .goto 1443/1,2920.55,53.06,0
     .goto 1443/1,2920.55,53.06,40,0
@@ -280,14 +254,25 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Melkins|r
     .turnin 1387 >>Turn in Centaur Bounty
     .target Corporal Melkins
-step << Hunter
-    .goto 1443/1,924.40,86.34,0
-    .goto 1443/1,654.65,-75.55,0
-    .goto 1443/1,2273.15,-1418.62,0
-    .goto 1443/1,690.62,-21.59,0
-    >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Scorpashi Lasher|r to tame it|r
-    >>Use |T132172:0|t[Eagle Eye] to scout the spawn spots north of Sargeron (marked on your map) as they're much closer than the southen spawns
-    .train 2975 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 5)]
+step
+    .goto 1443/1,1236.41,124.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Pentigast|r
+    .accept 1385 >>Accept Brutal Politics
+    .target Captain Pentigast
+step
+    .goto 1443/1,862.81,-1591.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
+    .turnin 1385 >>Turn in Brutal Politics
+    .accept 92841 >>Accept Valley of Bones
+    .accept 92743 >>Accept A Conqueror's Crown
+    .target Warug
+step
+    .goto 1443/1,862.81,-1591.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
+    >>|cRXP_WARN_The database has no objectives for A Conqueror's Crown. Skip this step if the quest is not finished|r
+    .turnin 92743 >>Turn in A Conqueror's Crown
+    .target Warug
+    .isOnQuest 92743
 step
     +|cRXP_WARN_That is all of Desolace for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Arathi Highlands|r: Crystal in the Mountains
@@ -306,13 +291,32 @@ RXPGuides.RegisterGuide([[
 #name 34-35 Desolace
 
 step
-    .goto 1443/1,1760.62,-333.37
-    >>Click the |cRXP_PICK_Mysterious Book|r
-    .accept 79950 >>Accept Demons and You
+    #loop
+    .goto 1443/1,1287.21,-546.22,0
+    .goto 1443/1,1287.21,-546.22,40,0
+    .goto 1443/1,1228.32,-689.82,40,0
+    .goto 1443/1,1184.26,-858.91,40,0
+    .goto 1443/1,1183.36,-1037.28,40,0
+    .goto 1443/1,1212.58,-1389.24,40,0
+    .goto 1443/1,1434.68,-1487.57,40,0
+    .goto 1443/1,1658.12,-1500.76,40,0
+    .goto 1443/1,1858.18,-1681.53,40,0
+    .goto 1443/1,2082.53,-1810.44,40,0
+    .goto 1443/1,2379.25,-1893.79,40,0
+    .goto 1443/1,2433.65,-1893.79,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cork Gizelton|r. |cRXP_WARN_This NPC walks a patrol route|r
+    .accept 5821 >>Accept Bodyguard for Hire
+    .unitscan Cork Gizelton
 step
-    .goto 1443/1,1760.62,-333.37
-    >>Open the |cRXP_PICK_Mysterious Book|r. Loot it for |cRXP_LOOT_Demons and You|r
-    .complete 79950,1 --Demons and You (1)
+    .goto 1443/1,1213.48,-1245.34
+    >>Escort Gizelton Caravan past Kolkar Centaur Village
+    .complete 5821,1 --Escort Gizelton Caravan past Kolkar Centaur Village
+step
+    .goto 1443/1,862.81,-1591.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
+    .turnin 92743 >>Turn in A Conqueror's Crown
+    .target Warug
+    .isOnQuest 92743
 step
     .goto 1443/1,1257.09,163.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
@@ -320,6 +324,20 @@ step
     .target Kreldig Ungor
     .isQuestTurnedIn 1458 --any of: Reagents for Reclaimers Inc.
     .xp <30,1
+step
+    .goto 1443/1,1497.17,-1402.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
+    .turnin 5821 >>Turn in Bodyguard for Hire
+    .accept 5561 >>Accept Kodo Roundup
+    .target Smeed Scrabblescrew
+step
+    .goto 1443/1,1760.62,-333.37
+    >>Click the |cRXP_PICK_Mysterious Book|r
+    .accept 79950 >>Accept Demons and You
+step
+    .goto 1443/1,1760.62,-333.37
+    >>Open the |cRXP_PICK_Mysterious Book|r. Loot it for |cRXP_LOOT_Demons and You|r
+    .complete 79950,1 --Demons and You (1)
 step
     .goto 1443/1,1257.09,163.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
@@ -358,80 +376,6 @@ step
     .isOnQuest 1440
 step
     #loop
-    .goto 1443/1,1287.21,-546.22,0
-    .goto 1443/1,1287.21,-546.22,40,0
-    .goto 1443/1,1228.32,-689.82,40,0
-    .goto 1443/1,1184.26,-858.91,40,0
-    .goto 1443/1,1183.36,-1037.28,40,0
-    .goto 1443/1,1212.58,-1389.24,40,0
-    .goto 1443/1,1434.68,-1487.57,40,0
-    .goto 1443/1,1658.12,-1500.76,40,0
-    .goto 1443/1,1858.18,-1681.53,40,0
-    .goto 1443/1,2082.53,-1810.44,40,0
-    .goto 1443/1,2379.25,-1893.79,40,0
-    .goto 1443/1,2433.65,-1893.79,40,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cork Gizelton|r. |cRXP_WARN_This NPC walks a patrol route|r
-    .accept 5821 >>Accept Bodyguard for Hire
-    .unitscan Cork Gizelton
-step
-    .goto 1443/1,1213.48,-1245.34
-    >>Escort Gizelton Caravan past Kolkar Centaur Village
-    .complete 5821,1 --Escort Gizelton Caravan past Kolkar Centaur Village
-step
-    .goto 1443/1,862.81,-1591.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
-    .turnin 92743 >>Turn in A Conqueror's Crown
-    .target Warug
-    .isOnQuest 92743
-step
-    .goto 1443/1,1497.17,-1402.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
-    .turnin 5821 >>Turn in Bodyguard for Hire
-    .accept 5561 >>Accept Kodo Roundup
-    .target Smeed Scrabblescrew
-step
-    #loop
-    .goto 1443/1,1730.05,-1426.11,0
-    .goto 1443/1,1730.05,-1426.11,40,0
-    .goto 1443/1,1793.44,-1443.80,40,0
-    .goto 1443/1,1876.62,-1412.62,40,0
-    .goto 1443/1,1884.71,-1365.85,40,0
-    .goto 1443/1,1808.28,-1376.35,40,0
-    >>Kill |cRXP_ENEMY_Aged Kodos|r, |cRXP_ENEMY_Dying Kodos|r and |cRXP_ENEMY_Ancient Kodos|r
-    .complete 5561,1 --Aged Kodo (5)
-    .mob Aged Kodo
-    .mob Dying Kodo
-    .mob Ancient Kodo
-step
-    .goto 1443/1,1497.17,-1402.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
-    .turnin 5561 >>Turn in Kodo Roundup
-    .target Smeed Scrabblescrew
-step
-    #loop
-    .goto 1443/1,1378.48,-596.59,0
-    .goto 1443/1,1378.48,-596.59,40,0
-    .goto 1443/1,1388.37,-542.63,40,0
-    .goto 1443/1,1400.51,-481.77,40,0
-    >>Kill |cRXP_ENEMY_Scorpashi Snappers|r, |cRXP_ENEMY_Scorpashi Lashers|r and |cRXP_ENEMY_Scorpashi Venomlashes|r. Loot them for |cRXP_LOOT_Scorpashi Venom|r
-    .complete 1459,1 --Scorpashi Venom (1)
-    .mob Scorpashi Snapper
-    .mob Scorpashi Lasher
-    .mob Scorpashi Venomlash
-    .isOnQuest 1459
-step
-    #loop
-    .goto 1443/1,1821.32,-1247.44,0
-    .goto 1443/1,1821.32,-1247.44,40,0
-    .goto 1443/1,1868.08,-1270.52,40,0
-    .goto 1443/1,1962.49,-1245.64,40,0
-    .goto 1443/1,1897.75,-1229.75,40,0
-    >>Kill |cRXP_ENEMY_Aged Kodos|r. Loot them for |cRXP_LOOT_Aged Kodo Hide|r
-    .complete 1459,2 --Aged Kodo Hide (3)
-    .mob Aged Kodo
-    .isOnQuest 1459
-step
-    #loop
     .goto 1443/1,2853.11,122.91,0
     .goto 1443/1,2853.11,122.91,40,0
     .goto 1443/1,2842.77,159.19,40,0
@@ -447,6 +391,47 @@ step
     .mob Slitherblade Tidehunter
     .mob Slitherblade Sea Witch
     .isOnQuest 1456
+step
+    #loop
+    .goto 1443/1,1884.71,-1365.85,0
+    .goto 1443/1,1884.71,-1365.85,40,0
+    .goto 1443/1,1876.62,-1412.62,40,0
+    .goto 1443/1,1793.44,-1443.80,40,0
+    .goto 1443/1,1730.05,-1426.11,40,0
+    .goto 1443/1,1808.28,-1376.35,40,0
+    >>Kill |cRXP_ENEMY_Aged Kodos|r, |cRXP_ENEMY_Dying Kodos|r and |cRXP_ENEMY_Ancient Kodos|r
+    .complete 5561,1 --Aged Kodo (5)
+    .mob Aged Kodo
+    .mob Dying Kodo
+    .mob Ancient Kodo
+step
+    .goto 1443/1,1497.17,-1402.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
+    .turnin 5561 >>Turn in Kodo Roundup
+    .target Smeed Scrabblescrew
+step
+    #loop
+    .goto 1443/1,1821.32,-1247.44,0
+    .goto 1443/1,1821.32,-1247.44,40,0
+    .goto 1443/1,1868.08,-1270.52,40,0
+    .goto 1443/1,1962.49,-1245.64,40,0
+    .goto 1443/1,1897.75,-1229.75,40,0
+    >>Kill |cRXP_ENEMY_Aged Kodos|r. Loot them for |cRXP_LOOT_Aged Kodo Hide|r
+    .complete 1459,2 --Aged Kodo Hide (3)
+    .mob Aged Kodo
+    .isOnQuest 1459
+step
+    #loop
+    .goto 1443/1,1378.48,-596.59,0
+    .goto 1443/1,1378.48,-596.59,40,0
+    .goto 1443/1,1388.37,-542.63,40,0
+    .goto 1443/1,1400.51,-481.77,40,0
+    >>Kill |cRXP_ENEMY_Scorpashi Snappers|r, |cRXP_ENEMY_Scorpashi Lashers|r and |cRXP_ENEMY_Scorpashi Venomlashes|r. Loot them for |cRXP_LOOT_Scorpashi Venom|r
+    .complete 1459,1 --Scorpashi Venom (1)
+    .mob Scorpashi Snapper
+    .mob Scorpashi Lasher
+    .mob Scorpashi Venomlash
+    .isOnQuest 1459
 step
     .goto 1443/1,1257.09,163.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
@@ -472,6 +457,14 @@ step
     .turnin 1440 >>Turn in Return to Vahlarriel
     .target Vahlarriel Demonslayer
     .isOnQuest 1440
+step << Hunter Hunter
+    .goto 1443/1,924.40,86.34,0
+    .goto 1443/1,654.65,-75.55,0
+    .goto 1443/1,2273.15,-1418.62,0
+    .goto 1443/1,690.62,-21.59,0
+    >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Scorpashi Lasher|r to tame it|r
+    >>Use |T132172:0|t[Eagle Eye] to scout the spawn spots north of Sargeron (marked on your map) as they're much closer than the southen spawns
+    .train 2975 >>|cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 5)]
 step
     +|cRXP_WARN_That is all of Desolace for now.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Ironforge|r: The Karnitol Shipwreck
@@ -489,6 +482,16 @@ RXPGuides.RegisterGuide([[
 #subweight -31
 #name 37-38 Desolace
 
+step << Hunter
+    .goto 1443/1,1326.33,136.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baritanas Skyriver|r
+    .fp Desolace >> Get the Desolace Flight Path
+    .target Baritanas Skyriver
+step << Hunter Hunter
+    .goto 1443/1,1239.11,248.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Christi Galvanis|r
+    .vendor >> |cRXP_BUY_Restock on |r |T132382:0|t[Razor Arrows] |cRXP_BUY_if needed|r
+    .target Christi Galvanis
 step
     .goto 1443/1,1242.70,214.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Anton|r
@@ -500,16 +503,26 @@ step
     .accept 93224 >>Accept Carved Centaur Totems
     .target Captain Pentigast
 step
-    .goto 1443/1,1431.08,-716.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
-    .accept 5501 >>Accept Bone Collector
-    .target Bibbly F'utzbuckle
+    #loop
+    .goto 1443/1,1287.21,-546.22,0
+    .goto 1443/1,1287.21,-546.22,40,0
+    .goto 1443/1,1228.32,-689.82,40,0
+    .goto 1443/1,1184.26,-858.91,40,0
+    .goto 1443/1,1183.36,-1037.28,40,0
+    .goto 1443/1,1212.58,-1389.24,40,0
+    .goto 1443/1,1434.68,-1487.57,40,0
+    .goto 1443/1,1658.12,-1500.76,40,0
+    .goto 1443/1,1858.18,-1681.53,40,0
+    .goto 1443/1,2082.53,-1810.44,40,0
+    .goto 1443/1,2379.25,-1893.79,40,0
+    .goto 1443/1,2433.65,-1893.79,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rigger Gizelton|r. |cRXP_WARN_This NPC walks a patrol route|r
+    .accept 5943 >>Accept Gizelton Caravan
+    .unitscan Rigger Gizelton
 step
-    .goto 1443/1,862.81,-1591.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
-    .turnin 92743 >>Turn in A Conqueror's Crown
-    .target Warug
-    .isOnQuest 92743
+    .goto 1443/1,1729.60,-1580.20
+    >>Escort Gizelton Caravan past Mannoroc Coven
+    .complete 5943,1 --Escort Gizelton Caravan past Mannoroc Coven
 step
     #loop
     .goto 1443/1,1357.35,-1991.22,0
@@ -526,49 +539,26 @@ step
     .complete 261,1 --Undead Ravager slain (30)
     .mob Undead Ravager
 step
-    #loop
-    .goto 1443/1,2433.65,-1893.79,0
-    .goto 1443/1,2433.65,-1893.79,40,0
-    .goto 1443/1,2379.25,-1893.79,40,0
-    .goto 1443/1,2082.53,-1810.44,40,0
-    .goto 1443/1,1858.18,-1681.53,40,0
-    .goto 1443/1,1658.12,-1500.76,40,0
-    .goto 1443/1,1434.68,-1487.57,40,0
-    .goto 1443/1,1212.58,-1389.24,40,0
-    .goto 1443/1,1183.36,-1037.28,40,0
-    .goto 1443/1,1184.26,-858.91,40,0
-    .goto 1443/1,1228.32,-689.82,40,0
-    .goto 1443/1,1287.21,-546.22,40,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rigger Gizelton|r. |cRXP_WARN_This NPC walks a patrol route|r
-    .accept 5943 >>Accept Gizelton Caravan
-    .unitscan Rigger Gizelton
-step
-    .goto 1443/1,1729.60,-1580.20
-    >>Escort Gizelton Caravan past Mannoroc Coven
-    .complete 5943,1 --Escort Gizelton Caravan past Mannoroc Coven
-step
-    #loop
-    .goto 1443/1,1785.80,-1461.49,0
-    .goto 1443/1,1785.80,-1461.49,40,0
-    .goto 1443/1,1838.85,-1383.84,40,0
-    .goto 1443/1,1934.16,-1347.27,40,0
-    .goto 1443/1,2031.72,-1349.36,40,0
-    .goto 1443/1,2101.86,-1276.82,40,0
-    .goto 1443/1,1999.80,-1259.13,40,0
-    .goto 1443/1,1887.41,-1303.80,40,0
-    .goto 1443/1,1810.53,-1290.31,40,0
-    .goto 1443/1,1787.15,-1358.06,40,0
-    >>Loot the |cRXP_PICK_Kodo Bones|r for |cRXP_LOOT_Kodo Bone|r
-    .complete 5501,1 --Kodo Bone (10)
+    .goto 1443/1,862.81,-1591.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warug|r
+    .turnin 92743 >>Turn in A Conqueror's Crown
+    .target Warug
+    .isOnQuest 92743
 step
     .goto 1443/1,1497.17,-1402.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smeed Scrabblescrew|r
     .turnin 5943 >>Turn in Gizelton Caravan
     .target Smeed Scrabblescrew
 step
+    .goto 1443/1,1242.70,214.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Anton|r
+    .turnin 261 >>Turn in Down the Scarlet Path
+    .accept 1052 >>Accept Down the Scarlet Path
+    .target Brother Anton
+step
     .goto 1443/1,1431.08,-716.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
-    .turnin 5501 >>Turn in Bone Collector
+    .accept 5501 >>Accept Bone Collector
     .target Bibbly F'utzbuckle
 step
     .goto 1443/1,2485.35,-362.15
@@ -589,12 +579,6 @@ step
     .target Azore Aldamort
     .isOnQuest 6027
 step
-    .goto 1443/1,1242.70,214.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Anton|r
-    .turnin 261 >>Turn in Down the Scarlet Path
-    .accept 1052 >>Accept Down the Scarlet Path
-    .target Brother Anton
-step
     #loop
     .goto 1443/1,2644.96,-1153.90,0
     .goto 1443/1,2644.96,-1153.90,40,0
@@ -613,6 +597,30 @@ step
     .mob Maraudine Mauler
     .mob Maraudine Windchaser
 step
+    #loop
+    .goto 1443/1,2101.86,-1276.82,0
+    .goto 1443/1,2101.86,-1276.82,40,0
+    .goto 1443/1,1999.80,-1259.13,40,0
+    .goto 1443/1,1887.41,-1303.80,40,0
+    .goto 1443/1,1810.53,-1290.31,40,0
+    .goto 1443/1,1787.15,-1358.06,40,0
+    .goto 1443/1,1785.80,-1461.49,40,0
+    .goto 1443/1,1838.85,-1383.84,40,0
+    .goto 1443/1,1934.16,-1347.27,40,0
+    .goto 1443/1,2031.72,-1349.36,40,0
+    >>Loot the |cRXP_PICK_Kodo Bones|r for |cRXP_LOOT_Kodo Bone|r
+    .complete 5501,1 --Kodo Bone (10)
+step
+    .goto 1443/1,1431.08,-716.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
+    .turnin 5501 >>Turn in Bone Collector
+    .target Bibbly F'utzbuckle
+step
+    .goto 1443/1,1236.41,124.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Pentigast|r
+    .turnin 93224 >>Turn in Carved Centaur Totems
+    .target Captain Pentigast
+step
     .goto 1443/1,2707.00,-1151.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melizza Brimbuzzle|r
     .accept 6132 >>Accept Get Me Out of Here!
@@ -622,11 +630,6 @@ step
     >>Melizza Brimbuzzle escorted to safety
     .complete 6132,1 --Melizza Brimbuzzle escorted to safety
 step
-    .goto 1443/1,2082.98,-1401.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hornizz Brimbuzzle|r
-    .turnin 6132 >>Turn in Get Me Out of Here!
-    .target Hornizz Brimbuzzle
-step
     .goto 1443/1,1257.09,163.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
     .accept 1466 >>Accept Reagents for Reclaimers Inc.
@@ -634,18 +637,18 @@ step
     .isQuestTurnedIn 1459 --any of: Reagents for Reclaimers Inc.
     .xp <30,1
 step
-    .goto 1443/1,1236.41,124.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Pentigast|r
-    .turnin 93224 >>Turn in Carved Centaur Totems while you are here
-    .isQuestComplete 93224
-    .target Captain Pentigast
+    .goto 1443/1,2082.98,-1401.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hornizz Brimbuzzle|r
+    .turnin 6132 >>Turn in Get Me Out of Here!
+    .accept 6134 >>Accept Ghost-o-plasm Round Up
+    .target Hornizz Brimbuzzle
 step
     #loop
-    .goto 1443/1,1614.06,-1812.54,0
-    .goto 1443/1,1614.06,-1812.54,40,0
+    .goto 1443/1,1676.10,-1811.04,0
     .goto 1443/1,1676.10,-1811.04,40,0
-    .goto 1443/1,1727.36,-1877.30,40,0
+    .goto 1443/1,1614.06,-1812.54,40,0
     .goto 1443/1,1685.99,-1877.30,40,0
+    .goto 1443/1,1727.36,-1877.30,40,0
     >>Kill |cRXP_ENEMY_Mana Eaters|r, |cRXP_ENEMY_Mage Hunters|r and |cRXP_ENEMY_Ley Hunters|r. Loot them for |cRXP_LOOT_Felhound Brain|r
     .complete 1466,1 --Felhound Brain (10)
     .mob Mana Eater
@@ -682,6 +685,16 @@ step
     .mob Kaskk
     .isOnQuest 1466
 step
+    .goto 1443/1,1347.91,-2294.91
+    >>Kill |cRXP_ENEMY_Magrami Spectres|r. Loot them for |cRXP_LOOT_Ghost-o-plasm|r
+    .complete 6134,1 --Ghost-o-plasm (8)
+    .mob Magrami Spectre
+step
+    .goto 1443/1,2082.98,-1401.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hornizz Brimbuzzle|r
+    .turnin 6134 >>Turn in Ghost-o-plasm Round Up
+    .target Hornizz Brimbuzzle
+step
     .goto 1443/1,1257.09,163.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreldig Ungor|r
     .turnin 1466 >>Turn in Reagents for Reclaimers Inc.
@@ -694,26 +707,6 @@ step
     .target Kreldig Ungor
     .isQuestTurnedIn 1466 --any of: Reagents for Reclaimers Inc.
     .xp <30,1
-step
-    .goto 1443/1,2082.98,-1401.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hornizz Brimbuzzle|r
-    .accept 6134 >>Accept Ghost-o-plasm Round Up
-    .target Hornizz Brimbuzzle
-step
-    .goto 1443/1,1347.91,-2294.91
-    >>Kill |cRXP_ENEMY_Magrami Spectres|r. Loot them for |cRXP_LOOT_Ghost-o-plasm|r
-    .complete 6134,1 --Ghost-o-plasm (8)
-    .mob Magrami Spectre
-step
-    .goto 1443/1,2082.98,-1401.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hornizz Brimbuzzle|r
-    .turnin 6134 >>Turn in Ghost-o-plasm Round Up
-    .target Hornizz Brimbuzzle
-step
-    .goto 1443/1,1236.41,124.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Pentigast|r
-    .turnin 93224 >>Turn in Carved Centaur Totems
-    .target Captain Pentigast
 step
     +|cRXP_WARN_End of the Desolace route.|r Quests still in your log lead on from here; pick your next zone by them
     >>|cRXP_FRIENDLY_Hillsbrad Foothills|r: Down the Scarlet Path

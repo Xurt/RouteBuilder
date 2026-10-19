@@ -351,8 +351,7 @@ step << Mage
     .mob Blood Elf Reclaimer
 step
     #loop
-    .goto 1447/1,-6154.78,4419.26,0
-    .goto 1447/1,-6154.78,4419.26,40,0
+    .goto 1447/1,-6148.70,4480.46,0
     .goto 1447/1,-6148.70,4480.46,40,0
     .goto 1447/1,-6080.75,4408.78,40,0
     .goto 1447/1,-6136.53,4366.18,40,0
@@ -361,6 +360,7 @@ step
     .goto 1447/1,-6214.11,4312.41,40,0
     .goto 1447/1,-6279.02,4375.64,40,0
     .goto 1447/1,-6220.19,4411.48,40,0
+    .goto 1447/1,-6154.78,4419.26,40,0
     >>Kill |cRXP_ENEMY_Blood Elf Reclaimers|r
     .complete 3505,1 --Blood Elf Reclaimer slain (10)
     .mob Blood Elf Reclaimer

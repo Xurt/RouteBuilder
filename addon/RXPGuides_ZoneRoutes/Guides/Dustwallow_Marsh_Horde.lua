@@ -42,7 +42,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mudcrush Durtfeet|r
     .accept 1177 >>Accept Hungry!
     .target Mudcrush Durtfeet
-step
+step << Mage
     .goto 1445/1,-2841.90,-3149.13
     .fp Brackenwall >> Get the Brackenwall flight path
 step
@@ -144,10 +144,10 @@ step
     .mob Mirefin Coastrunner
     .mob Mirefin Warrior
     .mob Mirefin Puddlejumper
-step
+step << Mage
     .trainer >> Teleport to Undercity. Train your level 38 spells
     >>Start being very careful with your money too, as it's very nice to have your mount at level 40
-step
+step << Mage
     .vendor >> Buy level 35 drink if needed
 step
     #loop
@@ -262,9 +262,9 @@ step
     .turnin 1206 >>Turn in Jarl Needs Eyes
     .accept 1203 >>Accept Jarl Needs a Blade
     .target "Swamp Eye" Jarl
-step << Undead
+step << Mage Undead
     .trainer >> Train your class spells
-step
+step << Mage
     .trainer >> Train your class spells
 step
     .goto 1445/1,-3885.60,-2952.78
