@@ -64,21 +64,17 @@ step
     .target Greatmother Hawkwind
 step
     #label Along3
-    .goto 1412/1,-538.84,-3067.10
+    .goto 1412/1,-532.07,-3060.12
     >>Pick up |cRXP_PICK_Water Pitcher|r from the ground
     .complete 753,1 --Water Pitcher (1)
 step
     #loop
-    .goto 1412/1,-506.83,-2964.54,0
-    .goto 1412/1,-506.83,-2964.54,40,0
-    .goto 1412/1,-594.84,-2979.31,40,0
-    .goto 1412/1,-635.46,-2836.15,40,0
-    .goto 1412/1,-525.91,-2813.59,40,0
-    .goto 1412/1,-445.29,-2884.96,40,0
+    .goto 1412/1,-566.53,-2948.55,0
+    .goto 1412/1,-566.53,-2948.55,40,0
+    .goto 1412/1,-599.15,-2839.43,40,0
     .goto 1412/1,-306.82,-2782.00,40,0
-    .goto 1412/1,-154.82,-2893.99,40,0
-    .goto 1412/1,-350.52,-2951.83,40,0
-    .goto 1412/1,-433.60,-3026.49,40,0
+    .goto 1412/1,-176.36,-2859.12,40,0
+    .goto 1412/1,-413.91,-2890.71,40,0
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for |cRXP_LOOT_Plainstrider Meat|r
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for |cRXP_LOOT_Plainstrider Feather|r
     .complete 747,1 --Plainstrider Meat (7)
@@ -139,16 +135,9 @@ step
     .xp <3,1
 step
     #loop
-    .goto 1412/1,-252.67,-3295.99,0
-    .goto 1412/1,-252.67,-3295.99,40,0
-    .goto 1412/1,-181.89,-3351.37,40,0
-    .goto 1412/1,-197.90,-3428.08,40,0
-    .goto 1412/1,-223.13,-3507.66,40,0
-    .goto 1412/1,-263.75,-3497.40,40,0
-    .goto 1412/1,-255.13,-3452.28,40,0
-    .goto 1412/1,-253.90,-3407.16,40,0
-    .goto 1412/1,-356.06,-3426.03,40,0
-    .goto 1412/1,-316.67,-3350.14,40,0
+    .goto 1412/1,-302.52,-3342.35,0
+    .goto 1412/1,-302.52,-3342.35,40,0
+    .goto 1412/1,-258.21,-3417.41,40,0
     >>Kill |cRXP_ENEMY_Mountain Cougars|r. Loot them for |cRXP_LOOT_Mountain Cougar Pelt|r
     .complete 750,1 --Mountain Cougar Pelt (10)
     .mob Mountain Cougar
@@ -252,16 +241,9 @@ step << Druid
     .target Gart Mistrunner
 step
     #loop
-    .goto 1412/1,-717.31,-3080.63,0
-    .goto 1412/1,-717.31,-3080.63,40,0
+    .goto 1412/1,-777.00,-3076.12,0
     .goto 1412/1,-777.00,-3076.12,40,0
-    .goto 1412/1,-813.31,-3018.69,40,0
-    .goto 1412/1,-857.01,-3080.22,40,0
-    .goto 1412/1,-852.08,-3152.01,40,0
-    .goto 1412/1,-879.16,-3181.13,40,0
-    .goto 1412/1,-852.70,-3214.77,40,0
-    .goto 1412/1,-780.08,-3244.31,40,0
-    .goto 1412/1,-754.85,-3150.78,40,0
+    .goto 1412/1,-842.24,-3191.80,40,0
     >>Kill |cRXP_ENEMY_Bristleback Battleboars|r and |cRXP_ENEMY_Battleboars|r. Loot them for |cRXP_LOOT_Battleboar Flank|r
     >>Kill |cRXP_ENEMY_Bristleback Battleboars|r and |cRXP_ENEMY_Battleboars|r. Loot them for |cRXP_LOOT_Battleboar Snout|r
     .complete 780,2 --Battleboar Flank (8)
@@ -270,16 +252,10 @@ step
     .mob Battleboar
 step
     #loop
-    .goto 1412/1,-1154.25,-3001.46,0
-    .goto 1412/1,-1154.25,-3001.46,40,0
-    .goto 1412/1,-1202.87,-3110.58,40,0
-    .goto 1412/1,-1233.64,-3049.87,40,0
-    .goto 1412/1,-1277.95,-2994.49,40,0
-    .goto 1412/1,-1340.11,-2913.27,40,0
-    .goto 1412/1,-1296.41,-2942.80,40,0
-    .goto 1412/1,-1239.80,-2955.11,40,0
-    .goto 1412/1,-1221.95,-2884.55,40,0
-    .goto 1412/1,-1124.10,-2869.79,40,0
+    .goto 1412/1,-1230.56,-3006.80,0
+    .goto 1412/1,-1230.56,-3006.80,40,0
+    .goto 1412/1,-1292.11,-2964.13,40,0
+    .goto 1412/1,-1223.80,-2908.76,40,0
     >>Kill |cRXP_ENEMY_Chief Sharptusk Thornmantle|r and loot |cRXP_LOOT_Chief Sharptusk Thornmantle's Head|r
     >>Kill |cRXP_ENEMY_Bristleback Quilboars|r and |cRXP_ENEMY_Bristleback Shamans|r. Loot them for |cRXP_LOOT_Bristleback Belt|r
     >>Kill |cRXP_ENEMY_Bristleback Shamans|r. Loot them for |cRXP_LOOT_Ritual Salve|r << Shaman
@@ -515,7 +491,7 @@ step
     .accept 99108 >>Accept Sparring Match
     .target Krang Stonehoof
 step
-    .goto 1412/1,-528.99,-2348.00
+    .goto 1412/1,-522.84,-2335.28
     >>Kill |cRXP_ENEMY_Novice Warriors|r
     .complete 99108,1 --Novice Warrior slain (8)
     .mob Novice Warrior
@@ -546,21 +522,16 @@ step
     .accept 99079 >>Accept Longwalker Malah
     .unitscan Brave Wildrunner
 step
-    .goto 1412/1,-836.08,-2075.21
+    .goto 1412/1,-539.45,-2550.64
     >>Pick up |cRXP_PICK_Ambercorn|r from the ground
     .complete 771,2 --Ambercorn (2)
 step << Tauren
     #loop
-    .goto 1412/1,-978.86,-2485.42,0
-    .goto 1412/1,-978.86,-2485.42,40,0
-    .goto 1412/1,-1052.09,-2386.56,40,0
-    .goto 1412/1,-1079.79,-2285.65,40,0
-    .goto 1412/1,-1180.10,-2386.97,40,0
-    .goto 1412/1,-1273.03,-2361.95,40,0
-    .goto 1412/1,-1154.25,-2520.29,40,0
-    .goto 1412/1,-1215.18,-2643.35,40,0
+    .goto 1412/1,-982.55,-2574.03,0
+    .goto 1412/1,-982.55,-2574.03,40,0
     .goto 1412/1,-1121.02,-2613.00,40,0
-    .goto 1412/1,-989.32,-2708.16,40,0
+    .goto 1412/1,-1223.18,-2350.46,40,0
+    .goto 1412/1,-1052.09,-2386.56,40,0
     >>Kill |cRXP_ENEMY_Prairie Wolfs|r, |cRXP_ENEMY_Prairie Stalkers|r, |cRXP_ENEMY_Prairie Wolf Alphas|r and |cRXP_ENEMY_Chakuyaks|r. Loot them for |cRXP_LOOT_Prairie Wolf Paw|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob Prairie Wolf
@@ -569,16 +540,10 @@ step << Tauren
     .mob Chakuyak
 step << Tauren
     #loop
-    .goto 1412/1,-635.46,-2836.15,0
-    .goto 1412/1,-635.46,-2836.15,40,0
-    .goto 1412/1,-624.38,-2918.19,40,0
-    .goto 1412/1,-618.23,-3006.80,40,0
-    .goto 1412/1,-552.99,-2983.41,40,0
-    .goto 1412/1,-500.68,-3072.43,40,0
-    .goto 1412/1,-392.98,-2983.41,40,0
-    .goto 1412/1,-500.07,-2939.11,40,0
+    .goto 1412/1,-583.15,-2883.32,0
+    .goto 1412/1,-583.15,-2883.32,40,0
+    .goto 1412/1,-594.84,-2979.31,40,0
     .goto 1412/1,-445.29,-2884.96,40,0
-    .goto 1412/1,-525.91,-2813.59,40,0
     >>Kill |cRXP_ENEMY_Plainstriders|r, |cRXP_ENEMY_Adult Plainstriders|r, |cRXP_ENEMY_Elder Plainstriders|r and |cRXP_ENEMY_Mazzranaches|r. Loot them for |cRXP_LOOT_Plainstrider Talon|r
     .complete 748,2 --Plainstrider Talon (4)
     .mob Plainstrider
@@ -600,12 +565,7 @@ step << Tauren
     >>Cleanse the Winterhoof Water Well
     .complete 754,1 --Cleanse the Winterhoof Water Well
 step
-    #loop
-    .goto 1412/1,-711.15,-2572.38,0
-    .goto 1412/1,-711.15,-2572.38,40,0
-    .goto 1412/1,-729.62,-2548.18,40,0
-    .goto 1412/1,-725.92,-2531.36,40,0
-    .goto 1412/1,-711.15,-2519.88,40,0
+    .goto 1412/1,-701.92,-2545.31
     >>Pick up |cRXP_PICK_Well Stone|r from the ground
     .complete 771,1 --Well Stone (2)
 step
@@ -705,27 +665,18 @@ step << Tauren
 step << Tauren
     #label Along61
     #loop
-    .goto 1412/1,-716.69,-1816.78,0
-    .goto 1412/1,-716.69,-1816.78,40,0
-    .goto 1412/1,-646.53,-1814.32,40,0
-    .goto 1412/1,-618.23,-1858.62,40,0
-    .goto 1412/1,-580.68,-1786.02,40,0
-    .goto 1412/1,-655.15,-1753.20,40,0
-    .goto 1412/1,-716.08,-1660.90,40,0
-    .goto 1412/1,-745.62,-1731.46,40,0
-    .goto 1412/1,-819.47,-1780.68,40,0
-    .goto 1412/1,-750.54,-1787.25,40,0
+    .goto 1412/1,-655.15,-1794.22,0
+    .goto 1412/1,-655.15,-1794.22,40,0
+    .goto 1412/1,-780.08,-1790.94,40,0
     >>Kill |cRXP_ENEMY_Prairie Stalkers|r. Loot them for |cRXP_LOOT_Stalker Claws|r
     .complete 756,1 --Stalker Claws (6)
     .mob Prairie Stalker
 step << Tauren
     #loop
-    .goto 1412/1,-857.01,-1923.44,0
-    .goto 1412/1,-857.01,-1923.44,40,0
-    .goto 1412/1,-911.78,-1966.51,40,0
-    .goto 1412/1,-1005.94,-2104.75,40,0
-    .goto 1412/1,-1016.40,-2142.49,40,0
+    .goto 1412/1,-895.16,-1953.79,0
+    .goto 1412/1,-895.16,-1953.79,40,0
     .goto 1412/1,-965.94,-2076.03,40,0
+    .goto 1412/1,-1005.94,-2104.75,40,0
     >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for |cRXP_LOOT_Cougar Claws|r
     .complete 756,2 --Cougar Claws (6)
     .mob Flatland Cougar
@@ -757,16 +708,10 @@ step
     .complete 98430,1 --Escort Perith Stormhoof out of Palemane Rock
 step
     #loop
-    .goto 1412/1,225.51,-2397.64,0
-    .goto 1412/1,225.51,-2397.64,40,0
-    .goto 1412/1,330.75,-2368.51,40,0
-    .goto 1412/1,402.14,-2320.52,40,0
-    .goto 1412/1,477.83,-2345.54,40,0
-    .goto 1412/1,527.68,-2337.75,40,0
-    .goto 1412/1,485.83,-2390.25,40,0
-    .goto 1412/1,442.75,-2401.74,40,0
+    .goto 1412/1,229.82,-2407.48,0
+    .goto 1412/1,229.82,-2407.48,40,0
     .goto 1412/1,383.06,-2366.46,40,0
-    .goto 1412/1,347.36,-2402.15,40,0
+    .goto 1412/1,471.68,-2360.72,40,0
     >>Kill |cRXP_ENEMY_Palemane Tanners|r
     >>Kill |cRXP_ENEMY_Palemane Skinners|r
     >>Kill |cRXP_ENEMY_Palemane Poachers|r
@@ -778,12 +723,9 @@ step
     .mob Palemane Poacher
 step
     #loop
-    .goto 1412/1,204.59,-2214.68,0
-    .goto 1412/1,204.59,-2214.68,40,0
-    .goto 1412/1,216.90,-2165.46,40,0
-    .goto 1412/1,209.51,-2064.96,40,0
-    .goto 1412/1,175.66,-2118.69,40,0
+    .goto 1412/1,157.20,-2258.99,0
     .goto 1412/1,157.20,-2258.99,40,0
+    .goto 1412/1,175.66,-2118.69,40,0
     >>Kill |cRXP_ENEMY_Adult Plainstriders|r, |cRXP_ENEMY_Elder Plainstriders|r and |cRXP_ENEMY_Mazzranaches|r. Loot them for |cRXP_LOOT_Tender Strider Meat|r
     .collect 287505,1,99411,1 --Tender Strider Meat (1)
     .mob Adult Plainstrider
@@ -877,16 +819,9 @@ step << Shaman
     .xp <8,1
 step
     #loop
-    .goto 1412/1,281.51,-1887.34,0
-    .goto 1412/1,281.51,-1887.34,40,0
+    .goto 1412/1,313.52,-1918.51,0
     .goto 1412/1,313.52,-1918.51,40,0
-    .goto 1412/1,311.05,-1975.12,40,0
-    .goto 1412/1,400.90,-1984.97,40,0
-    .goto 1412/1,451.98,-1991.12,40,0
-    .goto 1412/1,442.75,-1943.13,40,0
-    .goto 1412/1,405.21,-1894.72,40,0
-    .goto 1412/1,367.06,-1955.84,40,0
-    .goto 1412/1,341.21,-1899.64,40,0
+    .goto 1412/1,431.06,-1945.18,40,0
     >>Kill |cRXP_ENEMY_Bael'dun Diggers|r and |cRXP_ENEMY_Bael'dun Appraisers|r. Loot them for |cRXP_LOOT_Prospector's Pick|r
     .collect 4702,1,746,1 --Prospector's Pick (1)
     .mob Bael'dun Digger
@@ -901,16 +836,9 @@ step
     .complete 746,1 --Broken Tools (5)
 step
     #loop
-    .goto 1412/1,411.37,-1745.82,0
-    .goto 1412/1,411.37,-1745.82,40,0
-    .goto 1412/1,348.59,-1717.92,40,0
-    .goto 1412/1,316.59,-1751.15,40,0
-    .goto 1412/1,280.90,-1781.50,40,0
-    .goto 1412/1,287.05,-1716.28,40,0
-    .goto 1412/1,312.28,-1653.11,40,0
-    .goto 1412/1,381.83,-1680.59,40,0
-    .goto 1412/1,417.52,-1653.93,40,0
-    .goto 1412/1,451.98,-1680.18,40,0
+    .goto 1412/1,414.44,-1688.80,0
+    .goto 1412/1,414.44,-1688.80,40,0
+    .goto 1412/1,319.05,-1712.18,40,0
     >>Kill |cRXP_ENEMY_Windfury Harpies|r and |cRXP_ENEMY_Windfury Wind Witches|r. Loot them for |cRXP_LOOT_Windfury Talon|r
     .complete 743,1 --Windfury Talon (8)
     .mob Windfury Harpy
@@ -995,16 +923,9 @@ step
     .isQuestTurnedIn 773 --any of: Rite of Wisdom
 step
     #loop
-    .goto 1412/1,-1087.79,-1001.70,0
-    .goto 1412/1,-1087.79,-1001.70,40,0
-    .goto 1412/1,-1055.79,-1025.08,40,0
-    .goto 1412/1,-1093.94,-1054.61,40,0
-    .goto 1412/1,-1148.71,-1030.82,40,0
-    .goto 1412/1,-1155.48,-990.62,40,0
-    .goto 1412/1,-1129.64,-963.55,40,0
-    .goto 1412/1,-1121.02,-938.94,40,0
-    .goto 1412/1,-1057.02,-940.99,40,0
-    .goto 1412/1,-1055.79,-970.93,40,0
+    .goto 1412/1,-1126.56,-1027.54,0
+    .goto 1412/1,-1126.56,-1027.54,40,0
+    .goto 1412/1,-1076.10,-958.63,40,0
     >>Kill |cRXP_ENEMY_Bristleback Interlopers|r
     .complete 833,1 --Bristleback Interloper slain (8)
     .mob Bristleback Interloper
@@ -1045,16 +966,10 @@ step
     .target Baine Bloodhoof
 step
     #loop
-    .goto 1412/1,-1047.79,-2171.61,0
-    .goto 1412/1,-1047.79,-2171.61,40,0
-    .goto 1412/1,-1140.71,-2199.10,40,0
+    .goto 1412/1,-1052.09,-2386.56,0
+    .goto 1412/1,-1052.09,-2386.56,40,0
+    .goto 1412/1,-1180.72,-2316.42,40,0
     .goto 1412/1,-1150.56,-2249.55,40,0
-    .goto 1412/1,-1199.18,-2283.19,40,0
-    .goto 1412/1,-1180.10,-2386.97,40,0
-    .goto 1412/1,-1113.64,-2382.05,40,0
-    .goto 1412/1,-1058.25,-2441.94,40,0
-    .goto 1412/1,-1067.48,-2352.10,40,0
-    .goto 1412/1,-1079.79,-2285.65,40,0
     >>Kill |cRXP_ENEMY_Prairie Wolfs|r, |cRXP_ENEMY_Prairie Stalkers|r, |cRXP_ENEMY_Prairie Wolf Alphas|r and |cRXP_ENEMY_Chakuyaks|r. Loot them for |cRXP_LOOT_Prairie Wolf Heart|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .mob Prairie Wolf
@@ -1066,19 +981,13 @@ step
     #loop
     .goto 1412/1,-965.94,-2076.03,0
     .goto 1412/1,-965.94,-2076.03,40,0
-    .goto 1412/1,-911.78,-1966.51,40,0
-    .goto 1412/1,-857.01,-1923.44,40,0
+    .goto 1412/1,-895.16,-1953.79,40,0
     >>Kill |cRXP_ENEMY_Flatland Cougar|r and loot |cRXP_LOOT_Flatland Cougar Femur|r
     .complete 766,2 --Flatland Cougar Femur (1)
     .mob Flatland Cougar
     .isOnQuest 766
 step
-    #loop
-    .goto 1412/1,-649.00,-1480.00,0
-    .goto 1412/1,-649.00,-1480.00,40,0
-    .goto 1412/1,-649.00,-1450.06,40,0
-    .goto 1412/1,-652.69,-1385.24,40,0
-    .goto 1412/1,-706.23,-1441.03,40,0
+    .goto 1412/1,-649.00,-1450.06
     >>Kill |cRXP_ENEMY_Adult Plainstriders|r, |cRXP_ENEMY_Elder Plainstriders|r and |cRXP_ENEMY_Mazzranaches|r. Loot them for |cRXP_LOOT_Plainstrider Scale|r
     .complete 766,3 --Plainstrider Scale (1)
     .mob Adult Plainstrider
@@ -1366,14 +1275,7 @@ step
     .unitscan Morin Cloudstalker
     .isQuestTurnedIn 751 --any of: The Ravaged Caravan
 step
-    #loop
-    .goto 1412/1,-1236.72,-2265.14,0
-    .goto 1412/1,-1236.72,-2265.14,40,0
-    .goto 1412/1,-1240.41,-2239.30,40,0
-    .goto 1412/1,-1240.41,-2209.35,40,0
-    .goto 1412/1,-1252.72,-2169.56,40,0
-    .goto 1412/1,-1249.03,-2214.27,40,0
-    .goto 1412/1,-1250.26,-2231.09,40,0
+    .goto 1412/1,-1237.33,-2204.84
     >>Kill |cRXP_ENEMY_Herak the Pillager|r and loot |cRXP_LOOT_Herak's Head|r
     .complete 99080,3 --Herak's Head (1)
     .mob Herak the Pillager
@@ -1392,16 +1294,10 @@ step
     .isOnQuest 99080
 step << Tauren
     #loop
-    .goto 1412/1,-1386.88,-2340.62,0
-    .goto 1412/1,-1386.88,-2340.62,40,0
-    .goto 1412/1,-1307.49,-2437.02,40,0
-    .goto 1412/1,-1381.34,-2551.05,40,0
-    .goto 1412/1,-1298.88,-2592.49,40,0
-    .goto 1412/1,-1215.18,-2643.35,40,0
-    .goto 1412/1,-1250.87,-2513.73,40,0
-    .goto 1412/1,-1154.25,-2520.29,40,0
-    .goto 1412/1,-1180.10,-2386.97,40,0
-    .goto 1412/1,-1267.49,-2295.08,40,0
+    .goto 1412/1,-1240.41,-2317.65,0
+    .goto 1412/1,-1240.41,-2317.65,40,0
+    .goto 1412/1,-1350.57,-2489.11,40,0
+    .goto 1412/1,-1279.18,-2573.62,40,0
     >>Kill |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |cRXP_LOOT_Prairie Alpha Tooth|r
     .complete 759,1 --Prairie Alpha Tooth (8)
     .mob Prairie Wolf Alpha
@@ -1443,16 +1339,9 @@ step
     .complete 98424,3 --One "Gerenzo", of Stonetalon (1)
 step
     #loop
-    .goto 1412/1,-1091.48,-1733.51,0
-    .goto 1412/1,-1091.48,-1733.51,40,0
-    .goto 1412/1,-1136.41,-1753.20,40,0
-    .goto 1412/1,-1186.25,-1764.69,40,0
-    .goto 1412/1,-1194.87,-1829.91,40,0
-    .goto 1412/1,-1130.87,-1860.67,40,0
-    .goto 1412/1,-1143.18,-1922.62,40,0
-    .goto 1412/1,-1090.87,-1902.51,40,0
-    .goto 1412/1,-1032.40,-1935.33,40,0
-    .goto 1412/1,-1042.25,-1751.56,40,0
+    .goto 1412/1,-1153.02,-1781.91,0
+    .goto 1412/1,-1153.02,-1781.91,40,0
+    .goto 1412/1,-1059.48,-1930.41,40,0
     >>Kill |cRXP_ENEMY_Venture Co. Workers|r
     .complete 764,1 --Venture Co. Worker slain (14)
     .mob Venture Co. Worker
@@ -1461,14 +1350,8 @@ step
     #loop
     .goto 1412/1,-1126.56,-1851.65,0
     .goto 1412/1,-1126.56,-1851.65,40,0
-    .goto 1412/1,-1154.87,-1835.65,40,0
-    .goto 1412/1,-1201.64,-1810.22,40,0
-    .goto 1412/1,-1259.49,-1749.51,40,0
-    .goto 1412/1,-1281.64,-1770.84,40,0
-    .goto 1412/1,-1269.95,-1798.32,40,0
-    .goto 1412/1,-1154.25,-1845.09,40,0
-    .goto 1412/1,-1121.02,-1873.39,40,0
     .goto 1412/1,-1055.79,-1936.97,40,0
+    .goto 1412/1,-1281.64,-1770.84,40,0
     >>Kill |cRXP_ENEMY_Venture Co. Supervisors|r
     .complete 764,2 --Venture Co. Supervisor slain (6)
     .mob Venture Co. Supervisor
@@ -1477,8 +1360,6 @@ step
     #loop
     .goto 1412/1,-1059.48,-1735.15,0
     .goto 1412/1,-1059.48,-1735.15,40,0
-    .goto 1412/1,-1114.87,-1694.13,40,0
-    .goto 1412/1,-1164.10,-1657.21,40,0
     .goto 1412/1,-1207.18,-1624.39,40,0
     >>Loot the |cRXP_PICK_Blasting Supplies|r for |cRXP_LOOT_Seaforium Mining Charge|r
     .complete 76156,1 --Seaforium Mining Charge (5)
@@ -1863,16 +1744,10 @@ step
     .zoneskip 1412
 step
     #loop
-    .goto 1412/1,379.98,-1118.61,0
-    .goto 1412/1,379.98,-1118.61,40,0
-    .goto 1412/1,487.06,-1055.02,40,0
-    .goto 1412/1,415.06,-986.52,40,0
-    .goto 1412/1,520.91,-944.68,40,0
-    .goto 1412/1,588.61,-1002.93,40,0
-    .goto 1412/1,547.99,-1154.30,40,0
-    .goto 1412/1,520.30,-1214.19,40,0
-    .goto 1412/1,451.98,-1243.72,40,0
-    .goto 1412/1,451.98,-1146.09,40,0
+    .goto 1412/1,450.14,-1054.20,0
+    .goto 1412/1,450.14,-1054.20,40,0
+    .goto 1412/1,511.06,-984.06,40,0
+    .goto 1412/1,522.14,-1176.86,40,0
     >>Kill |cRXP_ENEMY_Windfury Sorceress|r. Loot them for |cRXP_LOOT_Azure Feather|r
     >>Kill |cRXP_ENEMY_Windfury Matriarches|r. Loot them for |cRXP_LOOT_Bronze Feather|r
     .complete 744,1 --Azure Feather (6)
@@ -1918,14 +1793,8 @@ step
     #loop
     .goto 1412/1,-441.60,-966.83,0
     .goto 1412/1,-441.60,-966.83,40,0
-    .goto 1412/1,-328.98,-872.07,40,0
-    .goto 1412/1,-265.59,-847.05,40,0
-    .goto 1412/1,-215.74,-810.13,40,0
-    .goto 1412/1,-110.51,-865.10,40,0
-    .goto 1412/1,-119.12,-949.60,40,0
+    .goto 1412/1,-250.21,-815.87,40,0
     .goto 1412/1,-176.36,-909.81,40,0
-    .goto 1412/1,-183.13,-869.61,40,0
-    .goto 1412/1,-225.59,-922.12,40,0
     >>Kill |cRXP_ENEMY_Flatland Prowlers|r. Loot them for |cRXP_LOOT_Flatland Prowler Claw|r
     .complete 861,1 --Flatland Prowler Claw (4)
     .mob Flatland Prowler

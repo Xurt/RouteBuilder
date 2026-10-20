@@ -103,15 +103,9 @@ step
     .target Gubber Blump
 step
     #loop
-    .goto 1439/1,911.82,4448.75,0
-    .goto 1439/1,911.82,4448.75,40,0
-    .goto 1439/1,883.66,4422.98,40,0
-    .goto 1439/1,938.02,4381.94,40,0
-    .goto 1439/1,991.73,4353.99,40,0
-    .goto 1439/1,1067.06,4367.96,40,0
-    .goto 1439/1,1005.49,4388.05,40,0
-    .goto 1439/1,999.59,4419.93,40,0
+    .goto 1439/1,938.02,4418.18,0
     .goto 1439/1,938.02,4418.18,40,0
+    .goto 1439/1,1005.49,4388.05,40,0
     >>Kill |cRXP_ENEMY_Pygmy Tide Crawlers|r, |cRXP_ENEMY_Tide Crawlers|r, |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Young Reef Crawlers|r. Loot them for |cRXP_LOOT_Crawler Leg|r
     .complete 983,1 --Crawler Leg (6)
     .mob Pygmy Tide Crawler
@@ -282,14 +276,8 @@ step
     #loop
     .goto 1439/1,580.39,6985.78,0
     .goto 1439/1,580.39,6985.78,40,0
-    .goto 1439/1,554.85,7056.52,40,0
-    .goto 1439/1,531.27,7125.95,40,0
-    .goto 1439/1,588.91,7107.61,40,0
-    .goto 1439/1,620.35,7046.48,40,0
     .goto 1439/1,689.12,7039.49,40,0
-    .goto 1439/1,742.83,7080.54,40,0
-    .goto 1439/1,724.49,6976.17,40,0
-    .goto 1439/1,653.10,6977.05,40,0
+    .goto 1439/1,588.91,7107.61,40,0
     >>Kill |cRXP_ENEMY_Darkshore Threshers|r and |cRXP_ENEMY_Elder Darkshore Threshers|r. Loot them for |cRXP_LOOT_Thresher Eye|r
     .complete 1001,1 --Thresher Eye (3)
     .mob Darkshore Thresher
@@ -315,16 +303,10 @@ step
     .target Asterion
 step
     #loop
-    .goto 1439/1,5.96,6752.16,0
-    .goto 1439/1,5.96,6752.16,40,0
-    .goto 1439/1,-15.00,6678.37,40,0
-    .goto 1439/1,-85.09,6678.37,40,0
-    .goto 1439/1,-146.66,6691.90,40,0
-    .goto 1439/1,-130.94,6753.91,40,0
-    .goto 1439/1,-218.05,6734.26,40,0
-    .goto 1439/1,-131.59,6621.16,40,0
-    .goto 1439/1,-31.38,6580.99,40,0
-    .goto 1439/1,57.05,6654.79,40,0
+    .goto 1439/1,14.47,6647.36,0
+    .goto 1439/1,14.47,6647.36,40,0
+    .goto 1439/1,-101.46,6643.43,40,0
+    .goto 1439/1,-166.31,6714.17,40,0
     >>Kill |cRXP_ENEMY_Vile Sprites|r and |cRXP_ENEMY_Wild Grells|r. Loot them for |cRXP_LOOT_Grell Earring|r
     .complete 955,1 --Grell Earring (8)
     .mob Vile Sprite
@@ -339,7 +321,6 @@ step
     #loop
     .goto 1439/1,-35.96,6739.50,0
     .goto 1439/1,-35.96,6739.50,40,0
-    .goto 1439/1,-113.25,6622.04,40,0
     .goto 1439/1,-32.03,6598.46,40,0
     >>Kill |cRXP_ENEMY_Deth'ryll Satyr|r and loot |cRXP_LOOT_Ancient Moonstone Seal|r
     .complete 956,1 --Ancient Moonstone Seal (1)
@@ -388,16 +369,9 @@ step
     .target Sentinel Glynda Nal'Shea
 step
     #loop
-    .goto 1439/1,383.24,6035.16,0
-    .goto 1439/1,383.24,6035.16,40,0
-    .goto 1439/1,362.93,6007.21,40,0
-    .goto 1439/1,387.17,5985.38,40,0
-    .goto 1439/1,343.94,5960.05,40,0
-    .goto 1439/1,363.59,5858.31,40,0
-    .goto 1439/1,306.60,5874.46,40,0
-    .goto 1439/1,325.60,5909.40,40,0
-    .goto 1439/1,306.60,5959.18,40,0
-    .goto 1439/1,313.81,6028.17,40,0
+    .goto 1439/1,346.56,5973.59,0
+    .goto 1439/1,346.56,5973.59,40,0
+    .goto 1439/1,338.04,5881.89,40,0
     >>Kill |cRXP_ENEMY_Blackwood Pathfinders|r
     >>Kill |cRXP_ENEMY_Blackwood Windtalkers|r
     .complete 985,1 --Blackwood Pathfinder slain (8)
@@ -415,16 +389,11 @@ step
     .target Sentinel Tysha Moonblade
 step
     #loop
-    .goto 1439/1,205.08,5702.42,0
-    .goto 1439/1,205.08,5702.42,40,0
-    .goto 1439/1,250.93,5589.76,40,0
-    .goto 1439/1,106.83,5566.18,40,0
-    .goto 1439/1,-12.38,5745.65,40,0
-    .goto 1439/1,-22.21,5870.10,40,0
-    .goto 1439/1,110.76,5818.13,40,0
-    .goto 1439/1,196.56,5830.36,40,0
-    .goto 1439/1,97.00,5728.62,40,0
-    .goto 1439/1,144.82,5639.10,40,0
+    .goto 1439/1,176.26,5660.93,0
+    .goto 1439/1,176.26,5660.93,40,0
+    .goto 1439/1,153.99,5782.33,40,0
+    .goto 1439/1,-10.42,5789.31,40,0
+    .goto 1439/1,78.01,5756.13,40,0
     >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r and loot |cRXP_LOOT_Anaya's Pendant|r
     >>Kill |cRXP_ENEMY_Cursed Highbornes|r, |cRXP_ENEMY_Writhing Highbornes|r and |cRXP_ENEMY_Wailing Highbornes|r. Loot them for |cRXP_LOOT_Highborne Relic|r
     >>Click the |cRXP_PICK_The Fall of Ameth'Aran|r
@@ -538,16 +507,9 @@ step
     .target Balthule Shadowstrike
 step
     #loop
-    .goto 1439/1,-709.96,7201.93,0
-    .goto 1439/1,-709.96,7201.93,40,0
-    .goto 1439/1,-735.50,7223.76,40,0
-    .goto 1439/1,-759.08,7208.48,40,0
-    .goto 1439/1,-848.82,7215.03,40,0
-    .goto 1439/1,-811.48,7183.59,40,0
-    .goto 1439/1,-796.42,7141.23,40,0
-    .goto 1439/1,-728.95,7173.55,40,0
-    .goto 1439/1,-667.38,7113.29,40,0
-    .goto 1439/1,-673.93,7173.98,40,0
+    .goto 1439/1,-710.61,7169.18,0
+    .goto 1439/1,-710.61,7169.18,40,0
+    .goto 1439/1,-787.90,7177.91,40,0
     >>Kill |cRXP_ENEMY_Dark Strand Fanatics|r. Loot them for |cRXP_LOOT_Worn Parchment|r
     .complete 966,1 --Worn Parchment (4)
     .mob Dark Strand Fanatic
@@ -564,16 +526,9 @@ step << NightElf Druid/Skyborne Druid
     .isOnQuest 6122
 step
     #loop
-    .goto 1439/1,-679.17,6848.67,0
-    .goto 1439/1,-679.17,6848.67,40,0
-    .goto 1439/1,-669.35,6822.90,40,0
-    .goto 1439/1,-661.49,6725.96,40,0
-    .goto 1439/1,-709.96,6752.60,40,0
-    .goto 1439/1,-694.24,6792.77,40,0
-    .goto 1439/1,-709.96,6826.40,40,0
-    .goto 1439/1,-769.56,6796.70,40,0
+    .goto 1439/1,-766.29,6829.89,0
     .goto 1439/1,-766.29,6829.89,40,0
-    .goto 1439/1,-795.11,6857.84,40,0
+    .goto 1439/1,-694.24,6792.77,40,0
     >>Pick up |cRXP_PICK_Scaber Stalk|r from the ground
     >>Pick up |cRXP_PICK_Death Cap|r from the ground
     .complete 947,1 --Scaber Stalk (5)
@@ -636,16 +591,9 @@ step
     .isOnQuest 730
 step
     #loop
-    .goto 1439/1,-119.15,6870.06,0
-    .goto 1439/1,-119.15,6870.06,40,0
-    .goto 1439/1,-169.58,6844.74,40,0
-    .goto 1439/1,-241.63,6795.83,40,0
-    .goto 1439/1,-281.59,6785.79,40,0
-    .goto 1439/1,-292.72,6873.12,40,0
-    .goto 1439/1,-230.50,6873.56,40,0
+    .goto 1439/1,-175.48,6890.15,0
     .goto 1439/1,-175.48,6890.15,40,0
-    .goto 1439/1,-146.00,6970.06,40,0
-    .goto 1439/1,-146.00,6919.41,40,0
+    .goto 1439/1,-241.63,6795.83,40,0
     >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
     .complete 2138,1 --Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
@@ -660,11 +608,7 @@ step << NightElf Druid
     .complete 6123,1 --Earthroot (5)
     .isOnQuest 6123
 step << NightElf Druid
-    #loop
-    .goto 1439/1,88.49,6133.41,0
-    .goto 1439/1,88.49,6133.41,40,0
-    .goto 1439/1,60.98,6128.17,40,0
-    .goto 1439/1,91.76,6189.30,40,0
+    .goto 1439/1,72.77,6139.96
     >>Loot the |cRXP_PICK_Lunar Fungal Blooms|r for |cRXP_LOOT_Lunar Fungus|r
     .complete 6123,2 --Lunar Fungus (12)
     .isOnQuest 6123
@@ -758,16 +702,10 @@ step << Hunter
     >>Skip this step if the area is too crowded
 step
     #loop
-    .goto 1439/1,525.37,4417.31,0
-    .goto 1439/1,525.37,4417.31,40,0
+    .goto 1439/1,552.88,4383.68,0
     .goto 1439/1,552.88,4383.68,40,0
-    .goto 1439/1,545.02,4337.83,40,0
-    .goto 1439/1,483.45,4319.06,40,0
     .goto 1439/1,487.38,4272.77,40,0
-    .goto 1439/1,360.31,4324.73,40,0
-    .goto 1439/1,296.12,4367.53,40,0
-    .goto 1439/1,351.14,4379.75,40,0
-    .goto 1439/1,417.95,4381.50,40,0
+    .goto 1439/1,331.49,4388.49,40,0
     >>Kill |cRXP_ENEMY_Moonstalkers|r, |cRXP_ENEMY_Moonstalker Runts|r, |cRXP_ENEMY_Moonstalker Matriarches|r and |cRXP_ENEMY_Moonstalker Sires|r. Loot them for |cRXP_LOOT_Moonstalker Fang|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
@@ -790,16 +728,10 @@ step
     .accept 1003 >>Accept Buzzbox 525
 step
     #loop
-    .goto 1439/1,463.80,4900.70,0
-    .goto 1439/1,463.80,4900.70,40,0
+    .goto 1439/1,293.50,4790.66,0
+    .goto 1439/1,293.50,4790.66,40,0
+    .goto 1439/1,450.05,4750.48,40,0
     .goto 1439/1,474.28,4847.86,40,0
-    .goto 1439/1,482.80,4751.36,40,0
-    .goto 1439/1,412.71,4733.45,40,0
-    .goto 1439/1,413.37,4818.60,40,0
-    .goto 1439/1,367.52,4780.61,40,0
-    .goto 1439/1,290.88,4762.71,40,0
-    .goto 1439/1,252.24,4784.11,40,0
-    .goto 1439/1,316.43,4849.61,40,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r and |cRXP_ENEMY_Den Mothers|r. Loot them for |cRXP_LOOT_Grizzled Scalp|r
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -821,15 +753,12 @@ step
     .accept 4727 >>Accept Beached Sea Turtle
 step << NightElf Druid
     #loop
-    .goto 1439/1,-459.09,6903.25,0
-    .goto 1439/1,-459.09,6903.25,40,0
+    .goto 1439/1,-405.38,6869.19,0
+    .goto 1439/1,-405.38,6869.19,40,0
     .goto 1439/1,-275.04,6757.84,40,0
-    .goto 1439/1,-146.00,6490.16,40,0
-    .goto 1439/1,-59.54,6521.60,40,0
-    .goto 1439/1,227.35,6032.97,40,0
+    .goto 1439/1,-71.33,6526.41,40,0
+    .goto 1439/1,74.73,6526.41,40,0
     .goto 1439/1,299.40,6049.57,40,0
-    .goto 1439/1,102.24,6552.17,40,0
-    .goto 1439/1,171.02,6604.13,40,0
     .goto 1439/1,200.49,6667.89,40,0
     >>Interact with |cRXP_FRIENDLY_Sickly Deers|r
     .complete 6124,1 --Sickly Deer (10)
@@ -979,16 +908,9 @@ step
 step
     #label Drop968x1
     #loop
-    .goto 1439/1,345.90,4578.87,0
-    .goto 1439/1,345.90,4578.87,40,0
-    .goto 1439/1,368.83,4612.93,40,0
-    .goto 1439/1,404.20,4606.38,40,0
-    .goto 1439/1,441.53,4591.10,40,0
+    .goto 1439/1,381.93,4491.10,0
+    .goto 1439/1,381.93,4491.10,40,0
     .goto 1439/1,416.64,4565.77,40,0
-    .goto 1439/1,438.91,4525.16,40,0
-    .goto 1439/1,396.99,4501.58,40,0
-    .goto 1439/1,354.42,4488.48,40,0
-    .goto 1439/1,378.00,4553.11,40,0
     >>Kill |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for |cRXP_LOOT_Peerless Eye|r
     .complete 98042,1 --Peerless Eye (1)
     .mob Twilight Disciple
@@ -1072,16 +994,10 @@ step
     .isOnQuest 4763
 step
     #loop
-    .goto 1439/1,-861.92,7259.57,0
-    .goto 1439/1,-861.92,7259.57,40,0
-    .goto 1439/1,-873.05,7344.28,40,0
-    .goto 1439/1,-782.01,7352.58,40,0
+    .goto 1439/1,-873.05,7293.19,0
+    .goto 1439/1,-873.05,7293.19,40,0
     .goto 1439/1,-835.72,7401.92,40,0
-    .goto 1439/1,-804.28,7475.72,40,0
-    .goto 1439/1,-918.25,7420.70,40,0
-    .goto 1439/1,-982.44,7377.91,40,0
-    .goto 1439/1,-1028.29,7328.56,40,0
-    .goto 1439/1,-954.93,7247.78,40,0
+    .goto 1439/1,-1010.60,7304.55,40,0
     >>Kill |cRXP_ENEMY_Stormscale Myrmidons|r
     .complete 98013,1 --Stormscale Myrmidon slain (12)
     .mob Stormscale Myrmidon
@@ -1089,13 +1005,8 @@ step
     #loop
     .goto 1439/1,-892.05,7274.42,0
     .goto 1439/1,-892.05,7274.42,40,0
-    .goto 1439/1,-886.81,7240.36,40,0
-    .goto 1439/1,-985.06,7284.46,40,0
     .goto 1439/1,-1041.39,7319.83,40,0
-    .goto 1439/1,-1123.26,7395.37,40,0
-    .goto 1439/1,-1085.93,7439.04,40,0
-    .goto 1439/1,-975.89,7502.36,40,0
-    .goto 1439/1,-1008.64,7384.89,40,0
+    .goto 1439/1,-1072.83,7471.79,40,0
     >>Pick up |cRXP_PICK_Mathystra Relic|r from the ground
     .complete 951,1 --Mathystra Relic (6)
     .isOnQuest 951
@@ -1106,16 +1017,9 @@ step
     .target Gelkak Gyromast
 step
     #loop
-    .goto 1439/1,-785.28,7763.48,0
-    .goto 1439/1,-785.28,7763.48,40,0
-    .goto 1439/1,-751.88,7787.06,40,0
-    .goto 1439/1,-763.67,7835.53,40,0
-    .goto 1439/1,-671.31,7801.47,40,0
-    .goto 1439/1,-679.17,7784.01,40,0
-    .goto 1439/1,-690.96,7782.26,40,0
+    .goto 1439/1,-745.98,7699.73,0
     .goto 1439/1,-745.98,7699.73,40,0
-    .goto 1439/1,-750.57,7623.31,40,0
-    .goto 1439/1,-823.27,7698.86,40,0
+    .goto 1439/1,-679.17,7784.01,40,0
     >>Kill |cRXP_ENEMY_Greymist Raiders|r, |cRXP_ENEMY_Greymist Coastrunners|r, |cRXP_ENEMY_Greymist Seers|r and |cRXP_ENEMY_Greymist Netters|r. Loot them for |cRXP_LOOT_Middle of Gelkak's Key|r
     >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Raging Reef Crawlers|r. Loot them for |cRXP_LOOT_Bottom of Gelkak's Key|r
     .complete 2098,2 --Middle of Gelkak's Key (1)
@@ -1127,22 +1031,15 @@ step
     .mob Encrusted Tide Crawler
     .mob Raging Reef Crawler
 step
-    #loop
-    .goto 1439/1,-884.19,7712.83,0
-    .goto 1439/1,-884.19,7712.83,40,0
-    .goto 1439/1,-916.28,7752.13,40,0
-    .goto 1439/1,-954.93,7782.70,40,0
+    .goto 1439/1,-916.28,7752.13
     >>Kill |cRXP_ENEMY_Giant Foreststrider|r and loot |cRXP_LOOT_Top of Gelkak's Key|r
     .complete 2098,1 --Top of Gelkak's Key (1)
     .mob Giant Foreststrider
 step
     #loop
-    .goto 1439/1,-992.92,7749.51,0
-    .goto 1439/1,-992.92,7749.51,40,0
+    .goto 1439/1,-1048.59,7747.76,0
     .goto 1439/1,-1048.59,7747.76,40,0
     .goto 1439/1,-1051.21,7815.01,40,0
-    .goto 1439/1,-1080.03,7846.01,40,0
-    .goto 1439/1,-981.78,7818.94,40,0
     >>Kill |cRXP_ENEMY_Moonstalker Matriarches|r and |cRXP_ENEMY_Moonstalker Sires|r. Loot them for |cRXP_LOOT_Fine Moonstalker Pelt|r
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Matriarch
@@ -1192,10 +1089,7 @@ step
     #loop
     .goto 1439/1,843.05,4809.00,0
     .goto 1439/1,843.05,4809.00,40,0
-    .goto 1439/1,799.82,4778.43,40,0
     .goto 1439/1,783.44,4714.24,40,0
-    .goto 1439/1,824.05,4678.00,40,0
-    .goto 1439/1,863.35,4756.60,40,0
     >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for |cRXP_LOOT_Fine Crab Chunks|r
     .complete 1138,1 --Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
@@ -1232,16 +1126,10 @@ step
     .isOnQuest 993
 step
     #loop
-    .goto 1439/1,-950.34,7278.35,0
-    .goto 1439/1,-950.34,7278.35,40,0
-    .goto 1439/1,-962.13,7363.93,40,0
-    .goto 1439/1,-1019.12,7477.90,40,0
-    .goto 1439/1,-1055.14,7559.12,40,0
-    .goto 1439/1,-1109.51,7482.27,40,0
-    .goto 1439/1,-1131.12,7439.91,40,0
-    .goto 1439/1,-1120.64,7370.92,40,0
-    .goto 1439/1,-1055.14,7394.50,40,0
-    .goto 1439/1,-1059.73,7323.76,40,0
+    .goto 1439/1,-981.13,7350.40,0
+    .goto 1439/1,-981.13,7350.40,40,0
+    .goto 1439/1,-1071.52,7370.05,40,0
+    .goto 1439/1,-1080.69,7494.93,40,0
     >>Kill |cRXP_ENEMY_Stormscale Sorceress|r
     >>Kill |cRXP_ENEMY_Stormscale Warriors|r
     >>Open the |cRXP_PICK_Scrolls|r. Loot it for |cRXP_LOOT_Nar'thalas Almanac, Vol. 74|r
@@ -1252,16 +1140,9 @@ step
     .mob Stormscale Warrior
 step
     #loop
-    .goto 1439/1,-345.12,7674.40,0
-    .goto 1439/1,-345.12,7674.40,40,0
-    .goto 1439/1,-280.28,7667.85,40,0
-    .goto 1439/1,-189.23,7707.15,40,0
+    .goto 1439/1,-303.86,7696.24,0
+    .goto 1439/1,-303.86,7696.24,40,0
     .goto 1439/1,-226.57,7763.92,40,0
-    .goto 1439/1,-224.60,7839.46,40,0
-    .goto 1439/1,-286.83,7861.30,40,0
-    .goto 1439/1,-351.02,7834.22,40,0
-    .goto 1439/1,-281.59,7775.71,40,0
-    .goto 1439/1,-309.10,7724.18,40,0
     >>Kill |cRXP_ENEMY_Stormscale Beastmistress|r and loot |cRXP_LOOT_Rod of Deep Dominion|r
     .complete 87760,1 --Rod of Deep Dominion (1)
     .mob Stormscale Beastmistress

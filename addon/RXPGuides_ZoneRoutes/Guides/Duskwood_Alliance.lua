@@ -68,14 +68,8 @@ step
     .target Jitters
 step
     #loop
-    .goto 1431/0,510.14,-10782.09,0
-    .goto 1431/0,510.14,-10782.09,40,0
-    .goto 1431/0,509.33,-10638.99,40,0
+    .goto 1431/0,542.00,-10670.67,0
     .goto 1431/0,542.00,-10670.67,40,0
-    .goto 1431/0,576.02,-10684.53,40,0
-    .goto 1431/0,543.08,-10713.69,40,0
-    .goto 1431/0,578.99,-10746.09,40,0
-    .goto 1431/0,584.12,-10811.43,40,0
     .goto 1431/0,552.53,-10779.75,40,0
     >>Kill |cRXP_ENEMY_Pygmy Venom Web Spiders|r
     .complete 245,1 --Pygmy Venom Web Spider slain (15)
@@ -105,16 +99,10 @@ step
     .mob Elmpaw
 step
     #loop
-    .goto 1431/0,543.89,-10400.13,0
-    .goto 1431/0,543.89,-10400.13,40,0
-    .goto 1431/0,535.25,-10471.59,40,0
-    .goto 1431/0,481.79,-10634.31,40,0
-    .goto 1431/0,499.34,-10707.93,40,0
-    .goto 1431/0,576.02,-10684.53,40,0
-    .goto 1431/0,576.02,-10610.37,40,0
+    .goto 1431/0,556.31,-10463.67,0
+    .goto 1431/0,556.31,-10463.67,40,0
     .goto 1431/0,542.81,-10556.01,40,0
-    .goto 1431/0,619.76,-10523.25,40,0
-    .goto 1431/0,621.11,-10451.25,40,0
+    .goto 1431/0,542.00,-10670.67,40,0
     >>Kill |cRXP_ENEMY_Venom Web Spiders|r, |cRXP_ENEMY_Pygmy Venom Web Spiders|r, |cRXP_ENEMY_Green Recluses|r and |cRXP_ENEMY_Naraxis|r. Loot them for |cRXP_LOOT_Gooey Spider Leg|r
     .complete 93,1 --Gooey Spider Leg (6)
     .mob Venom Web Spider
@@ -315,16 +303,9 @@ step
 step
     #label Drop337x1
     #loop
-    .goto 1431/0,-1273.48,-10922.85,0
-    .goto 1431/0,-1273.48,-10922.85,40,0
-    .goto 1431/0,-1242.43,-10981.17,40,0
-    .goto 1431/0,-1276.72,-11078.19,40,0
-    .goto 1431/0,-1349.35,-11045.43,40,0
-    .goto 1431/0,-1381.75,-11012.13,40,0
-    .goto 1431/0,-1384.45,-10953.27,40,0
-    .goto 1431/0,-1343.14,-10916.55,40,0
-    .goto 1431/0,-1342.06,-10980.27,40,0
-    .goto 1431/0,-1289.68,-10991.97,40,0
+    .goto 1431/0,-1320.73,-10954.17,0
+    .goto 1431/0,-1320.73,-10954.17,40,0
+    .goto 1431/0,-1288.60,-11030.85,40,0
     >>Kill |cRXP_ENEMY_Skeletal Warriors|r
     >>Kill |cRXP_ENEMY_Skeletal Mages|r
     .complete 56,1 --Skeletal Warrior slain (8)
@@ -333,16 +314,10 @@ step
     .mob Skeletal Mage
 step
     #loop
-    .goto 1431/0,-249.37,-10113.75,0
-    .goto 1431/0,-249.37,-10113.75,40,0
-    .goto 1431/0,-185.11,-10062.45,40,0
-    .goto 1431/0,-133.81,-10093.59,40,0
-    .goto 1431/0,-41.74,-10123.83,40,0
-    .goto 1431/0,10.10,-10176.93,40,0
-    .goto 1431/0,-61.45,-10244.97,40,0
-    .goto 1431/0,-72.79,-10198.17,40,0
+    .goto 1431/0,-219.13,-10145.43,0
+    .goto 1431/0,-219.13,-10145.43,40,0
     .goto 1431/0,-128.68,-10158.03,40,0
-    .goto 1431/0,-182.68,-10179.45,40,0
+    .goto 1431/0,-72.79,-10198.17,40,0
     >>Kill |cRXP_ENEMY_Starving Dire Wolfs|r
     >>Kill |cRXP_ENEMY_Rabid Dire Wolfs|r
     .complete 226,1 --Starving Dire Wolf slain (8)
@@ -516,29 +491,17 @@ step
     .target Tavernkeep Smitts
     .isQuestTurnedIn 158 --any of: Zombie Juice
 step
-    #loop
-    .goto 1431/0,191.27,-10508.67,0
-    .goto 1431/0,191.27,-10508.67,40,0
-    .goto 1431/0,203.15,-10484.37,40,0
-    .goto 1431/0,221.78,-10445.49,40,0
-    .goto 1431/0,232.85,-10478.43,40,0
-    .goto 1431/0,228.80,-10491.39,40,0
+    .goto 1431/0,203.15,-10484.37
     >>Kill |cRXP_ENEMY_Skeletal Fiends|r
     .complete 57,1 --Skeletal Fiend slain (15)
     .mob Skeletal Fiend
     .isOnQuest 57
 step
     #loop
-    .goto 1431/0,210.71,-10564.65,0
-    .goto 1431/0,210.71,-10564.65,40,0
-    .goto 1431/0,231.50,-10573.29,40,0
-    .goto 1431/0,277.67,-10571.67,40,0
-    .goto 1431/0,353.00,-10578.69,40,0
+    .goto 1431/0,251.48,-10586.07,0
+    .goto 1431/0,251.48,-10586.07,40,0
     .goto 1431/0,391.88,-10586.61,40,0
-    .goto 1431/0,441.02,-10579.05,40,0
-    .goto 1431/0,445.07,-10548.81,40,0
     .goto 1431/0,453.71,-10476.27,40,0
-    .goto 1431/0,393.50,-10536.39,40,0
     >>Kill |cRXP_ENEMY_Skeletal Horrors|r
     .complete 57,2 --Skeletal Horror slain (15)
     .mob Skeletal Horror
@@ -547,14 +510,8 @@ step
     #loop
     .goto 1431/0,379.46,-10564.47,0
     .goto 1431/0,379.46,-10564.47,40,0
-    .goto 1431/0,445.07,-10548.81,40,0
-    .goto 1431/0,453.71,-10476.27,40,0
-    .goto 1431/0,394.85,-10487.25,40,0
-    .goto 1431/0,232.85,-10478.43,40,0
-    .goto 1431/0,221.78,-10445.49,40,0
-    .goto 1431/0,169.67,-10470.33,40,0
-    .goto 1431/0,210.71,-10564.65,40,0
-    .goto 1431/0,275.78,-10551.87,40,0
+    .goto 1431/0,244.46,-10570.23,40,0
+    .goto 1431/0,203.15,-10484.37,40,0
     >>Kill |cRXP_ENEMY_Skeletal Horrors|r and |cRXP_ENEMY_Skeletal Fiends|r. Loot them for |cRXP_LOOT_Rot Blossom|r
     .complete 156,1 --Rot Blossom (8)
     .mob Skeletal Horror
@@ -707,31 +664,17 @@ step
     .mob Skeletal Fiend
 step
     #loop
-    .goto 1431/0,464.24,-10317.69,0
-    .goto 1431/0,464.24,-10317.69,40,0
+    .goto 1431/0,445.34,-10368.45,0
     .goto 1431/0,445.34,-10368.45,40,0
-    .goto 1431/0,418.34,-10422.27,40,0
     .goto 1431/0,391.34,-10410.57,40,0
-    .goto 1431/0,343.55,-10426.23,40,0
-    .goto 1431/0,359.21,-10382.67,40,0
-    .goto 1431/0,370.01,-10345.59,40,0
-    .goto 1431/0,354.89,-10304.55,40,0
-    .goto 1431/0,377.30,-10280.79,40,0
     >>Kill |cRXP_ENEMY_Skeletal Raiders|r
     .complete 323,1 --Skeletal Raider slain (15)
     .mob Skeletal Raider
     .isOnQuest 323
 step
     #loop
-    .goto 1431/0,377.03,-10346.67,0
-    .goto 1431/0,377.03,-10346.67,40,0
-    .goto 1431/0,383.51,-10396.17,40,0
+    .goto 1431/0,374.06,-10422.09,0
     .goto 1431/0,374.06,-10422.09,40,0
-    .goto 1431/0,404.84,-10455.39,40,0
-    .goto 1431/0,429.68,-10445.13,40,0
-    .goto 1431/0,456.41,-10372.23,40,0
-    .goto 1431/0,431.03,-10331.73,40,0
-    .goto 1431/0,393.77,-10295.37,40,0
     .goto 1431/0,378.65,-10238.49,40,0
     >>Kill |cRXP_ENEMY_Skeletal Healers|r
     .complete 323,2 --Skeletal Healer slain (3)
@@ -742,14 +685,7 @@ step
     #loop
     .goto 1431/0,366.23,-10389.69,0
     .goto 1431/0,366.23,-10389.69,40,0
-    .goto 1431/0,340.04,-10358.55,40,0
-    .goto 1431/0,402.41,-10340.37,40,0
-    .goto 1431/0,393.77,-10305.27,40,0
     .goto 1431/0,379.73,-10258.83,40,0
-    .goto 1431/0,369.74,-10222.29,40,0
-    .goto 1431/0,453.98,-10302.93,40,0
-    .goto 1431/0,462.62,-10367.55,40,0
-    .goto 1431/0,403.49,-10414.17,40,0
     >>Kill |cRXP_ENEMY_Skeletal Warders|r
     .complete 323,3 --Skeletal Warder slain (3)
     .mob Skeletal Warder
@@ -778,13 +714,9 @@ step
     .isQuestTurnedIn 57 --any of: The Night Watch
 step
     #loop
-    .goto 1431/0,-920.32,-10540.17,0
-    .goto 1431/0,-920.32,-10540.17,40,0
-    .goto 1431/0,-913.57,-10488.15,40,0
+    .goto 1431/0,-924.64,-10412.19,0
     .goto 1431/0,-924.64,-10412.19,40,0
     .goto 1431/0,-878.20,-10512.45,40,0
-    .goto 1431/0,-825.28,-10542.33,40,0
-    .goto 1431/0,-840.67,-10576.53,40,0
     >>Kill |cRXP_ENEMY_Nightbane Shadow Weavers|r
     .complete 173,1 --Nightbane Shadow Weaver slain (6)
     .mob Nightbane Shadow Weaver
@@ -796,14 +728,9 @@ step
     .target Calor
 step
     #loop
-    .goto 1431/0,-890.62,-10452.87,0
-    .goto 1431/0,-890.62,-10452.87,40,0
-    .goto 1431/0,-845.80,-10415.07,40,0
-    .goto 1431/0,-811.51,-10432.35,40,0
-    .goto 1431/0,-787.48,-10429.47,40,0
+    .goto 1431/0,-818.26,-10459.35,0
     .goto 1431/0,-818.26,-10459.35,40,0
     .goto 1431/0,-786.67,-10530.99,40,0
-    .goto 1431/0,-844.45,-10485.99,40,0
     >>Kill |cRXP_ENEMY_Nightbane Dark Runners|r
     .complete 221,1 --Nightbane Dark Runner slain (12)
     .mob Nightbane Dark Runner
@@ -823,16 +750,9 @@ step
     .mob Plague Spreader
 step
     #loop
-    .goto 1431/0,122.96,-10332.27,0
-    .goto 1431/0,122.96,-10332.27,40,0
-    .goto 1431/0,142.40,-10305.99,40,0
-    .goto 1431/0,146.18,-10268.37,40,0
-    .goto 1431/0,182.36,-10212.03,40,0
-    .goto 1431/0,214.76,-10224.63,40,0
-    .goto 1431/0,290.09,-10227.51,40,0
-    .goto 1431/0,193.16,-10329.93,40,0
-    .goto 1431/0,195.86,-10377.81,40,0
+    .goto 1431/0,172.64,-10341.63,0
     .goto 1431/0,172.64,-10341.63,40,0
+    .goto 1431/0,214.76,-10224.63,40,0
     >>Kill |cRXP_ENEMY_Plague Spreaders|r
     .complete 58,1 --Plague Spreader slain (20)
     .mob Plague Spreader
@@ -840,16 +760,10 @@ step
 step
     #label Along18
     #loop
-    .goto 1431/0,206.39,-10306.89,0
-    .goto 1431/0,206.39,-10306.89,40,0
-    .goto 1431/0,233.93,-10381.95,40,0
-    .goto 1431/0,181.55,-10365.57,40,0
-    .goto 1431/0,148.34,-10419.21,40,0
-    .goto 1431/0,107.84,-10333.71,40,0
-    .goto 1431/0,143.75,-10222.47,40,0
-    .goto 1431/0,237.17,-10202.31,40,0
-    .goto 1431/0,351.11,-10228.77,40,0
-    .goto 1431/0,278.21,-10257.57,40,0
+    .goto 1431/0,173.18,-10342.17,0
+    .goto 1431/0,173.18,-10342.17,40,0
+    .goto 1431/0,173.72,-10239.93,40,0
+    .goto 1431/0,248.24,-10226.25,40,0
     >>Kill |cRXP_ENEMY_Flesh Eaters|r, |cRXP_ENEMY_Bone Chewers|r, |cRXP_ENEMY_Brain Eaters|r and |cRXP_ENEMY_Plague Spreaders|r. Loot them for |cRXP_LOOT_Ghoul Rib|r
     .complete 133,1 --Ghoul Rib (7)
     .mob Flesh Eater
@@ -859,16 +773,10 @@ step
     .isOnQuest 133
 step
     #loop
-    .goto 1431/0,206.39,-10306.89,0
-    .goto 1431/0,206.39,-10306.89,40,0
-    .goto 1431/0,233.93,-10381.95,40,0
-    .goto 1431/0,181.55,-10365.57,40,0
-    .goto 1431/0,148.34,-10419.21,40,0
-    .goto 1431/0,107.84,-10333.71,40,0
-    .goto 1431/0,143.75,-10222.47,40,0
-    .goto 1431/0,237.17,-10202.31,40,0
-    .goto 1431/0,351.11,-10228.77,40,0
-    .goto 1431/0,278.21,-10257.57,40,0
+    .goto 1431/0,173.18,-10342.17,0
+    .goto 1431/0,173.18,-10342.17,40,0
+    .goto 1431/0,173.72,-10239.93,40,0
+    .goto 1431/0,248.24,-10226.25,40,0
     >>Kill |cRXP_ENEMY_Flesh Eaters|r, |cRXP_ENEMY_Bone Chewers|r, |cRXP_ENEMY_Brain Eaters|r and |cRXP_ENEMY_Plague Spreaders|r. Loot them for |cRXP_LOOT_Ghoul Fang|r
     .complete 101,1 --Ghoul Fang (10)
     .mob Flesh Eater
@@ -883,16 +791,10 @@ step
     .isOnQuest 133
 step
     #loop
-    .goto 1431/0,169.67,-10470.33,0
-    .goto 1431/0,169.67,-10470.33,40,0
-    .goto 1431/0,210.71,-10564.65,40,0
-    .goto 1431/0,275.78,-10551.87,40,0
-    .goto 1431/0,353.00,-10578.69,40,0
-    .goto 1431/0,393.50,-10536.39,40,0
-    .goto 1431/0,445.07,-10548.81,40,0
-    .goto 1431/0,394.85,-10487.25,40,0
-    .goto 1431/0,232.85,-10478.43,40,0
-    .goto 1431/0,221.78,-10445.49,40,0
+    .goto 1431/0,203.15,-10484.37,0
+    .goto 1431/0,203.15,-10484.37,40,0
+    .goto 1431/0,244.46,-10570.23,40,0
+    .goto 1431/0,379.46,-10564.47,40,0
     >>Kill |cRXP_ENEMY_Skeletal Warriors|r, |cRXP_ENEMY_Skeletal Horrors|r, |cRXP_ENEMY_Skeletal Mages|r and |cRXP_ENEMY_Skeletal Fiends|r. Loot them for |cRXP_LOOT_Skeleton Finger|r
     .complete 101,3 --Skeleton Finger (10)
     .mob Skeletal Warrior
@@ -901,16 +803,9 @@ step
     .mob Skeletal Fiend
 step
     #loop
-    .goto 1431/0,-18.79,-10480.59,0
-    .goto 1431/0,-18.79,-10480.59,40,0
+    .goto 1431/0,-39.04,-10424.97,0
     .goto 1431/0,-39.04,-10424.97,40,0
-    .goto 1431/0,-56.05,-10428.03,40,0
-    .goto 1431/0,-52.81,-10364.85,40,0
-    .goto 1431/0,-73.06,-10331.19,40,0
-    .goto 1431/0,-112.21,-10298.97,40,0
-    .goto 1431/0,-30.13,-10329.75,40,0
-    .goto 1431/0,0.11,-10301.67,40,0
-    .goto 1431/0,1.46,-10365.39,40,0
+    .goto 1431/0,-28.78,-10333.53,40,0
     >>Kill |cRXP_ENEMY_Venom Web Spiders|r, |cRXP_ENEMY_Pygmy Venom Web Spiders|r, |cRXP_ENEMY_Green Recluses|r and |cRXP_ENEMY_Naraxis|r. Loot them for |cRXP_LOOT_Vial of Spider Venom|r
     .complete 101,2 --Vial of Spider Venom (1)
     .mob Venom Web Spider
@@ -1128,25 +1023,13 @@ step
     .complete 1043,1 --Find evidence of the Scythe of Elune
     .isOnQuest 1043
 step
-    #loop
-    .goto 1431/0,-859.30,-11142.81,0
-    .goto 1431/0,-859.30,-11142.81,40,0
-    .goto 1431/0,-857.95,-11153.43,40,0
-    .goto 1431/0,-837.97,-11190.15,40,0
-    .goto 1431/0,-835.81,-11174.13,40,0
+    .goto 1431/0,-835.81,-11174.13
     >>Kill |cRXP_ENEMY_Nightbane Vile Fangs|r
     .complete 222,1 --Nightbane Vile Fang slain (8)
     .mob Nightbane Vile Fang
     .isOnQuest 222
 step
-    #loop
-    .goto 1431/0,-850.66,-11176.47,0
-    .goto 1431/0,-850.66,-11176.47,40,0
-    .goto 1431/0,-811.24,-11173.05,40,0
-    .goto 1431/0,-820.15,-11186.73,40,0
-    .goto 1431/0,-849.58,-11196.27,40,0
-    .goto 1431/0,-883.87,-11232.27,40,0
-    .goto 1431/0,-871.45,-11162.79,40,0
+    .goto 1431/0,-849.58,-11196.27
     >>Kill |cRXP_ENEMY_Nightbane Tainted Ones|r
     .complete 222,2 --Nightbane Tainted One slain (8)
     .mob Nightbane Tainted One

@@ -347,16 +347,10 @@ step
 step
     #label Drop635x1
     #loop
-    .goto 1445/1,-3936.00,-2838.33,0
-    .goto 1445/1,-3936.00,-2838.33,40,0
+    .goto 1445/1,-3967.50,-2817.33,0
     .goto 1445/1,-3967.50,-2817.33,40,0
-    .goto 1445/1,-3999.00,-2789.33,40,0
-    .goto 1445/1,-4020.00,-2754.33,40,0
-    .goto 1445/1,-4009.50,-2712.33,40,0
-    .goto 1445/1,-4045.20,-2601.03,40,0
-    .goto 1445/1,-3991.12,-2593.33,40,0
-    .goto 1445/1,-3924.45,-2616.08,40,0
-    .goto 1445/1,-3936.00,-2768.33,40,0
+    .goto 1445/1,-3999.00,-2740.33,40,0
+    .goto 1445/1,-4023.15,-2590.18,40,0
     >>Kill |cRXP_ENEMY_Mirefin Oracles|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Warriors|r and |cRXP_ENEMY_Mirefin Puddlejumpers|r. Loot them for |cRXP_LOOT_Mirefin Head|r
     .complete 1177,1 --Mirefin Head (12)
     .mob Mirefin Oracle
@@ -365,16 +359,10 @@ step
     .mob Mirefin Puddlejumper
 step
     #loop
-    .goto 1445/1,-4209.00,-2985.33,0
-    .goto 1445/1,-4209.00,-2985.33,40,0
-    .goto 1445/1,-4209.00,-3062.33,40,0
-    .goto 1445/1,-4198.50,-3104.33,40,0
-    .goto 1445/1,-4219.50,-3146.33,40,0
-    .goto 1445/1,-4432.12,-3103.63,40,0
-    .goto 1445/1,-4346.02,-3088.93,40,0
-    .goto 1445/1,-4289.32,-3082.28,40,0
-    .goto 1445/1,-4261.50,-3034.33,40,0
-    .goto 1445/1,-4261.50,-2922.33,40,0
+    .goto 1445/1,-4221.60,-3020.68,0
+    .goto 1445/1,-4221.60,-3020.68,40,0
+    .goto 1445/1,-4209.00,-3097.33,40,0
+    .goto 1445/1,-4398.00,-3097.33,40,0
     >>Kill |cRXP_ENEMY_Mudrock Tortoises|r, |cRXP_ENEMY_Mudrock Spikeshells|r, |cRXP_ENEMY_Mudrock Burrowers|r and |cRXP_ENEMY_Mudrock Borers|r. Loot them for |cRXP_LOOT_Forked Mudrock Tongue|r
     .complete 1204,1 --Forked Mudrock Tongue (8)
     .mob Mudrock Tortoise
@@ -450,16 +438,10 @@ step
     .isQuestTurnedIn 1218 --any of: Soothing Spices
 step
     #loop
-    .goto 1445/1,-2850.82,-2770.08,0
-    .goto 1445/1,-2850.82,-2770.08,40,0
-    .goto 1445/1,-2776.80,-2842.88,40,0
-    .goto 1445/1,-2818.80,-2884.53,40,0
-    .goto 1445/1,-2778.90,-2928.98,40,0
-    .goto 1445/1,-2686.50,-2817.33,40,0
-    .goto 1445/1,-2606.70,-2821.18,40,0
-    .goto 1445/1,-2562.07,-2777.78,40,0
-    .goto 1445/1,-2610.37,-2747.33,40,0
-    .goto 1445/1,-2736.37,-2753.28,40,0
+    .goto 1445/1,-2800.42,-2882.78,0
+    .goto 1445/1,-2800.42,-2882.78,40,0
+    .goto 1445/1,-2781.00,-2814.53,40,0
+    .goto 1445/1,-2614.05,-2785.13,40,0
     >>Kill |cRXP_ENEMY_Darkmist Spiders|r, |cRXP_ENEMY_Darkmist Lurkers|r, |cRXP_ENEMY_Darkmist Recluses|r and |cRXP_ENEMY_Darkmist Silkspinners|r. Loot them for |cRXP_LOOT_Unpopped Darkmist Eye|r
     .complete 1206,1 --Unpopped Darkmist Eye (40)
     .mob Darkmist Spider
@@ -524,12 +506,7 @@ step << Mage
     .target Tabetha
     .isQuestComplete 1948
 step << Mage
-    #loop
-    .goto 1445/1,-3289.72,-4306.23,0
-    .goto 1445/1,-3289.72,-4306.23,40,0
-    .goto 1445/1,-3336.97,-4323.03,40,0
-    .goto 1445/1,-3330.15,-4374.48,40,0
-    .goto 1445/1,-3228.82,-4333.18,40,0
+    .goto 1445/1,-3289.72,-4306.23
     >>Open the |cRXP_PICK_Gold Vein|r. Loot it for |cRXP_LOOT_Jade|r
     .complete 1948,1 --Jade (1)
     .isOnQuest 1948

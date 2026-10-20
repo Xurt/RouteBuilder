@@ -72,16 +72,10 @@ step
     .target Geologist Larksbane
 step
     #loop
-    .goto 1451/1,488.25,-7183.90,0
-    .goto 1451/1,488.25,-7183.90,40,0
-    .goto 1451/1,417.54,-7115.61,40,0
-    .goto 1451/1,343.70,-7122.35,40,0
-    .goto 1451/1,276.12,-7054.75,40,0
-    .goto 1451/1,325.23,-7224.32,40,0
-    .goto 1451/1,309.56,-7315.61,40,0
-    .goto 1451/1,414.76,-7314.68,40,0
-    .goto 1451/1,452.03,-7274.27,40,0
-    .goto 1451/1,387.59,-7217.35,40,0
+    .goto 1451/1,319.66,-7055.21,0
+    .goto 1451/1,319.66,-7055.21,40,0
+    .goto 1451/1,351.01,-7141.86,40,0
+    .goto 1451/1,352.40,-7314.22,40,0
     >>Kill |cRXP_ENEMY_Tortured Druids|r
     .complete 1125,1 --Tortured Druid slain (8)
     .mob Tortured Druid
@@ -90,14 +84,8 @@ step
     #loop
     .goto 1451/1,352.40,-7216.19,0
     .goto 1451/1,352.40,-7216.19,40,0
-    .goto 1451/1,410.58,-7260.33,40,0
-    .goto 1451/1,490.00,-7249.18,40,0
-    .goto 1451/1,440.18,-7184.37,40,0
-    .goto 1451/1,351.36,-7078.68,40,0
-    .goto 1451/1,347.53,-7138.61,40,0
-    .goto 1451/1,290.05,-7177.63,40,0
-    .goto 1451/1,284.83,-7309.81,40,0
-    .goto 1451/1,386.54,-7316.31,40,0
+    .goto 1451/1,444.02,-7252.90,40,0
+    .goto 1451/1,351.71,-7116.54,40,0
     >>Kill |cRXP_ENEMY_Tortured Sentinels|r
     .complete 1125,2 --Tortured Sentinel slain (8)
     .mob Tortured Sentinel
@@ -141,30 +129,18 @@ step
     .xp <54,1
 step
     #loop
-    .goto 1451/1,1687.57,-6231.51,0
-    .goto 1451/1,1687.57,-6231.51,40,0
+    .goto 1451/1,1702.20,-6276.34,0
     .goto 1451/1,1702.20,-6276.34,40,0
-    .goto 1451/1,1700.45,-6318.62,40,0
-    .goto 1451/1,1770.47,-6295.16,40,0
-    .goto 1451/1,1847.80,-6183.19,40,0
-    .goto 1451/1,1819.93,-6140.68,40,0
-    .goto 1451/1,1778.83,-6198.29,40,0
-    .goto 1451/1,1747.83,-6151.14,40,0
-    .goto 1451/1,1698.02,-6183.66,40,0
+    .goto 1451/1,1815.75,-6196.43,40,0
     >>Pick up |cRXP_PICK_Twilight Tablet Fragment|r from the ground
     .complete 8284,1 --Twilight Tablet Fragment (8)
 step
     #loop
-    .goto 1451/1,767.62,-6400.62,0
-    .goto 1451/1,767.62,-6400.62,40,0
-    .goto 1451/1,686.11,-6489.35,40,0
-    .goto 1451/1,492.78,-6582.50,40,0
-    .goto 1451/1,383.41,-6576.23,40,0
-    .goto 1451/1,413.01,-6477.27,40,0
-    .goto 1451/1,384.80,-6379.01,40,0
-    .goto 1451/1,546.43,-6413.63,40,0
-    .goto 1451/1,631.77,-6214.78,40,0
+    .goto 1451/1,670.08,-6252.18,0
+    .goto 1451/1,670.08,-6252.18,40,0
     .goto 1451/1,659.98,-6366.93,40,0
+    .goto 1451/1,455.86,-6607.36,40,0
+    .goto 1451/1,490.34,-6433.60,40,0
     >>Kill |cRXP_ENEMY_Stonelash Scorpids|r. Loot them for |cRXP_LOOT_Stonelash Scorpid Stinger|r
     >>Kill |cRXP_ENEMY_Sand Skitterers|r. Loot them for |cRXP_LOOT_Sand Skitterer Fang|r
     >>Kill |cRXP_ENEMY_Dredge Strikers|r
@@ -208,16 +184,9 @@ step
     .target General Kirika
 step
     #loop
-    .goto 1451/1,1352.47,-6973.91,0
-    .goto 1451/1,1352.47,-6973.91,40,0
-    .goto 1451/1,1394.27,-6912.12,40,0
-    .goto 1451/1,1471.25,-6877.74,40,0
-    .goto 1451/1,1513.40,-6912.36,40,0
-    .goto 1451/1,1552.41,-6869.15,40,0
-    .goto 1451/1,1563.21,-6920.25,40,0
-    .goto 1451/1,1550.32,-6983.44,40,0
-    .goto 1451/1,1490.41,-6966.25,40,0
-    .goto 1451/1,1469.16,-7035.70,40,0
+    .goto 1451/1,1386.95,-6979.49,0
+    .goto 1451/1,1386.95,-6979.49,40,0
+    .goto 1451/1,1508.17,-6991.57,40,0
     >>Kill |cRXP_ENEMY_Dredge Crushers|r
     .complete 8281,1 --Dredge Crusher slain (20)
     .mob Dredge Crusher
@@ -275,16 +244,10 @@ step
     .use 20461
 step
     #loop
-    .goto 1451/1,1369.19,-7553.02,0
-    .goto 1451/1,1369.19,-7553.02,40,0
-    .goto 1451/1,1472.30,-7545.58,40,0
-    .goto 1451/1,1428.75,-7498.43,40,0
-    .goto 1451/1,1466.03,-7411.55,40,0
-    .goto 1451/1,1417.96,-7289.60,40,0
-    .goto 1451/1,1281.06,-7390.41,40,0
-    .goto 1451/1,1213.83,-7397.38,40,0
-    .goto 1451/1,1279.67,-7450.11,40,0
-    .goto 1451/1,1348.64,-7429.44,40,0
+    .goto 1451/1,1255.28,-7416.66,0
+    .goto 1451/1,1255.28,-7416.66,40,0
+    .goto 1451/1,1404.37,-7448.48,40,0
+    .goto 1451/1,1445.82,-7383.21,40,0
     >>Kill |cRXP_ENEMY_Hive'Zora Waywatchers|r, |cRXP_ENEMY_Hive'Zora Tunnelers|r, |cRXP_ENEMY_Hive'Zora Wasps|r and |cRXP_ENEMY_Hive'Zora Reavers|r. Loot them for |cRXP_LOOT_Hive'Zora Silithid Brain|r
     .complete 8310,2 --Hive'Zora Silithid Brain (1)
     .mob Hive'Zora Waywatcher
@@ -294,16 +257,10 @@ step
 step
     #label Drop8308x1
     #loop
-    .goto 1451/1,889.88,-7083.55,0
-    .goto 1451/1,889.88,-7083.55,40,0
-    .goto 1451/1,849.13,-7051.73,40,0
-    .goto 1451/1,892.67,-7023.62,40,0
-    .goto 1451/1,875.25,-6952.31,40,0
-    .goto 1451/1,814.64,-6951.61,40,0
-    .goto 1451/1,731.04,-6913.98,40,0
+    .goto 1451/1,848.78,-7117.93,0
+    .goto 1451/1,848.78,-7117.93,40,0
+    .goto 1451/1,848.08,-6976.93,40,0
     .goto 1451/1,761.70,-6956.72,40,0
-    .goto 1451/1,789.21,-7110.96,40,0
-    .goto 1451/1,823.70,-7153.24,40,0
     >>Kill |cRXP_ENEMY_Hive'Ashi Stingers|r, |cRXP_ENEMY_Hive'Ashi Workers|r, |cRXP_ENEMY_Hive'Ashi Defenders|r and |cRXP_ENEMY_Hive'Ashi Sandstalkers|r. Loot them for |cRXP_LOOT_Hive'Ashi Silithid Brain|r
     .complete 8310,1 --Hive'Ashi Silithid Brain (1)
     .mob Hive'Ashi Stinger
@@ -344,16 +301,11 @@ step
 step
     #label Drop8308x2
     #loop
-    .goto 1451/1,628.98,-7606.68,0
-    .goto 1451/1,628.98,-7606.68,40,0
-    .goto 1451/1,604.25,-7703.77,40,0
-    .goto 1451/1,620.97,-7813.41,40,0
-    .goto 1451/1,723.03,-7843.15,40,0
-    .goto 1451/1,759.95,-7749.77,40,0
-    .goto 1451/1,819.87,-7880.31,40,0
-    .goto 1451/1,583.35,-7976.72,40,0
-    .goto 1451/1,522.74,-7859.18,40,0
-    .goto 1451/1,497.66,-7755.11,40,0
+    .goto 1451/1,624.45,-7697.27,0
+    .goto 1451/1,624.45,-7697.27,40,0
+    .goto 1451/1,543.29,-7825.96,40,0
+    .goto 1451/1,657.20,-7947.91,40,0
+    .goto 1451/1,741.14,-7812.02,40,0
     >>Kill |cRXP_ENEMY_Hive'Regal Ambushers|r, |cRXP_ENEMY_Hive'Regal Burrowers|r, |cRXP_ENEMY_Hive'Regal Spitfires|r and |cRXP_ENEMY_Hive'Regal Slavemakers|r. Loot them for |cRXP_LOOT_Hive'Regal Silithid Brain|r
     .complete 8310,3 --Hive'Regal Silithid Brain (1)
     .mob Hive'Regal Ambusher
@@ -389,48 +341,30 @@ step
     .isQuestTurnedIn 8285 --any of: The Deserter
 step
     #loop
-    .goto 1451/1,1045.59,-7386.00,0
-    .goto 1451/1,1045.59,-7386.00,40,0
+    .goto 1451/1,1035.14,-7331.64,0
     .goto 1451/1,1035.14,-7331.64,40,0
-    .goto 1451/1,1066.49,-7280.54,40,0
-    .goto 1451/1,1017.72,-7117.93,40,0
-    .goto 1451/1,1069.97,-7166.95,40,0
-    .goto 1451/1,1128.84,-7212.24,40,0
+    .goto 1451/1,1075.54,-7253.13,40,0
     .goto 1451/1,1215.57,-7173.92,40,0
-    .goto 1451/1,1260.16,-7145.81,40,0
-    .goto 1451/1,1198.51,-7249.88,40,0
     >>Kill |cRXP_ENEMY_Stonelash Pincers|r. Loot them for |cRXP_LOOT_Stonelash Pincer Stinger|r
     .complete 8278,2 --Stonelash Pincer Stinger (3)
     .mob Stonelash Pincer
     .isOnQuest 8278
 step
     #loop
-    .goto 1451/1,1251.10,-7583.21,0
-    .goto 1451/1,1251.10,-7583.21,40,0
-    .goto 1451/1,1305.10,-7605.75,40,0
-    .goto 1451/1,1375.11,-7613.41,40,0
-    .goto 1451/1,1367.80,-7675.20,40,0
-    .goto 1451/1,1460.80,-7688.44,40,0
-    .goto 1451/1,1433.63,-7779.04,40,0
-    .goto 1451/1,1345.15,-7809.47,40,0
-    .goto 1451/1,1282.45,-7772.07,40,0
-    .goto 1451/1,1282.45,-7716.32,40,0
+    .goto 1451/1,1283.50,-7553.48,0
+    .goto 1451/1,1283.50,-7553.48,40,0
+    .goto 1451/1,1383.47,-7617.36,40,0
+    .goto 1451/1,1415.52,-7757.43,40,0
     >>Kill |cRXP_ENEMY_Stonelash Flayers|r. Loot them for |cRXP_LOOT_Stonelash Flayer Stinger|r
     .complete 8278,1 --Stonelash Flayer Stinger (3)
     .mob Stonelash Flayer
     .isOnQuest 8278
 step
     #loop
-    .goto 1451/1,1248.67,-7850.81,0
-    .goto 1451/1,1248.67,-7850.81,40,0
-    .goto 1451/1,1212.79,-7841.06,40,0
-    .goto 1451/1,1218.01,-7921.20,40,0
-    .goto 1451/1,1244.49,-8039.43,40,0
-    .goto 1451/1,1306.84,-8074.98,40,0
-    .goto 1451/1,1322.86,-8018.76,40,0
-    .goto 1451/1,1281.76,-7956.97,40,0
+    .goto 1451/1,1216.27,-7861.03,0
+    .goto 1451/1,1216.27,-7861.03,40,0
     .goto 1451/1,1247.27,-7916.78,40,0
-    .goto 1451/1,1268.87,-7886.82,40,0
+    .goto 1451/1,1306.84,-8074.98,40,0
     >>Kill |cRXP_ENEMY_Rock Stalkers|r. Loot them for |cRXP_LOOT_Rock Stalker Fang|r
     .complete 8278,3 --Rock Stalker Fang (3)
     .mob Rock Stalker
@@ -534,16 +468,10 @@ step
 step
     #label Along32
     #loop
-    .goto 1451/1,230.84,-6477.74,0
-    .goto 1451/1,230.84,-6477.74,40,0
-    .goto 1451/1,218.30,-6416.18,40,0
-    .goto 1451/1,181.02,-6386.68,40,0
-    .goto 1451/1,147.24,-6355.78,40,0
-    .goto 1451/1,66.42,-6262.87,40,0
-    .goto 1451/1,106.13,-6290.98,40,0
-    .goto 1451/1,178.59,-6316.06,40,0
-    .goto 1451/1,275.42,-6319.55,40,0
-    .goto 1451/1,271.59,-6418.04,40,0
+    .goto 1451/1,227.00,-6458.69,0
+    .goto 1451/1,227.00,-6458.69,40,0
+    .goto 1451/1,186.60,-6354.16,40,0
+    .goto 1451/1,95.33,-6293.07,40,0
     >>Kill |cRXP_ENEMY_Twilight Keeper Havunths|r, |cRXP_ENEMY_Twilight Avengers|r, |cRXP_ENEMY_Twilight Geolords|r and |cRXP_ENEMY_Twilight Stonecallers|r. Loot them for |cRXP_LOOT_Encrypted Twilight Text|r
     .complete 8323,1 --Encrypted Twilight Text (10)
     .mob Twilight Keeper Havunth
@@ -581,16 +509,9 @@ step
     .isOnQuest 8287
 step
     #loop
-    .goto 1451/1,1073.45,-6972.05,0
-    .goto 1451/1,1073.45,-6972.05,40,0
-    .goto 1451/1,1114.21,-6939.07,40,0
-    .goto 1451/1,1153.92,-6906.32,40,0
-    .goto 1451/1,1246.58,-6953.94,40,0
-    .goto 1451/1,1258.42,-7008.29,40,0
-    .goto 1451/1,1235.43,-7052.89,40,0
-    .goto 1451/1,1178.65,-6999.93,40,0
-    .goto 1451/1,1170.29,-7054.98,40,0
-    .goto 1451/1,1111.77,-7049.87,40,0
+    .goto 1451/1,1120.13,-6988.55,0
+    .goto 1451/1,1120.13,-6988.55,40,0
+    .goto 1451/1,1188.40,-6992.96,40,0
     >>Kill |cRXP_ENEMY_Twilight Keeper Havunths|r, |cRXP_ENEMY_Twilight Avengers|r, |cRXP_ENEMY_Twilight Geolords|r and |cRXP_ENEMY_Twilight Stonecallers|r. Loot them for |cRXP_LOOT_Encrypted Twilight Text|r
     .complete 8318,1 --Encrypted Twilight Text (10)
     .mob Twilight Keeper Havunth

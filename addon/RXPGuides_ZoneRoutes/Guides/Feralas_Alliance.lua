@@ -119,16 +119,10 @@ step
 step
     #label Drop2766x1
     #loop
-    .goto 1444/1,3496.36,-4777.85,0
-    .goto 1444/1,3496.36,-4777.85,40,0
-    .goto 1444/1,3587.41,-4709.74,40,0
-    .goto 1444/1,3584.63,-4782.95,40,0
-    .goto 1444/1,3661.08,-4832.06,40,0
-    .goto 1444/1,3685.40,-4927.05,40,0
-    .goto 1444/1,3588.10,-4989.60,40,0
-    .goto 1444/1,3451.19,-5024.81,40,0
-    .goto 1444/1,3452.58,-4887.20,40,0
-    .goto 1444/1,3555.44,-4854.30,40,0
+    .goto 1444/1,3520.69,-4854.77,0
+    .goto 1444/1,3520.69,-4854.77,40,0
+    .goto 1444/1,3511.65,-4917.32,40,0
+    .goto 1444/1,3626.33,-4869.13,40,0
     >>Kill |cRXP_ENEMY_Hatecrest Warriors|r, |cRXP_ENEMY_Hatecrest Wave Riders|r, |cRXP_ENEMY_Hatecrest Serpent Guards|r and |cRXP_ENEMY_Hatecrest Myrmidons|r. Loot them for |cRXP_LOOT_Hatecrest Naga Scale|r
     .complete 2869,1 --Hatecrest Naga Scale (10)
     .mob Hatecrest Warrior
@@ -193,16 +187,10 @@ step
 step
     #label Drop2766x2
     #loop
-    .goto 1444/1,1513.53,-4984.50,0
-    .goto 1444/1,1513.53,-4984.50,40,0
-    .goto 1444/1,1558.01,-5091.53,40,0
-    .goto 1444/1,1582.33,-5015.54,40,0
-    .goto 1444/1,1617.78,-4976.62,40,0
-    .goto 1444/1,1772.76,-5009.06,40,0
-    .goto 1444/1,1749.13,-4967.36,40,0
-    .goto 1444/1,1722.03,-4926.12,40,0
-    .goto 1444/1,1668.51,-4944.19,40,0
-    .goto 1444/1,1599.01,-4857.55,40,0
+    .goto 1444/1,1547.58,-4982.65,0
+    .goto 1444/1,1547.58,-4982.65,40,0
+    .goto 1444/1,1644.19,-4968.75,40,0
+    .goto 1444/1,1752.61,-4981.26,40,0
     >>Kill |cRXP_ENEMY_Feral Scar Yetis|r, |cRXP_ENEMY_Hulking Feral Scars|r, |cRXP_ENEMY_Enraged Feral Scars|r and |cRXP_ENEMY_Bloodroar the Stalkers|r. Loot them for |cRXP_LOOT_Thick Yeti Hide|r
     .complete 2821,1 --Thick Yeti Hide (10)
     .mob Feral Scar Yeti
@@ -314,16 +302,10 @@ step
     .target Jer'kai Moonweaver
 step
     #loop
-    .goto 1444/1,763.62,-4190.35,0
-    .goto 1444/1,763.62,-4190.35,40,0
-    .goto 1444/1,826.87,-4165.79,40,0
+    .goto 1444/1,792.81,-4148.65,0
     .goto 1444/1,792.81,-4148.65,40,0
-    .goto 1444/1,651.73,-4147.26,40,0
-    .goto 1444/1,623.23,-4171.35,40,0
+    .goto 1444/1,643.39,-4196.37,40,0
     .goto 1444/1,578.06,-4117.14,40,0
-    .goto 1444/1,581.53,-4218.15,40,0
-    .goto 1444/1,648.25,-4254.75,40,0
-    .goto 1444/1,664.24,-4185.25,40,0
     >>Kill |cRXP_ENEMY_Grimtotem Naturalists|r
     >>Kill |cRXP_ENEMY_Grimtotem Raiders|r
     >>Kill |cRXP_ENEMY_Grimtotem Shamans|r
@@ -402,28 +384,15 @@ step
     .complete 2767,1 --Escort OOX-22/FE to the dock along the Forgotten Coast
     .isOnQuest 2767
 step
-    #loop
-    .goto 1444/1,1309.20,-5426.98,0
-    .goto 1444/1,1309.20,-5426.98,40,0
-    .goto 1444/1,1279.31,-5471.93,40,0
-    .goto 1444/1,1251.51,-5418.64,40,0
-    .goto 1444/1,1220.93,-5427.45,40,0
-    .goto 1444/1,1241.09,-5369.07,40,0
+    .goto 1444/1,1269.58,-5442.27
     >>Kill |cRXP_ENEMY_Gordunni Shamans|r
     .complete 2982,2 --Gordunni Shaman slain (8)
     .mob Gordunni Shaman
 step
     #loop
-    .goto 1444/1,1242.48,-5063.27,0
-    .goto 1444/1,1242.48,-5063.27,40,0
-    .goto 1444/1,1245.26,-5011.84,40,0
-    .goto 1444/1,1195.22,-4984.96,40,0
-    .goto 1444/1,1144.48,-4946.04,40,0
-    .goto 1444/1,1147.26,-4866.81,40,0
+    .goto 1444/1,1234.14,-5038.25,0
+    .goto 1444/1,1234.14,-5038.25,40,0
     .goto 1444/1,1175.76,-4913.61,40,0
-    .goto 1444/1,1218.85,-4922.88,40,0
-    .goto 1444/1,1243.17,-4890.91,40,0
-    .goto 1444/1,1318.23,-5031.76,40,0
     >>Kill |cRXP_ENEMY_Gordunni Warlocks|r
     >>Kill |cRXP_ENEMY_Gordunni Brutes|r
     .complete 2982,1 --Gordunni Warlock slain (8)
@@ -521,15 +490,9 @@ step
     .target Zorbin Fandazzle
 step
     #loop
-    .goto 1444/1,2588.69,-3414.73,0
-    .goto 1444/1,2588.69,-3414.73,40,0
-    .goto 1444/1,2631.09,-3405.92,40,0
-    .goto 1444/1,2684.60,-3399.90,40,0
-    .goto 1444/1,2746.46,-3382.76,40,0
-    .goto 1444/1,2817.35,-3382.29,40,0
-    .goto 1444/1,2788.85,-3358.20,40,0
-    .goto 1444/1,2784.68,-3320.67,40,0
+    .goto 1444/1,2668.62,-3381.37,0
     .goto 1444/1,2668.62,-3381.37,40,0
+    .goto 1444/1,2788.85,-3358.20,40,0
     >>Kill |cRXP_ENEMY_Land Walkers|r, |cRXP_ENEMY_Cliff Giants|r, |cRXP_ENEMY_Shore Striders|r and |cRXP_ENEMY_Deep Striders|r. Loot them for |cRXP_LOOT_Miniaturization Residue|r
     .complete 7003,1 --Miniaturization Residue (15)
     .mob Land Walker
@@ -540,9 +503,6 @@ step
     #loop
     .goto 1444/1,2680.43,-4075.90,0
     .goto 1444/1,2680.43,-4075.90,40,0
-    .goto 1444/1,2625.53,-4115.75,40,0
-    .goto 1444/1,2549.08,-4163.01,40,0
-    .goto 1444/1,2515.72,-4155.60,40,0
     .goto 1444/1,2586.61,-4123.16,40,0
     >>Kill |cRXP_ENEMY_Sea Elementals|r and |cRXP_ENEMY_Sea Sprays|r. Loot them for |cRXP_LOOT_Water Elemental Core|r
     .complete 7721,1 --Water Elemental Core (10)
@@ -556,16 +516,10 @@ step
     .target Zorbin Fandazzle
 step
     #loop
-    .goto 1444/1,1841.57,-3793.27,0
-    .goto 1444/1,1841.57,-3793.27,40,0
-    .goto 1444/1,1801.26,-3744.62,40,0
-    .goto 1444/1,1762.34,-3775.20,40,0
-    .goto 1444/1,1618.47,-3864.62,40,0
-    .goto 1444/1,1568.43,-3897.98,40,0
-    .goto 1444/1,1626.81,-3919.76,40,0
-    .goto 1444/1,1685.19,-3872.96,40,0
+    .goto 1444/1,1738.71,-3842.38,0
     .goto 1444/1,1738.71,-3842.38,40,0
-    .goto 1444/1,1790.14,-3837.75,40,0
+    .goto 1444/1,1762.34,-3775.20,40,0
+    .goto 1444/1,1630.98,-3897.98,40,0
     >>Kill |cRXP_ENEMY_Rage Scar Yetis|r, |cRXP_ENEMY_Elder Rage Scars|r, |cRXP_ENEMY_Ferocious Rage Scars|r and |cRXP_ENEMY_Lurking Feral Scars|r. Loot them for |cRXP_LOOT_Rage Scar Yeti Hide|r
     .complete 7733,1 --Rage Scar Yeti Hide (10)
     .mob Rage Scar Yeti

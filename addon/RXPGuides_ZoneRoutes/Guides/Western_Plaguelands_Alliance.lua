@@ -69,16 +69,10 @@ step << Human Paladin/Dwarf Paladin
     .mob Skeletal Executioner
 step
     #loop
-    .goto 1422/0,-1620.24,950.07,0
-    .goto 1422/0,-1620.24,950.07,40,0
+    .goto 1422/0,-1620.24,1022.02,0
     .goto 1422/0,-1620.24,1022.02,40,0
-    .goto 1422/0,-1684.74,1068.75,40,0
-    .goto 1422/0,-1653.78,1113.47,40,0
-    .goto 1422/0,-1710.54,1136.69,40,0
-    .goto 1422/0,-1744.94,1217.53,40,0
-    .goto 1422/0,-1779.34,1168.22,40,0
-    .goto 1422/0,-1766.44,1057.57,40,0
-    .goto 1422/0,-1716.56,993.93,40,0
+    .goto 1422/0,-1729.03,1056.42,40,0
+    .goto 1422/0,-1745.37,1163.06,40,0
     >>Kill |cRXP_ENEMY_Skeletal Flayers|r
     >>Kill |cRXP_ENEMY_Slavering Ghouls|r
     .complete 5092,1 --Skeletal Flayer slain (10)
@@ -150,16 +144,9 @@ step << Hunter
     >>If you are not yet close, do one more Cauldron quest to get you where you need to be
 step << Human Paladin/Dwarf Paladin
     #loop
-    .goto 1422/0,-1262.48,1764.20,0
-    .goto 1422/0,-1262.48,1764.20,40,0
-    .goto 1422/0,-1240.55,1819.81,40,0
-    .goto 1422/0,-1172.18,1819.53,40,0
-    .goto 1422/0,-1191.53,1772.80,40,0
-    .goto 1422/0,-1115.42,1732.38,40,0
-    .goto 1422/0,-1133.48,1689.95,40,0
-    .goto 1422/0,-1198.84,1659.28,40,0
-    .goto 1422/0,-1199.70,1734.96,40,0
-    .goto 1422/0,-1239.69,1719.19,40,0
+    .goto 1422/0,-1222.06,1786.85,0
+    .goto 1422/0,-1222.06,1786.85,40,0
+    .goto 1422/0,-1170.46,1728.65,40,0
     >>Kill |cRXP_ENEMY_Skeletal Flayers|r, |cRXP_ENEMY_Skeletal Sorcerers|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Skeletal Executioners|r. Loot them for |cRXP_LOOT_Minion's Scourgestone|r
     .complete 8414,1 --Minion's Scourgestone (20)
     .mob Skeletal Flayer
@@ -257,16 +244,9 @@ step
     .target Mulgris Deepriver
 step
     #loop
-    .goto 1422/0,-1581.54,2144.03,0
-    .goto 1422/0,-1581.54,2144.03,40,0
-    .goto 1422/0,-1587.13,2213.69,40,0
-    .goto 1422/0,-1680.87,2248.67,40,0
-    .goto 1422/0,-1556.17,2314.31,40,0
-    .goto 1422/0,-1516.18,2287.94,40,0
-    .goto 1422/0,-1453.83,2214.84,40,0
+    .goto 1422/0,-1649.48,2216.56,0
+    .goto 1422/0,-1649.48,2216.56,40,0
     .goto 1422/0,-1516.18,2211.97,40,0
-    .goto 1422/0,-1514.46,2148.33,40,0
-    .goto 1422/0,-1550.15,2179.29,40,0
     >>Kill |cRXP_ENEMY_Diseased Wolfs|r
     .complete 4984,1 --Diseased Wolf slain (8)
     .mob Diseased Wolf
@@ -548,22 +528,16 @@ step
     .accept 4971 >>Accept A Matter of Time
     .target Chromie
 step
-    .goto 1422/0,-1458.13,1360.86
+    .goto 1422/0,-1448.24,1374.05
     >>Open the |cRXP_PICK_Musty Tome|r. Loot it for |cRXP_LOOT_Annals of Darrowshire|r
     .complete 5154,1 --Annals of Darrowshire (1)
     .isOnQuest 5154
 step
     #loop
-    .goto 1422/0,-1613.36,1478.68,0
-    .goto 1422/0,-1613.36,1478.68,40,0
-    .goto 1422/0,-1527.36,1565.54,40,0
-    .goto 1422/0,-1591.00,1587.04,40,0
-    .goto 1422/0,-1640.02,1547.77,40,0
-    .goto 1422/0,-1666.68,1566.11,40,0
+    .goto 1422/0,-1577.67,1579.87,0
+    .goto 1422/0,-1577.67,1579.87,40,0
     .goto 1422/0,-1657.22,1520.82,40,0
-    .goto 1422/0,-1658.51,1481.26,40,0
-    .goto 1422/0,-1741.93,1464.92,40,0
-    .goto 1422/0,-1691.19,1380.07,40,0
+    .goto 1422/0,-1746.66,1439.41,40,0
     >>Kill |cRXP_ENEMY_Temporal Parasites|r
     .complete 4971,1 --Temporal Parasite slain (10)
     .mob Temporal Parasite
@@ -593,16 +567,9 @@ step
     .xp <50,1
 step
     #loop
-    .goto 1422/0,-1429.32,1408.16,0
-    .goto 1422/0,-1429.32,1408.16,40,0
+    .goto 1422/0,-1419.00,1371.47,0
     .goto 1422/0,-1419.00,1371.47,40,0
-    .goto 1422/0,-1384.60,1297.79,40,0
-    .goto 1422/0,-1379.87,1257.37,40,0
-    .goto 1422/0,-1425.45,1247.34,40,0
     .goto 1422/0,-1457.70,1259.67,40,0
-    .goto 1422/0,-1511.45,1278.59,40,0
-    .goto 1422/0,-1578.53,1275.15,40,0
-    .goto 1422/0,-1510.59,1347.67,40,0
     >>Loot the |cRXP_PICK_Small Lockboxes|r for |cRXP_LOOT_Andorhal Watch|r
     .complete 4972,1 --Andorhal Watch (5)
 step
@@ -619,16 +586,10 @@ step
     .xp <55,1
 step
     #loop
-    .goto 1422/0,-1297.74,1419.34,0
-    .goto 1422/0,-1297.74,1419.34,40,0
-    .goto 1422/0,-1312.79,1484.99,40,0
-    .goto 1422/0,-1381.59,1515.66,40,0
+    .goto 1422/0,-1367.40,1478.68,0
+    .goto 1422/0,-1367.40,1478.68,40,0
     .goto 1422/0,-1382.02,1378.63,40,0
-    .goto 1422/0,-1415.56,1321.59,40,0
-    .goto 1422/0,-1449.53,1220.39,40,0
     .goto 1422/0,-1380.73,1219.53,40,0
-    .goto 1422/0,-1367.83,1277.73,40,0
-    .goto 1422/0,-1253.88,1327.03,40,0
     >>Kill |cRXP_ENEMY_Skeletal Flayers|r, |cRXP_ENEMY_Skeletal Sorcerers|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Skeletal Executioners|r. Loot them for |cRXP_LOOT_Skeletal Fragments|r
     .complete 5537,1 --Skeletal Fragments (15)
     .mob Skeletal Flayer
@@ -663,16 +624,10 @@ step
     .xp <52,1
 step
     #loop
-    .goto 1422/0,-2115.17,1821.25,0
-    .goto 1422/0,-2115.17,1821.25,40,0
-    .goto 1422/0,-2070.88,1848.77,40,0
-    .goto 1422/0,-2112.59,1917.85,40,0
-    .goto 1422/0,-2186.12,1949.67,40,0
-    .goto 1422/0,-2244.17,2018.47,40,0
-    .goto 1422/0,-2286.31,1936.49,40,0
-    .goto 1422/0,-2244.60,1880.87,40,0
-    .goto 1422/0,-2199.88,1903.52,40,0
-    .goto 1422/0,-2182.25,1815.51,40,0
+    .goto 1422/0,-2120.76,1887.18,0
+    .goto 1422/0,-2120.76,1887.18,40,0
+    .goto 1422/0,-2170.64,1918.43,40,0
+    .goto 1422/0,-2258.36,1976.91,40,0
     >>Kill |cRXP_ENEMY_Diseased Grizzlies|r
     .complete 4985,1 --Diseased Grizzly slain (8)
     .mob Diseased Grizzly
@@ -714,11 +669,7 @@ step
     .complete 6004,3 --Scarlet Mage slain (8)
     .mob Scarlet Mage
 step
-    #loop
-    .goto 1422/0,-1766.01,2206.53,0
-    .goto 1422/0,-1766.01,2206.53,40,0
-    .goto 1422/0,-1764.29,2183.88,40,0
-    .goto 1422/0,-1726.02,2173.85,40,0
+    .goto 1422/0,-1751.82,2189.61
     >>Kill |cRXP_ENEMY_Scarlet Knights|r
     .complete 6004,4 --Scarlet Knight slain (2)
     .mob Scarlet Knight
@@ -884,15 +835,10 @@ step
     .isOnQuest 5803
 step
     #loop
-    .goto 1422/0,-1557.03,1319.87,0
-    .goto 1422/0,-1557.03,1319.87,40,0
-    .goto 1422/0,-1496.83,1311.27,40,0
+    .goto 1422/0,-1552.73,1317.00,0
+    .goto 1422/0,-1552.73,1317.00,40,0
     .goto 1422/0,-1462.43,1345.67,40,0
-    .goto 1422/0,-1445.23,1408.73,40,0
     .goto 1422/0,-1862.33,1526.27,40,0
-    .goto 1422/0,-1883.83,1546.33,40,0
-    .goto 1422/0,-1875.23,1500.47,40,0
-    .goto 1422/0,-1870.93,1460.33,40,0
     .goto 1422/0,-1832.23,1466.07,40,0
     >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
     .complete 5167,3 --Blood of Heroes (10)
@@ -992,16 +938,12 @@ step
     .isQuestComplete 6185
 step
     #loop
-    .goto 1422/0,-1496.83,1311.27,0
-    .goto 1422/0,-1496.83,1311.27,40,0
-    .goto 1422/0,-1557.03,1319.87,40,0
-    .goto 1422/0,-1827.93,1460.33,40,0
-    .goto 1422/0,-1870.93,1460.33,40,0
-    .goto 1422/0,-1875.23,1500.47,40,0
-    .goto 1422/0,-1879.53,1549.20,40,0
-    .goto 1422/0,-1445.23,1408.73,40,0
+    .goto 1422/0,-1552.73,1317.00,0
+    .goto 1422/0,-1552.73,1317.00,40,0
+    .goto 1422/0,-1458.13,1348.53,40,0
     .goto 1422/0,-1385.03,1345.67,40,0
-    .goto 1422/0,-1462.43,1345.67,40,0
+    .goto 1422/0,-1862.33,1526.27,40,0
+    .goto 1422/0,-1832.23,1466.07,40,0
     >>Pick up |cRXP_PICK_Blood of Heroes|r from the ground
     .complete 5166,3 --Blood of Heroes (10)
     .isOnQuest 5166

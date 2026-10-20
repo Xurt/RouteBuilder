@@ -78,16 +78,11 @@ step
     .target Oralius
 step
     #loop
-    .goto 1428/0,-2680.89,-7972.35,0
-    .goto 1428/0,-2680.89,-7972.35,40,0
-    .goto 1428/0,-2607.36,-7901.88,40,0
-    .goto 1428/0,-2533.26,-7952.05,40,0
-    .goto 1428/0,-2448.90,-7984.06,40,0
-    .goto 1428/0,-2468.23,-7915.35,40,0
-    .goto 1428/0,-2556.40,-7819.31,40,0
-    .goto 1428/0,-2687.33,-7686.76,40,0
+    .goto 1428/0,-2670.05,-7938.38,0
+    .goto 1428/0,-2670.05,-7938.38,40,0
     .goto 1428/0,-2671.51,-7803.30,40,0
-    .goto 1428/0,-2756.46,-7916.32,40,0
+    .goto 1428/0,-2626.40,-7867.13,40,0
+    .goto 1428/0,-2475.84,-7974.89,40,0
     >>Kill |cRXP_ENEMY_Firegut Ogre Mages|r
     >>Kill |cRXP_ENEMY_Firegut Ogres|r
     >>Kill |cRXP_ENEMY_Firegut Brutes|r
@@ -129,12 +124,8 @@ step
     .goto 1428/0,-2752.65,-7653.18,0
     .goto 1428/0,-2752.65,-7653.18,40,0
     .goto 1428/0,-2812.70,-7627.61,40,0
-    .goto 1428/0,-2853.71,-7612.58,40,0
-    .goto 1428/0,-2838.47,-7684.22,40,0
-    .goto 1428/0,-2887.39,-7888.02,40,0
     .goto 1428/0,-2918.44,-7913.98,40,0
     .goto 1428/0,-2919.61,-7956.34,40,0
-    .goto 1428/0,-2916.98,-8025.25,40,0
     >>Pick up |cRXP_PICK_Broodling Essence|r from the ground
     >>Kill |cRXP_ENEMY_Black Broodlings|r
     .complete 4726,1 --Broodling Essence (8)
@@ -148,12 +139,9 @@ step
 step
     #label Along8
     #loop
-    .goto 1428/0,-2916.68,-8051.80,0
-    .goto 1428/0,-2916.68,-8051.80,40,0
+    .goto 1428/0,-2917.56,-8091.04,0
     .goto 1428/0,-2917.56,-8091.04,40,0
-    .goto 1428/0,-2984.35,-8154.28,40,0
     .goto 1428/0,-3015.98,-8112.12,40,0
-    .goto 1428/0,-2967.07,-8097.28,40,0
     >>Kill |cRXP_ENEMY_Black Dragonspawns|r
     .complete 4182,2 --Black Dragonspawn slain (10)
     .mob Black Dragonspawn
@@ -161,9 +149,7 @@ step
     #loop
     .goto 1428/0,-2901.16,-7887.43,0
     .goto 1428/0,-2901.16,-7887.43,40,0
-    .goto 1428/0,-2855.17,-7811.50,40,0
     .goto 1428/0,-2871.57,-7766.01,40,0
-    .goto 1428/0,-2879.19,-7724.04,40,0
     >>Kill |cRXP_ENEMY_Black Wyrmkins|r
     >>Kill |cRXP_ENEMY_Black Drake|r
     .complete 4182,4 --Black Wyrmkin slain (4)
@@ -292,16 +278,9 @@ step
     .isOnQuest 4022
 step
     #loop
-    .goto 1428/0,-1913.15,-8072.49,0
-    .goto 1428/0,-1913.15,-8072.49,40,0
-    .goto 1428/0,-1901.73,-8092.21,40,0
-    .goto 1428/0,-1751.75,-8219.48,40,0
+    .goto 1428/0,-1885.32,-8085.18,0
+    .goto 1428/0,-1885.32,-8085.18,40,0
     .goto 1428/0,-1706.64,-8172.83,40,0
-    .goto 1428/0,-1701.96,-8144.52,40,0
-    .goto 1428/0,-1725.39,-8086.35,40,0
-    .goto 1428/0,-1761.42,-8076.20,40,0
-    .goto 1428/0,-1780.17,-8091.43,40,0
-    .goto 1428/0,-1835.24,-8061.56,40,0
     >>Kill |cRXP_ENEMY_Blackrock Soldiers|r, |cRXP_ENEMY_Blackrock Sorcerers|r, |cRXP_ENEMY_Blackrock Slayers|r and |cRXP_ENEMY_Blackrock Warlocks|r. Loot them for |cRXP_LOOT_Blackrock Medallion|r
     .complete 4283,1 --Blackrock Medallion (50)
     .mob Blackrock Soldier

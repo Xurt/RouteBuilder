@@ -36,31 +36,17 @@ step
 step
     #label Along1
     #loop
-    .goto 1448/1,-1217.81,3753.10,0
-    .goto 1448/1,-1217.81,3753.10,40,0
+    .goto 1448/1,-1162.03,3724.73,0
     .goto 1448/1,-1162.03,3724.73,40,0
-    .goto 1448/1,-1113.73,3710.55,40,0
-    .goto 1448/1,-1167.21,3664.55,40,0
-    .goto 1448/1,-1140.76,3629.67,40,0
-    .goto 1448/1,-1159.73,3583.28,40,0
-    .goto 1448/1,-1128.11,3570.25,40,0
-    .goto 1448/1,-1152.26,3531.53,40,0
-    .goto 1448/1,-1214.36,3621.23,40,0
+    .goto 1448/1,-1156.28,3609.35,40,0
     >>Kill |cRXP_ENEMY_Deadwood Warriors|r
     .complete 8460,1 --Deadwood Warrior slain (6)
     .mob Deadwood Warrior
 step
     #loop
-    .goto 1448/1,-1133.28,3627.75,0
-    .goto 1448/1,-1133.28,3627.75,40,0
-    .goto 1448/1,-1082.68,3582.90,40,0
-    .goto 1448/1,-1011.38,3688.32,40,0
-    .goto 1448/1,-1047.03,3748.12,40,0
-    .goto 1448/1,-1099.93,3730.87,40,0
-    .goto 1448/1,-1171.81,3718.60,40,0
+    .goto 1448/1,-1142.48,3689.47,0
     .goto 1448/1,-1142.48,3689.47,40,0
-    .goto 1448/1,-1189.06,3628.13,40,0
-    .goto 1448/1,-1175.26,3584.82,40,0
+    .goto 1448/1,-1024.61,3723.97,40,0
     >>Kill |cRXP_ENEMY_Deadwood Pathfinders|r
     >>Kill |cRXP_ENEMY_Deadwood Gardeners|r
     .complete 8460,2 --Deadwood Pathfinder slain (6)
@@ -83,16 +69,9 @@ step
     .target Grazle
 step << Warlock
     #loop
-    .goto 1448/1,-550.23,4470.70,0
-    .goto 1448/1,-550.23,4470.70,40,0
-    .goto 1448/1,-523.78,4504.43,40,0
-    .goto 1448/1,-515.16,4558.10,40,0
-    .goto 1448/1,-519.18,4583.02,40,0
-    .goto 1448/1,-507.11,4599.50,40,0
-    .goto 1448/1,-493.31,4553.88,40,0
-    .goto 1448/1,-488.13,4521.68,40,0
-    .goto 1448/1,-482.96,4484.50,40,0
-    .goto 1448/1,-494.46,4454.98,40,0
+    .goto 1448/1,-508.26,4494.47,0
+    .goto 1448/1,-508.26,4494.47,40,0
+    .goto 1448/1,-505.38,4577.65,40,0
     >>Kill |cRXP_ENEMY_Jadefire Rogues|r, |cRXP_ENEMY_Jadefire Tricksters|r, |cRXP_ENEMY_Jadefire Betrayers|r and |cRXP_ENEMY_Jadefire Felsworns|r. Loot them for |cRXP_LOOT_Felcloth|r
     .complete 8419,1 --Felcloth (1)
     .mob Jadefire Rogue
@@ -203,16 +182,9 @@ step
     .target Maybess Riverbreeze
 step << Warlock
     #loop
-    .goto 1448/1,-550.23,4470.70,0
-    .goto 1448/1,-550.23,4470.70,40,0
-    .goto 1448/1,-523.78,4504.43,40,0
-    .goto 1448/1,-515.16,4558.10,40,0
-    .goto 1448/1,-519.18,4583.02,40,0
-    .goto 1448/1,-507.11,4599.50,40,0
-    .goto 1448/1,-493.31,4553.88,40,0
-    .goto 1448/1,-488.13,4521.68,40,0
-    .goto 1448/1,-482.96,4484.50,40,0
-    .goto 1448/1,-494.46,4454.98,40,0
+    .goto 1448/1,-508.26,4494.47,0
+    .goto 1448/1,-508.26,4494.47,40,0
+    .goto 1448/1,-505.38,4577.65,40,0
     >>Kill |cRXP_ENEMY_Jadefire Rogues|r, |cRXP_ENEMY_Jadefire Tricksters|r, |cRXP_ENEMY_Jadefire Betrayers|r and |cRXP_ENEMY_Jadefire Felsworns|r. Loot them for |cRXP_LOOT_Felcloth|r
     .complete 8420,1 --Felcloth (1)
     .mob Jadefire Rogue
@@ -221,16 +193,10 @@ step << Warlock
     .mob Jadefire Felsworn
 step
     #loop
-    .goto 1448/1,-597.96,4756.28,0
-    .goto 1448/1,-597.96,4756.28,40,0
-    .goto 1448/1,-481.23,4784.27,40,0
-    .goto 1448/1,-433.51,4752.83,40,0
-    .goto 1448/1,-340.36,4817.23,40,0
-    .goto 1448/1,-401.88,4875.88,40,0
-    .goto 1448/1,-415.68,4812.25,40,0
-    .goto 1448/1,-556.56,4818.00,40,0
-    .goto 1448/1,-569.78,4921.12,40,0
-    .goto 1448/1,-615.21,4861.32,40,0
+    .goto 1448/1,-557.71,4777.75,0
+    .goto 1448/1,-557.71,4777.75,40,0
+    .goto 1448/1,-587.03,4824.13,40,0
+    .goto 1448/1,-421.43,4780.43,40,0
     >>Kill |cRXP_ENEMY_Jaedenar Hounds|r
     >>Kill |cRXP_ENEMY_Jaedenar Guardians|r
     >>Kill |cRXP_ENEMY_Jaedenar Adepts|r
@@ -280,30 +246,17 @@ step << Warlock
     .target Impsy
 step << Warlock
     #loop
-    .goto 1448/1,-684.21,5057.97,0
-    .goto 1448/1,-684.21,5057.97,40,0
-    .goto 1448/1,-631.88,5061.80,40,0
-    .goto 1448/1,-608.88,5040.72,40,0
+    .goto 1448/1,-642.23,5029.60,0
     .goto 1448/1,-642.23,5029.60,40,0
-    .goto 1448/1,-657.76,4985.13,40,0
-    .goto 1448/1,-675.58,4874.35,40,0
-    .goto 1448/1,-699.73,4843.30,40,0
-    .goto 1448/1,-709.51,4870.52,40,0
-    .goto 1448/1,-687.08,4997.78,40,0
+    .goto 1448/1,-693.98,4855.95,40,0
     >>Kill |cRXP_ENEMY_Tainted Oozes|r. Loot them for |cRXP_LOOT_Bloodvenom Essence|r
     .complete 8421,2 --Bloodvenom Essence (4)
     .mob Tainted Ooze
 step
     #loop
-    .goto 1448/1,-856.71,5585.43,0
-    .goto 1448/1,-856.71,5585.43,40,0
-    .goto 1448/1,-883.16,5568.95,40,0
+    .goto 1448/1,-914.21,5585.05,0
     .goto 1448/1,-914.21,5585.05,40,0
-    .goto 1448/1,-925.13,5562.43,40,0
-    .goto 1448/1,-952.16,5562.82,40,0
     .goto 1448/1,-986.08,5653.67,40,0
-    .goto 1448/1,-914.78,5653.67,40,0
-    .goto 1448/1,-850.96,5647.92,40,0
     >>Kill |cRXP_ENEMY_Entropic Beasts|r
     >>Kill |cRXP_ENEMY_Entropic Horrors|r
     .complete 5156,1 --Entropic Beast slain (2)
@@ -316,15 +269,9 @@ step
     .complete 5156,3 --Explore the craters in Shatter Scar Vale
 step << Warlock
     #loop
-    .goto 1448/1,-1290.83,6177.68,0
-    .goto 1448/1,-1290.83,6177.68,40,0
-    .goto 1448/1,-1334.53,6156.98,40,0
-    .goto 1448/1,-1378.81,6191.48,40,0
+    .goto 1448/1,-1322.46,6176.92,0
+    .goto 1448/1,-1322.46,6176.92,40,0
     .goto 1448/1,-1428.26,6247.83,40,0
-    .goto 1448/1,-1381.68,6319.52,40,0
-    .goto 1448/1,-1319.58,6302.65,40,0
-    .goto 1448/1,-1291.41,6393.12,40,0
-    .goto 1448/1,-1190.78,6426.08,40,0
     .goto 1448/1,-1158.58,6351.33,40,0
     >>Kill |cRXP_ENEMY_Irontree Wanderers|r, |cRXP_ENEMY_Irontree Stompers|r and |cRXP_ENEMY_Withered Protectors|r. Loot them for |cRXP_LOOT_Rotting Wood|r
     .complete 8421,1 --Rotting Wood (10)
@@ -345,16 +292,9 @@ step << Warlock
     .isQuestComplete 8422
 step
     #loop
-    .goto 1448/1,-1658.26,6299.97,0
-    .goto 1448/1,-1658.26,6299.97,40,0
-    .goto 1448/1,-1645.61,6328.33,40,0
-    .goto 1448/1,-1651.93,6379.32,40,0
+    .goto 1448/1,-1679.53,6277.35,0
+    .goto 1448/1,-1679.53,6277.35,40,0
     .goto 1448/1,-1688.16,6403.08,40,0
-    .goto 1448/1,-1714.61,6427.62,40,0
-    .goto 1448/1,-1779.58,6377.40,40,0
-    .goto 1448/1,-1785.33,6311.47,40,0
-    .goto 1448/1,-1696.78,6353.25,40,0
-    .goto 1448/1,-1692.76,6273.13,40,0
     >>Kill |cRXP_ENEMY_Warpwood Moss Flayers|r, |cRXP_ENEMY_Warpwood Shredders|r and |cRXP_ENEMY_Dessecus|r. Loot them for |cRXP_LOOT_Blood Amber|r
     .complete 4102,1 --Blood Amber (15)
     .mob Warpwood Moss Flayer
@@ -411,16 +351,10 @@ step
 step
     #label Drop5202x1
     #loop
-    .goto 1448/1,-977.46,3988.47,0
-    .goto 1448/1,-977.46,3988.47,40,0
-    .goto 1448/1,-919.96,4046.35,40,0
-    .goto 1448/1,-849.81,4050.18,40,0
-    .goto 1448/1,-811.28,3941.70,40,0
-    .goto 1448/1,-750.91,3848.93,40,0
-    .goto 1448/1,-845.78,3724.73,40,0
-    .goto 1448/1,-902.71,3838.20,40,0
-    .goto 1448/1,-1019.43,3817.12,40,0
-    .goto 1448/1,-915.36,3917.55,40,0
+    .goto 1448/1,-920.53,3958.57,0
+    .goto 1448/1,-920.53,3958.57,40,0
+    .goto 1448/1,-787.13,3822.87,40,0
+    .goto 1448/1,-841.18,3765.75,40,0
     >>Kill |cRXP_ENEMY_Cursed Oozes|r, |cRXP_ENEMY_Tainted Oozes|r, |cRXP_ENEMY_Vile Oozes|r and |cRXP_ENEMY_Ironbeak Owls|r. Loot them for |cRXP_LOOT_Corrupted Soul Shard|r
     .complete 5887,1 --Corrupted Soul Shard (1)
     .mob Cursed Ooze
@@ -468,16 +402,9 @@ step
     .xp <47,1
 step
     #loop
-    .goto 1448/1,-1334.53,6156.98,0
-    .goto 1448/1,-1334.53,6156.98,40,0
-    .goto 1448/1,-1290.83,6177.68,40,0
-    .goto 1448/1,-1319.58,6302.65,40,0
-    .goto 1448/1,-1381.68,6319.52,40,0
-    .goto 1448/1,-1419.06,6285.78,40,0
-    .goto 1448/1,-1428.26,6247.83,40,0
-    .goto 1448/1,-1411.01,6228.67,40,0
-    .goto 1448/1,-1378.81,6191.48,40,0
+    .goto 1448/1,-1335.11,6206.82,0
     .goto 1448/1,-1335.11,6206.82,40,0
+    .goto 1448/1,-1428.26,6247.83,40,0
     >>Kill |cRXP_ENEMY_Irontree Wanderers|r and |cRXP_ENEMY_Irontree Stompers|r. Loot them for |cRXP_LOOT_Irontree Heart|r
     .complete 4084,2 --Irontree Heart (1)
     .mob Irontree Wanderer
@@ -485,16 +412,10 @@ step
     .isOnQuest 4084
 step
     #loop
-    .goto 1448/1,-1346.03,5989.47,0
-    .goto 1448/1,-1346.03,5989.47,40,0
+    .goto 1448/1,-1365.01,5960.72,0
     .goto 1448/1,-1365.01,5960.72,40,0
-    .goto 1448/1,-1342.58,5912.80,40,0
+    .goto 1448/1,-1278.76,5910.12,40,0
     .goto 1448/1,-1201.71,5774.42,40,0
-    .goto 1448/1,-1181.01,5755.25,40,0
-    .goto 1448/1,-1210.33,5844.57,40,0
-    .goto 1448/1,-1191.93,5885.20,40,0
-    .goto 1448/1,-1250.01,5882.90,40,0
-    .goto 1448/1,-1308.66,5923.92,40,0
     >>Kill |cRXP_ENEMY_Angerclaw Bears|r, |cRXP_ENEMY_Angerclaw Grizzlies|r, |cRXP_ENEMY_Angerclaw Maulers|r and |cRXP_ENEMY_Felpaw Wolfs|r. Loot them for |cRXP_LOOT_Silvery Claws|r
     .complete 4084,1 --Silvery Claws (11)
     .mob Angerclaw Bear
@@ -523,16 +444,10 @@ step
     .xp <47,1
 step
     #loop
-    .goto 1448/1,-1181.01,5755.25,0
-    .goto 1448/1,-1181.01,5755.25,40,0
+    .goto 1448/1,-1201.71,5774.42,0
     .goto 1448/1,-1201.71,5774.42,40,0
-    .goto 1448/1,-1342.58,5912.80,40,0
+    .goto 1448/1,-1278.76,5910.12,40,0
     .goto 1448/1,-1365.01,5960.72,40,0
-    .goto 1448/1,-1346.03,5989.47,40,0
-    .goto 1448/1,-1308.66,5923.92,40,0
-    .goto 1448/1,-1250.01,5882.90,40,0
-    .goto 1448/1,-1191.93,5885.20,40,0
-    .goto 1448/1,-1210.33,5844.57,40,0
     >>Kill |cRXP_ENEMY_Angerclaw Bears|r, |cRXP_ENEMY_Angerclaw Grizzlies|r, |cRXP_ENEMY_Angerclaw Maulers|r and |cRXP_ENEMY_Felpaw Wolfs|r. Loot them for |cRXP_LOOT_Silvery Claws|r
     .collect 11172,1,4005,1 --Silvery Claws (1)
     .mob Angerclaw Bear
@@ -544,9 +459,7 @@ step
     #loop
     .goto 1448/1,-1147.66,5989.47,0
     .goto 1448/1,-1147.66,5989.47,40,0
-    .goto 1448/1,-1143.06,6015.53,40,0
     .goto 1448/1,-1109.13,6119.42,40,0
-    .goto 1448/1,-1117.76,6060.77,40,0
     >>Kill |cRXP_ENEMY_Irontree Wanderers|r and |cRXP_ENEMY_Irontree Stompers|r. Loot them for |cRXP_LOOT_Irontree Heart|r
     .collect 11173,1,4005,1 --Irontree Heart (1)
     .mob Irontree Wanderer
@@ -683,16 +596,10 @@ step
     .target Nafien
 step
     #loop
-    .goto 1448/1,-2019.36,6820.15,0
-    .goto 1448/1,-2019.36,6820.15,40,0
-    .goto 1448/1,-1961.86,6752.30,40,0
-    .goto 1448/1,-1996.36,6636.92,40,0
-    .goto 1448/1,-1952.66,6681.00,40,0
-    .goto 1448/1,-1892.28,6705.92,40,0
-    .goto 1448/1,-1812.36,6820.92,40,0
-    .goto 1448/1,-1814.66,6911.38,40,0
-    .goto 1448/1,-1873.88,6909.47,40,0
-    .goto 1448/1,-1927.93,6860.40,40,0
+    .goto 1448/1,-1987.16,6787.57,0
+    .goto 1448/1,-1987.16,6787.57,40,0
+    .goto 1448/1,-1984.28,6689.05,40,0
+    .goto 1448/1,-1908.38,6891.07,40,0
     >>Kill |cRXP_ENEMY_Deadwood Den Watchers|r
     >>Kill |cRXP_ENEMY_Deadwood Avengers|r
     >>Kill |cRXP_ENEMY_Deadwood Shamans|r

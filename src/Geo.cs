@@ -35,6 +35,13 @@ public static class Geo
         return pts.MinBy(p => p.To(c));
     }
 
+    /// <summary>The actual point with the most others within <paramref name="r"/> yards: the thick of a group of spawns.</summary>
+    public static Pt Busiest(IReadOnlyList<Pt> pts, double r)
+    {
+        var c = new Pt(pts.Average(p => p.X), pts.Average(p => p.Y));
+        return pts.MaxBy(p => (pts.Count(q => q.To(p) <= r), -p.To(c)));
+    }
+
     /// <summary>Keeps one point per grid cell.</summary>
     public static List<Pt> Thin(IEnumerable<Pt> pts, double cell)
     {

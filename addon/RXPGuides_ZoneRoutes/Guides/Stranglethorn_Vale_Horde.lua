@@ -100,31 +100,17 @@ step
 step
     #label Along13
     #loop
-    .goto 1434/0,-366.13,-11653.72,0
-    .goto 1434/0,-366.13,-11653.72,40,0
-    .goto 1434/0,-373.14,-11644.79,40,0
-    .goto 1434/0,-420.37,-11613.74,40,0
-    .goto 1434/0,-463.76,-11600.12,40,0
-    .goto 1434/0,-489.28,-11575.45,40,0
-    .goto 1434/0,-517.36,-11615.44,40,0
-    .goto 1434/0,-526.93,-11692.44,40,0
+    .goto 1434/0,-445.25,-11711.16,0
     .goto 1434/0,-445.25,-11711.16,40,0
-    .goto 1434/0,-417.81,-11714.13,40,0
+    .goto 1434/0,-463.76,-11600.12,40,0
     >>Kill |cRXP_ENEMY_Young Panthers|r
     .complete 190,1 --Young Panther slain (10)
     .mob Young Panther
 step
     #loop
-    .goto 1434/0,-75.14,-11718.81,0
-    .goto 1434/0,-75.14,-11718.81,40,0
-    .goto 1434/0,-50.89,-11696.27,40,0
-    .goto 1434/0,-54.08,-11685.21,40,0
-    .goto 1434/0,-17.07,-11683.93,40,0
-    .goto 1434/0,46.74,-11650.75,40,0
-    .goto 1434/0,76.73,-11636.71,40,0
+    .goto 1434/0,-38.13,-11704.77,0
+    .goto 1434/0,-38.13,-11704.77,40,0
     .goto 1434/0,63.97,-11696.27,40,0
-    .goto 1434/0,56.95,-11720.94,40,0
-    .goto 1434/0,12.92,-11747.32,40,0
     >>Kill |cRXP_ENEMY_Young Stranglethorn Tigers|r
     .complete 185,1 --Young Stranglethorn Tiger slain (10)
     .mob Young Stranglethorn Tiger
@@ -148,16 +134,10 @@ step
     .target Sir S. J. Erlgadin
 step
     #loop
-    .goto 1434/0,249.03,-11649.05,0
-    .goto 1434/0,249.03,-11649.05,40,0
+    .goto 1434/0,268.17,-11577.15,0
     .goto 1434/0,268.17,-11577.15,40,0
-    .goto 1434/0,319.22,-11500.57,40,0
-    .goto 1434/0,408.56,-11560.13,40,0
-    .goto 1434/0,395.80,-11670.74,40,0
-    .goto 1434/0,344.75,-11849.42,40,0
-    .goto 1434/0,258.60,-11851.54,40,0
-    .goto 1434/0,293.70,-11755.82,40,0
-    .goto 1434/0,319.22,-11645.22,40,0
+    .goto 1434/0,268.17,-11679.25,40,0
+    .goto 1434/0,284.76,-11817.08,40,0
     >>Kill |cRXP_ENEMY_Panthers|r
     >>Kill |cRXP_ENEMY_Stranglethorn Tigers|r
     .complete 191,1 --Panther slain (10)
@@ -183,12 +163,10 @@ step
     .target Barnil Stonepot
 step
     #loop
-    .goto 1434/0,14.20,-11613.74,0
-    .goto 1434/0,14.20,-11613.74,40,0
-    .goto 1434/0,15.47,-11513.34,40,0
-    .goto 1434/0,-57.27,-11517.59,40,0
-    .goto 1434/0,-249.99,-11650.32,40,0
+    .goto 1434/0,-130.66,-11615.86,0
     .goto 1434/0,-130.66,-11615.86,40,0
+    .goto 1434/0,-249.99,-11650.32,40,0
+    .goto 1434/0,-53.44,-11513.34,40,0
     >>Kill |cRXP_ENEMY_River Crocolisks|r. Loot them for |cRXP_LOOT_Large River Crocolisk Skin|r
     .complete 575,1 --Large River Crocolisk Skin (2)
     .mob River Crocolisk
@@ -493,14 +471,8 @@ step
     #loop
     .goto 1434/0,447.48,-11777.95,0
     .goto 1434/0,447.48,-11777.95,40,0
-    .goto 1434/0,473.01,-11826.02,40,0
-    .goto 1434/0,526.61,-11850.69,40,0
-    .goto 1434/0,579.58,-11841.33,40,0
-    .goto 1434/0,685.50,-11835.38,40,0
-    .goto 1434/0,640.84,-11852.39,40,0
-    .goto 1434/0,561.07,-11895.79,40,0
     .goto 1434/0,513.85,-11917.91,40,0
-    .goto 1434/0,462.80,-11920.46,40,0
+    .goto 1434/0,678.49,-11856.22,40,0
     >>Kill |cRXP_ENEMY_Stranglethorn Raptors|r
     .complete 194,1 --Stranglethorn Raptor slain (10)
     .mob Stranglethorn Raptor
@@ -532,16 +504,11 @@ step
 step
     #label Drop635x1
     #loop
-    .goto 1434/0,115.66,-11750.29,0
-    .goto 1434/0,115.66,-11750.29,40,0
-    .goto 1434/0,79.29,-11832.83,40,0
-    .goto 1434/0,48.66,-11882.60,40,0
-    .goto 1434/0,261.15,-11991.93,40,0
-    .goto 1434/0,321.77,-12088.50,40,0
-    .goto 1434/0,371.55,-11982.15,40,0
-    .goto 1434/0,277.74,-11882.17,40,0
-    .goto 1434/0,213.29,-11779.65,40,0
-    .goto 1434/0,206.27,-11682.65,40,0
+    .goto 1434/0,55.68,-11844.31,0
+    .goto 1434/0,55.68,-11844.31,40,0
+    .goto 1434/0,224.14,-11717.11,40,0
+    .goto 1434/0,338.36,-12004.69,40,0
+    .goto 1434/0,270.09,-11938.33,40,0
     >>Kill |cRXP_ENEMY_Bloodscalp Warriors|r, |cRXP_ENEMY_Bloodscalp Scouts|r, |cRXP_ENEMY_Bloodscalp Hunters|r and |cRXP_ENEMY_Bloodscalp Berserkers|r. Loot them for |cRXP_LOOT_Bloodscalp Tusk|r
     >>Kill |cRXP_ENEMY_Bloodscalp Warriors|r, |cRXP_ENEMY_Bloodscalp Scouts|r, |cRXP_ENEMY_Bloodscalp Hunters|r and |cRXP_ENEMY_Bloodscalp Berserkers|r. Loot them for |cRXP_LOOT_Bloodscalp Ear|r
     >>Kill |cRXP_ENEMY_Bloodscalp Warriors|r, |cRXP_ENEMY_Bloodscalp Scouts|r, |cRXP_ENEMY_Bloodscalp Hunters|r and |cRXP_ENEMY_Bloodscalp Berserkers|r. Loot them for |cRXP_LOOT_Bloody Bone Necklace|r
@@ -554,46 +521,28 @@ step
     .mob Bloodscalp Berserker
 step
     #loop
-    .goto 1434/0,222.86,-11943.43,0
-    .goto 1434/0,222.86,-11943.43,40,0
-    .goto 1434/0,224.14,-11875.79,40,0
-    .goto 1434/0,182.66,-11852.82,40,0
-    .goto 1434/0,151.39,-11953.22,40,0
-    .goto 1434/0,120.76,-11977.89,40,0
+    .goto 1434/0,173.09,-11976.62,0
+    .goto 1434/0,173.09,-11976.62,40,0
     .goto 1434/0,81.20,-11947.69,40,0
-    .goto 1434/0,49.93,-11916.21,40,0
-    .goto 1434/0,53.12,-11995.33,40,0
-    .goto 1434/0,210.10,-12025.54,40,0
     >>Kill |cRXP_ENEMY_Elder Stranglethorn Tigers|r
     .complete 187,1 --Elder Stranglethorn Tiger slain (10)
     .mob Elder Stranglethorn Tiger
     .isOnQuest 187
 step
     #loop
-    .goto 1434/0,180.75,-12048.51,0
-    .goto 1434/0,180.75,-12048.51,40,0
+    .goto 1434/0,146.93,-12079.99,0
     .goto 1434/0,146.93,-12079.99,40,0
-    .goto 1434/0,116.94,-12185.07,40,0
-    .goto 1434/0,89.50,-12213.15,40,0
-    .goto 1434/0,53.76,-12252.29,40,0
-    .goto 1434/0,153.31,-12214.85,40,0
     .goto 1434/0,175.00,-12180.82,40,0
-    .goto 1434/0,153.31,-12154.44,40,0
+    .goto 1434/0,53.76,-12252.29,40,0
     >>Kill |cRXP_ENEMY_Lashtail Raptors|r
     .complete 568,1 --Lashtail Raptor slain (15)
     .mob Lashtail Raptor
 step
     #loop
-    .goto 1434/0,153.31,-12154.44,0
-    .goto 1434/0,153.31,-12154.44,40,0
-    .goto 1434/0,146.93,-12079.99,40,0
-    .goto 1434/0,180.75,-12048.51,40,0
-    .goto 1434/0,262.43,-12177.84,40,0
+    .goto 1434/0,175.00,-12180.82,0
     .goto 1434/0,175.00,-12180.82,40,0
-    .goto 1434/0,153.31,-12214.85,40,0
+    .goto 1434/0,255.41,-12156.57,40,0
     .goto 1434/0,53.76,-12252.29,40,0
-    .goto 1434/0,89.50,-12213.15,40,0
-    .goto 1434/0,116.94,-12185.07,40,0
     >>Kill |cRXP_ENEMY_Lashtail Raptors|r
     .complete 195,1 --Lashtail Raptor slain (10)
     .mob Lashtail Raptor
@@ -631,13 +580,8 @@ step
     #loop
     .goto 1434/0,492.15,-11957.90,0
     .goto 1434/0,492.15,-11957.90,40,0
-    .goto 1434/0,545.76,-11938.33,40,0
-    .goto 1434/0,618.50,-11920.89,40,0
     .goto 1434/0,647.22,-11891.53,40,0
-    .goto 1434/0,656.15,-11885.15,40,0
     .goto 1434/0,707.84,-11891.11,40,0
-    .goto 1434/0,749.32,-11919.61,40,0
-    .goto 1434/0,648.49,-11941.31,40,0
     >>Kill |cRXP_ENEMY_Stone Maw Basilisks|r, |cRXP_ENEMY_Crystal Spine Basilisks|r, |cRXP_ENEMY_Cold Eye Basilisks|r and |cRXP_ENEMY_Thrashtail Basilisks|r. Loot them for |cRXP_LOOT_Singing Crystal Shard|r
     .complete 605,1 --Singing Crystal Shard (10)
     .mob Stone Maw Basilisk
@@ -662,16 +606,10 @@ step
 step
     #label Drop635x2
     #loop
-    .goto 1434/0,-481.63,-12114.03,0
-    .goto 1434/0,-481.63,-12114.03,40,0
-    .goto 1434/0,-554.37,-12167.63,40,0
-    .goto 1434/0,-618.18,-12045.11,40,0
-    .goto 1434/0,-602.23,-11961.30,40,0
-    .goto 1434/0,-639.24,-11863.03,40,0
-    .goto 1434/0,-584.36,-11910.68,40,0
-    .goto 1434/0,-501.41,-11948.96,40,0
-    .goto 1434/0,-533.31,-11990.65,40,0
-    .goto 1434/0,-533.95,-12058.30,40,0
+    .goto 1434/0,-573.52,-12153.59,0
+    .goto 1434/0,-573.52,-12153.59,40,0
+    .goto 1434/0,-525.66,-11979.59,40,0
+    .goto 1434/0,-616.91,-11916.63,40,0
     >>Kill |cRXP_ENEMY_Venture Co. Geologists|r. Loot them for |cRXP_LOOT_Tumbled Crystal|r
     .complete 213,1 --Tumbled Crystal (8)
     .mob Venture Co. Geologist
@@ -731,14 +669,10 @@ step
     #loop
     .goto 1434/0,-344.43,-12326.73,0
     .goto 1434/0,-344.43,-12326.73,40,0
-    .goto 1434/0,-341.24,-12142.10,40,0
-    .goto 1434/0,-313.80,-12083.82,40,0
-    .goto 1434/0,-417.81,-11981.72,40,0
-    .goto 1434/0,-387.18,-11920.04,40,0
-    .goto 1434/0,-315.08,-11913.23,40,0
-    .goto 1434/0,-321.46,-11848.14,40,0
+    .goto 1434/0,-378.89,-12112.32,40,0
+    .goto 1434/0,-422.28,-12050.21,40,0
     .goto 1434/0,-454.82,-11845.59,40,0
-    .goto 1434/0,-470.14,-12070.63,40,0
+    .goto 1434/0,-315.08,-11913.23,40,0
     >>Kill |cRXP_ENEMY_Snapjaw Crocolisks|r. Loot them for |cRXP_LOOT_Snapjaw Crocolisk Skin|r
     .complete 577,1 --Snapjaw Crocolisk Skin (5)
     .mob Snapjaw Crocolisk
@@ -830,16 +764,9 @@ step
     .complete 629,1 --Tablet Shard (1)
 step
     #loop
-    .goto 1434/0,709.75,-11631.60,0
-    .goto 1434/0,709.75,-11631.60,40,0
-    .goto 1434/0,729.54,-11633.30,40,0
-    .goto 1434/0,772.29,-11627.77,40,0
+    .goto 1434/0,675.29,-11612.03,0
+    .goto 1434/0,675.29,-11612.03,40,0
     .goto 1434/0,756.97,-11600.97,40,0
-    .goto 1434/0,769.74,-11535.46,40,0
-    .goto 1434/0,718.69,-11527.80,40,0
-    .goto 1434/0,727.62,-11574.60,40,0
-    .goto 1434/0,659.98,-11589.91,40,0
-    .goto 1434/0,645.30,-11615.86,40,0
     >>Kill |cRXP_ENEMY_Bloodscalp Headhunters|r. Loot them for |cRXP_LOOT_Shrunken Head|r
     .complete 582,1 --Shrunken Head (20)
     .mob Bloodscalp Headhunter
@@ -856,12 +783,7 @@ step
     .turnin 629 >>Turn in The Vile Reef
     .target Kin'weelay
 step
-    #loop
-    .goto 1434/0,-123.00,-12525.83,0
-    .goto 1434/0,-123.00,-12525.83,40,0
-    .goto 1434/0,-151.08,-12471.80,40,0
-    .goto 1434/0,-197.02,-12455.21,40,0
-    .goto 1434/0,-171.50,-12482.86,40,0
+    .goto 1434/0,-171.50,-12482.86
     >>Kill |cRXP_ENEMY_Mosh'Ogg Brutes|r
     .complete 569,1 --Mosh'Ogg Brute slain (10)
     .mob Mosh'Ogg Brute
@@ -870,8 +792,6 @@ step
     #loop
     .goto 1434/0,-171.50,-12489.24,0
     .goto 1434/0,-171.50,-12489.24,40,0
-    .goto 1434/0,-214.25,-12447.13,40,0
-    .goto 1434/0,-151.08,-12479.46,40,0
     .goto 1434/0,-84.07,-12516.90,40,0
     >>Kill |cRXP_ENEMY_Mosh'Ogg Witch Doctors|r
     .complete 569,2 --Mosh'Ogg Witch Doctor slain (5)
@@ -895,16 +815,10 @@ step
     .mob Stranglethorn Tigress
 step
     #loop
-    .goto 1434/0,-743.26,-12127.64,0
-    .goto 1434/0,-743.26,-12127.64,40,0
+    .goto 1434/0,-821.11,-12118.28,0
     .goto 1434/0,-821.11,-12118.28,40,0
-    .goto 1434/0,-886.20,-12114.03,40,0
-    .goto 1434/0,-898.32,-12183.79,40,0
-    .goto 1434/0,-951.29,-12252.29,40,0
-    .goto 1434/0,-983.19,-12148.91,40,0
-    .goto 1434/0,-1011.91,-12045.53,40,0
     .goto 1434/0,-922.57,-12036.17,40,0
-    .goto 1434/0,-847.91,-12028.09,40,0
+    .goto 1434/0,-949.37,-12192.30,40,0
     >>Kill |cRXP_ENEMY_Shadowmaw Panthers|r and |cRXP_ENEMY_Elder Shadowmaw Panthers|r. Loot them for |cRXP_LOOT_Shadowmaw Claw|r
     .complete 570,1 --Shadowmaw Claw (8)
     .mob Shadowmaw Panther
@@ -912,32 +826,20 @@ step
 step
     #label Along18
     #loop
-    .goto 1434/0,-886.20,-12114.03,0
-    .goto 1434/0,-886.20,-12114.03,40,0
+    .goto 1434/0,-821.11,-12118.28,0
     .goto 1434/0,-821.11,-12118.28,40,0
-    .goto 1434/0,-743.26,-12127.64,40,0
-    .goto 1434/0,-847.91,-12028.09,40,0
     .goto 1434/0,-922.57,-12036.17,40,0
-    .goto 1434/0,-1011.91,-12045.53,40,0
-    .goto 1434/0,-983.19,-12148.91,40,0
-    .goto 1434/0,-951.29,-12252.29,40,0
-    .goto 1434/0,-898.32,-12183.79,40,0
+    .goto 1434/0,-949.37,-12192.30,40,0
     >>Kill |cRXP_ENEMY_Shadowmaw Panthers|r
     .complete 192,1 --Shadowmaw Panther slain (10)
     .mob Shadowmaw Panther
     .isOnQuest 192
 step
     #loop
-    .goto 1434/0,-886.20,-12114.03,0
-    .goto 1434/0,-886.20,-12114.03,40,0
+    .goto 1434/0,-821.11,-12118.28,0
     .goto 1434/0,-821.11,-12118.28,40,0
-    .goto 1434/0,-743.26,-12127.64,40,0
-    .goto 1434/0,-847.91,-12028.09,40,0
     .goto 1434/0,-922.57,-12036.17,40,0
-    .goto 1434/0,-1011.91,-12045.53,40,0
-    .goto 1434/0,-983.19,-12148.91,40,0
-    .goto 1434/0,-951.29,-12252.29,40,0
-    .goto 1434/0,-898.32,-12183.79,40,0
+    .goto 1434/0,-949.37,-12192.30,40,0
     >>Kill |cRXP_ENEMY_Stranglethorn Tigress|r and loot |cRXP_LOOT_Pristine Tigress Fang|r
     .complete 570,2 --Pristine Tigress Fang (1)
     .mob Stranglethorn Tigress
@@ -1128,48 +1030,29 @@ step
     .isQuestTurnedIn 584 --any of: Bloodscalp Clan Heads
 step
     #loop
-    .goto 1434/0,207.55,-12900.20,0
-    .goto 1434/0,207.55,-12900.20,40,0
-    .goto 1434/0,150.76,-12943.59,40,0
-    .goto 1434/0,171.81,-13000.59,40,0
-    .goto 1434/0,212.02,-13013.36,40,0
-    .goto 1434/0,229.25,-13067.81,40,0
+    .goto 1434/0,178.83,-12970.81,0
+    .goto 1434/0,178.83,-12970.81,40,0
     .goto 1434/0,265.62,-13044.84,40,0
-    .goto 1434/0,297.52,-13021.86,40,0
-    .goto 1434/0,247.75,-12978.47,40,0
-    .goto 1434/0,277.74,-12948.27,40,0
     >>Kill |cRXP_ENEMY_Jungle Stalkers|r
     .complete 196,1 --Jungle Stalker slain (10)
     .mob Jungle Stalker
     .isOnQuest 196
 step
     #loop
-    .goto 1434/0,207.55,-12900.20,0
-    .goto 1434/0,207.55,-12900.20,40,0
-    .goto 1434/0,150.76,-12943.59,40,0
-    .goto 1434/0,212.02,-13013.36,40,0
-    .goto 1434/0,381.12,-13108.65,40,0
-    .goto 1434/0,437.27,-13177.57,40,0
-    .goto 1434/0,478.11,-13014.21,40,0
-    .goto 1434/0,377.93,-12982.30,40,0
-    .goto 1434/0,297.52,-13021.86,40,0
-    .goto 1434/0,277.74,-12948.27,40,0
+    .goto 1434/0,178.83,-12970.81,0
+    .goto 1434/0,178.83,-12970.81,40,0
+    .goto 1434/0,265.62,-13044.84,40,0
+    .goto 1434/0,416.22,-13145.66,40,0
+    .goto 1434/0,376.01,-13047.39,40,0
     >>Kill |cRXP_ENEMY_Jungle Stalkers|r. Loot them for |cRXP_LOOT_Jungle Stalker Feather|r
     .complete 572,1 --Jungle Stalker Feather (10)
     .mob Jungle Stalker
     .isOnQuest 572
 step
     #loop
-    .goto 1434/0,-354.00,-13031.65,0
-    .goto 1434/0,-354.00,-13031.65,40,0
-    .goto 1434/0,-395.48,-13023.99,40,0
-    .goto 1434/0,-406.97,-12952.10,40,0
-    .goto 1434/0,-483.54,-12930.40,40,0
-    .goto 1434/0,-462.48,-12979.75,40,0
-    .goto 1434/0,-430.58,-13018.46,40,0
-    .goto 1434/0,-432.49,-13066.96,40,0
-    .goto 1434/0,-472.05,-13073.34,40,0
-    .goto 1434/0,-470.14,-13135.03,40,0
+    .goto 1434/0,-436.96,-12992.94,0
+    .goto 1434/0,-436.96,-12992.94,40,0
+    .goto 1434/0,-444.61,-13090.36,40,0
     >>Kill |cRXP_ENEMY_Venture Co. Strip Miners|r, |cRXP_ENEMY_Venture Co. Foremans|r, |cRXP_ENEMY_Venture Co. Surveyors|r and |cRXP_ENEMY_Venture Co. Tinkerers|r. Loot them for |cRXP_LOOT_Singing Blue Crystal|r
     .complete 600,1 --Singing Blue Crystal (10)
     .mob Venture Co. Strip Miner
@@ -1194,16 +1077,12 @@ step
     .isOnQuest 585
 step
     #loop
-    .goto 1434/0,-784.74,-12619.00,0
+    .goto 1434/0,-728.58,-12530.08,0
+    .goto 1434/0,-728.58,-12530.08,40,0
     .goto 1434/0,-784.74,-12619.00,40,0
-    .goto 1434/0,-804.52,-12828.30,40,0
-    .goto 1434/0,-701.78,-12946.57,40,0
-    .goto 1434/0,-573.52,-12877.65,40,0
-    .goto 1434/0,-650.73,-12787.89,40,0
-    .goto 1434/0,-544.80,-12716.84,40,0
-    .goto 1434/0,-488.01,-12584.11,40,0
-    .goto 1434/0,-654.56,-12618.14,40,0
-    .goto 1434/0,-747.09,-12445.43,40,0
+    .goto 1434/0,-784.74,-12847.44,40,0
+    .goto 1434/0,-622.01,-12938.91,40,0
+    .goto 1434/0,-487.37,-12670.05,40,0
     >>Kill |cRXP_ENEMY_Skullsplitter Warriors|r, |cRXP_ENEMY_Skullsplitter Hunters|r, |cRXP_ENEMY_Skullsplitter Witch Doctors|r and |cRXP_ENEMY_Skullsplitter Spiritchasers|r. Loot them for |cRXP_LOOT_Skullsplitter Tusk|r
     .complete 209,1 --Skullsplitter Tusk (18)
     .mob Skullsplitter Warrior
@@ -1213,16 +1092,12 @@ step
     .isOnQuest 209
 step
     #loop
-    .goto 1434/0,-654.56,-12618.14,0
-    .goto 1434/0,-654.56,-12618.14,40,0
-    .goto 1434/0,-488.01,-12584.11,40,0
-    .goto 1434/0,-544.80,-12716.84,40,0
-    .goto 1434/0,-650.73,-12787.89,40,0
-    .goto 1434/0,-573.52,-12877.65,40,0
-    .goto 1434/0,-701.78,-12946.57,40,0
-    .goto 1434/0,-804.52,-12828.30,40,0
+    .goto 1434/0,-487.37,-12670.05,0
+    .goto 1434/0,-487.37,-12670.05,40,0
+    .goto 1434/0,-728.58,-12530.08,40,0
     .goto 1434/0,-784.74,-12619.00,40,0
-    .goto 1434/0,-747.09,-12445.43,40,0
+    .goto 1434/0,-784.74,-12847.44,40,0
+    .goto 1434/0,-622.01,-12938.91,40,0
     >>Kill |cRXP_ENEMY_Skullsplitter Warriors|r, |cRXP_ENEMY_Skullsplitter Hunters|r, |cRXP_ENEMY_Skullsplitter Witch Doctors|r and |cRXP_ENEMY_Skullsplitter Spiritchasers|r. Loot them for |cRXP_LOOT_Split Bone Necklace|r
     .complete 598,1 --Split Bone Necklace (25)
     .mob Skullsplitter Warrior
@@ -1231,13 +1106,7 @@ step
     .mob Skullsplitter Spiritchaser
     .isOnQuest 598
 step
-    #loop
-    .goto 1434/0,-918.74,-12223.78,0
-    .goto 1434/0,-918.74,-12223.78,40,0
-    .goto 1434/0,-905.98,-12164.22,40,0
-    .goto 1434/0,-944.27,-12189.75,40,0
-    .goto 1434/0,-1008.08,-12172.73,40,0
-    .goto 1434/0,-957.03,-12215.27,40,0
+    .goto 1434/0,-931.50,-12189.75
     >>Kill |cRXP_ENEMY_Bhag'thera|r and loot |cRXP_LOOT_Fang of Bhag'thera|r
     .complete 193,1 --Fang of Bhag'thera (1)
     .mob Bhag'thera
@@ -1335,12 +1204,7 @@ step
     .accept 576 >>Accept Keep An Eye Out
     .target Dizzy One-Eye
 step
-    #loop
-    .goto 1434/0,307.10,-14596.33,0
-    .goto 1434/0,307.10,-14596.33,40,0
-    .goto 1434/0,345.38,-14628.66,40,0
-    .goto 1434/0,314.12,-14623.56,40,0
-    .goto 1434/0,245.20,-14617.60,40,0
+    .goto 1434/0,314.12,-14623.56
     >>Kill |cRXP_ENEMY_Bloodsail Raiders|r, |cRXP_ENEMY_Bloodsail Mages|r, |cRXP_ENEMY_Bloodsail Swashbucklers|r and |cRXP_ENEMY_Bloodsail Warlocks|r. Loot them for |cRXP_LOOT_Dizzy's Eye|r
     .complete 576,1 --Dizzy's Eye (1)
     .mob Bloodsail Raider
@@ -1349,31 +1213,18 @@ step
     .mob Bloodsail Warlock
 step
     #loop
-    .goto 1434/0,157.78,-14079.88,0
-    .goto 1434/0,157.78,-14079.88,40,0
-    .goto 1434/0,233.07,-14058.60,40,0
-    .goto 1434/0,215.21,-13949.70,40,0
-    .goto 1434/0,111.83,-13927.15,40,0
-    .goto 1434/0,104.17,-13867.17,40,0
-    .goto 1434/0,11.64,-13951.83,40,0
-    .goto 1434/0,60.14,-14041.16,40,0
+    .goto 1434/0,185.21,-14043.29,0
+    .goto 1434/0,185.21,-14043.29,40,0
     .goto 1434/0,113.11,-13981.60,40,0
-    .goto 1434/0,171.81,-13982.46,40,0
+    .goto 1434/0,82.48,-13875.25,40,0
     >>Kill |cRXP_ENEMY_Elder Mistvale Gorillas|r. Loot them for |cRXP_LOOT_Mistvale Giblets|r
     .complete 606,1 --Mistvale Giblets (5)
     .mob Elder Mistvale Gorilla
 step
     #loop
-    .goto 1434/0,142.46,-14003.73,0
-    .goto 1434/0,142.46,-14003.73,40,0
-    .goto 1434/0,111.83,-14043.72,40,0
-    .goto 1434/0,60.14,-14041.16,40,0
-    .goto 1434/0,21.85,-14007.55,40,0
-    .goto 1434/0,111.83,-13927.15,40,0
-    .goto 1434/0,215.21,-13949.70,40,0
-    .goto 1434/0,250.30,-14007.55,40,0
-    .goto 1434/0,233.07,-14058.60,40,0
-    .goto 1434/0,157.78,-14079.88,40,0
+    .goto 1434/0,171.81,-13982.46,0
+    .goto 1434/0,171.81,-13982.46,40,0
+    .goto 1434/0,80.56,-14019.89,40,0
     >>Kill |cRXP_ENEMY_Elder Mistvale Gorilla|r and loot |cRXP_LOOT_Aged Gorilla Sinew|r
     .complete 571,1 --Aged Gorilla Sinew (1)
     .mob Elder Mistvale Gorilla
@@ -1404,12 +1255,7 @@ step
     #loop
     .goto 1434/0,419.41,-14674.18,0
     .goto 1434/0,419.41,-14674.18,40,0
-    .goto 1434/0,456.42,-14679.29,40,0
-    .goto 1434/0,477.48,-14677.59,40,0
-    .goto 1434/0,508.11,-14682.69,40,0
-    .goto 1434/0,527.89,-14721.40,40,0
-    .goto 1434/0,506.83,-14735.87,40,0
-    .goto 1434/0,485.13,-14715.45,40,0
+    .goto 1434/0,503.64,-14698.86,40,0
     >>Kill |cRXP_ENEMY_Bloodsail Raiders|r, |cRXP_ENEMY_Bloodsail Mages|r, |cRXP_ENEMY_Bloodsail Swashbucklers|r and |cRXP_ENEMY_Bloodsail Warlocks|r. Loot them for |cRXP_LOOT_Snuff|r
     .complete 587,1 --Snuff (15)
     .mob Bloodsail Raider
@@ -1418,16 +1264,10 @@ step
     .mob Bloodsail Warlock
 step
     #loop
-    .goto 1434/0,658.70,-13908.01,0
-    .goto 1434/0,658.70,-13908.01,40,0
-    .goto 1434/0,681.68,-13818.67,40,0
-    .goto 1434/0,622.97,-13741.67,40,0
-    .goto 1434/0,616.59,-13668.92,40,0
-    .goto 1434/0,574.47,-13705.51,40,0
-    .goto 1434/0,494.07,-13708.06,40,0
-    .goto 1434/0,541.29,-13748.90,40,0
-    .goto 1434/0,582.77,-13777.40,40,0
-    .goto 1434/0,583.40,-13856.96,40,0
+    .goto 1434/0,621.05,-13878.23,0
+    .goto 1434/0,621.05,-13878.23,40,0
+    .goto 1434/0,633.18,-13700.83,40,0
+    .goto 1434/0,536.18,-13720.82,40,0
     >>Kill |cRXP_ENEMY_Naga Explorers|r and |cRXP_ENEMY_Brinescale Skirmishers|r. Loot them for |cRXP_LOOT_Akiris Reed|r
     .complete 617,1 --Akiris Reed (1)
     .mob Naga Explorer
@@ -1538,25 +1378,17 @@ step
     .target Innkeeper Skindle
     .home >>Set your Hearthstone to Innkeeper Skindle's inn
 step
-    #loop
-    .goto 1434/0,500.45,-14678.44,0
-    .goto 1434/0,500.45,-14678.44,40,0
-    .goto 1434/0,488.32,-14686.09,40,0
-    .goto 1434/0,451.31,-14703.96,40,0
+    .goto 1434/0,488.32,-14686.09
     >>Pick up |cRXP_PICK_Bloodsail Charts|r from the ground
     .complete 604,2 --Bloodsail Charts (1)
     .isOnQuest 604
 step
-    #loop
-    .goto 1434/0,486.41,-14685.24,0
-    .goto 1434/0,486.41,-14685.24,40,0
-    .goto 1434/0,500.45,-14680.99,40,0
-    .goto 1434/0,450.67,-14705.24,40,0
+    .goto 1434/0,486.41,-14685.24
     >>Pick up |cRXP_PICK_Bloodsail Orders|r from the ground
     .complete 604,3 --Bloodsail Orders (1)
     .isOnQuest 604
 step
-    .goto 1434/0,527.89,-14721.40
+    .goto 1434/0,503.64,-14698.86
     >>Kill |cRXP_ENEMY_Bloodsail Swashbucklers|r
     .complete 604,1 --Bloodsail Swashbuckler slain (10)
     .mob Bloodsail Swashbuckler
@@ -1630,14 +1462,8 @@ step
     #loop
     .goto 1434/0,-331.67,-13646.38,0
     .goto 1434/0,-331.67,-13646.38,40,0
-    .goto 1434/0,-378.89,-13637.87,40,0
-    .goto 1434/0,-443.34,-13572.35,40,0
-    .goto 1434/0,-384.63,-13683.81,40,0
-    .goto 1434/0,-311.25,-13689.34,40,0
-    .goto 1434/0,-246.16,-13711.89,40,0
-    .goto 1434/0,-274.24,-13646.80,40,0
-    .goto 1434/0,-247.43,-13577.03,40,0
-    .goto 1434/0,-325.29,-13604.69,40,0
+    .goto 1434/0,-269.13,-13651.06,40,0
+    .goto 1434/0,-415.90,-13594.05,40,0
     >>Kill |cRXP_ENEMY_Zanzil Zombies|r, |cRXP_ENEMY_Zanzil Hunters|r, |cRXP_ENEMY_Zanzil Witch Doctors|r and |cRXP_ENEMY_Zanzil Nagas|r. Loot them for |cRXP_LOOT_Zanzil's Mixture|r
     .complete 621,1 --Zanzil's Mixture (1)
     .mob Zanzil Zombie
@@ -1651,16 +1477,10 @@ step
     .isOnQuest 573
 step
     #loop
-    .goto 1434/0,494.07,-13708.06,0
-    .goto 1434/0,494.07,-13708.06,40,0
-    .goto 1434/0,541.29,-13748.90,40,0
-    .goto 1434/0,582.77,-13777.40,40,0
-    .goto 1434/0,583.40,-13856.96,40,0
-    .goto 1434/0,658.70,-13908.01,40,0
-    .goto 1434/0,681.68,-13818.67,40,0
-    .goto 1434/0,622.97,-13741.67,40,0
-    .goto 1434/0,616.59,-13668.92,40,0
-    .goto 1434/0,574.47,-13705.51,40,0
+    .goto 1434/0,536.18,-13720.82,0
+    .goto 1434/0,536.18,-13720.82,40,0
+    .goto 1434/0,633.18,-13700.83,40,0
+    .goto 1434/0,621.05,-13878.23,40,0
     >>Kill |cRXP_ENEMY_Naga Explorers|r
     .complete 573,1 --Naga Explorer slain (10)
     .mob Naga Explorer
@@ -1702,10 +1522,8 @@ step
     .isOnQuest 573
 step
     #loop
-    .goto 1434/0,-740.07,-12246.76,0
-    .goto 1434/0,-740.07,-12246.76,40,0
+    .goto 1434/0,-786.65,-12222.51,0
     .goto 1434/0,-786.65,-12222.51,40,0
-    .goto 1434/0,-919.38,-12315.25,40,0
     .goto 1434/0,-891.30,-12386.72,40,0
     >>Kill |cRXP_ENEMY_Mosh'Ogg Maulers|r, |cRXP_ENEMY_Mosh'Ogg Shamans|r, |cRXP_ENEMY_Mosh'Ogg Lords|r and |cRXP_ENEMY_Mosh'Ogg Warmongers|r. Loot them for |cRXP_LOOT_Maury's Key|r
     .complete 613,1 --Maury's Key (1)
@@ -1786,36 +1604,22 @@ step
     .mob Ana'thek the Cruel
     .isOnQuest 586
 step
-    #loop
-    .goto 1434/0,-653.28,-13044.41,0
-    .goto 1434/0,-653.28,-13044.41,40,0
-    .goto 1434/0,-701.14,-13021.01,40,0
-    .goto 1434/0,-713.27,-13000.59,40,0
-    .goto 1434/0,-724.75,-12996.77,40,0
-    .goto 1434/0,-645.62,-12943.59,40,0
+    .goto 1434/0,-713.27,-13000.59
     >>Kill |cRXP_ENEMY_Skullsplitter Hunters|r
     .complete 586,1 --Skullsplitter Hunter slain (8)
     .mob Skullsplitter Hunter
     .isOnQuest 586
 step
     #loop
-    .goto 1434/0,-749.64,-13072.06,0
-    .goto 1434/0,-749.64,-13072.06,40,0
+    .goto 1434/0,-773.25,-13086.10,0
     .goto 1434/0,-773.25,-13086.10,40,0
-    .goto 1434/0,-820.47,-13053.77,40,0
-    .goto 1434/0,-843.44,-13054.62,40,0
     .goto 1434/0,-828.13,-13027.40,40,0
-    .goto 1434/0,-832.59,-12996.34,40,0
     >>Kill |cRXP_ENEMY_Skullsplitter Berserkers|r
     .complete 586,3 --Skullsplitter Berserker slain (4)
     .mob Skullsplitter Berserker
     .isOnQuest 586
 step
-    #loop
-    .goto 1434/0,-834.51,-13027.40,0
-    .goto 1434/0,-834.51,-13027.40,40,0
-    .goto 1434/0,-837.06,-13000.59,40,0
-    .goto 1434/0,-821.75,-12978.05,40,0
+    .goto 1434/0,-837.06,-13000.59
     >>Kill |cRXP_ENEMY_Skullsplitter Headhunters|r
     .complete 586,2 --Skullsplitter Headhunter slain (6)
     .mob Skullsplitter Headhunter
@@ -1850,16 +1654,9 @@ step
     .target Captain Hecklebury Smotts
 step
     #loop
-    .goto 1434/0,-497.58,-13269.03,0
-    .goto 1434/0,-497.58,-13269.03,40,0
-    .goto 1434/0,-523.74,-13260.10,40,0
-    .goto 1434/0,-553.73,-13259.25,40,0
+    .goto 1434/0,-567.13,-13224.79,0
     .goto 1434/0,-567.13,-13224.79,40,0
-    .goto 1434/0,-599.04,-13203.52,40,0
     .goto 1434/0,-563.31,-13156.72,40,0
-    .goto 1434/0,-504.60,-13118.86,40,0
-    .goto 1434/0,-464.40,-13168.63,40,0
-    .goto 1434/0,-502.05,-13203.09,40,0
     >>Kill |cRXP_ENEMY_Ironjaw Basilisks|r. Loot them for |cRXP_LOOT_Pulsing Blue Shard|r
     .complete 589,1 --Pulsing Blue Shard (3)
     .mob Ironjaw Basilisk

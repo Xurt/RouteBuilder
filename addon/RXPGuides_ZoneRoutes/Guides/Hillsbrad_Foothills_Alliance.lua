@@ -236,16 +236,10 @@ step
     .xp <30,1
 step
     #loop
-    .goto 1424/0,-489.17,-974.08,0
-    .goto 1424/0,-489.17,-974.08,40,0
-    .goto 1424/0,-514.13,-1042.77,40,0
-    .goto 1424/0,-442.13,-1057.92,40,0
-    .goto 1424/0,-373.65,-1062.61,40,0
-    .goto 1424/0,-346.13,-1117.01,40,0
-    .goto 1424/0,-226.13,-1119.57,40,0
-    .goto 1424/0,-241.49,-1067.95,40,0
-    .goto 1424/0,-300.69,-1076.48,40,0
-    .goto 1424/0,-406.29,-964.48,40,0
+    .goto 1424/0,-478.61,-1015.89,0
+    .goto 1424/0,-478.61,-1015.89,40,0
+    .goto 1424/0,-352.21,-1047.89,40,0
+    .goto 1424/0,-235.09,-1076.69,40,0
     >>Kill |cRXP_ENEMY_Torn Fin Tidehunters|r
     >>Kill |cRXP_ENEMY_Torn Fin Oracles|r
     .complete 536,1 --Torn Fin Tidehunter slain (10)
@@ -260,16 +254,10 @@ step
     .target Lieutenant Farren Orinelle
 step
     #loop
-    .goto 1424/0,-129.81,-1011.84,0
-    .goto 1424/0,-129.81,-1011.84,40,0
-    .goto 1424/0,-75.09,-1016.53,40,0
-    .goto 1424/0,-39.25,-1108.69,40,0
-    .goto 1424/0,21.23,-1142.19,40,0
-    .goto 1424/0,44.91,-1227.31,40,0
-    .goto 1424/0,-54.93,-1178.24,40,0
-    .goto 1424/0,-149.97,-1153.71,40,0
-    .goto 1424/0,-211.73,-1153.49,40,0
-    .goto 1424/0,-127.89,-1099.09,40,0
+    .goto 1424/0,-167.89,-1117.23,0
+    .goto 1424/0,-167.89,-1117.23,40,0
+    .goto 1424/0,-87.25,-1066.45,40,0
+    .goto 1424/0,11.31,-1147.52,40,0
     >>Kill |cRXP_ENEMY_Torn Fin Muckdwellers|r, |cRXP_ENEMY_Torn Fin Coastrunners|r, |cRXP_ENEMY_Torn Fin Oracles|r and |cRXP_ENEMY_Torn Fin Tidehunters|r. Loot them for |cRXP_LOOT_Murloc Head|r
     .complete 559,1 --Murloc Head (10)
     .mob Torn Fin Muckdweller
@@ -331,16 +319,10 @@ step
     .target Lieutenant Farren Orinelle
 step
     #loop
-    .goto 1424/0,-676.69,-973.23,0
-    .goto 1424/0,-676.69,-973.23,40,0
-    .goto 1424/0,-786.45,-987.73,40,0
-    .goto 1424/0,-857.81,-1163.31,40,0
-    .goto 1424/0,-754.45,-1173.76,40,0
-    .goto 1424/0,-753.81,-1117.01,40,0
-    .goto 1424/0,-765.01,-1058.13,40,0
-    .goto 1424/0,-721.17,-1020.59,40,0
-    .goto 1424/0,-683.09,-1060.05,40,0
-    .goto 1424/0,-587.73,-1011.20,40,0
+    .goto 1424/0,-620.69,-997.55,0
+    .goto 1424/0,-620.69,-997.55,40,0
+    .goto 1424/0,-781.01,-1014.40,40,0
+    .goto 1424/0,-822.29,-1126.19,40,0
     >>Kill |cRXP_ENEMY_Daggerspine Shorehunters|r
     >>Kill |cRXP_ENEMY_Daggerspine Sirens|r
     .complete 562,1 --Daggerspine Shorehunter slain (10)
@@ -385,8 +367,6 @@ step
     #loop
     .goto 1424/0,-723.41,-750.93,0
     .goto 1424/0,-723.41,-750.93,40,0
-    .goto 1424/0,-722.45,-817.71,40,0
-    .goto 1424/0,-751.89,-607.36,40,0
     .goto 1424/0,-737.81,-679.25,40,0
     >>Kill |cRXP_ENEMY_Snapjaw|r and loot |cRXP_LOOT_Turtle Meat|r
     .complete 555,1 --Turtle Meat (1)
@@ -496,16 +476,9 @@ step
 step
     #label Drop635x2
     #loop
-    .goto 1424/0,-417.17,-325.55,0
-    .goto 1424/0,-417.17,-325.55,40,0
-    .goto 1424/0,-279.25,-307.84,40,0
-    .goto 1424/0,-285.97,-251.31,40,0
-    .goto 1424/0,-321.49,-192.85,40,0
-    .goto 1424/0,-353.49,-133.97,40,0
-    .goto 1424/0,-377.81,-179.84,40,0
-    .goto 1424/0,-358.93,-226.35,40,0
-    .goto 1424/0,-382.29,-266.45,40,0
-    .goto 1424/0,-450.13,-258.77,40,0
+    .goto 1424/0,-413.97,-280.96,0
+    .goto 1424/0,-413.97,-280.96,40,0
+    .goto 1424/0,-338.45,-212.91,40,0
     >>Kill |cRXP_ENEMY_Cave Yetis|r and |cRXP_ENEMY_Ferocious Yetis|r. Loot them for |cRXP_LOOT_Yeti Fur|r
     >>Open the |cRXP_PICK_Solid Chest|r. Loot it for |cRXP_LOOT_Bolt of Woolen Cloth|r
     .complete 565,4 --Yeti Fur (1)

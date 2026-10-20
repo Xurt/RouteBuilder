@@ -67,16 +67,10 @@ step
     .target Sputtervalve
 step
     #loop
-    .goto 1413/1,-3819.86,-1316.33,0
-    .goto 1413/1,-3819.86,-1316.33,40,0
-    .goto 1413/1,-3884.71,-1323.09,40,0
-    .goto 1413/1,-3909.03,-1354.17,40,0
-    .goto 1413/1,-3878.63,-1379.17,40,0
-    .goto 1413/1,-3878.63,-1551.45,40,0
-    .goto 1413/1,-3881.67,-1614.96,40,0
-    .goto 1413/1,-3819.86,-1541.99,40,0
-    .goto 1413/1,-3845.19,-1485.24,40,0
-    .goto 1413/1,-3820.87,-1387.28,40,0
+    .goto 1413/1,-3870.52,-1356.20,0
+    .goto 1413/1,-3870.52,-1356.20,40,0
+    .goto 1413/1,-3828.98,-1504.16,40,0
+    .goto 1413/1,-3893.83,-1584.56,40,0
     >>Kill |cRXP_ENEMY_Southsea Brigands|r
     >>Kill |cRXP_ENEMY_Southsea Cannoneers|r
     .complete 887,1 --Southsea Brigand slain (12)
@@ -106,7 +100,7 @@ step
     .turnin 894 >>Turn in Samophlange
     .accept 900 >>Accept Samophlange
 step
-    .goto 1413/1,-2679.86,831.48
+    .goto 1413/1,-2676.82,840.94
     >>Click the |cRXP_PICK_Main Control Valve|r
     >>Click the |cRXP_PICK_Regulator Valve|r
     >>Click the |cRXP_PICK_Fuel Control Valve|r
@@ -245,16 +239,9 @@ step
     .target Gazlowe
 step
     #loop
-    .goto 1413/1,-3683.06,1236.85,0
-    .goto 1413/1,-3683.06,1236.85,40,0
-    .goto 1413/1,-3645.56,1246.99,40,0
-    .goto 1413/1,-3577.67,1240.91,40,0
-    .goto 1413/1,-3564.50,1345.63,40,0
-    .goto 1413/1,-3633.40,1387.52,40,0
-    .goto 1413/1,-3690.15,1355.09,40,0
-    .goto 1413/1,-3650.63,1325.36,40,0
+    .goto 1413/1,-3621.24,1278.07,0
     .goto 1413/1,-3621.24,1278.07,40,0
-    .goto 1413/1,-3680.02,1280.77,40,0
+    .goto 1413/1,-3652.66,1350.36,40,0
     >>Kill |cRXP_ENEMY_Venture Co. Enforcers|r, |cRXP_ENEMY_Venture Co. Overseers|r and |cRXP_ENEMY_Boss Copperplugs|r. Loot them for |cRXP_LOOT_Cats Eye Emerald|r
     .complete 896,1 --Cats Eye Emerald (1)
     .mob Venture Co. Enforcer
@@ -378,7 +365,7 @@ step
     .accept 1069 >>Accept Deepmoss Spider Eggs
     .target Mebok Mizzyrix
 step
-    .goto 1413/1,-3555.38,-552.88
+    .goto 1413/1,-3482.42,-563.69
     >>Kill |cRXP_ENEMY_Sunscale Scytheclaws|r, |cRXP_ENEMY_Ishamuhales|r and |cRXP_ENEMY_Takk the Leapers|r. Loot them for |cRXP_LOOT_Intact Raptor Horn|r
     .complete 865,1 --Intact Raptor Horn (5)
     .mob Sunscale Scytheclaw
@@ -457,14 +444,7 @@ step
     .target Mebok Mizzyrix
     .isQuestComplete 1069
 step
-    #loop
-    .goto 1413/1,-3234.15,-250.20,0
-    .goto 1413/1,-3234.15,-250.20,40,0
-    .goto 1413/1,-3244.28,-231.28,40,0
-    .goto 1413/1,-3260.50,-192.77,40,0
-    .goto 1413/1,-3244.28,-146.83,40,0
-    .goto 1413/1,-3199.70,-205.61,40,0
-    .goto 1413/1,-3208.82,-214.39,40,0
+    .goto 1413/1,-3215.91,-227.90
     >>Kill |cRXP_ENEMY_Chol'aruk|r and loot |cRXP_LOOT_Chol'aruk's Head|r
     .complete 97005,1 --Chol'aruk's Head (1)
     .mob Chol'aruk
@@ -519,7 +499,7 @@ step
     .accept 1221 >>Accept Blueleaf Tubers
     .target Mebok Mizzyrix
 step
-    .goto 1413/1,-3694.20,-927.85
+    .goto 1413/1,-3693.19,-929.20
     >>Open the |cRXP_PICK_Snufflenose Command Sticks|r. Loot it for |cRXP_LOOT_Snufflenose Command Stick|r
     >>Pick up |cRXP_PICK_Snufflenose Owner's Manual|r from the ground
     >>Open the |cRXP_PICK_Crate with Holes|r. Loot it for |cRXP_LOOT_Crate With Holes|r
@@ -641,7 +621,7 @@ step
     .complete 1221,3 --Snufflenose Owner's Manual (1)
     .isOnQuest 1221
 step
-    .goto 1413/1,-3693.19,-930.55
+    .goto 1413/1,-3692.18,-929.20
     >>Open the |cRXP_PICK_Crate with Holes|r. Loot it for |cRXP_LOOT_Crate With Holes|r
     .complete 1221,2 --Crate With Holes (1)
     .isOnQuest 1221
@@ -717,7 +697,7 @@ step
     .complete 1221,4 --Snufflenose Command Stick (1)
     .isOnQuest 1221
 step
-    .goto 1413/1,-3693.19,-930.55
+    .goto 1413/1,-3692.18,-929.20
     >>Open the |cRXP_PICK_Crate with Holes|r. Loot it for |cRXP_LOOT_Crate With Holes|r
     .complete 1221,2 --Crate With Holes (1)
     .isOnQuest 1221

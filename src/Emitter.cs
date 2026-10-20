@@ -86,12 +86,27 @@ public sealed class Emitter
         return l.Count <= 1 ? string.Concat(l) : string.Join(", ", l.Take(l.Count - 1)) + " and " + l[^1];
     }
 
-    /// <summary>A single pin, or a pin plus a loop of waypoints over a spawn patch.</summary>
+    /// <summary>
+    /// A single pin, or a pin plus a loop of waypoints over a spawn patch. The waypoints sit in the middle of the groups
+    /// of spawns (one group per stretch of the patch), not on its edges, so the arrow leads through where the mobs are.
+    /// A patch small enough to see across gets one pin, at its busiest spot.
+    /// </summary>
     List<string> LoopLines(int area, List<Pt> pts, Pt from, int maxPts = 9, bool ordered = false)
     {
+        var all = pts;
         pts = Geo.Thin(pts, 35);
-        if (pts.Count <= 2 || Geo.Span(pts) < 45) return new List<string> { Goto(area, Geo.Medoid(pts)) };
-        var wp = ordered ? Geo.AlongAxis(pts, from, maxPts) : Geo.Tour(Geo.FarthestSample(pts, maxPts), from);
+        double span = pts.Count > 1 ? Geo.Span(pts) : 0;
+        if (!ordered && (pts.Count <= 2 || span < Tuning.LoopSingleSpan)) return new List<string> { Goto(area, Geo.Busiest(all, Tuning.LoopGroupRadius)) };
+        if (pts.Count <= 2 || span < 45) return new List<string> { Goto(area, Geo.Medoid(pts)) };
+        List<Pt> wp;
+        if (ordered) wp = Geo.AlongAxis(pts, from, maxPts);
+        else
+        {
+            int k = Math.Clamp((int)Math.Ceiling(span / Tuning.LoopSpacing), 2, Math.Min(maxPts, Tuning.LoopMaxPoints));
+            var groups = Geo.KMeans(all.Distinct().ToList(), k);
+            wp = Geo.Tour(groups.Where(g => g.Count > 0).Select(g => Geo.Busiest(g, Tuning.LoopGroupRadius)).Distinct().ToList(), from);
+            if (wp.Count < 2) return new List<string> { Goto(area, wp[0]) };
+        }
         var lines = new List<string> { "    #loop", Goto(area, wp[0], 0) };
         lines.AddRange(wp.Select(p => Goto(area, p, 40, 0)));
         return lines;

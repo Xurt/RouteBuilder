@@ -48,16 +48,9 @@ step
 step
     #label Drop635x1
     #loop
-    .goto 1418/0,-3214.96,-6449.93,0
-    .goto 1418/0,-3214.96,-6449.93,40,0
-    .goto 1418/0,-3206.50,-6396.87,40,0
+    .goto 1418/0,-3167.20,-6403.83,0
     .goto 1418/0,-3167.20,-6403.83,40,0
-    .goto 1418/0,-3137.35,-6345.79,40,0
-    .goto 1418/0,-3090.34,-6316.77,40,0
-    .goto 1418/0,-3096.06,-6369.17,40,0
-    .goto 1418/0,-3131.88,-6389.07,40,0
-    .goto 1418/0,-3106.75,-6462.21,40,0
-    .goto 1418/0,-3139.34,-6438.66,40,0
+    .goto 1418/0,-3104.76,-6365.19,40,0
     >>Kill |cRXP_ENEMY_Shadowforge Tunnelers|r, |cRXP_ENEMY_Shadowforge Darkweavers|r, |cRXP_ENEMY_Shadowforge Chanters|r and |cRXP_ENEMY_Shadowforge Warriors|r. Loot them for |cRXP_LOOT_Ryedol's Lucky Pick|r
     .complete 719,1 --Ryedol's Lucky Pick (1)
     .mob Shadowforge Tunneler
@@ -148,16 +141,9 @@ step
 step
     #label Drop635x2
     #loop
-    .goto 1418/0,-2419.71,-7118.08,0
-    .goto 1418/0,-2419.71,-7118.08,40,0
-    .goto 1418/0,-2343.09,-7115.75,40,0
-    .goto 1418/0,-2278.66,-7088.39,40,0
-    .goto 1418/0,-2281.90,-7186.57,40,0
-    .goto 1418/0,-2278.17,-7250.08,40,0
-    .goto 1418/0,-2326.42,-7248.75,40,0
-    .goto 1418/0,-2352.29,-7218.41,40,0
-    .goto 1418/0,-2342.59,-7176.95,40,0
-    .goto 1418/0,-2313.74,-7144.28,40,0
+    .goto 1418/0,-2384.63,-7130.85,0
+    .goto 1418/0,-2384.63,-7130.85,40,0
+    .goto 1418/0,-2316.23,-7180.43,40,0
     >>Kill |cRXP_ENEMY_Dustbelcher Ogres|r, |cRXP_ENEMY_Dustbelcher Brutes|r, |cRXP_ENEMY_Dustbelcher Wyrmhunters|r and |cRXP_ENEMY_Dustbelcher Maulers|r. Loot them for |cRXP_LOOT_Scrap Metal|r
     .complete 733,1 --Scrap Metal (1)
     .mob Dustbelcher Ogre
@@ -213,13 +199,7 @@ step
     .accept 635 >>Accept Crystal in the Mountains
     .use 4614
 step
-    #loop
-    .goto 1418/0,-3404.76,-6458.56,0
-    .goto 1418/0,-3404.76,-6458.56,40,0
-    .goto 1418/0,-3359.48,-6458.39,40,0
-    .goto 1418/0,-3387.34,-6448.28,40,0
-    .goto 1418/0,-3411.97,-6404.99,40,0
-    .goto 1418/0,-3416.45,-6425.39,40,0
+    .goto 1418/0,-3387.34,-6448.28
     >>Kill |cRXP_ENEMY_Dustbelcher Ogres|r, |cRXP_ENEMY_Dustbelcher Brutes|r, |cRXP_ENEMY_Dustbelcher Maulers|r and |cRXP_ENEMY_Dustbelcher Shamans|r. Loot them for |cRXP_LOOT_Healing Potion|r
     .complete 715,1 --Healing Potion (1)
     .mob Dustbelcher Ogre
@@ -230,16 +210,9 @@ step
 step
     #label Drop635x3
     #loop
-    .goto 1418/0,-3293.07,-6121.75,0
-    .goto 1418/0,-3293.07,-6121.75,40,0
-    .goto 1418/0,-3312.97,-6085.27,40,0
-    .goto 1418/0,-3337.84,-6022.25,40,0
-    .goto 1418/0,-3303.02,-6008.98,40,0
-    .goto 1418/0,-3268.19,-6055.42,40,0
-    .goto 1418/0,-3233.37,-6025.57,40,0
-    .goto 1418/0,-3223.42,-6065.37,40,0
-    .goto 1418/0,-3198.54,-6098.53,40,0
-    .goto 1418/0,-3233.37,-6115.12,40,0
+    .goto 1418/0,-3288.09,-6068.68,0
+    .goto 1418/0,-3288.09,-6068.68,40,0
+    .goto 1418/0,-3218.44,-6065.37,40,0
     >>Kill |cRXP_ENEMY_Shadowforge Surveyors|r, |cRXP_ENEMY_Shadowforge Ruffians|r and |cRXP_ENEMY_Shadowforge Diggers|r. Loot them for |cRXP_LOOT_An'Alleum Power Stone|r
     >>Kill |cRXP_ENEMY_Shadowforge Surveyors|r, |cRXP_ENEMY_Shadowforge Ruffians|r and |cRXP_ENEMY_Shadowforge Diggers|r. Loot them for |cRXP_LOOT_Dentrium Power Stone|r
     .complete 2418,2 --An'Alleum Power Stone (8)
@@ -297,16 +270,9 @@ step
     .isQuestComplete 705
 step
     #loop
-    .goto 1418/0,-3314.46,-6956.06,0
-    .goto 1418/0,-3314.46,-6956.06,40,0
-    .goto 1418/0,-3345.80,-6956.89,40,0
+    .goto 1418/0,-3348.04,-6985.58,0
     .goto 1418/0,-3348.04,-6985.58,40,0
-    .goto 1418/0,-3384.11,-6983.42,40,0
-    .goto 1418/0,-3384.61,-7043.95,40,0
-    .goto 1418/0,-3352.27,-7077.78,40,0
-    .goto 1418/0,-3291.08,-7082.42,40,0
-    .goto 1418/0,-3255.75,-7048.59,40,0
-    .goto 1418/0,-3320.18,-7023.55,40,0
+    .goto 1418/0,-3311.23,-7047.10,40,0
     >>Kill |cRXP_ENEMY_Stonevault Bashers|r, |cRXP_ENEMY_Stonevault Shamans|r, |cRXP_ENEMY_Stonevault Bonesnappers|r and |cRXP_ENEMY_Stonevault Seers|r. Loot them for |cRXP_LOOT_Indurium Flake|r
     .complete 1108,1 --Indurium Flake (10)
     .mob Stonevault Basher
@@ -340,16 +306,10 @@ step
     .target Lotwil Veriatus
 step
     #loop
-    .goto 1418/0,-2653.78,-6681.44,0
-    .goto 1418/0,-2653.78,-6681.44,40,0
-    .goto 1418/0,-2636.86,-6613.61,40,0
-    .goto 1418/0,-2487.37,-6512.45,40,0
-    .goto 1418/0,-2410.50,-6519.25,40,0
-    .goto 1418/0,-2445.82,-6582.77,40,0
-    .goto 1418/0,-2497.07,-6598.35,40,0
+    .goto 1418/0,-2606.52,-6650.43,0
+    .goto 1418/0,-2606.52,-6650.43,40,0
     .goto 1418/0,-2547.07,-6602.50,40,0
-    .goto 1418/0,-2554.03,-6648.27,40,0
-    .goto 1418/0,-2580.40,-6684.59,40,0
+    .goto 1418/0,-2454.03,-6512.62,40,0
     >>Kill |cRXP_ENEMY_Lesser Rock Elementals|r. Loot them for |cRXP_LOOT_Small Stone Shard|r
     .complete 710,1 --Small Stone Shard (10)
     .mob Lesser Rock Elemental
@@ -361,13 +321,9 @@ step
     .target Lotwil Veriatus
 step
     #loop
-    .goto 1418/0,-2491.10,-6489.07,0
-    .goto 1418/0,-2491.10,-6489.07,40,0
+    .goto 1418/0,-2453.29,-6474.81,0
     .goto 1418/0,-2453.29,-6474.81,40,0
-    .goto 1418/0,-2423.93,-6491.23,40,0
-    .goto 1418/0,-2377.17,-6457.89,40,0
     .goto 1418/0,-2413.49,-6443.96,40,0
-    .goto 1418/0,-2465.23,-6423.73,40,0
     >>Kill |cRXP_ENEMY_Rock Elementals|r. Loot them for |cRXP_LOOT_Large Stone Slab|r
     .complete 711,1 --Large Stone Slab (3)
     .mob Rock Elemental
@@ -470,13 +426,7 @@ step
     #loop
     .goto 1418/0,-4104.99,-6431.19,0
     .goto 1418/0,-4104.99,-6431.19,40,0
-    .goto 1418/0,-4103.99,-6398.86,40,0
     .goto 1418/0,-4182.10,-6363.87,40,0
-    .goto 1418/0,-4210.95,-6350.77,40,0
-    .goto 1418/0,-4211.70,-6363.04,40,0
-    .goto 1418/0,-4161.45,-6395.54,40,0
-    .goto 1418/0,-4150.01,-6447.94,40,0
-    .goto 1418/0,-4129.36,-6462.70,40,0
     >>Kill |cRXP_ENEMY_Scalding Whelps|r and |cRXP_ENEMY_Scorched Guardians|r. Loot them for |cRXP_LOOT_Black Drake's Heart|r
     .complete 706,1 --Black Drake's Heart (1)
     .mob Scalding Whelp
@@ -495,49 +445,19 @@ step
     .isQuestTurnedIn 687 --any of: Theldurin the Lost
     .xp <30,1
 step
-    #loop
-    .goto 1418/0,-3435.35,-7248.59,0
-    .goto 1418/0,-3435.35,-7248.59,40,0
-    .goto 1418/0,-3473.41,-7262.02,40,0
-    .goto 1418/0,-3485.85,-7276.61,40,0
-    .goto 1418/0,-3473.41,-7283.08,40,0
-    .goto 1418/0,-3454.51,-7309.28,40,0
-    .goto 1418/0,-3461.47,-7335.82,40,0
-    .goto 1418/0,-3427.89,-7308.62,40,0
-    .goto 1418/0,-3387.34,-7308.29,40,0
-    .goto 1418/0,-3419.18,-7281.09,40,0
+    .goto 1418/0,-3419.18,-7281.09
     >>Kill |cRXP_ENEMY_Enraged Rock Elemental|r and loot |cRXP_LOOT_Torn Scroll Fragment|r
     .complete 692,1 --Torn Scroll Fragment (1)
     .mob Enraged Rock Elemental
     .isOnQuest 692
 step
-    #loop
-    .goto 1418/0,-3419.18,-7281.09,0
-    .goto 1418/0,-3419.18,-7281.09,40,0
-    .goto 1418/0,-3435.35,-7248.59,40,0
-    .goto 1418/0,-3473.41,-7262.02,40,0
-    .goto 1418/0,-3485.85,-7276.61,40,0
-    .goto 1418/0,-3473.41,-7283.08,40,0
-    .goto 1418/0,-3454.51,-7309.28,40,0
-    .goto 1418/0,-3461.47,-7335.82,40,0
-    .goto 1418/0,-3427.89,-7308.62,40,0
-    .goto 1418/0,-3387.34,-7308.29,40,0
+    .goto 1418/0,-3419.18,-7281.09
     >>Kill |cRXP_ENEMY_Enraged Rock Elemental|r and loot |cRXP_LOOT_Crumpled Scroll Fragment|r
     .complete 692,2 --Crumpled Scroll Fragment (1)
     .mob Enraged Rock Elemental
     .isOnQuest 692
 step
-    #loop
-    .goto 1418/0,-3419.18,-7281.09,0
-    .goto 1418/0,-3419.18,-7281.09,40,0
-    .goto 1418/0,-3435.35,-7248.59,40,0
-    .goto 1418/0,-3473.41,-7262.02,40,0
-    .goto 1418/0,-3485.85,-7276.61,40,0
-    .goto 1418/0,-3473.41,-7283.08,40,0
-    .goto 1418/0,-3454.51,-7309.28,40,0
-    .goto 1418/0,-3461.47,-7335.82,40,0
-    .goto 1418/0,-3427.89,-7308.62,40,0
-    .goto 1418/0,-3387.34,-7308.29,40,0
+    .goto 1418/0,-3419.18,-7281.09
     >>Kill |cRXP_ENEMY_Enraged Rock Elemental|r and loot |cRXP_LOOT_Singed Scroll Fragment|r
     .complete 692,3 --Singed Scroll Fragment (1)
     .mob Enraged Rock Elemental
@@ -550,16 +470,9 @@ step
     .isOnQuest 692
 step
     #loop
-    .goto 1418/0,-3352.27,-7077.78,0
-    .goto 1418/0,-3352.27,-7077.78,40,0
-    .goto 1418/0,-3356.50,-7045.77,40,0
-    .goto 1418/0,-3384.61,-7043.95,40,0
-    .goto 1418/0,-3384.11,-6983.42,40,0
-    .goto 1418/0,-3345.80,-6956.89,40,0
-    .goto 1418/0,-3314.46,-6956.06,40,0
-    .goto 1418/0,-3327.15,-7002.66,40,0
-    .goto 1418/0,-3255.75,-7048.59,40,0
+    .goto 1418/0,-3291.08,-7082.42,0
     .goto 1418/0,-3291.08,-7082.42,40,0
+    .goto 1418/0,-3348.04,-6985.58,40,0
     >>Kill |cRXP_ENEMY_Stonevault Bonesnappers|r
     .complete 739,2 --Stonevault Bonesnapper slain (12)
     .mob Stonevault Bonesnapper
@@ -584,16 +497,9 @@ step
     .isQuestTurnedIn 711 --any of: Study of the Elements: Rock
 step
     #loop
-    .goto 1418/0,-2244.59,-7114.26,0
-    .goto 1418/0,-2244.59,-7114.26,40,0
+    .goto 1418/0,-2215.48,-7165.67,0
     .goto 1418/0,-2215.48,-7165.67,40,0
-    .goto 1418/0,-2181.40,-7214.76,40,0
-    .goto 1418/0,-2148.07,-7186.73,40,0
-    .goto 1418/0,-2114.99,-7219.23,40,0
-    .goto 1418/0,-2118.22,-7291.04,40,0
-    .goto 1418/0,-2150.81,-7252.40,40,0
-    .goto 1418/0,-2201.80,-7277.94,40,0
-    .goto 1418/0,-2251.80,-7218.74,40,0
+    .goto 1418/0,-2153.79,-7213.10,40,0
     >>Kill |cRXP_ENEMY_Greater Rock Elementals|r. Loot them for |cRXP_LOOT_Bracers of Rock Binding|r
     .complete 712,1 --Bracers of Rock Binding (5)
     .mob Greater Rock Elemental

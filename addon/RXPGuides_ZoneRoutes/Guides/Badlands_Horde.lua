@@ -98,13 +98,7 @@ step
     .use 4614
 step
     #label Drop635x1
-    #loop
-    .goto 1418/0,-3359.48,-6458.39,0
-    .goto 1418/0,-3359.48,-6458.39,40,0
-    .goto 1418/0,-3387.34,-6448.28,40,0
-    .goto 1418/0,-3411.97,-6404.99,40,0
-    .goto 1418/0,-3416.45,-6425.39,40,0
-    .goto 1418/0,-3404.76,-6458.56,40,0
+    .goto 1418/0,-3387.34,-6448.28
     >>Kill |cRXP_ENEMY_Dustbelcher Ogres|r, |cRXP_ENEMY_Dustbelcher Brutes|r, |cRXP_ENEMY_Dustbelcher Maulers|r and |cRXP_ENEMY_Dustbelcher Shamans|r. Loot them for |cRXP_LOOT_Healing Potion|r
     .complete 715,1 --Healing Potion (1)
     .mob Dustbelcher Ogre
@@ -129,16 +123,9 @@ step
 step
     #label Drop635x2
     #loop
-    .goto 1418/0,-3432.37,-6241.15,0
-    .goto 1418/0,-3432.37,-6241.15,40,0
-    .goto 1418/0,-3382.62,-6247.78,40,0
-    .goto 1418/0,-3367.69,-6201.35,40,0
-    .goto 1418/0,-3337.84,-6135.02,40,0
-    .goto 1418/0,-3337.84,-6065.37,40,0
-    .goto 1418/0,-3352.77,-6095.22,40,0
-    .goto 1418/0,-3372.67,-6154.92,40,0
+    .goto 1418/0,-3402.52,-6191.40,0
     .goto 1418/0,-3402.52,-6191.40,40,0
-    .goto 1418/0,-3447.29,-6171.50,40,0
+    .goto 1418/0,-3342.82,-6108.48,40,0
     >>Kill |cRXP_ENEMY_Shadowforge Surveyors|r, |cRXP_ENEMY_Shadowforge Ruffians|r and |cRXP_ENEMY_Shadowforge Diggers|r. Loot them for |cRXP_LOOT_Dentrium Power Stone|r
     >>Kill |cRXP_ENEMY_Shadowforge Surveyors|r, |cRXP_ENEMY_Shadowforge Ruffians|r and |cRXP_ENEMY_Shadowforge Diggers|r. Loot them for |cRXP_LOOT_An'Alleum Power Stone|r
     .complete 2418,1 --Dentrium Power Stone (8)
@@ -181,16 +168,11 @@ step
     .isOnQuest 687
 step
     #loop
-    .goto 1418/0,-3382.87,-6895.20,0
-    .goto 1418/0,-3382.87,-6895.20,40,0
-    .goto 1418/0,-3461.22,-6782.26,40,0
-    .goto 1418/0,-3524.16,-6660.54,40,0
-    .goto 1418/0,-3391.32,-6540.31,40,0
-    .goto 1418/0,-3285.36,-6461.71,40,0
-    .goto 1418/0,-3268.94,-6549.10,40,0
-    .goto 1418/0,-3245.06,-6691.06,40,0
-    .goto 1418/0,-3317.20,-6656.40,40,0
-    .goto 1418/0,-3415.20,-6685.42,40,0
+    .goto 1418/0,-3409.48,-6854.24,0
+    .goto 1418/0,-3409.48,-6854.24,40,0
+    .goto 1418/0,-3447.79,-6752.25,40,0
+    .goto 1418/0,-3329.38,-6553.08,40,0
+    .goto 1418/0,-3314.21,-6654.57,40,0
     >>Kill |cRXP_ENEMY_Crag Coyotes|r, |cRXP_ENEMY_Feral Crag Coyotes|r, |cRXP_ENEMY_Elder Crag Coyotes|r and |cRXP_ENEMY_Rabid Crag Coyotes|r. Loot them for |cRXP_LOOT_Coyote Jawbone|r
     .complete 1419,1 --Coyote Jawbone (30)
     .mob Crag Coyote
@@ -265,16 +247,10 @@ step
     .target Lotwil Veriatus
 step
     #loop
-    .goto 1418/0,-2726.17,-6648.77,0
-    .goto 1418/0,-2726.17,-6648.77,40,0
-    .goto 1418/0,-2636.86,-6613.61,40,0
-    .goto 1418/0,-2491.10,-6489.07,40,0
-    .goto 1418/0,-2410.50,-6519.25,40,0
-    .goto 1418/0,-2445.82,-6582.77,40,0
-    .goto 1418/0,-2497.07,-6598.35,40,0
+    .goto 1418/0,-2606.52,-6650.43,0
+    .goto 1418/0,-2606.52,-6650.43,40,0
     .goto 1418/0,-2547.07,-6602.50,40,0
-    .goto 1418/0,-2554.03,-6648.27,40,0
-    .goto 1418/0,-2616.47,-6683.26,40,0
+    .goto 1418/0,-2454.03,-6512.62,40,0
     >>Kill |cRXP_ENEMY_Lesser Rock Elementals|r. Loot them for |cRXP_LOOT_Small Stone Shard|r
     >>Kill |cRXP_ENEMY_Rock Elementals|r, |cRXP_ENEMY_Lesser Rock Elementals|r, |cRXP_ENEMY_Greater Rock Elementals|r and |cRXP_ENEMY_Ambassador Infernus|r. Loot them for |cRXP_LOOT_Rock Elemental Shard|r
     .complete 710,1 --Small Stone Shard (10)
@@ -304,16 +280,10 @@ step
     .xp <28,1
 step
     #loop
-    .goto 1418/0,-3035.86,-7108.62,0
-    .goto 1418/0,-3035.86,-7108.62,40,0
-    .goto 1418/0,-3085.11,-7145.94,40,0
-    .goto 1418/0,-3225.90,-7177.11,40,0
-    .goto 1418/0,-3186.35,-7253.56,40,0
-    .goto 1418/0,-3179.39,-7312.76,40,0
-    .goto 1418/0,-3143.57,-7352.07,40,0
-    .goto 1418/0,-3118.94,-7276.78,40,0
-    .goto 1418/0,-3098.30,-7204.48,40,0
-    .goto 1418/0,-2951.78,-7140.30,40,0
+    .goto 1418/0,-2990.59,-7118.08,0
+    .goto 1418/0,-2990.59,-7118.08,40,0
+    .goto 1418/0,-3118.94,-7167.49,40,0
+    .goto 1418/0,-3156.75,-7285.90,40,0
     >>Kill |cRXP_ENEMY_Rock Elementals|r. Loot them for |cRXP_LOOT_Large Stone Slab|r
     .complete 711,1 --Large Stone Slab (3)
     .mob Rock Elemental
@@ -325,16 +295,9 @@ step
     .target Theldurin the Lost
 step
     #loop
-    .goto 1418/0,-3352.27,-7077.78,0
-    .goto 1418/0,-3352.27,-7077.78,40,0
-    .goto 1418/0,-3384.61,-7043.95,40,0
-    .goto 1418/0,-3384.11,-6983.42,40,0
+    .goto 1418/0,-3311.23,-7047.10,0
+    .goto 1418/0,-3311.23,-7047.10,40,0
     .goto 1418/0,-3348.04,-6985.58,40,0
-    .goto 1418/0,-3345.80,-6956.89,40,0
-    .goto 1418/0,-3314.46,-6956.06,40,0
-    .goto 1418/0,-3320.18,-7023.55,40,0
-    .goto 1418/0,-3255.75,-7048.59,40,0
-    .goto 1418/0,-3291.08,-7082.42,40,0
     >>Kill |cRXP_ENEMY_Stonevault Bashers|r, |cRXP_ENEMY_Stonevault Shamans|r, |cRXP_ENEMY_Stonevault Bonesnappers|r and |cRXP_ENEMY_Stonevault Seers|r. Loot them for |cRXP_LOOT_Indurium Flake|r
     .complete 1108,1 --Indurium Flake (10)
     .mob Stonevault Basher
@@ -357,16 +320,9 @@ step
     .xp <28,1
 step
     #loop
-    .goto 1418/0,-3008.25,-6847.44,0
-    .goto 1418/0,-3008.25,-6847.44,40,0
-    .goto 1418/0,-3013.97,-6934.17,40,0
-    .goto 1418/0,-3022.68,-6997.02,40,0
-    .goto 1418/0,-2885.12,-6987.07,40,0
-    .goto 1418/0,-2827.66,-6948.26,40,0
+    .goto 1418/0,-2971.93,-6902.49,0
+    .goto 1418/0,-2971.93,-6902.49,40,0
     .goto 1418/0,-2852.53,-6887.07,40,0
-    .goto 1418/0,-2940.84,-6911.61,40,0
-    .goto 1418/0,-2887.60,-6848.76,40,0
-    .goto 1418/0,-2910.99,-6793.04,40,0
     >>Kill |cRXP_ENEMY_Crag Coyotes|r, |cRXP_ENEMY_Feral Crag Coyotes|r, |cRXP_ENEMY_Elder Crag Coyotes|r and |cRXP_ENEMY_Rabid Crag Coyotes|r. Loot them for |cRXP_LOOT_Crag Coyote Fang|r
     .complete 2258,2 --Crag Coyote Fang (10)
     .mob Crag Coyote
@@ -374,15 +330,7 @@ step
     .mob Elder Crag Coyote
     .mob Rabid Crag Coyote
 step
-    #loop
-    .goto 1418/0,-2506.52,-6884.91,0
-    .goto 1418/0,-2506.52,-6884.91,40,0
-    .goto 1418/0,-2504.53,-6857.22,40,0
-    .goto 1418/0,-2477.66,-6862.53,40,0
-    .goto 1418/0,-2464.73,-6860.04,40,0
-    .goto 1418/0,-2453.04,-6886.24,40,0
-    .goto 1418/0,-2453.29,-6914.76,40,0
-    .goto 1418/0,-2481.40,-6912.77,40,0
+    .goto 1418/0,-2477.66,-6862.53
     >>Kill |cRXP_ENEMY_Starving Buzzards|r, |cRXP_ENEMY_Buzzards|r and |cRXP_ENEMY_Giant Buzzards|r. Loot them for |cRXP_LOOT_Buzzard Gizzard|r
     .complete 2258,1 --Buzzard Gizzard (5)
     .mob Starving Buzzard
@@ -469,49 +417,19 @@ step
     .isQuestTurnedIn 687 --any of: Theldurin the Lost
     .xp <30,1
 step
-    #loop
-    .goto 1418/0,-3435.35,-7248.59,0
-    .goto 1418/0,-3435.35,-7248.59,40,0
-    .goto 1418/0,-3473.41,-7262.02,40,0
-    .goto 1418/0,-3485.85,-7276.61,40,0
-    .goto 1418/0,-3473.41,-7283.08,40,0
-    .goto 1418/0,-3454.51,-7309.28,40,0
-    .goto 1418/0,-3461.47,-7335.82,40,0
-    .goto 1418/0,-3427.89,-7308.62,40,0
-    .goto 1418/0,-3387.34,-7308.29,40,0
-    .goto 1418/0,-3419.18,-7281.09,40,0
+    .goto 1418/0,-3419.18,-7281.09
     >>Kill |cRXP_ENEMY_Enraged Rock Elemental|r and loot |cRXP_LOOT_Singed Scroll Fragment|r
     .complete 692,3 --Singed Scroll Fragment (1)
     .mob Enraged Rock Elemental
     .isOnQuest 692
 step
-    #loop
-    .goto 1418/0,-3419.18,-7281.09,0
-    .goto 1418/0,-3419.18,-7281.09,40,0
-    .goto 1418/0,-3435.35,-7248.59,40,0
-    .goto 1418/0,-3473.41,-7262.02,40,0
-    .goto 1418/0,-3485.85,-7276.61,40,0
-    .goto 1418/0,-3473.41,-7283.08,40,0
-    .goto 1418/0,-3454.51,-7309.28,40,0
-    .goto 1418/0,-3461.47,-7335.82,40,0
-    .goto 1418/0,-3427.89,-7308.62,40,0
-    .goto 1418/0,-3387.34,-7308.29,40,0
+    .goto 1418/0,-3419.18,-7281.09
     >>Kill |cRXP_ENEMY_Enraged Rock Elemental|r and loot |cRXP_LOOT_Crumpled Scroll Fragment|r
     .complete 692,2 --Crumpled Scroll Fragment (1)
     .mob Enraged Rock Elemental
     .isOnQuest 692
 step
-    #loop
-    .goto 1418/0,-3419.18,-7281.09,0
-    .goto 1418/0,-3419.18,-7281.09,40,0
-    .goto 1418/0,-3435.35,-7248.59,40,0
-    .goto 1418/0,-3473.41,-7262.02,40,0
-    .goto 1418/0,-3485.85,-7276.61,40,0
-    .goto 1418/0,-3473.41,-7283.08,40,0
-    .goto 1418/0,-3454.51,-7309.28,40,0
-    .goto 1418/0,-3461.47,-7335.82,40,0
-    .goto 1418/0,-3427.89,-7308.62,40,0
-    .goto 1418/0,-3387.34,-7308.29,40,0
+    .goto 1418/0,-3419.18,-7281.09
     >>Kill |cRXP_ENEMY_Enraged Rock Elemental|r and loot |cRXP_LOOT_Torn Scroll Fragment|r
     .complete 692,1 --Torn Scroll Fragment (1)
     .mob Enraged Rock Elemental
@@ -540,14 +458,9 @@ step
     .mob Boss Tho'grun
 step
     #loop
-    .goto 1418/0,-2911.48,-6118.76,0
-    .goto 1418/0,-2911.48,-6118.76,40,0
-    .goto 1418/0,-2979.64,-6096.87,40,0
-    .goto 1418/0,-3019.69,-6061.88,40,0
-    .goto 1418/0,-3091.33,-6064.21,40,0
-    .goto 1418/0,-3099.29,-6138.33,40,0
-    .goto 1418/0,-3030.14,-6172.00,40,0
+    .goto 1418/0,-3013.72,-6142.64,0
     .goto 1418/0,-3013.72,-6142.64,40,0
+    .goto 1418/0,-3091.33,-6064.21,40,0
     >>Loot the |cRXP_PICK_Magenta Cap Clusters|r for |cRXP_LOOT_Magenta Fungus Cap|r
     .complete 2202,1 --Magenta Fungus Cap (12)
     .isOnQuest 2202
@@ -559,16 +472,9 @@ step
     .isQuestTurnedIn 711 --any of: Study of the Elements: Rock
 step
     #loop
-    .goto 1418/0,-2244.59,-7114.26,0
-    .goto 1418/0,-2244.59,-7114.26,40,0
+    .goto 1418/0,-2215.48,-7165.67,0
     .goto 1418/0,-2215.48,-7165.67,40,0
-    .goto 1418/0,-2181.40,-7214.76,40,0
-    .goto 1418/0,-2148.07,-7186.73,40,0
-    .goto 1418/0,-2114.99,-7219.23,40,0
-    .goto 1418/0,-2118.22,-7291.04,40,0
-    .goto 1418/0,-2150.81,-7252.40,40,0
-    .goto 1418/0,-2201.80,-7277.94,40,0
-    .goto 1418/0,-2251.80,-7218.74,40,0
+    .goto 1418/0,-2153.79,-7213.10,40,0
     >>Kill |cRXP_ENEMY_Greater Rock Elementals|r. Loot them for |cRXP_LOOT_Bracers of Rock Binding|r
     .complete 712,1 --Bracers of Rock Binding (5)
     .mob Greater Rock Elemental

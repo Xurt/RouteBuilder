@@ -44,14 +44,10 @@ step
     .target Kalaran Windblade
 step
     #loop
-    .goto 1427/0,-993.41,-6988.04,0
-    .goto 1427/0,-993.41,-6988.04,40,0
-    .goto 1427/0,-942.98,-7058.40,40,0
-    .goto 1427/0,-990.95,-7243.89,40,0
-    .goto 1427/0,-1017.50,-7213.54,40,0
-    .goto 1427/0,-1123.04,-7242.99,40,0
-    .goto 1427/0,-1113.00,-7218.60,40,0
+    .goto 1427/0,-1005.90,-7060.33,0
     .goto 1427/0,-1005.90,-7060.33,40,0
+    .goto 1427/0,-990.95,-7243.89,40,0
+    .goto 1427/0,-1113.00,-7218.60,40,0
     >>Kill |cRXP_ENEMY_Blazing Elementals|r, |cRXP_ENEMY_Inferno Elementals|r and |cRXP_ENEMY_Magma Elementals|r. Loot them for |cRXP_LOOT_Heart of Flame|r
     .complete 3442,1 --Heart of Flame (4)
     .mob Blazing Elemental
@@ -61,9 +57,7 @@ step
     #loop
     .goto 1427/0,-1138.44,-7014.22,0
     .goto 1427/0,-1138.44,-7014.22,40,0
-    .goto 1427/0,-1115.90,-6989.23,40,0
     .goto 1427/0,-1252.01,-7043.37,40,0
-    .goto 1427/0,-1152.27,-7022.70,40,0
     >>Kill |cRXP_ENEMY_Tempered War Golems|r, |cRXP_ENEMY_Heavy War Golems|r and |cRXP_ENEMY_Magma Elementals|r. Loot them for |cRXP_LOOT_Golem Oil|r
     .complete 3442,2 --Golem Oil (1)
     .mob Tempered War Golem
@@ -99,16 +93,11 @@ step
 step
     #label Drop4451x1
     #loop
-    .goto 1427/0,-1236.61,-6663.91,0
-    .goto 1427/0,-1236.61,-6663.91,40,0
-    .goto 1427/0,-1196.90,-6754.35,40,0
-    .goto 1427/0,-1090.02,-6749.59,40,0
-    .goto 1427/0,-1145.80,-6590.43,40,0
-    .goto 1427/0,-1251.34,-6535.39,40,0
-    .goto 1427/0,-1363.35,-6478.72,40,0
-    .goto 1427/0,-1303.77,-6600.69,40,0
-    .goto 1427/0,-1345.50,-6682.65,40,0
-    .goto 1427/0,-1418.68,-6763.57,40,0
+    .goto 1427/0,-1196.23,-6663.17,0
+    .goto 1427/0,-1196.23,-6663.17,40,0
+    .goto 1427/0,-1131.08,-6722.96,40,0
+    .goto 1427/0,-1385.44,-6746.02,40,0
+    .goto 1427/0,-1284.36,-6564.25,40,0
     >>Kill |cRXP_ENEMY_Dark Iron Taskmasters|r
     >>Kill |cRXP_ENEMY_Dark Iron Slavers|r
     >>Kill |cRXP_ENEMY_Dark Iron Geologists|r, |cRXP_ENEMY_Dark Iron Steamsmiths|r, |cRXP_ENEMY_Slave Workers|r and |cRXP_ENEMY_Dark Iron Slavers|r. Loot them for |cRXP_LOOT_Thorium Plated Dagger|r
@@ -133,10 +122,8 @@ step
     #loop
     .goto 1427/0,-1748.69,-6998.30,0
     .goto 1427/0,-1748.69,-6998.30,40,0
-    .goto 1427/0,-1743.33,-6981.49,40,0
-    .goto 1427/0,-1412.88,-6918.87,40,0
     .goto 1427/0,-1723.25,-7026.27,40,0
-    .goto 1427/0,-1731.73,-7012.43,40,0
+    .goto 1427/0,-1412.88,-6918.87,40,0
     >>Kill |cRXP_ENEMY_Dark Iron Geologists|r
     >>Open the |cRXP_PICK_Solid Chest|r. Loot it for |cRXP_LOOT_Silk Cloth|r
     .complete 4449,1 --Dark Iron Geologist slain (8)
@@ -185,11 +172,7 @@ step
     .turnin 3367 >>Turn in Suntara Stones
     .accept 3368 >>Accept Suntara Stones
 step
-    #loop
-    .goto 1427/0,-1964.22,-6346.92,0
-    .goto 1427/0,-1964.22,-6346.92,40,0
-    .goto 1427/0,-1926.96,-6340.83,40,0
-    .goto 1427/0,-1910.00,-6373.70,40,0
+    .goto 1427/0,-1926.96,-6340.83
     >>Kill |cRXP_ENEMY_Glassweb Spider|r and loot |cRXP_LOOT_Solid Crystal Leg Shaft|r
     .complete 4450,2 --Solid Crystal Leg Shaft (1)
     .mob Glassweb Spider
@@ -208,19 +191,13 @@ step
     #loop
     .goto 1427/0,-1228.36,-6836.01,0
     .goto 1427/0,-1228.36,-6836.01,40,0
-    .goto 1427/0,-1163.87,-6838.54,40,0
     .goto 1427/0,-1174.14,-6863.98,40,0
-    .goto 1427/0,-1281.91,-6868.74,40,0
     >>Kill |cRXP_ENEMY_Dark Iron Steamsmith|r and loot |cRXP_LOOT_Smithing Tuyere|r
     .complete 7728,1 --Smithing Tuyere (1)
     .mob Dark Iron Steamsmith
 step
     #label Drop4451x2
-    #loop
-    .goto 1427/0,-1433.63,-6932.55,0
-    .goto 1427/0,-1433.63,-6932.55,40,0
-    .goto 1427/0,-1481.38,-6973.01,40,0
-    .goto 1427/0,-1517.75,-6971.82,40,0
+    .goto 1427/0,-1494.55,-6962.75
     >>Kill |cRXP_ENEMY_Dark Iron Lookout|r and loot |cRXP_LOOT_Lookout's Spyglass|r
     .complete 7728,2 --Lookout's Spyglass (1)
     .mob Dark Iron Lookout
@@ -356,16 +333,10 @@ step
     .accept 7701 >>Accept WANTED: Overseer Maltorius
 step
     #loop
-    .goto 1427/0,-1290.83,-6520.37,0
-    .goto 1427/0,-1290.83,-6520.37,40,0
+    .goto 1427/0,-1317.38,-6469.64,0
     .goto 1427/0,-1317.38,-6469.64,40,0
-    .goto 1427/0,-1356.43,-6398.54,40,0
-    .goto 1427/0,-1427.16,-6448.07,40,0
-    .goto 1427/0,-1404.18,-6493.89,40,0
-    .goto 1427/0,-1464.20,-6535.09,40,0
-    .goto 1427/0,-1441.67,-6586.71,40,0
-    .goto 1427/0,-1474.69,-6656.18,40,0
-    .goto 1427/0,-1435.86,-6680.27,40,0
+    .goto 1427/0,-1448.36,-6486.45,40,0
+    .goto 1427/0,-1466.21,-6601.44,40,0
     >>Kill |cRXP_ENEMY_Incendosaurs|r
     .complete 7727,1 --Incendosaur slain (20)
     .mob Incendosaur
@@ -384,16 +355,10 @@ step
     .isQuestTurnedIn 3443 --any of: Forging the Shaft
 step
     #loop
-    .goto 1427/0,-885.64,-6613.04,0
-    .goto 1427/0,-885.64,-6613.04,40,0
-    .goto 1427/0,-805.54,-6639.96,40,0
-    .goto 1427/0,-761.36,-6674.17,40,0
+    .goto 1427/0,-847.71,-6643.68,0
+    .goto 1427/0,-847.71,-6643.68,40,0
     .goto 1427/0,-748.86,-6632.08,40,0
-    .goto 1427/0,-679.92,-6596.68,40,0
-    .goto 1427/0,-648.90,-6648.89,40,0
-    .goto 1427/0,-619.45,-6731.29,40,0
     .goto 1427/0,-714.28,-6752.12,40,0
-    .goto 1427/0,-844.58,-6711.66,40,0
     >>Kill |cRXP_ENEMY_Twilight Dark Shamans|r, |cRXP_ENEMY_Twilight Fire Guards|r, |cRXP_ENEMY_Twilight Geomancers|r and |cRXP_ENEMY_Twilight Idolaters|r. Loot them for |cRXP_LOOT_Prayer to Elune|r
     .complete 3378,1 --Prayer to Elune (1)
     .mob Twilight Dark Shaman
@@ -402,15 +367,9 @@ step
     .mob Twilight Idolater
 step
     #loop
-    .goto 1427/0,-761.36,-6674.17,0
-    .goto 1427/0,-761.36,-6674.17,40,0
-    .goto 1427/0,-844.58,-6711.66,40,0
-    .goto 1427/0,-885.64,-6613.04,40,0
-    .goto 1427/0,-805.54,-6639.96,40,0
+    .goto 1427/0,-748.86,-6632.08,0
     .goto 1427/0,-748.86,-6632.08,40,0
-    .goto 1427/0,-679.92,-6596.68,40,0
-    .goto 1427/0,-648.90,-6648.89,40,0
-    .goto 1427/0,-619.45,-6731.29,40,0
+    .goto 1427/0,-847.71,-6643.68,40,0
     .goto 1427/0,-714.28,-6752.12,40,0
     >>Kill |cRXP_ENEMY_Twilight Dark Shamans|r, |cRXP_ENEMY_Twilight Fire Guards|r, |cRXP_ENEMY_Twilight Geomancers|r and |cRXP_ENEMY_Twilight Idolaters|r. Loot them for |cRXP_LOOT_Symbol of Ragnaros|r
     .complete 3452,1 --Symbol of Ragnaros (1)
@@ -468,15 +427,9 @@ step
     .isOnQuest 3462
 step
     #loop
-    .goto 1427/0,-1042.94,-6692.17,0
-    .goto 1427/0,-1042.94,-6692.17,40,0
+    .goto 1427/0,-1015.05,-6707.20,0
     .goto 1427/0,-1015.05,-6707.20,40,0
-    .goto 1427/0,-980.91,-6751.82,40,0
-    .goto 1427/0,-951.01,-6765.80,40,0
     .goto 1427/0,-929.15,-6822.18,40,0
-    .goto 1427/0,-947.22,-6849.25,40,0
-    .goto 1427/0,-908.62,-6859.07,40,0
-    .goto 1427/0,-953.91,-6920.95,40,0
     .goto 1427/0,-982.47,-6940.73,40,0
     >>Kill |cRXP_ENEMY_Greater Lava Spiders|r
     .complete 7724,1 --Greater Lava Spider slain (20)
@@ -485,14 +438,8 @@ step
     #loop
     .goto 1427/0,-1048.07,-6782.32,0
     .goto 1427/0,-1048.07,-6782.32,40,0
-    .goto 1427/0,-1106.75,-6772.94,40,0
-    .goto 1427/0,-1176.82,-6813.55,40,0
-    .goto 1427/0,-1288.16,-6754.80,40,0
-    .goto 1427/0,-1386.33,-6687.26,40,0
-    .goto 1427/0,-1321.62,-6675.96,40,0
-    .goto 1427/0,-1252.46,-6715.68,40,0
     .goto 1427/0,-1212.29,-6757.03,40,0
-    .goto 1427/0,-1109.21,-6708.54,40,0
+    .goto 1427/0,-1359.33,-6665.40,40,0
     >>Kill |cRXP_ENEMY_Heavy War Golems|r
     .complete 7723,1 --Heavy War Golem slain (20)
     .mob Heavy War Golem

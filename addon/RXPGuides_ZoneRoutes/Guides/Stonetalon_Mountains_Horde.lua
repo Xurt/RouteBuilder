@@ -53,16 +53,10 @@ step
     .mob Deepmoss Venomspitter
 step
     #loop
-    .goto 1442/1,367.60,452.99,0
-    .goto 1442/1,367.60,452.99,40,0
+    .goto 1442/1,433.52,432.15,0
     .goto 1442/1,433.52,432.15,40,0
-    .goto 1442/1,498.96,429.87,40,0
-    .goto 1442/1,514.10,434.10,40,0
     .goto 1442/1,563.42,445.17,40,0
     .goto 1442/1,628.86,436.71,40,0
-    .goto 1442/1,619.09,445.17,40,0
-    .goto 1442/1,580.51,468.62,40,0
-    .goto 1442/1,576.12,481.97,40,0
     >>Kill |cRXP_ENEMY_Deepmoss Creepers|r
     .complete 6461,1 --Deepmoss Creeper slain (10)
     .mob Deepmoss Creeper
@@ -98,16 +92,10 @@ step
     .target Ziz Fizziks
 step
     #loop
-    .goto 1442/1,365.64,940.77,0
-    .goto 1442/1,365.64,940.77,40,0
-    .goto 1442/1,292.39,866.53,40,0
-    .goto 1442/1,267.49,754.84,40,0
-    .goto 1442/1,196.68,850.90,40,0
-    .goto 1442/1,162.99,917.65,40,0
-    .goto 1442/1,226.96,929.70,40,0
-    .goto 1442/1,207.42,983.11,40,0
-    .goto 1442/1,258.21,1052.46,40,0
-    .goto 1442/1,288.49,971.71,40,0
+    .goto 1442/1,315.83,911.47,0
+    .goto 1442/1,315.83,911.47,40,0
+    .goto 1442/1,261.63,948.59,40,0
+    .goto 1442/1,239.65,841.13,40,0
     >>Kill |cRXP_ENEMY_Deepmoss Venomspitters|r
     .complete 6461,2 --Deepmoss Venomspitter slain (7)
     .mob Deepmoss Venomspitter
@@ -119,11 +107,7 @@ step << Undead Warrior/Skyborne Warrior
     .money <1.5024
     .target Veenix
 step
-    #loop
-    .goto 1442/1,43.34,1234.81,0
-    .goto 1442/1,43.34,1234.81,40,0
-    .goto 1442/1,10.63,1234.49,40,0
-    .goto 1442/1,-30.39,1210.07,40,0
+    .goto 1442/1,10.63,1234.49
     >>Kill |cRXP_ENEMY_Venture Co. Operator|r and loot |cRXP_LOOT_Super Reaper 6000 Blueprints|r
     .complete 1093,1 --Super Reaper 6000 Blueprints (1)
     .mob Venture Co. Operator
@@ -167,16 +151,9 @@ step
     .complete 6421,2 --Investigate Cave in Boulderslide Ravine
 step
     #loop
-    .goto 1442/1,441.34,-4.19,0
-    .goto 1442/1,441.34,-4.19,40,0
-    .goto 1442/1,419.36,-53.68,40,0
-    .goto 1442/1,384.20,-83.64,40,0
-    .goto 1442/1,377.36,-123.69,40,0
-    .goto 1442/1,271.88,-93.74,40,0
-    .goto 1442/1,246.49,-49.13,40,0
-    .goto 1442/1,301.67,-32.19,40,0
-    .goto 1442/1,333.90,-62.48,40,0
-    .goto 1442/1,354.90,-11.03,40,0
+    .goto 1442/1,378.34,-36.10,0
+    .goto 1442/1,378.34,-36.10,40,0
+    .goto 1442/1,346.11,-72.25,40,0
     >>Pick up |cRXP_PICK_Resonite Crystal|r from the ground
     .complete 6421,1 --Resonite Crystal (10)
 step << Warlock
@@ -342,16 +319,9 @@ step
     .accept 6284 >>Accept Arachnophobia
 step
     #loop
-    .goto 1442/1,579.53,546.12,0
-    .goto 1442/1,579.53,546.12,40,0
-    .goto 1442/1,589.30,578.68,40,0
-    .goto 1442/1,657.67,591.70,40,0
-    .goto 1442/1,686.97,578.68,40,0
-    .goto 1442/1,706.50,513.55,40,0
-    .goto 1442/1,686.97,487.50,40,0
+    .goto 1442/1,677.20,507.04,0
     .goto 1442/1,677.20,507.04,40,0
     .goto 1442/1,667.43,552.63,40,0
-    .goto 1442/1,628.37,552.63,40,0
     >>Kill |cRXP_ENEMY_Besseleth|r and loot |cRXP_LOOT_Besseleth's Fang|r
     .complete 6284,1 --Besseleth's Fang (1)
     .mob Besseleth
@@ -364,9 +334,7 @@ step
     #loop
     .goto 1442/1,717.73,1528.85,0
     .goto 1442/1,717.73,1528.85,40,0
-    .goto 1442/1,757.29,1577.37,40,0
-    .goto 1442/1,794.89,1640.22,40,0
-    .goto 1442/1,773.40,1726.18,40,0
+    .goto 1442/1,782.68,1703.06,40,0
     >>Pick up |cRXP_PICK_Gaea Seed|r from the ground
     .complete 6301,1 --Gaea Seed (10)
 step
@@ -427,31 +395,18 @@ step
     .target Tsunaman
 step
     #loop
-    .goto 1442/1,1619.68,2517.12,0
-    .goto 1442/1,1619.68,2517.12,40,0
+    .goto 1442/1,1677.79,2541.87,0
     .goto 1442/1,1677.79,2541.87,40,0
-    .goto 1442/1,1730.53,2542.52,40,0
-    .goto 1442/1,1736.39,2603.42,40,0
-    .goto 1442/1,1672.91,2627.19,40,0
-    .goto 1442/1,1631.89,2655.52,40,0
-    .goto 1442/1,1569.87,2657.47,40,0
-    .goto 1442/1,1559.62,2587.13,40,0
-    .goto 1442/1,1620.66,2593.32,40,0
+    .goto 1442/1,1562.55,2619.05,40,0
     >>Kill |cRXP_ENEMY_Twilight Runners|r. Loot them for |cRXP_LOOT_Twilight Whisker|r
     .complete 1058,2 --Twilight Whisker (5)
     .mob Twilight Runner
 step
     #loop
-    .goto 1442/1,1522.99,2557.18,0
-    .goto 1442/1,1522.99,2557.18,40,0
+    .goto 1442/1,1627.98,2486.52,0
     .goto 1442/1,1627.98,2486.52,40,0
-    .goto 1442/1,1515.18,2419.11,40,0
-    .goto 1442/1,1440.46,2428.88,40,0
-    .goto 1442/1,1417.02,2488.80,40,0
-    .goto 1442/1,1379.42,2544.80,40,0
-    .goto 1442/1,1465.86,2490.42,40,0
     .goto 1442/1,1496.62,2506.70,40,0
-    .goto 1442/1,1492.72,2574.43,40,0
+    .goto 1442/1,1429.72,2513.54,40,0
     >>Kill |cRXP_ENEMY_Son of Cenarius|r
     >>Kill |cRXP_ENEMY_Daughter of Cenarius|r
     >>Kill |cRXP_ENEMY_Cenarion Botanists|r
@@ -468,27 +423,17 @@ step
     .mob Nal'taszar
 step
     #loop
-    .goto 1442/1,1501.99,2319.47,0
-    .goto 1442/1,1501.99,2319.47,40,0
+    .goto 1442/1,1504.44,2262.49,0
     .goto 1442/1,1504.44,2262.49,40,0
     .goto 1442/1,1431.67,2269.98,40,0
-    .goto 1442/1,1418.98,2253.37,40,0
-    .goto 1442/1,1383.82,2301.89,40,0
     >>Kill |cRXP_ENEMY_Sap Beast|r and loot |cRXP_LOOT_Stonetalon Sap|r
     .complete 1058,1 --Stonetalon Sap (1)
     .mob Sap Beast
 step
     #loop
-    .goto 1442/1,1290.06,2518.10,0
-    .goto 1442/1,1290.06,2518.10,40,0
-    .goto 1442/1,1239.76,2547.08,40,0
-    .goto 1442/1,1286.64,2645.42,40,0
-    .goto 1442/1,1257.83,2721.29,40,0
-    .goto 1442/1,1331.08,2724.55,40,0
-    .goto 1442/1,1318.87,2677.01,40,0
-    .goto 1442/1,1350.61,2654.86,40,0
-    .goto 1442/1,1312.03,2610.90,40,0
+    .goto 1442/1,1289.08,2558.48,0
     .goto 1442/1,1289.08,2558.48,40,0
+    .goto 1442/1,1318.87,2677.01,40,0
     >>Kill |cRXP_ENEMY_Antlered Coursers|r and |cRXP_ENEMY_Great Coursers|r. Loot them for |cRXP_LOOT_Courser Eye|r
     .complete 1058,3 --Courser Eye (30)
     .mob Antlered Courser
@@ -503,15 +448,9 @@ step
     .mob Bloodfury Ambusher
 step
     #loop
-    .goto 1442/1,1691.47,1003.29,0
-    .goto 1442/1,1691.47,1003.29,40,0
-    .goto 1442/1,1735.42,987.99,40,0
-    .goto 1442/1,1781.81,901.70,40,0
-    .goto 1442/1,1798.41,877.60,40,0
-    .goto 1442/1,1741.77,919.93,40,0
+    .goto 1442/1,1715.40,949.24,0
     .goto 1442/1,1715.40,949.24,40,0
-    .goto 1442/1,1679.75,948.91,40,0
-    .goto 1442/1,1655.33,941.43,40,0
+    .goto 1442/1,1781.81,901.70,40,0
     >>Kill |cRXP_ENEMY_Bloodfury Harpies|r
     >>Kill |cRXP_ENEMY_Bloodfury Ambushers|r
     .complete 6282,1 --Bloodfury Harpy slain (7)
@@ -521,16 +460,10 @@ step
 step
     #label Along11
     #loop
-    .goto 1442/1,1777.90,719.02,0
-    .goto 1442/1,1777.90,719.02,40,0
-    .goto 1442/1,1805.74,681.90,40,0
+    .goto 1442/1,1794.51,658.78,0
+    .goto 1442/1,1794.51,658.78,40,0
     .goto 1442/1,1815.02,627.20,40,0
-    .goto 1442/1,1819.90,600.17,40,0
-    .goto 1442/1,1769.11,650.97,40,0
-    .goto 1442/1,1741.77,672.78,40,0
-    .goto 1442/1,1550.83,612.22,40,0
     .goto 1442/1,1543.50,665.95,40,0
-    .goto 1442/1,1551.80,701.44,40,0
     >>Kill |cRXP_ENEMY_Bloodfury Slayers|r
     >>Kill |cRXP_ENEMY_Bloodfury Roguefeathers|r
     .complete 6282,3 --Bloodfury Slayer slain (7)
@@ -575,11 +508,9 @@ step
     .mob Bloodfury Ripper
 step
     #loop
-    .goto 1442/1,1785.23,519.09,0
-    .goto 1442/1,1785.23,519.09,40,0
+    .goto 1442/1,1726.14,512.90,0
     .goto 1442/1,1726.14,512.90,40,0
     .goto 1442/1,1622.61,478.39,40,0
-    .goto 1442/1,1651.91,523.00,40,0
     >>Kill |cRXP_ENEMY_Rogue Flame Spirits|r, |cRXP_ENEMY_Burning Ravagers|r and |cRXP_ENEMY_Burning Destroyers|r. Loot them for |cRXP_LOOT_Incendrites|r
     .complete 6393,1 --Incendrites (10)
     .mob Rogue Flame Spirit
@@ -601,31 +532,19 @@ step
 step
     #label Along18
     #loop
-    .goto 1442/1,1487.83,792.61,0
-    .goto 1442/1,1487.83,792.61,40,0
-    .goto 1442/1,1526.41,841.46,40,0
-    .goto 1442/1,1602.10,734.33,40,0
-    .goto 1442/1,1562.06,666.92,40,0
-    .goto 1442/1,1602.10,609.61,40,0
-    .goto 1442/1,1600.15,541.23,40,0
-    .goto 1442/1,1444.86,572.49,40,0
-    .goto 1442/1,1493.20,637.29,40,0
-    .goto 1442/1,1484.90,703.72,40,0
+    .goto 1442/1,1499.06,763.96,0
+    .goto 1442/1,1499.06,763.96,40,0
+    .goto 1442/1,1495.16,627.20,40,0
+    .goto 1442/1,1604.54,671.16,40,0
     >>Click the |cRXP_PICK_Gaea Dirt Mound|r
     .complete 6381,1 --Gaea seed planted
     .isOnQuest 6381
 step
     #loop
-    .goto 1442/1,1514.20,749.31,0
-    .goto 1442/1,1514.20,749.31,40,0
-    .goto 1442/1,1522.99,857.74,40,0
-    .goto 1442/1,1560.59,936.87,40,0
-    .goto 1442/1,1628.96,959.99,40,0
-    .goto 1442/1,1730.05,894.21,40,0
-    .goto 1442/1,1646.54,818.01,40,0
+    .goto 1442/1,1685.61,750.93,0
     .goto 1442/1,1685.61,750.93,40,0
-    .goto 1442/1,1742.25,790.66,40,0
-    .goto 1442/1,1741.77,672.78,40,0
+    .goto 1442/1,1642.15,826.81,40,0
+    .goto 1442/1,1524.46,858.39,40,0
     >>Kill |cRXP_ENEMY_Bloodfury Harpies|r, |cRXP_ENEMY_Bloodfury Roguefeathers|r, |cRXP_ENEMY_Bloodfury Slayers|r and |cRXP_ENEMY_Bloodfury Ambushers|r. Loot them for |cRXP_LOOT_Glittering Sunstone|r
     .complete 86576,1 --Glittering Sunstone (15)
     .mob Bloodfury Harpy

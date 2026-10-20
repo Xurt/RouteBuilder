@@ -99,14 +99,9 @@ step
     .use 255155
 step
     #loop
-    .goto 1436/0,1017.12,-9894.20,0
-    .goto 1436/0,1017.12,-9894.20,40,0
-    .goto 1436/0,1036.37,-9889.77,40,0
-    .goto 1436/0,1005.22,-9823.50,40,0
+    .goto 1436/0,1007.32,-9862.70,0
+    .goto 1436/0,1007.32,-9862.70,40,0
     .goto 1436/0,977.92,-9788.27,40,0
-    .goto 1436/0,949.57,-9825.83,40,0
-    .goto 1436/0,980.02,-9843.57,40,0
-    .goto 1436/0,1005.57,-9884.87,40,0
     >>Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Harvest Watchers|r, |cRXP_ENEMY_Harvest Reapers|r and |cRXP_ENEMY_Rusty Harvest Golems|r. Loot them for |cRXP_LOOT_Okra|r
     .complete 38,4 --Okra (3)
     .mob Harvest Golem
@@ -115,11 +110,7 @@ step
     .mob Rusty Harvest Golem
 step
     #label Drop136x1
-    #loop
-    .goto 1436/0,884.12,-10052.63,0
-    .goto 1436/0,884.12,-10052.63,40,0
-    .goto 1436/0,881.67,-10084.37,40,0
-    .goto 1436/0,817.62,-10049.60,40,0
+    .goto 1436/0,884.12,-10052.63
     >>Kill |cRXP_ENEMY_Greater Fleshrippers|r, |cRXP_ENEMY_Young Fleshrippers|r, |cRXP_ENEMY_Vultros|r and |cRXP_ENEMY_Fleshrippers|r. Loot them for |cRXP_LOOT_Stringy Vulture Meat|r
     .complete 38,1 --Stringy Vulture Meat (3)
     .mob Greater Fleshripper
@@ -155,15 +146,11 @@ step
 step
     #label Drop136x2
     #loop
-    .goto 1436/0,953.42,-10545.43,0
-    .goto 1436/0,953.42,-10545.43,40,0
-    .goto 1436/0,884.82,-10512.30,40,0
-    .goto 1436/0,871.87,-10448.83,40,0
-    .goto 1436/0,925.42,-10392.13,40,0
-    .goto 1436/0,1083.97,-10420.13,40,0
-    .goto 1436/0,1120.37,-10384.67,40,0
+    .goto 1436/0,1163.07,-10477.30,0
+    .goto 1436/0,1163.07,-10477.30,40,0
+    .goto 1436/0,913.52,-10461.20,40,0
+    .goto 1436/0,948.87,-10418.50,40,0
     .goto 1436/0,1172.17,-10330.07,40,0
-    .goto 1436/0,1186.17,-10447.67,40,0
     .goto 1436/0,1326.17,-10627.57,40,0
     >>Kill |cRXP_ENEMY_Goretusks|r, |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Goretusk Liver|r
     >>Kill |cRXP_ENEMY_Goretusks|r and |cRXP_ENEMY_Young Goretusks|r. Loot them for |cRXP_LOOT_Goretusk Snout|r
@@ -191,16 +178,9 @@ step
     .use 255155
 step
     #loop
-    .goto 1436/0,1146.97,-9661.33,0
-    .goto 1436/0,1146.97,-9661.33,40,0
-    .goto 1436/0,1172.52,-9623.77,40,0
-    .goto 1436/0,1157.12,-9606.73,40,0
-    .goto 1436/0,1070.67,-9587.13,40,0
-    .goto 1436/0,1066.82,-9570.57,40,0
-    .goto 1436/0,1040.22,-9605.57,40,0
-    .goto 1436/0,1046.87,-9623.77,40,0
-    .goto 1436/0,1081.17,-9622.37,40,0
-    .goto 1436/0,1122.82,-9623.53,40,0
+    .goto 1436/0,1156.07,-9647.57,0
+    .goto 1436/0,1156.07,-9647.57,40,0
+    .goto 1436/0,1066.47,-9601.37,40,0
     >>Kill |cRXP_ENEMY_Murloc Tidehunters|r, |cRXP_ENEMY_Murloc Oracles|r, |cRXP_ENEMY_Murloc Minor Oracles|r and |cRXP_ENEMY_Murloc Netters|r. Loot them for |cRXP_LOOT_Murloc Eye|r
     .complete 38,2 --Murloc Eye (3)
     .mob Murloc Tidehunter
@@ -210,16 +190,10 @@ step
 step
     #label Drop136x3
     #loop
-    .goto 1436/0,977.92,-9788.27,0
-    .goto 1436/0,977.92,-9788.27,40,0
-    .goto 1436/0,949.57,-9825.83,40,0
+    .goto 1436/0,980.02,-9843.57,0
     .goto 1436/0,980.02,-9843.57,40,0
-    .goto 1436/0,1080.47,-9973.30,40,0
-    .goto 1436/0,1113.02,-9997.10,40,0
-    .goto 1436/0,1146.97,-9983.10,40,0
-    .goto 1436/0,1162.02,-9939.23,40,0
-    .goto 1436/0,1036.37,-9889.77,40,0
-    .goto 1436/0,1005.22,-9823.50,40,0
+    .goto 1436/0,1018.52,-9868.53,40,0
+    .goto 1436/0,1113.72,-9968.63,40,0
     >>Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Harvest Watchers|r, |cRXP_ENEMY_Harvest Reapers|r and |cRXP_ENEMY_Rusty Harvest Golems|r. Loot them for |cRXP_LOOT_Golem Isospring|r
     .complete 92911,1 --Golem Isospring (8)
     .mob Harvest Golem
@@ -331,11 +305,8 @@ step
     #loop
     .goto 1436/0,1763.32,-10471.00,0
     .goto 1436/0,1763.32,-10471.00,40,0
-    .goto 1436/0,1810.57,-10474.50,40,0
     .goto 1436/0,1842.07,-10488.73,40,0
     .goto 1436/0,1878.82,-10248.40,40,0
-    .goto 1436/0,1864.12,-10228.80,40,0
-    .goto 1436/0,1846.97,-10244.43,40,0
     >>Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Harvest Watchers|r and |cRXP_ENEMY_Harvest Reapers|r. Loot them for |cRXP_LOOT_Harvester Gyrostabilizer|r
     .complete 92909,2 --Harvester Gyrostabilizer (5)
     .mob Harvest Golem
@@ -344,15 +315,10 @@ step
 step
     #label Drop92910x4
     #loop
-    .goto 1436/0,1188.62,-10155.77,0
-    .goto 1436/0,1188.62,-10155.77,40,0
-    .goto 1436/0,1081.52,-10186.33,40,0
-    .goto 1436/0,980.02,-9843.57,40,0
-    .goto 1436/0,1036.37,-9889.77,40,0
-    .goto 1436/0,1207.17,-9907.03,40,0
-    .goto 1436/0,1290.12,-9849.87,40,0
-    .goto 1436/0,1214.87,-9980.77,40,0
-    .goto 1436/0,1146.97,-9983.10,40,0
+    .goto 1436/0,1263.52,-9926.40,0
+    .goto 1436/0,1263.52,-9926.40,40,0
+    .goto 1436/0,1007.32,-9862.70,40,0
+    .goto 1436/0,1113.72,-9968.63,40,0
     .goto 1436/0,1126.32,-10122.87,40,0
     >>Open the |cRXP_PICK_Furlbrow's Wardrobe|r. Loot it for |cRXP_LOOT_Furlbrow's Pocket Watch|r
     >>Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Harvest Watchers|r, |cRXP_ENEMY_Harvest Reapers|r and |cRXP_ENEMY_Rusty Harvest Golems|r. Loot them for |cRXP_LOOT_Golem Isospring|r
@@ -371,16 +337,10 @@ step
 step
     #label Drop136x4
     #loop
-    .goto 1436/0,1050.02,-9814.87,0
-    .goto 1436/0,1050.02,-9814.87,40,0
-    .goto 1436/0,1011.52,-9855.23,40,0
-    .goto 1436/0,948.52,-9839.83,40,0
-    .goto 1436/0,970.57,-9771.93,40,0
-    .goto 1436/0,1037.07,-9702.17,40,0
-    .goto 1436/0,1046.87,-9623.77,40,0
-    .goto 1436/0,1066.82,-9570.57,40,0
-    .goto 1436/0,1122.82,-9623.53,40,0
-    .goto 1436/0,1172.52,-9623.77,40,0
+    .goto 1436/0,1008.37,-9838.90,0
+    .goto 1436/0,1008.37,-9838.90,40,0
+    .goto 1436/0,1024.47,-9702.40,40,0
+    .goto 1436/0,1066.47,-9608.83,40,0
     >>Kill |cRXP_ENEMY_Riverpaw Taskmasters|r, |cRXP_ENEMY_Riverpaw Gnolls|r, |cRXP_ENEMY_Riverpaw Mongrels|r and |cRXP_ENEMY_Riverpaw Brutes|r. Loot them for |cRXP_LOOT_Gnoll Paw|r
     >>Kill |cRXP_ENEMY_Murloc Coastrunners|r, |cRXP_ENEMY_Murloc Tidehunters|r, |cRXP_ENEMY_Murloc Warriors|r and |cRXP_ENEMY_Murloc Minor Oracles|r. Loot them for |cRXP_LOOT_Longshore Murloc Gill|r
     >>Loot the |cRXP_PICK_Sack of Oats|r for |cRXP_LOOT_Handful of Oats|r
@@ -427,16 +387,9 @@ step
 step
     #label Drop92910x5
     #loop
-    .goto 1436/0,1651.32,-10550.57,0
-    .goto 1436/0,1651.32,-10550.57,40,0
-    .goto 1436/0,1686.67,-10516.27,40,0
-    .goto 1436/0,1751.77,-10586.50,40,0
-    .goto 1436/0,1716.42,-10619.40,40,0
-    .goto 1436/0,1684.92,-10648.57,40,0
-    .goto 1436/0,1652.02,-10678.90,40,0
-    .goto 1436/0,1590.07,-10617.77,40,0
-    .goto 1436/0,1646.77,-10615.43,40,0
-    .goto 1436/0,1681.77,-10585.10,40,0
+    .goto 1436/0,1706.27,-10550.80,0
+    .goto 1436/0,1706.27,-10550.80,40,0
+    .goto 1436/0,1620.52,-10648.33,40,0
     >>Kill |cRXP_ENEMY_Harvest Watchers|r
     .complete 9,1 --Harvest Watcher slain (20)
     .mob Harvest Watcher
@@ -447,13 +400,9 @@ step
     .target Farmer Saldean
 step
     #loop
-    .goto 1436/0,1217.67,-10491.77,0
-    .goto 1436/0,1217.67,-10491.77,40,0
+    .goto 1436/0,1243.22,-10501.80,0
     .goto 1436/0,1243.22,-10501.80,40,0
-    .goto 1436/0,1317.07,-10513.00,40,0
-    .goto 1436/0,1366.42,-10477.53,40,0
-    .goto 1436/0,1346.12,-10411.73,40,0
-    .goto 1436/0,1318.12,-10455.60,40,0
+    .goto 1436/0,1330.72,-10490.13,40,0
     >>Kill |cRXP_ENEMY_Defias Trappers|r
     .complete 12,1 --Defias Trapper slain (15)
     .mob Defias Trapper
@@ -465,31 +414,19 @@ step
 step
     #label Along35
     #loop
-    .goto 1436/0,1431.87,-10027.67,0
-    .goto 1436/0,1431.87,-10027.67,40,0
-    .goto 1436/0,1470.37,-10001.30,40,0
-    .goto 1436/0,1473.87,-9944.60,40,0
-    .goto 1436/0,1458.12,-9902.60,40,0
-    .goto 1436/0,1423.47,-9889.77,40,0
-    .goto 1436/0,1423.12,-9821.40,40,0
-    .goto 1436/0,1386.02,-9856.40,40,0
-    .goto 1436/0,1263.52,-9830.03,40,0
-    .goto 1436/0,1321.97,-9863.40,40,0
+    .goto 1436/0,1451.12,-9998.27,0
+    .goto 1436/0,1451.12,-9998.27,40,0
+    .goto 1436/0,1415.77,-9878.33,40,0
+    .goto 1436/0,1287.32,-9847.77,40,0
     >>Kill |cRXP_ENEMY_Defias Smugglers|r
     .complete 12,2 --Defias Smuggler slain (15)
     .mob Defias Smuggler
 step
     #loop
-    .goto 1436/0,1407.02,-10291.10,0
-    .goto 1436/0,1407.02,-10291.10,40,0
-    .goto 1436/0,1394.77,-10326.10,40,0
-    .goto 1436/0,1366.42,-10477.53,40,0
-    .goto 1436/0,1317.07,-10513.00,40,0
-    .goto 1436/0,1243.22,-10501.80,40,0
-    .goto 1436/0,1212.07,-10488.27,40,0
-    .goto 1436/0,1283.47,-10483.37,40,0
-    .goto 1436/0,1317.77,-10452.80,40,0
-    .goto 1436/0,1346.12,-10411.73,40,0
+    .goto 1436/0,1402.82,-10311.40,0
+    .goto 1436/0,1402.82,-10311.40,40,0
+    .goto 1436/0,1328.62,-10487.57,40,0
+    .goto 1436/0,1217.67,-10491.77,40,0
     >>Kill |cRXP_ENEMY_Defias Smugglers|r, |cRXP_ENEMY_Defias Pathstalkers|r, |cRXP_ENEMY_Defias Highwaymans|r and |cRXP_ENEMY_Defias Knuckledusters|r. Loot them for |cRXP_LOOT_Red Leather Bandana|r
     .complete 153,1 --Red Leather Bandana (15)
     .mob Defias Smuggler
@@ -501,10 +438,6 @@ step
     .goto 1436/0,1448.67,-9939.47,0
     .goto 1436/0,1448.67,-9939.47,40,0
     .goto 1436/0,1430.47,-9877.40,40,0
-    .goto 1436/0,1401.42,-9852.67,40,0
-    .goto 1436/0,1404.22,-9826.77,40,0
-    .goto 1436/0,1430.12,-9830.73,40,0
-    .goto 1436/0,1454.97,-9866.43,40,0
     >>Kill |cRXP_ENEMY_Kobold Diggers|r
     .complete 92745,1 --Kobold Digger slain (4)
     .mob Kobold Digger
@@ -574,16 +507,9 @@ step << Shaman
     .isQuestComplete 94502
 step
     #loop
-    .goto 1436/0,1460.57,-10933.70,0
-    .goto 1436/0,1460.57,-10933.70,40,0
-    .goto 1436/0,1494.87,-10960.77,40,0
-    .goto 1436/0,1563.82,-11029.60,40,0
-    .goto 1436/0,1538.27,-11045.47,40,0
-    .goto 1436/0,1475.27,-11015.60,40,0
-    .goto 1436/0,1424.17,-11041.97,40,0
-    .goto 1436/0,1406.32,-11059.47,40,0
-    .goto 1436/0,1413.67,-11016.77,40,0
-    .goto 1436/0,1442.37,-10973.60,40,0
+    .goto 1436/0,1463.72,-10979.90,0
+    .goto 1436/0,1463.72,-10979.90,40,0
+    .goto 1436/0,1548.42,-11024.70,40,0
     >>Kill |cRXP_ENEMY_Defias Looters|r
     .complete 13,2 --Defias Looter slain (15)
     .mob Defias Looter
@@ -637,7 +563,6 @@ step
     .goto 1436/0,930.67,-10363.90,40,0
     .goto 1436/0,834.07,-10568.07,40,0
     .goto 1436/0,627.57,-11086.53,40,0
-    .goto 1436/0,761.62,-11136.23,40,0
     .goto 1436/0,760.22,-10999.27,40,0
     >>Pick up |cRXP_PICK_Peacebloom|r from the ground
     .complete 92109,2 --Peacebloom (5)
@@ -649,16 +574,12 @@ step
 step
     #label Drop92910x6
     #loop
-    .goto 1436/0,907.92,-10578.10,0
-    .goto 1436/0,907.92,-10578.10,40,0
-    .goto 1436/0,1136.82,-10451.17,40,0
-    .goto 1436/0,1171.12,-10233.00,40,0
-    .goto 1436/0,1240.77,-10080.63,40,0
-    .goto 1436/0,1088.52,-10088.10,40,0
-    .goto 1436/0,1022.72,-10246.30,40,0
-    .goto 1436/0,817.62,-10049.60,40,0
-    .goto 1436/0,805.72,-10291.80,40,0
-    .goto 1436/0,948.87,-10418.50,40,0
+    .goto 1436/0,913.52,-10461.20,0
+    .goto 1436/0,913.52,-10461.20,40,0
+    .goto 1436/0,1130.87,-10354.57,40,0
+    .goto 1436/0,1011.52,-10225.30,40,0
+    .goto 1436/0,1126.32,-10122.87,40,0
+    .goto 1436/0,884.12,-10052.63,40,0
     >>Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Defias Smugglers|r, |cRXP_ENEMY_Riverpaw Taskmasters|r and |cRXP_ENEMY_Harvest Watchers|r. Loot them for |cRXP_LOOT_Silverleaf|r. It can also be picked up from |cRXP_PICK_Silverleaf|r on the ground
     >>Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Harvest Watchers|r, |cRXP_ENEMY_Harvest Reapers|r and |cRXP_ENEMY_Rusty Harvest Golems|r. Loot them for |cRXP_LOOT_Flask of Oil|r
     .complete 92109,3 --Silverleaf (5)
@@ -672,16 +593,9 @@ step
 step
     #label Drop136x5
     #loop
-    .goto 1436/0,1146.97,-9661.33,0
-    .goto 1436/0,1146.97,-9661.33,40,0
-    .goto 1436/0,1172.52,-9623.77,40,0
-    .goto 1436/0,1157.12,-9606.73,40,0
-    .goto 1436/0,1070.67,-9587.13,40,0
-    .goto 1436/0,1066.82,-9570.57,40,0
-    .goto 1436/0,1040.22,-9605.57,40,0
-    .goto 1436/0,1046.87,-9623.77,40,0
-    .goto 1436/0,1081.17,-9622.37,40,0
-    .goto 1436/0,1122.82,-9623.53,40,0
+    .goto 1436/0,1156.07,-9647.57,0
+    .goto 1436/0,1156.07,-9647.57,40,0
+    .goto 1436/0,1066.47,-9601.37,40,0
     >>Kill |cRXP_ENEMY_Murloc Tidehunters|r, |cRXP_ENEMY_Murloc Oracles|r, |cRXP_ENEMY_Murloc Minor Oracles|r and |cRXP_ENEMY_Murloc Netters|r. Loot them for |cRXP_LOOT_Murloc Eye|r
     .complete 92110,1 --Murloc Eye (3)
     .mob Murloc Tidehunter
@@ -710,32 +624,18 @@ step
 step
     #label Along56
     #loop
-    .goto 1436/0,1495.57,-11052.00,0
-    .goto 1436/0,1495.57,-11052.00,40,0
-    .goto 1436/0,1419.97,-11019.10,40,0
-    .goto 1436/0,1397.57,-10971.50,40,0
-    .goto 1436/0,1461.62,-10971.50,40,0
-    .goto 1436/0,1466.17,-11001.13,40,0
-    .goto 1436/0,1490.67,-10989.00,40,0
-    .goto 1436/0,1500.82,-11023.53,40,0
+    .goto 1436/0,1526.37,-11013.97,0
     .goto 1436/0,1526.37,-11013.97,40,0
-    .goto 1436/0,1563.82,-11062.27,40,0
+    .goto 1436/0,1470.72,-10991.33,40,0
     >>Kill |cRXP_ENEMY_Defias Pillagers|r
     .complete 13,1 --Defias Pillager slain (15)
     .mob Defias Pillager
     .isOnQuest 13
 step
     #loop
-    .goto 1436/0,1497.67,-10991.33,0
-    .goto 1436/0,1497.67,-10991.33,40,0
-    .goto 1436/0,1494.17,-10963.33,40,0
-    .goto 1436/0,1553.67,-10970.33,40,0
+    .goto 1436/0,1529.17,-11003.00,0
     .goto 1436/0,1529.17,-11003.00,40,0
-    .goto 1436/0,1536.17,-11024.00,40,0
-    .goto 1436/0,1546.67,-11056.67,40,0
-    .goto 1436/0,1455.67,-11052.00,40,0
     .goto 1436/0,1427.67,-11038.00,40,0
-    .goto 1436/0,1462.67,-10989.00,40,0
     >>Loot the |cRXP_PICK_Suspicious Crates|r for |cRXP_LOOT_Suspicious Industrial Supplies|r
     .complete 92747,1 --Suspicious Industrial Supplies (8)
 step
@@ -753,16 +653,9 @@ step
 step
     #label Drop136x6
     #loop
-    .goto 1436/0,1659.02,-10726.50,0
-    .goto 1436/0,1659.02,-10726.50,40,0
-    .goto 1436/0,1718.52,-10753.80,40,0
-    .goto 1436/0,1744.77,-10694.07,40,0
-    .goto 1436/0,1787.82,-10654.87,40,0
-    .goto 1436/0,1716.42,-10619.40,40,0
-    .goto 1436/0,1681.77,-10585.10,40,0
-    .goto 1436/0,1595.32,-10556.40,40,0
-    .goto 1436/0,1590.07,-10617.77,40,0
-    .goto 1436/0,1673.02,-10666.77,40,0
+    .goto 1436/0,1646.77,-10615.43,0
+    .goto 1436/0,1646.77,-10615.43,40,0
+    .goto 1436/0,1755.27,-10676.57,40,0
     >>Kill |cRXP_ENEMY_Harvest Golems|r, |cRXP_ENEMY_Harvest Watchers|r, |cRXP_ENEMY_Harvest Reapers|r and |cRXP_ENEMY_Murloc Hunters|r. Loot them for |cRXP_LOOT_Copper Modulator|r. It can also be picked up from |cRXP_PICK_Box of Assorted Parts|r on the ground
     .complete 92911,2 --Copper Modulator (4)
     .mob Harvest Golem
@@ -772,14 +665,9 @@ step
     .isOnQuest 92911
 step
     #loop
-    .goto 1436/0,1957.22,-10558.50,0
-    .goto 1436/0,1957.22,-10558.50,40,0
+    .goto 1436/0,1978.92,-10580.20,0
     .goto 1436/0,1978.92,-10580.20,40,0
-    .goto 1436/0,2003.77,-10536.57,40,0
-    .goto 1436/0,1990.82,-10474.97,40,0
-    .goto 1436/0,1954.42,-10458.87,40,0
     .goto 1436/0,1939.72,-10477.77,40,0
-    .goto 1436/0,1957.57,-10509.50,40,0
     >>Kill |cRXP_ENEMY_Riverpaw Miners|r
     .complete 92745,2 --Riverpaw Miner slain (6)
     .mob Riverpaw Miner
@@ -952,17 +840,13 @@ step
     .complete 155,1 --Escort The Defias Traitor to discover where VanCleef is hiding
     .isOnQuest 155
 step
-    #loop
-    .goto 1436/0,1661.47,-11113.60,0
-    .goto 1436/0,1661.47,-11113.60,40,0
-    .goto 1436/0,1698.57,-11153.50,40,0
-    .goto 1436/0,1742.32,-11139.97,40,0
+    .goto 1436/0,1713.62,-11157.70
     >>Kill |cRXP_ENEMY_Defias Knuckledusters|r
     .complete 14,3 --Defias Knuckleduster slain (5)
     .mob Defias Knuckleduster
     .isOnQuest 14
 step
-    .goto 1436/0,1707.32,-11158.87
+    .goto 1436/0,1722.02,-11155.13
     >>Kill |cRXP_ENEMY_Defias Pathstalkers|r
     .complete 14,2 --Defias Pathstalker slain (5)
     .mob Defias Pathstalker
@@ -982,13 +866,6 @@ step
     #loop
     .goto 1436/0,1685.97,-11296.30,0
     .goto 1436/0,1685.97,-11296.30,40,0
-    .goto 1436/0,1718.17,-11325.47,40,0
-    .goto 1436/0,1719.57,-11313.80,40,0
-    .goto 1436/0,1708.72,-11276.23,40,0
-    .goto 1436/0,1683.52,-11281.60,40,0
-    .goto 1436/0,1650.97,-11250.57,40,0
-    .goto 1436/0,1581.32,-11254.30,40,0
-    .goto 1436/0,1501.17,-11260.60,40,0
     .goto 1436/0,1544.92,-11279.03,40,0
     >>Kill |cRXP_ENEMY_Defias Highwaymans|r
     .complete 14,1 --Defias Highwayman slain (8)
@@ -1018,13 +895,9 @@ step
     .unitscan Mouse
 step
     #loop
-    .goto 1436/0,1146.97,-9661.33,0
-    .goto 1436/0,1146.97,-9661.33,40,0
-    .goto 1436/0,1197.02,-9616.07,40,0
+    .goto 1436/0,1066.47,-9608.83,0
+    .goto 1436/0,1066.47,-9608.83,40,0
     .goto 1436/0,1157.12,-9606.73,40,0
-    .goto 1436/0,1122.82,-9623.53,40,0
-    .goto 1436/0,1040.22,-9605.57,40,0
-    .goto 1436/0,1046.87,-9623.77,40,0
     >>Kill |cRXP_ENEMY_Murloc Coastrunners|r
     .complete 152,1 --Murloc Coastrunner slain (7)
     .mob Murloc Coastrunner
@@ -1034,42 +907,23 @@ step
     .accept 79008 >>Accept ... and that note you found
     .accept 79192 >>Accept Stepping Stones
 step
-    #loop
-    .goto 1436/0,2101.42,-10555.70,0
-    .goto 1436/0,2101.42,-10555.70,40,0
-    .goto 1436/0,2133.27,-10561.77,40,0
-    .goto 1436/0,2154.97,-10527.70,40,0
-    .goto 1436/0,2129.77,-10520.23,40,0
-    .goto 1436/0,2114.02,-10518.83,40,0
-    .goto 1436/0,2106.32,-10506.00,40,0
+    .goto 1436/0,2142.02,-10540.53
     >>Kill |cRXP_ENEMY_Murloc Warriors|r
     .complete 152,2 --Murloc Warrior slain (7)
     .mob Murloc Warrior
 step
     #loop
-    .goto 1436/0,2045.77,-10634.10,0
-    .goto 1436/0,2045.77,-10634.10,40,0
+    .goto 1436/0,2053.12,-10651.60,0
     .goto 1436/0,2053.12,-10651.60,40,0
-    .goto 1436/0,2072.72,-10691.27,40,0
-    .goto 1436/0,2082.52,-10757.53,40,0
-    .goto 1436/0,2103.52,-10776.43,40,0
-    .goto 1436/0,2039.12,-10799.77,40,0
-    .goto 1436/0,2062.57,-10770.83,40,0
+    .goto 1436/0,2078.32,-10787.40,40,0
     >>Kill |cRXP_ENEMY_Murloc Oracles|r
     .complete 152,4 --Murloc Oracle slain (7)
     .mob Murloc Oracle
 step
     #loop
-    .goto 1436/0,2021.27,-11041.03,0
-    .goto 1436/0,2021.27,-11041.03,40,0
+    .goto 1436/0,2069.57,-11073.70,0
     .goto 1436/0,2069.57,-11073.70,40,0
-    .goto 1436/0,2086.02,-11079.77,40,0
-    .goto 1436/0,2098.97,-11073.00,40,0
-    .goto 1436/0,2123.82,-11127.60,40,0
     .goto 1436/0,2084.62,-11122.93,40,0
-    .goto 1436/0,2076.92,-11107.30,40,0
-    .goto 1436/0,2037.02,-11165.63,40,0
-    .goto 1436/0,2039.12,-11139.27,40,0
     >>Kill |cRXP_ENEMY_Murloc Tidehunters|r
     .complete 152,3 --Murloc Tidehunter slain (7)
     .mob Murloc Tidehunter

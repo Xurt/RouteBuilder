@@ -102,11 +102,7 @@ step
     .mob Venture Co. Logger
     .mob Venture Co. Deforester
 step
-    #loop
-    .goto 1442/1,43.34,1234.81,0
-    .goto 1442/1,43.34,1234.81,40,0
-    .goto 1442/1,10.63,1234.49,40,0
-    .goto 1442/1,-30.39,1210.07,40,0
+    .goto 1442/1,10.63,1234.49
     >>Kill |cRXP_ENEMY_Venture Co. Operator|r and loot |cRXP_LOOT_Super Reaper 6000 Blueprints|r
     .complete 1093,1 --Super Reaper 6000 Blueprints (1)
     .mob Venture Co. Operator
@@ -118,16 +114,11 @@ step
     .isOnQuest 1079
 step
     #loop
-    .goto 1442/1,18.93,1308.40,0
-    .goto 1442/1,18.93,1308.40,40,0
-    .goto 1442/1,-107.55,1282.68,40,0
-    .goto 1442/1,-74.34,1055.39,40,0
-    .goto 1442/1,34.55,1112.38,40,0
-    .goto 1442/1,81.43,1202.90,40,0
-    .goto 1442/1,106.34,1354.32,40,0
-    .goto 1442/1,163.96,1414.56,40,0
-    .goto 1442/1,78.99,1454.61,40,0
-    .goto 1442/1,-27.95,1447.45,40,0
+    .goto 1442/1,8.18,1252.07,0
+    .goto 1442/1,8.18,1252.07,40,0
+    .goto 1442/1,-38.21,1118.57,40,0
+    .goto 1442/1,18.93,1406.74,40,0
+    .goto 1442/1,111.22,1434.42,40,0
     >>Kill |cRXP_ENEMY_Venture Co. Loggers|r
     >>Kill |cRXP_ENEMY_Venture Co. Deforesters|r
     .complete 1071,1 --Venture Co. Logger slain (10)
@@ -221,15 +212,7 @@ step
     .accept 86574 >>Accept Stonetalon Supply Run
     .target Night Elf Courier
 step
-    #loop
-    .goto 1442/1,779.26,1509.32,0
-    .goto 1442/1,779.26,1509.32,40,0
-    .goto 1442/1,704.55,1503.45,40,0
-    .goto 1442/1,689.41,1465.03,40,0
-    .goto 1442/1,716.27,1429.54,40,0
-    .goto 1442/1,739.22,1460.80,40,0
-    .goto 1442/1,784.15,1438.65,40,0
-    .goto 1442/1,766.08,1481.64,40,0
+    .goto 1442/1,739.22,1460.80
     >>Kill |cRXP_ENEMY_Young Pridewings|r, |cRXP_ENEMY_Pridewing Wyverns|r, |cRXP_ENEMY_Pridewing Skyhunters|r and |cRXP_ENEMY_Pridewing Consorts|r. Loot them for |cRXP_LOOT_Stonetalon Supply Bundle|r
     .complete 86574,1 --Stonetalon Supply Bundle (1)
     .mob Young Pridewing
@@ -318,15 +301,9 @@ step
     .xp <22,1
 step
     #loop
-    .goto 1442/1,1655.33,941.43,0
-    .goto 1442/1,1655.33,941.43,40,0
-    .goto 1442/1,1679.75,948.91,40,0
+    .goto 1442/1,1715.40,949.24,0
     .goto 1442/1,1715.40,949.24,40,0
-    .goto 1442/1,1741.77,919.93,40,0
-    .goto 1442/1,1798.41,877.60,40,0
     .goto 1442/1,1781.81,901.70,40,0
-    .goto 1442/1,1735.42,987.99,40,0
-    .goto 1442/1,1691.47,1003.29,40,0
     >>Kill |cRXP_ENEMY_Bloodfury Harpies|r
     >>Kill |cRXP_ENEMY_Bloodfury Ambushers|r
     .complete 1057,1 --Bloodfury Harpy slain (7)
@@ -337,29 +314,21 @@ step
     #loop
     .goto 1442/1,1777.90,719.02,0
     .goto 1442/1,1777.90,719.02,40,0
-    .goto 1442/1,1769.11,650.97,40,0
-    .goto 1442/1,1819.90,600.17,40,0
+    .goto 1442/1,1774.97,648.04,40,0
     >>Kill |cRXP_ENEMY_Bloodfury Slayers|r
     .complete 1057,3 --Bloodfury Slayer slain (7)
     .mob Bloodfury Slayer
 step
     #loop
-    .goto 1442/1,1550.83,612.22,0
-    .goto 1442/1,1550.83,612.22,40,0
-    .goto 1442/1,1510.78,639.90,40,0
-    .goto 1442/1,1451.21,713.49,40,0
-    .goto 1442/1,1514.20,749.31,40,0
+    .goto 1442/1,1520.55,714.14,0
     .goto 1442/1,1520.55,714.14,40,0
-    .goto 1442/1,1551.80,701.44,40,0
-    .goto 1442/1,1543.50,665.95,40,0
+    .goto 1442/1,1510.78,639.90,40,0
     >>Kill |cRXP_ENEMY_Bloodfury Roguefeathers|r
     .complete 1057,4 --Bloodfury Roguefeather slain (7)
     .mob Bloodfury Roguefeather
 step
     #loop
-    .goto 1442/1,1578.17,716.09,0
-    .goto 1442/1,1578.17,716.09,40,0
-    .goto 1442/1,1639.70,858.72,40,0
+    .goto 1442/1,1644.10,850.58,0
     .goto 1442/1,1644.10,850.58,40,0
     .goto 1442/1,1758.86,699.81,40,0
     >>Kill |cRXP_ENEMY_Charred Ancients|r, |cRXP_ENEMY_Blackened Ancients|r and |cRXP_ENEMY_Vengeful Ancients|r. Loot them for |cRXP_LOOT_Corroded Shrapnel|r
@@ -414,8 +383,6 @@ step
     #loop
     .goto 1442/1,1622.61,478.39,0
     .goto 1442/1,1622.61,478.39,40,0
-    .goto 1442/1,1651.91,523.00,40,0
-    .goto 1442/1,1785.23,519.09,40,0
     .goto 1442/1,1726.14,512.90,40,0
     >>Kill |cRXP_ENEMY_Rogue Flame Spirits|r, |cRXP_ENEMY_Burning Ravagers|r and |cRXP_ENEMY_Burning Destroyers|r. Loot them for |cRXP_LOOT_Smoldering Embers|r
     .complete 1083,1 --Smoldering Embers (8)

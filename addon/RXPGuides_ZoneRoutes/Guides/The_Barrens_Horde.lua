@@ -193,16 +193,10 @@ step
     .isOnQuest 924
 step
     #loop
-    .goto 1413/1,-2752.82,-79.94,0
-    .goto 1413/1,-2752.82,-79.94,40,0
+    .goto 1413/1,-2813.62,-43.46,0
     .goto 1413/1,-2813.62,-43.46,40,0
-    .goto 1413/1,-2893.67,-48.86,40,0
-    .goto 1413/1,-2952.44,-99.53,40,0
-    .goto 1413/1,-3012.23,-155.61,40,0
-    .goto 1413/1,-2961.56,-183.99,40,0
-    .goto 1413/1,-2846.04,-148.18,40,0
-    .goto 1413/1,-2882.52,-114.40,40,0
-    .goto 1413/1,-2852.12,-89.40,40,0
+    .goto 1413/1,-2855.16,-111.70,40,0
+    .goto 1413/1,-2960.55,-116.42,40,0
     >>Kill |cRXP_ENEMY_Razormane Water Seekers|r
     >>Kill |cRXP_ENEMY_Razormane Thornweavers|r
     >>Kill |cRXP_ENEMY_Razormane Hunters|r
@@ -214,15 +208,9 @@ step
     .mob Razormane Hunter
 step
     #loop
-    .goto 1413/1,-2717.35,-117.78,0
-    .goto 1413/1,-2717.35,-117.78,40,0
+    .goto 1413/1,-2719.38,-152.23,0
     .goto 1413/1,-2719.38,-152.23,40,0
-    .goto 1413/1,-2748.76,-184.66,40,0
-    .goto 1413/1,-2711.27,-213.71,40,0
     .goto 1413/1,-2649.46,-217.77,40,0
-    .goto 1413/1,-2617.03,-249.52,40,0
-    .goto 1413/1,-2583.59,-279.93,40,0
-    .goto 1413/1,-2514.68,-267.09,40,0
     .goto 1413/1,-2547.11,-250.87,40,0
     >>Kill |cRXP_ENEMY_Greater Plainstriders|r, |cRXP_ENEMY_Ornery Plainstriders|r and |cRXP_ENEMY_Fleeting Plainstriders|r. Loot them for |cRXP_LOOT_Plainstrider Beak|r
     .complete 844,1 --Plainstrider Beak (7)
@@ -252,15 +240,7 @@ step
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
 step
-    #loop
-    .goto 1413/1,-3369.94,-80.62,0
-    .goto 1413/1,-3369.94,-80.62,40,0
-    .goto 1413/1,-3399.32,-60.35,40,0
-    .goto 1413/1,-3403.38,-48.19,40,0
-    .goto 1413/1,-3373.99,-38.05,40,0
-    .goto 1413/1,-3402.36,-10.35,40,0
-    .goto 1413/1,-3367.91,-6.30,40,0
-    .goto 1413/1,-3326.36,-15.76,40,0
+    .goto 1413/1,-3373.99,-38.05
     >>Pick up |cRXP_PICK_Crossroads' Supply Crates|r from the ground
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
@@ -270,12 +250,7 @@ step
     #loop
     .goto 1413/1,-3345.62,-76.56,0
     .goto 1413/1,-3345.62,-76.56,40,0
-    .goto 1413/1,-3256.44,-55.62,40,0
     .goto 1413/1,-3180.44,-80.62,40,0
-    .goto 1413/1,-3122.68,-47.51,40,0
-    .goto 1413/1,-3160.18,-90.75,40,0
-    .goto 1413/1,-3177.40,-112.37,40,0
-    .goto 1413/1,-3210.84,-85.35,40,0
     >>Kill |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,2 --Razormane Defender slain (8)
     .mob Razormane Defender
@@ -371,16 +346,10 @@ step
     .mob Baron Longshore
 step
     #loop
-    .goto 1413/1,-3881.67,-1614.96,0
-    .goto 1413/1,-3881.67,-1614.96,40,0
-    .goto 1413/1,-3878.63,-1551.45,40,0
-    .goto 1413/1,-3878.63,-1379.17,40,0
-    .goto 1413/1,-3909.03,-1354.17,40,0
-    .goto 1413/1,-3884.71,-1323.09,40,0
-    .goto 1413/1,-3819.86,-1316.33,40,0
-    .goto 1413/1,-3820.87,-1387.28,40,0
-    .goto 1413/1,-3845.19,-1485.24,40,0
-    .goto 1413/1,-3819.86,-1541.99,40,0
+    .goto 1413/1,-3893.83,-1584.56,0
+    .goto 1413/1,-3893.83,-1584.56,40,0
+    .goto 1413/1,-3828.98,-1504.16,40,0
+    .goto 1413/1,-3870.52,-1356.20,40,0
     >>Kill |cRXP_ENEMY_Southsea Brigands|r
     >>Kill |cRXP_ENEMY_Southsea Cannoneers|r
     .complete 887,1 --Southsea Brigand slain (12)
@@ -412,12 +381,7 @@ step
     #loop
     .goto 1413/1,-2686.95,-846.10,0
     .goto 1413/1,-2686.95,-846.10,40,0
-    .goto 1413/1,-2641.35,-871.77,40,0
-    .goto 1413/1,-2584.60,-887.31,40,0
-    .goto 1413/1,-2529.88,-944.74,40,0
     .goto 1413/1,-2568.39,-949.47,40,0
-    .goto 1413/1,-2617.03,-938.66,40,0
-    .goto 1413/1,-2651.48,-948.79,40,0
     >>Kill |cRXP_ENEMY_Zhevra Runners|r, |cRXP_ENEMY_Zhevra Chargers|r and |cRXP_ENEMY_Zhevra Coursers|r. Loot them for |cRXP_LOOT_Zhevra Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
@@ -508,16 +472,9 @@ step
     .target Regthar Deathgate
 step
     #loop
-    .goto 1413/1,-1544.92,282.19,0
-    .goto 1413/1,-1544.92,282.19,40,0
-    .goto 1413/1,-1621.94,331.51,40,0
-    .goto 1413/1,-1574.31,356.51,40,0
-    .goto 1413/1,-1552.02,480.15,40,0
-    .goto 1413/1,-1501.35,477.45,40,0
-    .goto 1413/1,-1483.11,415.97,40,0
-    .goto 1413/1,-1518.58,384.21,40,0
-    .goto 1413/1,-1442.58,349.08,40,0
-    .goto 1413/1,-1443.59,295.71,40,0
+    .goto 1413/1,-1595.59,335.57,0
+    .goto 1413/1,-1595.59,335.57,40,0
+    .goto 1413/1,-1453.72,338.27,40,0
     >>Kill |cRXP_ENEMY_Witchwing Harpies|r, |cRXP_ENEMY_Witchwing Roguefeathers|r, |cRXP_ENEMY_Witchwing Slayers|r and |cRXP_ENEMY_Witchwing Ambushers|r. Loot them for |cRXP_LOOT_Witchwing Talon|r
     .complete 867,1 --Witchwing Talon (8)
     .mob Witchwing Harpy
@@ -537,14 +494,7 @@ step
     .vendor	>> Vendor trash and repair
     .target Vrang Wildgore
 step
-    #loop
-    .goto 1413/1,-3630.36,-577.88,0
-    .goto 1413/1,-3630.36,-577.88,40,0
-    .goto 1413/1,-3622.26,-598.82,40,0
-    .goto 1413/1,-3645.56,-643.41,40,0
-    .goto 1413/1,-3676.98,-617.06,40,0
-    .goto 1413/1,-3668.87,-580.58,40,0
-    .goto 1413/1,-3651.64,-570.44,40,0
+    .goto 1413/1,-3630.36,-577.88
     >>Kill |cRXP_ENEMY_Savannah Patriarches|r and |cRXP_ENEMY_Savannah Matriarches|r. Loot them for |cRXP_LOOT_Savannah Lion Hide|r
     .complete 95494,1 --Savannah Lion Hide (6)
     .mob Savannah Patriarch
@@ -573,8 +523,6 @@ step
     #loop
     .goto 1413/1,-2200.55,761.21,0
     .goto 1413/1,-2200.55,761.21,40,0
-    .goto 1413/1,-2139.75,774.72,40,0
-    .goto 1413/1,-2078.95,734.19,40,0
     .goto 1413/1,-2139.75,734.19,40,0
     >>Loot the |cRXP_PICK_Sprung Traps|r for |cRXP_LOOT_Trapped Game|r
     .complete 95507,1 --Trapped Game (8)
@@ -593,16 +541,9 @@ step
     .target Walton
 step
     #loop
-    .goto 1413/1,-1658.42,639.60,0
-    .goto 1413/1,-1658.42,639.60,40,0
-    .goto 1413/1,-1591.54,629.47,40,0
-    .goto 1413/1,-1590.52,587.58,40,0
-    .goto 1413/1,-1522.63,553.80,40,0
-    .goto 1413/1,-1552.02,521.37,40,0
-    .goto 1413/1,-1601.67,486.91,40,0
-    .goto 1413/1,-1709.08,506.50,40,0
-    .goto 1413/1,-1655.38,535.55,40,0
-    .goto 1413/1,-1627.00,575.42,40,0
+    .goto 1413/1,-1616.87,580.14,0
+    .goto 1413/1,-1616.87,580.14,40,0
+    .goto 1413/1,-1641.19,545.69,40,0
     >>Kill |cRXP_ENEMY_Corporal Adamore|r and loot |cRXP_LOOT_Benedict's Orders|r
     .complete 95621,1 --Benedict's Orders (1)
     .mob Corporal Adamore
@@ -631,7 +572,7 @@ step
     .turnin 894 >>Turn in Samophlange
     .accept 900 >>Accept Samophlange
 step
-    .goto 1413/1,-2679.86,831.48
+    .goto 1413/1,-2676.82,840.94
     >>Click the |cRXP_PICK_Main Control Valve|r
     >>Click the |cRXP_PICK_Regulator Valve|r
     >>Click the |cRXP_PICK_Fuel Control Valve|r
@@ -655,13 +596,9 @@ step
     .accept 902 >>Accept Samophlange
 step
     #loop
-    .goto 1413/1,-2917.99,851.07,0
-    .goto 1413/1,-2917.99,851.07,40,0
+    .goto 1413/1,-2947.38,913.90,0
     .goto 1413/1,-2947.38,913.90,40,0
-    .goto 1413/1,-2975.75,978.76,40,0
-    .goto 1413/1,-2949.40,1082.13,40,0
     .goto 1413/1,-2909.88,1042.27,40,0
-    .goto 1413/1,-2919.00,988.22,40,0
     >>Kill |cRXP_ENEMY_Sunscale Lashtails|r, |cRXP_ENEMY_Sunscale Screechers|r, |cRXP_ENEMY_Sunscale Scytheclaws|r and |cRXP_ENEMY_Ishamuhales|r. Loot them for |cRXP_LOOT_Raptor Head|r
     .complete 869,1 --Raptor Head (12)
     .mob Sunscale Lashtail
@@ -670,16 +607,10 @@ step
     .mob Ishamuhale
 step
     #loop
-    .goto 1413/1,-2849.08,701.76,0
-    .goto 1413/1,-2849.08,701.76,40,0
+    .goto 1413/1,-2834.90,660.54,0
     .goto 1413/1,-2834.90,660.54,40,0
-    .goto 1413/1,-2776.12,588.93,40,0
-    .goto 1413/1,-2778.15,526.09,40,0
-    .goto 1413/1,-3034.52,522.04,40,0
-    .goto 1413/1,-3016.28,627.44,40,0
-    .goto 1413/1,-2951.43,608.52,40,0
-    .goto 1413/1,-2914.95,625.41,40,0
-    .goto 1413/1,-2869.35,593.66,40,0
+    .goto 1413/1,-2824.76,580.14,40,0
+    .goto 1413/1,-2998.04,530.82,40,0
     >>Kill |cRXP_ENEMY_Savannah Prowlers|r. Loot them for |cRXP_LOOT_Prowler Claws|r
     .complete 903,1 --Prowler Claws (7)
     .mob Savannah Prowler
@@ -689,16 +620,9 @@ step
     .xp 16
 step
     #loop
-    .goto 1413/1,-3577.67,1240.91,0
-    .goto 1413/1,-3577.67,1240.91,40,0
+    .goto 1413/1,-3621.24,1278.07,0
     .goto 1413/1,-3621.24,1278.07,40,0
-    .goto 1413/1,-3645.56,1246.99,40,0
-    .goto 1413/1,-3683.06,1236.85,40,0
-    .goto 1413/1,-3680.02,1280.77,40,0
-    .goto 1413/1,-3650.63,1325.36,40,0
-    .goto 1413/1,-3690.15,1355.09,40,0
-    .goto 1413/1,-3633.40,1387.52,40,0
-    .goto 1413/1,-3564.50,1345.63,40,0
+    .goto 1413/1,-3652.66,1350.36,40,0
     >>Kill |cRXP_ENEMY_Venture Co. Enforcers|r, |cRXP_ENEMY_Venture Co. Overseers|r and |cRXP_ENEMY_Boss Copperplugs|r. Loot them for |cRXP_LOOT_Cats Eye Emerald|r
     .complete 896,1 --Cats Eye Emerald (1)
     .mob Venture Co. Enforcer
@@ -838,16 +762,9 @@ step
     .target Innkeeper Wiley
 step
     #loop
-    .goto 1413/1,-3457.08,-1286.61,0
-    .goto 1413/1,-3457.08,-1286.61,40,0
-    .goto 1413/1,-3357.78,-1273.09,40,0
+    .goto 1413/1,-3453.03,-1386.60,0
+    .goto 1413/1,-3453.03,-1386.60,40,0
     .goto 1413/1,-3339.54,-1321.06,40,0
-    .goto 1413/1,-3289.88,-1368.36,40,0
-    .goto 1413/1,-3383.11,-1380.52,40,0
-    .goto 1413/1,-3418.58,-1421.06,40,0
-    .goto 1413/1,-3495.59,-1415.65,40,0
-    .goto 1413/1,-3508.76,-1342.01,40,0
-    .goto 1413/1,-3437.83,-1354.85,40,0
     >>Kill |cRXP_ENEMY_Sunscale Lashtails|r, |cRXP_ENEMY_Sunscale Screechers|r and |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for |cRXP_LOOT_Sunscale Feather|r
     .collect 5165,1,905,1 --Sunscale Feather (1)
     .mob Sunscale Lashtail
@@ -880,16 +797,9 @@ step
     .isOnQuest 877
 step
     #loop
-    .goto 1413/1,-2977.78,-1303.50,0
-    .goto 1413/1,-2977.78,-1303.50,40,0
-    .goto 1413/1,-2982.84,-1381.19,40,0
-    .goto 1413/1,-3026.42,-1323.09,40,0
-    .goto 1413/1,-3066.95,-1300.80,40,0
-    .goto 1413/1,-3054.79,-1258.91,40,0
-    .goto 1413/1,-3081.14,-1187.97,40,0
+    .goto 1413/1,-3024.39,-1233.23,0
     .goto 1413/1,-3024.39,-1233.23,40,0
-    .goto 1413/1,-2962.58,-1208.91,40,0
-    .goto 1413/1,-2967.64,-1262.28,40,0
+    .goto 1413/1,-3026.42,-1323.09,40,0
     >>Loot the |cRXP_PICK_Laden Mushrooms|r for |cRXP_LOOT_Fungal Spores|r
     .complete 848,1 --Fungal Spores (4)
     .isOnQuest 848
@@ -963,16 +873,10 @@ step
     .isOnQuest 3281
 step
     #loop
-    .goto 1413/1,-1976.60,-876.50,0
-    .goto 1413/1,-1976.60,-876.50,40,0
-    .goto 1413/1,-2019.16,-956.23,40,0
-    .goto 1413/1,-2043.48,-1149.46,40,0
+    .goto 1413/1,-1988.76,-946.77,0
+    .goto 1413/1,-1988.76,-946.77,40,0
+    .goto 1413/1,-1885.40,-951.50,40,0
     .goto 1413/1,-2018.15,-1116.35,40,0
-    .goto 1413/1,-1981.67,-1085.27,40,0
-    .goto 1413/1,-1918.84,-1078.51,40,0
-    .goto 1413/1,-1945.19,-1011.63,40,0
-    .goto 1413/1,-1883.38,-990.01,40,0
-    .goto 1413/1,-1868.18,-937.98,40,0
     >>Kill |cRXP_ENEMY_Kolkar Wranglers|r, |cRXP_ENEMY_Kolkar Stormers|r, |cRXP_ENEMY_Kolkar Pack Runners|r and |cRXP_ENEMY_Kolkar Marauders|r. Loot them for |cRXP_LOOT_Centaur Bracers|r
     .complete 855,1 --Centaur Bracers (15)
     .mob Kolkar Wrangler
@@ -993,16 +897,10 @@ step << Tauren Druid
     .isOnQuest 6127
 step
     #loop
-    .goto 1413/1,-1380.76,475.42,0
-    .goto 1413/1,-1380.76,475.42,40,0
-    .goto 1413/1,-1447.64,533.53,40,0
-    .goto 1413/1,-1405.08,558.52,40,0
-    .goto 1413/1,-1347.32,553.12,40,0
-    .goto 1413/1,-1286.52,516.64,40,0
-    .goto 1413/1,-1253.08,549.07,40,0
-    .goto 1413/1,-1151.75,550.42,40,0
-    .goto 1413/1,-1220.66,503.80,40,0
-    .goto 1413/1,-1310.84,420.70,40,0
+    .goto 1413/1,-1388.87,513.26,0
+    .goto 1413/1,-1388.87,513.26,40,0
+    .goto 1413/1,-1289.56,457.18,40,0
+    .goto 1413/1,-1247.00,529.47,40,0
     >>Kill |cRXP_ENEMY_Witchwing Slayers|r. Loot them for |cRXP_LOOT_Harpy Lieutenant Ring|r
     .complete 875,1 --Harpy Lieutenant Ring (6)
     .mob Witchwing Slayer
@@ -1131,31 +1029,21 @@ step
     .isOnQuest 3261
 step
     #loop
-    .goto 1413/1,-2254.26,-2054.79,0
-    .goto 1413/1,-2254.26,-2054.79,40,0
-    .goto 1413/1,-2289.72,-1977.10,40,0
-    .goto 1413/1,-2351.54,-1880.48,40,0
-    .goto 1413/1,-2257.30,-1890.62,40,0
-    .goto 1413/1,-2219.80,-1789.95,40,0
-    .goto 1413/1,-2139.75,-1685.90,40,0
-    .goto 1413/1,-2169.14,-1863.59,40,0
-    .goto 1413/1,-2147.86,-1948.72,40,0
-    .goto 1413/1,-2215.75,-1970.34,40,0
+    .goto 1413/1,-2262.36,-2012.23,0
+    .goto 1413/1,-2262.36,-2012.23,40,0
+    .goto 1413/1,-2236.02,-1942.64,40,0
+    .goto 1413/1,-2186.36,-1712.93,40,0
+    .goto 1413/1,-2293.78,-1867.64,40,0
     >>Kill |cRXP_ENEMY_Razormane Raiders|r. Loot them for |cRXP_LOOT_Olgra's Adornments|r
     .complete 95774,1 --Olgra's Adornments (4)
     .mob Razormane Raider
 step
     #loop
-    .goto 1413/1,-2387.00,-1967.64,0
-    .goto 1413/1,-2387.00,-1967.64,40,0
-    .goto 1413/1,-2395.11,-2093.98,40,0
-    .goto 1413/1,-2377.88,-2208.84,40,0
-    .goto 1413/1,-2487.32,-2289.23,40,0
-    .goto 1413/1,-2643.38,-2285.18,40,0
-    .goto 1413/1,-2792.34,-2071.68,40,0
-    .goto 1413/1,-2653.51,-2026.42,40,0
-    .goto 1413/1,-2517.72,-2085.20,40,0
-    .goto 1413/1,-2533.94,-1954.80,40,0
+    .goto 1413/1,-2418.42,-2063.58,0
+    .goto 1413/1,-2418.42,-2063.58,40,0
+    .goto 1413/1,-2474.15,-1973.72,40,0
+    .goto 1413/1,-2593.72,-2010.88,40,0
+    .goto 1413/1,-2589.67,-2277.07,40,0
     >>Kill |cRXP_ENEMY_Bristleback Hunters|r, |cRXP_ENEMY_Bristleback Water Seekers|r, |cRXP_ENEMY_Bristleback Thornweavers|r and |cRXP_ENEMY_Bristleback Geomancers|r. Loot them for |cRXP_LOOT_Bristleback Quilboar Tusk|r
     .complete 899,1 --Bristleback Quilboar Tusk (60)
     .mob Bristleback Hunter
@@ -1186,13 +1074,10 @@ step << Warlock/Shaman
     .xp 19+9500 >> Grind to 9500+/21300 xp
 step
     #loop
-    .goto 1413/1,-2463.00,-1541.32,0
-    .goto 1413/1,-2463.00,-1541.32,40,0
+    .goto 1413/1,-2480.23,-1504.83,0
     .goto 1413/1,-2480.23,-1504.83,40,0
-    .goto 1413/1,-2716.34,-1498.75,40,0
-    .goto 1413/1,-2709.24,-1513.62,40,0
     .goto 1413/1,-2687.96,-1537.26,40,0
-    .goto 1413/1,-2661.62,-1537.26,40,0
+    .goto 1413/1,-2716.34,-1498.75,40,0
     >>Kill |cRXP_ENEMY_Sunscale Scytheclaws|r, |cRXP_ENEMY_Ishamuhales|r and |cRXP_ENEMY_Takk the Leapers|r. Loot them for |cRXP_LOOT_Intact Raptor Horn|r
     .complete 865,1 --Intact Raptor Horn (5)
     .mob Sunscale Scytheclaw
@@ -1204,16 +1089,9 @@ step << Mage
     .fly Crossroads >>Fly to Crossroads
 step
     #loop
-    .goto 1413/1,-3014.26,-1333.90,0
-    .goto 1413/1,-3014.26,-1333.90,40,0
+    .goto 1413/1,-2982.84,-1251.47,0
+    .goto 1413/1,-2982.84,-1251.47,40,0
     .goto 1413/1,-3043.64,-1316.33,40,0
-    .goto 1413/1,-3054.79,-1281.88,40,0
-    .goto 1413/1,-3048.71,-1223.77,40,0
-    .goto 1413/1,-3013.24,-1190.67,40,0
-    .goto 1413/1,-2984.87,-1220.40,40,0
-    .goto 1413/1,-2950.42,-1240.66,40,0
-    .goto 1413/1,-3011.22,-1254.18,40,0
-    .goto 1413/1,-2978.79,-1281.88,40,0
     >>Kill |cRXP_ENEMY_Oasis Snapjaws|r. Loot them for |cRXP_LOOT_Altered Snapjaw Shell|r
     .complete 880,1 --Altered Snapjaw Shell (8)
     .mob Oasis Snapjaw
@@ -1322,16 +1200,9 @@ step
     .isQuestTurnedIn 3921 --any of: Wenikee Boltbucket
 step
     #loop
-    .goto 1413/1,-3012.23,1015.25,0
-    .goto 1413/1,-3012.23,1015.25,40,0
-    .goto 1413/1,-3001.08,1072.68,40,0
-    .goto 1413/1,-3041.62,1151.05,40,0
-    .goto 1413/1,-3185.51,1126.73,40,0
-    .goto 1413/1,-3175.38,1057.14,40,0
-    .goto 1413/1,-3170.31,998.36,40,0
-    .goto 1413/1,-3121.67,1017.27,40,0
-    .goto 1413/1,-3089.24,1063.89,40,0
-    .goto 1413/1,-3055.80,953.77,40,0
+    .goto 1413/1,-3022.36,973.36,0
+    .goto 1413/1,-3022.36,973.36,40,0
+    .goto 1413/1,-3085.19,1033.49,40,0
     >>Loot the |cRXP_PICK_Tool Buckets|r for |cRXP_LOOT_Nugget Slug|r
     .complete 3922,1 --Nugget Slug (15)
     .isOnQuest 3922
@@ -1522,15 +1393,9 @@ step
 step
     #label Drop884x1
     #loop
-    .goto 1413/1,-1544.92,207.88,0
-    .goto 1413/1,-1544.92,207.88,40,0
-    .goto 1413/1,-1534.79,191.66,40,0
-    .goto 1413/1,-1523.64,138.96,40,0
+    .goto 1413/1,-1530.74,178.15,0
+    .goto 1413/1,-1530.74,178.15,40,0
     .goto 1413/1,-1508.44,68.02,40,0
-    .goto 1413/1,-1491.22,92.34,40,0
-    .goto 1413/1,-1460.82,213.96,40,0
-    .goto 1413/1,-1470.95,250.44,40,0
-    .goto 1413/1,-1520.60,205.17,40,0
     >>Kill |cRXP_ENEMY_Savannah Patriarches|r, |cRXP_ENEMY_Savannah Highmanes|r, |cRXP_ENEMY_Savannah Huntress|r and |cRXP_ENEMY_Savannah Matriarches|r. Loot them for |cRXP_LOOT_Savannah Lion Tusk|r
     .complete 821,1 --Savannah Lion Tusk (5)
     .mob Savannah Patriarch
@@ -1593,13 +1458,7 @@ step << Tauren Druid
     .isQuestTurnedIn 6127 --any of: The Principal Source
     .xp <14,1
 step << Tauren Druid
-    #loop
-    .goto 1413/1,-3444.92,-1417.00,0
-    .goto 1413/1,-3444.92,-1417.00,40,0
-    .goto 1413/1,-3445.94,-1427.81,40,0
-    .goto 1413/1,-3463.16,-1463.62,40,0
-    .goto 1413/1,-3495.59,-1435.24,40,0
-    .goto 1413/1,-3478.36,-1433.22,40,0
+    .goto 1413/1,-3445.94,-1427.81
     >>Pick up |cRXP_PICK_Earthroot|r from the ground
     .complete 6128,1 --Earthroot (5)
     .isOnQuest 6128
@@ -1731,16 +1590,10 @@ step
 step
     #label Along40
     #loop
-    .goto 1413/1,-2487.32,-2289.23,0
-    .goto 1413/1,-2487.32,-2289.23,40,0
-    .goto 1413/1,-2517.72,-2227.08,40,0
-    .goto 1413/1,-2517.72,-2085.20,40,0
+    .goto 1413/1,-2589.67,-2277.07,0
+    .goto 1413/1,-2589.67,-2277.07,40,0
+    .goto 1413/1,-2578.52,-2114.25,40,0
     .goto 1413/1,-2577.51,-2046.69,40,0
-    .goto 1413/1,-2682.90,-2014.93,40,0
-    .goto 1413/1,-2611.96,-2114.25,40,0
-    .goto 1413/1,-2549.14,-2157.49,40,0
-    .goto 1413/1,-2586.63,-2212.21,40,0
-    .goto 1413/1,-2569.40,-2295.99,40,0
     >>Kill |cRXP_ENEMY_Bristleback Water Seekers|r
     >>Kill |cRXP_ENEMY_Bristleback Thornweavers|r
     .complete 878,1 --Bristleback Water Seeker slain (6)
@@ -1749,30 +1602,18 @@ step
     .mob Bristleback Thornweaver
 step
     #loop
-    .goto 1413/1,-2689.99,-1970.34,0
-    .goto 1413/1,-2689.99,-1970.34,40,0
-    .goto 1413/1,-2719.38,-1984.53,40,0
-    .goto 1413/1,-2750.79,-2047.36,40,0
-    .goto 1413/1,-2790.31,-2030.47,40,0
-    .goto 1413/1,-2813.62,-2053.44,40,0
-    .goto 1413/1,-2812.60,-2003.45,40,0
-    .goto 1413/1,-2780.18,-1981.15,40,0
-    .goto 1413/1,-2750.79,-1918.99,40,0
+    .goto 1413/1,-2703.16,-1929.80,0
     .goto 1413/1,-2703.16,-1929.80,40,0
+    .goto 1413/1,-2790.31,-2030.47,40,0
     >>Kill |cRXP_ENEMY_Bristleback Geomancers|r
     .complete 878,3 --Bristleback Geomancer slain (12)
     .mob Bristleback Geomancer
 step
     #loop
-    .goto 1413/1,-2714.31,-1047.44,0
-    .goto 1413/1,-2714.31,-1047.44,40,0
-    .goto 1413/1,-2782.20,-1025.14,40,0
-    .goto 1413/1,-2783.22,-872.45,40,0
-    .goto 1413/1,-2785.24,-785.97,40,0
-    .goto 1413/1,-2775.11,-822.45,40,0
-    .goto 1413/1,-2750.79,-915.01,40,0
-    .goto 1413/1,-2729.51,-927.17,40,0
+    .goto 1413/1,-2736.60,-996.76,0
     .goto 1413/1,-2736.60,-996.76,40,0
+    .goto 1413/1,-2750.79,-915.01,40,0
+    .goto 1413/1,-2785.24,-785.97,40,0
     >>Kill |cRXP_ENEMY_Zhevra Runners|r, |cRXP_ENEMY_Zhevra Chargers|r and |cRXP_ENEMY_Zhevra Coursers|r. Loot them for |cRXP_LOOT_Fresh Zhevra Carcass|r
     .collect 10338,1,882,1 --Fresh Zhevra Carcass (1)
     .mob Zhevra Runner
@@ -1789,12 +1630,7 @@ step
     #loop
     .goto 1413/1,-2495.43,-1955.48,0
     .goto 1413/1,-2495.43,-1955.48,40,0
-    .goto 1413/1,-2456.92,-1948.72,40,0
-    .goto 1413/1,-2384.98,-2012.23,40,0
     .goto 1413/1,-2402.20,-2060.20,40,0
-    .goto 1413/1,-2452.87,-2057.50,40,0
-    .goto 1413/1,-2445.78,-1995.34,40,0
-    .goto 1413/1,-2544.07,-1966.96,40,0
     >>Kill |cRXP_ENEMY_Stormhides|r, |cRXP_ENEMY_Thunderheads|r, |cRXP_ENEMY_Stormsnouts|r and |cRXP_ENEMY_Owatankas|r. Loot them for |cRXP_LOOT_Thunder Lizard Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormhide
@@ -1805,16 +1641,9 @@ step
 step
     #label Drop884x2
     #loop
-    .goto 1413/1,-3149.03,-515.72,0
-    .goto 1413/1,-3149.03,-515.72,40,0
-    .goto 1413/1,-3111.54,-485.99,40,0
-    .goto 1413/1,-3148.02,-446.13,40,0
-    .goto 1413/1,-3095.32,-430.59,40,0
-    .goto 1413/1,-3135.86,-383.30,40,0
-    .goto 1413/1,-3180.44,-356.27,40,0
-    .goto 1413/1,-3212.87,-450.18,40,0
-    .goto 1413/1,-3286.84,-545.45,40,0
-    .goto 1413/1,-3220.98,-503.56,40,0
+    .goto 1413/1,-3250.36,-481.26,0
+    .goto 1413/1,-3250.36,-481.26,40,0
+    .goto 1413/1,-3226.04,-408.29,40,0
     >>Kill |cRXP_ENEMY_Greater Plainstriders|r, |cRXP_ENEMY_Ornery Plainstriders|r and |cRXP_ENEMY_Fleeting Plainstriders|r. Loot them for |cRXP_LOOT_Plainstrider Kidney|r
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
@@ -1858,16 +1687,10 @@ step
     .isOnQuest 821
 step
     #loop
-    .goto 1413/1,-3888.76,-1078.51,0
-    .goto 1413/1,-3888.76,-1078.51,40,0
-    .goto 1413/1,-3882.68,-1127.84,40,0
-    .goto 1413/1,-3904.98,-1181.21,40,0
-    .goto 1413/1,-3925.24,-1237.29,40,0
-    .goto 1413/1,-4001.24,-1134.59,40,0
-    .goto 1413/1,-4005.30,-1056.22,40,0
-    .goto 1413/1,-3983.00,-1017.71,40,0
-    .goto 1413/1,-3947.54,-957.58,40,0
-    .goto 1413/1,-3936.39,-1042.71,40,0
+    .goto 1413/1,-3920.18,-1025.82,0
+    .goto 1413/1,-3920.18,-1025.82,40,0
+    .goto 1413/1,-3970.84,-1073.79,40,0
+    .goto 1413/1,-3911.06,-1140.00,40,0
     >>Kill |cRXP_ENEMY_Bruuz|r and loot |cRXP_LOOT_Bruuz's Dorsal Fin|r
     .complete 92706,1 --Bruuz's Dorsal Fin (1)
     .mob Bruuz
@@ -1906,16 +1729,10 @@ step
     .target Jorn Skyseer
 step
     #loop
-    .goto 1413/1,-1883.38,-1922.37,0
-    .goto 1413/1,-1883.38,-1922.37,40,0
-    .goto 1413/1,-1761.78,-1934.53,40,0
-    .goto 1413/1,-1714.15,-1873.05,40,0
-    .goto 1413/1,-1746.58,-1892.64,40,0
-    .goto 1413/1,-1795.22,-1888.59,40,0
-    .goto 1413/1,-1845.88,-1879.13,40,0
-    .goto 1413/1,-1905.67,-1854.81,40,0
+    .goto 1413/1,-1768.87,-1911.56,0
+    .goto 1413/1,-1768.87,-1911.56,40,0
+    .goto 1413/1,-1883.38,-1888.59,40,0
     .goto 1413/1,-1940.12,-1855.48,40,0
-    .goto 1413/1,-1985.72,-1875.08,40,0
     >>Kill |cRXP_ENEMY_Bristleback Hunters|r, |cRXP_ENEMY_Bristleback Water Seekers|r, |cRXP_ENEMY_Bristleback Thornweavers|r and |cRXP_ENEMY_Bristleback Geomancers|r. Loot them for |cRXP_LOOT_Blood Shard|r. It can also be picked up from |cRXP_PICK_Copper Vein|r on the ground
     .complete 5052,1 --Blood Shard (1)
     .mob Bristleback Hunter
@@ -1941,16 +1758,9 @@ step
     .isQuestTurnedIn 882 --any of: Ishamuhale
 step
     #loop
-    .goto 1413/1,-2189.40,-2499.35,0
-    .goto 1413/1,-2189.40,-2499.35,40,0
-    .goto 1413/1,-2286.68,-2510.16,40,0
-    .goto 1413/1,-2378.90,-2615.56,40,0
-    .goto 1413/1,-2349.51,-2558.81,40,0
-    .goto 1413/1,-2336.34,-2525.03,40,0
-    .goto 1413/1,-2320.12,-2477.73,40,0
-    .goto 1413/1,-2337.35,-2421.66,40,0
-    .goto 1413/1,-2289.72,-2406.12,40,0
+    .goto 1413/1,-2269.46,-2434.49,0
     .goto 1413/1,-2269.46,-2434.49,40,0
+    .goto 1413/1,-2370.79,-2575.02,40,0
     >>Kill |cRXP_ENEMY_Stormhides|r, |cRXP_ENEMY_Thunderheads|r and |cRXP_ENEMY_Stormsnouts|r. Loot them for |cRXP_LOOT_Thunder Lizard Blood|r
     .complete 907,1 --Thunder Lizard Blood (3)
     .mob Stormhide
@@ -2020,16 +1830,10 @@ step
     .mob Cannoneer Whessan
 step
     #loop
-    .goto 1413/1,-3509.78,-2093.98,0
-    .goto 1413/1,-3509.78,-2093.98,40,0
-    .goto 1413/1,-3535.11,-2145.33,40,0
-    .goto 1413/1,-3585.78,-2150.06,40,0
-    .goto 1413/1,-3621.24,-2174.38,40,0
-    .goto 1413/1,-3729.67,-2231.13,40,0
-    .goto 1413/1,-3779.32,-2214.24,40,0
-    .goto 1413/1,-3706.36,-2198.70,40,0
-    .goto 1413/1,-3653.67,-2122.36,40,0
-    .goto 1413/1,-3644.55,-2079.79,40,0
+    .goto 1413/1,-3524.98,-2118.30,0
+    .goto 1413/1,-3524.98,-2118.30,40,0
+    .goto 1413/1,-3640.50,-2106.82,40,0
+    .goto 1413/1,-3736.76,-2203.43,40,0
     >>Kill |cRXP_ENEMY_Captain Fairmount|r
     >>Kill |cRXP_ENEMY_Theramore Marines|r, |cRXP_ENEMY_Theramore Preservers|r, |cRXP_ENEMY_Captain Fairmounts|r and |cRXP_ENEMY_Cannoneer Smythes|r. Loot them for |cRXP_LOOT_Theramore Medal|r
     >>Kill |cRXP_ENEMY_Cannoneer Smythe|r
@@ -2047,7 +1851,7 @@ step
     .target Seereth Stonebreak
     .isQuestComplete 1062
 step << Tauren Druid
-    .goto 1413/1,-2018.15,-2989.86
+    .goto 1413/1,-2017.14,-2979.72
     >>Kill |cRXP_ENEMY_Lost Barrens Kodos|r and |cRXP_ENEMY_Barrens Kodos|r. Loot them for |cRXP_LOOT_Kodo Horn|r
     .complete 6128,2 --Kodo Horn (5)
     .mob Lost Barrens Kodo
@@ -2055,18 +1859,14 @@ step << Tauren Druid
     .isOnQuest 6128
 step
     #loop
-    .goto 1413/1,-2188.39,-3105.39,0
-    .goto 1413/1,-2188.39,-3105.39,40,0
-    .goto 1413/1,-2170.15,-3141.20,40,0
-    .goto 1413/1,-2217.78,-3179.03,40,0
-    .goto 1413/1,-2251.22,-3175.65,40,0
+    .goto 1413/1,-2300.87,-3106.74,0
     .goto 1413/1,-2300.87,-3106.74,40,0
+    .goto 1413/1,-2227.91,-3174.98,40,0
     >>Loot the |cRXP_PICK_Silithid Mounds|r for |cRXP_LOOT_Silithid Egg|r
     .complete 868,1 --Silithid Egg (12)
 step
     #loop
-    .goto 1413/1,-2142.79,-3364.15,0
-    .goto 1413/1,-2142.79,-3364.15,40,0
+    .goto 1413/1,-2150.90,-3414.15,0
     .goto 1413/1,-2150.90,-3414.15,40,0
     .goto 1413/1,-2190.42,-3470.90,40,0
     >>Kill |cRXP_ENEMY_Thunderhawk Hatchlings|r, |cRXP_ENEMY_Greater Thunderhawks|r and |cRXP_ENEMY_Thunderhawk Cloudscrapers|r. Loot them for |cRXP_LOOT_Thunderhawk Wings|r
@@ -2119,14 +1919,7 @@ step << Tauren Druid
     .isQuestTurnedIn 6128 --any of: Gathering the Cure
     .xp <14,1
 step
-    #loop
-    .goto 1413/1,-3199.70,-205.61,0
-    .goto 1413/1,-3199.70,-205.61,40,0
-    .goto 1413/1,-3208.82,-214.39,40,0
-    .goto 1413/1,-3234.15,-250.20,40,0
-    .goto 1413/1,-3244.28,-231.28,40,0
-    .goto 1413/1,-3260.50,-192.77,40,0
-    .goto 1413/1,-3244.28,-146.83,40,0
+    .goto 1413/1,-3215.91,-227.90
     >>Kill |cRXP_ENEMY_Chol'aruk|r and loot |cRXP_LOOT_Chol'aruk's Head|r
     .complete 97003,1 --Chol'aruk's Head (1)
     .mob Chol'aruk
@@ -2150,11 +1943,9 @@ step << Tauren Druid
     #loop
     .goto 1413/1,-2890.63,130.85,0
     .goto 1413/1,-2890.63,130.85,40,0
-    .goto 1413/1,-2879.48,140.99,40,0
-    .goto 1413/1,-3117.62,388.27,40,0
-    .goto 1413/1,-3189.56,386.92,40,0
     .goto 1413/1,-3212.87,228.14,40,0
-    .goto 1413/1,-3221.99,207.88,40,0
+    .goto 1413/1,-3189.56,386.92,40,0
+    .goto 1413/1,-3117.62,388.27,40,0
     >>Interact with |cRXP_FRIENDLY_Sickly Gazelles|r
     .complete 6129,1 --Sickly Gazelle (10)
     .target Sickly Gazelle
@@ -2210,16 +2001,10 @@ step << Warrior
     .target Ruga Ragetotem
 step << Warrior
     #loop
-    .goto 1413/1,-1786.10,-3077.01,0
-    .goto 1413/1,-1786.10,-3077.01,40,0
-    .goto 1413/1,-1789.14,-3152.01,40,0
-    .goto 1413/1,-1717.19,-3160.12,40,0
-    .goto 1413/1,-1746.58,-3216.19,40,0
-    .goto 1413/1,-1703.00,-3289.84,40,0
-    .goto 1413/1,-1642.20,-3231.06,40,0
-    .goto 1413/1,-1653.35,-3148.63,40,0
-    .goto 1413/1,-1620.92,-3050.66,40,0
+    .goto 1413/1,-1686.79,-3088.50,0
     .goto 1413/1,-1686.79,-3088.50,40,0
+    .goto 1413/1,-1763.80,-3123.63,40,0
+    .goto 1413/1,-1721.24,-3212.14,40,0
     >>Kill |cRXP_ENEMY_Silithid Creepers|r, |cRXP_ENEMY_Silithid Grubs|r, |cRXP_ENEMY_Silithid Swarmers|r and |cRXP_ENEMY_Silithid Harvesters|r. Loot them for |cRXP_LOOT_Twitching Antenna|r
     .complete 1824,1 --Twitching Antenna (5)
     .mob Silithid Creeper
@@ -2379,16 +2164,9 @@ step
     .target Grunt Logmar
 step
     #loop
-    .goto 1413/1,-2300.87,-3537.79,0
-    .goto 1413/1,-2300.87,-3537.79,40,0
-    .goto 1413/1,-2387.00,-3532.38,40,0
-    .goto 1413/1,-2406.26,-3565.49,40,0
-    .goto 1413/1,-2369.78,-3581.71,40,0
-    .goto 1413/1,-2369.78,-3633.73,40,0
-    .goto 1413/1,-2339.38,-3660.08,40,0
-    .goto 1413/1,-2319.11,-3616.84,40,0
-    .goto 1413/1,-2277.56,-3658.73,40,0
-    .goto 1413/1,-2253.24,-3571.57,40,0
+    .goto 1413/1,-2298.84,-3606.03,0
+    .goto 1413/1,-2298.84,-3606.03,40,0
+    .goto 1413/1,-2353.56,-3619.54,40,0
     >>Kill |cRXP_ENEMY_Encroaching Soldiers|r
     >>Kill |cRXP_ENEMY_Outraged Pillagers|r
     .complete 97250,1 --Encroaching Soldier slain (8)
@@ -2397,16 +2175,11 @@ step
     .mob Outraged Pillager
 step
     #loop
-    .goto 1413/1,-1870.20,-3789.80,0
-    .goto 1413/1,-1870.20,-3789.80,40,0
-    .goto 1413/1,-1902.63,-3871.55,40,0
-    .goto 1413/1,-1733.40,-4014.11,40,0
-    .goto 1413/1,-1611.80,-3939.11,40,0
-    .goto 1413/1,-1508.44,-3891.14,40,0
-    .goto 1413/1,-1547.96,-3783.04,40,0
-    .goto 1413/1,-1583.43,-3679.00,40,0
-    .goto 1413/1,-1683.75,-3881.68,40,0
-    .goto 1413/1,-1810.42,-3845.20,40,0
+    .goto 1413/1,-1832.71,-3826.96,0
+    .goto 1413/1,-1832.71,-3826.96,40,0
+    .goto 1413/1,-1655.38,-3903.98,40,0
+    .goto 1413/1,-1607.75,-3880.33,40,0
+    .goto 1413/1,-1594.58,-3720.21,40,0
     >>Kill |cRXP_ENEMY_Razormane Pathfinders|r and |cRXP_ENEMY_Razormane Stalkers|r. Loot them for |cRXP_LOOT_Razormane Backstabber|r
     >>Kill |cRXP_ENEMY_Razormane Seer|r and loot |cRXP_LOOT_Charred Razormane Wand|r
     >>Kill |cRXP_ENEMY_Razormane Warfrenzy|r and loot |cRXP_LOOT_Razormane War Shield|r
@@ -2484,7 +2257,7 @@ step
     .accept 1221 >>Accept Blueleaf Tubers
     .target Mebok Mizzyrix
 step
-    .goto 1413/1,-3694.20,-927.85
+    .goto 1413/1,-3693.19,-929.20
     >>Open the |cRXP_PICK_Snufflenose Command Sticks|r. Loot it for |cRXP_LOOT_Snufflenose Command Stick|r
     >>Pick up |cRXP_PICK_Snufflenose Owner's Manual|r from the ground
     >>Open the |cRXP_PICK_Crate with Holes|r. Loot it for |cRXP_LOOT_Crate With Holes|r
@@ -2582,7 +2355,7 @@ step << Rogue
     .mob Venture Co. Patroller
     .isOnQuest 2478
 step << Rogue
-    .goto 1413/1,-2928.12,1219.29
+    .goto 1413/1,-2913.94,1222.66
     >>Kill |cRXP_ENEMY_Venture Co. Lookouts|r
     .complete 2478,2 --Venture Co. Lookout slain (2)
     .mob Venture Co. Lookout
@@ -2643,16 +2416,9 @@ step
     .isOnQuest 879
 step
     #loop
-    .goto 1413/1,-2145.83,-4053.97,0
-    .goto 1413/1,-2145.83,-4053.97,40,0
+    .goto 1413/1,-2181.30,-4084.37,0
     .goto 1413/1,-2181.30,-4084.37,40,0
-    .goto 1413/1,-2211.70,-4105.31,40,0
-    .goto 1413/1,-2243.11,-4143.15,40,0
-    .goto 1413/1,-2260.34,-4222.87,40,0
-    .goto 1413/1,-2215.75,-4191.12,40,0
-    .goto 1413/1,-2184.34,-4180.98,40,0
-    .goto 1413/1,-2125.56,-4168.82,40,0
-    .goto 1413/1,-2190.42,-4134.37,40,0
+    .goto 1413/1,-2222.84,-4162.07,40,0
     >>Kill |cRXP_ENEMY_Prospector Khazgorm|r and loot |cRXP_LOOT_Khazgorm's Journal|r
     >>Kill |cRXP_ENEMY_Bael'dun Excavators|r
     >>Kill |cRXP_ENEMY_Bael'dun Foremans|r
@@ -2678,16 +2444,9 @@ step
     .unitscan Gann Stonespire
 step
     #loop
-    .goto 1413/1,-2286.68,-4047.21,0
-    .goto 1413/1,-2286.68,-4047.21,40,0
+    .goto 1413/1,-2322.15,-4086.40,0
     .goto 1413/1,-2322.15,-4086.40,40,0
-    .goto 1413/1,-2311.00,-4118.83,40,0
-    .goto 1413/1,-2332.28,-4124.23,40,0
-    .goto 1413/1,-2352.55,-4107.34,40,0
-    .goto 1413/1,-2360.66,-4071.53,40,0
-    .goto 1413/1,-2394.10,-4085.72,40,0
-    .goto 1413/1,-2419.43,-4070.18,40,0
-    .goto 1413/1,-2404.23,-4035.05,40,0
+    .goto 1413/1,-2381.94,-4071.53,40,0
     >>Kill |cRXP_ENEMY_Bael'dun Soldiers|r, |cRXP_ENEMY_Bael'dun Riflemans|r, |cRXP_ENEMY_Bael'dun Officers|r and |cRXP_ENEMY_Lord Cyrik Blackforges|r. Loot them for |cRXP_LOOT_Nitroglycerin|r
     >>Kill |cRXP_ENEMY_Bael'dun Soldiers|r, |cRXP_ENEMY_Bael'dun Riflemans|r, |cRXP_ENEMY_Bael'dun Officers|r and |cRXP_ENEMY_Lord Cyrik Blackforges|r. Loot them for |cRXP_LOOT_Wood Pulp|r
     >>Kill |cRXP_ENEMY_Bael'dun Soldiers|r, |cRXP_ENEMY_Bael'dun Riflemans|r, |cRXP_ENEMY_Bael'dun Officers|r and |cRXP_ENEMY_Lord Cyrik Blackforges|r. Loot them for |cRXP_LOOT_Sodium Nitrate|r
@@ -2776,12 +2535,7 @@ step
     .target Mahren Skyseer
     .isQuestTurnedIn 874 --any of: Mahren Skyseer
 step
-    #loop
-    .goto 1413/1,-3923.22,-1738.60,0
-    .goto 1413/1,-3923.22,-1738.60,40,0
-    .goto 1413/1,-3902.95,-1792.65,40,0
-    .goto 1413/1,-3882.68,-1806.16,40,0
-    .goto 1413/1,-3923.22,-1819.68,40,0
+    .goto 1413/1,-3902.95,-1792.65
     >>Kill |cRXP_ENEMY_Isha Awak|r and loot |cRXP_LOOT_Heart of Isha Awak|r
     .complete 873,1 --Heart of Isha Awak (1)
     .mob Isha Awak

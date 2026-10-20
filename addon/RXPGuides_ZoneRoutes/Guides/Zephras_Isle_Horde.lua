@@ -41,16 +41,10 @@ step
     .target Elatrell Featherlight
 step
     #loop
-    .goto 2521,45.04,25.33,0
-    .goto 2521,45.04,25.33,40,0
-    .goto 2521,47.17,22.03,40,0
-    .goto 2521,44.98,20.20,40,0
-    .goto 2521,43.25,21.87,40,0
-    .goto 2521,41.17,28.03,40,0
-    .goto 2521,44.15,28.30,40,0
-    .goto 2521,45.91,27.99,40,0
-    .goto 2521,47.74,28.36,40,0
-    .goto 2521,46.92,25.56,40,0
+    .goto 2521,44.10,27.18,0
+    .goto 2521,44.10,27.18,40,0
+    .goto 2521,46.07,27.66,40,0
+    .goto 2521,45.57,24.34,40,0
     >>Kill |cRXP_ENEMY_Pesky Cirrusflies|r
     >>Kill |cRXP_ENEMY_Juvenile Vuldrens|r
     .complete 92462,1 --Pesky Cirrusfly slain (8)
@@ -202,16 +196,9 @@ step
     .target Yala Windwatcher
 step
     #loop
-    .goto 2521,47.66,21.38,0
-    .goto 2521,47.66,21.38,40,0
-    .goto 2521,49.02,21.04,40,0
-    .goto 2521,48.01,18.99,40,0
-    .goto 2521,47.18,17.69,40,0
-    .goto 2521,46.81,19.40,40,0
-    .goto 2521,45.92,18.98,40,0
-    .goto 2521,45.05,20.50,40,0
-    .goto 2521,45.64,22.32,40,0
-    .goto 2521,46.98,23.32,40,0
+    .goto 2521,47.78,20.64,0
+    .goto 2521,47.78,20.64,40,0
+    .goto 2521,46.55,19.06,40,0
     >>Click the |cRXP_PICK_Elemental Convergence|r << Skyborne
     >>Kill |cRXP_ENEMY_Al'Aketh Converts|r
     >>Kill |cRXP_ENEMY_Roiling Winds|r
@@ -270,16 +257,10 @@ step << Shaman
     .target Minor Manifestation of Earth
 step
     #loop
-    .goto 2521,48.13,29.30,0
-    .goto 2521,48.13,29.30,40,0
-    .goto 2521,46.76,27.94,40,0
-    .goto 2521,45.33,29.14,40,0
-    .goto 2521,42.87,28.75,40,0
+    .goto 2521,47.40,26.43,0
+    .goto 2521,47.40,26.43,40,0
+    .goto 2521,43.48,23.85,40,0
     .goto 2521,41.51,26.94,40,0
-    .goto 2521,42.82,22.27,40,0
-    .goto 2521,44.23,24.95,40,0
-    .goto 2521,46.61,24.60,40,0
-    .goto 2521,48.29,25.67,40,0
     >>Loot the |cRXP_PICK_Raw Windstones|r for |cRXP_LOOT_Windstone Cluster|r
     .complete 93552,1 --Windstone Cluster (15)
 step << Alliance/!Shaman
@@ -420,16 +401,10 @@ step
     .target Valreaa Valewind
 step
     #loop
-    .goto 2521,39.71,26.78,0
-    .goto 2521,39.71,26.78,40,0
-    .goto 2521,38.05,28.12,40,0
-    .goto 2521,38.88,30.20,40,0
-    .goto 2521,40.35,29.86,40,0
-    .goto 2521,38.75,32.56,40,0
-    .goto 2521,36.83,31.17,40,0
-    .goto 2521,35.65,26.07,40,0
-    .goto 2521,36.17,22.76,40,0
-    .goto 2521,37.88,24.44,40,0
+    .goto 2521,38.33,27.25,0
+    .goto 2521,38.33,27.25,40,0
+    .goto 2521,38.39,30.03,40,0
+    .goto 2521,36.25,25.68,40,0
     >>Kill |cRXP_ENEMY_Scrawny Urseras|r. Loot them for |cRXP_LOOT_Scrawny Ursera Claw|r
     >>Kill |cRXP_ENEMY_Urs'anah|r and loot |cRXP_LOOT_Head of Urs'anah|r
     >>Kill |cRXP_ENEMY_Ursera Scavengers|r
@@ -458,16 +433,9 @@ step
     .target Hanaa Nightwind
 step
     #loop
-    .goto 2521,38.28,30.69,0
-    .goto 2521,38.28,30.69,40,0
-    .goto 2521,36.67,30.71,40,0
-    .goto 2521,35.31,32.00,40,0
-    .goto 2521,36.05,33.53,40,0
-    .goto 2521,36.28,35.28,40,0
-    .goto 2521,37.17,34.78,40,0
-    .goto 2521,38.05,34.32,40,0
-    .goto 2521,39.09,34.12,40,0
-    .goto 2521,37.18,33.37,40,0
+    .goto 2521,37.53,32.96,0
+    .goto 2521,37.53,32.96,40,0
+    .goto 2521,36.00,32.87,40,0
     >>Kill |cRXP_ENEMY_Malduko Cloudcrush|r
     >>Kill |cRXP_ENEMY_Al'Aketh Brutes|r
     >>Kill |cRXP_ENEMY_Al'Aketh Neophytes|r
@@ -551,11 +519,7 @@ step << Horde Shaman
     .money <0.01
     .xp <6,1
 step
-    #loop
-    .goto 2521,43.52,44.15,0
-    .goto 2521,43.52,44.15,40,0
-    .goto 2521,43.25,43.88,40,0
-    .goto 2521,41.76,44.72,40,0
+    .goto 2521,43.20,43.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coriella Calmbreeze|r
     .complete 92514,2 --Coriella Calmbreeze
     .target Coriella Calmbreeze
@@ -695,31 +659,17 @@ step
     .mob Galestrider
 step
     #loop
-    .goto 2521,45.21,41.42,0
-    .goto 2521,45.21,41.42,40,0
-    .goto 2521,45.87,40.44,40,0
-    .goto 2521,45.93,38.94,40,0
-    .goto 2521,46.80,39.11,40,0
-    .goto 2521,46.87,40.33,40,0
-    .goto 2521,47.67,38.81,40,0
-    .goto 2521,48.10,37.37,40,0
-    .goto 2521,45.88,37.36,40,0
-    .goto 2521,44.89,39.27,40,0
+    .goto 2521,45.60,39.86,0
+    .goto 2521,45.60,39.86,40,0
+    .goto 2521,46.77,38.40,40,0
     >>Kill |cRXP_ENEMY_High Order Apprentices|r
     .complete 94411,1 --High Order Apprentice slain (6)
     .mob High Order Apprentice
 step
     #loop
-    .goto 2521,47.67,39.10,0
-    .goto 2521,47.67,39.10,40,0
-    .goto 2521,45.74,36.73,40,0
-    .goto 2521,46.80,36.84,40,0
-    .goto 2521,47.64,36.04,40,0
-    .goto 2521,50.85,33.33,40,0
-    .goto 2521,50.21,36.04,40,0
-    .goto 2521,49.30,37.06,40,0
-    .goto 2521,50.06,39.64,40,0
-    .goto 2521,48.56,38.41,40,0
+    .goto 2521,47.91,37.51,0
+    .goto 2521,47.91,37.51,40,0
+    .goto 2521,50.03,34.53,40,0
     >>Kill |cRXP_ENEMY_"Badwind" Bennic|r
     >>Kill |cRXP_ENEMY_Highlands Bandits|r
     >>Kill |cRXP_ENEMY_Highlands Bandits|r and |cRXP_ENEMY_"Badwind" Bennics|r. Loot them for |cRXP_LOOT_Pilfered Windstone|r
@@ -883,16 +833,11 @@ step
     .target Raan Wildwind::263664
 step
     #loop
-    .goto 2521,41.41,49.41,0
-    .goto 2521,41.41,49.41,40,0
-    .goto 2521,39.81,52.06,40,0
-    .goto 2521,41.22,54.98,40,0
-    .goto 2521,38.06,57.60,40,0
-    .goto 2521,34.25,58.54,40,0
-    .goto 2521,33.19,54.37,40,0
-    .goto 2521,35.04,50.32,40,0
-    .goto 2521,36.84,53.31,40,0
-    .goto 2521,38.04,48.30,40,0
+    .goto 2521,37.71,50.96,0
+    .goto 2521,37.71,50.96,40,0
+    .goto 2521,36.01,52.18,40,0
+    .goto 2521,35.12,55.28,40,0
+    .goto 2521,38.86,53.20,40,0
     >>Pick up |cRXP_PICK_Hippogryph Down|r from the ground
     >>Kill |cRXP_ENEMY_Hippogryph Youths|r
     >>Kill |cRXP_ENEMY_Hippogryph Protectors|r
@@ -912,16 +857,11 @@ step
     .mob Vulgara the Insatiable
 step
     #loop
-    .goto 2521,42.82,45.53,0
-    .goto 2521,42.82,45.53,40,0
-    .goto 2521,43.27,40.66,40,0
-    .goto 2521,40.63,39.64,40,0
-    .goto 2521,38.83,42.57,40,0
-    .goto 2521,39.68,34.91,40,0
-    .goto 2521,43.44,35.71,40,0
-    .goto 2521,45.83,36.22,40,0
-    .goto 2521,47.92,38.95,40,0
-    .goto 2521,45.84,42.31,40,0
+    .goto 2521,39.75,41.89,0
+    .goto 2521,39.75,41.89,40,0
+    .goto 2521,42.99,40.37,40,0
+    .goto 2521,45.71,40.19,40,0
+    .goto 2521,42.95,36.55,40,0
     >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for |cRXP_LOOT_Prideclaw Pelt|r
     .complete 92515,1 --Prideclaw Pelt (10)
     .mob Prideclaw
@@ -1174,7 +1114,7 @@ step
     .accept 93927 >>Accept A Last Request
     .target Peacekeeper Vaaniel
 step
-    .goto 2521,42.37,62.07
+    .goto 2521,41.13,64.07
     >>Pick up |cRXP_PICK_Bloody Note|r from the ground
     >>Open the |cRXP_PICK_Arvensus Shadowsong|r. Loot it for |cRXP_LOOT_Shadowsong Family Signet|r
     >>Open the |cRXP_PICK_Raani Windgazer|r. Loot it for |cRXP_LOOT_Raani's Lucky Feather|r
@@ -1187,16 +1127,10 @@ step
 step
     #label Along77
     #loop
-    .goto 2521,47.66,58.53,0
-    .goto 2521,47.66,58.53,40,0
-    .goto 2521,49.86,60.20,40,0
-    .goto 2521,50.74,57.42,40,0
-    .goto 2521,51.36,54.89,40,0
-    .goto 2521,50.26,52.43,40,0
-    .goto 2521,49.42,55.91,40,0
-    .goto 2521,47.68,54.83,40,0
-    .goto 2521,47.58,51.70,40,0
-    .goto 2521,45.43,54.69,40,0
+    .goto 2521,48.55,57.49,0
+    .goto 2521,48.55,57.49,40,0
+    .goto 2521,49.66,54.96,40,0
+    .goto 2521,47.68,54.61,40,0
     >>Kill |cRXP_ENEMY_Commander Cyclas|r and loot |cRXP_LOOT_Commander Cyclas's Head|r
     >>Kill |cRXP_ENEMY_Al'Aketh Stormcallers|r
     >>Kill |cRXP_ENEMY_Al'Aketh Stormcallers|r, |cRXP_ENEMY_Al'Aketh Healers|r, |cRXP_ENEMY_Tel'daeor the Stormspeakers|r and |cRXP_ENEMY_Galemender Delaneas|r. Loot them for |cRXP_LOOT_Stolen Shen'dar Supplies|r. It can also be picked up from |cRXP_PICK_Supply Cache|r on the ground
@@ -1220,14 +1154,7 @@ step
     #loop
     .goto 2521,56.37,60.46,0
     .goto 2521,56.37,60.46,40,0
-    .goto 2521,55.54,61.28,40,0
-    .goto 2521,54.74,62.99,40,0
-    .goto 2521,54.58,61.18,40,0
-    .goto 2521,54.66,59.17,40,0
-    .goto 2521,55.45,58.32,40,0
-    .goto 2521,56.36,58.11,40,0
-    .goto 2521,56.80,59.35,40,0
-    .goto 2521,58.03,60.71,40,0
+    .goto 2521,55.22,60.46,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Assassins|r
     .complete 98512,1 --Al'Aketh Assassin slain (10)
     .mob Al'Aketh Assassin
@@ -1243,31 +1170,20 @@ step
 step
     #label Along81
     #loop
-    .goto 2521,42.58,44.42,0
-    .goto 2521,42.58,44.42,40,0
-    .goto 2521,46.97,45.34,40,0
-    .goto 2521,47.25,40.56,40,0
-    .goto 2521,48.79,37.31,40,0
-    .goto 2521,45.71,35.85,40,0
-    .goto 2521,44.65,39.22,40,0
-    .goto 2521,41.51,36.96,40,0
-    .goto 2521,42.20,40.43,40,0
-    .goto 2521,39.75,41.57,40,0
+    .goto 2521,40.86,41.46,0
+    .goto 2521,40.86,41.46,40,0
+    .goto 2521,43.33,37.80,40,0
+    .goto 2521,46.95,37.01,40,0
+    .goto 2521,45.84,40.77,40,0
     >>Kill |cRXP_ENEMY_Galestriders|r. Loot them for |cRXP_LOOT_Strider Meat|r
     .complete 92553,2 --Strider Meat (8)
     .mob Galestrider
 step
     #loop
-    .goto 2521,41.80,51.94,0
-    .goto 2521,41.80,51.94,40,0
-    .goto 2521,38.84,50.87,40,0
-    .goto 2521,36.35,49.18,40,0
-    .goto 2521,35.24,53.06,40,0
-    .goto 2521,33.37,55.78,40,0
-    .goto 2521,36.13,58.44,40,0
-    .goto 2521,39.64,61.01,40,0
-    .goto 2521,40.71,56.81,40,0
-    .goto 2521,37.95,55.33,40,0
+    .goto 2521,38.84,51.89,0
+    .goto 2521,38.84,51.89,40,0
+    .goto 2521,38.22,56.47,40,0
+    .goto 2521,35.74,54.05,40,0
     >>Kill |cRXP_ENEMY_Shadowgale Urseras|r, |cRXP_ENEMY_Highlands Urseras|r, |cRXP_ENEMY_Den'dralass|r and |cRXP_ENEMY_Hippogryph Matriarches|r. Loot them for |cRXP_LOOT_Small Egg|r
     .complete 92553,1 --Small Egg (3)
     .mob Shadowgale Ursera
@@ -1479,16 +1395,10 @@ step
     .mob Ornery Galestrider
 step
     #loop
-    .goto 2521,46.71,83.52,0
-    .goto 2521,46.71,83.52,40,0
-    .goto 2521,48.53,83.45,40,0
-    .goto 2521,49.93,84.69,40,0
-    .goto 2521,50.05,80.68,40,0
-    .goto 2521,47.68,81.02,40,0
-    .goto 2521,47.69,78.46,40,0
-    .goto 2521,48.28,76.75,40,0
-    .goto 2521,46.69,76.53,40,0
-    .goto 2521,45.89,79.97,40,0
+    .goto 2521,47.52,81.60,0
+    .goto 2521,47.52,81.60,40,0
+    .goto 2521,48.63,83.56,40,0
+    .goto 2521,46.47,78.88,40,0
     >>Pick up |cRXP_PICK_Ripe Stormapple|r from the ground
     >>Kill |cRXP_ENEMY_Hungry Bandits|r
     .complete 92682,1 --Ripe Stormapple (5)
@@ -1539,16 +1449,10 @@ step << Skyborne Shaman
     .target Olariaan Swiftburn
 step
     #loop
-    .goto 2521,48.00,79.50,0
-    .goto 2521,48.00,79.50,40,0
-    .goto 2521,45.72,80.62,40,0
-    .goto 2521,48.44,85.67,40,0
-    .goto 2521,51.81,83.51,40,0
-    .goto 2521,52.38,80.40,40,0
-    .goto 2521,52.91,77.18,40,0
-    .goto 2521,50.30,72.50,40,0
-    .goto 2521,47.58,75.01,40,0
-    .goto 2521,50.25,78.89,40,0
+    .goto 2521,50.55,79.99,0
+    .goto 2521,50.55,79.99,40,0
+    .goto 2521,50.25,83.43,40,0
+    .goto 2521,50.00,75.20,40,0
     >>Pick up |cRXP_PICK_Flutterfly Dust|r from the ground
     >>Kill |cRXP_ENEMY_Ornery Galestriders|r. Loot them for |cRXP_LOOT_Lowlands Galestrider Tenderloin|r
     .complete 92683,1 --Flutterfly Dust (5)
@@ -1565,28 +1469,14 @@ step
     .target Aamelia Windfield
 step
     #loop
-    .goto 2521,45.90,79.89,0
-    .goto 2521,45.90,79.89,40,0
-    .goto 2521,45.05,77.17,40,0
-    .goto 2521,43.27,74.95,40,0
-    .goto 2521,45.06,73.70,40,0
-    .goto 2521,46.51,71.08,40,0
-    .goto 2521,46.78,73.87,40,0
-    .goto 2521,48.35,73.46,40,0
-    .goto 2521,48.33,77.00,40,0
-    .goto 2521,46.80,76.43,40,0
+    .goto 2521,45.59,77.37,0
+    .goto 2521,45.59,77.37,40,0
+    .goto 2521,45.54,73.04,40,0
     >>Kill |cRXP_ENEMY_Bandit Highwaymans|r. Loot them for |cRXP_LOOT_Blood-Stained Bandit Mask|r
     .complete 92685,1 --Blood-Stained Bandit Mask (7)
     .mob Bandit Highwayman
 step
-    #loop
-    .goto 2521,44.80,76.70,0
-    .goto 2521,44.80,76.70,40,0
-    .goto 2521,43.90,75.50,40,0
-    .goto 2521,43.90,75.40,40,0
-    .goto 2521,43.30,74.50,40,0
-    .goto 2521,44.70,73.40,40,0
-    .goto 2521,44.80,74.20,40,0
+    .goto 2521,43.90,75.40
     >>Open the |cRXP_PICK_Construct Parts|r. Loot it for |cRXP_LOOT_Air Construct Core|r
     .complete 93737,4 --Air Construct Core (1)
     .isOnQuest 93737
@@ -1607,12 +1497,7 @@ step
     .complete 92693,1 --Aamelia Windfield
     .target Aamelia Windfield
 step
-    #loop
-    .goto 2521,46.47,78.22,0
-    .goto 2521,46.47,78.22,40,0
-    .goto 2521,47.59,78.30,40,0
-    .goto 2521,47.86,78.19,40,0
-    .goto 2521,48.56,76.82,40,0
+    .goto 2521,47.54,78.26
     >>Speak with Aamelia Windfield when you are ready to confront the bandit leader.
     .complete 92693,2 --Ferauu the Bludgeon
     .target Ferauu the Bludgeon
@@ -1831,16 +1716,9 @@ step << Hunter
     .xp <10,1
 step
     #loop
-    .goto 2521,61.32,72.83,0
-    .goto 2521,61.32,72.83,40,0
-    .goto 2521,59.67,72.83,40,0
-    .goto 2521,57.26,74.75,40,0
-    .goto 2521,58.18,75.78,40,0
-    .goto 2521,58.89,77.37,40,0
-    .goto 2521,59.83,75.24,40,0
-    .goto 2521,60.99,76.14,40,0
-    .goto 2521,61.65,74.66,40,0
-    .goto 2521,62.91,73.99,40,0
+    .goto 2521,61.80,74.10,0
+    .goto 2521,61.80,74.10,40,0
+    .goto 2521,59.33,74.44,40,0
     >>Kill |cRXP_ENEMY_Skyhoppers|r
     .complete 93949,1 --Skyhopper slain (8)
     .mob Skyhopper
@@ -1852,43 +1730,24 @@ step
     .mob Windsong Crawler
 step
     #label Along134
-    #loop
-    .goto 2521,52.90,66.10,0
-    .goto 2521,52.90,66.10,40,0
-    .goto 2521,52.80,64.80,40,0
-    .goto 2521,51.90,65.60,40,0
-    .goto 2521,51.50,67.60,40,0
-    .goto 2521,51.90,67.10,40,0
+    .goto 2521,51.90,67.10
     >>Open the |cRXP_PICK_Construct Parts|r. Loot it for |cRXP_LOOT_Crystallized Lightning|r
     .complete 93737,2 --Crystallized Lightning (1)
     .isOnQuest 93737
 step
     #loop
-    .goto 2521,51.89,60.75,0
-    .goto 2521,51.89,60.75,40,0
-    .goto 2521,51.17,58.83,40,0
-    .goto 2521,51.71,56.93,40,0
-    .goto 2521,52.88,58.53,40,0
-    .goto 2521,53.68,57.21,40,0
-    .goto 2521,55.54,56.11,40,0
-    .goto 2521,56.51,55.08,40,0
-    .goto 2521,57.06,56.59,40,0
-    .goto 2521,54.45,59.99,40,0
+    .goto 2521,52.00,58.33,0
+    .goto 2521,52.00,58.33,40,0
+    .goto 2521,53.42,57.73,40,0
+    .goto 2521,55.93,56.60,40,0
     >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |cRXP_LOOT_Windsong Crawler Meat|r
     .complete 93317,1 --Windsong Crawler Meat (6)
     .mob Windsong Crawler
 step
     #loop
-    .goto 2521,52.90,51.70,0
-    .goto 2521,52.90,51.70,40,0
-    .goto 2521,53.60,50.50,40,0
-    .goto 2521,52.80,49.70,40,0
-    .goto 2521,53.10,47.70,40,0
-    .goto 2521,52.50,45.80,40,0
-    .goto 2521,51.60,46.60,40,0
-    .goto 2521,50.70,44.50,40,0
+    .goto 2521,53.50,50.40,0
+    .goto 2521,53.50,50.40,40,0
     .goto 2521,50.00,44.80,40,0
-    .goto 2521,49.40,46.00,40,0
     >>Open the |cRXP_PICK_Construct Parts|r. Loot it for |cRXP_LOOT_Enchanted Gyrozephyr|r
     .complete 93737,3 --Enchanted Gyrozephyr (1)
     .isOnQuest 93737
@@ -1904,7 +1763,7 @@ step << Skyborne Druid
     .accept 94638 >>Accept Strength and Mercy
     .target Urs'endris
 step << Skyborne Druid
-    .goto 2521,53.77,65.20
+    .goto 2521,53.66,65.02
     >>Kill |cRXP_ENEMY_Ur'endras|r
     .complete 94638,1 --Ur'endra slain (8)
     .mob Ur'endra
@@ -1957,32 +1816,18 @@ step
 step
     #label Along145
     #loop
-    .goto 2521,57.17,29.30,0
-    .goto 2521,57.17,29.30,40,0
-    .goto 2521,57.31,33.42,40,0
-    .goto 2521,57.12,35.42,40,0
-    .goto 2521,58.08,34.88,40,0
-    .goto 2521,59.41,34.14,40,0
-    .goto 2521,59.68,31.84,40,0
-    .goto 2521,58.16,31.35,40,0
-    .goto 2521,58.69,29.37,40,0
-    .goto 2521,58.32,26.62,40,0
+    .goto 2521,58.15,30.59,0
+    .goto 2521,58.15,30.59,40,0
+    .goto 2521,57.81,33.82,40,0
     >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |cRXP_LOOT_Wind Hollow Essence|r
     .complete 93736,1 --Wind Hollow Essence (10)
     .mob Wind Hollow
     .isOnQuest 93736
 step
     #loop
-    .goto 2521,58.17,32.68,0
-    .goto 2521,58.17,32.68,40,0
-    .goto 2521,57.28,31.70,40,0
-    .goto 2521,56.90,29.40,40,0
-    .goto 2521,58.32,26.62,40,0
-    .goto 2521,58.69,29.37,40,0
-    .goto 2521,59.68,31.84,40,0
-    .goto 2521,59.01,34.81,40,0
-    .goto 2521,57.12,35.42,40,0
-    .goto 2521,57.00,33.40,40,0
+    .goto 2521,58.15,30.59,0
+    .goto 2521,58.15,30.59,40,0
+    .goto 2521,57.81,33.82,40,0
     >>Pick up |cRXP_PICK_Abandoned Belongings|r from the ground
     >>Kill |cRXP_ENEMY_Wind Hollows|r
     .complete 94896,1 --Abandoned Belongings (8)
@@ -2017,16 +1862,10 @@ step
     .isQuestTurnedIn 94484,94493 --any of: Unnerving Silence, A Sacrifice in Vain
 step
     #loop
-    .goto 2521,61.60,38.86,0
-    .goto 2521,61.60,38.86,40,0
-    .goto 2521,63.43,38.82,40,0
-    .goto 2521,65.21,38.84,40,0
-    .goto 2521,65.16,36.91,40,0
-    .goto 2521,65.83,35.70,40,0
-    .goto 2521,63.94,34.64,40,0
-    .goto 2521,63.43,36.84,40,0
-    .goto 2521,61.63,35.93,40,0
-    .goto 2521,59.41,35.93,40,0
+    .goto 2521,62.26,37.40,0
+    .goto 2521,62.26,37.40,40,0
+    .goto 2521,63.36,37.90,40,0
+    .goto 2521,65.04,37.19,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Stormchasers|r and |cRXP_ENEMY_Al'Aketh Footsoldiers|r. Loot them for |cRXP_LOOT_Bloody Heirloom|r
     .complete 94487,1 --Bloody Heirloom (10)
     .mob Al'Aketh Stormchaser
@@ -2046,16 +1885,10 @@ step
     .isQuestTurnedIn 94484,94493 --any of: Unnerving Silence, A Sacrifice in Vain
 step
     #loop
-    .goto 2521,61.80,36.40,0
-    .goto 2521,61.80,36.40,40,0
-    .goto 2521,61.70,39.30,40,0
-    .goto 2521,59.20,41.40,40,0
-    .goto 2521,57.60,40.60,40,0
-    .goto 2521,55.80,40.50,40,0
-    .goto 2521,57.20,39.20,40,0
-    .goto 2521,57.00,37.40,40,0
-    .goto 2521,58.80,38.70,40,0
-    .goto 2521,60.30,37.30,40,0
+    .goto 2521,61.00,37.70,0
+    .goto 2521,61.00,37.70,40,0
+    .goto 2521,58.70,39.90,40,0
+    .goto 2521,56.90,38.10,40,0
     >>Loot the |cRXP_PICK_Zephyrseed Cones|r for |cRXP_LOOT_Zephyrseed|r
     .complete 93160,1 --Zephyrseed (8)
     .isOnQuest 93160
@@ -2080,16 +1913,9 @@ step
     .target Strange Hermit::251684
 step
     #loop
-    .goto 2521,58.70,40.00,0
-    .goto 2521,58.70,40.00,40,0
-    .goto 2521,59.20,38.50,40,0
-    .goto 2521,61.20,35.30,40,0
-    .goto 2521,62.10,36.40,40,0
-    .goto 2521,64.30,39.30,40,0
-    .goto 2521,62.80,39.40,40,0
-    .goto 2521,61.80,38.90,40,0
+    .goto 2521,60.80,38.70,0
     .goto 2521,60.80,38.70,40,0
-    .goto 2521,60.00,40.30,40,0
+    .goto 2521,62.80,39.40,40,0
     >>Pick up |cRXP_PICK_Lady's Tear Moss|r from the ground
     .complete 94485,1 --Lady's Tear Moss (8)
     .isOnQuest 94485
@@ -2101,16 +1927,10 @@ step
     .target Elegael Thornpaw
 step
     #loop
-    .goto 2521,59.84,38.32,0
-    .goto 2521,59.84,38.32,40,0
-    .goto 2521,60.14,40.57,40,0
-    .goto 2521,60.08,43.03,40,0
-    .goto 2521,59.10,44.39,40,0
-    .goto 2521,57.76,42.85,40,0
-    .goto 2521,58.94,41.58,40,0
-    .goto 2521,58.03,39.74,40,0
-    .goto 2521,56.57,35.67,40,0
-    .goto 2521,58.35,36.93,40,0
+    .goto 2521,58.95,39.17,0
+    .goto 2521,58.95,39.17,40,0
+    .goto 2521,57.34,37.78,40,0
+    .goto 2521,59.24,42.09,40,0
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for |cRXP_LOOT_Pristine Shriekling Feather|r
     .complete 94486,1 --Pristine Shriekling Feather (20)
     .mob Shadowgale Shriekling
@@ -2159,13 +1979,7 @@ step
     .isQuestTurnedIn 94486 --Feathers for Binding
     .isQuestTurnedIn 94487 --Unwanted and Unworthy
 step
-    #loop
-    .goto 2521,64.96,34.95,0
-    .goto 2521,64.96,34.95,40,0
-    .goto 2521,65.92,33.55,40,0
-    .goto 2521,65.80,32.96,40,0
-    .goto 2521,64.43,31.90,40,0
-    .goto 2521,64.01,31.96,40,0
+    .goto 2521,64.96,34.95
     >>Kill |cRXP_ENEMY_Naaleos Leafwhisper|r, |cRXP_ENEMY_Telenos Leafwhisper|r, |cRXP_ENEMY_Nayeela Snarlfang|r and |cRXP_ENEMY_Neyasteel Mossmender|r
     .complete 94489,2 --Naaleos Leafwhisper (1)
     .mob Naaleos Leafwhisper
@@ -2205,16 +2019,10 @@ step
     .isQuestTurnedIn 94490 --any of: Ripped Missive
 step
     #loop
-    .goto 2521,63.51,45.29,0
-    .goto 2521,63.51,45.29,40,0
-    .goto 2521,63.80,48.67,40,0
-    .goto 2521,63.75,54.48,40,0
-    .goto 2521,61.50,53.54,40,0
-    .goto 2521,59.03,54.09,40,0
-    .goto 2521,56.63,50.37,40,0
-    .goto 2521,59.08,48.88,40,0
-    .goto 2521,59.84,51.32,40,0
-    .goto 2521,61.65,49.63,40,0
+    .goto 2521,62.53,48.25,0
+    .goto 2521,62.53,48.25,40,0
+    .goto 2521,62.23,52.31,40,0
+    .goto 2521,60.06,50.79,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Stormchasers|r, |cRXP_ENEMY_Al'Aketh Footsoldiers|r, |cRXP_ENEMY_Al'Aketh Guardians|r and |cRXP_ENEMY_Al'Aketh Spiritcallers|r. Loot them for |cRXP_LOOT_Al'Alketh Cultist's Ear|r
     .complete 93165,1 --Al'Alketh Cultist's Ear (10)
     .mob Al'Aketh Stormchaser
@@ -2395,7 +2203,7 @@ step << Skyborne Hunter
     .accept 94007 >>Accept Taming the Beast
     .target Elayaa Easewind
 step
-    .goto 2521,59.93,57.15
+    .goto 2521,59.79,57.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belathaan Brightwish|r
     .complete 93746,1 --Belathaan Brightwish
     .target Belathaan Brightwish
@@ -2457,16 +2265,10 @@ step
     .isOnQuest 92645
 step
     #loop
-    .goto 2521,65.85,66.38,0
-    .goto 2521,65.85,66.38,40,0
-    .goto 2521,63.95,67.12,40,0
-    .goto 2521,63.10,69.55,40,0
-    .goto 2521,65.42,71.96,40,0
-    .goto 2521,65.03,69.01,40,0
-    .goto 2521,67.32,67.76,40,0
-    .goto 2521,69.23,67.44,40,0
-    .goto 2521,66.70,61.99,40,0
-    .goto 2521,65.17,63.45,40,0
+    .goto 2521,65.51,64.44,0
+    .goto 2521,65.51,64.44,40,0
+    .goto 2521,65.16,67.71,40,0
+    .goto 2521,67.28,67.16,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Stormchasers|r, |cRXP_ENEMY_Al'Aketh Footsoldiers|r, |cRXP_ENEMY_Al'Aketh Guardians|r and |cRXP_ENEMY_Al'Aketh Spiritcallers|r. Loot them for |cRXP_LOOT_Al'Aketh Windstone Charm|r
     .complete 93740,1 --Al'Aketh Windstone Charm (10)
     .mob Al'Aketh Stormchaser
@@ -2476,32 +2278,19 @@ step
     .isOnQuest 93740
 step
     #loop
-    .goto 2521,66.05,67.20,0
-    .goto 2521,66.05,67.20,40,0
-    .goto 2521,67.65,67.90,40,0
-    .goto 2521,69.23,67.44,40,0
-    .goto 2521,65.42,71.96,40,0
-    .goto 2521,65.03,69.01,40,0
-    .goto 2521,63.10,69.55,40,0
-    .goto 2521,64.29,67.19,40,0
-    .goto 2521,65.14,64.33,40,0
-    .goto 2521,65.18,66.35,40,0
+    .goto 2521,65.10,65.31,0
+    .goto 2521,65.10,65.31,40,0
+    .goto 2521,64.99,68.12,40,0
+    .goto 2521,67.02,67.12,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers|r
     .complete 92642,2 --Al'Aketh Brawler slain (8)
     .mob Al'Aketh Brawler
     .isOnQuest 92642
 step
     #loop
-    .goto 2521,66.06,67.57,0
-    .goto 2521,66.06,67.57,40,0
-    .goto 2521,65.09,68.93,40,0
-    .goto 2521,65.59,70.58,40,0
-    .goto 2521,64.06,70.33,40,0
-    .goto 2521,63.37,68.41,40,0
-    .goto 2521,65.15,64.64,40,0
-    .goto 2521,67.61,67.12,40,0
-    .goto 2521,68.95,67.71,40,0
-    .goto 2521,67.48,69.01,40,0
+    .goto 2521,65.20,66.96,0
+    .goto 2521,65.20,66.96,40,0
+    .goto 2521,67.07,67.93,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Healers|r
     .complete 92642,1 --Al'Aketh Healer slain (4)
     .mob Al'Aketh Healer
@@ -2617,7 +2406,7 @@ step
     .target Valennia Stormfist
     .isOnQuest 92640
 step
-    .goto 2521,66.63,79.93
+    .goto 2521,66.61,80.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale|r
     .complete 92640,3 --Elaadrin Evengale
     .target Elaadrin Evengale
@@ -2647,7 +2436,7 @@ step
     .target Valennia Stormfist
     .isQuestTurnedIn 92640 --any of: Desperate Times
 step
-    .goto 2521,61.19,70.80
+    .goto 2521,61.17,70.95
     >>Interact with |cRXP_FRIENDLY_Valennia Stormfist|r
     .complete 93065,1 --Valennia Stormfist
     .target Valennia Stormfist
@@ -2678,48 +2467,29 @@ step
     .isQuestTurnedIn 93065 --any of: Prepare for Battle
 step
     #loop
-    .goto 2521,64.72,55.89,0
-    .goto 2521,64.72,55.89,40,0
+    .goto 2521,63.90,54.42,0
     .goto 2521,63.90,54.42,40,0
-    .goto 2521,62.55,53.02,40,0
-    .goto 2521,61.61,53.31,40,0
-    .goto 2521,62.56,51.65,40,0
-    .goto 2521,63.33,52.34,40,0
-    .goto 2521,64.47,52.15,40,0
-    .goto 2521,64.94,49.58,40,0
-    .goto 2521,66.43,53.31,40,0
+    .goto 2521,62.26,52.67,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Blademasters|r
     .complete 92947,3 --Al'Aketh Blademaster slain (7)
     .mob Al'Aketh Blademaster
     .isOnQuest 92947
 step
     #loop
-    .goto 2521,63.09,53.60,0
-    .goto 2521,63.09,53.60,40,0
-    .goto 2521,61.68,53.36,40,0
+    .goto 2521,62.25,52.47,0
+    .goto 2521,62.25,52.47,40,0
+    .goto 2521,64.44,54.60,40,0
     .goto 2521,59.03,54.09,40,0
-    .goto 2521,60.69,52.16,40,0
-    .goto 2521,62.46,51.30,40,0
-    .goto 2521,63.58,52.07,40,0
-    .goto 2521,65.11,53.56,40,0
-    .goto 2521,65.88,56.94,40,0
-    .goto 2521,64.20,55.22,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Spiritcallers|r
     .complete 92947,2 --Al'Aketh Spiritcaller slain (7)
     .mob Al'Aketh Spiritcaller
     .isOnQuest 92947
 step
     #loop
-    .goto 2521,61.68,51.47,0
-    .goto 2521,61.68,51.47,40,0
-    .goto 2521,61.96,49.11,40,0
-    .goto 2521,59.91,50.05,40,0
-    .goto 2521,58.14,51.04,40,0
-    .goto 2521,58.97,53.90,40,0
-    .goto 2521,63.21,53.88,40,0
-    .goto 2521,64.77,55.81,40,0
-    .goto 2521,64.79,53.73,40,0
-    .goto 2521,64.06,51.97,40,0
+    .goto 2521,62.74,53.00,0
+    .goto 2521,62.74,53.00,40,0
+    .goto 2521,61.38,50.67,40,0
+    .goto 2521,59.56,50.86,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Guardians|r
     .complete 92947,1 --Al'Aketh Guardian slain (7)
     .mob Al'Aketh Guardian

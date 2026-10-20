@@ -106,16 +106,10 @@ step
     .target Marukai
 step
     #loop
-    .goto 1440/1,1095.65,3529.79,0
-    .goto 1440/1,1095.65,3529.79,40,0
-    .goto 1440/1,954.37,3587.44,40,0
-    .goto 1440/1,1017.23,3652.79,40,0
-    .goto 1440/1,1077.78,3630.11,40,0
+    .goto 1440/1,1073.74,3573.99,0
+    .goto 1440/1,1073.74,3573.99,40,0
     .goto 1440/1,1097.96,3688.53,40,0
-    .goto 1440/1,1014.34,3754.64,40,0
-    .goto 1440/1,1082.39,3743.50,40,0
-    .goto 1440/1,1154.47,3723.13,40,0
-    .goto 1440/1,1215.60,3586.29,40,0
+    .goto 1440/1,1152.17,3685.46,40,0
     >>Kill |cRXP_ENEMY_Wrathtail Myrmidons|r, |cRXP_ENEMY_Wrathtail Razortails|r, |cRXP_ENEMY_Wrathtail Wave Riders|r and |cRXP_ENEMY_Wrathtail Sea Witches|r. Loot them for |cRXP_LOOT_Wrathtail Head|r
     .complete 6442,1 --Wrathtail Head (20)
     .mob Wrathtail Myrmidon
@@ -222,16 +216,10 @@ step
     .target Va'xug Firefure
 step
     #loop
-    .goto 1440/1,-580.14,2280.95,0
-    .goto 1440/1,-580.14,2280.95,40,0
-    .goto 1440/1,-586.48,2239.44,40,0
-    .goto 1440/1,-643.57,2130.28,40,0
-    .goto 1440/1,-664.91,2112.98,40,0
-    .goto 1440/1,-689.71,2100.29,40,0
-    .goto 1440/1,-595.13,2090.30,40,0
-    .goto 1440/1,-584.75,2166.41,40,0
-    .goto 1440/1,-540.35,2207.54,40,0
+    .goto 1440/1,-507.48,2260.19,0
     .goto 1440/1,-507.48,2260.19,40,0
+    .goto 1440/1,-540.35,2207.54,40,0
+    .goto 1440/1,-664.91,2112.98,40,0
     >>Kill |cRXP_ENEMY_Ashenvale Bears|r
     .complete 98251,2 --Ashenvale Bear slain (6)
     .mob Ashenvale Bear
@@ -239,11 +227,8 @@ step
     #loop
     .goto 1440/1,-779.67,2205.61,0
     .goto 1440/1,-779.67,2205.61,40,0
-    .goto 1440/1,-812.54,2235.98,40,0
     .goto 1440/1,-916.91,2194.08,40,0
-    .goto 1440/1,-773.32,2039.95,40,0
     .goto 1440/1,-728.34,1980.75,40,0
-    .goto 1440/1,-693.74,1940.78,40,0
     >>Kill |cRXP_ENEMY_Shadowhorn Stags|r
     .complete 98251,1 --Shadowhorn Stag slain (6)
     .mob Shadowhorn Stag
@@ -296,16 +281,10 @@ step
     .target Senani Thunderheart
 step
     #loop
-    .goto 1440/1,-2580.60,2003.43,0
-    .goto 1440/1,-2580.60,2003.43,40,0
+    .goto 1440/1,-2502.17,1975.37,0
     .goto 1440/1,-2502.17,1975.37,40,0
-    .goto 1440/1,-2458.34,1971.14,40,0
-    .goto 1440/1,-2546.57,1951.93,40,0
+    .goto 1440/1,-2666.52,1965.76,40,0
     .goto 1440/1,-2686.13,1863.14,40,0
-    .goto 1440/1,-2671.71,1928.86,40,0
-    .goto 1440/1,-2704.00,1954.62,40,0
-    .goto 1440/1,-2689.59,2018.81,40,0
-    .goto 1440/1,-2635.96,1960.77,40,0
     >>Kill |cRXP_ENEMY_Ashenvale Outrunners|r
     .complete 6503,1 --Ashenvale Outrunner slain (9)
     .mob Ashenvale Outrunner
@@ -359,16 +338,9 @@ step << Paladin
     .mob Blackfathom Tide Priestess
 step
     #loop
-    .goto 1440/1,-599.75,3359.51,0
-    .goto 1440/1,-599.75,3359.51,40,0
-    .goto 1440/1,-633.19,3349.13,40,0
-    .goto 1440/1,-702.97,3300.70,40,0
-    .goto 1440/1,-705.85,3347.59,40,0
-    .goto 1440/1,-656.26,3379.88,40,0
-    .goto 1440/1,-661.45,3458.29,40,0
-    .goto 1440/1,-617.62,3481.74,40,0
+    .goto 1440/1,-636.08,3432.54,0
     .goto 1440/1,-636.08,3432.54,40,0
-    .goto 1440/1,-604.36,3401.40,40,0
+    .goto 1440/1,-693.74,3336.44,40,0
     >>Loot the |cRXP_PICK_Troll Chests|r for |cRXP_LOOT_Troll Charm|r
     .complete 6462,1 --Troll Charm (8)
 step
@@ -388,27 +360,18 @@ step
     .complete 6482,1 --Escort Ruul from the Thistlefurs.
 step
     #loop
-    .goto 1440/1,-271.62,3178.85,0
-    .goto 1440/1,-271.62,3178.85,40,0
+    .goto 1440/1,-254.32,3179.62,0
     .goto 1440/1,-254.32,3179.62,40,0
-    .goto 1440/1,-86.51,3009.73,40,0
-    .goto 1440/1,-121.69,2984.74,40,0
     .goto 1440/1,-178.78,3029.71,40,0
-    .goto 1440/1,-246.25,3145.79,40,0
+    .goto 1440/1,-121.69,2984.74,40,0
     >>Kill |cRXP_ENEMY_Thistlefur Shamans|r
     .complete 216,2 --Thistlefur Shaman slain (8)
     .mob Thistlefur Shaman
 step
     #loop
-    .goto 1440/1,-416.94,3252.27,0
-    .goto 1440/1,-416.94,3252.27,40,0
-    .goto 1440/1,-412.91,3286.86,40,0
-    .goto 1440/1,-420.40,3318.38,40,0
-    .goto 1440/1,-355.24,3411.01,40,0
-    .goto 1440/1,-363.31,3442.53,40,0
-    .goto 1440/1,-415.79,3415.63,40,0
+    .goto 1440/1,-457.89,3355.66,0
     .goto 1440/1,-457.89,3355.66,40,0
-    .goto 1440/1,-487.30,3346.05,40,0
+    .goto 1440/1,-363.31,3442.53,40,0
     >>Kill |cRXP_ENEMY_Thistlefur Avengers|r
     .complete 216,1 --Thistlefur Avenger slain (8)
     .mob Thistlefur Avenger
@@ -572,31 +535,17 @@ step
     .isOnQuest 78133
 step
     #loop
-    .goto 1440/1,-1136.05,1911.18,0
-    .goto 1440/1,-1136.05,1911.18,40,0
-    .goto 1440/1,-1196.02,1897.73,40,0
-    .goto 1440/1,-1242.15,1930.40,40,0
-    .goto 1440/1,-1253.69,1853.14,40,0
-    .goto 1440/1,-1306.74,1876.59,40,0
-    .goto 1440/1,-1275.60,2001.89,40,0
-    .goto 1440/1,-1215.05,2000.74,40,0
-    .goto 1440/1,-1152.77,1999.59,40,0
-    .goto 1440/1,-1171.80,1940.01,40,0
+    .goto 1440/1,-1201.79,1971.14,0
+    .goto 1440/1,-1201.79,1971.14,40,0
+    .goto 1440/1,-1234.66,1903.88,40,0
     >>Kill |cRXP_ENEMY_Befouled Water Elementals|r
     .complete 25,1 --Befouled Water Elemental slain (12)
     .mob Befouled Water Elemental
 step
     #loop
-    .goto 1440/1,-2116.96,2505.43,0
-    .goto 1440/1,-2116.96,2505.43,40,0
-    .goto 1440/1,-2148.10,2475.44,40,0
-    .goto 1440/1,-2182.70,2536.18,40,0
-    .goto 1440/1,-2181.54,2573.08,40,0
-    .goto 1440/1,-2242.67,2579.61,40,0
-    .goto 1440/1,-2276.12,2621.89,40,0
-    .goto 1440/1,-2152.13,2681.85,40,0
-    .goto 1440/1,-2114.07,2619.59,40,0
-    .goto 1440/1,-2114.07,2551.94,40,0
+    .goto 1440/1,-2151.56,2516.96,0
+    .goto 1440/1,-2151.56,2516.96,40,0
+    .goto 1440/1,-2124.45,2652.64,40,0
     >>Kill |cRXP_ENEMY_Xavian Rogues|r, |cRXP_ENEMY_Xavian Betrayers|r, |cRXP_ENEMY_Xavian Felsworns|r and |cRXP_ENEMY_Xavian Hellcallers|r. Loot them for |cRXP_LOOT_Satyr Horns|r
     .complete 6441,1 --Satyr Horns (16)
     .mob Xavian Rogue
@@ -645,11 +594,8 @@ step
     .isOnQuest 6621
 step
     #loop
-    .goto 1440/1,483.23,2982.05,0
-    .goto 1440/1,483.23,2982.05,40,0
-    .goto 1440/1,518.99,2981.67,40,0
+    .goto 1440/1,518.99,3010.49,0
     .goto 1440/1,518.99,3010.49,40,0
-    .goto 1440/1,512.64,3050.85,40,0
     .goto 1440/1,513.80,3108.51,40,0
     >>Kill |cRXP_ENEMY_Saltspittle Oracle|r and loot |cRXP_LOOT_Shredder Operating Manual - Page 11|r
     .collect 16655,1,6504,1 --Shredder Operating Manual - Page 11 (1)
@@ -693,7 +639,7 @@ step
     .complete 6571,1 --Warsong Saw Blades (1)
     .mob Pixel
 step
-    .goto 1440/1,-2165.40,2493.89
+    .goto 1440/1,-2155.02,2476.60
     >>Pick up |cRXP_PICK_Warsong Oil|r from the ground
     .complete 6571,3 --Warsong Oil (1)
 step
@@ -716,11 +662,8 @@ step
     .isOnQuest 78134
 step
     #loop
-    .goto 1440/1,483.23,2982.05,0
-    .goto 1440/1,483.23,2982.05,40,0
-    .goto 1440/1,518.99,2981.67,40,0
+    .goto 1440/1,518.99,3010.49,0
     .goto 1440/1,518.99,3010.49,40,0
-    .goto 1440/1,512.64,3050.85,40,0
     .goto 1440/1,513.80,3108.51,40,0
     >>Kill |cRXP_ENEMY_Saltspittle Oracle|r and loot |cRXP_LOOT_Shredder Operating Manual - Page 11|r
     .collect 16655,1,6504,1 --Shredder Operating Manual - Page 11 (1)
@@ -734,16 +677,9 @@ step
     .isOnQuest 6504
 step
     #loop
-    .goto 1440/1,-1384.59,2331.30,0
-    .goto 1440/1,-1384.59,2331.30,40,0
-    .goto 1440/1,-1401.89,2288.25,40,0
-    .goto 1440/1,-1386.90,2251.35,40,0
-    .goto 1440/1,-1351.72,2222.14,40,0
-    .goto 1440/1,-1411.69,2181.01,40,0
-    .goto 1440/1,-1485.51,2254.04,40,0
-    .goto 1440/1,-1544.90,2288.64,40,0
-    .goto 1440/1,-1451.48,2309.01,40,0
-    .goto 1440/1,-1436.49,2274.03,40,0
+    .goto 1440/1,-1431.88,2281.72,0
+    .goto 1440/1,-1431.88,2281.72,40,0
+    .goto 1440/1,-1512.03,2282.49,40,0
     >>Kill |cRXP_ENEMY_Foulweald Warriors|r, |cRXP_ENEMY_Foulweald Pathfinders|r, |cRXP_ENEMY_Foulweald Den Watchers|r and |cRXP_ENEMY_Foulweald Shamans|r. Loot them for |cRXP_LOOT_Logging Rope|r
     .complete 6571,4 --Logging Rope (1)
     .mob Foulweald Warrior

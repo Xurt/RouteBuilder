@@ -59,14 +59,7 @@ step
     #loop
     .goto 1440/1,-76.13,3457.91,0
     .goto 1440/1,-76.13,3457.91,40,0
-    .goto 1440/1,-52.49,3481.74,40,0
-    .goto 1440/1,-114.77,3546.70,40,0
-    .goto 1440/1,-179.36,3546.31,40,0
-    .goto 1440/1,-151.68,3518.64,40,0
     .goto 1440/1,-114.19,3514.41,40,0
-    .goto 1440/1,-123.42,3493.65,40,0
-    .goto 1440/1,-136.11,3461.37,40,0
-    .goto 1440/1,-87.09,3485.58,40,0
     >>Kill |cRXP_ENEMY_Dark Strand Cultists|r, |cRXP_ENEMY_Dark Strand Enforcers|r, |cRXP_ENEMY_Dark Strand Adepts|r and |cRXP_ENEMY_Dark Strand Excavators|r. Loot them for |cRXP_LOOT_Glowing Soul Gem|r
     .complete 970,1 --Glowing Soul Gem (1)
     .mob Dark Strand Cultist
@@ -151,16 +144,9 @@ step
     .target Teronis' Corpse
 step
     #loop
-    .goto 1440/1,512.64,3050.85,0
-    .goto 1440/1,512.64,3050.85,40,0
-    .goto 1440/1,513.80,3108.51,40,0
-    .goto 1440/1,604.91,3124.27,40,0
-    .goto 1440/1,580.69,3076.61,40,0
-    .goto 1440/1,587.03,3014.72,40,0
-    .goto 1440/1,547.24,2940.54,40,0
-    .goto 1440/1,483.23,2982.05,40,0
-    .goto 1440/1,441.71,3041.24,40,0
-    .goto 1440/1,441.71,3089.29,40,0
+    .goto 1440/1,484.39,3015.88,0
+    .goto 1440/1,484.39,3015.88,40,0
+    .goto 1440/1,584.15,3050.85,40,0
     >>Kill |cRXP_ENEMY_Saltspittle Puddlejumpers|r, |cRXP_ENEMY_Saltspittle Warriors|r, |cRXP_ENEMY_Saltspittle Muckdwellers|r and |cRXP_ENEMY_Saltspittle Oracles|r. Loot them for |cRXP_LOOT_Glowing Gem|r
     .complete 1023,1 --Glowing Gem (1)
     .mob Saltspittle Puddlejumper
@@ -169,16 +155,10 @@ step
     .mob Saltspittle Oracle
 step
     #loop
-    .goto 1440/1,912.27,3485.20,0
-    .goto 1440/1,912.27,3485.20,40,0
+    .goto 1440/1,960.71,3520.94,0
     .goto 1440/1,960.71,3520.94,40,0
-    .goto 1440/1,954.37,3587.44,40,0
-    .goto 1440/1,1046.06,3597.05,40,0
-    .goto 1440/1,1215.60,3586.29,40,0
-    .goto 1440/1,1212.72,3519.79,40,0
-    .goto 1440/1,1153.32,3517.49,40,0
     .goto 1440/1,1055.29,3548.62,40,0
-    .goto 1440/1,1017.23,3448.30,40,0
+    .goto 1440/1,1185.04,3554.39,40,0
     >>Kill |cRXP_ENEMY_Wrathtail Myrmidons|r, |cRXP_ENEMY_Wrathtail Razortails|r, |cRXP_ENEMY_Wrathtail Wave Riders|r and |cRXP_ENEMY_Wrathtail Sea Witches|r. Loot them for |cRXP_LOOT_Wrathtail Head|r
     .complete 1008,1 --Wrathtail Head (20)
     .mob Wrathtail Myrmidon
@@ -283,16 +263,11 @@ step
     .target Shael'dryn
 step << Human Paladin/Dwarf Paladin
     #loop
-    .goto 1440/1,-2950.82,2179.48,0
-    .goto 1440/1,-2950.82,2179.48,40,0
-    .goto 1440/1,-3010.79,2117.59,40,0
-    .goto 1440/1,-3078.26,2114.13,40,0
-    .goto 1440/1,-3056.92,2019.96,40,0
-    .goto 1440/1,-3146.88,1983.44,40,0
-    .goto 1440/1,-3169.37,1853.53,40,0
-    .goto 1440/1,-3088.64,1915.41,40,0
-    .goto 1440/1,-2985.99,1949.62,40,0
-    .goto 1440/1,-2948.51,2050.71,40,0
+    .goto 1440/1,-2979.65,2147.19,0
+    .goto 1440/1,-2979.65,2147.19,40,0
+    .goto 1440/1,-3084.60,2053.79,40,0
+    .goto 1440/1,-3110.55,1957.31,40,0
+    .goto 1440/1,-3015.40,1978.45,40,0
     >>Kill |cRXP_ENEMY_Legion Hounds|r, |cRXP_ENEMY_Searing Infernals|r, |cRXP_ENEMY_Felguards|r and |cRXP_ENEMY_Mannoroc Lashers|r. Loot them for |cRXP_LOOT_Mote of Mannoroth|r
     .complete 78092,1 --Mote of Mannoroth (12)
     .mob Legion Hound
@@ -334,14 +309,8 @@ step
     #loop
     .goto 1440/1,-36.92,3722.36,0
     .goto 1440/1,-36.92,3722.36,40,0
-    .goto 1440/1,-68.06,3763.10,40,0
-    .goto 1440/1,-83.63,3866.50,40,0
-    .goto 1440/1,-111.89,3838.44,40,0
-    .goto 1440/1,-155.71,3837.67,40,0
+    .goto 1440/1,-164.94,3801.15,40,0
     .goto 1440/1,-252.59,3853.43,40,0
-    .goto 1440/1,-208.19,3823.06,40,0
-    .goto 1440/1,-149.37,3769.25,40,0
-    .goto 1440/1,-157.44,3730.04,40,0
     >>Loot the |cRXP_PICK_Plant Bundles|r for |cRXP_LOOT_Bathran's Hair|r
     .complete 1010,1 --Bathran's Hair (5)
 step
@@ -367,16 +336,7 @@ step
     .accept 1034 >>Accept The Ruins of Stardust
     .target Pelturas Whitemoon
 step
-    #loop
-    .goto 1440/1,-257.21,2114.13,0
-    .goto 1440/1,-257.21,2114.13,40,0
-    .goto 1440/1,-270.47,2072.62,40,0
-    .goto 1440/1,-231.83,2073.00,40,0
-    .goto 1440/1,-222.03,2059.94,40,0
-    .goto 1440/1,-227.22,2034.18,40,0
-    .goto 1440/1,-192.04,2042.25,40,0
-    .goto 1440/1,-178.78,2101.06,40,0
-    .goto 1440/1,-218.57,2089.92,40,0
+    .goto 1440/1,-222.03,2059.94
     >>Loot the |cRXP_PICK_Stardust Covered Bushes|r for |cRXP_LOOT_Handful of Stardust|r
     .complete 1034,1 --Handful of Stardust (5)
 step << Hunter Hunter
@@ -547,24 +507,15 @@ step
     .isQuestComplete 1017
 step
     #loop
-    .goto 1440/1,-1351.72,2222.14,0
-    .goto 1440/1,-1351.72,2222.14,40,0
-    .goto 1440/1,-1381.71,2222.53,40,0
+    .goto 1440/1,-1421.50,2215.99,0
     .goto 1440/1,-1421.50,2215.99,40,0
     .goto 1440/1,-1544.90,2288.64,40,0
-    .goto 1440/1,-1512.03,2282.49,40,0
-    .goto 1440/1,-1447.45,2251.35,40,0
     >>Kill |cRXP_ENEMY_Foulweald Warriors|r
     .complete 1025,4 --Foulweald Warrior slain (12)
     .mob Foulweald Warrior
     .isOnQuest 1025
 step
-    #loop
-    .goto 1440/1,-1412.85,2205.61,0
-    .goto 1440/1,-1412.85,2205.61,40,0
-    .goto 1440/1,-1411.69,2181.01,40,0
-    .goto 1440/1,-1355.76,2251.74,40,0
-    .goto 1440/1,-1386.90,2251.35,40,0
+    .goto 1440/1,-1412.85,2205.61
     >>Kill |cRXP_ENEMY_Foulweald Totemics|r
     .complete 1025,3 --Foulweald Totemic slain (10)
     .mob Foulweald Totemic
@@ -624,12 +575,7 @@ step
     .target Shael'dryn
     .isQuestTurnedIn 1024 --any of: Raene's Cleansing
 step
-    #loop
-    .goto 1440/1,-1457.83,3327.99,0
-    .goto 1440/1,-1457.83,3327.99,40,0
-    .goto 1440/1,-1453.79,3349.13,40,0
-    .goto 1440/1,-1441.68,3363.35,40,0
-    .goto 1440/1,-1475.70,3399.87,40,0
+    .goto 1440/1,-1453.79,3349.13
     >>Kill |cRXP_ENEMY_Withered Ancients|r and |cRXP_ENEMY_Crazed Ancients|r. Loot them for |cRXP_LOOT_Wooden Key|r
     .collect 5475,1,1026,1 --Wooden Key (1)
     .mob Withered Ancient
@@ -746,16 +692,9 @@ step
     .target Kayneth Stillwind
 step
     #loop
-    .goto 1440/1,-2890.84,2871.74,0
-    .goto 1440/1,-2890.84,2871.74,40,0
+    .goto 1440/1,-2845.86,2879.42,0
     .goto 1440/1,-2845.86,2879.42,40,0
-    .goto 1440/1,-2822.22,2847.90,40,0
-    .goto 1440/1,-2788.20,2878.27,40,0
-    .goto 1440/1,-2802.61,2931.31,40,0
-    .goto 1440/1,-2758.21,2947.46,40,0
-    .goto 1440/1,-2786.47,3038.55,40,0
-    .goto 1440/1,-2817.61,2993.58,40,0
-    .goto 1440/1,-2859.13,2922.09,40,0
+    .goto 1440/1,-2789.35,2965.14,40,0
     >>Kill |cRXP_ENEMY_Xavian Felsworns|r
     >>Kill |cRXP_ENEMY_Xavian Rogues|r
     >>Kill |cRXP_ENEMY_Xavian Hellcallers|r
@@ -807,16 +746,10 @@ step
     .complete 1011,1 --Bottle of Disease (1)
 step
     #loop
-    .goto 1440/1,-2605.97,1775.11,0
-    .goto 1440/1,-2605.97,1775.11,40,0
-    .goto 1440/1,-2586.94,1677.87,40,0
-    .goto 1440/1,-2548.88,1715.15,40,0
+    .goto 1440/1,-2600.78,1705.93,0
+    .goto 1440/1,-2600.78,1705.93,40,0
     .goto 1440/1,-2488.33,1718.61,40,0
-    .goto 1440/1,-2420.28,1714.38,40,0
-    .goto 1440/1,-2342.43,1748.59,40,0
-    .goto 1440/1,-2329.17,1824.31,40,0
-    .goto 1440/1,-2396.64,1836.23,40,0
-    .goto 1440/1,-2481.41,1785.49,40,0
+    .goto 1440/1,-2367.23,1844.69,40,0
     >>Open the |cRXP_PICK_Rusty Chest|r. Loot it for |cRXP_LOOT_Iron Pommel|r
     .complete 1027,1 --Iron Pommel (1)
     .isOnQuest 1027
@@ -905,16 +838,9 @@ step
     .isOnQuest 1030
 step
     #loop
-    .goto 1440/1,-2296.30,1506.05,0
-    .goto 1440/1,-2296.30,1506.05,40,0
-    .goto 1440/1,-2319.94,1428.79,40,0
-    .goto 1440/1,-2388.57,1453.01,40,0
-    .goto 1440/1,-2387.41,1520.27,40,0
-    .goto 1440/1,-2474.49,1522.19,40,0
-    .goto 1440/1,-2505.05,1581.00,40,0
+    .goto 1440/1,-2306.10,1456.47,0
+    .goto 1440/1,-2306.10,1456.47,40,0
     .goto 1440/1,-2462.38,1596.76,40,0
-    .goto 1440/1,-2435.28,1579.85,40,0
-    .goto 1440/1,-2422.01,1629.44,40,0
     >>Kill |cRXP_ENEMY_Horde Scouts|r. Loot them for |cRXP_LOOT_Curved Orcish Dagger|r
     >>Kill |cRXP_ENEMY_Horde Grunts|r. Loot them for |cRXP_LOOT_Jagged Orcish Sword|r
     .complete 86757,2 --Curved Orcish Dagger (4)
@@ -1033,16 +959,10 @@ step
     .isOnQuest 1035
 step
     #loop
-    .goto 1440/1,-2886.81,2746.43,0
-    .goto 1440/1,-2886.81,2746.43,40,0
-    .goto 1440/1,-2911.60,2789.09,40,0
-    .goto 1440/1,-2953.12,2762.96,40,0
-    .goto 1440/1,-2949.66,2717.22,40,0
+    .goto 1440/1,-3021.17,2668.79,0
     .goto 1440/1,-3021.17,2668.79,40,0
-    .goto 1440/1,-3084.60,2755.27,40,0
-    .goto 1440/1,-3013.67,2820.61,40,0
-    .goto 1440/1,-2890.84,2871.74,40,0
-    .goto 1440/1,-2822.22,2847.90,40,0
+    .goto 1440/1,-2989.45,2779.10,40,0
+    .goto 1440/1,-2872.39,2852.90,40,0
     >>Kill |cRXP_ENEMY_Xavian Rogues|r, |cRXP_ENEMY_Xavian Betrayers|r, |cRXP_ENEMY_Xavian Felsworns|r and |cRXP_ENEMY_Xavian Hellcallers|r. Loot them for |cRXP_LOOT_Satyr Horns|r
     .complete 1032,1 --Satyr Horns (16)
     .mob Xavian Rogue
@@ -1076,15 +996,9 @@ step
     .isQuestTurnedIn 1030 --any of: Raene's Cleansing
 step
     #loop
-    .goto 1440/1,-1467.63,1753.20,0
-    .goto 1440/1,-1467.63,1753.20,40,0
+    .goto 1440/1,-1493.00,1751.67,0
     .goto 1440/1,-1493.00,1751.67,40,0
-    .goto 1440/1,-1520.68,1773.96,40,0
-    .goto 1440/1,-1525.87,1743.59,40,0
     .goto 1440/1,-1463.59,1643.27,40,0
-    .goto 1440/1,-1470.51,1623.67,40,0
-    .goto 1440/1,-1437.07,1614.06,40,0
-    .goto 1440/1,-1457.83,1686.71,40,0
     >>Kill |cRXP_ENEMY_Bloodtooth Guards|r
     .complete 1045,2 --Bloodtooth Guard slain (4)
     .mob Bloodtooth Guard

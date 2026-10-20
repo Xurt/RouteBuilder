@@ -209,14 +209,9 @@ step
 step
     #label Drop5083x1
     #loop
-    .goto 1452/1,-3187.91,6511.73,0
-    .goto 1452/1,-3187.91,6511.73,40,0
+    .goto 1452/1,-3217.02,6520.72,0
     .goto 1452/1,-3217.02,6520.72,40,0
-    .goto 1452/1,-3320.68,6517.88,40,0
-    .goto 1452/1,-3329.20,6447.83,40,0
-    .goto 1452/1,-3295.12,6413.75,40,0
-    .goto 1452/1,-3250.39,6484.75,40,0
-    .goto 1452/1,-3209.92,6458.71,40,0
+    .goto 1452/1,-3337.72,6496.11,40,0
     >>Kill |cRXP_ENEMY_Winterfall Pathfinders|r
     .complete 5082,1 --Winterfall Pathfinder slain (8)
     .mob Winterfall Pathfinder
@@ -245,27 +240,13 @@ step
     #loop
     .goto 1452/1,-5012.61,6853.95,0
     .goto 1452/1,-5012.61,6853.95,40,0
-    .goto 1452/1,-5041.01,6833.12,40,0
-    .goto 1452/1,-5082.90,6817.97,40,0
-    .goto 1452/1,-5109.88,6833.59,40,0
     .goto 1452/1,-5153.90,6845.43,40,0
-    .goto 1452/1,-5183.01,6872.41,40,0
-    .goto 1452/1,-5144.67,6906.49,40,0
-    .goto 1452/1,-5071.54,6900.81,40,0
-    .goto 1452/1,-5019.00,6909.80,40,0
     >>Kill |cRXP_ENEMY_Winterfall Den Watchers|r
     .complete 5082,2 --Winterfall Den Watcher slain (8)
     .mob Winterfall Den Watcher
 step
     #label Drop5083x2
-    #loop
-    .goto 1452/1,-3176.55,6453.51,0
-    .goto 1452/1,-3176.55,6453.51,40,0
-    .goto 1452/1,-3161.64,6451.61,40,0
-    .goto 1452/1,-3115.49,6418.48,40,0
-    .goto 1452/1,-3111.23,6445.93,40,0
-    .goto 1452/1,-3139.63,6496.58,40,0
-    .goto 1452/1,-3161.64,6478.59,40,0
+    .goto 1452/1,-3161.64,6478.59
     >>Kill |cRXP_ENEMY_Winterfall Totemics|r
     .complete 5082,3 --Winterfall Totemic slain (8)
     .mob Winterfall Totemic
@@ -370,16 +351,10 @@ step
     .target Umi Rumplesnicker
 step
     #loop
-    .goto 1452/1,-4467.33,7325.86,0
-    .goto 1452/1,-4467.33,7325.86,40,0
-    .goto 1452/1,-4380.71,7452.24,40,0
-    .goto 1452/1,-4438.22,7444.67,40,0
-    .goto 1452/1,-4478.69,7421.95,40,0
-    .goto 1452/1,-4577.38,7520.87,40,0
-    .goto 1452/1,-4644.83,7534.60,40,0
+    .goto 1452/1,-4544.01,7418.16,0
+    .goto 1452/1,-4544.01,7418.16,40,0
     .goto 1452/1,-4602.23,7500.52,40,0
-    .goto 1452/1,-4583.06,7427.15,40,0
-    .goto 1452/1,-4541.88,7441.35,40,0
+    .goto 1452/1,-4380.71,7452.24,40,0
     >>Kill |cRXP_ENEMY_Fledgling Chillwinds|r, |cRXP_ENEMY_Chillwind Chimaeras|r and |cRXP_ENEMY_Chillwind Ravagers|r. Loot them for |cRXP_LOOT_Uncracked Chillwind Horn|r
     .complete 4809,1 --Uncracked Chillwind Horn (8)
     .mob Fledgling Chillwind
@@ -388,16 +363,11 @@ step
     .isOnQuest 4809
 step
     #loop
-    .goto 1452/1,-4952.97,6658.46,0
-    .goto 1452/1,-4952.97,6658.46,40,0
-    .goto 1452/1,-5021.84,6586.99,40,0
-    .goto 1452/1,-5280.99,6632.90,40,0
-    .goto 1452/1,-5183.72,6572.79,40,0
-    .goto 1452/1,-5107.75,6553.85,40,0
+    .goto 1452/1,-5016.87,6588.88,0
+    .goto 1452/1,-5016.87,6588.88,40,0
+    .goto 1452/1,-5033.20,6377.30,40,0
     .goto 1452/1,-5079.35,6479.54,40,0
-    .goto 1452/1,-5075.80,6376.83,40,0
-    .goto 1452/1,-4989.18,6345.11,40,0
-    .goto 1452/1,-4948.71,6527.35,40,0
+    .goto 1452/1,-5233.42,6642.84,40,0
     >>Kill |cRXP_ENEMY_Rogue Ice Thistles|r and |cRXP_ENEMY_Ice Thistle Yetis|r. Loot them for |cRXP_LOOT_Thick Yeti Fur|r
     .complete 3783,1 --Thick Yeti Fur (10)
     .mob Rogue Ice Thistle
@@ -423,16 +393,10 @@ step
 step
     #label Drop5083x4
     #loop
-    .goto 1452/1,-4948.71,6743.66,0
-    .goto 1452/1,-4948.71,6743.66,40,0
-    .goto 1452/1,-5048.11,6693.96,40,0
-    .goto 1452/1,-5094.26,6641.89,40,0
+    .goto 1452/1,-4987.76,6751.71,0
+    .goto 1452/1,-4987.76,6751.71,40,0
     .goto 1452/1,-5134.73,6731.83,40,0
-    .goto 1452/1,-5200.76,6742.24,40,0
-    .goto 1452/1,-5183.01,6872.41,40,0
-    .goto 1452/1,-5082.90,6817.97,40,0
-    .goto 1452/1,-5079.35,6921.16,40,0
-    .goto 1452/1,-5019.00,6909.80,40,0
+    .goto 1452/1,-5115.56,6845.43,40,0
     >>Kill |cRXP_ENEMY_Winterfall Shamans|r
     >>Kill |cRXP_ENEMY_Winterfall Den Watchers|r
     >>Kill |cRXP_ENEMY_Winterfall Ursas|r
@@ -478,16 +442,10 @@ step
     .target Witch Doctor Mau'ari
 step
     #loop
-    .goto 1452/1,-5167.39,6589.35,0
-    .goto 1452/1,-5167.39,6589.35,40,0
-    .goto 1452/1,-5297.32,6542.49,40,0
-    .goto 1452/1,-5369.74,6606.39,40,0
-    .goto 1452/1,-5403.11,6661.30,40,0
-    .goto 1452/1,-5367.61,6702.01,40,0
-    .goto 1452/1,-5351.28,6756.44,40,0
-    .goto 1452/1,-5303.71,6698.22,40,0
-    .goto 1452/1,-5283.83,6650.89,40,0
-    .goto 1452/1,-5308.68,6613.49,40,0
+    .goto 1452/1,-5209.28,6594.09,0
+    .goto 1452/1,-5209.28,6594.09,40,0
+    .goto 1452/1,-5287.38,6581.31,40,0
+    .goto 1452/1,-5327.14,6720.47,40,0
     >>Kill |cRXP_ENEMY_Ice Thistle Matriarches|r and |cRXP_ENEMY_Ice Thistle Patriarches|r. Loot them for |cRXP_LOOT_Pristine Yeti Horn|r
     .complete 977,1 --Pristine Yeti Horn (2)
     .mob Ice Thistle Matriarch
@@ -607,16 +565,9 @@ step
     .isOnQuest 4901
 step
     #loop
-    .goto 1452/1,-4971.43,5565.06,0
-    .goto 1452/1,-4971.43,5565.06,40,0
-    .goto 1452/1,-5026.81,5610.50,40,0
-    .goto 1452/1,-5046.69,5693.81,40,0
-    .goto 1452/1,-4987.05,5801.25,40,0
-    .goto 1452/1,-4887.65,5784.21,40,0
-    .goto 1452/1,-4839.37,5735.46,40,0
-    .goto 1452/1,-4928.12,5679.61,40,0
-    .goto 1452/1,-4851.44,5643.16,40,0
-    .goto 1452/1,-4890.49,5582.57,40,0
+    .goto 1452/1,-4952.97,5604.35,0
+    .goto 1452/1,-4952.97,5604.35,40,0
+    .goto 1452/1,-4992.73,5760.55,40,0
     >>Kill |cRXP_ENEMY_Crazed Owlbeasts|r, |cRXP_ENEMY_Moontouched Owlbeasts|r and |cRXP_ENEMY_Berserk Owlbeasts|r. Loot them for |cRXP_LOOT_Blue-feathered Amulet|r
     .complete 4864,2 --Blue-feathered Amulet (1)
     .mob Crazed Owlbeast
@@ -625,16 +576,10 @@ step
     .isOnQuest 4864
 step
     #loop
-    .goto 1452/1,-4619.98,5452.41,0
-    .goto 1452/1,-4619.98,5452.41,40,0
-    .goto 1452/1,-4551.11,5435.37,40,0
-    .goto 1452/1,-4481.53,5523.88,40,0
-    .goto 1452/1,-4461.65,5391.35,40,0
-    .goto 1452/1,-4438.93,5281.53,40,0
-    .goto 1452/1,-4543.30,5240.83,40,0
-    .goto 1452/1,-4515.61,5362.00,40,0
-    .goto 1452/1,-4564.60,5329.34,40,0
-    .goto 1452/1,-4609.33,5366.26,40,0
+    .goto 1452/1,-4606.49,5440.57,0
+    .goto 1452/1,-4606.49,5440.57,40,0
+    .goto 1452/1,-4508.51,5481.75,40,0
+    .goto 1452/1,-4458.81,5344.01,40,0
     >>Kill |cRXP_ENEMY_Frostmaul Giants|r, |cRXP_ENEMY_Frostmaul Preservers|r and |cRXP_ENEMY_Kashoch the Reavers|r. Loot them for |cRXP_LOOT_Frostmaul Shards|r. It can also be picked up from |cRXP_PICK_Frostmaul Shards|r on the ground
     .complete 969,1 --Frostmaul Shards (4)
     .mob Frostmaul Giant

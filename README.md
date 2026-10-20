@@ -268,7 +268,11 @@ build; the folder is rebuilt from scratch each time.
 * **Finishing what you pick up.** Carrying a picked-up quest whose objectives are not done yet costs a
   little per yard (`Open`), so the plan picks up a group of quests, does them, and hands them in before
   moving on, instead of leaving a starting area with its quests half done.
-* **Loops.** Objective steps get a `#loop` of waypoints over the spawns. When the chosen spot holds fewer
+* **Loops.** Objective steps get a `#loop` of waypoints over the spawns. The spawns are split into groups,
+  about one per 120 yards across (`LoopSpacing`, at most `LoopMaxPoints`), and each waypoint goes on the
+  busiest spawn of its group, so the arrow leads through the thick of the mobs rather than round the edge.
+  The loop starts at the waypoint nearest to where you come from. A patch under 110 yards across
+  (`LoopSingleSpan`) gets one pin at its busiest spot instead. When the chosen spot holds fewer
   than the objective needs (five Lazy Peons that each sleep somewhere else), the loop takes in the
   objective's other known spawn points, nearest first (`SpreadRange`).
 * **Doing things together.** Objectives next to each other in the route whose mobs or objects share an

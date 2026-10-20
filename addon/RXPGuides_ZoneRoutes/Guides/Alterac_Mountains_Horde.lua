@@ -42,14 +42,7 @@ step << Shaman
     .target Bath'rah the Windwatcher
     .isQuestComplete 79360
 step
-    #loop
-    .goto 1416/0,-986.27,682.40,0
-    .goto 1416/0,-986.27,682.40,40,0
-    .goto 1416/0,-980.67,689.87,40,0
-    .goto 1416/0,-969.47,749.60,40,0
-    .goto 1416/0,-947.07,742.13,40,0
-    .goto 1416/0,-907.87,682.40,40,0
-    .goto 1416/0,-924.67,689.87,40,0
+    .goto 1416/0,-924.67,689.87
     >>Kill |cRXP_ENEMY_Jailor Borhuin|r and loot |cRXP_LOOT_Rusted Iron Key|r
     .complete 503,2 --Rusted Iron Key (1)
     .mob Jailor Borhuin

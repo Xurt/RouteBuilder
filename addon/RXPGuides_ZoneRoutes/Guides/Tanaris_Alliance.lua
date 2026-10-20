@@ -134,16 +134,9 @@ step
 step
     #label Drop351x1
     #loop
-    .goto 1446/1,-4645.10,-7218.66,0
-    .goto 1446/1,-4645.10,-7218.66,40,0
+    .goto 1446/1,-4620.26,-7244.88,0
     .goto 1446/1,-4620.26,-7244.88,40,0
-    .goto 1446/1,-4627.85,-7311.58,40,0
-    .goto 1446/1,-4608.53,-7381.96,40,0
-    .goto 1446/1,-4616.12,-7411.40,40,0
-    .goto 1446/1,-4606.46,-7444.06,40,0
-    .goto 1446/1,-4556.78,-7387.94,40,0
-    .goto 1446/1,-4544.36,-7257.76,40,0
-    .goto 1446/1,-4594.04,-7225.10,40,0
+    .goto 1446/1,-4592.66,-7407.26,40,0
     >>Kill |cRXP_ENEMY_Wastewander Bandits|r
     >>Kill |cRXP_ENEMY_Wastewander Thiefs|r
     >>Kill |cRXP_ENEMY_Wastewander Rogues|r, |cRXP_ENEMY_Wastewander Thiefs|r, |cRXP_ENEMY_Wastewander Shadow Mages|r and |cRXP_ENEMY_Wastewander Bandits|r. Loot them for |cRXP_LOOT_Wastewander Water Pouch|r
@@ -234,13 +227,8 @@ step
     .use 8623
 step
     #loop
-    .goto 1446/1,-4594.04,-7717.30,0
-    .goto 1446/1,-4594.04,-7717.30,40,0
-    .goto 1446/1,-4635.44,-7707.18,40,0
-    .goto 1446/1,-4645.10,-7687.86,40,0
-    .goto 1446/1,-4678.91,-7683.72,40,0
-    .goto 1446/1,-4614.74,-7651.52,40,0
-    .goto 1446/1,-4594.73,-7619.78,40,0
+    .goto 1446/1,-4612.67,-7680.96,0
+    .goto 1446/1,-4612.67,-7680.96,40,0
     .goto 1446/1,-4584.38,-7596.32,40,0
     >>Kill |cRXP_ENEMY_Wastewander Rogues|r
     >>Kill |cRXP_ENEMY_Wastewander Assassins|r
@@ -250,29 +238,21 @@ step
     .mob Wastewander Assassin
 step
     #loop
-    .goto 1446/1,-4514.00,-7485.00,0
-    .goto 1446/1,-4514.00,-7485.00,40,0
+    .goto 1446/1,-4496.06,-7489.60,0
     .goto 1446/1,-4496.06,-7489.60,40,0
     .goto 1446/1,-4351.85,-7585.28,40,0
-    .goto 1446/1,-4290.44,-7580.68,40,0
     .goto 1446/1,-4284.92,-7524.10,40,0
-    .goto 1446/1,-4480.19,-7457.40,40,0
     >>Kill |cRXP_ENEMY_Wastewander Shadow Mages|r
     .complete 1691,3 --Wastewander Shadow Mage slain (10)
     .mob Wastewander Shadow Mage
 step
     #label Drop351x2
     #loop
-    .goto 1446/1,-5110.85,-7829.08,0
-    .goto 1446/1,-5110.85,-7829.08,40,0
-    .goto 1446/1,-5204.69,-7906.82,40,0
-    .goto 1446/1,-5252.99,-8014.46,40,0
-    .goto 1446/1,-5371.67,-7976.28,40,0
-    .goto 1446/1,-5383.40,-8072.88,40,0
-    .goto 1446/1,-5301.98,-8096.34,40,0
-    .goto 1446/1,-5213.66,-8110.60,40,0
-    .goto 1446/1,-5110.85,-8052.18,40,0
-    .goto 1446/1,-5147.42,-7971.22,40,0
+    .goto 1446/1,-5146.04,-7850.70,0
+    .goto 1446/1,-5146.04,-7850.70,40,0
+    .goto 1446/1,-5195.72,-8024.58,40,0
+    .goto 1446/1,-5275.76,-8077.02,40,0
+    .goto 1446/1,-5361.32,-8055.86,40,0
     >>Open the |cRXP_PICK_Stolen Cargo|r. Loot it for |cRXP_LOOT_Stoley's Shipment|r
     >>Kill |cRXP_ENEMY_Andre Firebeard|r and loot |cRXP_LOOT_Firebeard's Head|r
     >>Kill |cRXP_ENEMY_Southsea Pirates|r
@@ -464,16 +444,10 @@ step
     .target Marvon Rivetseeker
 step
     #loop
-    .goto 1446/1,-3482.45,-8791.40,0
-    .goto 1446/1,-3482.45,-8791.40,40,0
-    .goto 1446/1,-3406.55,-8786.80,40,0
-    .goto 1446/1,-3316.85,-8837.40,40,0
-    .goto 1446/1,-3399.65,-8892.60,40,0
-    .goto 1446/1,-3378.95,-8947.80,40,0
-    .goto 1446/1,-3468.65,-8911.00,40,0
-    .goto 1446/1,-3537.65,-8980.00,40,0
-    .goto 1446/1,-3523.85,-8901.80,40,0
-    .goto 1446/1,-3544.55,-8851.20,40,0
+    .goto 1446/1,-3427.25,-8828.20,0
+    .goto 1446/1,-3427.25,-8828.20,40,0
+    .goto 1446/1,-3309.95,-8874.20,40,0
+    .goto 1446/1,-3530.75,-8975.40,40,0
     >>Loot the |cRXP_PICK_Gahz'ridians|r for |cRXP_LOOT_Gahz'ridian Ornament|r
     .complete 3161,1 --Gahz'ridian Ornament (30)
 step
@@ -517,16 +491,10 @@ step
     .isQuestTurnedIn 992 --any of: Gadgetzan Water Survey
 step
     #loop
-    .goto 1446/1,-2752.43,-7714.54,0
-    .goto 1446/1,-2752.43,-7714.54,40,0
-    .goto 1446/1,-2715.17,-7851.62,40,0
-    .goto 1446/1,-2636.51,-7865.88,40,0
-    .goto 1446/1,-2657.21,-7729.72,40,0
-    .goto 1446/1,-2572.34,-7791.36,40,0
-    .goto 1446/1,-2459.87,-7833.68,40,0
-    .goto 1446/1,-2496.44,-7729.26,40,0
-    .goto 1446/1,-2533.70,-7627.14,40,0
-    .goto 1446/1,-2650.31,-7650.60,40,0
+    .goto 1446/1,-2598.56,-7692.00,0
+    .goto 1446/1,-2598.56,-7692.00,40,0
+    .goto 1446/1,-2546.81,-7806.08,40,0
+    .goto 1446/1,-2652.38,-7846.56,40,0
     >>Kill |cRXP_ENEMY_Centipaar Wasps|r, |cRXP_ENEMY_Centipaar Stingers|r, |cRXP_ENEMY_Centipaar Swarmers|r and |cRXP_ENEMY_Centipaar Workers|r. Loot them for |cRXP_LOOT_Centipaar Insect Parts|r
     .complete 82,1 --Centipaar Insect Parts (5)
     .mob Centipaar Wasp
@@ -536,11 +504,9 @@ step
     .isOnQuest 82
 step
     #loop
-    .goto 1446/1,-2163.86,-8769.78,0
-    .goto 1446/1,-2163.86,-8769.78,40,0
+    .goto 1446/1,-2172.83,-8824.06,0
     .goto 1446/1,-2172.83,-8824.06,40,0
     .goto 1446/1,-2244.59,-8923.88,40,0
-    .goto 1446/1,-2155.58,-8845.68,40,0
     >>Kill |cRXP_ENEMY_Thistleshrub Dew Collector|r and loot |cRXP_LOOT_Laden Dew Gland|r
     .complete 2605,1 --Laden Dew Gland (1)
     .mob Thistleshrub Dew Collector
@@ -803,13 +769,8 @@ step
     #loop
     .goto 1446/1,-3179.54,-8395.80,0
     .goto 1446/1,-3179.54,-8395.80,40,0
-    .goto 1446/1,-3154.70,-8446.86,40,0
-    .goto 1446/1,-3086.39,-8477.68,40,0
-    .goto 1446/1,-3082.25,-8534.26,40,0
-    .goto 1446/1,-2993.24,-8543.92,40,0
-    .goto 1446/1,-3022.22,-8513.56,40,0
     .goto 1446/1,-3053.96,-8275.74,40,0
-    .goto 1446/1,-3064.31,-8264.24,40,0
+    .goto 1446/1,-3022.22,-8513.56,40,0
     >>Kill |cRXP_ENEMY_Gor'marok the Ravager|r
     >>Kill |cRXP_ENEMY_Dunemaul Brutes|r
     .complete 5863,3 --Gor'marok the Ravager slain (1)
@@ -818,15 +779,10 @@ step
     .mob Dunemaul Brute
 step
     #loop
-    .goto 1446/1,-2861.45,-8504.82,0
-    .goto 1446/1,-2861.45,-8504.82,40,0
+    .goto 1446/1,-2835.23,-8514.02,0
     .goto 1446/1,-2835.23,-8514.02,40,0
-    .goto 1446/1,-2826.26,-8477.22,40,0
-    .goto 1446/1,-2865.59,-8307.02,40,0
     .goto 1446/1,-2893.88,-8290.92,40,0
-    .goto 1446/1,-2900.09,-8264.70,40,0
-    .goto 1446/1,-2953.91,-8231.58,40,0
-    .goto 1446/1,-2987.72,-8235.26,40,0
+    .goto 1446/1,-2969.09,-8217.32,40,0
     >>Kill |cRXP_ENEMY_Dunemaul Enforcers|r
     .complete 5863,2 --Dunemaul Enforcer slain (10)
     .mob Dunemaul Enforcer
@@ -834,13 +790,7 @@ step
     #loop
     .goto 1446/1,-2287.37,-8785.42,0
     .goto 1446/1,-2287.37,-8785.42,40,0
-    .goto 1446/1,-2243.21,-8747.24,40,0
-    .goto 1446/1,-2264.60,-8929.40,40,0
     .goto 1446/1,-2243.90,-8954.24,40,0
-    .goto 1446/1,-2253.56,-8985.06,40,0
-    .goto 1446/1,-2309.45,-8947.34,40,0
-    .goto 1446/1,-2343.95,-8918.82,40,0
-    .goto 1446/1,-2358.44,-8879.72,40,0
     >>Kill |cRXP_ENEMY_Gnarled Thistleshrubs|r
     >>Kill |cRXP_ENEMY_Thistleshrub Rootshapers|r
     .complete 3362,1 --Gnarled Thistleshrub slain (8)

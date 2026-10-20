@@ -39,10 +39,8 @@ step
     .target Tirion Fordring
 step
     #loop
-    .goto 1423/0,-3416.52,2770.89,0
-    .goto 1423/0,-3416.52,2770.89,40,0
+    .goto 1423/0,-3432.44,2710.69,0
     .goto 1423/0,-3432.44,2710.69,40,0
-    .goto 1423/0,-3457.82,2661.39,40,0
     .goto 1423/0,-3434.59,2634.73,40,0
     >>Kill |cRXP_ENEMY_Carrion Grubs|r and |cRXP_ENEMY_Carrion Devourers|r. Loot them for |cRXP_LOOT_Slab of Carrion Worm Meat|r
     .complete 5544,1 --Slab of Carrion Worm Meat (1)
@@ -60,12 +58,7 @@ step
     .accept 5149 >>Accept Pamela's Doll
     .target Pamela Redpath
 step
-    #loop
-    .goto 1423/0,-3663.89,1423.56,0
-    .goto 1423/0,-3663.89,1423.56,40,0
-    .goto 1423/0,-3680.24,1407.79,40,0
-    .goto 1423/0,-3716.81,1405.50,40,0
-    .goto 1423/0,-3715.95,1477.17,40,0
+    .goto 1423/0,-3680.24,1407.79
     >>Pick up |cRXP_PICK_Pamela's Doll's Left Side|r from the ground
     >>Pick up |cRXP_PICK_Pamela's Doll's Right Side|r from the ground
     >>Pick up |cRXP_PICK_Pamela's Doll's Head|r from the ground
@@ -94,16 +87,10 @@ step
     .xp <50,1
 step
     #loop
-    .goto 1423/0,-2980.29,1757.81,0
-    .goto 1423/0,-2980.29,1757.81,40,0
-    .goto 1423/0,-2911.46,1688.15,40,0
-    .goto 1423/0,-2849.94,1722.55,40,0
-    .goto 1423/0,-2780.67,1766.70,40,0
-    .goto 1423/0,-2721.31,1794.51,40,0
-    .goto 1423/0,-2766.05,1851.84,40,0
+    .goto 1423/0,-2962.22,1729.43,0
+    .goto 1423/0,-2962.22,1729.43,40,0
+    .goto 1423/0,-2821.97,1750.07,40,0
     .goto 1423/0,-2889.95,1887.67,40,0
-    .goto 1423/0,-2930.82,1837.79,40,0
-    .goto 1423/0,-2889.52,1794.79,40,0
     >>Kill |cRXP_ENEMY_Plaguebats|r
     >>Kill |cRXP_ENEMY_Plaguehound Runts|r
     .complete 5543,1 --Plaguebat slain (30)
@@ -112,12 +99,9 @@ step
     .mob Plaguehound Runt
 step
     #loop
-    .goto 1423/0,-4240.37,2306.78,0
-    .goto 1423/0,-4240.37,2306.78,40,0
+    .goto 1423/0,-4288.98,2312.23,0
     .goto 1423/0,-4288.98,2312.23,40,0
-    .goto 1423/0,-4385.78,2276.97,40,0
     .goto 1423/0,-4443.43,2231.96,40,0
-    .goto 1423/0,-4323.83,2284.71,40,0
     >>Kill |cRXP_ENEMY_Plaguehounds|r
     .complete 5542,2 --Plaguehound slain (20)
     .mob Plaguehound
@@ -249,14 +233,9 @@ step
     .target Augustus the Touched
 step
     #loop
-    .goto 1423/0,-4128.52,2753.41,0
-    .goto 1423/0,-4128.52,2753.41,40,0
-    .goto 1423/0,-4142.28,2725.89,40,0
-    .goto 1423/0,-4192.62,2792.39,40,0
-    .goto 1423/0,-4267.90,2776.91,40,0
-    .goto 1423/0,-4229.19,2805.58,40,0
+    .goto 1423/0,-4168.53,2880.97,0
     .goto 1423/0,-4168.53,2880.97,40,0
-    .goto 1423/0,-4154.33,2812.75,40,0
+    .goto 1423/0,-4192.62,2792.39,40,0
     >>Kill |cRXP_ENEMY_Frenzied Plaguehounds|r
     .complete 5542,3 --Frenzied Plaguehound slain (5)
     .mob Frenzied Plaguehound
@@ -353,13 +332,9 @@ step
     .isOnQuest 5181
 step
     #loop
-    .goto 1423/0,-4688.65,2810.74,0
-    .goto 1423/0,-4688.65,2810.74,40,0
-    .goto 1423/0,-4720.05,2811.89,40,0
-    .goto 1423/0,-4738.98,2872.66,40,0
-    .goto 1423/0,-4785.01,2771.47,40,0
-    .goto 1423/0,-4783.72,2745.95,40,0
+    .goto 1423/0,-4722.20,2774.05,0
     .goto 1423/0,-4722.20,2774.05,40,0
+    .goto 1423/0,-4738.98,2872.66,40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darrowshire Spirit|r
     .complete 5211,1 --Darrowshire Spirit (15)
     .target Darrowshire Spirit

@@ -124,16 +124,9 @@ step
 step
     #label Along9
     #loop
-    .goto 1432/0,-3019.57,-5221.49,0
-    .goto 1432/0,-3019.57,-5221.49,40,0
-    .goto 1432/0,-3046.33,-5185.44,40,0
-    .goto 1432/0,-3089.36,-5099.16,40,0
-    .goto 1432/0,-3019.85,-5091.44,40,0
-    .goto 1432/0,-2916.14,-5040.48,40,0
-    .goto 1432/0,-2901.79,-5133.19,40,0
-    .goto 1432/0,-2953.93,-5157.66,40,0
-    .goto 1432/0,-2972.68,-5112.22,40,0
+    .goto 1432/0,-3020.68,-5153.06,0
     .goto 1432/0,-3020.68,-5153.06,40,0
+    .goto 1432/0,-2927.45,-5072.49,40,0
     >>Kill |cRXP_ENEMY_Mountain Boars|r, |cRXP_ENEMY_Mangy Mountain Boars|r and |cRXP_ENEMY_Elder Mountain Boars|r. Loot them for |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Grizzled Black Bears|r, |cRXP_ENEMY_Black Bear Patriarches|r and |cRXP_ENEMY_Elder Black Bears|r. Loot them for |cRXP_LOOT_Bear Meat|r
     .complete 418,1 --Boar Intestines (3)
@@ -146,16 +139,10 @@ step
     .mob Elder Black Bear
 step
     #loop
-    .goto 1432/0,-2851.59,-5050.60,0
-    .goto 1432/0,-2851.59,-5050.60,40,0
+    .goto 1432/0,-2785.67,-5053.54,0
     .goto 1432/0,-2785.67,-5053.54,40,0
     .goto 1432/0,-2758.64,-4878.41,40,0
-    .goto 1432/0,-2748.71,-4824.88,40,0
-    .goto 1432/0,-2785.67,-4797.10,40,0
     .goto 1432/0,-2813.80,-4827.27,40,0
-    .goto 1432/0,-2880.00,-4801.70,40,0
-    .goto 1432/0,-2821.53,-4852.11,40,0
-    .goto 1432/0,-2818.49,-4903.80,40,0
     >>Kill |cRXP_ENEMY_Cliff Lurkers|r, |cRXP_ENEMY_Wood Lurkers|r, |cRXP_ENEMY_Forest Lurkers|r and |cRXP_ENEMY_Shanda the Spinners|r. Loot them for |cRXP_LOOT_Spider Ichor|r
     .complete 418,3 --Spider Ichor (3)
     .mob Cliff Lurker
@@ -242,16 +229,9 @@ step
     .isOnQuest 274
 step
     #loop
-    .goto 1432/0,-3110.05,-4671.46,0
-    .goto 1432/0,-3110.05,-4671.46,40,0
-    .goto 1432/0,-3023.44,-4689.30,40,0
-    .goto 1432/0,-2947.58,-4679.74,40,0
-    .goto 1432/0,-2916.96,-4720.58,40,0
-    .goto 1432/0,-2946.75,-4808.32,40,0
-    .goto 1432/0,-3051.02,-4849.53,40,0
-    .goto 1432/0,-3115.84,-4845.30,40,0
-    .goto 1432/0,-3023.99,-4789.56,40,0
-    .goto 1432/0,-3054.05,-4750.56,40,0
+    .goto 1432/0,-3042.47,-4718.55,0
+    .goto 1432/0,-3042.47,-4718.55,40,0
+    .goto 1432/0,-2980.41,-4793.24,40,0
     >>Kill |cRXP_ENEMY_Tunnel Rat Vermins|r, |cRXP_ENEMY_Tunnel Rat Scouts|r, |cRXP_ENEMY_Tunnel Rat Geomancers|r and |cRXP_ENEMY_Tunnel Rat Diggers|r. Loot them for |cRXP_LOOT_Tunnel Rat Ear|r
     .complete 416,1 --Tunnel Rat Ear (12)
     .mob Tunnel Rat Vermin
@@ -280,16 +260,9 @@ step
     .unitscan Mountaineer Kadrell
 step
     #loop
-    .goto 1432/0,-2775.19,-5386.87,0
-    .goto 1432/0,-2775.19,-5386.87,40,0
-    .goto 1432/0,-2742.64,-5346.40,40,0
-    .goto 1432/0,-2708.71,-5389.63,40,0
-    .goto 1432/0,-2726.91,-5389.26,40,0
-    .goto 1432/0,-2747.33,-5410.79,40,0
-    .goto 1432/0,-2742.09,-5484.55,40,0
-    .goto 1432/0,-2749.26,-5516.56,40,0
-    .goto 1432/0,-2743.74,-5537.53,40,0
-    .goto 1432/0,-2777.94,-5579.48,40,0
+    .goto 1432/0,-2718.64,-5378.04,0
+    .goto 1432/0,-2718.64,-5378.04,40,0
+    .goto 1432/0,-2737.95,-5527.60,40,0
     >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r
     >>Kill |cRXP_ENEMY_Stonesplinter Scouts|r
     >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r, |cRXP_ENEMY_Stonesplinter Scouts|r, |cRXP_ENEMY_Stonesplinter Skullthumpers|r and |cRXP_ENEMY_Stonesplinter Bonesnappers|r. Loot them for |cRXP_LOOT_Trogg Stone Tooth|r
@@ -341,16 +314,9 @@ step
     .target Mountaineer Gravelgaw
 step
     #loop
-    .goto 1432/0,-2765.53,-5980.87,0
-    .goto 1432/0,-2765.53,-5980.87,40,0
-    .goto 1432/0,-2794.22,-5981.61,40,0
-    .goto 1432/0,-2823.73,-6032.57,40,0
-    .goto 1432/0,-2935.72,-6067.89,40,0
+    .goto 1432/0,-2791.74,-6049.86,0
+    .goto 1432/0,-2791.74,-6049.86,40,0
     .goto 1432/0,-2897.38,-6140.55,40,0
-    .goto 1432/0,-2857.38,-6057.95,40,0
-    .goto 1432/0,-2785.67,-6073.59,40,0
-    .goto 1432/0,-2752.57,-6067.52,40,0
-    .goto 1432/0,-2779.60,-6027.41,40,0
     >>Kill |cRXP_ENEMY_Stonesplinter Skullthumpers|r
     >>Kill |cRXP_ENEMY_Stonesplinter Seers|r
     .complete 237,1 --Stonesplinter Skullthumper slain (10)
@@ -404,29 +370,18 @@ step << Shaman
     .xp <10,1
 step << Shaman
     #loop
-    .goto 1432/0,-3361.61,-5038.64,0
-    .goto 1432/0,-3361.61,-5038.64,40,0
-    .goto 1432/0,-3336.23,-5018.77,40,0
-    .goto 1432/0,-3313.34,-4912.08,40,0
-    .goto 1432/0,-3276.37,-4877.49,40,0
-    .goto 1432/0,-3318.85,-4839.04,40,0
-    .goto 1432/0,-3335.95,-4873.63,40,0
-    .goto 1432/0,-3371.81,-4921.09,40,0
-    .goto 1432/0,-3401.60,-4916.49,40,0
-    .goto 1432/0,-3375.95,-4988.60,40,0
+    .goto 1432/0,-3340.64,-5029.44,0
+    .goto 1432/0,-3340.64,-5029.44,40,0
+    .goto 1432/0,-3309.20,-4875.28,40,0
     >>Kill |cRXP_ENEMY_Stonesplinter Seer|r and loot |cRXP_LOOT_Reagent Pouch|r
     .complete 94466,2 --Reagent Pouch (1)
     .mob Stonesplinter Seer
     .isOnQuest 94466
 step << Shaman
     #loop
-    .goto 1432/0,-3004.40,-4949.97,0
-    .goto 1432/0,-3004.40,-4949.97,40,0
-    .goto 1432/0,-2991.71,-4934.70,40,0
-    .goto 1432/0,-2981.23,-4898.28,40,0
-    .goto 1432/0,-2975.16,-4875.10,40,0
+    .goto 1432/0,-2974.34,-4903.80,0
+    .goto 1432/0,-2974.34,-4903.80,40,0
     .goto 1432/0,-2974.34,-5001.11,40,0
-    .goto 1432/0,-3003.02,-4959.35,40,0
     >>Kill |cRXP_ENEMY_Tunnel Rat Geomancer|r and loot |cRXP_LOOT_Fire Tar|r
     .complete 94466,1 --Fire Tar (1)
     .mob Tunnel Rat Geomancer
@@ -512,16 +467,9 @@ step
     .target Mountaineer Stormpike
 step
     #loop
-    .goto 1432/0,-2956.41,-4918.70,0
-    .goto 1432/0,-2956.41,-4918.70,40,0
-    .goto 1432/0,-2953.65,-4979.22,40,0
-    .goto 1432/0,-2983.72,-4996.70,40,0
-    .goto 1432/0,-3007.44,-4967.26,40,0
-    .goto 1432/0,-2993.92,-4943.16,40,0
-    .goto 1432/0,-2978.75,-4934.33,40,0
+    .goto 1432/0,-2957.51,-4945.37,0
+    .goto 1432/0,-2957.51,-4945.37,40,0
     .goto 1432/0,-2984.27,-4893.50,40,0
-    .goto 1432/0,-2998.33,-4868.29,40,0
-    .goto 1432/0,-2971.85,-4853.21,40,0
     >>Loot the |cRXP_PICK_Miners' League Crates|r for |cRXP_LOOT_Miners' Gear|r
     .complete 307,1 --Miners' Gear (4)
 step << Mage
@@ -545,10 +493,7 @@ step
     #loop
     .goto 1432/0,-2913.38,-6161.34,0
     .goto 1432/0,-2913.38,-6161.34,40,0
-    .goto 1432/0,-2947.03,-6171.09,40,0
     .goto 1432/0,-2982.61,-6181.57,40,0
-    .goto 1432/0,-3023.44,-6186.91,40,0
-    .goto 1432/0,-2983.16,-6215.42,40,0
     >>Kill |cRXP_ENEMY_Stonesplinter Bonesnappers|r
     .complete 263,2 --Stonesplinter Bonesnapper slain (10)
     .mob Stonesplinter Bonesnapper
@@ -557,14 +502,7 @@ step
     #loop
     .goto 1432/0,-2989.51,-6189.67,0
     .goto 1432/0,-2989.51,-6189.67,40,0
-    .goto 1432/0,-3007.99,-6214.68,40,0
-    .goto 1432/0,-2952.55,-6223.15,40,0
-    .goto 1432/0,-2939.03,-6172.93,40,0
-    .goto 1432/0,-2961.10,-6169.25,40,0
-    .goto 1432/0,-3027.30,-6073.77,40,0
-    .goto 1432/0,-3048.26,-6100.81,40,0
-    .goto 1432/0,-3028.68,-6144.41,40,0
-    .goto 1432/0,-2993.65,-6161.89,40,0
+    .goto 1432/0,-3044.67,-6101.37,40,0
     >>Kill |cRXP_ENEMY_Stonesplinter Shamans|r
     .complete 263,1 --Stonesplinter Shaman slain (10)
     .mob Stonesplinter Shaman
@@ -626,10 +564,7 @@ step
     #loop
     .goto 1432/0,-4178.35,-5659.13,0
     .goto 1432/0,-4178.35,-5659.13,40,0
-    .goto 1432/0,-4169.25,-5576.17,40,0
-    .goto 1432/0,-4113.80,-5510.12,40,0
     .goto 1432/0,-4122.63,-5542.13,40,0
-    .goto 1432/0,-4120.15,-5560.34,40,0
     >>Kill |cRXP_ENEMY_Mountain Buzzards|r
     .complete 257,1 --Mountain Buzzard slain (6)
     .mob Mountain Buzzard
@@ -650,16 +585,9 @@ step
     .target Bingles Blastenheimer
 step
     #loop
-    .goto 1432/0,-3727.09,-5359.65,0
-    .goto 1432/0,-3727.09,-5359.65,40,0
-    .goto 1432/0,-3703.36,-5266.38,40,0
-    .goto 1432/0,-3724.33,-5304.83,40,0
-    .goto 1432/0,-3765.15,-5334.26,40,0
-    .goto 1432/0,-3820.59,-5363.14,40,0
-    .goto 1432/0,-3763.77,-5395.70,40,0
-    .goto 1432/0,-3741.43,-5426.61,40,0
-    .goto 1432/0,-3724.05,-5459.90,40,0
-    .goto 1432/0,-3710.54,-5486.76,40,0
+    .goto 1432/0,-3736.19,-5405.45,0
+    .goto 1432/0,-3736.19,-5405.45,40,0
+    .goto 1432/0,-3712.47,-5314.21,40,0
     >>Kill |cRXP_ENEMY_Daggerfang|r and loot |cRXP_LOOT_Marek's Croc-Hunting Knife|r
     >>Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Skin|r
     >>Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Meat|r
@@ -731,16 +659,9 @@ step
     .target Daryl the Youngling
 step
     #loop
-    .goto 1432/0,-3852.04,-5247.25,0
-    .goto 1432/0,-3852.04,-5247.25,40,0
-    .goto 1432/0,-3818.11,-5192.24,40,0
-    .goto 1432/0,-3737.02,-5133.19,40,0
-    .goto 1432/0,-3654.54,-5111.30,40,0
-    .goto 1432/0,-3648.75,-5184.52,40,0
-    .goto 1432/0,-3685.44,-5249.09,40,0
-    .goto 1432/0,-3730.95,-5222.41,40,0
-    .goto 1432/0,-3785.01,-5201.81,40,0
-    .goto 1432/0,-3796.87,-5259.02,40,0
+    .goto 1432/0,-3823.35,-5225.54,0
+    .goto 1432/0,-3823.35,-5225.54,40,0
+    .goto 1432/0,-3714.40,-5193.53,40,0
     >>Kill |cRXP_ENEMY_Elder Mountain Boars|r
     .complete 258,1 --Elder Mountain Boar slain (5)
     .mob Elder Mountain Boar
@@ -760,13 +681,7 @@ step
     .accept 86585 >>Accept Banner of the Fallen
     .target Mountaineer Ylva
 step
-    #loop
-    .goto 1432/0,-2870.35,-6070.83,0
-    .goto 1432/0,-2870.35,-6070.83,40,0
-    .goto 1432/0,-2884.14,-6092.35,40,0
-    .goto 1432/0,-2908.96,-6108.36,40,0
-    .goto 1432/0,-2921.65,-6107.44,40,0
-    .goto 1432/0,-2956.68,-6092.54,40,0
+    .goto 1432/0,-2884.14,-6092.35
     >>Kill |cRXP_ENEMY_Headsplitters|r
     .complete 86585,1 --Headsplitter slain (8)
     .mob Headsplitter
@@ -870,16 +785,10 @@ step
     .target Chief Engineer Hinderweir VII
 step
     #loop
-    .goto 1432/0,-3747.50,-4880.80,0
-    .goto 1432/0,-3747.50,-4880.80,40,0
-    .goto 1432/0,-3748.60,-4948.50,40,0
-    .goto 1432/0,-3845.42,-5110.93,40,0
-    .goto 1432/0,-3890.10,-5009.39,40,0
-    .goto 1432/0,-4032.99,-4941.88,40,0
-    .goto 1432/0,-3980.58,-4851.37,40,0
-    .goto 1432/0,-3906.10,-4874.73,40,0
-    .goto 1432/0,-3895.07,-4938.93,40,0
+    .goto 1432/0,-3813.70,-4884.67,0
     .goto 1432/0,-3813.70,-4884.67,40,0
+    .goto 1432/0,-3947.48,-4926.24,40,0
+    .goto 1432/0,-3885.14,-5072.86,40,0
     >>Kill |cRXP_ENEMY_Mo'grosh Ogres|r
     >>Kill |cRXP_ENEMY_Mo'grosh Enforcers|r
     .complete 255,1 --Mo'grosh Ogre slain (4)
@@ -888,28 +797,17 @@ step
     .mob Mo'grosh Enforcer
 step
     #loop
-    .goto 1432/0,-4079.88,-4826.35,0
-    .goto 1432/0,-4079.88,-4826.35,40,0
+    .goto 1432/0,-4085.67,-4809.61,0
     .goto 1432/0,-4085.67,-4809.61,40,0
-    .goto 1432/0,-4064.98,-4781.47,40,0
-    .goto 1432/0,-4125.67,-4740.99,40,0
-    .goto 1432/0,-4130.63,-4743.39,40,0
-    .goto 1432/0,-4194.62,-4767.12,40,0
+    .goto 1432/0,-4186.90,-4762.52,40,0
     >>Kill |cRXP_ENEMY_Mo'grosh Brutes|r
     .complete 255,2 --Mo'grosh Brute slain (4)
     .mob Mo'grosh Brute
 step
     #loop
-    .goto 1432/0,-4125.67,-4740.99,0
-    .goto 1432/0,-4125.67,-4740.99,40,0
-    .goto 1432/0,-4111.32,-4750.56,40,0
-    .goto 1432/0,-4066.09,-4795.08,40,0
-    .goto 1432/0,-4034.92,-4850.08,40,0
+    .goto 1432/0,-4114.08,-4784.96,0
+    .goto 1432/0,-4114.08,-4784.96,40,0
     .goto 1432/0,-4085.67,-4809.61,40,0
-    .goto 1432/0,-4104.98,-4819.91,40,0
-    .goto 1432/0,-4130.91,-4811.08,40,0
-    .goto 1432/0,-4178.07,-4770.98,40,0
-    .goto 1432/0,-4194.62,-4767.12,40,0
     >>Kill |cRXP_ENEMY_Mo'grosh Ogres|r, |cRXP_ENEMY_Mo'grosh Enforcers|r, |cRXP_ENEMY_Mo'grosh Brutes|r and |cRXP_ENEMY_Mo'grosh Shamans|r. Loot them for |cRXP_LOOT_Mo'grosh Crystal|r
     .complete 278,2 --Mo'grosh Crystal (1)
     .mob Mo'grosh Ogre
@@ -918,14 +816,7 @@ step
     .mob Mo'grosh Shaman
     .isOnQuest 278
 step
-    #loop
-    .goto 1432/0,-4131.18,-5117.74,0
-    .goto 1432/0,-4131.18,-5117.74,40,0
-    .goto 1432/0,-4140.56,-5157.11,40,0
-    .goto 1432/0,-4094.22,-5186.17,40,0
-    .goto 1432/0,-4043.74,-5183.05,40,0
-    .goto 1432/0,-4043.47,-5125.47,40,0
-    .goto 1432/0,-4079.88,-5148.46,40,0
+    .goto 1432/0,-4079.88,-5148.46
     >>Kill |cRXP_ENEMY_Cliff Lurkers|r, |cRXP_ENEMY_Wood Lurkers|r, |cRXP_ENEMY_Forest Lurkers|r and |cRXP_ENEMY_Shanda the Spinners|r. Loot them for |cRXP_LOOT_Lurker Venom|r
     .complete 278,1 --Lurker Venom (1)
     .mob Cliff Lurker
@@ -946,16 +837,9 @@ step
     .target Magmar Fellhew
 step
     #loop
-    .goto 1432/0,-3898.65,-5702.73,0
-    .goto 1432/0,-3898.65,-5702.73,40,0
-    .goto 1432/0,-3928.44,-5727.01,40,0
-    .goto 1432/0,-3987.47,-5743.02,40,0
-    .goto 1432/0,-3996.02,-5677.89,40,0
-    .goto 1432/0,-3998.78,-5627.86,40,0
-    .goto 1432/0,-3941.41,-5590.70,40,0
-    .goto 1432/0,-3865.83,-5574.69,40,0
-    .goto 1432/0,-3900.03,-5651.77,40,0
-    .goto 1432/0,-3948.58,-5669.98,40,0
+    .goto 1432/0,-3888.45,-5635.58,0
+    .goto 1432/0,-3888.45,-5635.58,40,0
+    .goto 1432/0,-3927.34,-5703.28,40,0
     >>Kill |cRXP_ENEMY_Stonesplinter Geomancers|r, |cRXP_ENEMY_Stonesplinter Diggers|r and |cRXP_ENEMY_Berserk Troggs|r. Loot them for |cRXP_LOOT_Carved Stone Idol|r
     .complete 297,1 --Carved Stone Idol (8)
     .mob Stonesplinter Geomancer
@@ -968,16 +852,9 @@ step
     .target Magmar Fellhew
 step
     #loop
-    .goto 1432/0,-3710.54,-5486.76,0
-    .goto 1432/0,-3710.54,-5486.76,40,0
-    .goto 1432/0,-3724.05,-5459.90,40,0
-    .goto 1432/0,-3741.43,-5426.61,40,0
-    .goto 1432/0,-3763.77,-5395.70,40,0
-    .goto 1432/0,-3820.59,-5363.14,40,0
-    .goto 1432/0,-3765.15,-5334.26,40,0
-    .goto 1432/0,-3724.33,-5304.83,40,0
-    .goto 1432/0,-3703.36,-5266.38,40,0
-    .goto 1432/0,-3727.09,-5359.65,40,0
+    .goto 1432/0,-3736.19,-5405.45,0
+    .goto 1432/0,-3736.19,-5405.45,40,0
+    .goto 1432/0,-3712.47,-5314.21,40,0
     >>Kill |cRXP_ENEMY_Loch Crocolisks|r, |cRXP_ENEMY_Large Loch Crocolisks|r and |cRXP_ENEMY_Daggerfangs|r. Loot them for |cRXP_LOOT_Crocolisk Tear|r
     .complete 278,3 --Crocolisk Tear (1)
     .mob Loch Crocolisk

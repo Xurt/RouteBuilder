@@ -88,16 +88,10 @@ step
 step
     #label Drop91741x1
     #loop
-    .goto 1429/0,-114.96,-8876.06,0
-    .goto 1429/0,-114.96,-8876.06,40,0
-    .goto 1429/0,-143.08,-8806.16,40,0
-    .goto 1429/0,-262.82,-8794.59,40,0
-    .goto 1429/0,-201.39,-8760.33,40,0
-    .goto 1429/0,-148.28,-8718.90,40,0
-    .goto 1429/0,-50.41,-8748.76,40,0
-    .goto 1429/0,-88.24,-8815.42,40,0
-    .goto 1429/0,-44.85,-8844.35,40,0
-    .goto 1429/0,-48.67,-8953.60,40,0
+    .goto 1429/0,-84.07,-8851.30,0
+    .goto 1429/0,-84.07,-8851.30,40,0
+    .goto 1429/0,-116.01,-8771.44,40,0
+    .goto 1429/0,-220.48,-8773.53,40,0
     >>Kill |cRXP_ENEMY_Timber Wolfs|r and |cRXP_ENEMY_Young Wolfs|r. Loot them for |cRXP_LOOT_Tough Wolf Meat|r
     >>Kill |cRXP_ENEMY_Kobold Vermins|r
     .complete 33,1 --Tough Wolf Meat (8)
@@ -212,16 +206,9 @@ step
 step
     #label Drop91741x2
     #loop
-    .goto 1429/0,-257.62,-8811.25,0
-    .goto 1429/0,-257.62,-8811.25,40,0
-    .goto 1429/0,-274.62,-8781.40,40,0
-    .goto 1429/0,-235.40,-8762.42,40,0
+    .goto 1429/0,-204.16,-8749.46,0
     .goto 1429/0,-204.16,-8749.46,40,0
-    .goto 1429/0,-155.92,-8721.68,40,0
-    .goto 1429/0,-127.46,-8671.69,40,0
-    .goto 1429/0,-70.54,-8698.53,40,0
-    .goto 1429/0,-101.78,-8752.46,40,0
-    .goto 1429/0,-138.22,-8769.82,40,0
+    .goto 1429/0,-108.37,-8707.56,40,0
     >>Kill |cRXP_ENEMY_Kobold Workers|r
     .complete 15,1 --Kobold Worker slain (10)
     .mob Kobold Worker
@@ -309,16 +296,9 @@ step << Human Mage
     .trainer >> Train your class spells
 step
     #loop
-    .goto 1429/0,-312.45,-8994.57,0
-    .goto 1429/0,-312.45,-8994.57,40,0
-    .goto 1429/0,-247.55,-9116.78,40,0
-    .goto 1429/0,-323.56,-9131.13,40,0
-    .goto 1429/0,-389.16,-9124.88,40,0
-    .goto 1429/0,-421.44,-9091.09,40,0
-    .goto 1429/0,-458.23,-9052.20,40,0
-    .goto 1429/0,-397.84,-9034.15,40,0
-    .goto 1429/0,-377.36,-9077.43,40,0
-    .goto 1429/0,-332.24,-9075.35,40,0
+    .goto 1429/0,-288.51,-9068.41,0
+    .goto 1429/0,-288.51,-9068.41,40,0
+    .goto 1429/0,-369.38,-9061.23,40,0
     >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for |cRXP_LOOT_Red Burlap Bandana|r
     .complete 18,1 --Red Burlap Bandana (12)
     .mob Defias Thug
@@ -357,16 +337,9 @@ step
 step
     #label Drop91741x3
     #loop
-    .goto 1429/0,-123.29,-8671.92,0
-    .goto 1429/0,-123.29,-8671.92,40,0
-    .goto 1429/0,-113.23,-8640.67,40,0
-    .goto 1429/0,-151.06,-8572.39,40,0
-    .goto 1429/0,-147.94,-8555.73,40,0
-    .goto 1429/0,-182.65,-8537.67,40,0
-    .goto 1429/0,-216.66,-8561.51,40,0
-    .goto 1429/0,-174.32,-8595.54,40,0
-    .goto 1429/0,-152.80,-8613.82,40,0
-    .goto 1429/0,-143.43,-8640.21,40,0
+    .goto 1429/0,-131.97,-8640.44,0
+    .goto 1429/0,-131.97,-8640.44,40,0
+    .goto 1429/0,-182.30,-8587.20,40,0
     >>Kill |cRXP_ENEMY_Kobold Laborers|r
     .complete 21,1 --Kobold Laborer slain (12)
     .mob Kobold Laborer
@@ -415,16 +388,10 @@ step
 step
     #label Drop91741x4
     #loop
-    .goto 1429/0,-257.62,-8811.25,0
-    .goto 1429/0,-257.62,-8811.25,40,0
-    .goto 1429/0,-190.63,-8768.20,40,0
-    .goto 1429/0,-118.44,-8793.90,40,0
-    .goto 1429/0,-70.54,-8698.53,40,0
-    .goto 1429/0,-113.23,-8640.67,40,0
-    .goto 1429/0,-182.65,-8537.67,40,0
-    .goto 1429/0,-152.80,-8613.82,40,0
-    .goto 1429/0,-161.82,-8698.77,40,0
-    .goto 1429/0,-207.98,-8722.61,40,0
+    .goto 1429/0,-195.49,-8779.78,0
+    .goto 1429/0,-195.49,-8779.78,40,0
+    .goto 1429/0,-119.13,-8747.84,40,0
+    .goto 1429/0,-143.43,-8616.60,40,0
     >>Kill |cRXP_ENEMY_Kobold Vermins|r, |cRXP_ENEMY_Kobold Laborers|r and |cRXP_ENEMY_Kobold Workers|r. Loot them for |cRXP_LOOT_Stolen Book|r
     .complete 91743,1 --Stolen Book (8)
     .mob Kobold Vermin
@@ -480,16 +447,9 @@ step << Rogue
     .target Jorik Kerridan
 step
     #loop
-    .goto 1429/0,-331.89,-9026.74,0
-    .goto 1429/0,-331.89,-9026.74,40,0
-    .goto 1429/0,-297.18,-9061.00,40,0
-    .goto 1429/0,-331.54,-9114.70,40,0
-    .goto 1429/0,-361.05,-9085.30,40,0
-    .goto 1429/0,-379.79,-9074.89,40,0
+    .goto 1429/0,-336.40,-9068.64,0
+    .goto 1429/0,-336.40,-9068.64,40,0
     .goto 1429/0,-461.01,-9056.37,40,0
-    .goto 1429/0,-361.74,-9072.11,40,0
-    .goto 1429/0,-330.85,-9061.23,40,0
-    .goto 1429/0,-350.98,-9045.26,40,0
     >>Pick up |cRXP_PICK_Milly's Harvest|r from the ground
     >>Kill |cRXP_ENEMY_Garrick Padfoot|r and loot |cRXP_LOOT_Garrick's Head|r
     .complete 3904,1 --Milly's Harvest (8)
@@ -652,13 +612,9 @@ step
     .target Sam Sarsaparilla
 step
     #loop
-    .goto 1429/0,4.43,-9342.45,0
-    .goto 1429/0,4.43,-9342.45,40,0
+    .goto 1429/0,51.98,-9370.46,0
     .goto 1429/0,51.98,-9370.46,40,0
-    .goto 1429/0,79.05,-9382.03,40,0
-    .goto 1429/0,28.03,-9351.71,40,0
     .goto 1429/0,-31.66,-9283.43,40,0
-    .goto 1429/0,-19.86,-9319.31,40,0
     >>Click the |cRXP_PICK_Kobold Tracks|r
     .complete 91772,1 --Kobold Tracks
     .isOnQuest 91772
@@ -885,16 +841,10 @@ step
     .target Tommy Joe Stonefield
 step
     #loop
-    .goto 1429/0,461.54,-9886.61,0
-    .goto 1429/0,461.54,-9886.61,40,0
-    .goto 1429/0,418.16,-9881.75,40,0
-    .goto 1429/0,377.20,-9910.22,40,0
-    .goto 1429/0,423.71,-9945.17,40,0
-    .goto 1429/0,379.28,-10016.00,40,0
-    .goto 1429/0,313.68,-10018.31,40,0
-    .goto 1429/0,308.82,-9971.32,40,0
-    .goto 1429/0,356.03,-9821.57,40,0
-    .goto 1429/0,435.86,-9792.87,40,0
+    .goto 1429/0,427.53,-9926.65,0
+    .goto 1429/0,427.53,-9926.65,40,0
+    .goto 1429/0,412.60,-9824.81,40,0
+    .goto 1429/0,362.97,-10008.59,40,0
     >>Kill |cRXP_ENEMY_Stonetusk Boars|r, |cRXP_ENEMY_Longsnouts|r, |cRXP_ENEMY_Princess|r and |cRXP_ENEMY_Porcine Entourages|r. Loot them for |cRXP_LOOT_Chunk of Boar Meat|r
     .complete 86,1 --Chunk of Boar Meat (4)
     .mob Stonetusk Boar
@@ -931,16 +881,10 @@ step
     .target Gramma Stonefield
 step
     #loop
-    .goto 1429/0,284.88,-9853.74,0
-    .goto 1429/0,284.88,-9853.74,40,0
-    .goto 1429/0,279.32,-9770.88,40,0
-    .goto 1429/0,191.86,-9758.15,40,0
-    .goto 1429/0,87.73,-9745.65,40,0
-    .goto 1429/0,82.18,-9822.50,40,0
-    .goto 1429/0,131.46,-9797.27,40,0
-    .goto 1429/0,160.97,-9840.55,40,0
-    .goto 1429/0,179.01,-9907.67,40,0
-    .goto 1429/0,222.75,-9954.43,40,0
+    .goto 1429/0,190.82,-9879.44,0
+    .goto 1429/0,190.82,-9879.44,40,0
+    .goto 1429/0,199.15,-9825.27,40,0
+    .goto 1429/0,111.68,-9789.40,40,0
     >>Kill |cRXP_ENEMY_Kobold Miners|r, |cRXP_ENEMY_Goldtooths|r, |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Geomancers|r. Loot them for |cRXP_LOOT_Large Candle|r
     >>Kill |cRXP_ENEMY_Kobold Miners|r, |cRXP_ENEMY_Goldtooths|r, |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Geomancers|r. Loot them for |cRXP_LOOT_Gold Dust|r
     .complete 60,1 --Large Candle (8)
@@ -951,16 +895,10 @@ step
     .mob Kobold Geomancer
 step
     #loop
-    .goto 1429/0,160.97,-9840.55,0
-    .goto 1429/0,160.97,-9840.55,40,0
-    .goto 1429/0,131.46,-9797.27,40,0
-    .goto 1429/0,82.18,-9822.50,40,0
-    .goto 1429/0,95.71,-9743.34,40,0
-    .goto 1429/0,191.86,-9758.15,40,0
-    .goto 1429/0,279.32,-9770.88,40,0
-    .goto 1429/0,284.88,-9853.74,40,0
-    .goto 1429/0,222.75,-9954.43,40,0
-    .goto 1429/0,179.01,-9907.67,40,0
+    .goto 1429/0,179.71,-9852.12,0
+    .goto 1429/0,179.71,-9852.12,40,0
+    .goto 1429/0,240.80,-9804.67,40,0
+    .goto 1429/0,111.68,-9789.40,40,0
     >>Kill |cRXP_ENEMY_Kobold Miners|r and |cRXP_ENEMY_Kobold Tunnelers|r. Loot them for |cRXP_LOOT_Lost Book|r
     .complete 91775,2 --Lost Book (6)
     .mob Kobold Miner
@@ -1141,16 +1079,9 @@ step
     .target Jason Mathers
 step
     #loop
-    .goto 1429/0,-141.00,-9349.16,0
-    .goto 1429/0,-141.00,-9349.16,40,0
-    .goto 1429/0,-151.41,-9314.45,40,0
-    .goto 1429/0,-147.94,-9409.34,40,0
-    .goto 1429/0,-182.65,-9455.63,40,0
-    .goto 1429/0,-193.06,-9478.78,40,0
-    .goto 1429/0,-182.65,-9511.18,40,0
-    .goto 1429/0,-144.47,-9504.24,40,0
-    .goto 1429/0,-92.40,-9464.89,40,0
-    .goto 1429/0,-81.99,-9437.12,40,0
+    .goto 1429/0,-144.47,-9316.76,0
+    .goto 1429/0,-144.47,-9316.76,40,0
+    .goto 1429/0,-158.35,-9467.21,40,0
     >>Loot the |cRXP_PICK_Fishing Traps|r for |cRXP_LOOT_Half-Eaten Fish|r
     .complete 99127,1 --Half-Eaten Fish (7)
 step
@@ -1166,16 +1097,10 @@ step
     .target Lee Brown
 step
     #loop
-    .goto 1429/0,-210.07,-9504.94,0
-    .goto 1429/0,-210.07,-9504.94,40,0
-    .goto 1429/0,-269.42,-9530.40,40,0
-    .goto 1429/0,-381.18,-9545.67,40,0
+    .goto 1429/0,-224.30,-9493.36,0
+    .goto 1429/0,-224.30,-9493.36,40,0
     .goto 1429/0,-395.75,-9484.10,40,0
-    .goto 1429/0,-487.04,-9511.65,40,0
-    .goto 1429/0,-488.77,-9449.85,40,0
-    .goto 1429/0,-447.82,-9381.34,40,0
-    .goto 1429/0,-390.90,-9403.56,40,0
-    .goto 1429/0,-331.89,-9456.33,40,0
+    .goto 1429/0,-451.98,-9413.74,40,0
     >>Kill |cRXP_ENEMY_Murlocs|r
     >>Loot the |cRXP_PICK_Junk Piles|r for |cRXP_LOOT_Shiny Junk|r
     >>Kill |cRXP_ENEMY_Murloc Streamrunners|r
@@ -1186,16 +1111,9 @@ step
     .mob Murloc Streamrunner
 step
     #loop
-    .goto 1429/0,-328.42,-9484.80,0
-    .goto 1429/0,-328.42,-9484.80,40,0
+    .goto 1429/0,-395.75,-9484.10,0
     .goto 1429/0,-395.75,-9484.10,40,0
-    .goto 1429/0,-381.18,-9545.67,40,0
-    .goto 1429/0,-449.55,-9547.06,40,0
-    .goto 1429/0,-487.04,-9511.65,40,0
-    .goto 1429/0,-488.77,-9449.85,40,0
-    .goto 1429/0,-447.82,-9381.34,40,0
-    .goto 1429/0,-390.90,-9403.56,40,0
-    .goto 1429/0,-313.15,-9410.04,40,0
+    .goto 1429/0,-451.98,-9413.74,40,0
     >>Kill |cRXP_ENEMY_Murlocs|r and |cRXP_ENEMY_Murloc Streamrunners|r. Loot them for |cRXP_LOOT_Crystal Kelp Frond|r
     .complete 112,1 --Crystal Kelp Frond (4)
     .mob Murloc
@@ -1306,16 +1224,10 @@ step
 step
     #label Along109
     #loop
-    .goto 1429/0,-1207.93,-9318.15,0
-    .goto 1429/0,-1207.93,-9318.15,40,0
-    .goto 1429/0,-1338.09,-9331.11,40,0
-    .goto 1429/0,-1421.39,-9350.78,40,0
-    .goto 1429/0,-1295.74,-9389.44,40,0
-    .goto 1429/0,-1249.58,-9362.36,40,0
-    .goto 1429/0,-1185.02,-9382.73,40,0
-    .goto 1429/0,-1127.06,-9425.31,40,0
-    .goto 1429/0,-1101.38,-9383.19,40,0
-    .goto 1429/0,-1146.84,-9316.99,40,0
+    .goto 1429/0,-1285.33,-9364.90,0
+    .goto 1429/0,-1285.33,-9364.90,40,0
+    .goto 1429/0,-1374.88,-9339.44,40,0
+    .goto 1429/0,-1128.45,-9369.07,40,0
     >>Pick up |cRXP_PICK_Bundle of Wood|r from the ground
     .complete 5545,1 --Bundle of Wood (8)
 step
@@ -1346,7 +1258,7 @@ step
     .mob Prowler
 step
     #label Along113
-    .goto 1429/0,-1050.35,-9707.92
+    .goto 1429/0,-1039.94,-9710.24
     >>Pick up |cRXP_PICK_Waterlogged Saw|r from the ground
     .complete 91733,2 --Waterlogged Saw (1)
 step
@@ -1361,27 +1273,20 @@ step
     .accept 91723 >>Accept Delicate Instruments
     .target Hamish Bergwort
 step
-    .goto 1429/0,-711.95,-9256.35
+    .goto 1429/0,-703.27,-9252.41
     >>Kill |cRXP_ENEMY_Kobold Geomancers|r
     .complete 91723,1 --Kobold Geomancer slain (8)
     .mob Kobold Geomancer
 step
     #loop
-    .goto 1429/0,-912.56,-8908.47,0
-    .goto 1429/0,-912.56,-8908.47,40,0
+    .goto 1429/0,-890.70,-8885.09,0
     .goto 1429/0,-890.70,-8885.09,40,0
-    .goto 1429/0,-918.81,-8847.83,40,0
-    .goto 1429/0,-943.80,-8806.39,40,0
-    .goto 1429/0,-1035.08,-8809.63,40,0
-    .goto 1429/0,-1081.94,-8803.62,40,0
-    .goto 1429/0,-1075.34,-8874.91,40,0
     .goto 1429/0,-1019.46,-8865.18,40,0
-    .goto 1429/0,-968.10,-8889.95,40,0
     >>Kill |cRXP_ENEMY_Prowlers|r
     .complete 52,1 --Prowler slain (8)
     .mob Prowler
 step
-    .goto 1429/0,-1310.67,-9319.07
+    .goto 1429/0,-1303.72,-9305.19
     >>Kill |cRXP_ENEMY_Young Forest Bears|r
     .complete 52,2 --Young Forest Bear slain (5)
     .mob Young Forest Bear
@@ -1394,16 +1299,9 @@ step
 step
     #label Drop91740x1
     #loop
-    .goto 1429/0,-1220.08,-9283.20,0
-    .goto 1429/0,-1220.08,-9283.20,40,0
-    .goto 1429/0,-1232.92,-9254.73,40,0
-    .goto 1429/0,-1255.83,-9173.49,40,0
+    .goto 1429/0,-1229.45,-9212.14,0
     .goto 1429/0,-1229.45,-9212.14,40,0
-    .goto 1429/0,-1199.60,-9229.50,40,0
-    .goto 1429/0,-1161.42,-9255.89,40,0
-    .goto 1429/0,-1165.24,-9282.97,40,0
-    .goto 1429/0,-1121.85,-9304.03,40,0
-    .goto 1429/0,-1189.88,-9332.96,40,0
+    .goto 1429/0,-1181.20,-9270.01,40,0
     >>Kill |cRXP_ENEMY_Murloc Foragers|r, |cRXP_ENEMY_Murloc Lurkers|r, |cRXP_ENEMY_Croakies|r and |cRXP_ENEMY_Elder Finseers|r. Loot them for |cRXP_LOOT_Torn Murloc Fin|r
     .complete 46,1 --Torn Murloc Fin (8)
     .mob Murloc Forager
@@ -1412,12 +1310,7 @@ step
     .mob Elder Finseer
     .isOnQuest 46
 step
-    #loop
-    .goto 1429/0,-606.09,-9177.88,0
-    .goto 1429/0,-606.09,-9177.88,40,0
-    .goto 1429/0,-574.85,-9159.37,40,0
-    .goto 1429/0,-599.15,-9101.50,40,0
-    .goto 1429/0,-599.15,-9131.59,40,0
+    .goto 1429/0,-588.73,-9131.59
     >>Pick up |cRXP_PICK_Mining Tools|r from the ground
     .complete 91732,1 --Mining Tools (4)
 step
@@ -1444,15 +1337,9 @@ step
 step
     #label Drop184x1
     #loop
-    .goto 1429/0,-917.42,-9766.95,0
-    .goto 1429/0,-917.42,-9766.95,40,0
+    .goto 1429/0,-927.14,-9805.83,0
     .goto 1429/0,-927.14,-9805.83,40,0
-    .goto 1429/0,-918.81,-9826.66,40,0
-    .goto 1429/0,-840.02,-9836.62,40,0
-    .goto 1429/0,-828.91,-9802.59,40,0
-    .goto 1429/0,-816.07,-9744.73,40,0
-    .goto 1429/0,-846.62,-9714.17,40,0
-    .goto 1429/0,-939.63,-9715.10,40,0
+    .goto 1429/0,-834.47,-9738.48,40,0
     >>Kill |cRXP_ENEMY_Defias Bandits|r, |cRXP_ENEMY_Morgan the Collectors|r, |cRXP_ENEMY_Defias Rogue Wizards|r and |cRXP_ENEMY_Defias Ambushers|r. Loot them for |cRXP_LOOT_Red Linen Bandana|r
     .complete 83,1 --Red Linen Bandana (6)
     .mob Defias Bandit
@@ -1855,30 +1742,16 @@ step << Rogue
     .target Keryn Sylvius
     .xp <10,1
 step
-    #loop
-    .goto 1429/0,88.08,-9918.55,0
-    .goto 1429/0,88.08,-9918.55,40,0
-    .goto 1429/0,105.43,-9932.44,40,0
-    .goto 1429/0,122.79,-9953.27,40,0
-    .goto 1429/0,108.90,-9969.47,40,0
-    .goto 1429/0,67.25,-10008.82,40,0
-    .goto 1429/0,60.31,-9969.47,40,0
-    .goto 1429/0,32.55,-9953.27,40,0
+    .goto 1429/0,105.43,-9932.44
     >>Open the |cRXP_PICK_Overgrown Duskweed|r. Loot it for |cRXP_LOOT_Duskweed Petal|r
     .complete 99130,1 --Duskweed Petal (1)
     .isOnQuest 99130
 step
     #loop
-    .goto 1429/0,114.11,-9907.67,0
-    .goto 1429/0,114.11,-9907.67,40,0
-    .goto 1429/0,46.43,-9943.09,40,0
-    .goto 1429/0,86.00,-9979.19,40,0
-    .goto 1429/0,114.11,-10067.15,40,0
-    .goto 1429/0,223.09,-10038.68,40,0
-    .goto 1429/0,313.68,-10018.31,40,0
-    .goto 1429/0,252.25,-9989.84,40,0
-    .goto 1429/0,197.06,-9933.83,40,0
-    .goto 1429/0,156.11,-9987.06,40,0
+    .goto 1429/0,86.00,-9941.93,0
+    .goto 1429/0,86.00,-9941.93,40,0
+    .goto 1429/0,195.67,-10013.45,40,0
+    .goto 1429/0,292.86,-9990.30,40,0
     >>Kill |cRXP_ENEMY_Stonetusk Boars|r and |cRXP_ENEMY_Young Forest Bears|r. Loot them for |cRXP_LOOT_Vial of Animal Blood|r
     .complete 99130,2 --Vial of Animal Blood (1)
     .mob Stonetusk Boar
@@ -1973,16 +1846,9 @@ step
 step
     #label Drop123x1
     #loop
-    .goto 1429/0,673.96,-10089.83,0
-    .goto 1429/0,673.96,-10089.83,40,0
-    .goto 1429/0,686.45,-10117.84,40,0
-    .goto 1429/0,653.48,-10120.15,40,0
-    .goto 1429/0,616.34,-10147.00,40,0
+    .goto 1429/0,645.84,-10033.82,0
+    .goto 1429/0,645.84,-10033.82,40,0
     .goto 1429/0,573.65,-10127.10,40,0
-    .goto 1429/0,542.76,-10091.91,40,0
-    .goto 1429/0,629.18,-10071.31,40,0
-    .goto 1429/0,581.28,-10010.67,40,0
-    .goto 1429/0,653.82,-9990.77,40,0
     >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for |cRXP_LOOT_Painted Gnoll Armband|r
     .complete 11,1 --Painted Gnoll Armband (8)
     .mob Riverpaw Runt
@@ -2355,32 +2221,19 @@ step
 step
     #label Drop184x2
     #loop
-    .goto 1429/0,-1122.89,-9175.11,0
-    .goto 1429/0,-1122.89,-9175.11,40,0
-    .goto 1429/0,-1131.22,-9065.16,40,0
-    .goto 1429/0,-1048.27,-9026.74,40,0
-    .goto 1429/0,-983.37,-9012.62,40,0
-    .goto 1429/0,-951.78,-9090.86,40,0
-    .goto 1429/0,-1020.16,-9123.72,40,0
-    .goto 1429/0,-954.56,-9143.86,40,0
-    .goto 1429/0,-980.94,-9245.24,40,0
-    .goto 1429/0,-1051.05,-9188.30,40,0
+    .goto 1429/0,-1052.44,-9152.19,0
+    .goto 1429/0,-1052.44,-9152.19,40,0
+    .goto 1429/0,-1011.13,-9091.32,40,0
+    .goto 1429/0,-1103.80,-9037.62,40,0
     >>Kill |cRXP_ENEMY_Defias Rogue Wizards|r
     .complete 91724,1 --Defias Rogue Wizard slain (6)
     .mob Defias Rogue Wizard
     .isOnQuest 91724
 step
     #loop
-    .goto 1429/0,-842.10,-8997.35,0
-    .goto 1429/0,-842.10,-8997.35,40,0
-    .goto 1429/0,-807.40,-8927.91,40,0
-    .goto 1429/0,-769.22,-8909.39,40,0
-    .goto 1429/0,-720.62,-8890.88,40,0
-    .goto 1429/0,-706.74,-8874.67,40,0
-    .goto 1429/0,-772.69,-8837.64,40,0
-    .goto 1429/0,-817.81,-8846.90,40,0
-    .goto 1429/0,-876.81,-8826.07,40,0
+    .goto 1429/0,-828.22,-8897.82,0
     .goto 1429/0,-828.22,-8897.82,40,0
+    .goto 1429/0,-755.33,-8874.67,40,0
     >>Pick up |cRXP_PICK_Stolen Enchanting Supplies|r from the ground
     .complete 91725,1 --Stolen Enchanting Supplies (5)
 step

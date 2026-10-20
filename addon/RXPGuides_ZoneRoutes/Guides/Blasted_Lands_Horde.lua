@@ -22,7 +22,7 @@ step
     >>Click the |cRXP_PICK_Book|r
     .accept 81956 >>Accept Conjurer's Codex
 step
-    .goto 1419/0,-3100.92,-11285.80
+    .goto 1419/0,-3097.57,-11285.80
     >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_Conjurer's Codex|r
     .complete 81956,1 --Conjurer's Codex (1)
 step
@@ -32,14 +32,9 @@ step
     .target Bloodmage Lynnore
 step
     #loop
-    .goto 1419/0,-2859.72,-10965.09,0
-    .goto 1419/0,-2859.72,-10965.09,40,0
-    .goto 1419/0,-2841.96,-11007.08,40,0
+    .goto 1419/0,-2809.47,-10999.93,0
+    .goto 1419/0,-2809.47,-10999.93,40,0
     .goto 1419/0,-2870.44,-11114.28,40,0
-    .goto 1419/0,-2841.96,-11092.17,40,0
-    .goto 1419/0,-2764.91,-11043.93,40,0
-    .goto 1419/0,-2796.07,-11013.33,40,0
-    .goto 1419/0,-2809.47,-11004.40,40,0
     >>Kill |cRXP_ENEMY_Black Slayers|r and |cRXP_ENEMY_Bonepickers|r. Loot them for |cRXP_LOOT_Vulture Gizzard|r
     >>Kill |cRXP_ENEMY_Starving Snickerfangs|r, |cRXP_ENEMY_Snickerfang Hyenas|r and |cRXP_ENEMY_Ravages|r. Loot them for |cRXP_LOOT_Snickerfang Jowl|r
     .complete 2603,1 --Vulture Gizzard (10)
@@ -61,16 +56,10 @@ step
     .target Kum'isha the Collector
 step
     #loop
-    .goto 1419/0,-3051.67,-10864.59,0
-    .goto 1419/0,-3051.67,-10864.59,40,0
-    .goto 1419/0,-3197.73,-10893.18,40,0
-    .goto 1419/0,-3252.00,-10746.00,40,0
-    .goto 1419/0,-3353.51,-10762.75,40,0
-    .goto 1419/0,-3301.58,-10637.24,40,0
-    .goto 1419/0,-3209.46,-10641.93,40,0
-    .goto 1419/0,-3166.91,-10704.02,40,0
-    .goto 1419/0,-3081.49,-10653.77,40,0
-    .goto 1419/0,-3111.30,-10786.87,40,0
+    .goto 1419/0,-3089.19,-10816.35,0
+    .goto 1419/0,-3089.19,-10816.35,40,0
+    .goto 1419/0,-3128.39,-10701.11,40,0
+    .goto 1419/0,-3291.87,-10723.89,40,0
     >>Kill |cRXP_ENEMY_Dreadmaul Ogres|r, |cRXP_ENEMY_Dreadmaul Ogre Mages|r, |cRXP_ENEMY_Dreadmaul Brutes|r and |cRXP_ENEMY_Dreadmaul Maulers|r. Loot them for |cRXP_LOOT_Imperfect Draenethyst Fragment|r
     .complete 3501,1 --Imperfect Draenethyst Fragment (1)
     .mob Dreadmaul Ogre
@@ -85,16 +74,10 @@ step
     .target Kum'isha the Collector
 step
     #loop
-    .goto 1419/0,-3051.67,-10864.59,0
-    .goto 1419/0,-3051.67,-10864.59,40,0
-    .goto 1419/0,-3197.73,-10893.18,40,0
-    .goto 1419/0,-3252.00,-10746.00,40,0
-    .goto 1419/0,-3353.51,-10762.75,40,0
-    .goto 1419/0,-3301.58,-10637.24,40,0
-    .goto 1419/0,-3209.46,-10641.93,40,0
-    .goto 1419/0,-3166.91,-10704.02,40,0
-    .goto 1419/0,-3081.49,-10653.77,40,0
-    .goto 1419/0,-3111.30,-10786.87,40,0
+    .goto 1419/0,-3089.19,-10816.35,0
+    .goto 1419/0,-3089.19,-10816.35,40,0
+    .goto 1419/0,-3128.39,-10701.11,40,0
+    .goto 1419/0,-3291.87,-10723.89,40,0
     >>Kill |cRXP_ENEMY_Dreadmaul Ogres|r, |cRXP_ENEMY_Dreadmaul Ogre Mages|r, |cRXP_ENEMY_Dreadmaul Brutes|r and |cRXP_ENEMY_Dreadmaul Maulers|r. Loot them for |cRXP_LOOT_Flawless Draenethyst Sphere|r
     .complete 2521,1 --Flawless Draenethyst Sphere (1)
     .mob Dreadmaul Ogre
@@ -143,16 +126,9 @@ step
     .target Bloodmage Drazial
 step
     #loop
-    .goto 1419/0,-2916.67,-10910.60,0
-    .goto 1419/0,-2916.67,-10910.60,40,0
-    .goto 1419/0,-2916.67,-10982.07,40,0
-    .goto 1419/0,-2903.27,-11098.20,40,0
-    .goto 1419/0,-2842.97,-11089.27,40,0
-    .goto 1419/0,-2796.07,-11066.93,40,0
-    .goto 1419/0,-2722.37,-11008.87,40,0
-    .goto 1419/0,-2775.97,-10964.20,40,0
-    .goto 1419/0,-2816.17,-10937.40,40,0
-    .goto 1419/0,-2849.67,-10986.53,40,0
+    .goto 1419/0,-2903.27,-10964.20,0
+    .goto 1419/0,-2903.27,-10964.20,40,0
+    .goto 1419/0,-2769.27,-10995.47,40,0
     >>Kill |cRXP_ENEMY_Black Slayers|r and |cRXP_ENEMY_Bonepickers|r. Loot them for |cRXP_LOOT_Vulture Gizzard|r
     >>Kill |cRXP_ENEMY_Scorpok Stingers|r and |cRXP_ENEMY_Clack the Reavers|r. Loot them for |cRXP_LOOT_Scorpok Pincer|r
     .complete 2585,2 --Vulture Gizzard (2)
@@ -163,16 +139,11 @@ step
     .mob Clack the Reaver
 step
     #loop
-    .goto 1419/0,-2992.71,-11178.38,0
-    .goto 1419/0,-2992.71,-11178.38,40,0
-    .goto 1419/0,-3079.81,-11247.61,40,0
-    .goto 1419/0,-3119.01,-11332.25,40,0
-    .goto 1419/0,-3192.04,-11244.71,40,0
+    .goto 1419/0,-2995.73,-11211.65,0
+    .goto 1419/0,-2995.73,-11211.65,40,0
+    .goto 1419/0,-3120.35,-11261.90,40,0
     .goto 1419/0,-3297.90,-11196.24,40,0
-    .goto 1419/0,-3361.21,-11194.46,40,0
-    .goto 1419/0,-3268.75,-11148.00,40,0
-    .goto 1419/0,-3227.21,-11204.51,40,0
-    .goto 1419/0,-3174.62,-11183.29,40,0
+    .goto 1419/0,-3193.04,-11175.92,40,0
     >>Kill |cRXP_ENEMY_Ashmane Boars|r, |cRXP_ENEMY_Helboars|r and |cRXP_ENEMY_Grunters|r. Loot them for |cRXP_LOOT_Blasted Boar Lung|r
     .complete 2585,3 --Blasted Boar Lung (1)
     .mob Ashmane Boar
@@ -186,16 +157,11 @@ step
     .target Bloodmage Drazial
 step
     #loop
-    .goto 1419/0,-2916.67,-10910.60,0
-    .goto 1419/0,-2916.67,-10910.60,40,0
-    .goto 1419/0,-2903.27,-10991.00,40,0
-    .goto 1419/0,-2903.27,-11098.20,40,0
-    .goto 1419/0,-2842.97,-11089.27,40,0
+    .goto 1419/0,-2869.77,-10964.20,0
+    .goto 1419/0,-2869.77,-10964.20,40,0
+    .goto 1419/0,-2762.57,-11022.27,40,0
     .goto 1419/0,-2796.07,-11330.24,40,0
-    .goto 1419/0,-2722.37,-11008.87,40,0
-    .goto 1419/0,-2802.77,-11026.73,40,0
-    .goto 1419/0,-2849.67,-10986.53,40,0
-    .goto 1419/0,-2816.17,-10937.40,40,0
+    .goto 1419/0,-2876.47,-11098.20,40,0
     >>Kill |cRXP_ENEMY_Scorpok Stingers|r and |cRXP_ENEMY_Clack the Reavers|r. Loot them for |cRXP_LOOT_Scorpok Pincer|r
     >>Kill |cRXP_ENEMY_Starving Snickerfangs|r, |cRXP_ENEMY_Snickerfang Hyenas|r and |cRXP_ENEMY_Ravages|r. Loot them for |cRXP_LOOT_Snickerfang Jowl|r
     .complete 2581,3 --Scorpok Pincer (1)
@@ -207,16 +173,11 @@ step
     .mob Ravage
 step
     #loop
-    .goto 1419/0,-2992.71,-11178.38,0
-    .goto 1419/0,-2992.71,-11178.38,40,0
-    .goto 1419/0,-3079.81,-11247.61,40,0
-    .goto 1419/0,-3119.01,-11332.25,40,0
-    .goto 1419/0,-3192.04,-11244.71,40,0
+    .goto 1419/0,-2995.73,-11211.65,0
+    .goto 1419/0,-2995.73,-11211.65,40,0
+    .goto 1419/0,-3120.35,-11261.90,40,0
     .goto 1419/0,-3297.90,-11196.24,40,0
-    .goto 1419/0,-3361.21,-11194.46,40,0
-    .goto 1419/0,-3268.75,-11148.00,40,0
-    .goto 1419/0,-3227.21,-11204.51,40,0
-    .goto 1419/0,-3174.62,-11183.29,40,0
+    .goto 1419/0,-3193.04,-11175.92,40,0
     >>Kill |cRXP_ENEMY_Ashmane Boars|r, |cRXP_ENEMY_Helboars|r and |cRXP_ENEMY_Grunters|r. Loot them for |cRXP_LOOT_Blasted Boar Lung|r
     .complete 2581,2 --Blasted Boar Lung (2)
     .mob Ashmane Boar
@@ -236,14 +197,8 @@ step
     #loop
     .goto 1419/0,-2922.36,-11029.41,0
     .goto 1419/0,-2922.36,-11029.41,40,0
-    .goto 1419/0,-2865.08,-11020.93,40,0
-    .goto 1419/0,-2809.47,-11004.40,40,0
-    .goto 1419/0,-2755.53,-10974.70,40,0
-    .goto 1419/0,-2717.01,-11125.22,40,0
-    .goto 1419/0,-2698.25,-11189.54,40,0
-    .goto 1419/0,-2733.42,-11241.36,40,0
-    .goto 1419/0,-2754.86,-11195.35,40,0
-    .goto 1419/0,-2817.17,-11059.56,40,0
+    .goto 1419/0,-2789.37,-10986.53,40,0
+    .goto 1419/0,-2731.08,-11155.37,40,0
     >>Kill |cRXP_ENEMY_Black Slayers|r and |cRXP_ENEMY_Bonepickers|r. Loot them for |cRXP_LOOT_Vulture Gizzard|r
     >>Kill |cRXP_ENEMY_Redstone Basilisks|r, |cRXP_ENEMY_Redstone Crystalhides|r and |cRXP_ENEMY_Deatheyes|r. Loot them for |cRXP_LOOT_Basilisk Brain|r
     .complete 2601,2 --Vulture Gizzard (2)
@@ -273,32 +228,20 @@ step
 step
     #label Along11
     #loop
-    .goto 1419/0,-2916.67,-10910.60,0
-    .goto 1419/0,-2916.67,-10910.60,40,0
-    .goto 1419/0,-2903.27,-10964.20,40,0
-    .goto 1419/0,-2903.27,-11026.73,40,0
-    .goto 1419/0,-2903.27,-11098.20,40,0
-    .goto 1419/0,-2842.97,-11089.27,40,0
-    .goto 1419/0,-2796.07,-11066.93,40,0
-    .goto 1419/0,-2722.37,-11008.87,40,0
-    .goto 1419/0,-2775.97,-10964.20,40,0
-    .goto 1419/0,-2849.67,-10986.53,40,0
+    .goto 1419/0,-2869.77,-10964.20,0
+    .goto 1419/0,-2869.77,-10964.20,40,0
+    .goto 1419/0,-2769.27,-10995.47,40,0
     >>Kill |cRXP_ENEMY_Scorpok Stingers|r and |cRXP_ENEMY_Clack the Reavers|r. Loot them for |cRXP_LOOT_Scorpok Pincer|r
     .complete 2583,2 --Scorpok Pincer (2)
     .mob Scorpok Stinger
     .mob Clack the Reaver
 step
     #loop
-    .goto 1419/0,-2992.71,-11178.38,0
-    .goto 1419/0,-2992.71,-11178.38,40,0
-    .goto 1419/0,-3103.93,-11200.71,40,0
-    .goto 1419/0,-3193.04,-11175.92,40,0
-    .goto 1419/0,-3268.75,-11148.00,40,0
-    .goto 1419/0,-3361.21,-11194.46,40,0
-    .goto 1419/0,-3289.86,-11245.15,40,0
-    .goto 1419/0,-3192.04,-11244.71,40,0
-    .goto 1419/0,-3119.01,-11332.25,40,0
+    .goto 1419/0,-2995.73,-11211.65,0
+    .goto 1419/0,-2995.73,-11211.65,40,0
     .goto 1419/0,-3120.35,-11261.90,40,0
+    .goto 1419/0,-3311.30,-11214.11,40,0
+    .goto 1419/0,-3193.04,-11175.92,40,0
     >>Kill |cRXP_ENEMY_Ashmane Boars|r, |cRXP_ENEMY_Helboars|r and |cRXP_ENEMY_Grunters|r. Loot them for |cRXP_LOOT_Blasted Boar Lung|r
     >>Kill |cRXP_ENEMY_Redstone Basilisks|r, |cRXP_ENEMY_Redstone Crystalhides|r and |cRXP_ENEMY_Deatheyes|r. Loot them for |cRXP_LOOT_Basilisk Brain|r
     .complete 2583,1 --Blasted Boar Lung (3)

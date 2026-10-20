@@ -99,16 +99,9 @@ step
     .isOnQuest 98461
 step
     #loop
-    .goto 1437/0,-914.78,-3314.36,0
-    .goto 1437/0,-914.78,-3314.36,40,0
-    .goto 1437/0,-880.46,-3283.77,40,0
-    .goto 1437/0,-842.00,-3246.56,40,0
-    .goto 1437/0,-894.52,-3224.51,40,0
-    .goto 1437/0,-947.45,-3247.94,40,0
-    .goto 1437/0,-1027.68,-3212.66,40,0
-    .goto 1437/0,-1040.91,-3272.19,40,0
-    .goto 1437/0,-977.23,-3284.87,40,0
-    .goto 1437/0,-948.28,-3306.92,40,0
+    .goto 1437/0,-937.11,-3282.11,0
+    .goto 1437/0,-937.11,-3282.11,40,0
+    .goto 1437/0,-1020.65,-3245.73,40,0
     >>Kill |cRXP_ENEMY_Bluegill Murlocs|r
     .complete 279,1 --Bluegill Murloc slain (12)
     .mob Bluegill Murloc
@@ -130,16 +123,9 @@ step
     .target Rethiel the Greenwarden
 step
     #loop
-    .goto 1437/0,-2935.35,-3988.26,0
-    .goto 1437/0,-2935.35,-3988.26,40,0
-    .goto 1437/0,-3001.93,-4052.21,40,0
-    .goto 1437/0,-2977.53,-4152.81,40,0
-    .goto 1437/0,-2979.59,-4214.28,40,0
-    .goto 1437/0,-2910.12,-4218.69,40,0
-    .goto 1437/0,-2884.48,-4181.20,40,0
-    .goto 1437/0,-2920.87,-4162.74,40,0
-    .goto 1437/0,-2948.99,-4129.11,40,0
-    .goto 1437/0,-2882.83,-4116.98,40,0
+    .goto 1437/0,-2969.26,-4049.45,0
+    .goto 1437/0,-2969.26,-4049.45,40,0
+    .goto 1437/0,-2934.52,-4150.88,40,0
     >>Kill |cRXP_ENEMY_Mosshide Gnolls|r
     >>Kill |cRXP_ENEMY_Mosshide Mongrels|r
     .complete 276,1 --Mosshide Gnoll slain (15)
@@ -239,16 +225,9 @@ step
     .target James Halloran
 step
     #loop
-    .goto 1437/0,-625.30,-3672.12,0
-    .goto 1437/0,-625.30,-3672.12,40,0
-    .goto 1437/0,-637.71,-3603.22,40,0
+    .goto 1437/0,-633.57,-3578.41,0
     .goto 1437/0,-633.57,-3578.41,40,0
-    .goto 1437/0,-670.79,-3564.63,40,0
-    .goto 1437/0,-716.28,-3545.34,40,0
-    .goto 1437/0,-724.55,-3534.31,40,0
-    .goto 1437/0,-666.66,-3479.19,40,0
-    .goto 1437/0,-583.95,-3548.09,40,0
-    .goto 1437/0,-596.35,-3597.70,40,0
+    .goto 1437/0,-666.66,-3487.45,40,0
     >>Pick up |cRXP_PICK_Khaz Modan Iron|r from the ground
     >>Pick up |cRXP_PICK_Khaz Modan Timber|r from the ground
     .complete 98197,2 --Khaz Modan Iron (30)
@@ -342,16 +321,9 @@ step
     .target Captain Stoutfist
 step
     #loop
-    .goto 1437/0,-2278.64,-3835.84,0
-    .goto 1437/0,-2278.64,-3835.84,40,0
-    .goto 1437/0,-2325.79,-3855.96,40,0
-    .goto 1437/0,-2320.00,-3907.23,40,0
-    .goto 1437/0,-2352.25,-3891.52,40,0
-    .goto 1437/0,-2401.05,-3877.74,40,0
+    .goto 1437/0,-2310.90,-3857.89,0
+    .goto 1437/0,-2310.90,-3857.89,40,0
     .goto 1437/0,-2398.98,-3857.07,40,0
-    .goto 1437/0,-2391.54,-3821.24,40,0
-    .goto 1437/0,-2371.27,-3797.26,40,0
-    .goto 1437/0,-2300.15,-3784.85,40,0
     >>Kill |cRXP_ENEMY_Leech Stalkers|r and |cRXP_ENEMY_Cave Stalkers|r. Loot them for |cRXP_LOOT_Unruptured Stalker Gland|r
     .complete 98282,1 --Unruptured Stalker Gland (1)
     .mob Leech Stalker
@@ -380,16 +352,9 @@ step
     .target Caitlin Grassman
 step
     #loop
-    .goto 1437/0,-2175.26,-3104.34,0
-    .goto 1437/0,-2175.26,-3104.34,40,0
-    .goto 1437/0,-2170.29,-3054.17,40,0
-    .goto 1437/0,-2150.03,-3025.78,40,0
-    .goto 1437/0,-2257.14,-3026.88,40,0
-    .goto 1437/0,-2277.40,-3021.92,40,0
-    .goto 1437/0,-2264.58,-3043.42,40,0
-    .goto 1437/0,-2288.15,-3104.34,40,0
-    .goto 1437/0,-2209.58,-3110.67,40,0
-    .goto 1437/0,-2198.41,-3086.97,40,0
+    .goto 1437/0,-2177.74,-3089.73,0
+    .goto 1437/0,-2177.74,-3089.73,40,0
+    .goto 1437/0,-2262.10,-3089.18,40,0
     >>Kill |cRXP_ENEMY_Mosshide Mistweavers|r, |cRXP_ENEMY_Mosshide Fenrunners|r, |cRXP_ENEMY_Mosshide Trappers|r and |cRXP_ENEMY_Mosshide Brutes|r. Loot them for |cRXP_LOOT_Crude Flint|r
     .complete 277,1 --Crude Flint (9)
     .mob Mosshide Mistweaver
@@ -413,29 +378,17 @@ step
     .isOnQuest 455
 step
     #loop
-    .goto 1437/0,-2486.24,-4268.02,0
-    .goto 1437/0,-2486.24,-4268.02,40,0
-    .goto 1437/0,-2454.40,-4245.97,40,0
-    .goto 1437/0,-2384.09,-4207.39,40,0
-    .goto 1437/0,-2360.94,-4265.27,40,0
-    .goto 1437/0,-2384.51,-4304.41,40,0
-    .goto 1437/0,-2428.34,-4268.85,40,0
-    .goto 1437/0,-2430.00,-4346.03,40,0
-    .goto 1437/0,-2460.60,-4340.51,40,0
-    .goto 1437/0,-2506.92,-4339.69,40,0
+    .goto 1437/0,-2372.93,-4249.28,0
+    .goto 1437/0,-2372.93,-4249.28,40,0
+    .goto 1437/0,-2442.40,-4325.91,40,0
     >>Kill |cRXP_ENEMY_Dragonmaw Scouts|r
     .complete 455,1 --Dragonmaw Scout slain (8)
     .mob Dragonmaw Scout
     .isOnQuest 455
 step
     #loop
-    .goto 1437/0,-2404.36,-4277.40,0
-    .goto 1437/0,-2404.36,-4277.40,40,0
-    .goto 1437/0,-2340.26,-4272.16,40,0
+    .goto 1437/0,-2358.46,-4231.09,0
     .goto 1437/0,-2358.46,-4231.09,40,0
-    .goto 1437/0,-2367.97,-4197.19,40,0
-    .goto 1437/0,-2383.27,-4236.33,40,0
-    .goto 1437/0,-2456.88,-4270.50,40,0
     .goto 1437/0,-2519.32,-4310.75,40,0
     >>Kill |cRXP_ENEMY_Dragonmaw Grunts|r
     .complete 455,2 --Dragonmaw Grunt slain (6)
@@ -585,16 +538,10 @@ step
 step
     #label Along8
     #loop
-    .goto 1437/0,-2854.29,-3363.70,0
-    .goto 1437/0,-2854.29,-3363.70,40,0
-    .goto 1437/0,-2951.89,-3433.71,40,0
-    .goto 1437/0,-3025.91,-3457.96,40,0
-    .goto 1437/0,-2983.32,-3571.24,40,0
-    .goto 1437/0,-3082.57,-3511.98,40,0
-    .goto 1437/0,-3118.54,-3414.14,40,0
-    .goto 1437/0,-3185.54,-3336.69,40,0
-    .goto 1437/0,-3061.89,-3367.28,40,0
-    .goto 1437/0,-3044.52,-3290.93,40,0
+    .goto 1437/0,-2963.05,-3410.00,0
+    .goto 1437/0,-2963.05,-3410.00,40,0
+    .goto 1437/0,-3014.33,-3491.31,40,0
+    .goto 1437/0,-3083.81,-3346.33,40,0
     >>Kill |cRXP_ENEMY_Red Whelps|r, |cRXP_ENEMY_Lost Whelps|r, |cRXP_ENEMY_Flamesnorting Whelps|r and |cRXP_ENEMY_Crimson Whelps|r. Loot them for |cRXP_LOOT_Pristine Crimson Scale|r
     .complete 98072,1 --Pristine Crimson Scale (8)
     .mob Red Whelp
@@ -617,16 +564,10 @@ step
     .target James Halloran
 step
     #loop
-    .goto 1437/0,-1339.49,-3704.92,0
-    .goto 1437/0,-1339.49,-3704.92,40,0
-    .goto 1437/0,-1391.18,-3595.77,40,0
-    .goto 1437/0,-1432.54,-3519.70,40,0
-    .goto 1437/0,-1514.83,-3436.74,40,0
-    .goto 1437/0,-1464.79,-3456.31,40,0
+    .goto 1437/0,-1342.38,-3679.01,0
+    .goto 1437/0,-1342.38,-3679.01,40,0
+    .goto 1437/0,-1355.20,-3558.29,40,0
     .goto 1437/0,-1405.66,-3437.01,40,0
-    .goto 1437/0,-1388.70,-3478.36,40,0
-    .goto 1437/0,-1386.63,-3537.89,40,0
-    .goto 1437/0,-1339.07,-3528.52,40,0
     >>Kill |cRXP_ENEMY_Mottled Raptors|r
     >>Kill |cRXP_ENEMY_Mottled Screechers|r
     .complete 294,1 --Mottled Raptor slain (10)
@@ -635,16 +576,9 @@ step
     .mob Mottled Screecher
 step
     #loop
-    .goto 1437/0,-1377.53,-3447.49,0
-    .goto 1437/0,-1377.53,-3447.49,40,0
-    .goto 1437/0,-1464.79,-3456.31,40,0
-    .goto 1437/0,-1480.51,-3425.16,40,0
-    .goto 1437/0,-1514.83,-3436.74,40,0
-    .goto 1437/0,-1472.65,-3502.61,40,0
-    .goto 1437/0,-1432.54,-3519.70,40,0
-    .goto 1437/0,-1386.63,-3537.89,40,0
-    .goto 1437/0,-1391.18,-3595.77,40,0
-    .goto 1437/0,-1339.07,-3528.52,40,0
+    .goto 1437/0,-1456.52,-3494.34,0
+    .goto 1437/0,-1456.52,-3494.34,40,0
+    .goto 1437/0,-1355.20,-3558.29,40,0
     >>Kill |cRXP_ENEMY_Mottled Raptors|r, |cRXP_ENEMY_Mottled Screechers|r, |cRXP_ENEMY_Mottled Scytheclaws|r and |cRXP_ENEMY_Mottled Razormaws|r. Loot them for |cRXP_LOOT_Stone of Relu|r
     .complete 943,1 --Stone of Relu (1)
     .mob Mottled Raptor
@@ -660,16 +594,9 @@ step
     .target Ormer Ironbraid
 step
     #loop
-    .goto 1437/0,-1862.62,-3577.03,0
-    .goto 1437/0,-1862.62,-3577.03,40,0
-    .goto 1437/0,-1849.39,-3511.98,40,0
-    .goto 1437/0,-1880.40,-3481.11,40,0
-    .goto 1437/0,-1844.42,-3422.96,40,0
-    .goto 1437/0,-1789.42,-3478.36,40,0
-    .goto 1437/0,-1767.09,-3441.98,40,0
-    .goto 1437/0,-1721.60,-3489.93,40,0
-    .goto 1437/0,-1746.83,-3554.16,40,0
+    .goto 1437/0,-1809.27,-3513.64,0
     .goto 1437/0,-1809.27,-3513.64,40,0
+    .goto 1437/0,-1823.75,-3445.83,40,0
     >>Kill |cRXP_ENEMY_Mottled Scytheclaws|r
     >>Kill |cRXP_ENEMY_Mottled Razormaws|r
     .complete 295,1 --Mottled Scytheclaw slain (10)
@@ -696,16 +623,10 @@ step << Mage
     .trainer >> Teleport back to Stormwind or Ironforge, and train your level 24 class spells
 step
     #loop
-    .goto 1437/0,-2176.08,-2952.19,0
-    .goto 1437/0,-2176.08,-2952.19,40,0
-    .goto 1437/0,-2211.23,-2913.88,40,0
-    .goto 1437/0,-2249.28,-2878.60,40,0
-    .goto 1437/0,-2319.58,-2881.35,40,0
-    .goto 1437/0,-2351.42,-2910.57,40,0
-    .goto 1437/0,-2380.37,-2825.95,40,0
-    .goto 1437/0,-2309.24,-2830.92,40,0
-    .goto 1437/0,-2209.17,-2814.38,40,0
-    .goto 1437/0,-2162.44,-2874.19,40,0
+    .goto 1437/0,-2181.46,-2918.29,0
+    .goto 1437/0,-2181.46,-2918.29,40,0
+    .goto 1437/0,-2218.68,-2848.83,40,0
+    .goto 1437/0,-2351.84,-2849.11,40,0
     >>Kill |cRXP_ENEMY_Crimson Oozes|r, |cRXP_ENEMY_Black Oozes|r and |cRXP_ENEMY_Monstrous Oozes|r. Loot them for |cRXP_LOOT_Sida's Bag|r
     .complete 470,1 --Sida's Bag (1)
     .mob Crimson Ooze
@@ -792,16 +713,9 @@ step
     .target Howin Kindfeather
 step
     #loop
-    .goto 1437/0,-2294.36,-3305.82,0
-    .goto 1437/0,-2294.36,-3305.82,40,0
-    .goto 1437/0,-2214.13,-3335.86,40,0
-    .goto 1437/0,-2221.16,-3379.41,40,0
-    .goto 1437/0,-2264.58,-3371.97,40,0
-    .goto 1437/0,-2235.22,-3425.99,40,0
-    .goto 1437/0,-2271.20,-3456.86,40,0
-    .goto 1437/0,-2315.45,-3448.04,40,0
-    .goto 1437/0,-2358.04,-3441.98,40,0
-    .goto 1437/0,-2324.54,-3396.77,40,0
+    .goto 1437/0,-2317.10,-3430.95,0
+    .goto 1437/0,-2317.10,-3430.95,40,0
+    .goto 1437/0,-2264.58,-3346.61,40,0
     >>Kill |cRXP_ENEMY_Dragonmaw Raiders|r, |cRXP_ENEMY_Dragonmaw Swamprunners|r, |cRXP_ENEMY_Dragonmaw Centurions|r and |cRXP_ENEMY_Dragonmaw Battlemasters|r. Loot them for |cRXP_LOOT_Dragonmaw War Banner|r
     .complete 464,1 --Dragonmaw War Banner (8)
     .mob Dragonmaw Raider
@@ -815,16 +729,9 @@ step
     .target Prospector Whelgar
 step
     #loop
-    .goto 1437/0,-1882.47,-3492.97,0
-    .goto 1437/0,-1882.47,-3492.97,40,0
-    .goto 1437/0,-1828.71,-3534.31,40,0
-    .goto 1437/0,-1824.57,-3594.95,40,0
-    .goto 1437/0,-1721.19,-3548.09,40,0
-    .goto 1437/0,-1725.32,-3481.94,40,0
-    .goto 1437/0,-1762.54,-3426.82,40,0
-    .goto 1437/0,-1787.35,-3487.45,40,0
+    .goto 1437/0,-1803.90,-3548.09,0
+    .goto 1437/0,-1803.90,-3548.09,40,0
     .goto 1437/0,-1832.84,-3443.35,40,0
-    .goto 1437/0,-1845.25,-3374.45,40,0
     >>Loot the |cRXP_PICK_Ancient Relics|r for |cRXP_LOOT_Ados Fragment|r
     >>Loot the |cRXP_PICK_Ancient Relics|r for |cRXP_LOOT_Modr Fragment|r
     >>Loot the |cRXP_PICK_Ancient Relics|r for |cRXP_LOOT_Golm Fragment|r
@@ -873,15 +780,9 @@ step
     .target Sylessa Duskwhisper
 step
     #loop
-    .goto 1437/0,-1117.83,-2950.26,0
-    .goto 1437/0,-1117.83,-2950.26,40,0
-    .goto 1437/0,-1149.26,-2893.21,40,0
-    .goto 1437/0,-1240.65,-2814.10,40,0
-    .goto 1437/0,-1184.41,-2780.48,40,0
-    .goto 1437/0,-1176.55,-2831.19,40,0
-    .goto 1437/0,-1112.87,-2796.74,40,0
-    .goto 1437/0,-1059.11,-2870.88,40,0
+    .goto 1437/0,-1091.78,-2888.25,0
     .goto 1437/0,-1091.78,-2888.25,40,0
+    .goto 1437/0,-1184.41,-2780.48,40,0
     >>Kill |cRXP_ENEMY_Giant Wetlands Crocolisks|r. Loot them for |cRXP_LOOT_Giant Crocolisk Skin|r
     .complete 471,1 --Giant Crocolisk Skin (6)
     .mob Giant Wetlands Crocolisk
@@ -1020,46 +921,30 @@ step
     .target Longbraid the Grim
 step
     #loop
-    .goto 1437/0,-1983.79,-2614.83,0
-    .goto 1437/0,-1983.79,-2614.83,40,0
-    .goto 1437/0,-1963.52,-2580.37,40,0
-    .goto 1437/0,-1793.56,-2490.79,40,0
+    .goto 1437/0,-1968.07,-2586.16,0
+    .goto 1437/0,-1968.07,-2586.16,40,0
     .goto 1437/0,-1755.51,-2506.50,40,0
-    .goto 1437/0,-1719.12,-2550.88,40,0
     .goto 1437/0,-1741.04,-2569.90,40,0
-    .goto 1437/0,-1782.81,-2559.70,40,0
-    .goto 1437/0,-1780.32,-2617.03,40,0
     >>Kill |cRXP_ENEMY_Highland Razormaws|r and |cRXP_ENEMY_Elder Razormaws|r. Loot them for |cRXP_LOOT_Razormaw Incisor|r
     .complete 98245,1 --Razormaw Incisor (10)
     .mob Highland Razormaw
     .mob Elder Razormaw
 step
     #loop
-    .goto 1437/0,-1554.53,-2592.22,0
-    .goto 1437/0,-1554.53,-2592.22,40,0
+    .goto 1437/0,-1506.97,-2613.45,0
     .goto 1437/0,-1506.97,-2613.45,40,0
-    .goto 1437/0,-1480.51,-2657.00,40,0
-    .goto 1437/0,-1415.99,-2649.28,40,0
-    .goto 1437/0,-1387.87,-2612.90,40,0
     .goto 1437/0,-1451.14,-2615.10,40,0
-    .goto 1437/0,-1470.17,-2597.19,40,0
     >>Kill |cRXP_ENEMY_Bluegill Raiders|r. Loot them for |cRXP_LOOT_Lightforge Ingot|r
     .complete 526,1 --Lightforge Ingot (5)
     .mob Bluegill Raider
 step
-    .goto 1437/0,-957.79,-2967.90
+    .goto 1437/0,-968.13,-2979.75
     >>Kill |cRXP_ENEMY_Cursed Sailors|r
     .complete 289,1 --Cursed Sailor slain (13)
     .mob Cursed Sailor
     .isOnQuest 289
 step
-    #loop
-    .goto 1437/0,-1002.04,-2827.06,0
-    .goto 1437/0,-1002.04,-2827.06,40,0
-    .goto 1437/0,-993.77,-2819.34,40,0
-    .goto 1437/0,-956.14,-2812.45,40,0
-    .goto 1437/0,-992.94,-2800.60,40,0
-    .goto 1437/0,-1030.57,-2811.35,40,0
+    .goto 1437/0,-991.29,-2812.45
     >>Kill |cRXP_ENEMY_Cursed Marines|r
     .complete 289,2 --Cursed Marine slain (5)
     .mob Cursed Marine
@@ -1123,16 +1008,10 @@ step
     .xp <20,1
 step
     #loop
-    .goto 1437/0,-885.01,-3899.51,0
-    .goto 1437/0,-885.01,-3899.51,40,0
-    .goto 1437/0,-954.48,-3912.19,40,0
-    .goto 1437/0,-901.55,-3982.20,40,0
-    .goto 1437/0,-846.13,-4120.84,40,0
-    .goto 1437/0,-784.52,-4146.75,40,0
-    .goto 1437/0,-748.54,-4114.50,40,0
-    .goto 1437/0,-746.88,-4049.73,40,0
-    .goto 1437/0,-812.22,-3975.59,40,0
-    .goto 1437/0,-857.30,-3954.64,40,0
+    .goto 1437/0,-901.13,-3945.27,0
+    .goto 1437/0,-901.13,-3945.27,40,0
+    .goto 1437/0,-783.27,-4018.31,40,0
+    .goto 1437/0,-783.27,-4118.64,40,0
     >>Kill |cRXP_ENEMY_Bluegill Raiders|r. Loot them for |cRXP_LOOT_Lightforge Ingot|r
     .complete 324,1 --Lightforge Ingot (5)
     .mob Bluegill Raider
@@ -1243,16 +1122,10 @@ step
     .isOnQuest 474
 step
     #loop
-    .goto 1437/0,-2775.31,-3513.36,0
-    .goto 1437/0,-2775.31,-3513.36,40,0
-    .goto 1437/0,-2887.79,-3480.29,40,0
-    .goto 1437/0,-2901.85,-3390.43,40,0
-    .goto 1437/0,-2994.07,-3393.47,40,0
-    .goto 1437/0,-2983.32,-3486.63,40,0
-    .goto 1437/0,-3068.51,-3460.99,40,0
-    .goto 1437/0,-3004.82,-3284.04,40,0
-    .goto 1437/0,-2817.49,-3301.13,40,0
-    .goto 1437/0,-2777.37,-3378.58,40,0
+    .goto 1437/0,-2822.45,-3405.59,0
+    .goto 1437/0,-2822.45,-3405.59,40,0
+    .goto 1437/0,-2864.63,-3354.33,40,0
+    .goto 1437/0,-2983.73,-3351.85,40,0
     >>Kill |cRXP_ENEMY_Dragonmaw Infiltrators|r
     >>Kill |cRXP_ENEMY_Dragonmaw Reclaimers|r
     >>Kill |cRXP_ENEMY_Dragonmaw Soulbinders|r
@@ -1269,27 +1142,15 @@ step
     .target Rethiel the Greenwarden
 step
     #loop
-    .goto 1437/0,-2764.97,-3098.27,0
-    .goto 1437/0,-2764.97,-3098.27,40,0
+    .goto 1437/0,-2807.56,-2987.47,0
     .goto 1437/0,-2807.56,-2987.47,40,0
-    .goto 1437/0,-2870.83,-2885.76,40,0
-    .goto 1437/0,-2915.08,-2953.84,40,0
-    .goto 1437/0,-2895.65,-3062.72,40,0
-    .goto 1437/0,-2958.50,-3098.82,40,0
-    .goto 1437/0,-3020.54,-3136.58,40,0
-    .goto 1437/0,-2949.41,-3188.13,40,0
-    .goto 1437/0,-2878.69,-3139.06,40,0
+    .goto 1437/0,-2908.88,-3034.88,40,0
+    .goto 1437/0,-2998.62,-3129.14,40,0
     >>Kill |cRXP_ENEMY_Maddened Rotclaw|r and loot |cRXP_LOOT_Malignant Rotclaw Flesh|r
     .complete 98283,1 --Malignant Rotclaw Flesh (1)
     .mob Maddened Rotclaw
 step
-    #loop
-    .goto 1437/0,-3235.99,-2941.44,0
-    .goto 1437/0,-3235.99,-2941.44,40,0
-    .goto 1437/0,-3271.56,-2948.06,40,0
-    .goto 1437/0,-3275.69,-2946.95,40,0
-    .goto 1437/0,-3307.95,-2930.97,40,0
-    .goto 1437/0,-3267.01,-2986.92,40,0
+    .goto 1437/0,-3268.25,-2949.16
     >>Kill |cRXP_ENEMY_Carnage|r and loot |cRXP_LOOT_Carnage's Head|r
     .complete 98283,2 --Carnage's Head (1)
     .mob Carnage
@@ -1311,16 +1172,9 @@ step
     .target Motley Garmason
 step
     #loop
-    .goto 1437/0,-2867.94,-2782.41,0
-    .goto 1437/0,-2867.94,-2782.41,40,0
-    .goto 1437/0,-2862.98,-2845.80,40,0
-    .goto 1437/0,-2935.35,-2898.99,40,0
-    .goto 1437/0,-2974.63,-2946.95,40,0
-    .goto 1437/0,-3006.06,-2941.17,40,0
-    .goto 1437/0,-2992.00,-2903.96,40,0
-    .goto 1437/0,-2973.39,-2859.86,40,0
-    .goto 1437/0,-2934.11,-2869.23,40,0
-    .goto 1437/0,-2889.44,-2833.12,40,0
+    .goto 1437/0,-2870.01,-2813.28,0
+    .goto 1437/0,-2870.01,-2813.28,40,0
+    .goto 1437/0,-2951.89,-2880.53,40,0
     >>Kill |cRXP_ENEMY_Dark Iron Dwarfs|r
     >>Kill |cRXP_ENEMY_Dark Iron Tunnelers|r
     >>Kill |cRXP_ENEMY_Dark Iron Saboteurs|r
@@ -1409,16 +1263,9 @@ step
     .target Prospector Whelgar
 step
     #loop
-    .goto 1437/0,-1904.39,-3589.99,0
-    .goto 1437/0,-1904.39,-3589.99,40,0
-    .goto 1437/0,-1833.67,-3600.18,40,0
-    .goto 1437/0,-1765.44,-3563.53,40,0
-    .goto 1437/0,-1742.69,-3475.33,40,0
-    .goto 1437/0,-1793.97,-3445.01,40,0
-    .goto 1437/0,-1849.80,-3436.19,40,0
-    .goto 1437/0,-1797.69,-3497.38,40,0
-    .goto 1437/0,-1836.15,-3527.97,40,0
-    .goto 1437/0,-1859.31,-3565.73,40,0
+    .goto 1437/0,-1798.93,-3572.62,0
+    .goto 1437/0,-1798.93,-3572.62,40,0
+    .goto 1437/0,-1807.62,-3467.06,40,0
     >>Kill |cRXP_ENEMY_Goaz Warder|r and loot |cRXP_LOOT_Titanic Keystone|r
     .complete 98216,1 --Titanic Keystone (1)
     .mob Goaz Warder
@@ -1439,16 +1286,9 @@ step
     .target Rethiel the Greenwarden
 step
     #loop
-    .goto 1437/0,-2478.38,-2724.25,0
-    .goto 1437/0,-2478.38,-2724.25,40,0
-    .goto 1437/0,-2494.92,-2685.66,40,0
-    .goto 1437/0,-2508.98,-2650.11,40,0
-    .goto 1437/0,-2526.35,-2618.41,40,0
-    .goto 1437/0,-2492.44,-2582.58,40,0
-    .goto 1437/0,-2498.65,-2551.71,40,0
-    .goto 1437/0,-2461.01,-2518.36,40,0
-    .goto 1437/0,-2466.80,-2627.23,40,0
-    .goto 1437/0,-2396.09,-2652.03,40,0
+    .goto 1437/0,-2495.34,-2644.04,0
+    .goto 1437/0,-2495.34,-2644.04,40,0
+    .goto 1437/0,-2490.37,-2561.35,40,0
     >>Kill |cRXP_ENEMY_Modr|r and loot |cRXP_LOOT_Heart of Modr|r
     .complete 98310,2 --Heart of Modr (1)
     .mob Modr
@@ -1467,38 +1307,22 @@ step
     .xp <28,1
 step
     #loop
-    .goto 1437/0,-2824.52,-2792.05,0
-    .goto 1437/0,-2824.52,-2792.05,40,0
-    .goto 1437/0,-2850.98,-2772.76,40,0
+    .goto 1437/0,-2874.56,-2754.29,0
     .goto 1437/0,-2874.56,-2754.29,40,0
-    .goto 1437/0,-2907.22,-2747.95,40,0
-    .goto 1437/0,-2911.36,-2744.92,40,0
-    .goto 1437/0,-2912.19,-2795.08,40,0
     .goto 1437/0,-2893.16,-2862.61,40,0
-    .goto 1437/0,-2827.41,-2846.63,40,0
     >>Kill |cRXP_ENEMY_Neru|r and loot |cRXP_LOOT_Heart of Neru|r
     .complete 98310,4 --Heart of Neru (1)
     .mob Neru
 step
-    #loop
-    .goto 1437/0,-3575.92,-3413.31,0
-    .goto 1437/0,-3575.92,-3413.31,40,0
-    .goto 1437/0,-3611.07,-3425.71,40,0
-    .goto 1437/0,-3599.49,-3449.97,40,0
-    .goto 1437/0,-3583.78,-3458.24,40,0
+    .goto 1437/0,-3589.98,-3446.39
     >>Kill |cRXP_ENEMY_Ados|r and loot |cRXP_LOOT_Heart of Ados|r
     .complete 98310,1 --Heart of Ados (1)
     .mob Ados
 step
     #loop
-    .goto 1437/0,-3158.66,-4042.29,0
-    .goto 1437/0,-3158.66,-4042.29,40,0
-    .goto 1437/0,-3174.79,-4065.72,40,0
-    .goto 1437/0,-3188.43,-4107.89,40,0
-    .goto 1437/0,-3189.67,-4122.22,40,0
-    .goto 1437/0,-3224.82,-4172.38,40,0
-    .goto 1437/0,-3155.35,-4169.35,40,0
-    .goto 1437/0,-3165.69,-4069.85,40,0
+    .goto 1437/0,-3175.61,-4078.67,0
+    .goto 1437/0,-3175.61,-4078.67,40,0
+    .goto 1437/0,-3181.40,-4134.90,40,0
     >>Kill |cRXP_ENEMY_Golm|r and loot |cRXP_LOOT_Heart of Golm|r
     .complete 98310,3 --Heart of Golm (1)
     .mob Golm
@@ -1556,11 +1380,7 @@ step
     .target Essene Villard
     .isQuestComplete 88757
 step
-    #loop
-    .goto 1437/0,-2973.81,-2931.24,0
-    .goto 1437/0,-2973.81,-2931.24,40,0
-    .goto 1437/0,-2937.00,-2969.28,40,0
-    .goto 1437/0,-2937.00,-3018.89,40,0
+    .goto 1437/0,-2937.00,-2969.28
     >>Kill |cRXP_ENEMY_Balgaras the Foul|r and loot |cRXP_LOOT_Ear of Balgaras|r
     .complete 304,1 --Ear of Balgaras (1)
     .mob Balgaras the Foul
@@ -1568,13 +1388,7 @@ step
     #loop
     .goto 1437/0,-3529.19,-3334.48,0
     .goto 1437/0,-3529.19,-3334.48,40,0
-    .goto 1437/0,-3542.01,-3405.04,40,0
-    .goto 1437/0,-3493.63,-3425.16,40,0
-    .goto 1437/0,-3548.63,-3466.23,40,0
-    .goto 1437/0,-3573.85,-3463.47,40,0
     .goto 1437/0,-3575.51,-3413.86,40,0
-    .goto 1437/0,-3583.37,-3400.91,40,0
-    .goto 1437/0,-3593.29,-3398.98,40,0
     >>Kill |cRXP_ENEMY_Subdued Dragonspawns|r
     .complete 98297,1 --Subdued Dragonspawn slain (8)
     .mob Subdued Dragonspawn

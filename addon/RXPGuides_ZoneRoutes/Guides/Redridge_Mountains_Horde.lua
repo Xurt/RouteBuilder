@@ -56,11 +56,7 @@ step
     #loop
     .goto 1433/0,-2211.58,-9352.82,0
     .goto 1433/0,-2211.58,-9352.82,40,0
-    .goto 1433/0,-2239.37,-9361.22,40,0
-    .goto 1433/0,-2300.15,-9374.25,40,0
-    .goto 1433/0,-2393.50,-9364.11,40,0
     .goto 1433/0,-2369.62,-9361.22,40,0
-    .goto 1433/0,-2311.66,-9347.75,40,0
     >>Open the |cRXP_PICK_Glinting Mud|r. Loot it for |cRXP_LOOT_Hilary's Necklace|r
     .complete 3741,1 --Hilary's Necklace (1)
 step

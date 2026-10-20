@@ -100,16 +100,10 @@ step
     .xp <10,1
 step
     #loop
-    .goto 1421/0,1145.04,1285.59,0
-    .goto 1421/0,1145.04,1285.59,40,0
-    .goto 1421/0,1090.44,1317.23,40,0
-    .goto 1421/0,940.50,1376.03,40,0
-    .goto 1421/0,887.58,1413.55,40,0
-    .goto 1421/0,949.74,1452.75,40,0
-    .goto 1421/0,994.26,1476.27,40,0
+    .goto 1421/0,1126.56,1312.47,0
+    .goto 1421/0,1126.56,1312.47,40,0
     .goto 1421/0,1019.88,1390.59,40,0
-    .goto 1421/0,1080.78,1442.95,40,0
-    .goto 1421/0,1091.28,1380.23,40,0
+    .goto 1421/0,949.74,1416.35,40,0
     >>Kill |cRXP_ENEMY_Worgs|r, |cRXP_ENEMY_Mottled Worgs|r, |cRXP_ENEMY_Bloodsnout Worgs|r and |cRXP_ENEMY_Gorefangs|r. Loot them for |cRXP_LOOT_Discolored Worg Heart|r
     .complete 429,1 --Discolored Worg Heart (6)
     .mob Worg
@@ -187,10 +181,7 @@ step
     #loop
     .goto 1421/0,1287.42,460.15,0
     .goto 1421/0,1287.42,460.15,40,0
-    .goto 1421/0,1257.60,497.67,40,0
-    .goto 1421/0,1274.82,408.63,40,0
     .goto 1421/0,1275.24,362.99,40,0
-    .goto 1421/0,1318.92,328.83,40,0
     >>Kill |cRXP_ENEMY_Moonrage Whitescalps|r
     .complete 421,1 --Moonrage Whitescalp slain (5)
     .mob Moonrage Whitescalp
@@ -212,16 +203,9 @@ step
     .target Quinn Yorick
 step
     #loop
-    .goto 1421/0,1025.34,1073.07,0
-    .goto 1421/0,1025.34,1073.07,40,0
-    .goto 1421/0,1050.54,1049.83,40,0
-    .goto 1421/0,1055.16,1000.27,40,0
-    .goto 1421/0,1077.84,940.07,40,0
-    .goto 1421/0,1111.86,877.63,40,0
-    .goto 1421/0,1037.94,943.43,40,0
-    .goto 1421/0,1020.30,976.75,40,0
-    .goto 1421/0,1024.92,1008.95,40,0
+    .goto 1421/0,1031.22,1037.51,0
     .goto 1421/0,1031.22,1037.51,40,0
+    .goto 1421/0,1094.22,890.51,40,0
     >>Kill |cRXP_ENEMY_Vile Fin Tidecallers|r and |cRXP_ENEMY_Vile Fin Shredders|r. Loot them for |cRXP_LOOT_Murloc Eye|r
     .complete 91920,1 --Murloc Eye (3)
     .mob Vile Fin Tidecaller
@@ -231,11 +215,7 @@ step
     >>Enter the Dead Fields
     .complete 437,1 --Enter the Dead Fields
 step
-    #loop
-    .goto 1421/0,1560.00,1078.67,0
-    .goto 1421/0,1560.00,1078.67,40,0
-    .goto 1421/0,1560.00,1106.67,40,0
-    .goto 1421/0,1602.00,1078.67,40,0
+    .goto 1421/0,1560.00,1078.67
     >>Kill |cRXP_ENEMY_Nightlash|r and loot |cRXP_LOOT_Essence of Nightlash|r
     .complete 437,2 --Essence of Nightlash (1)
     .mob Nightlash
@@ -247,16 +227,10 @@ step
     .isOnQuest 447
 step
     #loop
-    .goto 1421/0,1887.60,1221.19,0
-    .goto 1421/0,1887.60,1221.19,40,0
-    .goto 1421/0,1951.02,1216.99,40,0
-    .goto 1421/0,2015.28,1181.43,40,0
-    .goto 1421/0,2014.86,1240.51,40,0
-    .goto 1421/0,1956.90,1300.43,40,0
-    .goto 1421/0,1957.74,1372.11,40,0
-    .goto 1421/0,2000.16,1388.35,40,0
-    .goto 1421/0,1990.08,1446.87,40,0
-    .goto 1421/0,1942.62,1425.31,40,0
+    .goto 1421/0,1942.20,1282.79,0
+    .goto 1421/0,1942.20,1282.79,40,0
+    .goto 1421/0,1979.16,1214.19,40,0
+    .goto 1421/0,1969.92,1397.03,40,0
     >>Kill |cRXP_ENEMY_Moss Stalkers|r, |cRXP_ENEMY_Mist Creepers|r and |cRXP_ENEMY_Krethis Shadowspinners|r. Loot them for |cRXP_LOOT_Skittering Blood|r
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
@@ -264,14 +238,8 @@ step
     .mob Krethis Shadowspinner
 step
     #loop
-    .goto 1421/0,1702.80,1162.95,0
-    .goto 1421/0,1702.80,1162.95,40,0
+    .goto 1421/0,1665.84,1158.75,0
     .goto 1421/0,1665.84,1158.75,40,0
-    .goto 1421/0,1585.62,1189.83,40,0
-    .goto 1421/0,1548.24,1214.75,40,0
-    .goto 1421/0,1519.26,1155.39,40,0
-    .goto 1421/0,1619.22,1140.55,40,0
-    .goto 1421/0,1664.58,1120.95,40,0
     .goto 1421/0,1682.22,1058.23,40,0
     >>Kill |cRXP_ENEMY_Ferocious Grizzled Bears|r, |cRXP_ENEMY_Giant Grizzled Bears|r and |cRXP_ENEMY_Old Vicejaws|r. Loot them for |cRXP_LOOT_Grizzled Bear Heart|r
     .complete 447,1 --Grizzled Bear Heart (6)
@@ -324,16 +292,10 @@ step << Rogue
     .money <0.2633
 step
     #loop
-    .goto 1421/0,1720.44,820.79,0
-    .goto 1421/0,1720.44,820.79,40,0
-    .goto 1421/0,1818.72,844.59,40,0
-    .goto 1421/0,1840.56,907.03,40,0
+    .goto 1421/0,1747.74,855.51,0
+    .goto 1421/0,1747.74,855.51,40,0
+    .goto 1421/0,1804.02,911.79,40,0
     .goto 1421/0,1870.80,980.39,40,0
-    .goto 1421/0,1824.60,1051.51,40,0
-    .goto 1421/0,1784.70,1011.19,40,0
-    .goto 1421/0,1712.46,1020.71,40,0
-    .goto 1421/0,1722.54,951.55,40,0
-    .goto 1421/0,1785.54,943.15,40,0
     >>Kill |cRXP_ENEMY_Moonrage Gluttons|r. Loot them for |cRXP_LOOT_Glutton Shackle|r
     >>Kill |cRXP_ENEMY_Moonrage Darksouls|r. Loot them for |cRXP_LOOT_Darksoul Shackle|r
     .complete 423,1 --Glutton Shackle (6)
@@ -406,16 +368,9 @@ step
     .target Shadow Priest Allister
 step
     #loop
-    .goto 1421/0,1012.32,-65.41,0
-    .goto 1421/0,1012.32,-65.41,40,0
-    .goto 1421/0,935.46,-80.25,40,0
-    .goto 1421/0,875.40,-85.01,40,0
-    .goto 1421/0,893.04,-153.61,40,0
-    .goto 1421/0,912.78,-200.09,40,0
-    .goto 1421/0,970.32,-211.85,40,0
-    .goto 1421/0,1032.48,-223.05,40,0
-    .goto 1421/0,944.70,-159.77,40,0
-    .goto 1421/0,1014.42,-135.69,40,0
+    .goto 1421/0,974.10,-80.53,0
+    .goto 1421/0,974.10,-80.53,40,0
+    .goto 1421/0,961.92,-171.25,40,0
     >>Kill |cRXP_ENEMY_Dalaran Protectors|r, |cRXP_ENEMY_Dalaran Mages|r and |cRXP_ENEMY_Dalaran Conjurors|r. Loot them for |cRXP_LOOT_Dalaran Pendant|r
     .complete 479,1 --Dalaran Pendant (8)
     .mob Dalaran Protector
@@ -443,7 +398,7 @@ step
     .accept 452 >>Accept Pyrewood Ambush
     .target Deathstalker Faerleia
 step
-    .goto 1421/0,1496.58,-406.73
+    .goto 1421/0,1497.00,-406.17
     >>Kill |cRXP_ENEMY_Councilman Smithers|r, |cRXP_ENEMY_Councilman Thatchers|r, |cRXP_ENEMY_Councilman Hendricks|r and |cRXP_ENEMY_Councilman Wilhelms|r
     .complete 452,1 --Councilman Smithers (8)
     .mob Councilman Smithers
@@ -565,16 +520,9 @@ step
     .isQuestTurnedIn 424 --any of: Arugal's Folly
 step
     #loop
-    .goto 1421/0,1545.72,-329.45,0
-    .goto 1421/0,1545.72,-329.45,40,0
-    .goto 1421/0,1602.00,-345.13,40,0
-    .goto 1421/0,1633.08,-385.73,40,0
-    .goto 1421/0,1564.20,-433.33,40,0
-    .goto 1421/0,1543.62,-397.49,40,0
-    .goto 1421/0,1518.00,-439.49,40,0
-    .goto 1421/0,1453.32,-410.93,40,0
-    .goto 1421/0,1421.82,-354.37,40,0
-    .goto 1421/0,1487.76,-361.65,40,0
+    .goto 1421/0,1576.38,-370.89,0
+    .goto 1421/0,1576.38,-370.89,40,0
+    .goto 1421/0,1491.96,-377.61,40,0
     >>Kill |cRXP_ENEMY_Pyrewood Watchers|r, |cRXP_ENEMY_Moonrage Watchers|r, |cRXP_ENEMY_Moonrage Sentries|r and |cRXP_ENEMY_Pyrewood Sentries|r. Loot them for |cRXP_LOOT_Pyrewood Shackle|r
     .complete 99,1 --Pyrewood Shackle (6)
     .mob Pyrewood Watcher
@@ -584,16 +532,10 @@ step
     .isOnQuest 99
 step
     #loop
-    .goto 1421/0,1429.38,-452.65,0
-    .goto 1421/0,1429.38,-452.65,40,0
-    .goto 1421/0,1317.66,-488.21,40,0
-    .goto 1421/0,1316.40,-562.41,40,0
-    .goto 1421/0,1356.30,-588.73,40,0
-    .goto 1421/0,1387.38,-545.33,40,0
-    .goto 1421/0,1431.48,-525.17,40,0
-    .goto 1421/0,1485.24,-558.77,40,0
-    .goto 1421/0,1552.44,-587.05,40,0
+    .goto 1421/0,1463.82,-504.17,0
+    .goto 1421/0,1463.82,-504.17,40,0
     .goto 1421/0,1581.42,-549.81,40,0
+    .goto 1421/0,1316.40,-562.41,40,0
     >>Kill |cRXP_ENEMY_Moonrage Bloodhowlers|r. Loot them for |cRXP_LOOT_Worgen Bits|r
     .complete 98298,1 --Worgen Bits (6)
     .mob Moonrage Bloodhowler
@@ -619,14 +561,8 @@ step
     #loop
     .goto 1421/0,715.80,770.67,0
     .goto 1421/0,715.80,770.67,40,0
-    .goto 1421/0,610.80,798.67,40,0
-    .goto 1421/0,581.40,739.03,40,0
+    .goto 1421/0,610.80,786.35,40,0
     .goto 1421/0,547.80,689.47,40,0
-    .goto 1421/0,519.66,628.15,40,0
-    .goto 1421/0,584.34,686.11,40,0
-    .goto 1421/0,620.04,649.99,40,0
-    .goto 1421/0,636.00,695.07,40,0
-    .goto 1421/0,659.10,687.23,40,0
     >>Kill |cRXP_ENEMY_Rot Hide Brutes|r, |cRXP_ENEMY_Rot Hide Plague Weavers|r, |cRXP_ENEMY_Rot Hide Savages|r and |cRXP_ENEMY_Raging Rot Hides|r. Loot them for |cRXP_LOOT_Rot Hide Ichor|r
     .complete 443,1 --Rot Hide Ichor (1)
     .mob Rot Hide Brute
@@ -729,16 +665,9 @@ step
     .target Dalar Dawnweaver
 step
     #loop
-    .goto 1421/0,760.74,75.71,0
-    .goto 1421/0,760.74,75.71,40,0
-    .goto 1421/0,712.86,89.71,40,0
-    .goto 1421/0,687.24,51.63,40,0
-    .goto 1421/0,665.40,12.43,40,0
+    .goto 1421/0,782.58,39.03,0
+    .goto 1421/0,782.58,39.03,40,0
     .goto 1421/0,734.28,-65.69,40,0
-    .goto 1421/0,736.80,-115.53,40,0
-    .goto 1421/0,803.16,-40.21,40,0
-    .goto 1421/0,767.46,21.95,40,0
-    .goto 1421/0,719.58,28.95,40,0
     >>Kill |cRXP_ENEMY_Dalaran Wizards|r
     >>Kill |cRXP_ENEMY_Dalaran Watchers|r
     .complete 95981,2 --Dalaran Wizard slain (8)
@@ -747,16 +676,9 @@ step
     .mob Dalaran Watcher
 step
     #loop
-    .goto 1421/0,944.28,-289.97,0
-    .goto 1421/0,944.28,-289.97,40,0
-    .goto 1421/0,902.28,-366.13,40,0
-    .goto 1421/0,915.72,-405.61,40,0
+    .goto 1421/0,929.58,-351.85,0
     .goto 1421/0,929.58,-351.85,40,0
-    .goto 1421/0,982.08,-342.33,40,0
     .goto 1421/0,1037.52,-316.01,40,0
-    .goto 1421/0,1044.24,-290.25,40,0
-    .goto 1421/0,1011.48,-290.25,40,0
-    .goto 1421/0,966.12,-307.33,40,0
     >>Kill |cRXP_ENEMY_Ravenclaw Drudgers|r
     >>Kill |cRXP_ENEMY_Ravenclaw Guardians|r
     .complete 516,1 --Ravenclaw Drudger slain (6)
@@ -765,16 +687,9 @@ step
     .mob Ravenclaw Guardian
 step
     #loop
-    .goto 1421/0,1449.54,-743.85,0
-    .goto 1421/0,1449.54,-743.85,40,0
-    .goto 1421/0,1496.16,-727.05,40,0
-    .goto 1421/0,1520.52,-686.73,40,0
-    .goto 1421/0,1560.84,-651.45,40,0
-    .goto 1421/0,1593.60,-671.89,40,0
-    .goto 1421/0,1585.20,-698.77,40,0
-    .goto 1421/0,1547.40,-706.61,40,0
-    .goto 1421/0,1533.54,-742.17,40,0
-    .goto 1421/0,1501.62,-758.97,40,0
+    .goto 1421/0,1503.30,-740.21,0
+    .goto 1421/0,1503.30,-740.21,40,0
+    .goto 1421/0,1583.10,-695.41,40,0
     >>Kill |cRXP_ENEMY_Haggard Refugees|r
     >>Kill |cRXP_ENEMY_Sickly Refugees|r
     .complete 98299,1 --Haggard Refugee slain (5)
@@ -821,13 +736,7 @@ step << Undead Paladin
     .accept 91862 >>Accept Lumina Windsinger
     .target Lumina Windsinger
 step << Undead Paladin
-    #loop
-    .goto 1421/0,682.62,998.59,0
-    .goto 1421/0,682.62,998.59,40,0
-    .goto 1421/0,662.46,1015.95,40,0
-    .goto 1421/0,660.36,964.71,40,0
-    .goto 1421/0,684.30,965.55,40,0
-    .goto 1421/0,733.86,1021.27,40,0
+    .goto 1421/0,690.18,993.83
     >>Kill |cRXP_ENEMY_Rot Hide Savages|r, |cRXP_ENEMY_Raging Rot Hides|r, |cRXP_ENEMY_Rot Hide Bruisers|r and |cRXP_ENEMY_Snarlmanes|r. Loot them for |cRXP_LOOT_Fenris Isle Key|r
     .complete 91862,1 --Fenris Isle Key (1)
     .mob Rot Hide Savage
@@ -855,16 +764,10 @@ step << Undead Paladin
     .isOnQuest 95034
 step
     #loop
-    .goto 1421/0,738.48,511.11,0
-    .goto 1421/0,738.48,511.11,40,0
-    .goto 1421/0,741.42,456.23,40,0
-    .goto 1421/0,696.06,408.91,40,0
-    .goto 1421/0,688.92,349.27,40,0
-    .goto 1421/0,645.24,343.95,40,0
-    .goto 1421/0,610.38,283.75,40,0
-    .goto 1421/0,620.04,399.39,40,0
-    .goto 1421/0,649.44,450.63,40,0
-    .goto 1421/0,682.62,485.07,40,0
+    .goto 1421/0,724.20,484.51,0
+    .goto 1421/0,724.20,484.51,40,0
+    .goto 1421/0,648.60,384.27,40,0
+    .goto 1421/0,638.52,305.31,40,0
     >>Kill |cRXP_ENEMY_Vile Fin Shredders|r, |cRXP_ENEMY_Vile Fin Tidehunters|r, |cRXP_ENEMY_Vile Fin Oracles|r and |cRXP_ENEMY_Vile Fin Lakestalkers|r. Loot them for |cRXP_LOOT_Hardened Tumor|r
     .complete 451,3 --Hardened Tumor (1)
     .mob Vile Fin Shredder
@@ -874,14 +777,9 @@ step
     .isOnQuest 451
 step
     #loop
-    .goto 1421/0,567.96,619.19,0
-    .goto 1421/0,567.96,619.19,40,0
+    .goto 1421/0,520.92,594.27,0
     .goto 1421/0,520.92,594.27,40,0
-    .goto 1421/0,486.06,621.71,40,0
-    .goto 1421/0,445.74,658.67,40,0
     .goto 1421/0,486.48,679.11,40,0
-    .goto 1421/0,457.92,710.47,40,0
-    .goto 1421/0,510.00,726.99,40,0
     >>Kill |cRXP_ENEMY_Lake Skulkers|r and |cRXP_ENEMY_Elder Lake Skulkers|r. Loot them for |cRXP_LOOT_Lake Skulker Moss|r
     .complete 451,1 --Lake Skulker Moss (1)
     .mob Lake Skulker
@@ -889,16 +787,10 @@ step
     .isOnQuest 451
 step
     #loop
-    .goto 1421/0,192.06,851.03,0
-    .goto 1421/0,192.06,851.03,40,0
-    .goto 1421/0,173.16,910.11,40,0
-    .goto 1421/0,131.16,997.75,40,0
-    .goto 1421/0,176.10,1018.47,40,0
-    .goto 1421/0,241.20,1124.59,40,0
-    .goto 1421/0,339.48,1096.59,40,0
-    .goto 1421/0,281.94,1019.03,40,0
-    .goto 1421/0,228.60,1011.19,40,0
-    .goto 1421/0,235.32,935.87,40,0
+    .goto 1421/0,198.36,890.79,0
+    .goto 1421/0,198.36,890.79,40,0
+    .goto 1421/0,193.32,960.23,40,0
+    .goto 1421/0,292.02,1087.91,40,0
     >>Kill |cRXP_ENEMY_Lake Creepers|r and |cRXP_ENEMY_Elder Lake Creepers|r. Loot them for |cRXP_LOOT_Lake Creeper Moss|r
     .complete 451,2 --Lake Creeper Moss (1)
     .mob Lake Creeper
@@ -966,16 +858,9 @@ step
 step
     #label Drop95884x1
     #loop
-    .goto 1421/0,1006.86,-294.45,0
-    .goto 1421/0,1006.86,-294.45,40,0
-    .goto 1421/0,1044.24,-290.25,40,0
-    .goto 1421/0,982.08,-342.33,40,0
-    .goto 1421/0,915.72,-405.61,40,0
-    .goto 1421/0,902.28,-366.13,40,0
+    .goto 1421/0,1014.84,-295.57,0
+    .goto 1421/0,1014.84,-295.57,40,0
     .goto 1421/0,929.58,-351.85,40,0
-    .goto 1421/0,928.74,-324.41,40,0
-    .goto 1421/0,944.28,-289.97,40,0
-    .goto 1421/0,966.12,-307.33,40,0
     >>Kill |cRXP_ENEMY_Tortured Souls|r
     >>Kill |cRXP_ENEMY_Ravenclaw Guardians|r and |cRXP_ENEMY_Ravenclaw Drudgers|r. Loot them for |cRXP_LOOT_Note Scrap|r
     >>Kill |cRXP_ENEMY_Ravenclaw Guardians|r and |cRXP_ENEMY_Ravenclaw Drudgers|r. Loot them for |cRXP_LOOT_Tortured Soul|r

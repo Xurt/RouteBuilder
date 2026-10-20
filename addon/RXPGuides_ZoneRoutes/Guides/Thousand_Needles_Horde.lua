@@ -80,16 +80,11 @@ step
     .subzoneskip 484,1
 step
     #loop
-    .goto 1441/1,-2438.85,-5251.47,0
-    .goto 1441/1,-2438.85,-5251.47,40,0
-    .goto 1441/1,-2569.53,-5245.89,40,0
-    .goto 1441/1,-2534.77,-5158.77,40,0
+    .goto 1441/1,-2454.25,-5178.72,0
+    .goto 1441/1,-2454.25,-5178.72,40,0
     .goto 1441/1,-2392.65,-5128.27,40,0
-    .goto 1441/1,-2382.97,-5016.80,40,0
-    .goto 1441/1,-2315.21,-5018.27,40,0
-    .goto 1441/1,-2314.33,-5087.20,40,0
-    .goto 1441/1,-2221.05,-5046.72,40,0
-    .goto 1441/1,-2240.41,-5181.95,40,0
+    .goto 1441/1,-2283.97,-5078.11,40,0
+    .goto 1441/1,-2253.17,-5155.55,40,0
     >>Kill |cRXP_ENEMY_Galak Scouts|r
     >>Kill |cRXP_ENEMY_Galak Wranglers|r
     >>Kill |cRXP_ENEMY_Galak Windchasers|r
@@ -177,7 +172,7 @@ step
     .accept 4966 >>Accept Protect Kanati Greycloud
     .target Kanati Greycloud
 step
-    .goto 1441/1,-1368.77,-4899.76
+    .goto 1441/1,-1367.01,-4891.84
     >>Kill |cRXP_ENEMY_Galak Assassins|r
     .complete 4966,1 --Galak Assassin slain (8)
     .mob Galak Assassin
@@ -200,16 +195,10 @@ step
     .xp 28+20000 >> Grind to level 28 20000+/41400xp
 step
     #loop
-    .goto 1441/1,-1901.61,-4930.56,0
-    .goto 1441/1,-1901.61,-4930.56,40,0
+    .goto 1441/1,-1912.17,-4963.12,0
     .goto 1441/1,-1912.17,-4963.12,40,0
-    .goto 1441/1,-2000.61,-5028.53,40,0
-    .goto 1441/1,-2019.53,-5064.03,40,0
-    .goto 1441/1,-2043.29,-5103.92,40,0
-    .goto 1441/1,-2095.21,-5086.32,40,0
-    .goto 1441/1,-2045.05,-5029.41,40,0
-    .goto 1441/1,-2026.13,-4976.91,40,0
-    .goto 1441/1,-1971.13,-4940.83,40,0
+    .goto 1441/1,-2038.01,-5005.95,40,0
+    .goto 1441/1,-2066.17,-5100.11,40,0
     >>Pick up |cRXP_PICK_Incendia Agave|r from the ground
     .complete 5062,1 --Incendia Agave (1)
 step
@@ -378,11 +367,7 @@ step
     .mob Screeching Roguefeather
 step
     #label Along7
-    #loop
-    .goto 1441/1,-1683.37,-5394.91,0
-    .goto 1441/1,-1683.37,-5394.91,40,0
-    .goto 1441/1,-1673.69,-5363.81,40,0
-    .goto 1441/1,-1647.29,-5401.65,40,0
+    .goto 1441/1,-1683.37,-5394.91
     >>Kill |cRXP_ENEMY_Screeching Harpies|r
     .complete 98070,1 --Screeching Harpy slain (5)
     .mob Screeching Harpy
@@ -397,13 +382,9 @@ step
     .complete 4770,1 --Escort Pao'ka from Highperch
 step
     #loop
-    .goto 1441/1,-953.85,-4939.95,0
-    .goto 1441/1,-953.85,-4939.95,40,0
-    .goto 1441/1,-922.17,-4979.84,40,0
-    .goto 1441/1,-899.29,-5046.72,40,0
+    .goto 1441/1,-932.73,-4941.71,0
+    .goto 1441/1,-932.73,-4941.71,40,0
     .goto 1441/1,-941.97,-5055.23,40,0
-    .goto 1441/1,-985.97,-5062.85,40,0
-    .goto 1441/1,-969.69,-5026.48,40,0
     >>Pick up |cRXP_PICK_Highperch Wyvern Egg|r from the ground
     .complete 4767,1 --Highperch Wyvern Egg (10)
 step
@@ -453,14 +434,8 @@ step
     #loop
     .goto 1441/1,-1638.93,-5356.48,0
     .goto 1441/1,-1638.93,-5356.48,40,0
-    .goto 1441/1,-1606.81,-5359.71,40,0
-    .goto 1441/1,-1636.73,-5462.67,40,0
-    .goto 1441/1,-1628.81,-5499.04,40,0
-    .goto 1441/1,-1590.97,-5540.99,40,0
-    .goto 1441/1,-1584.37,-5615.49,40,0
-    .goto 1441/1,-1634.53,-5560.64,40,0
-    .goto 1441/1,-1685.57,-5440.37,40,0
-    .goto 1441/1,-1659.17,-5379.65,40,0
+    .goto 1441/1,-1609.01,-5494.93,40,0
+    .goto 1441/1,-1598.89,-5603.17,40,0
     >>Kill |cRXP_ENEMY_Screeching Roguefeathers|r
     >>Kill |cRXP_ENEMY_Screeching Windcallers|r
     .complete 98070,2 --Screeching Roguefeather slain (5)
@@ -495,16 +470,10 @@ step
     .target Kravel Koalbeard
 step
     #loop
-    .goto 1441/1,-3618.93,-6154.93,0
-    .goto 1441/1,-3618.93,-6154.93,40,0
-    .goto 1441/1,-3624.21,-6088.64,40,0
-    .goto 1441/1,-3654.13,-5981.87,40,0
-    .goto 1441/1,-3587.25,-5978.64,40,0
-    .goto 1441/1,-3561.73,-6078.67,40,0
-    .goto 1441/1,-3557.33,-6154.93,40,0
-    .goto 1441/1,-3513.33,-6269.33,40,0
-    .goto 1441/1,-3625.09,-6335.92,40,0
-    .goto 1441/1,-3585.05,-6257.89,40,0
+    .goto 1441/1,-3623.33,-6093.33,0
+    .goto 1441/1,-3623.33,-6093.33,40,0
+    .goto 1441/1,-3588.13,-5981.87,40,0
+    .goto 1441/1,-3552.93,-6286.93,40,0
     >>Loot the |cRXP_PICK_Rocket Car Rubbles|r for |cRXP_LOOT_Rocket Car Parts|r
     .complete 1110,1 --Rocket Car Parts (30)
 step
@@ -555,7 +524,7 @@ step
     .target Innkeeper Abeqwa
     .home >>Set your Hearthstone to Innkeeper Abeqwa's inn
 step
-    .goto 1441/1,-1612.53,-5591.73
+    .goto 1441/1,-1603.73,-5603.47
     >>Kill |cRXP_ENEMY_Grenka Bloodscreech|r and loot |cRXP_LOOT_Grenka's Claw|r
     .complete 1150,1 --Grenka's Claw (1)
     .mob Grenka Bloodscreech
@@ -684,11 +653,7 @@ step << Mage
     .target Magus Tirth
     .isOnQuest 1950
 step
-    #loop
-    .goto 1441/1,-4278.93,-5870.99,0
-    .goto 1441/1,-4278.93,-5870.99,40,0
-    .goto 1441/1,-4303.13,-5882.72,40,0
-    .goto 1441/1,-4315.45,-5905.01,40,0
+    .goto 1441/1,-4303.13,-5882.72
     >>Kill |cRXP_ENEMY_Salt Flats Scavengers|r and |cRXP_ENEMY_Salt Flats Vultures|r. Loot them for |cRXP_LOOT_Hollow Vulture Bone|r
     .complete 1176,1 --Hollow Vulture Bone (10)
     .mob Salt Flats Scavenger
@@ -697,14 +662,8 @@ step
     #loop
     .goto 1441/1,-4119.21,-5748.37,0
     .goto 1441/1,-4119.21,-5748.37,40,0
-    .goto 1441/1,-4113.93,-5682.96,40,0
-    .goto 1441/1,-4121.85,-5617.25,40,0
-    .goto 1441/1,-4113.49,-5549.79,40,0
-    .goto 1441/1,-4072.57,-5581.76,40,0
+    .goto 1441/1,-4052.77,-5585.87,40,0
     .goto 1441/1,-4023.73,-5535.41,40,0
-    .goto 1441/1,-4011.85,-5511.95,40,0
-    .goto 1441/1,-4018.01,-5576.48,40,0
-    .goto 1441/1,-4015.81,-5624.29,40,0
     >>Kill |cRXP_ENEMY_Sparkleshell Tortoises|r, |cRXP_ENEMY_Sparkleshell Snappers|r and |cRXP_ENEMY_Sparkleshell Borers|r. Loot them for |cRXP_LOOT_Hardened Tortoise Shell|r
     .complete 1105,1 --Hardened Tortoise Shell (9)
     .mob Sparkleshell Tortoise
@@ -714,13 +673,8 @@ step
     #loop
     .goto 1441/1,-3754.01,-5954.59,0
     .goto 1441/1,-3754.01,-5954.59,40,0
-    .goto 1441/1,-3604.85,-6115.04,40,0
-    .goto 1441/1,-3578.45,-6156.99,40,0
-    .goto 1441/1,-3548.97,-6218.00,40,0
-    .goto 1441/1,-3552.05,-6117.97,40,0
-    .goto 1441/1,-3537.53,-6105.65,40,0
     .goto 1441/1,-3570.53,-6103.60,40,0
-    .goto 1441/1,-3593.85,-6106.53,40,0
+    .goto 1441/1,-3548.97,-6218.00,40,0
     >>Kill |cRXP_ENEMY_Scorpid Terrors|r, |cRXP_ENEMY_Scorpid Reavers|r and |cRXP_ENEMY_Vile Stings|r. Loot them for |cRXP_LOOT_Salty Scorpid Venom|r
     .complete 1104,1 --Salty Scorpid Venom (6)
     .mob Scorpid Terror
@@ -889,16 +843,9 @@ step
     .xp <29,1
 step
     #loop
-    .goto 1441/1,-3673.49,-5710.24,0
-    .goto 1441/1,-3673.49,-5710.24,40,0
-    .goto 1441/1,-3680.09,-5650.99,40,0
+    .goto 1441/1,-3754.89,-5649.52,0
     .goto 1441/1,-3754.89,-5649.52,40,0
-    .goto 1441/1,-3779.97,-5621.07,40,0
-    .goto 1441/1,-3817.81,-5655.68,40,0
-    .goto 1441/1,-3886.89,-5697.33,40,0
     .goto 1441/1,-3837.61,-5714.35,40,0
-    .goto 1441/1,-3816.49,-5754.24,40,0
-    .goto 1441/1,-3748.73,-5769.79,40,0
     >>Kill |cRXP_ENEMY_Saltstone Basilisks|r
     .complete 1175,1 --Saltstone Basilisk slain (10)
     .mob Saltstone Basilisk
@@ -910,16 +857,9 @@ step
 step
     #label Along9
     #loop
-    .goto 1441/1,-3818.69,-6450.61,0
-    .goto 1441/1,-3818.69,-6450.61,40,0
+    .goto 1441/1,-3850.81,-6487.87,0
     .goto 1441/1,-3850.81,-6487.87,40,0
-    .goto 1441/1,-3902.73,-6516.03,40,0
-    .goto 1441/1,-3924.73,-6479.95,40,0
-    .goto 1441/1,-3947.61,-6523.07,40,0
-    .goto 1441/1,-3930.89,-6573.52,40,0
-    .goto 1441/1,-3859.61,-6613.41,40,0
-    .goto 1441/1,-3844.65,-6547.41,40,0
-    .goto 1441/1,-3797.13,-6544.19,40,0
+    .goto 1441/1,-3927.81,-6595.23,40,0
     >>Kill |cRXP_ENEMY_Saltstone Crystalhides|r
     .complete 1175,2 --Saltstone Crystalhide slain (10)
     .mob Saltstone Crystalhide
@@ -931,14 +871,9 @@ step
     .use 5877
 step
     #loop
-    .goto 1441/1,-3378.69,-6494.32,0
-    .goto 1441/1,-3378.69,-6494.32,40,0
+    .goto 1441/1,-3325.45,-6496.08,0
     .goto 1441/1,-3325.45,-6496.08,40,0
-    .goto 1441/1,-3306.97,-6510.75,40,0
-    .goto 1441/1,-3240.97,-6496.67,40,0
-    .goto 1441/1,-3227.77,-6483.47,40,0
     .goto 1441/1,-3254.17,-6485.81,40,0
-    .goto 1441/1,-3299.49,-6463.52,40,0
     >>Kill |cRXP_ENEMY_Silithid Invaders|r
     .complete 1147,3 --Silithid Invader slain (5)
     .mob Silithid Invader
@@ -952,32 +887,20 @@ step
 step
     #label Drop1148x1
     #loop
-    .goto 1441/1,-3453.49,-6354.11,0
-    .goto 1441/1,-3453.49,-6354.11,40,0
-    .goto 1441/1,-3470.65,-6405.44,40,0
-    .goto 1441/1,-3428.41,-6488.75,40,0
-    .goto 1441/1,-3419.17,-6557.09,40,0
-    .goto 1441/1,-3492.21,-6591.12,40,0
-    .goto 1441/1,-3464.93,-6527.17,40,0
-    .goto 1441/1,-3510.25,-6488.75,40,0
-    .goto 1441/1,-3556.45,-6451.79,40,0
-    .goto 1441/1,-3548.09,-6386.37,40,0
+    .goto 1441/1,-3490.89,-6356.16,0
+    .goto 1441/1,-3490.89,-6356.16,40,0
+    .goto 1441/1,-3485.61,-6470.27,40,0
+    .goto 1441/1,-3474.61,-6579.68,40,0
     >>Kill |cRXP_ENEMY_Silithid Hive Drones|r
     .complete 1147,2 --Silithid Hive Drone slain (5)
     .mob Silithid Hive Drone
     .isOnQuest 1147
 step
     #loop
-    .goto 1441/1,-3510.25,-6488.75,0
-    .goto 1441/1,-3510.25,-6488.75,40,0
-    .goto 1441/1,-3590.33,-6489.63,40,0
-    .goto 1441/1,-3589.89,-6410.72,40,0
-    .goto 1441/1,-3470.65,-6405.44,40,0
-    .goto 1441/1,-3383.97,-6385.79,40,0
-    .goto 1441/1,-3392.77,-6492.27,40,0
-    .goto 1441/1,-3419.17,-6557.09,40,0
-    .goto 1441/1,-3492.21,-6591.12,40,0
-    .goto 1441/1,-3464.93,-6527.17,40,0
+    .goto 1441/1,-3487.37,-6507.81,0
+    .goto 1441/1,-3487.37,-6507.81,40,0
+    .goto 1441/1,-3514.65,-6442.99,40,0
+    .goto 1441/1,-3442.05,-6381.39,40,0
     >>Kill |cRXP_ENEMY_Silithid Searchers|r, |cRXP_ENEMY_Silithid Invaders|r, |cRXP_ENEMY_Silithid Ravagers|r and |cRXP_ENEMY_Silithid Hive Drones|r. Loot them for |cRXP_LOOT_Silithid Heart|r
     .complete 1148,1 --Silithid Heart (1)
     .mob Silithid Searcher
@@ -987,16 +910,10 @@ step
     .isOnQuest 1148
 step
     #loop
-    .goto 1441/1,-3510.25,-6488.75,0
-    .goto 1441/1,-3510.25,-6488.75,40,0
-    .goto 1441/1,-3590.33,-6489.63,40,0
-    .goto 1441/1,-3589.89,-6410.72,40,0
-    .goto 1441/1,-3470.65,-6405.44,40,0
-    .goto 1441/1,-3383.97,-6385.79,40,0
-    .goto 1441/1,-3392.77,-6492.27,40,0
-    .goto 1441/1,-3419.17,-6557.09,40,0
-    .goto 1441/1,-3492.21,-6591.12,40,0
-    .goto 1441/1,-3464.93,-6527.17,40,0
+    .goto 1441/1,-3487.37,-6507.81,0
+    .goto 1441/1,-3487.37,-6507.81,40,0
+    .goto 1441/1,-3514.65,-6442.99,40,0
+    .goto 1441/1,-3442.05,-6381.39,40,0
     >>Kill |cRXP_ENEMY_Silithid Searchers|r, |cRXP_ENEMY_Silithid Invaders|r, |cRXP_ENEMY_Silithid Ravagers|r and |cRXP_ENEMY_Silithid Hive Drones|r. Loot them for |cRXP_LOOT_Silithid Talon|r
     .complete 1148,2 --Silithid Talon (5)
     .mob Silithid Searcher
@@ -1006,16 +923,10 @@ step
     .isOnQuest 1148
 step
     #loop
-    .goto 1441/1,-3510.25,-6488.75,0
-    .goto 1441/1,-3510.25,-6488.75,40,0
-    .goto 1441/1,-3590.33,-6489.63,40,0
-    .goto 1441/1,-3589.89,-6410.72,40,0
-    .goto 1441/1,-3470.65,-6405.44,40,0
-    .goto 1441/1,-3383.97,-6385.79,40,0
-    .goto 1441/1,-3392.77,-6492.27,40,0
-    .goto 1441/1,-3419.17,-6557.09,40,0
-    .goto 1441/1,-3492.21,-6591.12,40,0
-    .goto 1441/1,-3464.93,-6527.17,40,0
+    .goto 1441/1,-3487.37,-6507.81,0
+    .goto 1441/1,-3487.37,-6507.81,40,0
+    .goto 1441/1,-3514.65,-6442.99,40,0
+    .goto 1441/1,-3442.05,-6381.39,40,0
     >>Kill |cRXP_ENEMY_Silithid Searchers|r, |cRXP_ENEMY_Silithid Invaders|r, |cRXP_ENEMY_Silithid Ravagers|r and |cRXP_ENEMY_Silithid Hive Drones|r. Loot them for |cRXP_LOOT_Intact Silithid Carapace|r
     .complete 1148,3 --Intact Silithid Carapace (3)
     .mob Silithid Searcher
@@ -1031,16 +942,9 @@ step
     .isOnQuest 1147
 step
     #loop
-    .goto 1441/1,-3783.05,-6486.11,0
-    .goto 1441/1,-3783.05,-6486.11,40,0
-    .goto 1441/1,-3856.97,-6541.25,40,0
-    .goto 1441/1,-3926.93,-6523.65,40,0
-    .goto 1441/1,-3909.33,-6565.89,40,0
-    .goto 1441/1,-3949.37,-6587.89,40,0
-    .goto 1441/1,-3889.53,-6614.88,40,0
+    .goto 1441/1,-3812.53,-6511.04,0
+    .goto 1441/1,-3812.53,-6511.04,40,0
     .goto 1441/1,-3863.13,-6582.61,40,0
-    .goto 1441/1,-3824.85,-6628.08,40,0
-    .goto 1441/1,-3775.57,-6619.28,40,0
     >>Kill |cRXP_ENEMY_Saltstone Gazers|r
     .complete 1175,3 --Saltstone Gazer slain (6)
     .mob Saltstone Gazer

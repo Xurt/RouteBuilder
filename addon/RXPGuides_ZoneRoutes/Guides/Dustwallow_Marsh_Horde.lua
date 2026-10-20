@@ -128,16 +128,10 @@ step
 step
     #label Drop635x1
     #loop
-    .goto 1445/1,-3936.00,-2838.33,0
-    .goto 1445/1,-3936.00,-2838.33,40,0
+    .goto 1445/1,-3967.50,-2817.33,0
     .goto 1445/1,-3967.50,-2817.33,40,0
-    .goto 1445/1,-3999.00,-2789.33,40,0
-    .goto 1445/1,-4020.00,-2754.33,40,0
-    .goto 1445/1,-4009.50,-2712.33,40,0
-    .goto 1445/1,-4045.20,-2601.03,40,0
-    .goto 1445/1,-3991.12,-2593.33,40,0
-    .goto 1445/1,-3924.45,-2616.08,40,0
-    .goto 1445/1,-3936.00,-2768.33,40,0
+    .goto 1445/1,-3999.00,-2740.33,40,0
+    .goto 1445/1,-4023.15,-2590.18,40,0
     >>Kill |cRXP_ENEMY_Mirefin Oracles|r, |cRXP_ENEMY_Mirefin Coastrunners|r, |cRXP_ENEMY_Mirefin Warriors|r and |cRXP_ENEMY_Mirefin Puddlejumpers|r. Loot them for |cRXP_LOOT_Mirefin Head|r
     .complete 1177,1 --Mirefin Head (12)
     .mob Mirefin Oracle
@@ -151,16 +145,10 @@ step << Mage
     .vendor >> Buy level 35 drink if needed
 step
     #loop
-    .goto 1445/1,-2850.82,-2770.08,0
-    .goto 1445/1,-2850.82,-2770.08,40,0
-    .goto 1445/1,-2776.80,-2842.88,40,0
-    .goto 1445/1,-2818.80,-2884.53,40,0
-    .goto 1445/1,-2778.90,-2928.98,40,0
-    .goto 1445/1,-2686.50,-2817.33,40,0
-    .goto 1445/1,-2606.70,-2821.18,40,0
-    .goto 1445/1,-2562.07,-2777.78,40,0
-    .goto 1445/1,-2610.37,-2747.33,40,0
-    .goto 1445/1,-2736.37,-2753.28,40,0
+    .goto 1445/1,-2800.42,-2882.78,0
+    .goto 1445/1,-2800.42,-2882.78,40,0
+    .goto 1445/1,-2781.00,-2814.53,40,0
+    .goto 1445/1,-2614.05,-2785.13,40,0
     >>Kill |cRXP_ENEMY_Darkmist Spiders|r, |cRXP_ENEMY_Darkmist Lurkers|r, |cRXP_ENEMY_Darkmist Recluses|r and |cRXP_ENEMY_Darkmist Silkspinners|r. Loot them for |cRXP_LOOT_Unpopped Darkmist Eye|r
     .complete 1206,1 --Unpopped Darkmist Eye (40)
     .mob Darkmist Spider
@@ -176,14 +164,9 @@ step
 step
     #label Drop635x2
     #loop
-    .goto 1445/1,-2972.62,-2858.98,0
-    .goto 1445/1,-2972.62,-2858.98,40,0
-    .goto 1445/1,-3020.92,-2791.78,40,0
-    .goto 1445/1,-3019.35,-2818.03,40,0
-    .goto 1445/1,-3055.05,-2869.13,40,0
-    .goto 1445/1,-3019.87,-2957.33,40,0
-    .goto 1445/1,-2946.90,-2979.03,40,0
+    .goto 1445/1,-2972.62,-2927.93,0
     .goto 1445/1,-2972.62,-2927.93,40,0
+    .goto 1445/1,-3019.35,-2818.03,40,0
     >>Kill |cRXP_ENEMY_Theramore Infiltrators|r
     .complete 1201,1 --Theramore Infiltrator slain (9)
     .mob Theramore Infiltrator
@@ -317,16 +300,10 @@ step
     .isOnQuest 2861
 step
     #loop
-    .goto 1445/1,-3778.50,-4294.33,0
-    .goto 1445/1,-3778.50,-4294.33,40,0
-    .goto 1445/1,-3852.00,-4280.33,40,0
-    .goto 1445/1,-3926.02,-4309.03,40,0
-    .goto 1445/1,-3999.00,-4243.23,40,0
+    .goto 1445/1,-3810.00,-4280.33,0
+    .goto 1445/1,-3810.00,-4280.33,40,0
+    .goto 1445/1,-3879.30,-4222.23,40,0
     .goto 1445/1,-3946.50,-4217.33,40,0
-    .goto 1445/1,-3984.82,-4139.98,40,0
-    .goto 1445/1,-3894.00,-4175.33,40,0
-    .goto 1445/1,-3894.52,-4236.58,40,0
-    .goto 1445/1,-3831.00,-4217.33,40,0
     >>Kill |cRXP_ENEMY_Muckshell Razorclaws|r, |cRXP_ENEMY_Muckshell Clackers|r, |cRXP_ENEMY_Muckshell Scrabblers|r and |cRXP_ENEMY_Muckshell Snapclaws|r. Loot them for |cRXP_LOOT_Jeweled Pendant|r
     .complete 1261,1 --Jeweled Pendant (1)
     .mob Muckshell Razorclaw
@@ -404,16 +381,12 @@ step
     .isQuestTurnedIn 1321 --any of: The Black Shield
 step
     #loop
-    .goto 1445/1,-3322.27,-3324.13,0
-    .goto 1445/1,-3322.27,-3324.13,40,0
-    .goto 1445/1,-3362.70,-3375.58,40,0
-    .goto 1445/1,-3386.85,-3439.98,40,0
-    .goto 1445/1,-3434.62,-3516.98,40,0
+    .goto 1445/1,-3305.47,-3356.68,0
+    .goto 1445/1,-3305.47,-3356.68,40,0
+    .goto 1445/1,-3388.42,-3478.48,40,0
     .goto 1445/1,-3167.40,-3787.88,40,0
-    .goto 1445/1,-3211.50,-3589.78,40,0
     .goto 1445/1,-3161.62,-3562.83,40,0
     .goto 1445/1,-3219.37,-3518.38,40,0
-    .goto 1445/1,-3248.77,-3485.48,40,0
     >>Kill |cRXP_ENEMY_Darkfang Creepers|r, |cRXP_ENEMY_Darkfang Spiders|r, |cRXP_ENEMY_Darkfang Venomspitters|r and |cRXP_ENEMY_Giant Darkfang Spiders|r. Loot them for |cRXP_LOOT_Acidic Venom Sac|r
     .complete 1322,1 --Acidic Venom Sac (6)
     .mob Darkfang Creeper
@@ -575,12 +548,7 @@ step << Mage
     .target Tabetha
     .isQuestComplete 1956
 step << Mage
-    #loop
-    .goto 1445/1,-3289.72,-4306.23,0
-    .goto 1445/1,-3289.72,-4306.23,40,0
-    .goto 1445/1,-3336.97,-4323.03,40,0
-    .goto 1445/1,-3330.15,-4374.48,40,0
-    .goto 1445/1,-3228.82,-4333.18,40,0
+    .goto 1445/1,-3289.72,-4306.23
     >>Open the |cRXP_PICK_Gold Vein|r. Loot it for |cRXP_LOOT_Jade|r
     .complete 1948,1 --Jade (1)
     .isOnQuest 1948
@@ -646,13 +614,7 @@ step
     .complete 1166,2 --Mok'Morokk's Grog (1)
 step
     #label Along6
-    #loop
-    .goto 1445/1,-2961.07,-4388.83,0
-    .goto 1445/1,-2961.07,-4388.83,40,0
-    .goto 1445/1,-2960.02,-4421.38,40,0
-    .goto 1445/1,-2962.65,-4466.18,40,0
-    .goto 1445/1,-2898.60,-4468.28,40,0
-    .goto 1445/1,-2928.52,-4387.43,40,0
+    .goto 1445/1,-2960.02,-4421.38
     >>Pick up |cRXP_PICK_Mok'Morokk's Strongbox|r from the ground
     >>Kill |cRXP_ENEMY_Firemane Scalebanes|r
     .complete 1166,3 --Mok'Morokk's Strongbox (1)
@@ -668,16 +630,9 @@ step
 step
     #label Along7
     #loop
-    .goto 1445/1,-3211.50,-4434.33,0
-    .goto 1445/1,-3211.50,-4434.33,40,0
-    .goto 1445/1,-3190.50,-4350.33,40,0
-    .goto 1445/1,-3274.50,-4350.33,40,0
-    .goto 1445/1,-3274.50,-4287.33,40,0
-    .goto 1445/1,-3327.00,-4287.33,40,0
-    .goto 1445/1,-3369.00,-4322.33,40,0
-    .goto 1445/1,-3390.00,-4378.33,40,0
-    .goto 1445/1,-3327.00,-4399.33,40,0
-    .goto 1445/1,-3327.00,-4455.33,40,0
+    .goto 1445/1,-3211.50,-4364.33,0
+    .goto 1445/1,-3211.50,-4364.33,40,0
+    .goto 1445/1,-3316.50,-4322.33,40,0
     >>Kill |cRXP_ENEMY_Firemane Scouts|r
     >>Kill |cRXP_ENEMY_Firemane Ash Tails|r
     .complete 1168,1 --Firemane Scout slain (10)
@@ -686,16 +641,11 @@ step
     .mob Firemane Ash Tail
 step
     #loop
-    .goto 1445/1,-3379.50,-4658.33,0
-    .goto 1445/1,-3379.50,-4658.33,40,0
-    .goto 1445/1,-3579.00,-4763.33,40,0
-    .goto 1445/1,-3526.50,-4889.33,40,0
-    .goto 1445/1,-3432.00,-4994.33,40,0
-    .goto 1445/1,-3295.50,-4924.33,40,0
-    .goto 1445/1,-3148.50,-4854.33,40,0
-    .goto 1445/1,-3211.50,-4763.33,40,0
-    .goto 1445/1,-3306.00,-4791.33,40,0
-    .goto 1445/1,-3390.00,-4840.33,40,0
+    .goto 1445/1,-3337.50,-4777.33,0
+    .goto 1445/1,-3337.50,-4777.33,40,0
+    .goto 1445/1,-3169.50,-4826.33,40,0
+    .goto 1445/1,-3400.50,-4959.33,40,0
+    .goto 1445/1,-3526.50,-4742.33,40,0
     >>Kill |cRXP_ENEMY_Searing Hatchlings|r and |cRXP_ENEMY_Searing Whelps|r. Loot them for |cRXP_LOOT_Searing Tongue|r
     >>Kill |cRXP_ENEMY_Searing Hatchlings|r and |cRXP_ENEMY_Searing Whelps|r. Loot them for |cRXP_LOOT_Searing Heart|r
     .complete 1169,1 --Searing Tongue (15)
@@ -777,7 +727,7 @@ step << Mage
     .target Tabetha
     .isQuestComplete 1954
 step
-    .goto 1445/1,-3787.42,-4572.58
+    .goto 1445/1,-3786.90,-4571.88
     >>Click the |cRXP_PICK_Egg of Onyxia|r
     .complete 1172,1 --Egg of Onyxia destroyed
     .isOnQuest 1172

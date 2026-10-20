@@ -207,27 +207,16 @@ step
     .mob Syndicate Watchman
 step
     #label Along18
-    #loop
-    .goto 1424/0,-1025.17,-638.51,0
-    .goto 1424/0,-1025.17,-638.51,40,0
-    .goto 1424/0,-1008.53,-604.37,40,0
-    .goto 1424/0,-1066.13,-581.33,40,0
-    .goto 1424/0,-1106.77,-607.57,40,0
-    .goto 1424/0,-1068.69,-667.73,40,0
+    .goto 1424/0,-1025.17,-638.51
     >>Kill |cRXP_ENEMY_Syndicate Shadow Mage|r and loot |cRXP_LOOT_Vial of Innocent Blood|r
     .complete 1066,1 --Vial of Innocent Blood (1)
     .mob Syndicate Shadow Mage
     .isOnQuest 1066
 step
     #loop
-    .goto 1424/0,-1047.89,-639.57,0
-    .goto 1424/0,-1047.89,-639.57,40,0
+    .goto 1424/0,-1079.57,-617.60,0
+    .goto 1424/0,-1079.57,-617.60,40,0
     .goto 1424/0,-1080.53,-686.08,40,0
-    .goto 1424/0,-1083.73,-671.15,40,0
-    .goto 1424/0,-1096.53,-615.25,40,0
-    .goto 1424/0,-1078.93,-586.45,40,0
-    .goto 1424/0,-1047.89,-572.80,40,0
-    .goto 1424/0,-1024.85,-593.49,40,0
     >>Kill |cRXP_ENEMY_Syndicate Rogues|r
     >>Kill |cRXP_ENEMY_Syndicate Watchmans|r
     .complete 549,1 --Syndicate Rogue slain (10)
@@ -263,16 +252,11 @@ step
     .subzoneskip 272,1
 step
     #loop
-    .goto 1424/0,-823.57,-298.67,0
-    .goto 1424/0,-823.57,-298.67,40,0
+    .goto 1424/0,-791.89,-326.61,0
     .goto 1424/0,-791.89,-326.61,40,0
-    .goto 1424/0,-688.85,-443.52,40,0
-    .goto 1424/0,-509.01,-517.97,40,0
-    .goto 1424/0,-487.89,-586.45,40,0
-    .goto 1424/0,-639.57,-506.03,40,0
-    .goto 1424/0,-734.29,-520.96,40,0
     .goto 1424/0,-753.17,-460.16,40,0
-    .goto 1424/0,-837.65,-379.73,40,0
+    .goto 1424/0,-675.09,-499.20,40,0
+    .goto 1424/0,-528.53,-553.17,40,0
     >>Kill |cRXP_ENEMY_Gray Bears|r, |cRXP_ENEMY_Vicious Gray Bears|r, |cRXP_ENEMY_Elder Gray Bears|r and |cRXP_ENEMY_Big Samras|r. Loot them for |cRXP_LOOT_Gray Bear Tongue|r
     .complete 496,1 --Gray Bear Tongue (10)
     .mob Gray Bear
@@ -296,13 +280,9 @@ step << Undead Paladin
     .isOnQuest 95125
 step
     #loop
-    .goto 1424/0,-746.13,40.32,0
-    .goto 1424/0,-746.13,40.32,40,0
+    .goto 1424/0,-760.85,111.36,0
     .goto 1424/0,-760.85,111.36,40,0
-    .goto 1424/0,-833.49,108.16,40,0
     .goto 1424/0,-937.17,107.73,40,0
-    .goto 1424/0,-971.41,94.08,40,0
-    .goto 1424/0,-880.53,83.41,40,0
     >>Kill |cRXP_ENEMY_Elder Moss Creepers|r, |cRXP_ENEMY_Giant Moss Creepers|r, |cRXP_ENEMY_Forest Moss Creepers|r and |cRXP_ENEMY_Creepthess|r. Loot them for |cRXP_LOOT_Creeper Ichor|r
     .complete 496,2 --Creeper Ichor (1)
     .mob Elder Moss Creeper
@@ -348,16 +328,10 @@ step
     .xp 24 >>Grind to level 24
 step
     #loop
-    .goto 1424/0,-129.81,-1011.84,0
-    .goto 1424/0,-129.81,-1011.84,40,0
-    .goto 1424/0,-75.09,-1016.53,40,0
-    .goto 1424/0,-39.25,-1108.69,40,0
-    .goto 1424/0,21.23,-1142.19,40,0
-    .goto 1424/0,44.91,-1227.31,40,0
-    .goto 1424/0,-54.93,-1178.24,40,0
-    .goto 1424/0,-149.97,-1153.71,40,0
-    .goto 1424/0,-211.73,-1153.49,40,0
-    .goto 1424/0,-127.89,-1099.09,40,0
+    .goto 1424/0,-167.89,-1117.23,0
+    .goto 1424/0,-167.89,-1117.23,40,0
+    .goto 1424/0,-87.25,-1066.45,40,0
+    .goto 1424/0,11.31,-1147.52,40,0
     >>Kill |cRXP_ENEMY_Torn Fin Muckdwellers|r, |cRXP_ENEMY_Torn Fin Coastrunners|r, |cRXP_ENEMY_Torn Fin Oracles|r and |cRXP_ENEMY_Torn Fin Tidehunters|r. Loot them for |cRXP_LOOT_Torn Fin Eye|r
     .complete 515,3 --Torn Fin Eye (5)
     .mob Torn Fin Muckdweller
@@ -367,16 +341,10 @@ step
     .isOnQuest 515
 step
     #loop
-    .goto 1424/0,-906.45,-1345.49,0
-    .goto 1424/0,-906.45,-1345.49,40,0
-    .goto 1424/0,-981.01,-1351.89,40,0
-    .goto 1424/0,-976.53,-1418.03,40,0
-    .goto 1424/0,-1027.09,-1440.64,40,0
-    .goto 1424/0,-1084.37,-1457.71,40,0
-    .goto 1424/0,-1040.53,-1382.61,40,0
-    .goto 1424/0,-1014.29,-1313.92,40,0
-    .goto 1424/0,-1054.61,-1297.28,40,0
-    .goto 1424/0,-985.17,-1236.48,40,0
+    .goto 1424/0,-947.41,-1394.35,0
+    .goto 1424/0,-947.41,-1394.35,40,0
+    .goto 1424/0,-1046.93,-1419.52,40,0
+    .goto 1424/0,-1026.13,-1308.80,40,0
     >>Kill |cRXP_ENEMY_Daggerspine Shorestalkers|r, |cRXP_ENEMY_Daggerspine Shorehunters|r, |cRXP_ENEMY_Daggerspine Screamers|r and |cRXP_ENEMY_Daggerspine Sirens|r. Loot them for |cRXP_LOOT_Daggerspine Scale|r
     .complete 515,2 --Daggerspine Scale (5)
     .mob Daggerspine Shorestalker
@@ -446,7 +414,7 @@ step << Shaman Rogue/Rogue Rogue
     .target Ott
     .subzoneskip 272,1
 step
-    .goto 1424/0,-1486.61,-445.87
+    .goto 1424/0,-1477.01,-465.49
     >>Click the |cRXP_PICK_Locked ball and chain|r
     >>Kill |cRXP_ENEMY_Jailor Marlgen|r and loot |cRXP_LOOT_Burnished Gold Key|r
     >>Kill |cRXP_ENEMY_Jailor Eston|r and loot |cRXP_LOOT_Dull Iron Key|r
@@ -499,26 +467,16 @@ step
     .mob Hillsbrad Farmhand
 step
     #label Along7
-    #loop
-    .goto 1424/0,-104.53,-440.53,0
-    .goto 1424/0,-104.53,-440.53,40,0
-    .goto 1424/0,-59.73,-461.87,40,0
-    .goto 1424/0,-59.73,-410.67,40,0
+    .goto 1424/0,-98.13,-440.53
     >>Kill |cRXP_ENEMY_Farmer Getzs|r
     .complete 527,4 --Farmer Getz slain (8)
     .mob Farmer Getz
 step
     #loop
-    .goto 1424/0,-61.65,-417.92,0
-    .goto 1424/0,-61.65,-417.92,40,0
-    .goto 1424/0,-15.89,-455.25,40,0
-    .goto 1424/0,-110.29,-481.92,40,0
-    .goto 1424/0,-58.77,-610.35,40,0
+    .goto 1424/0,-55.25,-455.25,0
+    .goto 1424/0,-55.25,-455.25,40,0
     .goto 1424/0,-50.13,-551.89,40,0
-    .goto 1424/0,96.75,-431.79,40,0
-    .goto 1424/0,89.71,-352.21,40,0
-    .goto 1424/0,35.95,-371.63,40,0
-    .goto 1424/0,-21.97,-361.39,40,0
+    .goto 1424/0,81.39,-378.88,40,0
     >>Kill |cRXP_ENEMY_Farmer Ray|r
     >>Kill |cRXP_ENEMY_Hillsbrad Farmers|r
     >>Kill |cRXP_ENEMY_Hillsbrad Farmhands|r
@@ -543,12 +501,7 @@ step
     #loop
     .goto 1424/0,-66.45,-496.21,0
     .goto 1424/0,-66.45,-496.21,40,0
-    .goto 1424/0,-72.21,-545.28,40,0
-    .goto 1424/0,-99.41,-569.17,40,0
-    .goto 1424/0,-68.69,-585.60,40,0
-    .goto 1424/0,-46.29,-606.08,40,0
-    .goto 1424/0,-10.45,-610.13,40,0
-    .goto 1424/0,-43.41,-551.04,40,0
+    .goto 1424/0,-45.65,-583.68,40,0
     >>Kill |cRXP_ENEMY_Hillsbrad Peasants|r
     .complete 528,1 --Hillsbrad Peasant slain (15)
     .mob Hillsbrad Peasant
@@ -557,16 +510,10 @@ step << Mage
     .vendor >> Buy level 25 drink from the Innkeeper once you hearthed
 step
     #loop
-    .goto 1424/0,-533.65,-479.57,0
-    .goto 1424/0,-533.65,-479.57,40,0
-    .goto 1424/0,-584.85,-489.60,40,0
-    .goto 1424/0,-593.17,-553.60,40,0
-    .goto 1424/0,-657.17,-545.28,40,0
-    .goto 1424/0,-713.17,-547.84,40,0
-    .goto 1424/0,-818.13,-462.08,40,0
+    .goto 1424/0,-611.73,-365.01,0
+    .goto 1424/0,-611.73,-365.01,40,0
     .goto 1424/0,-646.93,-450.56,40,0
-    .goto 1424/0,-640.85,-369.49,40,0
-    .goto 1424/0,-565.01,-356.48,40,0
+    .goto 1424/0,-818.13,-462.08,40,0
     >>Kill |cRXP_ENEMY_Starving Mountain Lions|r, |cRXP_ENEMY_Feral Mountain Lions|r and |cRXP_ENEMY_Mountain Lions|r. Loot them for |cRXP_LOOT_Mountain Lion Blood|r
     .complete 501,1 --Mountain Lion Blood (1)
     .mob Starving Mountain Lion
@@ -596,16 +543,10 @@ step
     .target High Executor Darthalia
 step
     #loop
-    .goto 1424/0,29.87,-710.40,0
-    .goto 1424/0,29.87,-710.40,40,0
-    .goto 1424/0,35.95,-784.21,40,0
-    .goto 1424/0,61.87,-869.33,40,0
-    .goto 1424/0,154.03,-885.76,40,0
-    .goto 1424/0,219.63,-918.61,40,0
-    .goto 1424/0,180.59,-831.79,40,0
+    .goto 1424/0,67.31,-732.80,0
+    .goto 1424/0,67.31,-732.80,40,0
     .goto 1424/0,127.47,-812.37,40,0
-    .goto 1424/0,166.19,-691.41,40,0
-    .goto 1424/0,92.27,-750.51,40,0
+    .goto 1424/0,186.67,-865.49,40,0
     >>Kill |cRXP_ENEMY_Farmer Rays|r, |cRXP_ENEMY_Syndicate Shadow Mages|r, |cRXP_ENEMY_Syndicate Rogues|r and |cRXP_ENEMY_Syndicate Watchmans|r. Loot them for |cRXP_LOOT_Hillsbrad Human Skull|r
     .complete 546,1 --Hillsbrad Human Skull (30)
     .mob Farmer Ray
@@ -676,13 +617,7 @@ step
     .mob Blacksmith Verringtan
     .isOnQuest 529
 step
-    #loop
-    .goto 1424/0,55.15,-548.91,0
-    .goto 1424/0,55.15,-548.91,40,0
-    .goto 1424/0,69.23,-536.53,40,0
-    .goto 1424/0,69.87,-596.69,40,0
-    .goto 1424/0,43.95,-577.71,40,0
-    .goto 1424/0,22.83,-562.99,40,0
+    .goto 1424/0,43.95,-577.71
     >>Kill |cRXP_ENEMY_Hillsbrad Apprentice Blacksmiths|r
     .complete 529,2 --Hillsbrad Apprentice Blacksmith slain (4)
     .mob Hillsbrad Apprentice Blacksmith
@@ -711,16 +646,7 @@ step
     .target Deathstalker Masoj
     .isOnQuest 98095
 step
-    #loop
-    .goto 1424/0,-985.49,-881.28,0
-    .goto 1424/0,-985.49,-881.28,40,0
-    .goto 1424/0,-961.17,-897.28,40,0
-    .goto 1424/0,-987.09,-914.56,40,0
-    .goto 1424/0,-985.17,-935.68,40,0
-    .goto 1424/0,-1017.17,-933.97,40,0
-    .goto 1424/0,-1042.45,-912.21,40,0
-    .goto 1424/0,-1028.69,-896.00,40,0
-    .goto 1424/0,-1021.33,-883.63,40,0
+    .goto 1424/0,-999.25,-906.67
     >>Loot the |cRXP_PICK_Mudsnout Blossoms|r for |cRXP_LOOT_Mudsnout Blossoms|r
     .complete 509,1 --Mudsnout Blossoms (6)
 step
@@ -792,16 +718,9 @@ step
     .target Novice Thaivand
 step
     #loop
-    .goto 1424/0,-450.13,-258.77,0
-    .goto 1424/0,-450.13,-258.77,40,0
-    .goto 1424/0,-382.29,-266.45,40,0
-    .goto 1424/0,-358.93,-226.35,40,0
-    .goto 1424/0,-377.81,-179.84,40,0
-    .goto 1424/0,-353.49,-133.97,40,0
-    .goto 1424/0,-321.49,-192.85,40,0
-    .goto 1424/0,-285.97,-251.31,40,0
-    .goto 1424/0,-279.25,-307.84,40,0
-    .goto 1424/0,-417.17,-325.55,40,0
+    .goto 1424/0,-413.97,-280.96,0
+    .goto 1424/0,-413.97,-280.96,40,0
+    .goto 1424/0,-338.45,-212.91,40,0
     >>Kill |cRXP_ENEMY_Cave Yetis|r and |cRXP_ENEMY_Ferocious Yetis|r. Loot them for |cRXP_LOOT_Helcular's Rod|r
     .complete 552,1 --Helcular's Rod (1)
     .mob Cave Yeti
@@ -834,14 +753,7 @@ step
     .complete 532,3 --Hillsbrad Proclamation destroyed
     .isOnQuest 532
 step
-    #loop
-    .goto 1424/0,100.59,-499.41,0
-    .goto 1424/0,100.59,-499.41,40,0
-    .goto 1424/0,119.79,-447.36,40,0
-    .goto 1424/0,129.07,-472.11,40,0
-    .goto 1424/0,123.63,-520.32,40,0
-    .goto 1424/0,98.99,-529.07,40,0
-    .goto 1424/0,40.75,-505.17,40,0
+    .goto 1424/0,100.59,-499.41
     >>Kill |cRXP_ENEMY_Hillsbrad Councilmans|r
     .complete 532,2 --Hillsbrad Councilman slain (8)
     .mob Hillsbrad Councilman
@@ -875,16 +787,9 @@ step
     .isOnQuest 539
 step
     #loop
-    .goto 1424/0,92.59,-786.56,0
-    .goto 1424/0,92.59,-786.56,40,0
-    .goto 1424/0,35.95,-784.21,40,0
-    .goto 1424/0,29.87,-710.40,40,0
-    .goto 1424/0,166.19,-691.41,40,0
-    .goto 1424/0,161.07,-769.07,40,0
-    .goto 1424/0,202.99,-837.76,40,0
-    .goto 1424/0,140.27,-822.83,40,0
-    .goto 1424/0,100.27,-846.08,40,0
-    .goto 1424/0,61.87,-869.33,40,0
+    .goto 1424/0,65.71,-834.13,0
+    .goto 1424/0,65.71,-834.13,40,0
+    .goto 1424/0,67.31,-732.80,40,0
     >>Kill |cRXP_ENEMY_Hillsbrad Miners|r
     .complete 539,2 --Hillsbrad Miner slain (10)
     .mob Hillsbrad Miner
@@ -918,16 +823,9 @@ step
     .isOnQuest 98095
 step
     #loop
-    .goto 1424/0,-1177.81,-1149.01,0
-    .goto 1424/0,-1177.81,-1149.01,40,0
-    .goto 1424/0,-1173.33,-1200.85,40,0
-    .goto 1424/0,-1158.29,-1262.72,40,0
-    .goto 1424/0,-1137.17,-1296.85,40,0
-    .goto 1424/0,-1189.97,-1300.91,40,0
-    .goto 1424/0,-1247.25,-1356.59,40,0
-    .goto 1424/0,-1258.45,-1304.96,40,0
-    .goto 1424/0,-1206.93,-1266.99,40,0
-    .goto 1424/0,-1222.61,-1201.71,40,0
+    .goto 1424/0,-1180.37,-1261.65,0
+    .goto 1424/0,-1180.37,-1261.65,40,0
+    .goto 1424/0,-1230.29,-1316.27,40,0
     >>Kill |cRXP_ENEMY_Dun Garok Mountaineers|r, |cRXP_ENEMY_Dun Garok Riflemans|r, |cRXP_ENEMY_Dun Garok Priests|r and |cRXP_ENEMY_Tamra Stormpikes|r. Loot them for |cRXP_LOOT_Humbert's Sword|r
     .complete 547,1 --Humbert's Sword (1)
     .mob Dun Garok Mountaineer
@@ -935,7 +833,7 @@ step
     .mob Dun Garok Priest
     .mob Tamra Stormpike
 step
-    .goto 1424/0,-1237.97,-1331.41
+    .goto 1424/0,-1225.17,-1309.87
     >>Pick up |cRXP_PICK_Keg of Shindigger Stout|r from the ground
     .complete 517,1 --Keg of Shindigger Stout (1)
     .isOnQuest 517
@@ -1059,16 +957,9 @@ step
     .use 4614
 step
     #loop
-    .goto 1424/0,-1177.81,-1149.01,0
-    .goto 1424/0,-1177.81,-1149.01,40,0
+    .goto 1424/0,-1173.33,-1200.85,0
     .goto 1424/0,-1173.33,-1200.85,40,0
-    .goto 1424/0,-1158.29,-1262.72,40,0
-    .goto 1424/0,-1137.17,-1296.85,40,0
-    .goto 1424/0,-1189.97,-1300.91,40,0
-    .goto 1424/0,-1262.61,-1334.83,40,0
-    .goto 1424/0,-1258.45,-1304.96,40,0
-    .goto 1424/0,-1242.13,-1285.97,40,0
-    .goto 1424/0,-1206.93,-1266.99,40,0
+    .goto 1424/0,-1240.53,-1317.33,40,0
     >>Kill |cRXP_ENEMY_Dun Garok Mountaineers|r
     .complete 541,1 --Dun Garok Mountaineer slain (8)
     .mob Dun Garok Mountaineer
@@ -1077,22 +968,14 @@ step
     #loop
     .goto 1424/0,-1220.69,-1310.72,0
     .goto 1424/0,-1220.69,-1310.72,40,0
-    .goto 1424/0,-1223.89,-1335.68,40,0
-    .goto 1424/0,-1257.17,-1311.57,40,0
     .goto 1424/0,-1222.61,-1201.71,40,0
-    .goto 1424/0,-1172.37,-1232.64,40,0
-    .goto 1424/0,-1173.97,-1293.65,40,0
-    .goto 1424/0,-1195.09,-1276.80,40,0
-    .goto 1424/0,-1221.01,-1276.59,40,0
     >>Kill |cRXP_ENEMY_Dun Garok Riflemans|r
     .complete 541,2 --Dun Garok Rifleman slain (8)
     .mob Dun Garok Rifleman
     .isOnQuest 541
 step
     #loop
-    .goto 1424/0,-1230.29,-1316.27,0
-    .goto 1424/0,-1230.29,-1316.27,40,0
-    .goto 1424/0,-1258.45,-1320.96,40,0
+    .goto 1424/0,-1240.21,-1307.73,0
     .goto 1424/0,-1240.21,-1307.73,40,0
     .goto 1424/0,-1195.73,-1216.64,40,0
     >>Kill |cRXP_ENEMY_Dun Garok Priests|r
@@ -1101,7 +984,7 @@ step
     .isOnQuest 541
 step
     #label Drop635x1
-    .goto 1424/0,-1255.89,-1307.31
+    .goto 1424/0,-1254.29,-1299.20
     >>Kill |cRXP_ENEMY_Captain Ironhills|r
     .complete 541,4 --Captain Ironhill slain (8)
     .mob Captain Ironhill

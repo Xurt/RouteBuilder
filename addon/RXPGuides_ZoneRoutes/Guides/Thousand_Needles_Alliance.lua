@@ -60,11 +60,7 @@ step
     >>As you go: Loot the |cRXP_PICK_Rocket Car Rubbles|r for |cRXP_LOOT_Rocket Car Parts|r. |cRXP_WARN_Anything left is finished later|r
     .complete 1110,1 --Rocket Car Parts (30)
 step
-    #loop
-    .goto 1441/1,-4278.93,-5870.99,0
-    .goto 1441/1,-4278.93,-5870.99,40,0
-    .goto 1441/1,-4303.13,-5882.72,40,0
-    .goto 1441/1,-4315.45,-5905.01,40,0
+    .goto 1441/1,-4303.13,-5882.72
     >>Kill |cRXP_ENEMY_Salt Flats Scavengers|r and |cRXP_ENEMY_Salt Flats Vultures|r. Loot them for |cRXP_LOOT_Hollow Vulture Bone|r
     .complete 1176,1 --Hollow Vulture Bone (10)
     .mob Salt Flats Scavenger
@@ -73,14 +69,8 @@ step
     #loop
     .goto 1441/1,-4119.21,-5748.37,0
     .goto 1441/1,-4119.21,-5748.37,40,0
-    .goto 1441/1,-4113.93,-5682.96,40,0
-    .goto 1441/1,-4121.85,-5617.25,40,0
-    .goto 1441/1,-4113.49,-5549.79,40,0
-    .goto 1441/1,-4072.57,-5581.76,40,0
+    .goto 1441/1,-4052.77,-5585.87,40,0
     .goto 1441/1,-4023.73,-5535.41,40,0
-    .goto 1441/1,-4011.85,-5511.95,40,0
-    .goto 1441/1,-4018.01,-5576.48,40,0
-    .goto 1441/1,-4015.81,-5624.29,40,0
     >>Kill |cRXP_ENEMY_Sparkleshell Tortoises|r, |cRXP_ENEMY_Sparkleshell Snappers|r and |cRXP_ENEMY_Sparkleshell Borers|r. Loot them for |cRXP_LOOT_Hardened Tortoise Shell|r
     .complete 1105,1 --Hardened Tortoise Shell (9)
     .mob Sparkleshell Tortoise
@@ -91,13 +81,8 @@ step
     #loop
     .goto 1441/1,-3754.01,-5954.59,0
     .goto 1441/1,-3754.01,-5954.59,40,0
-    .goto 1441/1,-3604.85,-6115.04,40,0
-    .goto 1441/1,-3578.45,-6156.99,40,0
-    .goto 1441/1,-3548.97,-6218.00,40,0
-    .goto 1441/1,-3552.05,-6117.97,40,0
-    .goto 1441/1,-3537.53,-6105.65,40,0
     .goto 1441/1,-3570.53,-6103.60,40,0
-    .goto 1441/1,-3593.85,-6106.53,40,0
+    .goto 1441/1,-3548.97,-6218.00,40,0
     >>Kill |cRXP_ENEMY_Scorpid Terrors|r, |cRXP_ENEMY_Scorpid Reavers|r and |cRXP_ENEMY_Vile Stings|r. Loot them for |cRXP_LOOT_Salty Scorpid Venom|r
     .complete 1104,1 --Salty Scorpid Venom (6)
     .mob Scorpid Terror
@@ -105,16 +90,11 @@ step
     .mob Vile Sting
 step
     #loop
-    .goto 1441/1,-3584.61,-6315.39,0
-    .goto 1441/1,-3584.61,-6315.39,40,0
-    .goto 1441/1,-3625.09,-6335.92,40,0
-    .goto 1441/1,-3812.53,-6466.75,40,0
-    .goto 1441/1,-3860.93,-6436.53,40,0
-    .goto 1441/1,-3926.93,-6509.87,40,0
-    .goto 1441/1,-3887.33,-6606.67,40,0
-    .goto 1441/1,-3843.33,-6624.27,40,0
-    .goto 1441/1,-3790.97,-6592.29,40,0
-    .goto 1441/1,-3786.13,-6515.73,40,0
+    .goto 1441/1,-3618.93,-6333.87,0
+    .goto 1441/1,-3618.93,-6333.87,40,0
+    .goto 1441/1,-3860.93,-6474.67,40,0
+    .goto 1441/1,-3926.93,-6474.67,40,0
+    .goto 1441/1,-3843.33,-6618.40,40,0
     >>Loot the |cRXP_PICK_Rocket Car Rubbles|r for |cRXP_LOOT_Rocket Car Parts|r
     .complete 1110,1 --Rocket Car Parts (30)
 step
@@ -345,31 +325,17 @@ step
     .target Trackmaster Zherin
 step
     #loop
-    .goto 1441/1,-3816.49,-5754.24,0
-    .goto 1441/1,-3816.49,-5754.24,40,0
+    .goto 1441/1,-3837.61,-5714.35,0
     .goto 1441/1,-3837.61,-5714.35,40,0
-    .goto 1441/1,-3886.89,-5697.33,40,0
-    .goto 1441/1,-3817.81,-5655.68,40,0
-    .goto 1441/1,-3779.97,-5621.07,40,0
     .goto 1441/1,-3754.89,-5649.52,40,0
-    .goto 1441/1,-3680.09,-5650.99,40,0
-    .goto 1441/1,-3673.49,-5710.24,40,0
-    .goto 1441/1,-3748.73,-5769.79,40,0
     >>Kill |cRXP_ENEMY_Saltstone Basilisks|r
     .complete 1175,1 --Saltstone Basilisk slain (10)
     .mob Saltstone Basilisk
 step
     #loop
-    .goto 1441/1,-3818.69,-6450.61,0
-    .goto 1441/1,-3818.69,-6450.61,40,0
-    .goto 1441/1,-3783.05,-6486.11,40,0
-    .goto 1441/1,-3775.57,-6619.28,40,0
-    .goto 1441/1,-3859.61,-6613.41,40,0
-    .goto 1441/1,-3949.37,-6587.89,40,0
-    .goto 1441/1,-3908.01,-6552.11,40,0
-    .goto 1441/1,-3844.65,-6547.41,40,0
-    .goto 1441/1,-3878.53,-6505.17,40,0
-    .goto 1441/1,-3924.73,-6479.95,40,0
+    .goto 1441/1,-3941.45,-6553.57,0
+    .goto 1441/1,-3941.45,-6553.57,40,0
+    .goto 1441/1,-3841.57,-6596.11,40,0
     >>Kill |cRXP_ENEMY_Saltstone Crystalhides|r
     >>Kill |cRXP_ENEMY_Saltstone Gazers|r
     .complete 1175,2 --Saltstone Crystalhide slain (10)

@@ -47,6 +47,11 @@ public static class Tuning
     public static int SectionHubPickups = 4;   // a quest hub with at least this many pickups can start a section
     public static int SectionMinSteps = 40;    // a section runs at least this many tasks before the next can start
     public static int SectionLevelStep = 2;
+    // loops of waypoints over a spawn patch
+    public static double LoopSingleSpan = 110;     // a patch narrower than this gets one pin at its busiest spot, not a loop
+    public static double LoopSpacing = 120;        // about one waypoint per this many yards across the patch
+    public static int LoopMaxPoints = 6;           // at most this many waypoints
+    public static double LoopGroupRadius = 45;     // a waypoint goes on the spawn with the most others this close
     // link: suggested next zones
     public static int LinkSuggestions = 3;            // how many zones a guide suggests
     public static double LinkMinLevels = 0.5;         // a zone must still hold this many levels of quest experience

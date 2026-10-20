@@ -28,16 +28,10 @@ step << !Druid
     .xp 2 >> Grind to level 2
 step
     #loop
-    .goto 1438/1,744.31,10270.46,0
-    .goto 1438/1,744.31,10270.46,40,0
+    .goto 1438/1,689.32,10320.69,0
     .goto 1438/1,689.32,10320.69,40,0
-    .goto 1438/1,677.61,10441.85,40,0
-    .goto 1438/1,684.23,10497.51,40,0
-    .goto 1438/1,537.08,10457.80,40,0
-    .goto 1438/1,539.62,10404.86,40,0
+    .goto 1438/1,656.22,10390.60,40,0
     .goto 1438/1,589.01,10401.12,40,0
-    .goto 1438/1,656.73,10375.67,40,0
-    .goto 1438/1,648.59,10289.13,40,0
     >>Kill |cRXP_ENEMY_Young Nightsabers|r
     >>Kill |cRXP_ENEMY_Young Thistle Boars|r
     .complete 456,1 --Young Nightsaber slain (7)
@@ -139,16 +133,9 @@ step << NightElf Hunter
     .target Ayanna Everstride
 step
     #loop
-    .goto 1438/1,942.88,10265.71,0
-    .goto 1438/1,942.88,10265.71,40,0
-    .goto 1438/1,955.10,10276.57,40,0
-    .goto 1438/1,967.32,10298.97,40,0
-    .goto 1438/1,973.43,10327.82,40,0
+    .goto 1438/1,972.92,10286.75,0
+    .goto 1438/1,972.92,10286.75,40,0
     .goto 1438/1,1009.08,10483.93,40,0
-    .goto 1438/1,1020.79,10354.63,40,0
-    .goto 1438/1,1036.57,10343.77,40,0
-    .goto 1438/1,1018.75,10333.59,40,0
-    .goto 1438/1,964.78,10271.14,40,0
     >>Kill |cRXP_ENEMY_Grells|r and |cRXP_ENEMY_Grellkins|r. Loot them for |cRXP_LOOT_Fel Moss|r
     >>Pick up |cRXP_PICK_Gnarlpine Totem|r from the ground
     .complete 459,1 --Fel Moss (8)
@@ -231,30 +218,16 @@ step
 step
     #label Along15
     #loop
-    .goto 1438/1,895.02,10484.95,0
-    .goto 1438/1,895.02,10484.95,40,0
-    .goto 1438/1,937.28,10510.74,40,0
-    .goto 1438/1,915.39,10577.26,40,0
-    .goto 1438/1,887.89,10608.48,40,0
-    .goto 1438/1,857.34,10623.08,40,0
+    .goto 1438/1,922.52,10536.53,0
+    .goto 1438/1,922.52,10536.53,40,0
     .goto 1438/1,858.87,10587.44,40,0
-    .goto 1438/1,813.56,10563.68,40,0
-    .goto 1438/1,827.30,10535.86,40,0
-    .goto 1438/1,859.38,10526.35,40,0
     >>Pick up |cRXP_PICK_Moonpetal Lily|r from the ground
     .complete 3521,2 --Moonpetal Lily (4)
 step
     #loop
-    .goto 1438/1,934.23,10665.84,0
-    .goto 1438/1,934.23,10665.84,40,0
-    .goto 1438/1,944.41,10704.53,40,0
-    .goto 1438/1,944.41,10802.60,40,0
-    .goto 1438/1,924.04,10766.63,40,0
-    .goto 1438/1,902.66,10735.75,40,0
-    .goto 1438/1,872.11,10723.87,40,0
-    .goto 1438/1,822.72,10696.72,40,0
-    .goto 1438/1,882.29,10681.79,40,0
-    .goto 1438/1,900.11,10679.75,40,0
+    .goto 1438/1,874.15,10707.92,0
+    .goto 1438/1,874.15,10707.92,40,0
+    .goto 1438/1,926.08,10769.35,40,0
     >>Kill |cRXP_ENEMY_Webwood Spider|r and loot |cRXP_LOOT_Webwood Ichor|r
     >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for |cRXP_LOOT_Webwood Venom Sac|r
     .complete 3521,3 --Webwood Ichor (1)
@@ -262,16 +235,9 @@ step
     .mob Webwood Spider
 step
     #loop
-    .goto 1438/1,1020.79,10354.63,0
-    .goto 1438/1,1020.79,10354.63,40,0
-    .goto 1438/1,1036.57,10343.77,40,0
-    .goto 1438/1,1018.75,10333.59,40,0
-    .goto 1438/1,967.32,10298.97,40,0
-    .goto 1438/1,964.78,10271.14,40,0
+    .goto 1438/1,1033.01,10336.30,0
+    .goto 1438/1,1033.01,10336.30,40,0
     .goto 1438/1,955.10,10276.57,40,0
-    .goto 1438/1,942.88,10265.71,40,0
-    .goto 1438/1,892.48,10275.89,40,0
-    .goto 1438/1,908.26,10328.16,40,0
     >>Kill |cRXP_ENEMY_Grells|r and |cRXP_ENEMY_Grellkins|r. Loot them for |cRXP_LOOT_Hyacinth Mushroom|r. It can also be picked up from |cRXP_PICK_Hyacinth Mushroom|r on the ground
     .complete 3521,1 --Hyacinth Mushroom (7)
     .mob Grell
@@ -306,7 +272,7 @@ step << NightElf Priest
     .target Shanda
     .xp <5,1
 step
-    .goto 1438/1,929.14,10933.26
+    .goto 1438/1,922.52,10933.26
     >>Open the |cRXP_PICK_Webwood Eggs|r. Loot it for |cRXP_LOOT_Webwood Egg|r
     .complete 917,1 --Webwood Egg (1)
 step
@@ -337,16 +303,10 @@ step << NightElf Priest
     .xp <5,1
 step
     #loop
-    .goto 1438/1,695.94,10504.97,0
-    .goto 1438/1,695.94,10504.97,40,0
-    .goto 1438/1,849.20,10648.87,40,0
-    .goto 1438/1,788.61,10656.67,40,0
-    .goto 1438/1,762.13,10709.62,40,0
-    .goto 1438/1,759.58,10608.14,40,0
-    .goto 1438/1,689.83,10608.14,40,0
-    .goto 1438/1,629.24,10662.78,40,0
-    .goto 1438/1,613.96,10593.55,40,0
-    .goto 1438/1,584.43,10514.81,40,0
+    .goto 1438/1,748.89,10648.53,0
+    .goto 1438/1,748.89,10648.53,40,0
+    .goto 1438/1,689.83,10633.26,40,0
+    .goto 1438/1,642.48,10541.96,40,0
     >>Open the |cRXP_PICK_Shadowglen Moonwell|r. Loot it for |cRXP_LOOT_Filled Crystal Phial|r
     >>Kill |cRXP_ENEMY_Mangy Nightsabers|r
     >>Kill |cRXP_ENEMY_Thistle Boars|r
@@ -582,16 +542,12 @@ step
 step
     #label Drop927x1
     #loop
-    .goto 1438/1,647.06,9501.78,0
-    .goto 1438/1,647.06,9501.78,40,0
-    .goto 1438/1,778.42,9477.68,40,0
-    .goto 1438/1,827.30,9359.24,40,0
-    .goto 1438/1,1150.62,9319.88,40,0
-    .goto 1438/1,1123.13,9408.79,40,0
-    .goto 1438/1,1079.34,9492.62,40,0
-    .goto 1438/1,969.87,9551.33,40,0
-    .goto 1438/1,881.27,9590.70,40,0
-    .goto 1438/1,756.53,9643.30,40,0
+    .goto 1438/1,756.53,9438.66,0
+    .goto 1438/1,756.53,9438.66,40,0
+    .goto 1438/1,751.44,9615.47,40,0
+    .goto 1438/1,880.77,9621.24,40,0
+    .goto 1438/1,1067.12,9446.46,40,0
+    .goto 1438/1,1130.26,9354.83,40,0
     >>Kill |cRXP_ENEMY_Timberlings|r, |cRXP_ENEMY_Timberling Bark Rippers|r, |cRXP_ENEMY_Timberling Tramplers|r and |cRXP_ENEMY_Timberling Mire Beasts|r. Loot them for |cRXP_LOOT_Timberling Seed|r
     >>Pick up |cRXP_PICK_Timberling Sprout|r from the ground
     .complete 918,1 --Timberling Seed (8)
@@ -609,14 +565,10 @@ step
     .target Denalan
 step
     #loop
-    .goto 1438/1,605.31,9653.48,0
-    .goto 1438/1,605.31,9653.48,40,0
+    .goto 1438/1,555.92,9655.86,0
     .goto 1438/1,555.92,9655.86,40,0
-    .goto 1438/1,392.98,9747.15,40,0
-    .goto 1438/1,345.63,9722.03,40,0
-    .goto 1438/1,316.10,9713.55,40,0
-    .goto 1438/1,460.19,9556.42,40,0
     .goto 1438/1,477.00,9576.10,40,0
+    .goto 1438/1,345.63,9722.03,40,0
     >>Kill |cRXP_ENEMY_Strigid Owls|r, |cRXP_ENEMY_Strigid Screechers|r and |cRXP_ENEMY_Strigid Hunters|r. Loot them for |cRXP_LOOT_Strigid Owl Feather|r
     .complete 488,2 --Strigid Owl Feather (3)
     .mob Strigid Owl
@@ -642,27 +594,15 @@ step
     #loop
     .goto 1438/1,618.54,9785.16,0
     .goto 1438/1,618.54,9785.16,40,0
-    .goto 1438/1,617.53,9759.71,40,0
-    .goto 1438/1,649.60,9737.65,40,0
     .goto 1438/1,782.50,9693.53,40,0
-    .goto 1438/1,791.66,9736.63,40,0
-    .goto 1438/1,783.01,9747.49,40,0
-    .goto 1438/1,681.68,9828.26,40,0
-    .goto 1438/1,652.15,9791.61,40,0
     >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for |cRXP_LOOT_Soft Nightsaber Pelt|r
     .complete 87288,1 --Soft Nightsaber Pelt (6)
     .mob Nightsaber
 step
     #loop
-    .goto 1438/1,652.15,9791.61,0
-    .goto 1438/1,652.15,9791.61,40,0
+    .goto 1438/1,618.54,9785.16,0
     .goto 1438/1,618.54,9785.16,40,0
-    .goto 1438/1,617.53,9759.71,40,0
-    .goto 1438/1,649.60,9737.65,40,0
     .goto 1438/1,782.50,9693.53,40,0
-    .goto 1438/1,791.66,9736.63,40,0
-    .goto 1438/1,783.01,9747.49,40,0
-    .goto 1438/1,681.68,9828.26,40,0
     >>Kill |cRXP_ENEMY_Elder Nightsabers|r, |cRXP_ENEMY_Feral Nightsabers|r, |cRXP_ENEMY_Nightsabers|r and |cRXP_ENEMY_Nightsaber Stalkers|r. Loot them for |cRXP_LOOT_Nightsaber Fang|r
     .complete 488,1 --Nightsaber Fang (3)
     .mob Elder Nightsaber
@@ -672,14 +612,9 @@ step
     .isOnQuest 488
 step
     #loop
-    .goto 1438/1,702.05,9752.58,0
-    .goto 1438/1,702.05,9752.58,40,0
+    .goto 1438/1,747.87,9811.63,0
     .goto 1438/1,747.87,9811.63,40,0
-    .goto 1438/1,782.50,9805.18,40,0
-    .goto 1438/1,755.51,9854.73,40,0
-    .goto 1438/1,720.38,9892.40,40,0
-    .goto 1438/1,720.38,9978.94,40,0
-    .goto 1438/1,686.77,9978.26,40,0
+    .goto 1438/1,712.23,9957.90,40,0
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r, |cRXP_ENEMY_Webwood Venomfangs|r, |cRXP_ENEMY_Webwood Silkspinners|r and |cRXP_ENEMY_Giant Webwood Spiders|r. Loot them for |cRXP_LOOT_Webwood Spider Silk|r
     .complete 488,3 --Webwood Spider Silk (3)
     .mob Webwood Lurker
@@ -795,11 +730,9 @@ step
     .isOnQuest 932
 step
     #loop
-    .goto 1438/1,853.78,9952.13,0
-    .goto 1438/1,853.78,9952.13,40,0
-    .goto 1438/1,808.97,9927.02,40,0
+    .goto 1438/1,820.68,9948.06,0
+    .goto 1438/1,820.68,9948.06,40,0
     .goto 1438/1,810.50,9752.58,40,0
-    .goto 1438/1,808.46,9719.32,40,0
     >>Pick up |cRXP_PICK_Fel Cone|r from the ground
     .complete 489,1 --Fel Cone (3)
     .isOnQuest 489
@@ -817,12 +750,8 @@ step
     .isOnQuest 2459
 step
     #loop
-    .goto 1438/1,283.00,10025.44,0
-    .goto 1438/1,283.00,10025.44,40,0
-    .goto 1438/1,264.67,10036.30,40,0
+    .goto 1438/1,308.97,10054.62,0
     .goto 1438/1,308.97,10054.62,40,0
-    .goto 1438/1,328.83,10076.34,40,0
-    .goto 1438/1,338.50,10060.39,40,0
     .goto 1438/1,269.77,9953.83,40,0
     >>Kill |cRXP_ENEMY_Gnarlpine Mystics|r
     .complete 2459,1 --Gnarlpine Mystic slain (7)
@@ -872,14 +801,9 @@ step
     .isQuestTurnedIn 918 --any of: Timberling Seeds
 step
     #loop
-    .goto 1438/1,1453.58,9206.52,0
-    .goto 1438/1,1453.58,9206.52,40,0
+    .goto 1438/1,1430.16,9185.82,0
     .goto 1438/1,1430.16,9185.82,40,0
-    .goto 1438/1,1393.50,9167.50,40,0
-    .goto 1438/1,1318.14,9182.43,40,0
     .goto 1438/1,1373.64,9186.84,40,0
-    .goto 1438/1,1376.69,9196.68,40,0
-    .goto 1438/1,1403.68,9204.83,40,0
     >>Kill |cRXP_ENEMY_Gnarlpine Shaman|r and loot |cRXP_LOOT_Shaman Voodoo Charm|r
     .complete 2541,1 --Shaman Voodoo Charm (1)
     .mob Gnarlpine Shaman
@@ -927,15 +851,8 @@ step
     .unitscan Moon Priestess Amara
 step
     #loop
-    .goto 1438/1,1347.16,9995.23,0
-    .goto 1438/1,1347.16,9995.23,40,0
-    .goto 1438/1,1431.68,9985.39,40,0
-    .goto 1438/1,1458.67,9991.16,40,0
-    .goto 1438/1,1512.64,9977.24,40,0
-    .goto 1438/1,1485.15,10012.54,40,0
-    .goto 1438/1,1497.37,10035.62,40,0
-    .goto 1438/1,1464.78,10095.69,40,0
-    .goto 1438/1,1436.77,10050.55,40,0
+    .goto 1438/1,1355.82,10013.90,0
+    .goto 1438/1,1355.82,10013.90,40,0
     .goto 1438/1,1448.49,10018.31,40,0
     >>Kill |cRXP_ENEMY_Gnarlpine Ambushers|r
     .complete 487,1 --Gnarlpine Ambusher slain (6)
@@ -975,16 +892,9 @@ step
     .target Sentinel Lynessa Duskblossom
 step
     #loop
-    .goto 1438/1,1529.44,9841.16,0
-    .goto 1438/1,1529.44,9841.16,40,0
-    .goto 1438/1,1549.30,9795.00,40,0
-    .goto 1438/1,1499.40,9798.39,40,0
-    .goto 1438/1,1521.81,9750.88,40,0
-    .goto 1438/1,1547.26,9703.03,40,0
-    .goto 1438/1,1631.28,9752.92,40,0
-    .goto 1438/1,1607.85,9836.40,40,0
-    .goto 1438/1,1534.53,9928.04,40,0
-    .goto 1438/1,1461.21,9849.98,40,0
+    .goto 1438/1,1542.17,9875.43,0
+    .goto 1438/1,1542.17,9875.43,40,0
+    .goto 1438/1,1557.45,9775.32,40,0
     >>Kill |cRXP_ENEMY_Gnarlpine Ursas|r, |cRXP_ENEMY_Gnarlpine Gardeners|r, |cRXP_ENEMY_Gnarlpine Warriors|r and |cRXP_ENEMY_Gnarlpine Shamans|r. Loot them for |cRXP_LOOT_Gnarlpine Fang|r
     .complete 490,1 --Gnarlpine Fang (15)
     .mob Gnarlpine Ursa
@@ -1308,16 +1218,11 @@ step
     .isOnQuest 2399
 step
     #loop
-    .goto 1438/1,718.85,9540.47,0
-    .goto 1438/1,718.85,9540.47,40,0
-    .goto 1438/1,760.60,9467.16,40,0
-    .goto 1438/1,723.94,9356.19,40,0
-    .goto 1438/1,683.21,9471.92,40,0
-    .goto 1438/1,608.36,9624.63,40,0
-    .goto 1438/1,674.55,9618.53,40,0
-    .goto 1438/1,732.09,9647.03,40,0
-    .goto 1438/1,758.57,9728.48,40,0
-    .goto 1438/1,826.28,9641.60,40,0
+    .goto 1438/1,707.65,9469.54,0
+    .goto 1438/1,707.65,9469.54,40,0
+    .goto 1438/1,724.96,9576.44,40,0
+    .goto 1438/1,781.48,9641.94,40,0
+    .goto 1438/1,686.77,9603.25,40,0
     >>Kill |cRXP_ENEMY_Lasher Sproutlings|r, |cRXP_ENEMY_Blooming Lashers|r and |cRXP_ENEMY_Wrathvines|r. Loot them for |cRXP_LOOT_Dewy Lasher Frond|r
     .complete 99050,1 --Dewy Lasher Frond (6)
     .mob Lasher Sproutling
@@ -1338,16 +1243,9 @@ step
     .isOnQuest 99050
 step
     #loop
-    .goto 1438/1,1184.23,10319.00,0
-    .goto 1438/1,1184.23,10319.00,40,0
-    .goto 1438/1,1197.98,10293.54,40,0
-    .goto 1438/1,1296.75,10270.80,40,0
-    .goto 1438/1,1323.74,10273.86,40,0
-    .goto 1438/1,1288.61,10301.69,40,0
-    .goto 1438/1,1277.91,10338.34,40,0
-    .goto 1438/1,1279.44,10373.30,40,0
-    .goto 1438/1,1245.84,10347.50,40,0
-    .goto 1438/1,1196.96,10364.47,40,0
+    .goto 1438/1,1234.13,10349.54,0
+    .goto 1438/1,1234.13,10349.54,40,0
+    .goto 1438/1,1290.64,10295.58,40,0
     >>Kill |cRXP_ENEMY_Befouled Webwoods|r
     .complete 98403,1 --Befouled Webwood slain (8)
     .mob Befouled Webwood
@@ -1539,16 +1437,10 @@ step
     .zoneskip 1438
 step
     #loop
-    .goto 1438/1,1683.72,10413.00,0
-    .goto 1438/1,1683.72,10413.00,40,0
-    .goto 1438/1,1653.17,10449.65,40,0
+    .goto 1438/1,1652.15,10381.78,0
+    .goto 1438/1,1652.15,10381.78,40,0
     .goto 1438/1,1651.64,10518.55,40,0
-    .goto 1438/1,1651.64,10583.03,40,0
-    .goto 1438/1,1682.70,10680.09,40,0
-    .goto 1438/1,1580.87,10647.17,40,0
-    .goto 1438/1,1578.83,10501.24,40,0
-    .goto 1438/1,1586.47,10449.65,40,0
-    .goto 1438/1,1578.83,10382.46,40,0
+    .goto 1438/1,1651.13,10659.73,40,0
     >>Kill |cRXP_ENEMY_Timberling Tramplers|r, |cRXP_ENEMY_Timberling Mire Beasts|r and |cRXP_ENEMY_Elder Timberlings|r. Loot them for |cRXP_LOOT_Mossy Tumor|r
     .complete 923,1 --Mossy Tumor (5)
     .mob Timberling Trampler
@@ -1557,12 +1449,9 @@ step
     .isOnQuest 923
 step
     #loop
-    .goto 1438/1,1676.08,10962.45,0
-    .goto 1438/1,1676.08,10962.45,40,0
+    .goto 1438/1,1706.63,10976.03,0
     .goto 1438/1,1706.63,10976.03,40,0
-    .goto 1438/1,1808.47,10962.45,40,0
     .goto 1438/1,1798.28,10962.45,40,0
-    .goto 1438/1,1727.00,10962.45,40,0
     >>Kill |cRXP_ENEMY_Lady Sathrah|r and loot |cRXP_LOOT_Silvery Spinnerets|r
     .complete 2518,1 --Silvery Spinnerets (1)
     .mob Lady Sathrah
@@ -1573,16 +1462,9 @@ step << Rogue
     .mob Sethir the Ancient
 step
     #loop
-    .goto 1438/1,2067.63,10869.46,0
-    .goto 1438/1,2067.63,10869.46,40,0
-    .goto 1438/1,2076.29,10817.88,40,0
-    .goto 1438/1,2148.59,10746.27,40,0
-    .goto 1438/1,2155.72,10724.55,40,0
-    .goto 1438/1,2174.56,10732.69,40,0
-    .goto 1438/1,2196.96,10735.07,40,0
-    .goto 1438/1,2143.50,10796.50,40,0
-    .goto 1438/1,2128.73,10812.79,40,0
+    .goto 1438/1,2115.49,10835.86,0
     .goto 1438/1,2115.49,10835.86,40,0
+    .goto 1438/1,2174.56,10732.69,40,0
     >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r, |cRXP_ENEMY_Bloodfeather Rogues|r, |cRXP_ENEMY_Bloodfeather Sorceress|r and |cRXP_ENEMY_Bloodfeather Furies|r. Loot them for |cRXP_LOOT_Bloodfeather Belt|r
     .complete 937,1 --Bloodfeather Belt (6)
     .mob Bloodfeather Harpy
@@ -1922,7 +1804,7 @@ step
     .zone 1438 >>Leave Darnassus for Teldrassil
     .zoneskip 1438
 step
-    .goto 1438/1,1196.96,10302.71
+    .goto 1438/1,1197.98,10305.42
     >>Kill |cRXP_ENEMY_Xethorr the Wicked|r and loot |cRXP_LOOT_Mature Fel Moss|r
     .complete 98403,2 --Mature Fel Moss (1)
     .mob Xethorr the Wicked
@@ -2084,12 +1966,8 @@ step
     .zoneskip 1438
 step
     #loop
-    .goto 1438/1,338.50,10060.39,0
-    .goto 1438/1,338.50,10060.39,40,0
-    .goto 1438/1,328.83,10076.34,40,0
+    .goto 1438/1,308.97,10054.62,0
     .goto 1438/1,308.97,10054.62,40,0
-    .goto 1438/1,264.67,10036.30,40,0
-    .goto 1438/1,283.00,10025.44,40,0
     .goto 1438/1,269.77,9953.83,40,0
     >>Kill |cRXP_ENEMY_Gnarlpine Mystics|r
     .complete 2459,1 --Gnarlpine Mystic slain (7)

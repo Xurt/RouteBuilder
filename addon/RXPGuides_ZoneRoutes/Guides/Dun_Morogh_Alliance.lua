@@ -62,16 +62,10 @@ step << Shaman
     .target Teo Hammerstorm
 step
     #loop
-    .goto 1426/0,395.50,-6246.01,0
-    .goto 1426/0,395.50,-6246.01,40,0
-    .goto 1426/0,455.10,-6211.53,40,0
-    .goto 1426/0,519.12,-6148.82,40,0
-    .goto 1426/0,523.06,-6204.97,40,0
-    .goto 1426/0,402.89,-6318.24,40,0
-    .goto 1426/0,478.24,-6379.64,40,0
-    .goto 1426/0,362.51,-6437.43,40,0
-    .goto 1426/0,335.91,-6369.46,40,0
-    .goto 1426/0,257.11,-6302.48,40,0
+    .goto 1426/0,341.33,-6315.61,0
+    .goto 1426/0,341.33,-6315.61,40,0
+    .goto 1426/0,420.62,-6338.60,40,0
+    .goto 1426/0,497.94,-6202.01,40,0
     >>Kill |cRXP_ENEMY_Ragged Timber Wolfs|r and |cRXP_ENEMY_Ragged Young Wolfs|r. Loot them for |cRXP_LOOT_Tough Wolf Meat|r
     .complete 179,1 --Tough Wolf Meat (8)
     .mob Ragged Timber Wolf
@@ -101,16 +95,10 @@ step
     .target Balir Frosthammer
 step
     #loop
-    .goto 1426/0,244.31,-6296.57,0
-    .goto 1426/0,244.31,-6296.57,40,0
-    .goto 1426/0,301.44,-6336.63,40,0
-    .goto 1426/0,361.52,-6339.58,40,0
-    .goto 1426/0,438.35,-6389.16,40,0
-    .goto 1426/0,335.42,-6426.92,40,0
-    .goto 1426/0,242.34,-6424.62,40,0
-    .goto 1426/0,263.02,-6371.43,40,0
-    .goto 1426/0,213.77,-6367.82,40,0
-    .goto 1426/0,160.09,-6353.70,40,0
+    .goto 1426/0,290.60,-6343.85,0
+    .goto 1426/0,290.60,-6343.85,40,0
+    .goto 1426/0,235.44,-6364.21,40,0
+    .goto 1426/0,375.80,-6408.86,40,0
     >>Kill |cRXP_ENEMY_Rockjaw Troggs|r
     >>Kill |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Rockjaw Trogg slain (6)
@@ -133,15 +121,9 @@ step << Gnome Warlock
     .target Sten Stoutarm
 step << Warlock
     #loop
-    .goto 1426/0,300.94,-6488.65,0
-    .goto 1426/0,300.94,-6488.65,40,0
-    .goto 1426/0,313.26,-6512.61,40,0
-    .goto 1426/0,355.12,-6538.55,40,0
-    .goto 1426/0,371.37,-6542.16,40,0
-    .goto 1426/0,374.33,-6588.13,40,0
-    .goto 1426/0,389.10,-6606.85,40,0
-    .goto 1426/0,319.66,-6581.89,40,0
+    .goto 1426/0,304.39,-6532.31,0
     .goto 1426/0,304.39,-6532.31,40,0
+    .goto 1426/0,389.10,-6606.85,40,0
     >>Kill |cRXP_ENEMY_Frostmane Novices|r. Loot them for |cRXP_LOOT_Feather Charm|r
     .complete 1599,1 --Feather Charm (3)
     .mob Frostmane Novice
@@ -188,16 +170,10 @@ step
     .target Talin Keeneye
 step
     #loop
-    .goto 1426/0,618.61,-6257.50,0
-    .goto 1426/0,618.61,-6257.50,40,0
-    .goto 1426/0,550.64,-6182.97,40,0
-    .goto 1426/0,512.72,-6214.49,40,0
-    .goto 1426/0,412.74,-6275.23,40,0
-    .goto 1426/0,451.16,-6228.61,40,0
-    .goto 1426/0,492.53,-6128.46,40,0
-    .goto 1426/0,546.21,-6121.90,40,0
-    .goto 1426/0,589.55,-6147.84,40,0
+    .goto 1426/0,640.77,-6127.81,0
     .goto 1426/0,640.77,-6127.81,40,0
+    .goto 1426/0,522.08,-6148.16,40,0
+    .goto 1426/0,422.59,-6276.21,40,0
     >>Kill |cRXP_ENEMY_Small Crag Boars|r
     .complete 183,1 --Small Crag Boar slain (12)
     .mob Small Crag Boar
@@ -402,16 +378,9 @@ step
     .isOnQuest 3361
 step
     #loop
-    .goto 1426/0,685.59,-6509.99,0
-    .goto 1426/0,685.59,-6509.99,40,0
-    .goto 1426/0,631.41,-6514.58,40,0
-    .goto 1426/0,669.83,-6482.41,40,0
-    .goto 1426/0,703.32,-6442.02,40,0
-    .goto 1426/0,747.15,-6404.26,40,0
-    .goto 1426/0,767.83,-6350.42,40,0
-    .goto 1426/0,806.74,-6368.80,40,0
-    .goto 1426/0,797.88,-6410.83,40,0
-    .goto 1426/0,748.63,-6436.77,40,0
+    .goto 1426/0,676.72,-6502.44,0
+    .goto 1426/0,676.72,-6502.44,40,0
+    .goto 1426/0,766.36,-6386.86,40,0
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r
     .complete 182,1 --Frostmane Troll Whelp slain (14)
     .mob Frostmane Troll Whelp
@@ -423,16 +392,9 @@ step
     .isOnQuest 3361
 step << Shaman
     #loop
-    .goto 1426/0,767.83,-6350.42,0
-    .goto 1426/0,767.83,-6350.42,40,0
-    .goto 1426/0,806.74,-6368.80,40,0
-    .goto 1426/0,797.88,-6410.83,40,0
-    .goto 1426/0,748.63,-6436.77,40,0
-    .goto 1426/0,685.59,-6509.99,40,0
-    .goto 1426/0,631.41,-6514.58,40,0
-    .goto 1426/0,669.83,-6482.41,40,0
-    .goto 1426/0,703.32,-6442.02,40,0
-    .goto 1426/0,747.15,-6404.26,40,0
+    .goto 1426/0,766.36,-6386.86,0
+    .goto 1426/0,766.36,-6386.86,40,0
+    .goto 1426/0,676.72,-6502.44,40,0
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r and |cRXP_ENEMY_Frostmane Novices|r. Loot them for |cRXP_LOOT_Iceclaw Bear Pendant|r
     .complete 94373,1 --Iceclaw Bear Pendant (2)
     .mob Frostmane Troll Whelp
@@ -905,16 +867,9 @@ step
     .isOnQuest 98319
 step
     #loop
-    .goto 1426/0,-262.48,-5450.78,0
-    .goto 1426/0,-262.48,-5450.78,40,0
-    .goto 1426/0,-304.83,-5422.22,40,0
-    .goto 1426/0,-262.48,-5356.22,40,0
-    .goto 1426/0,-224.06,-5373.95,40,0
-    .goto 1426/0,-148.71,-5391.68,40,0
-    .goto 1426/0,-121.13,-5479.35,40,0
-    .goto 1426/0,-165.45,-5479.35,40,0
-    .goto 1426/0,-227.02,-5495.44,40,0
-    .goto 1426/0,-223.08,-5425.83,40,0
+    .goto 1426/0,-264.94,-5421.56,0
+    .goto 1426/0,-264.94,-5421.56,40,0
+    .goto 1426/0,-169.89,-5429.44,40,0
     >>Kill |cRXP_ENEMY_Young Wendigos|r, |cRXP_ENEMY_Wendigos|r, |cRXP_ENEMY_Edan the Howlers|r and |cRXP_ENEMY_Old Icebeards|r. Loot them for |cRXP_LOOT_Wendigo Mane|r
     .complete 313,1 --Wendigo Mane (8)
     .mob Young Wendigo
@@ -923,16 +878,10 @@ step
     .mob Old Icebeard
 step
     #loop
-    .goto 1426/0,-222.09,-5426.82,0
-    .goto 1426/0,-222.09,-5426.82,40,0
+    .goto 1426/0,-236.87,-5371.00,0
+    .goto 1426/0,-236.87,-5371.00,40,0
     .goto 1426/0,-271.34,-5469.50,40,0
-    .goto 1426/0,-340.29,-5502.33,40,0
-    .goto 1426/0,-310.74,-5574.57,40,0
-    .goto 1426/0,-256.57,-5610.68,40,0
-    .goto 1426/0,-217.17,-5545.02,40,0
-    .goto 1426/0,-123.59,-5403.83,40,0
-    .goto 1426/0,-202.39,-5364.43,40,0
-    .goto 1426/0,-256.57,-5364.43,40,0
+    .goto 1426/0,-295.97,-5535.17,40,0
     >>Pick up |cRXP_PICK_Flintfire's Shipment|r from the ground
     .complete 98321,1 --Flintfire's Shipment (8)
     .isOnQuest 98321
@@ -1003,7 +952,7 @@ step
     .zone 1426 >>Leave Ironforge for Dun Morogh
     .zoneskip 1426
 step
-    .goto 1426/0,-1426.75,-4294.72
+    .goto 1426/0,-1422.81,-4294.07
     >>Kill |cRXP_ENEMY_Young Black Bears|r, |cRXP_ENEMY_Ice Claw Bears|r and |cRXP_ENEMY_Black Bears|r. Loot them for |cRXP_LOOT_Thick Bear Fur|r
     .complete 317,2 --Thick Bear Fur (2)
     .mob Young Black Bear
@@ -1048,16 +997,10 @@ step
     .zoneskip 1426
 step
     #loop
-    .goto 1426/0,-585.56,-5431.08,0
-    .goto 1426/0,-585.56,-5431.08,40,0
+    .goto 1426/0,-566.84,-5428.46,0
     .goto 1426/0,-566.84,-5428.46,40,0
-    .goto 1426/0,-566.84,-5488.21,40,0
-    .goto 1426/0,-585.06,-5535.49,40,0
-    .goto 1426/0,-665.83,-5580.48,40,0
+    .goto 1426/0,-626.43,-5529.58,40,0
     .goto 1426/0,-709.17,-5593.94,40,0
-    .goto 1426/0,-731.83,-5628.08,40,0
-    .goto 1426/0,-722.96,-5555.52,40,0
-    .goto 1426/0,-632.84,-5534.51,40,0
     >>Kill |cRXP_ENEMY_Crag Boars|r, |cRXP_ENEMY_Large Crag Boars|r, |cRXP_ENEMY_Elder Crag Boars|r and |cRXP_ENEMY_Scarred Crag Boars|r. Loot them for |cRXP_LOOT_Chunk of Boar Meat|r
     .complete 317,1 --Chunk of Boar Meat (4)
     .mob Crag Boar
@@ -1163,16 +1106,10 @@ step << Gnome Mage
     .isOnQuest 319
 step
     #loop
-    .goto 1426/0,405.35,-5331.27,0
-    .goto 1426/0,405.35,-5331.27,40,0
-    .goto 1426/0,436.38,-5432.40,40,0
-    .goto 1426/0,524.05,-5400.88,40,0
-    .goto 1426/0,509.27,-5346.05,40,0
-    .goto 1426/0,486.12,-5286.95,40,0
-    .goto 1426/0,421.61,-5278.74,40,0
-    .goto 1426/0,359.06,-5239.99,40,0
-    .goto 1426/0,277.80,-5217.01,40,0
+    .goto 1426/0,214.76,-5423.20,0
     .goto 1426/0,214.76,-5423.20,40,0
+    .goto 1426/0,359.06,-5239.99,40,0
+    .goto 1426/0,420.62,-5292.20,40,0
     >>Kill |cRXP_ENEMY_Elder Crag Boars|r
     >>Kill |cRXP_ENEMY_Ice Claw Bears|r
     .complete 319,2 --Elder Crag Boar slain (8)
@@ -1184,8 +1121,7 @@ step
     .goto 1426/0,265.48,-5170.06,0
     .goto 1426/0,265.48,-5170.06,40,0
     .goto 1426/0,123.64,-5035.11,40,0
-    .goto 1426/0,68.48,-5026.58,40,0
-    .goto 1426/0,60.60,-5071.23,40,0
+    .goto 1426/0,82.77,-5050.22,40,0
     >>Kill |cRXP_ENEMY_Snow Leopards|r
     .complete 319,3 --Snow Leopard slain (8)
     .mob Snow Leopard
@@ -1244,16 +1180,9 @@ step
     .target Razzle Sprysprocket
 step
     #loop
-    .goto 1426/0,-306.80,-5078.45,0
-    .goto 1426/0,-306.80,-5078.45,40,0
-    .goto 1426/0,-293.01,-5071.56,40,0
-    .goto 1426/0,-259.03,-5053.83,40,0
-    .goto 1426/0,-203.38,-5018.04,40,0
-    .goto 1426/0,-241.79,-5012.79,40,0
-    .goto 1426/0,-293.50,-4985.21,40,0
-    .goto 1426/0,-284.15,-5018.70,40,0
+    .goto 1426/0,-289.07,-5052.19,0
     .goto 1426/0,-289.07,-5052.19,40,0
-    .goto 1426/0,-318.62,-5054.49,40,0
+    .goto 1426/0,-204.85,-5023.29,40,0
     >>Kill |cRXP_ENEMY_Frostmane Seers|r. Loot them for |cRXP_LOOT_Shimmerweed|r. It can also be picked up from |cRXP_PICK_Shimmerweed Basket|r on the ground
     .complete 315,1 --Shimmerweed (6)
     .mob Frostmane Seer
@@ -1333,16 +1262,9 @@ step << Gnome Mage
     .target Magis Sparkmantle
 step
     #loop
-    .goto 1426/0,460.02,-5288.59,0
-    .goto 1426/0,460.02,-5288.59,40,0
-    .goto 1426/0,515.18,-5279.39,40,0
-    .goto 1426/0,546.21,-5312.23,40,0
-    .goto 1426/0,543.25,-5364.10,40,0
-    .goto 1426/0,585.12,-5343.09,40,0
-    .goto 1426/0,621.07,-5302.38,40,0
-    .goto 1426/0,585.61,-5245.90,40,0
-    .goto 1426/0,585.12,-5170.06,40,0
-    .goto 1426/0,519.61,-5215.37,40,0
+    .goto 1426/0,580.68,-5294.83,0
+    .goto 1426/0,580.68,-5294.83,40,0
+    .goto 1426/0,576.25,-5192.71,40,0
     >>Kill |cRXP_ENEMY_Leper Gnomes|r and |cRXP_ENEMY_Gibblewilts|r. Loot them for |cRXP_LOOT_Gyromechanic Gear|r
     >>Kill |cRXP_ENEMY_Leper Gnomes|r and |cRXP_ENEMY_Gibblewilts|r. Loot them for |cRXP_LOOT_Restabilization Cog|r
     .complete 412,2 --Gyromechanic Gear (8)
@@ -1386,16 +1308,10 @@ step << Hunter
     .xp 10 >> Grind to level 10
 step
     #loop
-    .goto 1426/0,-955.92,-5633.67,0
-    .goto 1426/0,-955.92,-5633.67,40,0
+    .goto 1426/0,-985.47,-5548.30,0
     .goto 1426/0,-985.47,-5548.30,40,0
-    .goto 1426/0,-1064.27,-5584.42,40,0
-    .goto 1426/0,-1069.19,-5666.50,40,0
-    .goto 1426/0,-1143.07,-5801.12,40,0
-    .goto 1426/0,-1079.04,-5801.12,40,0
-    .goto 1426/0,-1083.97,-5751.87,40,0
     .goto 1426/0,-1015.02,-5679.63,40,0
-    .goto 1426/0,-1005.17,-5633.67,40,0
+    .goto 1426/0,-1083.97,-5751.87,40,0
     >>Loot the |cRXP_PICK_Fallen Logs|r for |cRXP_LOOT_Mostly Dry Firewood|r
     .complete 99159,1 --Mostly Dry Firewood (14)
 step
@@ -1405,16 +1321,10 @@ step
     .target Rudra Amberstill
 step
     #loop
-    .goto 1426/0,-1644.43,-5613.31,0
-    .goto 1426/0,-1644.43,-5613.31,40,0
-    .goto 1426/0,-1735.54,-5617.25,40,0
-    .goto 1426/0,-1831.58,-5579.16,40,0
-    .goto 1426/0,-1894.13,-5597.55,40,0
-    .goto 1426/0,-1919.74,-5683.57,40,0
-    .goto 1426/0,-1897.58,-5762.37,40,0
-    .goto 1426/0,-1802.03,-5685.54,40,0
-    .goto 1426/0,-1760.17,-5761.39,40,0
-    .goto 1426/0,-1719.29,-5696.05,40,0
+    .goto 1426/0,-1707.47,-5644.83,0
+    .goto 1426/0,-1707.47,-5644.83,40,0
+    .goto 1426/0,-1808.93,-5667.81,40,0
+    .goto 1426/0,-1889.70,-5700.97,40,0
     >>Kill |cRXP_ENEMY_Elder Snow Leopards|r. Loot them for |cRXP_LOOT_Pristine Leopard Pelt|r
     .complete 95212,1 --Pristine Leopard Pelt (6)
     .mob Elder Snow Leopard
@@ -1546,16 +1456,10 @@ step
     .target Father Gavin
 step
     #loop
-    .goto 1426/0,-996.79,-5370.34,0
-    .goto 1426/0,-996.79,-5370.34,40,0
-    .goto 1426/0,-1051.95,-5257.72,40,0
-    .goto 1426/0,-948.53,-5266.59,40,0
-    .goto 1426/0,-926.37,-5327.33,40,0
-    .goto 1426/0,-913.56,-5387.42,40,0
-    .goto 1426/0,-951.48,-5455.38,40,0
-    .goto 1426/0,-1015.02,-5507.91,40,0
-    .goto 1426/0,-1085.94,-5578.83,40,0
-    .goto 1426/0,-1045.55,-5415.00,40,0
+    .goto 1426/0,-1016.49,-5329.96,0
+    .goto 1426/0,-1016.49,-5329.96,40,0
+    .goto 1426/0,-950.01,-5347.36,40,0
+    .goto 1426/0,-997.78,-5408.76,40,0
     >>Kill |cRXP_ENEMY_Minor Ice Elementals|r
     .complete 99160,1 --Minor Ice Elemental slain (10)
     .mob Minor Ice Elemental
@@ -1582,16 +1486,9 @@ step
     .complete 99162,3 --Coalbeard's Rifle (1)
 step
     #loop
-    .goto 1426/0,442.78,-5282.35,0
-    .goto 1426/0,442.78,-5282.35,40,0
-    .goto 1426/0,467.41,-5226.53,40,0
-    .goto 1426/0,442.78,-5193.70,40,0
-    .goto 1426/0,506.81,-5206.83,40,0
-    .goto 1426/0,570.83,-5177.28,40,0
-    .goto 1426/0,556.06,-5279.07,40,0
+    .goto 1426/0,482.18,-5259.37,0
+    .goto 1426/0,482.18,-5259.37,40,0
     .goto 1426/0,595.46,-5328.32,40,0
-    .goto 1426/0,511.73,-5315.18,40,0
-    .goto 1426/0,516.66,-5256.08,40,0
     >>Loot the |cRXP_PICK_Snowdrifts|r for |cRXP_LOOT_Gnomeregan Archival Data|r
     .complete 95041,1 --Gnomeregan Archival Data (7)
 step
@@ -1879,16 +1776,9 @@ step << Warrior/Paladin/Rogue
     .train 2018,3
 step
     #loop
-    .goto 1426/0,-1577.94,-5784.04,0
-    .goto 1426/0,-1577.94,-5784.04,40,0
-    .goto 1426/0,-1506.53,-5800.46,40,0
-    .goto 1426/0,-1514.90,-5836.25,40,0
-    .goto 1426/0,-1546.92,-5825.74,40,0
-    .goto 1426/0,-1543.96,-5871.38,40,0
-    .goto 1426/0,-1590.26,-5840.52,40,0
-    .goto 1426/0,-1615.87,-5791.92,40,0
-    .goto 1426/0,-1670.53,-5810.31,40,0
-    .goto 1426/0,-1669.55,-5752.52,40,0
+    .goto 1426/0,-1643.45,-5776.49,0
+    .goto 1426/0,-1643.45,-5776.49,40,0
+    .goto 1426/0,-1524.75,-5830.99,40,0
     >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r
     .complete 432,1 --Rockjaw Skullthumper slain (6)
     .mob Rockjaw Skullthumper
@@ -1910,16 +1800,9 @@ step
     .target Foreman Stonebrow
 step
     #loop
-    .goto 1426/0,-1678.41,-5736.76,0
-    .goto 1426/0,-1678.41,-5736.76,40,0
-    .goto 1426/0,-1703.53,-5703.27,40,0
-    .goto 1426/0,-1790.21,-5654.68,40,0
-    .goto 1426/0,-1788.24,-5589.67,40,0
-    .goto 1426/0,-1730.62,-5589.67,40,0
-    .goto 1426/0,-1723.72,-5529.58,40,0
-    .goto 1426/0,-1656.25,-5607.07,40,0
-    .goto 1426/0,-1692.20,-5627.10,40,0
-    .goto 1426/0,-1693.19,-5670.11,40,0
+    .goto 1426/0,-1674.97,-5692.77,0
+    .goto 1426/0,-1674.97,-5692.77,40,0
+    .goto 1426/0,-1728.65,-5560.45,40,0
     >>Kill |cRXP_ENEMY_Rockjaw Bonesnappers|r
     .complete 433,1 --Rockjaw Bonesnapper slain (10)
     .mob Rockjaw Bonesnapper
@@ -1965,16 +1848,7 @@ step
     .use 274268
 step
     #label Drop96391x1
-    #loop
-    .goto 1426/0,-1985.73,-5845.44,0
-    .goto 1426/0,-1985.73,-5845.44,40,0
-    .goto 1426/0,-2012.82,-5862.51,40,0
-    .goto 1426/0,-2007.90,-5890.09,40,0
-    .goto 1426/0,-2008.88,-5924.24,40,0
-    .goto 1426/0,-2040.89,-5908.15,40,0
-    .goto 1426/0,-2049.27,-5886.15,40,0
-    .goto 1426/0,-2045.82,-5847.41,40,0
-    .goto 1426/0,-2010.85,-5825.08,40,0
+    .goto 1426/0,-2007.90,-5890.09
     >>Kill |cRXP_ENEMY_Dark Iron Spies|r
     .complete 96390,1 --Dark Iron Spy slain (10)
     .mob Dark Iron Spy
@@ -1991,16 +1865,9 @@ step
     .isOnQuest 96391
 step
     #loop
-    .goto 1426/0,-1662.65,-5594.59,0
-    .goto 1426/0,-1662.65,-5594.59,40,0
+    .goto 1426/0,-1692.20,-5626.77,0
     .goto 1426/0,-1692.20,-5626.77,40,0
-    .goto 1426/0,-1710.92,-5659.60,40,0
     .goto 1426/0,-1748.84,-5683.57,40,0
-    .goto 1426/0,-1773.96,-5710.82,40,0
-    .goto 1426/0,-1813.36,-5685.54,40,0
-    .goto 1426/0,-1772.48,-5645.16,40,0
-    .goto 1426/0,-1818.78,-5610.68,40,0
-    .goto 1426/0,-1838.97,-5568.66,40,0
     >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r and |cRXP_ENEMY_Rockjaw Backbreakers|r. Loot them for |cRXP_LOOT_Empty Powder Keg|r
     .complete 95213,1 --Empty Powder Keg (1)
     .mob Rockjaw Ambusher
@@ -2038,16 +1905,9 @@ step
 step
     #label Drop95213x1
     #loop
-    .goto 1426/0,-1662.65,-5594.59,0
-    .goto 1426/0,-1662.65,-5594.59,40,0
+    .goto 1426/0,-1692.20,-5626.77,0
     .goto 1426/0,-1692.20,-5626.77,40,0
-    .goto 1426/0,-1710.92,-5659.60,40,0
     .goto 1426/0,-1748.84,-5683.57,40,0
-    .goto 1426/0,-1773.96,-5710.82,40,0
-    .goto 1426/0,-1813.36,-5685.54,40,0
-    .goto 1426/0,-1772.48,-5645.16,40,0
-    .goto 1426/0,-1818.78,-5610.68,40,0
-    .goto 1426/0,-1838.97,-5568.66,40,0
     >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r and |cRXP_ENEMY_Rockjaw Backbreakers|r. Loot them for |cRXP_LOOT_Stolen Blasting Powder|r
     .complete 95214,1 --Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
@@ -2378,11 +2238,9 @@ step << Dwarf Paladin
     .zoneskip 1426
 step << Dwarf Paladin
     #loop
-    .goto 1426/0,-1703.53,-5533.52,0
-    .goto 1426/0,-1703.53,-5533.52,40,0
+    .goto 1426/0,-1749.33,-5513.17,0
     .goto 1426/0,-1749.33,-5513.17,40,0
     .goto 1426/0,-1793.17,-5632.35,40,0
-    .goto 1426/0,-1741.45,-5586.06,40,0
     >>Loot the |cRXP_PICK_Battered Chests|r for |cRXP_LOOT_Linen Cloth|r
     .complete 1648,1 --Linen Cloth (10)
     .isOnQuest 1648
@@ -2475,16 +2333,7 @@ step << Dwarf Paladin
     .isQuestTurnedIn 1783 --any of: The Tome of Divinity
     .xp <12,1
 step << Dwarf Paladin
-    #loop
-    .goto 1426/0,-2010.85,-5825.08,0
-    .goto 1426/0,-2010.85,-5825.08,40,0
-    .goto 1426/0,-1985.73,-5845.44,40,0
-    .goto 1426/0,-2012.82,-5862.51,40,0
-    .goto 1426/0,-2007.90,-5890.09,40,0
-    .goto 1426/0,-2008.88,-5924.24,40,0
-    .goto 1426/0,-2040.89,-5908.15,40,0
-    .goto 1426/0,-2049.27,-5886.15,40,0
-    .goto 1426/0,-2045.82,-5847.41,40,0
+    .goto 1426/0,-2007.90,-5890.09
     >>Kill |cRXP_ENEMY_Dark Iron Spy|r and loot |cRXP_LOOT_Dark Iron Script|r
     .complete 1784,1 --Dark Iron Script (1)
     .mob Dark Iron Spy
@@ -2929,7 +2778,7 @@ step
     .accept 2924 >>Accept Essential Artificials
     .target Klockmort Spannerspan
 step << Rogue
-    .goto 1455/0,-1131.75,-4648.43
+    .goto 1455/0,-1124.40,-4647.54
     >>Kill |cRXP_ENEMY_Hulfdan Blackbeard|r and loot |cRXP_LOOT_Elegant Letter|r. Use it to start the quest
     .collect 17126,1,6681 --Elegant Letter (1)
     .accept 6681 >>Accept The Manor, Ravenholdt
@@ -2955,7 +2804,6 @@ step
     #loop
     .goto 1426/0,714.15,-4998.01,0
     .goto 1426/0,714.15,-4998.01,40,0
-    .goto 1426/0,727.94,-4934.32,40,0
     .goto 1426/0,827.92,-4925.45,40,0
     >>Kill |cRXP_ENEMY_Irradiated Invader|r and loot |cRXP_LOOT_Full Leaden Collection Phial|r
     >>Kill |cRXP_ENEMY_Techbot|r and loot |cRXP_LOOT_Techbot's Memory Core|r
@@ -3152,15 +3000,7 @@ step
     .zone 1426 >>Leave Ironforge for Dun Morogh
     .zoneskip 1426
 step
-    #loop
-    .goto 1426/0,642.25,-5154.30,0
-    .goto 1426/0,642.25,-5154.30,40,0
-    .goto 1426/0,661.95,-5174.33,40,0
-    .goto 1426/0,730.90,-5164.48,40,0
-    .goto 1426/0,724.99,-5143.46,40,0
-    .goto 1426/0,692.48,-5161.52,40,0
-    .goto 1426/0,686.57,-5163.16,40,0
-    .goto 1426/0,678.20,-5159.88,40,0
+    .goto 1426/0,692.48,-5160.54
     >>Kill |cRXP_ENEMY_Caverndeep Invaders|r, |cRXP_ENEMY_Caverndeep Looters|r, |cRXP_ENEMY_Caverndeep Pillagers|r and |cRXP_ENEMY_Irradiated Invaders|r. Loot them for |cRXP_LOOT_White Punch Card|r
     .collect 9279,1,2930,1 --White Punch Card (1)
     .mob Caverndeep Invader
@@ -3209,15 +3049,7 @@ step << Warrior
     .zone 1426 >>Leave Ironforge for Dun Morogh
     .zoneskip 1426
 step
-    #loop
-    .goto 1426/0,642.25,-5154.30,0
-    .goto 1426/0,642.25,-5154.30,40,0
-    .goto 1426/0,661.95,-5174.33,40,0
-    .goto 1426/0,730.90,-5164.48,40,0
-    .goto 1426/0,724.99,-5143.46,40,0
-    .goto 1426/0,692.48,-5161.52,40,0
-    .goto 1426/0,686.57,-5163.16,40,0
-    .goto 1426/0,678.20,-5159.88,40,0
+    .goto 1426/0,692.48,-5160.54
     >>Kill |cRXP_ENEMY_Caverndeep Invaders|r, |cRXP_ENEMY_Caverndeep Looters|r, |cRXP_ENEMY_Caverndeep Pillagers|r and |cRXP_ENEMY_Irradiated Invaders|r. Loot them for |cRXP_LOOT_White Punch Card|r
     .collect 9279,1,2930,1 --White Punch Card (1)
     .mob Caverndeep Invader

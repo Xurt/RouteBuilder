@@ -221,11 +221,9 @@ step
     .complete 7839,1 --Slagtree's Lost Tools (1)
 step
     #loop
-    .goto 1425/0,-3788.37,352.22,0
-    .goto 1425/0,-3788.37,352.22,40,0
-    .goto 1425/0,-3752.56,337.33,40,0
-    .goto 1425/0,-3779.90,412.02,40,0
+    .goto 1425/0,-3801.46,475.42,0
     .goto 1425/0,-3801.46,475.42,40,0
+    .goto 1425/0,-3752.56,337.33,40,0
     >>Open the |cRXP_PICK_Horde Supply Crate|r. Loot it for |cRXP_LOOT_Hinterlands Honey Ripple|r
     .complete 77,1 --Hinterlands Honey Ripple (1)
     .isOnQuest 77
@@ -256,16 +254,10 @@ step
     .use 8704
 step
     #loop
-    .goto 1425/0,-2847.04,144.32,0
-    .goto 1425/0,-2847.04,144.32,40,0
-    .goto 1425/0,-2776.20,140.47,40,0
-    .goto 1425/0,-2680.72,151.76,40,0
-    .goto 1425/0,-2665.71,279.33,40,0
-    .goto 1425/0,-2816.63,370.70,40,0
-    .goto 1425/0,-2887.08,214.39,40,0
-    .goto 1425/0,-2799.69,258.28,40,0
+    .goto 1425/0,-2800.46,225.94,0
+    .goto 1425/0,-2800.46,225.94,40,0
     .goto 1425/0,-2739.63,215.42,40,0
-    .goto 1425/0,-2803.92,195.91,40,0
+    .goto 1425/0,-2812.39,354.27,40,0
     >>Kill |cRXP_ENEMY_Highvale Scouts|r
     >>Kill |cRXP_ENEMY_Highvale Outrunners|r
     >>Kill |cRXP_ENEMY_Highvale Rangers|r
@@ -286,55 +278,32 @@ step
 step
     #label Along14
     #loop
-    .goto 1425/0,-3377.96,-59.73,0
-    .goto 1425/0,-3377.96,-59.73,40,0
+    .goto 1425/0,-3415.69,-48.69,0
     .goto 1425/0,-3415.69,-48.69,40,0
-    .goto 1425/0,-3492.69,-10.71,40,0
     .goto 1425/0,-3518.48,-43.82,40,0
-    .goto 1425/0,-3570.46,-72.31,40,0
-    .goto 1425/0,-3424.16,-111.83,40,0
     >>Kill |cRXP_ENEMY_Silvermane Howlers|r
     .complete 7828,2 --Silvermane Howler slain (10)
     .mob Silvermane Howler
 step
-    #loop
-    .goto 1425/0,-4266.54,199.50,0
-    .goto 1425/0,-4266.54,199.50,40,0
-    .goto 1425/0,-4287.33,247.76,40,0
-    .goto 1425/0,-4331.22,264.95,40,0
-    .goto 1425/0,-4343.15,255.97,40,0
-    .goto 1425/0,-4353.16,219.78,40,0
+    .goto 1425/0,-4343.92,223.12
     >>Kill |cRXP_ENEMY_Vilebranch Scalpers|r
     .complete 7844,1 --Vilebranch Scalper slain (30)
     .mob Vilebranch Scalper
 step
     #loop
-    .goto 1425/0,-3483.45,-148.28,0
-    .goto 1425/0,-3483.45,-148.28,40,0
-    .goto 1425/0,-3381.42,-151.62,40,0
-    .goto 1425/0,-3290.95,-213.99,40,0
-    .goto 1425/0,-3320.59,-244.53,40,0
-    .goto 1425/0,-3342.54,-282.52,40,0
-    .goto 1425/0,-3386.43,-268.66,40,0
-    .goto 1425/0,-3406.06,-239.91,40,0
-    .goto 1425/0,-3470.36,-286.88,40,0
+    .goto 1425/0,-3454.96,-186.27,0
     .goto 1425/0,-3454.96,-186.27,40,0
+    .goto 1425/0,-3406.06,-239.91,40,0
     >>Kill |cRXP_ENEMY_Vilebranch Soothsayers|r
     .complete 7844,2 --Vilebranch Soothsayer slain (15)
     .mob Vilebranch Soothsayer
 step
     #label Drop485x1
     #loop
-    .goto 1425/0,-3823.40,65.27,0
-    .goto 1425/0,-3823.40,65.27,40,0
-    .goto 1425/0,-3808.00,173.07,40,0
-    .goto 1425/0,-3908.10,229.53,40,0
-    .goto 1425/0,-3992.80,301.40,40,0
-    .goto 1425/0,-4144.88,219.01,40,0
-    .goto 1425/0,-3977.40,132.00,40,0
-    .goto 1425/0,-4085.20,106.33,40,0
-    .goto 1425/0,-4108.30,-6.60,40,0
-    .goto 1425/0,-3931.20,-16.87,40,0
+    .goto 1425/0,-3831.10,111.47,0
+    .goto 1425/0,-3831.10,111.47,40,0
+    .goto 1425/0,-4031.30,96.07,40,0
+    .goto 1425/0,-4023.60,183.33,40,0
     >>Kill |cRXP_ENEMY_Razorbeak Skylord|r and loot |cRXP_LOOT_Skylord Plume|r
     >>Kill |cRXP_ENEMY_Silvermane Stalkers|r
     >>Kill |cRXP_ENEMY_Savage Owlbeasts|r
@@ -385,16 +354,11 @@ step
 step
     #label Drop485x2
     #loop
-    .goto 1425/0,-2845.12,-28.93,0
-    .goto 1425/0,-2845.12,-28.93,40,0
-    .goto 1425/0,-2789.29,-70.51,40,0
-    .goto 1425/0,-2723.46,-106.19,40,0
-    .goto 1425/0,-2653.39,-46.13,40,0
-    .goto 1425/0,-2681.49,15.22,40,0
-    .goto 1425/0,-2475.90,-16.87,40,0
-    .goto 1425/0,-2452.80,96.07,40,0
+    .goto 1425/0,-2816.24,-38.43,0
+    .goto 1425/0,-2816.24,-38.43,40,0
+    .goto 1425/0,-2718.45,-81.55,40,0
+    .goto 1425/0,-2468.20,85.80,40,0
     .goto 1425/0,-2599.10,229.53,40,0
-    .goto 1425/0,-2752.72,-14.04,40,0
     >>Kill |cRXP_ENEMY_Witherbark Hideskinners|r, |cRXP_ENEMY_Trained Razorbeaks|r, |cRXP_ENEMY_Razorbeak Gryphons|r and |cRXP_ENEMY_Razorbeak Skylords|r. Loot them for |cRXP_LOOT_Long Elegant Feather|r
     .complete 7842,1 --Long Elegant Feather (10)
     .mob Witherbark Hideskinner
@@ -492,16 +456,10 @@ step
     .mob Vilebranch Kidnapper
 step
     #loop
-    .goto 1425/0,-4551.44,-117.99,0
-    .goto 1425/0,-4551.44,-117.99,40,0
-    .goto 1425/0,-4551.44,-180.88,40,0
-    .goto 1425/0,-4505.62,-207.06,40,0
-    .goto 1425/0,-4554.52,-253.00,40,0
-    .goto 1425/0,-4448.26,-286.11,40,0
-    .goto 1425/0,-4452.49,-355.15,40,0
-    .goto 1425/0,-4588.40,-344.63,40,0
-    .goto 1425/0,-4645.38,-220.92,40,0
-    .goto 1425/0,-4598.02,-206.80,40,0
+    .goto 1425/0,-4579.54,-151.36,0
+    .goto 1425/0,-4579.54,-151.36,40,0
+    .goto 1425/0,-4551.82,-319.48,40,0
+    .goto 1425/0,-4477.52,-327.18,40,0
     >>Kill |cRXP_ENEMY_Saltwater Snapjaws|r
     .complete 7815,1 --Saltwater Snapjaw slain (15)
     .mob Saltwater Snapjaw
@@ -555,12 +513,7 @@ step
     .turnin 7845 >>Turn in Kidnapped Elder Torntusk!
     .target Elder Torntusk
 step
-    #loop
-    .goto 1425/0,-3906.18,-268.14,0
-    .goto 1425/0,-3906.18,-268.14,40,0
-    .goto 1425/0,-3915.42,-217.32,40,0
-    .goto 1425/0,-3913.88,-189.35,40,0
-    .goto 1425/0,-3835.72,-256.85,40,0
+    .goto 1425/0,-3915.42,-217.32
     >>Kill |cRXP_ENEMY_Vilebranch Soul Eaters|r
     .complete 7862,4 --Vilebranch Soul Eater slain (20)
     .mob Vilebranch Soul Eater
@@ -572,47 +525,28 @@ step
 step
     #label Along15
     #loop
-    .goto 1425/0,-4010.51,-241.96,0
-    .goto 1425/0,-4010.51,-241.96,40,0
+    .goto 1425/0,-4052.09,-242.99,0
     .goto 1425/0,-4052.09,-242.99,40,0
-    .goto 1425/0,-4200.70,-396.73,40,0
-    .goto 1425/0,-4136.79,-404.95,40,0
-    .goto 1425/0,-4136.02,-376.46,40,0
-    .goto 1425/0,-4061.72,-399.81,40,0
-    .goto 1425/0,-4060.56,-343.86,40,0
-    .goto 1425/0,-4022.06,-329.23,40,0
-    .goto 1425/0,-4051.71,-266.86,40,0
+    .goto 1425/0,-4039.00,-344.37,40,0
+    .goto 1425/0,-4158.35,-378.00,40,0
     >>Kill |cRXP_ENEMY_Vilebranch Berserkers|r
     .complete 7862,1 --Vilebranch Berserker slain (20)
     .mob Vilebranch Berserker
 step
     #label Along16
     #loop
-    .goto 1425/0,-3997.81,-529.69,0
-    .goto 1425/0,-3997.81,-529.69,40,0
-    .goto 1425/0,-4019.75,-579.48,40,0
-    .goto 1425/0,-4021.29,-642.11,40,0
-    .goto 1425/0,-4005.51,-672.91,40,0
-    .goto 1425/0,-4043.62,-668.29,40,0
-    .goto 1425/0,-4062.10,-642.11,40,0
-    .goto 1425/0,-4111.77,-596.93,40,0
-    .goto 1425/0,-4156.43,-608.74,40,0
-    .goto 1425/0,-4186.07,-521.47,40,0
+    .goto 1425/0,-3995.11,-539.44,0
+    .goto 1425/0,-3995.11,-539.44,40,0
+    .goto 1425/0,-4139.49,-619.78,40,0
     >>Kill |cRXP_ENEMY_Vilebranch Blood Drinkers|r
     .complete 7862,3 --Vilebranch Blood Drinker slain (20)
     .mob Vilebranch Blood Drinker
 step
     #loop
-    .goto 1425/0,-4137.95,-518.14,0
-    .goto 1425/0,-4137.95,-518.14,40,0
-    .goto 1425/0,-4192.62,-410.59,40,0
-    .goto 1425/0,-4232.27,-315.88,40,0
-    .goto 1425/0,-4176.45,-252.23,40,0
-    .goto 1425/0,-4088.28,-244.02,40,0
-    .goto 1425/0,-3983.56,-226.56,40,0
-    .goto 1425/0,-3967.39,-335.13,40,0
-    .goto 1425/0,-4007.43,-407.51,40,0
-    .goto 1425/0,-4075.96,-366.19,40,0
+    .goto 1425/0,-4193.00,-450.38,0
+    .goto 1425/0,-4193.00,-450.38,40,0
+    .goto 1425/0,-4045.55,-386.72,40,0
+    .goto 1425/0,-3988.57,-296.12,40,0
     >>Kill |cRXP_ENEMY_Vilebranch Shadow Hunters|r
     >>Pick up |cRXP_PICK_Vessel of Tainted Blood|r from the ground
     .complete 7862,2 --Vilebranch Shadow Hunter slain (20)
@@ -710,16 +644,10 @@ step
     .isOnQuest 7846
 step
     #loop
-    .goto 1425/0,-3782.98,-754.78,0
-    .goto 1425/0,-3782.98,-754.78,40,0
-    .goto 1425/0,-3780.67,-692.67,40,0
-    .goto 1425/0,-3952.38,-625.94,40,0
-    .goto 1425/0,-3871.53,-560.23,40,0
-    .goto 1425/0,-3806.08,-500.43,40,0
-    .goto 1425/0,-3794.91,-625.42,40,0
-    .goto 1425/0,-3730.62,-638.77,40,0
-    .goto 1425/0,-3672.48,-688.82,40,0
-    .goto 1425/0,-3720.22,-708.84,40,0
+    .goto 1425/0,-3744.86,-712.43,0
+    .goto 1425/0,-3744.86,-712.43,40,0
+    .goto 1425/0,-3793.37,-616.18,40,0
+    .goto 1425/0,-3887.31,-596.16,40,0
     >>Kill |cRXP_ENEMY_Vilebranch Aman'zasi Guards|r
     .complete 7861,2 --Vilebranch Aman'zasi Guard slain (20)
     .mob Vilebranch Aman'zasi Guard

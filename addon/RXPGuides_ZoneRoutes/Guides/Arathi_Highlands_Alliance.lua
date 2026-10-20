@@ -133,16 +133,9 @@ step
 step
     #label Drop635x1
     #loop
-    .goto 1417/0,-2114.43,-893.89,0
-    .goto 1417/0,-2114.43,-893.89,40,0
-    .goto 1417/0,-2078.43,-848.53,40,0
-    .goto 1417/0,-2115.87,-781.33,40,0
-    .goto 1417/0,-2035.59,-775.33,40,0
-    .goto 1417/0,-2022.63,-728.29,40,0
-    .goto 1417/0,-1957.47,-717.25,40,0
-    .goto 1417/0,-1912.47,-814.45,40,0
-    .goto 1417/0,-1981.23,-803.17,40,0
-    .goto 1417/0,-2010.75,-924.85,40,0
+    .goto 1417/0,-2083.11,-871.81,0
+    .goto 1417/0,-2083.11,-871.81,40,0
+    .goto 1417/0,-1990.59,-744.85,40,0
     >>Kill |cRXP_ENEMY_Syndicate Highwaymans|r
     >>Kill |cRXP_ENEMY_Syndicate Mercenaries|r
     .complete 681,1 --Syndicate Highwayman slain (8)
@@ -177,16 +170,9 @@ step
 step
     #label Drop635x2
     #loop
-    .goto 1417/0,-3812.19,-993.73,0
-    .goto 1417/0,-3812.19,-993.73,40,0
-    .goto 1417/0,-3840.27,-1044.13,40,0
-    .goto 1417/0,-3887.07,-952.69,40,0
-    .goto 1417/0,-3949.71,-928.45,40,0
-    .goto 1417/0,-3999.75,-892.45,40,0
-    .goto 1417/0,-3964.11,-859.09,40,0
+    .goto 1417/0,-3815.43,-1025.65,0
+    .goto 1417/0,-3815.43,-1025.65,40,0
     .goto 1417/0,-3934.23,-882.61,40,0
-    .goto 1417/0,-3899.31,-827.17,40,0
-    .goto 1417/0,-3869.79,-902.77,40,0
     >>Kill |cRXP_ENEMY_Drywhisker Kobolds|r, |cRXP_ENEMY_Drywhisker Surveyors|r and |cRXP_ENEMY_Drywhisker Diggers|r. Loot them for |cRXP_LOOT_Mote of Myzrael|r
     .complete 642,1 --Mote of Myzrael (12)
     .mob Drywhisker Kobold
@@ -205,16 +191,10 @@ step
 step
     #label Drop635x3
     #loop
-    .goto 1417/0,-3341.31,-1895.65,0
-    .goto 1417/0,-3341.31,-1895.65,40,0
-    .goto 1417/0,-3402.87,-2010.13,40,0
-    .goto 1417/0,-3382.35,-2080.45,40,0
-    .goto 1417/0,-3336.63,-2107.57,40,0
-    .goto 1417/0,-3268.95,-2065.33,40,0
-    .goto 1417/0,-3326.55,-2038.93,40,0
-    .goto 1417/0,-3305.31,-1982.77,40,0
+    .goto 1417/0,-3196.95,-1852.69,0
     .goto 1417/0,-3196.95,-1852.69,40,0
-    .goto 1417/0,-3284.07,-1897.81,40,0
+    .goto 1417/0,-3350.31,-2021.65,40,0
+    .goto 1417/0,-3297.75,-2065.57,40,0
     >>Kill |cRXP_ENEMY_Witherbark Trolls|r, |cRXP_ENEMY_Witherbark Shadowcasters|r, |cRXP_ENEMY_Witherbark Axe Throwers|r and |cRXP_ENEMY_Witherbark Witch Doctors|r. Loot them for |cRXP_LOOT_Witherbark Tusk|r
     >>Kill |cRXP_ENEMY_Witherbark Witch Doctors|r. Loot them for |cRXP_LOOT_Witherbark Medicine Pouch|r
     >>Kill |cRXP_ENEMY_Witherbark Shadow Hunter|r and loot |cRXP_LOOT_Shadow Hunter Knife|r
@@ -416,16 +396,9 @@ step
     .isOnQuest 651
 step
     #loop
-    .goto 1417/0,-1881.87,-1587.01,0
-    .goto 1417/0,-1881.87,-1587.01,40,0
-    .goto 1417/0,-1918.95,-1605.49,40,0
+    .goto 1417/0,-1919.67,-1645.81,0
     .goto 1417/0,-1919.67,-1645.81,40,0
-    .goto 1417/0,-1908.87,-1715.41,40,0
-    .goto 1417/0,-1854.51,-1706.77,40,0
-    .goto 1417/0,-1801.59,-1703.65,40,0
-    .goto 1417/0,-1820.31,-1658.53,40,0
-    .goto 1417/0,-1794.75,-1633.57,40,0
-    .goto 1417/0,-1857.75,-1621.33,40,0
+    .goto 1417/0,-1803.39,-1663.57,40,0
     >>Kill |cRXP_ENEMY_Syndicate Prowlers|r, |cRXP_ENEMY_Syndicate Conjurors|r and |cRXP_ENEMY_Syndicate Magus|r. Loot them for |cRXP_LOOT_Stromgarde Badge|r
     .complete 682,1 --Stromgarde Badge (7)
     .mob Syndicate Prowler
@@ -613,7 +586,6 @@ step
     #loop
     .goto 1417/0,-1932.99,-1644.61,0
     .goto 1417/0,-1932.99,-1644.61,40,0
-    .goto 1417/0,-1927.59,-1672.69,40,0
     .goto 1417/0,-1810.59,-1706.53,40,0
     >>Kill |cRXP_ENEMY_Otto|r and loot |cRXP_LOOT_Otto's Head|r
     >>Kill |cRXP_ENEMY_Lord Falconcrest|r and loot |cRXP_LOOT_Falconcrest's Head|r
@@ -626,16 +598,9 @@ step
     .mob Marez Cowl
 step
     #loop
-    .goto 1417/0,-1643.19,-1740.37,0
-    .goto 1417/0,-1643.19,-1740.37,40,0
+    .goto 1417/0,-1619.79,-1751.89,0
     .goto 1417/0,-1619.79,-1751.89,40,0
-    .goto 1417/0,-1642.47,-1773.97,40,0
-    .goto 1417/0,-1594.95,-1792.69,40,0
-    .goto 1417/0,-1585.59,-1753.57,40,0
     .goto 1417/0,-1518.27,-1774.45,40,0
-    .goto 1417/0,-1539.15,-1730.29,40,0
-    .goto 1417/0,-1568.31,-1684.21,40,0
-    .goto 1417/0,-1617.99,-1709.65,40,0
     >>Kill |cRXP_ENEMY_Boulderfist Shaman|r and loot |cRXP_LOOT_Azure Agate|r
     .complete 694,1 --Azure Agate (1)
     .mob Boulderfist Shaman
@@ -697,16 +662,10 @@ step
     .isOnQuest 662
 step
     #loop
-    .goto 1417/0,-1589.19,-2219.65,0
-    .goto 1417/0,-1589.19,-2219.65,40,0
-    .goto 1417/0,-1553.19,-2145.97,40,0
-    .goto 1417/0,-1656.15,-2147.41,40,0
-    .goto 1417/0,-1680.63,-2215.57,40,0
-    .goto 1417/0,-1781.79,-2178.85,40,0
-    .goto 1417/0,-1735.71,-2257.57,40,0
-    .goto 1417/0,-1785.39,-2326.69,40,0
-    .goto 1417/0,-1694.31,-2301.49,40,0
-    .goto 1417/0,-1624.47,-2294.29,40,0
+    .goto 1417/0,-1608.99,-2181.97,0
+    .goto 1417/0,-1608.99,-2181.97,40,0
+    .goto 1417/0,-1679.19,-2219.17,40,0
+    .goto 1417/0,-1768.47,-2285.17,40,0
     >>Kill |cRXP_ENEMY_Daggerspine Raiders|r
     .complete 664,1 --Daggerspine Raider slain (10)
     .mob Daggerspine Raider
@@ -715,25 +674,17 @@ step
     #loop
     .goto 1417/0,-1685.31,-2164.45,0
     .goto 1417/0,-1685.31,-2164.45,40,0
-    .goto 1417/0,-1721.67,-2169.49,40,0
-    .goto 1417/0,-1610.07,-2173.33,40,0
-    .goto 1417/0,-1632.39,-2151.25,40,0
+    .goto 1417/0,-1606.47,-2168.53,40,0
     >>Kill |cRXP_ENEMY_Daggerspine Sorceress|r
     .complete 664,2 --Daggerspine Sorceress slain (3)
     .mob Daggerspine Sorceress
     .isOnQuest 664
 step
     #loop
-    .goto 1417/0,-1694.67,-2149.33,0
-    .goto 1417/0,-1694.67,-2149.33,40,0
-    .goto 1417/0,-1694.67,-2245.33,40,0
-    .goto 1417/0,-1622.67,-2221.33,40,0
-    .goto 1417/0,-1586.67,-2173.33,40,0
-    .goto 1417/0,-1514.67,-2269.33,40,0
-    .goto 1417/0,-1622.67,-2341.33,40,0
-    .goto 1417/0,-1694.67,-2341.33,40,0
-    .goto 1417/0,-1766.67,-2317.33,40,0
-    .goto 1417/0,-1766.67,-2221.33,40,0
+    .goto 1417/0,-1658.67,-2149.33,0
+    .goto 1417/0,-1658.67,-2149.33,40,0
+    .goto 1417/0,-1730.67,-2245.33,40,0
+    .goto 1417/0,-1550.67,-2293.33,40,0
     >>Loot the |cRXP_PICK_Calcified Elven Gems|r for |cRXP_LOOT_Elven Gem|r
     .complete 666,1 --Elven Gem (10)
     .isOnQuest 666

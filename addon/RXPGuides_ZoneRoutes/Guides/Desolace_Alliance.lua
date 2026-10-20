@@ -60,16 +60,11 @@ step
     .use 4614
 step
     #loop
-    .goto 1443/1,1081.30,-14.99,0
-    .goto 1443/1,1081.30,-14.99,40,0
-    .goto 1443/1,959.02,-51.87,40,0
-    .goto 1443/1,1017.91,-151.10,40,0
-    .goto 1443/1,927.55,-194.27,40,0
-    .goto 1443/1,873.60,-143.30,40,0
-    .goto 1443/1,814.70,-19.49,40,0
-    .goto 1443/1,899.67,63.25,40,0
-    .goto 1443/1,851.57,131.31,40,0
-    .goto 1443/1,927.55,181.07,40,0
+    .goto 1443/1,984.64,-56.96,0
+    .goto 1443/1,984.64,-56.96,40,0
+    .goto 1443/1,945.08,-155.89,40,0
+    .goto 1443/1,855.61,-38.08,40,0
+    .goto 1443/1,886.19,117.52,40,0
     >>Kill |cRXP_ENEMY_Hatefury Rogues|r, |cRXP_ENEMY_Hatefury Tricksters|r, |cRXP_ENEMY_Hatefury Felsworns|r and |cRXP_ENEMY_Hatefury Betrayers|r. Loot them for |cRXP_LOOT_Hatefury Claw|r
     .complete 1458,1 --Hatefury Claw (10)
     .mob Hatefury Rogue
@@ -80,16 +75,11 @@ step
 step
     #label Drop635x1
     #loop
-    .goto 1443/1,899.67,63.25,0
-    .goto 1443/1,899.67,63.25,40,0
-    .goto 1443/1,927.55,181.07,40,0
-    .goto 1443/1,851.57,131.31,40,0
-    .goto 1443/1,814.70,-19.49,40,0
-    .goto 1443/1,873.60,-143.30,40,0
-    .goto 1443/1,927.55,-194.27,40,0
-    .goto 1443/1,1017.91,-151.10,40,0
-    .goto 1443/1,1081.30,-14.99,40,0
-    .goto 1443/1,959.02,-51.87,40,0
+    .goto 1443/1,855.61,-38.08,0
+    .goto 1443/1,855.61,-38.08,40,0
+    .goto 1443/1,945.08,-155.89,40,0
+    .goto 1443/1,984.64,-56.96,40,0
+    .goto 1443/1,886.19,117.52,40,0
     >>Kill |cRXP_ENEMY_Hatefury Rogues|r, |cRXP_ENEMY_Hatefury Tricksters|r, |cRXP_ENEMY_Hatefury Felsworns|r and |cRXP_ENEMY_Hatefury Betrayers|r. Loot them for |cRXP_LOOT_Hatefury Horn|r
     .complete 1458,2 --Hatefury Horn (10)
     .mob Hatefury Rogue
@@ -136,16 +126,10 @@ step
     .use 4614
 step
     #loop
-    .goto 1443/1,2665.19,-489.56,0
-    .goto 1443/1,2665.19,-489.56,40,0
-    .goto 1443/1,2653.95,-576.20,40,0
-    .goto 1443/1,2749.26,-611.58,40,0
-    .goto 1443/1,2824.34,-619.97,40,0
-    .goto 1443/1,2818.49,-551.92,40,0
-    .goto 1443/1,2813.55,-482.37,40,0
-    .goto 1443/1,2821.64,-383.14,40,0
-    .goto 1443/1,2719.59,-417.01,40,0
-    .goto 1443/1,2748.81,-480.27,40,0
+    .goto 1443/1,2672.83,-550.72,0
+    .goto 1443/1,2672.83,-550.72,40,0
+    .goto 1443/1,2782.98,-585.50,40,0
+    .goto 1443/1,2732.17,-450.29,40,0
     >>Kill |cRXP_ENEMY_Drysnap Crawlers|r and |cRXP_ENEMY_Drysnap Pincers|r. Loot them for |cRXP_LOOT_Rackmore's Silver Key|r
     .complete 6161,1 --Rackmore's Silver Key (1)
     .mob Drysnap Crawler
@@ -153,16 +137,11 @@ step
 step
     #label Drop635x2
     #loop
-    .goto 1443/1,1242.70,-1618.58,0
-    .goto 1443/1,1242.70,-1618.58,40,0
-    .goto 1443/1,1146.94,-1678.84,40,0
-    .goto 1443/1,1029.15,-1689.93,40,0
-    .goto 1443/1,958.57,-1879.40,40,0
-    .goto 1443/1,1147.84,-1846.12,40,0
-    .goto 1443/1,1084.00,-1981.93,40,0
-    .goto 1443/1,1213.93,-2049.08,40,0
-    .goto 1443/1,1314.19,-1884.79,40,0
-    .goto 1443/1,1242.26,-1757.98,40,0
+    .goto 1443/1,1211.23,-1713.01,0
+    .goto 1443/1,1211.23,-1713.01,40,0
+    .goto 1443/1,1068.27,-1743.89,40,0
+    .goto 1443/1,1088.50,-1855.41,40,0
+    .goto 1443/1,1262.94,-1935.76,40,0
     >>Kill |cRXP_ENEMY_Kolkar Centaurs|r, |cRXP_ENEMY_Kolkar Scouts|r, |cRXP_ENEMY_Kolkar Maulers|r and |cRXP_ENEMY_Kolkar Windchasers|r. Loot them for |cRXP_LOOT_Centaur Ear|r
     .complete 1387,1 --Centaur Ear (15)
     .mob Kolkar Centaur
@@ -229,16 +208,9 @@ step
 step
     #label Drop635x3
     #loop
-    .goto 1443/1,2920.55,53.06,0
-    .goto 1443/1,2920.55,53.06,40,0
-    .goto 1443/1,2989.79,74.95,40,0
-    .goto 1443/1,3018.11,144.80,40,0
-    .goto 1443/1,2988.44,214.65,40,0
-    .goto 1443/1,2980.79,279.70,40,0
-    .goto 1443/1,2848.62,214.65,40,0
-    .goto 1443/1,2922.80,181.37,40,0
-    .goto 1443/1,2948.42,120.51,40,0
-    .goto 1443/1,2853.11,122.91,40,0
+    .goto 1443/1,2922.35,112.12,0
+    .goto 1443/1,2922.35,112.12,40,0
+    .goto 1443/1,2951.12,181.97,40,0
     >>Kill |cRXP_ENEMY_Slitherblade Nagas|r, |cRXP_ENEMY_Slitherblade Sorceress|r, |cRXP_ENEMY_Slitherblade Warriors|r and |cRXP_ENEMY_Slitherblade Myrmidons|r. Loot them for |cRXP_LOOT_Rackmore's Golden Key|r
     .complete 6161,2 --Rackmore's Golden Key (1)
     .mob Slitherblade Naga
@@ -378,14 +350,7 @@ step
     #loop
     .goto 1443/1,2853.11,122.91,0
     .goto 1443/1,2853.11,122.91,40,0
-    .goto 1443/1,2842.77,159.19,40,0
-    .goto 1443/1,2848.62,214.65,40,0
-    .goto 1443/1,2885.03,218.25,40,0
-    .goto 1443/1,2922.80,181.37,40,0
-    .goto 1443/1,2986.64,179.57,40,0
-    .goto 1443/1,2989.79,74.95,40,0
-    .goto 1443/1,2944.83,77.34,40,0
-    .goto 1443/1,2922.35,112.12,40,0
+    .goto 1443/1,2948.42,120.51,40,0
     >>Kill |cRXP_ENEMY_Slitherblade Tidehunters|r and |cRXP_ENEMY_Slitherblade Sea Witches|r. Loot them for |cRXP_LOOT_Karnitol's Satchel|r
     .complete 1456,1 --Karnitol's Satchel (1)
     .mob Slitherblade Tidehunter
@@ -395,10 +360,7 @@ step
     #loop
     .goto 1443/1,1884.71,-1365.85,0
     .goto 1443/1,1884.71,-1365.85,40,0
-    .goto 1443/1,1876.62,-1412.62,40,0
-    .goto 1443/1,1793.44,-1443.80,40,0
     .goto 1443/1,1730.05,-1426.11,40,0
-    .goto 1443/1,1808.28,-1376.35,40,0
     >>Kill |cRXP_ENEMY_Aged Kodos|r, |cRXP_ENEMY_Dying Kodos|r and |cRXP_ENEMY_Ancient Kodos|r
     .complete 5561,1 --Aged Kodo (5)
     .mob Aged Kodo
@@ -413,8 +375,6 @@ step
     #loop
     .goto 1443/1,1821.32,-1247.44,0
     .goto 1443/1,1821.32,-1247.44,40,0
-    .goto 1443/1,1868.08,-1270.52,40,0
-    .goto 1443/1,1962.49,-1245.64,40,0
     .goto 1443/1,1897.75,-1229.75,40,0
     >>Kill |cRXP_ENEMY_Aged Kodos|r. Loot them for |cRXP_LOOT_Aged Kodo Hide|r
     .complete 1459,2 --Aged Kodo Hide (3)
@@ -424,7 +384,6 @@ step
     #loop
     .goto 1443/1,1378.48,-596.59,0
     .goto 1443/1,1378.48,-596.59,40,0
-    .goto 1443/1,1388.37,-542.63,40,0
     .goto 1443/1,1400.51,-481.77,40,0
     >>Kill |cRXP_ENEMY_Scorpashi Snappers|r, |cRXP_ENEMY_Scorpashi Lashers|r and |cRXP_ENEMY_Scorpashi Venomlashes|r. Loot them for |cRXP_LOOT_Scorpashi Venom|r
     .complete 1459,1 --Scorpashi Venom (1)
@@ -525,16 +484,10 @@ step
     .complete 5943,1 --Escort Gizelton Caravan past Mannoroc Coven
 step
     #loop
-    .goto 1443/1,1357.35,-1991.22,0
-    .goto 1443/1,1357.35,-1991.22,40,0
-    .goto 1443/1,1348.36,-2083.25,40,0
-    .goto 1443/1,1359.60,-2163.00,40,0
-    .goto 1443/1,1361.39,-2216.96,40,0
-    .goto 1443/1,1399.61,-2246.04,40,0
-    .goto 1443/1,1401.86,-2309.90,40,0
-    .goto 1443/1,1353.75,-2285.31,40,0
-    .goto 1443/1,1318.68,-2248.14,40,0
-    .goto 1443/1,1302.50,-2142.01,40,0
+    .goto 1443/1,1344.31,-2032.59,0
+    .goto 1443/1,1344.31,-2032.59,40,0
+    .goto 1443/1,1344.31,-2188.18,40,0
+    .goto 1443/1,1378.93,-2270.62,40,0
     >>Kill |cRXP_ENEMY_Undead Ravagers|r
     .complete 261,1 --Undead Ravager slain (30)
     .mob Undead Ravager
@@ -580,16 +533,10 @@ step
     .isOnQuest 6027
 step
     #loop
-    .goto 1443/1,2644.96,-1153.90,0
-    .goto 1443/1,2644.96,-1153.90,40,0
-    .goto 1443/1,2552.34,-1375.15,40,0
-    .goto 1443/1,2647.20,-1388.94,40,0
-    .goto 1443/1,2617.08,-1318.19,40,0
-    .goto 1443/1,2654.85,-1288.51,40,0
-    .goto 1443/1,2682.27,-1248.93,40,0
-    .goto 1443/1,2716.89,-1219.26,40,0
-    .goto 1443/1,2758.70,-1151.20,40,0
-    .goto 1443/1,2693.51,-1179.98,40,0
+    .goto 1443/1,2722.28,-1179.68,0
+    .goto 1443/1,2722.28,-1179.68,40,0
+    .goto 1443/1,2681.37,-1215.06,40,0
+    .goto 1443/1,2580.22,-1365.85,40,0
     >>Kill |cRXP_ENEMY_Maraudine Scouts|r, |cRXP_ENEMY_Maraudine Wranglers|r, |cRXP_ENEMY_Maraudine Maulers|r and |cRXP_ENEMY_Maraudine Windchasers|r. Loot them for |cRXP_LOOT_Carved Centaur Totem|r
     .complete 93224,1 --Carved Centaur Totem (5)
     .mob Maraudine Scout
@@ -600,14 +547,9 @@ step
     #loop
     .goto 1443/1,2101.86,-1276.82,0
     .goto 1443/1,2101.86,-1276.82,40,0
-    .goto 1443/1,1999.80,-1259.13,40,0
-    .goto 1443/1,1887.41,-1303.80,40,0
+    .goto 1443/1,1949.90,-1307.69,40,0
     .goto 1443/1,1810.53,-1290.31,40,0
-    .goto 1443/1,1787.15,-1358.06,40,0
-    .goto 1443/1,1785.80,-1461.49,40,0
-    .goto 1443/1,1838.85,-1383.84,40,0
-    .goto 1443/1,1934.16,-1347.27,40,0
-    .goto 1443/1,2031.72,-1349.36,40,0
+    .goto 1443/1,1788.50,-1430.01,40,0
     >>Loot the |cRXP_PICK_Kodo Bones|r for |cRXP_LOOT_Kodo Bone|r
     .complete 5501,1 --Kodo Bone (10)
 step
@@ -644,11 +586,9 @@ step
     .target Hornizz Brimbuzzle
 step
     #loop
-    .goto 1443/1,1676.10,-1811.04,0
-    .goto 1443/1,1676.10,-1811.04,40,0
-    .goto 1443/1,1614.06,-1812.54,40,0
+    .goto 1443/1,1685.99,-1877.30,0
     .goto 1443/1,1685.99,-1877.30,40,0
-    .goto 1443/1,1727.36,-1877.30,40,0
+    .goto 1443/1,1614.06,-1812.54,40,0
     >>Kill |cRXP_ENEMY_Mana Eaters|r, |cRXP_ENEMY_Mage Hunters|r and |cRXP_ENEMY_Ley Hunters|r. Loot them for |cRXP_LOOT_Felhound Brain|r
     .complete 1466,1 --Felhound Brain (10)
     .mob Mana Eater
@@ -657,10 +597,7 @@ step
     .isOnQuest 1466
 step
     #loop
-    .goto 1443/1,1879.31,-2046.98,0
-    .goto 1443/1,1879.31,-2046.98,40,0
-    .goto 1443/1,1868.97,-2100.34,40,0
-    .goto 1443/1,1902.24,-2086.55,40,0
+    .goto 1443/1,1894.60,-2064.97,0
     .goto 1443/1,1894.60,-2064.97,40,0
     .goto 1443/1,1956.64,-2023.30,40,0
     >>Kill |cRXP_ENEMY_Nether Maidens|r, |cRXP_ENEMY_Nether Sisters|r and |cRXP_ENEMY_Nether Sorceress|r. Loot them for |cRXP_LOOT_Nether Wing|r
@@ -673,11 +610,7 @@ step
     #loop
     .goto 1443/1,1904.94,-2051.78,0
     .goto 1443/1,1904.94,-2051.78,40,0
-    .goto 1443/1,1920.68,-2001.41,40,0
-    .goto 1443/1,1943.61,-2043.38,40,0
     .goto 1443/1,1933.71,-2130.02,40,0
-    .goto 1443/1,1913.03,-2075.76,40,0
-    .goto 1443/1,1871.67,-2063.17,40,0
     >>Kill |cRXP_ENEMY_Doomwarder Captains|r, |cRXP_ENEMY_Lord Azrethocs|r and |cRXP_ENEMY_Kaskks|r. Loot them for |cRXP_LOOT_Doomwarder Blood|r
     .complete 1466,3 --Doomwarder Blood (1)
     .mob Doomwarder Captain

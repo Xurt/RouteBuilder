@@ -98,13 +98,7 @@ step
     .target J.D. Collie
     .isQuestComplete 4005
 step
-    #loop
-    .goto 1449/1,-1553.47,-6270.07,0
-    .goto 1449/1,-1553.47,-6270.07,40,0
-    .goto 1449/1,-1560.87,-6270.07,40,0
-    .goto 1449/1,-1623.77,-6230.60,40,0
-    .goto 1449/1,-1616.37,-6183.73,40,0
-    .goto 1449/1,-1586.77,-6215.80,40,0
+    .goto 1449/1,-1586.77,-6215.80
     >>Pick up |cRXP_PICK_Blue Power Crystal|r from the ground
     >>Pick up |cRXP_PICK_Green Power Crystal|r from the ground
     >>Pick up |cRXP_PICK_Yellow Power Crystal|r from the ground
@@ -192,16 +186,10 @@ step
 step
     #label Drop3884x2
     #loop
-    .goto 1449/1,-1799.89,-6745.39,0
-    .goto 1449/1,-1799.89,-6745.39,40,0
-    .goto 1449/1,-1859.09,-6689.65,40,0
-    .goto 1449/1,-1884.25,-6617.62,40,0
-    .goto 1449/1,-1967.50,-6646.48,40,0
-    .goto 1449/1,-2131.41,-6723.44,40,0
-    .goto 1449/1,-2020.41,-6819.89,40,0
-    .goto 1449/1,-1941.60,-6924.97,40,0
-    .goto 1449/1,-1974.90,-6750.33,40,0
-    .goto 1449/1,-1907.19,-6791.77,40,0
+    .goto 1449/1,-1853.91,-6724.92,0
+    .goto 1449/1,-1853.91,-6724.92,40,0
+    .goto 1449/1,-1952.33,-6824.82,40,0
+    .goto 1449/1,-2017.45,-6700.25,40,0
     >>Kill |cRXP_ENEMY_Bloodpetal Lashers|r, |cRXP_ENEMY_Bloodpetal Flayers|r, |cRXP_ENEMY_Bloodpetal Threshers|r and |cRXP_ENEMY_Bloodpetal Trappers|r. Loot them for |cRXP_LOOT_Bloodpetal|r
     .complete 4141,1 --Bloodpetal (15)
     .mob Bloodpetal Lasher
@@ -267,16 +255,9 @@ step
 step
     #label Drop3884x3
     #loop
-    .goto 1449/1,-1879.44,-6376.63,0
-    .goto 1449/1,-1879.44,-6376.63,40,0
+    .goto 1449/1,-1903.12,-6351.96,0
     .goto 1449/1,-1903.12,-6351.96,40,0
-    .goto 1449/1,-1921.99,-6318.41,40,0
-    .goto 1449/1,-1959.36,-6339.87,40,0
-    .goto 1449/1,-1973.05,-6306.33,40,0
-    .goto 1449/1,-2011.53,-6340.37,40,0
-    .goto 1449/1,-2021.52,-6401.79,40,0
-    .goto 1449/1,-1960.10,-6390.44,40,0
-    .goto 1449/1,-1916.81,-6393.89,40,0
+    .goto 1449/1,-1986.74,-6359.11,40,0
     >>Kill |cRXP_ENEMY_Un'Goro Gorillas|r. Loot them for |cRXP_LOOT_Un'Goro Gorilla Pelt|r
     >>Kill |cRXP_ENEMY_Un'Goro Stompers|r. Loot them for |cRXP_LOOT_Un'Goro Stomper Pelt|r
     >>Kill |cRXP_ENEMY_Un'Goro Thunderers|r. Loot them for |cRXP_LOOT_Un'Goro Thunderer Pelt|r
@@ -307,16 +288,13 @@ step
     .use 11116
 step
     #loop
-    .goto 1449/1,-2008.57,-7814.94,0
-    .goto 1449/1,-2008.57,-7814.94,40,0
-    .goto 1449/1,-1808.77,-7822.09,40,0
-    .goto 1449/1,-1597.13,-7785.34,40,0
-    .goto 1449/1,-1456.53,-7810.01,40,0
-    .goto 1449/1,-1421.01,-8058.15,40,0
-    .goto 1449/1,-1575.67,-8250.80,40,0
-    .goto 1449/1,-1612.67,-8097.87,40,0
+    .goto 1449/1,-1985.26,-7815.43,0
+    .goto 1449/1,-1985.26,-7815.43,40,0
+    .goto 1449/1,-1785.46,-7847.75,40,0
+    .goto 1449/1,-1452.83,-7848.98,40,0
+    .goto 1449/1,-1516.84,-8050.26,40,0
+    .goto 1449/1,-1583.07,-8186.67,40,0
     .goto 1449/1,-1625.62,-7939.75,40,0
-    .goto 1449/1,-1756.23,-8019.18,40,0
     >>Kill |cRXP_ENEMY_Devilsaurs|r, |cRXP_ENEMY_Ironhide Devilsaurs|r, |cRXP_ENEMY_Tyrant Devilsaurs|r and |cRXP_ENEMY_Stegodons|r. Loot them for |cRXP_LOOT_Bloodpetal Sprout|r. It can also be picked up from |cRXP_PICK_Bloodpetal Sprout|r on the ground
     .complete 4144,1 --Bloodpetal Sprout (1)
     .mob Devilsaur
@@ -327,16 +305,9 @@ step
 step
     #label Drop3884x4
     #loop
-    .goto 1449/1,-1116.87,-8142.27,0
-    .goto 1449/1,-1116.87,-8142.27,40,0
-    .goto 1449/1,-1102.07,-8152.13,40,0
-    .goto 1449/1,-1116.87,-8201.47,40,0
-    .goto 1449/1,-1079.87,-8250.80,40,0
-    .goto 1449/1,-1057.67,-8206.40,40,0
-    .goto 1449/1,-1079.87,-8191.60,40,0
+    .goto 1449/1,-1065.07,-8112.67,0
     .goto 1449/1,-1065.07,-8112.67,40,0
-    .goto 1449/1,-1050.27,-8088.00,40,0
-    .goto 1449/1,-1087.27,-8122.53,40,0
+    .goto 1449/1,-1079.87,-8191.60,40,0
     >>Kill |cRXP_ENEMY_Pterrordaxes|r
     >>Kill |cRXP_ENEMY_Fledgling Pterrordaxes|r, |cRXP_ENEMY_Pterrordaxes|r and |cRXP_ENEMY_Frenzied Pterrordaxes|r. Loot them for |cRXP_LOOT_Webbed Pterrordax Scale|r
     .complete 4501,1 --Pterrordax slain (10)
@@ -346,15 +317,9 @@ step
     .mob Frenzied Pterrordax
 step
     #loop
-    .goto 1449/1,-1163.12,-8052.73,0
-    .goto 1449/1,-1163.12,-8052.73,40,0
-    .goto 1449/1,-1268.20,-8071.23,40,0
-    .goto 1449/1,-1297.80,-7986.13,40,0
-    .goto 1449/1,-1325.92,-7931.37,40,0
-    .goto 1449/1,-1254.88,-7977.49,40,0
-    .goto 1449/1,-1188.28,-7985.14,40,0
-    .goto 1449/1,-1095.41,-7958.50,40,0
+    .goto 1449/1,-1143.51,-8004.38,0
     .goto 1449/1,-1143.51,-8004.38,40,0
+    .goto 1449/1,-1297.80,-7986.13,40,0
     >>Open the |cRXP_PICK_Gorishi Hive Hatchery|r. Loot it for |cRXP_LOOT_Hive Wall Sample|r
     >>Kill |cRXP_ENEMY_Gorishi Wasps|r and |cRXP_ENEMY_Gorishi Stingers|r. Loot them for |cRXP_LOOT_Gorishi Sting|r << Druid
     .complete 3883,1 --Hive Wall Sample (1)
@@ -373,16 +338,10 @@ step
     .use 11116
 step
     #loop
-    .goto 1449/1,-450.87,-7560.13,0
-    .goto 1449/1,-450.87,-7560.13,40,0
-    .goto 1449/1,-436.07,-7530.53,40,0
-    .goto 1449/1,-384.27,-7486.13,40,0
-    .goto 1449/1,-347.27,-7446.67,40,0
-    .goto 1449/1,-310.27,-7412.13,40,0
-    .goto 1449/1,-243.67,-7417.07,40,0
-    .goto 1449/1,-221.47,-7461.47,40,0
-    .goto 1449/1,-258.47,-7471.33,40,0
-    .goto 1449/1,-280.67,-7446.67,40,0
+    .goto 1449/1,-436.07,-7550.27,0
+    .goto 1449/1,-436.07,-7550.27,40,0
+    .goto 1449/1,-332.47,-7441.73,40,0
+    .goto 1449/1,-243.67,-7456.53,40,0
     >>Click the |cRXP_PICK_Western Crystal Pylon|r
     >>Kill |cRXP_ENEMY_Frenzied Pterrordaxes|r
     .complete 4288,1 --Western Crystal Pylon
@@ -390,16 +349,10 @@ step
     .mob Frenzied Pterrordax
 step
     #loop
-    .goto 1449/1,-531.53,-7668.17,0
-    .goto 1449/1,-531.53,-7668.17,40,0
-    .goto 1449/1,-609.60,-7650.17,40,0
-    .goto 1449/1,-688.04,-7660.77,40,0
-    .goto 1449/1,-742.43,-7741.68,40,0
-    .goto 1449/1,-816.80,-7750.07,40,0
-    .goto 1449/1,-754.64,-7861.56,40,0
-    .goto 1449/1,-675.09,-7780.16,40,0
-    .goto 1449/1,-610.34,-7890.42,40,0
-    .goto 1449/1,-548.18,-7758.45,40,0
+    .goto 1449/1,-591.84,-7752.53,0
+    .goto 1449/1,-591.84,-7752.53,40,0
+    .goto 1449/1,-621.44,-7874.39,40,0
+    .goto 1449/1,-750.94,-7752.53,40,0
     >>Kill |cRXP_ENEMY_Stegodons|r, |cRXP_ENEMY_Plated Stegodons|r, |cRXP_ENEMY_Spiked Stegodons|r and |cRXP_ENEMY_Thunderstomp Stegodons|r. Loot them for |cRXP_LOOT_Dinosaur Bone|r. It can also be picked up from |cRXP_PICK_Dinosaur Bone|r on the ground
     .complete 3882,1 --Dinosaur Bone (8)
     .mob Stegodon
@@ -409,16 +362,11 @@ step
 step
     #label Drop3884x5
     #loop
-    .goto 1449/1,-908.56,-7842.07,0
-    .goto 1449/1,-908.56,-7842.07,40,0
-    .goto 1449/1,-1025.11,-7847.25,40,0
-    .goto 1449/1,-1038.43,-7780.90,40,0
-    .goto 1449/1,-1093.93,-7759.93,40,0
-    .goto 1449/1,-1139.81,-7679.77,40,0
-    .goto 1449/1,-1196.05,-7576.17,40,0
+    .goto 1449/1,-905.97,-7618.59,0
+    .goto 1449/1,-905.97,-7618.59,40,0
+    .goto 1449/1,-976.27,-7825.55,40,0
     .goto 1449/1,-1015.86,-7708.87,40,0
-    .goto 1449/1,-970.35,-7625.50,40,0
-    .goto 1449/1,-890.80,-7638.57,40,0
+    .goto 1449/1,-1207.15,-7620.32,40,0
     >>Kill |cRXP_ENEMY_Young Diemetradons|r, |cRXP_ENEMY_Diemetradons|r and |cRXP_ENEMY_Elder Diemetradons|r. Loot them for |cRXP_LOOT_Webbed Diemetradon Scale|r
     .complete 4503,1 --Webbed Diemetradon Scale (8)
     .mob Young Diemetradon
@@ -496,10 +444,9 @@ step
     .isQuestComplete 4244
 step << Druid
     #loop
-    .goto 1449/1,-884.51,-6537.21,0
-    .goto 1449/1,-884.51,-6537.21,40,0
-    .goto 1449/1,-838.63,-6586.05,40,0
+    .goto 1449/1,-868.60,-6652.40,0
     .goto 1449/1,-868.60,-6652.40,40,0
+    .goto 1449/1,-838.63,-6586.05,40,0
     >>Loot the |cRXP_PICK_Bloodpetal Sprouts|r for |cRXP_LOOT_Bloodcap|r
     .complete 9052,2 --Bloodcap (8)
 step << Druid

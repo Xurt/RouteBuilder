@@ -33,16 +33,9 @@ step
     .target Loh'atu
 step
     #loop
-    .goto 1447/1,-4275.53,3183.08,0
-    .goto 1447/1,-4275.53,3183.08,40,0
-    .goto 1447/1,-4311.53,3188.15,40,0
-    .goto 1447/1,-4341.45,3252.39,40,0
-    .goto 1447/1,-4357.17,3298.04,40,0
-    .goto 1447/1,-4321.17,3287.56,40,0
-    .goto 1447/1,-4285.67,3282.15,40,0
-    .goto 1447/1,-4304.94,3237.51,40,0
+    .goto 1447/1,-4279.08,3239.88,0
     .goto 1447/1,-4279.08,3239.88,40,0
-    .goto 1447/1,-4251.70,3222.64,40,0
+    .goto 1447/1,-4321.17,3287.56,40,0
     >>Kill |cRXP_ENEMY_Haldarr Satyrs|r
     >>Kill |cRXP_ENEMY_Haldarr Tricksters|r
     >>Kill |cRXP_ENEMY_Haldarr Felsworns|r
@@ -54,16 +47,9 @@ step
     .mob Haldarr Felsworn
 step
     #loop
-    .goto 1447/1,-4145.21,3114.78,0
-    .goto 1447/1,-4145.21,3114.78,40,0
-    .goto 1447/1,-4176.65,3082.32,40,0
-    .goto 1447/1,-4153.32,3023.82,40,0
-    .goto 1447/1,-4184.26,3013.68,40,0
-    .goto 1447/1,-4182.23,2976.14,40,0
+    .goto 1447/1,-4153.83,3054.59,0
+    .goto 1447/1,-4153.83,3054.59,40,0
     .goto 1447/1,-4152.82,2950.78,40,0
-    .goto 1447/1,-4120.87,2918.66,40,0
-    .goto 1447/1,-4117.32,2995.08,40,0
-    .goto 1447/1,-4113.77,3051.55,40,0
     >>Kill |cRXP_ENEMY_Highborne Apparitions|r
     >>Kill |cRXP_ENEMY_Highborne Lichlings|r
     .complete 5535,1 --Highborne Apparition slain (6)
@@ -109,10 +95,7 @@ step << Rogue
     #loop
     .goto 1447/1,-5377.42,4605.91,0
     .goto 1447/1,-5377.42,4605.91,40,0
-    .goto 1447/1,-5371.84,4660.01,40,0
-    .goto 1447/1,-5344.46,4679.96,40,0
-    .goto 1447/1,-5394.16,4701.93,40,0
-    .goto 1447/1,-5447.91,4717.83,40,0
+    .goto 1447/1,-5379.96,4683.34,40,0
     >>Kill |cRXP_ENEMY_Timbermaw Shaman|r and loot |cRXP_LOOT_Sealed Azure Bag|r
     .complete 8234,1 --Sealed Azure Bag (1)
     .mob Timbermaw Shaman
@@ -191,12 +174,7 @@ step
     .goto 1447/1,-5097.51,3346.73,0
     .goto 1447/1,-5097.51,3346.73,40,0
     .goto 1447/1,-5153.29,3498.89,40,0
-    .goto 1447/1,-5156.84,3588.15,40,0
-    .goto 1447/1,-5250.14,3534.05,40,0
-    .goto 1447/1,-5233.41,3494.83,40,0
     .goto 1447/1,-5274.99,3431.26,40,0
-    .goto 1447/1,-5269.92,3394.07,40,0
-    .goto 1447/1,-5198.93,3434.64,40,0
     >>Pick up |cRXP_PICK_Tablet of Beth'Amara|r from the ground
     >>Pick up |cRXP_PICK_Tablet of Jin'yael|r from the ground
     >>Pick up |cRXP_PICK_Tablet of Markri|r from the ground
@@ -264,16 +242,10 @@ step << Hunter
     .xp <50,1
 step << Hunter
     #loop
-    .goto 1447/1,-5686.24,4448.34,0
-    .goto 1447/1,-5686.24,4448.34,40,0
+    .goto 1447/1,-5746.07,4454.09,0
     .goto 1447/1,-5746.07,4454.09,40,0
-    .goto 1447/1,-5781.06,4424.00,40,0
     .goto 1447/1,-5824.67,4447.33,40,0
-    .goto 1447/1,-5865.74,4403.03,40,0
-    .goto 1447/1,-5949.92,4454.43,40,0
     .goto 1447/1,-5954.48,4517.99,40,0
-    .goto 1447/1,-5894.65,4495.34,40,0
-    .goto 1447/1,-5762.30,4498.72,40,0
     >>Kill |cRXP_ENEMY_Mosshoof Courser|r and loot |cRXP_LOOT_Perfect Courser Antler|r
     .complete 8153,1 --Perfect Courser Antler (1)
     .mob Mosshoof Courser
@@ -307,16 +279,10 @@ step << Priest
     .xp <50,1
 step << Priest
     #loop
-    .goto 1447/1,-5686.24,4448.34,0
-    .goto 1447/1,-5686.24,4448.34,40,0
+    .goto 1447/1,-5746.07,4454.09,0
     .goto 1447/1,-5746.07,4454.09,40,0
-    .goto 1447/1,-5781.06,4424.00,40,0
     .goto 1447/1,-5824.67,4447.33,40,0
-    .goto 1447/1,-5865.74,4403.03,40,0
-    .goto 1447/1,-5949.92,4454.43,40,0
     .goto 1447/1,-5954.48,4517.99,40,0
-    .goto 1447/1,-5894.65,4495.34,40,0
-    .goto 1447/1,-5762.30,4498.72,40,0
     >>Kill |cRXP_ENEMY_Mosshoof Coursers|r. Loot them for |cRXP_LOOT_Healthy Courser Gland|r
     .complete 8255,1 --Healthy Courser Gland (4)
     .mob Mosshoof Courser
@@ -335,32 +301,18 @@ step
     .complete 3601,4 --Kim'Jael's Wizzlegoober (1)
 step << Mage
     #loop
-    .goto 1447/1,-6083.79,4447.33,0
-    .goto 1447/1,-6083.79,4447.33,40,0
-    .goto 1447/1,-6148.70,4480.46,40,0
-    .goto 1447/1,-6215.63,4447.33,40,0
-    .goto 1447/1,-6219.18,4388.83,40,0
-    .goto 1447/1,-6279.02,4375.64,40,0
-    .goto 1447/1,-6230.34,4288.07,40,0
-    .goto 1447/1,-6107.62,4300.92,40,0
-    .goto 1447/1,-6136.53,4366.18,40,0
-    .goto 1447/1,-6154.78,4419.26,40,0
+    .goto 1447/1,-6127.40,4334.73,0
+    .goto 1447/1,-6127.40,4334.73,40,0
+    .goto 1447/1,-6251.13,4378.69,40,0
     >>Kill |cRXP_ENEMY_Blood Elf Surveyors|r and |cRXP_ENEMY_Blood Elf Reclaimers|r. Loot them for |cRXP_LOOT_Glittering Dust|r
     .complete 8251,1 --Glittering Dust (10)
     .mob Blood Elf Surveyor
     .mob Blood Elf Reclaimer
 step
     #loop
-    .goto 1447/1,-6148.70,4480.46,0
-    .goto 1447/1,-6148.70,4480.46,40,0
-    .goto 1447/1,-6080.75,4408.78,40,0
-    .goto 1447/1,-6136.53,4366.18,40,0
-    .goto 1447/1,-6096.47,4322.90,40,0
-    .goto 1447/1,-6162.39,4312.75,40,0
-    .goto 1447/1,-6214.11,4312.41,40,0
-    .goto 1447/1,-6279.02,4375.64,40,0
-    .goto 1447/1,-6220.19,4411.48,40,0
-    .goto 1447/1,-6154.78,4419.26,40,0
+    .goto 1447/1,-6127.40,4334.73,0
+    .goto 1447/1,-6127.40,4334.73,40,0
+    .goto 1447/1,-6258.73,4356.37,40,0
     >>Kill |cRXP_ENEMY_Blood Elf Reclaimers|r
     .complete 3505,1 --Blood Elf Reclaimer slain (10)
     .mob Blood Elf Reclaimer
@@ -368,15 +320,9 @@ step
 step
     #label Along12
     #loop
-    .goto 1447/1,-6152.75,4393.23,0
-    .goto 1447/1,-6152.75,4393.23,40,0
-    .goto 1447/1,-6215.63,4447.33,40,0
-    .goto 1447/1,-6257.72,4414.87,40,0
-    .goto 1447/1,-6256.70,4378.35,40,0
-    .goto 1447/1,-6219.18,4388.83,40,0
+    .goto 1447/1,-6124.86,4330.33,0
     .goto 1447/1,-6124.86,4330.33,40,0
-    .goto 1447/1,-6107.62,4300.92,40,0
-    .goto 1447/1,-6089.37,4344.20,40,0
+    .goto 1447/1,-6256.20,4380.72,40,0
     >>Kill |cRXP_ENEMY_Blood Elf Surveyors|r
     .complete 3505,2 --Blood Elf Surveyor slain (10)
     .mob Blood Elf Surveyor
@@ -393,9 +339,7 @@ step
     .isOnQuest 3505
 step << Rogue
     #loop
-    .goto 1447/1,-6784.07,4421.29,0
-    .goto 1447/1,-6784.07,4421.29,40,0
-    .goto 1447/1,-6855.06,4287.39,40,0
+    .goto 1447/1,-6914.39,4345.21,0
     .goto 1447/1,-6914.39,4345.21,40,0
     .goto 1447/1,-6906.79,4519.35,40,0
     >>Kill |cRXP_ENEMY_Forest Oozes|r. Loot them for |cRXP_LOOT_Encoded Fragment|r
@@ -404,16 +348,9 @@ step << Rogue
     .isOnQuest 8235
 step
     #loop
-    .goto 1447/1,-6263.80,4381.39,0
-    .goto 1447/1,-6263.80,4381.39,40,0
-    .goto 1447/1,-6213.10,4357.72,40,0
-    .goto 1447/1,-6167.46,4330.67,40,0
-    .goto 1447/1,-6121.82,4323.91,40,0
-    .goto 1447/1,-6142.10,4367.87,40,0
+    .goto 1447/1,-6167.46,4381.39,0
     .goto 1447/1,-6167.46,4381.39,40,0
-    .goto 1447/1,-6228.31,4405.06,40,0
     .goto 1447/1,-6243.52,4496.35,40,0
-    .goto 1447/1,-6248.59,4462.54,40,0
     >>Open the |cRXP_PICK_Kim'jael's Equipment|r. Loot it for |cRXP_LOOT_Kim'Jael's Compass|r
     >>Open the |cRXP_PICK_Kim'jael's Equipment|r. Loot it for |cRXP_LOOT_Kim'Jael's Scope|r
     >>Open the |cRXP_PICK_Kim'jael's Equipment|r. Loot it for |cRXP_LOOT_Kim'Jael's Stuffed Chicken|r
@@ -436,15 +373,10 @@ step << Mage
     .target Archmage Xylem
 step << Hunter
     #loop
-    .goto 1447/1,-7487.90,4949.44,0
-    .goto 1447/1,-7487.90,4949.44,40,0
+    .goto 1447/1,-7513.26,4912.25,0
     .goto 1447/1,-7513.26,4912.25,40,0
-    .goto 1447/1,-7747.53,4752.31,40,0
-    .goto 1447/1,-7749.05,4811.49,40,0
-    .goto 1447/1,-7754.63,4884.86,40,0
     .goto 1447/1,-7653.72,4915.29,40,0
-    .goto 1447/1,-7614.67,4946.40,40,0
-    .goto 1447/1,-7545.20,4941.66,40,0
+    .goto 1447/1,-7749.05,4811.49,40,0
     >>Kill |cRXP_ENEMY_Young Wavethrashers|r, |cRXP_ENEMY_Wavethrashers|r and |cRXP_ENEMY_Great Wavethrashers|r. Loot them for |cRXP_LOOT_Wavethrasher Scales|r
     .complete 8231,1 --Wavethrasher Scales (6)
     .mob Young Wavethrasher
@@ -453,16 +385,11 @@ step << Hunter
     .isOnQuest 8231
 step
     #loop
-    .goto 1447/1,-5747.59,3679.11,0
-    .goto 1447/1,-5747.59,3679.11,40,0
-    .goto 1447/1,-5685.22,3551.97,40,0
-    .goto 1447/1,-5616.26,3548.59,40,0
-    .goto 1447/1,-5613.72,3624.67,40,0
-    .goto 1447/1,-5492.53,3619.60,40,0
-    .goto 1447/1,-5553.89,3482.66,40,0
-    .goto 1447/1,-5677.62,3408.61,40,0
-    .goto 1447/1,-5781.57,3395.42,40,0
-    .goto 1447/1,-5790.70,3521.54,40,0
+    .goto 1447/1,-5724.77,3653.07,0
+    .goto 1447/1,-5724.77,3653.07,40,0
+    .goto 1447/1,-5579.75,3596.27,40,0
+    .goto 1447/1,-5611.69,3480.29,40,0
+    .goto 1447/1,-5748.10,3413.68,40,0
     >>Kill |cRXP_ENEMY_Spitelash Sirens|r, |cRXP_ENEMY_Spitelash Myrmidons|r, |cRXP_ENEMY_Spitelash Battlemasters|r and |cRXP_ENEMY_Spitelash Enchantress|r. Loot them for |cRXP_LOOT_Some Rune|r
     >>Kill |cRXP_ENEMY_Spitelash Sirens|r. Loot them for |cRXP_LOOT_Enchanted Coral|r << Mage
     .complete 5534,1 --Some Rune (1)
@@ -524,8 +451,7 @@ step << Priest
     .xp <50,1
 step << Priest
     #loop
-    .goto 1447/1,-5319.61,3781.90,0
-    .goto 1447/1,-5319.61,3781.90,40,0
+    .goto 1447/1,-5273.98,3639.88,0
     .goto 1447/1,-5273.98,3639.88,40,0
     .goto 1447/1,-5118.30,3719.68,40,0
     >>Kill |cRXP_ENEMY_Highborne Apparitions|r, |cRXP_ENEMY_Highborne Lichlings|r and |cRXP_ENEMY_Lingering Highbornes|r. Loot them for |cRXP_LOOT_Ichor of Undeath|r
@@ -712,14 +638,11 @@ step
     #loop
     .goto 1447/1,-6335.81,2678.59,0
     .goto 1447/1,-6335.81,2678.59,40,0
-    .goto 1447/1,-6317.05,2638.36,40,0
-    .goto 1447/1,-5963.61,2477.75,40,0
-    .goto 1447/1,-5903.77,2452.73,40,0
-    .goto 1447/1,-6258.73,2294.48,40,0
-    .goto 1447/1,-6452.95,2365.15,40,0
-    .goto 1447/1,-6502.13,2368.53,40,0
     .goto 1447/1,-6459.54,2438.53,40,0
-    .goto 1447/1,-6366.74,2644.78,40,0
+    .goto 1447/1,-6452.95,2365.15,40,0
+    .goto 1447/1,-6287.13,2287.05,40,0
+    .goto 1447/1,-5932.68,2455.09,40,0
+    .goto 1447/1,-5963.61,2477.75,40,0
     >>Loot the |cRXP_PICK_Azsharite Formations|r for |cRXP_LOOT_Crystallized Azsharite|r
     .complete 3602,1 --Crystallized Azsharite (20)
     .isOnQuest 3602

@@ -116,16 +116,9 @@ step
 step
     #label Drop485x1
     #loop
-    .goto 1425/0,-2681.49,15.22,0
-    .goto 1425/0,-2681.49,15.22,40,0
-    .goto 1425/0,-2725.77,13.16,40,0
-    .goto 1425/0,-2718.07,-45.36,40,0
-    .goto 1425/0,-2773.51,-35.86,40,0
-    .goto 1425/0,-2806.62,-4.29,40,0
-    .goto 1425/0,-2845.12,-28.93,40,0
-    .goto 1425/0,-2829.72,-67.43,40,0
-    .goto 1425/0,-2743.09,-113.12,40,0
-    .goto 1425/0,-2653.39,-46.13,40,0
+    .goto 1425/0,-2806.62,-32.78,0
+    .goto 1425/0,-2806.62,-32.78,40,0
+    .goto 1425/0,-2718.45,-81.55,40,0
     >>Click the |cRXP_PICK_Third Witherbark Cage|r
     >>Kill |cRXP_ENEMY_Vilebranch Axe Throwers|r, |cRXP_ENEMY_Vilebranch Witch Doctors|r, |cRXP_ENEMY_Vilebranch Headhunters|r and |cRXP_ENEMY_Vilebranch Shadowcasters|r. Loot them for |cRXP_LOOT_Troll Tribal Necklace|r
     .complete 2988,3 --Check Third Cage
@@ -164,16 +157,10 @@ step
     .use 8704
 step
     #loop
-    .goto 1425/0,-3820.71,62.70,0
-    .goto 1425/0,-3820.71,62.70,40,0
-    .goto 1425/0,-3824.17,134.57,40,0
-    .goto 1425/0,-3840.34,246.47,40,0
-    .goto 1425/0,-3960.08,277.27,40,0
-    .goto 1425/0,-3980.10,176.15,40,0
-    .goto 1425/0,-4091.36,99.40,40,0
+    .goto 1425/0,-3893.09,48.07,0
+    .goto 1425/0,-3893.09,48.07,40,0
     .goto 1425/0,-4039.00,53.20,40,0
-    .goto 1425/0,-3990.49,14.96,40,0
-    .goto 1425/0,-3913.49,80.41,40,0
+    .goto 1425/0,-3863.83,209.26,40,0
     >>Kill |cRXP_ENEMY_Silvermane Stalkers|r. Loot them for |cRXP_LOOT_Silvermane Stalker Flank|r
     .complete 4297,1 --Silvermane Stalker Flank (5)
     .mob Silvermane Stalker
@@ -181,16 +168,9 @@ step
 step
     #label Drop485x2
     #loop
-    .goto 1425/0,-3788.75,288.82,0
-    .goto 1425/0,-3788.75,288.82,40,0
-    .goto 1425/0,-3713.68,337.08,40,0
-    .goto 1425/0,-3716.37,414.08,40,0
-    .goto 1425/0,-3738.32,465.41,40,0
-    .goto 1425/0,-3821.09,477.22,40,0
-    .goto 1425/0,-3844.58,418.18,40,0
-    .goto 1425/0,-3897.32,376.60,40,0
-    .goto 1425/0,-3785.67,414.59,40,0
-    .goto 1425/0,-3789.91,368.65,40,0
+    .goto 1425/0,-3751.02,352.22,0
+    .goto 1425/0,-3751.02,352.22,40,0
+    .goto 1425/0,-3821.48,399.70,40,0
     >>Kill |cRXP_ENEMY_Green Sludges|r
     >>Kill |cRXP_ENEMY_Jade Oozes|r
     .complete 2877,1 --Green Sludge slain (10)

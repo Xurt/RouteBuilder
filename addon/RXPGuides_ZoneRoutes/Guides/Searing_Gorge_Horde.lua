@@ -29,10 +29,8 @@ step
     #loop
     .goto 1427/0,-1748.69,-6998.30,0
     .goto 1427/0,-1748.69,-6998.30,40,0
-    .goto 1427/0,-1743.33,-6981.49,40,0
-    .goto 1427/0,-1412.88,-6918.87,40,0
     .goto 1427/0,-1723.25,-7026.27,40,0
-    .goto 1427/0,-1731.73,-7012.43,40,0
+    .goto 1427/0,-1412.88,-6918.87,40,0
     >>Kill |cRXP_ENEMY_Dark Iron Geologists|r
     >>Open the |cRXP_PICK_Solid Chest|r. Loot it for |cRXP_LOOT_Silk Cloth|r
     .complete 4449,1 --Dark Iron Geologist slain (8)
@@ -78,14 +76,10 @@ step
 step
     #label Along7
     #loop
-    .goto 1427/0,-1168.56,-6837.80,0
-    .goto 1427/0,-1168.56,-6837.80,40,0
+    .goto 1427/0,-1337.91,-6811.17,0
     .goto 1427/0,-1337.91,-6811.17,40,0
     .goto 1427/0,-1394.59,-6835.42,40,0
-    .goto 1427/0,-1431.40,-6864.72,40,0
-    .goto 1427/0,-1237.06,-6949.81,40,0
     .goto 1427/0,-1197.57,-6931.81,40,0
-    .goto 1427/0,-1005.90,-7060.33,40,0
     .goto 1427/0,-993.41,-6988.04,40,0
     >>Kill |cRXP_ENEMY_Blazing Elementals|r, |cRXP_ENEMY_Inferno Elementals|r and |cRXP_ENEMY_Magma Elementals|r. Loot them for |cRXP_LOOT_Heart of Flame|r
     >>Open the |cRXP_PICK_Book|r. Loot it for |cRXP_LOOT_A Mind of Metal|r
@@ -96,16 +90,9 @@ step
     .mob Magma Elemental
 step
     #loop
-    .goto 1427/0,-1176.82,-6813.55,0
-    .goto 1427/0,-1176.82,-6813.55,40,0
-    .goto 1427/0,-1153.61,-6771.61,40,0
-    .goto 1427/0,-1106.75,-6772.94,40,0
+    .goto 1427/0,-1079.53,-6812.66,0
     .goto 1427/0,-1079.53,-6812.66,40,0
-    .goto 1427/0,-1048.07,-6782.32,40,0
     .goto 1427/0,-1109.21,-6708.54,40,0
-    .goto 1427/0,-1110.55,-6691.88,40,0
-    .goto 1427/0,-1185.74,-6715.68,40,0
-    .goto 1427/0,-1212.29,-6757.03,40,0
     >>Kill |cRXP_ENEMY_Tempered War Golems|r, |cRXP_ENEMY_Heavy War Golems|r and |cRXP_ENEMY_Magma Elementals|r. Loot them for |cRXP_LOOT_Golem Oil|r
     .complete 3442,2 --Golem Oil (1)
     .mob Tempered War Golem
@@ -155,16 +142,10 @@ step
 step
     #label Drop4451x1
     #loop
-    .goto 1427/0,-1216.98,-6715.97,0
-    .goto 1427/0,-1216.98,-6715.97,40,0
-    .goto 1427/0,-1278.11,-6703.03,40,0
-    .goto 1427/0,-1365.36,-6755.09,40,0
-    .goto 1427/0,-1422.03,-6685.18,40,0
-    .goto 1427/0,-1345.50,-6682.65,40,0
-    .goto 1427/0,-1282.13,-6641.90,40,0
-    .goto 1427/0,-1145.80,-6590.43,40,0
-    .goto 1427/0,-1135.76,-6700.21,40,0
-    .goto 1427/0,-1090.02,-6749.59,40,0
+    .goto 1427/0,-1196.23,-6663.17,0
+    .goto 1427/0,-1196.23,-6663.17,40,0
+    .goto 1427/0,-1131.08,-6722.96,40,0
+    .goto 1427/0,-1385.44,-6746.02,40,0
     >>Kill |cRXP_ENEMY_Dark Iron Geologists|r, |cRXP_ENEMY_Dark Iron Steamsmiths|r, |cRXP_ENEMY_Slave Workers|r and |cRXP_ENEMY_Dark Iron Slavers|r. Loot them for |cRXP_LOOT_Thorium Plated Dagger|r
     .complete 3443,1 --Thorium Plated Dagger (8)
     .mob Dark Iron Geologist
@@ -217,9 +198,7 @@ step
     #loop
     .goto 1427/0,-1228.36,-6836.01,0
     .goto 1427/0,-1228.36,-6836.01,40,0
-    .goto 1427/0,-1163.87,-6838.54,40,0
     .goto 1427/0,-1174.14,-6863.98,40,0
-    .goto 1427/0,-1281.91,-6868.74,40,0
     >>Kill |cRXP_ENEMY_Dark Iron Steamsmith|r and loot |cRXP_LOOT_Smithing Tuyere|r
     .complete 7728,1 --Smithing Tuyere (1)
     .mob Dark Iron Steamsmith
@@ -239,27 +218,16 @@ step
     .accept 4451 >>Accept The Key to Freedom
     .use 11818
 step
-    #loop
-    .goto 1427/0,-1075.07,-6872.31,0
-    .goto 1427/0,-1075.07,-6872.31,40,0
-    .goto 1427/0,-1063.47,-6896.41,40,0
-    .goto 1427/0,-1050.97,-6925.86,40,0
+    .goto 1427/0,-1063.47,-6896.41
     >>Kill |cRXP_ENEMY_Dark Iron Lookout|r and loot |cRXP_LOOT_Lookout's Spyglass|r
     .complete 7728,2 --Lookout's Spyglass (1)
     .mob Dark Iron Lookout
 step
     #label Drop4451x3
     #loop
-    .goto 1427/0,-1285.03,-6700.50,0
-    .goto 1427/0,-1285.03,-6700.50,40,0
-    .goto 1427/0,-1276.55,-6641.00,40,0
-    .goto 1427/0,-1220.99,-6576.59,40,0
-    .goto 1427/0,-1288.82,-6520.07,40,0
-    .goto 1427/0,-1363.35,-6478.72,40,0
-    .goto 1427/0,-1347.73,-6527.80,40,0
-    .goto 1427/0,-1303.77,-6600.69,40,0
-    .goto 1427/0,-1422.03,-6685.18,40,0
+    .goto 1427/0,-1345.50,-6682.65,0
     .goto 1427/0,-1345.50,-6682.65,40,0
+    .goto 1427/0,-1284.36,-6564.25,40,0
     >>Kill |cRXP_ENEMY_Dark Iron Taskmasters|r
     >>Kill |cRXP_ENEMY_Dark Iron Slavers|r
     .complete 7729,1 --Dark Iron Taskmaster slain (15)
@@ -268,14 +236,9 @@ step
     .mob Dark Iron Slaver
 step
     #loop
-    .goto 1427/0,-1637.57,-6882.87,0
-    .goto 1427/0,-1637.57,-6882.87,40,0
+    .goto 1427/0,-1700.04,-6860.11,0
     .goto 1427/0,-1700.04,-6860.11,40,0
-    .goto 1427/0,-1740.43,-6855.50,40,0
-    .goto 1427/0,-1784.16,-6826.79,40,0
-    .goto 1427/0,-1870.29,-6853.86,40,0
     .goto 1427/0,-1808.93,-6888.08,40,0
-    .goto 1427/0,-1724.59,-6906.37,40,0
     >>Kill |cRXP_ENEMY_Glassweb Spider|r and loot |cRXP_LOOT_Solid Crystal Leg Shaft|r
     .complete 4450,2 --Solid Crystal Leg Shaft (1)
     .mob Glassweb Spider
@@ -325,31 +288,19 @@ step
     .target Master Smith Burninate
 step
     #loop
-    .goto 1427/0,-1042.94,-6692.17,0
-    .goto 1427/0,-1042.94,-6692.17,40,0
+    .goto 1427/0,-1015.05,-6707.20,0
     .goto 1427/0,-1015.05,-6707.20,40,0
-    .goto 1427/0,-980.91,-6751.82,40,0
-    .goto 1427/0,-951.01,-6765.80,40,0
     .goto 1427/0,-929.15,-6822.18,40,0
-    .goto 1427/0,-947.22,-6849.25,40,0
-    .goto 1427/0,-908.62,-6859.07,40,0
-    .goto 1427/0,-953.91,-6920.95,40,0
     .goto 1427/0,-982.47,-6940.73,40,0
     >>Kill |cRXP_ENEMY_Greater Lava Spiders|r
     .complete 7724,1 --Greater Lava Spider slain (20)
     .mob Greater Lava Spider
 step
     #loop
-    .goto 1427/0,-1290.83,-6520.37,0
-    .goto 1427/0,-1290.83,-6520.37,40,0
+    .goto 1427/0,-1317.38,-6469.64,0
     .goto 1427/0,-1317.38,-6469.64,40,0
-    .goto 1427/0,-1356.43,-6398.54,40,0
-    .goto 1427/0,-1427.16,-6448.07,40,0
-    .goto 1427/0,-1404.18,-6493.89,40,0
-    .goto 1427/0,-1464.20,-6535.09,40,0
-    .goto 1427/0,-1441.67,-6586.71,40,0
-    .goto 1427/0,-1474.69,-6656.18,40,0
-    .goto 1427/0,-1435.86,-6680.27,40,0
+    .goto 1427/0,-1448.36,-6486.45,40,0
+    .goto 1427/0,-1466.21,-6601.44,40,0
     >>Kill |cRXP_ENEMY_Incendosaurs|r
     .complete 7727,1 --Incendosaur slain (20)
     .mob Incendosaur
@@ -368,16 +319,9 @@ step
     .isQuestTurnedIn 3443 --any of: Forging the Shaft
 step
     #loop
-    .goto 1427/0,-1009.03,-6490.91,0
-    .goto 1427/0,-1009.03,-6490.91,40,0
-    .goto 1427/0,-981.80,-6497.61,40,0
-    .goto 1427/0,-847.93,-6512.19,40,0
-    .goto 1427/0,-819.37,-6489.72,40,0
-    .goto 1427/0,-873.81,-6490.32,40,0
-    .goto 1427/0,-920.22,-6479.01,40,0
-    .goto 1427/0,-937.40,-6454.17,40,0
+    .goto 1427/0,-962.17,-6477.97,0
     .goto 1427/0,-962.17,-6477.97,40,0
-    .goto 1427/0,-985.15,-6482.14,40,0
+    .goto 1427/0,-873.81,-6490.32,40,0
     >>Kill |cRXP_ENEMY_Twilight Dark Shamans|r, |cRXP_ENEMY_Twilight Fire Guards|r, |cRXP_ENEMY_Twilight Geomancers|r and |cRXP_ENEMY_Twilight Idolaters|r. Loot them for |cRXP_LOOT_Symbol of Ragnaros|r
     .complete 3452,1 --Symbol of Ragnaros (1)
     .mob Twilight Dark Shaman
@@ -434,16 +378,11 @@ step
     .isOnQuest 3462
 step
     #loop
-    .goto 1427/0,-1252.46,-6715.68,0
-    .goto 1427/0,-1252.46,-6715.68,40,0
-    .goto 1427/0,-1109.21,-6708.54,40,0
+    .goto 1427/0,-1153.61,-6771.61,0
+    .goto 1427/0,-1153.61,-6771.61,40,0
     .goto 1427/0,-1048.07,-6782.32,40,0
-    .goto 1427/0,-1106.75,-6772.94,40,0
-    .goto 1427/0,-1176.82,-6813.55,40,0
-    .goto 1427/0,-1212.29,-6757.03,40,0
-    .goto 1427/0,-1344.83,-6718.95,40,0
-    .goto 1427/0,-1458.62,-6675.81,40,0
-    .goto 1427/0,-1359.33,-6665.40,40,0
+    .goto 1427/0,-1386.33,-6687.26,40,0
+    .goto 1427/0,-1288.16,-6754.80,40,0
     >>Kill |cRXP_ENEMY_Heavy War Golems|r
     .complete 7723,1 --Heavy War Golem slain (20)
     .mob Heavy War Golem

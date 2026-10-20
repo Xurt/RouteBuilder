@@ -34,16 +34,10 @@ step
     .use 4614
 step
     #loop
-    .goto 1417/0,-2221.71,-1241.89,0
-    .goto 1417/0,-2221.71,-1241.89,40,0
-    .goto 1417/0,-2205.15,-1179.73,40,0
-    .goto 1417/0,-2148.63,-1124.29,40,0
-    .goto 1417/0,-2115.51,-1164.61,40,0
-    .goto 1417/0,-1982.31,-1220.29,40,0
-    .goto 1417/0,-1988.43,-1286.53,40,0
-    .goto 1417/0,-2050.35,-1281.25,40,0
+    .goto 1417/0,-2150.43,-1185.73,0
+    .goto 1417/0,-2150.43,-1185.73,40,0
     .goto 1417/0,-2091.03,-1321.09,40,0
-    .goto 1417/0,-2151.87,-1219.81,40,0
+    .goto 1417/0,-1982.31,-1220.29,40,0
     >>Kill |cRXP_ENEMY_Boulderfist Ogres|r
     .complete 676,1 --Boulderfist Ogre slain (8)
     .mob Boulderfist Ogre
@@ -51,16 +45,9 @@ step
 step
     #label Drop635x1
     #loop
-    .goto 1417/0,-2109.39,-1194.13,0
-    .goto 1417/0,-2109.39,-1194.13,40,0
+    .goto 1417/0,-2075.55,-1203.49,0
     .goto 1417/0,-2075.55,-1203.49,40,0
-    .goto 1417/0,-2048.19,-1168.69,40,0
-    .goto 1417/0,-1985.55,-1166.77,40,0
-    .goto 1417/0,-2005.71,-1194.13,40,0
-    .goto 1417/0,-2038.11,-1186.45,40,0
-    .goto 1417/0,-2047.47,-1223.89,40,0
-    .goto 1417/0,-2055.03,-1251.97,40,0
-    .goto 1417/0,-2076.99,-1236.85,40,0
+    .goto 1417/0,-2032.71,-1207.09,40,0
     >>Kill |cRXP_ENEMY_Boulderfist Enforcers|r
     .complete 676,2 --Boulderfist Enforcer slain (10)
     .mob Boulderfist Enforcer
@@ -150,16 +137,9 @@ step
 step
     #label Drop635x2
     #loop
-    .goto 1417/0,-2114.43,-893.89,0
-    .goto 1417/0,-2114.43,-893.89,40,0
-    .goto 1417/0,-2115.87,-781.33,40,0
-    .goto 1417/0,-2022.63,-741.73,40,0
-    .goto 1417/0,-1957.47,-717.25,40,0
-    .goto 1417/0,-1912.47,-814.45,40,0
-    .goto 1417/0,-1970.79,-813.97,40,0
-    .goto 1417/0,-2028.39,-812.53,40,0
-    .goto 1417/0,-2078.43,-848.53,40,0
-    .goto 1417/0,-2010.75,-924.85,40,0
+    .goto 1417/0,-2055.39,-878.29,0
+    .goto 1417/0,-2055.39,-878.29,40,0
+    .goto 1417/0,-1993.47,-760.93,40,0
     >>Kill |cRXP_ENEMY_Syndicate Highwaymans|r, |cRXP_ENEMY_Syndicate Pathstalkers|r and |cRXP_ENEMY_Syndicate Mercenaries|r. Loot them for |cRXP_LOOT_Bloodstone Amulet|r
     .complete 671,1 --Bloodstone Amulet (10)
     .mob Syndicate Highwayman
@@ -189,32 +169,21 @@ step
     .turnin 79976 >>Turn in This Must Be The Place
 step
     #loop
-    .goto 1417/0,-2980.95,-1181.41,0
-    .goto 1417/0,-2980.95,-1181.41,40,0
-    .goto 1417/0,-3083.91,-1147.33,40,0
-    .goto 1417/0,-3238.71,-975.97,40,0
-    .goto 1417/0,-3380.91,-992.77,40,0
-    .goto 1417/0,-3333.75,-1121.41,40,0
-    .goto 1417/0,-3275.07,-1071.73,40,0
-    .goto 1417/0,-3184.71,-1115.41,40,0
-    .goto 1417/0,-3216.75,-1218.61,40,0
+    .goto 1417/0,-3055.83,-1147.33,0
+    .goto 1417/0,-3055.83,-1147.33,40,0
     .goto 1417/0,-3117.03,-1249.09,40,0
+    .goto 1417/0,-3315.03,-1017.97,40,0
+    .goto 1417/0,-3214.95,-1086.61,40,0
     >>Kill |cRXP_ENEMY_Highland Striders|r and |cRXP_ENEMY_Highland Thrashers|r. Loot them for |cRXP_LOOT_Highland Raptor Eye|r
     .complete 672,1 --Highland Raptor Eye (10)
     .mob Highland Strider
     .mob Highland Thrasher
 step
     #loop
-    .goto 1417/0,-3228.63,-1349.89,0
-    .goto 1417/0,-3228.63,-1349.89,40,0
-    .goto 1417/0,-3316.11,-1408.93,40,0
-    .goto 1417/0,-3317.55,-1476.61,40,0
-    .goto 1417/0,-3425.91,-1435.33,40,0
-    .goto 1417/0,-3451.11,-1345.57,40,0
-    .goto 1417/0,-3520.59,-1258.69,40,0
+    .goto 1417/0,-3350.31,-1283.41,0
+    .goto 1417/0,-3350.31,-1283.41,40,0
     .goto 1417/0,-3425.55,-1260.61,40,0
-    .goto 1417/0,-3384.51,-1338.85,40,0
-    .goto 1417/0,-3327.99,-1249.09,40,0
+    .goto 1417/0,-3348.87,-1484.05,40,0
     >>Kill |cRXP_ENEMY_Plains Creepers|r and |cRXP_ENEMY_Giant Plains Creepers|r. Loot them for |cRXP_LOOT_Surgical Spidersilk|r
     .complete 97539,1 --Surgical Spidersilk (12)
     .mob Plains Creeper
@@ -233,28 +202,17 @@ step
 step
     #label Along18
     #loop
-    .goto 1417/0,-3215.67,-1787.65,0
-    .goto 1417/0,-3215.67,-1787.65,40,0
+    .goto 1417/0,-3196.95,-1852.69,0
     .goto 1417/0,-3196.95,-1852.69,40,0
-    .goto 1417/0,-3188.67,-1886.29,40,0
-    .goto 1417/0,-3207.39,-1894.69,40,0
     .goto 1417/0,-3312.51,-1978.45,40,0
-    .goto 1417/0,-3284.07,-1897.81,40,0
-    .goto 1417/0,-3252.39,-1856.29,40,0
     >>Kill |cRXP_ENEMY_Witherbark Witch Doctors|r
     .complete 677,3 --Witherbark Witch Doctor slain (8)
     .mob Witherbark Witch Doctor
 step
     #loop
-    .goto 1417/0,-3341.31,-1895.65,0
-    .goto 1417/0,-3341.31,-1895.65,40,0
-    .goto 1417/0,-3351.75,-1860.85,40,0
-    .goto 1417/0,-3385.59,-1780.93,40,0
+    .goto 1417/0,-3312.15,-1969.09,0
+    .goto 1417/0,-3312.15,-1969.09,40,0
     .goto 1417/0,-3409.71,-1804.69,40,0
-    .goto 1417/0,-3431.67,-1811.41,40,0
-    .goto 1417/0,-3387.39,-1855.33,40,0
-    .goto 1417/0,-3334.47,-1967.17,40,0
-    .goto 1417/0,-3305.31,-1982.77,40,0
     >>Kill |cRXP_ENEMY_Witherbark Headhunters|r
     .complete 677,2 --Witherbark Headhunter slain (10)
     .mob Witherbark Headhunter
@@ -263,14 +221,8 @@ step
     #loop
     .goto 1417/0,-3215.67,-1755.49,0
     .goto 1417/0,-3215.67,-1755.49,40,0
-    .goto 1417/0,-3151.59,-1742.77,40,0
-    .goto 1417/0,-3226.83,-1681.09,40,0
-    .goto 1417/0,-3254.19,-1687.09,40,0
-    .goto 1417/0,-3270.75,-1661.89,40,0
-    .goto 1417/0,-3274.35,-1614.13,40,0
-    .goto 1417/0,-3321.87,-1590.13,40,0
+    .goto 1417/0,-3243.39,-1642.21,40,0
     .goto 1417/0,-3414.39,-1585.57,40,0
-    .goto 1417/0,-3417.99,-1613.17,40,0
     >>Kill |cRXP_ENEMY_Witherbark Axe Throwers|r
     .complete 677,1 --Witherbark Axe Thrower slain (10)
     .mob Witherbark Axe Thrower
@@ -371,16 +323,9 @@ step
     .isQuestTurnedIn 675 --any of: Raising Spirits
 step
     #loop
-    .goto 1417/0,-3812.19,-993.73,0
-    .goto 1417/0,-3812.19,-993.73,40,0
-    .goto 1417/0,-3840.27,-1044.13,40,0
-    .goto 1417/0,-3887.07,-952.69,40,0
-    .goto 1417/0,-3949.71,-928.45,40,0
-    .goto 1417/0,-3999.75,-892.45,40,0
-    .goto 1417/0,-3964.11,-859.09,40,0
+    .goto 1417/0,-3815.43,-1025.65,0
+    .goto 1417/0,-3815.43,-1025.65,40,0
     .goto 1417/0,-3934.23,-882.61,40,0
-    .goto 1417/0,-3899.31,-827.17,40,0
-    .goto 1417/0,-3869.79,-902.77,40,0
     >>Kill |cRXP_ENEMY_Drywhisker Kobolds|r, |cRXP_ENEMY_Drywhisker Surveyors|r and |cRXP_ENEMY_Drywhisker Diggers|r. Loot them for |cRXP_LOOT_Mote of Myzrael|r
     .complete 642,1 --Mote of Myzrael (12)
     .mob Drywhisker Kobold
@@ -427,47 +372,30 @@ step
     .turnin 651 >>Turn in Stones of Binding
 step
     #loop
-    .goto 1417/0,-2652.63,-1945.57,0
-    .goto 1417/0,-2652.63,-1945.57,40,0
-    .goto 1417/0,-2649.75,-2018.77,40,0
-    .goto 1417/0,-2836.23,-2063.41,40,0
-    .goto 1417/0,-2778.27,-1955.65,40,0
-    .goto 1417/0,-2852.07,-1879.09,40,0
-    .goto 1417/0,-2790.87,-1882.69,40,0
-    .goto 1417/0,-2748.03,-1848.85,40,0
-    .goto 1417/0,-2735.43,-1908.85,40,0
+    .goto 1417/0,-2696.55,-1970.77,0
     .goto 1417/0,-2696.55,-1970.77,40,0
+    .goto 1417/0,-2804.55,-1923.25,40,0
+    .goto 1417/0,-2836.23,-2063.41,40,0
     >>Kill |cRXP_ENEMY_Boulderfist Brutes|r
     .complete 678,1 --Boulderfist Brute slain (10)
     .mob Boulderfist Brute
     .isOnQuest 678
 step
     #loop
-    .goto 1417/0,-2753.07,-1947.73,0
-    .goto 1417/0,-2753.07,-1947.73,40,0
-    .goto 1417/0,-2716.71,-2001.01,40,0
-    .goto 1417/0,-2798.43,-2053.33,40,0
-    .goto 1417/0,-2832.63,-2085.01,40,0
-    .goto 1417/0,-2819.31,-1999.09,40,0
+    .goto 1417/0,-2773.23,-1981.81,0
     .goto 1417/0,-2773.23,-1981.81,40,0
     .goto 1417/0,-2786.19,-1918.69,40,0
-    .goto 1417/0,-2812.47,-1855.57,40,0
     >>Kill |cRXP_ENEMY_Boulderfist Magus|r
     .complete 678,2 --Boulderfist Magus slain (8)
     .mob Boulderfist Magus
     .isOnQuest 678
 step
     #loop
-    .goto 1417/0,-2668.47,-1823.41,0
-    .goto 1417/0,-2668.47,-1823.41,40,0
-    .goto 1417/0,-2705.55,-1783.33,40,0
-    .goto 1417/0,-2680.35,-1753.33,40,0
-    .goto 1417/0,-2510.43,-1972.93,40,0
-    .goto 1417/0,-2507.91,-2041.33,40,0
-    .goto 1417/0,-2595.03,-2111.89,40,0
-    .goto 1417/0,-2576.31,-2069.17,40,0
-    .goto 1417/0,-2552.91,-2022.85,40,0
+    .goto 1417/0,-2580.27,-1938.37,0
     .goto 1417/0,-2580.27,-1938.37,40,0
+    .goto 1417/0,-2552.91,-2022.85,40,0
+    .goto 1417/0,-2595.03,-2111.89,40,0
+    .goto 1417/0,-2652.63,-1792.21,40,0
     >>Kill |cRXP_ENEMY_Highland Fleshstalkers|r. Loot them for |cRXP_LOOT_Raptor Heart|r
     .complete 701,1 --Raptor Heart (12)
     .mob Highland Fleshstalker
@@ -522,16 +450,9 @@ step
     .target Zengu
 step
     #loop
-    .goto 1417/0,-1918.95,-1605.49,0
-    .goto 1417/0,-1918.95,-1605.49,40,0
+    .goto 1417/0,-1919.67,-1645.81,0
     .goto 1417/0,-1919.67,-1645.81,40,0
-    .goto 1417/0,-1908.87,-1715.41,40,0
-    .goto 1417/0,-1854.51,-1706.77,40,0
-    .goto 1417/0,-1801.59,-1703.65,40,0
-    .goto 1417/0,-1820.31,-1658.53,40,0
-    .goto 1417/0,-1794.75,-1633.57,40,0
-    .goto 1417/0,-1857.75,-1621.33,40,0
-    .goto 1417/0,-1881.87,-1587.01,40,0
+    .goto 1417/0,-1803.39,-1663.57,40,0
     >>Kill |cRXP_ENEMY_Syndicate Prowlers|r, |cRXP_ENEMY_Syndicate Conjurors|r and |cRXP_ENEMY_Syndicate Magus|r. Loot them for |cRXP_LOOT_Sigil of Strom|r
     .complete 639,1 --Sigil of Strom (1)
     .mob Syndicate Prowler
@@ -629,39 +550,22 @@ step << Shaman
     .target Veyric Thunderhame
     .isQuestComplete 79358
 step
-    .goto 1417/0,-1537.35,-1716.37
+    .goto 1417/0,-1535.91,-1727.17
     >>Kill |cRXP_ENEMY_Or'Kalar|r and loot |cRXP_LOOT_Or'Kalar's Head|r
     .complete 680,1 --Or'Kalar's Head (1)
     .mob Or'Kalar
     .isOnQuest 680
 step
     #loop
-    .goto 1417/0,-1539.15,-1730.29,0
-    .goto 1417/0,-1539.15,-1730.29,40,0
+    .goto 1417/0,-1518.27,-1774.45,0
     .goto 1417/0,-1518.27,-1774.45,40,0
-    .goto 1417/0,-1594.95,-1792.69,40,0
-    .goto 1417/0,-1642.47,-1773.97,40,0
-    .goto 1417/0,-1643.19,-1740.37,40,0
     .goto 1417/0,-1619.79,-1751.89,40,0
-    .goto 1417/0,-1585.59,-1753.57,40,0
-    .goto 1417/0,-1617.99,-1709.65,40,0
-    .goto 1417/0,-1568.31,-1684.21,40,0
     >>Kill |cRXP_ENEMY_Boulderfist Shamans|r
     .complete 679,1 --Boulderfist Shaman slain (7)
     .mob Boulderfist Shaman
     .isOnQuest 679
 step
-    #loop
-    .goto 1417/0,-1558.59,-1757.17,0
-    .goto 1417/0,-1558.59,-1757.17,40,0
-    .goto 1417/0,-1584.15,-1710.61,40,0
-    .goto 1417/0,-1548.51,-1715.65,40,0
-    .goto 1417/0,-1522.95,-1750.69,40,0
-    .goto 1417/0,-1509.27,-1765.57,40,0
-    .goto 1417/0,-1515.39,-1790.29,40,0
-    .goto 1417/0,-1537.35,-1795.09,40,0
-    .goto 1417/0,-1569.03,-1790.77,40,0
-    .goto 1417/0,-1609.35,-1772.05,40,0
+    .goto 1417/0,-1558.59,-1757.17
     >>Kill |cRXP_ENEMY_Boulderfist Lords|r
     .complete 679,2 --Boulderfist Lord slain (3)
     .mob Boulderfist Lord
@@ -680,16 +584,10 @@ step
     .isOnQuest 680
 step
     #loop
-    .goto 1417/0,-1907.07,-1546.69,0
-    .goto 1417/0,-1907.07,-1546.69,40,0
-    .goto 1417/0,-1831.11,-1533.01,40,0
-    .goto 1417/0,-1761.99,-1504.93,40,0
-    .goto 1417/0,-1722.75,-1503.97,40,0
-    .goto 1417/0,-1689.63,-1528.21,40,0
-    .goto 1417/0,-1628.79,-1586.05,40,0
-    .goto 1417/0,-1660.83,-1645.09,40,0
-    .goto 1417/0,-1708.71,-1633.09,40,0
-    .goto 1417/0,-1726.71,-1587.01,40,0
+    .goto 1417/0,-1863.15,-1543.33,0
+    .goto 1417/0,-1863.15,-1543.33,40,0
+    .goto 1417/0,-1744.71,-1545.01,40,0
+    .goto 1417/0,-1633.83,-1629.49,40,0
     >>Kill |cRXP_ENEMY_Stromgarde Troll Hunters|r, |cRXP_ENEMY_Stromgarde Defenders|r and |cRXP_ENEMY_Stromgarde Vindicators|r. Loot them for |cRXP_LOOT_Sigil Fragment|r
     .complete 640,1 --Sigil Fragment (11)
     .mob Stromgarde Troll Hunter
@@ -753,31 +651,19 @@ step
     .isOnQuest 662
 step
     #loop
-    .goto 1417/0,-1586.67,-2173.33,0
-    .goto 1417/0,-1586.67,-2173.33,40,0
-    .goto 1417/0,-1514.67,-2269.33,40,0
-    .goto 1417/0,-1622.67,-2341.33,40,0
-    .goto 1417/0,-1694.67,-2341.33,40,0
-    .goto 1417/0,-1766.67,-2317.33,40,0
-    .goto 1417/0,-1766.67,-2221.33,40,0
-    .goto 1417/0,-1694.67,-2245.33,40,0
-    .goto 1417/0,-1694.67,-2149.33,40,0
-    .goto 1417/0,-1622.67,-2221.33,40,0
+    .goto 1417/0,-1658.67,-2149.33,0
+    .goto 1417/0,-1658.67,-2149.33,40,0
+    .goto 1417/0,-1730.67,-2245.33,40,0
+    .goto 1417/0,-1550.67,-2293.33,40,0
     >>Loot the |cRXP_PICK_Calcified Elven Gems|r for |cRXP_LOOT_Elven Gem|r
     .complete 666,1 --Elven Gem (10)
     .isOnQuest 666
 step
     #loop
-    .goto 1417/0,-1680.63,-2215.57,0
-    .goto 1417/0,-1680.63,-2215.57,40,0
-    .goto 1417/0,-1656.15,-2147.41,40,0
-    .goto 1417/0,-1553.19,-2145.97,40,0
-    .goto 1417/0,-1589.19,-2219.65,40,0
-    .goto 1417/0,-1624.47,-2294.29,40,0
-    .goto 1417/0,-1694.31,-2301.49,40,0
-    .goto 1417/0,-1785.39,-2326.69,40,0
-    .goto 1417/0,-1735.71,-2257.57,40,0
-    .goto 1417/0,-1781.79,-2178.85,40,0
+    .goto 1417/0,-1679.19,-2219.17,0
+    .goto 1417/0,-1679.19,-2219.17,40,0
+    .goto 1417/0,-1608.99,-2181.97,40,0
+    .goto 1417/0,-1768.47,-2285.17,40,0
     >>Kill |cRXP_ENEMY_Daggerspine Raiders|r
     .complete 664,1 --Daggerspine Raider slain (10)
     .mob Daggerspine Raider
@@ -786,9 +672,7 @@ step
     #loop
     .goto 1417/0,-1685.31,-2164.45,0
     .goto 1417/0,-1685.31,-2164.45,40,0
-    .goto 1417/0,-1721.67,-2169.49,40,0
-    .goto 1417/0,-1610.07,-2173.33,40,0
-    .goto 1417/0,-1632.39,-2151.25,40,0
+    .goto 1417/0,-1606.47,-2168.53,40,0
     >>Kill |cRXP_ENEMY_Daggerspine Sorceress|r
     .complete 664,2 --Daggerspine Sorceress slain (3)
     .mob Daggerspine Sorceress
