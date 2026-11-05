@@ -100,8 +100,7 @@ public sealed class Verifier
                     else if (e.Cmd == "complete")
                     {
                         if (e.Args.Length < 2) Err($"step {s.No}: .complete without an objective number");
-                        // ".complete -quest,n" counts as done when the quest is not in the log (RestedXP's skip-if-missing)
-                        if (!held.Contains(q.Id) && qid > 0) Err($"an objective of {q.Name} comes before the quest is picked up ({who})");
+                        if (!held.Contains(q.Id)) Err($"an objective of {q.Name} comes before the quest is picked up ({who})");
                     }
                     else
                     {
