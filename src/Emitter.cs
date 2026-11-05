@@ -44,6 +44,10 @@ public sealed class Emitter
         public List<string> PreSteps = new(); public List<(RouteTask t, Cand c)> Early = new();
         public List<(RouteTask t, Cand c)> HandIns = new();   // finished quests whose hand-in is within reach here, ahead of their own step
         public List<RouteTask>? AllTasks;          // the whole stop, when this unit is one half of a split
+        // objectives of quests the player may not have (their own step would carry ".isOnQuest" for that quest alone):
+        // in a step shared with other quests' objectives they are written ".complete -quest,n", which RestedXP counts as
+        // done when the quest is not in the log, so the step still finishes
+        public HashSet<int> SkipIfMissing = new();
         public Unit Copy() => (Unit)MemberwiseClone();
     }
 
@@ -322,10 +326,18 @@ public sealed class Emitter
             }
             else
             {
-                var o = t.Obj!; bool mergeable = o.Kind is "kill" or "loot" or "object" or "use" && !o.Seq && !o.Patrol && guard.Length == 0;
+                // a guard that only asks for the quest itself can move onto the objective's own line, so such
+                // objectives can share a step with others in the same place (both are shown and done together)
+                var o = t.Obj!; bool soft = guard.Length > 0 && o.Command == null && o.Index != null && guard.Split('\n').All(l => l == $"    .isOnQuest {t.Q!.Id}");
+                // (people to interact with that are spread around, like Wounded Pilots, count as such an area too)
+                bool mergeable = (o.Kind is "kill" or "loot" or "object" or "use" || o.Kind == "talk" && o.Count > 1) && !o.Seq && !o.Patrol && (guard.Length == 0 || soft);
                 if (cur != null && cur.Kind == "obj" && cur.Mergeable && mergeable && cur.Area == c.Area &&
                     (cur.Pos.To(c.Pos) <= Tuning.MergeRadius || Overlapping(cur.Pts, c.Pts) && Geo.Span(cur.Pts.Concat(c.Pts).ToList()) <= 2 * Tuning.ClusterSpan))
-                { cur.Tasks.Add(t); cur.Pts.AddRange(Spread(t, c).Where(p => !cur.Pts.Contains(p)).ToList()); }
+                {
+                    if (cur.Guard.Length > 0) { cur.SkipIfMissing.UnionWith(cur.Tasks.Select(x => x.Id)); cur.Guard = ""; cur.GuardQuest = 0; }
+                    if (soft) cur.SkipIfMissing.Add(t.Id);
+                    cur.Tasks.Add(t); cur.Pts.AddRange(Spread(t, c).Where(p => !cur.Pts.Contains(p)).ToList());
+                }
                 else
                 {
                     units.Add(cur = new Unit { Kind = "obj", Mergeable = mergeable, Guard = guard, GuardQuest = gq, Area = c.Area, Pos = c.Pos, Level = r.Level[id], Pts = Spread(t, c) });
@@ -370,6 +382,11 @@ public sealed class Emitter
     }
 
     static bool Overlapping(List<Pt> a, List<Pt> b) => Inside(a, b) >= Tuning.OverlapShare || Inside(b, a) >= Tuning.OverlapShare;
+
+    // the step's guard is only ".isOnQuest" for the one quest whose objectives it holds
+    static bool OwnQuestGuard(Unit u) =>
+        u.Guard.Length > 0 && u.Tasks.Select(t => t.Q?.Id).Distinct().Count() == 1 && u.Tasks.All(t => t.Obj is { Command: null, Index: not null })
+        && u.Guard.Split('\n').All(l => l == $"    .isOnQuest {u.Tasks[0].Q!.Id}");
 
     static string UnitTag(Unit u)
     {
@@ -426,7 +443,7 @@ public sealed class Emitter
                 var ob = t.Obj!; string lt = LineTag(t); string tx = ObjText(ob);
                 if (tx.Length > 0 && texts.All(x => x.tx != tx)) texts.Add((tx, lt));
                 if (ob.Command != null) cmds.Add(Tagged("    " + ob.Command, lt));
-                else if (ob.Index != null) cmds.Add(Tagged($"    .complete {t.Q!.Id},{ob.Index} --{ob.Label}", lt));
+                else if (ob.Index != null) cmds.Add(Tagged($"    .complete {(u.SkipIfMissing.Contains(t.Id) ? "-" : "")}{t.Q!.Id},{ob.Index} --{ob.Label}", lt));
                 foreach (var extra in ob.Extra) cmds.Add(Tagged("    " + extra, lt));
                 foreach (var (k, nm) in ob.Targets)
                 {
@@ -561,7 +578,8 @@ public sealed class Emitter
         for (int ui = 0; ui < units.Count; ui++)
         {
             var u = units[ui];
-            if (u.Kind != "obj" || u.Guard.Length > 0) continue;
+            // (a step guarded only by its own quest can still be offered on the way: its line skips itself without the quest)
+            if (u.Kind != "obj" || u.Guard.Length > 0 && !OwnQuestGuard(u)) continue;
             foreach (var t in u.Tasks)
             {
                 var ob = t.Obj!;
@@ -603,7 +621,7 @@ public sealed class Emitter
             var texts = tasks.Select(t => ObjText(t.Obj!)).Where(x => x.Length > 0).Distinct().ToList();
             lines.Add("    >>As you go: " + string.Join(". ", texts) + ". |cRXP_WARN_Anything left is finished later|r");
             foreach (var t in tasks)
-                lines.Add(t.Obj!.Command != null ? "    " + t.Obj.Command : $"    .complete {t.Q!.Id},{t.Obj.Index} --{t.Obj.Label}");
+                lines.Add(t.Obj!.Command != null ? "    " + t.Obj.Command : $"    .complete {(units[ui].SkipIfMissing.Contains(t.Id) || OwnQuestGuard(units[ui]) ? "-" : "")}{t.Q!.Id},{t.Obj.Index} --{t.Obj.Label}");
             foreach (var line in tasks.SelectMany(t => t.Obj!.Targets).Distinct().Select(x => $"    .{x.Kind} {x.Name}")) lines.Add(line);
             units[first].PreSteps.AddRange(lines);
             g.AsYouGo += tasks.Count;

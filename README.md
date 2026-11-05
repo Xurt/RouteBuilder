@@ -275,8 +275,11 @@ build; the folder is rebuilt from scratch each time.
   (`LoopSingleSpan`) gets one pin at its busiest spot instead. When the chosen spot holds fewer
   than the objective needs (five Lazy Peons that each sleep somewhere else), the loop takes in the
   objective's other known spawn points, nearest first (`SpreadRange`).
-* **Doing things together.** Objectives next to each other in the route whose mobs or objects share an
-  area become one step. An objective whose area you pass through earlier (after picking it up) is also
+* **Doing things together.** Objectives next to each other in the route whose mobs, objects or people to
+  interact with share an area become one step, so all of them show at once. That includes objectives of
+  quests a player may not have (a later section's guide, or a quest that needs one from another zone): in
+  a shared step they are written `.complete -quest,n`, which RestedXP counts as done when the quest is not
+  in your log, so the step still finishes. An objective whose area you pass through earlier (after picking it up) is also
   shown "as you go" at those stops, with RestedXP's `#completewith`; its own step later finishes whatever
   is left and skips itself if nothing is. "As you go" is only offered once you are at the level the plan
   waits for, and at most `MaxAsYouGo` of them are on screen at once (`OverlapRadius`, `OverlapShare`).
