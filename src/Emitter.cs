@@ -228,7 +228,7 @@ public sealed class Emitter
     void ComputeSections()
     {
         sectionOf = new Dictionary<int, int>();
-        bool on = m.Cfg.Sections ?? true;
+        bool on = m.Cfg.Sections ?? false;      // one guide per zone unless the zone file asks for sections
         var seq = r.Seq;
         int Hub(int t)
         {
@@ -817,14 +817,16 @@ public sealed class Emitter
         // a header step at the start of each section, carrying the label the level jumps at the top of the guide go to.
         // It is shown to everyone (RestedXP drops other classes' steps, and a jump to a dropped label would stall there).
         // When the zone is split into a guide per section, the guide's name says it instead, and there are no jumps
-        int lastSec = -1; bool split = m.Cfg.Split ?? true;
+        int lastSec = -1; bool split = m.Cfg.Split ?? false;
         int UnitSection(Unit u) => (u.AllTasks ?? u.Tasks).Select(t => sectionOf!.GetValueOrDefault(t.Id, -1)).DefaultIfEmpty(-1).Min();
         void SectionHeader(int k)
         {
             var (_, lvl, hub) = sectionStart[k];
-            string label = $"RBSection{m.Visit.Number}_{k + 1}", name = SectionName(hub);
+            // without sections (the default) the guide just starts at the top: no header steps and no jumps to them
+            bool sectioned = m.Cfg.Sections ?? false;
+            string label = sectioned ? $"RBSection{m.Visit.Number}_{k + 1}" : "", name = SectionName(hub);
             g.Sections.Add(new SectionInfo { Label = label, Level = lvl, Name = name, Index = k, Line = L.Count });
-            if (split) return;
+            if (split || !sectioned) return;
             L.Add("step"); L.Add("    #label " + label); L.Add("    #completewith next");
             L.Add($"    +|cRXP_WARN_{m.Main.Name}: {name}|r (planned from level {lvl})");
         }
@@ -901,7 +903,7 @@ public sealed class Emitter
             }
             g.GateLine = L.Count;
             L.Add("step");
-            L.Add(m.Cfg.Split ?? true
+            L.Add(m.Cfg.Split ?? false
                 ? $"    +|cRXP_WARN_The rest of {m.Main.Name} is planned from level {nl}.|r Load its guide for level {nl} then"
                 : $"    .xp {nl} >>|cRXP_WARN_The rest of {m.Main.Name} is planned from level {nl}.|r Come back to this guide then");
         }
@@ -923,9 +925,10 @@ public sealed class Emitter
     static string Proper(string s) => s.Length == 0 ? s : char.ToUpperInvariant(s[0]) + s[1..];
 
     /// <summary>
-    /// The .lua file: a header, the faction check, and the guide. Split (the default), each section of each part is a guide
-    /// of its own, listed under the zone's name in RestedXP and chained to the next with #next; otherwise one guide holds
-    /// every part, with level jumps at the top to the section for your level.
+    /// The .lua file: a header, the faction check, and the guide. By default one guide holds every part, with a level check
+    /// between them (and, with sections, level jumps at the top to the section for your level). Split ("split": true in
+    /// the zone file), each section of each part is a guide of its own, listed under the zone's name in RestedXP and
+    /// chained to the next with #next.
     /// </summary>
     public static string FileText(List<(ZoneModel m, GuideOutput g)> visits)
     {
@@ -942,7 +945,7 @@ public sealed class Emitter
         foreach (var (vm, g) in visits)
             if (g.Sections.Count == 0 || g.Sections[0].Line > 0 && g.Sections[0].Index != 0)
                 g.Sections.Insert(0, new SectionInfo { Label = "", Level = (int)Math.Floor(vm.StartLevel), Name = vm.Visit.Number > 1 ? $"part {vm.Visit.Number}" : "start", Index = 0, Line = 0 });
-        bool split = (m.Cfg.Split ?? true) && visits.Sum(v => v.g.Sections.Count) > 1;
+        bool split = (m.Cfg.Split ?? false) && visits.Sum(v => v.g.Sections.Count) > 1;
         var chunks = new List<(GuideOutput g, SectionInfo s, int from, int to, string only)>();
         int subLo = int.MaxValue, subHi = 0;     // the levels the zone's guides cover, for its heading in the list
         if (split)

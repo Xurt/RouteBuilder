@@ -29,8 +29,8 @@ scales how long the search runs: `--effort 0.2` is good for test builds while yo
 (a few seconds, with a route up to about 10% longer), and values above 1 rarely find a shorter route.
 Each build writes two files into `guides`:
 
-* `<Zone> (<who>).lua` - the zone's guides (one per section, see "A guide per section"). See "Getting the
-  guides into the game" below.
+* `<Zone> (<who>).lua` - the zone's guide (see "One guide per zone"). See "Getting the guides into the
+  game" below.
 * `<Zone> (<who>).report.txt` - what went in, what was left out and why, and what to check in game.
 * `<Zone> (<who>).meta.json` - a short summary of the guide (levels, sections, quests) that `link` reads to
   suggest next zones. It is not packed into the addon.
@@ -163,32 +163,29 @@ the options of the build you will run next:
   in the report than RouteBuilder's own plan; RestedXP plans around terrain and grinding, which RouteBuilder
   does not see.
 
-## A guide per section
+## One guide per zone
 
-A zone's route is split into sections where it arrives at a new main quest hub (a place with four or more
-pickups) a couple of levels further on, and each section is a guide of its own. In RestedXP's guide list
-they sit under a heading inside "Zone Routes (Horde)" that gives the levels they cover and the zone's
-name, so Durotar shows as one entry, "1 - 12 Durotar", that opens to "1-4 Durotar: around Gornek",
-"4-7 Durotar: around Orgnil Soulscar" and so on. The headings are listed lowest level first. Pick the
-guide for your level, or start at the first and do everything.
+Each zone is one guide, named for the levels it covers ("1-13 Durotar"), that starts at the top.
 
-* Each guide leads on to the next with `#next`, so playing from the first is the same as one long guide.
-* Start at any of them: a step that needs a quest from an earlier one hides itself unless you did that
-  quest. A pickup whose prerequisite was handed in earlier gets `.isQuestTurnedIn`, and an objective or
-  hand-in of a quest picked up earlier gets `.isOnQuest`. Played in order, these always pass.
-* A zone planned in several parts ("the rest is planned from level 20") gets a guide per part as well, such
-  as "20-21 The Barrens". A part that only some classes have quests in is only listed for them.
-* The range in a guide's name runs from the level it is planned from to where the next one starts (the
-  last one: to the level you are expected to finish at). A last stretch of only a few steps, or less than
-  a level, stays with the section before it.
-* Sections are named after the town when the zone file names it under `hubs`, otherwise after the busiest
-  quest giver there. In a zone file, `"split": false` keeps the zone in one guide, which then starts at
-  the section for your level by itself (level jumps at its top; you can still scroll back), and
-  `"sections": false` makes it one guide that always starts at the top. See docs/zone-files.md.
+* A zone planned in several parts ("the rest is planned from level 20") keeps them in the same guide: at the
+  end of a part, a step waits for the level the next part is planned from (`.xp 20`), with "come back to
+  this guide then". `link` suggests where to go meanwhile.
+* Steps that depend on quests from other zones hide themselves unless you have those quests.
+
+Splitting a zone by quest hub is still there for a zone file to turn on (it is off because without terrain
+the hub sections did not play as well as one route):
+
+* `"sections": true` divides the route where it arrives at a new main quest hub (four or more pickups) a
+  couple of levels further on. The guide then starts at the section for your level by itself (level jumps
+  at its top; you can still scroll back). Sections are named after the town when the zone file names it
+  under `hubs`, otherwise after the busiest quest giver there.
+* `"split": true` as well makes each section and each part a guide of its own, listed under a heading such
+  as "1 - 12 Durotar" and chained with `#next`. A step that needs a quest from an earlier one hides itself
+  unless you did that quest (`.isQuestTurnedIn`, `.isOnQuest`); played in order, these always pass.
 * The settings `SectionHubPickups`, `SectionMinSteps` and `SectionLevelStep` set how big a hub has to be,
   how many steps a section has at least, and how many levels apart sections start.
-* It is still one .lua file per zone, and one lock file: the zone is planned as one route and only split
-  when it is written out.
+* Either way it is one .lua file per zone, and one lock file: the zone is planned as one route and only
+  divided when it is written out.
 
 ## Suggesting the next zone (link)
 
@@ -198,8 +195,8 @@ Run this after building. It reads the `.meta.json` of every guide in `guides` an
 the zones that suit its end level best:
 
 * At the end of the zone's last guide, a step listing up to three zones, and `#next` in that guide's
-  header, so RestedXP loads the best one when you complete that step. It loads the guide for the section
-  of that zone you would start at, not necessarily its first.
+  header, so RestedXP loads the best one when you complete that step (for a zone split into guides, the
+  one for the section you would start at).
 * At the end of each earlier part ("the rest of this zone is planned from level N"), the same for the
   level you are at there.
 * Zones are ranked by how many levels of quest experience they still hold for a player of that level,

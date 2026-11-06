@@ -144,8 +144,8 @@ public sealed class ZoneConfig
     public List<ReminderFix> Reminders = new();
     public List<StepFix> Steps = new();     // hand-written steps (vendor, trainer, flight path) placed next to a planned step
     public Dictionary<string, Spot> Hubs = new();   // names for the guide's sections: "Razor Hill": [52.0, 43.0] (the town's middle)
-    public bool? Sections;                  // false: no sections, so one guide that always starts at the top
-    public bool? Split;                     // false: the sections stay in one guide, with level jumps at its top (true: a guide per section)
+    public bool? Sections;                  // true: sections at each new main hub (off by default: one guide that starts at the top)
+    public bool? Split;                     // true: a guide per part and section (default: one guide per zone, with level jumps to its sections)
     public bool? Suggest;                   // false: the link command never suggests this zone as a next zone (other guides still get theirs)
 
     public static readonly JsonSerializerOptions Json = new()
