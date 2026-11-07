@@ -20,6 +20,7 @@ public sealed class GuideOutput
     public double EndLevel;                                                  // the predicted level at the end of this part
     public int? NextPartLevel;                                               // the level the next part is planned from
     public Dictionary<int, int> QuestSection = new();                        // quest -> the section its hand-in (or pickup) is in
+    public List<string> Arrivals = new();                                    // level skip: where the guide starts for later arrivals
 }
 
 /// <summary>A section of one part of a guide: where it starts in the part's lines, and the guide it becomes when the zone is split.</summary>

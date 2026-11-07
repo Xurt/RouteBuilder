@@ -63,6 +63,10 @@ public static class Tuning
     public static double HearthMinLeg = 550;  // only hearth for legs longer than this
     public static double HearthCost = 110;    // cost of the cast
     public static double HearthRadius = 170;  // "arriving at the inn" means within this range of the innkeeper
+    // --- level skip (--level-skip): steps you have outgrown hide themselves ---
+    public static int LevelSkip = 0;          // 1 = every build does it, as if --level-skip were given
+    public static double PickupBelow = 6;     // a pickup hides once you are more than this many levels above the quest
+    public static int ChainLift = 0;          // 1 = a chain's first quest uses the level of the chain's highest quest instead of its own
     // --- hard rules ---
     public static double OrderPenalty = 300000; // per broken prerequisite
     public static double LevelPenalty = 6000;  // per level short of a gate

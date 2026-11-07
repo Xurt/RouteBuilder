@@ -31,6 +31,8 @@ public static class Program
               --no-hearth            do not plan hearthstone use
               --fresh                plan from scratch instead of keeping the step order saved in locks/
               --order-from <guide>   keep the step order of a guide built earlier (for guides made before locks/)
+              --level-skip           steps you have outgrown hide themselves, so the guide can be loaded at any level
+                                     (pickups more than 6 levels below you, and chains whose first quest was skipped)
               --effort <x>           search effort from 0.01 to 100: 1 = normal, 0.2 = quick look, 3 = slow and thorough
 
           RouteBuilder link [--out <folder>]
@@ -51,7 +53,7 @@ public static class Program
         {
             if (!argv[i].StartsWith("--")) { Console.Error.WriteLine($"Unexpected argument: {argv[i]}"); return 2; }
             string key = argv[i][2..];
-            if (key is "no-hearth" or "no-download" or "fresh" or "no-rxp-steps") opt[key] = "1";
+            if (key is "no-hearth" or "no-download" or "fresh" or "no-rxp-steps" or "level-skip") opt[key] = "1";
             else if (i + 1 < argv.Length) opt[key] = argv[++i];
             else { Console.Error.WriteLine($"--{key} needs a value"); return 2; }
         }
@@ -133,7 +135,7 @@ public static class Program
         var data = GameData.Load(dataDir);
         var bo = new BuildOptions
         {
-            Faction = faction, Race = opt.GetValueOrDefault("race"), Class = opt.GetValueOrDefault("class"), NoHearth = opt.ContainsKey("no-hearth"), Fresh = opt.ContainsKey("fresh"), NoRxpSteps = opt.ContainsKey("no-rxp-steps"), OrderFrom = opt.GetValueOrDefault("order-from"), RxpDir = opt.GetValueOrDefault("rxp"),
+            Faction = faction, Race = opt.GetValueOrDefault("race"), Class = opt.GetValueOrDefault("class"), NoHearth = opt.ContainsKey("no-hearth"), Fresh = opt.ContainsKey("fresh"), NoRxpSteps = opt.ContainsKey("no-rxp-steps"), LevelSkip = opt.ContainsKey("level-skip") || Tuning.LevelSkip != 0, OrderFrom = opt.GetValueOrDefault("order-from"), RxpDir = opt.GetValueOrDefault("rxp"),
             StartLevel = Num(opt, "start-level"), MinLevel = (int?)Num(opt, "min-level"), MaxLevel = (int?)Num(opt, "max-level"),
         };
         string outDir = opt.GetValueOrDefault("out", "guides");
@@ -171,6 +173,7 @@ public static class Program
         else if (lk != null) Console.WriteLine($"  keeping the step order saved in {lockPath} (--fresh plans from scratch)");
         var visit = new Visit(); var visits = new List<(ZoneModel m, RouteResult r, GuideOutput g, Verifier v)>();
         bool debug = Environment.GetEnvironmentVariable("ROUTEBUILDER_DEBUG") == "1"; int bumps = 0; string onlyFor = "";
+        var turnedSoFar = new HashSet<int>();      // level skip: quests handed in by earlier parts of this guide
         while (true)
         {
             var model = new ZoneModel(data, area, cfg, bo, visit);
@@ -208,7 +211,13 @@ public static class Program
             int nextStart = more ? (int)Math.Min(Game.MaxLevel, Math.Max(Math.Floor(main.EndLevel) + Tuning.VisitGap, Math.Ceiling(firmLater.Min(v => v.Need)))) : 0;
             var guide = new Emitter(model, route).Write(more ? nextStart : null);
             guide.OnlyFor = visit.Number > 1 ? onlyFor : "";     // a part only some characters have quests in is a guide only they see
+            if (bo.LevelSkip) LevelSkip.Apply(model, guide, turnedSoFar);
             var check = new Verifier(); check.Run(model, guide);
+            if (bo.LevelSkip)
+            {
+                guide.Arrivals = LevelSkip.Report(model, guide);
+                foreach (var a in guide.Arrivals.Where(a => a.StartsWith("  level ") || a.Contains("PROBLEM"))) Console.WriteLine("    level skip: " + (a.StartsWith("  level ") ? "arriving at " + a.TrimStart()[6..] : a));
+            }
             visits.Add((model, route, guide, check));
             Console.WriteLine($"    {guide.Steps} steps, {Math.Round(main.Travel):N0} yd on foot for the shared route, ends about level {main.EndLevel:0.0}, quest log peak {check.LogPeak}/40" +
                               (check.Errors.Count == 0 ? "; checks passed" : $"; {check.Errors.Count} PROBLEMS - see the report"));

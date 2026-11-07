@@ -190,6 +190,12 @@ public static class Report
             sb.AppendLine(passes == 0 ? "The route never runs past a finished quest's hand-in without stopping (judged in straight lines, so roads are not seen)."
                                       : $"{passes} time{(passes == 1 ? "" : "s")} the route runs past a finished quest's hand-in without stopping (judged in straight lines).");
 
+        if (g.Arrivals.Count > 0)
+        {
+            H("Arriving later (level skip)");
+            foreach (var a in g.Arrivals) sb.AppendLine(a);
+        }
+
         H("Route");
         sb.AppendLine($"Planned from level {m.StartLevel.ToString("0.#", Inv)}. Distances are straight lines, so real running is longer; levels are an estimate.");
         if (r.Locked)

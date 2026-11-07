@@ -187,6 +187,42 @@ the hub sections did not play as well as one route):
 * Either way it is one .lua file per zone, and one lock file: the zone is planned as one route and only
   divided when it is written out.
 
+## Arriving at a zone above its start (--level-skip)
+
+*Being tried out on the `level-skip` branch.*
+
+    dotnet run -c Release -- build --zone Durotar --faction Horde --level-skip
+
+The guide is planned the same way, but the steps you have outgrown hide themselves, so a character who comes in
+at level 10 (from another zone, say) can load the guide and land on the first quests worth their level instead of
+skipping through the starting area by hand:
+
+* **Pickups** get `.maxlevel N` and hide once you are more than `PickupBelow` (6) levels above the quest.
+* **Chains.** A pickup that follows on from another quest shows only once that quest is handed in
+  (`.isQuestTurnedIn`), so a chain whose first quest was skipped never shows from the middle.
+* **Hand-ins and objectives** use RestedXP's negative quest IDs (`.turnin -788`, `.complete -788,1`): each line skips
+  itself when you are not on the quest. This is also what makes zones with more than one way in (The Barrens from
+  Durotar or from Mulgore) work: the quests brought from the other side skip themselves.
+* **Stops that hand in and pick up** are split into several steps at the same NPC, in the same order, because
+  `.maxlevel` hides a whole step.
+* **Training, vendor, hearth and travel steps** take the cutoff of the pickups before them, so you are not sent
+  back to a trainer in an area you skipped.
+
+The report has an "Arriving later" section: for each level, the first step the guide shows a character who loads it
+then with nothing in the zone done, and a check, as every race/class combination, that nothing is shown from the
+middle of a chain or for a quest you do not have. The console prints the same start lines. To see them for one
+character, set `ROUTEBUILDER_ARRIVE_AS`, for example `ROUTEBUILDER_ARRIVE_AS="Skyborne Druid"`.
+
+Settings (settings.json):
+
+* `PickupBelow` (6): how many levels below you a pickup may be. In Durotar, 6 starts a level 10 character at
+  Hana'zua in the Valley of Trials (level 5 quests are still in range); 4 starts them at Cook Torka in Razor Hill.
+* `ChainLift` (0): with 1, a chain's first quest is kept as long as the chain's highest quest is in range.
+* `LevelSkip` (0): with 1, every build does this, as if `--level-skip` were given.
+
+In game it needs RestedXP's "skip steps by level" setting (on by default). Loremaster mode turns `.maxlevel` skipping
+off. The level used is the one you have when a step comes up, so you can level past a cutoff part-way through.
+
 ## Suggesting the next zone (link)
 
     dotnet run -c Release -- link
