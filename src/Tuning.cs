@@ -67,6 +67,9 @@ public static class Tuning
     public static int LevelSkip = 0;          // 1 = every build does it, as if --level-skip were given
     public static double PickupBelow = 6;     // a pickup hides once you are more than this many levels above the quest
     public static int ChainLift = 0;          // 1 = a chain's first quest uses the level of the chain's highest quest instead of its own
+    // --- level order (--level-order): pickups go lowest level first ---
+    public static int LevelOrder = 0;         // 1 = every build does it, as if --level-order were given
+    public static double LevelOrderSlack = 0; // a pickup may be this many levels below the highest one picked up so far
     // --- hard rules ---
     public static double OrderPenalty = 300000; // per broken prerequisite
     public static double LevelPenalty = 6000;  // per level short of a gate

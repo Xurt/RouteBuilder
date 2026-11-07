@@ -33,6 +33,9 @@ public static class Program
               --order-from <guide>   keep the step order of a guide built earlier (for guides made before locks/)
               --level-skip           steps you have outgrown hide themselves, so the guide can be loaded at any level
                                      (pickups more than 6 levels below you, and chains whose first quest was skipped)
+              --level-order          pick quests up lowest level first (a chain's follow-ups count as at least the level
+                                     of the quest before them); the walking order within a level is still optimised.
+                                     Kept in its own lock file, "<zone> (<faction>, level order).json"
               --effort <x>           search effort from 0.01 to 100: 1 = normal, 0.2 = quick look, 3 = slow and thorough
 
           RouteBuilder link [--out <folder>]
@@ -53,7 +56,7 @@ public static class Program
         {
             if (!argv[i].StartsWith("--")) { Console.Error.WriteLine($"Unexpected argument: {argv[i]}"); return 2; }
             string key = argv[i][2..];
-            if (key is "no-hearth" or "no-download" or "fresh" or "no-rxp-steps" or "level-skip") opt[key] = "1";
+            if (key is "no-hearth" or "no-download" or "fresh" or "no-rxp-steps" or "level-skip" or "level-order") opt[key] = "1";
             else if (i + 1 < argv.Length) opt[key] = argv[++i];
             else { Console.Error.WriteLine($"--{key} needs a value"); return 2; }
         }
@@ -135,7 +138,7 @@ public static class Program
         var data = GameData.Load(dataDir);
         var bo = new BuildOptions
         {
-            Faction = faction, Race = opt.GetValueOrDefault("race"), Class = opt.GetValueOrDefault("class"), NoHearth = opt.ContainsKey("no-hearth"), Fresh = opt.ContainsKey("fresh"), NoRxpSteps = opt.ContainsKey("no-rxp-steps"), LevelSkip = opt.ContainsKey("level-skip") || Tuning.LevelSkip != 0, OrderFrom = opt.GetValueOrDefault("order-from"), RxpDir = opt.GetValueOrDefault("rxp"),
+            Faction = faction, Race = opt.GetValueOrDefault("race"), Class = opt.GetValueOrDefault("class"), NoHearth = opt.ContainsKey("no-hearth"), Fresh = opt.ContainsKey("fresh"), NoRxpSteps = opt.ContainsKey("no-rxp-steps"), LevelSkip = opt.ContainsKey("level-skip") || Tuning.LevelSkip != 0, LevelOrder = opt.ContainsKey("level-order") || Tuning.LevelOrder != 0, OrderFrom = opt.GetValueOrDefault("order-from"), RxpDir = opt.GetValueOrDefault("rxp"),
             StartLevel = Num(opt, "start-level"), MinLevel = (int?)Num(opt, "min-level"), MaxLevel = (int?)Num(opt, "max-level"),
         };
         string outDir = opt.GetValueOrDefault("out", "guides");
@@ -169,6 +172,17 @@ public static class Program
         string lockPath = RouteLock.PathFor(area.Name, bo);
         var lk = bo.OrderFrom != null ? RouteLock.FromGuide(bo.OrderFrom) : bo.Fresh ? null : RouteLock.Load(lockPath);
         bo.Lock = lk;
+        if (lk == null && bo.LevelOrder && bo.OrderFrom == null && !bo.Fresh)
+        {
+            // no level-ordered route saved yet: plan from scratch, but keep the training, vendor and flight-path steps
+            // saved with the normal route (they are placed next to quest steps, whatever the order)
+            bo.LevelOrder = false; string plainPath = RouteLock.PathFor(area.Name, bo); bo.LevelOrder = true;
+            if (RouteLock.Load(plainPath) is { } plain)
+            {
+                bo.Lock = plain; plain.Parts.Clear();
+                Console.WriteLine($"  level order: planning from scratch; training, vendor and flight-path steps from {plainPath}");
+            }
+        }
         if (bo.OrderFrom != null) Console.WriteLine($"  keeping the step order of {bo.OrderFrom}");
         else if (lk != null) Console.WriteLine($"  keeping the step order saved in {lockPath} (--fresh plans from scratch)");
         var visit = new Visit(); var visits = new List<(ZoneModel m, RouteResult r, GuideOutput g, Verifier v)>();
@@ -252,7 +266,7 @@ public static class Program
         GuideMeta.From(data, visits.Select(v => (v.m, v.g)).ToList()).Save(GuideMeta.PathFor(path));
         var reports = visits.Select((v, i) => Report.Write(v.m, v.r, v.g, v.v, path, zoneFile, i == visits.Count - 1, visits.Count));
         File.WriteAllText(Path.ChangeExtension(path, ".report.txt"), string.Join("\n\n" + new string('=', 100) + "\n\n", reports));
-        RouteLock.Save(lockPath, visits[0].g.Name, visits.Select((v, i) => (i + 1, v.m, v.r, v.g)), lk?.RestedXpLevels == true ? "RestedXP" : null);
+        RouteLock.Save(lockPath, visits[0].g.Name, visits.Select((v, i) => (i + 1, v.m, v.r, v.g)), (lk ?? bo.Lock)?.RestedXpLevels == true ? "RestedXP" : null);
         int fromLock = visits.Sum(v => v.g.LockSteps), fromRxp = visits.Sum(v => v.g.RxpSteps), custom = visits.Sum(v => v.g.CustomSteps);
         Console.WriteLine(fromLock + fromRxp + custom == 0
             ? "  training, vendor and flight-path steps: none (build with --rxp <RestedXP Guides folder>, or run RxpToLock, to add RestedXP's; or add your own under \"steps\" in the zone file)"

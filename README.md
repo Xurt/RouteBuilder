@@ -220,8 +220,35 @@ Settings (settings.json):
 * `ChainLift` (0): with 1, a chain's first quest is kept as long as the chain's highest quest is in range.
 * `LevelSkip` (0): with 1, every build does this, as if `--level-skip` were given.
 
+An early offer (a pickup shown ahead of its planned place in case you are a little ahead of the predicted level) of a
+quest that follows on from another is left out with level skip: a player who skipped the start may not have the quest
+before it. The pickup is still in its planned place.
+
 In game it needs RestedXP's "skip steps by level" setting (on by default). Loremaster mode turns `.maxlevel` skipping
 off. The level used is the one you have when a step comes up, so you can level past a cutoff part-way through.
+
+## Lowest level first (--level-order)
+
+*Being tried out on the `level-skip` branch.*
+
+    dotnet run -c Release -- build --zone Durotar --faction Horde --level-skip --level-order
+
+Quests are picked up in order of level, lowest first. Within a level the route is still optimised for walking, and
+hand-ins and objectives go wherever they cost least. Together with `--level-skip`, a character who loads the guide
+part-way up skips a clean stretch from the start instead of steps scattered through it. It walks further (Durotar:
+about 39,600 yards instead of 33,600) and goes back to hubs more often.
+
+* The rule is for quests that **start a chain** here. A follow-up waits for the quest before it anyway (and level skip
+  shows it only once that is handed in), so it goes where its chain puts it.
+* A **class or race quest** slotted into the shared route is held to the shared route's levels around it, but does
+  not move them.
+* The report shows "N pickups out of level order" for any route that could not keep to it.
+* The route is saved in its own lock file, `locks/<zone> (<faction>, level order).json`, so the normal saved route is
+  untouched. The first level-order build of a zone plans from scratch and takes its training, vendor and flight-path
+  steps from the normal lock.
+
+Settings (settings.json): `LevelOrder` (0; 1 = every build does it), `LevelOrderSlack` (0): a pickup may be this many
+levels below the highest one picked up before it.
 
 ## Suggesting the next zone (link)
 

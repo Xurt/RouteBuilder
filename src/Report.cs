@@ -206,7 +206,7 @@ public static class Report
         foreach (var x in r.Views)
         {
             string what = x == r.Views[0] ? $"{x.Tasks} tasks, {Yd(x.Travel)} on foot" + (r.Locked ? "" : $" (simply going to the nearest thing each time comes to {Yd(x.StartCost)})") : $"{x.Tasks} more tasks; their whole route comes to {Yd(x.Travel)}";
-            sb.AppendLine($"  {x.Name}: {what}; ends at level {x.EndLevel.ToString("0.0", Inv)}{(x.Hearths > 0 ? $"; {x.Hearths} hearth{(x.Hearths == 1 ? "" : "s")}" : "")}{(x.Broken > 0 ? $"; {x.Broken} ORDER PROBLEMS" : "")}{(x.LevelShort > 0.05 ? $"; at its hardest you are {(x.LevelShort + Tuning.MobMargin).ToString("0.0", Inv)} levels below the mobs" : "")}");
+            sb.AppendLine($"  {x.Name}: {what}; ends at level {x.EndLevel.ToString("0.0", Inv)}{(x.Hearths > 0 ? $"; {x.Hearths} hearth{(x.Hearths == 1 ? "" : "s")}" : "")}{(x.Broken > 0 ? $"; {x.Broken} ORDER PROBLEMS" : "")}{(x.OutOfOrder > 0 ? $"; {x.OutOfOrder} pickup{(x.OutOfOrder == 1 ? "" : "s")} out of level order" : "")}{(x.LevelShort > 0.05 ? $"; at its hardest you are {(x.LevelShort + Tuning.MobMargin).ToString("0.0", Inv)} levels below the mobs" : "")}");
         }
         if (m.Home != null) sb.AppendLine($"Hearthstone: set at {m.Inn!.Name} ({m.BindName}); {g.HearthSteps} hearth step{(g.HearthSteps == 1 ? "" : "s")} in the guide.");
         else sb.AppendLine("Hearthstone: not used (no inn found in this zone, or --no-hearth).");

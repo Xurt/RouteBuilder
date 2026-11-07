@@ -5,7 +5,7 @@ namespace RouteBuilder;
 /// <summary>What the simulated player experiences along one ordering, position by position.</summary>
 public sealed class Sim
 {
-    public double Travel, Penalty, EndXp, LevelShort; public int Broken, Misses, Passes;
+    public double Travel, Penalty, EndXp, LevelShort; public int Broken, Misses, Passes, OutOfOrder;
     public double[] Leg = Array.Empty<double>(), Level = Array.Empty<double>(), XpBefore = Array.Empty<double>();
     public bool[] Hearth = Array.Empty<bool>();
     public int Hearths => Hearth.Count(h => h);
@@ -20,6 +20,9 @@ public sealed class Evaluator
 {
     readonly ZoneModel m; readonly int n;
     public readonly int[][] Pre, Any, Succ; public readonly int[] Tight;
+    /// <summary>Succ plus "any of" links that have only one way in among the active tasks (the step must come after it).</summary>
+    public int[][] Needed => needed ??= Enumerable.Range(0, Succ.Length).Select(i => Succ[i].Concat(soleAny[i]).Distinct().ToArray()).ToArray();
+    int[][]? needed; List<int>[] soleAny = Array.Empty<List<int>>();
     readonly double[] xp, secs, late, safe, qlv; readonly bool[] isTurn, isAcc;
     readonly double[][] ct, cx, cy; readonly int[][] ca, ml;
     readonly bool[] done; readonly double[] mark;
@@ -28,6 +31,10 @@ public sealed class Evaluator
     public readonly int[][] Hub;       // [task][place] -> hub number, or -1
     public readonly int[][] HubTasks;  // [hub] -> pickups and hand-ins that can be done there
     public readonly bool[] Active;
+    /// <summary>Level order: the level of each pickup that opens a chain; 0 = no rule for that task.</summary>
+    public readonly double[] OrderLevel; public readonly bool Order;
+    readonly bool[] raises;
+    readonly double[] floatTurn;       // level order: hand-ins cut loose from their quest here (its pickup is planned elsewhere): the quest's level            // level order: pickups that set the level later ones are held to (the fixed route's, when slotting in)
     readonly bool[] pass;              // hand-ins that count as "run past" when the route goes by them finished
     readonly int[] preCount, left, wait;
     /// <param name="watch">Which pickups and hand-ins count as "left behind" when the player walks away from them; null = all.</param>
@@ -79,7 +86,46 @@ public sealed class Evaluator
         }
         home = m.Home != null && active[m.Home.Id] ? m.Home.Id : -1;
         if (m.Home != null) { var c = m.Home.Cands[0]; bx = c.Pos.X; by = c.Pos.Y; barea = c.Area; }
+        soleAny = Enumerable.Range(0, n).Select(_ => new List<int>()).ToArray();
+        Order = m.Opt.LevelOrder; OrderLevel = new double[n];
+        // a class or race's own pickups, slotted into the shared route, are held to its levels but do not move them:
+        // otherwise one early warlock quest would make every lower shared pickup after it "out of order"
+        raises = Enumerable.Range(0, n).Select(i => watch == null || !watch[i]).ToArray();
+        // a hand-in whose pickup (a drop-started quest, another layer's) is not in this plan has nothing holding it back,
+        // and the rule for leaving a hub pulls it to the first visit; keep it from coming long before its level
+        floatTurn = m.Tasks.Select(t => m.Opt.LevelOrder && t.Kind == TaskKind.TurnIn && t.Pre.Count > 0 && Pre[t.Id].Length == 0 && t.Q is { Level: > 0 } fq ? (double)fq.Level : 0).ToArray();
+        if (Order)
+        {
+            var turnIn = m.Tasks.Where(t => t.Kind == TaskKind.TurnIn && t.Q != null && active[t.Id]).GroupBy(t => t.Q!.Id).ToDictionary(g => g.Key, g => g.First().Id);
+            foreach (var t in m.Tasks)
+            {
+                if (t.Kind is not (TaskKind.Accept or TaskKind.ItemAccept) || t.Q is not { } q) continue;
+                if (OpensChain(m, q)) { OrderLevel[t.Id] = q.Level > 0 ? q.Level : Math.Max(q.Req, 0); continue; }
+                // "any of" where one way in is in another zone counts as no prerequisite here, so the normal route can put
+                // the pickup anywhere; with level order that drifts to the front. Wait for the way in that is here.
+                if (Pre[t.Id].Length == 0 && Any[t.Id].Length == 0 && !q.Cond && !t.Cond)
+                    Any[t.Id] = q.PreAll.Concat(q.PreAny).Where(turnIn.ContainsKey).Select(p => turnIn[p]).Distinct().OrderBy(x => x).ToArray();
+                // the quests it follows are not part of this plan (another class's, or ones that depend on other zones,
+                // slotted in later): order it by its own level here, so it does not drift to the front
+                if (Pre[t.Id].Length == 0 && Any[t.Id].Length == 0) OrderLevel[t.Id] = q.Level > 0 ? q.Level : Math.Max(q.Req, 0);
+            }
+        }
+        // A step whose "any of" is down to one way in among these tasks, because the other ways in are for characters this
+        // layer is not for (a shared quest a warlock reaches only through a warlock quest): that one has to come first.
+        if (watch != null)
+        {
+            ulong layer = 0; for (int i = 0; i < n; i++) if (watch[i]) layer |= m.Tasks[i].Elig;
+            for (int i = 0; i < n; i++)
+                if (active[i] && Any[i].Length == 1 && m.Tasks[i].PreAny.All(a => active[a] || (m.Tasks[a].Elig & layer) == 0))
+                    soleAny[Any[i][0]].Add(i);
+        }
     }
+
+    /// <summary>
+    /// Level order applies to quests that start a chain here (none of the quests they need are in this zone). A follow-up
+    /// waits for its chain anyway, and level skip shows it only once the quest before it is handed in.
+    /// </summary>
+    public static bool OpensChain(ZoneModel m, Quest q) => !q.PreAll.Concat(q.PreAny).Any(m.Quests.ContainsKey);
 
     public int Need(int task, int choice) => ml[task][choice];
 
@@ -102,6 +148,7 @@ public sealed class Evaluator
         double miss = Tuning.HubMiss; int hprev = -1;
         double passMiss = Tuning.PassMiss, r2 = Tuning.PassRadius * Tuning.PassRadius, share = Tuning.PassDetour, cap = 3 * Tuning.PassRadius;
         Array.Copy(preCount, left, n); int wn = 0;
+        double top = 0, slack = Tuning.LevelOrderSlack, obig = big * 0.1, ocap = big * 0.3;   // never worth breaking a chain for
         for (int pos = 0; pos < len; pos++)
         {
             int t = seq[pos];
@@ -129,6 +176,7 @@ public sealed class Evaluator
                     }
                     if (safe[u] > 0 && fl < ml[u][0] + safe[u]) continue;
                     if (qlv[u] > fl + Tuning.PickupAhead) continue;          // a quest well above your level is not "on offer" yet
+                    if (Order && OrderLevel[u] > top + slack) continue;     // level order: not its turn yet
                     pen += miss; if (detail != null) detail.Misses++;
                 }
             }
@@ -185,9 +233,15 @@ public sealed class Evaluator
             pen += ct[t][c];
             if (isAcc[t])
             {
+                if (Order && OrderLevel[t] > 0)
+                {
+                    if (OrderLevel[t] < top - slack) { pen += Math.Min(ocap, obig * (top - slack - OrderLevel[t])); if (detail != null) detail.OutOfOrder++; }
+                    if (OrderLevel[t] > top && raises[t]) top = OrderLevel[t];
+                }
                 pen += Tuning.Pickup * total;
                 if (qlv[t] > fl + Tuning.PickupAhead) pen += Tuning.AheadCost * (qlv[t] - fl - Tuning.PickupAhead);   // picked up long before you can do it
             }
+            if (floatTurn[t] > fl + Tuning.PickupAhead) pen += lbig * (floatTurn[t] - fl - Tuning.PickupAhead);
             if (isTurn[t])
             {
                 double rd = 0, picked = -1;
@@ -217,7 +271,7 @@ public sealed class Evaluator
 
 public sealed class ViewStat
 {
-    public string Name = ""; public bool Cond; public int Tasks, Broken; public double Travel, Penalty, EndLevel, StartCost, LevelShort; public int Hearths, HubMisses, Passes;
+    public string Name = ""; public bool Cond; public int Tasks, Broken, OutOfOrder; public double Travel, Penalty, EndLevel, StartCost, LevelShort; public int Hearths, HubMisses, Passes;
 }
 
 public sealed class RouteResult
@@ -284,7 +338,7 @@ public sealed class Router
             for (int p = 0; p < seq.Length; p++)
                 if (movable[seq[p]]) { res.Level[seq[p]] = sim.Level[p]; res.XpBefore[seq[p]] = sim.XpBefore[p]; res.Hearth[seq[p]] = sim.Hearth[p]; }
             int misses = sim.Misses;
-            res.Views.Add(new ViewStat { Name = name, Cond = cond, Tasks = mine.Count, Travel = sim.Travel, Penalty = sim.Penalty, EndLevel = Game.FracLevel(sim.EndXp), Hearths = sim.Hearths, HubMisses = misses, Passes = sim.Passes, StartCost = startCost, Broken = sim.Broken, LevelShort = sim.LevelShort });
+            res.Views.Add(new ViewStat { Name = name, Cond = cond, Tasks = mine.Count, Travel = sim.Travel, Penalty = sim.Penalty, EndLevel = Game.FracLevel(sim.EndXp), Hearths = sim.Hearths, HubMisses = misses, Passes = sim.Passes, StartCost = startCost, Broken = sim.Broken, OutOfOrder = sim.OutOfOrder, LevelShort = sim.LevelShort });
             master = Merge(master, seq, movable);
         }
         if (!firmPlaced) PlaceDeferred(master, res, false);
@@ -362,9 +416,13 @@ public sealed class Router
         while (left.Count > 0)
         {
             double lvl = Game.FracLevel(xp); double bd = double.MaxValue; int bt = -1, bc = 0;
+            // level order: only the lowest pickups still to do are open (unless nothing else can be done)
+            double low = ev.Order ? left.Select(i => ev.OrderLevel[i]).Where(v => v > 0).DefaultIfEmpty(0).Min() : 0;
+            for (int pass = 0; pass < 2 && bt < 0; pass++)
             foreach (int id in left)
             {
                 var t = m.Tasks[id];
+                if (pass == 0 && ev.Order && ev.OrderLevel[id] > low + Tuning.LevelOrderSlack) continue;
                 if (ev.Pre[id].Any(p => !done[p])) continue;
                 if (ev.Any[id].Length > 0 && !ev.Any[id].Any(p => done[p])) continue;
                 for (int ci = 0; ci < t.Cands.Count; ci++)
@@ -518,7 +576,8 @@ public sealed class Router
         double x = m.Start.X, y = m.Start.Y; double xp = m.StartXp;
         var followers = new Dictionary<int, List<int>>();
         foreach (int t in seq) if (ev.Tight[t] >= 0) { if (!followers.TryGetValue(ev.Tight[t], out var l)) followers[ev.Tight[t]] = l = new(); l.Add(t); }
-        void Do(int t) { var c = m.Tasks[t].Cands[ch[t]]; x = c.Pos.X; y = c.Pos.Y; xp += m.Tasks[t].Xp; done[t] = true; left[t] = false; o.Add(t); }
+        double top = 0;
+        void Do(int t) { var c = m.Tasks[t].Cands[ch[t]]; x = c.Pos.X; y = c.Pos.Y; xp += m.Tasks[t].Xp; done[t] = true; left[t] = false; o.Add(t); top = Math.Max(top, ev.OrderLevel[t]); }
         pulled = 0;
         while (remaining.Count > 0)
         {
@@ -536,6 +595,7 @@ public sealed class Router
                     if (ev.Any[u].Length > 0 && !ev.Any[u].Any(p => done[p])) continue;
                     if (t.Kind == TaskKind.Accept && t.MinLevel > 1 && lvl < t.MinLevel + Tuning.Safety) continue;
                     if (t.Kind == TaskKind.Accept && t.Q is { Level: > 0 } tq && tq.Level > lvl + Tuning.PickupAhead) continue;
+                    if (ev.Order && ev.OrderLevel[u] > top + Tuning.LevelOrderSlack) continue;     // level order: not its turn yet
                     for (int ci = 0; ci < t.Cands.Count; ci++)
                     {
                         if (ev.Hub[u][ci] != h) continue;
@@ -584,7 +644,7 @@ public sealed class Router
             // of the chain it is the end of: "Shimmer Stout" needs "Rejold's New Brew" handed in, which needs it picked up)
             int upper = seq.Count; var seen = new HashSet<int> { pick }; var stack = new Stack<int>(); stack.Push(pick);
             while (stack.Count > 0)
-                foreach (int sx in ev.Succ[stack.Pop()])
+                foreach (int sx in ev.Needed[stack.Pop()])
                 {
                     if (!seen.Add(sx)) continue;
                     if (placed[sx]) upper = Math.Min(upper, seq.IndexOf(sx)); else stack.Push(sx);

@@ -152,6 +152,15 @@ public static class LevelSkip
                 var extra = new List<string>();
                 if (accepts.Count > 0 && !hasWork && accepts.All(e => b.Gate.TryGetValue(e.Line, out var k) && k.Contains(".maxlevel")) && !b.Lines.Any(l => l.Contains(".maxlevel")))
                     extra.Add($"    .maxlevel {b.HeadCutoff} --level skip: hidden once you are past level {b.HeadCutoff}");
+                // An early offer (".xp <N,1": in case you are ahead of the predicted level) of a follow-up assumes you did the
+                // quest before it, which a player who skipped the start may not have. It is only a shortcut (the pickup is
+                // also planned further on), so it is left out.
+                else if (accepts.Count > 0 && !hasWork && !b.Rider && accepts.Any(e => b.Gate.GetValueOrDefault(e.Line, "").Contains(".isQuestTurnedIn"))
+                         && b.Lines.Any(l => Regex.IsMatch(StripComment(l), @"^\s*\.xp\s*<")) && !b.Lines.Any(l => Regex.IsMatch(StripComment(l), @"^\s*\.is[A-Z]")))
+                {
+                    foreach (int k in every) map[Old(k)] = outL.Count;
+                    continue;
+                }
                 Copy(every, extra);
                 continue;
             }
@@ -314,6 +323,7 @@ public static class LevelSkip
                 if (e.Cmd == "xp" && e.Args.Length > 0 && Regex.Match(e.Args[0], @"^(\d+)") is { Success: true } gm && level > int.Parse(gm.Groups[1].Value) && !els.Any(IsQ)) skip = true;   // a grind step you are past
             }
             if (skip) { a.Skipped++; continue; }
+            if (s.Rider) continue;                                                   // a drop-started quest: assume no drop yet
             bool did = false;
             foreach (var e in els)
             {
