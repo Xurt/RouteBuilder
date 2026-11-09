@@ -33,6 +33,9 @@ public static class Program
               --order-from <guide>   keep the step order of a guide built earlier (for guides made before locks/)
               --level-skip           steps you have outgrown hide themselves, so the guide can be loaded at any level
                                      (pickups more than 6 levels below you, and chains whose first quest was skipped)
+              --done <file>          quests already handed in: a guide (.lua: its hand-ins) or any text of quest IDs
+              --with "<zone>[,<zone>]"  plan neighbouring zones together with this one: the route goes over when their
+                                     quests suit your level and comes back (kept in its own lock file)
               --level-order          pick quests up lowest level first (a chain's follow-ups count as at least the level
                                      of the quest before them); the walking order within a level is still optimised.
                                      Kept in its own lock file, "<zone> (<faction>, level order).json"
@@ -101,6 +104,23 @@ public static class Program
         return rows.OrderBy(r => r.Item3).ThenBy(r => r.Item4).ThenBy(r => r.Item1.Name).ToList();
     }
 
+    /// <summary>
+    /// Quests a character has already handed in (--done): a RestedXP guide (its .turnin lines), or any text with quest IDs
+    /// in it, such as the output of /dump C_QuestLog.GetAllCompletedQuestIDs() pasted into a file.
+    /// </summary>
+    static HashSet<int> ReadDone(string path)
+    {
+        if (!File.Exists(path)) throw new InvalidOperationException($"--done: no file {path}");
+        string text = File.ReadAllText(path);
+        var rx = path.EndsWith(".lua", StringComparison.OrdinalIgnoreCase)
+            ? new System.Text.RegularExpressions.Regex(@"^\s*\.turnin\s+-?(\d+)", System.Text.RegularExpressions.RegexOptions.Multiline)
+            : new System.Text.RegularExpressions.Regex(@"\b(\d{1,6})\b");
+        var ids = rx.Matches(text).Select(m => int.Parse(m.Groups[1].Value));
+        var set = ids.ToHashSet();
+        Console.WriteLine($"  {set.Count} quests counted as already handed in (from {path})");
+        return set;
+    }
+
     static int Zones(GameData d, string faction)
     {
         Console.WriteLine($"Zones with {faction} quests ({d.Version}):\n");
@@ -138,7 +158,9 @@ public static class Program
         var data = GameData.Load(dataDir);
         var bo = new BuildOptions
         {
-            Faction = faction, Race = opt.GetValueOrDefault("race"), Class = opt.GetValueOrDefault("class"), NoHearth = opt.ContainsKey("no-hearth"), Fresh = opt.ContainsKey("fresh"), NoRxpSteps = opt.ContainsKey("no-rxp-steps"), LevelSkip = opt.ContainsKey("level-skip") || Tuning.LevelSkip != 0, LevelOrder = opt.ContainsKey("level-order") || Tuning.LevelOrder != 0, OrderFrom = opt.GetValueOrDefault("order-from"), RxpDir = opt.GetValueOrDefault("rxp"),
+            Faction = faction, Race = opt.GetValueOrDefault("race"), Class = opt.GetValueOrDefault("class"), NoHearth = opt.ContainsKey("no-hearth"), Fresh = opt.ContainsKey("fresh"), NoRxpSteps = opt.ContainsKey("no-rxp-steps"), LevelSkip = opt.ContainsKey("level-skip") || Tuning.LevelSkip != 0, LevelOrder = opt.ContainsKey("level-order") || Tuning.LevelOrder != 0,
+            Done = opt.TryGetValue("done", out var donePath) ? ReadDone(donePath) : new(),
+            With = opt.TryGetValue("with", out var with) ? with.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList() : new(), OrderFrom = opt.GetValueOrDefault("order-from"), RxpDir = opt.GetValueOrDefault("rxp"),
             StartLevel = Num(opt, "start-level"), MinLevel = (int?)Num(opt, "min-level"), MaxLevel = (int?)Num(opt, "max-level"),
         };
         string outDir = opt.GetValueOrDefault("out", "guides");
@@ -185,7 +207,7 @@ public static class Program
         }
         if (bo.OrderFrom != null) Console.WriteLine($"  keeping the step order of {bo.OrderFrom}");
         else if (lk != null) Console.WriteLine($"  keeping the step order saved in {lockPath} (--fresh plans from scratch)");
-        var visit = new Visit(); var visits = new List<(ZoneModel m, RouteResult r, GuideOutput g, Verifier v)>();
+        var visit = new Visit { Done = new HashSet<int>(bo.Done) }; var visits = new List<(ZoneModel m, RouteResult r, GuideOutput g, Verifier v)>();
         bool debug = Environment.GetEnvironmentVariable("ROUTEBUILDER_DEBUG") == "1"; int bumps = 0; string onlyFor = "";
         var turnedSoFar = new HashSet<int>();      // level skip: quests handed in by earlier parts of this guide
         while (true)
@@ -227,6 +249,7 @@ public static class Program
             guide.OnlyFor = visit.Number > 1 ? onlyFor : "";     // a part only some characters have quests in is a guide only they see
             if (bo.LevelSkip) LevelSkip.Apply(model, guide, turnedSoFar);
             var check = new Verifier(); check.Run(model, guide);
+            foreach (var vl in Report.Visits(model, route)) if (vl.StartsWith("  Visit") || vl.Contains("never goes")) Console.WriteLine("    " + vl.Trim());
             if (bo.LevelSkip)
             {
                 guide.Arrivals = LevelSkip.Report(model, guide);

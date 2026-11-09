@@ -250,6 +250,31 @@ about 39,600 yards instead of 33,600) and goes back to hubs more often.
 Settings (settings.json): `LevelOrder` (0; 1 = every build does it), `LevelOrderSlack` (0): a pickup may be this many
 levels below the highest one picked up before it.
 
+## Planning a neighbouring zone in (--with)
+
+*Being tried out on the `cross-zone` branch.*
+
+    dotnet run -c Release -- build --zone "The Barrens" --faction Horde --with "Stonetalon Mountains" --level-skip
+
+The other zone's quests are planned as part of this one, the way a capital city is: the route goes over when its
+quests suit your level, does a batch of them, and comes back when this zone has better ones. Quests that send you
+across (*Letter to Jin'Zil*, *Ziz Fizziks*) are picked up first and handed in on the visit. Nothing is written by
+hand: where you cross is the pair of quest NPCs, one in each zone, that stand closest together (for the Barrens and
+Stonetalon, Makaba Flathoof and Witch Doctor Jin'Zil at Malaka'jin), and the walk between them is counted.
+
+* Only zones on the same continent map (the walk can be measured). Zeppelins and boats are not modelled yet.
+* The report has a "Visits to neighbouring zones" section: each stretch spent in the other zone, its levels, the
+  quests that took you there, the ones done there and the ones carried back. The console prints the same.
+* Kept in its own lock file, `locks/<zone> (<who>, with <other zone>).json`.
+
+## Starting from where a character is (--done)
+
+    dotnet run -c Release -- build --zone "The Barrens" --race Skyborne --class Druid --start-level 19 --done done.lua
+
+`--done` takes the quests a character has already handed in, so the guide is planned for what is left. The file is
+either a RestedXP guide (every `.turnin` in it counts: the guide part you have played), or any text with quest IDs in
+it (the IDs are read from it, so a list pasted from the game works).
+
 ## Suggesting the next zone (link)
 
     dotnet run -c Release -- link

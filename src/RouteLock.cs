@@ -76,7 +76,8 @@ public sealed class RouteLock
             : bo.Faction;
         string range = bo.MinLevel != null && bo.MaxLevel != null ? $" {bo.MinLevel}-{bo.MaxLevel}"
                      : bo.MinLevel != null ? $" from {bo.MinLevel}" : bo.MaxLevel != null ? $" to {bo.MaxLevel}" : "";
-        if (bo.LevelOrder) who += ", level order";      // a level-ordered route is saved apart from the normal one
+        if (bo.LevelOrder) who += ", level order";
+        if (bo.With.Count > 0) who += ", with " + string.Join(" and ", bo.With);      // a level-ordered route is saved apart from the normal one
         return Path.Combine("locks", $"{zone}{range} ({who}).json");
     }
 

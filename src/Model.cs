@@ -6,6 +6,8 @@ public sealed class BuildOptions
 {
     public string Faction = "Horde"; public string? Race, Class;
     public double? StartLevel; public int? MinLevel, MaxLevel; public bool NoHearth, Fresh, NoRxpSteps, LevelSkip, LevelOrder; public string? RxpDir, OrderFrom;
+    public List<string> With = new();            // neighbouring zones planned together with this one (--with)
+    public HashSet<int> Done = new();            // quests already handed in before this guide starts (--done)
     public HashSet<string> RxpPlaced = new();    // RestedXP service steps already put in a part of this guide
     public RouteLock? Lock;                      // the saved order this build follows (null = planned from scratch)
     public HashSet<LockedService> LockPlaced = new();   // the lock's service steps already put in a part of this guide
@@ -351,7 +353,52 @@ public sealed class ZoneModel
         }
         else if (DefaultLinks.TryGetValue(Main.Id, out var ids))
             foreach (int id in ids) if (Data.Areas.TryGetValue(id, out var a)) { Areas.Add(a); AreaFix.Add(null); }
+        foreach (string name in Opt.With)
+        {
+            var a = Data.FindArea(name) ?? throw new InvalidOperationException($"--with: no zone called '{name}'");
+            if (Areas.Any(x => x.Id == a.Id)) continue;
+            if (!a.HasBounds || !Main.HasBounds || a.Continent != Main.Continent)
+                throw new InvalidOperationException($"--with: {a.Name} is not on the same continent map as {Main.Name}, so the walk between them cannot be measured");
+            Areas.Add(a); AreaFix.Add(null);
+            var (gate, hub, from, to) = Crossing(Main, a);
+            double walk = gate.To(hub);
+            gates[Areas.Count - 1] = (gate, hub, walk + Tuning.AreaChange);
+            WithAreas.Add(Areas.Count - 1);
+            Notes.Add($"{a.Name} is planned together with {Main.Name}: you cross between {from} and {to} ({walk:0} yards apart, the closest quest NPCs of the two zones)");
+        }
         Travel = new Travel(Areas, gates);
+    }
+
+    /// <summary>Indexes in <see cref="Areas"/> of the zones added with --with.</summary>
+    public readonly List<int> WithAreas = new();
+
+    /// <summary>
+    /// Where you walk between two neighbouring zones: the two quest NPCs, one in each, that stand closest to each other.
+    /// Quest NPCs gather at the camps and roads by a zone's edge, so this finds the way in without a map of the terrain.
+    /// </summary>
+    (Pt gate, Pt hub, string from, string to) Crossing(AreaInfo main, AreaInfo other)
+    {
+        var questNpcs = Data.Quests.Values.SelectMany(q => q.StartNpcs.Concat(q.EndNpcs)).ToHashSet();
+        List<(Pt p, string who)> Points(AreaInfo area)
+        {
+            var o = new List<(Pt, string)>();
+            foreach (int id in questNpcs)
+                if (Data.Npcs.TryGetValue(id, out var n))
+                    foreach (var (key, pts) in n.Spawns)
+                        if (Data.Parent(key) == area.Id && Data.Areas.TryGetValue(key, out var ai) && ai.HasBounds)
+                            o.AddRange(pts.Select(pt => (ai.ToWorld(pt), n.Name)));
+            return o;
+        }
+        var A = Points(main); var B = Points(other);
+        if (A.Count == 0 || B.Count == 0) throw new InvalidOperationException($"--with: no quest NPCs to cross between {main.Name} and {other.Name}");
+        (Pt, Pt, string, string) best = default; double bd = double.MaxValue;
+        foreach (var (pa, wa) in A)
+            foreach (var (pb, wb) in B)
+            {
+                double dd = pa.To(pb);
+                if (dd < bd) { bd = dd; best = (pa, pb, $"{wa} ({main.Name})", $"{wb} ({other.Name})"); }
+            }
+        return best;
     }
 
     /// <summary>Which of this zone's maps a spawn key belongs to, or -1.</summary>
@@ -618,17 +665,15 @@ public sealed class ZoneModel
         string num = @"(\d+|" + string.Join("|", NumberWords.Keys) + ")";
         int Val(string v) => int.TryParse(v, out int n) ? n : NumberWords[v.ToLowerInvariant()];
         string stem = Regex.Escape(Regex.Replace(name, "(y|ies|s)$", ""));
+        // a number that is part of the thing's own name ("Super Reaper 6000 Blueprints") is not how many you need
+        bool InName(string v) => Regex.IsMatch(name, @"\b" + Regex.Escape(v) + @"\b", RegexOptions.IgnoreCase);
         foreach (var t in q.Row.Text)
-        {
-            var m = Regex.Match(t, num + @"\s+" + stem, RegexOptions.IgnoreCase);
-            if (m.Success) return Val(m.Groups[1].Value);
-        }
+            foreach (Match m in Regex.Matches(t, num + @"\s+" + stem, RegexOptions.IgnoreCase))
+                if (!InName(m.Groups[1].Value)) return Val(m.Groups[1].Value);
         string last = Regex.Escape(Regex.Replace(name.Split(' ')[^1], "(y|ies|s)$", ""));
         foreach (var t in q.Row.Text)
-        {
-            var m = Regex.Match(t, num + @"\s+(?:[\w']+\s+){0,2}?" + last, RegexOptions.IgnoreCase);
-            if (m.Success) return Val(m.Groups[1].Value);
-        }
+            foreach (Match m in Regex.Matches(t, num + @"\s+(?:[\w']+\s+){0,2}?" + last, RegexOptions.IgnoreCase))
+                if (!InName(m.Groups[1].Value)) return Val(m.Groups[1].Value);
         found = false;
         return dflt;
     }

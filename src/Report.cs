@@ -160,6 +160,40 @@ public static class Report
 {
     static readonly CultureInfo Inv = CultureInfo.InvariantCulture;
 
+    /// <summary>
+    /// The stretches of route spent in a zone added with --with: when the route goes over, how long it stays, and which
+    /// quests take you there and bring you back.
+    /// </summary>
+    public static List<string> Visits(ZoneModel m, RouteResult r)
+    {
+        var o = new List<string>();
+        if (m.WithAreas.Count == 0) return o;
+        var away = new HashSet<int>(m.WithAreas);
+        int AreaOf(int t) => m.Tasks[t].Cands.Count == 0 ? 0 : m.Tasks[t].Cands[Math.Clamp(r.Choice[t], 0, m.Tasks[t].Cands.Count - 1)].Area;
+        var seq = r.Seq;
+        var pos = new Dictionary<int, int>(); for (int i = 0; i < seq.Count; i++) pos[seq[i]] = i;
+        int n = 0;
+        for (int i = 0; i < seq.Count;)
+        {
+            if (!away.Contains(AreaOf(seq[i]))) { i++; continue; }
+            int j = i; while (j + 1 < seq.Count && away.Contains(AreaOf(seq[j + 1]))) j++;
+            var run = seq.Skip(i).Take(j - i + 1).ToList();
+            var qs = run.Select(t => m.Tasks[t].Q).Where(q => q != null).Select(q => q!).Distinct().ToList();
+            int Of(Quest q, TaskKind k) => m.Tasks.FirstOrDefault(t => t.Q == q && t.Kind == k) is { } tk && pos.TryGetValue(tk.Id, out int p) ? p : -1;
+            var brought = qs.Where(q => Of(q, TaskKind.Accept) is int a && a >= 0 && a < i).Select(q => q.Name).Distinct().ToList();
+            var back = qs.Where(q => Of(q, TaskKind.TurnIn) is int b && b > j).Select(q => q.Name).Distinct().ToList();
+            var whole = qs.Where(q => !brought.Contains(q.Name) && !back.Contains(q.Name)).Select(q => q.Name).Distinct().ToList();
+            string zone = m.Areas[AreaOf(seq[i])].Name;
+            o.Add($"  Visit {++n} to {zone}: {run.Count} steps, level {r.Level[seq[i]]:0.0} to {r.Level[seq[j]]:0.0}, {qs.Count} quests");
+            if (brought.Count > 0) o.Add($"    brought there by: {string.Join(", ", brought)}");
+            if (whole.Count > 0) o.Add($"    done there: {string.Join(", ", whole)}");
+            if (back.Count > 0) o.Add($"    taken back: {string.Join(", ", back)}");
+            i = j + 1;
+        }
+        if (n == 0) o.Add($"  The route never goes to {string.Join(" or ", m.WithAreas.Select(a => m.Areas[a].Name))}: nothing there was worth the walk at these levels.");
+        return o;
+    }
+
     public static string Write(ZoneModel m, RouteResult r, GuideOutput g, Verifier v, string guidePath, string? zoneFile, bool lastVisit, int parts)
     {
         var sb = new StringBuilder();
@@ -194,6 +228,13 @@ public static class Report
         {
             H("Arriving later (level skip)");
             foreach (var a in g.Arrivals) sb.AppendLine(a);
+        }
+
+        var visitLines = Visits(m, r);
+        if (visitLines.Count > 0)
+        {
+            H("Visits to neighbouring zones (--with)");
+            foreach (var l in visitLines) sb.AppendLine(l);
         }
 
         H("Route");
