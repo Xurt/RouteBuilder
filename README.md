@@ -211,6 +211,41 @@ the zones that suit its end level best:
 * Running it again replaces the suggestions. Building a guide again takes them out of that guide until
   you link again (Rebuild-All.ps1 does that for you).
 
+## One route through every zone by level (plan)
+
+    dotnet run -c Release -- plan --faction Horde --min-level 10 --max-level 30 --dry-run
+    dotnet run -c Release -- plan --faction Horde --min-level 10 --max-level 30
+
+Instead of one guide per zone, `plan` cuts every zone into level bands and plays the bands lowest first,
+moving between zones as the levels go up:
+
+* Each zone's quests are counted at their chain's level: a quest that follows others in the same zone
+  counts at the level of the chain's first quest (or the level needed to pick it up, if that is higher),
+  since a chain can't be started part-way through. Elite, group and dungeon quests are left out
+  (`--keep-elite` keeps the elite and group ones). QuestieDB has no "Elite" tag, so a quest counts as one
+  when an objective can only be done on elite NPCs, or only inside a dungeon.
+* The levels most of a zone's quests fall in are cut into bands about 5 wide (`BandWidth` in
+  settings.json): 10-24 gives 10-14, 15-19, 20-24; 11-22 gives 11-16, 17-22. A band with fewer than 5
+  quests (`BandMinQuests`) goes in with a neighbour.
+* The bands are sorted by their lowest level, then their highest. Zone 1 10-14, 15-19, 20-24, Zone 2
+  11-16, 17-22 and Zone 3 14-17, 18-21 are played Zone 1 (10-14), Zone 2 (11-16), Zone 3 (14-17),
+  Zone 1 (15-19), Zone 2 (17-22), Zone 3 (18-21). Bands that start at the same level go nearest zone
+  first. `PlanTieLevels` (default 0) lets bands that start within that many levels count as level, so
+  the nearer one goes first.
+* Each band is built like `build --min-level --max-level`, planned from the level the bands before it
+  should get you to. A band is played once: quests it can't fit in (they need a higher level than it gets
+  you to) go into the zone's next band; if the zone has none, `route.txt` lists them as left out.
+* The guides go in `route` (`--out` changes it), listed in RestedXP under "Level Route (Horde)" as
+  "01 Silverpine Forest 10-13", "02 The Barrens 10-14" and so on. Each ends with a step naming the next
+  band, and `#next` loads its guide when you complete it. Don't run `link` on this folder: it adds its
+  own suggestions.
+* `route/route.txt` lists the order, then for each band its quests, the levels it should take you
+  through, and what moved on or was left out. `--dry-run` writes just the order, without building.
+* Starting zones (quests from level 1) are left out, since each race has its own; `--starters` takes
+  them in. `--zones "The Barrens;Stonetalon Mountains"` plans only those zones. `--race`/`--class`,
+  `--rxp`, `--no-hearth`, `--fresh` and `--effort` work as for `build`.
+* To get them into the game: `.\Make-Addon.ps1 -GuidesPath route`.
+
 ## Rebuilding every zone (Rebuild-All.ps1)
 
 `Rebuild-All.ps1` runs RxpToLock and then the build for every zone of both factions, and packs the addon

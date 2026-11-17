@@ -11,3 +11,4 @@ forever/
 locks/*.bak
 rebuild.log
 Rebuild.txt
+route/

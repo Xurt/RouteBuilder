@@ -80,6 +80,11 @@ public static class Tuning
     public static int VisitGap = 3;                // levels the player is assumed to gain elsewhere before coming back for the next part
     public static double ZoneTopPercentile = 0.90; // the zone's "top level" ignores the highest-level stragglers
     public static int ZoneLevelSlack = 2;          // quests this far above the zone's top level are still included
+    // --- plan: one route through every zone's level bands ---
+    public static int BandWidth = 5;               // a zone's level range is cut into bands about this many levels wide
+    public static int BandMinQuests = 5;           // a band with fewer quests than this is merged into its neighbour
+    public static int PlanTieLevels = 0;           // bands starting within this many levels of the lowest left count as level; the nearest zone goes first
+    public static double ChainStretch = 2;         // in a band, a chain's later quests may need this many levels past what the band gets you to
 
     public static void Load(string path)
     {

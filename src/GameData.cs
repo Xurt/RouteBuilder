@@ -67,6 +67,7 @@ public sealed class QuestRow
 public sealed class NpcRow
 {
     public int Id; public string Name = ""; public double MinLevel, MaxLevel; public int Rank, Flags;
+    public string Friendly = "";                           // "A", "H", "AH" or "" (none: hostile to both, or unknown)
     public Dictionary<int, List<Pt>> Spawns = new();      // percent coordinates by area
     public Dictionary<int, List<Pt>> Waypoints = new();
     /// <summary>Average level, or null when the database has none (it uses 9999 for "unknown").</summary>
@@ -108,6 +109,86 @@ public sealed class GameData
 
     public int Parent(int area) => ParentArea.TryGetValue(area, out var p) ? p : area;
     public string AreaName(int area) => Areas.TryGetValue(area, out var a) ? a.Name : $"area {area}";
+
+    // ------------------------------------------------------------------ elite and group quests
+    // QuestieDB has no quest tag (Elite, Group), so a quest counts as one when an objective can only be done on elite
+    // NPCs: a kill target, every NPC that gives a kill credit, or every NPC that drops a needed item (with no object or
+    // vendor that has it). NPC rank as in cmangos: 1 elite, 2 rare elite, 3 boss (0 normal, 4 rare are soloable).
+    static bool EliteRank(int rank) => rank is 1 or 2 or 3;
+    bool IsElite(int npc) => Npcs.TryGetValue(npc, out var n) && EliteRank(n.Rank);
+    readonly Dictionary<int, string?> eliteOf = new();
+
+    // an NPC or object that is only ever found inside dungeons (some dungeon quests are filed under the zone outside)
+    bool InsideOnly(Dictionary<int, List<Pt>> spawns) => spawns.Count > 0 && spawns.Keys.All(a => Instances.Contains(a) || Instances.Contains(Parent(a)));
+    bool NpcInside(int id) => Npcs.TryGetValue(id, out var n) && InsideOnly(n.Spawns);
+    bool ObjInside(int id) => Objects.TryGetValue(id, out var o) && InsideOnly(o.Spawns);
+
+    /// <summary>
+    /// What makes a quest an elite, group or dungeon quest ("elite: Name" or "in a dungeon: Name"), or null when it is
+    /// soloable out in the world.
+    /// </summary>
+    public string? EliteTarget(QuestRow q)
+    {
+        if (eliteOf.TryGetValue(q.Id, out var had)) return had;
+        string? found = null;
+        foreach (var (id, _) in q.KillNpcs) if (NpcInside(id)) { found = "in a dungeon: " + Npcs[id].Name; break; }
+        if (found == null) foreach (var (id, _) in q.UseObjects) if (ObjInside(id)) { found = "in a dungeon: " + Objects[id].Name; break; }
+        if (found == null)
+            foreach (var (id, _) in q.NeedItems)
+                if (Items.TryGetValue(id, out var it) && it.Vendors.Count == 0 && it.NpcDrops.Count + it.ObjectDrops.Count > 0 && it.NpcDrops.All(NpcInside) && it.ObjectDrops.All(ObjInside))
+                { found = "in a dungeon: " + it.Name; break; }
+        if (found != null) return eliteOf[q.Id] = found;
+        foreach (var (id, _) in q.KillNpcs)
+            if (IsElite(id)) { found = "elite: " + Npcs[id].Name; break; }
+        if (found == null)
+            foreach (var (ids, _) in q.KillCredits)
+                if (ids.Count > 0 && ids.All(IsElite)) { found = "elite: " + Npcs[ids[0]].Name; break; }
+        if (found == null)
+            foreach (var (id, _) in q.NeedItems)
+                if (Items.TryGetValue(id, out var it) && it.NpcDrops.Count > 0 && it.ObjectDrops.Count == 0 && it.Vendors.Count == 0 && it.NpcDrops.All(IsElite))
+                { found = "elite: " + Npcs[it.NpcDrops[0]].Name; break; }
+        return eliteOf[q.Id] = found;
+    }
+
+    /// <summary>
+    /// False when every NPC that starts the quest is unfriendly to the faction (an Alliance quest giver for a Horde
+    /// route). Quests started by objects or items, or by an NPC with no faction on record, count as open.
+    /// </summary>
+    public bool OpenTo(QuestRow q, string faction)
+    {
+        if (q.StartNpcs.Count == 0 || q.StartObjects.Count > 0 || q.StartItems.Count > 0) return true;
+        string f = faction == "Horde" ? "H" : "A";
+        return q.StartNpcs.Any(id => !Npcs.TryGetValue(id, out var n) || n.Friendly.Length == 0 || n.Friendly.Contains(f));
+    }
+
+    // ------------------------------------------------------------------ chain levels
+    readonly Dictionary<int, int> chainLevel = new();
+
+    /// <summary>
+    /// The level of the quest a chain starts with: the lowest level among the quest and the prerequisites before it
+    /// that are filed under the same zone. A chain's later quests go with its first one, since a chain can't be
+    /// started part-way through.
+    /// </summary>
+    public int ChainLevel(int id) => ChainLevel(id, new HashSet<int>());
+
+    int ChainLevel(int id, HashSet<int> seen)
+    {
+        if (chainLevel.TryGetValue(id, out int had)) return had;
+        if (!Quests.TryGetValue(id, out var q)) return 0;
+        if (!seen.Add(id)) return q.Level;               // a loop in the data
+        int lvl = q.Level, zone = Parent(q.ZoneOrSort);
+        foreach (int p in q.PreGroup.Concat(q.PreSingle))
+        {
+            if (p == id || q.Exclusive.Contains(p) || !Quests.TryGetValue(p, out var pq) || pq.ZoneOrSort <= 0 || Parent(pq.ZoneOrSort) != zone) continue;
+            int pl = ChainLevel(p, seen);
+            if (pl > 0) lvl = Math.Min(lvl, pl);
+        }
+        seen.Remove(id);
+        return chainLevel[id] = lvl;
+    }
+
+    /// <summary>The level that decides which band of its zone a quest goes in: its chain's level, but never below the level needed to pick it up.</summary>
+    public int BandLevel(QuestRow q) => Math.Max(ChainLevel(q.Id), q.ReqLevel);
     public string NpcName(int id) => Npcs.TryGetValue(id, out var n) ? n.Name : $"NPC {id}";
     public string ObjectName(int id) => Objects.TryGetValue(id, out var o) ? o.Name : $"object {id}";
     public string ItemName(int id) => Items.TryGetValue(id, out var i) ? i.Name : $"item {id}";
@@ -131,7 +212,7 @@ public sealed class GameData
 
         foreach (var (id, r) in Lua.ReadEntities(Path.Combine(exp, "foreverNpcDB.lua")))
         {
-            var n = new NpcRow { Id = id, Name = Lua.Text(r[1]) ?? "", MinLevel = Lua.Dbl(r[4]), MaxLevel = Lua.Dbl(r[5]), Rank = (int)Lua.Num(r[6]), Flags = (int)Lua.Num(r[15]) };
+            var n = new NpcRow { Id = id, Name = Lua.Text(r[1]) ?? "", MinLevel = Lua.Dbl(r[4]), MaxLevel = Lua.Dbl(r[5]), Rank = (int)Lua.Num(r[6]), Flags = (int)Lua.Num(r[15]), Friendly = Lua.Text(r[13]) ?? "" };
             ReadPoints(Lua.Tab(r[7]), n.Spawns); ReadPoints(Lua.Tab(r[8]), n.Waypoints);
             d.Npcs[id] = n;
         }

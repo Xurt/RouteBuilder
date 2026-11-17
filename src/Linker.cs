@@ -18,6 +18,7 @@ public sealed class GuideMeta
     public List<MetaPart> Parts = new();
     public List<MetaQuest> Quests = new();
     public Dictionary<string, int> CarriedTo = new();     // zone -> quests picked up here and handed in there
+    public List<int> Later = new();                       // quests the last part leaves for a higher level (and those that follow them)
 
     public sealed class MetaPart
     {
@@ -41,6 +42,7 @@ public sealed class GuideMeta
     {
         var m0 = visits[0].m; var g0 = visits[0].g;
         var meta = new GuideMeta { Zone = m0.Main.Name, Faction = m0.Opt.Faction, Who = Emitter.Who(m0), Group = g0.Group, Name = g0.Name, File = g0.FileName, Continent = m0.Main.Continent, Suggest = m0.Cfg.Suggest ?? true };
+        meta.Later = visits[^1].m.Later.Keys.ToList();
         string ZoneOf(string place)
         {
             var a = data.FindArea(place);

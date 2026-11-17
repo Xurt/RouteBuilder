@@ -936,7 +936,7 @@ public sealed class Emitter
         string who = Who(m), zone = m.Main.Name;
         // the range in the name runs from the level the plan starts at to the highest quest level in it
         int lo = (int)Math.Floor(m.StartLevel), hi = Math.Max(lo, visits.Max(v => v.m.LevelHi));
-        string name = $"{lo}-{hi} {zone}", group = $"Zone Routes ({who})";
+        string name = m.Opt.Name ?? $"{lo}-{hi} {zone}", group = m.Opt.Group ?? $"Zone Routes ({who})";
         // a build limited with --min-level/--max-level gets the range in its file name, so several ranges of one zone sit side by side
         string range = m.Opt.MinLevel != null || m.Opt.MaxLevel != null ? $" {m.Opt.MinLevel ?? lo}-{m.Opt.MaxLevel ?? hi}" : "";
         foreach (var (_, g) in visits) { g.Name = name; g.Group = group; g.FileName = $"{zone}{range} ({who}).lua"; }

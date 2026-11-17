@@ -9,6 +9,11 @@ public sealed class BuildOptions
     public HashSet<string> RxpPlaced = new();    // RestedXP service steps already put in a part of this guide
     public RouteLock? Lock;                      // the saved order this build follows (null = planned from scratch)
     public HashSet<LockedService> LockPlaced = new();   // the lock's service steps already put in a part of this guide
+    public bool Solo;                            // leave out elite and group quests
+    public bool ByChain;                         // a quest's level for --min-level/--max-level is its chain's (GameData.BandLevel)
+    public string? Group;                        // the RestedXP group the guide is listed under (default "Zone Routes (<who>)")
+    public string? Name;                         // the guide's name in RestedXP (default "<start>-<top quest level> <zone>")
+    public HashSet<int> Carry = new();           // quests taken in whatever their level (left over from an earlier band of the zone)
 }
 
 /// <summary>Fixed facts about the game: races, classes and the experience curve.</summary>
@@ -560,7 +565,7 @@ public sealed class ZoneModel
             if (start == null && si == null && row.StartItems.Count > 0) si = AutoStartItem(row);
             if (start == null && si == null && end == null) continue;
 
-            bool forced = Cfg.Include.Contains(row.Id) || held;
+            bool forced = Cfg.Include.Contains(row.Id) || held || Opt.Carry.Contains(row.Id);
             if (Cfg.Exclude.TryGetValue(row.Id.ToString(), out var why)) { Excluded[row.Id] = why; continue; }
             if (raceBit != 0 && row.Races != 0 && (row.Races & raceBit) == 0) continue;
             if (classBit != 0 && row.Classes != 0 && (row.Classes & classBit) == 0) continue;
@@ -573,8 +578,12 @@ public sealed class ZoneModel
                     row.NeedsReputation ? "needs reputation" :
                     row.ZoneOrSort < 0 && !Game.ClassSorts.Contains(row.ZoneOrSort) && row.ZoneOrSort != Game.CampingSort ? $"special category (sort {row.ZoneOrSort})" :
                     row.ZoneOrSort > 0 && Data.Instances.Contains(row.ZoneOrSort) ? "dungeon quest" :
-                    row.Level > ScopeMax || row.ReqLevel > ScopeMax ? $"level {row.Level} (needs {row.ReqLevel}), above this zone's range of {LevelLo}-{ScopeMax}" :
-                    scopeMin != null && row.Level < scopeMin ? $"level {row.Level}, below the requested minimum" : null;
+                    Opt.Solo && Data.EliteTarget(row) is { } elite ? $"group quest ({elite})" :
+                    Opt.ByChain && !Data.OpenTo(row, Opt.Faction) ? "quest giver is not friendly to " + Opt.Faction :
+                    Opt.ByChain && Data.BandLevel(row) is int bl && (bl > ScopeMax || bl < (scopeMin ?? 0)) ?
+                        $"level {row.Level}{(bl != row.Level ? $", band level {bl} (its chain starts at {Data.ChainLevel(row.Id)}{(row.ReqLevel > Data.ChainLevel(row.Id) ? $", needs {row.ReqLevel}" : "")})" : "")}, outside this band of {scopeMin}-{ScopeMax}" :
+                    !Opt.ByChain && (row.Level > ScopeMax || row.ReqLevel > ScopeMax) ? $"level {row.Level} (needs {row.ReqLevel}), above this zone's range of {LevelLo}-{ScopeMax}" :
+                    !Opt.ByChain && scopeMin != null && row.Level < scopeMin ? $"level {row.Level}, below the requested minimum" : null;
                 if (reason != null) { Excluded[row.Id] = reason; continue; }
             }
             var q = new Quest { Row = row, Fix = fix ?? new QuestFix(), Start = start, End = end, StartItem = start == null || fix?.StartItem != null ? si : null };
@@ -617,17 +626,19 @@ public sealed class ZoneModel
         if (string.IsNullOrEmpty(name)) { found = false; return dflt; }
         string num = @"(\d+|" + string.Join("|", NumberWords.Keys) + ")";
         int Val(string v) => int.TryParse(v, out int n) ? n : NumberWords[v.ToLowerInvariant()];
+        // a number that is part of the name ("Super Reaper 6000 Blueprints") is not a count
+        bool Count(Match m) => m.Success && !Regex.IsMatch(name, $@"\b{Regex.Escape(m.Groups[1].Value)}\b", RegexOptions.IgnoreCase) && Val(m.Groups[1].Value) <= 250;
         string stem = Regex.Escape(Regex.Replace(name, "(y|ies|s)$", ""));
         foreach (var t in q.Row.Text)
         {
             var m = Regex.Match(t, num + @"\s+" + stem, RegexOptions.IgnoreCase);
-            if (m.Success) return Val(m.Groups[1].Value);
+            if (Count(m)) return Val(m.Groups[1].Value);
         }
         string last = Regex.Escape(Regex.Replace(name.Split(' ')[^1], "(y|ies|s)$", ""));
         foreach (var t in q.Row.Text)
         {
             var m = Regex.Match(t, num + @"\s+(?:[\w']+\s+){0,2}?" + last, RegexOptions.IgnoreCase);
-            if (m.Success) return Val(m.Groups[1].Value);
+            if (Count(m)) return Val(m.Groups[1].Value);
         }
         found = false;
         return dflt;
@@ -925,7 +936,8 @@ public sealed class ZoneModel
             double cap = Game.FracLevel(StartXp + Tasks.Where(t => !t.Cond && (t.Elig & q.Elig) == q.Elig).Sum(t => t.Xp));
             var (need, why) = LevelNeeded(q);
             // a build limited with --max-level is meant to hold its quests: a short grind at the end beats a part of its own
-            double slack = Opt.MaxLevel != null && q.Req <= Opt.MaxLevel ? 1.0 : 0;
+            // in a band (--by-chain) a chain's later quests stay with its first one where they can: a little more stretch
+            double slack = Opt.MaxLevel != null && q.Req <= Opt.MaxLevel ? (Opt.ByChain ? Tuning.ChainStretch : 1.0) : 0;
             if (need <= cap + slack) continue;
             Later[q.Id] = ($"{why}; this part gets {(q.Tag.Length > 0 ? q.Tag + " characters" : "you")} to about {cap.ToString("0.0", inv)}", need, q.Cond);
             Quests.Remove(q.Id); any = true;

@@ -39,6 +39,19 @@ public static class Program
               "come back at level N" break), with "#next" so RestedXP loads the best one when the guide ends.
               Run it after building; build again and the suggestions are taken out until you link again.
 
+          RouteBuilder plan [--faction Horde|Alliance] [--race <race> --class <class>] [--min-level <n>] [--max-level <n>]
+              One route through every zone by level. Each zone's quests (elite, group and dungeon quests left out; a
+              chain's quests all count at the level of its first quest) are cut into bands about 5 levels wide; the
+              bands are played lowest first, and each band's guide leads on to the next with #next.
+
+              --min-level, --max-level   only the bands that overlap these levels (default: all)
+              --out <folder>         where the guides go (default: route)
+              --dry-run              print the order and write route.txt, without building the guides
+              --starters             also take in starting zones (left out by default: each race has its own)
+              --keep-elite           keep elite and group quests
+              --zones "<a>;<b>"      only these zones
+              --rxp, --no-hearth, --fresh, --effort   as for build
+
         Numbers the router's judgement rests on can be changed in settings.json (see README).
         """;
 
@@ -51,7 +64,7 @@ public static class Program
         {
             if (!argv[i].StartsWith("--")) { Console.Error.WriteLine($"Unexpected argument: {argv[i]}"); return 2; }
             string key = argv[i][2..];
-            if (key is "no-hearth" or "no-download" or "fresh" or "no-rxp-steps") opt[key] = "1";
+            if (key is "no-hearth" or "no-download" or "fresh" or "no-rxp-steps" or "dry-run" or "starters" or "keep-elite") opt[key] = "1";
             else if (i + 1 < argv.Length) opt[key] = argv[++i];
             else { Console.Error.WriteLine($"--{key} needs a value"); return 2; }
         }
@@ -69,13 +82,14 @@ public static class Program
                 case "zones": return Zones(GameData.Load(data), Faction(opt));
                 case "build": return Build(data, opt);
                 case "link": return Linker.Run(opt.GetValueOrDefault("out", "guides"));
+                case "plan": return Planner.Run(data, opt);
                 default: Console.Error.WriteLine($"Unknown command '{argv[0]}'.\n"); Console.WriteLine(Help); return 2;
             }
         }
         catch (InvalidOperationException e) { Console.Error.WriteLine("Error: " + e.Message); return 1; }
     }
 
-    static string Faction(Dictionary<string, string> opt)
+    internal static string Faction(Dictionary<string, string> opt)
     {
         string f = opt.GetValueOrDefault("faction", "Horde");
         if (f.Equals("horde", StringComparison.OrdinalIgnoreCase)) return "Horde";
@@ -83,7 +97,7 @@ public static class Program
         throw new InvalidOperationException("--faction must be Horde or Alliance");
     }
 
-    static List<(AreaInfo area, int count, int lo, int hi)> ZoneList(GameData d, string faction)
+    internal static List<(AreaInfo area, int count, int lo, int hi)> ZoneList(GameData d, string faction)
     {
         long mask = Game.Races(faction).Aggregate(0L, (m, r) => m | r.Bit);
         var rows = new List<(AreaInfo, int, int, int)>();
@@ -119,15 +133,7 @@ public static class Program
     {
         if (!opt.TryGetValue("zone", out var zone)) throw new InvalidOperationException("build needs --zone \"<name>\" (or --zone all). Run 'RouteBuilder zones' for the list.");
         string faction = Faction(opt);
-        if (opt.TryGetValue("effort", out var es))
-        {
-            // the search's try counts are whole numbers: below 0.01 they round away to nothing, above 100 they no longer fit
-            if (!double.TryParse(es, NumberStyles.Float, CultureInfo.InvariantCulture, out double effort) || !(effort >= 0.01 && effort <= 100))
-                throw new InvalidOperationException($"--effort must be a number from 0.01 to 100 (1 is normal). Got '{es}'.");
-            Tuning.IterationsPerTask = Math.Max(1, (int)(Tuning.IterationsPerTask * effort));
-            Tuning.MinIterations = Math.Max(1, (int)(Tuning.MinIterations * effort));
-            Tuning.MaxIterations = Math.Max(1, (int)(Tuning.MaxIterations * effort));
-        }
+        ApplyEffort(opt);
         var sw = Stopwatch.StartNew();
         Console.WriteLine("Reading QuestieDB data...");
         var data = GameData.Load(dataDir);
@@ -153,10 +159,23 @@ public static class Program
         return bad == 0 ? 0 : 3;
     }
 
-    static double? Num(Dictionary<string, string> opt, string key) =>
+    internal static void ApplyEffort(Dictionary<string, string> opt)
+    {
+        if (!opt.TryGetValue("effort", out var es)) return;
+        // the search's try counts are whole numbers: below 0.01 they round away to nothing, above 100 they no longer fit
+        if (!double.TryParse(es, NumberStyles.Float, CultureInfo.InvariantCulture, out double effort) || !(effort >= 0.01 && effort <= 100))
+            throw new InvalidOperationException($"--effort must be a number from 0.01 to 100 (1 is normal). Got '{es}'.");
+        Tuning.IterationsPerTask = Math.Max(1, (int)(Tuning.IterationsPerTask * effort));
+        Tuning.MinIterations = Math.Max(1, (int)(Tuning.MinIterations * effort));
+        Tuning.MaxIterations = Math.Max(1, (int)(Tuning.MaxIterations * effort));
+    }
+
+    internal static double? Num(Dictionary<string, string> opt, string key) =>
         opt.TryGetValue(key, out var s) ? double.TryParse(s, NumberStyles.Float, CultureInfo.InvariantCulture, out double v) ? v : throw new InvalidOperationException($"--{key} must be a number") : null;
 
-    static bool BuildOne(GameData data, AreaInfo area, BuildOptions bo, string outDir, string? zoneFile, Stopwatch sw)
+    static bool BuildOne(GameData data, AreaInfo area, BuildOptions bo, string outDir, string? zoneFile, Stopwatch sw) => BuildOne(data, area, bo, outDir, zoneFile, sw, out _);
+
+    internal static bool BuildOne(GameData data, AreaInfo area, BuildOptions bo, string outDir, string? zoneFile, Stopwatch sw, out string guidePath)
     {
         if (ZoneModel.CityParent(area.Id) is { } parent) throw new InvalidOperationException($"{area.Name} is planned as part of {data.AreaName(parent)}; build that zone instead");
         zoneFile ??= new[] { Path.Combine("zones", area.Name + ".json"), Path.Combine(AppContext.BaseDirectory, "zones", area.Name + ".json") }.FirstOrDefault(File.Exists);
@@ -240,6 +259,7 @@ public static class Program
         string text = Emitter.FileText(visits.Select(v => (v.m, v.g)).ToList());
         string path = Path.Combine(outDir, visits[0].g.FileName);
         File.WriteAllText(path, text);
+        guidePath = path;
         GuideMeta.From(data, visits.Select(v => (v.m, v.g)).ToList()).Save(GuideMeta.PathFor(path));
         var reports = visits.Select((v, i) => Report.Write(v.m, v.r, v.g, v.v, path, zoneFile, i == visits.Count - 1, visits.Count));
         File.WriteAllText(Path.ChangeExtension(path, ".report.txt"), string.Join("\n\n" + new string('=', 100) + "\n\n", reports));
