@@ -235,7 +235,7 @@ want them (one guide per level range, such as "15-21 The Barrens & Stonetalon Mo
 whatever zones and cities it likes, chained with `#next`) and keeps every step exactly as written. All it does
 is add the quests the set misses:
 
-    dotnet run -c Release -- fill --from "D:\Guides\Zygor Forever" --out filled
+    dotnet run -c Release -- fill --from "D:\Guides\Forever" --out filled
 
 * **Both factions in one folder.** Each guide's `<< Horde` / `<< Alliance` line says whose it is. Each faction's
   `#next` chain is followed on its own, so a Horde and an Alliance guide may have the same name.
