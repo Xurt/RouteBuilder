@@ -112,7 +112,7 @@ public sealed class Emitter
         return lines;
     }
 
-    static string ObjText(Obj o)
+    public static string ObjText(Obj o)
     {
         if (o.Text != null) return o.Text;
         var mobs = o.Targets.Where(t => t.Kind == "mob").Select(t => t.Name).ToList();
