@@ -33,6 +33,16 @@ public static class Program
               --order-from <guide>   keep the step order of a guide built earlier (for guides made before locks/)
               --effort <x>           search effort from 0.01 to 100: 1 = normal, 0.2 = quick look, 3 = slow and thorough
 
+          RouteBuilder fill --from <folder> [--out <folder>] [--faction Horde|Alliance] [--group <name>] [--max-detour <yards>]
+              Keeps a finished set of guides (one per level range, "15-21 The Barrens", chained with #next) as written
+              and adds the quests it misses: quests in the zones a guide does objectives in, inside its level range,
+              that no guide of that faction in the folder does. Each goes where it adds least walking, after what it
+              needs and once the player is high enough. Horde and Alliance guides can share the folder.
+
+              --out <folder>         where the filled guides go (default: filled); --from is never changed
+              --group <name>         their group in RestedXP (default: "RouteBuilder Forever", + " (Horde)" / " (Alliance)")
+              --max-detour <yards>   leave out quests that add more walking than this (default: 1500)
+
           RouteBuilder link [--out <folder>]
               Suggests where to go next. Each build saves a summary next to its guide (.meta.json); this reads
               them all and writes into every guide the zones that suit its end level best (and those for each
@@ -69,6 +79,7 @@ public static class Program
                 case "zones": return Zones(GameData.Load(data), Faction(opt));
                 case "build": return Build(data, opt);
                 case "link": return Linker.Run(opt.GetValueOrDefault("out", "guides"));
+                case "fill": return Filler.Run(GameData.Load(data), opt);
                 default: Console.Error.WriteLine($"Unknown command '{argv[0]}'.\n"); Console.WriteLine(Help); return 2;
             }
         }

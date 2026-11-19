@@ -228,6 +228,39 @@ at the end:
 * The console shows a line or two per zone and a summary of zones with problems; everything else goes to
   `rebuild.log`.
 
+## Filling in a finished guide set (fill)
+
+`fill` works the other way round from `build`. It takes a set of guides that are already laid out the way you
+want them (one guide per level range, such as "15-21 The Barrens & Stonetalon Mountain", wandering through
+whatever zones and cities it likes, chained with `#next`) and keeps every step exactly as written. All it does
+is add the quests the set misses:
+
+    dotnet run -c Release -- fill --from "D:\Guides\Zygor Forever" --out filled
+
+* **Both factions in one folder.** Each guide's `<< Horde` / `<< Alliance` line says whose it is. Each faction's
+  `#next` chain is followed on its own, so a Horde and an Alliance guide may have the same name.
+* **What counts as missed.** A quest is a candidate for a guide when it is picked up, done and handed in in the
+  zones the guide does objectives in (never the capital cities), its level is inside the guide's range (from
+  its name), and no guide of that faction in the folder picks it up, does or hands it in. Elite quests (an
+  elite, rare or boss target), dungeon quests, quests started from an item, quests that cannot be taken
+  with one the set does, and breadcrumbs to a quest the set already picks up are left out.
+* **Where it goes.** The pickup, objectives and hand-in each go between two existing steps, where they add
+  least walking, in that order. A pickup comes after whatever the quest needs (handed in earlier in the set,
+  or a missed quest added before it), and only where the player is high enough: at least its required
+  level, and at most one level below the quest. The player's level at each step is worked out from the
+  guide's range, pinned to the guide's own `.xp` grind steps. Escorts and timed quests get their objective
+  straight after the pickup.
+* `--max-detour <yards>` (default 1500): a quest that would add more walking than this is left out.
+* `--group <name>` (default "RouteBuilder Forever"): the filled guides are listed in RestedXP under this
+  name plus " (Horde)" or " (Alliance)", so they do not clash with the originals. Names and `#next` stay.
+* `--faction Horde` fills only that faction's guides.
+* The files in `--from` are never changed. Each file in `--out` starts with a comment saying how many quests
+  were added, and a `.report.txt` next to it lists, for each guide, what was added (after which step, and how
+  much walking it adds) and every candidate left out, with the reason.
+* Zone files (`zones/<zone>.json`) are used: the corrections of the guide's main zone, and the exclusions of
+  its other zones.
+* Pack the result with `.\Make-Addon.ps1 -GuidesPath filled`.
+
 ## Getting the guides into the game
 
 `Make-Addon.ps1` packs everything in `guides` into a small addon of its own, which lists RestedXP as a
