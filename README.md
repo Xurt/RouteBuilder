@@ -238,14 +238,20 @@ is add the quests the set misses:
     dotnet run -c Release -- fill --from "D:\Guides\Zygor Forever" --out filled
 
 * **Both factions in one folder.** Each guide's `<< Horde` / `<< Alliance` line says whose it is. Each faction's
-  `#next` chain is followed on its own, so a Horde and an Alliance guide may have the same name.
+  `#next` chain is followed on its own, so a Horde and an Alliance guide may have the same name. A guide written
+  for both (no faction line, its faction-only lines tagged, like the Skyborne starter) is filled once per faction:
+  the other faction's steps are left out of the planning, quests it does only for the other faction are not
+  missed ones, and every new step is tagged with its faction.
+* **Starter guides.** A guide with `#defaultfor Orc,Troll` gets no quests only other races (or classes those
+  races cannot be) can take. Prerequisites count only when a guide leading to this one (through `#next`) hands
+  them in, not a starter guide for another race that ends in the same place.
 * **What counts as missed.** A quest is a candidate for a guide when it is picked up, done and handed in in the
   zones the guide does objectives in (never the capital cities), its level is inside the guide's range (from
   its name), and no guide of that faction in the folder picks it up, does or hands it in. Elite quests (an
   elite, rare or boss target), dungeon quests, quests started from an item, quests that cannot be taken
   with one the set does, and breadcrumbs to a quest the set already picks up are left out.
 * **Where it goes.** The pickup, objectives and hand-in each go between two existing steps, where they add
-  least walking, in that order. A pickup comes after whatever the quest needs (handed in earlier in the set,
+  least walking, in that order, and only where the route is in that zone (next to a step there). A pickup comes after whatever the quest needs (handed in earlier in the set,
   or a missed quest added before it), and only where the player is high enough: at least its required
   level, and at most one level below the quest. The player's level at each step is worked out from the
   guide's range, pinned to the guide's own `.xp` grind steps. Escorts and timed quests get their objective

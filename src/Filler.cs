@@ -30,6 +30,9 @@ public static class Filler
     sealed class Guide
     {
         public string File = ""; public int Block; public string Name = "", Next = "", Faction = "";
+        public bool Shared;                      // one guide for both factions, its faction lines tagged "<< Horde" / "<< Alliance"
+        public List<string> Races = new();       // #defaultfor: the races the guide is written for (empty = any)
+        public HashSet<int> OtherSide = new();   // in a shared guide: quests it does for the other faction only
         public List<string> Lines = new();       // the guide body, between RegisterGuide([[ and ]]), one entry per line
         public List<SrcStep> Steps = new();
         public int? Lo, Hi;
@@ -42,7 +45,8 @@ public static class Filler
     {
         public string Path = "", Text = "", Newline = "\n";
         public List<(int Start, int End)> Bodies = new();   // character ranges of each guide body
-        public List<Guide> Guides = new();
+        public List<List<Guide>> Views = new();             // per body: the guide as each faction sees it (two for a shared one)
+        public IEnumerable<Guide> Guides => Views.SelectMany(v => v);
     }
 
     static readonly Regex GotoRx = new(@"^\.goto\s+([^,]+?)\s*,\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)((?:\s*,\s*-?\d+(?:\.\d+)?)*)", RegexOptions.Compiled);
@@ -66,11 +70,11 @@ public static class Filler
         foreach (var path in Directory.EnumerateFiles(from, "*.lua").OrderBy(p => p, StringComparer.OrdinalIgnoreCase))
         {
             var f = ReadFile(path, data);
-            if (f.Guides.Count > 0) files.Add(f);
+            if (f.Bodies.Count > 0) files.Add(f);
         }
         if (files.Count == 0) throw new InvalidOperationException($"no guides (.lua files with RegisterGuide) in {from}");
         var guides = files.SelectMany(f => f.Guides).ToList();
-        foreach (var g in guides.Where(g => g.Faction == "")) Console.WriteLine($"  {g.Name} ({Path.GetFileName(g.File)}): no << Horde / << Alliance line, left as it is");
+        foreach (var g in guides.Where(g => g.Faction == "")) Console.WriteLine($"  {g.Name} ({Path.GetFileName(g.File)}): no << Horde / << Alliance line and no lines tagged with a faction, left as it is");
         Console.WriteLine($"{guides.Count} guides in {files.Count} files: {guides.Count(g => g.Faction == "Horde")} Horde, {guides.Count(g => g.Faction == "Alliance")} Alliance");
 
         foreach (var faction in new[] { "Horde", "Alliance" })
@@ -108,9 +112,24 @@ public static class Filler
         {
             var body = m.Groups[1];
             f.Bodies.Add((body.Index, body.Index + body.Length));
-            var g = new Guide { File = path, Block = block++, Lines = body.Value.Split('\n').Select(l => l.TrimEnd('\r')).ToList() };
-            Parse(g, data);
-            f.Guides.Add(g);
+            var lines = body.Value.Split('\n').Select(l => l.TrimEnd('\r')).ToList();
+            // whose it is: a "<< Horde" line in the header, or (a guide written for both) lines tagged with either faction
+            string? own = null;
+            foreach (var l in lines.Select(x => x.Trim()))
+            {
+                if (l == "step" || l.StartsWith("step ")) break;
+                if (l.StartsWith("<<")) own = RxpServices.SideOf(l[2..].Trim()) ?? own;
+            }
+            bool shared = own == null && lines.Any(l => Regex.IsMatch(l, @"<<[^>]*\b(Horde|Alliance)\b"));
+            var views = new List<Guide>();
+            foreach (var fac in own != null ? new[] { own } : shared ? new[] { "Horde", "Alliance" } : new[] { "" })
+            {
+                var g = new Guide { File = path, Block = block, Lines = lines, Faction = fac, Shared = shared };
+                Parse(g, data);
+                views.Add(g);
+            }
+            block++;
+            f.Views.Add(views);
         }
         return f;
     }
@@ -132,7 +151,8 @@ public static class Filler
 
     static void Parse(Guide g, GameData data)
     {
-        SrcStep? cur = null;
+        SrcStep? cur = null; bool skip = false; int no = 0;
+        string other = g.Faction == "Horde" ? "Alliance" : g.Faction == "Alliance" ? "Horde" : "";
         for (int i = 0; i < g.Lines.Count; i++)
         {
             string l = g.Lines[i].Trim();
@@ -140,15 +160,25 @@ public static class Filler
             string tag = ""; string bare = l;
             int ti = l.LastIndexOf("<<", StringComparison.Ordinal);
             if (ti >= 0 && !l.StartsWith(">>")) { tag = l[(ti + 2)..].Trim(); bare = l[..ti].TrimEnd(); }
+            // a line (or a whole step) for the other faction is not part of this faction's guide; the own faction's
+            // name in a tag says nothing more here ("Shaman Horde" is "Shaman")
+            bool theirs = other.Length > 0 && tag.Length > 0 && RxpServices.SideOf(tag) == other;
+            if (bare == "step") { skip = theirs; if (theirs) continue; }
+            else if (skip || theirs)
+            {
+                if (CmdRx.Match(bare) is { Success: true } om) g.OtherSide.Add(int.Parse(om.Groups[2].Value));
+                continue;
+            }
+            if (g.Faction.Length > 0) tag = Regex.Replace(tag, @"\b(Horde|Alliance)\b", "").Trim();
             if (cur == null)
             {
                 if (bare.StartsWith("#name ")) g.Name = bare[6..].Trim();
                 else if (bare.StartsWith("#next ")) { string n = bare[6..].Trim(); g.Next = n[(n.LastIndexOf('\\') + 1)..].Trim(); }
-                else if (bare.Length == 0 && tag.Length > 0) g.Faction = RxpServices.SideOf(tag) ?? g.Faction;
+                else if (bare.StartsWith("#defaultfor ")) g.Races = bare[12..].Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList();
             }
             if (bare == "step")
             {
-                g.Steps.Add(cur = new SrcStep { Line = i, No = g.Steps.Count + 1, Tag = tag });
+                g.Steps.Add(cur = new SrcStep { Line = i, No = ++no, Tag = tag });
                 continue;
             }
             if (cur == null) continue;
@@ -210,22 +240,49 @@ public static class Filler
 
         // every quest the set does, and where it is handed in (guide in chain order, step)
         var inSet = new HashSet<int>();
-        var turnedIn = new Dictionary<int, (int Guide, int Step)>();
+        var handIns = new Dictionary<int, List<(int Guide, int Step)>>();
         for (int gi = 0; gi < order.Count; gi++)
             foreach (var st in order[gi].Steps)
             {
                 foreach (int q in st.Accepts.Concat(st.Completes)) inSet.Add(q);
-                foreach (int q in st.TurnIns) { inSet.Add(q); turnedIn.TryAdd(q, (gi, st.No - 1)); }
+                foreach (int q in st.TurnIns)
+                {
+                    inSet.Add(q);
+                    if (!handIns.TryGetValue(q, out var at)) handIns[q] = at = new();
+                    at.Add((gi, st.No - 1));
+                }
             }
 
+        // quests a guide written for both factions does only for the other one are that faction's, not missed here
+        var theirs = order.SelectMany(g => g.OtherSide).Where(q => !inSet.Contains(q)).ToHashSet();
         for (int gi = 0; gi < order.Count; gi++)
         {
             var g = order[gi];
             g.Report.Add($"{g.Name}  ({faction})   {Path.GetFileName(g.File)}");
             if (g.Lo == null) { g.Report.Add("  The name has no level range (\"15-21 ...\"), so nothing was added."); Console.WriteLine($"  {g.Name}: no level range in the name; left as it is"); continue; }
-            try { FillGuide(data, faction, g, gi, inSet, turnedIn, maxDetour); }
+            // what the player has handed in by the time this guide starts: only what the guides leading to it do (#next),
+            // not a starter guide for another race that ends in the same place
+            var before = Ancestors(order, gi);
+            var turnedIn = new Dictionary<int, (int Guide, int Step)>();
+            foreach (var (q, at) in handIns)
+                turnedIn[q] = at.Any(x => x.Guide == gi) ? at.First(x => x.Guide == gi) : at.Any(x => before.Contains(x.Guide)) ? (-1, 0) : (int.MaxValue, 0);
+            try { FillGuide(data, faction, g, gi, inSet, theirs, turnedIn, maxDetour); }
             catch (InvalidOperationException e) { g.Report.Add("  Nothing added: " + e.Message); Console.WriteLine($"  {g.Name}: {e.Message}"); }
         }
+    }
+
+    /// <summary>The guides (by place in the order) whose #next chains lead to this one.</summary>
+    static HashSet<int> Ancestors(List<Guide> order, int gi)
+    {
+        var seen = new HashSet<int>(); var todo = new Stack<int>(); todo.Push(gi);
+        while (todo.Count > 0)
+        {
+            var name = order[todo.Pop()].Name;
+            for (int i = 0; i < order.Count; i++)
+                if (order[i].Next.Equals(name, StringComparison.OrdinalIgnoreCase) && seen.Add(i)) todo.Push(i);
+        }
+        seen.Remove(gi);
+        return seen;
     }
 
     // ------------------------------------------------------------------ one guide
@@ -235,7 +292,7 @@ public static class Filler
         public RouteTask? Task; public Cand? Cand; public Quest? Q;
     }
 
-    static void FillGuide(GameData data, string faction, Guide g, int gi, HashSet<int> inSet, Dictionary<int, (int Guide, int Step)> turnedIn, double maxDetour)
+    static void FillGuide(GameData data, string faction, Guide g, int gi, HashSet<int> inSet, HashSet<int> theirs, Dictionary<int, (int Guide, int Step)> turnedIn, double maxDetour)
     {
         int lo = g.Lo!.Value, hi = g.Hi!.Value;
         // the zones this guide quests in: objectives done there, not just a hand-in or a trainer (and never a capital city)
@@ -257,10 +314,16 @@ public static class Filler
 
         var left = new List<string>(); var added = new List<string>();
         var pending = new List<Quest>(); var rejected = new Dictionary<int, string>();
+        // a guide written for some races (#defaultfor) gets no quests only other races can take
+        long raceMask = Game.Races(faction).Where(r => g.Races.Contains(r.Name, StringComparer.OrdinalIgnoreCase)).Aggregate(0L, (mk, r) => mk | r.Bit);
         foreach (var q in model.Quests.Values.OrderBy(q => q.Level).ThenBy(q => q.Id))
         {
             if (inSet.Contains(q.Id)) continue;
-            string? why = Unfit(q, model, questAreas, inSet, data);
+            string? why = theirs.Contains(q.Id) ? $"the guides do it for the {(faction == "Horde" ? "Alliance" : "Horde")} only"
+                : raceMask != 0 && q.Row.Races != 0 && (q.Row.Races & raceMask) == 0 ? $"for other races; this guide is for {string.Join(", ", g.Races)}"
+                : raceMask != 0 && q.Row.Classes != 0 && !Game.Races(faction).Where(r => (r.Bit & raceMask) != 0 && (q.Row.Races == 0 || (q.Row.Races & r.Bit) != 0))
+                      .Any(r => Game.Classes.Any(c => (q.Row.Classes & c.Bit) != 0 && Game.Exists(r.Name, c.Name))) ? $"for a class that {string.Join(", ", g.Races)} cannot be"
+                : Unfit(q, model, questAreas, inSet, data);
             if (why != null) { left.Add(Line(q, why)); rejected[q.Id] = why; continue; }
             pending.Add(q);
         }
@@ -295,7 +358,7 @@ public static class Filler
             {
                 // a pickup and hand-in at the same NPC, one after another, are one step
                 int e = k; while (e + 1 <= j && SameStop(nodes[k], nodes[e + 1])) e++;
-                lines.AddRange(Render(nodes.GetRange(k, e - k + 1), model, data, turnedIn, gi));
+                lines.AddRange(Render(nodes.GetRange(k, e - k + 1), model, data, turnedIn, gi, g.Shared ? faction : ""));
                 k = e + 1;
             }
             steps.Add((before, lines));
@@ -399,7 +462,7 @@ public static class Filler
         {
             if (Ready(p) is int r) { minGap = Math.Max(minGap, r); continue; }
             if (rejected.TryGetValue(p, out var pw)) return $"needs {QName(p)}, which was left out too";
-            return turnedIn.TryGetValue(p, out var at) ? $"needs {QName(p)}, which the guides hand in later" : $"needs {QName(p)}, which none of the guides do";
+            return turnedIn.TryGetValue(p, out var at) ? $"needs {QName(p)}, which the guides hand in later or on another path" : $"needs {QName(p)}, which none of the guides do";
         }
         if (q.PreAny.Count > 0)
         {
@@ -408,7 +471,7 @@ public static class Filler
             {
                 string what = q.PreAny.Count == 1 ? QName(q.PreAny.First()) : "one of " + string.Join(", ", q.PreAny.Select(QName));
                 return q.PreAny.All(rejected.ContainsKey) ? $"needs {what}, which {(q.PreAny.Count == 1 ? "was" : "were all")} left out too"
-                     : q.PreAny.Any(turnedIn.ContainsKey) ? $"needs {what}, which the guides hand in later" : $"needs {what}, which none of the guides do";
+                     : q.PreAny.Any(turnedIn.ContainsKey) ? $"needs {what}, which the guides hand in later or on another path" : $"needs {what}, which none of the guides do";
             }
             minGap = Math.Max(minGap, ok.Min());
         }
@@ -443,14 +506,18 @@ public static class Filler
                 {
                     if (!allowed(lvl, c)) continue;
                     var a = m.Areas[c.Area];
-                    double d = pa[i] == null ? (na[i] != null ? Dist(a, c.Pos, na[i], np[i]) : 0)
-                             : na[i] != null ? Dist(pa[i], pp[i], a, c.Pos) + Dist(a, c.Pos, na[i], np[i]) - Dist(pa[i], pp[i], na[i], np[i])
-                             : Dist(pa[i], pp[i], a, c.Pos);
+                    // only where the route is in that zone: right after a step there, or right before one. Next to a step in
+                    // another zone only the walk on this side counts (the trip between zones, a flight or a boat, is the guide's)
+                    bool pS = Same(pa[i], a), nS = Same(na[i], a);
+                    if (!pS && !nS) continue;
+                    double d = pS && nS ? Dist(pa[i], pp[i], a, c.Pos) + Dist(a, c.Pos, na[i], np[i]) - Dist(pa[i], pp[i], na[i], np[i])
+                             : pS ? Dist(pa[i], pp[i], a, c.Pos) : Dist(a, c.Pos, na[i], np[i]);
                     if (d < best.Item3) best = (i, c, d);
                 }
             }
             return best;
         }
+        bool Same(AreaInfo? x, AreaInfo y) => x != null && (x.Id == y.Id || data.Parent(x.Id) == data.Parent(y.Id));
         Node Make(RouteTask t, Cand c, double lvl) => new() { Task = t, Cand = c, Q = q, Area = m.Areas[c.Area], Pos = c.Pos, HasPos = true, Level = lvl };
 
         // every place for the pickup; for each, the objectives and then the hand-in where they add least after it
@@ -523,9 +590,11 @@ public static class Filler
         return string.Format(Inv, "    .goto {0},{1:0.00},{2:0.00}", a.Name, Math.Clamp(p.X, 0, 100), Math.Clamp(p.Y, 0, 100)) + (hidden ? ",0" : "");
     }
 
-    static List<string> Render(List<Node> stop, ZoneModel m, GameData data, Dictionary<int, (int Guide, int Step)> turnedIn, int gi)
+    static List<string> Render(List<Node> stop, ZoneModel m, GameData data, Dictionary<int, (int Guide, int Step)> turnedIn, int gi, string side)
     {
         var o = new List<string>(); var t0 = stop[0].Task!; string tag = t0.Tag;
+        // in a guide shared by both factions every new step says whose it is ("Warrior/Rogue" -> "Warrior Horde/Rogue Horde")
+        if (side.Length > 0) tag = tag.Length == 0 ? side : string.Join("/", tag.Split('/').Select(a => a.Trim() + " " + side));
         o.Add(tag.Length > 0 ? "step << " + tag : "step");
         var area = stop[0].Area!; var c = stop[0].Cand!;
         if (t0.Kind == TaskKind.Objective)
@@ -574,22 +643,28 @@ public static class Filler
     {
         var sb = new StringBuilder(); int pos = 0; string nl = f.Newline;
         int added = f.Guides.Sum(g => g.Added);
-        sb.Append($"-- RouteBuilder fill, {DateTime.Now:yyyy-MM-dd}: {added} missed quest{(added == 1 ? "" : "s")} added to the guide{(f.Guides.Count == 1 ? "" : "s")} below (see {Path.GetFileNameWithoutExtension(f.Path)}.report.txt).{nl}");
-        for (int b = 0; b < f.Guides.Count; b++)
+        sb.Append($"-- RouteBuilder fill, {DateTime.Now:yyyy-MM-dd}: {added} missed quest{(added == 1 ? "" : "s")} added to the guide{(f.Bodies.Count == 1 ? "" : "s")} below (see {Path.GetFileNameWithoutExtension(f.Path)}.report.txt).{nl}");
+        for (int b = 0; b < f.Bodies.Count; b++)
         {
-            var g = f.Guides[b]; var (start, end) = f.Bodies[b];
+            var (start, end) = f.Bodies[b];
             sb.Append(f.Text, pos, start - pos);
-            var lines = g.Lines.ToList();
-            bool touch = g.Faction.Length > 0 && (onlyFaction == null || g.Faction == onlyFaction);
-            if (touch)
+            var views = f.Views[b].Where(g => g.Faction.Length > 0 && (onlyFaction == null || g.Faction == onlyFaction)).ToList();
+            var lines = f.Views[b][0].Lines.ToList();
+            // new steps from the back, so the line numbers in front stay right
+            foreach (var (before, add) in views.SelectMany(g => g.Inserts).OrderByDescending(x => x.Before)) lines.InsertRange(before, add);
+            int firstStep = lines.FindIndex(l => l.Trim() == "step" || l.Trim().StartsWith("step "));
+            foreach (var g in views)
             {
-                // new steps from the back, so the line numbers in front stay right
-                foreach (var (before, add) in g.Inserts.OrderByDescending(x => x.Before)) lines.InsertRange(before, add);
-                string group = $"#group {groupBase} ({g.Faction})";
-                int gl = lines.FindIndex(l => l.TrimStart().StartsWith("#group ") );
-                int firstStep = lines.FindIndex(l => l.Trim().StartsWith("step"));
+                // its #group line: the one for its faction in a shared guide ("#group ... << Horde"), else the only one
+                string group = $"#group {groupBase} ({g.Faction})" + (g.Shared ? " << " + g.Faction : "");
+                int gl = lines.FindIndex(l => l.TrimStart().StartsWith("#group ") && (!g.Shared || Regex.IsMatch(l, $@"<<[^>]*\b{g.Faction}\b")));
                 if (gl >= 0 && (firstStep < 0 || gl < firstStep)) lines[gl] = Regex.Match(lines[gl], @"^\s*").Value + group;
-                else lines.Insert(Math.Max(0, lines.FindIndex(l => l.TrimStart().StartsWith("#name "))), group);
+                else
+                {
+                    int at = Math.Max(0, lines.FindIndex(l => l.TrimStart().StartsWith("#name ")));
+                    lines.Insert(at, group);
+                    if (firstStep >= at) firstStep++;
+                }
             }
             sb.Append(string.Join(nl, lines));
             pos = end;
