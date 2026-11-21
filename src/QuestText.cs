@@ -15,7 +15,7 @@ public static class QuestText
     static readonly Regex StepRx = new(@"^\s*step\b", RegexOptions.Compiled);
     static readonly Regex CompleteRx = new(@"^\s*\.complete\s+(\d+)[^<]*?(?:<<\s*(.+?))?\s*$", RegexOptions.Compiled);
     static readonly Regex OursRx = new(@"^\s*" + Regex.Escape(Mark), RegexOptions.Compiled);
-    static readonly Regex BodyRx = new(@"(RegisterGuide\(\s*\[\[)(.*?)(\]\])", RegexOptions.Singleline | RegexOptions.Compiled);
+    static readonly Regex BodyRx = new(@"(?<open>RegisterGuide\(\s*\[(?<eq>=*)\[)(?<body>.*?)(?<close>\]\k<eq>\])", RegexOptions.Singleline | RegexOptions.Compiled);
 
     /// <summary>The description, made safe for a guide line, or null when the database has none.</summary>
     public static string? Text(QuestRow? q)
@@ -25,7 +25,7 @@ public static class QuestText
         if (t.Length == 0) return null;
         return t.Replace("|", "||")          // a literal pipe in a WoW string
                 .Replace("--", "-")          // RestedXP cuts a line at "--" (a comment)
-                .Replace("]]", "] ]")        // would end the guide's [[ ]] string
+                .Replace("]]", "] ]").Replace("]=", "] =")   // would end the guide's [[ ]] (or [=[ ]=]) string
                 .Replace("<<", "<").Replace(">>", ">");   // RestedXP's tag and text markers
     }
 
@@ -35,8 +35,8 @@ public static class QuestText
         string nl = fileText.Contains("\r\n") ? "\r\n" : "\n";
         return BodyRx.Replace(fileText, m =>
         {
-            var lines = m.Groups[2].Value.Split('\n').Select(l => l.TrimEnd('\r')).ToList();
-            return m.Groups[1].Value + string.Join(nl, Apply(lines, data)) + m.Groups[3].Value;
+            var lines = m.Groups["body"].Value.Split('\n').Select(l => l.TrimEnd('\r')).ToList();
+            return m.Groups["open"].Value + string.Join(nl, Apply(lines, data)) + m.Groups["close"].Value;
         });
     }
 

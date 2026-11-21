@@ -143,6 +143,9 @@ public static class Program
                         services.Add(new Svc(order++, name, svcMap >= 0 ? svcMap : lastMap, new LockedService { Lines = svcLines, Tag = st.Tag.Length > 0 ? st.Tag : null, From = "RestedXP: " + name }));
                 }
             }
+        if (guides.Count == 0 && notOurs.Count > 0 && only == null)
+            throw new InvalidOperationException($"the only guides for this zone are for some characters only: {string.Join(", ", notOurs)}. " +
+                                                "Run with --race and/or --class for that character (e.g. --class Hunter), and build with the same.");
         if (guides.Count == 0) throw new InvalidOperationException(only != null ? "none of the --guides names were found in the files" : "no RestedXP guides found in the files");
         Console.WriteLine($"Read {hits.Count} pickups, objectives and hand-ins from: {string.Join(", ", guides)}");
         if (notOurs.Count > 0) Console.WriteLine($"Not followed (RestedXP offers them to some characters only): {string.Join(", ", notOurs)}");
@@ -252,10 +255,10 @@ public static class Program
     static IEnumerable<(string Name, string Tag, List<Step> Steps)> ReadGuides(string file, string faction, GameData data)
     {
         string text = File.ReadAllText(file);
-        foreach (Match block in Regex.Matches(text, @"RegisterGuide\(\s*\[\[(.*?)\]\]", RegexOptions.Singleline))
+        foreach (Match block in RxpServices.GuideRx.Matches(text))
         {
             string name = "?", side = "", guideTag = ""; var steps = new List<Step>(); Step? cur = null;
-            foreach (var raw in block.Groups[1].Value.Split('\n'))
+            foreach (var raw in block.Groups["body"].Value.Split('\n'))
             {
                 string l = Regex.Replace(raw, "--.*$", "").Trim();
                 if (l.Length == 0) continue;

@@ -126,15 +126,21 @@ public static class RxpServices
     public static string IdOf(string tag, IEnumerable<string> lines) =>
         tag + "|" + string.Join("|", lines.Where(x => !x.StartsWith(".goto") && !x.StartsWith(">>")).Select(x => Regex.Replace(x.Trim(), @"\s+", " ")));
 
+    /// <summary>
+    /// A guide's text in a RestedXP file: RegisterGuide([[ ... ]]) or with a level of Lua long brackets,
+    /// RegisterGuide([=[ ... ]=]). The text is in the group "body".
+    /// </summary>
+    public static readonly Regex GuideRx = new(@"RegisterGuide\(\s*\[(?<eq>=*)\[(?<body>.*?)\](\k<eq>)\]", RegexOptions.Singleline | RegexOptions.Compiled);
+
     /// <summary>Every service step in the RestedXP guide files' text, by guide.</summary>
     public static List<RxpService> Read(string file, string text, GameData? data = null)
     {
         var all = new List<RxpService>();
-        foreach (Match block in Regex.Matches(text, @"RegisterGuide\(\s*\[\[(.*?)\]\]", RegexOptions.Singleline))
+        foreach (Match block in GuideRx.Matches(text))
         {
             string name = Path.GetFileNameWithoutExtension(file), faction = "", guideTag = "";
             var steps = new List<(string Tag, bool Along, List<(string Text, string Tag)> Lines)>();
-            foreach (var raw in block.Groups[1].Value.Split('\n'))
+            foreach (var raw in block.Groups["body"].Value.Split('\n'))
             {
                 string l = Regex.Replace(raw, "--.*$", "").Trim();
                 if (l.Length == 0) continue;

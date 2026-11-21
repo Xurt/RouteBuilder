@@ -21,6 +21,7 @@ public static class Filler
         public int Line, No;                     // index of its "step" line in the guide body, and its number (1 = first)
         public string Tag = "";
         public bool Along, Hidden;               // #completewith (done as you go), #hidewindow (a label only)
+        public bool Dungeon;                     // shown only to players who chose (or did not choose) a dungeon: ".dungeon WC", ".dungeon !WC"
         public AreaInfo? Area; public Pt Pos; public bool HasPos, PlainPos;
         public List<int> Accepts = new(), TurnIns = new(); public List<int> Completes = new();
         public double? XpLevel;                  // a grind step (".xp 21+23750"): the level it gets you to
@@ -32,8 +33,9 @@ public static class Filler
         public string File = ""; public int Block; public string Name = "", Next = "", Faction = "";
         public bool Shared;                      // one guide for both factions, its faction lines tagged "<< Horde" / "<< Alliance"
         public List<string> Races = new();       // #defaultfor: the races the guide is written for (empty = any)
+        public string HeaderTag = "";            // the guide's own "<< ..." line, its faction taken out ("Hunter": a guide for hunters only)
         public HashSet<int> OtherSide = new();   // in a shared guide: quests it does for the other faction only
-        public List<string> Lines = new();       // the guide body, between RegisterGuide([[ and ]]), one entry per line
+        public List<string> Lines = new();       // the guide body, between RegisterGuide([[ and ]]) (or [=[ and ]=]), one entry per line
         public List<SrcStep> Steps = new();
         public int? Lo, Hi;
         public List<string> Report = new();
@@ -100,6 +102,7 @@ public static class Filler
             if (!f.Guides.Any(g => g.Faction.Length > 0 && (onlyFaction == null || g.Faction == onlyFaction))) continue;
             string text = Rewrite(f, groupBase, onlyFaction);
             if (!opt.ContainsKey("no-quest-text")) text = QuestText.Apply(text, data);
+            text = PlainBrackets(text);
             File.WriteAllText(Path.Combine(outDir, Path.GetFileName(f.Path)), text);
             var rep = f.Guides.Where(g => g.Report.Count > 0).SelectMany(g => g.Report.Append("")).ToList();
             if (rep.Count > 0) File.WriteAllLines(Path.Combine(outDir, Path.GetFileNameWithoutExtension(f.Path) + ".report.txt"), rep);
@@ -116,9 +119,9 @@ public static class Filler
         var f = new SrcFile { Path = path, Text = File.ReadAllText(path) };
         f.Newline = f.Text.Contains("\r\n") ? "\r\n" : "\n";
         int block = 0;
-        foreach (Match m in Regex.Matches(f.Text, @"RegisterGuide\(\s*\[\[(.*?)\]\]", RegexOptions.Singleline))
+        foreach (Match m in RxpServices.GuideRx.Matches(f.Text))
         {
-            var body = m.Groups[1];
+            var body = m.Groups["body"];
             f.Bodies.Add((body.Index, body.Index + body.Length));
             var lines = body.Value.Split('\n').Select(l => l.TrimEnd('\r')).ToList();
             // whose it is: a "<< Horde" line in the header, or (a guide written for both) lines tagged with either faction
@@ -182,6 +185,7 @@ public static class Filler
             {
                 if (bare.StartsWith("#name ")) g.Name = bare[6..].Trim();
                 else if (bare.StartsWith("#next ")) { string n = bare[6..].Trim(); g.Next = n[(n.LastIndexOf('\\') + 1)..].Trim(); }
+                else if (bare.Length == 0 && tag.Length > 0) g.HeaderTag = tag;
                 else if (bare.StartsWith("#defaultfor ")) g.Races = bare[12..].Split(new[] { ',', '/' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList();
             }
             if (bare == "step")
@@ -192,6 +196,7 @@ public static class Filler
             if (cur == null) continue;
             if (bare.StartsWith("#completewith")) cur.Along = true;
             else if (bare.StartsWith("#hidewindow")) cur.Hidden = true;
+            else if (bare.StartsWith(".dungeon")) { cur.Dungeon = true; cur.XpLevel = null; }
             else if (bare.StartsWith(">>") && cur.Text.Length == 0) cur.Text = Regex.Replace(bare[2..], @"\|cRXP_[A-Z]+_|\|c[0-9A-Fa-f]{8}|\|r|\|T[^|]*\|t", "").Trim();
             var gm = GotoRx.Match(bare);
             if (gm.Success)
@@ -211,7 +216,7 @@ public static class Filler
                 (cm.Groups[1].Value switch { "accept" => cur.Accepts, "turnin" => cur.TurnIns, _ => cur.Completes }).Add(q);
             }
             var xm = XpRx.Match(bare);
-            if (xm.Success && tag.Length == 0 && cur.Tag.Length == 0)
+            if (xm.Success && tag.Length == 0 && cur.Tag.Length == 0 && !cur.Dungeon)
             {
                 int lvl = int.Parse(xm.Groups[1].Value);
                 double extra = xm.Groups[2].Success ? double.Parse(xm.Groups[2].Value, Inv) : 0;
@@ -305,8 +310,9 @@ public static class Filler
     static void FillGuide(GameData data, string faction, Guide g, int gi, HashSet<int> inSet, HashSet<int> theirs, Dictionary<int, (int Guide, int Step)> turnedIn, double maxDetour)
     {
         int lo = g.Lo!.Value, hi = g.Hi!.Value;
-        // the zones this guide quests in: objectives done there, not just a hand-in or a trainer (and never a capital city)
-        var zoneSteps = g.Steps.Where(s => s.HasPos && s.Completes.Count > 0 && s.Tag.Length == 0)
+        // the zones this guide quests in: objectives done there, not just a hand-in or a trainer (and never a capital city,
+        // nor a dungeon trip only some players take)
+        var zoneSteps = g.Steps.Where(s => s.HasPos && s.Completes.Count > 0 && s.Tag.Length == 0 && !s.Dungeon)
                                .GroupBy(s => data.Parent(s.Area!.Id))
                                .Select(x => (Area: data.Areas.GetValueOrDefault(x.Key) ?? x.First().Area!, Count: x.Count()))
                                .Where(x => x.Count >= 1 && ZoneModel.CityParent(x.Area.Id) == null && !data.Instances.Contains(x.Area.Id))
@@ -322,22 +328,23 @@ public static class Filler
         for (int i = 0; i < model.Areas.Count; i++) if (zoneSteps.Any(z => z.Area.Id == model.Areas[i].Id)) questAreas.Add(i);
 
         // the guide as a list of places, with the level the player is about at each
-        var nodes = g.Steps.Select(s => new Node { Src = s, Area = s.Area, Pos = s.Pos, HasPos = s.HasPos && !s.Along && !s.Hidden && s.Tag.Length == 0 }).ToList();
+        var nodes = g.Steps.Select(s => new Node { Src = s, Area = s.Area, Pos = s.Pos, HasPos = s.HasPos && !s.Along && !s.Hidden && s.Tag.Length == 0 && !s.Dungeon }).ToList();
         SetLevels(nodes, lo, hi);
         MarkClassRuns(nodes, g, faction);
         MarkTimed(nodes, data);
 
         var left = new List<string>(); var added = new List<string>();
         var pending = new List<Quest>(); var rejected = new Dictionary<int, string>();
-        // a guide written for some races (#defaultfor) gets no quests only other races can take
-        long raceMask = Game.Races(faction).Where(r => g.Races.Contains(r.Name, StringComparer.OrdinalIgnoreCase)).Aggregate(0L, (mk, r) => mk | r.Bit);
+        // a guide written for some races (#defaultfor) or classes ("<< Alliance Hunter") gets no quests only other characters can take
+        var combos = Combos(g, faction);
+        var raceBit = Game.Races(faction).ToDictionary(r => r.Name, r => r.Bit); var clsBit = Game.Classes.ToDictionary(c => c.Name, c => c.Bit);
+        bool ForUs(QuestRow r) => combos.Any(rc => (r.Races == 0 || (r.Races & raceBit[rc.Race]) != 0) && (r.Classes == 0 || (r.Classes & clsBit[rc.Cls]) != 0));
+        string who = string.Join(" ", new[] { string.Join("/", g.Races), g.HeaderTag }.Where(x => x.Length > 0));
         foreach (var q in model.Quests.Values.OrderBy(q => q.Level).ThenBy(q => q.Id))
         {
             if (inSet.Contains(q.Id)) continue;
             string? why = theirs.Contains(q.Id) ? $"the guides do it for the {(faction == "Horde" ? "Alliance" : "Horde")} only"
-                : raceMask != 0 && q.Row.Races != 0 && (q.Row.Races & raceMask) == 0 ? $"for other races; this guide is for {string.Join(", ", g.Races)}"
-                : raceMask != 0 && q.Row.Classes != 0 && !Game.Races(faction).Where(r => (r.Bit & raceMask) != 0 && (q.Row.Races == 0 || (q.Row.Races & r.Bit) != 0))
-                      .Any(r => Game.Classes.Any(c => (q.Row.Classes & c.Bit) != 0 && Game.Exists(r.Name, c.Name))) ? $"for a class that {string.Join(", ", g.Races)} cannot be"
+                : !ForUs(q.Row) ? $"not for the characters this guide is for ({who})"
                 : Unfit(q, model, questAreas, inSet, data, fc.Forced.ContainsKey(q.Id));
             if (why != null) { left.Add(Line(q, why)); rejected[q.Id] = why; continue; }
             pending.Add(q);
@@ -422,6 +429,16 @@ public static class Filler
         catch (InvalidOperationException e) when (own) { throw new InvalidOperationException($"zones/{main.Name}.json: {e.Message}"); }
     }
 
+    /// <summary>The race/class pairs a guide is for: its faction, cut down by #defaultfor and by its own "&lt;&lt; ..." line.</summary>
+    static List<(string Race, string Cls)> Combos(Guide g, string faction)
+    {
+        var races = Game.Races(faction).Where(r => g.Races.Contains(r.Name, StringComparer.OrdinalIgnoreCase)).ToList();
+        if (races.Count == 0) races = Game.Races(faction).ToList();
+        var all = races.SelectMany(r => Game.Classes.Where(c => Game.Exists(r.Name, c.Name)).Select(c => (r.Name, c.Name))).ToList();
+        var mine = all.Where(rc => Verifier.Applies(g.HeaderTag, rc.Item1, rc.Item2, faction)).ToList();
+        return mine.Count > 0 ? mine : all;
+    }
+
     /// <summary>
     /// Steps for some races or classes ("step &lt;&lt; Priest/Mage/Warlock") come in runs between steps for everyone. A run that,
     /// taken together, every character does (one step for warlocks, the next for everyone else) is part of the route: its
@@ -430,23 +447,24 @@ public static class Filler
     /// </summary>
     static void MarkClassRuns(List<Node> nodes, Guide g, string faction)
     {
-        var races = Game.Races(faction).Where(r => g.Races.Contains(r.Name, StringComparer.OrdinalIgnoreCase)).ToList();
-        if (races.Count == 0) races = Game.Races(faction).ToList();
-        var combos = races.SelectMany(r => Game.Classes.Where(c => Game.Exists(r.Name, c.Name)).Select(c => (Race: r.Name, Cls: c.Name))).ToList();
+        var combos = Combos(g, faction);
         bool Anyone(SrcStep s) => combos.Any(rc => Verifier.Applies(s.Tag, rc.Race, rc.Cls, faction));
+        // a dungeon step is for some players (those who chose that dungeon, or those who did not), like a class step
+        bool Some(SrcStep s) => s.Tag.Length > 0 || s.Dungeon;
+        bool Does(SrcStep s, (string Race, string Cls) rc) => !s.Dungeon && Verifier.Applies(s.Tag, rc.Race, rc.Cls, faction);
         // steps no character does ("<< skip") are left out of the runs: they neither start nor break one
         foreach (var n in nodes) n.Dead = n.Src!.Tag.Length > 0 && !Anyone(n.Src);
         var live = nodes.Where(n => !n.Dead).ToList();
         for (int i = 0; i < live.Count;)
         {
-            if (live[i].Src!.Tag.Length == 0) { i++; continue; }
-            int j = i; while (j + 1 < live.Count && live[j + 1].Src!.Tag.Length > 0) j++;
+            if (!Some(live[i].Src!)) { i++; continue; }
+            int j = i; while (j + 1 < live.Count && Some(live[j + 1].Src!)) j++;
             var run = live.GetRange(i, j - i + 1);
             var pinned = run.Where(n => n.Src!.HasPos && !n.Src.Along && !n.Src.Hidden).ToList();
-            bool everyone = pinned.Count > 0 && combos.All(rc => pinned.Any(n => Verifier.Applies(n.Src!.Tag, rc.Race, rc.Cls, faction)));
+            bool everyone = pinned.Count > 0 && combos.All(rc => pinned.Any(n => Does(n.Src!, rc)));
             if (everyone) foreach (var n in pinned) n.HasPos = true;
-            foreach (var n in run.Skip(1)) n.NoGap ??= "in the middle of steps for some classes or races";
-            if (!everyone && j + 1 < live.Count) live[j + 1].NoGap ??= "straight after steps only some classes or races do";
+            foreach (var n in run.Skip(1)) n.NoGap ??= "in the middle of steps for some classes, races or dungeon choices";
+            if (!everyone && j + 1 < live.Count) live[j + 1].NoGap ??= "straight after steps only some players do";
             i = j + 1;
         }
         // a step no one does takes the rule of the next step anyone does
@@ -741,6 +759,13 @@ public static class Filler
     }
 
     // ------------------------------------------------------------------ writing the files
+    /// <summary>
+    /// Every guide written as RegisterGuide([[ ... ]]), also one that came as a Lua long string with level brackets
+    /// ([=[ ... ]=]). Inside [[ ]] a "]]" would end the guide and a "[[" is a Lua 5.1 error, so those get a space.
+    /// </summary>
+    static string PlainBrackets(string text) =>
+        RxpServices.GuideRx.Replace(text, m => "RegisterGuide([[" + m.Groups["body"].Value.Replace("]]", "] ]").Replace("[[", "[ [") + "]]");
+
     static string Rewrite(SrcFile f, string groupBase, string? onlyFaction)
     {
         var sb = new StringBuilder(); int pos = 0; string nl = f.Newline;
