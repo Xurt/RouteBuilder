@@ -48,19 +48,19 @@ $zones = @{
         'Durotar', 'Mulgore', 'Zephras Isle', 'Tirisfal Glades', 'Silverpine Forest',
         'The Barrens', 'Redridge Mountains', 'Westfall', 'Stonetalon Mountains', 'Ashenvale',
         'Hillsbrad Foothills', 'Thousand Needles', 'Duskwood', 'Dun Morogh', 'Stranglethorn Vale', 'Desolace',
-        'Loch Modan', 'Arathi Highlands', 'Alterac Mountains', 'Swamp of Sorrows', 'Dustwallow Marsh', 'Badlands',
+        'Loch Modan', 'Arathi Highlands', 'Alterac Mountains', 'Riverglades', 'Swamp of Sorrows', 'Dustwallow Marsh', 'Badlands', "Shen'dralas",
         'Feralas', 'The Hinterlands', 'Tanaris', 'Searing Gorge', 'Azshara', 'Felwood', "Un'Goro Crater",
         'Blasted Lands', 'Burning Steppes', 'Western Plaguelands', 'Winterspring', 'Eastern Plaguelands', 'Moonglade',
-        'Silithus', 'Teldrassil'
+        'Silithus', 'Teldrassil', 'Mount Hyjal'
     )
     Alliance = @(
         'Elwynn Forest', 'Teldrassil', 'Zephras Isle', 'Dun Morogh', 'Durotar',
         'Westfall', 'Darkshore', 'Loch Modan', 'Redridge Mountains', 'The Barrens', 'Ashenvale',
         'Wetlands', 'Duskwood', 'Dustwallow Marsh', 'Stonetalon Mountains', 'Riverglades', 'Hillsbrad Foothills',
         'Thousand Needles', 'Stranglethorn Vale', 'Arathi Highlands', 'Desolace', 'Alterac Mountains', 'Badlands',
-        'Swamp of Sorrows', 'Feralas', 'The Hinterlands', 'Tanaris', 'Searing Gorge', 'Azshara', 'Felwood',
+        'Swamp of Sorrows', "Shen'dralas", 'Feralas', 'The Hinterlands', 'Tanaris', 'Searing Gorge', 'Azshara', 'Felwood',
         "Un'Goro Crater", 'Burning Steppes', 'Blasted Lands', 'Western Plaguelands', 'Winterspring',
-        'Eastern Plaguelands', 'Moonglade', 'Silithus'
+        'Eastern Plaguelands', 'Moonglade', 'Silithus', 'Mount Hyjal'
     )
 }
 

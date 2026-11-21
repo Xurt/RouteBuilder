@@ -75,6 +75,22 @@ copies in RestedXP's training, vendor and flight-path steps for the zone:
 * The ones placed are saved in the lock file (next section), so later builds keep them where they are, with
   or without `--rxp`, and you can move them by hand.
 
+### The quest's description on each objective step
+
+Every step that completes a quest objective (it has a `.complete` line) starts with the quest's own short
+description from QuestieDB (its objectives text), in a light tan colour:
+
+    step
+        >>|cFFE6BBADKill 10 Kobold Vermin, then return to Marshal McBride.|r
+        .goto Elwynn Forest,47.6,34.8
+        .complete 7,1
+
+* A step that works on several quests gets one line per quest, in the order they first appear in it.
+* If every `.complete` line for a quest in the step has the same tag (`<< Druid`), its line gets that tag too.
+* `fill` does the same to the guides it fills: their own objective steps and the ones it adds. Lines put there
+  before (by an earlier run, or by the older add_objectives script) are replaced, so they are never doubled.
+* `--no-quest-text` (on `build` and `fill`) leaves them out.
+
 ## Keeping the route between builds
 
 Every build saves its step order in `locks/<Zone> (<who>).json` (the level range is in the name too, when
@@ -219,7 +235,9 @@ at the end:
     .\Rebuild-All.ps1 -Rxp "D:\World of Warcraft\_classic_beta_\Interface\AddOns\RXPGuides\Guides\forever"
 
 * It reads every RestedXP guide file in that folder (not its subfolders; `-Recurse` adds them). A zone
-  RestedXP's guides do not cover keeps its lock as it was.
+  RestedXP's guides do not cover keeps its lock as it was; one with no lock yet is planned by RouteBuilder
+  alone. Riverglades, Shen'dralas and Mount Hyjal (Forever zones RestedXP has no guides for yet) are built
+  that way for both factions.
 * `-Faction Horde` or `-Zone "Durotar","Mulgore"` narrows it down; `-NoRxpToLock` builds from the locks as
   they are; `-Fresh` plans every zone from scratch; `-Update` fetches QuestieDB first; `-NoLink` skips
   the next-zone suggestions; `-NoAddon` skips Make-Addon.ps1.
@@ -238,14 +256,20 @@ is add the quests the set misses:
     dotnet run -c Release -- fill --from "D:\Guides\Forever" --out filled
 
 * **Both factions in one folder.** Each guide's `<< Horde` / `<< Alliance` line says whose it is. Each faction's
-  `#next` chain is followed on its own, so a Horde and an Alliance guide may have the same name.
+  `#next` chain is followed on its own, so a Horde and an Alliance guide may have the same name. A guide written
+  for both (no faction line, its faction-only lines tagged, like the Skyborne starter) is filled once per faction:
+  the other faction's steps are left out of the planning, quests it does only for the other faction are not
+  missed ones, and every new step is tagged with its faction.
+* **Starter guides.** A guide with `#defaultfor Orc,Troll` gets no quests only other races (or classes those
+  races cannot be) can take. Prerequisites count only when a guide leading to this one (through `#next`) hands
+  them in, not a starter guide for another race that ends in the same place.
 * **What counts as missed.** A quest is a candidate for a guide when it is picked up, done and handed in in the
   zones the guide does objectives in (never the capital cities), its level is inside the guide's range (from
   its name), and no guide of that faction in the folder picks it up, does or hands it in. Elite quests (an
   elite, rare or boss target), dungeon quests, quests started from an item, quests that cannot be taken
   with one the set does, and breadcrumbs to a quest the set already picks up are left out.
 * **Where it goes.** The pickup, objectives and hand-in each go between two existing steps, where they add
-  least walking, in that order. A pickup comes after whatever the quest needs (handed in earlier in the set,
+  least walking, in that order, and only where the route is in that zone (next to a step there). A pickup comes after whatever the quest needs (handed in earlier in the set,
   or a missed quest added before it), and only where the player is high enough: at least its required
   level, and at most one level below the quest. The player's level at each step is worked out from the
   guide's range, pinned to the guide's own `.xp` grind steps. Escorts and timed quests get their objective
