@@ -274,15 +274,29 @@ is add the quests the set misses:
   level, and at most one level below the quest. The player's level at each step is worked out from the
   guide's range, pinned to the guide's own `.xp` grind steps. Escorts and timed quests get their objective
   straight after the pickup.
+* **Class and race steps.** A run of steps tagged for some classes or races (`step << Priest/Mage/Warlock`
+  followed by `step << !Warlock`) counts as part of the route when every character does one of them; nothing
+  new goes in the middle of such a run, or straight after a run only some characters do. `#defaultfor`
+  limits "every character" to the races the guide is for.
+* **Timed quests and escorts.** Nothing new goes in while a timed quest or an escort the guide does is under
+  way: from its pickup to its hand-in (for an escort, to the step that finishes it).
+* **Zones.** A new step only goes where the player is in that zone on both sides, counting every step anyone
+  does, also class steps and `#completewith` pins (so not between a city visit and the flight back).
 * `--max-detour <yards>` (default 1500): a quest that would add more walking than this is left out.
+  `--max-detour none` (or `0`) turns the limit off.
+* Per zone, in `zones/<zone>.json`: `"fillMaxDetour": 3000` sets the limit for guides that do most of
+  their quest steps in that zone (it wins over `--max-detour`; `0` = no limit). Quest IDs in the zone file's
+  `include` list skip the detour limit and the elite check in every guide that quests in that zone; they
+  still need a place in the route where the player is high enough, and their pickup, objectives and
+  hand-in must be in the guide's zones. `exclude` wins over `include`.
 * `--group <name>` (default "RouteBuilder Forever"): the filled guides are listed in RestedXP under this
   name plus " (Horde)" or " (Alliance)", so they do not clash with the originals. Names and `#next` stay.
 * `--faction Horde` fills only that faction's guides.
 * The files in `--from` are never changed. Each file in `--out` starts with a comment saying how many quests
   were added, and a `.report.txt` next to it lists, for each guide, what was added (after which step, and how
   much walking it adds) and every candidate left out, with the reason.
-* Zone files (`zones/<zone>.json`) are used: the corrections of the guide's main zone, and the exclusions of
-  its other zones.
+* Zone files (`zones/<zone>.json`) are used: the corrections of the guide's main zone, and the `include` and
+  `exclude` lists of all its zones.
 * Pack the result with `.\Make-Addon.ps1 -GuidesPath filled`.
 
 ## Getting the guides into the game
