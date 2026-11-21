@@ -52,7 +52,7 @@ public static class Filler
     static readonly Regex GotoRx = new(@"^\.goto\s+([^,]+?)\s*,\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)((?:\s*,\s*-?\d+(?:\.\d+)?)*)", RegexOptions.Compiled);
     static readonly Regex CmdRx = new(@"^\.(accept|turnin|complete)\s+(\d+)", RegexOptions.Compiled);
     static readonly Regex XpRx = new(@"^\.xp\s+(\d+)(?:\s*\+\s*(\d+))?", RegexOptions.Compiled);
-    static readonly Regex RangeRx = new(@"^\s*(\d+)\s*-\s*(\d+)\b", RegexOptions.Compiled);
+    static readonly Regex RangeRx = new(@"^\s*(\d+)\s*-\s*(\d+)(?!\d)", RegexOptions.Compiled);
 
     // ------------------------------------------------------------------ the command
     public static int Run(GameData data, Dictionary<string, string> opt)
