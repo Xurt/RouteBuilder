@@ -281,7 +281,7 @@ is add the quests the set misses:
   the ones the guide is for, and quests only other characters can take are left out. Steps with `.dungeon`
   (`.dungeon WC`, `.dungeon !WC`) are treated the same way, and do not count toward the guide's zones.
 * Guides written as `RegisterGuide([[ ... ]])` and as `RegisterGuide([=[ ... ]=])` are both read (by `fill`,
-  RxpToLock and the build's `--rxp`).
+  RxpToLock and the build's `--rxp`). `fill` always writes them with `[[ ... ]]`.
 * **Timed quests and escorts.** Nothing new goes in while a timed quest or an escort the guide does is under
   way: from its pickup to its hand-in (for an escort, to the step that finishes it).
 * **Zones.** A new step only goes where the player is in that zone on both sides, counting every step anyone

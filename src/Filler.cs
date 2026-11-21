@@ -102,6 +102,7 @@ public static class Filler
             if (!f.Guides.Any(g => g.Faction.Length > 0 && (onlyFaction == null || g.Faction == onlyFaction))) continue;
             string text = Rewrite(f, groupBase, onlyFaction);
             if (!opt.ContainsKey("no-quest-text")) text = QuestText.Apply(text, data);
+            text = PlainBrackets(text);
             File.WriteAllText(Path.Combine(outDir, Path.GetFileName(f.Path)), text);
             var rep = f.Guides.Where(g => g.Report.Count > 0).SelectMany(g => g.Report.Append("")).ToList();
             if (rep.Count > 0) File.WriteAllLines(Path.Combine(outDir, Path.GetFileNameWithoutExtension(f.Path) + ".report.txt"), rep);
@@ -758,6 +759,13 @@ public static class Filler
     }
 
     // ------------------------------------------------------------------ writing the files
+    /// <summary>
+    /// Every guide written as RegisterGuide([[ ... ]]), also one that came as a Lua long string with level brackets
+    /// ([=[ ... ]=]). Inside [[ ]] a "]]" would end the guide and a "[[" is a Lua 5.1 error, so those get a space.
+    /// </summary>
+    static string PlainBrackets(string text) =>
+        RxpServices.GuideRx.Replace(text, m => "RegisterGuide([[" + m.Groups["body"].Value.Replace("]]", "] ]").Replace("[[", "[ [") + "]]");
+
     static string Rewrite(SrcFile f, string groupBase, string? onlyFaction)
     {
         var sb = new StringBuilder(); int pos = 0; string nl = f.Newline;
