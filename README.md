@@ -277,7 +277,11 @@ is add the quests the set misses:
 * **Class and race steps.** A run of steps tagged for some classes or races (`step << Priest/Mage/Warlock`
   followed by `step << !Warlock`) counts as part of the route when every character does one of them; nothing
   new goes in the middle of such a run, or straight after a run only some characters do. `#defaultfor`
-  limits "every character" to the races the guide is for.
+  and the guide's own `<<` line (`<< Alliance Hunter`: a guide for hunters only) limit "every character" to
+  the ones the guide is for, and quests only other characters can take are left out. Steps with `.dungeon`
+  (`.dungeon WC`, `.dungeon !WC`) are treated the same way, and do not count toward the guide's zones.
+* Guides written as `RegisterGuide([[ ... ]])` and as `RegisterGuide([=[ ... ]=])` are both read (by `fill`,
+  RxpToLock and the build's `--rxp`).
 * **Timed quests and escorts.** Nothing new goes in while a timed quest or an escort the guide does is under
   way: from its pickup to its hand-in (for an escort, to the step that finishes it).
 * **Zones.** A new step only goes where the player is in that zone on both sides, counting every step anyone
