@@ -182,7 +182,7 @@ public static class Filler
             {
                 if (bare.StartsWith("#name ")) g.Name = bare[6..].Trim();
                 else if (bare.StartsWith("#next ")) { string n = bare[6..].Trim(); g.Next = n[(n.LastIndexOf('\\') + 1)..].Trim(); }
-                else if (bare.StartsWith("#defaultfor ")) g.Races = bare[12..].Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList();
+                else if (bare.StartsWith("#defaultfor ")) g.Races = bare[12..].Split(new[] { ',', '/' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList();
             }
             if (bare == "step")
             {
@@ -298,6 +298,8 @@ public static class Filler
     {
         public SrcStep? Src; public AreaInfo? Area; public Pt Pos; public bool HasPos; public double Level;
         public RouteTask? Task; public Cand? Cand; public Quest? Q;
+        public string? NoGap;                    // a source step no new step may go in front of, and why
+        public bool Dead;                        // a source step no character does ("<< skip")
     }
 
     static void FillGuide(GameData data, string faction, Guide g, int gi, HashSet<int> inSet, HashSet<int> theirs, Dictionary<int, (int Guide, int Step)> turnedIn, double maxDetour)
@@ -322,6 +324,8 @@ public static class Filler
         // the guide as a list of places, with the level the player is about at each
         var nodes = g.Steps.Select(s => new Node { Src = s, Area = s.Area, Pos = s.Pos, HasPos = s.HasPos && !s.Along && !s.Hidden && s.Tag.Length == 0 }).ToList();
         SetLevels(nodes, lo, hi);
+        MarkClassRuns(nodes, g, faction);
+        MarkTimed(nodes, data);
 
         var left = new List<string>(); var added = new List<string>();
         var pending = new List<Quest>(); var rejected = new Dictionary<int, string>();
@@ -416,6 +420,64 @@ public static class Filler
         var bo = new BuildOptions { Faction = faction, MinLevel = lo, MaxLevel = hi, StartLevel = lo, NoHearth = true };
         try { return new ZoneModel(data, main, cfg, bo); }
         catch (InvalidOperationException e) when (own) { throw new InvalidOperationException($"zones/{main.Name}.json: {e.Message}"); }
+    }
+
+    /// <summary>
+    /// Steps for some races or classes ("step &lt;&lt; Priest/Mage/Warlock") come in runs between steps for everyone. A run that,
+    /// taken together, every character does (one step for warlocks, the next for everyone else) is part of the route: its
+    /// spots count when measuring a detour. Nothing new goes in the middle of a run, nor straight after a run only some
+    /// characters do (they would be sent off from wherever that run left them).
+    /// </summary>
+    static void MarkClassRuns(List<Node> nodes, Guide g, string faction)
+    {
+        var races = Game.Races(faction).Where(r => g.Races.Contains(r.Name, StringComparer.OrdinalIgnoreCase)).ToList();
+        if (races.Count == 0) races = Game.Races(faction).ToList();
+        var combos = races.SelectMany(r => Game.Classes.Where(c => Game.Exists(r.Name, c.Name)).Select(c => (Race: r.Name, Cls: c.Name))).ToList();
+        bool Anyone(SrcStep s) => combos.Any(rc => Verifier.Applies(s.Tag, rc.Race, rc.Cls, faction));
+        // steps no character does ("<< skip") are left out of the runs: they neither start nor break one
+        foreach (var n in nodes) n.Dead = n.Src!.Tag.Length > 0 && !Anyone(n.Src);
+        var live = nodes.Where(n => !n.Dead).ToList();
+        for (int i = 0; i < live.Count;)
+        {
+            if (live[i].Src!.Tag.Length == 0) { i++; continue; }
+            int j = i; while (j + 1 < live.Count && live[j + 1].Src!.Tag.Length > 0) j++;
+            var run = live.GetRange(i, j - i + 1);
+            var pinned = run.Where(n => n.Src!.HasPos && !n.Src.Along && !n.Src.Hidden).ToList();
+            bool everyone = pinned.Count > 0 && combos.All(rc => pinned.Any(n => Verifier.Applies(n.Src!.Tag, rc.Race, rc.Cls, faction)));
+            if (everyone) foreach (var n in pinned) n.HasPos = true;
+            foreach (var n in run.Skip(1)) n.NoGap ??= "in the middle of steps for some classes or races";
+            if (!everyone && j + 1 < live.Count) live[j + 1].NoGap ??= "straight after steps only some classes or races do";
+            i = j + 1;
+        }
+        // a step no one does takes the rule of the next step anyone does
+        string? next = null;
+        for (int i = nodes.Count - 1; i >= 0; i--)
+            if (live.Contains(nodes[i])) next = nodes[i].NoGap; else nodes[i].NoGap ??= next;
+    }
+
+    /// <summary>
+    /// While a timed quest or an escort the guide does is under way (from its pickup to its hand-in, or for an escort to
+    /// the step that finishes it), nothing new goes in.
+    /// </summary>
+    static void MarkTimed(List<Node> nodes, GameData data)
+    {
+        var steps = nodes.Select(n => n.Src!).ToList();
+        foreach (int q in steps.SelectMany(s => s.Accepts).Distinct())
+        {
+            if (!data.Quests.TryGetValue(q, out var row)) continue;
+            bool timed = row.TimeLimit != null, escort = row.Escort;
+            if (!timed && !escort) continue;
+            int a = steps.FindIndex(s => s.Accepts.Contains(q));
+            int e = steps.FindIndex(a + 1, s => s.TurnIns.Contains(q));
+            if (escort && !timed)
+            {
+                int c = steps.FindLastIndex(s => s.Completes.Contains(q));
+                if (c > a && (e < 0 || c < e)) e = c;
+            }
+            if (e < 0) e = steps.Count - 1;
+            string why = $"while {row.Name} [{q}] is under way ({(timed ? "timed" : "escort")})";
+            for (int i = a + 1; i <= e; i++) nodes[i].NoGap ??= why;
+        }
     }
 
     /// <summary>The player's level at each step: from the guide's range, pinned to its own grind steps, straight in between.</summary>
@@ -525,10 +587,21 @@ public static class Filler
             for (int i = 0; i <= n; i++) { pa[i] = la; pp[i] = lp; if (i < n && seq[i].HasPos) { la = seq[i].Area; lp = seq[i].Pos; } }
             la = null; lp = default;
             for (int i = n; i >= 0; i--) { if (i < n && seq[i].HasPos) { la = seq[i].Area; lp = seq[i].Pos; } na[i] = la; np[i] = lp; }
+            // a gap takes the rule of the guide's own step after it (new steps put in earlier sit in front of that step too)
+            var shut = new bool[n + 1];
+            for (int i = n - 1; i >= 0; i--) shut[i] = seq[i].Src != null ? seq[i].NoGap != null : shut[i + 1];
+            // where the player is: the last (and next) spot of any step someone does, also one for some classes or a
+            // "do this as you go" pin, so a gap is only next to a zone when nothing elsewhere comes in between
+            var pz = new AreaInfo?[n + 1]; var nz = new AreaInfo?[n + 1];
+            AreaInfo? lz = null;
+            for (int i = 0; i <= n; i++) { pz[i] = lz; if (i < n && Pin(seq[i]) is { } z) lz = z; }
+            lz = null;
+            for (int i = n; i >= 0; i--) { if (i < n && Pin(seq[i]) is { } z) lz = z; nz[i] = lz; }
             var cs = t.Cands.Where(c => questAreas.Contains(c.Area)).ToList();
             (int, Cand?, double) best = (-1, null, double.PositiveInfinity);
             for (int i = Math.Max(1, from); i <= Math.Min(n, to); i++)
             {
+                if (shut[i]) continue;
                 double lvl = seq[i - 1].Level;
                 foreach (var c in cs)
                 {
@@ -536,7 +609,7 @@ public static class Filler
                     var a = m.Areas[c.Area];
                     // only where the route is in that zone: right after a step there, or right before one. Next to a step in
                     // another zone only the walk on this side counts (the trip between zones, a flight or a boat, is the guide's)
-                    bool pS = Same(pa[i], a), nS = Same(na[i], a);
+                    bool pS = Same(pa[i], a) && Same(pz[i], a), nS = Same(na[i], a) && Same(nz[i], a);
                     if (!pS && !nS) continue;
                     double d = pS && nS ? Dist(pa[i], pp[i], a, c.Pos) + Dist(a, c.Pos, na[i], np[i]) - Dist(pa[i], pp[i], na[i], np[i])
                              : pS ? Dist(pa[i], pp[i], a, c.Pos) : Dist(a, c.Pos, na[i], np[i]);
@@ -545,6 +618,7 @@ public static class Filler
             }
             return best;
         }
+        static AreaInfo? Pin(Node x) => x.Src == null ? x.Area : x.Src.HasPos && !x.Dead ? x.Src.Area : null;
         bool Same(AreaInfo? x, AreaInfo y) => x != null && (x.Id == y.Id || data.Parent(x.Id) == data.Parent(y.Id));
         Node Make(RouteTask t, Cand c, double lvl) => new() { Task = t, Cand = c, Q = q, Area = m.Areas[c.Area], Pos = c.Pos, HasPos = true, Level = lvl };
 
