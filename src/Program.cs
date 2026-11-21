@@ -32,6 +32,7 @@ public static class Program
               --fresh                plan from scratch instead of keeping the step order saved in locks/
               --order-from <guide>   keep the step order of a guide built earlier (for guides made before locks/)
               --effort <x>           search effort from 0.01 to 100: 1 = normal, 0.2 = quick look, 3 = slow and thorough
+              --no-quest-text        leave out the quest's description line at the top of each objective step
 
           RouteBuilder fill --from <folder> [--out <folder>] [--faction Horde|Alliance] [--group <name>] [--max-detour <yards>]
               Keeps a finished set of guides (one per level range, "15-21 The Barrens", chained with #next) as written
@@ -42,6 +43,8 @@ public static class Program
               --out <folder>         where the filled guides go (default: filled); --from is never changed
               --group <name>         their group in RestedXP (default: "RouteBuilder Forever", + " (Horde)" / " (Alliance)")
               --max-detour <yards>   leave out quests that add more walking than this (default: 1500)
+              --no-quest-text        leave out the quest's description line at the top of each objective step
+                                     (otherwise it is put on every objective step, the guide's own and the new ones)
 
           RouteBuilder link [--out <folder>]
               Suggests where to go next. Each build saves a summary next to its guide (.meta.json); this reads
@@ -61,7 +64,7 @@ public static class Program
         {
             if (!argv[i].StartsWith("--")) { Console.Error.WriteLine($"Unexpected argument: {argv[i]}"); return 2; }
             string key = argv[i][2..];
-            if (key is "no-hearth" or "no-download" or "fresh" or "no-rxp-steps") opt[key] = "1";
+            if (key is "no-hearth" or "no-download" or "fresh" or "no-rxp-steps" or "no-quest-text") opt[key] = "1";
             else if (i + 1 < argv.Length) opt[key] = argv[++i];
             else { Console.Error.WriteLine($"--{key} needs a value"); return 2; }
         }
@@ -144,7 +147,7 @@ public static class Program
         var data = GameData.Load(dataDir);
         var bo = new BuildOptions
         {
-            Faction = faction, Race = opt.GetValueOrDefault("race"), Class = opt.GetValueOrDefault("class"), NoHearth = opt.ContainsKey("no-hearth"), Fresh = opt.ContainsKey("fresh"), NoRxpSteps = opt.ContainsKey("no-rxp-steps"), OrderFrom = opt.GetValueOrDefault("order-from"), RxpDir = opt.GetValueOrDefault("rxp"),
+            Faction = faction, Race = opt.GetValueOrDefault("race"), Class = opt.GetValueOrDefault("class"), NoHearth = opt.ContainsKey("no-hearth"), Fresh = opt.ContainsKey("fresh"), NoRxpSteps = opt.ContainsKey("no-rxp-steps"), NoQuestText = opt.ContainsKey("no-quest-text"), OrderFrom = opt.GetValueOrDefault("order-from"), RxpDir = opt.GetValueOrDefault("rxp"),
             StartLevel = Num(opt, "start-level"), MinLevel = (int?)Num(opt, "min-level"), MaxLevel = (int?)Num(opt, "max-level"),
         };
         string outDir = opt.GetValueOrDefault("out", "guides");
@@ -249,6 +252,7 @@ public static class Program
         visits[^1].g.StepsNotPlaced = unplaced;
         foreach (var k in unplaced) Console.WriteLine($"  zone file: no step called \"{k}\" in this guide, so no hand-written step was placed there");
         string text = Emitter.FileText(visits.Select(v => (v.m, v.g)).ToList());
+        if (!bo.NoQuestText) text = QuestText.Apply(text, data);    // the quest's own description on top of each objective step
         string path = Path.Combine(outDir, visits[0].g.FileName);
         File.WriteAllText(path, text);
         GuideMeta.From(data, visits.Select(v => (v.m, v.g)).ToList()).Save(GuideMeta.PathFor(path));

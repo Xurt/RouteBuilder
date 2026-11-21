@@ -75,6 +75,22 @@ copies in RestedXP's training, vendor and flight-path steps for the zone:
 * The ones placed are saved in the lock file (next section), so later builds keep them where they are, with
   or without `--rxp`, and you can move them by hand.
 
+### The quest's description on each objective step
+
+Every step that completes a quest objective (it has a `.complete` line) starts with the quest's own short
+description from QuestieDB (its objectives text), in a light tan colour:
+
+    step
+        >>|cFFE6BBADKill 10 Kobold Vermin, then return to Marshal McBride.|r
+        .goto Elwynn Forest,47.6,34.8
+        .complete 7,1
+
+* A step that works on several quests gets one line per quest, in the order they first appear in it.
+* If every `.complete` line for a quest in the step has the same tag (`<< Druid`), its line gets that tag too.
+* `fill` does the same to the guides it fills: their own objective steps and the ones it adds. Lines put there
+  before (by an earlier run, or by the older add_objectives script) are replaced, so they are never doubled.
+* `--no-quest-text` (on `build` and `fill`) leaves them out.
+
 ## Keeping the route between builds
 
 Every build saves its step order in `locks/<Zone> (<who>).json` (the level range is in the name too, when
@@ -219,7 +235,9 @@ at the end:
     .\Rebuild-All.ps1 -Rxp "D:\World of Warcraft\_classic_beta_\Interface\AddOns\RXPGuides\Guides\forever"
 
 * It reads every RestedXP guide file in that folder (not its subfolders; `-Recurse` adds them). A zone
-  RestedXP's guides do not cover keeps its lock as it was.
+  RestedXP's guides do not cover keeps its lock as it was; one with no lock yet is planned by RouteBuilder
+  alone. Riverglades, Shen'dralas and Mount Hyjal (Forever zones RestedXP has no guides for yet) are built
+  that way for both factions.
 * `-Faction Horde` or `-Zone "Durotar","Mulgore"` narrows it down; `-NoRxpToLock` builds from the locks as
   they are; `-Fresh` plans every zone from scratch; `-Update` fetches QuestieDB first; `-NoLink` skips
   the next-zone suggestions; `-NoAddon` skips Make-Addon.ps1.

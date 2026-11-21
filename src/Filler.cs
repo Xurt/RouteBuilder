@@ -92,6 +92,7 @@ public static class Filler
             // files with nothing for the factions filled (no faction line, or the other faction with --faction) are not copied
             if (!f.Guides.Any(g => g.Faction.Length > 0 && (onlyFaction == null || g.Faction == onlyFaction))) continue;
             string text = Rewrite(f, groupBase, onlyFaction);
+            if (!opt.ContainsKey("no-quest-text")) text = QuestText.Apply(text, data);
             File.WriteAllText(Path.Combine(outDir, Path.GetFileName(f.Path)), text);
             var rep = f.Guides.Where(g => g.Report.Count > 0).SelectMany(g => g.Report.Append("")).ToList();
             if (rep.Count > 0) File.WriteAllLines(Path.Combine(outDir, Path.GetFileNameWithoutExtension(f.Path) + ".report.txt"), rep);
