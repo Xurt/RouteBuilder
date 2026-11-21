@@ -147,6 +147,7 @@ public sealed class ZoneConfig
     public bool? Sections;                  // true: sections at each new main hub (off by default: one guide that starts at the top)
     public bool? Split;                     // true: a guide per part and section (default: one guide per zone, with level jumps to its sections)
     public bool? Suggest;                   // false: the link command never suggests this zone as a next zone (other guides still get theirs)
+    public double? FillMaxDetour;           // fill: the detour limit (yards) for guides that mostly quest in this zone; 0 = no limit
 
     public static readonly JsonSerializerOptions Json = new()
     {

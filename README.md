@@ -275,14 +275,20 @@ is add the quests the set misses:
   guide's range, pinned to the guide's own `.xp` grind steps. Escorts and timed quests get their objective
   straight after the pickup.
 * `--max-detour <yards>` (default 1500): a quest that would add more walking than this is left out.
+  `--max-detour none` (or `0`) turns the limit off.
+* Per zone, in `zones/<zone>.json`: `"fillMaxDetour": 3000` sets the limit for guides that do most of
+  their quest steps in that zone (it wins over `--max-detour`; `0` = no limit). Quest IDs in the zone file's
+  `include` list skip the detour limit and the elite check in every guide that quests in that zone; they
+  still need a place in the route where the player is high enough, and their pickup, objectives and
+  hand-in must be in the guide's zones. `exclude` wins over `include`.
 * `--group <name>` (default "RouteBuilder Forever"): the filled guides are listed in RestedXP under this
   name plus " (Horde)" or " (Alliance)", so they do not clash with the originals. Names and `#next` stay.
 * `--faction Horde` fills only that faction's guides.
 * The files in `--from` are never changed. Each file in `--out` starts with a comment saying how many quests
   were added, and a `.report.txt` next to it lists, for each guide, what was added (after which step, and how
   much walking it adds) and every candidate left out, with the reason.
-* Zone files (`zones/<zone>.json`) are used: the corrections of the guide's main zone, and the exclusions of
-  its other zones.
+* Zone files (`zones/<zone>.json`) are used: the corrections of the guide's main zone, and the `include` and
+  `exclude` lists of all its zones.
 * Pack the result with `.\Make-Addon.ps1 -GuidesPath filled`.
 
 ## Getting the guides into the game

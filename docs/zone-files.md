@@ -113,6 +113,7 @@ These sit at the top level of the file.
 | `sections` | `true`: sections at each new main hub, and the guide starts at the one for your level by itself (see the README). | No sections: one guide that starts at the top. |
 | `split` | `true`: a guide per section and per part, listed under a heading such as "1 - 16 Mulgore". | One guide per zone, its parts joined by a level check. |
 | `suggest` | `false`: `link` never suggests this zone to other guides. This zone's own guide still gets its suggestions. | Suggested when it suits the level. |
+| `fillMaxDetour` | `fill` only: the most walking (yards) a missed quest may add to a guide that does most of its quest steps in this zone. `0` = no limit. Wins over `--max-detour`. | `--max-detour` (1500). |
 
 Hearthstone steps are only planned for a part of the guide with at least 25 things to do.
 
@@ -124,6 +125,9 @@ high enough for. It cannot bring in a quest that neither starts nor ends in the 
 other faction, or, when building for one character, a quest that character cannot take.
 
 `exclude` wins over `include`. The reason you give is printed in the report's "Left out" section.
+
+For `fill`, an included quest also skips the detour limit and the elite check, in every guide that quests
+in this zone. It still has to fit the guide's levels and zones; the report marks it "forced in by include".
 
 ### linkedAreas
 

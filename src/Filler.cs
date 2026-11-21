@@ -54,6 +54,13 @@ public static class Filler
     static readonly Regex XpRx = new(@"^\.xp\s+(\d+)(?:\s*\+\s*(\d+))?", RegexOptions.Compiled);
     static readonly Regex RangeRx = new(@"^\s*(\d+)\s*-\s*(\d+)(?!\d)", RegexOptions.Compiled);
 
+    /// <summary>A detour limit as written on the command line: yards, or none / 0 for no limit. Null if it is neither.</summary>
+    static double? Detour(string s) =>
+        s.Trim().ToLowerInvariant() is "none" or "off" or "unlimited" or "no" ? double.PositiveInfinity
+        : double.TryParse(s, NumberStyles.Float, Inv, out double v) && v >= 0 ? v == 0 ? double.PositiveInfinity : v : null;
+
+    static string Yd(double d) => double.IsPositiveInfinity(d) ? "none" : d.ToString("0", Inv);
+
     // ------------------------------------------------------------------ the command
     public static int Run(GameData data, Dictionary<string, string> opt)
     {
@@ -63,7 +70,7 @@ public static class Filler
         if (Path.GetFullPath(outDir).TrimEnd(Path.DirectorySeparatorChar).Equals(Path.GetFullPath(from).TrimEnd(Path.DirectorySeparatorChar), StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException("--out must be a different folder from --from (the guides there are kept as they are)");
         string groupBase = opt.GetValueOrDefault("group", "RouteBuilder Forever");
-        double maxDetour = opt.TryGetValue("max-detour", out var md) ? double.TryParse(md, NumberStyles.Float, Inv, out double v) && v > 0 ? v : throw new InvalidOperationException("--max-detour must be a number of yards") : 1500;
+        double maxDetour = opt.TryGetValue("max-detour", out var md) ? Detour(md) ?? throw new InvalidOperationException("--max-detour must be a number of yards, or none (no limit)") : 1500;
         string? onlyFaction = opt.TryGetValue("faction", out var ff) ? ff.Equals("alliance", StringComparison.OrdinalIgnoreCase) ? "Alliance" : ff.Equals("horde", StringComparison.OrdinalIgnoreCase) ? "Horde" : throw new InvalidOperationException("--faction must be Horde or Alliance") : null;
 
         var files = new List<SrcFile>();
@@ -305,7 +312,10 @@ public static class Filler
         if (zoneSteps.Count == 0) throw new InvalidOperationException("it does no quest objectives outside the cities, so there is no zone to look for missed quests in");
         g.Report.Add($"  Levels {lo}-{hi}; looked for missed quests in {string.Join(", ", zoneSteps.Select(z => $"{z.Area.Name} ({z.Count} objective step{(z.Count == 1 ? "" : "s")})"))}");
 
-        var model = BuildModel(data, faction, zoneSteps.Select(z => z.Area).ToList(), lo, hi);
+        var fc = new FillCfg();
+        var model = BuildModel(data, faction, zoneSteps.Select(z => z.Area).ToList(), lo, hi, fc);
+        // the main zone's file can set its own limit; it wins over the one from the command line
+        if (fc.MaxDetour is double zd) { maxDetour = zd; g.Report.Add($"  Detour limit: {Yd(zd)} ({fc.DetourFile}, fillMaxDetour)"); }
         var questAreas = new HashSet<int>();
         for (int i = 0; i < model.Areas.Count; i++) if (zoneSteps.Any(z => z.Area.Id == model.Areas[i].Id)) questAreas.Add(i);
 
@@ -324,7 +334,7 @@ public static class Filler
                 : raceMask != 0 && q.Row.Races != 0 && (q.Row.Races & raceMask) == 0 ? $"for other races; this guide is for {string.Join(", ", g.Races)}"
                 : raceMask != 0 && q.Row.Classes != 0 && !Game.Races(faction).Where(r => (r.Bit & raceMask) != 0 && (q.Row.Races == 0 || (q.Row.Races & r.Bit) != 0))
                       .Any(r => Game.Classes.Any(c => (q.Row.Classes & c.Bit) != 0 && Game.Exists(r.Name, c.Name))) ? $"for a class that {string.Join(", ", g.Races)} cannot be"
-                : Unfit(q, model, questAreas, inSet, data);
+                : Unfit(q, model, questAreas, inSet, data, fc.Forced.ContainsKey(q.Id));
             if (why != null) { left.Add(Line(q, why)); rejected[q.Id] = why; continue; }
             pending.Add(q);
         }
@@ -335,9 +345,10 @@ public static class Filler
             // a quest that needs another missed quest goes after it
             var q = pending.FirstOrDefault(p => p.PreAll.Concat(p.PreAny).All(x => !candIds.Contains(x) || placedHere.ContainsKey(x) || rejected.ContainsKey(x))) ?? pending[0];
             pending.Remove(q);
-            string? why = TryPlace(q, model, nodes, gi, g, turnedIn, placedHere, rejected, questAreas, maxDetour, data, out string? done);
+            bool forced = fc.Forced.TryGetValue(q.Id, out var forcedBy);
+            string? why = TryPlace(q, model, nodes, gi, g, turnedIn, placedHere, rejected, questAreas, forced ? double.PositiveInfinity : maxDetour, data, out string? done);
             if (why != null) { rejected[q.Id] = why; left.Add(Line(q, why)); continue; }
-            added.Add(done!); inSet.Add(q.Id);
+            added.Add(done! + (forced ? $" (forced in by include in {forcedBy})" : "")); inSet.Add(q.Id);
         }
 
         g.Added = added.Count;
@@ -370,22 +381,38 @@ public static class Filler
 
     static string Line(Quest q, string why) => $"Lvl {q.Level,-2} {q.Name} [{q.Id}]{(q.Tag.Length > 0 ? " (" + q.Tag + ")" : "")}: {why}";
 
-    static ZoneModel BuildModel(GameData data, string faction, List<AreaInfo> zones, int lo, int hi)
+    /// <summary>What the guide's zone files say about filling: the main zone's detour limit, and the quests their "include" lists force in.</summary>
+    sealed class FillCfg { public double? MaxDetour; public string? DetourFile; public Dictionary<int, string> Forced = new(); }
+
+    static ZoneModel BuildModel(GameData data, string faction, List<AreaInfo> zones, int lo, int hi, FillCfg fc)
     {
         var main = zones[0];
         ZoneConfig cfg; bool own = false;
-        string? file = new[] { Path.Combine("zones", main.Name + ".json"), Path.Combine(AppContext.BaseDirectory, "zones", main.Name + ".json") }.FirstOrDefault(File.Exists);
+        string? ZoneFile(AreaInfo z) => new[] { Path.Combine("zones", z.Name + ".json"), Path.Combine(AppContext.BaseDirectory, "zones", z.Name + ".json") }.FirstOrDefault(File.Exists);
+        string? file = ZoneFile(main);
         if (file != null) { cfg = ZoneConfig.Load(file); own = true; } else cfg = new ZoneConfig();
+        if (cfg.FillMaxDetour is double d)
+        {
+            fc.MaxDetour = d > 0 ? d : d == 0 ? double.PositiveInfinity : throw new InvalidOperationException($"zones/{main.Name}.json: fillMaxDetour must be a number of yards (0 = no limit)");
+            fc.DetourFile = $"zones/{main.Name}.json";
+        }
+        var include = new List<int>();
+        foreach (int q in cfg.Include) { include.Add(q); fc.Forced.TryAdd(q, $"zones/{main.Name}.json"); }
         // the main zone's file keeps its corrections and its linked cities (its points may refer to them); the other zones
-        // of the guide are linked areas too, and their files lend their exclusions
+        // of the guide are linked areas too, and their files lend their exclusions and inclusions
         var links = cfg.LinkedAreas?.ToList() ?? data.Areas.Values.Where(a => ZoneModel.CityParent(a.Id) == main.Id).Select(a => new LinkedAreaFix { Area = a.Id.ToString() }).ToList();
         foreach (var z in zones.Skip(1))
         {
             links.Add(new LinkedAreaFix { Area = z.Id.ToString() });
-            string? zf = new[] { Path.Combine("zones", z.Name + ".json"), Path.Combine(AppContext.BaseDirectory, "zones", z.Name + ".json") }.FirstOrDefault(File.Exists);
-            if (zf != null) foreach (var (k, why) in ZoneConfig.Load(zf).Exclude) cfg.Exclude.TryAdd(k, why);
+            string? zf = ZoneFile(z);
+            if (zf == null) continue;
+            var other = ZoneConfig.Load(zf);
+            foreach (var (k, why) in other.Exclude) cfg.Exclude.TryAdd(k, why);
+            foreach (int q in other.Include) { include.Add(q); fc.Forced.TryAdd(q, $"zones/{z.Name}.json"); }
         }
-        cfg.LinkedAreas = links; cfg.MinLevel = lo; cfg.MaxLevel = hi; cfg.Include = new(); cfg.Steps = new(); cfg.Start = null; cfg.StartLevel = lo;
+        // excluded wins over included, as in a build
+        foreach (var k in cfg.Exclude.Keys) if (int.TryParse(k, out int ex)) { include.Remove(ex); fc.Forced.Remove(ex); }
+        cfg.LinkedAreas = links; cfg.MinLevel = lo; cfg.MaxLevel = hi; cfg.Include = include.Distinct().ToList(); cfg.Steps = new(); cfg.Start = null; cfg.StartLevel = lo;
         var bo = new BuildOptions { Faction = faction, MinLevel = lo, MaxLevel = hi, StartLevel = lo, NoHearth = true };
         try { return new ZoneModel(data, main, cfg, bo); }
         catch (InvalidOperationException e) when (own) { throw new InvalidOperationException($"zones/{main.Name}.json: {e.Message}"); }
@@ -408,7 +435,7 @@ public static class Filler
     }
 
     /// <summary>Why a quest the model found cannot be added, or null.</summary>
-    static string? Unfit(Quest q, ZoneModel m, HashSet<int> questAreas, HashSet<int> inSet, GameData data)
+    static string? Unfit(Quest q, ZoneModel m, HashSet<int> questAreas, HashSet<int> inSet, GameData data, bool forced)
     {
         if (q.Arrival) return "starts outside this guide's zones";
         if (q.Carried) return $"handed in outside this guide's zones ({q.Destination})";
@@ -421,7 +448,7 @@ public static class Filler
         {
             if (o.Cands.All(c => !questAreas.Contains(c.Area))) return $"\"{o.Label}\" is in {m.Areas[o.Cands[0].Area].Name}, not one of this guide's zones";
             if (o.Index == null && o.Command == null) return $"the database does not say which quest-log line \"{o.Label}\" is";
-            if (o.Kind is "kill" or "loot" && o.SrcNpcs.Select(n => data.Npcs.GetValueOrDefault(n)).FirstOrDefault(n => n is { Rank: >= 1 }) is { } elite)
+            if (!forced && o.Kind is "kill" or "loot" && o.SrcNpcs.Select(n => data.Npcs.GetValueOrDefault(n)).FirstOrDefault(n => n is { Rank: >= 1 }) is { } elite)
                 return $"elite: {elite.Name} is {(elite.Rank == 3 ? "a boss" : elite.Rank == 4 ? "rare" : "elite")}";
         }
         if (q.Routed.Count == 0 && q.Row.HasObjectives) return "its objectives are not in the database";
@@ -556,7 +583,7 @@ public static class Filler
             if (!levelOk) return top < q.Req ? $"needs level {q.Req}; this guide reaches about {top:0.0}" : $"a level {q.Level} quest; no place in the route after what it needs where the player is high enough";
             return "no place in the route where the player is high enough for all of its objectives";
         }
-        if (bestTotal > maxDetour) return $"too far off the route: about {bestTotal:0} yd of extra walking (--max-detour is {maxDetour:0})";
+        if (bestTotal > maxDetour) return $"too far off the route: about {bestTotal:0} yd of extra walking (the limit is {maxDetour:0} yd: --max-detour, or fillMaxDetour in the zone file)";
         nodes.Clear(); nodes.AddRange(bestSeq);
         placedHere[q.Id] = bestTurn!;
 
