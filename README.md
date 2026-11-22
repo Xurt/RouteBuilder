@@ -292,6 +292,14 @@ is add the quests the set misses:
   (`.dungeon WC`, `.dungeon !WC`) are treated the same way, and do not count toward the guide's zones.
 * Guides written as `RegisterGuide([[ ... ]])` and as `RegisterGuide([=[ ... ]=])` are both read (by `fill`,
   RxpToLock and the build's `--rxp`). `fill` always writes them with `[[ ... ]]`.
+* **Picked up, not finished.** A quest that would be added but cannot be finished in the guide (its hand-in or
+  part of it on another continent or where the database has no spawn, or the guide never gets you high enough
+  for its objectives) still gets its pickup, after everything else. A step at the end of the guide lists those
+  quests with the reason, one checkbox each (tagged for its class or race). Later guides on the same `#next`
+  path finish them when they can, and the list then says where. Not for quests started from an item, timed
+  quests, escorts or elite ones.
+* **Layout.** Every line inside a step is written indented by four spaces; `step` lines and the guide's header
+  lines are at the margin.
 * **Timed quests and escorts.** Nothing new goes in while a timed quest or an escort the guide does is under
   way: from its pickup to its hand-in (for an escort, to the step that finishes it).
 * **Zones.** A new step only goes where the player is in that zone on both sides, counting every step anyone
