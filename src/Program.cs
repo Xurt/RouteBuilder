@@ -36,13 +36,14 @@ public static class Program
 
           RouteBuilder fill --from <folder> [--out <folder>] [--faction Horde|Alliance] [--group <name>] [--max-detour <yards>|none]
               Keeps a finished set of guides (one per level range, "15-21 The Barrens", chained with #next) as written
-              and adds the quests it misses: quests in the zones a guide does objectives in, inside its level range,
-              that no guide of that faction in the folder does. Each goes where it adds least walking, after what it
+              and adds the quests it misses: quests picked up in the zones a guide does objectives in, inside its level
+              range, and the rest of their chains wherever they go (a trip, or finished in a later guide), that no guide
+              of that faction in the folder does. Each goes where it adds least walking, after what it
               needs and once the player is high enough. Horde and Alliance guides can share the folder.
 
               --out <folder>         where the filled guides go (default: filled); --from is never changed
               --group <name>         their group in RestedXP (default: "RouteBuilder Forever", + " (Horde)" / " (Alliance)")
-              --max-detour <yards>   leave out quests that add more walking than this (default: 1500; none or 0 = no limit;
+              --max-detour <yards>   leave out quests that add more walking than this (default: none = no limit;
                                  a zone file's fillMaxDetour wins for guides mostly in that zone)
               --no-quest-text        leave out the quest's description line at the top of each objective step
                                      (otherwise it is put on every objective step, the guide's own and the new ones)

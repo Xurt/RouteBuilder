@@ -72,7 +72,7 @@ public static class Filler
         if (Path.GetFullPath(outDir).TrimEnd(Path.DirectorySeparatorChar).Equals(Path.GetFullPath(from).TrimEnd(Path.DirectorySeparatorChar), StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException("--out must be a different folder from --from (the guides there are kept as they are)");
         string groupBase = opt.GetValueOrDefault("group", "RouteBuilder Forever");
-        double maxDetour = opt.TryGetValue("max-detour", out var md) ? Detour(md) ?? throw new InvalidOperationException("--max-detour must be a number of yards, or none (no limit)") : 1500;
+        double maxDetour = opt.TryGetValue("max-detour", out var md) ? Detour(md) ?? throw new InvalidOperationException("--max-detour must be a number of yards, or none (no limit)") : double.PositiveInfinity;
         string? onlyFaction = opt.TryGetValue("faction", out var ff) ? ff.Equals("alliance", StringComparison.OrdinalIgnoreCase) ? "Alliance" : ff.Equals("horde", StringComparison.OrdinalIgnoreCase) ? "Horde" : throw new InvalidOperationException("--faction must be Horde or Alliance") : null;
 
         var files = new List<SrcFile>();
@@ -268,6 +268,9 @@ public static class Filler
 
         // quests a guide written for both factions does only for the other one are that faction's, not missed here
         var theirs = order.SelectMany(g => g.OtherSide).Where(q => !inSet.Contains(q)).ToHashSet();
+        var run = new FactionRun { Order = order, Visits = order.Select(g => Visited(g, data)).ToList() };
+        foreach (var q in order.SelectMany(g => g.Steps).SelectMany(s => s.TurnIns).Distinct())
+            if (order.SelectMany(g => g.Steps).Where(s => s.TurnIns.Contains(q)).All(s => s.Tag.Length > 0 || s.Dungeon)) run.SomeOnly.Add(q);
         for (int gi = 0; gi < order.Count; gi++)
         {
             var g = order[gi];
@@ -279,10 +282,29 @@ public static class Filler
             var turnedIn = new Dictionary<int, (int Guide, int Step)>();
             foreach (var (q, at) in handIns)
                 turnedIn[q] = at.Any(x => x.Guide == gi) ? at.First(x => x.Guide == gi) : at.Any(x => before.Contains(x.Guide)) ? (-1, 0) : (int.MaxValue, 0);
-            try { FillGuide(data, faction, g, gi, inSet, theirs, turnedIn, maxDetour); }
+            // and the quests fill added to those guides
+            foreach (var (q, at) in run.AddedIn) if (!turnedIn.ContainsKey(q)) turnedIn[q] = before.Contains(at) ? (-1, 0) : (int.MaxValue, 0);
+            try { FillGuide(data, faction, g, gi, inSet, theirs, turnedIn, maxDetour, run); }
             catch (InvalidOperationException e) { g.Report.Add("  Nothing added: " + e.Message); Console.WriteLine($"  {g.Name}: {e.Message}"); }
         }
+        // a quest picked up to be finished in a later guide that could not finish it after all
+        foreach (var (q, c) in run.Carry.Where(c => !run.AddedIn.ContainsKey(c.Key)))
+            order[c.From].Report.Add($"  Note: {data.Quests.GetValueOrDefault(q)?.Name ?? "?"} [{q}] is picked up here to be finished in {order[c.To].Name}, which could not fit it; finish it yourself or drop it.");
     }
+
+    /// <summary>What one faction's fill keeps across its guides.</summary>
+    sealed class FactionRun
+    {
+        public List<Guide> Order = new();
+        public List<HashSet<int>> Visits = new();                        // per guide: the zones and cities (parent area IDs) it goes to
+        public Dictionary<int, int> AddedIn = new();                     // quest -> the guide fill handed it in in
+        public Dictionary<int, (int From, int To)> Carry = new();        // quest -> picked up in one guide, finished in a later one
+        public HashSet<int> SomeOnly = new();                            // quests the set hands in only on steps for some characters
+    }
+
+    /// <summary>The zones and cities (parent area IDs) a guide takes every player to: its steps for everyone with a spot.</summary>
+    static HashSet<int> Visited(Guide g, GameData data) =>
+        g.Steps.Where(s => s.HasPos && !s.Hidden && !s.Dungeon && s.Tag.Length == 0 && s.Area != null).Select(s => data.Parent(s.Area!.Id)).ToHashSet();
 
     /// <summary>The guides (by place in the order) whose #next chains lead to this one.</summary>
     static HashSet<int> Ancestors(List<Guide> order, int gi)
@@ -307,7 +329,7 @@ public static class Filler
         public bool Dead;                        // a source step no character does ("<< skip")
     }
 
-    static void FillGuide(GameData data, string faction, Guide g, int gi, HashSet<int> inSet, HashSet<int> theirs, Dictionary<int, (int Guide, int Step)> turnedIn, double maxDetour)
+    static void FillGuide(GameData data, string faction, Guide g, int gi, HashSet<int> inSet, HashSet<int> theirs, Dictionary<int, (int Guide, int Step)> turnedIn, double maxDetour, FactionRun run)
     {
         int lo = g.Lo!.Value, hi = g.Hi!.Value;
         // the zones this guide quests in: objectives done there, not just a hand-in or a trainer (and never a capital city,
@@ -319,13 +341,75 @@ public static class Filler
                                .OrderByDescending(x => x.Count).ToList();
         if (zoneSteps.Count == 0) throw new InvalidOperationException("it does no quest objectives outside the cities, so there is no zone to look for missed quests in");
         g.Report.Add($"  Levels {lo}-{hi}; looked for missed quests in {string.Join(", ", zoneSteps.Select(z => $"{z.Area.Name} ({z.Count} objective step{(z.Count == 1 ? "" : "s")})"))}");
+        var main = zoneSteps[0].Area;
 
-        var fc = new FillCfg();
-        var model = BuildModel(data, faction, zoneSteps.Select(z => z.Area).ToList(), lo, hi, fc);
+        // quest chains: what follows a quest this guide or the ones before it do (or fill added to them), wherever it is
+        var earlier = Ancestors(run.Order, gi);
+        var doneBy = earlier.Append(gi).SelectMany(i => run.Order[i].Steps).SelectMany(s => s.Accepts.Concat(s.TurnIns)).ToHashSet();
+        foreach (var (q, at) in run.AddedIn) if (earlier.Contains(at)) doneBy.Add(q);
+        var carriedIn = run.Carry.Where(c => c.Value.To == gi).Select(c => c.Key).ToHashSet();   // picked up earlier, finished here
+        long fmask = Game.Races(faction).Aggregate(0L, (mk, r) => mk | r.Bit);
+        bool Ours(QuestRow r) => r.Races == 0 || (r.Races & fmask) != 0;
+
+        // areas a chain may go to: on this continent, not a dungeon
+        var extra = new HashSet<int>();
+        bool Reachable(AreaInfo? x) => x != null && x.HasBounds && x.Continent == main.Continent && !data.Instances.Contains(x.Id) && !zoneSteps.Any(z => z.Area.Id == x.Id);
+        void AddArea(int id) { var x = data.Areas.GetValueOrDefault(data.Parent(id)) ?? data.Areas.GetValueOrDefault(id); if (Reachable(x)) extra.Add(x!.Id); }
+        void AddSpawns(IEnumerable<int> npcs, IEnumerable<int> objs)
+        {
+            foreach (int n in npcs) if (data.Npcs.TryGetValue(n, out var nn)) foreach (int k in nn.Spawns.Keys) AddArea(k);
+            foreach (int o in objs) if (data.Objects.TryGetValue(o, out var oo)) foreach (int k in oo.Spawns.Keys) AddArea(k);
+        }
+        foreach (int v in run.Visits[gi]) AddArea(v);                     // the cities and zones the guide goes to anyway
+
+        var fc = new FillCfg(); ZoneModel model = null!; HashSet<int> questAreas = new(), chain = new(); var alternatives = new Dictionary<int, int>();
+        for (int pass = 0; pass < 4; pass++)
+        {
+            model = BuildModel(data, faction, zoneSteps.Select(z => z.Area).ToList(), lo, hi, fc = new FillCfg(), extra.Select(id => data.Areas[id]).ToList());
+            questAreas = new HashSet<int>();
+            for (int i = 0; i < model.Areas.Count; i++) if (zoneSteps.Any(z => z.Area.Id == model.Areas[i].Id)) questAreas.Add(i);
+            // the chains: starters (picked up in this guide's zones) and what follows them or what the guides do
+            var roots = doneBy.Concat(carriedIn).Concat(model.Quests.Values.Where(q => !inSet.Contains(q.Id) && q.Start != null && q.Start.Cands.Any(c => questAreas.Contains(c.Area))).Select(q => q.Id)).ToHashSet();
+            chain = new HashSet<int>();
+            // another race's version of a quest the guides do ("Call of Earth" from Kodo Rock for tauren, from Spirit Rock for
+            // orcs and trolls): the same name, after the same quest, and neither needs the other
+            int? AlternativeOf(QuestRow row)
+            {
+                var pre = row.PreGroup.Concat(row.PreSingle).ToHashSet();
+                foreach (int d in doneBy)
+                    if (d != row.Id && data.Quests.TryGetValue(d, out var dr) && dr.Name == row.Name && !pre.Contains(d) && !dr.PreGroup.Concat(dr.PreSingle).Contains(row.Id)
+                        && dr.PreGroup.Concat(dr.PreSingle).Any(pre.Contains)) return d;
+                return null;
+            }
+            for (bool grew = true; grew;)
+            {
+                grew = false;
+                var nexts = roots.Concat(chain).Select(x => data.Quests.GetValueOrDefault(x)?.NextInChain ?? 0).ToHashSet();
+                foreach (var row in data.Quests.Values)
+                {
+                    if (chain.Contains(row.Id) || inSet.Contains(row.Id) && !carriedIn.Contains(row.Id) || !Ours(row) || row.Level > hi || row.ReqLevel > hi) continue;
+                    bool next = row.PreGroup.Concat(row.PreSingle).Any(x => roots.Contains(x) || chain.Contains(x))
+                             || nexts.Contains(row.Id) || carriedIn.Contains(row.Id);
+                    if (next && !carriedIn.Contains(row.Id) && AlternativeOf(row) is int alt) { alternatives[row.Id] = alt; continue; }
+                    if (next) { chain.Add(row.Id); grew = true; }
+                }
+            }
+            // where they go: their givers, hand-ins and objectives; a model with those areas linked
+            int had = extra.Count;
+            foreach (int id in chain) { var r = data.Quests[id]; AddSpawns(r.StartNpcs.Concat(r.EndNpcs), r.StartObjects.Concat(r.EndObjects)); }
+            foreach (var q in model.Quests.Values.Where(q => !inSet.Contains(q.Id) && (chain.Contains(q.Id) || q.Start != null && q.Start.Cands.Any(c => questAreas.Contains(c.Area)))))
+            {
+                if (q.Carried) AddSpawns(q.Row.EndNpcs, q.Row.EndObjects);
+                foreach (var o in q.Unrouted) if (o.Elsewhere != null && data.FindArea(o.Elsewhere) is { } ea) AddArea(ea.Id);
+            }
+            if (extra.Count == had) break;
+        }
+        var chainAreas = extra.Where(id => !run.Visits[gi].Contains(id)).Select(id => data.Areas[id].Name).OrderBy(n => n).ToList();
+        if (chainAreas.Count > 0) g.Report.Add($"  Quest chains followed into: {string.Join(", ", chainAreas)}");
         // the main zone's file can set its own limit; it wins over the one from the command line
         if (fc.MaxDetour is double zd) { maxDetour = zd; g.Report.Add($"  Detour limit: {Yd(zd)} ({fc.DetourFile}, fillMaxDetour)"); }
-        var questAreas = new HashSet<int>();
-        for (int i = 0; i < model.Areas.Count; i++) if (zoneSteps.Any(z => z.Area.Id == model.Areas[i].Id)) questAreas.Add(i);
+        var visitedIdx = new HashSet<int>();
+        for (int i = 0; i < model.Areas.Count; i++) if (run.Visits[gi].Contains(data.Parent(model.Areas[i].Id)) || run.Visits[gi].Contains(model.Areas[i].Id)) visitedIdx.Add(i);
 
         // the guide as a list of places, with the level the player is about at each
         var nodes = g.Steps.Select(s => new Node { Src = s, Area = s.Area, Pos = s.Pos, HasPos = s.HasPos && !s.Along && !s.Hidden && s.Tag.Length == 0 && !s.Dungeon }).ToList();
@@ -333,6 +417,7 @@ public static class Filler
         MarkClassRuns(nodes, g, faction);
         MarkTimed(nodes, data);
 
+        string QN(int id) => $"{data.Quests.GetValueOrDefault(id)?.Name ?? "?"} [{id}]";
         var left = new List<string>(); var added = new List<string>();
         var pending = new List<Quest>(); var rejected = new Dictionary<int, string>();
         // a guide written for some races (#defaultfor) or classes ("<< Alliance Hunter") gets no quests only other characters can take
@@ -342,13 +427,47 @@ public static class Filler
         string who = string.Join(" ", new[] { string.Join("/", g.Races), g.HeaderTag }.Where(x => x.Length > 0));
         foreach (var q in model.Quests.Values.OrderBy(q => q.Level).ThenBy(q => q.Id))
         {
-            if (inSet.Contains(q.Id)) continue;
+            bool carried = carriedIn.Contains(q.Id);
+            if (inSet.Contains(q.Id) && !carried) continue;
+            bool inChain = chain.Contains(q.Id);
+            // a quest only starts a chain where this guide quests; one that follows another can be picked up anywhere
+            if (!inChain && !carried && (q.Start == null || q.Start.Cands.All(c => !questAreas.Contains(c.Area)) || q.Level < lo)) continue;
+            int alt = q.PreAll.Concat(q.PreAny).FirstOrDefault(alternatives.ContainsKey);
             string? why = theirs.Contains(q.Id) ? $"the guides do it for the {(faction == "Horde" ? "Alliance" : "Horde")} only"
+                : alternatives.ContainsKey(q.Id) ? $"another race's version of {QN(alternatives[q.Id])}, which the guides do"
+                : alt != 0 && q.PreAll.Concat(q.PreAny).All(x => alternatives.ContainsKey(x) || !doneBy.Contains(x)) ? $"follows {QN(alt)}, another race's version of {QN(alternatives[alt])}"
                 : !ForUs(q.Row) ? $"not for the characters this guide is for ({who})"
-                : Unfit(q, model, questAreas, inSet, data, fc.Forced.ContainsKey(q.Id));
-            if (why != null) { left.Add(Line(q, why)); rejected[q.Id] = why; continue; }
+                : Unfit(q, model, questAreas, inSet, data, fc.Forced.ContainsKey(q.Id), carried);
+            if (why != null) { left.Add(Line(q, carried ? $"picked up in {run.Order[run.Carry[q.Id].From].Name}, but {why}" : why)); rejected[q.Id] = why; continue; }
             pending.Add(q);
         }
+        foreach (int q in carriedIn.Where(q => !model.Quests.ContainsKey(q)))
+            left.Add($"{data.Quests.GetValueOrDefault(q)?.Name ?? "?"} [{q}]: picked up in {run.Order[run.Carry[q].From].Name}, but it is not in this guide's zones after all");
+
+        // the first later guide (on this guide's path) that goes to all of a quest's other places soon enough not to outlevel it
+        (int To, string Name)? LaterGuide(Quest q)
+        {
+            if (q.Row.TimeLimit != null) return null;
+            var places = q.Routed.SelectMany(o => o.Cands.Take(1)).Append(q.End!.Cands[0]).Select(c => data.Parent(model.Areas[c.Area].Id)).ToHashSet();
+            for (int t = gi + 1; t < run.Order.Count; t++)
+            {
+                var tg = run.Order[t];
+                if (tg.Lo == null || !Ancestors(run.Order, t).Contains(gi)) continue;
+                if (tg.Lo > q.Level + CarryLevels) break;
+                if (places.All(run.Visits[t].Contains)) return (t, tg.Name);
+            }
+            return null;
+        }
+        // a quest whose places are all outside where this guide goes, and whose chain does not come back here: picked up
+        // now, finished later (a trip now would only be for that)
+        bool LeavesForGood(Quest q)
+        {
+            bool Out(RouteTask? t) => t != null && t.Cands.All(c => !visitedIdx.Contains(c.Area));
+            if (!Out(model.Find(TaskKind.TurnIn, q.Id)) || Enumerable.Range(0, q.Routed.Count).Any(k => !Out(model.Find(TaskKind.Objective, q.Id, k)))) return false;
+            var after = model.Quests.Values.Where(f => chain.Contains(f.Id) && (f.PreAll.Contains(q.Id) || f.PreAny.Contains(q.Id) || q.Row.NextInChain == f.Id)).ToList();
+            return !after.Any(f => !Out(model.Find(TaskKind.TurnIn, f.Id)) || Enumerable.Range(0, f.Routed.Count).Any(k => !Out(model.Find(TaskKind.Objective, f.Id, k))));
+        }
+
         var placedHere = new Dictionary<int, Node>();     // quest -> the node of its new hand-in
         var candIds = pending.Select(q => q.Id).ToHashSet();
         while (pending.Count > 0)
@@ -356,10 +475,32 @@ public static class Filler
             // a quest that needs another missed quest goes after it
             var q = pending.FirstOrDefault(p => p.PreAll.Concat(p.PreAny).All(x => !candIds.Contains(x) || placedHere.ContainsKey(x) || rejected.ContainsKey(x))) ?? pending[0];
             pending.Remove(q);
-            bool forced = fc.Forced.TryGetValue(q.Id, out var forcedBy);
-            string? why = TryPlace(q, model, nodes, gi, g, turnedIn, placedHere, rejected, questAreas, forced ? double.PositiveInfinity : maxDetour, data, out string? done);
-            if (why != null) { rejected[q.Id] = why; left.Add(Line(q, why)); continue; }
-            added.Add(done! + (forced ? $" (forced in by include in {forcedBy})" : "")); inSet.Add(q.Id);
+            bool forced = fc.Forced.TryGetValue(q.Id, out var forcedBy), carried = carriedIn.Contains(q.Id);
+            double limit = forced ? double.PositiveInfinity : maxDetour;
+            string? why, done;
+            var later = carried ? null : LaterGuide(q);
+            bool pickOnly = later != null && LeavesForGood(q);
+            if (pickOnly) why = TryPlace(q, model, nodes, gi, g, turnedIn, placedHere, rejected, questAreas, visitedIdx, limit, data, PlaceMode.PickupOnly, out done);
+            else
+            {
+                why = TryPlace(q, model, nodes, gi, g, turnedIn, placedHere, rejected, questAreas, visitedIdx, limit, data, carried ? PlaceMode.Finish : PlaceMode.Whole, out done);
+                // it does not fit whole here: picked up now and finished later, if a later guide can
+                if (why != null && later != null && !why.StartsWith("needs ")
+                    && TryPlace(q, model, nodes, gi, g, turnedIn, placedHere, rejected, questAreas, visitedIdx, limit, data, PlaceMode.PickupOnly, out var d2) == null)
+                { why = null; done = d2; pickOnly = true; }
+            }
+            if (why != null)
+            {
+                // it follows one picked up here and finished later: it is for that guide
+                if (q.PreAll.Concat(q.PreAny).FirstOrDefault(p => run.Carry.TryGetValue(p, out var c) && c.From == gi) is int cp and > 0)
+                    why = $"follows {QN(cp)}, which is finished in {run.Order[run.Carry[cp].To].Name}; it is looked at there";
+                rejected[q.Id] = why;
+                left.Add(Line(q, carried ? $"picked up in {run.Order[run.Carry[q.Id].From].Name}, but {why}" : why));
+                continue;
+            }
+            if (pickOnly) { run.Carry[q.Id] = (gi, later!.Value.To); inSet.Add(q.Id); added.Add(done + $"; objectives and hand-in in {later.Value.Name}"); continue; }
+            added.Add(done + (forced ? $" (forced in by include in {forcedBy})" : "") + (carried ? $" (picked up in {run.Order[run.Carry[q.Id].From].Name})" : ""));
+            inSet.Add(q.Id); run.AddedIn[q.Id] = gi;
         }
 
         g.Added = added.Count;
@@ -381,7 +522,7 @@ public static class Filler
             {
                 // a pickup and hand-in at the same NPC, one after another, are one step
                 int e = k; while (e + 1 <= j && SameStop(nodes[k], nodes[e + 1])) e++;
-                lines.AddRange(Render(nodes.GetRange(k, e - k + 1), model, data, turnedIn, gi, g.Shared ? faction : ""));
+                lines.AddRange(Render(nodes.GetRange(k, e - k + 1), model, data, turnedIn, gi, g.Shared ? faction : "", run.SomeOnly));
                 k = e + 1;
             }
             steps.Add((before, lines));
@@ -395,7 +536,7 @@ public static class Filler
     /// <summary>What the guide's zone files say about filling: the main zone's detour limit, and the quests their "include" lists force in.</summary>
     sealed class FillCfg { public double? MaxDetour; public string? DetourFile; public Dictionary<int, string> Forced = new(); }
 
-    static ZoneModel BuildModel(GameData data, string faction, List<AreaInfo> zones, int lo, int hi, FillCfg fc)
+    static ZoneModel BuildModel(GameData data, string faction, List<AreaInfo> zones, int lo, int hi, FillCfg fc, List<AreaInfo>? extra = null)
     {
         var main = zones[0];
         ZoneConfig cfg; bool own = false;
@@ -421,10 +562,13 @@ public static class Filler
             foreach (var (k, why) in other.Exclude) cfg.Exclude.TryAdd(k, why);
             foreach (int q in other.Include) { include.Add(q); fc.Forced.TryAdd(q, $"zones/{z.Name}.json"); }
         }
+        // the cities and zones quest chains go to: linked too, so their givers, hand-ins and objectives have places
+        foreach (var x in extra ?? new())
+            if (x.Id != main.Id && !links.Any(l => l.Area == x.Id.ToString() || data.FindArea(l.Area)?.Id == x.Id)) links.Add(new LinkedAreaFix { Area = x.Id.ToString() });
         // excluded wins over included, as in a build
         foreach (var k in cfg.Exclude.Keys) if (int.TryParse(k, out int ex)) { include.Remove(ex); fc.Forced.Remove(ex); }
-        cfg.LinkedAreas = links; cfg.MinLevel = lo; cfg.MaxLevel = hi; cfg.Include = include.Distinct().ToList(); cfg.Steps = new(); cfg.Start = null; cfg.StartLevel = lo;
-        var bo = new BuildOptions { Faction = faction, MinLevel = lo, MaxLevel = hi, StartLevel = lo, NoHearth = true };
+        cfg.LinkedAreas = links; cfg.MinLevel = lo - CarryLevels; cfg.MaxLevel = hi; cfg.Include = include.Distinct().ToList(); cfg.Steps = new(); cfg.Start = null; cfg.StartLevel = lo;
+        var bo = new BuildOptions { Faction = faction, MinLevel = lo - CarryLevels, MaxLevel = hi, StartLevel = lo, NoHearth = true };
         try { return new ZoneModel(data, main, cfg, bo); }
         catch (InvalidOperationException e) when (own) { throw new InvalidOperationException($"zones/{main.Name}.json: {e.Message}"); }
     }
@@ -515,18 +659,19 @@ public static class Filler
     }
 
     /// <summary>Why a quest the model found cannot be added, or null.</summary>
-    static string? Unfit(Quest q, ZoneModel m, HashSet<int> questAreas, HashSet<int> inSet, GameData data, bool forced)
+    static string? Unfit(Quest q, ZoneModel m, HashSet<int> questAreas, HashSet<int> inSet, GameData data, bool forced, bool carried)
     {
-        if (q.Arrival) return "starts outside this guide's zones";
-        if (q.Carried) return $"handed in outside this guide's zones ({q.Destination})";
-        if (q.Late) return q.DataGap ? "the database has no objectives for it" : "part of it is outside this guide's zones";
-        if (q.Optional || q.StartItem != null) return "starts from an item";
-        if (q.Start == null || !q.HasTurnin) return "no quest giver or no hand-in in the database";
-        if (q.Start.Cands.All(c => !questAreas.Contains(c.Area))) return $"picked up in {m.Areas[q.Start.Cands[0].Area].Name}, not one of this guide's zones";
-        if (q.End!.Cands.All(c => !questAreas.Contains(c.Area))) return $"handed in at {m.Areas[q.End.Cands[0].Area].Name}, not one of this guide's zones";
+        string Where(string? place) =>
+            place == null || place.StartsWith("an unknown") ? "somewhere the database has no spawn for"
+            : data.FindArea(place) is { } a && data.Instances.Contains(a.Id) ? $"in a dungeon ({place})" : $"in {place}, on another continent";
+        if (q.Arrival && !carried) return $"its giver is {Where(q.Origin)}";
+        if (q.Carried) return $"its hand-in is {Where(q.Destination)}";
+        if (q.Late) return q.DataGap ? "the database has no objectives for it" : $"part of it is {Where(q.Unrouted.FirstOrDefault()?.Elsewhere)}";
+        if (!carried && (q.Optional || q.StartItem != null)) return "starts from an item";
+        if (!carried && q.Start == null || !q.HasTurnin) return "no quest giver or no hand-in in the database";
         foreach (var o in q.Routed)
         {
-            if (o.Cands.All(c => !questAreas.Contains(c.Area))) return $"\"{o.Label}\" is in {m.Areas[o.Cands[0].Area].Name}, not one of this guide's zones";
+            if (o.Cands.Count == 0) return $"\"{o.Label}\" is {Where(o.Elsewhere)}";
             if (o.Index == null && o.Command == null) return $"the database does not say which quest-log line \"{o.Label}\" is";
             if (!forced && o.Kind is "kill" or "loot" && o.SrcNpcs.Select(n => data.Npcs.GetValueOrDefault(n)).FirstOrDefault(n => n is { Rank: >= 1 }) is { } elite)
                 return $"elite: {elite.Name} is {(elite.Rank == 3 ? "a boss" : elite.Rank == 4 ? "rare" : "elite")}";
@@ -535,6 +680,22 @@ public static class Filler
         if (q.Row.Exclusive.FirstOrDefault(inSet.Contains) is int ex and > 0) return $"cannot be taken together with {data.Quests.GetValueOrDefault(ex)?.Name ?? "?"} [{ex}], which the guides do";
         if (q.Row.BreadcrumbFor != 0 && inSet.Contains(q.Row.BreadcrumbFor)) return $"leads to {data.Quests.GetValueOrDefault(q.Row.BreadcrumbFor)?.Name ?? "?"} [{q.Row.BreadcrumbFor}], which the guides already pick up";
         return null;
+    }
+
+    /// <summary>A timed quest's limit in minutes (30 when the text only says there is one), or null.</summary>
+    static double? TimedMinutes(Quest q) => q.Row.TimeLimit is double t ? t > 0 ? t : 30 : null;
+
+    /// <summary>The walk along the route from one node to another, spot to spot.</summary>
+    static double RouteYards(List<Node> seq, int from, int to)
+    {
+        double d = 0; Node? last = null;
+        for (int i = from; i <= to; i++)
+        {
+            if (!seq[i].HasPos) continue;
+            if (last != null) d += Dist(last.Area, last.Pos, seq[i].Area, seq[i].Pos);
+            last = seq[i];
+        }
+        return d;
     }
 
     static double Dist(AreaInfo? a, Pt p, AreaInfo? b, Pt q)
@@ -549,8 +710,12 @@ public static class Filler
     /// Finds the cheapest gaps for a quest's pickup, objectives and hand-in (in that order) and puts them there. Returns
     /// why it could not, or null. Gap i is between node i-1 and node i; gap 0 (before the guide's first step) is not used.
     /// </summary>
+    enum PlaceMode { Whole, PickupOnly, Finish }
+    const int CarryLevels = 3;                   // a quest picked up to finish later: the later guide starts at most this far above its level
+
     static string? TryPlace(Quest q, ZoneModel m, List<Node> nodes, int gi, Guide g, Dictionary<int, (int Guide, int Step)> turnedIn,
-                            Dictionary<int, Node> placedHere, Dictionary<int, string> rejected, HashSet<int> questAreas, double maxDetour, GameData data, out string? done)
+                            Dictionary<int, Node> placedHere, Dictionary<int, string> rejected, HashSet<int> questAreas, HashSet<int> visitedIdx,
+                            double maxDetour, GameData data, PlaceMode mode, out string? done)
     {
         done = null;
         string QName(int p) => $"{data.Quests.GetValueOrDefault(p)?.Name ?? "?"} [{p}]";
@@ -566,13 +731,13 @@ public static class Filler
             }
             return null;
         }
-        foreach (int p in q.PreAll)
+        foreach (int p in mode == PlaceMode.Finish ? new HashSet<int>() : q.PreAll)
         {
             if (Ready(p) is int r) { minGap = Math.Max(minGap, r); continue; }
             if (rejected.TryGetValue(p, out var pw)) return $"needs {QName(p)}, which was left out too";
             return turnedIn.TryGetValue(p, out var at) ? $"needs {QName(p)}, which the guides hand in later or on another path" : $"needs {QName(p)}, which none of the guides do";
         }
-        if (q.PreAny.Count > 0)
+        if (q.PreAny.Count > 0 && mode != PlaceMode.Finish)
         {
             var ok = q.PreAny.Select(Ready).Where(r => r != null).Select(r => r!.Value).ToList();
             if (ok.Count == 0)
@@ -584,7 +749,8 @@ public static class Filler
             minGap = Math.Max(minGap, ok.Min());
         }
 
-        var acc = m.Find(TaskKind.Accept, q.Id)!; var turn = m.Find(TaskKind.TurnIn, q.Id)!;
+        var acc = m.Find(TaskKind.Accept, q.Id); var turn = m.Find(TaskKind.TurnIn, q.Id)!;
+        if (acc == null && mode != PlaceMode.Finish) return "no quest giver in the database";
         var objs = Enumerable.Range(0, q.Routed.Count).Select(k => m.Find(TaskKind.Objective, q.Id, k)!).ToList();
         bool tight = q.Tight && objs.Count > 0;
         bool AccOk(double lvl, Cand _) => lvl >= q.Req && lvl + 1 >= q.Level;
@@ -615,7 +781,7 @@ public static class Filler
             for (int i = 0; i <= n; i++) { pz[i] = lz; if (i < n && Pin(seq[i]) is { } z) lz = z; }
             lz = null;
             for (int i = n; i >= 0; i--) { if (i < n && Pin(seq[i]) is { } z) lz = z; nz[i] = lz; }
-            var cs = t.Cands.Where(c => questAreas.Contains(c.Area)).ToList();
+            var cs = t.Cands;
             (int, Cand?, double) best = (-1, null, double.PositiveInfinity);
             for (int i = Math.Max(1, from); i <= Math.Min(n, to); i++)
             {
@@ -628,8 +794,10 @@ public static class Filler
                     // only where the route is in that zone: right after a step there, or right before one. Next to a step in
                     // another zone only the walk on this side counts (the trip between zones, a flight or a boat, is the guide's)
                     bool pS = Same(pa[i], a) && Same(pz[i], a), nS = Same(na[i], a) && Same(nz[i], a);
-                    if (!pS && !nS) continue;
-                    double d = pS && nS ? Dist(pa[i], pp[i], a, c.Pos) + Dist(a, c.Pos, na[i], np[i]) - Dist(pa[i], pp[i], na[i], np[i])
+                    // a place the guide never goes to (a quest chain's city or next zone) is a trip there and back
+                    bool trip = !pS && !nS && !visitedIdx.Contains(c.Area);
+                    if (!pS && !nS && !trip) continue;
+                    double d = pS && nS || trip ? Dist(pa[i], pp[i], a, c.Pos) + Dist(a, c.Pos, na[i], np[i]) - Dist(pa[i], pp[i], na[i], np[i])
                              : pS ? Dist(pa[i], pp[i], a, c.Pos) : Dist(a, c.Pos, na[i], np[i]);
                     if (d < best.Item3) best = (i, c, d);
                 }
@@ -642,20 +810,45 @@ public static class Filler
 
         // every place for the pickup; for each, the objectives and then the hand-in where they add least after it
         double bestTotal = double.PositiveInfinity; List<Node>? bestSeq = null; Node? bestAcc = null, bestTurn = null; List<Node> bestObjs = new();
-        bool levelOk = false;
+        bool levelOk = false, timedCut = false;
+        if (mode == PlaceMode.PickupOnly)
+        {
+            // just the pickup, where it adds least; the rest is for a later guide
+            for (int ga = Math.Max(1, minGap); ga <= nodes.Count; ga++)
+            {
+                double lvl = nodes[ga - 1].Level;
+                if (!AccOk(lvl, null!)) continue;
+                levelOk = true;
+                var (_, ac, total) = Best(nodes, acc!, ga, ga, AccOk);
+                if (ac == null || total >= bestTotal) continue;
+                var seq = new List<Node>(nodes); var an = Make(acc!, ac, lvl); seq.Insert(ga, an);
+                bestTotal = total; bestSeq = seq; bestAcc = an;
+            }
+            if (bestSeq == null) return !levelOk ? $"needs level {q.Req}; this guide reaches about {nodes.Max(x => x.Level):0.0}" : "no place in the route for its pickup";
+            if (bestTotal > maxDetour) return $"too far off the route: about {bestTotal:0} yd of extra walking (the limit is {maxDetour:0} yd: --max-detour, or fillMaxDetour in the zone file)";
+            nodes.Clear(); nodes.AddRange(bestSeq);
+            done = Line(q, $"pickup {Where(bestAcc!)}; about {Math.Max(0, bestTotal):0} yd of extra walking");
+            return null;
+        }
         for (int ga = Math.Max(1, minGap); ga <= nodes.Count; ga++)
         {
             double lvl = nodes[ga - 1].Level;
-            if (!AccOk(lvl, null!)) continue;
+            if (mode == PlaceMode.Whole && !AccOk(lvl, null!)) continue;
             levelOk = true;
-            var (_, ac, total) = Best(nodes, acc, ga, ga, AccOk);
-            if (ac == null || total >= bestTotal) continue;
-            var seq = new List<Node>(nodes); var an = Make(acc, ac, lvl); seq.Insert(ga, an);
+            List<Node> seq; Node? an = null; double total = 0;
+            if (mode == PlaceMode.Finish) { if (ga > Math.Max(1, minGap)) break; seq = new List<Node>(nodes); }   // already in the quest log
+            else
+            {
+                var (_, ac, t0) = Best(nodes, acc!, ga, ga, AccOk);
+                if (ac == null || t0 >= bestTotal) continue;
+                total = t0; seq = new List<Node>(nodes); an = Make(acc!, ac, lvl); seq.Insert(ga, an);
+            }
+            int start = an != null ? seq.IndexOf(an) + 1 : 1;
             var on = new List<Node>(); bool fail = false;
             for (int k = 0; k < objs.Count && !fail; k++)
             {
                 int kk = k;
-                int from = tight && k == 0 ? seq.IndexOf(an) + 1 : q.Routed[k].Seq && on.Count > 0 ? seq.IndexOf(on[^1]) + 1 : seq.IndexOf(an) + 1;
+                int from = tight && k == 0 ? start : q.Routed[k].Seq && on.Count > 0 ? seq.IndexOf(on[^1]) + 1 : start;
                 int to = tight && k == 0 ? from : int.MaxValue;
                 var (oi, oc, cost) = Best(seq, objs[k], from, to, (l, c) => ObjOk(kk, l, c));
                 if (oc == null) { fail = true; break; }
@@ -663,31 +856,36 @@ public static class Filler
                 if (total >= bestTotal) fail = true;
             }
             if (fail) continue;
-            int tf = on.Append(an).Max(x => seq.IndexOf(x)) + 1;
+            int tf = on.Count > 0 || an != null ? on.Concat(an != null ? new[] { an } : Array.Empty<Node>()).Max(x => seq.IndexOf(x)) + 1 : start;
             var (ti, tc, tcost) = Best(seq, turn, tf, int.MaxValue, (_, _) => true);
             if (tc == null) continue;
             var tn = Make(turn, tc, seq[ti - 1].Level); seq.Insert(ti, tn); total += tcost;
+            // a timed quest: its hand-in no further along the route than half its time allows on foot (fights, flights, slack)
+            if (an != null && TimedMinutes(q) is double mins && RouteYards(seq, seq.IndexOf(an), seq.IndexOf(tn)) > mins * 60 * Tuning.RunSpeed / 2) { timedCut = true; continue; }
             if (total < bestTotal) { bestTotal = total; bestSeq = seq; bestAcc = an; bestTurn = tn; bestObjs = on; }
         }
         if (bestSeq == null)
         {
             double top = nodes.Max(x => x.Level);
             if (!levelOk) return top < q.Req ? $"needs level {q.Req}; this guide reaches about {top:0.0}" : $"a level {q.Level} quest; no place in the route after what it needs where the player is high enough";
+            if (timedCut) return $"timed ({(q.Row.TimeLimit is > 0 ? $"{q.Row.TimeLimit:0} min" : "the database does not say how long; taken as 30 min")}): no place where its hand-in comes soon enough after the pickup";
             return "no place in the route where the player is high enough for all of its objectives";
         }
         if (bestTotal > maxDetour) return $"too far off the route: about {bestTotal:0} yd of extra walking (the limit is {maxDetour:0} yd: --max-detour, or fillMaxDetour in the zone file)";
         nodes.Clear(); nodes.AddRange(bestSeq);
         placedHere[q.Id] = bestTurn!;
+        done = Line(q, (bestAcc != null ? $"pickup {Where(bestAcc)}; " : "") + (bestObjs.Count > 0 ? $"objectives {string.Join(", ", bestObjs.Select(Where).Distinct())}; " : "")
+                       + $"hand-in {Where(bestTurn!)}; about {Math.Max(0, bestTotal):0} yd of extra walking");
+        return null;
 
         string Where(Node x)
         {
-            int i = nodes.IndexOf(x) - 1;
-            while (i >= 0 && nodes[i].Src == null) i--;
-            return i < 0 ? "at the start" : $"after step {nodes[i].Src!.No} ({Describe(nodes[i].Src!, data)})";
+            var list = bestSeq ?? nodes;
+            int i = list.IndexOf(x) - 1;
+            while (i >= 0 && list[i].Src == null) i--;
+            string trip = x.Cand != null && !visitedIdx.Contains(x.Cand.Area) ? $" (trip to {m.Areas[x.Cand.Area].Name})" : "";
+            return (i < 0 ? "at the start" : $"after step {list[i].Src!.No} ({Describe(list[i].Src!, data)})") + trip;
         }
-        done = Line(q, $"pickup {Where(bestAcc!)}" + (bestObjs.Count > 0 ? $"; objectives {string.Join(", ", bestObjs.Select(Where).Distinct())}" : "")
-                       + $"; hand-in {Where(bestTurn!)}; about {Math.Max(0, bestTotal):0} yd of extra walking");
-        return null;
     }
 
     static string Describe(SrcStep s, GameData data)
@@ -710,7 +908,7 @@ public static class Filler
         return string.Format(Inv, "    .goto {0},{1:0.00},{2:0.00}", a.Name, Math.Clamp(p.X, 0, 100), Math.Clamp(p.Y, 0, 100)) + (hidden ? ",0" : "");
     }
 
-    static List<string> Render(List<Node> stop, ZoneModel m, GameData data, Dictionary<int, (int Guide, int Step)> turnedIn, int gi, string side)
+    static List<string> Render(List<Node> stop, ZoneModel m, GameData data, Dictionary<int, (int Guide, int Step)> turnedIn, int gi, string side, HashSet<int> someOnly)
     {
         var o = new List<string>(); var t0 = stop[0].Task!; string tag = t0.Tag;
         // in a guide shared by both factions every new step says whose it is ("Warrior/Rogue" -> "Warrior Horde/Rogue Horde")
@@ -745,7 +943,9 @@ public static class Filler
         if (e.Kind == EntKind.Npc) o.Add($"    .target {e.Name}");
         // the conditions first: what a pickup needs from earlier guides, and that a hand-in's quest is in the log
         foreach (var x in stop.Where(x => x.Task!.Kind == TaskKind.Accept))
-            foreach (int p in x.Q!.PreAll.OrderBy(p => p).Where(p => turnedIn.TryGetValue(p, out var at) && at.Guide < gi))
+            // (also one the guides hand in only for some characters: "<< Hunter" Wenikee Boltbucket before Nugget Slugs)
+            foreach (int p in x.Q!.PreAll.Concat(x.Q.PreAny.Count == 1 ? x.Q.PreAny : Enumerable.Empty<int>()).Distinct().OrderBy(p => p)
+                                  .Where(p => turnedIn.TryGetValue(p, out var at) && (at.Guide < gi || someOnly.Contains(p))))
                 o.Add($"    .isQuestTurnedIn {p} --{data.Quests.GetValueOrDefault(p)?.Name ?? "?"}");
         var turnins = stop.Where(x => x.Task!.Kind == TaskKind.TurnIn).ToList();
         if (turnins.Count == stop.Count && turnins.Count == 1) o.Add($"    .isOnQuest {turnins[0].Q!.Id}");

@@ -113,7 +113,7 @@ These sit at the top level of the file.
 | `sections` | `true`: sections at each new main hub, and the guide starts at the one for your level by itself (see the README). | No sections: one guide that starts at the top. |
 | `split` | `true`: a guide per section and per part, listed under a heading such as "1 - 16 Mulgore". | One guide per zone, its parts joined by a level check. |
 | `suggest` | `false`: `link` never suggests this zone to other guides. This zone's own guide still gets its suggestions. | Suggested when it suits the level. |
-| `fillMaxDetour` | `fill` only: the most walking (yards) a missed quest may add to a guide that does most of its quest steps in this zone. `0` = no limit. Wins over `--max-detour`. | `--max-detour` (1500). |
+| `fillMaxDetour` | `fill` only: the most walking (yards) a missed quest may add to a guide that does most of its quest steps in this zone. `0` = no limit. Wins over `--max-detour`. | `--max-detour` (no limit). |
 
 Hearthstone steps are only planned for a part of the guide with at least 25 things to do.
 

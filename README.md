@@ -263,17 +263,27 @@ is add the quests the set misses:
 * **Starter guides.** A guide with `#defaultfor Orc,Troll` gets no quests only other races (or classes those
   races cannot be) can take. Prerequisites count only when a guide leading to this one (through `#next`) hands
   them in, not a starter guide for another race that ends in the same place.
-* **What counts as missed.** A quest is a candidate for a guide when it is picked up, done and handed in in the
-  zones the guide does objectives in (never the capital cities), its level is inside the guide's range (from
-  its name), and no guide of that faction in the folder picks it up, does or hands it in. Elite quests (an
-  elite, rare or boss target), dungeon quests, quests started from an item, quests that cannot be taken
-  with one the set does, and breadcrumbs to a quest the set already picks up are left out.
+* **What counts as missed.** No guide of that faction in the folder picks it up, does or hands it in, and it is
+  either a **starter**, picked up in the zones the guide does objectives in (never the capital cities) at a
+  level inside the guide's range (from its name), or a **follow-up**: next in the chain of a quest the guide or
+  the guides before it do, or one fill adds. A follow-up can be anywhere on the same continent: other zones,
+  cities, wherever the chain goes. Elite quests (an elite, rare or boss target: group quests), dungeon quests,
+  quests started from an item, quests that cannot be taken with one the set does, breadcrumbs to a quest the
+  set already picks up, and another race's version of a quest the set does (the tauren "Call of Earth" for an
+  orc guide) are left out.
+* **Chains into other zones.** A part of a quest in a zone or city the guide goes to anyway goes next to a step
+  there. A part somewhere the guide never goes is a **trip**: there and back, where it adds least (the report
+  says "trip to ..."). When a quest's objectives and hand-in are all somewhere the guide does not go, and the
+  chain does not come back, it is picked up now and **finished in a later guide** (on this guide's `#next`
+  path) that goes there, if that guide starts at most 3 levels above the quest; otherwise it is a trip now, so
+  the quest is not outlevelled. Its steps in the later guide only show while it is in the quest log.
 * **Where it goes.** The pickup, objectives and hand-in each go between two existing steps, where they add
   least walking, in that order, and only where the route is in that zone (next to a step there). A pickup comes after whatever the quest needs (handed in earlier in the set,
   or a missed quest added before it), and only where the player is high enough: at least its required
   level, and at most one level below the quest. The player's level at each step is worked out from the
   guide's range, pinned to the guide's own `.xp` grind steps. Escorts and timed quests get their objective
-  straight after the pickup.
+  straight after the pickup, and a timed quest's hand-in comes no further along the route than half its time
+  on foot (30 minutes when the database only says it is timed).
 * **Class and race steps.** A run of steps tagged for some classes or races (`step << Priest/Mage/Warlock`
   followed by `step << !Warlock`) counts as part of the route when every character does one of them; nothing
   new goes in the middle of such a run, or straight after a run only some characters do. `#defaultfor`
@@ -286,13 +296,12 @@ is add the quests the set misses:
   way: from its pickup to its hand-in (for an escort, to the step that finishes it).
 * **Zones.** A new step only goes where the player is in that zone on both sides, counting every step anyone
   does, also class steps and `#completewith` pins (so not between a city visit and the flight back).
-* `--max-detour <yards>` (default 1500): a quest that would add more walking than this is left out.
-  `--max-detour none` (or `0`) turns the limit off.
+* `--max-detour <yards>` (default: no limit): a quest that would add more walking than this is left out.
+  `--max-detour none` (or `0`) is no limit.
 * Per zone, in `zones/<zone>.json`: `"fillMaxDetour": 3000` sets the limit for guides that do most of
   their quest steps in that zone (it wins over `--max-detour`; `0` = no limit). Quest IDs in the zone file's
   `include` list skip the detour limit and the elite check in every guide that quests in that zone; they
-  still need a place in the route where the player is high enough, and their pickup, objectives and
-  hand-in must be in the guide's zones. `exclude` wins over `include`.
+  still need a place in the route where the player is high enough. `exclude` wins over `include`.
 * `--group <name>` (default "RouteBuilder Forever"): the filled guides are listed in RestedXP under this
   name plus " (Horde)" or " (Alliance)", so they do not clash with the originals. Names and `#next` stay.
 * `--faction Horde` fills only that faction's guides.
