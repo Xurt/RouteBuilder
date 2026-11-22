@@ -709,8 +709,22 @@ public sealed class ZoneModel
             var nd = it?.NpcDrops.Where(n => Points(EntKind.Npc, n).Count > 0).ToList() ?? new();
             var od = it?.ObjectDrops.Where(n => Points(EntKind.Object, n).Count > 0).ToList() ?? new();
             var ve = it?.Vendors.Where(n => Points(EntKind.Npc, n).Count > 0).ToList() ?? new();
+            // an NPC on our side that "drops" it hands it over (Pixel in Splintertree Post with the Warsong Saw Blades): not a
+            // mob to kill, and its level says nothing about the quest's
+            var giver = nd.Where(n => Data.Npcs.GetValueOrDefault(n)?.FriendlyTo(Opt.Faction) == true).ToList();
+            nd = nd.Except(giver).ToList();
             Obj o;
-            if (nd.Count > 0 || od.Count > 0)
+            if (nd.Count == 0 && od.Count == 0 && ve.Count == 0 && giver.Count > 0)
+            {
+                string who = Data.NpcName(giver[0]);
+                // what it wants for it: a helper quest of this one at that NPC ("Bring Pixel a Deadly Blunderbuss")
+                var wants = Data.Quests.Values.Where(h => h.Parent == row.Id && h.StartNpcs.Contains(giver[0]))
+                                .SelectMany(h => h.NeedItems.Select(x => Data.Items.GetValueOrDefault(x.id)?.Name)).Where(x => x != null).Distinct().ToList();
+                o = new Obj { Index = ix, Kind = "talk", Label = $"{nm} ({cnt})", Count = cnt, Loot = nm, Cands = MakeCands(Points(EntKind.Npc, giver[0]), 1),
+                              Text = $"{Emitter.Talk}Get |cRXP_LOOT_{nm}|r from |cRXP_FRIENDLY_{who}|r" + (wants.Count > 0 ? $" (for {string.Join(" and ", wants.Select(w => $"a |cRXP_LOOT_{w}|r"))})" : "") };
+                o.Targets.Add(("target", who)); o.SrcNames.Add(who);
+            }
+            else if (nd.Count > 0 || od.Count > 0)
             {
                 var pts = Points(nd, od);
                 var rates = nd.Select(n => Data.DropRates.GetValueOrDefault(id)?.GetValueOrDefault(n) ?? 0).Where(r => r > 0).ToList();
