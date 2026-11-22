@@ -67,6 +67,12 @@ public sealed class QuestRow
 public sealed class NpcRow
 {
     public int Id; public string Name = ""; public double MinLevel, MaxLevel; public int Rank, Flags;
+    public string Friendly = "";                            // QuestieDB friendlyToFaction: "A", "H" or "AH" (wild beasts are "AH" too)
+    /// <summary>
+    /// An NPC on that faction's side that talks to players (Pixel in Splintertree Post): friendly to it and with NPC flags
+    /// (gossip, quests, a vendor). Not a mob to kill. Wild beasts are "AH" but have no flags.
+    /// </summary>
+    public bool FriendlyTo(string faction) => Flags != 0 && Friendly.Contains(faction.StartsWith("H", StringComparison.OrdinalIgnoreCase) ? 'H' : 'A');
     public Dictionary<int, List<Pt>> Spawns = new();      // percent coordinates by area
     public Dictionary<int, List<Pt>> Waypoints = new();
     /// <summary>Average level, or null when the database has none (it uses 9999 for "unknown").</summary>
@@ -131,7 +137,7 @@ public sealed class GameData
 
         foreach (var (id, r) in Lua.ReadEntities(Path.Combine(exp, "foreverNpcDB.lua")))
         {
-            var n = new NpcRow { Id = id, Name = Lua.Text(r[1]) ?? "", MinLevel = Lua.Dbl(r[4]), MaxLevel = Lua.Dbl(r[5]), Rank = (int)Lua.Num(r[6]), Flags = (int)Lua.Num(r[15]) };
+            var n = new NpcRow { Id = id, Name = Lua.Text(r[1]) ?? "", MinLevel = Lua.Dbl(r[4]), MaxLevel = Lua.Dbl(r[5]), Rank = (int)Lua.Num(r[6]), Flags = (int)Lua.Num(r[15]), Friendly = Lua.Text(r[13]) ?? "" };
             ReadPoints(Lua.Tab(r[7]), n.Spawns); ReadPoints(Lua.Tab(r[8]), n.Waypoints);
             d.Npcs[id] = n;
         }
