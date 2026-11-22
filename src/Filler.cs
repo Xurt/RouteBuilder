@@ -102,7 +102,7 @@ public static class Filler
             if (!f.Guides.Any(g => g.Faction.Length > 0 && (onlyFaction == null || g.Faction == onlyFaction))) continue;
             string text = Rewrite(f, groupBase, onlyFaction);
             if (!opt.ContainsKey("no-quest-text")) text = QuestText.Apply(text, data);
-            text = PlainBrackets(text);
+            text = PlainBrackets(Indent(text));
             File.WriteAllText(Path.Combine(outDir, Path.GetFileName(f.Path)), text);
             var rep = f.Guides.Where(g => g.Report.Count > 0).SelectMany(g => g.Report.Append("")).ToList();
             if (rep.Count > 0) File.WriteAllLines(Path.Combine(outDir, Path.GetFileNameWithoutExtension(f.Path) + ".report.txt"), rep);
@@ -287,10 +287,31 @@ public static class Filler
             try { FillGuide(data, faction, g, gi, inSet, theirs, turnedIn, maxDetour, run); }
             catch (InvalidOperationException e) { g.Report.Add("  Nothing added: " + e.Message); Console.WriteLine($"  {g.Name}: {e.Message}"); }
         }
+        // a step at the end of each guide that picked up quests it does not finish: what they are, and why
+        for (int gi = 0; gi < order.Count; gi++)
+        {
+            var open = run.Open.Where(o => o.Value.From == gi).OrderBy(o => o.Value.Level).ThenBy(o => o.Key).ToList();
+            if (open.Count == 0) continue;
+            var g = order[gi];
+            var lines = new List<string> { g.Shared ? "step << " + faction : "step", "    >>|cRXP_WARN_Quests picked up in this guide that it does not finish|r" };
+            foreach (var (q, o) in open)
+            {
+                string tag = o.Tag;
+                if (g.Shared) tag = tag.Length == 0 ? faction : string.Join("/", tag.Split('/').Select(a => a.Trim() + " " + faction));
+                string why = o.DoneIn != null ? $"finished in {o.DoneIn}" : o.Why;
+                lines.Add($"    +{Safe(o.Name)} (level {o.Level}): {Safe(why)}" + (tag.Length > 0 ? " << " + tag : ""));
+            }
+            g.Inserts.Insert(0, (g.Lines.Count, lines));
+            g.Report.Add($"  Picked up, not finished in this guide ({open.Count}), listed in a step at its end:");
+            g.Report.AddRange(open.Select(o => $"    Lvl {o.Value.Level,-2} {o.Value.Name} [{o.Key}]{(o.Value.Tag.Length > 0 ? " (" + o.Value.Tag + ")" : "")}: {(o.Value.DoneIn != null ? "finished in " + o.Value.DoneIn : o.Value.Why)}"));
+        }
         // a quest picked up to be finished in a later guide that could not finish it after all
         foreach (var (q, c) in run.Carry.Where(c => !run.AddedIn.ContainsKey(c.Key)))
             order[c.From].Report.Add($"  Note: {data.Quests.GetValueOrDefault(q)?.Name ?? "?"} [{q}] is picked up here to be finished in {order[c.To].Name}, which could not fit it; finish it yourself or drop it.");
     }
+
+    /// <summary>A quest fill picks up but cannot finish where it is picked up (its hand-in is on another continent, say).</summary>
+    sealed class OpenQuest { public int From; public string Why = "", Name = "", Tag = ""; public int Level; public string? DoneIn; }
 
     /// <summary>What one faction's fill keeps across its guides.</summary>
     sealed class FactionRun
@@ -300,7 +321,11 @@ public static class Filler
         public Dictionary<int, int> AddedIn = new();                     // quest -> the guide fill handed it in in
         public Dictionary<int, (int From, int To)> Carry = new();        // quest -> picked up in one guide, finished in a later one
         public HashSet<int> SomeOnly = new();                            // quests the set hands in only on steps for some characters
+        public Dictionary<int, OpenQuest> Open = new();                  // picked up, but no guide so far could finish it
     }
+
+    /// <summary>Text for a guide line: nothing that RestedXP reads as a tag or a command.</summary>
+    static string Safe(string t) => t.Replace("<<", "<").Replace(">>", ">").Replace("[[", "[").Replace("]]", "]");
 
     /// <summary>The zones and cities (parent area IDs) a guide takes every player to: its steps for everyone with a spot.</summary>
     static HashSet<int> Visited(Guide g, GameData data) =>
@@ -348,12 +373,17 @@ public static class Filler
         var doneBy = earlier.Append(gi).SelectMany(i => run.Order[i].Steps).SelectMany(s => s.Accepts.Concat(s.TurnIns)).ToHashSet();
         foreach (var (q, at) in run.AddedIn) if (earlier.Contains(at)) doneBy.Add(q);
         var carriedIn = run.Carry.Where(c => c.Value.To == gi).Select(c => c.Key).ToHashSet();   // picked up earlier, finished here
+        // quests picked up earlier on this path that no guide could finish yet: finished here if they fit
+        var openIn = run.Open.Where(o => o.Value.DoneIn == null && earlier.Contains(o.Value.From)).Select(o => o.Key).ToHashSet();
+        carriedIn.UnionWith(openIn);
+        string FromName(int q) => run.Order[run.Carry.TryGetValue(q, out var c) && c.To == gi ? c.From : run.Open[q].From].Name;
         long fmask = Game.Races(faction).Aggregate(0L, (mk, r) => mk | r.Bit);
         bool Ours(QuestRow r) => r.Races == 0 || (r.Races & fmask) != 0;
 
         // areas a chain may go to: on this continent, not a dungeon
         var extra = new HashSet<int>();
-        bool Reachable(AreaInfo? x) => x != null && x.HasBounds && x.Continent == main.Continent && !data.Instances.Contains(x.Id) && !zoneSteps.Any(z => z.Area.Id == x.Id);
+        var continents = zoneSteps.Where(z => z.Area.HasBounds).Select(z => z.Area.Continent).ToHashSet();
+        bool Reachable(AreaInfo? x) => x != null && x.HasBounds && continents.Contains(x.Continent) && !data.Instances.Contains(x.Id) && !zoneSteps.Any(z => z.Area.Id == x.Id);
         void AddArea(int id) { var x = data.Areas.GetValueOrDefault(data.Parent(id)) ?? data.Areas.GetValueOrDefault(id); if (Reachable(x)) extra.Add(x!.Id); }
         void AddSpawns(IEnumerable<int> npcs, IEnumerable<int> objs)
         {
@@ -419,6 +449,18 @@ public static class Filler
 
         string QN(int id) => $"{data.Quests.GetValueOrDefault(id)?.Name ?? "?"} [{id}]";
         var left = new List<string>(); var added = new List<string>();
+        var openCands = new List<(Quest Q, string Why)>();
+        // why a quest can be picked up here but not finished: its hand-in or part of it out of reach. Not one that cannot be
+        // picked up or should not be (an item starts it, timed, an escort, elite, shut out by one the set does)
+        string? OpenWhy(Quest q)
+        {
+            if (q.Start == null || q.Arrival || q.StartItem != null || q.Optional || q.Tight || TimedMinutes(q) != null || q.DataGap) return null;
+            if (!q.Carried && !q.Late) return null;
+            if (theirs.Contains(q.Id) || alternatives.ContainsKey(q.Id) || !ForUs(q.Row)) return null;
+            if (!fc.Forced.ContainsKey(q.Id) && q.Routed.Any(o => o.Kind is "kill" or "loot" && o.SrcNpcs.Any(n => data.Npcs.GetValueOrDefault(n) is { Rank: >= 1 }))) return null;
+            if (q.Row.Exclusive.Any(inSet.Contains) || q.Row.BreadcrumbFor != 0 && inSet.Contains(q.Row.BreadcrumbFor)) return null;
+            return Unfit(q, model, questAreas, inSet, data, fc.Forced.ContainsKey(q.Id), false);
+        }
         var pending = new List<Quest>(); var rejected = new Dictionary<int, string>();
         // a guide written for some races (#defaultfor) or classes ("<< Alliance Hunter") gets no quests only other characters can take
         var combos = Combos(g, faction);
@@ -438,11 +480,13 @@ public static class Filler
                 : alt != 0 && q.PreAll.Concat(q.PreAny).All(x => alternatives.ContainsKey(x) || !doneBy.Contains(x)) ? $"follows {QN(alt)}, another race's version of {QN(alternatives[alt])}"
                 : !ForUs(q.Row) ? $"not for the characters this guide is for ({who})"
                 : Unfit(q, model, questAreas, inSet, data, fc.Forced.ContainsKey(q.Id), carried);
-            if (why != null) { left.Add(Line(q, carried ? $"picked up in {run.Order[run.Carry[q.Id].From].Name}, but {why}" : why)); rejected[q.Id] = why; continue; }
+            // one that would be added but cannot be finished in this guide (its hand-in on another continent, say): just the pickup
+            if (why != null && !carried && OpenWhy(q) is { } ow) { openCands.Add((q, ow)); continue; }
+            if (why != null) { if (!openIn.Contains(q.Id)) left.Add(Line(q, carried ? $"picked up in {FromName(q.Id)}, but {why}" : why)); rejected[q.Id] = why; continue; }
             pending.Add(q);
         }
-        foreach (int q in carriedIn.Where(q => !model.Quests.ContainsKey(q)))
-            left.Add($"{data.Quests.GetValueOrDefault(q)?.Name ?? "?"} [{q}]: picked up in {run.Order[run.Carry[q].From].Name}, but it is not in this guide's zones after all");
+        foreach (int q in carriedIn.Where(q => !model.Quests.ContainsKey(q) && !openIn.Contains(q)))
+            left.Add($"{data.Quests.GetValueOrDefault(q)?.Name ?? "?"} [{q}]: picked up in {FromName(q)}, but it is not in this guide's zones after all");
 
         // the first later guide (on this guide's path) that goes to all of a quest's other places soon enough not to outlevel it
         (int To, string Name)? LaterGuide(Quest q)
@@ -489,18 +533,37 @@ public static class Filler
                     && TryPlace(q, model, nodes, gi, g, turnedIn, placedHere, rejected, questAreas, visitedIdx, limit, data, PlaceMode.PickupOnly, out var d2) == null)
                 { why = null; done = d2; pickOnly = true; }
             }
+            // nowhere is high enough for its objectives, and no later guide takes it: just the pickup, listed at the end
+            if (why != null && !carried && why.StartsWith("no place in the route where the player is high enough") && !q.Tight && TimedMinutes(q) == null)
+            {
+                openCands.Add((q, "the guide does not get you high enough for its objectives"));
+                continue;
+            }
+            if (why != null && openIn.Contains(q.Id)) continue;   // still open; the guide it was picked up in lists it
             if (why != null)
             {
                 // it follows one picked up here and finished later: it is for that guide
                 if (q.PreAll.Concat(q.PreAny).FirstOrDefault(p => run.Carry.TryGetValue(p, out var c) && c.From == gi) is int cp and > 0)
                     why = $"follows {QN(cp)}, which is finished in {run.Order[run.Carry[cp].To].Name}; it is looked at there";
                 rejected[q.Id] = why;
-                left.Add(Line(q, carried ? $"picked up in {run.Order[run.Carry[q.Id].From].Name}, but {why}" : why));
+                left.Add(Line(q, carried ? $"picked up in {FromName(q.Id)}, but {why}" : why));
                 continue;
             }
             if (pickOnly) { run.Carry[q.Id] = (gi, later!.Value.To); inSet.Add(q.Id); added.Add(done + $"; objectives and hand-in in {later.Value.Name}"); continue; }
-            added.Add(done + (forced ? $" (forced in by include in {forcedBy})" : "") + (carried ? $" (picked up in {run.Order[run.Carry[q.Id].From].Name})" : ""));
+            added.Add(done + (forced ? $" (forced in by include in {forcedBy})" : "") + (carried ? $" (picked up in {FromName(q.Id)})" : ""));
             inSet.Add(q.Id); run.AddedIn[q.Id] = gi;
+            if (run.Open.TryGetValue(q.Id, out var oq)) oq.DoneIn = g.Name;
+        }
+
+        // the quests that can only be picked up here: their pickups, after everything else
+        foreach (var (q, ow) in openCands.OrderBy(o => o.Q.Level).ThenBy(o => o.Q.Id))
+        {
+            if (inSet.Contains(q.Id)) continue;
+            string? why = TryPlace(q, model, nodes, gi, g, turnedIn, placedHere, rejected, questAreas, visitedIdx, maxDetour, data, PlaceMode.PickupOnly, out var done);
+            if (why != null) { left.Add(Line(q, $"{ow}; and {why}")); rejected[q.Id] = why; continue; }
+            run.Open[q.Id] = new OpenQuest { From = gi, Why = ow, Name = q.Name, Tag = q.Tag, Level = q.Level };
+            inSet.Add(q.Id);
+            added.Add(done + $"; not finished here: {ow} (listed at the end of the guide)");
         }
 
         g.Added = added.Count;
@@ -663,6 +726,7 @@ public static class Filler
     {
         string Where(string? place) =>
             place == null || place.StartsWith("an unknown") ? "somewhere the database has no spawn for"
+            : place == "another zone" ? "somewhere this guide's zones and their chains do not reach"
             : data.FindArea(place) is { } a && data.Instances.Contains(a.Id) ? $"in a dungeon ({place})" : $"in {place}, on another continent";
         if (q.Arrival && !carried) return $"its giver is {Where(q.Origin)}";
         if (q.Carried) return $"its hand-in is {Where(q.Destination)}";
@@ -963,6 +1027,22 @@ public static class Filler
     /// Every guide written as RegisterGuide([[ ... ]]), also one that came as a Lua long string with level brackets
     /// ([=[ ... ]=]). Inside [[ ]] a "]]" would end the guide and a "[[" is a Lua 5.1 error, so those get a space.
     /// </summary>
+    /// <summary>Every line inside a step indented by four spaces; "step" lines and the guide's header lines at the margin.</summary>
+    static string Indent(string text) => RxpServices.GuideRx.Replace(text, m =>
+    {
+        var body = m.Groups["body"];
+        string nl = body.Value.Contains("\r\n") ? "\r\n" : "\n";
+        var o = new List<string>(); bool inStep = false;
+        foreach (var raw in body.Value.Split('\n'))
+        {
+            string t = raw.TrimEnd('\r').Trim();
+            bool step = t == "step" || t.StartsWith("step ") || t.StartsWith("step<<");
+            if (step) inStep = true;
+            o.Add(t.Length == 0 || step || !inStep ? t : "    " + t);
+        }
+        return m.Value[..(body.Index - m.Index)] + string.Join(nl, o) + m.Value[(body.Index + body.Length - m.Index)..];
+    });
+
     static string PlainBrackets(string text) =>
         RxpServices.GuideRx.Replace(text, m => "RegisterGuide([[" + m.Groups["body"].Value.Replace("]]", "] ]").Replace("[[", "[ [") + "]]");
 
@@ -977,8 +1057,10 @@ public static class Filler
             sb.Append(f.Text, pos, start - pos);
             var views = f.Views[b].Where(g => g.Faction.Length > 0 && (onlyFaction == null || g.Faction == onlyFaction)).ToList();
             var lines = f.Views[b][0].Lines.ToList();
-            // new steps from the back, so the line numbers in front stay right
-            foreach (var (before, add) in views.SelectMany(g => g.Inserts).OrderByDescending(x => x.Before)) lines.InsertRange(before, add);
+            // new steps from the back, so the line numbers in front stay right; ones at the very end go before the blank
+            // lines the body ends with (so the guide's "]]" stays on a line of its own)
+            int tail = lines.Count; while (tail > 0 && lines[tail - 1].Trim().Length == 0) tail--;
+            foreach (var (before, add) in views.SelectMany(g => g.Inserts).OrderByDescending(x => x.Before)) lines.InsertRange(Math.Min(before, tail), add);
             int firstStep = lines.FindIndex(l => l.Trim() == "step" || l.Trim().StartsWith("step "));
             foreach (var g in views)
             {
